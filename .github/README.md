@@ -8,10 +8,11 @@
 
 | 项目 | 当前状态 |
 | --- | --- |
-| 已正式通过的资格门 | 2 / 6；沿用最近已验收裁决，尚未因新文档升级 |
-| 当前候选 | 69，文件身份已固定，科研导师审查进行中 |
+| 当前候选的最新资格裁决 | 科研导师独立裁决：1 PASS、3 UNKNOWN、2 FAIL；尚待完整三审与根代理综合 |
+| 当前候选 | 69，科研导师报告已返回，存在九项 bearing objections；Nature 审查进行中 |
 | 前一候选 | 68，三路审查已返回；bearing objections 未闭合，根代理要求后继版本 |
 | 扩展期刊检索 | 独立子智能体进行中，寻找建设性路线与可比较机制 |
+| 官方工件原始证据 | 独立只读审计进行中，核对固定源码、许可证、接口与最小复现计划 |
 | Opus 建设性咨询 | 已取得完整实际回执；含需修正的逻辑问题，仅作 NONBALLOT 建议 |
 | 算法实现与主实验 | 尚未获准开始 |
 
@@ -19,6 +20,7 @@
 
 - [详细进度与资格门](../GITHUB_PROGRESS.md)
 - [当前候选 69](../69_PIE_DTRS_KNOWLEDGE_CERTIFIED_PROPOSAL_PRESERVING_TRANSACTIONAL_REFINEMENT_PREEXPERIMENT_CANDIDATE_20260905.md)
+- [69 科研导师报告](../69R1_PIE_DTRS_KNOWLEDGE_CERTIFIED_REFINEMENT_RESEARCH_MENTOR_REVIEW_20260905.md)
 - [68 三审根代理综合](../68R4_PIE_COMMIT_BOUNDARY_THREE_REVIEW_ROOT_SYNTHESIS_AND_SUCCESSOR_RULING_20260905.md)
 - [Opus 本次完整回执及根代理限制](../69C1_PIE_DTRS_BOUNDED_ERROR_OBSERVATION_CLAUDE_OPUS_CONSTRUCTIVE_ADVICE_RECEIPT_20260905.md)
 
