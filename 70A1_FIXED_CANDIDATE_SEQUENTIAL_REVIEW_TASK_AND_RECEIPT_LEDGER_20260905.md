@@ -98,3 +98,15 @@ collaboration.spawn_agent 已实际返回 /root/review70_nature，fork_turns=non
 上一轮 6 文件同步已实证：6589a1aa0d144c1d355111cd2644c8991b0dc758，push exit=0，远端 API 与本地 HEAD 一致。70C2 固定提示 SHA256 28f18eeb13d8418584a01679dfd90fe36bc38f1390f35abdc9ab6aad191ebc0a、4529 bytes；完整第二次回执 090053394e3bfb71fb94a990ffe7f44431f841c04cfd295899d048c870a583de、19514 bytes。
 
 第三阶段实际工具句柄已返回 /root/review70_logic，fork_turns=none，与预登记一致。首段派发文字有一处多余问号笔误，已立即用同句柄明确更正为“完全不读取/使用任何 skill；遵守直接注入边界；唯一科学输入固定 70，禁止前路报告/其他候选/账本/受限文件”。此更正不含任何前路科学发现或后继构造。当前等待实际完整回执，不以等待时长判通过，70 根验收尚未开始。
+
+## 第三阶段完成、缓存缺段恢复与根裁决
+
+/root/review70_logic 已实际返回完整最终消息与约定 70R3：SHA256 771943a4d8f7f7dd5e803da1fc3c349635707eb50f66aed4bc6182935f63eae7，26269 bytes，159 行，11652 Unicode 字符。候选一次完整 L1–450 覆盖、明确无 skill/无前路输入、起止身份、四条承重意见和六门齐备，回执有效。根代理在 09:29 UTC 前审读 chars [0,10000)；用户轮次中断后函数缓存丢失，13:00 UTC 复核同一散列并只补展示此前未读 [10000,11652) 尾段，现已全文读完。没有把丢失缓存冒称仍可用，未改科学正文。
+
+三路全部有效之后，根代理新建 70R4_THREE_REVIEW_ROOT_SYNTHESIS_AND_SUCCESSOR_71_REQUIREMENTS_20260905.md，逐项处置 4+6+4 条原始 bearing；根裁决 2 PASS / 3 UNKNOWN / 1 FAIL，候选 70 NOT-CLOSED。逻辑报告的 5 PASS / 0 UNKNOWN / 1 FAIL 使用更窄判据，不能覆盖前路解析阻断；没有多数表决。后继另立 71，不改 69/70。
+
+根代理补充来源证据：SharedEnv.h 固定 blob 7f4b4678ca9da7278e92fd4cdf9eed043f03a8e2、SHA256 8acce1b85b0878e575606e0058e10b46366bdc1eae4e4d9982dd5f355e627de0、573 bytes/27 行已全文读；Ma/Kumar/Koenig AAAI 2017 DOI 10.1609/aaai.v31i1.11035 官方 PDF 提取文本 L0–959 全部已读，未检查图像或生成 PDF 散列。固定 TIP-MCP 调用链出现末端 nextNode 前置边界缺口，根裁决 ROOT-S01 记录纸面见证与身份；未运行源码、未声称所有样例崩溃。
+
+原 69L1/69E1 于 13:00 UTC 精确路径检查仍缺，旧任务不重派、不冒认完成。上次实际同步 main=6a5ee598d2fadd9176ddf92e7cc039fdfdf575d4 已由远端核实；本段不是新 push 成功回执。
+
+根裁决后派发两个有界 NONBALLOT 建设性任务：真实工具句柄 /root/construct71_control 与 /root/construct71_transactions_stats。只给根代理明确的数学/协议问题，不读科学工件或 skill、不写文件；协助 71 有限到达、终点交接和统计构造。不是正式审查，不是原 L1/E1 重派，当前消息不计完整建议。
