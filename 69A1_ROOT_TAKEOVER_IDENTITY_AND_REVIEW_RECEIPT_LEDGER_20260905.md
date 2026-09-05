@@ -78,3 +78,17 @@ research-mentor 主 skill 及 25、06、12 三份参考文件的当前 hash/byte
 已逐行读取固定 R0 的 CompetitionSystem 头/源码，以及固定外部 time-independent 工件的 readme、MAPF-DP/MCP 头/源码、Agent 源码；8 个对象的 API Git blob、字节数、独立 Git SHA1 与 SHA256 匹配。另已完整读两仓库许可与 CMake、R0 README/输入输出说明/version、外部 .gitmodules；这些只读核验不等于已经构建、运行或原任务 69E1 已返回。
 
 第二次阶段同步只精确增加 69R3、69R4、69C2 prompt/完整回执及更新行政页；提交/push 的实际结果仍由后续工具核验。原 69L1/69E1 截至本次检查仍缺，继续 AWAITING-RECEIPT / OLD-HANDLE-NOT-OBSERVABLE。
+
+## 7. 候选 70 与本轮实际协作终态
+
+第二次阶段推送已实际完成：a7ec7c946983e074364f4a7ad4ffe4c90943e6b0，本地/远端 API 身份一致；没有运行 hooks、构建或测试。
+
+69C3 exec 72384 现已实际终结：exit=1，API 504，输入/输出 tokens 为零，没有构造正文；失败原始 JSON 已保存为独立传输回执。之后较窄的 69C4 exec 4355 实际 exit=0、completed、ADVICE-COMPLETE，完整原始 output/result 与根批注已保存。其 SHA256 e19589602bd309905e0c710d0041354a6f426868820923e954dc16008c79afe0，14773 bytes，47 换行；NONBALLOT。接受 2×2 对照与负例，拒绝终点无条件安全、监控自动证明真界、违约后收回已退休资源等错误建议。
+
+根代理额外完整读 JAIR 70 (2021) 923–954 的可提取全文；PDF SHA256 def08325da0ee2d4d12e01fd5ed864acaa224b87b0421f402803b9e4a68023bd，1097341 bytes，32 页；一页抽取近空，不冒称图像/版式全审。官方 PIE 论文代码脚注和外部 TIP 论文源码脚注均已亲见；原版论文→官方仓库关联不再只靠 README。更多固定源码含 driver/Planner/ActionModel/CMake 和外部 sample 引用闭合已读或身份核验，细节集中在 70，未运行任何原法。
+
+候选 70 已实际创建并固定：70_PIE_BOUNDED_SPATIAL_SUFFIX_OCCUPANCY_AND_BLOCKER_DIRECTED_OBSERVATION_PREEXPERIMENT_CANDIDATE_20260905.md，SHA256 487816cd59322e23f79a569454a3bde41f00564143c8c16606e87381caf677d7，76103 bytes，450 换行。根代理独立构造，不假装旧 69L1/69E1 已返回。28 个纸面 witness、公开来源/源码、物理保持、资源事务、总规格和纯仿真预注册为新候选证据，不是通过记录。
+
+70A1 已先登记第一路任务，collaboration.spawn_agent 实际返回 /root/review70_mentor，fork_turns=none。当前等待科研导师完整回执；Nature、无 skill 逻辑和根验收未派发/未进行。70 自固定后不修改，承重异议另立新编号。
+
+原 69L1/69E1 于 2026-09-05 07:47 UTC 精确路径检查仍不存在，继续 AWAITING-RECEIPT / OLD-HANDLE-NOT-OBSERVABLE。没有因缺回执提前实现/实验，也没有重复启动旧两项任务。行政进度页本轮更新，逐文件私有同步的实际 push 结果以工具回执和 Git 历史为准。

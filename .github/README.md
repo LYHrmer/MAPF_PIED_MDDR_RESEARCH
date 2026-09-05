@@ -1,32 +1,25 @@
 # MAPF 科研进度
 
-**当前状态：HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**
+**HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**
 
-本仓库是项目的私有进度与实验前文档快照。最近状态更新：2026-09-05。页面反映最后一次提交时的状态，后续阶段性同步会留下提交记录。
+这是既有私有仓库的实验前文档快照。2026-09-05：69 的三路审查与根验收已完成，仍有承重异议；70 已另立新编号和新字节，进入科研导师第一路审查。
 
-研究目标：保留 PIE-D 基线，寻找面向实际误差及处理延迟的、有明确效果机制和公平比较证据的 MAPF 方法。定位/运动执行偏差与离散反馈错误仍在比较，最终主线须经过文献证据和独立审查。
+| 项目 | 当前实查状态 |
+|---|---|
+| 最新已验收六门 | 69R4：1 PASS / 3 UNKNOWN / 2 FAIL；70 尚不授予 PASS |
+| 新候选 70 | 有界空间/运动包络、可信进度后缀释放、阻塞原因查询；76103 bytes，SHA256 487816cd59322e23f79a569454a3bde41f00564143c8c16606e87381caf677d7 |
+| 70 顺序审查 | 科研导师 /root/review70_mentor 已派发；Nature、无 skill 逻辑和根验收尚未启动 |
+| 原 69L1 / 69E1 | 原真实句柄当前不可访问、约定报告仍未落盘；未重复启动、未计完成 |
+| Claude 建设性协作 | 69C3 实际 504 无正文；69C4 完整实际回执有效，仅 NONBALLOT，错误建议已拒收 |
+| 实现/构建/测试/仿真/实验 | 均未开放，未执行 |
 
-| 项目 | 当前状态 |
-| --- | --- |
-| 当前候选的最新资格裁决 | 三路回执核验与根代理综合已完成：1 PASS、3 UNKNOWN、2 FAIL |
-| 当前候选 | 69，导师九项、Nature 八项、逻辑八项 bearing 已逐条综合，尚未闭合；需要新字节后继 |
-| 前一候选 | 68，三路审查已返回；bearing objections 未闭合，根代理要求后继版本 |
-| 扩展期刊检索 | 原句柄在新会话不可访问，69L1 尚未落盘；未重派、未计完成 |
-| 官方工件原始证据 | 原句柄在新会话不可访问，69E1 尚未落盘；未重派、未计完成 |
-| Opus 建设性咨询 | 69C2 完整实际回执已取得、拒收点已登记；69C3 构造任务运行中，仅作 NONBALLOT 建议 |
-| 算法实现与主实验 | 尚未获准开始 |
+允许组合/改进，效果必须由实际误差机制、公平对照和可证伪证据支持。保留 PIE-D 与官方外部 MCP 原版轨道；共同安全底座的增量比较单列。13 项一手记录和 4 份完整期刊提取文本已写入候选，未得全文的近邻限制公开。28 个静态 witness 尚未执行，不是实验结果。
 
-不提供主观“总体完成百分比”：文档数量、篇幅和候选版本数不能代表验收完成度。
+- [完整进度与资格门](../GITHUB_PROGRESS.md)
+- [候选 70](../70_PIE_BOUNDED_SPATIAL_SUFFIX_OCCUPANCY_AND_BLOCKER_DIRECTED_OBSERVATION_PREEXPERIMENT_CANDIDATE_20260905.md)
+- [70 真实审查任务登记](../70A1_FIXED_CANDIDATE_SEQUENTIAL_REVIEW_TASK_AND_RECEIPT_LEDGER_20260905.md)
+- [69 三路逐项根验收](../69R4_THREE_REVIEW_ROOT_SYNTHESIS_AND_SUCCESSOR_REQUIREMENTS_20260905.md)
+- [Claude 完整建议及根代理筛选](../69C4_CLAUDE_SUFFIX_OCCUPANCY_CONSTRUCTIVE_ADVICE_COMPLETE_RECEIPT_20260905.md)
+- [接任核验账本](../69A1_ROOT_TAKEOVER_IDENTITY_AND_REVIEW_RECEIPT_LEDGER_20260905.md)
 
-- [详细进度与资格门](../GITHUB_PROGRESS.md)
-- [当前候选 69](../69_PIE_DTRS_KNOWLEDGE_CERTIFIED_PROPOSAL_PRESERVING_TRANSACTIONAL_REFINEMENT_PREEXPERIMENT_CANDIDATE_20260905.md)
-- [69 科研导师报告](../69R1_PIE_DTRS_KNOWLEDGE_CERTIFIED_REFINEMENT_RESEARCH_MENTOR_REVIEW_20260905.md)
-- [69 Nature 报告](../69R2_PIE_DTRS_KNOWLEDGE_CERTIFIED_REFINEMENT_NATURE_REVIEWER_REPORT_20260905.md)
-- [69 无 skill 逻辑报告](../69R3_PIE_DTRS_KNOWLEDGE_CERTIFIED_REFINEMENT_NO_SKILL_INDEPENDENT_LOGIC_REVIEW_20260905.md)
-- [69 三审根代理裁决与逐条修复要求](../69R4_THREE_REVIEW_ROOT_SYNTHESIS_AND_SUCCESSOR_REQUIREMENTS_20260905.md)
-- [69C2 完整建设建议与根代理拒收说明](../69C2_CLAUDE_CONSTRUCTIVE_MECHANISM_AND_PROTOCOL_ADVICE_RECEIPT_20260905.md)
-- [接任独立核验与真实任务账本](../69A1_ROOT_TAKEOVER_IDENTITY_AND_REVIEW_RECEIPT_LEDGER_20260905.md)
-- [68 三审根代理综合](../68R4_PIE_COMMIT_BOUNDARY_THREE_REVIEW_ROOT_SYNTHESIS_AND_SUCCESSOR_RULING_20260905.md)
-- [Opus 本次完整回执及根代理限制](../69C1_PIE_DTRS_BOUNDED_ERROR_OBSERVATION_CLAUDE_OPUS_CONSTRUCTIVE_ADVICE_RECEIPT_20260905.md)
-
-本仓库按逐文件清单同步；未上传桌面备份、旧 35–38、受限实验载荷、凭据或整个工作目录。页面是行政进度记录，不能替代科研导师、Nature reviewer、无 skill 独立逻辑审查及根代理验收。
+逐文件同步，不上传受限载荷、桌面备份、旧 35–38 或整个工作目录。候选和正式报告不改；六门及全部协议/审查未闭合时不宣布实验前工作完成。
