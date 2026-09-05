@@ -80,3 +80,21 @@ collaboration.spawn_agent 已实际返回 /root/review70_nature，fork_turns=non
 根代理只读展开 R0 固定 src/MAPF-LNS2/src 中三个明确对象，均在内存按 Git blob SHA1 和 SHA256 复核，未下载工作副本、未运行其代码。LNS.cpp：blob 1fb0e54f8f2bb00af05de53233ae600774e36f2a、SHA256 0113b1911195d630ce98dfa09a28412148e1fadfc0f1aac9f75f1ba4ad2a54b2、53100 bytes / 1486 换行；Instance.cpp：2183ba41c4a04278fafa0c4ed0605762abd5fb7c、dcfd6fb4b134dcc437b6124d5bf099e4fd6a977e9f749607446e87b7fedae2ac、14658 / 454；mcp.cpp：ec7c149fa01206752ae1eeebff64f699facc2bb2、c228082f5d0ae6001366022baace45e4a8c3b4563fe60cb06a3ab8d59bfa3aaf、13558 / 426。
 
 当前只实际审读 LNS 的 loadPaths、commitPath、validateCommitSolution、checkReplan、setStartGoal/clearAll 和 LaCAM 修复相关指定段，Instance 的初始化/prepareDummy，内部 MCP 开头至 L130；不是三文件全文阅读，更不是所有依赖审计通过。其他已缓存字节没有冒称读完。补核验供后继修复适配与原法检查合同，不修改固定 70，不冒充旧 69E1 正式回执，也不送进正在进行的独立 Nature 审查。
+
+## 第二阶段实际完整回执与根核验
+
+2026-09-05 09:02–09:04 UTC，/root/review70_nature 已发送真实完整最终回执。70R2 为 46419 bytes、320 换行/物理行，SHA256 fcbe2abbfd9474429de0faf5c6fd18f6009a4068b4822f43ab217174cd24ab7d。根代理一次完整读取进缓存，连续展示 chars [0,11500) 与 [11500,22311)，全文无缺口；重新核验候选与报告散列不变，Nature 主 skill 和七参考的当前散列全部匹配报告所记。
+
+接受 COMPLETE 回执有效性：固定候选从同一缓存 L1–450 全文审读，三视角/交叉综合、实际来源限制、六条 bearing 与六门齐备。科学仍 NOT-CLOSED；阶段计数 2 PASS / 3 UNKNOWN / 1 FAIL，G2 仅确认已发表锚点存在，不作强新颖性认定。六条 bearing 是有限终点、terminal 多资源交接、源码适配、机会/模式语法、缺失评分、聚类推断；不能相互抵消。本记录不替代三路齐备后的根验收，70 不修改。
+
+## 第三阶段无 skill 逻辑派发前登记
+
+预登记 canonical task：/root/review70_logic。唯一科学输入为同一固定 70，SHA256 487816cd59322e23f79a569454a3bde41f00564143c8c16606e87381caf677d7、76103 bytes、450 行。不给任何导师/Nature/Claude/根代理后继材料，不读此账本。
+
+要求明确不使用、读取或调用任何 skill；不引入其他候选或前路报告。一次完整读取候选进缓存、连续全稿审读、起止身份、独立定理/总函数/协议/证伪/公平性审查、六门与所有承重意见及客观关闭义务。允许为核实正文中明确引用的事实而作最小必要一手只读访问，必须记录亲见范围，禁止重派旧任务。
+
+约定唯一新报告：70R3_PIE_SPATIAL_SUFFIX_AND_BLOCKER_OBSERVATION_NO_SKILL_INDEPENDENT_LOGIC_REVIEW_20260905.md。只用 apply_patch 创建该报告，新工件只在研究目录；所有 shell 段用 rtk；不实现/构建/测试/仿真/调参/赋保护参数/生成载荷。预登记尚不等于真实派发或完成，实际句柄待工具返回追加。
+
+上一轮 6 文件同步已实证：6589a1aa0d144c1d355111cd2644c8991b0dc758，push exit=0，远端 API 与本地 HEAD 一致。70C2 固定提示 SHA256 28f18eeb13d8418584a01679dfd90fe36bc38f1390f35abdc9ab6aad191ebc0a、4529 bytes；完整第二次回执 090053394e3bfb71fb94a990ffe7f44431f841c04cfd295899d048c870a583de、19514 bytes。
+
+第三阶段实际工具句柄已返回 /root/review70_logic，fork_turns=none，与预登记一致。首段派发文字有一处多余问号笔误，已立即用同句柄明确更正为“完全不读取/使用任何 skill；遵守直接注入边界；唯一科学输入固定 70，禁止前路报告/其他候选/账本/受限文件”。此更正不含任何前路科学发现或后继构造。当前等待实际完整回执，不以等待时长判通过，70 根验收尚未开始。

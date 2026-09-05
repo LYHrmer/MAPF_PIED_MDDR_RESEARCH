@@ -2,7 +2,7 @@
 
 更新：2026-09-05。**HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。
 
-候选 69 的科研导师、Nature、无 skill 逻辑三路有效回执及根代理验收均已完成，结论为未闭合：9、8、8 条原始承重异议逐条登记，不按多数抵消。69 保持原字节，不修改、不封存。新候选 70 已固定，第一路科研导师已返回有效完整报告，独立 Nature 第二阶段正在进行。
+候选 69 的科研导师、Nature、无 skill 逻辑三路有效回执及根代理验收均已完成，结论为未闭合：9、8、8 条原始承重异议逐条登记，不按多数抵消。69 保持原字节，不修改、不封存。新候选 70 已固定，科研导师与 Nature 两路均已返回有效完整报告；第三路明确不使用任何 skill 的独立逻辑审查正在进行。
 
 ## 已验收资格门与当前候选
 
@@ -23,8 +23,8 @@
 |---|---|---|
 | 候选 70，76103 bytes / 450 换行 | 487816cd59322e23f79a569454a3bde41f00564143c8c16606e87381caf677d7 | 已固定新字节；禁止修补后冒用此审查 |
 | 70 第一阶段科研导师 | /root/review70_mentor；报告 SHA256 ecc5823d92b48cb35c247a2797bd062d9e11ae8a3f94ac83674486bb95b5a5e9 | 完整实际回执有效；31950 bytes / 229 行；四项 bearing，2 PASS / 3 UNKNOWN / 1 FAIL |
-| 70 Nature | /root/review70_nature | 已在导师有效回执后登记/派发，候选输入隔离，等待完整报告 |
-| 70 无 skill 逻辑 | 尚未派发 | 仅 Nature 有效回执返回后启动 |
+| 70 Nature | /root/review70_nature；报告 SHA256 fcbe2abbfd9474429de0faf5c6fd18f6009a4068b4822f43ab217174cd24ab7d | 完整实际回执有效；46419 bytes / 320 行；六条 bearing，2 PASS / 3 UNKNOWN / 1 FAIL |
+| 70 无 skill 逻辑 | /root/review70_logic | Nature 有效完整回执后先登记再派发；唯一固定候选输入，不使用任何 skill，等待完整报告 |
 | 70 根代理验收 | 尚未开始 | 三路有效返回后逐项综合 |
 | 原 69L1 文献任务 | Anscombe / 01a06ff8-a89f-7c91-8248-f7c8f1555577 | 原句柄 not found，约定报告仍缺；不可观测，不重派、不计完成 |
 | 原 69E1 源码任务 | Pauli / 01a0700b-ea09-7792-94d3-7b2acff4497d | 原句柄 not found，约定报告仍缺；不可观测，不重派、不计完成 |
@@ -52,4 +52,4 @@
 
 H、T_delay、B_CAL、B_max、B*、P_active、density N 保持原含义、未赋值。没有实现、构建、测试、仿真、调参、实验载荷或结果；桌面只读、旧 35–38 与受限载荷禁读。六门、全部协议、顺序审查和显式要求审计闭合前不能宣告实验前完成。
 
-既有私有仓库已核实 private=true / visibility=private / main。上次实际同步 83148d7497a7ab89851819aa33b68c2e95754517 已由远端 API 确认；本次进度与实际 Claude 回执仅按精确文件清单同步，不发布 release、不自动追踪整目录。行政页允许更新，科学候选和正式报告保持原字节。
+既有私有仓库已核实 private=true / visibility=private / main。上次实际同步 6589a1aa0d144c1d355111cd2644c8991b0dc758 已由远端 API 确认；本次 Nature 回执与进度仅按精确文件清单同步，不发布 release、不自动追踪整目录。行政页允许更新，科学候选和正式报告保持原字节。
