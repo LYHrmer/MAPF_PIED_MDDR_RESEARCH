@@ -32,6 +32,7 @@
 | Claude 69C3 | exec 72384 | 已终结 exit=1 / API 504 / 零 tokens；无意见，不算有效回执 |
 | Claude 69C4 | exec 4355 | 实际 exit=0 / completed / ADVICE-COMPLETE；完整正文与根批注已落盘，NONBALLOT |
 | Claude 70C1 | exec 2867 | 有限时间后继构造实际完整返回，NONBALLOT；不修改 70，不输入独立正式审查 |
+| Claude 70C2 | 首次 58610 截断；原调用终止后重试 47256 | 第二次完整 JSON/result 已核验，NONBALLOT；拒收无依据的符号置换区间等建议 |
 
 状态反映本次提交时的实查，非持续在线保证。原 69L1/69E1 于 07:47 UTC 精确路径复查仍不存在；根代理独立来源实核不是旧任务报告。69R2 的实际文档有效性与旧 Boyle 工具终态不可访问分开记录，未冒称见过旧线程 final。
 
@@ -51,4 +52,4 @@
 
 H、T_delay、B_CAL、B_max、B*、P_active、density N 保持原含义、未赋值。没有实现、构建、测试、仿真、调参、实验载荷或结果；桌面只读、旧 35–38 与受限载荷禁读。六门、全部协议、顺序审查和显式要求审计闭合前不能宣告实验前完成。
 
-既有私有仓库已核实 private=true / visibility=private / main。上次实际同步 d3827142d5e15c88a776d7bc9533f3cafb21ae25 已由远端 API 确认；本次新增 70 与实际 Claude 回执仅按精确文件清单同步，不发布 release、不自动追踪整目录。行政页允许更新，科学候选和正式报告保持原字节。
+既有私有仓库已核实 private=true / visibility=private / main。上次实际同步 83148d7497a7ab89851819aa33b68c2e95754517 已由远端 API 确认；本次进度与实际 Claude 回执仅按精确文件清单同步，不发布 release、不自动追踪整目录。行政页允许更新，科学候选和正式报告保持原字节。
