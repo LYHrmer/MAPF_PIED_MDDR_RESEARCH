@@ -116,3 +116,11 @@ root 新完成 ECAI 2024 DOI 10.3233/FAIA241017 的会议版 PDF 提取全文阅
 上述首次 Claude 24801 后续实际终态 exit=1 / is_error / api_error / FailedToOpenSocket，185055ms、零 token。已另存完整原始失败回执，不计建议。确认终态之后同提示权限升级获准，实际 exec 60396 第二次启动；当前仅运行中，尚无有效建议，未重复并发同任务。
 
 根新增有界 /root/r0_clock_input_evidence followup 已实际发出，仅追已发现 R0 时钟入口的一层 lacam2.cpp、InitLNS、SIPP、SpaceTimeAStar 直接读钟/停止/remaining 传递窗口。不用 skill、不读本地候选/旧报告、不写文件/运行，原对象身份、亲见范围及未核依赖分列；不等于重派原 69E1 全审计。
+
+本批 71R3/71R4/71L2、Claude 71C3 提示和首次失败回执及行政页已精确提交并 push exit=0；远端 API 实证 main=a64eed56e94774851e523059d0c315b98176398e。仓库再次核 private=true/visibility=private/default_branch=main。根裁决 71R4 为 13849 bytes/80 行，提示71C3为3610 bytes/13行，未更改固定身份。源核和后续建议仍按真正返回时间另记。
+
+PSIPP/CTC followup 完整实际回执已返回，71L3_PSIPP_CTC_PROVENANCE_AND_COMPONENT_NONBALLOT_RECEIPT_20260906.md 归档：代理读作者项目/幻灯片/机构/Crossref，并读 ResearchGate 原刊全文文字转录但未核上传者、未获 PDF、未逐符号/图检查；root 随后亲见完整作者项目 L0–66 和 34 页幻灯片文字 L0–185。不能写成 root 新增出版社 PDF 全文，未加入既有四期刊全文最低计数。方法的预计算组件可借鉴，连续时间不自动等于空间误差鲁棒性，整体优先规划器不能直接替 PIE。
+
+71E4_R0_NESTED_CLOCK_AND_SOLVER_INTERFACE_NONBALLOT_RECEIPT_20260906.md 已归档六对象有界源核完整回执，root 也独立读 SpaceTimeAStar.h 全文确认带超时入口空体。随后最后补核完整返回，明示 MAPFPlanner.cpp L19 true 经 LNS 构造参数 use_sipp 和 BasicLNS.h L12–17 选择 new SIPP；该明示对象分派不会进入空 A* 入口，不扩大成全仓永不进入。既有缓存复用与唯一新 caller 窗口身份另见 71E4 补充；未修源码或运行，不能把空入口当方法收益。
+
+真实新增 /root/construct72_minimal_authority（fork_turns=none）完成有界 NONBALLOT 构造：单可信中心资源账本与 agent gate 可消除多 owner 的分布式提交，但保留已发 grant 的迟到/重放围栏、旧新覆盖、终点 HOLD 与收费证据。root 完整读最终回执，认可它是更小的待比较方案，非正式审查或已采用定理。中心串行检查/提交必须按访问量收费，已发 grant 不按超时回收；中心 fail-stop 停止新分配，既有物理运动仍受保留包络，不能把故障后真实任务偷偷删掉。中心化不自动保证扩展性，队列饱和和长期阻塞是保留的负效应域。后继选择仍由 root 的完整规格与新顺序审查决定。

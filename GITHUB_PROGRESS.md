@@ -38,6 +38,9 @@
 | Claude 71C2 | 首次 91127 已 exit=1 网络失败；确认终态后同提示权限升级重试 43492 已 exit=0/completed | 完整实际 JSON/result 至 ADVICE-COMPLETE 和根筛选已留；仅 NONBALLOT，纠正两车不能量化收益等过强结论；未作正式审稿或启动实物 |
 | LIMO 两文件接口核验 | /root/limo_interface_evidence | 已完整实际返回，root 亦核固定两对象并读源码，71E2 保存来源与边界；NONBALLOT、不用 skill，不代替原 MAPF 源码任务 |
 | R0 时钟输入定点核验 | /root/r0_clock_input_evidence | 已完整实际返回，71E3 保存七对象身份/亲见范围；LNS high_resolution_clock 平台 alias 未核，LaCAM2 为 steady_clock；仍有明示未读依赖，NONBALLOT、不用 skill |
+| R0 嵌套时钟与入口补核 | /root/r0_clock_input_evidence followup | 完整返回，71E4 保存六对象及明示 SIPP 构造链；空 A* 超时入口不用于该明示对象，不外推全仓不可达；T3 适配时钟语义仍待关闭 |
+| PSIPP/CTC 来源及组件 | /root/scale_journal_mechanisms followup | 完整返回，71L3 区分作者项目/幻灯片与 ResearchGate 原文转录，未获 PDF；root 亲见完整作者项目/幻灯片，不新增虚假期刊 PDF 全文计数 |
+| 单中心最小协议构造 | /root/construct72_minimal_authority | 完整 NONBALLOT 回执有效；中心可减少分布式提交但不能消除迟到 grant、gate 围栏与终点占用，不等于已采用或通过的新候选 |
 
 主研究继续回应实际误差，保留 PIE-D 唯一新 MOVE 提议源。有限空间后缀退休、付费阻塞原因查询、普通反馈错误隔离和处理时延可组合。主比较为相同物理/信息/费用底座的 2×2；外部原版与守卫适配版分轨，不能把安全底座或源码修复的收益归给查询策略。没有实验结果、首创或普遍增益结论。
 
@@ -56,6 +59,8 @@
 - [Claude 71C2 两台 LIMO 完整建议及根纠错](71C2_CLAUDE_TWO_LIMO_EVIDENCE_FEASIBILITY_COMPLETE_RECEIPT_20260906.md)
 - [LIMO 两文件接口来源与根核验](71E2_LIMO_TWO_FILE_INTERFACE_AUDIT_NONBALLOT_RECEIPT_20260906.md)
 - [R0 规划时钟输入定点来源回执](71E3_R0_CLOCK_INPUT_BOUNDED_SOURCE_AUDIT_NONBALLOT_RECEIPT_20260906.md)
+- [R0 嵌套时钟与 SIPP 选择证据](71E4_R0_NESTED_CLOCK_AND_SOLVER_INTERFACE_NONBALLOT_RECEIPT_20260906.md)
+- [PSIPP/CTC 阅读层级和预计算组件](71L3_PSIPP_CTC_PROVENANCE_AND_COMPONENT_NONBALLOT_RECEIPT_20260906.md)
 - [70 三路逐项根裁决](70R4_THREE_REVIEW_ROOT_SYNTHESIS_AND_SUCCESSOR_71_REQUIREMENTS_20260905.md)
 - [70 顺序任务与回执账本](70A1_FIXED_CANDIDATE_SEQUENTIAL_REVIEW_TASK_AND_RECEIPT_LEDGER_20260905.md)
 - [候选 70](70_PIE_BOUNDED_SPATIAL_SUFFIX_OCCUPANCY_AND_BLOCKER_DIRECTED_OBSERVATION_PREEXPERIMENT_CANDIDATE_20260905.md)
@@ -66,4 +71,4 @@ H、T_delay、B_CAL、B_max、B*、P_active、density N 原义保留且未赋值
 
 按用户最新偏好减少 skill 依赖：日常实证、推导与顾问协作不额外套技能管线；已约定的候选正式顺序审查保留，以承重证据而非风格/分数判断修订。
 
-既有仓库已核 private=true / visibility=private。最近实际 push exit=0 且远端 API 核实 main=991575f0eb87f81c7a4e0bddca4976fee9b6d962；本批按精确清单同步实际已完成 71R3、71R4 和来源记录，Claude 在运行的提示可以归档，未返回的建议不计完成。新 push 与远端身份须由实际工具确认，随后追加账本。
+既有仓库已核 private=true / visibility=private。最近实际 push exit=0 且远端 API 核实 main=a64eed56e94774851e523059d0c315b98176398e，包含完整 71R3、71R4 与当批来源记录。新增 71E4/71L3 按精确清单继续同步；Claude 在运行的提示可以归档，未返回建议不计完成。新 push 与远端身份须由实际工具确认，随后追加账本。
