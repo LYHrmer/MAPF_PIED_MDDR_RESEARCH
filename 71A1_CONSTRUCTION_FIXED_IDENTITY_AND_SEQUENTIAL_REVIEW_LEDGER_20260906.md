@@ -60,3 +60,33 @@ Claude 71C2 实际 exec 91127 已启动，提示文件 71C2_CLAUDE_TWO_LIMO_EVID
 Claude 71C2 首次实际 91127 已收到终态 exit=1 / api_error / FailedToOpenSocket，input/output tokens 均零，完整实际 JSON 已保存至 71C2_CLAUDE_TWO_LIMO_FIRST_CALL_NETWORK_FAILURE_RECEIPT_20260906.md。没有建议；确认终态后按沙箱网络权限规则同一提示升级重试，不因 poll 超时重派。
 
 同提示权限升级重试实际 exec 43492 已启动，待完整回执。Nature /root/review71_nature 已报告候选一次缓存完整覆盖 L1–352、身份相符、主技能和七份参考完整阅读；报告仍在形成，阶段消息不是有效终稿。
+
+Claude 71C2 第二次实际 exec 43492 已终结 exit=0 / completed，session 8be89197-4e83-49f2-92ce-f58f7c41f957，完整非空 JSON/result 连续读取至 ADVICE-COMPLETE。实际全文和根筛选已保存至 71C2_CLAUDE_TWO_LIMO_EVIDENCE_FEASIBILITY_COMPLETE_RECEIPT_20260906.md。根接受证据分工、三类量分账和公平失败记录；拒收两车普遍不可识别/不能量化回收收益、把授权早于清空自动算碰撞、补造无共同坐标、把挂钟自动当处理上界及把不安全自动归为前提缺失等过强结论。没有把顾问结论当正式票。两个 Claude 调用均已终态，当前无运行中的 71C2。
+
+另有只读 NONBALLOT /root/limo_interface_evidence 实际派发，限定官方 limo_ros 固定提交后的 limo_driver.cpp 与 LimoStatus.msg 两个文件，核对底盘消息/时刻/积分与清空证据的关系；不读取任何 skill/本地科学文件、不写文件，不是原 69E1 MAPF 源码任务副本。未收齐完整实际回执前不计完成。
+
+用户最新允许适度减少对 skills 的依赖。根执行为：日常来源核验、源码审计、数学推导和建设性 Claude 协作不额外套 skill 或重复建立管线；集中使用技能于已明确要求的正式研究候选顺序审查。新增偏好没有明确取消既定科研导师 → Nature → 无 skill 逻辑 → 根验收的顺序，故保留此顺序，并避免把风格偏好当承重异议或触发无实质新版本。最终以具体反例、可核验来源与闭合证据裁决，不按技能分数或模板长度放行。
+
+本轮私有 main 推送已实际 exit=0，远端 API 核实 97c12c2ea8207d41de7eaf7d798acfbf3bdaaf6a。其后新增 Claude 完整回执与本行政追加待下一精确清单同步，不冒称已在该提交中。
+
+用户继续明确 Lifelong MAPF 要面向大规模，并确认大规模应以仿真实验为主。根采纳此研究优先级：大规模持续任务吞吐与全流程开销是主论证，小规模场景用于可解释机制与反例，两台 LIMO 只作尽可能完成的有限实物补充。实物集成成败不替代纯仿真证据链，也不让两车演示代替查询策略/拥塞/扩展性证据；保留实际误差问题和 PIE-D。后继候选须明确协调、核验、事务、通信和状态维护的规模代价及零/负收益条件，不能只用局部提前放行推出大规模吞吐改善。这是用户范围与证据优先级记录，不是追改 71、设定实验参数、实施或放行。
+
+Claude 71C2 完整回执实际身份 93e39052823c8ffb91ee0d54d8dd0d0ba898460f5f96eb9cc2f1187283d9f678 / 12974 bytes / 24 换行。LIMO 接口代理已完整实际返回两个固定文件的阅读/身份/事实/未读依赖；根已完整阅读该回执，正保存来源强度。没有继续扩展为硬件集成任务。
+
+## 第二阶段有效完成与第三阶段派发前登记
+
+/root/review71_nature 已实际完整返回报告 71R2_PIE_FINITE_ARRIVAL_SUFFIX_CAUSAL_OBSERVATION_NATURE_REVIEWER_REPORT_20260906.md，SHA256 b3f75a0d6c813a67506342914c4aac2fcf8c80a3ea4b1ee7d86fe32221d49015 / 38184 bytes / 248 行。root 一次完整读入，首次显示前 18000 字符，再由同次缓存补余 1204 字符，覆盖 L1–248 和 COMPLETE，无缺段；候选再次仅核身份，固定 3a3da493613d36dfe64280d468dd34c90498cdfe854ba939128b1e84bb7b4d51 / 72567 bytes / 352 行未变。主 skill 与七份参考身份均与报告相符。
+
+行政记数例外已查清：editorial criteria and processes.md 为 4391 bytes、45 个换行但 46 个逻辑行，报告表误写 L1–45。根向原审稿人发有界行政 followup；其实际完整回执用原 nature_skill_data 缓存及既有 text(d.text) 输出确认末行当时已完整展示与阅读，并给出无末尾换行的末段作为定位。因此正确历史范围为 L1–46，属于行数記載错误、非缺读；未重读候选/参考，未改固定报告，没有重派科学审查。本行政更正不修改科学裁决。根接受 71R2 的报告有效性。
+
+Nature 四项 bearing 均 OPEN / UNKNOWN：R2-B01 active tid 全集状态谓词；R2-B02 原规划 clock/停止条件到可暂停处理时钟的映射；R2-B03 guarded TIP 的收费可信 cursor 取得路径；R2-B04 合法 INIT 全程 HOLD 与未发起的评分分界。本路 G1/G2 PASS、G3–G6 UNKNOWN，未发现所列 P1–P3/Hoeffding 已证数学矛盾，不把无硬件或未运行单独算 FAIL。导师的 ABORT 迟到 PREPARE 及评分 bearing 继续保留，不因 Nature 判断抵消。最新根六门仍为 70R4；71 尚无根验收。
+
+预登记第三阶段 canonical task：/root/review71_logic。唯一科学输入仍固定 71，唯一报告 71R3_PIE_FINITE_ARRIVAL_SUFFIX_CAUSAL_OBSERVATION_NO_SKILL_INDEPENDENT_LOGIC_REVIEW_20260906.md。明确不读取、不使用任何 skill；不读导师/Nature/Claude/账本/旧候选或禁区。一次完整阅读候选 L1–352、核起止身份，独立检查定义、推导、状态机、计费/评分/基线可比性，以具体反例/语义分歧和可审查关闭标准区分 bearing 与编辑意见；写唯一新报告并给完整实际回执。这里只是派发前登记，未冒称启动或完成。收齐第三路之后 root 逐条综合；任何承重修复另立 72，不修改/封存 71。
+
+collaboration.spawn_agent 已实际返回 /root/review71_logic，fork_turns=none，与预登记相符，明确不用任何 skill。第三路运行中，未获报告前不计完成。
+
+根针对 Nature R2-B02 的条件前提做独立定点来源核验：实际 GitHub API 取得固定 R0 的 LNS.cpp blob 1fb0e54f8f2bb00af05de53233ae600774e36f2a；只展示读取 clock/runtime/time_limit/deadline 匹配附近窗口，未冒称本次全文阅读。L18/49/73/78/96–98/166 明确存在 Time::now 和 runtime<time_limit；L467 传 remaining time 给 InitLNS；L567/575/591 传 remaining time 给 findPath；L655 构造 Deadline 并传 solve。故“固定调用链根本不读时间”不能作为豁免，具体 alias/依赖时钟仍待核。源码数字仅为原文，不转成项目设置。实际新增 /root/r0_clock_input_evidence 有界 NONBALLOT 子任务，只追 Time/fsec、Deadline 和 MAPFPlanner 入口的直接时钟依赖，不用 skill、不读本地科学文件、不写文件；不重派原 69E1 全审计，也不把新事实投送独立第三路。
+
+/root/r0_clock_input_evidence 已完整实际返回，root 完整读完；71E3_R0_CLOCK_INPUT_BOUNDED_SOURCE_AUDIT_NONBALLOT_RECEIPT_20260906.md 保存根定点阅读与代理七文件身份、实际阅读强度、clock 分类/入口/停止分支及未读依赖。LNS 为 high_resolution_clock，实际平台 alias 未核；LaCAM2 Deadline 为 steady_clock 的经过时间与原单位转换，不能当 CPU 计费。未闭依赖诚实保留，不称完整时钟清单已过门；原 69E1 仍不冒称返回。
+
+71E2_LIMO_TWO_FILE_INTERFACE_AUDIT_NONBALLOT_RECEIPT_20260906.md 为 70abc6fb98c7f6ed4fc95835e8d42bc61d8f2dca02c2feb56b0c1ab409971c09 / 5995 bytes / 33 行。root 驱动全文的合并输出截断用同次缓存补 L1–50 与 L51，现完整覆盖 L1–580；LimoStatus 独立 API 七行亦完整读完。普通状态、主机积分 odom 和接收/发布时刻均不能单独证明实体清空；未读固件/实车依赖保留，未继续硬件搭建。
