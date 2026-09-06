@@ -38,3 +38,25 @@ SHA256 3a3da493613d36dfe64280d468dd34c90498cdfe854ba939128b1e84bb7b4d51；72567 
 collaboration.spawn_agent 实际返回 /root/review71_mentor，与预登记一致，fork_turns=none。已收到一次读入固定全文并连续展示 L1–352 的阶段证据；导师还在读取适用 skill 参考/核对来源，未计正式完成。Nature 与无 skill 逻辑未启动。
 
 71 固定之后，根代理补读 C3 官方 PIE-D PDF 此前未读的提取行 108–168、234–253、315–430、478–510、699–792；网页展示有重叠上下文，与先前已读范围合起来现覆盖 L0–792 全文。未检查图像、未生成 PDF 字节散列、未采用论文实验数字为项目设置。此新阅读强度不追溯修改固定 71 中准确记录的当时“非全文”范围，也不投送独立导师输入；后续根验收来源记录可使用。官方 URL https://ojs.aaai.org/index.php/AAAI/article/view/34506/36661 。
+
+## 第一阶段实际有效完成与第二阶段派发前登记
+
+/root/review71_mentor 已实际返回完整最终消息及约定 71R1。根代理已一次完整阅读报告 L1–146 至 COMPLETE；本次再做身份扫描，候选仍为固定 3a3da493613d36dfe64280d468dd34c90498cdfe854ba939128b1e84bb7b4d51 / 72567 bytes / 352 行，报告为 608ee9079c636f06967c49ed320e4eb6571f1bf9c6cf348dbc2d9fefc570f5c1 / 24782 bytes / 146 行。报告声明候选一次完整缓存并连续展示 L1–352、起止身份相同；root 已核主 skill 与参考 25、06、12 的四份实际身份均相符。参考 25 的截断由该次缓存补齐，未把缺段当已读。来源辅助回执按报告所述亲见层级使用，未冒称导师亲自读取全部辅助源码。
+
+根代理接受 71R1 的报告有效性，不接受为候选放行：两条 bearing 为 ABORT 清理之后的迟到 PREPARE 屏障不完整，以及合法试验发起与物理 MOVE 启动的评分歧义。导师阶段资格 G1–G5 PASS / G6 FAIL，仅为本阶段裁决；最新根裁决仍 70R4 的 2 PASS / 3 UNKNOWN / 1 FAIL。71 保持原字节，不修订或封存。两条问题和任何后续异议待三路收齐后逐条根验收。
+
+预登记第二阶段 canonical task：/root/review71_nature；唯一报告 71R2_PIE_FINITE_ARRIVAL_SUFFIX_CAUSAL_OBSERVATION_NATURE_REVIEWER_REPORT_20260906.md。使用 nature-reviewer 主 skill 及其必要参考，三个审稿视角与综合。唯一科学输入固定 71，不读本账本、71R1、他路意见、Claude 原文、旧候选或禁区。要求一次完整读取 L1–352 与候选起止身份、实际 skill/参考完整阅读证明、明确 bearing/关闭条件/六门/适用域，apply_patch 新写唯一报告及实际最终消息。此为派发前登记，尚未记作已启动。Nature 有效完整回执之后才派明确不使用任何 skill 的独立逻辑审查。
+
+用户新提供现实资源：手上有两台 LIMO，将尽可能尝试实物，但不保证实物成功，并提供 https://github.com/agilexrobotics/limo-doc?tab=readme-ov-file 。这是硬件可用性与研究可行性的新增事实，不是给 density N 赋值，不是执行实物/仿真放行。根代理仅开展文档核验和可选实物证据的建设性准备；不把它加入独立审稿输入、不追改 71、不替代原纯仿真证据主链。具体平台状态待用户信息，文档列举能力不等于两台实物已实现或达到可信测量/制动假设。
+
+collaboration.spawn_agent 已实际返回 /root/review71_nature，fork_turns=none，与上述预登记一致。第二路现已启动，未收到完整报告前不记完成；第三路仍未派发。
+
+Claude 71C2 实际 exec 91127 已启动，提示文件 71C2_CLAUDE_TWO_LIMO_EVIDENCE_FEASIBILITY_CONSTRUCTIVE_PROMPT_20260906.md 为 SHA256 0b042682241cafbe3b203d60cacbca80fb00868e21f6f1c47035c66497229571 / 4323 bytes。沿用 safe-mode、Opus、effort max、tools 空、disable-slash-commands、strict empty MCP、dontAsk、no-session-persistence；无本地科学文件输入、无外部工具，明确只依据提示事实。只分析两台车的可识别机制/可信接口缺口/失败解释和仿真主证据范围，不作正式票。最近 poll 未返回正文，不计完成或重派。
+
+根代理读取用户所给 LIMO 官方 README 网页相关段落：底盘 Twist 指令、里程计/IMU/状态发布、AMCL 概率定位、move_base 及 DWA/TEB 局部轨迹调整；未通读全篇，不采用示例数字。GitHub API 实核 limo-doc master 为 d78a730163f50e1a5e5631ffd651444e0ac6abc5，commit 日期 2025-12-05T08:49:49Z。沙箱子进程内容请求 exit=1 未保留具体 stderr，不计读取成功；依权限规则升级官方同对象 API 只读核验成功，README.md Git blob 160c56593a586e0dd8f0f07e92d85ef3f7a1d4e3 / API size 122581 bytes，固定下载 URL https://raw.githubusercontent.com/agilexrobotics/limo-doc/d78a730163f50e1a5e5631ffd651444e0ac6abc5/README.md 。这是元数据身份；未取得原始字节 SHA256 或核对完整正文，不将网页读取自动提高为固定 blob 全文读取。
+
+2026-09-06 04:36 UTC 前后的精确文件存在性检查，原 69L1/69E1 约定报告仍不存在；不重派、不计通过。私有仓库本轮重新确认 private=true / visibility=private / default_branch=main。没有对机器人进行连接、运行、测量或设置；保护参数仍未赋值。
+
+Claude 71C2 首次实际 91127 已收到终态 exit=1 / api_error / FailedToOpenSocket，input/output tokens 均零，完整实际 JSON 已保存至 71C2_CLAUDE_TWO_LIMO_FIRST_CALL_NETWORK_FAILURE_RECEIPT_20260906.md。没有建议；确认终态后按沙箱网络权限规则同一提示升级重试，不因 poll 超时重派。
+
+同提示权限升级重试实际 exec 43492 已启动，待完整回执。Nature /root/review71_nature 已报告候选一次缓存完整覆盖 L1–352、身份相符、主技能和七份参考完整阅读；报告仍在形成，阶段消息不是有效终稿。
