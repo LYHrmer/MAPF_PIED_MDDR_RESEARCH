@@ -90,3 +90,29 @@ collaboration.spawn_agent 已实际返回 /root/review71_logic，fork_turns=none
 /root/r0_clock_input_evidence 已完整实际返回，root 完整读完；71E3_R0_CLOCK_INPUT_BOUNDED_SOURCE_AUDIT_NONBALLOT_RECEIPT_20260906.md 保存根定点阅读与代理七文件身份、实际阅读强度、clock 分类/入口/停止分支及未读依赖。LNS 为 high_resolution_clock，实际平台 alias 未核；LaCAM2 Deadline 为 steady_clock 的经过时间与原单位转换，不能当 CPU 计费。未闭依赖诚实保留，不称完整时钟清单已过门；原 69E1 仍不冒称返回。
 
 71E2_LIMO_TWO_FILE_INTERFACE_AUDIT_NONBALLOT_RECEIPT_20260906.md 为 70abc6fb98c7f6ed4fc95835e8d42bc61d8f2dca02c2feb56b0c1ab409971c09 / 5995 bytes / 33 行。root 驱动全文的合并输出截断用同次缓存补 L1–50 与 L51，现完整覆盖 L1–580；LimoStatus 独立 API 七行亦完整读完。普通状态、主机积分 odom 和接收/发布时刻均不能单独证明实体清空；未读固件/实车依赖保留，未继续硬件搭建。
+
+本批有效 71R2、Claude 71C2 完整回执、71E2/71E3 及行政页已逐文件提交并 push 实际 exit=0；远端 API 核实 main=991575f0eb87f81c7a4e0bddca4976fee9b6d962。用户再次要求及时上传、做好记录，继续按实际阶段同步，不把本地追加或运行中报告先写作远端已完成。
+
+用户要求重新认真核对实验前全部工作并进一步浏览论文，寻找更好的方法/改进。新来源工作聚焦新增“大规模主论证”范围，当前 71 仍只是备选；收齐其审查不等于已经选定只修补它。已实际派发无 skill 的 /root/scale_journal_mechanisms，有界仅核两个新发现期刊对象：RA-L DOI 10.1109/LRA.2025.3554099 与 TII DOI 10.1109/TII.2026.3681327；后一条作者机构页面仅报 Accepted/In press，需核官方发表状态。不是旧 69L1 全域任务的复制，不冒称原约定回执返回。要求只有实际全文才能称全文，机制借鉴/不兼容/扩展性/错误类别分列；当前待完整回执。
+
+root 新完成 ECAI 2024 DOI 10.3233/FAIA241017 的会议版 PDF 提取全文阅读，9 页 / L0–856：首次 L0–336，后续窗口及最后缓存定位补齐其余所有段（含 L469–508）；未审图像、未核 PDF 原始字节散列。官方正文 https://journals.sagepub.com/doi/pdf/10.3233/FAIA241017 。它将动力学、朝向/占用与连续任务显式建模，并公开局限；不属于新增期刊全文，也不把其规模或硬件数字移植成本项目参数。借鉴/不兼容判断待路线比较记录，全文阅读不是采用决定。
+
+另外新取得 RAS DOI 10.1016/j.robot.2025.105295 的官方摘要/章节预览与代码地址 https://github.com/FE-LAK/PSIPP_demo ，直接 open 正文 403，仍仅部分；Sensors DOI 10.3390/s26134139 已核官方 2026-07-01 发表与若干摘要/方法/实验片段，PMC open 为 CAPTCHA，未计全文。来源片段涉及占用区间、局部障碍触发重规划等，不得据此说已解决任意空间偏差或错误反馈。原 69L1/69E1 仍无有效回执，不重复启动或把不可见算通过。
+
+实验前重新核对按六个具体工作面展开：实际误差与任务目标的可解释定义；一手近邻和替代路线机制比较；可计算方法/假设/证明及随规模的状态和处理代价；固定原版基线与同能力增量比较；公共来源、故障与计费、主指标/失败/停止/统计的未执行预注册；所有显式边界和顺序审查的逐项验收。每面须指向证据与尚缺条件，不能以篇幅、审稿分数或又写一份候选代替完成。全程仍不实现、不构建测试、不仿真、不赋保护参数、不生成载荷或结果。
+
+## 第三阶段有效回执与根 71R4 验收
+
+/root/review71_logic 已实际完整返回 71R3_PIE_FINITE_ARRIVAL_SUFFIX_CAUSAL_OBSERVATION_NO_SKILL_INDEPENDENT_LOGIC_REVIEW_20260906.md，SHA256 17ab9ef01c19a7d8f9fde15b97cba04a7b08e7ecc1a9d52196ccebbf5da43e98 / 22574 bytes / 141 行。根一次完整显示并实际读 L1–141 至 REPORT-READ-END，无截断；报告明确不使用任何 skill、不读其他意见，完整候选一次缓存阅读和起止身份相符。根再核候选及三路报告散列全部相符，接受第三路实际回执有效。
+
+第三路四 bearing：B1 ABORT 迟到首次 PREPARE；B2 RR 初始 cursor 与 active 集；B3 新增可信采样线性化时刻；B4 guarded TIP 的收费可信 cursor。G1/G2/G3 PASS、G4/G5 UNKNOWN、G6 FAIL 为该路窄范围票。根不以 G3 PASS 抵消 Nature 和实际时钟源码支持的缺口。
+
+71R4_THREE_REVIEW_ROOT_SYNTHESIS_AND_SUCCESSOR_ROUTE_REQUIREMENTS_20260906.md 已新建，SHA256 adb0d2f79fd5086af2bfcdfeeb78e4fb58a751c8d36d33d6e66d1c779ef41760。十条原始 bearing 逐条保留，合为六主题 T1–T6，列客观关闭条件、支持内容和不可外推结论；最新根六门仍 2 PASS / 3 UNKNOWN / 1 FAIL，但不再用 70 已修复的有限到达作为 71 失败理由。71 NOT-ACCEPTED/NOT-CLOSED，保持原字节。72 选型须结合新增大规模路线比较，未固定或审过 72，不只按现稿补丁自动决定路线。
+
+/root/scale_journal_mechanisms 的 A/B 有界任务已完整实际返回，根全文读完。B 当前官方记录为 TII 22(8), 6859–6870，Published 2026-08-01，根重新直接打开机构页核实，更新早前搜索缓存 Accepted/In press；A 仅一手题录，B 一手摘要，均未获全文。71L2_SCALE_PRIORITY_PRIMARY_LITERATURE_NONBALLOT_RECEIPT_20260906.md 归档实际范围、未读部分、兼容性和条件推论，并记录根新增 ECAI 全文、RAS/Sensors 部分阅读。原 69L1 不冒称返回。同代理新的有界 PSIPP-CTC 作者全文 followup 已实际发出，当前运行中，不增记已读全文。
+
+用户再次授权 Claude Opus 提高效率。root 创建 71C3_CLAUDE_ABORT_CLOSURE_AND_LIFELONG_STATE_CONSTRUCTION_PROMPT_20260906.md，SHA256 550dd021d8a29909fceb557dd176658df4d241fdadb74e9ea6c1d00c1e33cf7f。任务仅纸面 ABORT owner 吸收性关闭与无已知时延上界时的长期状态压缩，不用 skill/工具/文件/网络，无投票。实际 CLI --model opus --effort max，工具与 MCP 关闭，exec session 24801 正运行，未有完整回执，不预先采纳或计完成。根同时做三路综合和 Git 同步。
+
+上述首次 Claude 24801 后续实际终态 exit=1 / is_error / api_error / FailedToOpenSocket，185055ms、零 token。已另存完整原始失败回执，不计建议。确认终态之后同提示权限升级获准，实际 exec 60396 第二次启动；当前仅运行中，尚无有效建议，未重复并发同任务。
+
+根新增有界 /root/r0_clock_input_evidence followup 已实际发出，仅追已发现 R0 时钟入口的一层 lacam2.cpp、InitLNS、SIPP、SpaceTimeAStar 直接读钟/停止/remaining 传递窗口。不用 skill、不读本地候选/旧报告、不写文件/运行，原对象身份、亲见范围及未核依赖分列；不等于重派原 69E1 全审计。
