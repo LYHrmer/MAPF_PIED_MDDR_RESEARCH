@@ -2,13 +2,16 @@
 
 **HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**
 
-2026-09-05：候选 70 的导师 → Nature → 无 skill 独立逻辑 → 根代理顺序审查已完整返回。根裁决 **2 PASS / 3 UNKNOWN / 1 FAIL**；14 条原始承重意见及新增官方外部 MCP 末端索引缺口均未注销。候选 69、70 保持原字节，后继 71 正在构造。
+2026-09-06：候选 70 完整顺序审查与根验收仍未闭合，最新根资格 **2 PASS / 3 UNKNOWN / 1 FAIL**；14 条原始承重意见和官方 MCP 索引缺口保留。新候选 71 已固定为 72567 bytes / 352 行，SHA256 3a3da493613d36dfe64280d468dd34c90498cdfe854ba939128b1e84bb7b4d51，第一阶段科研导师审查运行中。69/70 不改；稿件完成不自动授予门票。
 
-主要修复是有限时间到达、逐资源终点交接、完整 PIE/MCP 适配、有限机会事件及停止/缺失评分/固定总体推断。主研究继续包含真实空间/执行偏差、反馈错误与处理耗时，保留 PIE-D 和公平 2×2。当前没有性能结果。
+71 提交有限到达解析构造、逐 owner 终点交接、因果 PIE/任务适配、有限机会/费用及总停止/缺失评分/固定总体推断，并给 36 个纸面 witness。主研究包含实体偏差、反馈错误和处理耗时，保留 PIE-D 和 2×2；真实服务与认证知识分开计数。没有性能结果。
 
 原 69L1/69E1 的旧句柄不可访问，约定报告仍缺，不重派或把超时当通过。Claude 完整建议及有界构造协作均 NONBALLOT；每个后继固定工件还须完整顺序审查。
 
 - [完整进度和资格门](../GITHUB_PROGRESS.md)
+- [固定候选 71](../71_PIE_FINITE_ARRIVAL_SPATIAL_SUFFIX_AND_CAUSAL_OBSERVATION_PREEXPERIMENT_CANDIDATE_20260906.md)
+- [71 实际任务与回执](../71A1_CONSTRUCTION_FIXED_IDENTITY_AND_SEQUENTIAL_REVIEW_LEDGER_20260906.md)
+- [Claude 71C1 完整建设性回执及根筛选](../71C1_CLAUDE_GEOMETRIC_EFFECT_AND_TRUE_SERVICE_FAIRNESS_COMPLETE_RECEIPT_20260906.md)
 - [70 根裁决](../70R4_THREE_REVIEW_ROOT_SYNTHESIS_AND_SUCCESSOR_71_REQUIREMENTS_20260905.md)
 - [70 实际任务与回执账本](../70A1_FIXED_CANDIDATE_SEQUENTIAL_REVIEW_TASK_AND_RECEIPT_LEDGER_20260905.md)
 - [固定候选 70](../70_PIE_BOUNDED_SPATIAL_SUFFIX_OCCUPANCY_AND_BLOCKER_DIRECTED_OBSERVATION_PREEXPERIMENT_CANDIDATE_20260905.md)

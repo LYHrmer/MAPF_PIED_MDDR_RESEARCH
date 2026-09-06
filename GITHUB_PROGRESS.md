@@ -1,8 +1,8 @@
 # 实验前工作进度
 
-更新：2026-09-05。**HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。
+更新：2026-09-06。**HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。
 
-候选 70 三路有效完整回执和根代理验收已完成，结论仍为 NOT-CLOSED。科研导师 4 条、Nature 6 条、无 skill 独立逻辑 4 条承重意见共 14 条逐项保留；根代理另增官方外部 MCP 末端索引调用路径缺口。69、70 保持原字节，不修改或封存。后继 71 正在构造，尚未形成受审工件。
+候选 70 三路有效完整回执和根代理验收已完成，仍 NOT-CLOSED；14 条原始承重意见和根增官方 MCP 末端索引缺口保留。69、70 不修改或封存。后继 71 已完整固定，14 节与 36 个纸面 witness；第一阶段科研导师审查实际运行，尚无有效完成回执，未授予新资格票。
 
 | 资格门 | 最新根裁决：70R4 | 范围和剩余工作 |
 |---|---|---|
@@ -22,14 +22,20 @@
 | 70R2 Nature | /root/review70_nature；fcbe2abbfd9474429de0faf5c6fd18f6009a4068b4822f43ab217174cd24ab7d | 完整实际回执有效，46419 bytes / 320 行 |
 | 70R3 无 skill 逻辑 | /root/review70_logic；771943a4d8f7f7dd5e803da1fc3c349635707eb50f66aed4bc6182935f63eae7 | 完整实际回执有效，26269 bytes / 159 行；根代理缺段已补齐 |
 | 70R4 根裁决 | 21bfaf8a5b1e2a1070607bc083b82683fd52c3d98f16ad71e0e4527c473d236e | 15854 bytes；14 条原始 bearing 及 ROOT-S01 均登记 |
-| 后继 71 | 尚无固定候选 | 有限到达、逐 owner 交接、完整适配、事件/统计合同构造中；须完整顺序复审 |
+| 固定 71 | SHA256 3a3da493613d36dfe64280d468dd34c90498cdfe854ba939128b1e84bb7b4d51 | 72567 bytes / 352 行，完整待审，任何承重修复另编号 |
+| 71 科研导师 | /root/review71_mentor | 已实际派发、完整 L1–352 审读证据已返，待正式完整报告；Nature/逻辑尚未启动 |
 | 原 69L1 文献任务 | Anscombe / 01a06ff8-a89f-7c91-8248-f7c8f1555577 | 旧句柄 not found，约定报告 13:00 UTC 仍缺；不重派、不计通过 |
 | 原 69E1 源码任务 | Pauli / 01a0700b-ea09-7792-94d3-7b2acff4497d | 同上；根代理定点来源实核不冒充其回执 |
 | Claude 69C4 / 70C1 / 70C2 第二次 | 实际 exec 4355 / 2867 / 47256 | 完整 NONBALLOT 回执及根筛选已留存；失败/截断另记 |
 | 71 建设性数学协作 | /root/construct71_control、/root/construct71_transactions_stats | 有界 NONBALLOT；不替代正式审查或旧来源任务 |
+| 71 PIE 适配构造协作 | /root/construct71_pie_adapter | 实际完整 NONBALLOT 回执；未获取来源正文的限制明确，所有权受限预测和原子快照已纳入候选 |
+| Claude 71C1 | 首次 80351 网络失败；确认终态后同提示重试 41724 | 第二次 exit=0/completed/ADVICE-COMPLETE 全文与根筛选已留；拒收两个时间下界推出先后和事后按查询归因筛 Q 等错误 |
 
 主研究继续回应实际误差，保留 PIE-D 唯一新 MOVE 提议源。有限空间后缀退休、付费阻塞原因查询、普通反馈错误隔离和处理时延可组合。主比较为相同物理/信息/费用底座的 2×2；外部原版与守卫适配版分轨，不能把安全底座或源码修复的收益归给查询策略。没有实验结果、首创或普遍增益结论。
 
+- [固定候选 71](71_PIE_FINITE_ARRIVAL_SPATIAL_SUFFIX_AND_CAUSAL_OBSERVATION_PREEXPERIMENT_CANDIDATE_20260906.md)
+- [71 顺序登记与实际回执](71A1_CONSTRUCTION_FIXED_IDENTITY_AND_SEQUENTIAL_REVIEW_LEDGER_20260906.md)
+- [Claude 71C1 完整原文与根筛选](71C1_CLAUDE_GEOMETRIC_EFFECT_AND_TRUE_SERVICE_FAIRNESS_COMPLETE_RECEIPT_20260906.md)
 - [70 三路逐项根裁决](70R4_THREE_REVIEW_ROOT_SYNTHESIS_AND_SUCCESSOR_71_REQUIREMENTS_20260905.md)
 - [70 顺序任务与回执账本](70A1_FIXED_CANDIDATE_SEQUENTIAL_REVIEW_TASK_AND_RECEIPT_LEDGER_20260905.md)
 - [候选 70](70_PIE_BOUNDED_SPATIAL_SUFFIX_OCCUPANCY_AND_BLOCKER_DIRECTED_OBSERVATION_PREEXPERIMENT_CANDIDATE_20260905.md)
@@ -38,4 +44,4 @@
 
 H、T_delay、B_CAL、B_max、B*、P_active、density N 原义保留且未赋值。未实现、构建、创建/执行测试、仿真、调参或生成实验载荷/结果。桌面只读、旧 35–38 及受限载荷禁读。全部显式要求与六门、协议、顺序审查闭合前，目标保持 ACTIVE，不能宣布实验前完成。
 
-既有仓库 private=true / visibility=private。上次实证 main=6a5ee598d2fadd9176ddf92e7cc039fdfdf575d4；本次只按精确清单同步 70R3、70R4 和行政页，新提交成功与远端身份须另由实际工具确认。
+既有仓库 private=true / visibility=private。上次实证 main=20d6083eccfd962c5708aab968c1dbe222fefd94；本次只按精确清单同步 71、任务账本、Claude 提示/实际回执和行政页，未完成正式报告不加入提交，新 push 与远端身份须由实际工具确认。
