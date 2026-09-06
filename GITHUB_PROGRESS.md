@@ -2,7 +2,7 @@
 
 更新：2026-09-06。**HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。
 
-候选 71 三路完整有效审查及根 71R4 验收已完成，结论仍 NOT-ACCEPTED / NOT-CLOSED。导师两项、Nature 四项、明确不用任何 skill 的独立逻辑四项，共十条原始 bearing 逐条保留，合成六个未闭主题。69、70、71 不修改或封存。后继 72 尚未固定，须结合新增大规模路线证据选型，不把 71 当唯一答案。
+候选 71 三路完整有效审查及根 71R4 验收已完成，结论仍 NOT-ACCEPTED / NOT-CLOSED。导师两项、Nature 四项、明确不用任何 skill 的独立逻辑四项，共十条原始 bearing 逐条保留，合成六个未闭主题。69、70、71 不修改或封存。后继 72 已写成第 1–10 节的 DRAFT，尚未固定或正式审查；用户提供的网页建议已获得完整无 skill 建设性分析及根的一手来源核验，先加强问题定位和强基线，不把现候选当唯一答案。
 
 | 资格门 | 最新根裁决：71R4 | 范围和剩余工作 |
 |---|---|---|
@@ -28,7 +28,7 @@
 | 71 无 skill 逻辑 | /root/review71_logic；17ab9ef01c19a7d8f9fde15b97cba04a7b08e7ecc1a9d52196ccebbf5da43e98 | 完整有效，22574 bytes / 141 行，根全文读完；四项 bearing，新增采样线性化与 RR 初态问题 |
 | 71R4 根裁决 | adb0d2f79fd5086af2bfcdfeeb78e4fb58a751c8d36d33d6e66d1c779ef41760 | 十条逐项裁决、六主题关闭合同、六门及后继大规模路线要求；71 不通过 |
 | 新增大规模文献有界核验 | /root/scale_journal_mechanisms | A/B 完整 NONBALLOT 回执有效，A 仅一手题录、B 一手摘要；71L2 归档。PSIPP-CTC 新 followup 另核读取强度，不替代旧 69L1 |
-| Claude 71C3 | 首次 exec 24801 已 exit=1 网络失败；同提示权限升级重试 exec 60396 | ABORT 闭合与长期状态压缩的独立建设性任务；首次完整失败回执已留，第二次运行中，无完整建议前不采纳、不投票 |
+| Claude 71C3 | 首次 exec 24801 已 exit=1 网络失败；第二次 exec 60396 恢复查询返回 Unknown process id | HANDLE-MISSING / NO-COMPLETE-RECEIPT；实际第二次exit及建议UNKNOWN，精确完整文件缺，不继续冒称运行中、不重派同提示或超时计通过 |
 | 原 69L1 文献任务 | Anscombe / 01a06ff8-a89f-7c91-8248-f7c8f1555577 | 旧句柄 not found，2026-09-06 本轮精确约定路径仍缺；不重派、不计通过 |
 | 原 69E1 源码任务 | Pauli / 01a0700b-ea09-7792-94d3-7b2acff4497d | 同上；根代理定点来源实核不冒充其回执 |
 | Claude 69C4 / 70C1 / 70C2 第二次 | 实际 exec 4355 / 2867 / 47256 | 完整 NONBALLOT 回执及根筛选已留存；失败/截断另记 |
@@ -41,14 +41,27 @@
 | R0 嵌套时钟与入口补核 | /root/r0_clock_input_evidence followup | 完整返回，71E4 保存六对象及明示 SIPP 构造链；空 A* 超时入口不用于该明示对象，不外推全仓不可达；T3 适配时钟语义仍待关闭 |
 | PSIPP/CTC 来源及组件 | /root/scale_journal_mechanisms followup | 完整返回，71L3 区分作者项目/幻灯片与 ResearchGate 原文转录，未获 PDF；root 亲见完整作者项目/幻灯片，不新增虚假期刊 PDF 全文计数 |
 | 单中心最小协议构造 | /root/construct72_minimal_authority | 完整 NONBALLOT 回执有效；中心可减少分布式提交但不能消除迟到 grant、gate 围栏与终点占用，不等于已采用或通过的新候选 |
+| 72 科学 DRAFT | SHA256 9e63b986fccc1933f4b63e53c59014a2dde12d862f473c3f5f930d81a4cf9da6 | 38960 bytes / 160 行，第1–10节；非固定，完整预注册/评分/故障/机械合同未写齐，正式顺序未启动 |
+| Claude 72C1 单中心构造 | 真实 exec 24155，exit=0 / completed，完整JSON已存 | 完整实际 NONBALLOT 回执有效；根七点筛选，拒收全边钉至READY、忽略UNSEEN取消等建议；不替代原71C3缺失回执 |
+| 72 游标与采样构造 | /root/construct72_cursor_sampling | 原任务完整返回，根采用付费CAPTURE/游标分离，纠正免费q和终点生命周期建议；NONBALLOT |
+| 用户网页建议独立分析 | /root/webproposal_tracking_handoff_analysis | 完整 NO-SKILL / NONBALLOT 返回，根全文读完；72D1记录根一手核验和综合，72D1A归档顾问原文；不冒充正式无skill逻辑审查 |
+| R0 核心37对象审计 | /root/r0_clock_input_evidence 原任务followup | 完整关键词/身份与行政更正回执已返回，72E1归档；304149 bytes/8713行，语义阅读限命中及窗口，不冒称依赖全闭或旧69E1返回 |
 
 主研究继续回应实际误差，保留 PIE-D 唯一新 MOVE 提议源。有限空间后缀退休、付费阻塞原因查询、普通反馈错误隔离和处理时延可组合。主比较为相同物理/信息/费用底座的 2×2；外部原版与守卫适配版分轨，不能把安全底座或源码修复的收益归给查询策略。没有实验结果、首创或普遍增益结论。
+
+网页建议比较带来三项具体构造要求：写清受限端点的控制/资源拼接条件；补充具有合理释放规则的强固定裕量对照；区分准确但付费/滞后观测与免费即时全状态。72 当前固定Z/朝向、每边参考零速的交接未认证一般跨窗口位置/速度/姿态集合；现 D-S−R-S 主比较也不识别共享交接机制收益。WinkTPG/SCALE/MAPF-X 的相关近邻已定点核验，不能把“冲突数选人”“冻结旧前缀”“连续运动+离散规划”本身当空白。两条具体路线和匹配主效应未选择完之前不固定72；动态管/局部修复建议不直接变为已通过功能。
 
 用户补充只有两台 LIMO，尽可能做实物但不保证成功。根代理开始只读厂商接口核验与可选实物证据分层；两台现有平台不构成 density N 的赋值。官方文档存在不等于用户已具备共同定位、可信清空或可证制动；两车局部交接能检验的机制与多候选查询收益须区分。纯仿真主链保留，硬件可行性不倒灌到固定 71，不作已成功验证或放行。无实物本身不是实验前协议无法完成的理由。
 
 用户进一步明确：面向大规模 Lifelong MAPF，以仿真实验为主。大规模持续任务吞吐、失败情况与全流程开销是主论证；小规模场景用于机制/反例，两台 LIMO 为有限实物补充，不扩展为当前搭建任务。后继设计需交代规划、核验、事务、通信与状态维护的规模代价，避免从局部提前清空直接外推多车收益；实物成功不作为纯仿真主链成立的必要前提。未设规模数值或保护参数。
 
 - [固定候选 71](71_PIE_FINITE_ARRIVAL_SPATIAL_SUFFIX_AND_CAUSAL_OBSERVATION_PREEXPERIMENT_CANDIDATE_20260906.md)
+- [72 未固定科学草稿](72_PIE_CENTRAL_SPATIAL_RETIREMENT_AND_PAID_OBSERVATION_PREEXPERIMENT_CANDIDATE_20260906.md)
+- [72 构造与真实任务账本](72A1_CONSTRUCTION_ROUTE_DECISIONS_AND_SEQUENTIAL_REVIEW_LEDGER_20260906.md)
+- [用户网页建议：根核验与综合](72D1_USER_WEB_PROPOSAL_NO_SKILL_ANALYSIS_AND_PRIMARY_SOURCE_NOTES_20260906.md)
+- [网页建议子智能体完整无skill原文](72D1A_WEB_PROPOSAL_NO_SKILL_CONSTRUCTIVE_COMPLETE_RECEIPT_20260906.md)
+- [Claude 72C1 完整实际回执与根筛选](72C1_CLAUDE_CENTRAL_GRANT_SAFETY_COMPLETE_RECEIPT_20260906.md)
+- [R0 核心37对象的时钟/随机输入证据](72E1_R0_CORE_CLOCK_RANDOM_INPUT_INVENTORY_NONBALLOT_RECEIPT_20260906.md)
 - [71 顺序登记与实际回执](71A1_CONSTRUCTION_FIXED_IDENTITY_AND_SEQUENTIAL_REVIEW_LEDGER_20260906.md)
 - [71 科研导师完整报告](71R1_PIE_FINITE_ARRIVAL_SUFFIX_CAUSAL_OBSERVATION_RESEARCH_MENTOR_REVIEW_20260906.md)
 - [71 Nature 完整报告](71R2_PIE_FINITE_ARRIVAL_SUFFIX_CAUSAL_OBSERVATION_NATURE_REVIEWER_REPORT_20260906.md)
@@ -69,6 +82,6 @@
 
 H、T_delay、B_CAL、B_max、B*、P_active、density N 原义保留且未赋值。未实现、构建、创建/执行测试、仿真、调参或生成实验载荷/结果。桌面只读、旧 35–38 及受限载荷禁读。全部显式要求与六门、协议、顺序审查闭合前，目标保持 ACTIVE，不能宣布实验前完成。
 
-按用户最新偏好减少 skill 依赖：日常实证、推导与顾问协作不额外套技能管线；已约定的候选正式顺序审查保留，以承重证据而非风格/分数判断修订。
+按用户最新偏好减少 skill 依赖：日常实证、推导与顾问协作不额外套技能管线；已约定的候选正式顺序审查保留，以承重证据而非风格/分数判断修订。每次必要 skill 意见返回后根另做不用 skill 的直接分析，不冒称盲审；Nature有效后仍派不读任何skill/他路意见的独立逻辑审查。
 
-既有仓库已核 private=true / visibility=private。最近实际 push exit=0 且远端 API 核实 main=a64eed56e94774851e523059d0c315b98176398e，包含完整 71R3、71R4 与当批来源记录。新增 71E4/71L3 按精确清单继续同步；Claude 在运行的提示可以归档，未返回建议不计完成。新 push 与远端身份须由实际工具确认，随后追加账本。
+既有仓库已核 private=true / visibility=private。本批之前最近实际 push exit=0 且远端 API 核实 main=e8d8d8c1535ec3f1df0a78d3ffaefee023682ecc，包含71E4/71L3。本批按精确清单同步72未固定草稿、实际顾问回执及来源记录；尚未固定或通过明确保留，未返回建议不计完成。新 push 与远端身份须由实际工具确认，随后追加账本。
