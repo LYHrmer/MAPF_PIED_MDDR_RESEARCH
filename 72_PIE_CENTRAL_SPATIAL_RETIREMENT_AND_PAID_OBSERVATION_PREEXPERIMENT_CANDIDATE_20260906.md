@@ -1,6 +1,6 @@
 # 72：PIE 原提议下的中心空间退休与付费观测——实验前候选
 
-起稿2026-09-06，继续构造2026-09-07；**DRAFT / NOT-FIXED / NOT-REVIEWED**。正文构造中，未授予任何资格门。HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT。71 及其报告不改、不封存；本文件是新编号、新字节，固定之后才进入正式顺序审查。
+起稿2026-09-06，固定送审2026-09-07；**FIXED-FOR-SEQUENTIAL-REVIEW / NOT-ACCEPTED**。本字节自此不改，固定身份登记于72A1；尚未授予任何新资格门。HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT。69、70、71及其报告不改、不封存；本候选依次接受科研导师、Nature、无skill独立逻辑和根验收，有实质异议另立后继编号修复。
 
 ## 1. 研究问题、主张和动作边界
 
@@ -34,7 +34,7 @@
 | Lehoux-Lebacque等，ECAI2024，10.3233/FAIA241017；[官方PDF](https://journals.sagepub.com/doi/pdf/10.3233/FAIA241017) | 根完整9页/857提取行，会议非期刊 | 动力学/朝向/占用与依赖任务，有条件安全等待位置；整套VP*改变路径来源，时长扰动不等于空间偏差 |
 | RAS 10.1016/j.robot.2025.105295；[出版商](https://www.sciencedirect.com/science/article/pii/S0921889025003926)；Sensors 10.3390/s26134139；[出版商](https://www.mdpi.com/1424-8220/26/13/4139) | 官方摘要/章节片段，非全文 | 安全区间/预计算与局部受影响者重规划可比较，不能据片段泛化完备性或反馈鲁棒性 |
 | AI 10.1016/j.artint.2026.104586；[出版商](https://www.sciencedirect.com/science/article/pii/S0004370226001128)；RAS 10.1016/j.robot.2026.105701；[出版商](https://www.sciencedirect.com/science/article/pii/S0921889026003726) | 官方元数据/预览，非全文；编排刊期不等于已核在线日期 | 直接时序执行/协议观测近邻，全文排除和强新颖性仍OPEN，不宣称对方缺少本机制 |
-| Chen/Li/Fan/Williams，S2M2，AAAI2021，10.1609/aaai.v35i13.17340；[官方题录与摘要](https://ojs.aaai.org/index.php/AAAI/article/view/17340) | 根本次完整摘要，未读其PDF；会议非期刊 | 合格路径、执行限制与跟踪误差界的安全规划已有先例；固定误差包络本身不是首创 |
+| Chen/Li/Fan/Williams，S2M2，AAAI2021，10.1609/aaai.v35i13.17340；[官方九页PDF](https://ojs.aaai.org/index.php/AAAI/article/view/17340/17147) | 新有界代理读完全部988行可提取文本；根另读模型及§4方法窗口至L718，非全文/逐式版面审计，截图失败；会议非期刊 | 控制模型/初集/扰动决定误差界，段间状态集合包含已有先例；定时扫掠占用不自动覆盖任意迟启或超窗停留，MILP/PBS整体会改变新MOVE来源 |
 | Yan/Smith/Li，WinkTPG，[arXiv:2508.01495v2](https://arxiv.org/html/2508.01495v2)，2026-04-26 | 根定点读III–VI相关方法与结论、核版本；非全文逐式审计，HTML自述accepted不替正式期刊题录 | 给定路径速度优化、冲突依赖数选择、保留enqueued前缀及窗口重算已有近邻；其对象与本付费POSITION选择不同，不等于无重叠 |
 | Okumura等，MAPF-X/Tree-LaCAM，npj Robotics4,20，2026-03-14，10.1038/s44182-026-00083-2；[官方正文](https://www.nature.com/articles/s44182-026-00083-2) | 根完整方法/讨论的指定窗口，补充材料未读 | 时空预测、不确定性、离散规划与MPC/CBF已结合；形式搜索完备性不等于真实系统无条件安全，整个替换改变本MOVE来源 |
 | Cao，SCALE，[arXiv:2607.00591v2](https://arxiv.org/html/2607.00591v2)，2026-07-03 | 根核版本及III/IV相关窗口、非全文逐式/图表审计；按指定预印本记 | 已有扫掠占用、released前缀、未放行路径局部修复与接续，不能将冻结前缀/授权执行泛称空白；未搜到error不证明其无误差处理 |
@@ -89,7 +89,9 @@ MOVE请求必须来自当前已认证Kc指定的原Π步并带parent gamma。先
 
 CANCEL须可信且绑定完整当前请求身份，包括尚未首次登记的合法e=d_i+1。在同一中心序列中，若尚未GRANTED，则原子记录ABORTED、推进关闭水位并持久化之后才回CLOSED；不改resident、不消费c、不释放不存在的部分预留。迟到首次/重复REQUEST均因e≤d_i拒绝。若GRANT先提交，CANCEL返回DENIED_GRANT_LIVE，不能回“已释放”成功ack。证明两局部顺序：CANCEL先使吸收性水位成立所以GRANT不可再产生；GRANT先使取消分支不可进入。没有多owner“此刻FREE”的清理推断，也不允许已发grant超时回收。请求重试只在确知当前请求已关闭后换新e，旧逻辑slot可仍未消费。
 
-gate验证grant的会话、tid、slot、原边、parent gamma、签发authority和当前闭合水位，在付费验证完成后等待合法ACTUATOR机会才首次启动；no-start不消费、不重发新tid，不释放M0。重复同grant不重复执行，旧epoch永远不能使s或c回退。已授尚未进入时q仍为0、整个U(0)保留；进入后匹配可信q可按P2退休，不能再把整条原边钉到READY从而消灭S因子。F全程持有M0直到终点交接。
+gate有自己的持久关闭标记g_i：初始为未执行过授权的前哨，只在其旧tid不可逆END时提升为该已执行请求的e。它不免费读取中心d_i；d_i还包括未执行的ABORTED请求，两者不是同一变量。验证grant须会话/签发authority有效、e>g_i、slot等于gate当前真实c，并匹配原边、parent及当前唯一授权；不要求e=g_i+1，因为中心取消可留下从未发grant的序号。中心的未授取消不可能产生可重放的有效grant，已发grant又不允许取消；已执行旧grant则由g_i/幂等标志拒绝。这些条件与中心d_i共同保护重放，不需要免费同步两端水位。
+
+付费grant验证完成后等待合法ACTUATOR机会才首次启动；no-start不消费、不重发新tid，不释放M0。重复同grant不重复执行，旧epoch永远不能使s或c回退。已授尚未进入时q仍为0、整个U(0)保留；进入后匹配可信q可按P2退休，不能再把整条原边钉到READY从而消灭S因子。F全程持有M0直到终点交接。
 
 到达参考终点后，gate先持久关闭旧tid入口、进入reference HOLD并生成新resident latch gamma'，封存(last_closed_tid,slot,v,v_ref=0,closed,gamma')终点记录。该记录在活动槽变NONE后仍可由ENTRY查询，至少保留到新grant合法进入；此前新grant只能在中心处理它完成后产生。当前位置/普通COMPLETE或NONE本身不替代终点证明。
 
@@ -244,7 +246,7 @@ future manifest必需字段：全部源身份/alias/解析字段；官方与适�
 
 全臂Stop只取公共顺序最早的预设CUTOFF/STOP、不可认证的物理推进、物理/信任前提破坏或无法维持定义的协议状态；事故触点可被精确认证时截断到该触点。并列按下述主类优先级记录，同时保留全部次级flags。Stop截断原区间，之后不再服务、不继续到刚好完成、不释放责任；这是评价函数的终止约定，不是声称真实车辆已安全停下。评价器/日志损坏没有可证Stop前缀时属于未知评分，不伪造零结果。
 
-Classify为总函数：缺设计绑定→UNINSTANTIATED；静态输入/INIT不合法→INPUT_INVALID/NOT_ADMITTED；合法INIT尚未实际发起→NOT_LAUNCHED；界内可证实体碰撞或互斥破坏→SAFETY_VIOLATION；物理/信任越界→MODEL_BREACH；协议/身份/因果或源未定义访问→PROTOCOL_OR_SOURCE_INVALID；数值不能认证→UNKNOWN_NUMERICAL；评分前缀缺失/不可信→UNVERIFIABLE；其余已证不可恢复执行故障→EXECUTION_FAILURE；合法cutoff/停止限制→ADMIN_CENSORED；完整合法窗口结束→COMPLETED_EXPOSURE；其余一律TRACE_INVALID。一个标签不覆盖其他flag。安全域字段独立为VIOLATED、VERIFIED_ON_PREFIX、UNKNOWN或OUTSIDE_MODEL，不以没发现碰撞当安全证据。
+Classify为总函数：缺设计绑定→UNINSTANTIATED；静态输入/INIT不合法→INPUT_INVALID/NOT_ADMITTED；静态可准入但INIT尚未实际发起→NOT_LAUNCHED；INIT已发起但未形成可证合法提交→INIT_INCOMPLETE；界内可证实体碰撞或互斥破坏→SAFETY_VIOLATION；物理/信任越界→MODEL_BREACH；协议/身份/因果或源未定义访问→PROTOCOL_OR_SOURCE_INVALID；数值不能认证→UNKNOWN_NUMERICAL；评分前缀缺失/不可信→UNVERIFIABLE；其余已证不可恢复执行故障→EXECUTION_FAILURE；完整合法窗口抵达预定末端（含该末端CUTOFF）→COMPLETED_EXPOSURE；早于预定末端的合法cutoff/STOP→ADMIN_CENSORED；其余一律TRACE_INVALID。正常到评价末端不因事件名CUTOFF而被提前归入删失，完成暴露也不表示全部任务已完成。一个标签不覆盖其他flag；INIT_INCOMPLETE不填零分。安全域字段独立为VIOLATED、VERIFIED_ON_PREFIX、UNKNOWN或OUTSIDE_MODEL，不以没发现碰撞当安全证据。
 
 INIT admission是完整输入/初始参考实体/resident覆盖/身份及有限初始化作业的合法提交，和首次ACTUATOR成功START不同。准备/预处理费用单列纳入首次成本；公共评价窗口不因某臂初始化慢重开。INIT失败/尚未完成不填Q=0；合法INIT之后全程HOLD也有合法物理前缀，可Q=0，若初始resident满足真实TASK_SERVICE则可Q>0。合法INIT后立即发生可定义Stop且零前缀可验证时Q=0；主机没启动臂、崩溃日志缺失或不知道是否完成INIT则UNVERIFIABLE。这四类不能再共用“未启动”一词。
 
@@ -277,6 +279,12 @@ Score输出 VERIFIED(Q,observedExposure,E,flags) 或 UNVERIFIABLE(reason)，禁�
 这个见证还要求固定R0确实输出上述原MOVE及匹配合法任务的来源证据；当前未生成该运行输出，所以它是结构性充分条件，不是已找到公开主roster上的获益实例，更不是主总体theta正的证据。不得为实现见证事后选cutoff、地图、profile或删无跨越样本。预注册全来源会同时保留无中途clearance、RR恰先选关键者、D反复查询失联holder、几何表低复用、中心队列拥塞、终点已足够便宜等零/负效应。
 
 活性反例必须正面保留：在走廊/tree缺少绕行时，互相占着下一原边需要的resident可形成等待；交叉口/环路上的多agent原MOVE可能各需其他agent的起点资源。单中心整M0独占准入不自动完成同步环形轮转；查询或WAIT也不能凭空消环。全原MOVE合法不推出本连续保守wrapper有执行解。不同阻塞图component因新请求合并，仍用同一全球资源key与中心owner，不分发新authority、不让相同资源获得两owner；对独立未准入fleet的合并必须重新满足INIT/授权合同。无活性保证的失败不通过排除动态样本掩盖，也不以全HOLD安全冒称实现了lifelong效益。
+
+封闭循环的充分负例可直接证明：取一组尚未启动且原occurrence不变的请求，每个目标顶点为组内下一agent当前resident。其M0包含该外国resident的非空终点mask，而每个resident只有自己的合法运动/交接才可能腾空；故组内没有第一个grant、正进度或原点退休。查询未启动者、未消费槽的HOLD与增大包络不能在这个封闭状态产生突破。这只是组内阻塞的充分条件，不是“存在环 iff 全队不启动”；环外可继续，无环亦可能因故障/容量不足停滞。
+
+不能用部分预留自动修复：在当前同尺度闭瓦片、边向支撑恰为±rho且rho>0时，停在不碰终点瓦片的参考位置需s+rho<ell/2；让后继安全取得旧origin瓦片则需已证q−rho>ell/2，同时q≤s，三式不可能同真。若终点争用资源还必须等下一agent完成终点READY才移交，分段启动后仍可全部卡在终点等待环。这个推导只否定上述具体分段方案；细分资源、允许经连续认证的同瓦片联合占用或相对进度控制均需新的状态/不变量/成本与独立工件，未并入72。
+
+同一循环也不必意味着真正连续运动无解：对正方形环的各原边，令同一进度alpha(t)从0到1，参考中心分别为(alpha ell,0)、(ell,alpha ell)、((1−alpha)ell,ell)、(0,(1−alpha)ell)。若各实体相对参考包络K为世界闭盒、半宽rho且4rho<ell，则任意相邻中心的一个坐标差至少ell/2>2rho，对角中心至少一个坐标差为ell，故所有同时刻包络互不相交。这是几何可行性的符号见证，不是已实现公共启动器或加入实验规模赋值。独立no-start/任意异步进度破坏共同alpha，因而不能把该路径当当前故障域的安全执行证据；后继若采用联合运动，须证明包含启动/制动和付费滞后信息的可达集合，而不能仅展示同步动画。
 
 下表是纸面故障与检查覆盖合同，全部**NOT_IMPLEMENTED / NOT_RUN**，不是生成或执行测试。每项未来必须给条件、付费事件顺序、预期不变量/分类及最小失败前缀；未满足输入条件返回INAPPLICABLE/UNKNOWN而非PASS。
 
@@ -342,4 +350,4 @@ Score输出 VERIFIED(Q,observedExposure,E,flags) 或 UNVERIFIABLE(reason)，禁�
 
 最终完成性审计逐项指向实际证据：交接文件与全部任务真实状态/身份；至少十二项相关一手来源及四份期刊全文的真实阅读、其他来源缺口和差异矩阵；原源码接口/许可/原法检查合同及外部公平域；P1–P6与所有资源/事件/模式/失败总函数；全roster与各比较/评分/区间的适用性；W01–41及所有未运行机械合同；本新字节完整固定后的科研导师skill→Nature reviewer skill→完全不使用任何skill且不读他路意见的独立逻辑→根逐条验收；每份必要skill意见后根另做不用skill的直接分析；私有GitHub精确同步和全历史冻结/只读/保护边界。阅读缺失、报告无效、间接一致或仍UNKNOWN均不能计完成。
 
-H、T_delay、B_CAL、B_max、B*、P_active、density N原义保留未赋值；只进行来源阅读与文档构造，未实现、构建、创建或运行测试、仿真、调参、生成种子/tape/实验载荷/结果或实车动作。旧35–38及受限载荷禁读、桌面永久只读；69/70/71及其有异议报告不改不封存。新候选固定前仍DRAFT，全部六门与协议审查闭合前继续HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT。研究目标未完成，不以正文篇幅、版本、审查次数或会话运行状态宣布实验前完成。
+H、T_delay、B_CAL、B_max、B*、P_active、density N原义保留未赋值；只进行来源阅读与文档构造，未实现、构建、创建或运行测试、仿真、调参、生成种子/tape/实验载荷/结果或实车动作。旧35–38及受限载荷禁读、桌面永久只读；69/70/71及其有异议报告不改不封存。本候选字节已固定，等待全部正式顺序审查；六门与协议未闭合前继续HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT。研究目标未完成，不以正文篇幅、版本、审查次数或会话运行状态宣布实验前完成。

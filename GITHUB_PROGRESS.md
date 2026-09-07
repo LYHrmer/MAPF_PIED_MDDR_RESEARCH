@@ -2,7 +2,7 @@
 
 更新：2026-09-07。**HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。
 
-候选 71 三路完整有效审查及根 71R4 验收已完成，结论仍 NOT-ACCEPTED / NOT-CLOSED。导师两项、Nature 四项、明确不用任何 skill 的独立逻辑四项，共十条原始 bearing 逐条保留，合成六个未闭主题。69、70、71 不修改或封存。后继 72 已写成第 1–14 节的 DRAFT，补入受限端点拼接、强固定裕量/低观测成本对照、付费决策因果、总评分与预注册、41项纸面故障/机械合同；尚未固定或正式审查。章节已写齐不代表所有协议与科研价值已通过。
+候选 72 已固定第1–14节，**FIXED-FOR-SEQUENTIAL-REVIEW / NOT-ACCEPTED**。72R1科研导师完整报告已实际返回并由根全文/身份核验，单路六门为1 PASS / 5 UNKNOWN / 0 FAIL，六项承重未知；根另不用skill逐项分析后，真实启动第二阶段 /root/review72_nature，完整Nature报告待回。正式无skill逻辑尚未启动，必须等Nature有效回执。正文包含受限端点拼接、强固定裕量/低观测成本对照、付费决策因果、总评分/预注册和41项纸面故障/机械合同；明确保留循环阻塞与未证净收益。69、70、71和报告不改不封存；71三路十条原异议合为六主题的有效根裁决仍适用，单路72R1不取代最终根资格快照。
 
 | 资格门 | 最新根裁决：71R4 | 范围和剩余工作 |
 |---|---|---|
@@ -41,7 +41,7 @@
 | R0 嵌套时钟与入口补核 | /root/r0_clock_input_evidence followup | 完整返回，71E4 保存六对象及明示 SIPP 构造链；空 A* 超时入口不用于该明示对象，不外推全仓不可达；T3 适配时钟语义仍待关闭 |
 | PSIPP/CTC 来源及组件 | /root/scale_journal_mechanisms followup | 完整返回，71L3 区分作者项目/幻灯片与 ResearchGate 原文转录，未获 PDF；root 亲见完整作者项目/幻灯片，不新增虚假期刊 PDF 全文计数 |
 | 单中心最小协议构造 | /root/construct72_minimal_authority | 完整 NONBALLOT 回执有效；中心可减少分布式提交但不能消除迟到 grant、gate 围栏与终点占用，不等于已采用或通过的新候选 |
-| 72 科学 DRAFT | SHA256 acded6a1d5beb43a0082c163c59e67f7cf6ae48b2b68797177ea0f1e6b550054 | 83449 bytes / 345 行，第1–14节；仍非固定，根一致性复核中，正式顺序未启动 |
+| 固定72科学候选 | SHA256 d2b7ee412b59b070f33cd80036f1e79b55ffb6fa6b79aa0a3d39e8b359f7bc84 | 86528 bytes / 353行，第1–14节；导师回执有效，Nature审查中，自此不改；实质修复须三路收齐后另编号 |
 | Claude 72C1 单中心构造 | 真实 exec 24155，exit=0 / completed，完整JSON已存 | 完整实际 NONBALLOT 回执有效；根七点筛选，拒收全边钉至READY、忽略UNSEEN取消等建议；不替代原71C3缺失回执 |
 | 72 游标与采样构造 | /root/construct72_cursor_sampling | 原任务完整返回，根采用付费CAPTURE/游标分离，纠正免费q和终点生命周期建议；NONBALLOT |
 | 用户网页建议独立分析 | /root/webproposal_tracking_handoff_analysis | 完整 NO-SKILL / NONBALLOT 返回，根全文读完；72D1记录根一手核验和综合，72D1A归档顾问原文；不冒充正式无skill逻辑审查 |
@@ -51,6 +51,15 @@
 | 付费事件构造 | /root/construct72_paid_decision_events | 完整NO-SKILL / NONBALLOT，72E2归档；只读提示未读候选。根采用三层事件，纠正预消费c与按算法请求限制真实服务的建议 |
 | Claude 72C2 | 首次exec76857 exit=1/api_error；升级后第二次exec6115 exit=124/aborted_streaming | 两次实际终态均已取得并归档，无建议正文，不计完成/通过；不重复旧缺失任务 |
 | 原法headless命令来源 | /root/construct72_native_command_contract及有界TIP子任务 | 两份完整文字回执已返回，72E3已实际归档并独立核散列，官方目标/入口模板补入§10；仅源码层证据，未绑定或执行 |
+| Claude72C3循环路线构造 | 实际exec92545 exit=0/completed | 72C3完整JSON/正文与根十点筛选已归档；采用限定封闭环反例，拒绝未证分段移交、碰撞量词混淆和运行后可行交集删样，NONBALLOT |
+| S2M2一手补读 | /root/source_s2m2_model_handoff | 72L1完整实际回执已归档；代理全九页提取文本、根模型/方法窗口，截图失败，未确认提取公式疑点为论文错误 |
+| 72正式导师 | /root/review72_mentor；SHA256 5c216348f5ebc97baf3ef5739344d3878d9ad740c0d707f35c5731b662513e81 | 72R1完整有效，35031 bytes / 240行；1 PASS / 5 UNKNOWN / 0 FAIL，M01–M06；根全文及不用skill直接分析已完成，非最终验收 |
+| 72正式Nature | /root/review72_nature | 导师有效且根直接分析后真实启动；只读固定72与必要Nature技能来源，完整72R2待回 |
+| R0随机比较器有界静态审计 | /root/r0_random_comparator_domain；72E4 SHA256 382540dbeb20188e46076465727985c3d947ad622bb6e7ad0c55bf6aa5c3c7b9 | 完整回执有效，19756 bytes / 129行，根全文读取；FOCAL随机比较分支条件可达，另一比较器仅方法内链；不能由标准库规则直接断言Boost UB，不测试，不替原69E1 |
+| Claude72C4几何前缀构造 | 实际exec96509 exit=0/completed；完整回执412364488f6afd8f0cff5064f3a66a42990fcdc3e218b4dcc48c8719cbd7d15d | 完整JSON/正文及根十点更正已归档，16272 bytes / 33行；数学前缀条件可参考，纠正误读单调进度与闭分区边界，不改固定72或提前建立后继候选 |
+| Claude72C5费用/服务合同构造 | 首次exec79797 exit=1/api_error；获准升级重试exec14081 | 首次网络失败完整JSON已归档；第二次已启动，完整建议待回；仅自给提示，不读固定72/skill，不投票 |
+| Claude72C6初始化比较量构造 | 首次exec40388 exit=1/api_error；获准升级重试exec68174 | 首次网络失败完整JSON已归档；第二次已启动，完整建议待回；只作数学及结果结构分析，不实例化保护参数 |
+| 数据目录元信息/许可定点审计 | /root/source72_dataset_metadata_license | 真实已启动，完整72L2待回；禁读地图/场景/任务载荷正文，只核官方元信息/说明及必要parser窗口 |
 
 主研究继续回应实际误差，保留 PIE-D 唯一新 MOVE 提议源。有限空间后缀退休、付费阻塞原因查询、普通反馈错误隔离和处理时延可组合。主比较为相同物理/信息/费用底座的 2×2；外部原版与守卫适配版分轨，不能把安全底座或源码修复的收益归给查询策略。没有实验结果、首创或普遍增益结论。
 
@@ -61,7 +70,7 @@
 用户进一步明确：面向大规模 Lifelong MAPF，以仿真实验为主。大规模持续任务吞吐、失败情况与全流程开销是主论证；小规模场景用于机制/反例，两台 LIMO 为有限实物补充，不扩展为当前搭建任务。后继设计需交代规划、核验、事务、通信与状态维护的规模代价，避免从局部提前清空直接外推多车收益；实物成功不作为纯仿真主链成立的必要前提。未设规模数值或保护参数。
 
 - [固定候选 71](71_PIE_FINITE_ARRIVAL_SPATIAL_SUFFIX_AND_CAUSAL_OBSERVATION_PREEXPERIMENT_CANDIDATE_20260906.md)
-- [72 未固定科学草稿](72_PIE_CENTRAL_SPATIAL_RETIREMENT_AND_PAID_OBSERVATION_PREEXPERIMENT_CANDIDATE_20260906.md)
+- [72 固定送审候选](72_PIE_CENTRAL_SPATIAL_RETIREMENT_AND_PAID_OBSERVATION_PREEXPERIMENT_CANDIDATE_20260906.md)
 - [72 构造与真实任务账本](72A1_CONSTRUCTION_ROUTE_DECISIONS_AND_SEQUENTIAL_REVIEW_LEDGER_20260906.md)
 - [用户网页建议：根核验与综合](72D1_USER_WEB_PROPOSAL_NO_SKILL_ANALYSIS_AND_PRIMARY_SOURCE_NOTES_20260906.md)
 - [网页建议子智能体完整无skill原文](72D1A_WEB_PROPOSAL_NO_SKILL_CONSTRUCTIVE_COMPLETE_RECEIPT_20260906.md)
@@ -72,6 +81,8 @@
 - [付费事件完整原文与范围](72E2_PAID_DECISION_EVENT_CONSTRUCTION_COMPLETE_NONBALLOT_RECEIPT_20260907.md)
 - [官方原法headless命令来源合同](72E3_NATIVE_HEADLESS_COMMAND_SOURCE_CONTRACT_COMPLETE_NONBALLOT_RECEIPT_20260907.md)
 - [Claude 72C2 第二次无建议终态](72C2_CLAUDE_PAID_EVENT_SECOND_CALL_NO_ADVICE_RECEIPT_20260907.md)
+- [Claude72C3循环路线完整建议及根筛选](72C3_CLAUDE_CYCLE_PROGRESS_ROUTE_CONSTRUCTION_COMPLETE_RECEIPT_20260907.md)
+- [S2M2模型与拼接一手阅读范围](72L1_S2M2_PRIMARY_MODEL_HANDOFF_COMPLETE_NONBALLOT_RECEIPT_20260907.md)
 - [71 顺序登记与实际回执](71A1_CONSTRUCTION_FIXED_IDENTITY_AND_SEQUENTIAL_REVIEW_LEDGER_20260906.md)
 - [71 科研导师完整报告](71R1_PIE_FINITE_ARRIVAL_SUFFIX_CAUSAL_OBSERVATION_RESEARCH_MENTOR_REVIEW_20260906.md)
 - [71 Nature 完整报告](71R2_PIE_FINITE_ARRIVAL_SUFFIX_CAUSAL_OBSERVATION_NATURE_REVIEWER_REPORT_20260906.md)
@@ -94,4 +105,4 @@ H、T_delay、B_CAL、B_max、B*、P_active、density N 原义保留且未赋值
 
 按用户最新偏好减少 skill 依赖：日常实证、推导与顾问协作不额外套技能管线；已约定的候选正式顺序审查保留，以承重证据而非风格/分数判断修订。每次必要 skill 意见返回后根另做不用 skill 的直接分析，不冒称盲审；Nature有效后仍派不读任何skill/他路意见的独立逻辑审查。
 
-既有仓库再次实核 private=true / visibility=private。本批之前最近实际 push exit=0 且远端 API 核实 main=7f6dd41026e66fb465b7e08d10379b93a762ec45，包含72原草稿、网页建议和源码审计归档。本批按精确清单同步72完整章节草稿、实际构造/来源和失败回执，尚未固定或通过明确保留；新push与远端身份须由实际工具确认，不预填成功。
+既有仓库再次实核 private=true / visibility=private。最近实际push exec97344 exit=0，远端API与本地HEAD核实 main=5793e2f4df881e133d112621c23688ad0619d246，包含上一批12文件的完整章节草稿和实际回执。当前固定送审及新增来源/Opus建议按精确清单另同步；新push与远端身份须由实际工具确认，不预填成功。
