@@ -1,8 +1,8 @@
 # 实验前工作进度
 
-更新：2026-09-06。**HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。
+更新：2026-09-07。**HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。
 
-候选 71 三路完整有效审查及根 71R4 验收已完成，结论仍 NOT-ACCEPTED / NOT-CLOSED。导师两项、Nature 四项、明确不用任何 skill 的独立逻辑四项，共十条原始 bearing 逐条保留，合成六个未闭主题。69、70、71 不修改或封存。后继 72 已写成第 1–10 节的 DRAFT，尚未固定或正式审查；用户提供的网页建议已获得完整无 skill 建设性分析及根的一手来源核验，先加强问题定位和强基线，不把现候选当唯一答案。
+候选 71 三路完整有效审查及根 71R4 验收已完成，结论仍 NOT-ACCEPTED / NOT-CLOSED。导师两项、Nature 四项、明确不用任何 skill 的独立逻辑四项，共十条原始 bearing 逐条保留，合成六个未闭主题。69、70、71 不修改或封存。后继 72 已写成第 1–14 节的 DRAFT，补入受限端点拼接、强固定裕量/低观测成本对照、付费决策因果、总评分与预注册、41项纸面故障/机械合同；尚未固定或正式审查。章节已写齐不代表所有协议与科研价值已通过。
 
 | 资格门 | 最新根裁决：71R4 | 范围和剩余工作 |
 |---|---|---|
@@ -41,15 +41,20 @@
 | R0 嵌套时钟与入口补核 | /root/r0_clock_input_evidence followup | 完整返回，71E4 保存六对象及明示 SIPP 构造链；空 A* 超时入口不用于该明示对象，不外推全仓不可达；T3 适配时钟语义仍待关闭 |
 | PSIPP/CTC 来源及组件 | /root/scale_journal_mechanisms followup | 完整返回，71L3 区分作者项目/幻灯片与 ResearchGate 原文转录，未获 PDF；root 亲见完整作者项目/幻灯片，不新增虚假期刊 PDF 全文计数 |
 | 单中心最小协议构造 | /root/construct72_minimal_authority | 完整 NONBALLOT 回执有效；中心可减少分布式提交但不能消除迟到 grant、gate 围栏与终点占用，不等于已采用或通过的新候选 |
-| 72 科学 DRAFT | SHA256 9e63b986fccc1933f4b63e53c59014a2dde12d862f473c3f5f930d81a4cf9da6 | 38960 bytes / 160 行，第1–10节；非固定，完整预注册/评分/故障/机械合同未写齐，正式顺序未启动 |
+| 72 科学 DRAFT | SHA256 acded6a1d5beb43a0082c163c59e67f7cf6ae48b2b68797177ea0f1e6b550054 | 83449 bytes / 345 行，第1–14节；仍非固定，根一致性复核中，正式顺序未启动 |
 | Claude 72C1 单中心构造 | 真实 exec 24155，exit=0 / completed，完整JSON已存 | 完整实际 NONBALLOT 回执有效；根七点筛选，拒收全边钉至READY、忽略UNSEEN取消等建议；不替代原71C3缺失回执 |
 | 72 游标与采样构造 | /root/construct72_cursor_sampling | 原任务完整返回，根采用付费CAPTURE/游标分离，纠正免费q和终点生命周期建议；NONBALLOT |
 | 用户网页建议独立分析 | /root/webproposal_tracking_handoff_analysis | 完整 NO-SKILL / NONBALLOT 返回，根全文读完；72D1记录根一手核验和综合，72D1A归档顾问原文；不冒充正式无skill逻辑审查 |
 | R0 核心37对象审计 | /root/r0_clock_input_evidence 原任务followup | 完整关键词/身份与行政更正回执已返回，72E1归档；304149 bytes/8713行，语义阅读限命中及窗口，不冒称依赖全闭或旧69E1返回 |
+| 强固定裕量/低成本对照构造 | /root/webproposal_tracking_handoff_analysis followup | 完整NO-SKILL / NONBALLOT，72B1归档；根核精确几何等价，保留主D/R并必报D/E0；无效果或新颖性通过票 |
+| 受限端点拼接构造 | /root/construct72_endpoint_composition | 完整NO-SKILL / NONBALLOT，72M1归档；同世界闭环、同点零参考速、不重置真实误差；不认证一般姿态/速度接入 |
+| 付费事件构造 | /root/construct72_paid_decision_events | 完整NO-SKILL / NONBALLOT，72E2归档；只读提示未读候选。根采用三层事件，纠正预消费c与按算法请求限制真实服务的建议 |
+| Claude 72C2 | 首次exec76857 exit=1/api_error；升级后第二次exec6115 exit=124/aborted_streaming | 两次实际终态均已取得并归档，无建议正文，不计完成/通过；不重复旧缺失任务 |
+| 原法headless命令来源 | /root/construct72_native_command_contract及有界TIP子任务 | 两份完整文字回执已返回，72E3已实际归档并独立核散列，官方目标/入口模板补入§10；仅源码层证据，未绑定或执行 |
 
 主研究继续回应实际误差，保留 PIE-D 唯一新 MOVE 提议源。有限空间后缀退休、付费阻塞原因查询、普通反馈错误隔离和处理时延可组合。主比较为相同物理/信息/费用底座的 2×2；外部原版与守卫适配版分轨，不能把安全底座或源码修复的收益归给查询策略。没有实验结果、首创或普遍增益结论。
 
-网页建议比较带来三项具体构造要求：写清受限端点的控制/资源拼接条件；补充具有合理释放规则的强固定裕量对照；区分准确但付费/滞后观测与免费即时全状态。72 当前固定Z/朝向、每边参考零速的交接未认证一般跨窗口位置/速度/姿态集合；现 D-S−R-S 主比较也不识别共享交接机制收益。WinkTPG/SCALE/MAPF-X 的相关近邻已定点核验，不能把“冲突数选人”“冻结旧前缀”“连续运动+离散规划”本身当空白。两条具体路线和匹配主效应未选择完之前不固定72；动态管/局部修复建议不直接变为已通过功能。
+网页建议带来的三项构造已写入72：受限端点拼接；允许及时退休的强固定裕量R-S/精确几何参考；准确但付费/滞后观测与免费全状态的区别。当前具体候选继续研究受限原边空间退休和观测选择，未认证一般跨窗口位置/速度/姿态集合；D-S−R-S不识别共享交接底座收益。新增E0不主动查询途中进度、保留必要付费终点确认，D胜R但不胜E0不能支持整体实用性。G/N是同安全集合的计算组织差异，不是动态误差管。WinkTPG/SCALE/MAPF-X及Zhong等直接近邻继续约束创新边界；允许后继换路线，尚未确认组合有足够创新性或大规模净增益。
 
 用户补充只有两台 LIMO，尽可能做实物但不保证成功。根代理开始只读厂商接口核验与可选实物证据分层；两台现有平台不构成 density N 的赋值。官方文档存在不等于用户已具备共同定位、可信清空或可证制动；两车局部交接能检验的机制与多候选查询收益须区分。纯仿真主链保留，硬件可行性不倒灌到固定 71，不作已成功验证或放行。无实物本身不是实验前协议无法完成的理由。
 
@@ -62,6 +67,11 @@
 - [网页建议子智能体完整无skill原文](72D1A_WEB_PROPOSAL_NO_SKILL_CONSTRUCTIVE_COMPLETE_RECEIPT_20260906.md)
 - [Claude 72C1 完整实际回执与根筛选](72C1_CLAUDE_CENTRAL_GRANT_SAFETY_COMPLETE_RECEIPT_20260906.md)
 - [R0 核心37对象的时钟/随机输入证据](72E1_R0_CORE_CLOCK_RANDOM_INPUT_INVENTORY_NONBALLOT_RECEIPT_20260906.md)
+- [强固定裕量与低成本对照完整构造](72B1_STRONG_FIXED_MARGIN_BASELINE_EQUIVALENCE_COMPLETE_NONBALLOT_RECEIPT_20260906.md)
+- [受限端点拼接完整构造](72M1_RESTRICTED_ENDPOINT_COMPOSITION_COMPLETE_NONBALLOT_RECEIPT_20260906.md)
+- [付费事件完整原文与范围](72E2_PAID_DECISION_EVENT_CONSTRUCTION_COMPLETE_NONBALLOT_RECEIPT_20260907.md)
+- [官方原法headless命令来源合同](72E3_NATIVE_HEADLESS_COMMAND_SOURCE_CONTRACT_COMPLETE_NONBALLOT_RECEIPT_20260907.md)
+- [Claude 72C2 第二次无建议终态](72C2_CLAUDE_PAID_EVENT_SECOND_CALL_NO_ADVICE_RECEIPT_20260907.md)
 - [71 顺序登记与实际回执](71A1_CONSTRUCTION_FIXED_IDENTITY_AND_SEQUENTIAL_REVIEW_LEDGER_20260906.md)
 - [71 科研导师完整报告](71R1_PIE_FINITE_ARRIVAL_SUFFIX_CAUSAL_OBSERVATION_RESEARCH_MENTOR_REVIEW_20260906.md)
 - [71 Nature 完整报告](71R2_PIE_FINITE_ARRIVAL_SUFFIX_CAUSAL_OBSERVATION_NATURE_REVIEWER_REPORT_20260906.md)
@@ -80,8 +90,8 @@
 - [69 根裁决](69R4_THREE_REVIEW_ROOT_SYNTHESIS_AND_SUCCESSOR_REQUIREMENTS_20260905.md)
 - [接任核验账本](69A1_ROOT_TAKEOVER_IDENTITY_AND_REVIEW_RECEIPT_LEDGER_20260905.md)
 
-H、T_delay、B_CAL、B_max、B*、P_active、density N 原义保留且未赋值。未实现、构建、创建/执行测试、仿真、调参或生成实验载荷/结果。桌面只读、旧 35–38 及受限载荷禁读。全部显式要求与六门、协议、顺序审查闭合前，目标保持 ACTIVE，不能宣布实验前完成。
+H、T_delay、B_CAL、B_max、B*、P_active、density N 原义保留且未赋值。未实现、构建、创建/执行测试、仿真、调参或生成实验载荷/结果。桌面只读、旧 35–38 及受限载荷禁读。全部显式要求与六门、协议、顺序审查闭合前，研究目标仍未完成，不能宣布实验前完成。
 
 按用户最新偏好减少 skill 依赖：日常实证、推导与顾问协作不额外套技能管线；已约定的候选正式顺序审查保留，以承重证据而非风格/分数判断修订。每次必要 skill 意见返回后根另做不用 skill 的直接分析，不冒称盲审；Nature有效后仍派不读任何skill/他路意见的独立逻辑审查。
 
-既有仓库已核 private=true / visibility=private。本批之前最近实际 push exit=0 且远端 API 核实 main=e8d8d8c1535ec3f1df0a78d3ffaefee023682ecc，包含71E4/71L3。本批按精确清单同步72未固定草稿、实际顾问回执及来源记录；尚未固定或通过明确保留，未返回建议不计完成。新 push 与远端身份须由实际工具确认，随后追加账本。
+既有仓库再次实核 private=true / visibility=private。本批之前最近实际 push exit=0 且远端 API 核实 main=7f6dd41026e66fb465b7e08d10379b93a762ec45，包含72原草稿、网页建议和源码审计归档。本批按精确清单同步72完整章节草稿、实际构造/来源和失败回执，尚未固定或通过明确保留；新push与远端身份须由实际工具确认，不预填成功。

@@ -74,3 +74,29 @@ write_stdin(60396) 当前明确 Unknown process id，内存输出缓存亦不可
 本批同步前再核既有 GitHub 仓库 default_branch=main、private=true、visibility=private。仅精确白名单文档可暂存，DRAFT 与 NONBALLOT 标签保留；最新实际提交/远端确认在完成后另记，不预填成功。
 
 本批默认 git diff --cached --check 实际 exit=2，全部告警定位于三份原样回执：72D1A 的 Markdown 双空格换行、72E1 的原源码摘录行尾/空行，以及72C1/72E1末尾空行。保留原样及已核散列，不悄悄规范化源码/回执。同步核验将对其余七个明确文件继续严格检查，只对这三份回执的行尾/EOF空白作本次命令级排除并保留此说明；不改全局Git设置、不将默认非零记成通过，也未运行任何科研测试。
+
+## 2026-09-07：完整章节构造、强对照和收费因果复核
+
+上一批实际push已exit=0，远端main=7f6dd41026e66fb465b7e08d10379b93a762ec45。本轮再由GitHub API独立核相同远端以及private=true / visibility=private / default_branch=main。中断后确认仅72科学草稿有跟踪修改；本地AGENTS.md和.codegraph仍不存在，遵守用户注入rtk指令，没有建立索引。71R4再次核得adb0d2f79fd5086af2bfcdfeeb78e4fb58a751c8d36d33d6e66d1c779ef41760，不改旧裁决。
+
+72现已构造到第14节，仍DRAFT / NOT-FIXED / NOT-REVIEWED，不把章节齐全称协议闭合。新内容包括P5受限同点零参考速拼接、P6精确几何等价、强R-S与必报低观测成本E0、公共源完整选择器、总故障/评分/固定总体区间、41项纸面故障及机械合同、六主题和全部要求映射。本批最终草稿身份须待编辑完成后再核；旧38960 bytes快照只代表上一时点。
+
+真实 /root/webproposal_tracking_handoff_analysis 的强对照followup已完整返回并归档72B1，根全文阅读并独立核SHA256 e5999eb1813d2c6a39254c67863cb6b965430c3283f0a6dcd4d46ddb5e0e410d、8627 bytes / 96行。真实 /root/construct72_endpoint_composition 已完整返回并归档72M1，根全文阅读并独立核SHA256 0ec35c645a48b2d7caf9fcadf52b1a306fcd6f6f3cfbb0c062cbe6dd6b993341、9643 bytes / 110行。两者均NO-SKILL / NONBALLOT，基于旧72快照，不是本新字节审查。根采用等价集合函数与端点拼接证明，明确所有臂均固定K、G只改变计算组织、真实z不清零且真实速度未必为零；未扩为一般姿态/非零速度集合接入。
+
+根独立保留D-S−R-S为唯一确认主比较，R-S本已具同固定裕量和途中退休。E0不主动POSITION且不付无用阈值表费，是必报实用性比较。主D/R与D/E0的正效应合取须二者都成立；根从“至少一项不正”的并集零假设重新证明交并检验错误率界，不声称两个区间同时覆盖。顾问追加统计意见只作构造，不授新颖性或效果票。中心全M0独占可能阻断原法合法同步轮转，作为活性负例保留，不以排除动态失败或私添绕行修补。
+
+真实 /root/construct72_paid_decision_events 只根据根给定有界问题推理，未读72；完整原文归档72E2，根完整阅读并独立核SHA256 ecf75f25cf6783bbff7b14928229f65a41bf6ad18824fa8a17ad98b9f1e11ea8、7553 bytes / 68行。采用机会→付费作业→后继付费发布，QUERY不得免费先选tid、发布才推进RR-last、待发布仍占writer槽、版本一致不替连续保持证明。根不采纳提前消费c再释放的含糊建议：只在合法真实提交增加，不回滚；不采纳TASK_SERVICE必须等待算法请求：真实已分配任务独立按到位计服务；不新增证书租约或超时释放；CAPTURE原子读取费用不足不先读，也不自动引入跨行容量储蓄。原文完整保留，纠错不改顾问回执。
+
+根又定点重读Zhong/Rossi/Shell的官方正文定义及§6非理想通信/观测、§7结论，DOI 10.1007/s10514-025-10225-4；这不是新增一次全文计数。该文已联合观测、执行和重新调度成本，check-in模型与本部分进度/固定原MOVE权限有区别，区别本身不证明新颖性。异步动作耗时和部分观测的适用讨论也不能被省略，继续保留近邻全文和覆盖差异的证据边界。
+
+用户再次授权Claude办公协作，根新增不同于CANCEL任务的72C2付费事件因果prompt，SHA256 d1e1ed027a01f30a079f48b9c5ea3f97fd77e176c76bf382d3683d01132545dd。首次真实exec76857已exit=1/api_error/FailedToOpenSocket，完整失败JSON另存；终态确认后权限升级获准，同提示第二次真实exec6115。仅完整结果才能计建议完成；旧71C3无回执及69L1/69E1旧句柄缺失状态不因此变化。Claude只看有界prompt，tools/MCP/skills关闭，不替正式审查。
+
+根并行派 /root/construct72_native_command_contract 定点查官方固定源码的headless目标和原样检查命令模板，禁止构建和载荷读取；局部回报不计完整。当前实际get_goal显示paused，这是会话目标控制状态，不是科研完成或阻塞裁决；根没有调用update_goal或擅自更改该状态。六门仍2 PASS / 3 UNKNOWN / 1 FAIL，本轮没有任何实验程序、载荷或结果。
+
+本轮用户中断后续行恢复，根查询真实exec6115取得exit=124 / terminal_reason=aborted_streaming / duration_ms=239621，完整终态JSON不含建议正文；第二次无建议回执SHA256 28153f8e7aeca1c1f9fbb62d7cb0f242e8a96884bec0e4a2c7d983503d173564，首次失败回执85aac59b0149cc1bb81c29c0d2f2ffa9167f5337cf283e97f897ac6fadcfec07。两次均不计建设性建议有效，本次不再追加重试。根自行补明确：writer槽只串行算法提交，不能锁住连续流/自主END；命令版本、逻辑slot消费、closed记录与q包含性分别有依赖和保持合同，版本不变不能代替P2/P5。此修订不是Claude本次建议。
+
+原法命令任务及TIP子任务完整正文均已实际返回，72E3归档后根独立核SHA256 e67ac034d5045286d4d0212937f642094bfc14767e9aa35a97e8540e55496534、12968 bytes / 134行，已读实际完整两份原文和归档阅读边界。R0 lifelong、TIP app构建目标与完整未绑定运行选项写入§10；没有执行这些模板。根本轮raw CMake的web读取Cache miss，后gh管道网络失败时末段exit0不代表成功；权限升级工具被用户中断，未取得完整源码回执，不把代理亲见冒称根新读全文。
+
+本批准备同步的72草稿已独立核得SHA256 acded6a1d5beb43a0082c163c59e67f7cf6ae48b2b68797177ea0f1e6b550054、83449 bytes / 345行。仍NOT-FIXED / NOT-REVIEWED；本轮根修订与局部一致性核查不是正式根验收。还须完成整份定义/费用/输入依赖的一致性审计、来源差异与科研价值判断，再固定同一完整字节按导师→Nature→无skill逻辑→根顺序处理；不能以14节/41项/文档检查通过授资格门。此次Git仅精确12个文档/白名单/进度文件，不含冻结候选及受限载荷。
+
+本批默认git diff --cached --check实际exit=2，仅两份72C2失败回执末尾空行告警。保留已核原样归档身份，对其他十个明确文件继续严格检查，仅对这两份回执的blank-at-eof作命令级排除；不改全局设置、不把默认非零记通过、不开展科研测试。用户再次授权Claude办公协作不改变实际回执门槛：可继续安排独立工作，未返回本次正文不能当已有科学建议。
