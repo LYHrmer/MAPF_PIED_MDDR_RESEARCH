@@ -2,18 +2,18 @@
 
 更新：2026-09-07。**HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。
 
-候选 72 已固定第1–14节，**FIXED-FOR-SEQUENTIAL-REVIEW / NOT-ACCEPTED**。72R1科研导师、72R2 Nature完整报告均已返回，根分别核全文/身份并不用skill再分析。导师单路六门1 PASS / 5 UNKNOWN / 0 FAIL；Nature确认P2回溯时间原句的局部反例，并未给出实际释放后的覆盖碰撞反例。最后正式无skill独立逻辑 /root/review72_logic 已按顺序真实启动，完整回执待回。候选不改，三路齐后才根综合/另编号修复。71三路的有效根资格快照仍适用，单路意见不取代最终根验收。
+候选72的导师、Nature、明确无任何skill的独立逻辑三路完整报告均已有效返回，根全文/身份复核及逐项直接分析完成。72R4处理15条主意见与导师6条附属意见，归为S1–S9关闭合同；**72仍NOT-ACCEPTED，最新根资格2 PASS / 3 UNKNOWN / 1 FAIL**。P2回溯原句有局部反例，终点未消费状态与真实服务充分条件须补齐；没有据此声称实际退休后发生界内碰撞。已进入后继73建设，尚未固定/审查/放行，不改69–72或旧报告。72R4A仅纠正目标控制状态为实际active及晚回执，不改变科学裁决。
 
-| 资格门 | 最新根裁决：71R4 | 范围和剩余工作 |
+| 资格门 | 最新根裁决：72R4 | 范围和剩余工作 |
 |---|---|---|
 | G1 白话实际问题 | PASS | 已区分实体空间/运动偏差、错误普通反馈和处理耗时；仅限明示有界模型 |
 | G2 已发表锚点 | PASS（限锚点存在） | 四份期刊完整提取文本及其他一手来源；近邻全文、强新颖性排除及旧检索回执仍 OPEN |
-| G3 官方 PIE-D R0 | UNKNOWN | T3：真实源码时钟、暂停/排队及原停止语义映射未闭，不能当 CPU 指令钟自动替代 |
-| G4 外部已发表基线 | UNKNOWN | T5：guarded TIP 的收费可信逻辑 cursor 来源未闭，特别是纯 WAIT 消费 |
-| G5 数据与场景 | UNKNOWN | T2/T4/T6：策略总定义、可信采样时刻与合法 INIT 全 HOLD 评分使 profile 输出未唯一 |
-| G6 公平纯仿真链 | FAIL（协议验收未通过） | T1 ABORT 吸收性关闭及 T2–T4/T6 仍缺；有限到达已取得有效新构造，不沿用 70 的旧失败理由 |
+| G3 官方 PIE-D R0 | UNKNOWN | S6：源可达调用/传递依赖/外部输入/精确部署域仍未全闭；已补Boost版本要求和条件调用证据，不冒称实际UB或原样复现 |
+| G4 外部已发表基线 | UNKNOWN | S8：主lifelong的同域已发表比较与近邻机制差异未全闭；内部D/R/E0和有限TIP族不能互相冒名 |
+| G5 数据与场景 | UNKNOWN | S7：四类目录元数据/基础parser可得，素材许可链/完整合法来源未核；主profile与INIT口径见S4 |
+| G6 公平纯仿真链 | FAIL（当前字节未通过） | S1前向P2、S2终点/权限、S3实体服务见证、S4总体/INIT与S5服务拓扑需后继明确；不重复71已经补足的UNSEEN取消/RR初態/capture旧理由 |
 
-最新有效根状态为 **2 PASS / 3 UNKNOWN / 1 FAIL**，71R4 取代 70R4 作为当前资格快照，不改变旧裁决。三路的局部 PASS 不按多数抵消具体缺口；无实物、尚未实现或运行本身不是本阶段 FAIL 理由。审查次数和文件篇幅不代表完成百分比。
+最新有效根状态为 **2 PASS / 3 UNKNOWN / 1 FAIL**，72R4取代71R4作为当前资格快照，不改旧裁决。数量相同但具体依据/缺口已更新；三路局部支持不按多数抵消反例。无实物、尚未实现或运行本身不是本阶段FAIL理由。审查次数和篇幅不代表完成百分比。
 
 | 工件或任务 | 身份 / 真实句柄 | 实际状态 |
 |---|---|---|
@@ -41,7 +41,7 @@
 | R0 嵌套时钟与入口补核 | /root/r0_clock_input_evidence followup | 完整返回，71E4 保存六对象及明示 SIPP 构造链；空 A* 超时入口不用于该明示对象，不外推全仓不可达；T3 适配时钟语义仍待关闭 |
 | PSIPP/CTC 来源及组件 | /root/scale_journal_mechanisms followup | 完整返回，71L3 区分作者项目/幻灯片与 ResearchGate 原文转录，未获 PDF；root 亲见完整作者项目/幻灯片，不新增虚假期刊 PDF 全文计数 |
 | 单中心最小协议构造 | /root/construct72_minimal_authority | 完整 NONBALLOT 回执有效；中心可减少分布式提交但不能消除迟到 grant、gate 围栏与终点占用，不等于已采用或通过的新候选 |
-| 固定72科学候选 | SHA256 d2b7ee412b59b070f33cd80036f1e79b55ffb6fa6b79aa0a3d39e8b359f7bc84 | 86528 bytes / 353行，第1–14节；导师/Nature回执有效，正式无skill逻辑审查中；实质修复须三路收齐后另编号 |
+| 固定72科学候选 | SHA256 d2b7ee412b59b070f33cd80036f1e79b55ffb6fa6b79aa0a3d39e8b359f7bc84 | 86528 bytes / 353行，三路已齐并根综合；NOT-ACCEPTED，实质修复另编号 |
 | Claude 72C1 单中心构造 | 真实 exec 24155，exit=0 / completed，完整JSON已存 | 完整实际 NONBALLOT 回执有效；根七点筛选，拒收全边钉至READY、忽略UNSEEN取消等建议；不替代原71C3缺失回执 |
 | 72 游标与采样构造 | /root/construct72_cursor_sampling | 原任务完整返回，根采用付费CAPTURE/游标分离，纠正免费q和终点生命周期建议；NONBALLOT |
 | 用户网页建议独立分析 | /root/webproposal_tracking_handoff_analysis | 完整 NO-SKILL / NONBALLOT 返回，根全文读完；72D1记录根一手核验和综合，72D1A归档顾问原文；不冒充正式无skill逻辑审查 |
@@ -55,14 +55,20 @@
 | S2M2一手补读 | /root/source_s2m2_model_handoff | 72L1完整实际回执已归档；代理全九页提取文本、根模型/方法窗口，截图失败，未确认提取公式疑点为论文错误 |
 | 72正式导师 | /root/review72_mentor；SHA256 5c216348f5ebc97baf3ef5739344d3878d9ad740c0d707f35c5731b662513e81 | 72R1完整有效，35031 bytes / 240行；1 PASS / 5 UNKNOWN / 0 FAIL，M01–M06；根全文及不用skill直接分析已完成，非最终验收 |
 | 72正式Nature | /root/review72_nature；03b9fedf0d130a95421b2d6335365e723caa186544d21b8deeff33ff87f0e07d | 72R2完整有效，36244 bytes / 303行，根全读/独立分析；NR1局部反例、NR2–4 UNKNOWN、NR5待检、NR6表达，不授根资格 |
-| 72正式无skill独立逻辑 | /root/review72_logic | 仅在Nature有效后真实启动；唯一固定72，不读任何skill或他路意见；完整72R3待回 |
+| 72正式无skill独立逻辑 | /root/review72_logic；693b2651b2691b51b9429241f1a32890a7f2bc2b2f109081cbc27bf00b286021 | 72R3完整有效，16445 bytes / 104行，根全文已读；三项意见，新增参考到达不足以推出实体服务的证明缺口 |
+| 72根逐项综合 | 72R4；a8b73cb49c56f41a95591ab1813c06c7f708d24dad74406ad14ab36c8cf09720 | 16304 bytes / 93行；15条主意见+6附属、S1–S9后继合同，2 PASS / 3 UNKNOWN / 1 FAIL，不放行 |
+| 72R4行政更正 | 72R4A；6a6e574de99644dc5d4a24ce1a886a366ed3f455f4e286dc4d1a605f662e9269 | 目标实际active，纠正R4沿用旧paused快照；E5晚回执与C7超时另记，科学裁决不变 |
 | R0随机比较器有界静态审计 | /root/r0_random_comparator_domain；72E4 SHA256 382540dbeb20188e46076465727985c3d947ad622bb6e7ad0c55bf6aa5c3c7b9 | 完整回执有效，19756 bytes / 129行，根全文读取；FOCAL随机比较分支条件可达，另一比较器仅方法内链；不能由标准库规则直接断言Boost UB，不测试，不替原69E1 |
 | Claude72C4几何前缀构造 | 实际exec96509 exit=0/completed；完整回执412364488f6afd8f0cff5064f3a66a42990fcdc3e218b4dcc48c8719cbd7d15d | 完整JSON/正文及根十点更正已归档，16272 bytes / 33行；数学前缀条件可参考，纠正误读单调进度与闭分区边界，不改固定72或提前建立后继候选 |
 | Claude72C5费用/服务合同构造 | 首次79797网络失败；第二次14081 exit=1/refusal | Opus防护拒绝，无建议正文；完整拒绝JSON归档，不绕过，根自行继续合同分析 |
 | Claude72C6初始化比较量构造 | 第二次68174 exit=0/completed；bf5c99a1d5adf6fa94a7fa96f0d52c9a30e4e4f7a4a43ed38f1edaf47eb04d62 | 完整JSON/正文+根九点更正归档，11287 bytes / 19行；纠正未定义潜在量反例、端点独立性等，不改当前主估计量 |
 | 数据目录元信息/许可定点审计 | /root/source72_dataset_metadata_license；20f3b8826ab65ac2ac44d877185d7d4063de6082468353b4096828b89b99ae88 | 72L2完整有效，23206 bytes / 166行，根全文已读；四类元数据非空但合法source_id未求值，素材许可覆盖UNKNOWN，未读载荷 |
-| Boost Compare依赖合同来源 | /root/r0_random_comparator_domain followup | 新有界72E5任务已启动，完整回执待回；不指定部署版本或运行源码 |
-| Claude72C7可变cap控制数学 | 首次49402 exit=1/FailedToOpenSocket；获准第二次exec47344 | 首次完整网络失败JSON已归档；第二次完整回执待回。提示给的是根自给待核简化，不是72原控制器，非正式逻辑 |
+| Boost Compare依赖合同来源 | /root/r0_random_comparator_domain followup；b8875d3bfa6c86fd2a255cc6c74de8cd93ca7e04851801488c9d00ded67e3b74 | 72E5完整有效，23759 bytes / 167行，根全读；最低/兼容版本要求及单版本条件调用已核，实际UB/部署/全依赖仍UNKNOWN |
+| Claude72C7可变cap控制数学 | 首次49402网络失败；第二次47344 exit=124/空输出 | 两次终态归档，第二次无JSON/建议，不计完成/通过，不再重试；根/新独立数学任务继续，不能冒称Claude结果 |
+| 后继73参考cap解析构造 | /root/construct73_monotone_prefix_control；907b61f8ac9e20c3d11bc1e9f6080f252d38fab40a329a2dad82dbe0fd6fe6d8 | 73M1完整返回，23184 bytes/280行，根全读/复算，极值实体反例前提另纠正；仅条件控制构造 |
+| 后继73终点与游标权限构造 | /root/construct73_terminal_roles；655b02a6653abb815c5c1578c9029271890510b322314626cd7ed09d642018d6 | 73T1完整返回，22642 bytes/184行，根全读；明确终点未消费与SOURCE_REQUEST/LOCAL_POLICY角色，非正式审查 |
+| 73区间资源与外部对照定点工作 | 两原agent分别新followup | 73P1/73L1已启动、完整待回，分别核区间资源组合与Hönig已发表lifelong执行的实际比较域；不替旧缺失任务 |
+| Claude73C1真实服务收益构造 | 首次91679网络失败；第二次实际97292 | 首次完整失败JSON已归档，同提示升级获准重试运行中，完整建议待回；与C5/C7不同子题，不计成功 |
 | 根新增一手比较/对象身份补核 | 72L3；5652c70c35dcfb50ab7186c8db5e66889b8ac2dd418e0975374d18b89470e189 | Zhong具体模型窗口、两篇期刊官方预览，以及R0 README/LICENSE根完整读取与Git blob复算；近邻全文/素材许可仍未全闭 |
 
 主研究继续回应实际误差，保留 PIE-D 唯一新 MOVE 提议源。有限空间后缀退休、付费阻塞原因查询、普通反馈错误隔离和处理时延可组合。主比较为相同物理/信息/费用底座的 2×2；外部原版与守卫适配版分轨，不能把安全底座或源码修复的收益归给查询策略。没有实验结果、首创或普遍增益结论。
@@ -76,6 +82,9 @@
 - [固定候选 71](71_PIE_FINITE_ARRIVAL_SPATIAL_SUFFIX_AND_CAUSAL_OBSERVATION_PREEXPERIMENT_CANDIDATE_20260906.md)
 - [72 固定送审候选](72_PIE_CENTRAL_SPATIAL_RETIREMENT_AND_PAID_OBSERVATION_PREEXPERIMENT_CANDIDATE_20260906.md)
 - [72 构造与真实任务账本](72A1_CONSTRUCTION_ROUTE_DECISIONS_AND_SEQUENTIAL_REVIEW_LEDGER_20260906.md)
+- [72三路根综合及S1–S9](72R4_THREE_REVIEW_ROOT_SYNTHESIS_AND_SUCCESSOR_REQUIREMENTS_20260907.md)
+- [72R4行政状态更正](72R4A_GOAL_STATE_AND_LATE_RECEIPT_ADMINISTRATIVE_CORRECTION_20260907.md)
+- [73建设与真实任务](73A1_CONSTRUCTION_DECISIONS_AND_ACTUAL_TASK_LEDGER_20260907.md)
 - [用户网页建议：根核验与综合](72D1_USER_WEB_PROPOSAL_NO_SKILL_ANALYSIS_AND_PRIMARY_SOURCE_NOTES_20260906.md)
 - [网页建议子智能体完整无skill原文](72D1A_WEB_PROPOSAL_NO_SKILL_CONSTRUCTIVE_COMPLETE_RECEIPT_20260906.md)
 - [Claude 72C1 完整实际回执与根筛选](72C1_CLAUDE_CENTRAL_GRANT_SAFETY_COMPLETE_RECEIPT_20260906.md)
@@ -109,4 +118,4 @@ H、T_delay、B_CAL、B_max、B*、P_active、density N 原义保留且未赋值
 
 按用户最新偏好减少 skill 依赖：日常实证、推导与顾问协作不额外套技能管线；已约定的候选正式顺序审查保留，以承重证据而非风格/分数判断修订。每次必要 skill 意见返回后根另做不用 skill 的直接分析，不冒称盲审；Nature有效后仍派不读任何skill/他路意见的独立逻辑审查。
 
-既有仓库再次实核 private=true / visibility=private。最近实际push exec97344 exit=0，远端API与本地HEAD核实 main=5793e2f4df881e133d112621c23688ad0619d246，包含上一批12文件的完整章节草稿和实际回执。当前固定送审及新增来源/Opus建议按精确清单另同步；新push与远端身份须由实际工具确认，不预填成功。
+既有仓库已实核 private=true / visibility=private。最近实际push exec79072 exit=0，远端API与本地HEAD核实 main=c762450f9b6213101846b6fc3e393f6a8039c09c，包含第三批11文件。当前三路根验收及73建设记录按精确清单另同步；新push与远端身份须由实际工具确认，不预填成功。

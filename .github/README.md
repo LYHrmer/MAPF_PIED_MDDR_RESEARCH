@@ -2,7 +2,7 @@
 
 **HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**
 
-2026-09-07：72固定为86528 bytes / 353行，**FIXED-FOR-SEQUENTIAL-REVIEW / NOT-ACCEPTED**。导师72R1与Nature72R2完整回执已核验，根分别不用skill再分析；正式无skill独立逻辑已按顺序启动、回执待回。导师六门为1 PASS / 5 UNKNOWN / 0 FAIL；Nature确认P2回溯时间原句局部反例，没有给出实际退休后覆盖碰撞反例。最新完整根资格仍为71R4的 **2 PASS / 3 UNKNOWN / 1 FAIL**；三路齐后逐项综合，不改69/70/71/72和既有报告，不授予实施权限。
+2026-09-07：72三路正式审查均完整返回，根已逐项核验15条主意见和6条附属意见，形成72R4的S1–S9关闭合同。最新根資格 **2 PASS / 3 UNKNOWN / 1 FAIL**，72仍NOT-ACCEPTED；P2回溯时间原句、终点未消费权限、实体服务充分条件等需后继修复，没有据此宣称实际退休后碰撞。后继73建设已启动，未固定/送审/放行；69–72和报告不改。72R4A纠正旧目标控制快照为实际active，不改变科学裁决。
 
 71 提交有限到达解析构造、逐 owner 终点交接、因果 PIE/任务适配、有限机会/费用及总停止/缺失评分/固定总体推断，并给 36 个纸面 witness。主研究包含实体偏差、反馈错误和处理耗时，保留 PIE-D 和 2×2；真实服务与认证知识分开计数。没有性能结果。
 
@@ -12,9 +12,12 @@
 
 用户已明确大规模 Lifelong MAPF 以仿真为主：主论证检验持续任务吞吐、失败和全流程开销，小规模验证解释机制，两台实物只补充有限现实证据。当前不搭建双车系统，也不以实物演示替代扩展性结论。
 
-用户网页建议已获独立无skill完整分析及根一手核验。72选择受限原边空间退休与付费观测主线，P5不等于一般速度/姿态集合接入；主D-S−R-S与必报D-S−E0区分查询选择和整体购买价值。保守准入可能阻断原法合法环形轮转，失败必须保留。Claude72C3/C4/C6已完整返回循环路线、几何前缀和初始化比较量建议，根均逐项纠错；72C5被Opus防护拒绝，无建议，不绕过。S2M2模型/拼接、R0随机比较器、数据元信息/许可回执均已核验；外来素材许可仍UNKNOWN。新72C7只处理可变cap的一维控制可行性，不改固定候选、代替正式审查或宣称有大规模效果。
+用户网页建议已获独立无skill分析和根一手核验。受限原边空间退休不等于一般速度/姿态接入；主D/R与必报D/E0区分查询选择和整体购买价值。Claude72C3/C4/C6完整建议均已由根纠错；72C5防护拒绝、72C7超时空输出均如实归档，不计完成。S2M2、R0随机比较器/Boost合同、数据元信息/许可回执已核验；许可与全源定义域仍有未知。73继续比较现有窄路线与同原MOVE的前缀执行扩展，新的独立控制/终点状态构造正在进行，无大规模效果结论。
 
 - [完整进度和资格门](../GITHUB_PROGRESS.md)
+- [72三路根综合](../72R4_THREE_REVIEW_ROOT_SYNTHESIS_AND_SUCCESSOR_REQUIREMENTS_20260907.md)
+- [72R4行政更正](../72R4A_GOAL_STATE_AND_LATE_RECEIPT_ADMINISTRATIVE_CORRECTION_20260907.md)
+- [73建设与实际任务](../73A1_CONSTRUCTION_DECISIONS_AND_ACTUAL_TASK_LEDGER_20260907.md)
 - [72 固定送审候选](../72_PIE_CENTRAL_SPATIAL_RETIREMENT_AND_PAID_OBSERVATION_PREEXPERIMENT_CANDIDATE_20260906.md)
 - [网页建议的根核验与综合](../72D1_USER_WEB_PROPOSAL_NO_SKILL_ANALYSIS_AND_PRIMARY_SOURCE_NOTES_20260906.md)
 - [子智能体完整无skill建设性分析](../72D1A_WEB_PROPOSAL_NO_SKILL_CONSTRUCTIVE_COMPLETE_RECEIPT_20260906.md)
