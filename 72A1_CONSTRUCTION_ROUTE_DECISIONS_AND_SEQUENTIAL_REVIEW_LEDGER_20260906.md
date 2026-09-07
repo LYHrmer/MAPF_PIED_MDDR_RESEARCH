@@ -149,3 +149,36 @@ write_stdin(60396) 当前明确 Unknown process id，内存输出缓存亦不可
 随后真实查询72C5 exec79797与72C6 exec40388，均exit=1、is_error=true、api_error/FailedToOpenSocket，完整失败JSON分别归档72C5/72C6 FIRST_CALL_NETWORK_FAILURE；JSON的subtype=success不能压过error字段及退出码，零usage不计建议。确认终态后按沙箱网络要求发起升级，实际获准两条精确命令；重试真实exec14081与68174已启动，完整建议待回，不重复仍运行句柄、不使用假正文。数据来源代理的局部目录计数是元信息证据，不是任何保护参数赋值，完整来源回执未到仍不计完成。
 
 第二批精确暂存16个文档/行政文件。默认git diff --cached --check真实exit=2；rtk过滤未显正文，随即raw复核仅72E4 L129 new blank line at EOF。不改已核来源回执身份，对其他15文件保持默认严格检查，只对该单文件使用命令级core.whitespace=-blank-at-eof，不能把默认检查非零记成通过。此为文档卫生检查，不是科研测试或算法验证；固定72/72R1身份再次实核不变。
+
+第二批16文件实际提交8cdd81a3d895c42b8fe73f65b662b1b11c55dd20，两类文档卫生检查均实际exit0。首次push exec74726最终exit128/TLS连接异常，API exec44400最终exit1/TLS握手超时；没有把该次写成同步成功。获准升级后push exec37361真实exit0，返回远端5793e2f→8cdd81a；推送前的API仍5793e2f只是当时快照，推送后远端身份另核。
+
+72C5第二次exec14081已exit1/is_error=true/stop_reason=refusal，API明确Opus防护拒绝该提示，没有费用合同正文；完整实际JSON归档72C5 SECOND_CALL_SAFEGUARD_REFUSAL，SHA256 6a683cb69d01044f0ca827c764708771c6aa992025d61df3e4a08d9fa37aff7f、2222 bytes / 7行。不是本平台审批拒绝，更不是科研FAIL，不改写提示/换模型绕过，根自己继续这部分。
+
+72C6第二次exec68174已exit0/is_error=false/completed，173226ms，完整建议至ADVICE-COMPLETE；完整JSON及根九点不用skill更正在72C6 COMPLETE回执，SHA256 bf5c99a1d5adf6fa94a7fa96f0d52c9a30e4e4f7a4a43ed38f1edaf47eb04d62、11287 bytes / 19行。根采纳联合状态表；拒绝将未定义INIT失败类又赋潜在差值的自相矛盾反例，另给全域合法但缺失依值的纸面反例；纠正任意缺失机制下端点独立性假定，并从已有独立潜在差值的集中事件给更稳健外包区间证明。并未选择或纳入新的主估计量，固定72不动。
+
+推送后真实GitHub main API返回8cdd81a3d895c42b8fe73f65b662b1b11c55dd20，与本地HEAD一致；第二批远端确认已完成，首次网络失败不被覆盖。
+
+## 2026-09-07：Nature有效回执、根不用skill分析、最后独立逻辑真实启动
+
+72R2已实际完整返回，SHA256 03b9fedf0d130a95421b2d6335365e723caa186544d21b8deeff33ff87f0e07d、36244 bytes / 303行；固定候选仍d2b7ee412b59b070f33cd80036f1e79b55ffb6fa6b79aa0a3d39e8b359f7bc84。根已全文读取全部三侧重报告/综合/回执及QA，正式报告记录主skill和七参考的完整实读身份。初次ls时文件为36241 bytes，代理完成前最后把L249“后向保持”改“提交后保持”（净增3 bytes），L294“实際”改“实际”；根获实际行政说明并另读L245–252、292–297，最终hash一致。报告此后不再编辑。
+
+根不使用skill的直接分析（已见Nature报告，非盲审）：
+
+| 意见 | 直接核验与处理 |
+|---|---|
+| NR1（与导师m01相关） | 根另亲读候选L64–68。“从采样起…U(q_new)”字面可指本次迟到旧包的采样时刻，确实过强。两个同tid严格递增合法下界、较新先合并、旧包后到即可反驳回溯句。恒定合法z取投影极值的构造满足误差公理。根接受局部命题原句FAIL；当前退休后不变量只需所有样本在提交前且参考单调，仍可成立，所以不扩大为P3碰撞。后继须明确保证自融合/退休提交后起。 |
+| NR2 | 接受源执行域EVIDENCE_UNKNOWN；与M02同主题。72E4的Boost类型/条件可达只补局部，不能强称已发生UB；也不能由所有臂共用同一源推出未定义行为因果可解释。另做72E5限定依赖/Compare合同来源审计。 |
+| NR3 | 接受关键近邻同口径排除未知，与M03合并处理。几何表等价优化、共同反馈隔离不是多个独立首创票；局部组件已有先例也不推出组合必无贡献。根本轮补核Zhong具体方法窗口及两份期刊官方摘要/预览，不冒充取得所有近邻全文。 |
+| NR4 | 接受主profile域的规格UNKNOWN：原文全部profile等权与域外TRUST_OR_PHYSICS_BREACH单列的关系未唯一。应事先按生成机制声明主界内profile集合及压力集合，不按实际运行是否越界再挑样；预期界内臂意外breach仍保留其原主总体/失败标签。固定72暂不修改。 |
+| NR5 | 接受净效益/规模为待检科研假设；不要求被禁止的实际阳性结果作为设计资格的前置证据。只关闭可识别主量/对照/先验范围/负例/可用性合同，不能把这些合同本身转写成正结果。 |
+| NR6 | 接受证据分层与可读性要求，非结构FAIL；同一主张应显式指向安全定理、局部机制充分条件或未检效果，避免文档/检查项数量冒充科研完成度。 |
+
+Nature有效后根真实spawn返回 /root/review72_logic，明确任何skill/skill参考、导师/Nature/Claude/旧意见均禁读；唯一科学输入固定72全文。约定72R3_PIE_CENTRAL_SPATIAL_RETIREMENT_PAID_OBSERVATION_NO_SKILL_INDEPENDENT_LOGIC_REVIEW_20260907.md，完整回执尚未返回。未在三路齐前写后继候选。此根直接分析不替该独立审查，最终还须逐原始意见综合验收。
+
+72L2元信息/许可回执实际完整返回，SHA256 20f3b8826ab65ac2ac44d877185d7d4063de6082468353b4096828b89b99ae88、23206 bytes / 166行；根全文已读。四类目录完整非截断元信息均非空，根MIT文本可得，外来素材权利链未建立；不将它推为无许可/违法，也不凭文件名认定MovingAI归属。源码parser窗口已有字段/atoi/尺寸/通行编码证据，但没有求值任何JSON/map/agent/task/delay载荷，不证明合法source_id非空。代理误多看候选§9 L192–196已如实披露，未用作结论；根不把这些计数赋给任何实验保护量。
+
+并行新增 /root/r0_random_comparator_domain 的72E5不同任务，核官方CMake/Boost Compare合同和版本边界，完整回执待回；不重启旧任务或读取载荷。另72C7自给的一维单调可变cap控制数学问题，Opus/high无skill工具，真实exec49402；只核潜在前缀运动的闭环可行条件，非72审查、非后继候选、非外层事务/吞吐票。完整回执待回，保持HOLD/NO-GO。
+
+72C7首次exec49402实际终态exit1/FailedToOpenSocket、179452ms、零usage，完整失败JSON归档SHA256 d871e132edd9ef70f97f5399adfad74fb5bb22e58ab7cad1f1a71383bfc481c9；确认终态且获准升级后第二次exec47344已启动。提示SHA256 4acf5792198e23bcb9b10b98b2998bd6ff43f04d0ab688d0811437cde16c6990；其中根给的APPROACH常减速待核线索与固定72 L50的反馈律不同。根另读L46–54已明确此区别，绝不能把提示简化的缺陷冒称72原P1反例；待顾问返回须据真实输入/固定方法分别分析。
+
+根72L3新增有界近邻/来源复核记录SHA256 5652c70c35dcfb50ab7186c8db5e66889b8ac2dd418e0975374d18b89470e189：本轮Zhong读模型/方法/局限窗口，AI/RAS两近邻只得官方摘要/预览、直接正文open失败。作者NTU主页后续查到AI题录但链接仍指出版商，未取得全文；不能追加全文计数。R0 README与LICENSE根已实际全文取得，并只在内存复算SHA256/正确Git blob，分别与固定tree一致；没有执行README命令或读取载荷。后续定点搜索也返回不相关/二手结果，未使用它们证明技术结论。
