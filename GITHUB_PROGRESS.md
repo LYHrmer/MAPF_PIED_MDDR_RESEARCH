@@ -10,7 +10,9 @@
 - [新Codex完整交接](HANDOFF_NEW_CODEX_PREEXPERIMENT_DESIGN_20260908_CANDIDATE73.md)
 - [73未送审全文](73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)
 
-以下72及更早表格为历史审查与任务依据；其尚未返回的时态以本轮账本实际终态为准。
+本批18文件已实际push并由GitHub main API核验：[b87676c5640d2d2f08ad7b96d7c79a52496f8e27](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/commit/b87676c5640d2d2f08ad7b96d7c79a52496f8e27)。完整73草稿、新回执和两份交接均已入私有仓库；本段仅随后追加实际运输记录，未放行实验。精确检查与EOF空行例外见73A1。
+
+以下72及更早表格为历史审查与任务依据；其尚未返回的时态、底部旧同步SHA以本轮账本实际终态和上述已核提交为准。
 
 候选72的导师、Nature、明确无任何skill的独立逻辑三路完整报告均已有效返回，根全文/身份复核及逐项直接分析完成。72R4处理15条主意见与导师6条附属意见，归为S1–S9关闭合同；**72仍NOT-ACCEPTED，最新根资格2 PASS / 3 UNKNOWN / 1 FAIL**。P2回溯原句有局部反例，终点未消费状态与真实服务充分条件须补齐；没有据此声称实际退休后发生界内碰撞。已进入后继73建设，尚未固定/审查/放行，不改69–72或旧报告。72R4A仅纠正目标控制状态为实际active及晚回执，不改变科学裁决。
 

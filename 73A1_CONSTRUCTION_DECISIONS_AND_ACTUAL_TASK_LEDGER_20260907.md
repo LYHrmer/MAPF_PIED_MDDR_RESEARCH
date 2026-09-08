@@ -46,6 +46,10 @@
 
 本轮18文件默认文档空白检查实际exit2，仅73C3完整回执第39行EOF空行。该完整回执已核身份并被交接引用，保留原字节；只对这一个文件用单次core.whitespace=-blank-at-eof复查，其余17文件继续默认严格检查。没有运行研究测试。
 
+### 2026-09-08 实际同步回执
+
+本轮18文件已实际提交并推送：b87676c5640d2d2f08ad7b96d7c79a52496f8e27，提交题名 docs: hand off candidate 73 draft and verified construction evidence。push真实exec5351最终exit0，GitHub main API同完整SHA，git show确认18文件/1900插入/2删除；工作树已跟踪状态clean。此提交含73完整草稿、13份其他新增文档与4个行政文件更新；仅白名单，冻结69–72未改。73草稿SHA保持e0baef1ebf3b5c6a999b5324ac6023588e8da9affc82f1cba3ceb7ee972045dc，新交接SHA为915e8146c0f19f5a5ea30ca6d5d443c9bee5f68456d92fa1c24babb63d7e6f04。17文件默认文档空白检查exit0，73C3完整回执仅单次EOF空行例外复查exit0；未运行研究测试。随后只追加本行政回执，不改变科学状态或先前完整回执。
+
 ## 以下为2026-09-07原始过程记录（时态以以上实际更新为准）
 
 ## 当前构造与根直接判断
