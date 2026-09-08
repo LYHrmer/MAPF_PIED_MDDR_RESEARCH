@@ -1,6 +1,16 @@
 # 实验前工作进度
 
-更新：2026-09-07。**HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。
+更新：2026-09-08。**HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。
+
+本轮接续状态：73完整草稿已形成（107921 bytes / 418行；SHA256 e0baef1ebf3b5c6a999b5324ac6023588e8da9affc82f1cba3ceb7ee972045dc），尚未固定、送审或接受。73P1/L1/L2/E1/E3/E4及Claude73C1第三次、73C3第二次完整回执均已实际返回并根读核，不能再按下方历史时态视为运行中；新证据不改变72R4六门裁决。73C2第二次句柄失落、73E2文件缺失仍未闭合。
+
+草稿已提出前向取证、终点状态/权限、真实服务、WORLD与软件INIT分离、费用/服务矩阵等修复，但需继续全稿组合检查。单调前缀cap的控制和资源组件有条件证明，全策略、公平成本和E0匹配尚未完整；主lifelong外部基线、素材来源链、原源精确调用域与强新颖性仍开放。没有实验或效果结论。
+
+- [本轮完整身份与真实任务账本](73A1_CONSTRUCTION_DECISIONS_AND_ACTUAL_TASK_LEDGER_20260907.md)
+- [新Codex完整交接](HANDOFF_NEW_CODEX_PREEXPERIMENT_DESIGN_20260908_CANDIDATE73.md)
+- [73未送审全文](73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)
+
+以下72及更早表格为历史审查与任务依据；其尚未返回的时态以本轮账本实际终态为准。
 
 候选72的导师、Nature、明确无任何skill的独立逻辑三路完整报告均已有效返回，根全文/身份复核及逐项直接分析完成。72R4处理15条主意见与导师6条附属意见，归为S1–S9关闭合同；**72仍NOT-ACCEPTED，最新根资格2 PASS / 3 UNKNOWN / 1 FAIL**。P2回溯原句有局部反例，终点未消费状态与真实服务充分条件须补齐；没有据此声称实际退休后发生界内碰撞。已进入后继73建设，尚未固定/审查/放行，不改69–72或旧报告。72R4A仅纠正目标控制状态为实际active及晚回执，不改变科学裁决。
 
