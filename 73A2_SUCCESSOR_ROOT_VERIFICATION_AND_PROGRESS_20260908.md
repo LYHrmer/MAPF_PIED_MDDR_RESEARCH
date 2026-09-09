@@ -66,3 +66,25 @@
 桌面论文包现已实际完成并收到子代理最终回执：10篇PDF共43118896 bytes /149页，编号01–10分别为Hönig持续执行、Zhong主动观察、S2M2、TIP、时间不确定性MAPF、B-UAVC、WinkTPG、Concrete MAPF、MAPF统一定义、RHCR。根对实际10文件重新核验完整字节SHA256、PDF签名、pdfinfo页数，并逐一读取第一页题名/摘要；与完整来源清单逐项相符。`99_来源与下载核验.md`完整根读，11941 bytes /122行，SHA256 `f7543f98ec5d580cb6729ec4362dfe1a202fd74f533a1ed4a3c03c4ddd661744`。根另以apply_patch写`00_阅读顺序与交流问题.md`，6篇先读、4篇专题补读；源稿/正式版及WinkTPG接受声明分别标明。此阅读包完成不等于全文精读或来源资格门关闭。桌面PDF不加入Git研究白名单。
 
 本批拟同步精确8文件：`.gitignore`、`GITHUB_PROGRESS.md`、73A2、73P2、73E5、73C4提示与首次失败回执、73C5提示。`git diff --cached --check`只报告完整原回执73C4失败文件L8与73E5 L214的EOF空行；保留已核回执字节，不为格式改原件。除此项的单次格式检查另核，不宣称原始check为零。私有属性再次实际API返回private=true/visibility=private/main。提交/推送成功必须等待实际工具，不在此预填未来SHA。
+
+### 2026-09-09：实际新回执、根取舍和正文局部修订
+
+上述8文件实际提交为 `0ce78efcd7a6a96013381e9674abb751228a45b4`，push会话75903最终exit=0，远端commits/main API实际同值。首次commit因本会话无默认作者失败；读取前一提交的既有LYHrmer/noreply身份后仅以单次`-c user.name/user.email`完成提交，没有改本地或全局Git配置；提交和push单次禁hooks。首次push连接失败后按正常权限升级成功，未将失败冒作上传。
+
+73L3已实际完整返回，根全文读取且hash复核 `e0c21289ea3047ff3aa72b1871dc4f39044074a7227268b2572d9a0c609f83f9`，32022 bytes /201行；原任务确已完成，不再按上文历史缺文件时态处理。它完整交代本次范围与UNKNOWN，不等于来源门闭合。73P3同样实际完整返回并根全文读取、hash复核 `f366386a2a8bf2a8b660aa41503abbb0aeacaf1fdee2836d5fdfb2b934dfc00f`，22575 bytes /196行。两者均NO-SKILL / NONBALLOT，未代替正式审查。
+
+根直接分析和取舍（未使用skill）：
+
+1. P3的两条平行反向单步边确属四邻接动作域；膨胀后r/f相交区间、初始及终点Mask、CAND中点和相互不能退休的归纳成立。它纠正P2 CE3原边内部交叉的域缺口，证明最大cap即使有精确途中证据也可把可行次序锁死。四块非均匀闭矩形覆盖符合73的一般有限有理资源域，但不外推为规则细方瓦片下反例，更不当作固定PIE实际输出。源提案身份与主素材实例仍未核。
+2. 接受P3“最小下一cap仍可能下一次抢占”的反证提醒；全长或旧覆盖规则能避免该例却保留很多整边循环问题。完成次序规则有明确条件证明，但阶乘枚举及队列冻结代价不适合作为未经证据的大规模默认。根不将这两条直接升为主策略，也不默认最大cap即可用；保留为失败机制与可审查替代，后续需选可负担的完整规则。
+3. L3将外部自己的规划动作与本方法PIE原提议约束区分，符合系统级对照的目的。根优先推进按论文重构、共同任务域的H19系统对照，并单列共同来源执行比较；没有把缺完整作者2019实现等同于无法研究，也没有冒称原样复现。具体求解Environment和desired-set/cut触发规则未定，不能只靠命名关闭G4。
+4. 付费END推送是应认真保留的共同能力：不能为抬高D价值强迫已发表执行框架等待我们任选的轮询节拍。它仍需与现有Srv_E/Srv_N/Srv_C、pending/READY、重试与所有臂费用完整组合；本次没有仅在外部段落加名字就声称正文已实现该协议。空间访问ADG可作不依赖当前owner守卫的备选，其保守性和跨窗接缝另证，根不将当前guard强定为唯一安全架构。
+5. 用户允许组合/改进不降低证据要求。当前优先区分空间退休、查询选择和整套系统价值；若有效收益主要来自共享授权/退休，须如实调整贡献归因，不把D启发式必须获胜作为前提。没有实测效果，不预言统计显著或大规模普遍改进。
+
+根已对未固定73作8处行替换：END原子清active_tid并明确本地resident_ref=v/resident_gamma=NONE；消费从pending复制新gamma后才清pending；唯一主SERVICE_TRUE采用整个X包含服务域、真实合法终点/初始驻留及有效队首，不以软件就绪或READY送达决定服务，也不新增真实停稳要求；同步真实服务充分见证；更新E3/E4/E5实收及R0源问题；W汇总补到W01–48。根完整读本次diff并做静态格式检查，未创建或运行测试。新正文SHA256 `decef3a8908b21796c3ff86eaf2a8361289c76d13cbd09b1f45d66c1b138b38f`，109595 bytes /418行；原e0baef身份仅指此次修订前字节。前缀总策略、付费END推送及外部完整适配尚未混入主工作版本；仍DRAFT / NOT-FIXED / NOT-REVIEWED / NOT-ACCEPTED。
+
+Claude73C5首会话59349实际exit=1/FailedToOpenSocket，完整回执 `7a99353b0832eed66e124fd786701d06c33c11c5897b0d3c6122450837fcd9be`；确认失败后正常升级同提示，真实第二会话84130也已exit=1/Connection lost mid-response，完整回执 `701a5c103c440135794521b4027d461efb8952baca808e8a120caaa51926f1a6`。两次均无建议正文，不再记RUNNING，不计科学完成。用户强调Claude必须Opus；两次均明确`--model opus --effort high`，后续保留Opus，不悄悄降档。没有重试任何仍失落的旧任务。
+
+根在L3完成后独立尝试恢复其两个精确失败对象：Benchmark-Archive固定commit `25ffd5b6a39b6fe30e5bc6cb5e22720a9531ea8a` 的README内容和非递归根tree，只请求元数据/说明，不读实验载荷。普通GitHub API两项均TLS handshake timeout；依规则升级后会话1278/35199也各exit=1同类超时，没有取得正文或树。仍不能补造README blob、许可或R0素材逐对象链。此失败不代表仓库无许可。
+
+本轮取得两个完整新构造回执并修订真实正文，但没有正式固定/审查、源适配与素材全闭、实验结果或放行。六门维持 **2 PASS / 3 UNKNOWN / 1 FAIL；HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。

@@ -1,6 +1,6 @@
 # 73：原边空间证据、终点交接与付费服务——实验前整合草稿
 
-起稿2026-09-08；**DRAFT / NOT-FIXED / NOT-REVIEWED / NOT-ACCEPTED**。完整章节草稿供进一步构造核对，当前仍以整边准入执行模块为工作版本；同原MOVE前缀扩展在§15比较，尚未混入其保证。它不是已选定的唯一最终路线。72三路审查及72R4根综合已齐后才创建本实质新编号；69–72及其报告不改、不封存。本稿固定后仍须科研导师skill→Nature reviewer skill→无任何skill独立逻辑→根验收。HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT；不自授新资格门。
+起稿2026-09-08，根局部修订2026-09-09；**DRAFT / NOT-FIXED / NOT-REVIEWED / NOT-ACCEPTED**。完整章节草稿供进一步构造核对，当前仍以整边准入执行模块为工作版本；同原MOVE前缀扩展在§15比较，尚未混入其保证。它不是已选定的唯一最终路线。72三路审查及72R4根综合已齐后才创建本实质新编号；69–72及其报告不改、不封存。本稿固定后仍须科研导师skill→Nature reviewer skill→无任何skill独立逻辑→根验收。HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT；不自授新资格门。
 
 ## 1. 研究问题、主张和动作边界
 
@@ -95,9 +95,9 @@ gate有自己的持久关闭标记g_i：初始为未执行过授权的前哨，�
 
 付费grant验证在实际接纳点通过上述RESIDENT_OPEN完整谓词后，原子转GRANT_ARMED，保留唯一active_tid和started=false；后继合法ACTUATOR再以同tid/slot/parent/命令和起点HOLD进行一次START并转MOVE_LIVE。no-start不消费、不重发tid、不释放M0。重复同grant/START幂等，旧epoch不回退s/c。已授未进入时q=0、整个U(0)保留；进入后可信q按P2前向退休；F保留M0至终点交接。错误phase、pending非空、该occurrence已END或原起点不匹配的首次grant/START均拒绝，不重新打开旧边。
 
-只有MOVE_LIVE同tid在可信s=ell、v_ref=0且c=k时发生END。物理阶段不可逆关闭旧tid入口、提升gate已执行关闭水位，建立gamma_prime及pending、转TERMINAL_UNCONSUMED并HOLD。该记录是物理/控制事实，不免费传给中心、不消费c、不改中心owner。保存至其合法一次消费及后继责任建立后才能按引用规则回收；active_tid置NONE或普通COMPLETE不替END。此时参考顶点已经是v而未消费原边仍u→v，故明确禁止旧槽再次PRECHECK。
+只有MOVE_LIVE同tid在可信s=ell、v_ref=0且c=k时发生END。物理阶段不可逆关闭旧tid入口、提升gate已执行关闭水位，建立gamma_prime及pending、转TERMINAL_UNCONSUMED并HOLD；同一次本地提交令active_tid←NONE、resident_ref←v、resident_gamma←NONE。旧tid及候选新gamma_prime保存在pending，NONE表示本地尚未接纳中心的新resident身份，不表示实体或中心资源为空。该记录是物理/控制事实，不免费传给中心、不消费c、不改中心owner。保存至其合法一次消费及后继责任建立后才能按引用规则回收；单独清active_tid或普通COMPLETE不替END。此时参考顶点已经是v而未消费原边仍u→v，故明确禁止旧槽再次PRECHECK。
 
-中心取得付费ENTRY END证据后，在串行提交复核当前GRANTED tid、occurrence、原终点/parent/gamma_prime/closed，将Mask(E)从tid转同agent resident gamma_prime，清其余、记录FINISHED及d_i=e，再发布READY。本地收到并付费验证匹配pending的READY，只设置ready_verified，不先消费。LOCAL_POLICY的后继实际提交须再次检查TERMINAL_UNCONSUMED、c=k、匹配原MOVE/closed/pending/ready_verified且consumed=false、active_tid=NONE、HOLD于原终点及gamma_prime绑定；一次提交标消费、c=k+1、清当前pending并转RESIDENT_OPEN，不连锁处理下一槽。旧/不匹配READY拒绝且不改相关命令版本；重复已消费READY不能作用到下一槽。中心FINISHED不打开本地入口，READY本身不写Kc。下一MOVE仍须新PRECHECK及预留，迟到旧释放因tag/tid/水位不匹配不改新holder。
+中心取得付费ENTRY END证据后，在串行提交复核当前GRANTED tid、occurrence、原终点/parent/gamma_prime/closed，将Mask(E)从tid转同agent resident gamma_prime，清其余、记录FINISHED及d_i=e，再发布READY。本地收到并付费验证匹配pending的READY，只设置ready_verified，不先消费。LOCAL_POLICY的后继实际提交须再次检查TERMINAL_UNCONSUMED、c=k、匹配原MOVE/closed/pending/ready_verified且consumed=false、active_tid=NONE、resident_ref=v、resident_gamma=NONE、HOLD于原终点及gamma_prime绑定；一次提交先从已匹配pending复制resident_ref←v、resident_gamma←gamma_prime，标消费、c←k+1、保持active_tid=NONE，再清当前pending并转RESIDENT_OPEN，不连锁处理下一槽。这些写入是一项本地原子转移，不能先清pending后丢失新身份。旧/不匹配READY拒绝且不改相关命令版本；重复已消费READY不能作用到下一槽。中心FINISHED不打开本地入口，READY本身不写Kc。下一MOVE仍须新PRECHECK及预留，迟到旧释放因tag/tid/水位不匹配不改新holder。
 
 P3覆盖归纳：WORLD_GIVEN的bootstrap由§3同世界z不变性及固定参考HOLD持续覆盖实体，而不只在初始瞬间分离；软件INIT核验并同agent同包络接续所有bootstrap责任，不删其他未激活agent的占有；授予先完整预留、parent包含于M0，同agent改tag无空隙；gate只有覆盖已存在才进入；P2使中段退休后实体仍在剩余集合；终点改tag保持E、清其余不删实体所在资源；CANCEL未授无资源变化，已授取消拒绝；旧消息不改变新tag。不同agent的bootstrap和软件资源责任共同互斥，任何实体交点落在共同闭瓦片而违反该互斥，故界内无实体碰撞。该证明不保证无死锁、吞吐正或永久丢包后的释放。中心故障/失联不使grant/bootstrap/实体消失；界外信任破坏另记，不能借此掩盖前提成立时的反例。
 
@@ -137,7 +137,7 @@ NATIVE-COLD-OFF是独立原生定义域的冷启动旁路：在任何共享INIT/
 
 最多一个规划作业及一个待提交结果。S为最新提交段的起点；只有all Kc_i≥S且无上述作业时，才可请求在尾L追加。接纳后S←old L、L←new L，new L>old L；未追上的前段不能无限追加。段首与旧尾同一槽，不重复消费/服务。旧承诺不因预测目标改变而撤销。在线路径可保留从min Kc起到L及被当前作业pin住的前缀，只有无仍有效引用才可GC；完整审计历史另追加归档，不能把在线窗口界称为总存储有界。
 
-真实任务账本A与已知K_task分开。固定TASK_SERVICE机会先按真实reference terminal/resident、任务顶点匹配及真实X处于服务区域判断，每agent至多服务一个合法队首，再按固定原任务策略补给：greedy按agent规范顺序填已分配队列；Fixed用各自原序列；Inf用原tasks[(counter_i*num_agents+i) mod tasks_size]并递增counter。补给深度/原CLI意义保持而本阶段不绑定数值；tasks_size为空或接口非法不做取模/假目标。先服务再补给是明确共享顺序，不冒称native三种策略的sync相同。
+真实任务账本A与已知K_task分开。唯一主服务谓词SERVICE_TRUE(i,j,t)为：j是此刻真实A中分配给i且尚未服务的有效队首；参考处于合法初始驻留或已END原MOVE的终点驻留（尚未消费亦可），其参考顶点等于j的任务顶点且v_ref=0；整个真实实体X_i(t)⊆ServiceRegion(j)；共同服务机会存在且未达Stop。这里的物理驻留事实不以软件INIT_READY、中心READY、resident_gamma的已知性或算法证书送达为前提；原边中途cap HOLD不冒作终点驻留。主域不另要求真实实体速度为零或额外驻留时间，不把参考零速当作实际停稳；需要停稳的任务属于另行定义的扩展域。固定TASK_SERVICE机会据此每agent至多服务一个合法队首，再按固定原任务策略补给：greedy按agent规范顺序填已分配队列；Fixed用各自原序列；Inf用原tasks[(counter_i*num_agents+i) mod tasks_size]并递增counter。补给深度/原CLI意义保持而本阶段不绑定数值；tasks_size为空或接口非法不做取模/假目标。先服务再补给是明确共享顺序，不冒称native三种策略的sync相同。
 
 初始合法resident可真实服务，无MOVE也可能Q>0。每实例有独立task_instance_id，即使目标相同仍区分；service_id=(block,agent,TASK_SERVICE行,task_instance_id)，全局task_revision单调，记录分配前后和去重。Q来自独立真实服务记录，不等待POSITION、ENTRY、READY或TASK回执。真实派单不为规划冻结，也不按查询归因筛服务。
 
@@ -218,7 +218,7 @@ FAULT的类型记录为(公共行,role,subject,kind,该profile已规定的载荷
 
 瞬时故障与迟到消息用公开行序区分：FAULT前已发布的grant继续有效；中心已计算未发布的grant在fail-stop后不发布。失联/中心停止服务本身不令正在运动的机器人停车或让已预留空间消失，物理与真实TASK_SERVICE按其仍合法的模式继续。各分量停止、全臂评价Stop及主机评价器故障在§12分开。有限自主运动每旧tid只按LAUNCH/APPROACH/END或BRAKE/HOLD这些既定守卫推进；若数值过程产生未定义/Zeno级联，不把无限内部工作塞进一个公共行，返回不可认证并按§12处理。
 
-新增来源73E1已经完整读取六个固定R0对象（101756 bytes/2869逻辑行），证实官方CLI类别“LACAM only”和具名分支初始/重试/修复经getInitialSolution→runLACAM2→solve→Planner::solve，不需要修改源才有此模式。它仍复用LNS对象、随机洗牌/预采样tie等；不是无随机、无SIPP对象或整个生命周期契约已闭。枚举/构造/调度依赖另查，不把73E2缺失回执补为完成；当前新增73E3也须实际完整回执。此草稿尚未把这个类别暗中替换为原主baseline模式，最终源选择和scope须在固定前唯一登记，未知不靠种子/ABI宣称消除。72E5的Boost最低/兼容版本及一个官方版本条件链同样不是实际部署版本或UB证明。
+新增来源73E1已经完整读取六个固定R0对象（101756 bytes/2869逻辑行），证实官方CLI类别“LACAM only”和具名分支初始/重试/修复经getInitialSolution→runLACAM2→solve→Planner::solve，不需要修改源才有此模式。它仍复用LNS对象、随机洗牌/预采样tie等；不是无随机、无SIPP对象或整个生命周期契约已闭。73E3/E4现已实际完整返回；73E5亦完整返回并经根全文读取，不能再按历史时态记待回；原73E2仍缺，不用新报告冒充。根另独立核固定头文件/driver全文和相关完整函数窗口，确认init_time_limit在所见构造与driver路径未初始化却在simulate首次按值传给plan，plan体内覆盖不能消除调用前读取；初始化失败未向simulate传成停止，future完成仅join不get不能识别其异常；computeAllPair另有局部第五个pairing_heap，其>=比较不满足严格弱序，且位于LACAM分支选择之前。这些源合同问题不能由纯LACAM名称或种子消除，不等于已运行观察到崩溃或性能损失。实际Boost版本尚未绑定，72E5所核单一版本只给条件合同。后继可明确设计修复适配器，但须列初始化/失败/线程生命周期/比较器及预处理费用的完整修改合同，保留原版身份；当前没有修改源码或据此计查询策略优势。此草稿尚未将LACAM类别或任何修复适配器静默定为主源，最终选择和scope须在固定前唯一登记。
 
 ## 10. 外部原法、守卫适配与原样检查合同
 
@@ -321,7 +321,7 @@ Score输出VERIFIED(Q,observedExposure,E,flags)或UNVERIFIABLE(reason)，以WORL
 
 费用及真实服务见证还需要独立事件关系：A已合法在途、B唯一原请求因A旧origin资源阻塞、RR下一个对象为C而D唯一选A；没有其他外国holder或免费终点反馈可提前释放B。存在一条满足全部费用/容量/付费采样发布规则的有限公共轨迹，使D取得足够q、完成退休和B新授权验证，并在一个公共ACTUATOR机会成功START，时间上界f；RR和E0使B首次可能START的下界分别r_R/r_E，要求f<min(r_R,r_E)。下界须涵盖所有合法中途/终点释放通路，不能只比较两个不完整的下界。
 
-若B各臂无后续中断，且相同初态与时间平移不变的合法控制/扰动使其参考运动同长tau_B，参考终点到达分别为D≤f+tau_B、对照≥min(r_R,r_E)+tau_B；一般不同段时长须分别证明f+tau_D_upper<r+tau_other_lower。再选定一条事前公共TASK_SERVICE行t*满足f+tau_B≤t*<min(r_R,r_E)+tau_B且t*<E；它不是观察后挑的cutoff。要得到真实服务还须：D在t*仍处该目标的reference terminal/resident并未Stop；B此时仍是同一有效未服务队首、未重分配；其真实实体满足所定义服务区域谓词。一个足够的全形体几何条件是目标参考点v加K完全包含于ServiceRegion(B)，如此任意允许z都满足X⊆ServiceRegion(B)。若采用中心型服务，充分条件相应为v+Z包含于中心服务域，不能两种谓词混用；若额外要求真实停稳，另证真实速度/驻留条件，参考v_ref=0不够。对照未到参考终点只有在任务规则确实要求该reference终点且同B未曾由其他匹配终点/agent服务时，才能排除其服务；若服务可沿途发生，必须直接证明对照参考点不在(A⊖F)⊕(−Z)（全形体）或A⊕(−Z)（中心型）的可能服务集。
+若B各臂无后续中断，且相同初态与时间平移不变的合法控制/扰动使其参考运动同长tau_B，参考终点到达分别为D≤f+tau_B、对照≥min(r_R,r_E)+tau_B；一般不同段时长须分别证明f+tau_D_upper<r+tau_other_lower。再选定一条事前公共TASK_SERVICE行t*满足f+tau_B≤t*<min(r_R,r_E)+tau_B且t*<E；它不是观察后挑的cutoff。要得到真实服务还须：D在t*仍处该目标的reference terminal/resident并未Stop；B此时仍是同一有效未服务队首、未重分配；其真实实体满足§8唯一SERVICE_TRUE全形体谓词。一个足够的几何条件是目标参考点v加K完全包含于ServiceRegion(B)，如此任意允许z都满足X⊆ServiceRegion(B)。对照未到参考终点排除其服务，还须确认同一任务实例未曾由该对照的其他合法匹配终点驻留服务，不能仅用本次到达下界排除过去服务。中心型、沿途型或额外真实停稳型服务均不是本稿主服务定义；如改用它们须重写该见证和公共任务合同，不在实例绑定或看到结果后择用。
 
 从B的单次事件到总Q另需完整计数前提：截至t*前B在D/两对照均未计数、对照截至t*仍不具服务资格，所有B之外服务事件的总计数在D不小于相应对照（可用相同实体轨迹/同队列/同Stop及同服务序列的受限见证充分保证）。此时Q_D(t*)≥Q_R(t*)+1及Q_D(t*)≥Q_E0(t*)+1。只证明B早一次而没有补集计数条件时，只能声称B的局部机制。上述充分条件并不声称实际D必然保持其他机器人的服务数；共同参考轨迹也只有在实际误差/任务与Stop条件相同后才能推出共同服务。
 
@@ -387,7 +387,7 @@ Score输出VERIFIED(Q,observedExposure,E,flags)或UNVERIFIABLE(reason)，以WORL
 
 另有NativeIdentity合同：固定源码与编译/依赖/原输入/时钟随机环境，比较冷旁路与直接原入口的用户可见输出及原状态副作用身份，不借新共享初始化改变原随机消费；实际并发/时钟环境无法固定时不得声称bitwise等价。TriggeredRefinement合同检查公开触发/已知前缀决定模式、动作仍只原MOVE、保护未触发时资源责任不断、切换/取消/退休全合法。两项当前未实现未运行，与共用物理adapter和原生域的边界必须同报。
 
-所有未来检查绑定被检程序/依赖/输入/科学规格版本、覆盖域及原始输出。即使某checker全绿，若漏W01–41、仅逐帧看图或把自写期望复述一遍，不构成验收。现在不创建测试、运行模拟器或读取受限载荷给这些合同补假回执。
+所有未来检查绑定被检程序/依赖/输入/科学规格版本、覆盖域及原始输出。即使某checker全绿，若漏W01–48、仅逐帧看图或把自写期望复述一遍，不构成验收。现在不创建测试、运行模拟器或读取受限载荷给这些合同补假回执。
 
 新增纸面合同同样NOT_IMPLEMENTED/NOT_RUN：W42，END/FINISHED后READY未消费，旧Kc再次提原u→v必须因pending/未END/原起点至少一项拒绝；W43，后继PRECHECK成功后旧READY重复不改c/parent/相关版本；W44，LOCAL_POLICY逐个纯WAIT消费而中心Kc滞后，不靠本地分支免费派SOURCE_REQUEST机会；W45，参考到达但实体不满足服务域，不能计真实B；W46，局部B领先而补集计数变差或固定E追平/反超，不能套总Q充分条件；W47，Srv_C持槽等待远端回复的错误安排应违反服务合同，正确异步消息流各自释放槽且所有传输/接收付费；W48，WORLD物理初态、算法INIT状态、HOST日志可得性分别按下述新初始化合同判定，禁止将软件INIT标签直接变成零分或丢行。
 
@@ -401,7 +401,7 @@ Score输出VERIFIED(Q,observedExposure,E,flags)或UNVERIFIABLE(reason)，以WORL
 
 六门含义维持：G1实际误差问题；G2已发表锚点与诚实路线比较；G3固定R0/适配/原样合同；G4已发表外部基线与适用域；G5公开来源和场景协议；G6物理/算法/资源/费用/评价公平闭环。最新有效根裁决是72R4的2 PASS/3 UNKNOWN/1 FAIL；本73草稿不自授资格。S1前向证据、S2终点/权限、S3真实服务、S4WORLD/软件INIT/总体、S5服务拓扑在本稿提出实质修订，均须新字节核对和顺序审查。S6源定义域、S7素材来源/合法source、S8主lifelong外部比较、S9规模/可证伪范围仍有明确待补证据；不能由章节齐全判闭。
 
-最终完成性审计逐项指向实际证据：交接文件与全部任务真实状态/身份；至少十二项相关一手来源及四份期刊全文的真实阅读、其他来源缺口和差异矩阵；原源码接口/许可/原法检查合同及外部公平域；P1–P6与所有资源/事件/模式/失败总函数；全roster与各比较/评分/区间的适用性；W01–41及所有未运行机械合同；本新字节完整固定后的科研导师skill→Nature reviewer skill→完全不使用任何skill且不读他路意见的独立逻辑→根逐条验收；每份必要skill意见后根另做不用skill的直接分析；私有GitHub精确同步和全历史冻结/只读/保护边界。阅读缺失、报告无效、间接一致或仍UNKNOWN均不能计完成。
+最终完成性审计逐项指向实际证据：交接文件与全部任务真实状态/身份；至少十二项相关一手来源及四份期刊全文的真实阅读、其他来源缺口和差异矩阵；原源码接口/许可/原法检查合同及外部公平域；P1–P6与所有资源/事件/模式/失败总函数；全roster与各比较/评分/区间的适用性；W01–48及所有未运行机械合同；本新字节完整固定后的科研导师skill→Nature reviewer skill→完全不使用任何skill且不读他路意见的独立逻辑→根逐条验收；每份必要skill意见后根另做不用skill的直接分析；私有GitHub精确同步和全历史冻结/只读/保护边界。阅读缺失、报告无效、间接一致或仍UNKNOWN均不能计完成。
 
 H、T_delay、B_CAL、B_max、B*、P_active、density N原义保留未赋值；只进行来源阅读与文档构造，未实现、构建、创建或运行测试、仿真、调参、生成seed/tape/实验载荷/结果或实车动作。旧35–38及受限载荷禁读、桌面只读；69–72及其报告不改不封存。本稿尚未固定或送审，所有来源/协议/资格及顺序审查闭合前保持HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT。实验前目标未完成，不以版本/篇幅或审查次数宣布完成。
 
