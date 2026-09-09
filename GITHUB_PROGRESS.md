@@ -8,7 +8,7 @@
 
 用户指定由子智能体置于桌面的PIE-D以外10篇阅读包已完成并根核验，旧备份保持只读。Claude后续只用Opus；73C5两次已确认网络失败且无建议，不计通过。旧失落任务不重复启动，历史表的运行时态以最新实际账本为准。
 
-当前六门仍是72R4的 **2 PASS / 3 UNKNOWN / 1 FAIL**。已改正文不意味着72旧票自动通过；73完整固定后仍需科研导师、Nature reviewer、明确无任何skill独立逻辑与根验收，每次skill意见后根另作不用skill分析。本轮未实施或运行。最新已核同步基点为`3f3d06ca5296fc331740d3632f684ed4351e6ac6`，本批15文件另按白名单同步，新运输须实际确认。
+当前六门仍是72R4的 **2 PASS / 3 UNKNOWN / 1 FAIL**。已改正文不意味着72旧票自动通过；73完整固定后仍需科研导师、Nature reviewer、明确无任何skill独立逻辑与根验收，每次skill意见后根另作不用skill分析。本轮未实施或运行。本批15文件已实际同步：[ca316c5](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/commit/ca316c51891b7f4e709b010279a1cec9c6c26845)，push与GitHub main API均确认；此段为后续行政回执。
 - [新Codex完整交接](HANDOFF_NEW_CODEX_PREEXPERIMENT_DESIGN_20260908_CANDIDATE73.md)
 - [73未送审全文](73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)
 

@@ -132,3 +132,5 @@ Claude73C5首会话59349实际exit=1/FailedToOpenSocket，完整回执 `7a99353b
 本批拟精确同步上述9个新件，加73正文、A1/A2、GITHUB_PROGRESS、.github/README和.gitignore，共15个文件；每项均在明确白名单内。此记录形成时本批尚未push，不预填运输成功。冻结52/52R1及69–72/报告保持，桌面原备份只读、已完成的用户指定10篇阅读包未重写；35–38与Q/受限载荷禁读。所有shell及链段rtk，修改仅apply_patch，未实现、构建、创建/运行测试、仿真、调参、生成实验载荷/结果或赋保护参数。六门仍 **2 PASS / 3 UNKNOWN / 1 FAIL；HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。
 
 提交前静态检查：暂存路径逐项等于15文件白名单。普通git diff --cached --check实际exit=2，仅报已完成E8回执第73行new blank line at EOF；根按完整回执保字节规则保留其既定SHA，不为格式清理回写已完成顾问报告。该唯一EOF空行是明确记录的运输例外，不是科学修改或测试失败；其余正文/本批文本没有另见格式报错。后续排除此单一EOF规则的静态检查另核，不将普通检查写成exit=0。
+
+本批运输实际完成：15文件提交`ca316c51891b7f4e709b010279a1cec9c6c26845`，父提交`3f3d06ca5296fc331740d3632f684ed4351e6ac6`；push会话61976实际exit=0，origin main从3f3d06c推进至ca316c5。后继GitHub main API实际返回同一完整SHA，本地HEAD一致且当时工作树干净；仓库元数据实核private=true。普通静态检查的E8既定EOF空行例外已如上保留，单次core.whitespace=-blank-at-eof检查实际exit=0，无其他格式异常。当前段为之后的行政运输记录，不改73或九件科学回执；按四个确切行政路径另同步，不预填该后续提交的hash。下一步按实质缺口推进：前缀总策略/信息精度与费用、明确可行收费执行机制、外部NominalDuration/公共角色与跨窗拼接、素材来源许可链；全稿固定后才进入已约定顺序审查。HOLD及六门不变，实验前研究未完成。
