@@ -2,11 +2,11 @@
 
 **HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**
 
-2026-09-09：73草稿已局部修订终点身份、唯一真实服务及源证据；新增前缀协议、最大授权反例/替代规则、R0生命周期和已发表lifelong对照的完整有界回执，根已独立分析。**73尚未固定、未正式送审、未接受**。72三路正式审查与根综合已完成，72仍NOT-ACCEPTED；最新有效六门仍为 **2 PASS / 3 UNKNOWN / 1 FAIL**。继续比较组合/改进路线，不将当前方案作为唯一答案；尚无实验结果。实际状态以GITHUB_PROGRESS及73A2为准。
+2026-09-09：73已整合共同付费END推送/READY缓存恢复、条件异步环见证、R0修复来源和H19/ECBS-FA外部工作选择；九件新构造/来源回执均实际完成，根已独立分析并补齐固定Benchmark归档根身份。**73尚未固定、未正式送审、未接受**。前缀总策略、精确计量后端、外部cut组合、素材许可与正式审查仍未闭。最新有效六门为 **2 PASS / 3 UNKNOWN / 1 FAIL**，没有实验结果。完整状态见GITHUB_PROGRESS及73A2。
 
 当前工作问题：有界真实空间跟踪偏差与反馈耗时下，如何凭付费可信进度证据安全释放已通过空间，减少大规模lifelong等待。方法候选为后缀退休、阻塞导向取证及持续资源覆盖/终点交接；同原MOVE的前缀cap还需完整组合。强固定裕量、相同底层控制及低成本E0对照保留，最终路线和效果尚未确认。
 
-完整73及本批证据已实际同步：[18文件提交b87676c](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/commit/b87676c5640d2d2f08ad7b96d7c79a52496f8e27)，push与远端main API一致；其后只追加行政运输回执。
+本次同步前的已核main为`3f3d06ca5296fc331740d3632f684ed4351e6ac6`，既有仓库仍private=true；本批15文件按精确白名单同步，实际运输记录以73A2后续回执为准。
 
 - [新终端完整交接](../HANDOFF_NEW_CODEX_PREEXPERIMENT_DESIGN_20260908_CANDIDATE73.md)
 - [73完整草稿（未送审）](../73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)

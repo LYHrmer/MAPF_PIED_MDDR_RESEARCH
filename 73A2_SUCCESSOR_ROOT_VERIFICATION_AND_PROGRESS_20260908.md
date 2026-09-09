@@ -88,3 +88,47 @@ Claude73C5首会话59349实际exit=1/FailedToOpenSocket，完整回执 `7a99353b
 根在L3完成后独立尝试恢复其两个精确失败对象：Benchmark-Archive固定commit `25ffd5b6a39b6fe30e5bc6cb5e22720a9531ea8a` 的README内容和非递归根tree，只请求元数据/说明，不读实验载荷。普通GitHub API两项均TLS handshake timeout；依规则升级后会话1278/35199也各exit=1同类超时，没有取得正文或树。仍不能补造README blob、许可或R0素材逐对象链。此失败不代表仓库无许可。
 
 本轮取得两个完整新构造回执并修订真实正文，但没有正式固定/审查、源适配与素材全闭、实验结果或放行。六门维持 **2 PASS / 3 UNKNOWN / 1 FAIL；HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。
+
+## 2026-09-09：付费终点组合、异步环证明与两条来源工作选择
+
+本次从已同步的main `3f3d06ca5296fc331740d3632f684ed4351e6ac6`接续，起初工作树无已跟踪修改。根重新核origin为既有仓库，GitHub API实际返回private=true、visibility=private、default_branch=main。前序普通API超时的升级调用已确认该旧main身份；本次目录元数据查询正常成功，不预记新push。用户“继续”仍授权研究设计，不能用报告完成替代目标完成。当前get_goal实际返回blocked，根本轮没有调用update_goal或重建目标，也没有据此停止用户已授权的实质工作；历史active文字只描述当时查询，不是本轮控制状态。研究目标明确仍未完成。
+
+下表均为实际落盘和完整回执，根全文读取后复核；P5/E7是根直接建设，其他是NO-SKILL有界协作。它们全部NONBALLOT，未启动73正式审查。三个既有代理均先确认上一任务完成再followup，最新P6/E8/L5/L6均已确认completed；没有活Claude或新的失落会话。旧C4重试等NOT_CONFIRMED记录不被覆盖，C5两次Opus失败仍无建议。
+
+| 实际新工件 | SHA256 | bytes / LF |
+|---|---|---|
+| [73P4](73P4_PAID_END_PUSH_PREFIX_ROLES_AND_FAIR_CAPABILITY_COMPOSITION_20260909.md) | `70ddcb01292a8e74773113403084f7b146ddcdb29ba237b4cac88222634cf1e1` | 33281 / 214 |
+| [73P5](73P5_ROOT_PAID_CERTIFICATE_TWO_STAGE_ASYNCHRONOUS_RING_WITNESS_20260909.md) | `dd897d4d87f833681daa804fcbd62cbc7051109d2b05879dc58faa74a1cf9a5e` | 15589 / 126 |
+| [73P6](73P6_TWO_STAGE_RING_WITNESS_CONSTRUCTIVE_ERROR_CHECK_20260909.md) | `9ce7b8640ef76b7800086d4a89d931ba24462561f1f767c74c7625caba53fc83` | 6814 / 57 |
+| [73E6](73E6_R0_REPAIRED_ADAPTER_MINIMAL_SOURCE_AND_LIFECYCLE_CONTRACT_20260909.md) | `6f5205a871e6d8b2d45897283fd270d8c044fd48abeeac3b52acceab4b4a1dc6` | 34244 / 190 |
+| [73E7](73E7_ROOT_HOST_BOOST_174_IDENTITY_AND_PAIRING_HEAP_CONTRACT_20260909.md) | `9c0e7effe9320ae5e91199b4162bd8d5f2a35369d28e045d4577056db5059a09` | 5656 / 50 |
+| [73E8](73E8_R0_CHECKPOINT_AND_FINITE_METERING_BACKEND_FEASIBILITY_20260909.md) | `3cc6bdece7a2687571c44442557b6643dc382fbc8cb232af8bc4f1c4ebfd3648` | 9616 / 73 |
+| [73L4](73L4_H19_EXTERNAL_PLANNER_ENVIRONMENT_AND_COMMIT_CUT_TOTAL_CONTRACT_20260909.md) | `ace2f5365a73ade6650a3a1b02637c226d2229b0821b786f2e37d90f6e9e52d8` | 27882 / 174 |
+| [73L5](73L5_H19_SERVICE_FAIRNESS_AND_FINITE_SEARCH_DOMAIN_COMPOSITION_20260909.md) | `832354368806762b1c7c33a85ad379156ef059b0a7d4d1f0f921ad4dd10041db` | 10274 / 70 |
+| [73L6](73L6_FIXED_BENCHMARK_ARCHIVE_METADATA_AND_LICENSE_RECOVERY_20260909.md) | `e296a125ebbac735571c313850627cef7f46d9131f563a5728c59ecd0c0e8b88` | 10429 / 88 |
+
+身份更正：P4输入表把L3哈希末尾誊写为错误值，实际L3仍是`e0c21289ea3047ff3aa72b1871dc4f39044074a7227268b2572d9a0c609f83f9`。P4作者已实际确认自己读的是正确原件，L5也复核此差异。根保留P4完整回执字节，在此更正，不把错误字符串用作匹配依据。
+
+根不用任何skill的独立分析和实际取舍：
+
+1. 接受P4的主共同PUSH_RECOVERY，已真实并入73 §5/6/9/11/13：不可变EndRecord与可变握手分开；付费历史CAPTURE与物理END点分开；推送/轮询合流同一正缓存；FINISHED、终点owner接续、索引维护和完整可重放READY同一持久提交；READY验证不推进c，一次LOCAL_POLICY消费才安装新gamma；两个固定公共retry与GC条件明确。根额外要求grant接纳前付费准备有限记录/描述符容量，消除物理END中任意分配的暗项，并改正§9曾仅列latch的字段冲突。主配置不购买周期END轮询，但保留事前单列的同能力轮询配置；不在运行中随收益切换。END首推只给后继Srv_E负载，不给额外服务容量或中心免费事实。
+2. 根逐段复核历史END首次安全性：中心仍GRANTED时，本地合法后继入口必须先经过该中心READY，因此历史真实END仍可支撑首次终点交接；中心已经FINISHED或换新tid时，旧包仅走缓存/关闭分支，不能删新holder。本地清pending不销毁被pin对象；消费证据和引用释放缺一不可回收中心收据。缓存及字段原子性是明确可信前提，不声称任意崩溃恢复或无条件活性。
+3. P5修订前为`187823da00cf20bf604686aed33b42b1aeb47cfd13f38a4b6581eadf2503b2c2`、14541/124，P6只评这个字节。根独立验证P6指出的统一晶格隐含前提确实缺失；改为用覆盖前沿点取得真实I_r进入端点的证明，仍保留ell>4rho+3h+epsilon_obs充分条件。根还明确早证书在运动中扩cap分支与晚证书HOLD分支、有效队首保持至真实服务行的量词。P5为根可修订建设稿，本次修正文稿并留完整旧身份；P6不改。已将条件异步环见证和E0首个全长授权归谬并入73 §15，未把它升为一般算法/固定E/总体效益结论。
+4. 最大cap的P3粗资源死锁见证仍成立；P5只给存在顺序，D/R可能都买齐证书。主前缀总选择、局部组与外部占用调度、有信息量证书来源/费用尚未选择闭合。整边基座仍为正文主控制版本，不能把终点推送接好误报为前缀主协议已经全部采用。
+5. 接受E6的唯一纸面工作选择R0-REPAIRED-LACAM-ADAPTER：同步隔离入口、首预算显式传值、第五堆严格value>、原PIE提议链及LACAM调用保留、检查点之外费用与首次资格不可回滚、退出确认后回收。根E7实际绑定本机Boost1.74头的条件语义，未配置/编译未来工件。空堆生命周期才可排除Compare，非空析构走pop可能进入merge，不能说析构总不比较。源头lns已有nullptr，不重复制造另一未初始化问题。
+6. E8拒绝fork/COW加普通墙钟抢占满足现有完整合同，根直接分析接受此限定否定：保留虚拟地址的私有内存分支不蕴含描述符/外部状态回滚，业务CAS不改变父子回收权；未在收费边界阻止的执行会越过单行容量，事后补费不能恢复同一不变量。QEMU全系统icount与公共行chrono映射不同，不能仅写工具名便算可用。正文已明确EXECUTION_BACKEND_UNKNOWN；继续需要一个有实际依据的执行前闸门/外部输入/分支/回收合同，或明确修订共同服务模型。此处不是靠运行一次源程序就能关闭。
+7. 接受L4/L5的外部工作选择H19-PR-COMMON-SYSTEM / ECBS-FA：作者固定纯ECBS组件、外部自己的原动作、共同任务分配、论文重构ADG与cut，准确标出不是2019整套原实现。根独立核L5的公平反例，取消仅外部等待TASK确认离站的额外屏障；visited是预测访问、真实Q仍由共同SERVICE_TRUE决定。ADG同层环分支只覆盖其执行域，不能宣称占满环的一般MAPF无解；J只压缩根冻结几何问题，不压缩有绝对层约束的每个无界孩子或真实服务等待。正文已纳入这些限制与cut工作规则，NominalDuration、公开PLAN_CHECK及全新旧图拼接仍未完全关闭，数值/库定义域也未通过。
+
+根新增一手来源读取（不是只转述L6）：
+
+- [固定纯Git commit元数据](https://api.github.com/repos/MAPF-Competition/Benchmark-Archive/git/commits/25ffd5b6a39b6fe30e5bc6cb5e22720a9531ea8a)完整实收，tree字段明确为`6030f1878e6abf48b833b5b7212953259fc81cb1`；没有使用带文件diff的commit接口，也未读parent正文。
+- [按真实tree SHA寻址的非递归元数据](https://api.github.com/repos/MAPF-Competition/Benchmark-Archive/git/trees/6030f1878e6abf48b833b5b7212953259fc81cb1)完整实收，顶层sha一致、四条、truncated=false；根按四条mode/name/对象id构造161字节Git tree内容再复算对象帧，SHA1一致。L6以commit寻址的响应顶层字段差异因此有了独立链，不改L6字节或指控损坏。
+- [固定README](https://github.com/MAPF-Competition/Benchmark-Archive/blob/25ffd5b6a39b6fe30e5bc6cb5e22720a9531ea8a/README.md)base64实收、根解码全文17行；1008字节，SHA256 `1cf7f15a1389560b1fc7e3aa69734c3be69915ea2a10ca7fef5a1d40f116ba61`、Git blob `77ddb82e6cba768e590d91976d158ec74dc8ee5f`独立复算与tree一致。只支持该固定归档自述及根入口，不支持具体素材许可/转换关系。
+
+根此次早先同一raw README正常请求会话29676与升级49493均exit=28/SSL连接超时，终态已取得；随后connector恢复正常完成，无挂起句柄。根树没有独立许可条目、README无授予条款，不意味着所有子树/上游没有许可；R0逐对象上游/合法转换/许可链继续UNKNOWN。本轮未打开任何子树载荷、任务、配置、地图、解或生成脚本，没有把实际取得README当素材门通过。
+
+73现为`1881a85c7a21e5e5fe55e602e246cc057b964df4114dc6c8ab4bbde42f200a54`，130281 bytes /466行。根已读取本次完整变更；新鲜CAPTURE规则另明确END预付描述符例外，避免与首推矛盾。W01–54仍仅NOT_IMPLEMENTED/NOT_RUN纸面检查条件，不是新测试。未固定/未送审/未接受；后续必须按科研导师skill→根不用skill分析→Nature reviewer skill→根不用skill分析→明确无任何skill独立逻辑→根验收顺序，不能以这些构造回执替正式环节。
+
+本批拟精确同步上述9个新件，加73正文、A1/A2、GITHUB_PROGRESS、.github/README和.gitignore，共15个文件；每项均在明确白名单内。此记录形成时本批尚未push，不预填运输成功。冻结52/52R1及69–72/报告保持，桌面原备份只读、已完成的用户指定10篇阅读包未重写；35–38与Q/受限载荷禁读。所有shell及链段rtk，修改仅apply_patch，未实现、构建、创建/运行测试、仿真、调参、生成实验载荷/结果或赋保护参数。六门仍 **2 PASS / 3 UNKNOWN / 1 FAIL；HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。
+
+提交前静态检查：暂存路径逐项等于15文件白名单。普通git diff --cached --check实际exit=2，仅报已完成E8回执第73行new blank line at EOF；根按完整回执保字节规则保留其既定SHA，不为格式清理回写已完成顾问报告。该唯一EOF空行是明确记录的运输例外，不是科学修改或测试失败；其余正文/本批文本没有另见格式报错。后续排除此单一EOF规则的静态检查另核，不将普通检查写成exit=0。
