@@ -179,3 +179,5 @@ Claude C6真实状态：新有界服务模型选择提示，不是旧失落几�
 本批拟精确同步表中73及八个新件，加A1/A2/GITHUB_PROGRESS/.github/README/.gitignore，合计14文件。提交前只做文本、身份和Git白名单检查；已完成顾问回执不因格式更改。既有69–72与冻结52/52R1、35–38禁读及受限载荷边界保持；桌面10篇阅读包不重写，旧备份只读。正式流程仍为全稿固定后科研导师skill→根不使用skill独立分析→Nature reviewer skill→根不使用skill独立分析→明确无任何skill/不读他路意见的独立逻辑→根验收。六门仍2 PASS /3 UNKNOWN /1 FAIL，HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT。来源继续域、前缀总策略、服务模型、外部cut组合与资格/审查未闭，研究未完成；本节落盘不预填后继运输成功。
 
 提交前静态检查：暂存路径实际逐项等于上述14文件白名单。普通git diff --cached --check实际exit=2，仅报告73C6第二次完整失败回执第12行与已完成73E9第70行的new blank line at EOF。根保留两份完整回执字节和已登记hash，不为格式改变它们；这是两个确切运输格式例外，不是研究测试或通过票。其他已跟踪差异普通git diff --check此前exit=0；后继单次忽略blank-at-eof的静态检查另取真实终态。
+
+本批真实运输完成：14文件科学提交7ae8ba64693db30773be1ff3ce49409fc8319dfd，父e3db9056abcf46528df0f2800e8146ea578382b5；push真实会话27591最终exit=0，远端main从e3db905推进至7ae8ba6。随后gh api refs/heads/main返回同一完整SHA，本地已跟踪工作树当时干净；此前gh repo API已实核private=true。单次core.whitespace=-blank-at-eof静态检查实际exit=0，没有其他格式错误，不改变两份回执字节。这里随后只追加四行政文件的运输记录，不改73/八件新科学与失败回执，也不预填之后行政提交的hash。目标active，E13完整待回、P7/L7仍无实际全文，研究未完成。

@@ -6,7 +6,7 @@
 
 当前工作问题：有界真实空间跟踪偏差与反馈耗时下，如何凭付费可信进度证据安全释放已通过空间，减少大规模lifelong等待。方法候选为后缀退休、阻塞导向取证及持续资源覆盖/终点交接；同原MOVE的前缀cap还需完整组合。强固定裕量、相同底层控制及低成本E0对照保留，最终路线和效果尚未确认。
 
-此前科学提交ca316c5及行政提交e3db9056abcf46528df0f2800e8146ea578382b5已核；本轮同步前远端main仍为e3db905且private=true。当前14文件精确白名单批次待实际push终态，不预填成功。P7/L7原句柄pending_init、文件缺，不重复启动；C6两次Opus请求均超时无建议；E13服务/推断构造完整待回。
+本轮14文件科学提交[7ae8ba6](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/commit/7ae8ba64693db30773be1ff3ce49409fc8319dfd)已实际push，GitHub main API同完整SHA；既有仓库已核private=true。此段为随后行政运输记录。P7/L7原句柄pending_init、文件缺，不重复启动；C6两次Opus请求均超时无建议；E13服务/推断构造完整待回。
 
 - [新终端完整交接](../HANDOFF_NEW_CODEX_PREEXPERIMENT_DESIGN_20260908_CANDIDATE73.md)
 - [73完整草稿（未送审）](../73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)

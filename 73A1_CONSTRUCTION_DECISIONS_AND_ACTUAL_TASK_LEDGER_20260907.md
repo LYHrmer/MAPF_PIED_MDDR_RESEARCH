@@ -4,7 +4,7 @@
 
 ## 2026-09-09 接续根最新记录
 
-2026-09-09最新覆盖记录见[73A2](73A2_SUCCESSOR_ROOT_VERIFICATION_AND_PROGRESS_20260908.md)。73当前SHA256为529a67132eabf915401df097c0a78be91e2c1e47ce9f9205518acdef5ec7420c，137460 bytes /480 LF；已在原PUSH_RECOVERY/环见证等之上，采用ALWAYS_ADVANCE / FAIL_STOP_SOURCE，明确保留正常调用历史、拒收不更新外部Π、去除逐job回滚、失败停止会话及同能力全成本，补PRE_COMMIT_SHAPE。E9/E12完整实际回执已根全文读；E10/E11/L8根构造及来源证据已落盘。NP-PLANNER仍备选，服务后端/源继续域未闭；前缀P7/外部L7原句柄仍pending_init且约定文件缺，未重派，E13新有界构造已有中途消息但完整待回。Claude C6两次Opus请求均实际exit124、0token/无建议，完整失败JSON分别保存，不计完成。根补核random地图在R0/赛事归档同blob，Paris同名异blob及Moving AI许可入口，G5未通过。原已核HEAD/远端e3db9056abcf46528df0f2800e8146ea578382b5且private=true；当前14文件按精确白名单另同步，不预填push。下方旧hash/任务时态为历史，桌面10篇阅读包已交付不重写。目标实际active，研究未完成；73未固定/未送审/未接受，六门2 PASS /3 UNKNOWN /1 FAIL与HOLD不变。
+2026-09-09最新覆盖记录见[73A2](73A2_SUCCESSOR_ROOT_VERIFICATION_AND_PROGRESS_20260908.md)。73当前SHA256为529a67132eabf915401df097c0a78be91e2c1e47ce9f9205518acdef5ec7420c，137460 bytes /480 LF；已在原PUSH_RECOVERY/环见证等之上，采用ALWAYS_ADVANCE / FAIL_STOP_SOURCE，明确保留正常调用历史、拒收不更新外部Π、去除逐job回滚、失败停止会话及同能力全成本，补PRE_COMMIT_SHAPE。E9/E12完整实际回执已根全文读；E10/E11/L8根构造及来源证据已落盘。NP-PLANNER仍备选，服务后端/源继续域未闭；前缀P7/外部L7原句柄仍pending_init且约定文件缺，未重派，E13新有界构造已有中途消息但完整待回。Claude C6两次Opus请求均实际exit124、0token/无建议，完整失败JSON分别保存，不计完成。根补核random地图在R0/赛事归档同blob，Paris同名异blob及Moving AI许可入口，G5未通过。14文件科学提交7ae8ba64693db30773be1ff3ce49409fc8319dfd已实际push，GitHub main API一致；仓库private=true。本段随后追加运输回执。下方旧hash/任务时态为历史，桌面10篇阅读包已交付不重写。目标实际active，研究未完成；73未固定/未送审/未接受，六门2 PASS /3 UNKNOWN /1 FAIL与HOLD不变。
 
 ## 2026-09-08 接续前实际更新（以下旧“运行中”按各任务最新终态读取）
 

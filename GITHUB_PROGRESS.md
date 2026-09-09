@@ -8,7 +8,7 @@
 
 用户指定桌面的PIE-D以外10篇阅读包已完成并根核验，旧备份只读。Claude只请求Opus；C6首次95654及升级37657均实际exit124、0token/空modelUsage，无建议，完整失败回执已保存。P7/L7原代理仍pending_init且约定文件不存在，不重启或另派同任务；E13服务/推断新构造已有实际中途消息，完整待回。历史表时态以最新实际账本为准。
 
-当前六门仍是72R4的 **2 PASS / 3 UNKNOWN / 1 FAIL**。73完整固定后仍依次经过科研导师skill、Nature reviewer skill、明确无任何skill独立逻辑与根验收，每次skill意见后根另作不用skill分析。最新已核旧HEAD/远端main为e3db9056abcf46528df0f2800e8146ea578382b5且private=true；本轮14文件白名单同步尚待实际终态，不预填成功。本轮未实现、构建、研究测试、仿真或生成载荷/结果。
+当前六门仍是72R4的 **2 PASS / 3 UNKNOWN / 1 FAIL**。73完整固定后仍依次经过科研导师skill、Nature reviewer skill、明确无任何skill独立逻辑与根验收，每次skill意见后根另作不用skill分析。本轮14文件科学提交[7ae8ba6](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/commit/7ae8ba64693db30773be1ff3ce49409fc8319dfd)已实际push，GitHub main API同完整SHA；仓库已核private=true。此段为随后追加行政运输回执。本轮未实现、构建、研究测试、仿真或生成载荷/结果。
 - [新Codex完整交接](HANDOFF_NEW_CODEX_PREEXPERIMENT_DESIGN_20260908_CANDIDATE73.md)
 - [73未送审全文](73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)
 
