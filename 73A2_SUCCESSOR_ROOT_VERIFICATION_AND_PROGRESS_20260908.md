@@ -134,3 +134,48 @@ Claude73C5首会话59349实际exit=1/FailedToOpenSocket，完整回执 `7a99353b
 提交前静态检查：暂存路径逐项等于15文件白名单。普通git diff --cached --check实际exit=2，仅报已完成E8回执第73行new blank line at EOF；根按完整回执保字节规则保留其既定SHA，不为格式清理回写已完成顾问报告。该唯一EOF空行是明确记录的运输例外，不是科学修改或测试失败；其余正文/本批文本没有另见格式报错。后续排除此单一EOF规则的静态检查另核，不将普通检查写成exit=0。
 
 本批运输实际完成：15文件提交`ca316c51891b7f4e709b010279a1cec9c6c26845`，父提交`3f3d06ca5296fc331740d3632f684ed4351e6ac6`；push会话61976实际exit=0，origin main从3f3d06c推进至ca316c5。后继GitHub main API实际返回同一完整SHA，本地HEAD一致且当时工作树干净；仓库元数据实核private=true。普通静态检查的E8既定EOF空行例外已如上保留，单次core.whitespace=-blank-at-eof检查实际exit=0，无其他格式异常。当前段为之后的行政运输记录，不改73或九件科学回执；按四个确切行政路径另同步，不预填该后续提交的hash。下一步按实质缺口推进：前缀总策略/信息精度与费用、明确可行收费执行机制、外部NominalDuration/公共角色与跨窗拼接、素材来源许可链；全稿固定后才进入已约定顺序审查。HOLD及六门不变，实验前研究未完成。
+
+## 2026-09-09：源历史简化、调用前守卫、上游对象关系及实际无建议终态
+
+本轮实际get_goal返回active，目标仍为完成大规模实验前全部准备，未更改或完成目标。起点本地HEAD为e3db9056abcf46528df0f2800e8146ea578382b5；上轮科学提交ca316c5之后的四文件行政运输已在该HEAD内。此次本地remote仍是https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH.git。连接器get_repo曾返回404，不据此宣布仓库不存在；git ls-remote沙箱内连接失败后，正常权限升级真实会话94027完整exit=0返回同一远端main=e3db9056abcf46528df0f2800e8146ea578382b5。随后gh api实际成功核private=true/visibility=private/default_branch=main。这些是写本节前的核验，不预填后续新push成功。
+
+新增E9/E12均收到原代理真实完整最终回执，根全文读完并独立分析；E10/E11/L8为根直接构造/来源核验。当前73已从1881...的130281 bytes/466 LF实质更新为下表新身份；中间仅加来源/形状段的9bcb2b29e30d7332c4a622b9b114d995106c0a8a4b4b4f7babc6a18357682b88、133377/472未固定或送审，后续统一采用AA才形成当前字节。全批仍NO-SKILL / NONBALLOT，不替正式任何一步。
+
+| 工件 | 实核SHA256 | bytes / LF |
+|---|---|---|
+| [73](73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md) | 529a67132eabf915401df097c0a78be91e2c1e47ce9f9205518acdef5ec7420c | 137460 /480 |
+| [73E9](73E9_INSTRUCTION_GATE_BACKEND_PRIMARY_INTERFACE_FEASIBILITY_20260909.md) | ae3788d0f1b23fe9296e7a74910c8869a29b4fc191e78cbe68b5f1cc7b243236 | 10152 /70 |
+| [73E10](73E10_ROOT_NONPREEMPTIVE_PLANNER_SERVICE_AND_SUBREAPER_ALTERNATIVE_20260909.md) | 1e2a6c7ff03ae879656e1032f8d2bdff8b472226edfc9e25d48e5fd86ab48fa9 | 12336 /80 |
+| [73E11](73E11_ROOT_R0_PRECOMMIT_SHAPE_AND_SOURCE_HISTORY_ALTERNATIVE_20260909.md) | 9e3aa1ba8c3a6570b403f38780a5b17b9e8649058641fa5e816d07de121a02fd | 10985 /61 |
+| [73L8](73L8_ROOT_ARCHIVE_MAP_OBJECT_LINKS_AND_MOVINGAI_LICENSE_EVIDENCE_20260909.md) | 909444c424001978ba4d7029f076962d1b1c67d3ab9b4a7e66f430760d0064fd | 11708 /68 |
+| [73C6](73C6_CLAUDE_PLANNER_SERVICE_MODEL_CHOICE_CONSTRUCTION_PROMPT_20260909.md) | 4747b76e9f23bc40e45ca676e1ad8d37728e1c0931bd993c97f479232c2477b2 | 5499 /31 |
+| [73C6](73C6_CLAUDE_FIRST_TIMEOUT_NO_ADVICE_RECEIPT_20260909.md) | 12a06212636812d8aa2b24f480c814538d2dabfc7a4f522acbbc21d7a2225126 | 1926 /9 |
+| [73C6](73C6_CLAUDE_SECOND_TIMEOUT_NO_ADVICE_RECEIPT_20260909.md) | a72035f279aa9cba1dba81fe45882c57effcf60dad4633cdba4d2f8d3b2a90ba | 2161 /12 |
+| [73E12](73E12_ALWAYS_ADVANCE_SOURCE_HISTORY_FAIRNESS_AND_FAILURE_CONSTRUCTION_20260909.md) | e4e6285012c53b3676a62bdab51b54798a8db225f3e95694f5a6a86b964ecc88 | 24294 /137 |
+
+根不用任何skill的逐项判断及真实改动：
+
+1. E9取得Unicorn 2.1.4计数hook、停止及CPU/MEMORY context具体接口证据，不能再泛称计量API完全不存在。根接受其边界判断：hook顺序不能单独证明整个x86目标的执行前副作用边界，context也不覆盖完整Linux入口、fd/外部状态和宿主回调成本；MEMORY不能跨engine使用。该报告没有解析标签commit，三个对象有实际raw hash，不能写成未来构建依赖已绑定。它仍不能直接给G3/G6通过票。
+2. E10为明确不同的NP-PLANNER服务备选：FIFO单工人非抢占，elapsed决定结果最早可见，冻结输入不许读未来。根实际官方Linux手册读取支持单调经过钟/CPU钟区分及subreaper的限定回收功能。它改变原PROCESS_SLICE和时钟、终止尾部及宿主噪声推断，不能与原服务模型混报；本轮未采用NP。subreaper不能代替完整快照或收费证明。
+3. 根E11按固定R0取得MAPFPlanner.cpp/LNS.cpp/PathTable.cpp三对象并独立hash；前者全文，后两者相关完整函数，边界与具体链接见E11。plan void及未传播后继修复bool不保证commit形状；planner_commit先清容器、commitPath短分支可能在后验验证前读空back。因此具体PRE_COMMIT_SHAPE已写入73，位于原commit第一动作之前，检查源已有路径/容器/整数域/锚点，失败不人工补WAIT或新MOVE，工作全收费。源insertPath对空路径有明示早返回，根实际核到后从E11草稿中去掉该疑点，不增虚假修补。局部静态可能形状不等于已观察运行崩溃。
+4. E12给完整ALWAYS_ADVANCE / FAIL_STOP_SOURCE合同，根独立接受作为当前唯一来源历史工作选择。安全权限在已接纳Π/资源/控制层，源私有历史无写权限；非预知要求合法过去输入，而不逻辑要求“仅接纳才保留源状态”。故每次完整合格调用包结束都可保留状态/RNG，外部CAS拒收只不追加Π。此变化实质删除逐job快照/恢复/父子提升负担，未发生费用不虚收；不声称与原native或accepted-only逐次同提议。
+5. 根额外检查并补写结果处置的自阻塞问题：中心终态走既有规划通道到本job事前有限控制槽，作为仍占槽原job在后继Srv_P PROCESS_SLICE中的付费阶段消费、释放；不能另排在其自身后面。下一job必须等处置及释放，不能利用私有结果早跑；中心不持自己的writer槽等待。D/R/E0均明确同能力、同AA及失败守卫；外部不同来源不被强行配虚构的R0状态。
+6. AA不能消掉源码继续域：需证明所有合法正常历史（包括上次未接纳输出）与下一冻结输入的源闭包，不将clearAll称全重置，也不造万能运行检查器。输入安装前NO_INPUT可继续；安装后部分失败、形状不合格、内生非法输出或未知继续域停止来源会话，无自动冷重启/重新播种。硬WORKER_FAIL终止会话，软目标版本拒收可付费正常完成；未知源行为仍INFERENCE_UNAVAILABLE，不洗成合法零分。真实旧物理和任务评分不清空。
+7. 根接受E12的反例限制：不同正常拒收次数可改变C随机/缓存和后继提议，D−R包含这条闭环中介，不是固定路径上的纯查询效应。正文§8/9/11/12、W28/W30与新增W55–58已统一更新；只是未运行检查合同，没有生成测试。源历史制度交互若要识别需D/R跨两制度，不只补一个R；当前不把无合格后端的回滚交叉当新必做主检验，也不免费删快照费用造公平。
+8. 根L8沿归档已知2023 Example Instances分支取得四类maps元数据，并重核R0四maps；14次端点/13独立tree，全部truncated=false且Git tree帧复算一致。random地图两入口同Git blob/size；Paris同名但不同blob/size；示例game/warehouse条目不同。不得从这个归档根的存在推四类R0全同源或猜city转换。
+9. 根实际读Moving AI两个官方说明页、MAPF目录和ODC-By v1.0全文；四个R0地图名有官网条目、许可入口明示存在，但网站名称与Git对象/转换仍未连接，许可数据库/独立内容范围及集合说明不能抹去。R0具体素材/任务/delay/配置合法来源继续UNKNOWN。没有打开任何地图/场景/配置/任务/delay/图片/结果载荷、生成脚本或赛事README中可能混有结果的全文；L8不改L6既定回执。
+
+Claude C6真实状态：新有界服务模型选择提示，不是旧失落几何任务重派。首次exec95654在曾见PID205416存活后，同句柄最终exit124、0token、空modelUsage、aborted_streaming；完整JSON已落73C6首次回执。确认终态后同一提示与完全相同Opus命令正常升级，第二exec37657两次无正文后同句柄最终exit124，完整JSON另存。两次都没有科学建议，不能从空modelUsage声称实际完成Opus推理；无审批拒绝、没有第三次同任务重试。C4旧RETRY_NOT_CONFIRMED不因此改成完成或获重复许可。
+
+现有任务的精确观察：
+
+| 任务 | 实际状态与根处理 |
+|---|---|
+| P7，/root/construct73_prefix_protocol；约定73P7_FINITE_SHARED_THRESHOLD_GROUP_PREFIX_POLICY_CONSTRUCTION_20260909.md | 多次list仍pending_init，精确stat报告不存在；状态消息无完整答复。根一次interrupt返回previous_status=pending_init，随后list仍pending_init，故没有取得停止完成或科学完成证据，不重启/另派相同任务 |
+| L7，/root/source73_external_comparator；约定73L7_H19_NOMINAL_DURATION_PLAN_OPPORTUNITY_AND_CUT_SPLICE_TOTAL_CONTRACT_20260909.md | 同样pending_init且约定文件不存在；一次interrupt后状态仍未变，不用“已启动”冒充实际推导中，也不另开重复任务 |
+| E12，/root/source73_r0_remaining_contract | 完整最终消息、文件和hash三者一致，根全文已读 |
+| E13，同一已完成E12代理的新有界任务；约定73E13_NONPREEMPTIVE_SERVICE_CAUSAL_STOP_AND_RUNTIME_INFERENCE_CONSTRUCTION_20260909.md | 已有实际中途文字，构造NP终止与宿主噪声下可行推断，完整回执未取得；不把中途方案计通过 |
+
+本批拟精确同步表中73及八个新件，加A1/A2/GITHUB_PROGRESS/.github/README/.gitignore，合计14文件。提交前只做文本、身份和Git白名单检查；已完成顾问回执不因格式更改。既有69–72与冻结52/52R1、35–38禁读及受限载荷边界保持；桌面10篇阅读包不重写，旧备份只读。正式流程仍为全稿固定后科研导师skill→根不使用skill独立分析→Nature reviewer skill→根不使用skill独立分析→明确无任何skill/不读他路意见的独立逻辑→根验收。六门仍2 PASS /3 UNKNOWN /1 FAIL，HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT。来源继续域、前缀总策略、服务模型、外部cut组合与资格/审查未闭，研究未完成；本节落盘不预填后继运输成功。
+
+提交前静态检查：暂存路径实际逐项等于上述14文件白名单。普通git diff --cached --check实际exit=2，仅报告73C6第二次完整失败回执第12行与已完成73E9第70行的new blank line at EOF。根保留两份完整回执字节和已登记hash，不为格式改变它们；这是两个确切运输格式例外，不是研究测试或通过票。其他已跟踪差异普通git diff --check此前exit=0；后继单次忽略blank-at-eof的静态检查另取真实终态。

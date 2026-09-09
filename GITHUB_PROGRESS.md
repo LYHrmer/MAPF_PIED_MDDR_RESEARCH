@@ -2,13 +2,13 @@
 
 更新：2026-09-09。**HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。
 
-73当前为130281 bytes /466行，SHA256 `1881a85c7a21e5e5fe55e602e246cc057b964df4114dc6c8ab4bbde42f200a54`，**DRAFT / NOT-FIXED / NOT-REVIEWED / NOT-ACCEPTED**。根已将共同付费END推送/READY缓存恢复、条件两阶段异步环见证、R0修复来源和H19/ECBS-FA外部系统工作选择写入正文。P4–P6、E6–E8、L4–L6九件均实际完成并全文根核，根直接分析与精确身份见[73A2](73A2_SUCCESSOR_ROOT_VERIFICATION_AND_PROGRESS_20260908.md)。这些建设性回执全是NONBALLOT，不授资格。
+73当前为137460 bytes /480 LF，SHA256 `529a67132eabf915401df097c0a78be91e2c1e47ce9f9205518acdef5ec7420c`，**DRAFT / NOT-FIXED / NOT-REVIEWED / NOT-ACCEPTED**。本轮采用共同ALWAYS_ADVANCE / FAIL_STOP_SOURCE：正常规划调用保留内部状态，外部计划仍凭中心验证接纳；去除逐job快照/拒收回滚，明确失败停止会话和全成本，补提交切分前形状守卫。E9/E12完整回执已根核读，E10/E11/L8为根构造与一手来源证据，详见[73A2](73A2_SUCCESSOR_ROOT_VERIFICATION_AND_PROGRESS_20260908.md)。全部建设性NONBALLOT，不授资格。
 
-已补齐Benchmark-Archive固定commit→tree→README身份，未读载荷，具体R0上游/转换/许可链仍未核。主要未闭项是前缀总选择与信息精度、逐步收费执行后端、外部cut名义时长/公共角色/跨窗组合、源合法域与强新颖性及顺序正式审查。普通fork/COW加墙钟抢占不能按现有证据满足逐步收费合同，已明确记入正文。没有实验或效果结论。
+来源已从归档根进一步核到random地图与R0同Git对象；Paris同名但不同对象。Moving AI官方地图目录及ODC-By入口已亲核，具体R0素材/转换/任务/delay许可链仍未闭，未读载荷。主要剩余项是前缀总策略、源拒收历史后的继续域、计算服务/时钟/公平推断、外部cut组合、强新颖性及正式审查。AA只消去回滚需求，NP-PLANNER仍是明确不同的未采用服务备选；没有实验或效果结论。
 
-用户指定由子智能体置于桌面的PIE-D以外10篇阅读包已完成并根核验，旧备份保持只读。Claude后续只用Opus；73C5两次已确认网络失败且无建议，不计通过。旧失落任务不重复启动，历史表的运行时态以最新实际账本为准。
+用户指定桌面的PIE-D以外10篇阅读包已完成并根核验，旧备份只读。Claude只请求Opus；C6首次95654及升级37657均实际exit124、0token/空modelUsage，无建议，完整失败回执已保存。P7/L7原代理仍pending_init且约定文件不存在，不重启或另派同任务；E13服务/推断新构造已有实际中途消息，完整待回。历史表时态以最新实际账本为准。
 
-当前六门仍是72R4的 **2 PASS / 3 UNKNOWN / 1 FAIL**。已改正文不意味着72旧票自动通过；73完整固定后仍需科研导师、Nature reviewer、明确无任何skill独立逻辑与根验收，每次skill意见后根另作不用skill分析。本轮未实施或运行。本批15文件已实际同步：[ca316c5](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/commit/ca316c51891b7f4e709b010279a1cec9c6c26845)，push与GitHub main API均确认；此段为后续行政回执。
+当前六门仍是72R4的 **2 PASS / 3 UNKNOWN / 1 FAIL**。73完整固定后仍依次经过科研导师skill、Nature reviewer skill、明确无任何skill独立逻辑与根验收，每次skill意见后根另作不用skill分析。最新已核旧HEAD/远端main为e3db9056abcf46528df0f2800e8146ea578382b5且private=true；本轮14文件白名单同步尚待实际终态，不预填成功。本轮未实现、构建、研究测试、仿真或生成载荷/结果。
 - [新Codex完整交接](HANDOFF_NEW_CODEX_PREEXPERIMENT_DESIGN_20260908_CANDIDATE73.md)
 - [73未送审全文](73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)
 

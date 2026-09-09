@@ -2,11 +2,11 @@
 
 **HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**
 
-2026-09-09：73已整合共同付费END推送/READY缓存恢复、条件异步环见证、R0修复来源和H19/ECBS-FA外部工作选择；九件新构造/来源回执均实际完成，根已独立分析并补齐固定Benchmark归档根身份。**73尚未固定、未正式送审、未接受**。前缀总策略、精确计量后端、外部cut组合、素材许可与正式审查仍未闭。最新有效六门为 **2 PASS / 3 UNKNOWN / 1 FAIL**，没有实验结果。完整状态见GITHUB_PROGRESS及73A2。
+2026-09-09：73本轮采用共同ALWAYS_ADVANCE / FAIL_STOP_SOURCE源历史制度，去除逐job回滚并保留外部计划验证、源失败停止及全成本；补提交切分前守卫。E9/E12实际完整回执及根E10/E11/L8已归档，根核random地图对象关系与Moving AI许可入口。**73尚未固定、未正式送审、未接受**。前缀总策略、源继续域、服务/推断、外部cut、完整素材链与正式审查仍未闭，NP-PLANNER只是备选。最新有效六门为 **2 PASS / 3 UNKNOWN / 1 FAIL**，没有实验结果。完整状态见GITHUB_PROGRESS及73A2。
 
 当前工作问题：有界真实空间跟踪偏差与反馈耗时下，如何凭付费可信进度证据安全释放已通过空间，减少大规模lifelong等待。方法候选为后缀退休、阻塞导向取证及持续资源覆盖/终点交接；同原MOVE的前缀cap还需完整组合。强固定裕量、相同底层控制及低成本E0对照保留，最终路线和效果尚未确认。
 
-本批15文件已实际推送至既有私有仓库：[科学提交ca316c5](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/commit/ca316c51891b7f4e709b010279a1cec9c6c26845)，GitHub main API与本地HEAD一致。当前段为随后追加的行政运输记录，73正文及九件新科学回执字节不变。
+此前科学提交ca316c5及行政提交e3db9056abcf46528df0f2800e8146ea578382b5已核；本轮同步前远端main仍为e3db905且private=true。当前14文件精确白名单批次待实际push终态，不预填成功。P7/L7原句柄pending_init、文件缺，不重复启动；C6两次Opus请求均超时无建议；E13服务/推断构造完整待回。
 
 - [新终端完整交接](../HANDOFF_NEW_CODEX_PREEXPERIMENT_DESIGN_20260908_CANDIDATE73.md)
 - [73完整草稿（未送审）](../73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)
