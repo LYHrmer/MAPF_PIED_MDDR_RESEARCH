@@ -1,12 +1,12 @@
 # MAPF 科研进度
 
-**HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**
+更新：2026-09-09。**HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。
 
-2026-09-09：73本轮采用共同ALWAYS_ADVANCE / FAIL_STOP_SOURCE源历史制度，去除逐job回滚并保留外部计划验证、源失败停止及全成本；补提交切分前守卫。E9/E12实际完整回执及根E10/E11/L8已归档，根核random地图对象关系与Moving AI许可入口。**73尚未固定、未正式送审、未接受**。前缀总策略、源继续域、服务/推断、外部cut、完整素材链与正式审查仍未闭，NP-PLANNER只是备选。最新有效六门为 **2 PASS / 3 UNKNOWN / 1 FAIL**，没有实验结果。完整状态见GITHUB_PROGRESS及73A2。
+73现为141042 bytes /490 LF，SHA256 `7197daafe3af9f1a3757ae9f230ee406dae346184064a97d51f7566d98b5a881`，未固定、未送审、未接受。P8有限阈值组选择及P9独立反例修复已核：补到cap后实际采样、有限后继服务、中心FINISHED、公共组角色及围栏成本。主仍整边/纯D/AA，前缀未完成全稿采用。E13完整取得，根E14因服务/故障/统计目标实质变化暂不采用NP-LIVE。
 
-当前工作问题：有界真实空间跟踪偏差与反馈耗时下，如何凭付费可信进度证据安全释放已通过空间，减少大规模lifelong等待。方法候选为后缀退休、阻塞导向取证及持续资源覆盖/终点交接；同原MOVE的前缀cap还需完整组合。强固定裕量、相同底层控制及低成本E0对照保留，最终路线和效果尚未确认。
+Claude C7升级调用实际exit0，模型字段确认claude-opus-5，完整建议已归档；根C7R纠正机会/选择公平、费用和E0比较等问题，给未采用的付费交替查询构造。A3登记建设性分工；P7/L7仍pending_init且缺约定文件，未重派。E15具体后端接口核验完整待回。六门仍 **2 PASS /3 UNKNOWN /1 FAIL**；没有实验或效果结论，源/服务/外部cut/来源及正式顺序审查尚未闭。
 
-本轮14文件科学提交[7ae8ba6](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/commit/7ae8ba64693db30773be1ff3ce49409fc8319dfd)已实际push，GitHub main API同完整SHA；既有仓库已核private=true。此段为随后行政运输记录。P7/L7原句柄pending_init、文件缺，不重复启动；C6两次Opus请求均超时无建议；E13服务/推断构造完整待回。
+用户授权目标内自主推进及必要时更新既有桌面必读包；当前10篇包已交付，本轮没有新增必读要求。起点main实际核为0be8f3450a1625ce05a3dfc2d61076a0ff40ccdf、仓库private=true；本批15文件尚未push，真实运输结果另追加。详见73A2与73A3，旧表时态以最新实际账本为准。
 
 - [新终端完整交接](../HANDOFF_NEW_CODEX_PREEXPERIMENT_DESIGN_20260908_CANDIDATE73.md)
 - [73完整草稿（未送审）](../73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)

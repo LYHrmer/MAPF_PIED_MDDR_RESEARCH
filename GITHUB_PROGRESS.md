@@ -2,13 +2,11 @@
 
 更新：2026-09-09。**HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。
 
-73当前为137460 bytes /480 LF，SHA256 `529a67132eabf915401df097c0a78be91e2c1e47ce9f9205518acdef5ec7420c`，**DRAFT / NOT-FIXED / NOT-REVIEWED / NOT-ACCEPTED**。本轮采用共同ALWAYS_ADVANCE / FAIL_STOP_SOURCE：正常规划调用保留内部状态，外部计划仍凭中心验证接纳；去除逐job快照/拒收回滚，明确失败停止会话和全成本，补提交切分前形状守卫。E9/E12完整回执已根核读，E10/E11/L8为根构造与一手来源证据，详见[73A2](73A2_SUCCESSOR_ROOT_VERIFICATION_AND_PROGRESS_20260908.md)。全部建设性NONBALLOT，不授资格。
+73现为141042 bytes /490 LF，SHA256 `7197daafe3af9f1a3757ae9f230ee406dae346184064a97d51f7566d98b5a881`，未固定、未送审、未接受。P8有限阈值组选择及P9独立反例修复已核：补到cap后实际采样、有限后继服务、中心FINISHED、公共组角色及围栏成本。主仍整边/纯D/AA，前缀未完成全稿采用。E13完整取得，根E14因服务/故障/统计目标实质变化暂不采用NP-LIVE。
 
-来源已从归档根进一步核到random地图与R0同Git对象；Paris同名但不同对象。Moving AI官方地图目录及ODC-By入口已亲核，具体R0素材/转换/任务/delay许可链仍未闭，未读载荷。主要剩余项是前缀总策略、源拒收历史后的继续域、计算服务/时钟/公平推断、外部cut组合、强新颖性及正式审查。AA只消去回滚需求，NP-PLANNER仍是明确不同的未采用服务备选；没有实验或效果结论。
+Claude C7升级调用实际exit0，模型字段确认claude-opus-5，完整建议已归档；根C7R纠正机会/选择公平、费用和E0比较等问题，给未采用的付费交替查询构造。A3登记建设性分工；P7/L7仍pending_init且缺约定文件，未重派。E15具体后端接口核验完整待回。六门仍 **2 PASS /3 UNKNOWN /1 FAIL**；没有实验或效果结论，源/服务/外部cut/来源及正式顺序审查尚未闭。
 
-用户指定桌面的PIE-D以外10篇阅读包已完成并根核验，旧备份只读。Claude只请求Opus；C6首次95654及升级37657均实际exit124、0token/空modelUsage，无建议，完整失败回执已保存。P7/L7原代理仍pending_init且约定文件不存在，不重启或另派同任务；E13服务/推断新构造已有实际中途消息，完整待回。历史表时态以最新实际账本为准。
-
-当前六门仍是72R4的 **2 PASS / 3 UNKNOWN / 1 FAIL**。73完整固定后仍依次经过科研导师skill、Nature reviewer skill、明确无任何skill独立逻辑与根验收，每次skill意见后根另作不用skill分析。本轮14文件科学提交[7ae8ba6](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/commit/7ae8ba64693db30773be1ff3ce49409fc8319dfd)已实际push，GitHub main API同完整SHA；仓库已核private=true。此段为随后追加行政运输回执。本轮未实现、构建、研究测试、仿真或生成载荷/结果。
+用户授权目标内自主推进及必要时更新既有桌面必读包；当前10篇包已交付，本轮没有新增必读要求。起点main实际核为0be8f3450a1625ce05a3dfc2d61076a0ff40ccdf、仓库private=true；本批15文件尚未push，真实运输结果另追加。详见73A2与73A3，旧表时态以最新实际账本为准。
 - [新Codex完整交接](HANDOFF_NEW_CODEX_PREEXPERIMENT_DESIGN_20260908_CANDIDATE73.md)
 - [73未送审全文](73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)
 

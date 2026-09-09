@@ -167,6 +167,8 @@ PROJECT(K_task,Kc,Π,L)仅复制每agent已合法分配且未被可信确认完�
 
 ## 9. 原时钟、随机输入与有限收费事件
 
+E13已给NP-LIVE实时非抢占及条件随机分配的完整备选，根E14不用skill复算后本轮不采用：它同时改变TASK_SERVICE实际时刻、故障释放/生效/退出和随机条件目标，不能只当作PROCESS_SLICE的计时实现。BOOTTIME/timerfd文档不提供连续物理认证或精确指令停止；原严格付费服务的执行接缝仍需证据。本稿保留下述公共物理事件时钟及原固定配对推断，AA来源历史选择独立保持，未恢复逐job回滚。
+
 一手源码新增实核：LNS/InitLNS为Time=high_resolution_clock、fsec=duration<float>；LaCAM2 Deadline为steady_clock，毫秒duration_cast后严格elapsed>limit；SIPP超时为经过秒数>=timeout。InitLNS存在增加time_limit、continue绕过runtime更新、初始逐agent传完整预算及后处理；不能统一改写成全流程硬CPU截止。明示MAPFPlanner→LNS(use_sipp=true)→BasicLNS Agent选择SIPP，避免该对象进入SpaceTimeAStar空超时入口，其他配置不自动豁免。mcp.cpp的clock()/CLOCKS_PER_SEC是CPU起止日志，不是上述经过钟停止条件。
 
 37个固定规划源/头对象已完成完整关键词检索并核对象身份（304149 bytes/8713行），人工语义阅读限命中/必要窗口；根另亲见MCP L14–72及SingleAgentSolver.h L35–100。rand()还在比较器/路径表；默认random_shuffle、LaCAM局部mt19937和分布后端必须登记。LaCAM每次runLACAM2重建其源码指定MT初态，不能偷改成共享主流。随机比较器不等于固定严格弱序，不能承诺跨编译器/容器调用顺序相同；native定义域/运行合同必须保留此风险，不静默修比较器再称原字节。限定集合没有额外直接OS取时/熵/sleep调用的关键词证据，不排除未搜索顶层入口/动态库；既有源清单仍非完整运行覆盖。
@@ -477,4 +479,12 @@ H、T_delay、B_CAL、B_max、B*、P_active、density N原义保留未赋值；�
 
 有限候选的一个充分条件是ell>4rho+3h+epsilon_obs。记A=r_geo+epsilon_obs、B=ell−r_geo，取A+h<s<B；完整覆盖中的某个瓦片包含有向边前沿点u+(s+rho)e。其沿e投影下端m给真实进入阈值a=m−e·u−rho∈[s−h,s]⊂(A,B)，横向亦相交，故a为非截断I_r左端点并属于CAND。不需假定瓦片共同晶格或等差阈值。相同原MOVE/资源/控制下，E0直到原END都保留q_release=0及起点Mask；假设首次有b=ell授权，则此前不可能已有原END，而该授权必含后继agent尚持有的非空起点Mask，违反外国owner互斥。因此它在此制度下不能完成第一个原MOVE，虽可部分前进并享有相同cap/RUN/END推送能力。此归谬不涉及采用联合占用、其他途中证据或更换原路径的方法。
 
-该见证条件包括闭合局部组、无额外占用/障碍、信息充分的可信服务及必要作业/传输/控制最终完成；只含真值而永远返回[0,ell]不能建立屏障。所得完成时刻依实际执行而定，没有任意预定E内完成保证；原任务须仍为适用TASK_SERVICE行上的有效未服务队首，且在Stop前保持合法终点、整个X包含服务域，才能推真实服务。它没有核实际PIE输出、没有证明最大cap会找到顺序、没有D胜R或总体净收益，也不能免费重复lifelong多轮。P3的两条平行原边粗矩形资源反例仍说明贪心可能锁死原本可行次序；阶段组选择、与其他agent冲突的总调度、证书精度来源及成本尚须定案。这些几何量只服务纸面条件证明，不给任何保护参数或实验profile赋值。
+该见证条件包括闭合局部组、无额外占用/障碍、信息充分的可信服务及必要作业/传输/控制最终完成；只含真值而永远返回[0,ell]不能建立屏障。所得完成时刻依实际执行而定，没有任意预定E内完成保证；原任务须仍为适用TASK_SERVICE行上的有效未服务队首，且在Stop前保持合法终点、整个X包含服务域，才能推真实服务。它没有核实际PIE输出、没有证明任意最大cap会找到顺序、没有D胜R或总体净收益，也不能免费重复lifelong多轮。P3的两条平行原边粗矩形资源反例仍说明贪心可能锁死原本可行次序。下述P8给出有限组选择模块，尚不替代完整全稿组合；这些几何量只服务纸面条件证明，不给任何保护参数或实验profile赋值。
+
+根P8新增有限共享阈值族并取得P9完整独立查错：令Theta为各CAND_i中x/ell_i的并集，对每个alpha取c_i=max{ x∈CAND_i:x≤alpha ell_i }，剔除非严格内点，验证A_i=Mask(U_i(0,c_i))两两不交和B_i=Mask(U_i(max(0,c_i−epsilon_i),ell_i))两两不交。P5等长环中取d_i=min CAND_i∩(A,B)、d_max=max d_i，alpha=d_max/ell属于Theta且d_i≤c_i≤d_max，故有限族确实找到该充分见证；不保证非对称一般完备或源必输出这些MOVE。准入只检查当前请求依赖循环组，完整F_G内无外国owner/其他围栏后，付费原子设组准入围栏与各初始cap。围栏是有排他能力/占用时间和失败成本的调度保留，所有新增占有路径须检查；不是清空证据。GROUP_ADMIT为独立公开角色、既有Srv_C FIFO；P2的modulo 3维护文法中未授分支仅整边准入，组角色才授初始部分cap，取消任意贪心初始前缀。各臂同能力，无额外免费服务。
+
+早扩展仍可在全部阶段证据到齐前按实际资源安全授予，不设只对E0生效的屏障。新资源Mask(U_i(q,x))减旧持有只落在Mask(U_i(b_i,x))⊆B_i。对扩展需求j，外国冲突r不在其已持S_j，故r∈D_j\\S_j⊆B_j；已清holder只持B_i，最终endpoint也在B_i，二者与B_j不交。因此当前相关阻塞必由尚未清除的Active非endpoint资源贡献正分。组提交同时把原P请求转为唯一CAP_EXTEND，首次加入行固定、每occurrence去重，q_release/b更新和中心获得的关闭事实才更新/删除；任何未通过围栏的外部请求排除score。该参考函数相较§7当前整边P有实质变化，尚须在采用时统一全稿。
+
+P9的有限日历反例要求严格保留：所有采样可以在到cap前完成而之后只剩维护机会；早采样晚到并不提供到cap后证据。P8已据根独立复算修订为实际退休制度下、初始到cap之后仍有相关QUERY/实际CAPTURE/交付/q_release提交，或完整END至中心FINISHED链的条件归纳；已清集合单调，每成员至多一次有效清除，不等于一次采样。物理END本身不替中心FINISHED，模式OFF/后继容量耗尽/永久丢包不能套进展证明。组成员下一原MOVE在全组中心交接并付费退栏前被挡住，合法endpoint接续不受误拦；长期围栏失败和外部等待全记费用。主73仍未切换成前缀版，精度来源、完整控制/角色/外部cut与协议合并尚未闭。
+
+Claude C7本次实际claude-opus-5完整返回了定向/轮询交替构造；根C7R纠正释放机会与已付费选择的混淆、恒定费用和必然优劣等过强说法，另给PAID-ALT-D：一般QUERY不变，仅在付费SELECT决定提交时交替定向与按固定robot身份的轮询，游标不因tid替换或采样失败回滚。在持续Active区间和足够合格选择提交下有至多2|ID|个决定内被选的条件界，不是有限O自动供给或有效证书保证。它是未采用的策略候选，主§7纯D不变，原D/R及必要D/E0固定全窗真实Q与全费用比较不缩为查询频率。
