@@ -6,7 +6,7 @@
 
 Claude C7升级调用实际exit0，模型字段确认claude-opus-5，完整建议已归档；根C7R纠正机会/选择公平、费用和E0比较等问题，给未采用的付费交替查询构造。A3登记建设性分工；P7/L7仍pending_init且缺约定文件，未重派。E15具体后端接口核验完整待回。六门仍 **2 PASS /3 UNKNOWN /1 FAIL**；没有实验或效果结论，源/服务/外部cut/来源及正式顺序审查尚未闭。
 
-用户授权目标内自主推进及必要时更新既有桌面必读包；当前10篇包已交付，本轮没有新增必读要求。起点main实际核为0be8f3450a1625ce05a3dfc2d61076a0ff40ccdf、仓库private=true；本批15文件尚未push，真实运输结果另追加。详见73A2与73A3，旧表时态以最新实际账本为准。
+用户授权目标内自主推进及必要时更新既有桌面必读包；当前10篇包已交付，本轮没有新增必读要求。起点main实际核为0be8f3450a1625ce05a3dfc2d61076a0ff40ccdf、仓库private=true；本批15文件已实际push为[aa482c1](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/commit/aa482c1b9d345372434cf87139a8ae111c57441f)、GitHub main API一致，普通暂存静态检查exit0；本段为随后行政运输回执。详见73A2与73A3，旧表时态以最新实际账本为准。
 - [新Codex完整交接](HANDOFF_NEW_CODEX_PREEXPERIMENT_DESIGN_20260908_CANDIDATE73.md)
 - [73未送审全文](73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)
 
