@@ -2,11 +2,11 @@
 
 更新：2026-09-10。**HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。
 
-73已补入图对象直接构造、输出借用寿命及标量封存的纸面修订；当前196691 bytes /625 LF，SHA256 `dd7abfa7086ac284277d037d1b851ae7cd199dbfc8481b547546f141e4a2e288`，W01–89未实现/未运行。P15/P17完整报告经根P16独立复算，名义参考成为优先评估但尚未采用的备选；原eta/APPROACH仍为主稿当前工作模型。
+73已补入图对象直接构造、输出借用寿命，以及部分构造异常中的唯一顶点归属合同；当前197955 bytes /629 LF，SHA256 `74f051d48924c9ce1373851f7264c07d083e071179e937bcb64984d55402bc65`，W01–90未实现/未运行。P15/P17完整报告经根P16独立复算，名义参考仍是优先评估但尚未采用的备选；原eta/APPROACH仍为主稿当前工作模型。
 
 新备选能在明确的代数输入子域简化参考事件判序，同时必须承认控制接纳已知时查询可能无信息增益。收费最终接纳、真实空间服务/Stop、完整来源及外部公平资格继续未闭；没有性能结果。本轮无新Claude调用，旧C14拒绝及C16/C17超时均不计意见；完整独立报告不冒充Opus。P18有限空间驱动与服务行包含判定正在有界建设，完整待回；P7/L7缺报不重派。桌面12篇与两指南保持。
 
-六门仍 **2 PASS /3 UNKNOWN /1 FAIL；HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。73未固定、未送审、未接受；设计闭合后再评估会议/期刊。前14文件`e2be41084805484af374bf71addbfc1da41f476a`已实际push并经main API独立确认，本新10文件按精确白名单另同步。
+六门仍 **2 PASS /3 UNKNOWN /1 FAIL；HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。73未固定、未送审、未接受；设计闭合后再评估会议/期刊。前10文件`7f062bd8eecd3b474cfc1eac9a4c85e9ac262428`已实际push并经main API独立确认，本新7文件按精确白名单另同步。
 
 - [新Codex完整交接](HANDOFF_NEW_CODEX_PREEXPERIMENT_DESIGN_20260908_CANDIDATE73.md)
 - [73未送审全文](73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)
