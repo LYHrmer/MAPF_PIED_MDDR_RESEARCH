@@ -2,11 +2,11 @@
 
 更新：2026-09-10。**HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。
 
-73已将GROUP_PREFIX整合为主工作平台，同原MOVE的控制、几何、组准入/退栏、扩展需求、模式和S/F_cap对照均已更新；WHOLE_EDGE保留参照。当前155562 bytes /531 LF，SHA256 `0beccea730aced26203406f8ffa69f5ffa93247f80cec64f00ec9de265065965`，仍未固定、未送审、未接受。纯D、ALWAYS_ADVANCE / FAIL_STOP_SOURCE、PROCESS_SLICE和原独立配对主量保持，C7R/NP-SEALED/L9两项新增策略未采用。实际根推导见73P11，不据作者整合认定协议组合通过。
+73主GROUP_PREFIX已补跨MOVE控制代际、命令认证与ACTUATOR实际作用点、退栏所需历史END证据、DRAIN/E0恢复和WHOLE_EDGE安装规则。当前159064 bytes /533 LF，SHA256 `d613bc26c54ac9a3eac0cb5483120752f710eef8acb08e7418c240ddf1a9cf52`，仍未固定、未送审、未接受。根P12独立否定Opus C9的非法碰撞前缀并采用P10中的实际接口修订；W01–70均仅纸面。纯D、ALWAYS_ADVANCE / FAIL_STOP_SOURCE、PROCESS_SLICE及原独立配对主量保持。
 
-L9完整返回并根全文核验；SCALE已追加桌面阅读包，11篇及指南/来源清单均由根重新核哈希，原10篇字节不变。C8L两次实际exit124、零usage、无分析，完整失败原文已归档，没有第三次。根L10独立复算单holder计分及围栏收缩，只保留有条件备选，未据集合改良预言净吞吐。P7/L7仍pending_init、报告缺且未重派；唯一可运行代理接续P10组合检查及Opus C9有界接口题，截至本段无完整回执。
+P10和Opus C9、C10均有实际完整终态，根分别逐项分析。L11外部名义时长/公共机会/cut和C10R追加记录重传已成文，尚未整入73；H19协调入队粒度需先核原法与机会公平。用户要求的L12论文架构精读已接续，目标四篇非PIE-D正式论文及PIE-D锚点；C11真实exec19355仍待终态，不能把中途消息当完成。桌面仍11篇，新增必读待根核选；P7/L7仍pending_init、报告缺且不重派。
 
-六门仍 **2 PASS /3 UNKNOWN /1 FAIL**。主要缺口是全协议组合、可信证书精度、实际收费服务/源持续域、已发表H19完整适配、素材及近邻全文来源、最终固定后的顺序审查。没有实现/实验/效果结论，不能据此保证中稿；设计闭合后再评估会议/期刊。起点本地HEAD与GitHub refs/heads/main均实核b8b444c4a21f3cfc898213da3f3346650d5b04a4，仓库再次实核private=true/main。本批13文件已实际push为[431b956](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/commit/431b95608d399c0c31265bdf0e7ebf3ed6105cf2)，远端main API与本地同值，默认暂存静态检查exit0。首次TLS失败后正常升级重试成功；此处仅随后运输记录。
+六门仍 **2 PASS /3 UNKNOWN /1 FAIL**。剩余重点是可信精度、收费服务/源持续域、外部完整适配、素材和近邻全文、最终固定后的顺序审查。没有实现/实验/效果结论，设计闭合后再评估会议/期刊。起点本地HEAD为c9eb47a0f8c4bc02f8748466af1396a221f01ef7，上一轮已实际与私有远端同值；本轮API及正常升级重试TLS超时，未声称新核验成功。随后只读git ls-remote实际exit0，refs/heads/main与本地c9eb47a0f8c4bc02f8748466af1396a221f01ef7相符；API私有属性重核仍未成功。本批尚未push，真实同步结果后记。
 
 - [新终端完整交接](../HANDOFF_NEW_CODEX_PREEXPERIMENT_DESIGN_20260908_CANDIDATE73.md)
 - [73完整草稿（未送审）](../73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)

@@ -272,3 +272,38 @@ L9及C8L根已完整读并逐个hash。C8L首次exec31686、唯一正常升级ex
 本轮get_goal真实active，目标仍完整实验前准备；用户询问进度只作中途回答，不替代或取消目标。本批精确13文件：表中8件及73A1/73A2/GITHUB_PROGRESS/.github/README/.gitignore。仅apply_patch文档及静态身份/Git检查；一次只读哈希命令括号笔误exit1后修正取得实际输出，不记为研究测试。无实现、伪代码、构建、研究测试、仿真、调参、受限载荷读取、保护参数赋值或实验结果。冻结原件保字节，73仍DRAFT / NOT-FIXED / NOT-REVIEWED / NOT-ACCEPTED；六门与HOLD不变。最终固定后的正式顺序及根每次无skill分析仍未开始。本段形成时尚未push，不预填同步成功。
 
 本批13文件实际科学提交431b95608d399c0c31265bdf0e7ebf3ed6105cf2，父b8b444c4a21f3cfc898213da3f3346650d5b04a4；暂存路径逐项等于精确白名单，13文件/400插入/81删除，默认git diff --cached --check实际exit0、无格式例外。首次push exec62504实际exit128/TLS中断；取得终态后正常权限升级重试，真实exec27262最终exit0，GitHub refs/heads/main API与本地HEAD同完整SHA，已跟踪工作树当时干净，73仍0bec...身份。此处仅随后四行政文件运输记录，完成科学/顾问回执不改字节，不预填后继行政提交SHA。P10/C9仍待真实完整回执，目标active，资格与HOLD不变。
+
+## 2026-09-10：控制代际实质修订、两份Opus完整意见与LMAPF架构精读接续
+
+起点本地HEAD实际c9eb47a0f8c4bc02f8748466af1396a221f01ef7；上一轮科学431b956和随后四行政c9eb47a均有真实push及远端核验。当前API仓库身份和main两个只读调用各实际exit1/TLS握手超时，正常require_escalated重试exec95189/73688亦实际exit1同因。本段不把历史private/main快照说成当前网络核验成功；本批后续同步以真实终态另记。
+
+| 工件 | 本轮实核SHA256 | bytes / LF |
+|---|---|---|
+| [73](73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md) | d613bc26c54ac9a3eac0cb5483120752f710eef8acb08e7418c240ddf1a9cf52 | 159064 /533 |
+| [73L11](73L11_ROOT_H19_NOMINAL_DURATION_PUBLIC_OPPORTUNITY_AND_CUT_SPLICE_CONSTRUCTION_20260910.md) | c845f894147dc2e3cdcf6def1df06fb8478298e82d4d670f9799296f00535046 | 18880 /89 |
+| [73C10](73C10_CLAUDE_EXTERNAL_APPEND_DELIVERY_AND_REPLAY_CONSTRUCTION_PROMPT_20260910.md) | 775be96cc23053eefe250871495237e0b02b70247d93373c93ab82556bcebf67 | 5553 /24 |
+| [73C10](73C10_CLAUDE_EXTERNAL_APPEND_DELIVERY_AND_REPLAY_COMPLETE_RECEIPT_20260910.md) | 485d95120a9b2472ae5f4bf178e01ce7c053495bbfdff14f438f687eba9d039a | 15954 /72 |
+| [73C10R](73C10R_ROOT_APPEND_DELIVERY_RECOVERY_AND_PAID_RETRANSMISSION_ANALYSIS_20260910.md) | 80e4bee047db7aa3ef21a83216e5f4d00f754e1fc073c995cca9dbdb94c5f374 | 10050 /55 |
+| [73P10](73P10_INTEGRATED_PREFIX_PROTOCOL_COST_AND_MODE_COMPOSITION_ANALYSIS_20260910.md) | 0f86e240da1ea980f1a2f14870f1bec53ac3e26ffd41f222876244f58ad2d6a2 | 17656 /88 |
+| [73C9](73C9_GROUP_RETIRE_CONTROL_MODE_CONSTRUCTIVE_PROMPT_20260910.md) | b7b373f5da3ba79f31c9e036075999d547f5c11342944b04c554768220667032 | 7934 /43 |
+| [73C9](73C9_GROUP_RETIRE_CONTROL_MODE_RAW_RESPONSE_20260910.json) | 7b441056ca980931b1ccaa27afab1ad5e4b34284dec7e2be33e411e7e093c764 | 8214 /1 |
+| [73C9](73C9_GROUP_RETIRE_CONTROL_MODE_COMPLETE_RECEIPT_20260910.md) | 072de18cdc760f93e64da3f695efbfb108a000045528332b888a67f054d962f9 | 11096 /99 |
+| [73P12](73P12_ROOT_CONTROL_EPOCH_ACTUATOR_COMMIT_AND_GROUP_RETIRE_ANALYSIS_20260910.md) | 566fee834ae69292ab174d316df528a3cc3df715bd5505f7ea9229e36a0633f3 | 9077 /55 |
+
+根已完整读P10/C9，实际补73控制作用域及writer接缝。P12不用skill独立复算：C9第5步把FINISHED与本地中点未闭并置，第7步又把(s,C]覆盖资源称FREE，均不合法；中心后来签closed不能改写旧在途命令，五项所谓修复不采用。真实需补的是持久per-agent控制epoch、每次首次GRANT严格后继代际、MODE只作用当前GRANTED、Srv_E只认证入列、ACTUATOR唯一处理水位/作用点及受限缺grant拒绝。公共空出现仍推进modulo 3；DRAIN禁止旧UNGRANTED首次正cap；E0 QUERY_ON可恢复ACTIVE但不买POSITION；WHOLE_EDGE本地C须实际安装。G-GEOM失败增量/成本及退栏历史END证明引用亦明确，W01–70仍仅纸面NOT_IMPLEMENTED/NOT_RUN。
+
+P10/C9均是新整合字节的前一身份0bec...建设意见，不能当d613...正式票。C9真实functions cell109→exec29561→chunk455020/exit0，CLI7fa8583c-34b7-4062-a7d6-bb61f0808613，claude-opus-5/firstParty、duration175504ms、完整原JSON/正文保持，不重试。P10实际17656/88与提交身份相符，已全读且根逐项分析，不是仅收到摘要。
+
+根L11先补H19名义时长精确函数、共同PLAN_CHECK/COORDINATE角色映射、不可改追加记录、历史经过量、前驱闭合cut、严格新旧层与两条外部E0/R-S系统臂；当时不改正被P10读取的73。C10新题只查APPEND投送/重放，不重做失落L7的cut；真实functions cell195→exec83561→chunkfc94fa/exit0，CLIc9ca550b-8f7c-4f40-ac1a-ea949dec12ec，claude-opus-5/firstParty、duration147798ms、END-C10完整、无失败或重试。根C10R完整逐项独立纠正：FINISHED不能当消费证据，但可给历史安装下界；选择封存当时尾长的APPEND轮询及cap/APPEND实际发送交替，拒无来源新窗口预算；仍保留延迟cap和真实Q下降的负例。L11/C10R尚未整入73，不能计G4 PASS。
+
+根本轮再直接读H19作者版p.4–5，原IV-B只给合法入队的依赖条件，允许队列中多个动作，未规定L11的“一公共协调机会一动作”限制。因此外部整合前应修正此人为粒度及完整自然费用，不凭同容量四字判断公平。没有再次读取四个源头对象或实现ADG。
+
+用户新增LMAPF顶刊顶会论文架构精读：原Copernicus在P10/C9完整交付后实际接续唯一73L12_LMAPF_LEADING_VENUE_PAPER_ARCHITECTURE_AND_METHOD_LESSONS_20260910.md，要求四篇非PIE-D正式主文加项目锚点、阅读范围/版本、贡献/强基线/消融/规模/费用/失败矩阵及可直接改稿的结构。中途消息称已读RHCR、Traffic Flow、Hönig、PIE原文及PIE-D，最终L12尚待收；新C11提示1b56806dc4bb76be7b865dd6add8a64a94ed635351d068df8f1e851252e2fb89、functions cell138→exec19355仍运行，未据请求参数宣称已得Opus终态。桌面仍既有11篇，本轮未改；新增必读建议须完整回执、根核选后再执行授权更新。P7/L7仍pending_init、原精确报告未回，不重启。
+
+近邻来源状态有一项根实际更新：[Korea University一手条目](https://pure.korea.ac.kr/en/publications/a-scalable-framework-for-lifelong-multiagent-path-finding-with-as/)现列Kim等TII2026论文正式发表于2026-08-01，22(8):6859–6870，DOI10.1109/TII.2026.3681327；已读元数据/摘要，不是取得全文。KIST直接打开失败、作者Ting Huang主页仅给Zhuang2025书目而未取得该文PDF；不把检索摘要当全文方法证据，不联系作者或下载受限来源。
+
+当前仅apply_patch文档和静态文本/身份/Git检查；两次文档补丁因上下文/区块顺序在应用前失败，修正后实际成功，无研究测试。冻结文件和完成回执保字节，保护参数原义未赋值，35–38及受限载荷禁读，旧桌面备份只读。无实现、伪代码、构建、仿真、调参、实验载荷或结果；73未固定/未送审/未接受，六门及HOLD保持。最终固定后科研导师skill→根无skill分析→Nature reviewer skill→根无skill分析→无任何skill独立逻辑→根验收尚未开始。目标真实active，本轮有科学正文进展，准备未完成。
+
+本批拟精确15文件：上表10件及73A1/73A2/GITHUB_PROGRESS/.github/README/.gitignore；L12/C11仍进行中不列白名单、不预填完整。当前暂存/提交/push结果将在实际发生后追加。
+
+后续只读git ls-remote真实chunk93ffe9、exit0，refs/heads/main=c9eb47a0f8c4bc02f8748466af1396a221f01ef7，与本地HEAD相符；这是本轮实际远端ref核验成功，先前API私有属性重核失败仍如实保留。73实际全文与根预期逐字一致，未暂存默认静态diff检查exit0。
