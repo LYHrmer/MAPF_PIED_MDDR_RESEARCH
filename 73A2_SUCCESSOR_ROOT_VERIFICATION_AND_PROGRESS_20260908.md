@@ -307,3 +307,5 @@ P10/C9均是新整合字节的前一身份0bec...建设意见，不能当d613...
 本批拟精确15文件：上表10件及73A1/73A2/GITHUB_PROGRESS/.github/README/.gitignore；L12/C11仍进行中不列白名单、不预填完整。当前暂存/提交/push结果将在实际发生后追加。
 
 后续只读git ls-remote真实chunk93ffe9、exit0，refs/heads/main=c9eb47a0f8c4bc02f8748466af1396a221f01ef7，与本地HEAD相符；这是本轮实际远端ref核验成功，先前API私有属性重核失败仍如实保留。73实际全文与根预期逐字一致，未暂存默认静态diff检查exit0。
+
+本批15文件已实际科学提交dd608503e0b72d70dedfc4f1e31c292e080a0bf3，父c9eb47a0f8c4bc02f8748466af1396a221f01ef7；暂存路径与精确白名单逐项相等，15文件/593插入/20删除，默认git diff --cached --check真实exit0、无格式例外。push真实exec23155→chunk026d8d/exit0；随后git ls-remote真实exit0、main与本地HEAD同完整SHA；GitHub repo API随后也真实成功，private=true/visibility=private/default_branch=main。此前API失败保留为历史，不再代表最新核验状态。已跟踪工作树当时干净；此处仅随后四行政文件记录，不改科学正文和完成回执、不预填后继行政提交。C11代理已报exec19355/exit0、完整END-C11，四件正式交付仍待根全文核验，尚不计本批证据。

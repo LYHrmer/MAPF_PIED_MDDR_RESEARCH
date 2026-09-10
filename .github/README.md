@@ -4,9 +4,9 @@
 
 73主GROUP_PREFIX已补跨MOVE控制代际、命令认证与ACTUATOR实际作用点、退栏所需历史END证据、DRAIN/E0恢复和WHOLE_EDGE安装规则。当前159064 bytes /533 LF，SHA256 `d613bc26c54ac9a3eac0cb5483120752f710eef8acb08e7418c240ddf1a9cf52`，仍未固定、未送审、未接受。根P12独立否定Opus C9的非法碰撞前缀并采用P10中的实际接口修订；W01–70均仅纸面。纯D、ALWAYS_ADVANCE / FAIL_STOP_SOURCE、PROCESS_SLICE及原独立配对主量保持。
 
-P10和Opus C9、C10均有实际完整终态，根分别逐项分析。L11外部名义时长/公共机会/cut和C10R追加记录重传已成文，尚未整入73；H19协调入队粒度需先核原法与机会公平。用户要求的L12论文架构精读已接续，目标四篇非PIE-D正式论文及PIE-D锚点；C11真实exec19355仍待终态，不能把中途消息当完成。桌面仍11篇，新增必读待根核选；P7/L7仍pending_init、报告缺且不重派。
+P10和Opus C9、C10均有实际完整终态，根分别逐项分析。L11外部名义时长/公共机会/cut和C10R追加记录重传已成文，尚未整入73；H19协调入队粒度需先核原法与机会公平。用户要求的L12论文架构精读已接续，目标四篇非PIE-D正式论文及PIE-D锚点；C11代理已报exec19355/exit0，完整工件待根核验，不能把中途消息当完成。桌面仍11篇，新增必读待根核选；P7/L7仍pending_init、报告缺且不重派。
 
-六门仍 **2 PASS /3 UNKNOWN /1 FAIL**。剩余重点是可信精度、收费服务/源持续域、外部完整适配、素材和近邻全文、最终固定后的顺序审查。没有实现/实验/效果结论，设计闭合后再评估会议/期刊。起点本地HEAD为c9eb47a0f8c4bc02f8748466af1396a221f01ef7，上一轮已实际与私有远端同值；本轮API及正常升级重试TLS超时，未声称新核验成功。随后只读git ls-remote实际exit0，refs/heads/main与本地c9eb47a0f8c4bc02f8748466af1396a221f01ef7相符；API私有属性重核仍未成功。本批尚未push，真实同步结果后记。
+六门仍 **2 PASS /3 UNKNOWN /1 FAIL**。剩余重点是可信精度、收费服务/源持续域、外部完整适配、素材和近邻全文、最终固定后的顺序审查。没有实现/实验/效果结论，设计闭合后再评估会议/期刊。本批精确15文件已实际push为[dd60850](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/commit/dd608503e0b72d70dedfc4f1e31c292e080a0bf3)，远端main与本地HEAD相符，随后API实核private=true/main；默认暂存静态检查exit0。此前API超时已保留历史，此处仅后续运输记录。
 
 - [新终端完整交接](../HANDOFF_NEW_CODEX_PREEXPERIMENT_DESIGN_20260908_CANDIDATE73.md)
 - [73完整草稿（未送审）](../73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)
