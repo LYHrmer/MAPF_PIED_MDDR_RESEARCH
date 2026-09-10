@@ -215,3 +215,31 @@ Claude C6真实状态：新有界服务模型选择提示，不是旧失落几�
 本批精确白名单为表中10文件，加A1/A2/GITHUB_PROGRESS/.github/README/.gitignore共15文件。表中完成回执不为格式改字节；正文未固定，六门仍2 PASS /3 UNKNOWN /1 FAIL，HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT。未实现/构建/研究测试/仿真/调参或生成载荷/结果，未给保护参数赋值。正式顺序在全稿固定后执行，阶段工件/同步/新回执均不代表研究完成。本段形成时本批尚未push，不预填未来运输成功。
 
 本批15文件实际科学提交aa482c1b9d345372434cf87139a8ae111c57441f，父0be8f3450a1625ce05a3dfc2d61076a0ff40ccdf；暂存路径逐项等于精确白名单，普通git diff --cached --check实际exit0、无格式例外。push真实会话72659最终exit0，GitHub main API与本地HEAD同完整SHA。此处随后仅追加四行政文件运输回执，不改科学/顾问回执，不预填后续行政提交身份。E15完整待回，目标active，HOLD与六门不变。
+
+## 2026-09-10：服务后端明确接缝、Opus封存服务构造与文献更新任务
+
+起点本地HEAD实际dd2037b5813c3ba7611fd9eef18053521bf9d851，已跟踪状态clean；本轮gh repo API再次实际返回private=true/visibility=private/default_branch=main。该起点是aa482c1科学批之后行政同步；本批下述文件尚未push时不预填成功。
+
+| 工件 | 实核SHA256 | bytes / LF |
+|---|---|---|
+| [73](73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md) | 2f772fb65e9a9198fe30cae33647f7503c6c4eaf03831ca5eb0605ef0abb6844 | 141812 /492 |
+| [73E15](73E15_QEMU_ICOUNT_FULL_SYSTEM_SOURCE_SERVICE_INTERFACE_EVIDENCE_20260909.md) | 3099877eee3f20a56c0b4d11a511f6580073f5b62d05bce1cea36835d8a5cfff | 18619 /100 |
+| [73E16](73E16_QEMU_ICOUNT_OUTER_RUN_LOOP_PARKING_CONTRACT_EVIDENCE_20260909.md) | 8e477cff7ca98eb8ff8721e399443d1dc4b28bb22e939df1a99093632c6a68bc | 13627 /75 |
+| [73E17](73E17_ROOT_QEMU_FIXED_IDENTITY_AND_CLOCK_INTERFACE_ANALYSIS_20260910.md) | 799ee4793c7aa20f74fed57878d1902b25f88b35f1bda5f05bd747275081c84d | 7619 /32 |
+| [73C8S](73C8S_CLAUDE_SEALED_NONPREEMPTIVE_SERVICE_CAUSAL_CONSTRUCTION_PROMPT_20260909.md) | 48a963551ebe43c9a8118bccce6e6cbe3b14a2c5ef8b2d516435bc9517a4943e | 4308 /16 |
+| [73C8S](73C8S_CLAUDE_SEALED_NONPREEMPTIVE_SERVICE_COMPLETE_RECEIPT_20260910.md) | 33f1b53e9fe89c5506f7ee86414cd25745bed08a90ac53091690391896394939 | 13145 /59 |
+| [73C8SR](73C8SR_ROOT_SEALED_SERVICE_CAUSAL_COST_AND_PAIRED_DESIGN_ANALYSIS_20260910.md) | e2cd4cb2d0ccf9ff79533cc20bb72ae64a9240eed8de4bb43624472827f07873 | 9379 /47 |
+
+E15/E16均有真实最终回执、完整文件与相符hash，根全文读完；首次合并工具在E16后半截断，已补读L40至末尾，没有将截断当全文。E17记录根对QEMU v10.2.0标签→annotated tag→固定commit 698104725efad4b29079d857dfdebbd804e34c99的实际解析，三个完整源码对象标签/commit逐字相同并独立计算hash/blob；REP及外层RR/CPU暂停函数仅窗口语义核验，阅读层次明示。
+
+根确认默认RR循环会重授额，现成CPU stopped握手没有与研究额度耗尽原子绑定。icount时钟不等于公共物理t，guest指令停止也不蕴含全部设备/宿主工作静止。严格服务需要显式运行外层/clock ABI/I/O合同，故到E16的三新增对象为止停止泛查QEMU；没有运行、配置或修改模拟器。
+
+C8S是新的NP-SEALED建设题，不是C6失落/失败重启。依据此前同类沙箱失败证据正常权限升级，真实exec16486最终exit0，完整JSON确认claude-opus-5 / firstParty、completed/end_turn/is_error=false、END-C8S完整，duration133056ms，实际输出7776 tokens。没有该题首次失败或第二次调用，不补造重试史。根C8SR独立全文分析：全额尾费封存可有条件非预知，但宿主暂停不能证明无未来信息、宿主噪声不全外生、源持续域不能由非预知推出、任何保护预算改义建议拒绝。候选尚缺实际读写隔离、服务结束/发布文法、源故障和独立配对合同，暂不采用；原73纯D/整边/AA/PROCESS_SLICE工作选择保持。
+
+根只在73§9加入上述后端及未采用服务的明确取舍，共增两行；实际完整文本与预期全文逐字一致。没有以此声称前缀总协议已合成，未固定/未送审/未接受。原141042/490/7197da...身份保留为修改前历史。
+
+用户要求新增子智能体及时检索论文、学习方法、提出改良并使用Opus。实际额外spawn遭thread limit失败，未产生新句柄；复用唯一可运行且E16已完成的Copernicus接续L9及其有界Opus C8L，任务不与P7/L7重复。L9目前只有中途消息：新近三文核验及SCALE作者预印本方法阅读，完整报告/真实C8L终态仍待回，不能计入已接收科学证据。根已请求其精确版本URL作独立核验；额外泛搜未取得匹配SCALE的一手正文，不凭搜索片段宣称核完。未改桌面10篇包，是否追加须根核选后由已授权任务落实。
+
+本轮list_agents实际仍P7/L7 pending_init，约定完整报告未收到，未重启；Copernicus running当前L9，根C8S终态已取得，无该题运行句柄。get_goal真实active，目标仍完成大规模实验前全部准备；用户询问进度仅作中途说明，不终止主线。最终投稿目标及设计闭合后评估会议/期刊已记待办，不在没有方法/结果证据时保证中稿。
+
+本批拟精确12文件：上表7件及A1/A2/GITHUB_PROGRESS/.github/README/.gitignore。完成顾问报告和原始回执保字节，冻结52/52R1、69–72及其报告不改，35–38/受限载荷禁读，桌面旧备份只读。仅apply_patch文档，shell及链段rtk，未实现/伪代码/构建/研究测试/仿真/调参/载荷/结果，保护参数原义未赋值。六门2 PASS /3 UNKNOWN /1 FAIL，HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT保持；研究未完成。

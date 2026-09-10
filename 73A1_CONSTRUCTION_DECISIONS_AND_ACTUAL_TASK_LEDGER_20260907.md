@@ -2,9 +2,9 @@
 
 2026-09-07，根/root。可追加行政记录，非正式科学候选或放行。HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT。72三路及72R4根验收已齐；72未接受，六门2 PASS/3 UNKNOWN/1 FAIL。69–72及报告原字节不变；目标实际active见72R4A。
 
-## 2026-09-09 接续根最新记录
+## 2026-09-10 接续根最新记录
 
-2026-09-09最新覆盖记录见[73A2](73A2_SUCCESSOR_ROOT_VERIFICATION_AND_PROGRESS_20260908.md)。73现为7197daafe3af9f1a3757ae9f230ee406dae346184064a97d51f7566d98b5a881，141042 bytes /490 LF；新增P8有限组选择/P9反例修复、Opus C7完整实际意见及根C7R纠正，E13已全文读、E14决定暂不采用NP-LIVE。主仍整边/纯D/AA，前缀与交替查询备选未全稿采用。C7升级exec17370实际exit0、modelUsage=claude-opus-5，旧失落状态不改；P7/L7仍pending_init且缺约定全文，E15四对象有界核验完整待回。A3记录Opus建设性分工和用户自主推进授权；桌面10篇阅读包已完成，必读变更时按新授权更新。起点本地及远端main均0be8f3450a1625ce05a3dfc2d61076a0ff40ccdf，仓库再次核private=true；本批15文件已实际push为aa482c1b9d345372434cf87139a8ae111c57441f、GitHub main API一致，普通暂存静态检查exit0。目标active，73未固定/未送审/未接受，六门2 PASS /3 UNKNOWN /1 FAIL与HOLD不变。
+2026-09-10最新覆盖记录见[73A2](73A2_SUCCESSOR_ROOT_VERIFICATION_AND_PROGRESS_20260908.md)。73现为2f772fb65e9a9198fe30cae33647f7503c6c4eaf03831ca5eb0605ef0abb6844，141812 bytes /492 LF；本批补E15/E16完整接收、根E17固定QEMU身份及运行循环核验，Opus C8S真实exec16486完整exit0/claude-opus-5与根C8SR独立纠正。严格后端需运行外层/时钟/I/O适配，停止泛查；NP-SEALED暂不采用，原独立配对保留。主仍整边/纯D/AA，前缀未全稿采用。P7/L7仍pending_init缺完整报告且未重启，唯一运行代理接续L9新文献及Opus C8L，只有中途消息不计完成。桌面10篇包已交付，待根核选必读变化才按授权更新。起点HEAD dd2037b5813c3ba7611fd9eef18053521bf9d851，仓库本轮再核private=true；本批12文件待实际同步，不预填成功。用户最终投稿目标及设计后会议/期刊评估保持待办。目标active，73未固定/未送审/未接受，六门2 PASS /3 UNKNOWN /1 FAIL与HOLD不变。
 
 ## 2026-09-08 接续前实际更新（以下旧“运行中”按各任务最新终态读取）
 

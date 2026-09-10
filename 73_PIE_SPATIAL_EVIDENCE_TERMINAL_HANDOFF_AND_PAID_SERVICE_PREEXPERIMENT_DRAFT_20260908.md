@@ -169,6 +169,8 @@ PROJECT(K_task,Kc,Π,L)仅复制每agent已合法分配且未被可信确认完�
 
 E13已给NP-LIVE实时非抢占及条件随机分配的完整备选，根E14不用skill复算后本轮不采用：它同时改变TASK_SERVICE实际时刻、故障释放/生效/退出和随机条件目标，不能只当作PROCESS_SLICE的计时实现。BOOTTIME/timerfd文档不提供连续物理认证或精确指令停止；原严格付费服务的执行接缝仍需证据。本稿保留下述公共物理事件时钟及原固定配对推断，AA来源历史选择独立保持，未恢复逐job回滚。
 
+E15/E16现已实际完整取得，根E17独立绑定QEMU v10.2.0至698104725efad4b29079d857dfdebbd804e34c99，并读预算/时钟及外层关键源码。默认RR循环在一次计数结算后自动重授额；CPU stopped握手存在，但未与公共服务片额度耗尽原子绑定，也不等于设备/排队宿主工作静止。因此严格后端仍需明确运行外层、公共clock ABI及I/O费用适配，本轮停止泛查模拟器。新Opus C8S完整建设意见经根C8SR独立纠正：冻结输入、封存结果及全计尾费可给非预知的非抢占备选，但实际读取域、服务完成/发布文法、源故障及独立配对条件未闭；NP-SEALED暂不采用，不重定义保护预算，也不以单臂条件目标替换本稿配对主量。
+
 一手源码新增实核：LNS/InitLNS为Time=high_resolution_clock、fsec=duration<float>；LaCAM2 Deadline为steady_clock，毫秒duration_cast后严格elapsed>limit；SIPP超时为经过秒数>=timeout。InitLNS存在增加time_limit、continue绕过runtime更新、初始逐agent传完整预算及后处理；不能统一改写成全流程硬CPU截止。明示MAPFPlanner→LNS(use_sipp=true)→BasicLNS Agent选择SIPP，避免该对象进入SpaceTimeAStar空超时入口，其他配置不自动豁免。mcp.cpp的clock()/CLOCKS_PER_SEC是CPU起止日志，不是上述经过钟停止条件。
 
 37个固定规划源/头对象已完成完整关键词检索并核对象身份（304149 bytes/8713行），人工语义阅读限命中/必要窗口；根另亲见MCP L14–72及SingleAgentSolver.h L35–100。rand()还在比较器/路径表；默认random_shuffle、LaCAM局部mt19937和分布后端必须登记。LaCAM每次runLACAM2重建其源码指定MT初态，不能偷改成共享主流。随机比较器不等于固定严格弱序，不能承诺跨编译器/容器调用顺序相同；native定义域/运行合同必须保留此风险，不静默修比较器再称原字节。限定集合没有额外直接OS取时/熵/sleep调用的关键词证据，不排除未搜索顶层入口/动态库；既有源清单仍非完整运行覆盖。

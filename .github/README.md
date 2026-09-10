@@ -1,12 +1,12 @@
 # MAPF 科研进度
 
-更新：2026-09-09。**HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。
+更新：2026-09-10。**HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。
 
-73现为141042 bytes /490 LF，SHA256 `7197daafe3af9f1a3757ae9f230ee406dae346184064a97d51f7566d98b5a881`，未固定、未送审、未接受。P8有限阈值组选择及P9独立反例修复已核：补到cap后实际采样、有限后继服务、中心FINISHED、公共组角色及围栏成本。主仍整边/纯D/AA，前缀未完成全稿采用。E13完整取得，根E14因服务/故障/统计目标实质变化暂不采用NP-LIVE。
+73现为141812 bytes /492 LF，SHA256 `2f772fb65e9a9198fe30cae33647f7503c6c4eaf03831ca5eb0605ef0abb6844`，未固定、未送审、未接受。P8/P9前缀局部构造已修，尚未全稿采用；主仍整边/纯D/AA/PROCESS_SLICE。E15/E16完整实收，根E17绑定QEMU固定commit并核默认重授额与暂停接缝；需要显式外层/时钟/I/O适配，已停止泛查模拟器。
 
-Claude C7升级调用实际exit0，模型字段确认claude-opus-5，完整建议已归档；根C7R纠正机会/选择公平、费用和E0比较等问题，给未采用的付费交替查询构造。A3登记建设性分工；P7/L7仍pending_init且缺约定文件，未重派。E15具体后端接口核验完整待回。六门仍 **2 PASS /3 UNKNOWN /1 FAIL**；没有实验或效果结论，源/服务/外部cut/来源及正式顺序审查尚未闭。
+Claude C8S实际exec16486 exit0，claude-opus-5完整意见已保存；根C8SR纠正封存因果、尾费、宿主历史和保护预算等意见，NP-SEALED暂不采用，原固定配对主量保持。P7/L7仍pending_init且缺报告，未重派；既有可用代理接续L9新文献与Opus C8L，完整回执待回。六门仍 **2 PASS /3 UNKNOWN /1 FAIL**，没有实验或效果结论，来源/服务/前缀组合/外部cut与正式审查未闭。
 
-用户授权目标内自主推进及必要时更新既有桌面必读包；当前10篇包已交付，本轮没有新增必读要求。起点main实际核为0be8f3450a1625ce05a3dfc2d61076a0ff40ccdf、仓库private=true；本批15文件已实际push为[aa482c1](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/commit/aa482c1b9d345372434cf87139a8ae111c57441f)、GitHub main API一致，普通暂存静态检查exit0；本段为随后行政运输回执。详见73A2与73A3，旧表时态以最新实际账本为准。
+用户授权自主推进及必要阅读包更新；桌面10篇已交付，候选新增论文尚待根核选。最终投稿目标明确，设计闭合后评估会议/期刊。起点本地HEAD实际dd2037b5813c3ba7611fd9eef18053521bf9d851，本轮仓库再核private=true；当前12文件待同步，不预填成功。详见73A2/73C8SR，历史表按最新真实回执读取。
 
 - [新终端完整交接](../HANDOFF_NEW_CODEX_PREEXPERIMENT_DESIGN_20260908_CANDIDATE73.md)
 - [73完整草稿（未送审）](../73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)
