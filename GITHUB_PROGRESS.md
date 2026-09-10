@@ -2,11 +2,11 @@
 
 更新：2026-09-10。**HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。
 
-73已整入H19的规划/cut、付费批入队/重传及两条预定外部系统比较，本轮再补固定来源的四堆限定域和空H_goal失败处理设计；当前181390 bytes /583 LF，SHA256 `ab0283a5ef6fb9b3a408f0d453fb763340f9241b01a63928851ceb5ddef48939`。E18/C13完整收齐、根E19独立复算，已写正文；没有修改源代码或运行实验。主NATURAL D-S减R-S、必报D-S减E0及外部系统对照保持，稿件仍未固定、未送审、未接受。
+73本轮已补入单已知任务的来源修订、交换循环局部进展，以及可信进度的有限因果历史工作选择/局部数值构造和付费失败规则；此前H19规划/cut、批执行/恢复和两条强外部比较均保留。当前190063 bytes /607 LF，SHA256 `7f0b0d27e6ab79c32e3c75fdfccf132cc2e7fc59ff651471fd4a5bb859d681d9`，W01–85仅纸面。根E20/P14已直接核源/复算并改正文，未修改源码或运行实验。主D-S减R-S、必报D-S减E0及两条外部比较保持；73未固定、未送审、未接受。
 
-LMAPF论文架构及桌面12篇/两指南已完成。C13为实际claude-opus-5完整成功回执；根采用有限调用域和有费用的失败守卫，拒其UB必要论、原样等价及空解自动重试。C12原62977实际exit124/空stdout，无意见、不重跑。子代理已接续P13/C14，建设可信参考进度的可计算精度与付费来源，完整报告待；P7/L7仍缺报不重派。
+C15已真实收到Opus5完整result/END，根纠正其空队列守卫及未证反例；P13完整交付但C14被提供方拒绝，只有失败终态、没有科学意见，无绕过重试。E21/C16源状态键与所有权题中C16实际超时exit124、无科学result，独立E21待最终报告；C17研究路线价值与最小方法改良仍在原句柄运行，未到完整回执不计。LMAPF论文组织建议及桌面12篇/两指南已完成，P7/L7仍缺报不重派。
 
-六门仍 **2 PASS /3 UNKNOWN /1 FAIL；HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。剩余来源目标索引/对象/数值、严格计费后端、可信精度、材料链/近邻全文及整稿顺序审查未闭，设计闭合后再评估会议/期刊。前批5d9b37c及0d62d471eca7e7654279f9af67e18c0e6f5786da已push/API核验一致；当前新来源正文及回执按精确白名单另同步，不预填成功。
+六门仍 **2 PASS /3 UNKNOWN /1 FAIL；HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。完整来源/数值继续域、混合事件判序与观测来源、严格计费后端、素材链/近邻全文及整稿顺序审查仍未闭；设计闭合后再评估会议/期刊。前批`d34579c7556d5c256ea46f63b92a8f0d56d489fc`已真实push/API核验，本批15文件另按精确白名单同步，不预填成功。
 
 - [新Codex完整交接](HANDOFF_NEW_CODEX_PREEXPERIMENT_DESIGN_20260908_CANDIDATE73.md)
 - [73未送审全文](73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)

@@ -2,7 +2,7 @@
 
 ## 2026-09-10 外部全文实整合与新的 Opus 建设分工
 
-2026-09-10最新覆盖记录：73已整合H19公共规划/协调、名义时长/cut、付费批入队/APPEND恢复及两条外部系统比较；本轮又据完整E18/C13和根E19独立分析补入四LLNode堆的限定空状态域与Planner::solve空H_goal的失败分流。当前SHA256 ab0283a5ef6fb9b3a408f0d453fb763340f9241b01a63928851ceb5ddef48939，181390 bytes /583 LF，W01–80均仅纸面。C13实际Opus5/exit0/result/END完整，根全读核验并纠正其UB必要论、native等价及自动重试等意见；C12实际exit124无正文，不计意见不重跑。E18/C13原任务完成，原Copernicus接续唯一P13/C14可信参考进度精度建设，尚无完整回执；P7/L7仍pending_init缺报不重派。桌面12篇/两指南已完整核验，设计后投稿评估待办。前批科学5d9b37c与六文件后继0d62d471eca7e7654279f9af67e18c0e6f5786da均有真实push/API一致，private=true/main已核；本新来源批尚待精确提交/运输。目标active，73未固定/未送审/未接受；六门2 PASS /3 UNKNOWN /1 FAIL与全部NO-GO保持。
+2026-09-10最新覆盖记录：73已整合H19完整规划/批执行/恢复及强外部比较、E19来源限定域，本轮又经C15完整Opus回执与根E20独立核源加入单已知任务引导、puller自身行和交换循环局部进展修订；P13已完整交付，根P14复算后写入可信进度的有限因果来源工作选择、局部积分/有限下界构造、全部费用与混合同刻判序缺口。当前SHA256 7f0b0d27e6ab79c32e3c75fdfccf132cc2e7fc59ff651471fd4a5bb859d681d9，190063 bytes /607 LF，W01–85均未实现/未运行。C15原exec34155真实exit0/result/END完整；C14原43881真实exit1/拒绝，无科学意见，不重试绕过。根不采C15的迟到空任务守卫及未证无限饥饿等断言。P13/C14结束后Copernicus接续独立E21/C16源键/所有权，原exec29117实际exit124、无result/END及模型用量字段，E21最终报告待；根另开C17研究路线/最小方法改良，原exec14628在途，尚无完整意见，提示未列本批同步。P7/L7仍pending_init缺报不重派。桌面12篇/两指南完整，设计后投稿评估待办。前批d34579c7556d5c256ea46f63b92a8f0d56d489fc已有真实push/API一致，本轮又核HEAD/main及private=true；本新15文件批待精确提交/运输。73未固定/未送审/未接受；六门2 PASS /3 UNKNOWN /1 FAIL及全部NO-GO保持，目标active。
 
 根新73正文从d613bc26...159064/533改为656cfdc496154a0d1a640f7ac7364a7fa854a0a5be120be33c29204dbe8151e2，178035/575；实际读回全文与预备整稿逐字相等，默认diff --check exit0。L14 707328474104bd85ebce3c56dc325cdc4a4629c1596d4451024a7913390bde54，19497/98；L15 bfdfcfb0c86a77a0ddfd1a9858dac566a7e0dbbafa48042bc9bbcbdbaecef07e；C12提示9535c2020ccce5c4f4ff5c7eac9983d92631a3c3390f9aa38a953c1b3289406c。根对L14的最大前缀/单元原子性、外生fail-stop与排队MODE、跨writer保槽/独立传输另做无skill分析；新正文明确规划失败需求未处理标记和两条外部同时推断族，W范围增为W01–78。它们都是纸面设计及静态身份检查，没有实现/运行或资格票。
 
@@ -373,3 +373,17 @@ E18旧任务完全结束后根复用Copernicus接续P13/C14，限定§3/6/15/必
 上批六文件0d62d471eca7e7654279f9af67e18c0e6f5786da，默认cached check0；push90380实际aeec16/exit124后才正常升级重试76079，终态82fdd0/exit0；独立main API c3db0e/exit0同0d62d47。当前这批精确11路径为新E18/E19/C13三件、73及五行政白名单，无P13/C14进行件和桌面文件；本段未预填其新提交。前次行政补丁还曾因同文件重复操作被工具拒绝，分组后实际成功；本次科学补丁初次hunk倒序被拒绝，排序后成功，未改完成旧件或运行研究测试。目标持续active，本轮为实质PROGRESS，所有门/NO-GO保持。
 
 本批11文件首次默认git diff --cached --check实际exit2，唯一项为已完整核验的73C13_R0_COMPARATOR_DOMAIN_COMPLETE_RECEIPT_20260910.md第108行EOF空行。该完整回执保原字节/hash，不为格式修改；只对这个精确文件的本次检查例外允许blank-at-eof，其他十文件仍用默认检查。不得把默认全批检查改记为exit0，后继例外检查以实际工具为准。
+
+## 2026-09-10 E20/P14实际科学整合及Claude建设分工
+
+前批d34579c7556d5c256ea46f63b92a8f0d56d489fc原push4535→chunkf48786/exit0、main API704f1b/exit0已经完整；本轮独立HEAD c38ac8/main c5549d再次一致，仓库身份经7d51f0/exit0确认为LYHrmer/MAPF_PIED_MDDR_RESEARCH、private=true/main。第一次元数据7b8003/exit1仅沙箱socket限制，正常升级同读请求，不绕过。默认tracked clean只表示已跟踪文件，不代表忽略的在途提示已上传。原批C13回执EOF空行例外见旧实际记录，不改完成件。
+
+E20根取固定R0六个完整源码文本对象，Git blob与SHA256实算一致，只读必要源码/函数而不碰载荷；C15实际Opus5/firstParty、CLI293f850f-94b0-43d1-8117-be0d0c158430、chunk7d8361/exit0、END-C15完整。其prompt/raw/receipt为db55075b...、6af8204f...、8697619e...，根全文原样比对；E20 f0aeea240ae56872862db44e6d0794a465e2acc0e44e9abca29d1353ed09c6fd，11644/66。73先从ab028...181390/583改到c59c96cb...185290/593；根补完整0/1范围与空队列先于实例front的界线、统一已知目标引导及交换循环严格下降，不把局部内存/终止定义当搜索资格或效果。
+
+P13最终56156882067661aa7746db7a8138ef2869c153d2bc694d586eb5e16ba0d9cc2f，23740/135；C14 prompt/raw/终态分别036354c1...、d22bf9d0...、bb99b800...。C14实际claude-opus-5却is_error=true/refusal/api_error、chunk4c2ef1/exit1，无END及科学正文，只有调用终态完整；计费token和subtype=success不计意见。根实核四件与result原样相含，再独立读FLINT官方必要API和P13全文、复算r(y)/Phi、q精度与信息下限，选择明确有限因果历史子域但不隐藏新增eta来源能力/同刻模式判序未知。P14 6b85834fb23146413389bb2375133eddbf5e4599e19d2b3effee72262a8e00a9；73再至7f0b0d27...190063/607。全稿读回与预备字节一致，默认diff --check chunkae715e/exit0；最初一次编排JS语法错误未执行任何命令，修正后实查，不冒作研究检查。
+
+当前Claude分工采用有界“构造—根核源/复算—整稿修订”：来源题E21/C16由Copernicus接续，C16提示18a7f8ff637d65de7750fd7e424d65aa35eca1278b25fc8266887891959b79f7、22219/560，原exec29117初chunk6c10c8；根C17方法路线提示39673388feae6ab9e98153b02d7deacbabf17b1cd9abdf4a692c8e80b37b63ca，原exec14628初chunkf1a2e3。两题只读真实定界输入、Opus/high、禁tools/skills/MCP、单次有界，不重做C14或C11，不将运行中当完整回执。C16/C17/E21新件在途暂不进本批15文件白名单；正式审查严格另按固定全文后的导师→根无skill→Nature→根无skill→无任何skill独立逻辑→根验收。
+
+本批仅73、A1/A2/GITHUB_PROGRESS/.github README/.gitignore及9件完整E20/C15/P13/C14/P14文档；不改冻结旧件/完成回执、桌面12篇、保护参数或受限输入。无实现/伪代码/构建/研究测试/仿真/调参/载荷/结果。来源键/对象/数值、严格服务后端、可信事件序列、素材许可/近邻全文与整稿审查仍未闭，HOLD和目标active，不以手稿增长或Opus数量称研究完成。
+
+本批暂存默认git diff --cached --check实际chunk8546ea/exit2，只报已实际发送并保字节的C15提示66处行末空白；根逐一核其均为带原行号的逐字源窗口（含空源行的编号分隔），原source文本逐项一致，不为了格式改写历史提示。其余14文件默认检查chunka734a2/exit0；仅该一文件使用单命令core.whitespace=-blank-at-eol检查chunk88686b/exit0，不改全局配置。提示SHA256仍db55075b...，本批不能称默认整批检查为0。C16最新终态覆盖本节原“在途”：原29117→eb81db/exit124，返回aborted_streaming/error_during_execution JSON但无result/END且modelUsage为空，请求Opus不等于实际模型确认；不重启，E21正作独立最终收束。C17仍原14628无终态，不计意见。
