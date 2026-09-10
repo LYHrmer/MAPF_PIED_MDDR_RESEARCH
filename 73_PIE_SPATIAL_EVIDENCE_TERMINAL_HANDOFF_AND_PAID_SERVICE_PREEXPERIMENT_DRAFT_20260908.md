@@ -83,11 +83,11 @@ G/N机制比较固定同查询与S，比较相同集合函数的计算组织；N
 
 ## 5. 前缀组准入、累计权限与不可逆终点交接
 
-信任域：唯一中心资源authority与各低层gate不分叉、会话内状态持久不回滚；授权和可信证书不可被普通错误包伪造。中心同一时刻只执行一个可暂停资源作业，所有检查/计算/资源访问付费，在完成后的发布点一次原子应用私有增量；计算期间物理继续、外部不能见半更新。已计算完但未发布的结果仍占据中心作业槽，后继中心作业在它发布或明确失败前不能开始读取旧账本。此是单机串行提交模型，不是假设跨owner免费原子事务。中心fail-stop不重启/清空/重新分配；当前授权和物理覆盖继续保留，不承诺恢复活性。
+信任域：唯一中心资源authority与各低层gate不分叉、会话内状态持久不回滚；授权和可信证书不可被普通错误包伪造。中心同一时刻只占用一个可暂停应用作业槽，所有检查/计算/资源访问付费。普通作业只有一个提交单元，计算完后在严格后继发布点一次原子应用私有增量；GROUP_ADMIT的全组仍是不可拆的一单元。§10的ADG_ENQUEUE是明确另定的有限批控制器：在同一占有槽逐个计算、封存和发布单记录单元，前单元成功发布后才可于后继PROCESS_SLICE继续下一单元，批终态处置完成才释放槽。任一时刻至多一单元计算或待发布，外部不能见该单元半更新；普通作业及批的未发布结果继续占槽，后继中心作业不能先读/改账本。此是收费的单机串行提交模型，不是假设跨owner免费原子事务或第二writer。计算期间物理及其他服务站继续。中心fail-stop不重启/清空/重新分配，阻止其后的新计算/发布；已经发布的单元与物理责任保留，不承诺恢复活性。
 
 每资源owner为FREE或(agent,tag)，tag为resident gamma或活动tid。每agent有当前resident/活动记录、连续关闭请求水位d_i和至多一个未关闭请求e=d_i+1；tid=(session,i,e)，原slot、原边、parent gamma、M0、几何版本不可变。未授状态UNGRANTED、已授GRANTED；关闭结果为ABORTED或FINISHED。中心拒绝e≤d_i的任何首次/重复请求，不可复用序号；e>d_i+1拒绝而不跳过未知责任。标准数学整数无回绕，位成本仍随序号增长。普通消息无权生成新的可信序号/原步。 中心活动记录另含b、授权lineage/cap序号、q_release、可选q_evidence、desired_mode及组身份；control_epoch为同session、同agent的持久单调代际，INIT从无历史前哨开始，跨tid、FINISHED和退栏均不重置。本地独立持C、最大已实际处理控制代际及该代际内已处理公共控制尝试水位。初始b与C为无活动授权的零值，首次准入后b>0；记录中的M0只代表完整原边，不等于当前持有集合。组准入围栏与物理owner分别记录，agent的组成员关系保持至付费退栏，不能仅因旧tid FINISHED便消失。
 
-slot=k表示原occurrence从Π_i[k]到Π_i[k+1]，消费前真实c=k、消费后c=k+1；slot不是目标下标。请求保留起始slot、两端点及MOVE/WAIT类型，避免把PRECHECK的c相等与外部plan[c+1]混成不同索引。计划代际plan_epoch在整个合法episode固定，append只增独立revision；追加未来段不使已有cursor证书失效。
+slot=k表示原occurrence从Π_i[k]到Π_i[k+1]，消费前真实c=k、消费后c=k+1；slot不是目标下标。请求保留起始slot、两端点及MOVE/WAIT类型，避免把PRECHECK的c相等与外部plan[c+1]混成不同索引。计划代际plan_epoch在整个合法episode固定，append只增独立revision；追加未来段不使已有cursor证书失效。 内部PIE的共同L与外部H19的每agent执行长度L_C,i分别见§8/10；统一slot仍从0编号，长度为L的执行账本有槽0至L−1及顶点0至L。外部源图generation不重置执行plan_epoch或c，APPEND安装不等于消费。
 
 executor显式持久phase为BOOTSTRAP、RESIDENT_OPEN、GRANT_ARMED、MOVE_LIVE、TERMINAL_UNCONSUMED或QUARANTINE。BOOTSTRAP只允许原世界给定的参考HOLD及其误差闭环，不允许新MOVE/WAIT消费/PRECHECK；软件未就绪的应用角色除INIT外返回付费NO_APPLICATION_READY，不将未安装索引当空集合。INIT合法转交后才RESIDENT_OPEN，其有合法resident_gamma与resident_ref、active_tid=NONE、pending=NONE；GRANT_ARMED已接纳唯一grant但尚未START；MOVE_LIVE已START、原occurrence未END，允许同tid运动/制动/HOLD；在这两个phase保留的起点resident字段仅是parent元数据，不能作当前位姿。TERMINAL_UNCONSUMED为END已发生且旧槽未消费。原occurrence=(session,plan_epoch,i,k)，计划代际不随append改，revision单列。pending指向不可变EndRecord和可变TerminalHandshake：前者保存原动作及唯一END事实，后者保存ready_verified、consumed、缓存/重试引用。END时c仍k、两个标志均false；中心FINISHED、READY在途或已验证均不使其退出该phase。已消费历史由单调c/关闭水位及必要closed记录拒绝重放，不要求无限位图。QUARANTINE禁止新作用并保留既有物理责任，已缓存历史收据可收费重放，不暗含域外机器人瞬时安全停车。
 
@@ -165,11 +165,11 @@ QUERY在收费中心快照上重算每个需求的当前owner及全部非owner�
 
 参考总函数完整枚举P、相交资源、nonowner条件并规范去重/排序，全部费用计入。若未来用反向索引，必须同一快照上与此函数等价，计维护/失效与最坏输出规模；“只处理受影响者”不是已经证明的复杂度界。P8的组条件进展证明在§15自给，不能替代一般纯D公平性。C7R付费交替公平构造和L9单剩余阻塞者建议仍另作未采用备选，不在本主D中暗自切换或事后择优。
 
-POLICY主体仍预先为SOURCE_REQUEST(i)或LOCAL_POLICY(i)。每agent的既有SOURCE_REQUEST公开出现次序从零编号n_i，用n_i modulo 3固定为SOURCE_OR_EXTEND、RESEND_CAP、CONTROL_RETRY；每次公共出现均推进n_i，包括业务空结果；丢包、空结果和私有进度不能额外插入、跳过或暂停后续既定相位。这是明确修订公共文法，不新增周期数值。LOCAL_POLICY的主体和机会不因本地看到MOVE才生成中心token。新增GROUP_ADMIT、GROUP_RETIRE由各自公共行登记到同Srv_C FIFO，一个token只有一个角色；没有自动高优先级或额外PROCESS_SLICE。
+POLICY主体仍预先为SOURCE_REQUEST(i)或LOCAL_POLICY(i)。每agent的既有SOURCE_REQUEST公开出现次序从零编号n_i，用n_i modulo 3固定为SOURCE_OR_EXTEND、RESEND_CAP、CONTROL_RETRY；每次公共出现均推进n_i，包括业务空结果；丢包、空结果和私有进度不能额外插入、跳过或暂停后续既定相位。这是明确修订公共文法，不新增周期数值。LOCAL_POLICY的主体和机会不因本地看到MOVE才生成中心token。共同PLAN_CHECK、COORDINATE及GROUP_RETIRE由各自预定公共行登记到同Srv_C FIFO；COORDINATE按事前算法身份在内部映射GROUP_ADMIT、在H19映射ADG_ENQUEUE有限批控制器。一个token一个角色，无自动高优先级或额外PROCESS_SLICE；GROUP_ADMIT是内部作业名，不再是与COORDINATE并列的第二种日历机会。
 
-SOURCE_OR_EXTEND只按中心已知Kc、模式/parent/d_i/唯一请求/组成员关系与不可变Π取一个总分支：中心未就绪或失效则限定空/失败；当前GRANTED且b<ell尝试一次最大合法扩展，b=ell则NO_EXTENSION；当前UNGRANTED只在模式允许首次授权时重试同绑定普通整边及所需PRECHECK链，不同时组准入；DRAIN下不给任何UNGRANTED请求首次正cap，只保留可行的CANCEL关闭；无未闭请求但仍是未退组成员则GROUP_HELD；否则Kc未知、Kc=L或对应WAIT分别给NO_SOURCE_INPUT/NO_REMAINING_SLOT/NO_MOVE_REQUEST，只有Kc<L且原槽MOVE才生成一个原请求。PRECHECK与实际授予仍在后继收费阶段，不能在此读真实c或从拒绝猜正确槽。新request_e只在已可信确认旧请求CLOSED后产生，重试不换tid。
+SOURCE_OR_EXTEND只按中心已知Kc、模式/parent/d_i/唯一请求/组成员关系与不可变Π取一个总分支：中心未就绪或失效则限定空/失败；当前GRANTED且b<ell尝试一次最大合法扩展，b=ell则NO_EXTENSION；当前UNGRANTED只在模式允许首次授权时重试同绑定普通整边及所需PRECHECK链，不同时组准入；DRAIN下不给任何UNGRANTED请求首次正cap，只保留可行的CANCEL关闭；无未闭请求但仍是未退组成员则GROUP_HELD；否则Kc未知、Kc达到本臂该agent的已提交执行尾长或对应WAIT分别给NO_SOURCE_INPUT/NO_REMAINING_SLOT/NO_MOVE_REQUEST，只有Kc严格小于该尾长且原槽MOVE才生成一个原请求。PRECHECK与实际授予仍在后继收费阶段，不能在此读真实c或从拒绝猜正确槽。新request_e只在已可信确认旧请求CLOSED后产生，重试不换tid。
 
-RESEND_CAP只读当前中心已提交最大b和其合法缓存，重发同一累计授权；无GRANTED则NO_GRANT，不读取本地是否安装/到cap。CONTROL_RETRY只按当前GRANTED和已声明控制代际/desired_mode发送一个绑定该公共行的RUN/STOP；无则NO_TID。两者查缓存、复制、签发/认证、通信、接收/拒绝和空结果全收费。初始grant发送以后丢包通过累计重发恢复，运行意图通过新尝试恢复；同一个公开role不能顺带做另一项或附赠q。
+内部RESEND_CAP只读当前中心已提交最大b和其合法缓存，重发同一累计授权；无GRANTED则NO_GRANT，不读取本地是否安装/到cap。H19在同一RESEND_CAP角色按§10持久两类交替和封存尾界轮询选择一条cap或APPEND消息，不新增机会。共同CONTROL_RETRY只按当前GRANTED和已声明控制代际/desired_mode发送一个绑定该公共行的RUN/STOP；无则NO_TID。查缓存、复制、签发/认证、通信、接收/拒绝和空结果全收费。初始grant发送以后丢包通过累计重发恢复，运行意图通过新尝试恢复；同一个公开role不能顺带做另一项或附赠q。
 
 LOCAL_POLICY的唯一顺序保持：完整pending/READY可消费则只消费一个MOVE；TERMINAL_UNCONSUMED未满足则HOLD；GRANT_ARMED/MOVE_LIVE保留原责任而不消费；RESIDENT_OPEN无剩余槽则HOLD，当前WAIT在无active/pending及原顶点/slot守卫下只消费一个，当前MOVE等中心；矛盾QUARANTINE。WAIT可在未退组内合法消费，组限制仅阻止下一原MOVE授权，不能把READY消费锁在退栏后造成额外环。一次消费不连锁生成下槽请求，Kc仍等付费CURSOR。
 
@@ -181,11 +181,11 @@ NATIVE-COLD-OFF仍为共享INIT/任何副作用之前决定的独立原生旁路
 
 ## 8. PIE、真实任务与冻结规划作业
 
-固定官方 R0 为 [YueZhang-studyuse/LMAPF-delay](https://github.com/YueZhang-studyuse/LMAPF-delay/tree/0b5b33649fc367abcb1cd0a7ad5ac03511bf9357)，commit 0b5b33649fc367abcb1cd0a7ad5ac03511bf9357。新MOVE只能是该固定核心经下述显式共享接口接纳的输出；原生 NATIVE-PIE-D 原字节/原误差域另轨保留。共享接口改变执行、观测、任务同步和计时注入，不宣称整个native轨迹等价，不把接口成本或原源失败当查询策略收益。
+固定官方 R0 为 [YueZhang-studyuse/LMAPF-delay](https://github.com/YueZhang-studyuse/LMAPF-delay/tree/0b5b33649fc367abcb1cd0a7ad5ac03511bf9357)，commit 0b5b33649fc367abcb1cd0a7ad5ac03511bf9357。内部PIE比较臂的新MOVE只能是该固定核心经下述显式共享接口接纳的输出；原生 NATIVE-PIE-D 原字节/原误差域另轨保留。共享接口改变执行、观测、任务同步和计时注入，不宣称整个native轨迹等价，不把接口成本或原源失败当查询策略收益。 §10具名H19外部系统使用其自己的ECBS-FA原动作；此例外不授内部PIE改变提议来源的权限。
 
-联合历史Π_i[0..L]使用共同逻辑槽，每slot映射原job/segment/source/input/原边或WAIT，提交后不可改。真实c_i≤L，已知Kc_i≤c_i，未知则不为该agent提即时MOVE；Π_i[0]为合法起点，初始L=S=c=Kc=0是空历史索引定义，不是实验保护参数。MOVE只在对应READY后消费，COMMITTED_WAIT在合法POLICY消费，HOLD不消费。即使主算法使用Kc提出旧slot，gate也只能经PRECHECK及grant执行其真实当前原MOVE，不按未来PROJECT输出自行改路。
+内部PIE的联合历史Π_i[0..L]使用共同逻辑槽，每slot映射原job/segment/source/input/原边或WAIT，提交后不可改。真实c_i≤L，已知Kc_i≤c_i，未知则不为该agent提即时MOVE；Π_i[0]为合法起点，初始L=S=c=Kc=0是空历史索引定义，不是实验保护参数。MOVE只在对应READY后消费，COMMITTED_WAIT在合法POLICY消费，HOLD不消费。即使主算法使用Kc提出旧slot，gate也只能经PRECHECK及grant执行其真实当前原MOVE，不按未来PROJECT输出自行改路。H19的每agent中心/本地已安装尾长L_C,i/L_E,i及只追加消息另由§10给定，不用虚构WAIT凑共同L，消费/原动作守卫和Kc含义相同。
 
-最多一个规划作业及一个待提交结果。S为最新提交段的起点；只有all Kc_i≥S且无上述作业时，才可请求在尾L追加。接纳后S←old L、L←new L，new L>old L；未追上的前段不能无限追加。段首与旧尾同一槽，不重复消费/服务。旧承诺不因预测目标改变而撤销。在线路径可保留从min Kc起到L及被当前作业pin住的前缀，只有无仍有效引用才可GC；完整审计历史另追加归档，不能把在线窗口界称为总存储有界。
+最多一个规划作业及一个待提交结果。内部PIE仅在共同PLAN_CHECK所登记的付费中心作业中检查规划触发：应用/模式允许、all Kc_i≥S、无在途或待处理planner job且PROJECT输入合法，才至多冻结一次在尾L追加的请求；未满足为具名空/等待/输入失败。S为最新提交段的起点，接纳后S←old L、L←new L，new L>old L；未追上的前段不能无限追加。段首与旧尾同一槽，不重复消费/服务。旧承诺不因预测目标改变而撤销。触发、目标预测、冻结、版本检查和空结果均收费，没有未登记的隐式规划循环或TASK自增机会。在线路径可保留从min Kc起到L及被当前作业pin住的前缀，只有无仍有效引用才可GC；完整审计历史另追加归档，不能把在线窗口界称为总存储有界。H19在同一个公共PLAN_CHECK执行§10自己的触发/冻结合同。
 
 真实任务账本A与已知K_task分开。唯一主服务谓词SERVICE_TRUE(i,j,t)为：j是此刻真实A中分配给i且尚未服务的有效队首；参考处于合法初始驻留或已END原MOVE的终点驻留（尚未消费亦可），其参考顶点等于j的任务顶点且v_ref=0；整个真实实体X_i(t)⊆ServiceRegion(j)；共同服务机会存在且未达Stop。这里的物理驻留事实不以软件INIT_READY、中心READY、resident_gamma的已知性或算法证书送达为前提；原边中途cap HOLD不冒作终点驻留。主域不另要求真实实体速度为零或额外驻留时间，不把参考零速当作实际停稳；需要停稳的任务属于另行定义的扩展域。固定TASK_SERVICE机会据此每agent至多服务一个合法队首，再按固定原任务策略补给：greedy按agent规范顺序填已分配队列；Fixed用各自原序列；Inf用原tasks[(counter_i*num_agents+i) mod tasks_size]并递增counter。补给深度/原CLI意义保持而本阶段不绑定数值；tasks_size为空或接口非法不做取模/假目标。先服务再补给是明确共享顺序，不冒称native三种策略的sync相同。
 
@@ -217,9 +217,9 @@ CPU clock单独映射为该隔离worker自出生以来已实际完成的收费�
 
 C PRNG初态作为显式ADAPTER输入由独立block根和固定核心角色映射，具体种子本阶段不生成；之后包括比较器rand及默认shuffle后端的全部调用/状态均在冻结标准库与持续worker内保存。每次完整合格调用后的状态及随机消费均保留，中心STALE/合法软撤销不退回；失败会话不自动重播或重播种，完整费用永不回滚。原局部MT按源码构造/重置，不改成另一条永久随机流；公共故障创新不按源随机消费量顺移。编译器/ABI/标准库/库版本、机器指令/浮点语义、随机接口/初态和外部调用表仍为未来manifest必需项；“seed相同”不表示跨平台相同执行。原native轨道不注入本适配时钟/PRNG，明确分域。
 
-公共有限机会表O按(t,row_id)全序、t非减，含INIT、POLICY(role,i)、ACTUATOR(i)、REPORT(i)、QUERY、CURSOR、ENTRY(i,kind)、TASK_REQ、TASK_SERVICE、END_LOCAL_RETRY(i)、READY_CENTER_RETRY(i)、GROUP_ADMIT、GROUP_RETIRE、NETWORK(channel)、PROCESS_SLICE(server)、MODE(scope,kind)、FAULT、CUTOFF、STOP。POLICY的role必须为§7两个公共主体之一；两个终点retry及两个组角色的主体/服务站由公共描述符预先确定；SOURCE_REQUEST的三个子角色按§7公共编号派生，不由私有状态现选。不得依某臂已观察收益改O。每行先推进物理到t并处理有限自主切换，再按job规范key发布前行已完成的有限结果，最后只执行本行类型；缺输入为明确空结果，不从未来补对象。新生工作/消息/结果可见发布均在严格后继行，单行不递归自触发。本段是未实例化的文法，不生成实际O。
+公共有限机会表O按(t,row_id)全序、t非减，含INIT、POLICY(role,i)、ACTUATOR(i)、REPORT(i)、QUERY、CURSOR、ENTRY(i,kind)、TASK_REQ、TASK_SERVICE、END_LOCAL_RETRY(i)、READY_CENTER_RETRY(i)、PLAN_CHECK、COORDINATE、GROUP_RETIRE、NETWORK(channel)、PROCESS_SLICE(server)、MODE(scope,kind)、FAULT、CUTOFF、STOP。POLICY的role必须为§7两个公共主体之一；两个终点retry、PLAN_CHECK及协调/退栏的主体/服务站由公共描述符预先确定；SOURCE_REQUEST的三个子角色按§7公共编号派生，COORDINATE按算法身份固定映射，不由私有状态现选。不得依某臂已观察收益改O。每行先推进物理到t并处理有限自主切换，再按job规范key发布前行已完成的有限提交单元，最后只执行本行类型；缺输入为明确空结果，不从未来补对象。新生工作/消息/结果可见发布均在严格后继行，单行不递归自触发；同一批的下一单元也须后继实际PROCESS_SLICE。此是共同修订但尚未实例化的文法，不生成实际O或另设规划/协调频率。
 
-机会、作业、提交三层语义：上文POLICY/QUERY/CURSOR/ENTRY/TASK_REQ/NETWORK/REPORT/MODE/GROUP_ADMIT/GROUP_RETIRE等名称既标识公共机会类型，也标识其后付费作业类别；本候选所有“选择、读取、生成、消费、更新模式”均发生于该类别作业的付费步骤及合法提交，不能在机会到达时先免费执行。机会只提供预先类型/公共subject/不透明输入引用，不携带根据真实进度、阻塞数或任务算出的答案。输入token由元调度器按固定FIFO登记；固定描述符/队列槽的有界控制开销按公共供给预付并单列，不再递归生成一个排队作业。策略生成请求、复制/解析字段、日志或遍历业务队列均是付费应用工作，不能藏在token登记中。
+机会、作业、提交单元三层语义：POLICY/QUERY/CURSOR/ENTRY/TASK_REQ/NETWORK/REPORT/MODE/PLAN_CHECK/GROUP_RETIRE标识公共机会及其付费作业类别；COORDINATE按事前身份映射内部GROUP_ADMIT或H19 ADG_ENQUEUE，后者是§10明确限定的有限批控制器。所有“选择、读取、生成、消费、更新模式”均发生于相应作业的付费步骤及合法单元提交，不能在机会到达时先免费执行。机会只提供预先类型/公共subject/不透明输入引用，不携带根据真实进度、阻塞数或任务算出的答案。输入token由元调度器按固定FIFO登记；固定描述符/队列槽的有界控制开销按公共供给预付并单列，不再递归生成一个排队作业。策略生成请求、复制/解析字段、日志或遍历业务队列均是付费应用工作，不能藏在token登记中。批不是免费的一组子作业；它占用原同一槽，逐单元消费真实计算和发布能力。
 
 唯一新增的物理事件所派生应用待办是§5真实END的LOCAL_END_OFFER：它来自已接纳原控制责任，严格后继行才可进入既有Srv_E队列。END事件及其固定记录/描述符单列共同控制费用；不因一臂先END就给额外服务容量或给中心新公共选择信号。中点HOLD、cap安装、普通COMPLETE或本地私有c变化均不能借此规则派生免费业务机会。
 
@@ -229,7 +229,7 @@ C PRNG初态作为显式ADAPTER输入由独立block根和固定核心角色映�
 
 发布依赖分开记录：c消费绑定plan_epoch/slot及未消费状态；初始grant接入绑定session/tid/parent及已验证原边，累计扩展另绑定不可撤销lineage/单调cap；本地离散命令依赖单列，不把普通q退休账本revision变化当撤销旧cap；END绑定不可逆closed记录；q证书绑定采样时原tid/几何版本/进度下界。正常连续s/z演化不会冒充命令改写，command_revision相同亦不证明瞬时模式不变。需要HOLD的RESUME、首次START等在实际接纳点还须付费检查规定离散模式/幂等标志；模式不符则拒绝或等待，不用当前pose免费重算可行域。PRECHECK的合法resident保持、END的单调closed以及q的P2包含性各有自己的保持证明，不能共用一个含糊“证书未过期”。同一旧tid只发生有限既定切换，混合守卫/模式/原tag保存的成本归共同控制项且按实际字段位长计，不称无成本业务操作。
 
-应用作业完成后，在严格后继行的有限控制发布容量中执行已列明的版本/tag/幂等检查与准备好的增量；不足支付完整检查/发布则不产生效果、继续占槽。控制发布容量是future O/容量表的显式部分，费用依访问字段与字节长度计，不把随epoch增长的大整数或任意扫描称免费O(1)。验证需要新的几何/全局推导时退回新付费作业，不能在发布点顺便重算。物理在等待期间照常推进；版本稳定只排除离散命令改写，连续安全仍需P2/P5及完整原责任的保持性，不能以相同version替代物理证明。
+普通作业的唯一提交单元，或ADG_ENQUEUE当前单记录单元，计算完成后在严格后继行的有限控制发布容量中执行已列明的版本/tag/幂等检查与准备好的完整增量；不足支付完整检查/发布则不产生该单元效果、继续占槽，检查尝试实际费用保留。不赠送未登记跨行结账额度；若没有能支付完整发布的后继行，该单元可保持未完成至Stop。控制发布容量是future O/容量表的显式部分，费用依访问字段与字节长度计，不把随epoch增长的大整数或任意扫描称免费O(1)。验证需要新的几何/全局推导时退回新付费计算，不能在发布点顺便重算。批的单元完成不等于整批完成，已发布前缀不可回滚，未发布增量不可见；普通作业/GROUP_ADMIT的原子性不因批例外被拆小。物理在等待期间照常推进；版本稳定只排除离散命令改写，连续安全仍需P2/P5及完整原责任的保持性。
 
 INIT机会登记软件初始化作业，经付费验证固定输入、持续有效的bootstrap包络/资源互斥/角色身份并完整提交后，才建立应用可读的resident索引与初始游标证据；它接续已存在的世界责任，不创建物理机器人或另起评分世界。gate激活消息延迟时对应bootstrap/已接续resident仍保留，不能在其他agent启动时被当作FREE。初始化及预处理实际成本单列并纳入首次总成本，公共E不因某臂初始化慢重开。POLICY按公共角色只读允许知识，最多消费一槽或生成一个请求；软件未就绪时除初始化外的应用业务不运行。ACTUATOR只执行已验证发布的命令，REPORT不改可信知识；物理BOOTSTRAP HOLD与真实任务环境依§12独立继续。
 
@@ -237,13 +237,13 @@ QUERY机会只入队通用SELECT作业。中心在它的付费CAPTURE固定已�
 
 CURSOR作业以同样付费读取/选择/后继提交推进固定agent轮询；POSITION与其字段权限仍分开。ENTRY(PRECHECK)只对指定合法请求付费处理，不存在则NO_REQUEST；ENTRY(END)按§5主配置返回付费NO_END_POLL，预先启用轮询的独立配置才经中心请求、通道和本地历史服务链执行；两个公开终点retry按§5各自站内收费总函数运行；TASK_REQ生成单个全局快照请求。NETWORK的付费作业才从指定channel已可发送的不透明队列中取规范最小payload、编码和传输，提交后按本消息外生故障key作用；读取不存在的重放目标为NO_REPLAY_TARGET，不填别臂payload。其队列FIFO是传输规则，不由元调度器提前替策略解析消息或获得发送方新状态。
 
-POLICY(SOURCE_REQUEST,i)按公共n_i modulo 3在中心收费槽执行§7指定的SOURCE_OR_EXTEND、RESEND_CAP或CONTROL_RETRY，总函数只读允许的Kc/Π/中心/组状态。GROUP_ADMIT和GROUP_RETIRE各只运行§5的一项付费中心作业，扫描、空结果、失败及原子发布均用原Srv_C容量；不在首次FINISHED之后免费递归退栏。POLICY(LOCAL_POLICY,i)在本地收费槽读c/pending/已验证READY并执行一次消费；捕获与实际发布都核slot/phase/未消费/绑定，不符合则丢弃，不回写影子c。各token不能连做别的角色，不由本地到cap触发中心机会。PRECHECK/END/gate按各自保持证明复核；ACTUATOR不重规划或重算全局碰撞，旧运动/自主END不被作业槽阻塞。
+POLICY(SOURCE_REQUEST,i)按公共n_i modulo 3在中心收费槽执行§7指定的SOURCE_OR_EXTEND、RESEND_CAP或CONTROL_RETRY，总函数只读允许的Kc/Π/中心/组状态。PLAN_CHECK仅运行该臂§8/10的触发和冻结；COORDINATE在内部运行一项全组原子GROUP_ADMIT，在H19启动§10有限捕获批ADG_ENQUEUE；GROUP_RETIRE在内部运行一项付费退栏，H19无组时为不适用供给。所有扫描、空结果、失败、单元发布与批末清理均用原Srv_C容量，不在首次FINISHED之后免费递归退栏/入队。POLICY(LOCAL_POLICY,i)在本地收费槽读c/pending/已验证READY并执行一次消费；捕获与实际发布都核slot/phase/未消费/绑定，不符合则丢弃，不回写影子c。各token不能连做别的角色，不由本地到cap触发中心机会。PRECHECK/END/gate按各自保持证明复核；ACTUATOR不重规划或重算全局碰撞，旧运动/自主END不被作业槽阻塞。
 
 TASK_SERVICE为固定机会的真实环境操作，按§8已分配队首与实体/模式判断并转移A，不要求某策略额外申请才可计分；资格检查/任务转移的环境服务费用及宿主成本单列，公共容量与规则各臂相同，不把算法可见真值作为副产品。此前已真实发生的服务不因策略未查询TASK而消失。元评价器推进物理、查O、维护不透明token的宿主耗时与应用工作分账，二者均报告；任何业务选择/信息读取不得记入元评价器来规避费用。
 
-PROCESS_SLICE为固定server提供有限正工作容量。server内FIFO，按入队行/job_id打破同时性，运行一个队首job，剩余容量不在本行递归运行新生job。中心账本job检查/更新在私有副本中分步收费，完成后等待后继发布才原子生效；CAPTURE是新鲜authority job及首次END历史封存的首个收费原子操作；已有缓存重放只读既有历史对象并收实际费用、不新建采样点，具体发生于本PROCESS_SLICE行物理推进后的操作起点。它与其他同server作业串行；不同authority共享世界全序，不能有含糊同一时刻的前后快照。容量不足完成该原子操作时不读取状态，保留至以后。每条已执行操作不可撤销计费，未执行未来容量不算真实工作。
+PROCESS_SLICE为固定server提供有限正工作容量。server内FIFO，按入队行/job_id打破同时性，运行一个队首job或其仍占槽的批控制器；剩余容量不在本行递归运行新生job。中心计算的增量保持私有，单元完成后等待后继发布才原子生效；批只在前一单元实际发布后的后继PROCESS_SLICE准备下一单元，不能用前次余量免费继续或同时私备多项。CAPTURE是新鲜authority job及首次END历史封存的首个收费原子操作；已有缓存重放只读既有历史对象并收实际费用、不新建采样点，具体发生于本PROCESS_SLICE行物理推进后的操作起点。批捕获保持已提交图/finished及头尾的有效引用，必要读取/复制/扫描仍逐项收费，独占中心槽只固定中心应用状态、不冻结物理。不同authority共享世界全序，不能有含糊同一时刻的前后快照。容量不足完成相应原子操作时不读取状态，保留至以后。每条已执行操作不可撤销计费，未执行未来容量不算真实工作。
 
-费用表必须列请求生成、CAPTURE/数值封装、区间/CAND/组选择、owner/围栏/索引访问及失效、原子提交、累计cap/控制尝试/证书、网络字节/每接收端、验证/拒绝/padding、重复/失败、planner、日志/GC及首次/复用预处理；组围栏占用时间/面积与造成的外部等待单列，仍进入全窗口成本，不能只统计已完成组。所有动作正费用或由明确共用已付费对象复用，不能隐含免费全局扫描。NATURAL计实际工作与竞争同公共服务容量；STRICT在同O/容量下连空闲未用供给也预付，实际工作向量仍分别报告，不能强迫两臂实际工作量相同。处理排队/物理推进/来源停止互相作用纳入闭环，不能为费用对齐冻结实体。
+费用表必须列请求生成、CAPTURE/数值封装、区间/CAND/组选择、owner/围栏/索引访问及失效、原子提交、累计cap/控制尝试/证书、网络字节/每接收端、验证/拒绝/padding、重复/失败、planner、PLAN_CHECK/历史钟与代数名义量、cut闭包/合图、ADG批捕获及每记录/批末、APPEND初传/重传/安装与前沿维护、日志/GC及首次/复用预处理；组围栏占用时间/面积与造成的外部等待单列，仍进入全窗口成本，不能只统计已完成组。所有动作正费用或由明确共用已付费对象复用，不能隐含免费全局扫描。NATURAL计实际工作与竞争同公共服务容量；STRICT在同O/容量下连空闲未用供给也预付，实际工作向量仍分别报告，不能强迫两臂实际工作量相同。处理排队/物理推进/来源停止互相作用纳入闭环，不能为费用对齐冻结实体。
 
 服务拓扑合同：每臂用同一个有限角色图。Srv_C是中心单服务站；Srv_E(i)是每agent的本地应用/可信捕获服务站；Srv_P为该臂唯一隔离规划worker；Srv_A为任务快照复制服务站；Srv_N(u,v)为每个已登记有向消息通道的服务站。通道/角色由公共合法主体关系固定，不按某臂产生的负荷增设服务器。实体运动/已接纳混合守卫与真实TASK_SERVICE由共同物理/环境引擎提供，其容量与费用独立明列；它们不被某算法应用writer锁住。各站FIFO及同刻key沿用上述规则，能力数值仍未绑定。改变分站/共享关系必须另立预注册profile且各臂相同，不能以只相同单价掩盖不同队列拓扑。
 
@@ -251,13 +251,15 @@ PROCESS_SLICE为固定server提供有限正工作容量。server内FIFO，按入
 |---|---|---|---|
 | 软件INIT/几何缓存/资源验证 | 固定输入、共同bootstrap身份；中心私有副本→合法中心状态 | Srv_C | 后继中心发布；全部解析/几何/建表/核验/复制/首次提交计费 |
 | SOURCE_OR_EXTEND、RESEND_CAP、CONTROL_RETRY、QUERY、CURSOR选主体、模式 | 已交付知识/中心账本；中心状态、请求和last | Srv_C | 封存不可变请求/模式结果，发布后释放本writer；选择/空结果/去重/版本检查均收费 |
-| GROUP_ADMIT、GROUP_RETIRE、围栏/组需求及区间事件维护 | 已交付请求/owner/精度合同/中心版本；只写中心私有增量及原子账本 | Srv_C | 全候选扫描/分量/几何/容量/记录费，先完整准入后签发；退栏不删endpoint，失败及长期保留照计 |
+| COORDINATE的GROUP_ADMIT、GROUP_RETIRE、围栏/组需求及区间事件维护 | 内部已交付请求/owner/精度合同/中心版本；只写中心私有增量及原子账本 | Srv_C | 全候选扫描/分量/几何/容量/记录费，GROUP_ADMIT全组一单元；退栏不删endpoint，失败及长期保留照计 |
+| COORDINATE的H19 ADG_ENQUEUE批控制器 | 已提交图/paid finished、执行尾与cut允许域；中心执行记录/enqueued/独立APPEND意图 | Srv_C | 一槽逐记录封存/后继完整发布，成功前缀不可撤；批末检查/清理后释放，不等待传输或本地安装 |
+| H19 APPEND_ACTION接收与安装 | 认证记录/前驱锚/历史L_E；本地安装序列及持久尾锚 | Srv_E(i) | 连续单记录后继安装，旧槽/缺前驱拒绝与缓存/GC全收费，不写c、cap、finished或Q |
 | PRECHECK/CURSOR/POSITION新鲜捕获及END首次历史封存 | 指定authority允许字段或绑定EndRecord；只写本作业冻结payload/本地缓存及outbox | Srv_E(i) | 首个正END只封存一次；新鲜/首次历史CAPTURE不足容量不读，余复制/封装/拒绝另费；不写中心知识 |
 | END_LOCAL_RETRY、正END缓存重放及GC | 本地握手/已封存历史及引用；本地writer | Srv_E(i) | 公共固定主体，收费空检查/复用/发送意图或合格回收，不读取新的动态END |
 | 真实END及LOCAL_END_OFFER登记 | 已接纳原控制的守卫/预备记录槽；本地状态authority | 共同控制记录容量 | §5完整原子字段写入及唯一后继不透明待办，计记录/位长成本，不提供应用证书或额外Srv_E容量 |
 | 累计cap/READY/控制命令接收验证与LOCAL_POLICY | 本地已交付消息/c/phase/pending；本地命令、消费状态 | Srv_E(i) | 当前合法守卫的后继本地提交；不能在此顺发新原MOVE；接纳与拒绝都计费 |
 | 中心证书接收/资源退休/授予/CANCEL/FINISHED与READY_CENTER_RETRY | 已投送证书、中心版本及持久READY/消费证据；中心唯一账本 | Srv_C | FINISHED/owner/索引/完整READY缓存同一原子提交，网络后继；重复只缓存重发或拒绝，全部实际工作计费 |
-| planner输入/输出管理 | 已交付Kc/K_task、不可变Π和版本；中心管理记录 | Srv_C | 完成的冻结输入交Srv_P，返回后再付费完整检验/CAS，不持中心槽等待worker |
+| PLAN_CHECK及planner输入/输出、H19 cut/ADG合图与前沿维护 | 已交付Kc/K_task/合法生命周期证据、不可变Π/图与版本；中心管理记录 | Srv_C | 触发/空结果、名义量/精确比较、冻结/闭包/合图/语义检查全费；输入交Srv_P后释放中心槽，返回后另付完整检验/CAS |
 | 原core求解 | 冻结SharedEnv、持续worker源历史/clock/RNG；只写worker私有状态 | Srv_P | 完整合格调用即封存结果及结束节点并保留历史；等待中心终态付费交接、槽释放后才可下个job；失败/拒收全计工作 |
 | TASK_REQ生成/任务知识接收 | 中心已知版本、请求身份；中心请求或K_task | Srv_C | 请求后释放中心槽；完整快照交付后另作业验证/更新 |
 | TASK CAPTURE及快照复制 | 同一真实A修订的不可变视图；只写快照payload/outbox | Srv_A | 向中心的后继消息；固定根不赠送整账本复制，不阻塞真实环境更新A |
@@ -267,7 +269,7 @@ PROCESS_SLICE为固定server提供有限正工作容量。server内FIFO，按入
 | 真实TASK_SERVICE | 真实A、实体/服务谓词和Stop界；唯有环境改A/Q | 共同任务环境容量 | 自主真实服务，无算法可见副产品；资格/派单/去重/宿主成本完整记录 |
 | 日志/GC/索引维护 | 各写域已授权状态 | 所属写域的原server | 不设免费后台线程；独立审计器仅留证据，不反向供算法选路 |
 
-异步交接不跨writer嵌套锁：发送者只在自己的提交中封存不可变envelope并产生目的通道的不透明token，随后释放自己的槽；通道作业再付费读取/编码，完成才产生接收角色token；接收角色自己的后继作业付费验证后改自身状态。元调度器只登记有限不透明引用，固定描述符开销单列预付；业务payload读取/复制、FIFO取项和解析不由元调度器代劳。不能在持中心槽时同步等待Srv_E/Srv_P/Srv_A回复，也不能让Srv_N直接写中心owner或本地c。跨角色引用在所有仍有效使用方结束前保留，GC/保留内存也计费。发布的版本/tag检查使用对应writer的显式控制发布容量，不借用另一站空闲供给；不足时继续占自己的槽，不借机冻结其他物理进程。
+异步交接不跨writer嵌套锁：发送者只在自己的提交单元中封存不可变envelope并产生目的通道的不透明token；普通作业随后释放自己的槽。ADG_ENQUEUE的已发布单元同样使该envelope独立可传，但其有限批控制器仍占原中心槽、仅在后继PROCESS_SLICE推进下一单元，批末处置才释放。此例外不等待目的writer、不另占第二槽，不把中心占槽等同持有通道锁。通道作业再付费读取/编码，完成才产生接收角色token；接收角色自己的后继作业付费验证后改自身状态。元调度器只登记有限不透明引用，固定描述符开销单列预付；业务payload读取/复制、FIFO取项和解析不由元调度器代劳。不能在持中心槽时同步等待Srv_E/Srv_P/Srv_A回复，也不能让Srv_N直接写中心owner或本地c。跨角色引用在所有仍有效使用方结束前保留，GC/保留内存也计费。发布的版本/tag检查使用对应writer的显式控制发布容量，不借用另一站空闲供给；不足时继续占自己的槽，不借机冻结其他物理进程。
 
 故障创新由独立block根派生，key=(角色,公开行或请求/作业语义id,有限copy/attempt序号)。同block各臂共享创新函数而输入自己产生的对象；调用次数不同不顺移公用PRNG磁带。ordinary假反馈、no-start、空间/运动扰动、通信错误、处理容量分别有类型；给普通包加时间偏移不等于实体误差。ROOT独立性只对block成立，臂间配对相关允许。当前不生成根、种子、O、manifest、tape或载荷。
 
@@ -305,7 +307,7 @@ ALWAYS_ADVANCE的继续域必须覆盖合法初始化、全部合格正常历史
 
 另保留真实已发表lifelong外部候选Hönig等RA-L2019：原文IV-C/Algorithm2有ADG前驱闭合commit cut和规划执行重叠，不能称其只有single-shot。73L1完整作者PDF及两个作者库头文件已核；当前库4c75fa20c435c440d8b6bd6dc81668ddc7296ba0不是已证2019实验提交，尚未取得整套ADG/monitor/仓库任务驱动原始身份。其native必须保留原动作状态/Type-1与Type-2依赖/任务规划及适用前提；若用共同PIE来源则必须明确叫共同来源ADG执行适配，不能冒称整法原样。
 
-guarded Hönig候选要求共同K/控制、付费完成证据/队列信息、不可撤销旧动作、cut快照与接纳检查、真正服务计数及全部ADG/规划/通信费用；新gate只延后原动作、不偷换MOVE，不继承原活性/平滑性保证。原法允许队列连续执行而本底座要求逐边参考零速和付费交接时，须公开适配限制、分列native/guarded，不能把新增等待归罪原法。该比较的整法身份、任务接口及组合合同尚未全闭，当前不能宣布主lifelong外部对照已冻结；内部R-S/E0与有限TIP族不能抵销此缺口。
+H19共同守卫适配保持付费K/控制、完成证据/队列信息、不可撤销旧动作、cut快照与接纳检查、真正服务计数及全部ADG/规划/通信费用；新gate只延后该系统自己的原动作、不偷换MOVE。原法允许多动作预取及连续队列执行，本底座明确保留多动作逻辑入队，却要求逐边参考零速和付费END/READY交接；原未知障碍下清命令队列也不能直接用于此不可撤逻辑账本。native/共同适配分名，公开这些变化，不继承原活性/平滑性/通信保证或把新增等待归罪原法。下文给定所选完整纸面接缝，源及实际数值/服务后端资格仍未知，主lifelong外部对照尚未固定。
 
 当前外部系统工作选择为H19-PR-COMMON-SYSTEM / ECBS-FA：按已发表2019论文重构ADG与前驱闭合cut，共同任务派发下固定各agent已知首个任务，以固定作者库4c75fa20c435c440d8b6bd6dc81668ddc7296ba0的纯ECBS作几何规划组件，产生它自己的原MOVE/WAIT。不是2019整套作者实现已复现，也不是PIE共同来源执行臂。73L4亲读四个固定头对象，指出ECBS-TA默认分支在全部子搜索失败后可能到未判空open.top；纯ECBS工作选择避免该特定额外分配分支，不把它称所有来源定义域已通过。根全文核读L4/L5后作此纸面选择；未冒称根重新全文读取四个原头或已观察异常。
 
@@ -315,7 +317,41 @@ guarded Hönig候选要求共同K/控制、付费完成证据/队列信息、不
 
 取消L4曾提出的外部专属TASK确认离站屏障。H19满足原source/cut、ADG、共同运动授权与END/READY消费后可继续后继，不额外等待TASK知识或插入服务驻留时间。它与D/R/E0共享§8 SERVICE_TRUE及同一真实TASK_SERVICE机会和付费TASK接口；离开前若未实际服务，任务仍未完成并保留损失，visited不补造Q。未知完成造成重复访问是此系统策略的代价，与PIE PROJECT的预测机制单列比较。PUSH_RECOVERY只给END及资源交接事实，不免费给TASK或下一任务。
 
-cut的工作合同以中心已知旧ADG/动作版本捕获为起点，desired部分保留所有不可撤销已授动作，按各agent原动作次序取达到预估规划经过量的最短前缀，再做Type-1/Type-2前驱闭包并取各agent最大已纳入下标；空旧计划以已知锚点起步。预估量只用最新一次已完成规划尝试从付费输入CAPTURE到中心终态发布的实际历史经过量，包含失败/拒收费用；首轮无历史用初始锚点，不能猜默认时长。公共PLAN_CHECK仅在无在途job，且初始/无可执行计划、出现未处理TASK修订、有agent名义剩余量不大于该历史量三类条件之一成立时可触发，空义务且无变化则IDLE；每次失败后须后继公开机会才重试。封存cut后不对cut外旧动作发新授权，旧cut继续已承诺执行；worker按预测cut终点规划，共同层末端延拓只作几何核验。接纳必须核同一cut版本、完整新旧ADG/动作拼接、源及目标版本，不撤回旧责任，新任务不私改在途输入。这里的NominalDuration有限总函数、PLAN_CHECK与§9公共机会/server的最终登记及跨窗全过程仍待关闭；本文没有将这一未闭cut模块登记为可执行或把缺项填为零。
+以下H19合同采用根L11、C10R及根独立分析后的L14批量修订，替换旧稿未登记的名义时长/机会和笼统cut条款。它是按原论文适配的明确设计，仍NOT_IMPLEMENTED/NOT_RUN，不能冒称作者2019整套实现或来源资格通过。
+
+名义函数固定为T_nom(MOVE)=sqrt(2 a_lo ell/[a_launch(a_launch+a_lo)])+sqrt(2 ell/a_lo)，其中ell>0及a_launch、a_lo沿§3已登记控制profile的原义。它是完整原边、零速出发、已装整cap且之后不中断的保守解析时长估计，不包括no-start、BRAKE、通信、排队、规划或服务，真实完成仍可无界。T_nom(WAIT)=0只反映共同WAIT的一次逻辑消费无额外物理驻留要求，不使其自动消费/finished，也不免等待及证据费用。空序列/驻留锚点名义量为零，不制造动作。原动作/控制字段按可核有限编码的精确有理值解释，平方根/有限和及与公共已发生时刻的比较按实代数数语义并收实际位长/计算费；缺profile、非法长度、非有限编码或数值域不能认证分别返回BINDING/INPUT/NUMERIC_UNAVAILABLE，不能用主机估计或猜零补缺。数值后端尚未绑定，未为任何保护参数赋值。
+
+H19至多一个冻结planner job及一个待处理结果。h是最近一次已在中心提交终态的attempt从实际付费输入CAPTURE到ACCEPT/STALE/合法失败处置的公共经过时长，包含队列、计算、验证与失败；在途attempt不形成h。首次没有历史只能以合法初始锚点开始，非初始历史缺失为PLANNER_HISTORY_UNVERIFIABLE。共同PLAN_CHECK收费检查初始化/模式/在途状态及下列需求：缺初始计划；尚未妥善处理的已交付TASK语义修订；或某参与agent从中心首个未finished动作起的完整名义余量≤h。参与指有已知未完成访问义务或未finished原动作，二者皆无的空闲agent不以零余量反复触发；已耗尽计划但有义务的参与者余量为零。无已知义务且无待更新队列/后缀时IDLE优先。触发后登记待处置规划需求，冻结输入的TASK修订与已接纳处理标记分开；失败/STALE不伪称该需求已解决，只能于后继实际PLAN_CHECK在模式/来源允许时重试，合法接纳或已证明需求消失才清除。源fail-stop不因待处理标记重启，已有job不重复发起，没有失败同一行递归或私有进度增O。
+
+desired对每agent从中心首个未finished动作起按原顺序累计T_nom，取首次达到h的动作，不足取末动作；h=0且仍有未finished时取首项，全WAIT零和不跳过。无未finished则取合法驻留锚点。还须并入全部已enqueued/执行账本已追加、已登记请求/授权或发送缓存可能生效的原动作，以及历史任一cut已承诺但尚未finished的staged动作，再取旧ADG的Type-1/Type-2前驱闭包和各agent最大动作下标。中心只读已发布图/队列/请求cap责任、已付finished/Kc/TASK及消息记录，不读真实s/C/c或未交付END；没有ACK不能排除已签发责任。既有cut的未入队承诺不能在下一cut被忘掉。
+
+cut只在闭包、原动作连接、互异合法预测锚点、任务与版本检查全部付费完成后一次原子封存cut_id、保留前缀/可替换staged后缀边界和冻结源输入，提交失败无半cut。此后cut外未承诺后缀从权威可调度/desired图移除，只可存为无发布资格的历史；禁止从它入队、请求或授权，规划失败也不自行复活。cut内staged可继续按ADG条件付费入队。已发APPEND/cap/RUN及已承诺cut不可撤，真实执行可继续至保留尾；封存不等于物理到达、服务或新位置观察。
+
+新ECBS输入用每agent保留cut最后原动作的符号终态，空前缀用已认证锚点；任务只取冻结K_task首个未完成实例，visited不改A/Q。令cut_layer为旧保留动作最大离散完成层，新源相对层统一平移至cut_layer，使每个新动作起始层严格大于每个旧保留动作起始层；无旧动作则用原初始层锚点。较早到达的预测cut尾只作共同层驻留延拓的几何核验，不追加虚假可消费WAIT、物理驻留或服务机会。cut_layer是已有层的推导索引，不是新增lookahead/误差预算。
+
+旧保留动作及旧依赖不改。新旧合序列按原Algorithm 1首次匹配/传递链规则核候选依赖，仅安装至少一端为新动作的新增边。严格时标不产生new→old Type-2，跨代Type-1仅旧尾→新首；旧/新各自合法无环时，跨两部的环因缺new→old边而被排除。仍须实际付费验证原端点连续、动作/任务语义、完整原ADG规则、短路径末端永久驻留、§10搜索域及共同连续几何接入，不以证明省略输入/对象检查。欠项为INVALID_SPLICE/GEOMETRY/ADG等具名失败。旧保留部分前驱闭合，新图不向旧动作加新前驱，所以不撤已enqueued合法性；这仅为依赖保持，不推出连续资源守卫无死锁。各agent在自己的旧尾按原Type-2及共同END/READY消费后可入新后缀，不设全队到cut或外部TASK确认离站屏障。
+
+接纳须绑定同一cut/job/source、不可变原动作与执行槽、冻结任务义务及正常源结束节点，并完成数值/依赖/合图资格核验。Kc/finished单调前进或旧任务可信完成不因普通账本revision变化而必然STALE；后来新TASK保留为下一次待处理修订。撤销/改写目标/归属造成冻结义务不相容时拒新后缀，不回滚旧cut。接纳只更新未入队且未承诺的候选后缀，执行历史和旧消息不改。输入错误、合法ECBS穷尽false、公共供给停止、内存/表示不足、源异常、非法输出、合图失败、语义STALE、ACCEPTED分记且全费保留；无法证明源状态安全继续便终止其会话，不自动重启/重新播种或换法造路。无后继时cut尾HOLD和未完成任务保留。
+
+H19执行账本按agent设Π_i[0..L_C,i]，本地只安装至L_E,i，0≤c_i≤L_E,i≤L_C,i；整个episode的plan_epoch固定、append revision另记，源图generation不重置执行历史。原动作id=(源job,agent,源动作下标)唯一，入执行槽后两端点/类型/前一记录身份不可改。staged仅为未入队候选；只有下述ADG_ENQUEUE单元合法中心提交，才连续追加一条执行记录并记enqueued。不同agent无需相同L_C。逻辑enqueued可有多条，不等于物理GRANTED：每agent仍至多一个未闭请求、每gate至多一个活动tid，新原MOVE须原END/READY/消费及下一合法PRECHECK，H19初始授权只取b=ell，不运行GROUP_PREFIX或产生组围栏；本地C仅由真实合法安装取得。
+
+一次COORDINATE为H19启动一个有限捕获批ADG_ENQUEUE，原Srv_C单槽保留已提交合法有限图/允许发布域（当前合法后缀或既有cut保留动作）、各agent执行尾和身份引用。F0为捕获时中心已付费提交的finished集合，E0q为已enqueued集合（不指臂E0）；物理END、在途回执、APPEND安装或预计时长不加入F0。中心槽排除其它中心FINISH/CURSOR/MODE/新图/GC作业并发提交，故本批F0及原依赖固定；保留引用及必要字段读取/复制全部收费，不赠送全图快照。
+
+每agent只能选择捕获执行尾之后原Type-1链的连续前缀：动作在允许域、所有Type-2前驱在F0、存在的首Type-1前驱匹配原尾已enqueued/finished身份，其余Type-1接该前缀上一项；首次不合格即关闭本批该链。原无Type-1初始链头仅在确为唯一原链头、没有前序执行记录且匹配付费INIT起始锚时准入，不造虚拟finished。各链最长合格前缀之并B0为此固定捕获域的唯一最大合格集合。每次按各当前合法链头的（原计划时标、agent规范key、原动作id）最小者选下一记录，成功发布后才推进该链头；所有依赖/身份/比较/头尾维护按实际位长收费，不要求每批重排整张图，也不把批内新enqueued当Type-2 finished。链/图身份损坏须失败关闭，不能伪装无候选。
+
+批内一次只计算一条完整提交单元：首项含捕获/头尾检查、后项含前沿推进，均付选择、槽分配、不可变原记录、APPEND封装、索引/引用及发布增量准备费用。单元完成后封存，等严格后继发布行能付完整核验/发布才原子追加记录、标enqueued、产生独立不可变APPEND发送意图并推进批已发布前沿；不能半追加、预发、先算后条或一次免费发满批。前项发布后控制器仍占同一槽，只在后继实际PROCESS_SLICE继续。最后无候选检查、终态及引用回收/转移也收费，完成后才释放槽；空批照计，不拿一个有限O必能完成B0作保证。GROUP_ADMIT继续全组一个原子单元。
+
+APPEND_ACTION绑定中心提交、session/plan_epoch/agent/槽、原动作/前驱身份、source/generation及几何/控制版本，经Srv_N原通道传输，Srv_E逐记录付费认证并在后继合法点连续安装。缺前驱的乱序包不跳槽，冲突拒绝，重复旧槽不重建记录、控制或c。历史安装长度及尾锚持久保留，前缀GC不能删去验证下一追加的必要锚；旧正文已合格GC时只按安装水位拒绝重装，不声称比较了不存在的正文。无新安装ACK/批送达屏障；中心可据自己的Π和Kc提出请求，但本地未安装时完整PRECHECK限定拒绝，不回报正确私有cursor。已发布envelope在原通道可独立传输，与中心准备后条并行；中心不持槽等待交付或Srv_E回执，不增任何站点/容量。
+
+中心将Kc、生命周期消费下界f_cons、历史安装长度下界f_inst分开。合法CURSOR c=x可给f_cons≥x及f_inst≥x，并按原规则更新Kc；完整成功PRECHECK槽k可给f_cons≥k及f_inst≥k+1，不能给f_cons≥k+1或刷新通用Kc；合法FINISH_RECEIPT槽k可给f_inst≥k+1，不能推进f_cons/Kc。只用同episode/动作/槽的已付验证事实取单调最大，初值来自付费INIT；保持f_cons≤c及f_inst≤L_E≤L_C。MOVE ADG finished还须付费维护FINISH_RECEIPT事实，WAIT finished只凭CURSOR越过其槽或后继PRECHECK严格蕴含已消费并付维护费。finished、消费、安装、资源退休和真实Q均不可互相替代。
+
+H19 SOURCE_OR_EXTEND沿共同Kc/原记录产生或重试当前MOVE，初授仅b=ell；CONTROL_RETRY与控制代际/尝试实际水位完全共用§5/7/9。RESEND_CAP在合法当前cap及APPEND两类均非空时按每agent持久二态交替，初态cap，只有实际发送意图成功提交才切换；仅一类有候选则用它且二态不变，均空为收费空结果，不因tid/generation重置。APPEND只选已中心追加且槽k≥f_inst的缓存；每轮封存当时L_C为尾界，规范槽序扫描，游标随实际发送意图提交推进，到尾后才重开下一轮，新append不延长当前轮。私有失败/未发布不推进，已提交后网络丢失不回退；每token至多一条，扫描/空检查/重传/拒绝均收费，不设入队窗口或新预算。
+
+f_inst只让已证安装记录退出APPEND重传候选；实际缓存GC还须所有引用结束，执行记录/cut/ADG/pending/READY分别按消费/关闭合同保留，批末不能一次抹掉所有已追加记录。不保证无限运行固定内存。恢复仅是条件命题：有限目标槽及必要前驱记录保留、未fail-stop、足够实际选择/发布/传输/本地服务并有按前驱次序的成功投送时，连续安装归纳可恢复目标，不需额外CURSOR才能尝试后继缺口。真正MOVE与WAIT finished仍需各自知识/授权/控制/终点链，真实任务另须SERVICE_TRUE；选中一次或有限批不等于投送、执行或服务完成。两类交替也可能延迟丢失cap、错过RUN/TASK_SERVICE而降低Q；保留此负例及全成本。
+
+批占中心槽期间真实物理/END/任务服务和其他站继续，中心接收/MODE/GC作业排队；尚未中心提交的MODE不得偷读，长批延迟MODE/FINISH正是本适配代价。已生效DRAIN禁止新规划/逻辑enqueue/新原MOVE请求及任一UNGRANTED首次正cap，已授维护/终点/缓存恢复照原规则；外生中心fail-stop或全臂Stop按公共顺序及时阻止后续计算/发布，不等批尾清完才生效。批部分失败保留已经原子发布的前缀及独立APPEND，未发布单元/后缀不新增承诺，失败与清理全费；没有清理机会则保留占用/未完成状态。仅后来真实COORDINATE及合法模式/来源可捕获新批，不复活失效私有增量。物理DRAINED不声称未来逻辑槽全已消费，恢复不回滚旧承诺或水位。
+
+费用须覆盖PLAN_CHECK/历史钟/名义函数及精确比较、desired/闭包/cut/合图、批捕获与每项/终态、APPEND初传/交替重传/乱序拒绝/安装、各前沿与WAIT finished维护、所有私有失败、在途/未安装内存及GC。COORDINATE和PLAN_CHECK使用共同O/原站/容量/单价；H19不产生组，GROUP_RETIRE为不适用供给，NATURAL不虚构无用组几何/退栏扫描，STRICT仍按共同未用供给预付。批的逐条发布可早于全批准备完成而开始预取，但原中心槽可能延迟物理授权/FINISH/MODE；不保证较一整批原子事务或作者原实现更快，更不推出净收益。
 
 固定源关键对象：R0 CompetitionSystem.cpp blob4e9a86921fda3fd15bd616c3c0dff461688254ed（27752bytes/885行完整）；.h 6daf0b9e3fa1015e49893b09be87940577427189（6753/243完整）；MAPFPlanner.cpp 94afb42df1a70f5e312a382e61cf83576fd7360e（6125/208完整）；DelaySimulation.cpp 1e1953d9fa9ccb1eb96ae5d7b8829f425679d113（14733/454完整）；driver.cpp b75764cc26c2374ce51dabb94e13a138e50f166f（6664/172完整）；ActionModel.h/.cpp fb3aa01448d3f9369ca7a423d975d4a148cbe1e8/3292164aa861521beda270f18b8d3892e35fbd21（3757/136、8164/220完整）；SharedEnv.h 7f4b4678ca9da7278e92fd4cdf9eed043f03a8e2（573/27完整）。LNS.cpp blob1fb0e54f8f2bb00af05de53233ae600774e36f2a、SHA2560113b1911195d630ce98dfa09a28412148e1fadfc0f1aac9f75f1ba4ad2a54b2，仅指定规划/提交/时钟窗口语义阅读，不用完整关键词检索冒称全文语义。
 
@@ -336,7 +372,7 @@ rtk proxy <UNBOUND_TIP_BUILD>/app -i <UNBOUND_TIP_INSTANCE> -o <UNBOUND_TIP_OUTP
 
 R0选项名见固定src/driver.cpp L40–55；commitStep还参与L106–158的任务揭示，不能只当执行窗。initTimeLimit在所读main声明但未见下传，不凭名字授予初始化耗时保证。--help在clock调用之后、notify和载荷读取之前非零退出，不能当成功运行/失败实例。TIP app.cpp L50–72的-s选择solver而非随机种子，L175起调用P->run并写日志，L255起用编译期_PLANDIR_拼计划路径；实例内部字段、默认覆盖及地图/计划均待独立合法绑定。省略未知字段不能自动接纳原运行默认。R0 Boost组件、TIP原生架构编译选项、平台/ABI/传递依赖与样例适用性仍未运行核实；这些模板不授权开始执行。
 
-主内部GROUP_PREFIX的采用不自动改写上述H19原算法：外部SYSTEM仍保留自己的规划动作、ADG/cut及名义时间含义，共同执行接口允许其原动作累计授权而不授改PIE路径权。是否/如何使用部分cap、公开PLAN_CHECK与源请求/重传/控制角色对应，以及新旧cut对已发部分权限的不可撤回处理，必须在外部总合同明确；当前不让它偷偷运行内部组策略，也不强迫它做无用途组几何以抬高费用。若选H19整动作放行，须明确b=ell及省去组工作和保留原完成通知，另核机会/容量公平。此映射尚未闭，因此G4仍UNKNOWN，不将内部协议整合当成外部对照已合格。
+主内部GROUP_PREFIX不改H19的原动作/ADG/cut。H19所选外部两臂共同为整动作b=ell、无组围栏、付费终点推送与逐边交接：H19E0不买途中POSITION；H19R-S使用与内部R相同的规范轮询/可信空间退休能力并付全部实际费用，但途中清空不放松原Type-2必须finished。两臂都报告，不能运行后只挑较弱者；该共享观察能力不把外部变成PIE来源或内部组策略。§10现给定名义函数、公共机会、批入队/APPEND、cut与不可撤责任的纸面总规则，实际原源/数值/服务后端及全适用域尚未闭，故G4仍UNKNOWN，不能因接口文字已整合自授外部资格。
 
 ## 11. 公共来源、完整选择器与比较预注册
 
@@ -354,9 +390,11 @@ future manifest必需字段：全部源身份/alias/解析字段；官方与适�
 
 共享四臂D-S、R-S、D-F_cap、R-F_cap维持相同物理控制/静态K、原PIE提议及参数含义、共同ALWAYS_ADVANCE / FAIL_STOP_SOURCE与相同继续域守卫/单待结果屏障、可信字段与可购买能力、共同O/容量/费用函数、原任务流/分配规则及外生创新函数。真实派单/请求/payload按各臂自身闭环产生，规则相同不要求实际派单次序或证书逐字相同。它们共同采用GROUP_PREFIX、G-GEOM精确集合制度及PUSH_RECOVERY，所有cap/组/退栏/控制能力相同；S/F_cap按实际释放下界分开，F_cap可省无用途退休工作。E0同样使用上述AA来源会话、继续域/失败规则和待结果屏障；它不主动生成POSITION，也不构建无用途退出事件/退休索引，保留同M0/Mask(E)检查、CURSOR/TASK/PRECHECK/PUSH_RECOVERY/grant/READY等必要共同服务，费用照自身实际工作计。它没有更差的底层控制或信息真实性，只选择不购买途中进度。N-GEOM/G-GEOM的补充比较固定同一查询策略与S，在同输入的离线集合函数合同之外另报NATURAL闭环费用，不能为同迹强行冻结物理。
 
-所有共同适配臂，包括E0与H19-PR-COMMON-SYSTEM，均用同一付费真实END首推、缓存重放、两个公共retry、真实服务与READY消费能力，不强迫额外周期END轮询来制造通知差距。公共机会/容量/单价/故障函数相同，实际END时刻、消息数、等待及重复成本由各自闭环决定。本轮内部主平台已选择GROUP_PREFIX，强R/E0同cap/CUM_CAP、RUN水位、组/退栏和无中点END/ACK规则。外部SYSTEM须按§10补齐自身动作/ADG/cut到共同接口的映射，不能据“能力共同”四字认定其角色合同已经闭合。
+所有共同适配臂，包括E0与H19-PR-COMMON-SYSTEM，均用同一付费真实END首推、缓存重放、两个公共retry、真实服务与READY消费能力，不强迫额外周期END轮询来制造通知差距。共同PLAN_CHECK/COORDINATE及原机会/容量/单价/故障函数相同，触发谓词、每批工作量、实际END时刻、消息数、等待及重复成本由各自闭环决定。内部主平台GROUP_PREFIX的强R/E0同cap/CUM_CAP、RUN水位、组/退栏及无中点END/ACK；H19按§10自己的ECBS-FA/ADG/cut、多个逻辑预取、整动作物理放行及APPEND恢复映射运行。无组省去无用组工作，原队列/合图费用则完整计入，不以“能力共同”推导来源已资格化。
 
 唯一确认主估计仍为NATURAL的D-S−R-S；STRICT仅检验固定预付供给的机制，S/F_cap、G/N与交互为预先列明的次要分析，不择显著者替主效应。E0是必报实用性比较：对D-S−E0给同总体的点估计和预定有效区间；声称“中途观测值得购买且值得定向分配”必须两项均有正证据，任何一项不支持都保留。三臂分数不齐不能给这个合取结论。主D/R比较本来已用固定Z的合理S，新增朴素几何不是首次补上空间安全。
+
+外部预先固定H19E0与H19R-S两条系统臂，均按§10同源ECBS-FA/ADG/cut/批与重传合同。预定系统级次级比较为D-S−H19E0及D-S−H19R-S，两条同报且归§12的明确两比较同时推断族；不择最佳外部回写确认主量，也不以较弱一条替代另一条缺失。它们涉及不同规划机制、队列与放行制度，差异只能解释为整个具名系统在共同世界/供给下的效果，不全归于D查询分数。固定roster、来源适用性和失败/缺失规则一致；某外部在既定域不能合格时登记该比较不可估/不可推断，不运行后缩小地图集合或重分权。
 
 上述效应名称明确对应ALWAYS_ADVANCE / FAIL_STOP_SOURCE闭环profile，包含查询引起的规划次数、过期调用、缓存/随机历史、时间和成本影响；不是固定规划路径下查询的直接效应。AA与accepted-only在相同后继可见输入下仍可因前次正常拒收的随机消费/缓存而给不同提议，不能声称trace等价或普遍优劣。若要分辨状态制度交互，至少需同一S下D/R各自跨AA和accepted-only的预定交叉对照；只有一个R回滚臂不足。当前没有合格回滚后端，不把该交叉当已可实施的新主检验，也不为配齐对照免费删快照费用。共同取消快照的收益属于共享适配，不认领为D创新。
 
@@ -407,6 +445,8 @@ Score输出VERIFIED(Q,observedExposure,E,flags)或UNVERIFIABLE(reason)，以WORL
 对theta_DE0用相同设计/权重/界构造其预定点估计与同水平CI。确认主结论只对应theta_DR；若另声称二者均正，仅在两个预定CI下端均>0且三臂评分可用时发布这个合取。原假设是至少一个分量≤0；合取拒绝是任一真实零假设分量的拒绝事件子集，故各分量有效水平不超过alpha即可使此合取错误率不超过alpha，臂间相关不破坏该逻辑。不能据此宣称两个CI同时95%覆盖或任选一个显著就成功，不更换主量为事后min或择优对照。
 
 若固定合法机制下全部潜在分数有定义，则P(发布数值区间且未覆盖对应theta | X)≤alpha；缺失时整次该比较UNESTIMABLE保留此错误发布界。“可发布”可能依赖随机结果，不能再宣称条件于已发布自动95%覆盖；若潜在评分机制本身未定义，界也不可用。区间可能很宽，无权事后删图/改bound/增减重复/调保护参数取得显著。安全反例、停滞和E0负结果不能被主D/R的正估计抵销。
+
+H19系统级次级族事前只含(D-S,H19E0)及(D-S,H19R-S)这两对，使用同一X、w_b、E_b、Qmax_b及独立block根。各配对差按上式构造点估计，将每个区间的错误概率取alpha/2，再与各自已知目标范围相交；并合界给该两区间同时覆盖的错误概率不超过alpha，不要求两对独立。它不声称与确认主CI或其它机制分析合并后仍同时95%覆盖。两对所需评分/来源域必须齐备，缺任一必需评分则整个该族UNESTIMABLE、域不合格则INFERENCE_UNAVAILABLE，不挑可发布或显著的一条作整体胜出。这个族是预定系统比较，未生成运行结果、样本数或参数。
 
 ## 13. 效果充分条件、失败见证及未运行机械合同
 
@@ -482,7 +522,7 @@ Score输出VERIFIED(Q,observedExposure,E,flags)或UNVERIFIABLE(reason)，以WORL
 
 另有NativeIdentity合同：固定源码与编译/依赖/原输入/时钟随机环境，比较冷旁路与直接原入口的用户可见输出及原状态副作用身份，不借新共享初始化改变原随机消费；实际并发/时钟环境无法固定时不得声称bitwise等价。TriggeredRefinement合同检查公开触发/已知前缀决定模式、动作仍只原MOVE、保护未触发时资源责任不断、切换/取消/退休全合法。两项当前未实现未运行，与共用物理adapter和原生域的边界必须同报。
 
-所有未来检查绑定被检程序/依赖/输入/科学规格版本、覆盖域及原始输出。即使某checker全绿，若漏W01–70、仅逐帧看图或把自写期望复述一遍，不构成验收。现在不创建测试、运行模拟器或读取受限载荷给这些合同补假回执。
+所有未来检查绑定被检程序/依赖/输入/科学规格版本、覆盖域及原始输出。即使某checker全绿，若漏W01–78、仅逐帧看图或把自写期望复述一遍，不构成验收。现在不创建测试、运行模拟器或读取受限载荷给这些合同补假回执。
 
 新增纸面合同同样NOT_IMPLEMENTED/NOT_RUN：W42，END/FINISHED后READY未消费，旧Kc再次提原u→v必须因pending/未END/原起点至少一项拒绝；W43，后继PRECHECK成功后旧READY重复不改c/parent/相关版本；W44，LOCAL_POLICY逐个纯WAIT消费而中心Kc滞后，不靠本地分支免费派SOURCE_REQUEST机会；W45，参考到达但实体不满足服务域，不能计真实B；W46，局部B领先而补集计数变差或固定E追平/反超，不能套总Q充分条件；W47，Srv_C持槽等待远端回复的错误安排应违反服务合同，正确异步消息流各自释放槽且所有传输/接收付费；W48，WORLD物理初态、算法INIT状态、HOST日志可得性分别按下述新初始化合同判定，禁止将软件INIT标签直接变成零分或丢行。
 
@@ -490,9 +530,11 @@ Score输出VERIFIED(Q,observedExposure,E,flags)或UNVERIFIABLE(reason)，以WORL
 
 W55–58同为NOT_IMPLEMENTED/NOT_RUN：W55，正常源返回后中心STALE不退随机/缓存节点，外部Π不变；W56，输入安装后部分失败或形状拒绝使来源会话停止，费用/真实服务前缀仍保留；W57，结果待处置期间不提前复用Srv_P或把内部future_paths送入PROJECT；W58，相同后继输入而不同拒收历史不强求同提议，AA与accepted-only效应/费用不混报。这里只登记未来核验条件，不生成或运行研究测试。
 
-W59–67均仅为NOT_IMPLEMENTED/NOT_RUN纸面合同：W59，q_release/C/b独立、初始新累计包越过丢失小包、cap到达/安装同刻及旧无作用RUN副本不能复活；W60，区间计数入口/退出事件与N-GEOM精确等价，非凸资源可先退后再申请；W61，GROUP_ADMIT先验A/B分离、完整F_G无外国责任与全部原子提交，失败无半组；W62，所有新增owner路径检查围栏，endpoint接续允许而下一原MOVE等退栏；W63，UNGRANTED到唯一CAP_EXTEND的同提交替换、首次行/tie与FENCE_BLOCKED排除；W64，modulo 3及两个组角色一token一职、同站FIFO、无真进度触发额外供给；W65，T后实际采样/完整终点链与有限日历反例，不把一次有效清除说成一次查询；W66，全部中心FINISHED后付费GROUP_RETIRE，长期失联/退栏等待和组历史GC照计；W67，F_cap/E0同cap能力且q_release=0，不用q_evidence清栏、旧整边F与新因子不混报。
+W59–67均仅为NOT_IMPLEMENTED/NOT_RUN纸面合同：W59，q_release/C/b独立、初始新累计包越过丢失小包、cap到达/安装同刻及旧无作用RUN副本不能复活；W60，区间计数入口/退出事件与N-GEOM精确等价，非凸资源可先退后再申请；W61，GROUP_ADMIT先验A/B分离、完整F_G无外国责任与全部原子提交，失败无半组；W62，所有新增owner路径检查围栏，endpoint接续允许而下一原MOVE等退栏；W63，UNGRANTED到唯一CAP_EXTEND的同提交替换、首次行/tie与FENCE_BLOCKED排除；W64，modulo 3、COORDINATE的内部组角色及GROUP_RETIRE一token一职、同站FIFO、无真进度触发额外供给；W65，T后实际采样/完整终点链与有限日历反例，不把一次有效清除说成一次查询；W66，全部中心FINISHED后付费GROUP_RETIRE，长期失联/退栏等待和组历史GC照计；W67，F_cap/E0同cap能力且q_release=0，不用q_evidence清栏、旧整边F与新因子不混报。
 
 W68–70均为NOT_IMPLEMENTED/NOT_RUN纸面合同：W68，旧原tid经MODE推进代际并真正END后，新tid首次授权获得严格后继代际，旧tid/旧尝试不能抬高新活动水位；W69，新STOP仅在Srv_E验证而未ACTUATOR时不提前覆盖旧RUN，实际处理、同代际去重、缺grant限定拒绝和队列写入遵守唯一全序，未作用尝试不因以后cap安装而复活；W70，DRAIN禁止已有UNGRANTED请求首次正cap，E0的QUERY_ON恢复ACTIVE但仍无POSITION，WHOLE_EDGE本地C等真实安装而非中心准入时预置。它们登记可区分的行为，不是已运行测试或资格回执。
+
+W71–78均为NOT_IMPLEMENTED/NOT_RUN纸面合同：W71，共同PLAN_CHECK、COORDINATE固定角色映射及H19无组费用，不以私有需求新增机会；W72，批单元后继付全费才追加/发独立APPEND，前条发布后才继续，部分失败保留前缀且GROUP_ADMIT不拆；W73，固定F0的Type-2、初始无Type-1合法锚与各链最长前缀，入队/安装不能冒finished；W74，APPEND乱序/重放/前缀GC不跳槽，f_inst/f_cons/Kc严格区分，FINISHED不消费；W75，封存尾界不随新增尾延伸、cap/APPEND持久交替和发送提交水位，有限供给仍可有负净收益；W76，h只取中心已终态attempt、零名义WAIT仍需消费，空闲agent不反复触发，失败需求只在后继公共机会重试；W77，历史cut已承诺staged不撤回，cut外私有历史不复活，新图无new→old而仍完整付费核合图；W78，批占槽期间排队MODE不偷生效、外生fail-stop及时禁止新发布、旧承诺/物理责任保留，外部两个固定比较均报且不因缺失换主量。这些只登记未来可区别的行为，没有实例/事件载荷或已运行检查。
 
 ## 14. 继承异议、证据范围与最终验收要求
 
@@ -504,7 +546,7 @@ W68–70均为NOT_IMPLEMENTED/NOT_RUN纸面合同：W68，旧原tid经MODE推进
 
 六门含义维持：G1实际误差问题；G2已发表锚点与诚实路线比较；G3固定R0/适配/原样合同；G4已发表外部基线与适用域；G5公开来源和场景协议；G6物理/算法/资源/费用/评价公平闭环。最新有效根裁决是72R4的2 PASS/3 UNKNOWN/1 FAIL；本73草稿不自授资格。S1前向证据、S2终点/权限、S3真实服务、S4WORLD/软件INIT/总体、S5服务拓扑在本稿提出实质修订，均须新字节核对和顺序审查。S6源定义域、S7素材来源/合法source、S8主lifelong外部比较、S9规模/可证伪范围仍有明确待补证据；不能由章节齐全判闭。
 
-最终完成性审计逐项指向实际证据：交接文件与全部任务真实状态/身份；至少十二项相关一手来源及四份期刊全文的真实阅读、其他来源缺口和差异矩阵；原源码接口/许可/原法检查合同及外部公平域；P1–P6与所有资源/事件/模式/失败总函数；全roster与各比较/评分/区间的适用性；W01–70及所有未运行机械合同；本新字节完整固定后的科研导师skill→Nature reviewer skill→完全不使用任何skill且不读他路意见的独立逻辑→根逐条验收；每份必要skill意见后根另做不用skill的直接分析；私有GitHub精确同步和全历史冻结/只读/保护边界。阅读缺失、报告无效、间接一致或仍UNKNOWN均不能计完成。
+最终完成性审计逐项指向实际证据：交接文件与全部任务真实状态/身份；至少十二项相关一手来源及四份期刊全文的真实阅读、其他来源缺口和差异矩阵；原源码接口/许可/原法检查合同及外部公平域；P1–P6与所有资源/事件/模式/失败总函数；全roster与各比较/评分/区间的适用性；W01–78及所有未运行机械合同；本新字节完整固定后的科研导师skill→Nature reviewer skill→完全不使用任何skill且不读他路意见的独立逻辑→根逐条验收；每份必要skill意见后根另做不用skill的直接分析；私有GitHub精确同步和全历史冻结/只读/保护边界。阅读缺失、报告无效、间接一致或仍UNKNOWN均不能计完成。
 
 H、T_delay、B_CAL、B_max、B*、P_active、density N原义保留未赋值；只进行来源阅读与文档构造，未实现、构建、创建或运行测试、仿真、调参、生成seed/tape/实验载荷/结果或实车动作。旧35–38及受限载荷禁读，桌面旧备份只读、用户明确授权的新阅读包可按任务更新；69–72及其报告不改不封存。本稿尚未固定或送审，所有来源/协议/资格及顺序审查闭合前保持HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT。实验前目标未完成，不以版本/篇幅或审查次数宣布完成。
 
@@ -530,4 +572,4 @@ R在固定有限相关Active及足够实际选择/采样/交付下也能取得�
 
 整边WHOLE_EDGE作为预先登记机制参照保留：普通中心准入提交b=ell，本地C待合法grant实际安装后才为ell，丢包或尚未安装期间不得预置；没有部分cap/组围栏，按旧完整后缀退休和相同原END链。共同供给比较可将不使用的组/cap机会明确空闲；另报告它省去无用途组/候选/累计cap工作的自然经济版本及其固定机会合同，不能强迫整边跑无用代码来显得更慢。前缀与整边比较以相同D/R查询语义及固定世界/费用为条件性机制比较，主确认仍是GROUP_PREFIX内NATURAL的D-S减R-S及必报D-S减E0，不事后择平台或改主量。
 
-新近方法已覆盖前缀释放和局部修复，前缀名称本身不构成创新。根保留实际付费证据如何改变不可撤授权、有限组选择的条件推进及包含失败围栏/查询开销后的净效应为待证增量；不保证它们已超出现有论文。C7R付费交替选择、L9单一剩余阻塞者及单调退栏建议仍是未采用的不同机制，需要分别给总规则/代价/反例，不能在本稿模糊组合。当前精度、源码/后端、外部cut与完整资格仍未闭，必须在固定73之前继续处理，不能用本节长度或NONBALLOT数量放行。
+新近方法已覆盖前缀释放和局部修复，前缀名称本身不构成创新。根保留实际付费证据如何改变不可撤授权、有限组选择的条件推进及包含失败围栏/查询开销后的净效应为待证增量；不保证它们已超出现有论文。C7R付费交替选择、L9单一剩余阻塞者及单调退栏建议仍是未采用的不同机制，需要分别给总规则/代价/反例，不能在本稿模糊组合。外部cut/批入队/恢复现已有§10明确纸面规则，但当前精度、源码/数值及服务后端、原样/适用域与完整资格仍未闭，必须在固定73之前继续处理，不能用本节长度或NONBALLOT数量放行。

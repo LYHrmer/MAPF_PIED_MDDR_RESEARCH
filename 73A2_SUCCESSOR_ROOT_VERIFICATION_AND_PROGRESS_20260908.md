@@ -1,5 +1,15 @@
 # 73A2：接续根实核与继续构造账本
 
+## 2026-09-10 外部全文实整合与新的 Opus 建设分工
+
+2026-09-10最新覆盖记录：73已实际整入H19的PLAN_CHECK/COORDINATE、名义时长/cut、付费批入队/APPEND与恢复，以及两个预定外部系统比较；当前SHA256 656cfdc496154a0d1a640f7ac7364a7fa854a0a5be120be33c29204dbe8151e2，178035 bytes /575 LF。L14完整收到并经根全文/hash核验，根L15独立推导和跨writer例外已写正文；不是失落L7或正式审查。新C12绑定此73输入，Opus/high原exec62977运行中、尚无完整回执；E18/C13由原Copernicus做R0四比较器有限域与最小来源修订，最终文件尚待根接收。P7/L7仍pending_init缺报不重派。L12/C11/L13及桌面12篇/两指南已完整核验，设计后投稿评估仍待。前批83350a8854b805f9efe273db29a3e642fba9b4a9现已真实push成功并API main一致，private=true/main亦重新核验。新整合批尚待本次精确提交/运输，不预填成功。目标active；73未固定/未送审/未接受，六门2 PASS /3 UNKNOWN /1 FAIL及全部NO-GO保持。
+
+根新73正文从d613bc26...159064/533改为656cfdc496154a0d1a640f7ac7364a7fa854a0a5be120be33c29204dbe8151e2，178035/575；实际读回全文与预备整稿逐字相等，默认diff --check exit0。L14 707328474104bd85ebce3c56dc325cdc4a4629c1596d4451024a7913390bde54，19497/98；L15 bfdfcfb0c86a77a0ddfd1a9858dac566a7e0dbbafa48042bc9bbcbdbaecef07e；C12提示9535c2020ccce5c4f4ff5c7eac9983d92631a3c3390f9aa38a953c1b3289406c。根对L14的最大前缀/单元原子性、外生fail-stop与排队MODE、跨writer保槽/独立传输另做无skill分析；新正文明确规划失败需求未处理标记和两条外部同时推断族，W范围增为W01–78。它们都是纸面设计及静态身份检查，没有实现/运行或资格票。
+
+运输的实际后继覆盖旧末段：exec72932终于取得chunka38a95/exit128 SSL超时后才启动唯一有界HTTP/1.1升级push7191；后者本轮收chunk eee8f5/exit0，14f33c8→83350a8。独立有界main API chunk a82f8e/exit0回显完整83350a8。本轮仓库属性只读首次db5cb6/exit1为沙箱代理socket拒绝；正常升级原functions cell276返回chunk733065/exit0，full_name=LYHrmer/MAPF_PIED_MDDR_RESEARCH、private=true、default_branch=main。无活Git运输句柄，不把旧失败抹掉或把新未提交73当已同步。
+
+C12为根唯一新的有界建设题，实际functions cell274→exec62977，firstchunkf6ecb9，Opus/high、无tools/skill/MCP/持久会话、timeout480s；只读提示中的实际新73窗口，要求合法反例/最小修补，不是正式逻辑审查，尚无完整意见则不计。C13属于另一个来源题，由Copernicus管理原exec7933，不与根C12重题/重复；其报告最终完整交付之前本账不按中途意见投票。原完成报告、冻结文件、桌面和受限载荷均不改。研究目标继续active。
+
 2026-09-08，接续根 `/root`。可追加行政及根直接分析记录；不是正式科学候选、审稿票或放行。最新有效裁决仍为72R4的 **2 PASS / 3 UNKNOWN / 1 FAIL；HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。本次不是再次交接，也不将交接读取完成当作研究完成。
 
 ## 接续实核
@@ -337,3 +347,7 @@ L12A随后完整实收：SHA256 3c92d2715adfbb73c5a1c20474cc4ed8a5e6a0886d190b3f
 在L12/C11/L12A实际完成、无活下载/Claude句柄后，根复用Copernicus接续唯一73L14_H19_BATCH_ADG_ENQUEUE_PUBLIC_OPPORTUNITY_COST_CONSTRUCTION_20260910.md：限定H19原IV-B与L11/C10R入队/追加段，构造收费批量协调、一次提交/失败/GC/模式和机会公平；不重做失落L7名义时长/cut、QEMU或四源码头。已给可挑战的有限快照/规范拓扑序批量构造，完整回执尚待，若需新Opus仅有界C12而非重跑C11。根主线下一轮同时整入外部全文，不把任务排出算方案闭合。
 
 本批精确11文件：上表5件加L12A及73A1/73A2/GITHUB_PROGRESS/.github/README/.gitignore；桌面PDF/指南不进Git，L14及任何进行中C12不进本批。尚未填同步成功。
+
+本批11文件已实际本地提交83350a8854b805f9efe273db29a3e642fba9b4a9，父14f33c8a78e42c2f2af91b97faf53109d1af7c85；逐项白名单相等、11文件/418插入/7删除，默认git diff --cached --check实际exit0且无格式例外。首次push原exec47941最终chunk49cebd/exit128、SSL connection timeout；取得实际终态后才正常require_escalated重试，原exec72932当前仍返回同运行句柄，无完整成功/失败终态，不再次push。期间API main查询exec69800实际exit1/TLS超时；最终远端核验仍须在运输有终态后继续正常重试。本段只是本地行政进展，不预填远端或关闭目标。
+
+本目标轮有实质PROGRESS：73控制/模式/事务澄清实际落盘并完成前批科学同步；P10/C9/C10与L11/C10R及根P12完整归档；L12/C11及根L13完成，桌面12篇实际核验，L14新有界基线构造正在进行。不能把网络等待记成科学通过，也不把主线当无工作可推进而标blocked。后继首先只续原exec72932取得终态，再实核远端；研究继续整合外部合同，保持全部NO-GO。此次四行政追加尚未再次提交，不改已完成科学/顾问字节。
