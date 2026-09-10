@@ -4,7 +4,7 @@
 
 ## 2026-09-10 接续根最新记录
 
-2026-09-10最新覆盖记录见[73A2](73A2_SUCCESSOR_ROOT_VERIFICATION_AND_PROGRESS_20260908.md)。73现为0beccea730aced26203406f8ffa69f5ffa93247f80cec64f00ec9de265065965，155562 bytes /531 LF；GROUP_PREFIX已全稿整合，WHOLE_EDGE留作参照，主查询/来源/收费/主量保持。根P11记录实际控制/几何/退栏/扩展需求与成本推导，P10及Opus C9组合检查仍待完整回执，不据整合放行。L9与C8L实际终态全部实收；C8L两次exit124、零usage无意见，不重试第三次。根L10独立复算改良并明确未采用，桌面11篇包及两指南实际核验，原10篇不变。P7/L7仍pending_init且缺约定报告，不重派。起点本地/远端b8b444c4a21f3cfc898213da3f3346650d5b04a4与private属性再核，本批13文件待实际精确同步，不预填成功。用户最终投稿目标及设计后会议/期刊评估仍待办。目标active，73未固定/未送审/未接受，六门2 PASS /3 UNKNOWN /1 FAIL与HOLD不变。
+2026-09-10最新覆盖记录见[73A2](73A2_SUCCESSOR_ROOT_VERIFICATION_AND_PROGRESS_20260908.md)。73现为0beccea730aced26203406f8ffa69f5ffa93247f80cec64f00ec9de265065965，155562 bytes /531 LF；GROUP_PREFIX已全稿整合，WHOLE_EDGE留作参照，主查询/来源/收费/主量保持。根P11记录实际控制/几何/退栏/扩展需求与成本推导，P10及Opus C9组合检查仍待完整回执，不据整合放行。L9与C8L实际终态全部实收；C8L两次exit124、零usage无意见，不重试第三次。根L10独立复算改良并明确未采用，桌面11篇包及两指南实际核验，原10篇不变。P7/L7仍pending_init且缺约定报告，不重派。起点本地/远端b8b444c4a21f3cfc898213da3f3346650d5b04a4与private属性再核，本批13文件已实际push为431b95608d399c0c31265bdf0e7ebf3ed6105cf2，远端main API与本地同值，默认暂存静态检查exit0。用户最终投稿目标及设计后会议/期刊评估仍待办。目标active，73未固定/未送审/未接受，六门2 PASS /3 UNKNOWN /1 FAIL与HOLD不变。
 
 ## 2026-09-08 接续前实际更新（以下旧“运行中”按各任务最新终态读取）
 
