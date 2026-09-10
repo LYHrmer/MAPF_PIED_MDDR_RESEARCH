@@ -4,9 +4,9 @@
 
 73已完成前缀/控制修订，并实际整入H19的公共规划/协调、名义时长/cut、付费批入队和APPEND恢复；当前178035 bytes /575 LF，SHA256 `656cfdc496154a0d1a640f7ac7364a7fa854a0a5be120be33c29204dbe8151e2`，仍未固定、未送审、未接受。L14完整回执经根L15独立分析；正文允许多动作预取但逐记录付费发布，安装/消费/finished分开，旧cut承诺不可撤。两个外部系统比较预先同时登记，主NATURAL D-S减R-S与必报D-S减E0不变，没有实现或效果结果。
 
-LMAPF论文架构任务及桌面12篇/两指南已完成并根核验；L12/C11与根L13的证据组织取舍保留。用户要求充分利用Claude，现并行两项Opus/high建设：根C12挑战已整合外部接缝（原exec62977尚无完整终态），Copernicus E18/C13分析R0四比较器有限调用域及最小来源路线（最终完整报告待根接收）。不是形式打分或新一轮正式审稿，P7/L7缺报不重派。
+LMAPF论文架构任务及桌面12篇/两指南已完成并根核验；L12/C11与根L13的证据组织取舍保留。用户要求充分利用Claude，现并行两项Opus/high建设：根C12挑战已整合外部接缝（原exec62977实际exit124/空stdout，无意见且不重跑），Copernicus E18/C13分析R0四比较器有限调用域及最小来源路线（最终完整报告待根接收）。不是形式打分或新一轮正式审稿，P7/L7缺报不重派。
 
-六门仍 **2 PASS /3 UNKNOWN /1 FAIL；HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。未闭重点为可信精度、来源/数值及严格收费服务后端、外部原样/适用域、素材链/近邻全文及最终固定后的顺序审查；设计闭合后评估会议/期刊。前批83350a8854b805f9efe273db29a3e642fba9b4a9已实际HTTP/1.1 push exit0，main API一致，仓库private=true/main重新实核。新73整合批当前待精确提交/同步，不由前批运输预填本批成功。
+六门仍 **2 PASS /3 UNKNOWN /1 FAIL；HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。未闭重点为可信精度、来源/数值及严格收费服务后端、外部原样/适用域、素材链/近邻全文及最终固定后的顺序审查；设计闭合后评估会议/期刊。前批83350a8854b805f9efe273db29a3e642fba9b4a9已实际HTTP/1.1 push exit0，main API一致，仓库private=true/main重新实核。新73整合精确9文件已提交并push/API核验一致为5d9b37cd8411222a610e968228e5f605819d424a；超时及后续回执另按精确白名单登记。
 
 - [新终端完整交接](../HANDOFF_NEW_CODEX_PREEXPERIMENT_DESIGN_20260908_CANDIDATE73.md)
 - [73完整草稿（未送审）](../73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)
