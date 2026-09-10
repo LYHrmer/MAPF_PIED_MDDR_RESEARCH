@@ -309,3 +309,31 @@ P10/C9均是新整合字节的前一身份0bec...建设意见，不能当d613...
 后续只读git ls-remote真实chunk93ffe9、exit0，refs/heads/main=c9eb47a0f8c4bc02f8748466af1396a221f01ef7，与本地HEAD相符；这是本轮实际远端ref核验成功，先前API私有属性重核失败仍如实保留。73实际全文与根预期逐字一致，未暂存默认静态diff检查exit0。
 
 本批15文件已实际科学提交dd608503e0b72d70dedfc4f1e31c292e080a0bf3，父c9eb47a0f8c4bc02f8748466af1396a221f01ef7；暂存路径与精确白名单逐项相等，15文件/593插入/20删除，默认git diff --cached --check真实exit0、无格式例外。push真实exec23155→chunk026d8d/exit0；随后git ls-remote真实exit0、main与本地HEAD同完整SHA；GitHub repo API随后也真实成功，private=true/visibility=private/default_branch=main。此前API失败保留为历史，不再代表最新核验状态。已跟踪工作树当时干净；此处仅随后四行政文件记录，不改科学正文和完成回执、不预填后继行政提交。C11代理已报exec19355/exit0、完整END-C11，四件正式交付仍待根全文核验，尚不计本批证据。
+
+## 2026-09-10：LMAPF四篇非PIE-D精读、C11完整终态与根论证取舍
+
+L12/C11四件已实际最终交付并由根完整阅读/核验。根先读L12的94行草稿，再与98行最终正文逐字比较并补读全部新增阅读优先级/PDF内存核验段，不以早期b0dd...身份当最终件。根完整读取C11 result，并解析原JSON核modelUsage/terminal_reason及回执逐字包含result、END-C11均为true。下表是实际最终身份；完成件此后保字节。
+
+| 工件 | 根实核SHA256 | bytes / LF |
+|---|---|---|
+| [73L12](73L12_LMAPF_LEADING_VENUE_PAPER_ARCHITECTURE_AND_METHOD_LESSONS_20260910.md) | 90e8efdaca480f28c9199558943a6e88f788015ce98c411485a0797921ad7521 | 24392 /98 |
+| [73C11](73C11_PAPER_ARCHITECTURE_COUNTERFACTUAL_CONSTRUCTION_PROMPT_20260910.md) | 1b56806dc4bb76be7b865dd6add8a64a94ed635351d068df8f1e851252e2fb89 | 8716 /33 |
+| [73C11](73C11_PAPER_ARCHITECTURE_RAW_RESPONSE_20260910.json) | a66ce9ea11f97bd9fc8e1af29e6df2681283a4db5e9cf875ab30952a5b648c9b | 10459 /1 |
+| [73C11](73C11_PAPER_ARCHITECTURE_COMPLETE_RECEIPT_20260910.md) | e9e2c1c5d4afbdf9251ea1e997ef4154789834340c01929c93011ab33432bae4 | 13109 /122 |
+| [73L13](73L13_ROOT_LMAPF_ARCHITECTURE_EVIDENCE_AND_READING_DECISIONS_20260910.md) | 79da19c3f26a0d529e1fc2c955457c29c419ed716b9e6002522ecb44d9a0f05f | 9610 /62 |
+
+代理完整阅读四篇非PIE-D正式主文：RHCR AAAI2021、Traffic Flow AAAI2024、Hönig RA-L2019、PIE ICAPS2024，并另读PIE-D AAAI2025锚点；实际作者版与出版身份/阅读范围分别登记，不冒称原PDF字节全部同出版版。根另独立完整读Traffic Flow官方PDF解析文字L0–741和出版条目，未视觉核图或读论文外载荷；H19又读p.4–5，其余本轮按代理回执而非重复声称根新读全文。
+
+C11单次实际functions cell138→exec19355→chunk6b52a4/exit0，CLI da1b98f6-aac8-4938-b285-9574f749fc49，claude-opus-5/firstParty、duration144019ms、completed/end_turn/is_error=false、END-C11完整，原JSON/result保字节；没有重试或活句柄。根L13不用skill独立分析：不买POSITION时选择器不调用，所谓D-off/R-off都为E0，不加同义第四臂；权重不是原边、Q不是退休分数，反例不合法；系统总差可多组件同时改变，但不能冒称单组件归因；未知接口仍是实验门槛。只采用主张—对照映射与从WORLD起点到固定E的服务/全费用联合过程呈现，不新增算法、处理臂、参数、在线真值或确认终点。73科学字节本批不变。
+
+根选择Traffic Flow为新增第12篇必读（其官方出版/主文已亲核），原代理在四件完整交付后实际接续73L12A_TRAFFIC_FLOW_READING_PACKET_UPDATE_RECEIPT_20260910.md，只新增指定PDF、用apply_patch更新00/99，原11PDF保字节，旧桌面备份不碰。L12报告纯内存官方PDF c57ab25d529e87113035f413d9fae90fc5a05cc5a8c623a357fba55d6be6e30a、2877835 bytes、9页；实际落盘及两指南完整回执尚待，未据内存身份宣布桌面已完成。P24暂作次级阅读建议，不把所有相关论文自动变成用户必读。
+
+前批科学dd608503e0b72d70dedfc4f1e31c292e080a0bf3已有实际远端/private核验；随后四行政提交14f33c8a78e42c2f2af91b97faf53109d1af7c85，暂存精确4路径、默认check0，首次push exec87437实际exit128/TLS失败，正常升级重试exec52810→chunk951290/exit0。后继git ls-remote exec61462及正常升级exec98419均实际exit128/TLS失败，保留为新的ref验证缺失，不把push终态冒作API读取。新文献批同步尚未发生，后记实际结果。
+
+用户再次问进度已中途答复，主线未停止：下一实质工作仍为L11/C10R外部合同入正文及H19批量协调粒度公平、可信精度、源/服务和素材来源。目标active；P7/L7仍pending_init、精确报告未回不重派。新稿未固定/未送审/未接受，正式导师skill→根无skill→Nature skill→根无skill→完全无skill独立逻辑→根验收未开始。无实现/伪代码/构建/研究测试/仿真/调参、保护参数赋值、受限载荷或结果，六门与HOLD保持。
+
+L12A随后完整实收：SHA256 3c92d2715adfbb73c5a1c20474cc4ed8a5e6a0886d190b3f37e21054dcb8b42c，8390 bytes /61 LF。原下载exec37376→chunkcf615c/exit0，HTTP200/application/pdf/2877835 bytes。根全读L12A与00、99新增段，独立pdfinfo及第一页题名/作者核验，并逐个全字节hash12PDF和两指南：新12为c57ab25d529e87113035f413d9fae90fc5a05cc5a8c623a357fba55d6be6e30a、2877835bytes/9页；原11与已核表逐项相符，12PDF共68931345bytes/169页。00最新c381b9c3b71d29395512111ec15ca12e19ece130a84546eb40eb3510ab347758、10678/63，99最新6773ad057ee662bec5b70b63db20dc083c5b4dffcd675c53e387737fc8f14250、17234/161；99旧14550字节前缀hash仍219721...，目录精确12PDF+2指南。下载任务使用nature-downloader合法开放来源流程，科学L12/C11/根L13仍NO-SKILL，不把下载skill当必要科学审稿。本次桌面新阅读任务完成，不代表研究完成。
+
+在L12/C11/L12A实际完成、无活下载/Claude句柄后，根复用Copernicus接续唯一73L14_H19_BATCH_ADG_ENQUEUE_PUBLIC_OPPORTUNITY_COST_CONSTRUCTION_20260910.md：限定H19原IV-B与L11/C10R入队/追加段，构造收费批量协调、一次提交/失败/GC/模式和机会公平；不重做失落L7名义时长/cut、QEMU或四源码头。已给可挑战的有限快照/规范拓扑序批量构造，完整回执尚待，若需新Opus仅有界C12而非重跑C11。根主线下一轮同时整入外部全文，不把任务排出算方案闭合。
+
+本批精确11文件：上表5件加L12A及73A1/73A2/GITHUB_PROGRESS/.github/README/.gitignore；桌面PDF/指南不进Git，L14及任何进行中C12不进本批。尚未填同步成功。

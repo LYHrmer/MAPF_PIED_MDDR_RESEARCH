@@ -2,11 +2,11 @@
 
 更新：2026-09-10。**HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。
 
-73主GROUP_PREFIX已补跨MOVE控制代际、命令认证与ACTUATOR实际作用点、退栏所需历史END证据、DRAIN/E0恢复和WHOLE_EDGE安装规则。当前159064 bytes /533 LF，SHA256 `d613bc26c54ac9a3eac0cb5483120752f710eef8acb08e7418c240ddf1a9cf52`，仍未固定、未送审、未接受。根P12独立否定Opus C9的非法碰撞前缀并采用P10中的实际接口修订；W01–70均仅纸面。纯D、ALWAYS_ADVANCE / FAIL_STOP_SOURCE、PROCESS_SLICE及原独立配对主量保持。
+73已完成前缀平台及本轮控制/模式修订，当前159064 bytes /533 LF，SHA256 `d613bc26c54ac9a3eac0cb5483120752f710eef8acb08e7418c240ddf1a9cf52`；仍未固定、未送审、未接受。P10/C9经根P12独立分析，C9碰撞前缀不成立；实际修订跨MOVE控制代际、ACTUATOR作用点、退栏历史证据、DRAIN/E0恢复与整边安装。L11/C10R的H19规划衔接和重传尚待整入，入队机会公平须修正。主量仍为NATURAL的D-S减R-S，D-S减E0必报；没有实现或效果结果。
 
-P10和Opus C9、C10均有实际完整终态，根分别逐项分析。L11外部名义时长/公共机会/cut和C10R追加记录重传已成文，尚未整入73；H19协调入队粒度需先核原法与机会公平。用户要求的L12论文架构精读已接续，目标四篇非PIE-D正式论文及PIE-D锚点；C11代理已报exec19355/exit0，完整工件待根核验，不能把中途消息当完成。桌面仍11篇，新增必读待根核选；P7/L7仍pending_init、报告缺且不重派。
+用户要求的LMAPF论文架构任务已完成：L12实际精读RHCR（AAAI2021）、Traffic Flow（AAAI2024）、Hönig（RA-L2019）、PIE（ICAPS2024）及PIE-D锚点，版本和阅读强度分别登记。新Opus C11真实exec19355/exit0，完整JSON/正文均已根核；根L13独立否定重复E0的所谓第四格及错误权重反例，仅采用主张—对照表与全程服务/费用呈现两项证据组织改良，不改算法或主量。Traffic Flow已实际加入桌面包，根核第12篇9页/文件身份、两指南和原11PDF不变。L14新有界题接续修订H19批量入队与机会成本，完整回执待；原P7/L7缺报且不重派。
 
-六门仍 **2 PASS /3 UNKNOWN /1 FAIL**。剩余重点是可信精度、收费服务/源持续域、外部完整适配、素材和近邻全文、最终固定后的顺序审查。没有实现/实验/效果结论，设计闭合后再评估会议/期刊。本批精确15文件已实际push为[dd60850](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/commit/dd608503e0b72d70dedfc4f1e31c292e080a0bf3)，远端main与本地HEAD相符，随后API实核private=true/main；默认暂存静态检查exit0。此前API超时已保留历史，此处仅后续运输记录。
+六门仍 **2 PASS /3 UNKNOWN /1 FAIL；HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。未闭重点为可信精度、源及收费服务、完整已发表外部适配、素材与近邻全文、最终固定后的顺序审查；设计闭合后再评估会议/期刊。前批15文件已实际同步dd608503e0b72d70dedfc4f1e31c292e080a0bf3并核远端/private；随后四行政14f33c8a78e42c2f2af91b97faf53109d1af7c85首次TLS失败后正常升级push真实exit0，但后续ref查询及升级重试TLS失败，未假报新的ref核验成功。本轮文献完整工件同步尚未发生。
 
 - [新终端完整交接](../HANDOFF_NEW_CODEX_PREEXPERIMENT_DESIGN_20260908_CANDIDATE73.md)
 - [73完整草稿（未送审）](../73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)
