@@ -2,7 +2,7 @@
 
 ## 2026-09-10 外部全文实整合与新的 Opus 建设分工
 
-2026-09-10最新覆盖记录：73已实际整入H19的PLAN_CHECK/COORDINATE、名义时长/cut、付费批入队/APPEND与恢复，以及两个预定外部系统比较；当前SHA256 656cfdc496154a0d1a640f7ac7364a7fa854a0a5be120be33c29204dbe8151e2，178035 bytes /575 LF。L14完整收到并经根全文/hash核验，根L15独立推导和跨writer例外已写正文；不是失落L7或正式审查。新C12绑定此73输入，原exec62977实际exit124/空stdout，已登记73C12_TIMEOUT_NO_ADVICE_RECEIPT_20260910.md，不计意见、不重启；E18/C13由原Copernicus做R0四比较器有限域与最小来源修订，最终文件尚待根接收。P7/L7仍pending_init缺报不重派。L12/C11/L13及桌面12篇/两指南已完整核验，设计后投稿评估仍待。前批83350a8854b805f9efe273db29a3e642fba9b4a9现已真实push成功并API main一致，private=true/main亦重新核验。新整合精确9文件已实际提交5d9b37cd8411222a610e968228e5f605819d424a，push17845/9f1aed exit0、独立main API689f02 exit0同SHA。目标active；73未固定/未送审/未接受，六门2 PASS /3 UNKNOWN /1 FAIL及全部NO-GO保持。
+2026-09-10最新覆盖记录：73已整合H19公共规划/协调、名义时长/cut、付费批入队/APPEND恢复及两条外部系统比较；本轮又据完整E18/C13和根E19独立分析补入四LLNode堆的限定空状态域与Planner::solve空H_goal的失败分流。当前SHA256 ab0283a5ef6fb9b3a408f0d453fb763340f9241b01a63928851ceb5ddef48939，181390 bytes /583 LF，W01–80均仅纸面。C13实际Opus5/exit0/result/END完整，根全读核验并纠正其UB必要论、native等价及自动重试等意见；C12实际exit124无正文，不计意见不重跑。E18/C13原任务完成，原Copernicus接续唯一P13/C14可信参考进度精度建设，尚无完整回执；P7/L7仍pending_init缺报不重派。桌面12篇/两指南已完整核验，设计后投稿评估待办。前批科学5d9b37c与六文件后继0d62d471eca7e7654279f9af67e18c0e6f5786da均有真实push/API一致，private=true/main已核；本新来源批尚待精确提交/运输。目标active，73未固定/未送审/未接受；六门2 PASS /3 UNKNOWN /1 FAIL与全部NO-GO保持。
 
 根新73正文从d613bc26...159064/533改为656cfdc496154a0d1a640f7ac7364a7fa854a0a5be120be33c29204dbe8151e2，178035/575；实际读回全文与预备整稿逐字相等，默认diff --check exit0。L14 707328474104bd85ebce3c56dc325cdc4a4629c1596d4451024a7913390bde54，19497/98；L15 bfdfcfb0c86a77a0ddfd1a9858dac566a7e0dbbafa48042bc9bbcbdbaecef07e；C12提示9535c2020ccce5c4f4ff5c7eac9983d92631a3c3390f9aa38a953c1b3289406c。根对L14的最大前缀/单元原子性、外生fail-stop与排队MODE、跨writer保槽/独立传输另做无skill分析；新正文明确规划失败需求未处理标记和两条外部同时推断族，W范围增为W01–78。它们都是纸面设计及静态身份检查，没有实现/运行或资格票。
 
@@ -361,3 +361,15 @@ C12始终只续exec62977，最终85ddaa/exit124、stdout空；后继实时时钟
 根全文重读E5，独立取得固定R0 planner.cpp L100–280（blob4f46f988d2c16f09c5a6f65bb9cd70e8e01aa483）及lacam2.cpp全10行（blob75ee58f4e1adb46ad3b26991cc212929bbff5f60）。亲见OPEN为std::stack；H_goal/curr_best初值空，若deadline使while不入，fallback仍空，cout先解引用，之后if(H_goal!=nullptr)已太迟。这是限定前提的源码问题，不是LLNode Compare，不是已运行崩溃或全源审查。已给原代理，后继据E18/C13根独立取舍，不直接改源码。
 
 此次行政补丁首次因A2实际新增段位于旧引言之前、内存预期位置不同而全文上下文不匹配，工具拒绝且git状态实际仍clean；根随后读回五行政原文，确认其余四件完全匹配，A2只是同块位置不同，再改为精确段落补丁。没有完成科学文件字节变更或研究测试。73仍656cfdc496154a0d1a640f7ac7364a7fa854a0a5be120be33c29204dbe8151e2，178035/575。用户询问进度为中途沟通，目标active，六门/HOLD及未固定未审保持。
+
+## 2026-09-10 E18/C13 实收、根 E19 与来源条款入正文
+
+E18/C13四件完整最终传输已收到，根全文读E18/完整C13及代理复算，截断的E18§6–8另补读；完整hash/bytes/LF与最终表一致，实际raw result在receipt逐字匹配、END-C13为true。E18为8e6b0f86e262a3d2b76924b21cf3392d1c90f8c6d3497507377a9d4fd507c0da /27150/132；C13 prompt为320f5d0d4cf3c45a8fe789e581a1e01d99ce3a9290fbef4dc725279381b2377b /9506/31，raw734f3853a4e59da8e2ddeebbbef32e72aea90d1021925d228eca8c6d1bce64fc /12759/1，receipt d92c31e89a9f5271459a317f10d41a03d7f265625216d2e1041021ef2f4045bc /19190/108。C13原7933→8e8505 exit0，真实Opus5/firstParty/completed/end_turn，无重试活句柄；不是C12的回执。
+
+根E19为6549b04c7cd94ce39006d1fb6039c930deaa28dc683ddbee3fe8ff36d7e3753f，独立补读固定MAPFPlanner.cpp L35–90并结合此前两个原函数：接受四种堆/两个谓词的条件空状态归纳，修正最弱条件/全仓/UB三条件/native等价/审计与运行费混淆；空H_goal在首次读取前分流并保原清理、空返回，本次PRE_COMMIT_SHAPE停止，不自动clearAll重试。实际写73 §9与W79–80，旧“唯一修补第五堆”已更新，当前ab0283a5ef6fb9b3a408f0d453fb763340f9241b01a63928851ceb5ddef48939 /181390/583，全文读回与预备稿相等、默认静态check0。仅文档；全部源/目标索引/所有权/数值和后端并未合格。
+
+E18旧任务完全结束后根复用Copernicus接续P13/C14，限定§3/6/15/必要付费接口，构造q≤s及已有epsilon精度的有限表示/可信观测来源，不给精度赋零或默认，不免费读实体pose/未来创新，不泛查QEMU/R0；起始656c...输入中相关三节与新稿相同，报告须标实际范围。完整精度回执尚待，不能计通过。
+
+上批六文件0d62d471eca7e7654279f9af67e18c0e6f5786da，默认cached check0；push90380实际aeec16/exit124后才正常升级重试76079，终态82fdd0/exit0；独立main API c3db0e/exit0同0d62d47。当前这批精确11路径为新E18/E19/C13三件、73及五行政白名单，无P13/C14进行件和桌面文件；本段未预填其新提交。前次行政补丁还曾因同文件重复操作被工具拒绝，分组后实际成功；本次科学补丁初次hunk倒序被拒绝，排序后成功，未改完成旧件或运行研究测试。目标持续active，本轮为实质PROGRESS，所有门/NO-GO保持。
+
+本批11文件首次默认git diff --cached --check实际exit2，唯一项为已完整核验的73C13_R0_COMPARATOR_DOMAIN_COMPLETE_RECEIPT_20260910.md第108行EOF空行。该完整回执保原字节/hash，不为格式修改；只对这个精确文件的本次检查例外允许blank-at-eof，其他十文件仍用默认检查。不得把默认全批检查改记为exit0，后继例外检查以实际工具为准。

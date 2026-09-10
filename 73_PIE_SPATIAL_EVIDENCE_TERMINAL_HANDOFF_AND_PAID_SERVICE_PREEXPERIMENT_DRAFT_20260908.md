@@ -281,7 +281,13 @@ FAULT的类型记录为(公共行,role,subject,kind,该profile已规定的载荷
 
 新增来源73E1已经完整读取六个固定R0对象（101756 bytes/2869逻辑行），证实官方CLI类别“LACAM only”和具名分支初始/重试/修复经getInitialSolution→runLACAM2→solve→Planner::solve，不需要修改源才有此模式。它仍复用LNS对象、随机洗牌/预采样tie等；不是无随机、无SIPP对象或整个生命周期契约已闭。73E3/E4现已实际完整返回；73E5亦完整返回并经根全文读取，不能再按历史时态记待回；原73E2仍缺，不用新报告冒充。根另独立核固定头文件/driver全文和相关完整函数窗口，确认init_time_limit在所见构造与driver路径未初始化却在simulate首次按值传给plan，plan体内覆盖不能消除调用前读取；初始化失败未向simulate传成停止，future完成仅join不get不能识别其异常；computeAllPair另有局部第五个pairing_heap，其>=比较不满足严格弱序，且位于LACAM分支选择之前。这些源合同问题不能由纯LACAM名称或种子消除，不等于已运行观察到崩溃或性能损失。73E7根已实核本机Boost 1.74头文件/软件包与构造、析构、merge调用窗口，选其为纸面参考依赖合同；实际未来include路径、宏、对象hash及构建仍未绑定，不能由头文件存在推运行通过。原生R0身份保留，修复适配的具体工作选择如下，所有改变共同给予相应内部比较，不据源缺陷制造查询优势。
 
-当前唯一修复来源工作选择为R0-REPAIRED-LACAM-ADAPTER / ALWAYS_ADVANCE / FAIL_STOP_SOURCE，依据73E6、E11、E12及根不用skill独立分析：保留固定R0 0b5b33649fc367abcb1cd0a7ad5ac03511bf9357的PIE/原规划提议链与LACAM类别；另设隔离worker同步入口，绕过原driver/BaseSystem.simulate及其异步planner_initialize线程/脱离路径，在同步initialize前显式选择算法。预处理、首个plan、后继plan预算槽逐项显式传入并保留原义，当前不赋值；不读取未初始化BaseSystem.init_time_limit，不把plan内部覆盖当调用安全。唯一内部算法修补为computeAllPair局部第五个堆比较器从value>=改为value>，不改另外四个LLNode比较器、不替换all-pairs/LNS路径。此修补只恢复该局部严格关系，四堆仅在已证空生命周期才可排除Compare调用；不能推所有合法输入或搜索已定域。
+当前唯一修复来源工作选择为R0-REPAIRED-LACAM-ADAPTER / ALWAYS_ADVANCE / FAIL_STOP_SOURCE，依据73E6、E11、E12及根不用skill独立分析：保留固定R0 0b5b33649fc367abcb1cd0a7ad5ac03511bf9357的PIE/原规划提议链与LACAM类别；另设隔离worker同步入口，绕过原driver/BaseSystem.simulate及其异步planner_initialize线程/脱离路径，在同步initialize前显式选择算法。预处理、首个plan、后继plan预算槽逐项显式传入并保留原义，当前不赋值；不读取未初始化BaseSystem.init_time_limit，不把plan内部覆盖当调用安全。已登记内部源码差异包含computeAllPair局部第五个堆比较器从value>=改为value>及下述Planner::solve空H_goal失败分流，不改SIPP/A*四种堆所用的两个LLNode谓词、不替换all-pairs/LNS路径。前者只恢复该局部严格关系；后者只封闭具名空目标分支。原样R0另存，两项共同差异和隔离/时钟/形状接口属于修改版来源，不能推所有合法输入或搜索已定域。
+
+73E18与C13完整实际回执经根E19不用skill独立分析，将四堆排除限定为具名条件域：固定具体MAPFPlanner且无未登记虚覆盖，初始化前显式选择LACAM并在会话内不变；agent身份/数量固定、fresh reserve后emplace且不复制持裸solver指针的Agent；唯一worker及原输入权限；仅用loadPaths→plan→PRE_COMMIT_SHAPE→planner_commit包和已登记生命周期，不从诊断/监控调用runPP、LNS::run、LNS2、findPath或getTravelTime。已读构造建立空SIPP，路径维护只改路径/表/标量，纯初次及正常后继均调独立LaCAM；其OPEN为std::stack而非LLNode堆。原提交验证的临时A*只做路径几何检查，也从空构造到空析构。故在有效对象/合法调用与已核参考Boost语义下，四种root由空保持空，正常AA软拒收不新增Compare边；这不是全仓唯一调用者或最弱条件证明。实际include/ABI、完整输入/对象继续域仍须绑定，不把paper条件当自动已满足。
+
+根另直接读取固定planner.cpp的完整solve窗口与lacam2.cpp/外层plan调用：若建结构后首次while因deadline未进入，curr_best/H_goal仍空，原fallback之后cout先解引用，后面的非空if已太迟。预算为原义、结构工作收费且公共时间可前进，不能靠补默认/下限或免费预跑排除此分支。所选纸面修订在首次H_goal读取前分流：非空才进入原目标日志/回溯，空目标不读取、不回溯、不补路径，仍经过原已建立对象清理后返回空solution；构造/清理异常沿原真实退出，不假称成功。runLACAM2的空解失败经本次plan返回后的PRE_COMMIT_SHAPE即NO_PROPOSAL_SHAPE/FAIL_STOP_SOURCE，不进原commit或下一次clearAll重试。外层fix分支没有把false回写initial_success，不能伪造统一失败标志链。守卫/分支/空对象/清理/停止全费，非空路径也不宣称墙钟逐结果等价；目标内部索引覆盖、EXPLORED所有权及全部可达数值域仍未证。
+
+四种堆成员对应两个原谓词类型，原随机平局关系不因不调用而变成严格弱序；没有具体库条款或运行证据时，也不把“必须实际落平局且随后出错”当UB的必要三条件。已证本域无该项Compare只免未发生的比较/RNG工作，常驻SIPP与验证临时A*构造/析构及路径维护照实际计费，不拿研究审计成本代替运行成本，不删除空对象给任一臂优势。D/R/F_cap/E0凡引用该来源均同修订、同AA/失败/费用规则；H19不同来源不虚收R0对象费用。未获资格时不造失败实验；未来已资格守卫失败与实际源失效/不可推断分别登记。
 
 同步初始化以公共入队到付费结果接纳的全部经过时间判截止：正常返回、完整后条件与状态封存均完成且中心在截止/取消之前付费验证提交才INIT_READY。仅join、私有函数已返回、未取回异常或超时后才发布均不算成功；异常/无效/未知分别登记。首次planning资格在首次合法事务发布时消耗，即使失败/拒收不回滚；原initial_run的源状态语义另存。initMap/computeAllPair/LNS创建、loadPaths/plan/planner_commit、PRE_COMMIT_SHAPE、输出封存、持续内存/复制/失败/清理全部收费；本profile不做逐job检查点，未发生的快照/回滚工作不虚收。MAPFPlanner.h的lns声明已有nullptr初值，不再制造“未初始化lns”问题；原析构env先于lns的风险由对象生命周期另核，不能凭进程终止忽略已经走过的局部析构或异常展开。
 
@@ -522,7 +528,7 @@ H19系统级次级族事前只含(D-S,H19E0)及(D-S,H19R-S)这两对，使用同
 
 另有NativeIdentity合同：固定源码与编译/依赖/原输入/时钟随机环境，比较冷旁路与直接原入口的用户可见输出及原状态副作用身份，不借新共享初始化改变原随机消费；实际并发/时钟环境无法固定时不得声称bitwise等价。TriggeredRefinement合同检查公开触发/已知前缀决定模式、动作仍只原MOVE、保护未触发时资源责任不断、切换/取消/退休全合法。两项当前未实现未运行，与共用物理adapter和原生域的边界必须同报。
 
-所有未来检查绑定被检程序/依赖/输入/科学规格版本、覆盖域及原始输出。即使某checker全绿，若漏W01–78、仅逐帧看图或把自写期望复述一遍，不构成验收。现在不创建测试、运行模拟器或读取受限载荷给这些合同补假回执。
+所有未来检查绑定被检程序/依赖/输入/科学规格版本、覆盖域及原始输出。即使某checker全绿，若漏W01–80、仅逐帧看图或把自写期望复述一遍，不构成验收。现在不创建测试、运行模拟器或读取受限载荷给这些合同补假回执。
 
 新增纸面合同同样NOT_IMPLEMENTED/NOT_RUN：W42，END/FINISHED后READY未消费，旧Kc再次提原u→v必须因pending/未END/原起点至少一项拒绝；W43，后继PRECHECK成功后旧READY重复不改c/parent/相关版本；W44，LOCAL_POLICY逐个纯WAIT消费而中心Kc滞后，不靠本地分支免费派SOURCE_REQUEST机会；W45，参考到达但实体不满足服务域，不能计真实B；W46，局部B领先而补集计数变差或固定E追平/反超，不能套总Q充分条件；W47，Srv_C持槽等待远端回复的错误安排应违反服务合同，正确异步消息流各自释放槽且所有传输/接收付费；W48，WORLD物理初态、算法INIT状态、HOST日志可得性分别按下述新初始化合同判定，禁止将软件INIT标签直接变成零分或丢行。
 
@@ -536,6 +542,8 @@ W68–70均为NOT_IMPLEMENTED/NOT_RUN纸面合同：W68，旧原tid经MODE推进
 
 W71–78均为NOT_IMPLEMENTED/NOT_RUN纸面合同：W71，共同PLAN_CHECK、COORDINATE固定角色映射及H19无组费用，不以私有需求新增机会；W72，批单元后继付全费才追加/发独立APPEND，前条发布后才继续，部分失败保留前缀且GROUP_ADMIT不拆；W73，固定F0的Type-2、初始无Type-1合法锚与各链最长前缀，入队/安装不能冒finished；W74，APPEND乱序/重放/前缀GC不跳槽，f_inst/f_cons/Kc严格区分，FINISHED不消费；W75，封存尾界不随新增尾延伸、cap/APPEND持久交替和发送提交水位，有限供给仍可有负净收益；W76，h只取中心已终态attempt、零名义WAIT仍需消费，空闲agent不反复触发，失败需求只在后继公共机会重试；W77，历史cut已承诺staged不撤回，cut外私有历史不复活，新图无new→old而仍完整付费核合图；W78，批占槽期间排队MODE不偷生效、外生fail-stop及时禁止新发布、旧承诺/物理责任保留，外部两个固定比较均报且不因缺失换主量。这些只登记未来可区别的行为，没有实例/事件载荷或已运行检查。
 
+W79–80均为NOT_IMPLEMENTED/NOT_RUN纸面合同：W79，源首次while之前截止且H_goal空时，首次解引用被限定守卫挡住，原已构造对象收费清理/空返回后本次形状拒绝即会话停止，不进commit/自动重试；W80，受限纯来源跨正常AA软拒收只走既定分支，常驻SIPP和临时验证A*保持空，诊断不得新增搜索入口，实际空对象/守卫成本保留而未发生Compare不虚收。这两项不替全部目标索引、所有权/库/后端继续域证明。
+
 ## 14. 继承异议、证据范围与最终验收要求
 
 71R4六个主题逐项承接：T1迟到首次请求/关闭竞态对应§5的UNSEEN取消和已授拒绝；T2 RR全集/初态对应§7；T3源时钟/暂停/原预算对应§9；T4采样线性化对应§6/9；T5可信逻辑cursor与pure WAIT公平对应§6/8/10；T6 INIT与首次MOVE评分对应§12。它们是新候选提出的关闭证据，不回改71的十条原意见、69的九条或任何审稿票，不能以删去一种协议的名称代替其安全责任。
@@ -546,7 +554,7 @@ W71–78均为NOT_IMPLEMENTED/NOT_RUN纸面合同：W71，共同PLAN_CHECK、COO
 
 六门含义维持：G1实际误差问题；G2已发表锚点与诚实路线比较；G3固定R0/适配/原样合同；G4已发表外部基线与适用域；G5公开来源和场景协议；G6物理/算法/资源/费用/评价公平闭环。最新有效根裁决是72R4的2 PASS/3 UNKNOWN/1 FAIL；本73草稿不自授资格。S1前向证据、S2终点/权限、S3真实服务、S4WORLD/软件INIT/总体、S5服务拓扑在本稿提出实质修订，均须新字节核对和顺序审查。S6源定义域、S7素材来源/合法source、S8主lifelong外部比较、S9规模/可证伪范围仍有明确待补证据；不能由章节齐全判闭。
 
-最终完成性审计逐项指向实际证据：交接文件与全部任务真实状态/身份；至少十二项相关一手来源及四份期刊全文的真实阅读、其他来源缺口和差异矩阵；原源码接口/许可/原法检查合同及外部公平域；P1–P6与所有资源/事件/模式/失败总函数；全roster与各比较/评分/区间的适用性；W01–78及所有未运行机械合同；本新字节完整固定后的科研导师skill→Nature reviewer skill→完全不使用任何skill且不读他路意见的独立逻辑→根逐条验收；每份必要skill意见后根另做不用skill的直接分析；私有GitHub精确同步和全历史冻结/只读/保护边界。阅读缺失、报告无效、间接一致或仍UNKNOWN均不能计完成。
+最终完成性审计逐项指向实际证据：交接文件与全部任务真实状态/身份；至少十二项相关一手来源及四份期刊全文的真实阅读、其他来源缺口和差异矩阵；原源码接口/许可/原法检查合同及外部公平域；P1–P6与所有资源/事件/模式/失败总函数；全roster与各比较/评分/区间的适用性；W01–80及所有未运行机械合同；本新字节完整固定后的科研导师skill→Nature reviewer skill→完全不使用任何skill且不读他路意见的独立逻辑→根逐条验收；每份必要skill意见后根另做不用skill的直接分析；私有GitHub精确同步和全历史冻结/只读/保护边界。阅读缺失、报告无效、间接一致或仍UNKNOWN均不能计完成。
 
 H、T_delay、B_CAL、B_max、B*、P_active、density N原义保留未赋值；只进行来源阅读与文档构造，未实现、构建、创建或运行测试、仿真、调参、生成seed/tape/实验载荷/结果或实车动作。旧35–38及受限载荷禁读，桌面旧备份只读、用户明确授权的新阅读包可按任务更新；69–72及其报告不改不封存。本稿尚未固定或送审，所有来源/协议/资格及顺序审查闭合前保持HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT。实验前目标未完成，不以版本/篇幅或审查次数宣布完成。
 
