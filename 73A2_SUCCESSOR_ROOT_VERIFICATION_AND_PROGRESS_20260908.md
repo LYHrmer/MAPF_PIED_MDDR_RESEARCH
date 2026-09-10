@@ -2,7 +2,7 @@
 
 ## 2026-09-10 外部全文实整合与新的 Opus 建设分工
 
-2026-09-10最新覆盖记录：73已整合H19完整规划/批执行/恢复及强外部比较、E19来源限定域，本轮又经C15完整Opus回执与根E20独立核源加入单已知任务引导、puller自身行和交换循环局部进展修订；P13已完整交付，根P14复算后写入可信进度的有限因果来源工作选择、局部积分/有限下界构造、全部费用与混合同刻判序缺口。当前SHA256 7f0b0d27e6ab79c32e3c75fdfccf132cc2e7fc59ff651471fd4a5bb859d681d9，190063 bytes /607 LF，W01–85均未实现/未运行。C15原exec34155真实exit0/result/END完整；C14原43881真实exit1/拒绝，无科学意见，不重试绕过。根不采C15的迟到空任务守卫及未证无限饥饿等断言。P13/C14结束后Copernicus接续独立E21/C16源键/所有权，原exec29117实际exit124、无result/END及模型用量字段，E21最终报告待；根另开C17研究路线/最小方法改良，原exec14628在途，尚无完整意见，提示未列本批同步。P7/L7仍pending_init缺报不重派。桌面12篇/两指南完整，设计后投稿评估待办。前批d34579c7556d5c256ea46f63b92a8f0d56d489fc已有真实push/API一致，本轮又核HEAD/main及private=true；本新15文件批待精确提交/运输。73未固定/未送审/未接受；六门2 PASS /3 UNKNOWN /1 FAIL及全部NO-GO保持，目标active。
+2026-09-10最新覆盖记录：73此前H19全协议、单已知任务/交换修订与P14可信进度构造已入正文；本轮E21独立报告完整收齐，经根E22亲核键源码/规范后加入同一后继身份、真实RCEqual及求解期唯一对象归属/全部退出清理合同。当前SHA256 e72ccb8cd65bbbd037aa2ea005666bd46e307c4f3ae2da860f0cf9a9f2b9fbeb，194152 bytes /619 LF，W01–88全部未实现/未运行。C15为完整Opus意见并经根纠错；C14提供方拒绝无科学意见，C16原29117实际timeout124、错误JSON无result/modelUsage，C17原14628实际timeout124/空stdout，均不重启不算通过。E21不靠C16背书，根E22独立复算并实改稿；原Claude句柄均已得终态。Copernicus的L17完整有界全文追索报告已收齐并由根全文读核，但合法主文仍缺，只能保留已核题录/摘要和精确缺口；P7/L7仍pending_init缺报不重派。桌面12篇/两指南维持，设计后投稿评估待。前15文件768d996c2c8d9cd4b47b5896a81fc9ba4f08acbf已真实push/main API同值；本新14文件批另精确同步。全源/数值继续域、可信混合判序/来源、严格计费后端、素材/近邻全文和整稿顺序审查仍未闭；73未固定/未送审/未接受，六门2 PASS /3 UNKNOWN /1 FAIL及NO-GO不变，目标active。
 
 根新73正文从d613bc26...159064/533改为656cfdc496154a0d1a640f7ac7364a7fa854a0a5be120be33c29204dbe8151e2，178035/575；实际读回全文与预备整稿逐字相等，默认diff --check exit0。L14 707328474104bd85ebce3c56dc325cdc4a4629c1596d4451024a7913390bde54，19497/98；L15 bfdfcfb0c86a77a0ddfd1a9858dac566a7e0dbbafa48042bc9bbcbdbaecef07e；C12提示9535c2020ccce5c4f4ff5c7eac9983d92631a3c3390f9aa38a953c1b3289406c。根对L14的最大前缀/单元原子性、外生fail-stop与排队MODE、跨writer保槽/独立传输另做无skill分析；新正文明确规划失败需求未处理标记和两条外部同时推断族，W范围增为W01–78。它们都是纸面设计及静态身份检查，没有实现/运行或资格票。
 
@@ -387,3 +387,17 @@ P13最终56156882067661aa7746db7a8138ef2869c153d2bc694d586eb5e16ba0d9cc2f，2374
 本批仅73、A1/A2/GITHUB_PROGRESS/.github README/.gitignore及9件完整E20/C15/P13/C14/P14文档；不改冻结旧件/完成回执、桌面12篇、保护参数或受限输入。无实现/伪代码/构建/研究测试/仿真/调参/载荷/结果。来源键/对象/数值、严格服务后端、可信事件序列、素材许可/近邻全文与整稿审查仍未闭，HOLD和目标active，不以手稿增长或Opus数量称研究完成。
 
 本批暂存默认git diff --cached --check实际chunk8546ea/exit2，只报已实际发送并保字节的C15提示66处行末空白；根逐一核其均为带原行号的逐字源窗口（含空源行的编号分隔），原source文本逐项一致，不为了格式改写历史提示。其余14文件默认检查chunka734a2/exit0；仅该一文件使用单命令core.whitespace=-blank-at-eol检查chunk88686b/exit0，不改全局配置。提示SHA256仍db55075b...，本批不能称默认整批检查为0。C16最新终态覆盖本节原“在途”：原29117→eb81db/exit124，返回aborted_streaming/error_during_execution JSON但无result/END且modelUsage为空，请求Opus不等于实际模型确认；不重启，E21正作独立最终收束。C17仍原14628无终态，不计意见。
+
+## 2026-09-10 E21完整交付、根E22源码修订与两次真实超时
+
+前15文件实际提交768d996c2c8d9cd4b47b5896a81fc9ba4f08acbf（882 insertions/10 deletions）。初有界push54492→96257e/exit124后才正常升级原命令重试54518→769623/exit0；GitHub main API860bb1/exit0同值，无活Git句柄。历史C15提示66处行末空白例外仍只限其实际发送字节，未修改原提示或全局配置。
+
+E21 25ecfc1c98c8ac133735b1d9f4064ca1f9bc37e163440f45eb03aeec7ff1c645，19860/100；C16 prompt/raw/终态分别18a7f8ff...22219/560、b21ba51e...875/1、559166f6...4865/42。根完整实读并解析raw，原JSON在回执逐字相含；原29117→eb81db/exit124、aborted_streaming/error_during_execution、无result/END且modelUsage={}，实际型号未确认。E21全部科学意见来自子代理独立推导，根另直接取graph.hpp/cpp全文并复算blob，读完整键函数及标准草案p3/5/6、重读rewrite后采纳一个局部身份/拥有包。E22 ebaa50d9bf0aae054dcc28b4650428ebd8b086235bec834a1072bb6064afc27b；原73从7f0b0d27...190063/607实改至e72ccb8c...194152/619，读回与预备全文一致、默认diff --check chunk2b5d56/exit0。正确索引不等于Markov完整状态、重复借用不等于double-free、部分退出不等于正常AA节点，原全源资格仍UNKNOWN。
+
+C17为与C11写作、C14精度、C16源码不同的方法路线题，提示39673388feae6ab9e98153b02d7deacbabf17b1cd9abdf4a692c8e80b37b63ca，17949/68。根原14628→6a0287/exit124、stdout空，无任何科学意见/modelUsage/CLI JSON；唯一失败记录22b46ed435ddbf61194502d1edb985532156aadfa0c0394409b06a84df6efea3，2598/15。不创建不存在的raw或科学complete，不重跑、不给通过。用户要求充分利用Claude落实为有界具体建设与根独立核验；下一新题收窄一项决策及必要原文，不以此重启失败题或越过C14拒绝。当前主D/R、D/E0及两个强外部比较保持，没有从C17获得新路线。
+
+复用同代理新L17：精确Kim TII DOI10.1109/TII.2026.3681327，核出版/作者/机构入口与合法全文。中途已查IEEE JS/验证页和KIST非OA元数据、作者题录，无合法全文；完整报告未到时不算补齐，不替其未读方法编改良。不是新Claude咨询，也不改桌面/参数/载荷。P7/L7依旧pending_init缺约定报告，不重复派发。正式审查尚未启动，目标active，本14文件仅研究文档与行政精确白名单。
+
+本批格式实际默认cached check为114735/exit2：仅C16已发送提示94处行末空白及其EOF空行、完整终态receipt的EOF空行；四件终稿身份已与代理最终回执一致，均保字节。其余11文件默认检查5d04b6/exit0，两件仅以单命令core.whitespace=-blank-at-eol,-blank-at-eof检查424f23/exit0；不改全局设置、不把默认整批exit2改记0。后补L17按默认检查单独验证。
+
+L17最终完整0040d775d7b7ae8f5cef0a61479f0cfa969bf9920f199d2434854f4893a51a4f，10513/52，根全文读并实核hash；论文题名A Scalable Framework for Lifelong Multiagent Path Finding With Asynchronous Actions、六作者/DOI、正式22(8):6859–6870与机构Published日期分别按真实证据精度记录。根另外独立打开韩国大学条目，仍只得题录/摘要；未取得主文或PDF，不把代理KIST HTML哈希称为根独立抓取复算。源码/余路径重同步的收费责任建议与现73§9/10全费用合同部分重合，根只接纳为该近邻待全文核对的明确责任问题，不计新方法贡献、不假造新外部臂或给新颖性排除。IEEE验证页、KIST非OA无附件及作者题录无全文的有界查找已终止，合法主文仍是外部缺失，不重复无下一跳搜索。73中既有Kim正式题录已相符，无需为此改科学字节或更新桌面。L17报告纳入本批第14件，报告完成不等于全文阅读完成；Copernicus本题结束，无活外部读取句柄。
