@@ -1,5 +1,17 @@
 # 73A2：接续根实核与继续构造账本
 
+## 2026-09-10 名义备选与图寿命的根独立后继
+
+2026-09-10本轮后继：根E23已核局部图/输出链与C++14拷贝消除，73采用唯一直接构造、借用寿命与标量封存的纸面来源修订；P15/P17完整建设回执均已根全读，根P16独立复算局部名义控制、表示闭包、过期起点反例和信息退化，登记为优先评估但尚未采用的模型备选。73当前SHA256 dd7abfa7086ac284277d037d1b851ae7cd199dbfc8481b547546f141e4a2e288，196691 bytes /625 LF，W01–89全部未实现/未运行。原eta/APPROACH及FINITE_CAUSAL_REFERENCE_HISTORY仍是现正文工作模型；未混入新名义方程或修改H19 T_nom。物理/数值、收费接纳与真实服务资格未闭，六门2 PASS /3 UNKNOWN /1 FAIL，73未固定/未送审/未接受，HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT保持。
+
+本轮完整对象：E23 dafbd5c127d53a74b9062a971eb26a1ccb7cddba99422d3e7ca352824af04f1b（9171 bytes/53 LF）；P15 4f3350ee05435e53684528d96d04074fadfb1b0702e1e5664dc24fc2001a1747（19670/118）；P17 37b2162e6feb1d02748c78395f8bf09cb97ed106fcca22cb398421c78ef58686（20416/106）；根P16 359f2cea8687b967831cdced29fd012347402b2b7637fbcfa238f8410a0a33a1（11232/63）。P15/P17由同一Copernicus分先后有界完成，无Claude/skill；根另直接核来源、语言条文与qqbar一手能力边界，不以库文档充当执行后端。本轮完整新73按分段实际读回与预备全文逐字符一致。随后同一代理真正启动P18有限空间驱动/固定服务行全实体判定题，约定73P18_FINITE_SPATIAL_DRIVE_AND_TASK_SERVICE_DECIDABILITY_CONSTRUCTION_20260910.md，完整待回；不在本批白名单，不计完成。P7/L7原失落报告仍缺且不重派。C14拒绝无科学意见、C16/C17超时无有效建议都已闭句柄，本轮无新Claude，不冒充Opus或审查票。桌面12篇及两指南维持，未改变必读清单。
+
+旧e2be41084805484af374bf71addbfc1da41f476a的运输已实际完成：原超时/失败句柄关闭后唯一新push exec33193→chunkcec5e5/exit0，独立main API chunk48e8de/exit0同完整e2be；不抹旧56782/38813超时与TLS失败。本轮再次独立核仓库dcf110/exit0为LYHrmer/MAPF_PIED_MDDR_RESEARCH、private=true、main；远端4ec1c8/exit0与本地6bf978/exit0都为e2be，无活Git运输句柄。接续本新10文件按精确白名单另同步，不预填成功。
+
+本批四新件的no-index空白预检：E23/P17/P16各exit1且无空白诊断（新文件本身产生差异）；P15 exit3，仅L35的Markdown公式硬换行两个尾空格。P15是已完整返回的固定报告，保留原字节/hash，不作文本“清理”；暂未将此预检误记为staged全批通过。仅P15该文件在后继检查可用命令局部blank-at-eol例外，其他文件及EOF仍走默认。没有研究测试、源码/实现/构建、仿真、调参或任何O/配置/驱动/实验载荷/结果，保护参数未赋值，冻结旧件与禁读边界保持。
+
+本10文件暂存核验实际结果：默认全批cached --check为chunkebe0a7/exit2，仅P15 L35两尾空格；其余9文件默认检查e13d5c/exit0，P15单文件命令局部core.whitespace=-blank-at-eol检查448bc1/exit0，EOF规则未关闭。已暂存路径6b24cb严格等于本批10项白名单，冻结件无diff；此前stat936dce为378插入/8删除，本段行政追加另计。四完整新报告及73的当前hash再次实核一致，不称默认全批exit0。
+
 ## 2026-09-10 外部全文实整合与新的 Opus 建设分工
 
 2026-09-10最新覆盖记录：73此前H19全协议、单已知任务/交换修订与P14可信进度构造已入正文；本轮E21独立报告完整收齐，经根E22亲核键源码/规范后加入同一后继身份、真实RCEqual及求解期唯一对象归属/全部退出清理合同。当前SHA256 e72ccb8cd65bbbd037aa2ea005666bd46e307c4f3ae2da860f0cf9a9f2b9fbeb，194152 bytes /619 LF，W01–88全部未实现/未运行。C15为完整Opus意见并经根纠错；C14提供方拒绝无科学意见，C16原29117实际timeout124、错误JSON无result/modelUsage，C17原14628实际timeout124/空stdout，均不重启不算通过。E21不靠C16背书，根E22独立复算并实改稿；原Claude句柄均已得终态。Copernicus的L17完整有界全文追索报告已收齐并由根全文读核，但合法主文仍缺，只能保留已核题录/摘要和精确缺口；P7/L7仍pending_init缺报不重派。桌面12篇/两指南维持，设计后投稿评估待。前15文件768d996c2c8d9cd4b47b5896a81fc9ba4f08acbf已真实push/main API同值；本新14文件批另精确同步。全源/数值继续域、可信混合判序/来源、严格计费后端、素材/近邻全文和整稿顺序审查仍未闭；73未固定/未送审/未接受，六门2 PASS /3 UNKNOWN /1 FAIL及NO-GO不变，目标active。
