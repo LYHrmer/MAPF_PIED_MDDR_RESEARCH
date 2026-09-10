@@ -245,3 +245,28 @@ C8S是新的NP-SEALED建设题，不是C6失落/失败重启。依据此前同�
 本批拟精确12文件：上表7件及A1/A2/GITHUB_PROGRESS/.github/README/.gitignore。完成顾问报告和原始回执保字节，冻结52/52R1、69–72及其报告不改，35–38/受限载荷禁读，桌面旧备份只读。仅apply_patch文档，shell及链段rtk，未实现/伪代码/构建/研究测试/仿真/调参/载荷/结果，保护参数原义未赋值。六门2 PASS /3 UNKNOWN /1 FAIL，HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT保持；研究未完成。
 
 本批12文件已实际提交eafdd63fb72fe9e7eb209368cd8551de26709aa5，父dd2037b5813c3ba7611fd9eef18053521bf9d851；暂存路径逐项等于精确白名单，普通git diff --cached --check实际exit0，无格式例外。push真实会话62017最终exit0，GitHub refs/heads/main实际与本地HEAD同完整SHA，已跟踪工作树当时干净。此处随后仅追加四行政文件运输记录，73和六份新科学/顾问文件不再改字节，不预填后继行政提交身份。L9已见15008 bytes工件并读前45行以取得精确论文URL，但尚未收到最终回执；不是全部读完或C8L完成。目标active，六门与HOLD不变。
+
+## 2026-09-10：GROUP_PREFIX全稿整合、文献取舍与11篇阅读包根核
+
+本轮起点HEAD实核b8b444c4a21f3cfc898213da3f3346650d5b04a4，rtk包裹的git ls-remote真实会话6758终态exit0、refs/heads/main同值；gh repo API再次private=true/visibility=private/default_branch=main。此前eafdd63之后四文件行政同步已完成；本轮没有把当前本地73修改误报已在远端。
+
+| 工件 | 根实核SHA256 | bytes / LF |
+|---|---|---|
+| 73当前全文 | 0beccea730aced26203406f8ffa69f5ffa93247f80cec64f00ec9de265065965 | 155562 /531 |
+| 73P11根整合分析 | 526ec57cef7d2ee2445a6c2d7ef369bac11600661d6966d45b41d9f81e2291f5 | 7322 /41 |
+| 73L9完整文献构造 | 855ccddbf5b808c48c11ea4d2a5f0f91c62d61a8c32e099bcd8b41b5feabb896 | 17245 /90 |
+| 73L10根文献取舍 | 7f8409aba5166b86ad188dd762589d517efe6d5e61edfba12ad42b67c0f10140 | 7848 /45 |
+| 73C8L提示 | 47ca7b3c661275ff1a4e55ffddc856d2d1832093b81fabf5555cd27ce95d31d1 | 7419 /35 |
+| 73C8L首次原JSON | 07317361375fa717cccd03094d7352c461fa8579db7782ed053ca862a916b504 | 875 /1 |
+| 73C8L唯一重试原JSON | 611d6f0e6e6cde425dfacbf06b9b02776c07ba8823b7903e8c8d677ce9adb69e | 875 /1 |
+| 73C8L完整失败回执 | b82596190e9fc23ac21de865e2b01d06712afde6ce7a37d7017c25dd84038339 | 4760 /35 |
+
+根本轮实质改73正文，113插入/74删除，落盘全文与组装预期逐字一致、默认未暂存静态diff检查exit0。P11给出根无skill独立推导：C为控制上界；闭区间资源计数处理进/出事件且失败扫描不免费；普通初授整边、部分初授仅合法有限阈值组；新增独立付费GROUP_RETIRE；cap/控制水位与MODE；CAP_EXTEND原子P替换；F_cap明确q_release=0；DRAIN不保自动清组；W汇总至67仅纸面。主选择GROUP_PREFIX，不把原PIE MOVE拆成新动作；WHOLE_EDGE参照保留自然费用。仍纯D/AA/PROCESS_SLICE及原配对主量，未自动采用C7R/NP-SEALED或L9新策略。外部角色及cut映射没有靠内部采用而消失。
+
+L9及C8L根已完整读并逐个hash。C8L首次exec31686、唯一正常升级exec44092均实际exit124、零token无模型正文，modelUsage空；不声称Opus版本已运行，不归因未经证实的网络原因，不第三次重试。L9的两项建设是代理自行推导而非Opus支持。根L10独立复算单holder条件和围栏收缩，明确后者必须用q_release、保留下一MOVE禁令、原q/END作业内全额收费；这两项暂不采用且不列为当前固定前新增必做算法，避免无限累积候选。
+
+根独立补读SCALE官方HTML的IV-B构造及后续依赖/定理窗口，确认单向构造不自动推出反向闭包；只保留关系层限制，完整几何和实现安全不作结论。Kim/Zhuang仍缺合法全文，没有新增完整新颖性排除。阅读包代理实际完成11号SCALE v2追加，根核pdfinfo/首页并重新hash原10与新增PDF及00/99，逐项匹配来源表；11篇共66053510 bytes /160页，原10篇未变。新增PDF SHA256 5fd2432c60e57963bde9ab9cfdbba0ae5c651bdbf77275d9afd3a654e281fb67；最新00为b5731062381cdc58c7b5531fad71329764d5fd862c5bb938d7889785b6d40bee，99为21972106febd09dcd451a0e0e7e987efaf645a49658c0ad727f3e66b0b6f900d。桌面论文不进Git。
+
+实际P7/L7仍pending_init，约定报告精确不存在，未重启或重复派发。唯一可用代理Copernicus在L9/阅读包最终完成后接续P10（73P10_INTEGRATED_PREFIX_PROTOCOL_COST_AND_MODE_COMPOSITION_ANALYSIS_20260910.md），根先核目标缺、再交付0bec...完整读取身份；另安排新Opus C9退栏/控制/MODE有界题。当前P10目标仍缺、C9提示已出现而无完整意见，只记运行中；后续必须取得真实终态。P10不是正式独立逻辑票，根已知作者构造不得冒称盲审。
+
+本轮get_goal真实active，目标仍完整实验前准备；用户询问进度只作中途回答，不替代或取消目标。本批精确13文件：表中8件及73A1/73A2/GITHUB_PROGRESS/.github/README/.gitignore。仅apply_patch文档及静态身份/Git检查；一次只读哈希命令括号笔误exit1后修正取得实际输出，不记为研究测试。无实现、伪代码、构建、研究测试、仿真、调参、受限载荷读取、保护参数赋值或实验结果。冻结原件保字节，73仍DRAFT / NOT-FIXED / NOT-REVIEWED / NOT-ACCEPTED；六门与HOLD不变。最终固定后的正式顺序及根每次无skill分析仍未开始。本段形成时尚未push，不预填同步成功。

@@ -2,11 +2,11 @@
 
 更新：2026-09-10。**HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。
 
-73现为141812 bytes /492 LF，SHA256 `2f772fb65e9a9198fe30cae33647f7503c6c4eaf03831ca5eb0605ef0abb6844`，未固定、未送审、未接受。P8/P9前缀局部构造已修，尚未全稿采用；主仍整边/纯D/AA/PROCESS_SLICE。E15/E16完整实收，根E17绑定QEMU固定commit并核默认重授额与暂停接缝；需要显式外层/时钟/I/O适配，已停止泛查模拟器。
+73已将GROUP_PREFIX整合为主工作平台，同原MOVE的控制、几何、组准入/退栏、扩展需求、模式和S/F_cap对照均已更新；WHOLE_EDGE保留参照。当前155562 bytes /531 LF，SHA256 `0beccea730aced26203406f8ffa69f5ffa93247f80cec64f00ec9de265065965`，仍未固定、未送审、未接受。纯D、ALWAYS_ADVANCE / FAIL_STOP_SOURCE、PROCESS_SLICE和原独立配对主量保持，C7R/NP-SEALED/L9两项新增策略未采用。实际根推导见73P11，不据作者整合认定协议组合通过。
 
-Claude C8S实际exec16486 exit0，claude-opus-5完整意见已保存；根C8SR纠正封存因果、尾费、宿主历史和保护预算等意见，NP-SEALED暂不采用，原固定配对主量保持。P7/L7仍pending_init且缺报告，未重派；既有可用代理接续L9新文献与Opus C8L，完整回执待回。六门仍 **2 PASS /3 UNKNOWN /1 FAIL**，没有实验或效果结论，来源/服务/前缀组合/外部cut与正式审查未闭。
+L9完整返回并根全文核验；SCALE已追加桌面阅读包，11篇及指南/来源清单均由根重新核哈希，原10篇字节不变。C8L两次实际exit124、零usage、无分析，完整失败原文已归档，没有第三次。根L10独立复算单holder计分及围栏收缩，只保留有条件备选，未据集合改良预言净吞吐。P7/L7仍pending_init、报告缺且未重派；唯一可运行代理接续P10组合检查及Opus C9有界接口题，截至本段无完整回执。
 
-用户授权自主推进及必要阅读包更新；桌面10篇已交付，候选新增论文尚待根核选。最终投稿目标明确，设计闭合后评估会议/期刊。起点本地HEAD实际dd2037b5813c3ba7611fd9eef18053521bf9d851，本轮仓库再核private=true；本批12文件已实际push为[eafdd63](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/commit/eafdd63fb72fe9e7eb209368cd8551de26709aa5)、GitHub main API一致，普通暂存静态检查exit0；此段仅随后运输记录。详见73A2/73C8SR，历史表按最新真实回执读取。
+六门仍 **2 PASS /3 UNKNOWN /1 FAIL**。主要缺口是全协议组合、可信证书精度、实际收费服务/源持续域、已发表H19完整适配、素材及近邻全文来源、最终固定后的顺序审查。没有实现/实验/效果结论，不能据此保证中稿；设计闭合后再评估会议/期刊。起点本地HEAD与GitHub refs/heads/main均实核b8b444c4a21f3cfc898213da3f3346650d5b04a4，仓库再次实核private=true/main。本批正文/证据/账本尚待精确白名单提交，不预填push成功；最新真实运输记录随后追加。
 
 - [新终端完整交接](../HANDOFF_NEW_CODEX_PREEXPERIMENT_DESIGN_20260908_CANDIDATE73.md)
 - [73完整草稿（未送审）](../73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)

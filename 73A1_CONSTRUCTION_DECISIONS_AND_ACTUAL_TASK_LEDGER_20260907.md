@@ -4,7 +4,7 @@
 
 ## 2026-09-10 接续根最新记录
 
-2026-09-10最新覆盖记录见[73A2](73A2_SUCCESSOR_ROOT_VERIFICATION_AND_PROGRESS_20260908.md)。73现为2f772fb65e9a9198fe30cae33647f7503c6c4eaf03831ca5eb0605ef0abb6844，141812 bytes /492 LF；本批补E15/E16完整接收、根E17固定QEMU身份及运行循环核验，Opus C8S真实exec16486完整exit0/claude-opus-5与根C8SR独立纠正。严格后端需运行外层/时钟/I/O适配，停止泛查；NP-SEALED暂不采用，原独立配对保留。主仍整边/纯D/AA，前缀未全稿采用。P7/L7仍pending_init缺完整报告且未重启，唯一运行代理接续L9新文献及Opus C8L，只有中途消息不计完成。桌面10篇包已交付，待根核选必读变化才按授权更新。起点HEAD dd2037b5813c3ba7611fd9eef18053521bf9d851，仓库本轮再核private=true；本批12文件已实际push为eafdd63fb72fe9e7eb209368cd8551de26709aa5、GitHub main API一致，普通暂存静态检查exit0。用户最终投稿目标及设计后会议/期刊评估保持待办。目标active，73未固定/未送审/未接受，六门2 PASS /3 UNKNOWN /1 FAIL与HOLD不变。
+2026-09-10最新覆盖记录见[73A2](73A2_SUCCESSOR_ROOT_VERIFICATION_AND_PROGRESS_20260908.md)。73现为0beccea730aced26203406f8ffa69f5ffa93247f80cec64f00ec9de265065965，155562 bytes /531 LF；GROUP_PREFIX已全稿整合，WHOLE_EDGE留作参照，主查询/来源/收费/主量保持。根P11记录实际控制/几何/退栏/扩展需求与成本推导，P10及Opus C9组合检查仍待完整回执，不据整合放行。L9与C8L实际终态全部实收；C8L两次exit124、零usage无意见，不重试第三次。根L10独立复算改良并明确未采用，桌面11篇包及两指南实际核验，原10篇不变。P7/L7仍pending_init且缺约定报告，不重派。起点本地/远端b8b444c4a21f3cfc898213da3f3346650d5b04a4与private属性再核，本批13文件待实际精确同步，不预填成功。用户最终投稿目标及设计后会议/期刊评估仍待办。目标active，73未固定/未送审/未接受，六门2 PASS /3 UNKNOWN /1 FAIL与HOLD不变。
 
 ## 2026-09-08 接续前实际更新（以下旧“运行中”按各任务最新终态读取）
 
