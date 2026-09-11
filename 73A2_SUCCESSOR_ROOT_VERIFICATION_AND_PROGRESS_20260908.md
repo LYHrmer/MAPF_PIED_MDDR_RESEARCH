@@ -1,5 +1,29 @@
 # 73A2：接续根实核与继续构造账本
 
+## 2026-09-11 Opus建设分工与外部观测作用域
+
+用户再次要求充分利用Claude。根将Opus用于具体方法/反例/强基线构造，并行由根亲读来源、独立推导后取舍；每题绑定有限问题/输入/实际完整回执，不用意见数量或成功退出代替资格。本题新C21由Copernicus执行，根同时核H19 staged/enqueued/GRANTED阶段，在提示固定/调用前纠正“合法已请求p还有未finished原Type-2前驱”的空域前提；不重做C14/C17或失落P7/L7。后续优先源执行/计费模型的具体取舍，正式skill顺序仍在整稿固定后单列。
+
+C21唯一次正常升级调用cell310→95740，4bd125启动/e128b6仍活/6348b3实际exit0；Opus完整END-C21、completed/end_turn、实际claude-opus-5/firstParty，67644ms/outputTokens4871/费用0.15035375 USD，无失败重试/活句柄。根实际亲读提示b8872a、raw5582b0、完整回执b9743e和P27全文5a142e，61ec48独立核四身份及raw.result逐字匹配；824空白分词超过约700目标，如实保留。根不冒称自己轮询代理CLI，完整回执模型/正文已直接核实。
+
+根先独立推导再以P28逐项纠正C21：Type-1未入队不等于必须finished，实际请求不存在其“窄Type-1例外”；APPEND不新增owner，采样/封装在Srv_E而非全部占Srv_C；endpoint仅不由本原动作q退休，非世界永久占用；空阻塞不推整体不可授，局部不排序不等于已有实际反转轨迹。P27/P28均保留Type-2阶段空域和已入队后非空完整资源guard条件：全部实际owner非endpoint阻塞须被合法q严格越过最后退出并实际退休，其它门仍有效才局部可准入；不代表grant/START/真实服务发生。post-END匹配历史终点记录可合法给q，但不冒作未END的运动途中证据，仍不改变Active或给策略真END。两个外部臂及原失败/缺失总体维持，不按效果删样。
+
+当前73 SHA256 9e06199cc6045ddd750b861b3091ec239c7c6ff2ae7eeaebbdd0e7fde61ec113，216498 bytes /665 LF；根八段全文实读比对47f95b/ca74d8/75d4e5/e36f38/60f881/4fc3ee/26a127/fc4b09均一致，整体cd2b83；W01–99仍全部NOT_IMPLEMENTED/NOT_RUN。本次只在§10已有比较后补阶段/资源/费用解释，不把已登记两臂说成新发现，也不以理论式冒充实际源/素材/精度/容量见证。
+
+| 本批新完整工件 | SHA256 | bytes / LF |
+|---|---|---|
+| 73C21_EXTERNAL_H19_OBSERVATION_ENABLEMENT_CONSTRUCTION_PROMPT_20260911.md | 248465810c8feba071b50b33d399f05483cafa8b84c2d89ef28ae40b96ef044e | 5249 /19 |
+| 73C21_EXTERNAL_H19_OBSERVATION_ENABLEMENT_CONSTRUCTION_RAW_RESPONSE_20260911.json | 41df5a06582f2a14fe2322a13f117f7c5efbd8f4ed8991b2dbc24cf5021436da | 6788 /1 |
+| 73C21_EXTERNAL_H19_OBSERVATION_ENABLEMENT_CONSTRUCTION_COMPLETE_RECEIPT_20260911.md | acaa30969a5461521c7d8f172811bcfab67abf6485e575c64947303cbabc568c | 13831 /83 |
+| 73P27_EXTERNAL_H19_OBSERVATION_ENABLEMENT_AND_COST_BOUNDARY_CONSTRUCTION_20260911.md | cbe312e82b9ffa642fee95dbcce4abe8cb3bea7b42bc05c27ca0a3ea288e0c3e | 15868 /99 |
+| 73P28_ROOT_EXTERNAL_H19_OBSERVATION_STAGE_AND_C21_ANALYSIS_20260911.md | b4f55e3213983525ff7df9d9f69af4ebbfc1f96e0d692e831d258826d41d8195 | 10619 /63 |
+
+上一批13文件a5a8c15540f4b91d75e27a8ff20d6af8ac3c0c8d已真实提交并push：b60b9d提交、1883→33652f/exit0推送，bf3485本地HEAD与7f1083 GitHub main同全SHA，6d9618工作树当时clean；5b6874精确13路径、600ea2默认cached --check实际exit0，无格式例外。仓库9b1384已实核private=true/main。本新11文件白名单为73、上述5件及A1/A2/GITHUB_PROGRESS/.github/README/.gitignore；此段不预填尚未完成的新运输身份。
+
+Copernicus本题四件已实际最终返回并结束，原73读取解除；无活Claude或新科学代理任务，P7/L7仍原pending_init及缺报不重启。桌面12PDF/两指南无新必读变化，旧备份只读。已完成回执及冻结52/52R1/69–72均保字节，35–38/Q/受限载荷未读；所有shell/链段rtk，编辑仅apply_patch研究目录文档，未实现、伪代码、构建测试、仿真、调参或赋保护参数、生成实验载荷/结果。
+
+六门2 PASS /3 UNKNOWN /1 FAIL仍为72R4有效正式快照；73DRAFT / NOT-FIXED / NOT-REVIEWED / NOT-ACCEPTED，HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT。真实源/计量/控制与服务、完整协议/外部资格/素材/近邻全文和固定后导师skill→根无skill→Nature skill→根无skill→明确无任何skill逻辑→根验收仍未闭。目标active，设计/研究未完成，没有实际性能或中稿保证。
+
 ## 2026-09-11 当前段付费复用与稳定agent轮询
 
 当前73实改为CURRENT_SEGMENT_ROOT受限视图：在原Srv_E付费冻结当前精确参考段、采样点和必要历史索引，局部求值/认证封装；已付控制状态不强制全史重算，查询诱发保留/复制/读屏障和新增求值全部由购买者支付。传递依赖不可变、CAPTURE前的合法控制计入、之后END不刷新旧样本，内部版本/eta不旁漏；不借任务世界宿主例外给查询或控制免费工作。实际精确源/权限/生命周期/计量仍未资格化。
