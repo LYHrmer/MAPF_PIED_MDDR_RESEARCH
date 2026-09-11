@@ -1,6 +1,29 @@
 # 73A1：后继实质构造与证据任务账本
 
-2026-09-07，根/root。可追加行政记录，非正式科学候选或放行。HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT。72三路及72R4根验收已齐；72未接受，六门2 PASS/3 UNKNOWN/1 FAIL。69–72及报告原字节不变；目标实际active见72R4A。
+2026-09-07，根/root。可追加行政记录，非正式科学候选或放行。HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT。72三路及72R4根验收已齐；72未接受，六门2 PASS/3 UNKNOWN/1 FAIL。69–72及报告原字节不变；目标控制状态以本页最新行政记录为准。
+
+## 2026-09-11 新根交接封存与 P29/C22 真实终态
+
+用户要求整理进度并给新 Codex 终端接续说明，后续“继续”承接该任务。新入口为 HANDOFF_NEW_CODEX_PREEXPERIMENT_DESIGN_20260911_CANDIDATE73.md；它按原交接→当前账本→72根综合→73全文给读取顺序，记录现稿已采纳内容、尚未采纳的源服务备选、实际证据和下一步义务。旧根完成本次同步后停止科学写入，交接不等于科研完成。
+
+上一批11文件 52a798e2875772387514bbd0f63a6c6311bb6ea6 已真实完成：042aa6提交、97054→8d1224/exit0推送、30740d本地与52bcdf远端同SHA、04f1f0当时clean；默认cached检查83de92/exit0、精确路径80fc95，无格式例外。本轮重新核0c275b本地/3c2d54远端同52a798e，2ae7bc为既有origin，dfe7a6确认private=true/main，1bfd48编辑前clean。本交接批次另按精确白名单同步，不预填其尚未完成运输结果。
+
+最后一题 P29/C22 在暂停新任务消息到达前已实际启动；Copernicus只续原 functions cell323→exec81862，a149e5启动/a3399c仍活/e6165e实际exit0，之后封存四件并最终返回，停止科学写入。C22完整completed/end_turn/is_error=false/END-C22，实际claude-opus-5/firstParty，52346ms/outputTokens3595/费用0.11914749999999999 USD，无重试或活句柄。744词超过约700建议保留原文。根实际全读prompt0b2d28、P29 fa3593、raw2ea9b3、receipt6eb144，ef5b69核四身份、非符号链接及raw.result逐字相等；不冒称根亲自轮询代理CLI。
+
+| 本题完整工件 | SHA256 | bytes / LF |
+|---|---|---:|
+| 73P29_SOURCE_ONLY_NONPREEMPTIVE_ROW_PUBLICATION_CONSTRUCTION_20260911.md | 94b881eac78b738b6f61b8171bc1f05724fa2c3ed4d02d3b8f1ef4f4cae8323e | 16561 /89 |
+| 73C22_SOURCE_ONLY_NONPREEMPTIVE_ROW_PUBLICATION_PROMPT_20260911.md | 16835758832351e4fd74b279a7e906ca022850804c0968968fd21a855917b519 | 5899 /19 |
+| 73C22_SOURCE_ONLY_NONPREEMPTIVE_ROW_PUBLICATION_RAW_RESPONSE_20260911.json | 0255a646f7559f7d35985a9b2a6e295a549916c63659516c5f03aee46ea76f11 | 6229 /1 |
+| 73C22_SOURCE_ONLY_NONPREEMPTIVE_ROW_PUBLICATION_COMPLETE_RECEIPT_20260911.md | bc0c8e5cd4f4362571fed53219926eeba69a26f489a370e32a3db0e145dcaf21 | 12229 /77 |
+
+P29是主稿外SOURCE_ONLY_NONPREEMPTIVE_ROW_PUBLICATION备选：只取消源体指令配额，完整体/真实elapsed/S'封存，原后继O行依本源发布容量发表，中心处置和源收费释放后才准下一体；明确REVOKE_AND_DRAIN改变旧硬终止能力，完整已执行尾费与取消后行政析构分开。根独立不用skill接受旧收件执行载体缺口，但纠正C22将pending直接判全世界不total、源发表误归Srv_C、取消配额不改能力等说法；保留后体精确源切片会重引未闭指令后端义务。P29仍未采用：实际读域/时钟/完整计量、发布容量后端、持续状态及真实退出、物理认证与统计独立均未闭，不能把分费名称当实际执行证据。根详细取舍写入新交接第6节，非正式根验收。
+
+当前73仍9e06199cc6045ddd750b861b3091ec239c7c6ff2ae7eeaebbdd0e7fde61ec113，216498 bytes/665 LF，本轮202919再次核同；仍严格PROCESS_SLICE源模型，W01–99 NOT_IMPLEMENTED/NOT_RUN，本交接不改主稿。52/52R1、69–72、72R1–R4A及两旧交接本輪202919核原身份。P7/L7精确约定路径仍缺，原两代理pending_init，不重启；更早缺失/拒绝/超时保历史，C20/C21/C22均完整关闭。Copernicus本题已完成，不给新根遗留活Claude。
+
+最近实际get_goal为paused，不是blocked或complete，本次未改目标状态。历史段的active仅当时时态。六门2 PASS /3 UNKNOWN /1 FAIL仍属72最后正式快照；73 DRAFT /NOT-FIXED /NOT-REVIEWED /NOT-ACCEPTED，HOLD /NO-GO-IMPLEMENT /NO-GO-MAIN-EXPERIMENT。新根继续源模型与公平计量取舍、统计前提、外部/来源和整体协议收束，再固定并依导师skill→根无skill→Nature skill→根无skill→明确无任何skill独立逻辑→根验收。根在交接前只重读统计合同，未完成新统计来源检索/方案，不假称已派统计任务。
+
+本批精确10文件：新交接、上述四件、A1/A2/GITHUB_PROGRESS/.github/README/.gitignore。桌面12PDF/两指南无变化；本轮未实现、伪代码、构建测试、仿真、调参、读35–38/Q/受限载荷或生成实验数据，保护参数未赋值。所有shell链段rtk、编辑仅apply_patch且仅研究目录；既有已完成回执保字节。用户的出版目标和设计完成后投稿评估仍待完成，不能以交接完成替代。
 
 ## 2026-09-11 Opus建设分工与外部观测作用域
 
