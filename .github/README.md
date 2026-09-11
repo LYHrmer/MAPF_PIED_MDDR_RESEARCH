@@ -1,12 +1,12 @@
 # MAPF 科研进度
 
-更新：2026-09-10。**HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。
+更新：2026-09-11。**HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。
 
-73已补齐图正常/部分构造的纸面归属合同，并登记根P19独立给出的固定服务行包含判定条件证据；当前199092 bytes /631 LF，SHA256 `35d3412a89c2619776426e2eb56872a475d13d650d5c3aceb686818237459f50`，W01–90未实现/未运行。名义参考/有限空间驱动仍是优先评估但尚未采用的备选，原eta/APPROACH仍为主稿当前工作模型。
+73已采用保留参考扰动的代数控制工作子域：a_hi−a_lo=4delta，使参考状态和到达事件可精确判序；原控制/同刻HOLD与END保留。有限空间驱动/闭凸服务区的固定行全实体包含证明一并进入草稿；参数域及来源明确收窄，不声称原广域等价或实际费用后端通过。当前202789 bytes /639 LF，SHA256 `b2bc276160ab59b5fbe8e920d5a87256c27a670d4430165477f7971f9278e5f4`，W01–93未实现/未运行。
 
-根P19已核一手定理并推导有限指数和的零值/符号判定，未把一般w、非凸服务区或连续事故触点当作已解决；数学可计算也不保证有限费用容量。收费接纳、真实服务/Stop、完整来源及外部资格仍未闭，没有性能结果。本轮无新Claude；P18原有界句柄仍running但完整报告未回，根自己的报告不冒充其回执，不重复启动。P7/L7缺报与桌面12篇/两指南保持。
+C18完整实际Opus回执已收，根P20独立复算并纠错；首次socket失败已结束后才正常同提示提权重试，只有第二次completed/END-C18计完整建议。P18已完整返回且根全文/身份核验，旧取证等待已结束。新P21/C19正在进行真实服务原子更新与费用边界的有界构造，Opus/high已有唯一真实调用句柄，尚无完整结果；P7/L7缺报与桌面12篇/两指南保持。
 
-六门仍 **2 PASS /3 UNKNOWN /1 FAIL；HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT**。73未固定、未送审、未接受；设计闭合后再评估会议/期刊。前7文件`4bdd803f5b30b60ceacaa7cad619e2ccd2da9159`已实际push并经main API独立确认，本新7文件按精确白名单另同步。
+六门仍 **2 PASS /3 UNKNOWN /1 FAIL**。73未固定、未送审、未接受；公平费用、协议组合、来源与外部基线资格及正式顺序审查仍未闭，没有性能结果。设计闭合后再评估会议/期刊，不以局部证明推中稿保证。前7文件`495c5a37a58351727b91b55f207868a6f01dd657`已实际push并由GitHub main API复核，既有仓库仍private；本新12文件另按精确白名单同步。
 
 - [新终端完整交接](../HANDOFF_NEW_CODEX_PREEXPERIMENT_DESIGN_20260908_CANDIDATE73.md)
 - [73完整草稿（未送审）](../73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)

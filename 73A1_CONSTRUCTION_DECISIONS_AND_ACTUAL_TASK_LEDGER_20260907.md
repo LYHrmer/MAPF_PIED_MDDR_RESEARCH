@@ -2,6 +2,20 @@
 
 2026-09-07，根/root。可追加行政记录，非正式科学候选或放行。HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT。72三路及72R4根验收已齐；72未接受，六门2 PASS/3 UNKNOWN/1 FAIL。69–72及报告原字节不变；目标实际active见72R4A。
 
+## 2026-09-11 保留扰动的代数工作 profile 与真实回执
+
+本轮有实质科学修订：C18完整Opus实际回执经根P20独立不用skill复算，选择NOISY_ALGEBRAIC_REFERENCE_PROFILE，保留原eta/APPROACH及真实z/w，以a_hi−a_lo=4delta、有限实代数输入和既有允许更新行的常值驱动明确收窄工作子域；不采用P15删除eta备选，不宣称原参数全域等价或实际硬件/roster资格。解析状态/最早到达值和外部事件在有限代数表示内关闭本子域理论判序，原同刻HOLD/END、不可取消BRAKE与H19旧保守T_nom保持。P19/P18空间子域一并纳入当前工作选择，SERVICE_TRUE先有合法驻留，p是图顶点，固定点指数和证明不要求任意途中s代数。当前根接纳和费用不足时的无效果/未处理水位责任同步正文，仍无实际计费后端通过。
+
+当前73 SHA256 `b2bc276160ab59b5fbe8e920d5a87256c27a670d4430165477f7971f9278e5f4`，202789 bytes /639 LF；W01–93均NOT_IMPLEMENTED/NOT_RUN。修改前35d3412版已实际完整校对，根新全文分段读回；P20 SHA256 f897b9514fe25c97ef0b8c76f04b86fbc0b89828a9cf6f7cc648afc424b9e865，15346 bytes /88 LF。根纠正C18的同刻切换必然除零解释、z的错误措辞及一概只许eta包络建议；其新增硬件符号条件只作条件代数，不当已测能力。数学有限终止不等于原有限服务容量、连续Stop/全真值链或主效应通过。
+
+C18实际首次86950→276d45/exit1为FailedToOpenSocket，is_error=true、modelUsage空、零用量/费用，无科学意见；完整raw SHA256 910adf76f212edf681f32953557eec434f76146f269c4c871e18ece4e79c76aa，902 bytes/1 LF。原句柄结束后正常提权同一固定提示，cell431→8231→b30495/exit0，completed/end_turn/END-C18；实际claude-opus-5/firstParty，162865 ms，output_tokens12979，费用0.35217249999999994 USD。第二raw SHA256 2838dcfad7f09ffcfbec4aca72a9b5a202e9b5687df4a1674283c5ea06a7c1af，7556/1；完整receipt d911411b04464e191f23aa99282e571879376c20c35f9f86f88bf2633f7d87bf，9084/55；prompt仍6c4c5b986855c8c38b878cbe93d5f428be5122cc2dd4b64d3c2bda2cd9f2f6a7，3763/25。根全部原始文本实际读回精确相同。无活C18，不重启C14拒绝/C17超时。
+
+P18现已完整返回且根全文读427647、独立核证明与最终hash：469bab9d3eeccedad612400f665f3d020d60f4512c64cca76dc15db323aa6a8d，16496 bytes/108 LF。AFP条目/理论窗口为代理直接一手证据，根不冒称自己的抓取；P19仍为根另行直接数学来源。旧等待已澄清为真实socket权限失败后的正常升级，cell264→53752→exit0、两URL HTTP200，无活旧句柄，不能沿历史条目继续写“无答复/缺报告”。P18只结束本题，六门不投票。Copernicus已获新的有界P21/C19任务，针对TASK_SERVICE原子A更新及世界宿主/应用计算费用分界；随后实际固定C19提示745a282e5d128ef885551ae34df81c9f2e1fb7f5c7f752d0566e5e62d5c7680f（5750/17），原exec30627/chunk972eaa已启动Opus/high，输出尚空、仅续原句柄，不能预填Claude成功。P7/L7仍旧pending_init缺报，不重复派。桌面12PDF/两指南未变，当前数学引用不变更必读包。
+
+上一批7文件495c5a37a58351727b91b55f207868a6f01dd657已实际commit a1b28b/exit0（111插入/6删除），push69877→4023fa/exit0，main API86faee同完整值、工作树718722当时干净；默认cached检查b0cc55/exit0。本轮再次HEAD5c1634和main API21ce1f确认同495c5a3，origin71c43a仍既有仓库，2a7208确认private=true/visibility=private/default_branch=main。当前12文件按精确白名单同步；不把待运输写成已完成，不上传桌面/素材/受限载荷。新任务C19/P21不在本批清单，待真实完整结果另核。
+
+六门2 PASS /3 UNKNOWN /1 FAIL；73未固定/未送审/未接受，HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT，目标active。剩余实际费用/服务与Stop、协议组合和有限供给进展、来源/外部比较/素材与近邻全文及固定后导师→根→Nature→根→无skill逻辑→根正式链。没有性能结果或中稿保证；不实现、构建测试、仿真、调参、实例化保护参数或生成实验载荷。接续与回执完成不等于研究完成。
+
 ## 2026-09-10 固定服务行的根独立数学证据
 
 2026-09-10目标续轮实际为progress：根先实核4bdd803本地/远端一致与73/24身份，继而独立读取PJM 1952原论文定理窗口及Annals 1989作者摘要，完成P19固定TASK_SERVICE行的有限空间驱动/全实体包含数学分析。P19 SHA256 18760627a74c92a0fda8486dc5cc8120babab308a8c7bf925cbd56cd1798034e，11255 bytes/78 LF；已全读核对，声明原论文仅定理/导言窗口，截图工具失败，不增加根全文阅读份数。有限指数和先精确合并指数/系数，以一手定理判断零值，其余用认证外包判符号；有限凸服务区/有限驱动是明示子域，不等于原任意w域，不保证服务容量、连续首次事故或实际计量。
