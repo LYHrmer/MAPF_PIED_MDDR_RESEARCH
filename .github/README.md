@@ -1,52 +1,40 @@
-# MAPF 科研进度
+# MAPF 项目当前入口
 
-更新：2026-09-12。**设计核验继续；尚未允许实现或大规模实验。**
+更新：2026-09-12。完整目标是完成大规模实验之前的全部准备，设计符合多智能体路径规划领域认可标准。**目前设计未完成，HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT。**
 
-研究问题：在机器人存在横向跟踪偏差时，选择性付费取得进度证据、提前释放已通过空间，能否在计入处理和通信等待后提高终身任务服务率？主比较是同能力的阻塞导向D与强轮询R，并必须报告不买途中观测的E0和两条H19外部系统。
+本页是当前导航与操作约束的唯一入口。先读本页，再按正在解决的问题读取主稿对应章节和直接证据；不要递归全文读取历史交接、账本或全部咨询。正式审查和全稿组合验收仍必须实际读完所需完整候选及相关原始意见，不能用导航摘要代替。
 
-本轮已将统一确定性模拟计费P_model写入73：计算/队列仍影响虚拟任务完成，真实CPU、耗时和内存另报。这样明确区分有限计算模型内效应与实际宿主性能，避免未经证明的宿主独立性进入主区间。原配对、权重、固定窗口和强对照保留；没有以新模型宣称旧real-host效应相等，也没有扩大顾问建议的整套附加矩阵。
+## 当前设计与证据
 
-Opus已完成统计构造C25、计算模型C26、论文贡献与实验论证C27，根逐条纠正并选择采用内容。S2/L22/E26均已交付并由根全文核读；E26只核旧输入及开发版API，未审新稿或授后端资格。视频子任务V1已交付：实际只取得官方简介/章节，字幕需登录且画面/音频未取得，不能称已观看。其独立建议已落实为有限待决清单、主稿§14的贡献与反证表及停止同题重复咨询。当前源/模型对应、合法运行及公开来源非空、delay语义和全稿正式审查仍未闭合。
+- [73 主稿](../73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)：DRAFT / NOT-FIXED / NOT-REVIEWED / NOT-ACCEPTED。当前 SHA256 `ed80e6a53f9e3932070c641f4a5cfac852f07ecbf26dff41f9ba43155da9fcf9`，233999 bytes / 727 LF；文件名日期不代表当前内容版本。
+- [本窗口决策和原始收件索引](../73A3_DESIGN_VERIFICATION_SESSION_20260912.md)：按具体问题查阅；其中早期状态、任务句柄、提交与 SHA 是历史记录，不能覆盖当前文件或活工具状态。
+- [72R4 原要求与 S1–S9](../72R4_THREE_REVIEW_ROOT_SYNTHESIS_AND_SUCCESSOR_REQUIREMENTS_20260907.md)：最后正式六门裁决属于冻结 72，G1/G2 限域 PASS、G3/G4/G5 UNKNOWN、G6 FAIL；不是对当前 73 的裁决。
 
-用户随后已允许四类首个公开配置及引用的有限只读核验。L23已完成四JSON和13引用对象的哈希、基础格式、位置及静态连通性核对，不扩大为全部来源或连续物理资格。Opus C28实际构造delay接入方案，根纠正后写入公共ACTUATOR机会秩映射与有效来源alias；raw准备成本和模型内规范输入费用明确分开，目标口径变化已明示。矩阵只处理no-start，研究仍包含实体横向跟踪偏差。
+研究包含有尺寸机器人的实际横向跟踪偏差，普通错误/延迟反馈、计算通信等待与 no-start 分开。当前组合为同原 MOVE 的 GROUP_PREFIX、付费可信进度与空间退休；主比较 D-S−强轮询 R-S，必须报告 D-S−E0 和 H19E0/H19R-S 两条外部系统。P_model 是确定性基本步计算模型，真实宿主 CPU/耗时/内存另报。允许组合、改进或更换路线；不保证正效应，不用弱对照或成功者筛选制造说服力。
 
-73最新SHA256 `ed80e6a53f9e3932070c641f4a5cfac852f07ecbf26dff41f9ba43155da9fcf9`，233999 bytes/727 LF；DRAFT / NOT-FIXED / NOT-REVIEWED / NOT-ACCEPTED。W01–99仅未运行合同，2 PASS /3 UNKNOWN /1 FAIL仍是72R4历史正式裁决，不是对新稿的投票。没有实验结果、保护参数赋值、实现、构建或研究测试。
+R0 固定 `YueZhang-studyuse/LMAPF-delay@0b5b33649fc367abcb1cd0a7ad5ac03511bf9357`；H19 源固定 `whoenig/libMultiRobotPlanning@4c75fa20c435c440d8b6bd6dc81668ddc7296ba0`。两者适配和明确修复不能冒称原样 native 或作者整套实现。源码正常继续与 P_model 对应、有限付费流程到真实服务的非空见证、全来源/连续 WORLD 资格、近邻与外部比较、S1–S9 全稿组合及正式审查仍未闭合。
 
-当前入口：[本窗口决策与有限剩余义务](../73A3_DESIGN_VERIFICATION_SESSION_20260912.md)、[73完整设计](../73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)。开始时本地与私有远端实核同为5b6c40a，本轮新文档按精确白名单同步，运输记录以实际回执为准。以下是此前交接和历史审查，旧运行中/暂停时态不作为当前状态。
+[L23 有限输入核验](../73L23_LIMITED_PUBLIC_INPUT_STATIC_VERIFICATION_20260912.md)及[L23A parser 核验](../73L23A_STATIC_INPUT_PARSER_CONTRACT_CHECK_20260912.md)已完成：四类首个配置和 13 个引用对象的基础静态核验通过。C28 的公共 ACTUATOR 秩映射与规范有效 delay 输入已整入主稿；这不等于全部 roster、连续物理域或运行资格通过，不再把这次已获准且已完成的核验列为等待用户许可。
 
-- [新终端完整交接](../HANDOFF_NEW_CODEX_PREEXPERIMENT_DESIGN_20260911_CANDIDATE73.md)
-- [73完整草稿（未送审）](../73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)
-- [73本轮实际证据/句柄更新](../73A1_CONSTRUCTION_DECISIONS_AND_ACTUAL_TASK_LEDGER_20260907.md)
+## 有效操作边界
 
-71 提交有限到达解析构造、逐 owner 终点交接、因果 PIE/任务适配、有限机会/费用及总停止/缺失评分/固定总体推断，并给 36 个纸面 witness。主研究包含实体偏差、反馈错误和处理耗时，保留 PIE-D 和 2×2；真实服务与认证知识分开计数。没有性能结果。
+1. 当前只做设计和获准静态证据工作。不实现、不写实现伪代码、不构建或运行研究测试/仿真、不调参、不控制机器人；不生成实验 O、种子、tape、manifest、具体配置/场景或结果。设计核验、来源正文/许可/parser/接口及文档检查可以继续。通过对应门后再进入实现/资格检查等后续阶段；不得因旧计划提前开始。
+2. H、T_delay、B_CAL、B_max、B*、P_active、density N 保持原含义且 UNASSIGNED，不赋数值、范围或默认值；纯符号证明条件不当作实验赋值。35–38 与 Q-CAL/Q-CONFIRM 科研/结果载荷禁读；其它实际公开或本地 map/scen/config/agent/task/delay/result 正文和地图图像也仍受限。用户唯一已授例外是 L23 固定四类首配置及其引用输入的有限只读静态核验，不扩展到更多输入。
+3. 已冻结候选与已完成报告、提示、原始回执保留原字节，含 52/52R1、69–72；不向 52 添加新 sidecar。73 未固定稿可以实质修改，须标明身份与承重变化。用户授权本次删除已确认误导的旧交接和清理可变工作记忆，不等于删除科研证据或恢复旧失败路线。
+4. `/home/lyh/桌面/智能仓机器人分布式调度_文献备份` 永久只读。仅既获准的 `/home/lyh/桌面/MAPF_实验前必读论文_20260909` 可在必读论文变化时更新；PDF 不入 Git。新研究/行政工件写本研究目录，编辑使用 apply_patch。
+5. shell 每条命令用 rtk，精确内容用 rtk proxy；仅在仓库实际有 .codegraph 时先用 CodeGraph，不创建或重建索引。不得绕过沙箱、审批拒绝或登录限制，不向外部人员发消息。
+6. 用户已授权既有私有仓库 `LYHrmer/MAPF_PIED_MDDR_RESEARCH` 的精确文档同步。只暂存核过的路径，不 add .、不上传整个目录/受限材料，不运行 hook、不改全局 Git 设置、不发 release。操作前核实际工作树/远端状态；历史提交号不是当前状态。
+7. Claude Opus 用于具体方法构造、证明、反例和证据整合，由根独立取舍，职责不限审查。每题绑定一个未决问题，无新证据不重开同题。仅实际完整终态与正文算收件，核实际模型并留原回执；建设意见不算正式票。用户要求额度恢复一小时后再用，本窗口以 **2026-09-12 16:37 UTC（北京时间次日 00:37）** 为保守最早恢复点；这是一次性截止，后续接续不得重新顺延。
+8. 历史 51 失败链与失落 69L1/69E1、73P7/73L7/73C2，以及已终态的旧 Claude 调用按原记录处理，不因旧文件写“运行中”就重启。先核活句柄和实际文件；缺回执不算完成，有新证据的不同具体问题可继续。
 
-原 69L1/69E1 的旧句柄不可访问，约定报告仍缺，不重派或把超时当通过。Claude 完整建议及有界构造协作均 NONBALLOT；每个后继固定工件还须完整顺序审查。
+## 接下来怎样验收
 
-用户新增两台 LIMO 实物资源信息；根代理只读核验官方文档，Claude 71C2 第二次已返回完整有效 NONBALLOT 回执，根已纠正过强结论。保留纯仿真主证据链，实物拟用于有限机制及假设检验；平台尚未确认为可用、实物成功未保证、没有开始实物或仿真。按用户最新偏好，日常工作减少 skill 依赖，已约定的正式顺序审查保留。
+先闭合当前源/付费服务见证、合法来源及全稿组合；固定自给完整候选后，严格依次：research-mentor 完整审查 → 根不用 skill 独立分析 → nature-reviewer 完整审查 → 根独立分析 → 明确无任何 skill、未读前两路意见的独立逻辑审查 → 根逐项验收。实际用 skill 时须读取并说明，不能以建设咨询或审稿数量代替。
 
-用户已明确大规模 Lifelong MAPF 以仿真为主：主论证检验持续任务吞吐、失败和全流程开销，小规模验证解释机制，两台实物只补充有限现实证据。当前不搭建双车系统，也不以实物演示替代扩展性结论。
+完整实验前工作还包括门控后的实现与资格检查、主实验预注册和执行/验证/分析工具冻结、结果留空的论文实验前稿与引用/主张/图表规划、复现包和最终逐项验收。当前没有主实验结果；不能把仅完成 73 设计或整理文件当成整个目标完成。
 
-用户网页建议已获独立无skill分析和根一手核验。受限原边空间退休不等于一般速度/姿态接入；主D/R与必报D/E0区分查询选择和整体购买价值。Claude72C3/C4/C6完整建议均已由根纠错；72C5防护拒绝、72C7超时空输出均如实归档，不计完成。S2M2、R0随机比较器/Boost合同、数据元信息/许可回执已核验；许可与全源定义域仍有未知。73继续比较现有窄路线与同原MOVE的前缀执行扩展，新的独立控制/终点状态构造正在进行，无大规模效果结论。
+## 历史材料与视频
 
-- [完整进度和资格门](../GITHUB_PROGRESS.md)
-- [72三路根综合](../72R4_THREE_REVIEW_ROOT_SYNTHESIS_AND_SUCCESSOR_REQUIREMENTS_20260907.md)
-- [72R4行政更正](../72R4A_GOAL_STATE_AND_LATE_RECEIPT_ADMINISTRATIVE_CORRECTION_20260907.md)
-- [73建设与实际任务](../73A1_CONSTRUCTION_DECISIONS_AND_ACTUAL_TASK_LEDGER_20260907.md)
-- [72 固定送审候选](../72_PIE_CENTRAL_SPATIAL_RETIREMENT_AND_PAID_OBSERVATION_PREEXPERIMENT_CANDIDATE_20260906.md)
-- [网页建议的根核验与综合](../72D1_USER_WEB_PROPOSAL_NO_SKILL_ANALYSIS_AND_PRIMARY_SOURCE_NOTES_20260906.md)
-- [子智能体完整无skill建设性分析](../72D1A_WEB_PROPOSAL_NO_SKILL_CONSTRUCTIVE_COMPLETE_RECEIPT_20260906.md)
-- [72 构造与实际句柄](../72A1_CONSTRUCTION_ROUTE_DECISIONS_AND_SEQUENTIAL_REVIEW_LEDGER_20260906.md)
-- [固定候选 71](../71_PIE_FINITE_ARRIVAL_SPATIAL_SUFFIX_AND_CAUSAL_OBSERVATION_PREEXPERIMENT_CANDIDATE_20260906.md)
-- [71 实际任务与回执](../71A1_CONSTRUCTION_FIXED_IDENTITY_AND_SEQUENTIAL_REVIEW_LEDGER_20260906.md)
-- [71 导师完整报告](../71R1_PIE_FINITE_ARRIVAL_SUFFIX_CAUSAL_OBSERVATION_RESEARCH_MENTOR_REVIEW_20260906.md)
-- [71 Nature 完整报告](../71R2_PIE_FINITE_ARRIVAL_SUFFIX_CAUSAL_OBSERVATION_NATURE_REVIEWER_REPORT_20260906.md)
-- [71 无 skill 逻辑完整报告](../71R3_PIE_FINITE_ARRIVAL_SUFFIX_CAUSAL_OBSERVATION_NO_SKILL_INDEPENDENT_LOGIC_REVIEW_20260906.md)
-- [71 根验收和后继关闭条件](../71R4_THREE_REVIEW_ROOT_SYNTHESIS_AND_SUCCESSOR_ROUTE_REQUIREMENTS_20260906.md)
-- [大规模主线新增文献来源记录](../71L2_SCALE_PRIORITY_PRIMARY_LITERATURE_NONBALLOT_RECEIPT_20260906.md)
-- [LIMO 接口来源核验](../71E2_LIMO_TWO_FILE_INTERFACE_AUDIT_NONBALLOT_RECEIPT_20260906.md)
-- [Claude 71C1 完整建设性回执及根筛选](../71C1_CLAUDE_GEOMETRIC_EFFECT_AND_TRUE_SERVICE_FAIRNESS_COMPLETE_RECEIPT_20260906.md)
-- [70 根裁决](../70R4_THREE_REVIEW_ROOT_SYNTHESIS_AND_SUCCESSOR_71_REQUIREMENTS_20260905.md)
-- [70 实际任务与回执账本](../70A1_FIXED_CANDIDATE_SEQUENTIAL_REVIEW_TASK_AND_RECEIPT_LEDGER_20260905.md)
-- [固定候选 70](../70_PIE_BOUNDED_SPATIAL_SUFFIX_OCCUPANCY_AND_BLOCKER_DIRECTED_OBSERVATION_PREEXPERIMENT_CANDIDATE_20260905.md)
+用户已授权删除三份旧 HANDOFF，避免递归阅读和旧状态复活；当前约束已收拢到本页。旧报告中对这些路径的引用是历史出处，按[清理前提交](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/0153a15e4f059a567de169716985444cca86ec9d)查证，不恢复为当前指令。原始科学件仍在原路径，按需读取。
 
-逐文件同步至既有私有仓库。保护参数保持未赋值；不实现、构建、测试、仿真、调参或生成实验载荷/结果；不上传受限材料、桌面备份或整个目录。全部要求未闭合前不宣布实验前完成。
+[视频建议报告 V1](../73V1_BILIBILI_RESEARCH_QUALITY_AND_EFFICIENCY_GUIDANCE_20260912.md)已交付，但只取得官方简介/章节，实际画面、语音和字幕读取量均为零；不能称已观看正文。项目采用的有限问题分工、强对照、贡献与反证表和减少重复咨询属于独立判断，不能归为未核实的视频主张。
