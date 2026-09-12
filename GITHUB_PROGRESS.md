@@ -8,7 +8,9 @@
 
 Opus已完成统计构造C25、计算模型C26、论文贡献与实验论证C27，根逐条纠正并选择采用内容。S2/L22/E26均已交付并由根全文核读；E26只核旧输入及开发版API，未审新稿或授后端资格。视频子任务V1已交付：实际只取得官方简介/章节，字幕需登录且画面/音频未取得，不能称已观看。其独立建议已落实为有限待决清单、主稿§14的贡献与反证表及停止同题重复咨询。当前源/模型对应、合法运行及公开来源非空、delay语义和全稿正式审查仍未闭合。
 
-73最新SHA256 `64ae0e0366ff6f98c4b3d5a4341bd13a52b869f2ecb2fe14af62f438e304e751`，226801 bytes/709 LF；DRAFT / NOT-FIXED / NOT-REVIEWED / NOT-ACCEPTED。W01–99仅未运行合同，2 PASS /3 UNKNOWN /1 FAIL仍是72R4历史正式裁决，不是对新稿的投票。没有实验结果、保护参数赋值、实现、构建或研究测试。
+用户随后已允许四类首个公开配置及引用的有限只读核验。L23已完成四JSON和13引用对象的哈希、基础格式、位置及静态连通性核对，不扩大为全部来源或连续物理资格。Opus C28实际构造delay接入方案，根纠正后写入公共ACTUATOR机会秩映射与有效来源alias；raw准备成本和模型内规范输入费用明确分开，目标口径变化已明示。矩阵只处理no-start，研究仍包含实体横向跟踪偏差。
+
+73最新SHA256 `ed80e6a53f9e3932070c641f4a5cfac852f07ecbf26dff41f9ba43155da9fcf9`，233999 bytes/727 LF；DRAFT / NOT-FIXED / NOT-REVIEWED / NOT-ACCEPTED。W01–99仅未运行合同，2 PASS /3 UNKNOWN /1 FAIL仍是72R4历史正式裁决，不是对新稿的投票。没有实验结果、保护参数赋值、实现、构建或研究测试。
 
 当前入口：[本窗口决策与有限剩余义务](73A3_DESIGN_VERIFICATION_SESSION_20260912.md)、[73完整设计](73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)。开始时本地与私有远端实核同为5b6c40a，本轮新文档按精确白名单同步，运输记录以实际回执为准。以下是此前交接和历史审查，旧运行中/暂停时态不作为当前状态。
 

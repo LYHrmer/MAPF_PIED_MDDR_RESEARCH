@@ -333,7 +333,19 @@ PROCESS_SLICE为固定server提供有限正工作容量。server内FIFO，按入
 
 异步交接不跨writer嵌套锁：发送者只在自己的提交单元中封存不可变envelope并产生目的通道的不透明token；普通作业随后释放自己的槽。ADG_ENQUEUE的已发布单元同样使该envelope独立可传，但其有限批控制器仍占原中心槽、仅在后继PROCESS_SLICE推进下一单元，批末处置才释放。此例外不等待目的writer、不另占第二槽，不把中心占槽等同持有通道锁。通道作业再付费读取/编码，完成才产生接收角色token；接收角色自己的后继作业付费验证后改自身状态。元调度器只登记有限不透明引用，固定描述符开销单列预付；业务payload读取/复制、FIFO取项和解析不由元调度器代劳。不能在持中心槽时同步等待Srv_E/Srv_P/Srv_A回复，也不能让Srv_N直接写中心owner或本地c。跨角色引用在所有仍有效使用方结束前保留，GC/保留内存也计费。发布的版本/tag检查使用对应writer的显式控制发布容量，不借用另一站空闲供给；不足时继续占自己的槽，不借机冻结其他物理进程。
 
-故障创新由独立block根派生，key=(角色,公开行或请求/作业语义id,有限copy/attempt序号)。同block各臂共享创新函数而输入自己产生的对象；调用次数不同不顺移公用PRNG磁带。ordinary假反馈、no-start、空间/运动扰动、通信错误、处理容量分别有类型；给普通包加时间偏移不等于实体误差。ROOT独立性只对block成立，臂间配对相关允许。当前不生成根、种子、O、manifest、tape或载荷。
+故障创新除下述固定公开矩阵的no-start外，由独立block根派生，key=(角色,公开行或请求/作业语义id,有限copy/attempt序号)。同block各臂共享创新函数而输入自己产生的对象；调用次数不同不顺移公用PRNG磁带。ordinary假反馈、no-start、空间/运动扰动、通信错误、处理容量分别有类型；给普通包加时间偏移不等于实体误差。ROOT独立性只对block成立，臂间配对相关允许。当前不生成根、种子、O、manifest、tape或载荷。
+
+**公开延迟表的共同接入合同（2026-09-12，C28建设经根纠正）。** 主共享比较的no-start采用固定source延迟矩阵D_src作为X中的确定性输入，不再对同一no-start角色另从Z_b抽样或叠加。每个agent的矩阵行号就是原agent文件记录次序的零基下标，不重排、不按后续轨迹选行。令O中该agent全部原ACTUATOR机会的零基秩为k，当前机会对应D_src[i,k]。索引由原O全序给定，既无新的源时间尺度参数，也不产生额外机会；它将原native的离散时刻列改解释为公共控制机会列，不宣称原生MCP/PIBT/PIBTD与当前连续运动逐迹等价。不同臂同一公共机会用同一位，但处理哪个命令、是否有合法RUN以及其后果仍由各自闭环决定。
+
+空机会、无候选、guard费用不足、已关闭/重放拒绝及合法无作用命令仍占它们原有的公共序位；序位不按实际读取/成功次数压缩。只有已经核明当前身份、RUN_ALLOWED、合法HOLD及C>s等START/RESUME条件的RUN，才需要在本行付费读取该位，并以0允许、1阻止这次启动。读取、索引/位长、相应副作用及提交的完整收费工作均须在原行容量内成立；不足保既定PARTIAL_GUARD语义，没有外部提交或水位推进。已实际处理的no-start和无作用RUN照§5消费尝试，BRAKE保持其原来的模式/代际/水位和制动作用且不受此位取消；运行中既有运动不因该位瞬停。无用途分支不被迫读矩阵烧费。重放已处理命令不得因到了新公共列就复活；后继原机会上的合法新尝试用该新行自己的位，不是重抽旧尝试。
+
+矩阵只由环境/ACTUATOR现有权限使用，不能成为planner、D/R/E0或H19的免费未来信息。POSITION/TASK/CURSOR以及付费API均不授读取未来延迟的能力；已有合法结果/状态的间接信息沿原权限，不新增delay反馈通道。共享模型接受的是§11有效投影的同一规范表示，而不是各raw别名的不同原文本：按§9.1固定字宽记录主体数，再按原agent顺序记录各行长度，0/1按列升序从字的最低有效位装填，末字未用位为0；字段越出表示域依原输入不合法规则，不回绕。各profile对应的有序表示与机会结构一起固定，当前不生成其实际字节。
+
+原始文本的取证、语法检查和有效投影/规范表示的构造，是建立给定外生no-start世界输入X的宿主准备工作；按实际raw别名逐项保留耗时/内存/失败，不能报告原raw处理成本相等。它不计算任何算法专用查询/几何/授权或未来派单，不把业务成本移出计量。模型内初次导入规范对象、必要解码/持有/业务索引及逐次取位的实际工作按原职责收费，并且只能接触这一规范对象；raw路径、原文本长度、未使用尾部和任意宿主分配地址不得进入模型状态、供给、日志身份或F。若未来后端仍让raw处理或别名影响这些模型量，则尚未满足本alias合同，必须先保留raw身份，不能凭投影相等省略费用证明。此处等价仅是声明P_model中输入及费用法相同，宿主准备账允许不同；评价者的静态取证不等于线上应用已取得知识。
+
+delay静态支持要求原输入编码/布尔域、行身份及索引算术有定义，对每agent令K_i为全部原公共ACTUATOR机会数，须其行存在且K_i≤该行实际列宽；涵盖空机会和所有潜在分支，不按已实现尝试筛列。无行/不足列在事前记录为该source/profile静态不适用，必需类别或profile无合法成员仍UNINSTANTIATED；不能补零、循环矩阵、缩E、补O或按结果删来源。运行后发现索引/来源绑定破坏不是合法物理no-start：保原证据缺失/INFERENCE_UNAVAILABLE，不虚造物理Stop或尾部零分。原native另轨仍须其每次current_time至current_time+commit_window−1整个窗口落在实有列内，本秩条件不替该条件。
+
+原文件名、首行第二token和本次1的经验计数不定义随机概率、独立性或故障强度参数。D_src固定于X，其他角色Z_b仍可使潜在Q随机；块内同表及不同block复用同一固定表均不破坏条件于X的独立根论证，但不提供对未知延迟生成机制的总体推断。主效应现在是在所声明公开控制机会表及P_model下的固定来源效应，不称对原生随机延迟法等效。source的有效delay身份、alias及权重按§11的新规则绑定；当前仅定义语义，不实例化K_i、O或合法roster。
 
 MODE的有限kind为QUERY_ON、QUERY_OFF、DRAIN、BRAKE、RESUME。前三者scope为本臂，付费提交分别设ACTIVE、SHARED-OFF、DRAIN而不删责任；E0的QUERY_ON同样恢复ACTIVE，另记POSITION能力仍STRATEGY_DISABLED，不能因其不买观测而禁止它恢复新准入。后两者scope为指定agent，仅对当前GRANTED原tid推进该agent持久control_epoch并改变意图；无合法tid则付费NO_MATCH，不影响未来原tid的初始RUN_ALLOWED。合法时产生绑定该MODE公开行的首次控制尝试，经后继Srv_E付费认证、候选入列及ACTUATOR实际处理才作用；之后CONTROL_RETRY使用新公开尝试key。两种来源共用§5实际处理水位，不能因MODE身份省去幂等或制动守卫。BRAKE在P1制动域内继续旧tid；RUN只有合法参考HOLD且C>s时可重入LAUNCH，已开始BRAKE未停或C=s时本次无运动作用并消费尝试，必须后继另一RUN。NATIVE旁路不接受共享MODE；非法scope/kind为INPUT_INVALID。每行只推进一阶段，不在模式切换时自行产生新MOVE。
 
@@ -482,7 +494,11 @@ R0选项名见固定src/driver.cpp L40–55；commitStep还参与L106–158的�
 
 未来获准合法绑定后，按固定树规范相对路径的字节序枚举四类别全部JSON；用原driver的mapFile、teamSize、agentFile、taskFile、delayFile字段，位置为L101/112/114/115/150，固定driver SHA256 3198636d1114e4901c9aae48d549787c9fb3bc3a0bdfd49b6445d81bb5fc4f44。引用相对JSON父目录解析，规范化后须仍处同一固定公共树；拒绝外部绝对路径、未解释符号链接、缺blob、非法编码/语法。源图/agent/task/delay的索引/长度/静态通行和初态合法性分别给理由。teamSize只待density N合法绑定后检验原义相容，本阶段不按文件名取N或猜robotFile字段。
 
-规范source_id=(category,map_blob,agent_blob,task_blob,delay_blob,assignment_strategy,parsed_semantic_options)。同语义别名合并并保留全部alias；同task跨地图建立incidence，不假设严格嵌套。各类别完整采用所有静态合法来源，不按原规划是否快、某策略能否成功、预期效应/可见性筛选。静态排除保留路径、身份、失败谓词与证据，动态失败不改roster。任一必需类别无合法来源即UNINSTANTIATED，不拿另一类补齐或重新分权。
+本次明确修订共享主总体的来源身份为source_id=(category,map_blob,agent_blob,task_blob,effective_delay,assignment_strategy,effective_semantic_options)，替换旧式中的原始delay_blob身份项。effective_delay是§9原输入行序在全部预定共享profile之潜在公共ACTUATOR支持上的有序0/1投影族，并绑定对应机会结构/行身份；不按实际读过或成功的轨迹截取。公共机会结构先由原共同设计和有效的非delay输入确定，不依delay位值、文件alias或尚未定义的source_id，避免source_id→O→投影→source_id循环；后继block身份/创新根才可使用规范source身份。完整raw delay_blob、首行与所有alias保留作出处，未使用行列差异本身不生成额外等权来源。
+
+同语义合并同时要求上述其它有效字段、全部必需profile支持及有效delay相等，而不是只比两个延迟子矩阵。有效语义选项按原driver真正使用项和本稿具名适配解释：例如本次JSON的numTasksReveal未被原driver消费，不能仅因它不同就构造不同native揭示制度。任务揭示深度仍按§8原CLI含义待合法绑定，不从原文件的1设置。合并保留全部路径和对象别名，同task跨地图建立incidence，不假设严格嵌套。若固定O/合法行序/必需profile或有效语义改变，必须在结果之前重新核alias及总体；不存在实际roster时不造合并前后数量。
+
+各类别完整采用所有静态合法来源，不按原规划是否快、某策略能否成功、预期效应/可见性筛选。静态排除保留路径、身份、失败谓词与证据，动态失败不改roster。任一必需类别无合法来源即UNINSTANTIATED，不拿另一类补齐或重新分权。保留后文等权层级公式不证明新旧数值总体相同：effective_delay合并可能改变每map来源数及权重，须在未来固定清单披露原始alias到有效成员的重数与口径。本次已显式改变模型/来源身份目标，不能宣称只是无害重命名；native原样资格继续绑定完整原blob及原时刻消费，不能继承共享投影等价。
 
 future manifest必需字段：全部源身份/alias/解析字段；官方与适配版本；原任务策略与合法分配初态；物理、可信观测、普通错误及故障profile的有限函数/语法和适用域；几何表示/初态证明；原参数语义和待授权绑定；公共O、固定评价窗口/设计暴露E与cutoff；服务能力、费用、精度、指令/浮点语义、编译器/ABI/库版本、clock/RNG外部接口；重复索引和独立block根的角色派生规则；各臂及native/外部族适用性；计分、停止、缺失、权重、推断和报告合同。当前各载荷、种子、表和绑定均未生成，manifest状态UNINSTANTIATED并不伪装实际检查通过。
 
@@ -503,6 +519,8 @@ future manifest必需字段：全部源身份/alias/解析字段；官方与适�
 profile总体分层必须事前唯一：MAIN_IN_MODEL只允许§2/3当前有限参考/空间驱动与服务区域子域、原可信物理条件及§9所列模型内通信、普通反馈、no-start和分量故障机制；STRESS_TRUST_PHYSICS专门声明会破坏这些前提的机制。成员资格依据生成机制/支持集及来源定义，不根据运行后是否真的breach归类。MAIN中的意外breach保持原主行及失败标志，不能改挂压力层后删去；压力层单列自己的固定权重和描述，不能在主显著性不够时混入。四类别/map/source/profile/repeat的主w_b仅在MAIN_IN_MODEL的完整事前roster定义；任何类别/必需profile无合法成员时UNINSTANTIATED，不运行后重归一化。静态合法性、软件初始化成败与实际结果选择是三种不同事项。
 
 来源补核73L2给Moving AI的ODC-By/独立素材权利及研究分发说明。新根73L18通过固定LoRR官方归档25ffd5b6a39b6fe30e5bc6cb5e22720a9531ea8a与固定R0的完整Git树元数据，已定位city的Paris_1_256.map（blob0ff641690b48c1c4807fcea7c0c31d167973b221）及random-32-32-20.map（blobb44f5a949e91b251b0e3bb29f3cd0784ce7d80b5）同blob/size对象，全程未读地图载荷；归档README明确比赛实例来源，补上此前首页只有JS壳的入口。该证据不证明复制方向/更早原创权利或适用许可；game的ht_mansion_n、warehouse-s的warehouse-10-20-10-2-1在该归档没有同blob对应，不能用另一同类地图替代。R0软件MIT/归档存在及同名文件均不能关闭全部素材权利，agent/task/delay生成/转换链仍缺。本草稿仍未实例化合法source_id/roster，没有读取受限载荷或复现实验；许可与全部数据资格保持UNKNOWN。 L19完整有界报告经根全文核对，补充官方Moving AI目录把ht_mansion_n列在Dragon Age 2分类、目标warehouse文件列在MAPF集合及仓库更新说明；仅支持具名分类和分发说明上下文，没有官方对象hash。官网两个目录的game尺寸顺序不同不能自行解释为转置/显示约定，名字/状态数不替内容身份；根不冒称已直接抓取代理四页。两目标与R0的完整对象/适用权利链仍未闭，不能套同类许可或扩大论文效度。
+
+2026-09-12用户已允许本次固定官方四类首配置及其引用输入的有限只读静态核验。根L23实读四JSON及13个引用对象（共用一delay），全部内容Git blob重算匹配；四配置的位置记录足数、十进制单位置、起点互异且起点/任务均可通行并位于共同四邻接分量。原delay有5000行、每行2000位，首行第二token53983未被原parser使用，实际numTasksReveal也不由JSON同名字段决定。源文件数值只作已有对象事实，不采用为density N、时间或其他保护参数。该证据关闭这四个对象的基础格式/引用/位置缺口，不等于全364配置、连续F/Z/Mask初态、ServiceRegion、完整源继续、delay支持O或来源权利链通过；未读取其它配置/旧Q，未生成source_id/roster或运行原算法。L23A仅核parser必要条件，C28为非正式建设，均不计本稿通过票。
 
 ## 12. 故障停止、总分类、评分与固定总体推断
 
