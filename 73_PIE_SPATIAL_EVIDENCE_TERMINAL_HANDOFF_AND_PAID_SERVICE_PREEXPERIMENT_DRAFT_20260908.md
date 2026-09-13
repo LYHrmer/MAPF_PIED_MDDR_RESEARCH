@@ -440,11 +440,13 @@ ALWAYS_ADVANCE的继续域必须覆盖合法初始化、全部合格正常历史
 | 诊断/日志/文件 | 下述已核输出采用私有带类型收费记录；未用文件建图/专用regex从共享隔离组件明确裁出。 | 已定义具名输出/失败和字数界；须与源执行次数、分配/容器组合成工作界，实际后端再核符合性。未核导入仍FOREIGN_INPUT_UNMAPPED，不概称所有I/O无业务作用。 |
 | 几何/代数/可信记录 | §2–6的有限表示、精确谓词与原子根提交；展开实际字工作、暂停/失败规则已选。 | 数学可判定不等于给出所有费用展开。首个服务联合见证仍需各实际段和不可跨行guard的事前界；真实后端耗时及重放之后验证。 |
 
-批准纯LACAM诊断现选共同私有记录适配，限定于已核MAPFPlanner.cpp、LNS.cpp、lacam2/planner.cpp、lacam2.cpp和graph.cpp的实际入口。保留原触发分支、有定义实参的求值及输出先后，记录固定site/通道和文本、整数或冻结浮点位型，不调用宿主locale、十进制浮点格式器或文件反馈。MAPFPlanner的screen实传零，受其控制而未进入的输出不虚收费，条件检查仍计；无条件重算/空解/目标计数/runtime及验证失败诊断保留。BasicLNS.h明确runtime初值零，不能误报未初始化，也不能把此诊断值称为实际规划耗时。HNode::HNODE_CNT仍按原构造递增及原持续语义保留，另核表示域，不因这五对象未见读取便免费删除。
+批准纯LACAM诊断现选共同私有记录适配，限定于已核MAPFPlanner.cpp、LNS.cpp、lacam2/planner.cpp、lacam2.cpp、graph.cpp及lacam_instance.cpp的实际入口。保留原触发分支、有定义实参的求值及输出先后，记录固定site/通道和文本、整数或冻结浮点位型，不调用宿主locale、十进制浮点格式器或文件反馈。MAPFPlanner的screen实传零，受其控制而未进入的输出不虚收费，条件检查仍计；无条件重算/空解/目标计数/runtime及验证失败诊断保留。BasicLNS.h明确runtime初值零，不能误报未初始化，也不能把此诊断值称为实际规划耗时。LACAMInstance的SharedEnvironment构造还无条件输出两个标题、2n_f个location整数、2n_f个空格文本及四个endl，必须按源顺序纳入记录；不能漏掉标题自带的行尾。HNode::HNODE_CNT仍按原构造递增及原持续语义保留，另核表示域，不因这些对象未见读取便免费删除。
 
-每条诊断记录采用四个固定字头(site、channel、字段数、载荷字数)，各字段有两个固定字(type、有效位长)及ceil(位长/w)个载荷字，文本保留源字节、整数保留冻结宽度/符号编码、浮点保留固定格式原位型，w沿§9.1原义。endl另追加一个固定终结标记并执行本源私有记录封口，不新增外部发布机会、消息或宿主fsync。故记录存储量是4+Σ字段[2+ceil(位长/w)]+终结标记数个字；这只是字数界，实参读取、长度换算/溢出检查、分配、写入/复制、封口、持有与回收均按实际基本步另计。未封口的私有前缀可暂停保存，源失败时保留已付工作，不把半记录伪装完整诊断。空间/表示不足为具名SOURCE_DIAGNOSTIC_UNAVAILABLE并沿源失败停止合同处理，不静默丢日志或从宿主借容量。记录不回流为策略知识；后续宿主展示格式与审计复制另报成本、不反馈原虚拟时间/Q。此改变原stdout格式/错误语义及费用，所有R0内部臂共用，不称native字节或成本等价。
+每个实际源输出完整表达式对应一条私有诊断记录，链式输出的有定义实参按原求值顺序形成字段。记录采用四个固定字头(site、channel、字段数、载荷字数)，各字段有两个固定字(type、有效位长)及ceil(位长/w)个载荷字，文本保留源字节、整数保留冻结宽度/符号编码、浮点保留固定格式原位型，w沿§9.1原义。每个endl另追加一个固定终结标记并执行本源私有记录封口，不新增外部发布机会、消息或宿主fsync。故记录存储量是4+Σ字段[2+ceil(位长/w)]+终结标记数个字；这只是字数界，实参读取、长度换算/溢出检查、分配、写入/复制、封口、持有与回收均按实际基本步另计。未封口的私有前缀可暂停保存，源失败时保留已付工作，不把半记录伪装完整诊断。空间/表示不足为具名SOURCE_DIAGNOSTIC_UNAVAILABLE并沿源失败停止合同处理，不静默丢日志或从宿主借容量。记录不回流为策略知识；后续宿主展示格式与审计复制另报成本、不反馈原虚拟时间/Q。此改变原stdout格式/错误语义及费用，所有R0内部臂共用，不称native字节或成本等价。
 
-上述五对象的批准输出点未见流状态/文件/diagnostic字符串回读；有实际文件读写的字符串版loadPaths、writeIterStatsToFile/writeResultToFile/writePathsToFile均不在批准包，不能把它们概称无业务I/O。Planner::rewrite的solver_info条件在H_goal尚空且邻接节点合法非空时为假，H_goal一旦赋值即退出本搜索，故该限定分支不需纳入实际输出格式器。未经核定的其它I/O仍FOREIGN_INPUT_UNMAPPED。graph.cpp三个命名空间static regex即便文件构造器未调用也可能动态初始化；本共享隔离组件明确不编入文件版Graph构造入口及专用regex定义，只保留已核向量建图/必要类型。这是显式源码裁剪，原文件输入轨道仍保留原字节，不以未调用冒称原程序免费免初始化；其它实际初始化/析构照计。上述合同关闭具名输出的语义选择，完整首轮日志次数和总工作界仍与分配/容器及源计数组合。
+另将已核Instance.cpp::computeAllPair的无条件标题和endl登记到同一sink。于§9.3首次正常链，现可数出2n_f+7条源表达式记录及七个endl：all-pairs一条、实例构造2n_f+4条、到达目标计数一条、原commit runtime一条；其全部字段及求值/记录工作仍按上式展开。重算、空解及验证失败等其它分支各保留自身实际诊断，不按本首轮次数套全会话。
+
+上述对象的批准输出点未见流状态/文件/diagnostic字符串回读；有实际文件读写的字符串版loadPaths、writeIterStatsToFile/writeResultToFile/writePathsToFile均不在批准包，不能把它们概称无业务I/O。Planner::rewrite的solver_info条件在H_goal尚空且邻接节点合法非空时为假，H_goal一旦赋值即退出本搜索，故该限定分支不需纳入实际输出格式器。未经核定的其它I/O仍FOREIGN_INPUT_UNMAPPED。graph.cpp三个命名空间static regex及lacam_instance.cpp的r_instance即便文件构造器未调用也可能动态初始化；本共享隔离组件明确不编入文件版Graph入口、依赖它的文件/场景/随机实例构造入口及各自专用regex定义，只保留批准SharedEnvironment→向量建图入口及必要类型。这是显式源码裁剪，原文件输入轨道仍保留原字节，不以未调用冒称原程序免费免初始化；其它实际初始化/析构照计。上述合同关闭具名输出的语义选择，完整首轮日志次数和总工作界仍与分配/容器及源计数组合。
 
 源私有分配现选有限first-fit arena，A仅表示设计X原有限地址域中的数据字槽数，不新增实验预算。used[A]与len[A]另各预留A字，栈、续体、寄存器映射和其它保留对象占R_aux字；3A+R_aux以及地址/长度换算必须共同落入原有限域，元数据不递归调用自身分配器。used/len从全零建立，初始化写入及遍历收费；数据raw storage不因此获得已初始化C++对象语义。所有初始源对象、容器、诊断和临时对象的实际分配都进入同一记账域，不在证明开始前留下未计的活块。
 
@@ -458,6 +460,10 @@ ALWAYS_ADVANCE的继续域必须覆盖合法初始化、全部合格正常历史
 
 对单次r≤A的分配，单位步进至多A−r+1次对齐检查，合格候选至多floor((A−r)/q)+1个，used读取至多r[floor((A−r)/q)+1]次；成功另有r次used写及一次len写，失败不写保留标记。合法free有一次len读、界/头核验、r次used清除及一次len清除，索引、分支、暂停/恢复等照实际基本步收费。容器增长保持冻结库的分配、构造/搬移、销毁和释放顺序；搬移量由当时实际构造元素数决定，旧容量至多是其上界，平凡类型的字节复制也须保留原选择和费用。上述只是逐类次数，不虚构完整指令单价或免费realloc；批准源的容量规则/元素操作与有限原语展开仍需对应。本合同关闭分配选择、对齐、失败及局部有限证明的语义缺口，不保证搜索成功、整个AA闭包或净真实服务。
 
+普通vector的容量选择进一步绑定到已实读GNU libstdc++11的stl_vector.h/vector.tcc，具体头身份见73A3；固定R0非Python CMake入口声明C++14，不能默认为Python分支的C++17或debug容器。本参考包沿普通vector及冻结allocator/元素trait选择，不把此条推广为全部STL/Boost资格。设当前size为n、capacity为c、max_size为m。发生追加重分配时，原_M_check_len先核m−n≥d，再由n+max(n,d)及原unsigned溢出/上限分支选择新容量；在数学正常域等于min(m,n+max(n,d))，不是不论操作一律两倍旧capacity。reserve(d)仅在d>c时申请恰d；空vector的_M_allocate(0)直接返回空指针、不实际调用allocator。clear/缩小resize销毁已构造尾部而保留容量；复制构造按源size申请，赋值在复用容量与重新申请之间按原分支处理。元素级构造、搬移/复制、析构及实际平凡重定位各按对应路径收费，不能对raw容量槽统一虚收析构。
+
+由这些已核规则可给请求上界而不用实跑：若某一普通vector在所证正常分支中的所有目标size、显式reserve和复制源size均不超过事前L，初态为空且没有来自更大历史对象的move/swap转入，则每次所申请容量不超过2L；设事前至多J次真实分配调用，则该vector的数据字槽累计申请量至多J·ceil(2L·sizeof(T)/b_word)，再加各次对齐损耗即可纳入S_bar。这里L/J是输入与源码结构计数的符号界，sizeof/布局保持冻结类型；不是实际峰值、容量恒为2L或无条件的跨历史AA界。若只知道成员操作次数，可保守作为分配调用次数上界，但赋值/嵌套元素及allocator内部请求须分别计，不能漏算；deque/list/hash/tree与Boost容器仍按各自具体实现映射，不由普通vector公式代替。
+
 ### 9.3 首次非空源输出与付费真实服务的分段见证
 
 本节把两个证明义务分开：先证明一个明确子族的固定源正常非空分支，再证明有预先基本步界时该分支如何嵌入既有付费协议。此处没有实际map、输入配置、种子或O，不改变§11完整roster，也不给ALWAYS_ADVANCE全历史或H19执行资格。以下n_f仅表示已有有限fleet的基数，k_commit仅指原源commitStep的既定值；不是density N或新的调参量。
@@ -468,7 +474,21 @@ ALWAYS_ADVANCE的继续域必须覆盖合法初始化、全部合格正常历史
 
 因此原solve正常提议的联合路径恰为[S,G]。固定LNS.cpp L648–713两种reached_goal_time切分都留下每agent的[s_i,g_i]；§9.2共同修订已删除runLACAM2的两处无消费登记，本见证不再依赖该表写入。根另直接核L1236–1339及L1433–1482：k_commit=1时跳过锚点后输出[g_i]；更长原提交量先插入g_i，再由原短路径分支填充终点WAIT，输出恰k_commit项且future为[g_i]，back首次读取前已有元素。validateCommitSolution只见不同目标上的WAIT并返回true；它漏验首边和首层，故PRE_COMMIT_SHAPE与外层完整锚点/冲突检查仍不可删。这里证明正常非空提议分支及原切分的定义域，不把它直接当成已append或获得运动授权。
 
-费用中原地图/距离/图构造、dummy候选及容器、n_f次PIBT、路径复制、n_f·k_commit个提交项、n_f(k_commit−1)次逐路径移动检查和binom(n_f,2)(k_commit−1)次冲突比较都保留；验证器外层成对枚举的空分支也收费。不能由这些计数直接给任意C++库工作恒价。已核的GNU libstdc++ 11特定32/64位优化分支，在本子族的两项std::shuffle中只作一次MT取数，uniform_int_distribution范围2的拒绝阈值为0；其它库分支不能继承此结论。dummy的default random_shuffle至多作K−1次原rand调用而不重抽，K为实际已收集候选数。glibc-2.35已读上游TYPE_3 rand体无循环；只有整个C随机状态独占、锁初态合法、无线程/信号/外部库重入且保留原状态时，wrapper可走固定两原子锁路径。若原调用确有srand，其原30次填表和310次预热照计；不暗加播种或改为另一发生器。具体实体与读证见73A3；该条件性有限路径不自动绑定本机Ubuntu补丁或实际链接。本轮下段另明确修订随机浮点的固定特化；容器分配、日志/清理及完整基本步对应仍须逐项关闭，不把普通“正常返回”当成预先已知的工作界。
+首轮费用计数必须区分矩形槽数M_grid=rows·cols与自由顶点数V；不能只用V界定含大量障碍槽的表扫描。设自由分量c有v_c点、e_c无向边，N_vis=Σ_c v_c²≤V²，N_adj=Σ_c 2v_c e_c≤4N_vis。在已修严格最小堆、单位边权、合法表示和不碰哨兵条件下，all-pairs按距离层归纳首次发现即最短路，每源每可达点只入堆一次。以下是固定源码操作的事前次数，不能把表中一项当恒价基本步。
+
+| 首轮源阶段 | 必须保留的实际对象、循环与物化 |
+|---|---|
+| initMap/all-pairs | existing_path为n_f个空行；原Instance仍构造长度4的degrees。距离外层长M_grid、V个有效行各长M_grid，共V M_grid个整数初始化；相关三趟外层扫描各长M_grid。V个局部Boost pairing heap的push/pop各N_vis次，成功松弛N_vis−V次；getNeighbors调用N_vis次、候选检查4N_vis次，临时list节点及松弛比较各N_adj次，堆内部工作另计。 |
+| 常驻LNS/PathTable | n_f个Agent各建SIPP；原destroy_weights为枚举规定的三个double，stay_target按原resize及再写零。两个输出容器各n_f个空list；PathTable仍有M_grid个空vector及M_grid个MAX_COST整数。首次未进入loadPaths/clearAll，删除的两次登记不收费，实际空对象构造/析构不能删。 |
+| prepareDummy与向量建图 | 八个度桶及M_grid扫描；桶实际合格节点总数B_bucket，n_f≤K≤B_bucket≤V_comp，不能只按最终K收桶清理。candidates是Boost unordered_set<int>，不是std版本。Graph的vector<int> map参数仍按值复制M_grid整数，直接构造ins不能消除此副本；U长M_grid，V个顶点，两趟M_grid扫描，邻接追加总数2Σe_c≤4V。 |
+| Planner/节点/搜索容器 | starts/goals各n_f指针；C_next为n_f个array<Vertex*,5>，tie_breakers为V个float，A及C_new各长n_f，occupied_now/next各长V。n_f个LACAMAgent、两HNode和四LNode；两次长度n_f的priority sort，一次长度2的shuffle、n_f次长度2的candidate sort及n_f次非递归PIBT。两queue与一stack的底层为deque；根/子H间set只插一条边。EXPLORED为显式std unordered_map，批准修订下两个插入点及一次后继未命中查找。 |
+| keys/回溯/源路径 | 根、后继查找、后继插入的键构造各含n_f长Config/标志向量；实际每次RConfigHasher还按auto C=RC.first复制n_f个指针，哈希调用次数取实际固定库映射。回溯复制两层Config，源路径产生2n_f个PathEntry及位置写入；唯一拥有者/后继描述/注册与清理按实际修订另计。 |
+| 原提交/验证/输出 | 原提交list含n_f k_commit节点、future含n_f节点。validateCommitSolution按值参数再复制n_f k_commit个list节点；验证临时n_f个Agent各new SpaceTimeAStar，又物化n_f k_commit个PathEntry；外层curr_commits另追加n_f k_commit个PathEntry。这些不能合并成一份提交项计数。 |
+| 验证循环/清理 | validMove为n_f(k_commit−1)次，成对身份判据n_f²次，进入binom(n_f,2)个无序对，联合冲突循环binom(n_f,2)(k_commit−1)轮；本子族swap第二个等式因第一个为假而短路，不虚收。局部L/H/Agent/图/键/路径/诊断按归属释放，常驻LNS/环境会话终止时才释放。 |
+
+上述SIPP及临时A*的空堆/Boost hash、未用成员也有真实构造/析构；不调用搜索只免未发生的比较/搜索。普通vector类型覆盖标量、指针、固定array、PathEntry、Agent及嵌套vector/list，不能把成员本体当平凡定长标量复制。已读的vector<bool>只位于本首轮未构造的ConstraintTable声明，不为它新增运行费；输入安装所拥有的完整任务/字符串/元数据长度另按冻结编码计，不能全由V/n_f/k_commit界定。余下容器差异集中为已选Boost pairing heap/集合、std hash/tree/deque/sort及新增唯一拥有者的具体有限步骤映射；普通vector合同不代替它们，也不把库实测性能当设计前提。
+
+已核的GNU libstdc++11特定32/64位优化分支，在本子族的两项std::shuffle中只作一次MT取数，uniform_int_distribution范围2的拒绝阈值为0；其它库分支不能继承此结论。dummy的default random_shuffle作K−1次原rand调用而不重抽，K为实际已收集候选数。glibc-2.35已读上游TYPE_3 rand体无循环；只有整个C随机状态独占、锁初态合法、无线程/信号/外部库重入且保留原状态时，wrapper可走固定两原子锁路径。若原调用确有srand，其原30次填表和310次预热照计；不暗加播种或改为另一发生器。具体实体与读证见73A3；该条件性有限路径不自动绑定本机Ubuntu补丁或实际链接。下段另明确随机浮点的固定特化；总费用仍由这些次数及实际有限原语对应组合，不以普通“正常返回”冒充事前工作界。
 
 2026-09-13新增共享参考库特化，仅作用于原generate_canonical<float,24>(std::mt19937)：由发生器基数2^32和binary32有效精度24，直接取所需取数次数m=ceil(24/32)=1，保留原一次循环、判断/计数、一次原MT取数、转换和后续运算；删除原为求m而调用的两个log、长双商及相关转换。该修改不覆盖其它生成器/实数类型，也不选择或改源种子；未绑定native builtin或FYL2X不能作为等价证据。删除这些计算改变库控制流、费用和可能的浮点标志，故是所有引用R0臂共用的明示源接口修订，既不声称旧native位轨迹/费用相等，也不为H19虚收。新版本未执行的旧log不收费，新版本实际保留/新增的步骤全费；有限字宽与表示的实际绑定仍须资格核验。
 
@@ -493,7 +513,28 @@ ALWAYS_ADVANCE的继续域必须覆盖合法初始化、全部合格正常历史
 
 条件嵌入引理：若上述每段展开已有仅依事前编码输入、固定私有源初态及已绑定实体的有限基本步上界，所有不可跨行CAPTURE、当前guard、原子账本段和发布单元也有这样的上界，并且原公共文法/供给约束允许相应有限容量与行数，则可先加入单writer/FIFO、跨发布占槽及原phase轮转边，再取有限拓扑顺序嵌入一个事先定义的符号日历类。不能以DAG同层误判站点不冲突；源等待中心处置的保留收件阶段不是排在自身后的新作业，不产生该自等待环。选择/接收/失败空分支、轮询中间机会和已有必需业务均计入段界，不以“供给够大”替代上述界，也不按实际源完成行数改O。
 
-该类允许源准备阶段的不同row_id共用同一符号时刻tau；依当前原clock映射，源各起止读取相同而elapsed为零，仍实际支付全部基本步并保留原比较/转换。相同物理时刻不等于同一行递归完成。把tau_START定义为该符号日历事前指定、由前段工作界保证已具备合法RUN候选的ACTUATOR行时刻；本首次新MOVE在该行由(s,v_ref)=(0,0)实际START，随后完整cap C=ell固定且不中断，由§3可取解析统一上界T_move=sqrt(2a_lo·ell/[a_launch(a_launch+a_lo)])+sqrt(2ell/a_lo)；LAUNCH首交点剩余距离不超过ell，故两段界之和覆盖原END，与已实现扰动轨迹无关。事前服务行若满足t_service>tau_START+T_move且先于Stop，并保持上述队首/实体包含条件，便计到至少一次经真实原MOVE到达后的任务服务。所有时间关系只是符号条件，未选实际时刻/供给或改保护参数；不得用实现后的到达时刻安排服务。该引理依赖尚未闭合的全展开费用/表示条件，当前不宣称完整源—付费—服务联合资格已通过，更不推出D优于R/E0、一般死锁自由、外部H19同源或整个比较域非空。
+同刻源处理还必须通过原deadline谓词。固定runLACAM2先建LACAMInstance/图及其诊断，再建MT，随后以原(time_limit−0.1)·1000建立Deadline；utils.cpp先将steady经过量duration_cast为毫秒，到期谓词为elapsed_ms>time_limit_ms。该首轮共有n_f+4次is_expired，包含逐agent PIBT之前的n_f次。若这些起点/检查都在同一符号时刻tau，elapsed_ms为零；只有原阈值表达式的求值/转换全部有定义且存入的d_clock≥0，才可推出这些检查均不触发。此是正常见证的符号条件，不给原预算补默认值或下限；起钟前初始化及图/诊断仍全费，公共INIT截止、硬故障与Stop按原全序约束，不能靠局部elapsed为零豁免。
+
+无需把网络握手链也压到同一tau。给该完整源计算阶段一个事前足额的原PROCESS_SLICE，就能使内部deadline起止同刻；要等消息的源前/后阶段分别安排，其它发送/接收仍走预先声明可交付的NETWORK机会。若另选择整条准备链同刻的见证子族，就须明确外生输入允许这些同刻投送，不能从有限延迟推出零时延。不同row_id同刻也不等于同一行递归完成。当前模型中工作供给不自动换算为物理时间增长，故足额切片是允许的条件存在性证书；若以后加入每物理时间段供给率上限，必须重新核该嵌入，不能继承本结论。
+
+把tau_START定义为该符号日历事前指定、由前段工作界保证已具备合法RUN候选的ACTUATOR行时刻；本首次新MOVE在该行由(s,v_ref)=(0,0)实际START，随后完整cap C=ell固定且不中断，由§3可取解析统一上界T_move=sqrt(2a_lo·ell/[a_launch(a_launch+a_lo)])+sqrt(2ell/a_lo)；LAUNCH首交点剩余距离不超过ell，故两段界之和覆盖原END，与已实现扰动轨迹无关。事前服务行若满足t_service>tau_START+T_move且先于Stop，并保持上述队首/实体包含条件，便计到至少一次经真实原MOVE到达后的任务服务。所有时间关系只是符号条件，未选实际时刻/供给或改保护参数；不得用实现后的到达时刻安排服务。该引理依赖尚未闭合的全展开费用/表示条件，当前不宣称完整源—付费—服务联合资格已通过，更不推出D优于R/E0、一般死锁自由、外部H19同源或整个比较域非空。
+
+费用与行数的量词次序进一步固定如下。先取首轮非日历输入/私有初态/例程合同X_0，由已证源正常分支及协议角色计数形成有限阶段骨架J(X_0)，保留必要空分支、各站FIFO、发送/接收、发布、原SOURCE_REQUEST三相与同job处置阶段。先据此确定所需有限行号/序号及消息/记录字段长度界，再以已固定例程r的调用次数N_jr(X_0)和相应表示域上的基本步界U_r(A,X_0)形成W_j=Σ_r N_jr U_r。不得用实际完成时间倒推阶段数，也不必采用“一基本步一行”造成行号位长→费用→行数自循环。W_j的可暂停部分、不可跨行原子块及后继发布按各自原供给分项，不跨站借容量或重复计数。
+
+同一个事前A须满足§9.2的S_bar(A,X_0)≤A、3A+R_aux及完整地址表示条件，同时用于计算扫描费用和全部W_j。对每个事前满足这些条件、各原服务阶段/原子块/发布容量、deadline及服务时序的O，以及每条落在已声明交付/首次允许START/队首保持/不中断条件中的外生轨迹，既有正常源证明和付费依赖归纳共同推出上述至少一次真实服务。这里U_r必须来自已核循环、固定格式逐字段展开或具名总有限步骤合同，不能只写“正常返回时的费用”或给整个容器/认证宏任意单价；有限机器状态数本身不证明源正常终止。固定例程的实际后端符合性属于实现后资格，但未选定的签发/认证和其它未知回调仍须先补设计语义。
+
+| 首轮实际部分 | 事前计数/数值依据 | 原供给与原子性责任 |
+|---|---|---|
+| 初始化、源求解、切分及验证/清理 | 矩形槽/自由顶点分开；容器实际元素、按值复制、临时对象、hash复制、诊断和原循环全部计 | 原Srv_P；普通工作可暂停，后继封存/发表另计 |
+| 静态几何、PROJECT及外层检查 | 既定表长/路径长度、整边投影次数、有理操作数位界 | 所属C/P站；变长准备不藏入根交换 |
+| CAPTURE与append/CAS、普通整边grant | 预备句柄/保留槽、有限身份/版本/parent/所有权和已准备增量 | CAPTURE完整原子费；完整guard和根发表付原发布容量 |
+| 首次PRECHECK、cap接纳及ACTUATOR | 原起点HOLD、槽/phase/closed/身份、C>0、公开秩delay及首段建立 | 原E/共同控制责任；同接纳点完成动态guard与作用，不先求一般途中POSITION |
+| 消息、诊断、保留和回收 | 字段长度、收发次数、有限表长、具体签发/认证及维护步骤 | 所属原站；当前未知例程不得藏在固定宏名内 |
+| 自主切换、真实END与TASK_SERVICE | 下述有限首段表达式/预备EndRecord；真实实体包含、有效队首与原全行事务 | END保持共同控制责任，不等应用槽；TASK_SERVICE保持宿主设施账，不重塞模拟应用CPU |
+
+首轮控制数值有一个无需通用POSITION的有限子族证书：沿已有有理几何域，令原合法边长、控制字段和公共时刻取有理编码，首次START到首服务间eta保持原同一个合法常值；不改变主roster、保护参数或原控制律，非零F/Z及真实横向w/z保持。记a_0=a_launch+delta+eta>0，xi_L=ell·a_0/(a_0+a_lo)，v_L=sqrt(2a_lo xi_L)，r_*=(a_hi+a_lo)/2+2eta>0，v_*=sqrt(2r_*xi_L)。由原LAUNCH与a_hi−a_lo=4delta的APPROACH，首次END时刻为tau_START+v_L/a_0+4xi_L/(v_L+v_*)。根独立从r−r_*=c_r sqrt(xi)（c_r为该段积分常数）积分复核APPROACH项；r_*=a_lo的退化情形由同一正分母式直接覆盖，未修改制动/接点语义。
+
+上述时刻属于至多两个平方根生成的次数不超过四的实数域；与本子族有理公共时刻的比较可经固定次数有理运算及保留符号条件的平方消元处理，相等/退化分支也有限，不能无条件平方引入伪根。表达式固定深度给输入位长的事前有限增长界，运算仍逐字收费。这为首段建立、自主切换和END记录的有限步骤合同提供数值依据，不要求把横向指数状态判定放进应用CPU；真实任务设施仍按原完整谓词求值。任意eta更新历史、一般POSITION及全部WORLD资格不由此子族自动通过。
 
 
 ## 10. 外部原法、守卫适配与原样检查合同
@@ -665,7 +706,7 @@ future manifest必需字段：全部源身份/alias/解析字段；官方与适�
 
 profile总体分层必须事前唯一：MAIN_IN_MODEL只允许§2/3当前有限参考/空间驱动与服务区域子域、原可信物理条件及§9所列模型内通信、普通反馈、no-start和分量故障机制；STRESS_TRUST_PHYSICS专门声明会破坏这些前提的机制。成员资格依据生成机制/支持集及来源定义，不根据运行后是否真的breach归类。MAIN中的意外breach保持原主行及失败标志，不能改挂压力层后删去；压力层单列自己的固定权重和描述，不能在主显著性不够时混入。四类别/map/source/profile/repeat的主w_b仅在MAIN_IN_MODEL的完整事前roster定义；任何类别/必需profile无合法成员时UNINSTANTIATED，不运行后重归一化。静态合法性、软件初始化成败与实际结果选择是三种不同事项。
 
-来源补核73L2给Moving AI的ODC-By/独立素材权利及研究分发说明。根73L18通过固定LoRR官方归档25ffd5b6a39b6fe30e5bc6cb5e22720a9531ea8a与固定R0的完整Git树元数据，已定位city的Paris_1_256.map（blob0ff641690b48c1c4807fcea7c0c31d167973b221）及random-32-32-20.map（blobb44f5a949e91b251b0e3bb29f3cd0784ce7d80b5）同blob/size对象，全程未读地图载荷；归档README明确比赛实例来源，补上此前首页只有JS壳的入口。该证据不证明复制方向/更早原创权利或适用许可；game的ht_mansion_n、warehouse-s的warehouse-10-20-10-2-1在该归档没有同blob对应，不能用另一同类地图替代。R0软件MIT/归档存在及同名文件均不能关闭全部素材权利，agent/task/delay的研究使用依据及覆盖范围仍待明确；不把完整生成/转换历史另设为S7前置条件。本草稿仍未实例化合法source_id/roster，没有读取受限载荷或复现实验；许可与全部数据资格保持UNKNOWN。 L19完整有界报告经根全文核对，补充官方Moving AI目录把ht_mansion_n列在Dragon Age 2分类、目标warehouse文件列在MAPF集合及仓库更新说明；仅支持具名分类和分发说明上下文，没有官方对象hash。官网两个目录的game尺寸顺序不同不能自行解释为转置/显示约定，名字/状态数不替内容身份；根不冒称已直接抓取代理四页。两目标与R0的完整对象/适用权利链仍未闭，不能套同类许可或扩大论文效度。
+来源补核73L2给Moving AI的ODC-By/独立素材权利及研究分发说明。根73L18通过固定LoRR官方归档25ffd5b6a39b6fe30e5bc6cb5e22720a9531ea8a与固定R0的完整Git树元数据，已定位city的Paris_1_256.map（blob0ff641690b48c1c4807fcea7c0c31d167973b221）及random-32-32-20.map（blobb44f5a949e91b251b0e3bb29f3cd0784ce7d80b5）同blob/size对象，全程未读地图载荷；归档README明确比赛实例来源，补上此前首页只有JS壳的入口。该证据不证明复制方向/更早原创权利或适用许可；game的ht_mansion_n、warehouse-s的warehouse-10-20-10-2-1在该归档没有同blob对应，不能用另一同类地图替代。R0软件MIT/归档存在及同名文件均不能关闭全部素材权利，agent/task/delay的公开研究评测用途依据按本节已核论文说明登记，固定版本/对象覆盖及第三方再分发范围分别保留；不把完整生成/转换历史另设为S7前置条件。本草稿仍未实例化合法source_id/roster，没有读取受限载荷或复现实验；完整再分发范围及全roster实例资格尚未通过，不回滚本节已核研究用途和L23基础合法输入存在证据。 L19完整有界报告经根全文核对，补充官方Moving AI目录把ht_mansion_n列在Dragon Age 2分类、目标warehouse文件列在MAPF集合及仓库更新说明；仅支持具名分类和分发说明上下文，没有官方对象hash。官网两个目录的game尺寸顺序不同不能自行解释为转置/显示约定，名字/状态数不替内容身份；根不冒称已直接抓取代理四页。两目标与R0的完整对象/适用权利链仍未闭，不能套同类许可或扩大论文效度。
 
 2026-09-12用户已允许本次固定官方四类首配置及其引用输入的有限只读静态核验。根L23实读四JSON及13个引用对象（共用一delay），全部内容Git blob重算匹配；四配置的位置记录足数、十进制单位置、起点互异且起点/任务均可通行并位于共同四邻接分量。原delay有5000行、每行2000位，首行第二token53983未被原parser使用，实际numTasksReveal也不由JSON同名字段决定。源文件数值只作已有对象事实，不采用为density N、时间或其他保护参数。该证据关闭这四个对象的基础格式/引用/位置缺口，不等于全364配置、连续F/Z/Mask初态、ServiceRegion、完整源继续、delay支持O或来源权利链通过；未读取其它配置/旧Q，未生成source_id/roster或运行原算法。L23A仅核parser必要条件，C28为非正式建设，均不计本稿通过票。
 

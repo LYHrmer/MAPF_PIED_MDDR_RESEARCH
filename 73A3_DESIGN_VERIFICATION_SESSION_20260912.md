@@ -299,3 +299,25 @@ C35唯一具体题为私有arena分配语义和正常分支充分界；首个exe
 新分工已写唯一入口：Astra Ultra承担研究路线、核心推导/反例和关键取舍；Opus优先承担具备阶段授权、清楚文件接口和验收条件的实现/修复/调试；普通子智能体核事实，根整合真实差异与测试。当前未越过设计阶段写代码，也不再无新证据地让模型互审或重复同题。既有Opus任务收回结果后结束。
 
 本轮主稿身份a953637e1d93b343315c8a608221c94ecd4ee2351b8a01393b8ea3640c4a28a7，285597 bytes / 884 LF；仍DRAFT/NOT-FIXED/NOT-REVIEWED/NOT-ACCEPTED及HOLD。本轮有实质设计进展，完整目标保持active。未实现/构建/运行研究测试、仿真或算法，未赋保护参数、生成实验输入/结果或扩读受限载荷。下一步是批准容器操作/请求界与费用—服务联合组合、剩余source/WORLD和全稿验收；不把已选合同的未来实现符合性倒设为无限设计前置。
+
+## 2026-09-14 首轮费用组合、导师汇报与设计出口收敛
+
+上一目标轮完成arena/诊断及模型分工并同步3c4a70e753a756f896bc1a947158f7e551e2c2e6，判progress。本轮起始4e3af9工作树空，完整目标保持active；没有续轮询已终态Claude或旧网络句柄。用户随后询问进度、导师汇报的研究问题/数学表达、预计工期，并明确要求加速设计阶段且不能降低质量。根已据此将工作集中到真正设计出口，不另加实现细节门。
+
+实际指定astra_ultra_paid_service_closure（gpt-6-astra/ultra/fork_turns=none）负责联合构造，source_first_pass_containers只核固定源码计数；两者均已完整交付。根并行亲读固定runLACAM2、utils、Planner正常窗口/低层/get_new_config、validateCommitSolution、BasicLNS Agent、Instance初始化/all-pairs、RConfigHasher和lacam_instance全文，均为0b5b336…git对象；首次尝试Agent.h路径不存在后改读实际BasicLNS.h，未把空结果当证据。源码类型定位曾读本地两个头的匹配行，最终计数/修改依据为代理固定对象及根上述git对象复核，未以工作树名称代替固定身份。
+
+§9.3新增源级费用组成表，矩形槽M_grid与自由V分开，单位边权严格最小堆下N_vis=Σv_c²、N_adj=Σ2v_c e_c给all-pairs计数；原>=比较器的共同改>已在先前主稿中登记，不重开该问题。明确Graph按值map参数的M_grid整数副本、dummy全部桶节点与最终K区别、两HNode/四LNode、三键构造、每次hash的Config副本、原提交和按值验证/临时A*/外层输出的多份物化，及验证短路/空分支。std/Boost hash、deque/tree和实际嵌套类型分开，不把普通vector证明推广为全库资格。
+
+根直接读取GNU libstdc++11普通vector构造/追加/reserve/赋值/缩小/释放相关完整函数。stl_vector.h SHA256为22ae2a5e1314084cf7838f802306ec23f089305b9f0f398bacdd7fc7c7f4ebc4，vector.tcc为532ca7b973e3a4dd66af1345c01727dad5ae3d6f8a830aa845ca9f6b8d8da3ee；c++config.h仍396bda2073fd4c0854af34b255ea5bca03fa1db337abfe97b3bc719119cc5ccb。§9.2记录实际_M_check_len基于size及追加量、reserve恰所请求容量、空分配不调用allocator，以及普通vector的有条件2L容量上界。未把该次数界当完整编译基本步数，未改编译配置或运行。
+
+首轮输出漏项已直接补齐：Instance::computeAllPair标题/行尾、LACAMInstance start/goal输出。现在一个源输出完整表达式对应一条私有记录，首轮2n_f+7条、七个endl；根纠正初步意见只数循环末尾而漏标题行尾。lacam_instance.cpp另一个static r_instance与未用文件/场景/随机构造入口明确一并裁出，保留SharedEnvironment→向量建图。原真实输入未读、源码未改，此为共同纸面适配。
+
+根208e4e/9cf6bf/542aab核源deadline：先ins/图和MT，后以原(time_limit−0.1)*1000建立Deadline，elapsed_ms作毫秒duration_cast，原比较严格>。代理初报四次仅外层，最终计数n_f+4包含逐agent检查；已通知Ultra并共同采用。§9.3明确零elapsed仍要求原派生阈值求值有定义且非负，不给预算赋值；同tau可只覆盖一个足额源PROCESS_SLICE，网络仍走预定可交付机会，不从有限延迟推出零时延。INIT总截止、Stop和硬故障仍保留。
+
+联合费用段先固定源/协议阶段骨架，再定字段位界和W_j=ΣN_jr U_r，以同一A同时核请求、总存储及扫描费，避免行数/费用自循环。新增责任表区分普通工作、CAPTURE、guard/发布、首次HOLD控制、END和真实任务宿主。根独立由原APPROACH的r−r_*=K sqrt(xi)积分复算恒eta首段END根式，两平方根域次数≤4，退化由正分母式覆盖；该有理子族保留原控制和非零横向误差，只给有限数值依据，不认证全部历史或净正效应。完整首轮联合可满足仍未冒称通过。
+
+为落实加速，另实际指定astra_ultra_design_exit_triage（gpt-6-astra/ultra/fork_turns=none）做有界出口清理，非正式票、不生新任务。根f2f3f7亲读72R4原S1–S9：原S6要求静态调用/库契约证据与失败分层，并不要求逐条编译指令审计；原文也禁止以未知正负/缺阳性数据无限增加设计门。三项当前实质设计缺口已写入唯一入口：认证语义、封闭参考例程接口、首轮联合相容性。已定义接口的实际符合性、完整roster/WORLD实例、外部实际复现和效果检验仍属于完整实验前目标，但不因未实现而反复阻止固定候选。尚未固定/正式审查，不凭此次建设清理写PASS。
+
+根核并改正§11残留的研究使用依据口径冲突：论文用途已核，固定版本/对象及第三方再分发范围分别保留，不再概称agent/task/delay全无用途依据。不重做L23、目录搜索或完整生成历史。另新增可变[导师汇报一页说明](RESEARCH_BRIEF_FOR_ADVISOR.md)，概括PIE-D底座、阻塞导向查询/误差包络/前缀授权与空间释放、状态/占用/退休/真实Q公式；跨block仍按固定E_b与权重比较服务率，明确无实测提升。它不是替代候选或另一个操作入口。
+
+本轮主稿身份68eecae75a83ff3fe2d90c73866bc4980eaffd395f323b7505c1609caf1706a3，297583 bytes / 925 LF，仍DRAFT/NOT-FIXED/NOT-REVIEWED/NOT-ACCEPTED与HOLD。无实现、构建、研究测试/仿真、算法或随机执行，无保护参数赋值和实验载荷生成/扩读。三名本轮子智能体均完整终态；当前已停止继续泛读库，下一步仅对上述三项作最小建设后固定候选，保持原正式顺序审查。
