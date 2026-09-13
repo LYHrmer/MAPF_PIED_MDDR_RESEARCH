@@ -6,7 +6,7 @@
 
 ## 当前设计与证据
 
-- [73 主稿](../73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)：DRAFT / NOT-FIXED / NOT-REVIEWED / NOT-ACCEPTED。当前 SHA256 `772fe0aa53372e18442ccff0206ab1b91ab5f7f54cebf03406c1f730d617b795`，236321 bytes / 733 LF；文件名日期不代表当前内容版本。
+- [73 主稿](../73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)：DRAFT / NOT-FIXED / NOT-REVIEWED / NOT-ACCEPTED。当前 SHA256 `7e3869a7e3a90838b7da7e842c5c75389c362eae030014119c7944abb39a9e60`，245726 bytes / 763 LF；文件名日期不代表当前内容版本。
 - [本窗口决策和原始收件索引](../73A3_DESIGN_VERIFICATION_SESSION_20260912.md)：按具体问题查阅；其中早期状态、任务句柄、提交与 SHA 是历史记录，不能覆盖当前文件或活工具状态。
 - [72R4 原要求与 S1–S9](../72R4_THREE_REVIEW_ROOT_SYNTHESIS_AND_SUCCESSOR_REQUIREMENTS_20260907.md)：最后正式六门裁决属于冻结 72，G1/G2 限域 PASS、G3/G4/G5 UNKNOWN、G6 FAIL；不是对当前 73 的裁决。
 
@@ -29,7 +29,7 @@ R0 固定 `YueZhang-studyuse/LMAPF-delay@0b5b33649fc367abcb1cd0a7ad5ac03511bf935
 
 ## 接下来怎样验收
 
-2026-09-13 新进展：Opus C29 已实际完整返回并经根纠正，原文见[完整建设回执](../73C29_NORMAL_SOURCE_TO_TRUE_SERVICE_CONSTRUCTION_COMPLETE_RECEIPT_20260913.md)，不是已闭合见证。根直接核固定源后将左下邻格读取修订写入§9；§2/15补WinkTPG的真实执行/费用证据与循环输入域边界。下一步仍须闭合完整收费链与固定源正常运行的联合可满足证明。
+2026-09-13 新进展：C29/C30均已实际完整返回并归档，[C30完整建设回执](../73C30_PAID_FIRST_MOVE_DEPENDENCY_AND_CALENDAR_EMBEDDING_COMPLETE_RECEIPT_20260913.md)列根纠正。§9.3新增首轮叶起点源路径、原切分与付费阶段的条件见证，已定点核候选数、源处置顺序、原phase轮转及解析到达上界；不是完整联合资格。下一步要落实剩余库/分配/日志与基本步的对应和预先有限界，再核源继续域、全来源及全稿组合；不重复C29/C30的已决咨询。
 
 先闭合当前源/付费服务见证、合法来源及全稿组合；固定自给完整候选后，严格依次：research-mentor 完整审查 → 根不用 skill 独立分析 → nature-reviewer 完整审查 → 根独立分析 → 明确无任何 skill、未读前两路意见的独立逻辑审查 → 根逐项验收。实际用 skill 时须读取并说明，不能以建设咨询或审稿数量代替。
 

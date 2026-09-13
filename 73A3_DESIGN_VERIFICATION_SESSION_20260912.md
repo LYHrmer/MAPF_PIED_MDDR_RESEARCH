@@ -96,3 +96,42 @@ paired_statistics仅核fa9cd233新增映射/alias和§12，指出一个直接问
 wink_mechanism_gap_closure已实际完整消息交付：读当前§1/2/14/15和官方WinkTPG v2的II–VIII文字/表格、L430–480引用/页尾及版本；未看图像/PDF/源码或复算全部证明。根另直接核官方HTML L78–93、295–311，并已有VII费用/真实实验窗口。主稿§2补完整的近邻范围，§15明确四机器人同步环含cycle conflict而在其输入假设之外，不能用环例判它输；未扩展确认矩阵，未声称本文优越。只在本账本留读取范围，不新增平行文献报告。
 
 本次主稿最新SHA256 772fe0aa53372e18442ccff0206ab1b91ab5f7f54cebf03406c1f730d617b795，236321B/733LF；ed80e6a为修订前，c92f2a5为修订日期字段前的中间字节。仍DRAFT/NOT-FIXED/NOT-REVIEWED/NOT-ACCEPTED，未实现、构建、研究测试、仿真、保护参数赋值或生成载荷。尚待源正常继续及付费依赖链联合可满足、全来源/连续WORLD/外部资格和完整顺序审查。
+
+## 2026-09-13 首次源分支、库有限路径与C30因果构造
+
+上一批科学文档已实际提交/推送18c662b5769b390ecdb1369cd93d2c07ca7fea0f并核本地/远端一致。本次用户继续后，根再次回答视频状态并全文核V1；报告完成而画面/语音/字幕仍零读取，没有后台视频任务或新缓存取证。
+
+C30唯一exec32405→0ee1b3/exit0已实际完整返回，CLI 08be843e-5512-4bf8-8bee-a22eda23ec05，实际claude-opus-5/firstParty、completed/end_turn，93028ms、客户端0.21176625000000002 USD。原stdout与完整正文现已保存为同名前缀RAW_RESPONSE和COMPLETE_RECEIPT，提示文件此前已存在；未因接续重复调用。根拒绝其源处置/中心接纳倒序、将回复处理重标公共机会、任意同层并行、phase1无条件NOOP、重复ACTUATOR是到达必要条件、遗漏CAPTURE等原子段、凭W命名即有限、未证SRC_WORK_CERT及无证据epoch接缝。具体纠正与完整原文均在C30回执；只把经纠正的付费阶段和条件嵌入整入73，不算正式票。
+
+r0_first_commit_witness实际完成首源见证、GNU11随机模板分支、glibc固定tag源码核验及一次定点反例复查，均以完整消息交付，无代理新文件。限定所有起点为degree-1叶、首目标为唯一邻点、2n个端点各异；冻结非空目标行、精确距离/哨兵、原首次纯LACAM状态、共享修订、表示和时钟条件不可省。发现并纠正“连通便使每个degree>0”：原北邻0边界最多漏一自由点，候选仍至少V_comp−1≥n，dummy候选足量，runLACAM2中dummy安装仍为注释。无新增源修补。首轮不进入交换帮助/继承递归或第二任务，得到[S,G]；原commit输出各k_commit个目标，future为单目标。结论仅第一正常源分支，不涵盖后继AA、全roster或完整服务。
+
+根独立直接读固定Git对象的MAPFPlanner.cpp L141–166、Instance.cpp L1–66、LNS.cpp L648–713、1236–1339、1433–1482；核清curr_commits不被函数自动扩容/清空、短分支先有目标才读back、n(k_commit−1)校验累计和首边/首层检查缺失，保留PRE_COMMIT_SHAPE与外层全检。一次只读打印命令括号笔误exit1，未执行内部读取或写文件；立即修正后a4d8fa/exit0取得窗口，不把失败算源运行。当前主稿新增§9.3：首次分支、剩余费用义务、完整付费因果表及条件日历嵌入；T_move从§3现有LAUNCH/APPROACH上界相加，没有实际O/输入或保护参数赋值。
+
+GNU头实体由代理读取本机libstdc++11，_GLIBCXX_RELEASE=11、__GLIBCXX__=20230528；仅相应优化分支适用。两项std::shuffle在uint32/uint64乘高位分支的范围2拒绝阈值0，正好一次MT调用；另一fallback可能重抽，不能泛化。MT标量seed为原623次填表、每次draw至多624项twist加固定tempering；源原seed常数不改。get_random_float的generate_canonical本体是固定m次倒计数，m与浮点/数学库映射仍须绑定，不能凭库名断言全费用已闭。dummy default random_shuffle至多K−1次rand与取模/交换，无接受重抽。
+
+| 已读GNU11头文件 | SHA256 |
+|---|---|
+| /usr/include/c++/11/bits/stl_algo.h | a6ab2375b2a806e2ea2adf2eced5956bbad1e2e490bf2bcd48eb1272150f7375 |
+| /usr/include/c++/11/bits/uniform_int_dist.h | c12839cb514b0bd11bb47bd9ddfa24f492e8ca83a0462255f9c3185da0455d89 |
+| /usr/include/c++/11/bits/random.h | 9ddfdf978a64b4ff3cf484a0ad72ee205a4f9ff4769ebfb481d8c0ea4ab3aeed |
+| /usr/include/c++/11/bits/random.tcc | 99ad5611aacb8f86374c013bf0794b1ed9e46d1152f2e442e078c16374201325 |
+| /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h | 396bda2073fd4c0854af34b255ea5bca03fa1db337abfe97b3bc719119cc5ccb |
+
+glibc代理实际getconf=2.35，dpkg的libc6 amd64/i386及libc6-dev amd64均2.35-0ubuntu3.15；本机缓存未找到对应C源。下面实际读的是[官方上游glibc-2.35](https://sourceware.org/git/?p=glibc.git;a=tree;hb=glibc-2.35)，不是Ubuntu全补丁或实际链接验证。官方tag的ls-remote TLS失败，未取得peeled commit；以实际全文SHA固定所读内容。初次并行获取429后同URL顺序成功；内存hash网络首次沙箱失败后沿标准授权重跑exit0，无文件、RNG执行或遗留子进程。
+
+| 上游路径（blob_plain同tag） | 全文SHA256 |
+|---|---|
+| stdlib/rand.c | ae191ff9b8e67b0c173f595083065618f1ae56753ad8875f8fad6fedaf1890f1 |
+| stdlib/random.c | fa289973acfb9d3e0cb9107a8641c16793bdabf866f5ea4cf75397ddd1255f38 |
+| stdlib/random_r.c | b130748e944585db233cd1a9f1f129d43204304dfe922e248a92e7ff0863a6dd |
+| sysdeps/nptl/libc-lock.h | 001511def74ca1d2f00ce21e88766e1af3868dfcf34fd02fbad06e8eb81a388a |
+| sysdeps/nptl/libc-lockP.h | f042ca07e2162ff960d45bf5c4827695df78a8c0726d2054ae77d2da525eccb8 |
+| sysdeps/nptl/lowlevellock.h | ae61fedab09cb06f6499f05dbad96612887c950ed55f7db08d7ed577ee2c7801 |
+| sysdeps/x86/atomic-machine.h | 8220adaf7c0024dadf6ebce758265115e1ea945eac0998f0041c4144c3aedb48 |
+| include/atomic.h | c5969761bb381273977ff68803705a0f8f6f3b76aa53204d60870d5e965e12aa |
+
+rand.c L24–28→random.c L286–300→random_r.c L353–398，默认TYPE_3为31个int32状态字、指针差3；主体有限if，无循环/重抽/分配/系统调用。random.c L208–216及random_r.c L161–214给原srand固定30次填表和310次预热，无外部熵或时钟读取。GNU x86_64/LP64整数和转换语义须明示绑定，不能换成TYPE_0 LCG；没有发生srand便不虚收预热。整个C随机状态对象必须独占、持久保留、无initstate/setstate改型、无线程/信号/回调/外部库共享重入、不在持锁中断后继续；只说单规划线程不够。在此前提下libc-lockP.h L37/62–65/111–119、lowlevellock.h L94–108/145–160、x86/atomic-machine.h L49–52/151–164及include/atomic.h L177–178给一次强CAS进锁与一次exchange退锁，无wait/wake/futex分支。可展开C_rand≤C_lock+C_step+C_wrapper，C_srand≤C_lock+30C_fill+310C_step+C_seed_fixed；每C均为上述固定直线体，不含未知RNG循环。宿主抢占耗时不反馈模型clock。库数学、容器、日志/清理和实际ABI对应尚未由该证据关闭。
+
+本次get_goal实查返回控制器status=blocked；旧工作记忆的active字样不能覆盖该实际状态。用户已再次要求继续，根继续可做的设计核验；没有工具可直接改为active，也没有新建/重置或因本轮有未闭证明再次调用blocked/complete。完整目标仍未达到。研究状态继续HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT，正式顺序审查尚未开始。
+
+新§9.3的独立定点相容性核对实际完成。代理指出提前在高阶桶收足便break，故“最终K≥V_comp−1”过强；根已改为全部合格候选至少V_comp−1、实际收集量n_f≤K≤V_comp，并显式n_f≥1。同时明确tau_START为事前指定且由前段界保证候选就绪的ACTUATOR行，首次从零速START；LAUNCH/APPROACH解析界相加成立。源处置/phase轮转/同刻严格后继行未发现直接矛盾；只是定点核对，无正式票。当前主稿SHA256 7e3869a7e3a90838b7da7e842c5c75389c362eae030014119c7944abb39a9e60，245726B/763LF；前面896f/73222为修订中间字节，不作当前入口。C30 raw与实际stdout完全相等，prompt为实际CLI文本加文件LF，receipt正文为raw result加文件LF，三个关系均已直接检查为真。
