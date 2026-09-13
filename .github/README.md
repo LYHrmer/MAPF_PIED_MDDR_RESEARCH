@@ -6,11 +6,13 @@
 
 ## 当前设计与证据
 
-- [73 主稿](../73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)：DRAFT / NOT-FIXED / NOT-REVIEWED / NOT-ACCEPTED。当前 SHA256 `7e3869a7e3a90838b7da7e842c5c75389c362eae030014119c7944abb39a9e60`，245726 bytes / 763 LF；文件名日期不代表当前内容版本。
+- [73 主稿](../73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)：DRAFT / NOT-FIXED / NOT-REVIEWED / NOT-ACCEPTED。当前 SHA256 `fb09cfc9fded11546f0fba3e0e96d695755c625b73ba5f0398d7584106485a20`，257945 bytes / 807 LF；文件名日期不代表当前内容版本。
 - [本窗口决策和原始收件索引](../73A3_DESIGN_VERIFICATION_SESSION_20260912.md)：按具体问题查阅；其中早期状态、任务句柄、提交与 SHA 是历史记录，不能覆盖当前文件或活工具状态。
 - [72R4 原要求与 S1–S9](../72R4_THREE_REVIEW_ROOT_SYNTHESIS_AND_SUCCESSOR_REQUIREMENTS_20260907.md)：最后正式六门裁决属于冻结 72，G1/G2 限域 PASS、G3/G4/G5 UNKNOWN、G6 FAIL；不是对当前 73 的裁决。
 
-研究包含有尺寸机器人的实际横向跟踪偏差，普通错误/延迟反馈、计算通信等待与 no-start 分开。当前组合为同原 MOVE 的 GROUP_PREFIX、付费可信进度与空间退休；主比较 D-S−强轮询 R-S，必须报告 D-S−E0 和 H19E0/H19R-S 两条外部系统。P_model 是确定性基本步计算模型，真实宿主 CPU/耗时/内存另报。允许组合、改进或更换路线；不保证正效应，不用弱对照或成功者筛选制造说服力。
+明确基于 Zhang 等的 [PIE-D（AAAI2025）](https://ojs.aaai.org/index.php/AAAI/article/view/34506) 改进。研究包含有尺寸机器人的实际横向跟踪偏差，普通错误/延迟反馈、计算通信等待与 no-start 分开；当前组合为同原 MOVE 的 GROUP_PREFIX、付费可信进度与空间退休。D-S−强轮询 R-S 为内部确认主比较，D-S−E0 必报；R/E0及释放消融不能冒称已发表基线。H19两系统仍是必需核验/报告的外部候选，忠实性及共同域未闭，不能称已合格原法。§10已纠正MCP归属：Ma等AAAI2017方法、TIP作者库仿真实现，非Causal-PIBT。P_model计确定基本步，真实宿主CPU/耗时/内存另报，不保证正效应或删失败。
+
+DARI已淘汰；旧编号计划的WORKING/pending是历史状态，不恢复为待办。用户目标为SCI二区/三区，中科院或JCR均可；已核纯仿真MAPF期刊先例，实物保持可选补充。具体期刊/分区证据与限制见73A3，不将无硬件设为当前前置门，也不将先例当本项目录用保证。
 
 R0 固定 `YueZhang-studyuse/LMAPF-delay@0b5b33649fc367abcb1cd0a7ad5ac03511bf9357`；H19 源固定 `whoenig/libMultiRobotPlanning@4c75fa20c435c440d8b6bd6dc81668ddc7296ba0`。两者适配和明确修复不能冒称原样 native 或作者整套实现。源码正常继续与 P_model 对应、有限付费流程到真实服务的非空见证、全来源/连续 WORLD 资格、近邻与外部比较、S1–S9 全稿组合及正式审查仍未闭合。
 
@@ -24,12 +26,14 @@ R0 固定 `YueZhang-studyuse/LMAPF-delay@0b5b33649fc367abcb1cd0a7ad5ac03511bf935
 4. `/home/lyh/桌面/智能仓机器人分布式调度_文献备份` 永久只读。仅既获准的 `/home/lyh/桌面/MAPF_实验前必读论文_20260909` 可在必读论文变化时更新；PDF 不入 Git。新研究/行政工件写本研究目录，编辑使用 apply_patch。
 5. shell 每条命令用 rtk，精确内容用 rtk proxy；仅在仓库实际有 .codegraph 时先用 CodeGraph，不创建或重建索引。不得绕过沙箱、审批拒绝或登录限制，不向外部人员发消息。
 6. 用户已授权既有私有仓库 `LYHrmer/MAPF_PIED_MDDR_RESEARCH` 的精确文档同步。只暂存核过的路径，不 add .、不上传整个目录/受限材料，不运行 hook、不改全局 Git 设置、不发 release。操作前核实际工作树/远端状态；历史提交号不是当前状态。
-7. Claude Opus 用于具体方法构造、证明、反例和证据整合，由根独立取舍，职责不限审查。每题绑定一个未决问题，无新证据不重开同题。仅实际完整终态与正文算收件，核实际模型并留原回执；建设意见不算正式票。用户要求额度恢复一小时后再用，本窗口以 **2026-09-12 16:37 UTC（北京时间次日 00:37）** 为保守最早恢复点；这是一次性截止，后续接续不得重新顺延。
+7. Claude Opus 用于具体方法构造、证明、反例和证据整合，由根独立取舍，职责不限审查。每题绑定一个具体缺口，提供必要局部原文，以可采用结果而非报告数衡量；无新证据不重开同题。仅实际完整终态与正文算收件，核实际模型并留原回执；建设意见不算正式票。一次性恢复截止2026-09-12 16:37 UTC已过，不重新顺延。C31已取消且无正文，C32已完整返回，均不再轮询。
 8. 历史 51 失败链与失落 69L1/69E1、73P7/73L7/73C2，以及已终态的旧 Claude 调用按原记录处理，不因旧文件写“运行中”就重启。先核活句柄和实际文件；缺回执不算完成，有新证据的不同具体问题可继续。
 
 ## 接下来怎样验收
 
-2026-09-13 新进展：C29/C30均已实际完整返回并归档，[C30完整建设回执](../73C30_PAID_FIRST_MOVE_DEPENDENCY_AND_CALENDAR_EMBEDDING_COMPLETE_RECEIPT_20260913.md)列根纠正。§9.3新增首轮叶起点源路径、原切分与付费阶段的条件见证，已定点核候选数、源处置顺序、原phase轮转及解析到达上界；不是完整联合资格。下一步要落实剩余库/分配/日志与基本步的对应和预先有限界，再核源继续域、全来源及全稿组合；不重复C29/C30的已决咨询。
+2026-09-13新进展：科研导师阶段诊断及[C32 Opus建设](../73C32_RESEARCH_MENTOR_STAGE_EXIT_AND_EFFICIENCY_COMPLETE_RECEIPT_20260913.md)已归档并经根纠正，不是正式票；主稿删去五段过时路线/流水。§9.2已合入跨调用状态表、费用缺口表及stay_target事前条件界；§9.3含首轮源输出/付费链和限定随机特化，§13含following原MOVE分支。§1/10落实论文底座与基线归属。
+
+下一步按73A3的S1–S9有界组合推进，优先PIE-D具体实例化及H19核心规则对应、AA输入安装与后继两分支保持、真实付费启动差/服务和合法来源域。容器/分配/日志等真正缺语义或费用展开的项仍须补，已定义合同的实现符合性留给后续资格；不扩成全OS证明，不复读全部咨询或以未运行/未知正负作为设计反例。
 
 先闭合当前源/付费服务见证、合法来源及全稿组合；固定自给完整候选后，严格依次：research-mentor 完整审查 → 根不用 skill 独立分析 → nature-reviewer 完整审查 → 根独立分析 → 明确无任何 skill、未读前两路意见的独立逻辑审查 → 根逐项验收。实际用 skill 时须读取并说明，不能以建设咨询或审稿数量代替。
 

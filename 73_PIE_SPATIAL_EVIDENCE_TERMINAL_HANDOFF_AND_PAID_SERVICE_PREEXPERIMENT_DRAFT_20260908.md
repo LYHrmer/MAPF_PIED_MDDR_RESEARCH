@@ -4,6 +4,8 @@
 
 ## 1. 研究问题、主张和动作边界
 
+本文明确基于 Zhang、Chen、Harabor、Le Bodic 与 Stuckey 的 **PIE-D** 改进：[Concurrent Planning and Execution in Lifelong Multi-Agent Path Finding with Delay Probabilities](https://ojs.aaai.org/index.php/AAAI/article/view/34506)，AAAI 2025，39(22):23387–23394，DOI 10.1609/aaai.v39i22.34506。继承其并行规划执行与原规划提议链；本稿新增的研究对象是有限尺寸/横向跟踪偏差下的安全执行，以及可信途中信息与空间释放的净成本效益。共享源修复和模拟计算适配逐项披露，不作为D策略创新；DARI已淘汰，不是本稿的前置任务或待恢复方法。
+
 真实机器人有尺寸及跟踪偏差；按名义格点判断通道清空可能不安全，而一直保留整段占用又会延迟后车。研究问题是：在保留 PIE-D 新 MOVE 提议来源时，付费取得可信参考进度、只释放已经证明不再需要的空间，能否在持续任务中取得正的净服务率增量。普通反馈误报/迟报、真实空间偏差和处理耗时分别建模，随机 no-start 不能改名为定位误差。
 
 规划层为离散四邻接图，执行层保留连续实体足迹、连续参考运动和有界跟踪误差。方法不改变原边、目标或新 MOVE 顺序；只允许接受原MOVE、同MOVE单调前缀cap、合法COMMITTED_WAIT、阻塞HOLD、继续旧tid或在已证明可行域内制动/保持。没有主动绕行、补邻边、伪目标或在 unsafe proposal 上偷偷换轨。底层参考控制是假设明确的理想执行模型，不声称已经装进 LIMO。
@@ -237,7 +239,7 @@ PROJECT(K_task,Kc,Π,L)仅复制每agent已合法分配且未被可信确认完�
 
 ## 9. 原时钟、随机输入与有限收费事件
 
-本稿工作选择为P_model统一确定性模拟计算语义。E13/E14的实时NP-LIVE、P29/E25的源完整体真实elapsed及E17的QEMU物理指令片保留为历史备选，不再是本稿必须拼合的默认路线。S2与C25说明只有独立创新种子不能消除真实宿主对后继源耗时/返回/发布/Q的影响；不采用无独立证据的campaign重复，也不以历史条件随机目标替换固定配对。删除的是host elapsed对虚拟闭环的因果输入，处理工作、队列、原规划超时语义、有限供给和全成本责任保留。
+本稿以P_model统一确定性模拟计算语义：处理工作、队列、原规划超时和有限供给共同决定虚拟闭环；宿主elapsed不进入该因果映射。固定配对与独立block条件见§12，旧执行路线的取舍保留在73A3及其原回执。
 
 ### 9.1 有限基本步、费用和当前行接纳
 
@@ -265,7 +267,7 @@ CAPTURE的固定宽度句柄有效性由先前付费INIT/构造和生命周期�
 
 ### 9.2 既有时钟、公共服务与源域的组合
 
-E15–E17对QEMU指令钟和外层自动重授额的否定只作用旧物理指令配额路线。本P_model无需将CPU wall/perf信号解释为精确供给，也不采用C8S/P29实际elapsed决定源发表。Wasmtime等便携VM只作为后续实现候选：fuel单位不是CPU，异步yield不等于耗尽trap可恢复，host imports和bulk操作不能免费，外层不得在同一原行自动重poll。源码/版本/绑定与完整对应证明须有独立证据；本节的规范选择不宣称任一现成VM已经通过。
+后端必须实现§9.1基本步、具名导入、合法暂停和原行发布语义，并提供与所选源/表示版本的对应证据。现成VM的fuel、yield或指令计数接口本身不证明这些条件；实际导入、批操作和失败边界须在后续实现资格检查中核对。
 
 一手源码新增实核：LNS/InitLNS为Time=high_resolution_clock、fsec=duration<float>；LaCAM2 Deadline为steady_clock，毫秒duration_cast后严格elapsed>limit；SIPP超时为经过秒数>=timeout。InitLNS存在增加time_limit、continue绕过runtime更新、初始逐agent传完整预算及后处理；不能统一改写成全流程硬CPU截止。明示MAPFPlanner→LNS(use_sipp=true)→BasicLNS Agent选择SIPP，避免该对象进入SpaceTimeAStar空超时入口，其他配置不自动豁免。mcp.cpp的clock()/CLOCKS_PER_SEC是CPU起止日志，不是上述经过钟停止条件。
 
@@ -397,11 +399,34 @@ ALWAYS_ADVANCE的继续域必须覆盖合法初始化、全部合格正常历史
 
 73E11根实际核固定MAPFPlanner.cpp全文及LNS.cpp相关完整函数，将E6既有前置资格具体化为付费PRE_COMMIT_SHAPE：必须在plan返回后、原planner_commit首次清容器之前完成，不能放到commitPath之后。逐agent检查对象/编号/容器与目标队首相容、原切分量及索引可表示、路径有被跳过锚点和后继、冻结锚点及边合法、原切分分支必先产生非空提交项。源码短分支会读取commit_path.back，空/单点源路径可能在后验检查之前已不满足其定义域；plan为void且后继修复bool未传出，正常return不证明完整成功。不合格时不调用commit、不人工补WAIT/改MOVE，记NO_PROPOSAL_SHAPE或SOURCE_BROKEN/UNVERIFIABLE；全部已发生费用保留，可继续源状态资格另证。原validateCommitSolution保留，外层另检冻结锚点到首提交边及全体冲突/版本。根还实核PathTable::insertPath空路径有早返回，已排除此具体疑点，不增加臆测修补；本节不是源全闭或运行故障证据。
 
-73E8对fork/COW、外部状态和旧检查点路线的限制保留为历史证据；当前AA不要求逐job回滚。P_model已明确改变旧严格物理机器指令计量，故不再以未取得QEMU/perf的逐指令硬闸门重复阻断同一设计选择。EXECUTION_BACKEND_UNKNOWN现在精确指C++修复来源/数值/导入与有限基本步的对应、合法暂停/原行重入和宿主完整回收尚未资格化；不能用规范已定义宣称后端完成，也不能用尚未构建要求先取得效果数据。
+当前EXECUTION_BACKEND_UNKNOWN指所选修复源/数值/导入到基本步的对应及暂停、回收尚未资格化。设计阶段须写清接口和失败语义、修正已知矛盾；实现后再核具体后端符合性，不能把未构建或尚无效果数据单独当作设计反例。
 
-73E9完整建设回执已根读取：固定Unicorn 2.1.4确有指令计数/停止/context接口，完整x86边界及Linux装载/服务未闭；MEMORY context跨engine限制是真实接口边界，但当前AA不再要求逐job跨engine快照。根E10的NP-PLANNER仍是未采用服务备选：共同FIFO单工人非抢占、真实elapsed延后可见，改变逐指令供给/公共行读钟/失败尾部与宿主噪声推断，不能当现合同即插即用后端。E12已完整返回，根独立接受其AA会话合同，显式替代E6和E10中的accepted-only状态条款，旧报告字节不改；E10若后续采用须按AA重新组合。服务模型与源历史制度是两项独立选择；目前只定后者，仍不改固定PIE新MOVE边界。
+当前组合为P_model和ALWAYS_ADVANCE：服务模型与源历史制度均已在本稿明确选择，固定PIE新MOVE来源边界保持。未采用的非抢占、逐job检查点、QEMU/Unicorn等路线不再作为当前工作清单，历史证据由73A3索引。
 
 每job的审计联系至少覆盖源会话/前一正常节点、冻结输入与已接纳尾、源执行阶段、PRE_COMMIT_SHAPE和commit是否进入、封存输出/结束节点、中心终态与槽释放；失败保留阶段及费用，拒收也有完成节点。节点身份不等于完整内存快照或重放证明；若另外读取状态指纹/随机记录，扫描/散列/存储均收费且不向查询策略提供新字段。AA的非预知归纳来自仅用合法过去输入及私有源历史，物理安全归纳仍只作用于经完整验证/准入的外部Π和资源责任；两者都不推出吞吐改善。
+
+以下两表限定S6剩余设计义务。已证只指固定源码局部更新或已给条件证明；已定义指当前共享适配的选择，不等于实际实现符合。表本身不充当AA归纳闭包或全费用证明。
+
+| 批准阶段 | 跨请求字段及已核更新 | STALE后保持与剩余设计义务 |
+|---|---|---|
+| 同步initialize及同一worker | initMap→computeAllPair→LNS；固定env/图/距离表、agent身份、solver对象和原参数；stay_target初始化为零。显式选择LACAM为已定义入口。 | STALE不重建对象、换算法或重置图；尚须把冻结输入安装、固定对象寿命与有限表示前提合入整个批准包，不扩大到未用入口。 |
+| 冻结SharedEnvironment安装 | curr_states、goal_locations、unexecuted_paths、curr_timestep分别绑定合法已知状态/目标、已接纳Π及原时钟；安装前资格为已定义。 | 目标非空、长度/索引和合法顶点须在clearAll读取目标[0]之前成立；PRE_COMMIT_SHAPE不能倒保。拒收future_paths不变成下次已承诺路径。 |
+| loadPaths→clearAll→向量loadPaths→checkReplan | 仅initial_success且非initial_run进入；先清agents[].path/path_table并更新起终点，再装输入路径，按原规则补短路径并查缺路/锚点/目标/冲突。 | 本分支不混入上一提议路径；clearAll没有重置全部字段。剩余是PROJECT至源级前置条件、路径表访问及两个后继分支的组合。 |
+| 首次/未成功/修复的plan | 首次写initial_success并清initial_run；未成功后继先clearAll；成功后继的fixInitialSolutionWithLaCAM可重算或复用，其bool不回写initial_success。 | 保留真实旗标，不按中心CAS结果改旗标。runLACAM2的succ要求到达全部首目标，非空合法前缀未必succ；不能统一要求可提交正常节点initial_success=true，仍按形状与完整包分别判定。 |
+| 每次runLACAM2→solve | 局部MT按原构造重建；持续C随机/静态历史保留。图、搜索节点为本次对象，既有唯一拥有者修订负责回溯后清理。 | STALE保随机消费，不恢复已释放局部对象。余项是批准分支的表示域与基本步对应，非全平台库一致性。 |
+| PRE_COMMIT_SHAPE→planner_commit→commitPath及外层验证 | 原commit清commited_paths/future_paths；curr_commits须有正确外层和空行。长路径分支stay_target归零，短路径补齐时递增；clearAll不清它。 | 保留整个正常post，外部Π只经CAS追加；stay_target条件界见下，其它跨调用计数、step/长度界及完整锚点/冲突后条件仍须组合。形状守卫不免原切分费用。 |
+| 封存→中心CAS/STALE→同job处置→释放 | 正常源节点保留，接纳才append；预备收件阶段仍属未释放job，处置完成才开下一job。安装后失败/硬失败停会话。 | 下一输入来自新已接纳尾；中心不持槽等P。暂停、发布和代际回收的具体符合性后续验证，不重设计逐job回滚制度。 |
+
+源码定位：固定MAPFPlanner.cpp L35–73/141–165；LNS.cpp L1–52、383–443、496–541、648–713、1186–1215、1236–1339、1360–1429；SharedEnv.h及PathTable.h。当前AA剩余组合证明集中于安装前提、两条后继plan分支和跨调用表示界；源成功旗标与提议形状的区别不得在实现时抹平。
+
+其中stay_target有独立的事前界。令J_plan为已固定公共O中PLAN_CHECK行总数，仅为输入计数，不新增预算/赋值；每行最多开启一个job，每job最多进入一次原commit。固定fleet/唯一agent身份及会话内原k_commit不变，批准入口skip_start=true，合法路径长度m≥2。短分支m≤k_commit时初循环结束step=m，随后恰增加k_commit+1−m≤k_commit−1；长分支先置零，初始化为零，固定源没有其它原向量写点。因此每个agent在任意正常包及commit中间前缀均满足0≤stay_target[i]≤J_plan·max(k_commit−1,0)，包括中心后来STALE的包。先以数学整数核右界落在源int域，便排除此特定累计字段的溢出；不能在源int中先乘溢出再检查，不用accepted次数替J_plan。k_commit+1、路径长度/遍历step和其它统计仍分别核；这不是完整AA证明，也不改变原清零/自增行为。
+
+| 费用/表示类别 | 当前已选语义 | 现在的缺口与后续验证边界 |
+|---|---|---|
+| 时钟/随机/外部导入 | 原chrono比较与预算语义、模型工作clock、持续C PRNG及局部MT；§9.3限定float特化；未登记导入明确失败。 | 绑定所用编码/确定版本及原调用对应；源日志不反向带入宿主时钟。实现后核实际导入，已排除的log依赖不再作为同一特化的义务。 |
+| 容器/内存/对象释放 | 固定字步骤；确定分配次序；唯一归属及实际复制/扩容/清理全费。 | “确定次序”还不是完整容器/分配状态变换；批准包所需操作的具体对应仍缺，不能把一次vector扩容或析构记一恒价步。实测峰值/宿主OOM另属后续资格。 |
+| 诊断/日志/文件 | 业务日志/编码/持有仍付费；模型禁止一般宿主文件导入。 | 须逐一分类批准链中的输出、静态对象与可能回读，不能声称所有I/O都无业务作用并免费删除；未核导入保持FOREIGN_INPUT_UNMAPPED。C31没有取得构造，不能据其提示关闭本项。 |
+| 几何/代数/可信记录 | §2–6的有限表示、精确谓词与原子根提交；展开实际字工作、暂停/失败规则已选。 | 数学可判定不等于给出所有费用展开。首个服务联合见证仍需各实际段和不可跨行guard的事前界；真实后端耗时及重放之后验证。 |
 
 ### 9.3 首次非空源输出与付费真实服务的分段见证
 
@@ -413,7 +438,11 @@ ALWAYS_ADVANCE的继续域必须覆盖合法初始化、全部合格正常历史
 
 因此原solve正常提议的联合路径恰为[S,G]。固定LNS.cpp L648–713两种reached_goal_time切分都留下每agent的[s_i,g_i]；其目标各异使PathTable的初次目标记录有效。根另直接核L1236–1339及L1433–1482：k_commit=1时跳过锚点后输出[g_i]；更长原提交量先插入g_i，再由原短路径分支填充终点WAIT，输出恰k_commit项且future为[g_i]，back首次读取前已有元素。validateCommitSolution只见不同目标上的WAIT并返回true；它漏验首边和首层，故PRE_COMMIT_SHAPE与外层完整锚点/冲突检查仍不可删。这里证明正常非空提议分支及原切分的定义域，不把它直接当成已append或获得运动授权。
 
-费用中原地图/距离/图构造、dummy候选及容器、n_f次PIBT、路径复制、n_f·k_commit个提交项、n_f(k_commit−1)次逐路径移动检查和binom(n_f,2)(k_commit−1)次冲突比较都保留；验证器外层成对枚举的空分支也收费。不能由这些计数直接给任意C++库工作恒价。已核的GNU libstdc++ 11特定32/64位优化分支，在本子族的两项std::shuffle中只作一次MT取数，uniform_int_distribution范围2的拒绝阈值为0；其它库分支不能继承此结论。dummy的default random_shuffle至多作K−1次原rand调用而不重抽，K为实际已收集候选数。glibc-2.35已读上游TYPE_3 rand体无循环；只有整个C随机状态独占、锁初态合法、无线程/信号/外部库重入且保留原状态时，wrapper可走固定两原子锁路径。若原调用确有srand，其原30次填表和310次预热照计；不暗加播种或改为另一发生器。具体实体与读证见73A3；该条件性有限路径不自动绑定本机Ubuntu补丁或实际链接。随机浮点生成/数学库、容器分配与日志/清理的完整确定映射及其基本步界仍未闭，不把普通“正常返回”当成预先已知的工作界。
+费用中原地图/距离/图构造、dummy候选及容器、n_f次PIBT、路径复制、n_f·k_commit个提交项、n_f(k_commit−1)次逐路径移动检查和binom(n_f,2)(k_commit−1)次冲突比较都保留；验证器外层成对枚举的空分支也收费。不能由这些计数直接给任意C++库工作恒价。已核的GNU libstdc++ 11特定32/64位优化分支，在本子族的两项std::shuffle中只作一次MT取数，uniform_int_distribution范围2的拒绝阈值为0；其它库分支不能继承此结论。dummy的default random_shuffle至多作K−1次原rand调用而不重抽，K为实际已收集候选数。glibc-2.35已读上游TYPE_3 rand体无循环；只有整个C随机状态独占、锁初态合法、无线程/信号/外部库重入且保留原状态时，wrapper可走固定两原子锁路径。若原调用确有srand，其原30次填表和310次预热照计；不暗加播种或改为另一发生器。具体实体与读证见73A3；该条件性有限路径不自动绑定本机Ubuntu补丁或实际链接。本轮下段另明确修订随机浮点的固定特化；容器分配、日志/清理及完整基本步对应仍须逐项关闭，不把普通“正常返回”当成预先已知的工作界。
+
+2026-09-13新增共享参考库特化，仅作用于原generate_canonical<float,24>(std::mt19937)：由发生器基数2^32和binary32有效精度24，直接取所需取数次数m=ceil(24/32)=1，保留原一次循环、判断/计数、一次原MT取数、转换和后续运算；删除原为求m而调用的两个log、长双商及相关转换。该修改不覆盖其它生成器/实数类型，也不选择或改源种子；未绑定native builtin或FYL2X不能作为等价证据。删除这些计算改变库控制流、费用和可能的浮点标志，故是所有引用R0臂共用的明示源接口修订，既不声称旧native位轨迹/费用相等，也不为H19虚收。新版本未执行的旧log不收费，新版本实际保留/新增的步骤全费；有限字宽与表示的实际绑定仍须资格核验。
+
+此特化绑定binary32的round-to-nearest, ties-to-even、确定的中间存储和无未声明重排/额外精度。原MT返回即使存于更宽uint_fast32_t，其值仍在[0,2^32−1]；减原min=0后转float，不能替换为截取高24位。__sum的先乘后加及结果存储保留；原__tmp*=__r是float提升long double、乘精确2^32、再窄回float，这些转换/乘积在本次__tmp=1时精确但仍各付费，不误称原式全用float。已舍入分子除精确2^32等于指数平移，非零结果至少2^-32且无下溢；等于1时保留原clamp，沿已核nextafterf(1,0)的取位/减一/写位分支得到1−2^-24。原分布默认端点0、1的减/乘/加照计，最终严格在[0,1)，不是任意区间缩放保证。最高有效位最多检查32个位置，舍入最多考察8个丢弃位及25位进位；其它本特化运算只涉及有限格式字段、固定精确常数和上述正常数域。每次字段读取、位运算、分支、写回及MT的有限twist/tempering均按§9.1展开，32/24等是源格式长度而非实验预算；这些计数不冒称完整模型总步数。该纸面修订消除本特化的超越函数/重抽终止义务，不等于已实现位级后端或全源继续域。
 
 与上述源子族组合的物理条件是原整边M0互不相交、与其它agent驻留资源相容，且端点g_i+F+Z包含于对应真实任务服务域；保留非零F/Z、真实z闭环和原扰动界。首目标尚未服务且在本段保持真实有效，初始位置不同于目标，软件INIT可合法接续bootstrap，模式不禁止该原MOVE，消息及首次合格RUN的既定外生分量允许交付/START。这是一个公开说明的非空性证明条件族，不是删去主roster失败项的规则，也不由格图端点互异自动推出连续Mask条件。
 
@@ -435,13 +464,24 @@ ALWAYS_ADVANCE的继续域必须覆盖合法初始化、全部合格正常历史
 
 ## 10. 外部原法、守卫适配与原样检查合同
 
-外部原版固定 [Kei18/time-independent-planning v1.0](https://github.com/Kei18/time-independent-planning/tree/755a7ce740d49543b1165403371752c08e342ca4)，commit 755a7ce740d49543b1165403371752c08e342ca4。NATIVE-TIP保持原字节与原误差/通信域；共享比较器明确称TIP-MCP guarded adapter。源mcp.cpp先nextNode后isStable、末下标访问plan[t+1]的静态缺口已亲见，不先修原版也不把其越界记作本方法优势。
+“已发表基线”必须能追溯到具体论文及其中的算法；作者实现或忠实复现的身份、必要修复、共同域适配和差异均须说明。内部自定义控制规则不获得已发表基线身份，论文引用也不自动认证重组系统。当前比较身份如下：
+
+| 比较对象 | 论文与实现来源 | 在本文可以承担的证据 |
+|---|---|---|
+| PIE-D 原法 | §1 AAAI2025论文；§8作者固定R0。原文具体执行/重规划组合与代码分支须对应登记 | 原问题域内的原法复现和改进底座；共享修复/物理/计费适配另名另报，不能让原法在未宣称支持的横向误差域失败来证明优势。 |
+| D/R、S/F_cap、E0及G/N | 本稿自定义机制、对照或消融；共享PIE-D提议来源 | 回答查询、释放和费用组织的内部因果问题。R/E0不是文献算法，D胜R/E0不单独证明胜过PIE-D或MAPF已发表方法。 |
+| Ma等的MCP；采用TIP作者库仿真及本稿守卫适配 | Ma/Kumar/Koenig，AAAI2017，10.1609/aaai.v31i1.11035；下述固定TIP仓库明确将FSP/MCP列为仿真对象 | 仅在完整no-following等原条件匹配的有限计划族比较；不是AAAI2021的Causal-PIBT原创算法，也不冒充已有lifelong任务系统。 |
+| H19-PR-COMMON-SYSTEM的两臂 | Hönig等RA-L2019论文的ADG/cut；当前固定作者库仅证ECBS组件 | 仍是待核验的论文方法适配候选。原ADG/任务驱动整套实现身份与必要适配的忠实性未闭，当前不能称作者原版或已合格强外部基线。 |
+
+主theta_DR保留为事前限定的机制效应；更广的“基于PIE-D改进且有实用竞争力”结论还须可追溯的已发表方法比较。实验前必须把论文算法、代码分支、原域复现与共同域适配逐项对上，并解释共同安全接口是否掩盖或改变了原执行策略。若H19或其它必需论文比较无法取得忠实实现或匹配适用域，该证据义务仍未完成，不能用自定义R/E0填补、给重组系统换名称或只报较弱比较来宣称完成。原法复现、共同域系统比较和内部消融分别解释，其成本、失败与缺失均按既定规则保留。
+
+MCP的已发表方法来源是 Ma/Kumar/Koenig 的 [Multi-Agent Path Finding with Delay Probabilities](https://ojs.aaai.org/index.php/AAAI/article/view/11035)，AAAI2017。所用仿真实现固定为 [Kei18/time-independent-planning v1.0](https://github.com/Kei18/time-independent-planning/tree/755a7ce740d49543b1165403371752c08e342ca4)，commit 755a7ce740d49543b1165403371752c08e342ca4；其[readme第10行](https://github.com/Kei18/time-independent-planning/blob/755a7ce740d49543b1165403371752c08e342ca4/readme.md#L10)明确是FSP/MCP的time-independent仿真，app.cpp也将MCP与CausalPIBT分别构造。本文名称改为MCP-2017-TIP-IMPLEMENTATION及其guarded adapter；旧标签NATIVE-TIP/TIP-MCP只指该仓库轨道，不代表TIP论文全部算法或Ma原作者代码。原字节/原域检查与共享守卫轨道分开；源mcp.cpp先nextNode后isStable、末下标访问plan[t+1]的静态缺口仍保留，不能把越界计作本方法优势。
 
 守卫版每次激活先验证c的定义域；本地末下标直接HOLD不访问nextNode，否则唯一下一原步plan[c+1]。WAIT仅合法POLICY消费一次，MOVE no-start/在途不消费；仅中心READY后消费并转CONTRACTED，在此之前用保守EXTENDED表示tail=plan[c]、head=plan[c+1]。他者getT只用同计划代际已交付Kc下界和固定原计划依赖，未知返回WAIT；同一臂已付费CURSOR证据可复用，不免费读他者真实c/head/tail。守卫、单中心/物理接口和付费通信是显式变化，不宣称恢复原最小通信量定理。
 
 补充匹配计划族在每公共block以同固定源和确定的R0计划输出供全部比较臂，生成授权之前先登记来源/作业/计划身份，不能从某策略成功结果挑计划。计划必须非空、vertex及完整no-following合规，含末端永久驻留；不适用登记INAPPLICABLE全行保留，主lifelong仍保留该公共来源。该族是有限计划的完成/服务/成本比较，不冒称TIP有相同lifelong分配算法。没有合法匹配block则补充族UNINSTANTIATED/UNESTIMABLE，不能隐去外部基线。下一episode只有全部旧责任合法drain后同规则重新INIT，不能reset未完成机器人。
 
-另保留真实已发表lifelong外部候选Hönig等RA-L2019：原文IV-C/Algorithm2有ADG前驱闭合commit cut和规划执行重叠，不能称其只有single-shot。73L1完整作者PDF及两个作者库头文件已核；当前库4c75fa20c435c440d8b6bd6dc81668ddc7296ba0不是已证2019实验提交，尚未取得整套ADG/monitor/仓库任务驱动原始身份。其native必须保留原动作状态/Type-1与Type-2依赖/任务规划及适用前提；若用共同PIE来源则必须明确叫共同来源ADG执行适配，不能冒称整法原样。
+另保留真实已发表lifelong外部候选Hönig等RA-L2019：原文IV-C/Algorithm2有ADG前驱闭合commit cut和规划执行重叠，不能称其只有single-shot。73L1完整作者PDF及两个作者库头文件已核；当前库4c75fa20c435c440d8b6bd6dc81668ddc7296ba0不是已证2019实验提交，尚未取得整套ADG/monitor/仓库任务驱动原始身份。忠实复现可以采用自行实现，但须逐项证明核心状态、依赖、完成及cut/重规划规则对应；原框架允许不同求解器，使用纯ECBS本身不构成失格。当前真正未闭的是完整规则对应、本文visited/触发/逐边停走等改动的影响及共同适用域。其native保留原动作状态/Type-1与Type-2依赖/任务规划及适用前提；若用共同PIE来源则明确叫共同来源ADG执行适配，不冒称整法原样。
 
 H19共同守卫适配保持付费K/控制、完成证据/队列信息、不可撤销旧动作、cut快照与接纳检查、真正服务计数及全部ADG/规划/通信费用；新gate只延后该系统自己的原动作、不偷换MOVE。原法允许多动作预取及连续队列执行，本底座明确保留多动作逻辑入队，却要求逐边参考零速和付费END/READY交接；原未知障碍下清命令队列也不能直接用于此不可撤逻辑账本。native/共同适配分名，公开这些变化，不继承原活性/平滑性/通信保证或把新增等待归罪原法。下文给定所选完整纸面接缝，源及实际数值/服务后端资格仍未知，主lifelong外部对照尚未固定。
 
@@ -618,7 +658,11 @@ H19系统级次级族事前只含(D-S,H19E0)及(D-S,H19R-S)这两对，使用同
 
 局部增量不能推出全固定E正差。纸面反例：预定t_1<t_2<t_3<E，D在t_1、R在t_2完成同B，随后共同C/共同行程tau；D多支付等待c，满足t_2+tau≤t_3<t_1+c+tau。若此前C无其他合法服务、t_3之后至E无其他服务行，早期D多一次，t_2追平，t_3时R完成C而D不能，固定E为Q_D=1、Q_R=2。这里c>t_2−t_1，规则/窗口均先定；这只是符号反例，无实验参数绑定或载荷。主HYP-NET必须用全roster固定E端到端比较检验，不能只保留早期见证或删除后来追平的行。
 
-这个见证还要求固定R0确实输出上述原MOVE及匹配合法任务的来源证据；当前未生成该运行输出，所以它是结构性充分条件，不是已找到公开主roster上的获益实例，更不是主总体theta正的证据。不得为实现见证事后选cutoff、地图、profile或删无跨越样本。预注册全来源会同时保留无中途clearance、RR恰先选关键者、D反复查询失联holder、几何表低复用、中心队列拥塞、终点已足够便宜等零/负效应。
+本轮补充该机制原动作的条件性固定源证据，仍无公开主roster实例或运行输出。取§13已有A/B/C角色，图邻接满足N(w)={u}、N(u)={w,v}，A的首目标v、B的首目标u；由v之后的连通通路接到远处C的叶起点/唯一邻目标，其余起点对若存在也与前三顶点及彼此候选分离。保留§9.3正常首次纯LACAM、精确距离、表示/对象/目标/时钟条件和§9已登记的puller自身行/交换循环外层距离更新，不改PIBT算法。B在源实际float运算和存储之后的根优先级须严格大于其余agent，不能仅由整数ID最大推出。它使第一次低层展开选degree-1的B，原shuffle仍只有两项且当前深度零无额外约束。唯一端点复用g_B=s_A=u，不能沿用§9.3全部2n_f端点互异；本A/B/C族有至少2n_f−1个不同端点，因此仍有V_comp−1≥2n_f−2≥n_f个合格候选，prepareDummy足量。
+
+根直接核固定planner.cpp L393–568：B的唯一最佳候选是u，首次is_swap_required(B,A,w,u)在u扫描排除w，只剩空v；顶点对推进到(u,v)后，pusher目标u的距离关系由0<1变成1<0，循环终止，puller目标v的最终关系也为1<0，返回false并短路is_swap_possible。B先预留u，再唯一一次优先级继承调用A。A的最佳候选v为空；其clear-operation看见仍在w的B，会再调is_swap_required(B,A,u,v)，此时首个1<0已为假，最终puller比较仍假，不反转候选。A预留v并成功返回，后继主优先级循环跳过已经分配的A，远处C及其余叶各选空目标。两次帮助函数仅读各自合法首目标，得到A:u→v、B:w→u、C:s_C→g_C；这是following而不是同层vertex或对向swap冲突。已修目标位使下一DFS命中全目标并返回[S,G]；原目标各异，路径表和原commit切分/外层完整验证条件成立。
+
+这个子族与全叶族的实际费用不同：PIBT仍各agent一次，但有一层继承调用；随机float调用为n_f+1，加一次两项shuffle的MT取数；两次is_swap_required共有一次循环、两邻扫描和十二次距离表查询，四次目标解析及所有分支照计，is_swap_possible未调用。A的候选sort长度三，其余长度二；两HNode、四LNode及原n_f·k_commit提交项的界保留。该证据只关闭三条机制原MOVE的一个源码可产生分支；还须证明A在途、RR下个选C、D唯一选A、真实费用允许的启动差、所有对照释放通路下界以及总Q补集条件，不能把§9.3整边M0互不相交的服务族搬过来——本机制正需B的M0与A的origin重叠。未生成运行结果或声称主总体theta正，预注册全来源仍保留无中途clearance、RR恰先选关键者、D反复查询失联holder、几何表低复用、中心队列拥塞、终点足够便宜等零/负效应。
 
 活性反例必须正面保留：在走廊/tree缺少绕行时，互相占着下一原边需要的resident可形成等待；交叉口/环路上的多agent原MOVE可能各需其他agent的起点资源。WHOLE_EDGE的整M0准入不能自动完成同步环轮转；主GROUP_PREFIX只在§15明示条件下推进，粗瓦片/不合格组/无证据与长期围栏仍可能停滞。全原MOVE合法不推出本连续保守wrapper有执行解。不同阻塞图component因新请求合并，仍用同一全球资源key与中心owner，不分发新authority、不让相同资源获得两owner；对独立未准入fleet的合并必须重新满足INIT/授权合同。无活性保证的失败不通过排除动态样本掩盖，也不以全HOLD安全冒称实现了lifelong效益。
 
@@ -662,7 +706,7 @@ H19系统级次级族事前只含(D-S,H19E0)及(D-S,H19R-S)这两对，使用同
 | W28 | planner期间c推进/目标改变/过期CAS：拒绝陈旧外部结果但保留正常源结束节点与费用；后继只从已接纳Π重新冻结，中心终态交接前不得启动下一job |
 | W29 | P_model的chrono含虚拟暂停/排队，CPU日志编码只累已执行模型工作；真实host耗时不进源输入/Q；变长操作与imports全计费，保留源预算/比较语义且不烧掉未用供给 |
 | W30 | 空目标/非法路径/源_exit/随机比较器域：入口NO_INPUT与安装后失败分开；PRE_COMMIT_SHAPE先于危险commit，不补动作；不合格会话停止且不重播，不杀评价器或把源缺陷计优势 |
-| W31 | TIP末端nextNode越界与guarded定义域：原问题保留，守卫不越界；完整no-following不适用全列 |
+| W31 | MCP的TIP仓库仿真实现末端nextNode越界与guarded定义域：原问题保留，守卫不越界；完整no-following不适用全列，不能归为Causal-PIBT方法 |
 | W32 | 无对应本臂消息/有限copy/同t多行：NO_REPLAY_TARGET，严格后继发布，无跨臂payload或零时无限级联 |
 | W33 | 静态WORLD非法、HOST未发起/缺日志、WORLD合法而软件INIT未完、合法全HOLD/零前缀Stop分别判断；软件INIT标签不直接决定Q，完整物理服务前缀才可评分 |
 | W34 | cutoff穿过物理段、先真实服务后送证书：精确截断，不补末后服务；完整先前真实服务仍计 |
@@ -728,7 +772,7 @@ W97–99均为NOT_IMPLEMENTED/NOT_RUN纸面合同：W97，当前段与采样点�
 
 完整方案对早期交接要求的对应也必须核：实际空间误差而非delay改名（§1/3/13）；保留PIE原提议与可证制动/HOLD（§3/5/7/8）；唯一authority、资源ID/epoch/fencing/幂等与origin释放/destination接入/edge-in-progress（§4–6）；lost ACK、分区、无界延迟、clock skew、走廊/tree/交叉口/饥饿/component merge（§9/12/13）；原样与共享适配、inactive与triggered机械合同（§7/10/13）；纯仿真全成本/主次比较、公共源、独立配对、失败分母/缺失/删失/固定目标推断（§9/11/12）；全部来源阅读强度与近邻（§2/10）。静态几何mask同时覆盖顶点、同向/反向边扫掠及实体起终点；若某未来adapter只检vertex/swap而忽略连续mask，不能继承P3。
 
-来自72M1的P5构造、72B1的朴素几何/P6/强对照及追加统计建议、72D1A的网页路线分析、72C1的Claude完整建议，以及71E2–E4、72E1等来源回执均为实际NONBALLOT协作，根独立筛选后写成本正文的自给规则。顾问只读的旧72快照不能冒作现在字节的审查。普通报告错误共同隔离、几何阈值、阻塞数量启发式、中心事务与冷旁路都不能各自重复认领为原创；Zhong等已联合考虑观测与重排费用，WinkTPG/SCALE等已有冲突选择/前缀保留近邻。没有根已核的一手证据证明本组合无人做过或在大规模必然正效应。
+建设咨询的原始意见、阅读范围与根取舍由73A3索引，不计正式通过票。创新边界沿§2与本节主张表：共同反馈隔离、几何阈值、冲突计数、事务或前缀名称不能各自认领原创，当前也无组合首创或规模正效应的已获证据。
 
 六门含义维持：G1实际误差问题；G2已发表锚点与诚实路线比较；G3固定R0/适配/原样合同；G4已发表外部基线与适用域；G5公开来源和场景协议；G6物理/算法/资源/费用/评价公平闭环。最新有效根裁决是72R4的2 PASS/3 UNKNOWN/1 FAIL；本73草稿不自授资格。S1前向证据、S2终点/权限、S3真实服务、S4WORLD/软件INIT/总体、S5服务拓扑在本稿提出实质修订，均须新字节核对和顺序审查。S6源定义域、S7素材来源/合法source、S8主lifelong外部比较、S9规模/可证伪范围仍有明确待补证据；不能由章节齐全判闭。
 
