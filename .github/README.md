@@ -6,7 +6,7 @@
 
 ## 当前设计与证据
 
-- [73 主稿](../73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)：DRAFT / NOT-FIXED / NOT-REVIEWED / NOT-ACCEPTED。当前 SHA256 `dfbae515461dfb7d1347ecd9aa6800aea999e665e4ec086bc515f58f1c0bffe9`，269005 bytes / 838 LF；文件名日期不代表当前内容版本。
+- [73 主稿](../73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)：DRAFT / NOT-FIXED / NOT-REVIEWED / NOT-ACCEPTED。当前 SHA256 `1df16e4149feee0d4ec8bee7672069cd93ad9865dc529574b513d080cf1927e2`，275238 bytes / 860 LF；文件名日期不代表当前内容版本。
 - [本窗口决策和原始收件索引](../73A3_DESIGN_VERIFICATION_SESSION_20260912.md)：按具体问题查阅；其中早期状态、任务句柄、提交与 SHA 是历史记录，不能覆盖当前文件或活工具状态。
 - [72R4 原要求与 S1–S9](../72R4_THREE_REVIEW_ROOT_SYNTHESIS_AND_SUCCESSOR_REQUIREMENTS_20260907.md)：最后正式六门裁决属于冻结 72，G1/G2 限域 PASS、G3/G4/G5 UNKNOWN、G6 FAIL；不是对当前 73 的裁决。
 
@@ -16,7 +16,7 @@ DARI已淘汰；旧编号计划的WORKING/pending是历史状态，不恢复为�
 
 R0 固定 `YueZhang-studyuse/LMAPF-delay@0b5b33649fc367abcb1cd0a7ad5ac03511bf9357`；H19 源固定 `whoenig/libMultiRobotPlanning@4c75fa20c435c440d8b6bd6dc81668ddc7296ba0`。两者适配和明确修复不能冒称原样 native 或作者整套实现。源码正常继续与 P_model 对应、有限付费流程到真实服务的非空见证、全来源/连续 WORLD 资格、近邻与外部比较、S1–S9 全稿组合及正式审查仍未闭合。
 
-进一步已核：当前R0只复用作者LACAM-only及切分链，不保留完整PIBT-D＋A。§10另已固定官方improve_morereveal@74cfba3c81a0c165c2e7044dea6fd4dee8ddf415为作者完整组合复现候选，实际含旧路径引导/LaCAM/LNS/PIBT-D，检索已停止。A破平局与PIBT-D优先级有文码差异，新增LNS调用域与原域资格仍须核实；不替换R0或用作者名称自动授资格。
+进一步已核：当前R0只复用作者LACAM-only及切分链，不保留完整PIBT-D＋A。§10另固定官方improve_morereveal@74cfba3c81a0c165c2e7044dea6fd4dee8ddf415为作者完整组合复现候选，检索已停止。原字节检查与原文规则复现分轨；后者A按(a+b,a)、PIBT-D按delay优先，窗口计数生命周期已核并沿用。两表/BFS同版本接口也已明示；LNS调用域、原域和实际符合性仍待资格，不替换R0或凭作者名称授资格。
 
 [L23 有限输入核验](../73L23_LIMITED_PUBLIC_INPUT_STATIC_VERIFICATION_20260912.md)及[L23A parser 核验](../73L23A_STATIC_INPUT_PARSER_CONTRACT_CHECK_20260912.md)已完成：四类首个配置和 13 个引用对象的基础静态核验通过。C28 的公共 ACTUATOR 秩映射与规范有效 delay 输入已整入主稿；这不等于全部 roster、连续物理域或运行资格通过，不再把这次已获准且已完成的核验列为等待用户许可。
 
@@ -28,7 +28,7 @@ R0 固定 `YueZhang-studyuse/LMAPF-delay@0b5b33649fc367abcb1cd0a7ad5ac03511bf935
 4. `/home/lyh/桌面/智能仓机器人分布式调度_文献备份` 永久只读。仅既获准的 `/home/lyh/桌面/MAPF_实验前必读论文_20260909` 可在必读论文变化时更新；PDF 不入 Git。新研究/行政工件写本研究目录，编辑使用 apply_patch。
 5. shell 每条命令用 rtk，精确内容用 rtk proxy；仅在仓库实际有 .codegraph 时先用 CodeGraph，不创建或重建索引。不得绕过沙箱、审批拒绝或登录限制，不向外部人员发消息。
 6. 用户已授权既有私有仓库 `LYHrmer/MAPF_PIED_MDDR_RESEARCH` 的精确文档同步。只暂存核过的路径，不 add .、不上传整个目录/受限材料，不运行 hook、不改全局 Git 设置、不发 release。操作前核实际工作树/远端状态；历史提交号不是当前状态。
-7. Claude Opus 用于具体方法构造、证明、反例和证据整合，由根独立取舍，职责不限审查。每题绑定一个具体缺口，提供必要局部原文，以可采用结果而非报告数衡量；无新证据不重开同题。仅实际完整终态与正文算收件，核实际模型并留原回执；建设意见不算正式票。一次性恢复截止2026-09-12 16:37 UTC已过，不重新顺延。C31已取消且无正文，C32已完整返回，均不再轮询。
+7. Claude Opus 用于具体方法构造、证明、反例和证据整合，由根独立取舍，职责不限审查。每题绑定一个具体缺口，提供必要局部原文，以可采用结果而非报告数衡量；无新证据不重开同题。仅实际完整终态与正文算收件，核实际模型并留原回执；建设意见不算正式票。一次性恢复截止2026-09-12 16:37 UTC已过，不重新顺延。C31已取消且无正文，C32/C33/C34已完整返回，均不再轮询。
 8. 历史 51 失败链与失落 69L1/69E1、73P7/73L7/73C2，以及已终态的旧 Claude 调用按原记录处理，不因旧文件写“运行中”就重启。先核活句柄和实际文件；缺回执不算完成，有新证据的不同具体问题可继续。
 
 ## 接下来怎样验收
@@ -39,7 +39,9 @@ R0 固定 `YueZhang-studyuse/LMAPF-delay@0b5b33649fc367abcb1cd0a7ad5ac03511bf935
 
 最新局部闭合：§9.2对批准纯LACAM选共同删除runLACAM2两处无消费PathTable登记，并证明合法完整solution的原提交前缀不因首达截分而损坏；§9.3同步，不重建替代表或要求所有目标互异。仅为纸面修订，缓存接入资格及其它源后条件仍保留。
 
-下一步按S1–S9推进，优先处理已固定PIE-D候选的两项文码差异与LNS/原域资格、H19核心规则对应，以及其余源后条件、真实付费启动差/服务和合法来源域。容器/分配/日志等真正缺语义或费用展开的项仍须补，已定义合同的实现符合性留给后续资格；不扩成全OS证明，不复读全部咨询或以未运行/未知正负作为设计反例。
+最新补齐：§10明确PIE-D两项排序的原文复现规则，H19五项核心对应及完整合序列首匹配/条件无环证明；[C34 Opus建设](../73C34_H19_FIRST_MATCH_SPLICE_COMPLETE_RECEIPT_20260913.md)已完整返回并经根纠正GC依赖方向。源完成才消解后继的入向义务，不能反用目标完成。§11分清四类基础输入存在已核与剩余使用依据，压缩旧调查流水，不要求完整生成历史作为新增门。
+
+下一步按S1–S9推进：把固定素材或覆盖目录/版本与官方研究使用依据相连；补其余源后条件、费用/真实服务组合及全稿验收。已固定PIE-D的LNS/原域、H19共同物理/后端与实际符合性仍须资格，不再重搜分支或重开已闭条件图证明。容器/分配/日志等真正缺语义或费用展开的项继续补，已定义合同的实现符合性留给后续资格；不扩成全OS证明，不复读全部咨询或以未运行/未知正负作为设计反例。
 
 先闭合当前源/付费服务见证、合法来源及全稿组合；固定自给完整候选后，严格依次：research-mentor 完整审查 → 根不用 skill 独立分析 → nature-reviewer 完整审查 → 根独立分析 → 明确无任何 skill、未读前两路意见的独立逻辑审查 → 根逐项验收。实际用 skill 时须读取并说明，不能以建设咨询或审稿数量代替。
 

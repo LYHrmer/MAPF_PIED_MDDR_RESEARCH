@@ -502,13 +502,27 @@ PIE-D原文与固定代码的对应不能仅看类名。原文pp23390–23392列
 
 该候选尚有两项明确的论文/代码差异：原文Figure3按距引导路径破平局，而[Instance.h L73–87](https://github.com/YueZhang-studyuse/LMAPF-delay/blob/74cfba3c81a0c165c2e7044dea6fd4dee8ddf415/inc/MAPF-LNS2/inc/Instance.h#L73)实际元组为常量、引导距离和、直达当前目标距离；PIBTDDelaySimulation.cpp L56–62仍先按距计划位置、再按累计延误排序。复现须分别登记作者代码行为与原文规则，不能假定两种排序等价或静默改后仍称原样。LNS::run→runPP还重新进入当前纯LACAM明确排除的调用域，不继承其局部修复/费用资格；本次未实现、未判完整基线通过。另核官方improve_delay@48f45dc16c88584b8e03eebe31bd69d6d7443c04仅用到旧路径指定时刻位置的指导，不选为A的复现依据；本地pie_upstream@ec410bc63470ed10c768baacd678e2609d9c4076属于PIE.git，不能冒充PIE-D版本。
 
+两项排序的纸面选择现确定：作者原字节轨道保留74cfba…的行为，承担原样检查/来源对照；PIE-D原文规则复现轨道以同一来源承接PIBT-D＋A，调整下述两项明确次序，其它未指定细节尽量沿用固定作者选择并披露。两轨身份、成本与失败分别记录，差异不归因于D策略；不因这一区分扩展内部D/R/E0实验矩阵，也不将任一未运行轨道称为已合格基线。
+
+A所需的两个量已在现有表中：a为guidance_heuristic中到所选最近引导点的距离，b为second_guidance_heuristic中沿该引导路径至终点的剩余长度。原文轨道首先按a+b，再按a排序；两者都相同时沿用作者的直达目标距离及已存随机破平局值，不在比较器内新增抽样。最近点有并列时保留固定引导路径初始化次序、邻居顺序和BFS首次发现；不能改成在所有引导点中直接最小化a+b。读取合同要求已执行initMap、fleet身份/尺寸不变，第一/第二表及惰性BFS队列属于同一冻结引导版本，所读有限a/b已共同解析且求和可表示；字段名相同不满足该合同。空引导或已转后续目标沿用原目标距离回退，并作为原文未指定的细节公开；未初始化/损坏/不可达标记不伪装成该回退，也不让哨兵参加求和。initMap已resize第二表外层，不能误报其缺少初始化；空引导行可能残留旧第二表值，须由当前第一表/版本资格排除。表初始化、惰性扩展、读两分量、比较与守卫均计实际费用，不新增路径搜索方法。
+
+PIBT-D原文轨道优先按较小delay，再按作者已有的距计划对应位置距离排序；其余完全平局沿用固定作者顺序合同，不宣称论文规定了唯一总序。delay的生命周期沿用已核作者调用：Agent字段初值零，CompetitionSystem::execution_simulate每个窗口新建postpibt，init→simulate→取路径/统计→clear删除Agent，主循环下一窗口重新构造；不改为全运行累计。计数记该窗口直接及传播阻延所插入的额外等待步数，当前时刻执行结果之后才影响后续优先级；原计划WAIT及PIBT自身退回等待不自动计作外生阻延。实际延误段与后继无额外延误的预测尾共用同一对象，尾部保留已有计数而不新增。论文未细定这一累计口径/重置与完全平局，本轨道明确沿用实现补全，不称恢复作者唯一原意。此规则依据固定PIBTDDelaySimulation.h L12–24、.cpp L75–110/208–221及CompetitionSystem.cpp L267–285/380–410；其它调用者、计数表示和整套LNS/执行原域资格仍须按所选入口核。
+
 MCP的已发表方法来源是 Ma/Kumar/Koenig 的 [Multi-Agent Path Finding with Delay Probabilities](https://ojs.aaai.org/index.php/AAAI/article/view/11035)，AAAI2017。所用仿真实现固定为 [Kei18/time-independent-planning v1.0](https://github.com/Kei18/time-independent-planning/tree/755a7ce740d49543b1165403371752c08e342ca4)，commit 755a7ce740d49543b1165403371752c08e342ca4；其[readme第10行](https://github.com/Kei18/time-independent-planning/blob/755a7ce740d49543b1165403371752c08e342ca4/readme.md#L10)明确是FSP/MCP的time-independent仿真，app.cpp也将MCP与CausalPIBT分别构造。本文名称改为MCP-2017-TIP-IMPLEMENTATION及其guarded adapter；旧标签NATIVE-TIP/TIP-MCP只指该仓库轨道，不代表TIP论文全部算法或Ma原作者代码。原字节/原域检查与共享守卫轨道分开；源mcp.cpp先nextNode后isStable、末下标访问plan[t+1]的静态缺口仍保留，不能把越界计作本方法优势。
 
 守卫版每次激活先验证c的定义域；本地末下标直接HOLD不访问nextNode，否则唯一下一原步plan[c+1]。WAIT仅合法POLICY消费一次，MOVE no-start/在途不消费；仅中心READY后消费并转CONTRACTED，在此之前用保守EXTENDED表示tail=plan[c]、head=plan[c+1]。他者getT只用同计划代际已交付Kc下界和固定原计划依赖，未知返回WAIT；同一臂已付费CURSOR证据可复用，不免费读他者真实c/head/tail。守卫、单中心/物理接口和付费通信是显式变化，不宣称恢复原最小通信量定理。
 
 补充匹配计划族在每公共block以同固定源和确定的R0计划输出供全部比较臂，生成授权之前先登记来源/作业/计划身份，不能从某策略成功结果挑计划。计划必须非空、vertex及完整no-following合规，含末端永久驻留；不适用登记INAPPLICABLE全行保留，主lifelong仍保留该公共来源。该族是有限计划的完成/服务/成本比较，不冒称TIP有相同lifelong分配算法。没有合法匹配block则补充族UNINSTANTIATED/UNESTIMABLE，不能隐去外部基线。下一episode只有全部旧责任合法drain后同规则重新INIT，不能reset未完成机器人。
 
-另保留真实已发表lifelong外部候选Hönig等RA-L2019：原文IV-C/Algorithm2有ADG前驱闭合commit cut和规划执行重叠，不能称其只有single-shot。73L1完整作者PDF及两个作者库头文件已核；当前库4c75fa20c435c440d8b6bd6dc81668ddc7296ba0不是已证2019实验提交，尚未取得整套ADG/monitor/仓库任务驱动原始身份。忠实复现可以采用自行实现，但须逐项证明核心状态、依赖、完成及cut/重规划规则对应；原框架允许不同求解器，使用纯ECBS本身不构成失格。当前真正未闭的是完整规则对应、本文visited/触发/逐边停走等改动的影响及共同适用域。其native保留原动作状态/Type-1与Type-2依赖/任务规划及适用前提；若用共同PIE来源则明确叫共同来源ADG执行适配，不冒称整法原样。
+另保留真实已发表lifelong外部候选Hönig等[RA-L2019](https://whoenig.github.io/publications/2019_RA-L_Hoenig.pdf)：原文IV-C/Algorithm2有ADG前驱闭合commit cut和规划执行重叠。当前库4c75fa20c435c440d8b6bd6dc81668ddc7296ba0仅证ECBS组件，不是已证2019整套实验实现；忠实复现可自行实现，原框架也允许不同求解器。下表与后文精确拼接合同对应已亲核的IV-B/C、Algorithm1/2；原任务/物理/费用共同域及实际实现符合性仍另核，不再把“未取得整套作者程序”本身当作无法建立规则对应。
+
+| H19承重规则 | 本稿对应与适配边界 |
+|---|---|
+| 同agent相邻动作Type-1；各他agent首个端点/时标匹配Type-2 | 保留该精确规则，首次匹配在旧保留前缀＋新后缀上定义，详见下文；不以所有交点互连替代。 |
+| Type-1前驱已入队或完成，所有Type-2前驱已完成才入队；执行通知决定完成 | 多动作逻辑入队对应原规则；有限批冻结已付F0，途中进度不代替finished。批调度/付费通知改变等待，不继承原通信量或持续执行性能。 |
+| desired的全部反图可达前驱决定保留集合，各agent最大下标给cut | 仍取完整前驱闭包；额外并入不可撤签发/历史cut责任。本文≥h及最近attempt时间是明确启发式，原文建议剩余时间大于预期规划时间，不保证重叠必成功。 |
+| cut尾终态作为新规划起点，统一时标并按Algorithm1接续 | 本文取旧最大完成层而非直接照搬原cut动作时标最大值，以严格分开新旧起始层；仅为离散标号，不增加物理WAIT/服务。 |
+| 任务持续接续与执行恢复 | 共同visited访问任务、逐边零速和不可撤队列是系统适配；不继承原仓库任务驱动、连续运动或新障碍清队列恢复保证。 |
 
 H19共同守卫适配保持付费K/控制、完成证据/队列信息、不可撤销旧动作、cut快照与接纳检查、真正服务计数及全部ADG/规划/通信费用；新gate只延后该系统自己的原动作、不偷换MOVE。原法允许多动作预取及连续队列执行，本底座明确保留多动作逻辑入队，却要求逐边参考零速和付费END/READY交接；原未知障碍下清命令队列也不能直接用于此不可撤逻辑账本。native/共同适配分名，公开这些变化，不继承原活性/平滑性/通信保证或把新增等待归罪原法。下文给定所选完整纸面接缝，源及实际数值/服务后端资格仍未知，主lifelong外部对照尚未固定。
 
@@ -534,7 +548,13 @@ cut只在闭包、原动作连接、互异合法预测锚点、任务与版本�
 
 新ECBS输入用每agent保留cut最后原动作的符号终态，空前缀用已认证锚点；任务只取冻结K_task首个未完成实例，visited不改A/Q。令cut_layer为旧保留动作最大离散完成层，新源相对层统一平移至cut_layer，使每个新动作起始层严格大于每个旧保留动作起始层；无旧动作则用原初始层锚点。较早到达的预测cut尾只作共同层驻留延拓的几何核验，不追加虚假可消费WAIT、物理驻留或服务机会。cut_layer是已有层的推导索引，不是新增lookahead/误差预算。
 
-旧保留动作及旧依赖不改。新旧合序列按原Algorithm 1首次匹配/传递链规则核候选依赖，仅安装至少一端为新动作的新增边。严格时标不产生new→old Type-2，跨代Type-1仅旧尾→新首；旧/新各自合法无环时，跨两部的环因缺new→old边而被排除。仍须实际付费验证原端点连续、动作/任务语义、完整原ADG规则、短路径末端永久驻留、§10搜索域及共同连续几何接入，不以证明省略输入/对象检查。欠项为INVALID_SPLICE/GEOMETRY/ADG等具名失败。旧保留部分前驱闭合，新图不向旧动作加新前驱，所以不撤已enqueued合法性；这仅为依赖保持，不推出连续资源守卫无死锁。各agent在自己的旧尾按原Type-2及共同END/READY消费后可入新后缀，不设全队到cut或外部TASK确认离站屏障。
+旧保留动作及其尚未满足的依赖保持；指向已撤未承诺后缀的旧边随目标退出允许图，不保留悬空义务。Type-2的精确定义为：对源动作a和每个他agent j，在j的“旧保留前缀＋新后缀”中，按原动作下标取首个同时满足s(a)=g(b)、t(a)≤t(b)的b，加入a→b后停止该次扫描。若旧a的原首匹配b仍保留，沿用它，不跳过旧目标另找新目标；若b在cut外或原本不存在，因保留集合是同一原Type-1链的前缀，不会有更晚却仍保留的旧匹配，才取新后缀的首个匹配。新a的时标严格晚于全部旧动作，故只能匹配新后缀；统一平移不改变新动作内部比较。已完成源的依赖在下述付费完成依据转移后视为满足，不重造执行义务。
+
+条件拼接引理：旧图为合法ADG，cut对Type-1/2前驱闭合且保留每agent原前缀；新序列各自端点/完整联合几何合法，独立按Algorithm1所得新图无环；新旧严格分层、合法执行历史和下述GC依据成立。按上段分别讨论旧首匹配保留、旧首匹配被cut删除/不存在、新源三类，所得未满足Type-2依赖与对完整合序列重新执行Algorithm1再消解已完成源的结果相同。Type-1仅多旧尾→新首。新增依赖只指向新动作，旧入队资格不因接纳而撤回；旧诱导子图及新图各无环、跨两部只有old→new，故合图无环。添加所有同端点跨代边一般会增加传递冗余和费用，不是原边集；删必要旧边或仅扫描新后缀则可能漏依赖。该引理不推出有实际入队供给、连续资源守卫无死锁或真实任务服务进展。
+
+GC按依赖源的完成消解，不能反向使用目标完成。对已合法存在的跨agent Type-2边a→b，b进入中心F必已合法入队，而入队时a已在F；F事实单调且不向旧已入队动作加新前驱，所以“a尚未确认完成、首匹配b却已完成并GC”不是合法前缀。此推导不适用于只要求前驱已入队的Type-1；同agent完成通知可以乱序。未完成旧源及其首匹配义务须保留完整身份；源a经真实完成通知进入F后，付费将其完整id=(sourcejob,agent,源动作下标)和中心验证/发布依据转交给仍引用它的入向依赖记录，后者由此记满足，不能靠GC缺条目或一位无身份状态猜完成。Type-1另保留其原前驱身份和已入队/已完成依据及执行尾锚；消费/位置证书不替代MOVE的finished。所有图、cut、批捕获、执行、消息及验证引用结束后才回收正文/相关依据，无法认证引用便停该项而不静默略过。F0捕获只读取相关已付完成依据，不免费重建全历史，也不要求新增每动作乘fleet的稠密槽表；索引、转移、引用和回收全费。不以任意已删最大下标推完整已完成前缀，不主张固定内存或任意GC可恢复。
+
+拼接仍须实际付费验证原端点连续、动作/任务语义、依赖/完成依据、短路径末端永久驻留、§10搜索域及共同连续几何接入；欠项为INVALID_SPLICE/GEOMETRY/ADG等具名失败。各agent在自己的旧尾按原Type-2及共同END/READY消费后可入新后缀，不设全队到cut或外部TASK确认离站屏障。此处关闭的是有明示前提的图规则对应，不替代原源、数值/服务后端及共同物理域资格。
 
 接纳须绑定同一cut/job/source、不可变原动作与执行槽、冻结任务义务及正常源结束节点，并完成数值/依赖/合图资格核验。Kc/finished单调前进或旧任务可信完成不因普通账本revision变化而必然STALE；后来新TASK保留为下一次待处理修订。撤销/改写目标/归属造成冻结义务不相容时拒新后缀，不回滚旧cut。接纳只更新未入队且未承诺的候选后缀，执行历史和旧消息不改。输入错误、合法ECBS穷尽false、公共供给停止、内存/表示不足、源异常、非法输出、合图失败、语义STALE、ACCEPTED分记且全费保留；无法证明源状态安全继续便终止其会话，不自动重启/重新播种或换法造路。无后继时cut尾HOLD和未完成任务保留。
 
@@ -587,11 +607,13 @@ R0选项名见固定src/driver.cpp L40–55；commitStep还参与L106–158的�
 
 ## 11. 公共来源、完整选择器与比较预注册
 
-只登记已经核验的公共源元数据与未来选择函数，不读取旧35–38、Q-CAL/Q-CONFIRM载荷或桌面。R0 lifelong tree=22ae3c8b3ad1f4791bd8c15b7d7b5521ed043c17；city=3e12a4483e615cd1a261d1e2476a29294fa4d0d1、game=8d8f8fbe8d16d80f5dab7a5cbf5ab6f3a341215a、random=2264326dfda14559e0db92e1649aaf512f9ff98f、warehouse-s=60b252f11972fed7d12f00960a7c6738b3f35a19；delay tree=4e3fe329a547e682d1520047bf767a5397b3b43f。它们不是已生成的实验实例。
+本节登记已核公共源元数据、L23获准完成的四类基础输入存在证据及未来选择函数；不扩读其它实际输入、旧35–38或Q-CAL/Q-CONFIRM载荷。R0 lifelong tree=22ae3c8b3ad1f4791bd8c15b7d7b5521ed043c17；city=3e12a4483e615cd1a261d1e2476a29294fa4d0d1、game=8d8f8fbe8d16d80f5dab7a5cbf5ab6f3a341215a、random=2264326dfda14559e0db92e1649aaf512f9ff98f、warehouse-s=60b252f11972fed7d12f00960a7c6738b3f35a19；delay tree=4e3fe329a547e682d1520047bf767a5397b3b43f。四类各有基础可解析输入不等于已生成完整合法实验roster。
 
-73L6已实际恢复Benchmark-Archive固定引用README与非递归根元数据，根又独立取得纯Git commit对象和其明确tree对象：commit 25ffd5b6a39b6fe30e5bc6cb5e22720a9531ea8a的tree为6030f1878e6abf48b833b5b7212953259fc81cb1，非递归四项、truncated=false，根按161字节原生tree帧复算一致。README blob为77ddb82e6cba768e590d91976d158ec74dc8ee5f，根亲读全部1008字节/17行，SHA256 1cf7f15a1389560b1fc7e3aa69734c3be69915ea2a10ca7fef5a1d40f116ba61且Git blob复算一致。它自述赛事年度实例/解归档；根树无独立许可文件、README无许可条款，不证明子树/具体素材无授权。此前以commit引用请求tree时顶层sha回显commit的差异已由独立commit→tree及真实tree读取消除身份歧义，未改L6原回执。R0具体对象→该归档上游blob→合法转换/本地身份→具体许可链仍未核；没有读取任一实例、结果或生成脚本载荷。精确来源链接与根阅读范围见73A2。
+LoRR官方Benchmark-Archive固定commit为25ffd5b6a39b6fe30e5bc6cb5e22720a9531ea8a，tree=6030f1878e6abf48b833b5b7212953259fc81cb1；commit/tree及README完整身份已由73L6和根核验。README说明其为赛事年度实例/解归档，未给许可条款；根树无独立许可文件不等于素材无授权。具体对象对应以本节后述L18/L19证据为准，旧Git API身份疑点不再是待办；原读取/复算回执保留在73A2所索引证据中。
 
-根73L8进一步实收并复算14个非递归tree端点：归档固定2023 Competition→Example Instances→四domain→maps，以及R0四maps。random-32-32-20.map在两固定入口同为blob b44f5a949e91b251b0e3bb29f3cd0784ce7d80b5、1091字节；此单对象关系已核。Paris同名但blob/大小不同，game/warehouse示例条目不同，不能说四类均直接同源或猜转换原因。根实际读取Moving AI的[grid说明](https://movingai.com/benchmarks/grids.html)、[MAPF说明](https://movingai.com/benchmarks/mapf.html)与[目录](https://movingai.com/benchmarks/mapf/index.html)：四个R0地图名称均列明且说明页明示ODC-By入口；[ODC-By v1.0](https://opendatacommons.org/licenses/by/1-0/)全文已读，其数据库/独立内容权利和告示范围须区分。网站同名不是Git对象一致，页脚也不抹去集合级说明；R0逐项上游版本/转换及agents/tasks/delay许可链仍未闭。全部本次读取限元数据和说明/许可文字，未打开地图/场景/配置/图像或结果载荷。
+根已实际读取Moving AI的[grid说明](https://movingai.com/benchmarks/grids.html)、[MAPF说明](https://movingai.com/benchmarks/mapf.html)与[目录](https://movingai.com/benchmarks/mapf/index.html)，其中列有四个R0地图名称及ODC-By入口；[ODC-By v1.0](https://opendatacommons.org/licenses/by/1-0/)全文已读。集合许可、独立素材权利和告示范围须区分，同名不证明同对象，R0软件MIT也不能自动覆盖第三方素材。旧L8只核部分示例目录，后续完整归档对象匹配见下，不以早期局部缺匹配否定后来证据。
+
+S7当前分层结论固定：四类首配置及13个引用对象已给出基础格式/索引/位置合法输入的存在证据，不再重做L23。尚需把固定素材或明确覆盖它们的版本/目录，与官方研究使用依据相连，并分别说明地图与agent/task/delay的覆盖范围；不额外要求维护者逐hash授权或重建所有生成历史。生成器/随机种子只有在用于支持生成分布等主张时才另负证据责任。完整source_id/alias与预定O的有效delay支持属于后续实例化，连续初态/ServiceRegion属于WORLD，源继续属于S6；它们仍是必需资格，但不反填为四类基础输入不存在。规划无解、拥塞、超时及效应未知均不构成输入静态非法的理由。
 
 未来获准合法绑定后，按固定树规范相对路径的字节序枚举四类别全部JSON；用原driver的mapFile、teamSize、agentFile、taskFile、delayFile字段，位置为L101/112/114/115/150，固定driver SHA256 3198636d1114e4901c9aae48d549787c9fb3bc3a0bdfd49b6445d81bb5fc4f44。引用相对JSON父目录解析，规范化后须仍处同一固定公共树；拒绝外部绝对路径、未解释符号链接、缺blob、非法编码/语法。源图/agent/task/delay的索引/长度/静态通行和初态合法性分别给理由。teamSize只待density N合法绑定后检验原义相容，本阶段不按文件名取N或猜robotFile字段。
 
@@ -619,7 +641,7 @@ future manifest必需字段：全部源身份/alias/解析字段；官方与适�
 
 profile总体分层必须事前唯一：MAIN_IN_MODEL只允许§2/3当前有限参考/空间驱动与服务区域子域、原可信物理条件及§9所列模型内通信、普通反馈、no-start和分量故障机制；STRESS_TRUST_PHYSICS专门声明会破坏这些前提的机制。成员资格依据生成机制/支持集及来源定义，不根据运行后是否真的breach归类。MAIN中的意外breach保持原主行及失败标志，不能改挂压力层后删去；压力层单列自己的固定权重和描述，不能在主显著性不够时混入。四类别/map/source/profile/repeat的主w_b仅在MAIN_IN_MODEL的完整事前roster定义；任何类别/必需profile无合法成员时UNINSTANTIATED，不运行后重归一化。静态合法性、软件初始化成败与实际结果选择是三种不同事项。
 
-来源补核73L2给Moving AI的ODC-By/独立素材权利及研究分发说明。新根73L18通过固定LoRR官方归档25ffd5b6a39b6fe30e5bc6cb5e22720a9531ea8a与固定R0的完整Git树元数据，已定位city的Paris_1_256.map（blob0ff641690b48c1c4807fcea7c0c31d167973b221）及random-32-32-20.map（blobb44f5a949e91b251b0e3bb29f3cd0784ce7d80b5）同blob/size对象，全程未读地图载荷；归档README明确比赛实例来源，补上此前首页只有JS壳的入口。该证据不证明复制方向/更早原创权利或适用许可；game的ht_mansion_n、warehouse-s的warehouse-10-20-10-2-1在该归档没有同blob对应，不能用另一同类地图替代。R0软件MIT/归档存在及同名文件均不能关闭全部素材权利，agent/task/delay生成/转换链仍缺。本草稿仍未实例化合法source_id/roster，没有读取受限载荷或复现实验；许可与全部数据资格保持UNKNOWN。 L19完整有界报告经根全文核对，补充官方Moving AI目录把ht_mansion_n列在Dragon Age 2分类、目标warehouse文件列在MAPF集合及仓库更新说明；仅支持具名分类和分发说明上下文，没有官方对象hash。官网两个目录的game尺寸顺序不同不能自行解释为转置/显示约定，名字/状态数不替内容身份；根不冒称已直接抓取代理四页。两目标与R0的完整对象/适用权利链仍未闭，不能套同类许可或扩大论文效度。
+来源补核73L2给Moving AI的ODC-By/独立素材权利及研究分发说明。根73L18通过固定LoRR官方归档25ffd5b6a39b6fe30e5bc6cb5e22720a9531ea8a与固定R0的完整Git树元数据，已定位city的Paris_1_256.map（blob0ff641690b48c1c4807fcea7c0c31d167973b221）及random-32-32-20.map（blobb44f5a949e91b251b0e3bb29f3cd0784ce7d80b5）同blob/size对象，全程未读地图载荷；归档README明确比赛实例来源，补上此前首页只有JS壳的入口。该证据不证明复制方向/更早原创权利或适用许可；game的ht_mansion_n、warehouse-s的warehouse-10-20-10-2-1在该归档没有同blob对应，不能用另一同类地图替代。R0软件MIT/归档存在及同名文件均不能关闭全部素材权利，agent/task/delay的研究使用依据及覆盖范围仍待明确；不把完整生成/转换历史另设为S7前置条件。本草稿仍未实例化合法source_id/roster，没有读取受限载荷或复现实验；许可与全部数据资格保持UNKNOWN。 L19完整有界报告经根全文核对，补充官方Moving AI目录把ht_mansion_n列在Dragon Age 2分类、目标warehouse文件列在MAPF集合及仓库更新说明；仅支持具名分类和分发说明上下文，没有官方对象hash。官网两个目录的game尺寸顺序不同不能自行解释为转置/显示约定，名字/状态数不替内容身份；根不冒称已直接抓取代理四页。两目标与R0的完整对象/适用权利链仍未闭，不能套同类许可或扩大论文效度。
 
 2026-09-12用户已允许本次固定官方四类首配置及其引用输入的有限只读静态核验。根L23实读四JSON及13个引用对象（共用一delay），全部内容Git blob重算匹配；四配置的位置记录足数、十进制单位置、起点互异且起点/任务均可通行并位于共同四邻接分量。原delay有5000行、每行2000位，首行第二token53983未被原parser使用，实际numTasksReveal也不由JSON同名字段决定。源文件数值只作已有对象事实，不采用为density N、时间或其他保护参数。该证据关闭这四个对象的基础格式/引用/位置缺口，不等于全364配置、连续F/Z/Mask初态、ServiceRegion、完整源继续、delay支持O或来源权利链通过；未读取其它配置/旧Q，未生成source_id/roster或运行原算法。L23A仅核parser必要条件，C28为非正式建设，均不计本稿通过票。
 
