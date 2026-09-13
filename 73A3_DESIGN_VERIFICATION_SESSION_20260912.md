@@ -84,3 +84,15 @@ paired_statistics仅核fa9cd233新增映射/alias和§12，指出一个直接问
 本次活 collaboration 列表仅有根时，E27 约定文件实际不存在，先前消息不能补成完整回执。新 r0_source_boundary_closure 仅承接 E28 对角索引边界证据，不重启旧 E27 广泛题。Claude 用户冷却按本次 15:37 UTC 观测取保守最早 16:37 UTC，截止前没有新调用。视频 V1 本次再次全文核实：报告已完成，实际画面/语音/字幕均未读；用户获如实答复。
 
 清理实查：三份 HANDOFF 已不存在；五份当前导航/工作记忆的本地链接全部有效，git diff --check exit0，修改范围为七份行政路径，73 主稿 SHA256 仍为 ed80e6a53f9e3932070c641f4a5cfac852f07ecbf26dff41f9ba43155da9fcf9，未改科学候选和原回执。私有 GitHub API 再核 private=true/main，清理前远端与本地仍为 0153a15e4f059a567de169716985444cca86ec9d；本批尚未由这些检查推定已运输。独立清理代理已给完整清理判断消息；E28 仅给部分定位消息后，本次活代理列表再次只剩根，不计完整交付或仍运行。
+
+## 2026-09-13 来源边界修订、近邻域与实际Opus建设
+
+此前清理批已实际提交/推送6b7acfc1ad7bb763bb14cf9d796ce56853131b85，本地/远端main一致且已跟踪clean。本次继续原完整目标，未把清理完成当研究完成。根04:00:25 UTC核时间已过用户一次性一小时冷却，随后唯一C29 exec87486→e7dc72/exit0，实际claude-opus-5/firstParty、completed/end_turn，136290ms、客户端0.2778725 USD。三件同名前缀prompt/raw/complete receipt已归档，receipt正文严格等于raw result加一个文件换行；完整根纠正见该回执。C29真正承担有限服务构造，但其单节点恒价、append/grant混同、PRECHECK置错和删H19规划接纳等建议未采用；联合可满足见证仍待根继续，不算正式票或已闭证明。
+
+根已直接核固定0b5b336的Instance.h/API blob 97808fa7929c1f99772b05b047c20d48bb878814，4939B/154LF，SHA256 ed1dea14eba7373d13b2378e59839bf962085316ffb6527655f92dfc5aae565d。网络首轮EOF及web raw缓存缺失不计读取；随后以API对象身份对应本地diagnostic_fork Git对象库，重算blob一致并读L45–120。该本地对象库也含固定commit，MAPFPlanner.cpp blob94afb42df1a70f5e312a382e61cf83576fd7360e / SHA256 c81952afaa94157abd7138bdaae71edc7b19b59dee60b653bb380ef16e681be1实读首调用/commit窗口。Instance.cpp blob2183ba41…与E20身份一致，根读L1–85。本地pie_upstream HEAD实际ec410bc，Instance.h/planner/LNS对象不匹配，未误用其源码；所需固定planner/LNS对象在diagnostic_fork对象库存在，按E20已核blob4f46f988…/1fb0e54f…读取必要正常分支窗口。不读该目录地图、任务、配置或旧结果。
+
+具体采用：getDegreeAdvanced L116的左下guard却读右下，在倒数第二行最右自由格可读取map[size]；MAPFPlanner首LACAM分支prepareDummy→全自由格遍历使其条件可达。§9新增共享纸面修订只将读取绑定原guard左下目标，并列输入整数表示/矩形域及八读取合法条件；保留L101严格0<的原北邻漏计行为，避免混入未声明启发式改动。预处理、候选/shuffle/费用保留，不称原样native或D创新。E27/E28文件仍缺，这些是根新的直接证据，不冒称旧代理完成。
+
+wink_mechanism_gap_closure已实际完整消息交付：读当前§1/2/14/15和官方WinkTPG v2的II–VIII文字/表格、L430–480引用/页尾及版本；未看图像/PDF/源码或复算全部证明。根另直接核官方HTML L78–93、295–311，并已有VII费用/真实实验窗口。主稿§2补完整的近邻范围，§15明确四机器人同步环含cycle conflict而在其输入假设之外，不能用环例判它输；未扩展确认矩阵，未声称本文优越。只在本账本留读取范围，不新增平行文献报告。
+
+本次主稿最新SHA256 772fe0aa53372e18442ccff0206ab1b91ab5f7f54cebf03406c1f730d617b795，236321B/733LF；ed80e6a为修订前，c92f2a5为修订日期字段前的中间字节。仍DRAFT/NOT-FIXED/NOT-REVIEWED/NOT-ACCEPTED，未实现、构建、研究测试、仿真、保护参数赋值或生成载荷。尚待源正常继续及付费依赖链联合可满足、全来源/连续WORLD/外部资格和完整顺序审查。

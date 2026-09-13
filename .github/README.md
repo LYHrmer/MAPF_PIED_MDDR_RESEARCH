@@ -1,12 +1,12 @@
 # MAPF 项目当前入口
 
-更新：2026-09-12。完整目标是完成大规模实验之前的全部准备，设计符合多智能体路径规划领域认可标准。**目前设计未完成，HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT。**
+更新：2026-09-13。完整目标是完成大规模实验之前的全部准备，设计符合多智能体路径规划领域认可标准。**目前设计未完成，HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT。**
 
 本页是当前导航与操作约束的唯一入口。先读本页，再按正在解决的问题读取主稿对应章节和直接证据；不要递归全文读取历史交接、账本或全部咨询。正式审查和全稿组合验收仍必须实际读完所需完整候选及相关原始意见，不能用导航摘要代替。
 
 ## 当前设计与证据
 
-- [73 主稿](../73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)：DRAFT / NOT-FIXED / NOT-REVIEWED / NOT-ACCEPTED。当前 SHA256 `ed80e6a53f9e3932070c641f4a5cfac852f07ecbf26dff41f9ba43155da9fcf9`，233999 bytes / 727 LF；文件名日期不代表当前内容版本。
+- [73 主稿](../73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)：DRAFT / NOT-FIXED / NOT-REVIEWED / NOT-ACCEPTED。当前 SHA256 `772fe0aa53372e18442ccff0206ab1b91ab5f7f54cebf03406c1f730d617b795`，236321 bytes / 733 LF；文件名日期不代表当前内容版本。
 - [本窗口决策和原始收件索引](../73A3_DESIGN_VERIFICATION_SESSION_20260912.md)：按具体问题查阅；其中早期状态、任务句柄、提交与 SHA 是历史记录，不能覆盖当前文件或活工具状态。
 - [72R4 原要求与 S1–S9](../72R4_THREE_REVIEW_ROOT_SYNTHESIS_AND_SUCCESSOR_REQUIREMENTS_20260907.md)：最后正式六门裁决属于冻结 72，G1/G2 限域 PASS、G3/G4/G5 UNKNOWN、G6 FAIL；不是对当前 73 的裁决。
 
@@ -28,6 +28,8 @@ R0 固定 `YueZhang-studyuse/LMAPF-delay@0b5b33649fc367abcb1cd0a7ad5ac03511bf935
 8. 历史 51 失败链与失落 69L1/69E1、73P7/73L7/73C2，以及已终态的旧 Claude 调用按原记录处理，不因旧文件写“运行中”就重启。先核活句柄和实际文件；缺回执不算完成，有新证据的不同具体问题可继续。
 
 ## 接下来怎样验收
+
+2026-09-13 新进展：Opus C29 已实际完整返回并经根纠正，原文见[完整建设回执](../73C29_NORMAL_SOURCE_TO_TRUE_SERVICE_CONSTRUCTION_COMPLETE_RECEIPT_20260913.md)，不是已闭合见证。根直接核固定源后将左下邻格读取修订写入§9；§2/15补WinkTPG的真实执行/费用证据与循环输入域边界。下一步仍须闭合完整收费链与固定源正常运行的联合可满足证明。
 
 先闭合当前源/付费服务见证、合法来源及全稿组合；固定自给完整候选后，严格依次：research-mentor 完整审查 → 根不用 skill 独立分析 → nature-reviewer 完整审查 → 根独立分析 → 明确无任何 skill、未读前两路意见的独立逻辑审查 → 根逐项验收。实际用 skill 时须读取并说明，不能以建设咨询或审稿数量代替。
 
