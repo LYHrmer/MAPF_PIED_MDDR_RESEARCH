@@ -6,7 +6,7 @@
 
 ## 当前设计与证据
 
-- [73 主稿](../73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)：DRAFT / NOT-FIXED / NOT-REVIEWED / NOT-ACCEPTED。当前 SHA256 `526ebb6593dec34fd1c750919f06772aa21bc1bc259e4e69a7d1fb4869105dad`，265239 bytes / 830 LF；文件名日期不代表当前内容版本。
+- [73 主稿](../73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)：DRAFT / NOT-FIXED / NOT-REVIEWED / NOT-ACCEPTED。当前 SHA256 `dfbae515461dfb7d1347ecd9aa6800aea999e665e4ec086bc515f58f1c0bffe9`，269005 bytes / 838 LF；文件名日期不代表当前内容版本。
 - [本窗口决策和原始收件索引](../73A3_DESIGN_VERIFICATION_SESSION_20260912.md)：按具体问题查阅；其中早期状态、任务句柄、提交与 SHA 是历史记录，不能覆盖当前文件或活工具状态。
 - [72R4 原要求与 S1–S9](../72R4_THREE_REVIEW_ROOT_SYNTHESIS_AND_SUCCESSOR_REQUIREMENTS_20260907.md)：最后正式六门裁决属于冻结 72，G1/G2 限域 PASS、G3/G4/G5 UNKNOWN、G6 FAIL；不是对当前 73 的裁决。
 
@@ -16,7 +16,7 @@ DARI已淘汰；旧编号计划的WORKING/pending是历史状态，不恢复为�
 
 R0 固定 `YueZhang-studyuse/LMAPF-delay@0b5b33649fc367abcb1cd0a7ad5ac03511bf9357`；H19 源固定 `whoenig/libMultiRobotPlanning@4c75fa20c435c440d8b6bd6dc81668ddc7296ba0`。两者适配和明确修复不能冒称原样 native 或作者整套实现。源码正常继续与 P_model 对应、有限付费流程到真实服务的非空见证、全来源/连续 WORLD 资格、近邻与外部比较、S1–S9 全稿组合及正式审查仍未闭合。
 
-进一步已核：当前只复用作者LACAM-only及切分链，不保留原论文完整PIBT-D＋A；原A的旧路径指导和LNS改善不在当前批准分支中，native PIBT-D优先级也有待说明的原文/代码差异。§10已列对应；选择并资格化一个真实已发表组合仍是必需工作，不能用作者仓库名称替代。
+进一步已核：当前R0只复用作者LACAM-only及切分链，不保留完整PIBT-D＋A。§10另已固定官方improve_morereveal@74cfba3c81a0c165c2e7044dea6fd4dee8ddf415为作者完整组合复现候选，实际含旧路径引导/LaCAM/LNS/PIBT-D，检索已停止。A破平局与PIBT-D优先级有文码差异，新增LNS调用域与原域资格仍须核实；不替换R0或用作者名称自动授资格。
 
 [L23 有限输入核验](../73L23_LIMITED_PUBLIC_INPUT_STATIC_VERIFICATION_20260912.md)及[L23A parser 核验](../73L23A_STATIC_INPUT_PARSER_CONTRACT_CHECK_20260912.md)已完成：四类首个配置和 13 个引用对象的基础静态核验通过。C28 的公共 ACTUATOR 秩映射与规范有效 delay 输入已整入主稿；这不等于全部 roster、连续物理域或运行资格通过，不再把这次已获准且已完成的核验列为等待用户许可。
 
@@ -37,7 +37,9 @@ R0 固定 `YueZhang-studyuse/LMAPF-delay@0b5b33649fc367abcb1cd0a7ad5ac03511bf935
 
 本轮补充：§8明确已接纳job的非承诺缓存、完整空行容器和PathTable缓存资格；§9.2给两后继分支不混入STALE路径的局部条件引理。C33实际Opus已完成，§13新增时钟预测与付费观测的条件区分，侧通道/付费CAPTURE及服务收益仍未闭。RHCR/PIE/PIE-D/Traffic Flow的数千上万agents已核为仿真，规模与实物台数不混写，见73A3。
 
-下一步按S1–S9推进，优先选定并核实已发表PIE-D组合的复现依据、H19核心规则对应，以及源重算/输出登记后条件、真实付费启动差/服务和合法来源域。容器/分配/日志等真正缺语义或费用展开的项仍须补，已定义合同的实现符合性留给后续资格；不扩成全OS证明，不复读全部咨询或以未运行/未知正负作为设计反例。
+最新局部闭合：§9.2对批准纯LACAM选共同删除runLACAM2两处无消费PathTable登记，并证明合法完整solution的原提交前缀不因首达截分而损坏；§9.3同步，不重建替代表或要求所有目标互异。仅为纸面修订，缓存接入资格及其它源后条件仍保留。
+
+下一步按S1–S9推进，优先处理已固定PIE-D候选的两项文码差异与LNS/原域资格、H19核心规则对应，以及其余源后条件、真实付费启动差/服务和合法来源域。容器/分配/日志等真正缺语义或费用展开的项仍须补，已定义合同的实现符合性留给后续资格；不扩成全OS证明，不复读全部咨询或以未运行/未知正负作为设计反例。
 
 先闭合当前源/付费服务见证、合法来源及全稿组合；固定自给完整候选后，严格依次：research-mentor 完整审查 → 根不用 skill 独立分析 → nature-reviewer 完整审查 → 根独立分析 → 明确无任何 skill、未读前两路意见的独立逻辑审查 → 根逐项验收。实际用 skill 时须读取并说明，不能以建设咨询或审稿数量代替。
 

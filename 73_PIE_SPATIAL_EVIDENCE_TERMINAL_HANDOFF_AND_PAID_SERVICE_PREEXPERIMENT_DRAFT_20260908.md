@@ -427,6 +427,10 @@ ALWAYS_ADVANCE的继续域必须覆盖合法初始化、全部合格正常历史
 
 缓存末点唯一是源级必要接缝：PathTable.cpp L14在登记前要求该末顶点目标槽为空，lns_common.h的MAX_COST/MAX_TIMESTEP相等；Instance::hasCollision L373–398只查共同长度且从索引1开始。两条不同长度、共同前缀无冲突但在不同末索引结束于同一顶点的合法路径，足以否定“逐路径格式/锚点合法必可安全载入”的蕴含；这不是已证明由完整接纳链产生的反例。§8在缓存资格中明示末点唯一、共同起点/补齐前缀检查，失败回原无缓存求解，并共同收其费用，不能等assert触发后才补资格。该缓存选择是显式适配，不改变原样轨道，也不把源搜索中其它PathTable写入自动算作已证。
 
+重算输出另有可移除的无消费登记。固定runLACAM2在L693/L706把各agent截后的路径登记到PathTable；批准纯LACAM调用域不读取这两次登记的约束、冲突或目标信息，实际消费者位于已排除的runPP、LNS::run及邻域搜索。求解器不接收该表，下一次正常loadPaths/重算之前又经clearAll重置。当前共同源码修订因此仅删除这两处登记，保留原求解、顶点读取/复制、首达目标截分、soc、succ及后续commit/验证；不重建多目标表，不改变路线或收窄为目标唯一的roster。缓存载入checkReplan的登记及§8资格仍保留。此变换改变分配、清理与费用，所有相关R0内部臂共同采用，未发生的登记不收费；不声称native字节/成本等价，也不推广到启用LNS的外部候选。
+
+此处提交前缀可作条件证明：设完整合法联合solution有M≥2层、原提交量为正整数k_commit。原首达层r_i未找到或小于k_commit时保留全部M层，否则保留r_i+1层。若M−1≥k_commit，每条截后路径都保留共同的前k_commit步；若M−1<k_commit，各条均保留整个solution，再在互异的最终位置补WAIT。因此在完整身份、合法顶点借用、数值可表示及完整联合solution无vertex/swap冲突的前提下，原commit前缀仍合法，无须要求截后所有末点互异。相反，两agent可先后到同一目标x、先到者随后离开，完整共同层仍无冲突；若两次首达均不早于k_commit，截后却都以x结束。这只反驳“完整联合序列合法必使截后PathTable登记合法”，尚未证明当前搜索实际产生该序列。删除无消费登记关闭这一额外前提，不替代完整solution合法性、索引/累计表示、费用及其它源后条件。
+
 其中stay_target有独立的事前界。令J_plan为已固定公共O中PLAN_CHECK行总数，仅为输入计数，不新增预算/赋值；每行最多开启一个job，每job最多进入一次原commit。固定fleet/唯一agent身份及会话内原k_commit不变，批准入口skip_start=true，合法路径长度m≥2。短分支m≤k_commit时初循环结束step=m，随后恰增加k_commit+1−m≤k_commit−1；长分支先置零，初始化为零，固定源没有其它原向量写点。因此每个agent在任意正常包及commit中间前缀均满足0≤stay_target[i]≤J_plan·max(k_commit−1,0)，包括中心后来STALE的包。先以数学整数核右界落在源int域，便排除此特定累计字段的溢出；不能在源int中先乘溢出再检查，不用accepted次数替J_plan。k_commit+1、路径长度/遍历step和其它统计仍分别核；这不是完整AA证明，也不改变原清零/自增行为。
 
 | 费用/表示类别 | 当前已选语义 | 现在的缺口与后续验证边界 |
@@ -444,7 +448,7 @@ ALWAYS_ADVANCE的继续域必须覆盖合法初始化、全部合格正常历史
 
 固定Instance.cpp L13–52的prepareDummy仍照常运行。前述左下修订后，原严格上邻判据只可能使loc=cols这一点漏掉唯一北邻0；不能声称所有自由点degree均正。同分量含至少2n_f个互异端点，其余至少一个四邻被计数，故可被收集的合格候选总数至少V_comp−1≥n_f；原程序按度桶累加并在首次达到n_f后停止，因此实际收集量K满足n_f≤K≤V_comp，原shuffle后resize不会因不足而补入伪目标。原runLACAM2中update_dummygoals仍为注释，prepareDummy不改真实目标队首。对每agent，PIBT仅有g_i与s_i两候选；原随机浮点项在[0,1)时，目标距离0严格优于驻留距离1。g_i未被任何当前起点或先前已选目标占用，swap检查跳过空邻点，不进入交换帮助函数或继承递归。所有agent各一次选择后得到全目标子节点；按已修一致目标位，下一DFS先检全目标并结束，不读取第二任务。各原Deadline检查必须未过期，不能删除检查或换预算。
 
-因此原solve正常提议的联合路径恰为[S,G]。固定LNS.cpp L648–713两种reached_goal_time切分都留下每agent的[s_i,g_i]；其目标各异使PathTable的初次目标记录有效。根另直接核L1236–1339及L1433–1482：k_commit=1时跳过锚点后输出[g_i]；更长原提交量先插入g_i，再由原短路径分支填充终点WAIT，输出恰k_commit项且future为[g_i]，back首次读取前已有元素。validateCommitSolution只见不同目标上的WAIT并返回true；它漏验首边和首层，故PRE_COMMIT_SHAPE与外层完整锚点/冲突检查仍不可删。这里证明正常非空提议分支及原切分的定义域，不把它直接当成已append或获得运动授权。
+因此原solve正常提议的联合路径恰为[S,G]。固定LNS.cpp L648–713两种reached_goal_time切分都留下每agent的[s_i,g_i]；§9.2共同修订已删除runLACAM2的两处无消费登记，本见证不再依赖该表写入。根另直接核L1236–1339及L1433–1482：k_commit=1时跳过锚点后输出[g_i]；更长原提交量先插入g_i，再由原短路径分支填充终点WAIT，输出恰k_commit项且future为[g_i]，back首次读取前已有元素。validateCommitSolution只见不同目标上的WAIT并返回true；它漏验首边和首层，故PRE_COMMIT_SHAPE与外层完整锚点/冲突检查仍不可删。这里证明正常非空提议分支及原切分的定义域，不把它直接当成已append或获得运动授权。
 
 费用中原地图/距离/图构造、dummy候选及容器、n_f次PIBT、路径复制、n_f·k_commit个提交项、n_f(k_commit−1)次逐路径移动检查和binom(n_f,2)(k_commit−1)次冲突比较都保留；验证器外层成对枚举的空分支也收费。不能由这些计数直接给任意C++库工作恒价。已核的GNU libstdc++ 11特定32/64位优化分支，在本子族的两项std::shuffle中只作一次MT取数，uniform_int_distribution范围2的拒绝阈值为0；其它库分支不能继承此结论。dummy的default random_shuffle至多作K−1次原rand调用而不重抽，K为实际已收集候选数。glibc-2.35已读上游TYPE_3 rand体无循环；只有整个C随机状态独占、锁初态合法、无线程/信号/外部库重入且保留原状态时，wrapper可走固定两原子锁路径。若原调用确有srand，其原30次填表和310次预热照计；不暗加播种或改为另一发生器。具体实体与读证见73A3；该条件性有限路径不自动绑定本机Ubuntu补丁或实际链接。本轮下段另明确修订随机浮点的固定特化；容器分配、日志/清理及完整基本步对应仍须逐项关闭，不把普通“正常返回”当成预先已知的工作界。
 
@@ -476,7 +480,7 @@ ALWAYS_ADVANCE的继续域必须覆盖合法初始化、全部合格正常历史
 
 | 比较对象 | 论文与实现来源 | 在本文可以承担的证据 |
 |---|---|---|
-| PIE-D 原法 | §1 AAAI2025论文；§8作者固定R0。原文具体执行/重规划组合与代码分支须对应登记 | 原问题域内的原法复现和改进底座；共享修复/物理/计费适配另名另报，不能让原法在未宣称支持的横向误差域失败来证明优势。 |
+| PIE-D 原法 | §1 AAAI2025论文；下述固定74cfba…为PIBT-D＋A作者实现复现候选，§8固定R0另作内部提议来源 | 原问题域内的原法复现和改进底座；共享修复/物理/计费适配另名另报，不能让原法在未宣称支持的横向误差域失败来证明优势。 |
 | D/R、S/F_cap、E0及G/N | 本稿自定义机制、对照或消融；共享PIE-D提议来源 | 回答查询、释放和费用组织的内部因果问题。R/E0不是文献算法，D胜R/E0不单独证明胜过PIE-D或MAPF已发表方法。 |
 | Ma等的MCP；采用TIP作者库仿真及本稿守卫适配 | Ma/Kumar/Koenig，AAAI2017，10.1609/aaai.v31i1.11035；下述固定TIP仓库明确将FSP/MCP列为仿真对象 | 仅在完整no-following等原条件匹配的有限计划族比较；不是AAAI2021的Causal-PIBT原创算法，也不冒充已有lifelong任务系统。 |
 | H19-PR-COMMON-SYSTEM的两臂 | Hönig等RA-L2019论文的ADG/cut；当前固定作者库仅证ECBS组件 | 仍是待核验的论文方法适配候选。原ADG/任务驱动整套实现身份与必要适配的忠实性未闭，当前不能称作者原版或已合格强外部基线。 |
@@ -492,7 +496,11 @@ PIE-D原文与固定代码的对应不能仅看类名。原文pp23390–23392列
 | 规划后的LNS改善及F/S | 纯LACAM的MAPFPlanner.cpp L46–73置迭代为零，未用其它类别的lns->run或F的LNS2修复，也不继承S的原MCP未来仿真链。 |
 | 承诺切分/未来提示 | 保留planner_commit→commitPath；已接纳Π、非承诺缓存、PROJECT和付费触发是本文明示接口变化，目标揭示与第二目标修订亦须披露。 |
 
-原域基线尚需明确一个已发表组合并完成其代码忠实性，不能把上述修改来源直接标成完整PIE-D基线。固定PIBTDDelaySimulation.cpp L56–62还先按当前位置到计划时刻位置的距离排优先级，累计延误只破平局；与原文按延误优先的描述有具体差异，后续原域复现必须说明处理依据，不从类名自动判通过。此处记录来源差异，不宣称原论文错误或已复现其结果。
+原域基线尚须完成下述已发表组合的代码忠实性和原域资格，不能把上述修改来源直接标成完整PIE-D基线。固定PIBTDDelaySimulation.cpp L56–62还先按当前位置到计划时刻位置的距离排优先级，累计延误只破平局；与原文按延误优先的描述有具体差异，后续原域复现必须说明处理依据，不从类名自动判通过。此处记录来源差异，不宣称原论文错误或已复现其结果。
+
+作者实现复现候选现固定为官方仓库的[improve_morereveal@74cfba3c81a0c165c2e7044dea6fd4dee8ddf415](https://github.com/YueZhang-studyuse/LMAPF-delay/tree/74cfba3c81a0c165c2e7044dea6fd4dee8ddf415)，对应待复现的已发表PIBT-D＋A组合。此候选不替换当前R0：其[LNS.cpp L465–501](https://github.com/YueZhang-studyuse/LMAPF-delay/blob/74cfba3c81a0c165c2e7044dea6fd4dee8ddf415/src/MAPF-LNS2/src/LNS.cpp#L465)从旧路径去WAIT/环并建立引导；[Instance.cpp L193–246](https://github.com/YueZhang-studyuse/LMAPF-delay/blob/74cfba3c81a0c165c2e7044dea6fd4dee8ddf415/src/MAPF-LNS2/src/Instance.cpp#L193)用多源BFS构造“距引导路径＋沿该路径至终点距离”；planner.cpp L432–440实际消费该值；MAPFPlanner.cpp L82–115接LaCAM修复与LNS::run，CompetitionSystem.cpp L267–285/385–410接PIBT-D和后续窗口。因此不再把寻找含A核心引导/LNS的作者代码列为无来源，完整资格仍须完成。
+
+该候选尚有两项明确的论文/代码差异：原文Figure3按距引导路径破平局，而[Instance.h L73–87](https://github.com/YueZhang-studyuse/LMAPF-delay/blob/74cfba3c81a0c165c2e7044dea6fd4dee8ddf415/inc/MAPF-LNS2/inc/Instance.h#L73)实际元组为常量、引导距离和、直达当前目标距离；PIBTDDelaySimulation.cpp L56–62仍先按距计划位置、再按累计延误排序。复现须分别登记作者代码行为与原文规则，不能假定两种排序等价或静默改后仍称原样。LNS::run→runPP还重新进入当前纯LACAM明确排除的调用域，不继承其局部修复/费用资格；本次未实现、未判完整基线通过。另核官方improve_delay@48f45dc16c88584b8e03eebe31bd69d6d7443c04仅用到旧路径指定时刻位置的指导，不选为A的复现依据；本地pie_upstream@ec410bc63470ed10c768baacd678e2609d9c4076属于PIE.git，不能冒充PIE-D版本。
 
 MCP的已发表方法来源是 Ma/Kumar/Koenig 的 [Multi-Agent Path Finding with Delay Probabilities](https://ojs.aaai.org/index.php/AAAI/article/view/11035)，AAAI2017。所用仿真实现固定为 [Kei18/time-independent-planning v1.0](https://github.com/Kei18/time-independent-planning/tree/755a7ce740d49543b1165403371752c08e342ca4)，commit 755a7ce740d49543b1165403371752c08e342ca4；其[readme第10行](https://github.com/Kei18/time-independent-planning/blob/755a7ce740d49543b1165403371752c08e342ca4/readme.md#L10)明确是FSP/MCP的time-independent仿真，app.cpp也将MCP与CausalPIBT分别构造。本文名称改为MCP-2017-TIP-IMPLEMENTATION及其guarded adapter；旧标签NATIVE-TIP/TIP-MCP只指该仓库轨道，不代表TIP论文全部算法或Ma原作者代码。原字节/原域检查与共享守卫轨道分开；源mcp.cpp先nextNode后isStable、末下标访问plan[t+1]的静态缺口仍保留，不能把越界计作本方法优势。
 
