@@ -219,3 +219,35 @@ source_positive_mechanism实际交付S6跨调用字段表，根整入§9.2并补
 本轮C32归档实查：receipt原文严格等于raw result加LF，JSON实际claude-opus-5/firstParty、end_turn、is_error=false、CLI7492201f-9e6e-4c68-84e2-85441a165613，完整END标记。C31首轮JSON错误且modelUsage空。前轮进程原stdout的函数临时store现不可用，因此本轮不冒称重新完成stdout/实际CLI提示的字节比对；终态仍据前轮实际工具记录及完整归档，不重启C31/C32。无研究代码/输入/实验操作。
 
 当前主稿身份fb09cfc9fded11546f0fba3e0e96d695755c625b73ba5f0398d7584106485a20，257945 bytes / 807 LF。新增表和条件证明属于必要承重修改；已完成报告/旧候选未改。同步前实核私有仓库private=true/main、本地与远端均97306f6befcd4391773921686e83e02dd7da8926；将按精确文档路径同步，不把文档同步当设计验收。下一步仍需PIE-D实例化/外部规则映射、AA输入与两后继分支、付费服务联合见证及S1–S9组合，不泛化为全平台证明。
+
+## 2026-09-13 原论文实例对应、缓存继续域与C33构造
+
+上一轮11件文档实际提交/推送a00675e0234b07b1e0e2cdc0f89329a7e4de3c01，根复核本地/远端一致及工作树空；本轮开始亦空。上一目标轮判progress，完整目标保持active/未完成，没有正式放行。
+
+source_provenance实际重核PIE-D主文pp23389–23392及固定源相关窗口，根另亲读官方PDF对应内容与planner.cpp L393–425、Instance.h L70–83、PIBTDDelaySimulation.cpp L50–63。原论文三执行策略MCP/PIBT-I/PIBT-D不含FSP；F为受影响者重算，S为MCP模拟后重算，A含旧路径指导，实验二用PIBT-D＋A。固定纯LACAM在需要修复时clearAll→全部agent runLACAM2，候选只用静态地图到目标距离加tie，没有A的距旧路径/沿旧路径指导；setIterations(0)不做后续LNS改善。原文A_N也是目标距离类，但未证明完整A_N等价。当前绕过原execution_simulate/simulate，以本文GROUP_PREFIX/付费状态/PROJECT执行，LaCAM内部funcPIBT不是PIBT-D执行，prepareDummy不是D.Simulate。§1/10已据此改为准确的框架/代码继承描述，不能冒称原论文完整实例。
+
+固定PIBTD代码先按当前位置到计划时刻位置距离、再按delay破平局，与论文延误优先描述存在具体差异。后续原域复现必须选清楚已发表组合和处理依据；尚未因为名字相同、仓库来自作者或规则类似而授资格。证据链接：[PIE-D官方全文](https://ojs.aaai.org/index.php/AAAI/article/view/34506/36661)、[规划候选排序](https://github.com/YueZhang-studyuse/LMAPF-delay/blob/0b5b33649fc367abcb1cd0a7ad5ac03511bf9357/src/MAPF-LNS2/src/lacam2/planner.cpp#L411)、[原PIBTD排序](https://github.com/YueZhang-studyuse/LMAPF-delay/blob/0b5b33649fc367abcb1cd0a7ad5ac03511bf9357/src/PIBTDDelaySimulation.cpp#L56)。代理本题完成，未自动开始新一轮组合搜索。
+
+source_positive_mechanism补两后继分支条件引理，发现三处实际安装接缝。根直接读固定MAPFPlanner.cpp L25–75/140–166，LNS.cpp L383–443/496–545/1186–1215/1360–1429，PathTable.h L1–110、PathTable.cpp L1–62、Instance.cpp L365–402及lns_common.h L1–85。§8原“前次接纳future_path”与“只由已接纳Π构造”并非同一字节来源；现明确中心接受job时关联不可变、绑定新尾的非承诺缓存，STALE不替换。缺缓存须恰fleet个空行而非空外层；非空缓存末点唯一，按原补齐语义核共同索引vertex/swap与起点。资格不满足整个包回原空缓存分支，检查/持有/传输/原补齐费用全计，是明示适配，不把源UB洗成CACHE_MISS。
+
+PathTable登记末点assert早于后续求解，MAX_COST与MAX_TIMESTEP相等；不同长度路径共用末点的局部例子说明逐行格式合法不够，但未证它已经由完整接纳链产生，不冒称运行故障。两后继分支先清旧paths/table，故可证该具体STALE路径不污染；原RNG/stay_target仍保历史。新引理止于合法进入重算/复用，源搜索及输出登记后条件、其它整数/费用域仍未闭，不自授AA整体通过。
+
+C33是不同的短构造题，不重开已取消C31。根先推两LAUNCH扰动世界、观测精度及清空阈值的区间条件，再让Opus独立构造/纠错并检查信息前提。唯一普通沙箱exec91595→a40ec1/exit0，实际claude-opus-5/firstParty，CLI9e33c671-7983-474e-a691-2128e1fedbad，128681ms，费用0.24102875 USD，无升级/重试/外部工具。正文完整且END标记齐。[完整建设回执](73C33_OBSERVATION_INFORMATION_VALUE_COMPLETE_RECEIPT_20260913.md)按本轮工具显示保存全文及根纠正；没有另存stdout原字节，不冒称raw字节核验。提示为同号实际输入加文件LF。
+
+§13采用局部时间区间非空证明：a_-epsilon<2delta q_star且q_star+epsilon<a_lo ell/(a_lo+a_+)；充要性仅指同一LAUNCH的两常加速度构造。根纠正Opus把APPROACH概括为至少a_lo减速度、要求所有价格/GC全域不依赖eta、中心可任选采样时间、以及“可选购买期望非负”等过强或错误表述。只在指定两世界全部合法可见前缀相同时，预测参考下界不能越该阈值；真正CAPTURE仍服从原付费队列，K仅含于盒时阈值不是所有退休方法必要条件。该条件引理不冒称信息侧通道/实际供给/总Q收益已证。
+
+### LMAPF规模仿真与硬件数量
+
+用户追问大规模是否本来就是仿真。simulation_only_sci_feasibility重新核五篇实验段/表图文字与H19混合组组成，以下规模只记文献覆盖，不赋本项目规模或保护参数。前四篇主文未报告实物，不能泛化为整个领域从无大型实物系统。
+
+| 论文与主文 | 最大报告规模及实验类型 | 实物与证据责任 |
+|---|---|---|
+| [RHCR，AAAI2021](https://arxiv.org/pdf/2005.07371v2)，§5.2/Table2 | 1000 agents仿真 | 主文未报告实物；窗口规划吞吐/时间/扩展性。 |
+| [PIE，ICAPS2024](https://pathfinding.ai/pdf/zchls-icaps24-pie.pdf)，lifelong实验/Table1/Fig5 | 3500 agents仿真 | 主文未报告实物；并行规划/执行的吞吐与规模退化。 |
+| [PIE-D，AAAI2025](https://ojs.aaai.org/index.php/AAAI/article/view/34506/36661)，Experiments/Fig5 | 5000 agents仿真 | 主文未报告实物；延迟策略与吞吐，最大规模仍有超时/退化，不是全部成功上限。 |
+| [Traffic Flow，AAAI2024](https://ojs.aaai.org/index.php/AAAI/article/download/30054/31856)，Experimental Results/Fig4–5 | 12000 agents仿真 | 主文未报告实物；拥堵引导/响应/初始化。 |
+| [Hönig等，RA-L2019](https://whoenig.github.io/publications/2019_RA-L_Hoenig.pdf)，§V | 50 agents仿真；另12 agents混合现实 | 6台Create2＋2个物理引擎模拟机器人＋4个理想模拟agent；小规模检验动态/新障碍/重复任务接续。 |
+
+本项目的“大规模实验”继续指规模仿真，实物是可选的假设验证，不要求筹集数百/数千台机器人；没有硬件便不声称已证真实定位/控制能力。该答复没有替换完整实验前目标或降低来源/基线/统计要求。
+
+本轮主稿身份526ebb6593dec34fd1c750919f06772aa21bc1bc259e4e69a7d1fb4869105dad，265239 bytes / 830 LF。仅修改未固定73、当前入口/会话记忆，并新增C33提示/完整回执；冻结件、源代码及实验载荷不动。仍HOLD；下一步为真实已发表组合的复现依据、H19规则对应、源重算/输出后条件及费用/服务组合，不把本轮局部结论视为整体完成。
