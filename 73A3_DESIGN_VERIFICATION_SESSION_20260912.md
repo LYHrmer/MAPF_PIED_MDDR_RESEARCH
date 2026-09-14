@@ -321,3 +321,34 @@ C35唯一具体题为私有arena分配语义和正常分支充分界；首个exe
 根核并改正§11残留的研究使用依据口径冲突：论文用途已核，固定版本/对象及第三方再分发范围分别保留，不再概称agent/task/delay全无用途依据。不重做L23、目录搜索或完整生成历史。另新增可变[导师汇报一页说明](RESEARCH_BRIEF_FOR_ADVISOR.md)，概括PIE-D底座、阻塞导向查询/误差包络/前缀授权与空间释放、状态/占用/退休/真实Q公式；跨block仍按固定E_b与权重比较服务率，明确无实测提升。它不是替代候选或另一个操作入口。
 
 本轮主稿身份68eecae75a83ff3fe2d90c73866bc4980eaffd395f323b7505c1609caf1706a3，297583 bytes / 925 LF，仍DRAFT/NOT-FIXED/NOT-REVIEWED/NOT-ACCEPTED与HOLD。无实现、构建、研究测试/仿真、算法或随机执行，无保护参数赋值和实验载荷生成/扩读。三名本轮子智能体均完整终态；当前已停止继续泛读库，下一步仅对上述三项作最小建设后固定候选，保持原正式顺序审查。
+
+## 2026-09-14 认证、参考接口与参数化联合构造收件；73固定送审
+
+上一目标轮为progress：五件文档的本地提交8385450dca0c2c16164f2d7ef27e4b3812231066及push已完成。本轮旧远端核验句柄97255实查Unknown process id，不冒称其返回；新唯一只读查询exec18266在41cf9f/exit0确证远端main同为8385450。起始581694工作树空。完整目标保持active，当前未开始实现或实验。
+
+astra_ultra_design_exit_triage上轮建设收件的AUTH契约本轮正式整入§9.1/9.2：受控不可变自足类型，既有C/E/A/P角色发布、N仅转送/复制；全文与适用业务身份绑定，原序号不回绕，创建/副本各一个L+h_AUTH连续块，普通字段/地址猜测不能造标签。逐字段收费，本地验证不读远端堆/注册表，来源完整不等于内容真、精度或新鲜。根采用已纠正的本地回收规则：原件释放不废除已交付自足副本，身份不复用不要求整块永久保存。三个具名失败不产生半证书、不自动解旧物理责任；可信隔离/实际计量仍须后续资格，不声称密码签名或抵抗失陷writer。
+
+finite_library_profile完成一轮有界接口建设并终态，无文件修改。根将13行封闭参考接口表写入§9.2，覆盖字段/所有权、普通vector、list、deque/stack/queue、树、std与Boost hash、pairing/二叉堆、sort/RNG、arena、诊断/AUTH、有理几何和首轮两平方根比较。正常输入/正常分配须保证有限正常后条件，不能以任意失败总函数偷代正常源见证；实际请求、嵌套元素和访问体逐§9.1展开，不用任意宏单价。GNU11/Boost语义保持，已读头函数和只声明的正常参考合同标出不同证据强度；特别不把std prime helper头声明写成已核out-of-line实现，不换桶/迭代规则。
+
+根e6331f/ebe3f9直接核GNU11 deque初始化与扩图/旧图搬移完整函数；9e9f22核Boost prime/mix64与整数特化；5f0968核pairing合并完整体。空deque有图和一块，扩图有不申请的旧图搬移分支；int哈希用prime_policy，64位一般key另用mix64；d≥1子树合并需d−1次merge，d=0不合并。根在代数比较表补零根/退化先处理及异号sign(A)·sign(A²−vB²)，避免无条件平方。8b7388实际核六头SHA如下，均仅静态读取：
+
+| 头文件 | SHA256 |
+|---|---|
+| /usr/include/c++/11/bits/stl_deque.h | a683d5271d9043162a4a4a6b50b4ac04898a0015a4404fa6c4ad60b2eb937f52 |
+| /usr/include/c++/11/bits/deque.tcc | 2cbb7609597627e1ecb3f2b97dae42829f68c205ad3ef8b2c30a326069f76757 |
+| /usr/include/c++/11/bits/hashtable_policy.h | ed83bff2887cbba0018bfc203beb6829a923d59743a9a589c24bec7b195655b8 |
+| /usr/include/boost/unordered/detail/implementation.hpp | eff494aeda40831e65e4eb2a823afca0cbaf05fbcf1d4138e4e548d7f4d42461 |
+| /usr/include/boost/heap/pairing_heap.hpp | 668543a7a2ab2b4519452a5f841d36f30761cb99b102e3273d999adb3afe9fcd |
+| /usr/include/boost/version.hpp | 90e046b8e3138a61c692abdd9bc2e45c1a95996cc5a8031cce1f110de5e64a70 |
+
+astra_ultra_paid_service_closure（原实际gpt-6-astra/ultra）完成最后一轮有界联合构造，终态。根d81c9c亲核§9.1原文：P_model字宽/地址域属于X且当前未赋值；不能把它误读成已有实际固定容量。源int/size_t/pointer原域仍不能扩大。最终选择明确给定FIT结构描述符的条件日历与服务构造；FIT逐列源及其它站存储、地址/对齐、源整数/容器/身份/容量字段。根进一步纠正：FIT不蕴含原deadline非负或窗口充分，命题另列原时间/交付/START/队首/不中断前提，不能在证明中临时加前提。阶段骨架先于字段长度/费用，同一个A算请求与扫描，原源段同刻只解决elapsed，不删除n_f+4次原检查；网络可以不同刻。
+
+证据范围改变下一步：该交付证明给定FIT及明确原时间/输入条件时，有限协议/费用与真实服务可以联合构造；**没有证明FIT域非空、具体ABI已有可容纳实例、完整来源/WORLD资格或D的净正收益**。原72R4 S3要求真实服务充分条件逐项，S6要求源码/库契约及证据强度，不要求现在完成全ABI或逐编译指令审计。根据用户加速要求，将自给条件定理连同未验证实例化义务提交正式审查，由审查判断其对实际主张是否足够；不把移到后续资格的项目删掉或记PASS。此处替代此前泛称“完整联合非空必须先已证”的工作排序，保留实际未完成事实，非缩小完整实验前目标。
+
+2026-09-14固定73为完整送审候选：SHA256 b64f5b555034655b2676226d051a70c03aab3679d67c00bc334fb588c4811a8a，315128 bytes / 971 LF，0c7c24/5d2342实核一致。状态FIXED-FOR-REVIEW / NOT-REVIEWED / NOT-ACCEPTED，HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT。文件名中的DRAFT为历史名称，从此不得继续修改该字节；若审查需要实质修复另立后继。入口已同步这一冻结和阶段边界，主稿末段不再要求所有实际后端资格完成才准固定送审。根本轮亲核新增承重点及接口/原文，没有把这些定点读取冒称又全文读完971行。
+
+首路正式任务已实际派/root/review73_mentor，spawn明确model=gpt-6-astra、reasoning_effort=ultra、fork_turns=none；必须亲读完整候选、research-mentor主skill及必要25/12、原S1–S9，输出完整独立报告。不再派建设代理，也未启动Nature/无skill后两路。[完整任务文件](73R1_RESEARCH_MENTOR_FULL_REVIEW_PROMPT_20260914.md)SHA256 165528e46e828511196f6b5b02e5f1e2e5ace3473fe2678f0d64897d107351c3（5d2342）；不是报告或通过票。当前任务真实已启动但尚未完整收件，预期报告73R1_RESEARCH_MENTOR_FULL_REVIEW_20260914.md不得提前记完成。后续必须根不用skill直接分析有效完整意见，再启动Nature，最后盲于他路且完全无skill的逻辑审查及根逐项验收。
+
+本轮未实现、编译、运行研究测试/算法/RNG/仿真、赋保护参数或生成/扩读任何实验载荷；仅文档与所列静态头。Claude C31取消、C32–C35终态，不重复轮询；当前按用户分工把Opus留给相应准入后规格明确的代码任务。完整实验前目标仍包括源/外部/数据与WORLD资格、门控实现、预注册/工具冻结、结果留空论文/引用图表规划、复现包及最终全项验收，不因固定73或开始首路审查而完成。
+
+同步前1ea57a实核私有仓库isPrivate=true、default main；78860a核固定候选字节/三件引用身份及入口本地链接，f229fc默认工作树空白检查通过。精确暂存五件后c670ca默认cached检查仅提示已发出固定审查任务末尾一空行；保留该任务既定字节/hash，不为格式改变正在审查的任务。其余四件仍执行默认检查，该任务仅以命令级关闭blank-at-eof检查且保留行尾/缩进检查，不改Git配置。实际首路代理随后list_agents仍为running，尚无完整票。
