@@ -414,3 +414,27 @@ astra_ultra_paid_service_closure（原实际gpt-6-astra/ultra）完成最后一�
 根本次裁决：73R2完整有效；报告的条件安全、终点状态、源/服务条件、固定目标及解释层级与根上述直接推理相容，没有已定位的承重矛盾要求先改固定候选。接受继续同一字节的最终独立逻辑审查，不是三路最终接受，也不新增G3–G6的资格PASS。实现后验证仍须之后的阶段授权；当前HOLD / NO-GO-IMPLEMENT / NO-GO-MAIN-EXPERIMENT。第三路准备任务将自足列边界，不让盲审代理读含本轮结果的入口或A3。
 
 在上述完整收件与根分析写入后，才实际spawn /root/review73_logic，明确gpt-6-astra/ultra/fork_turns=none。固定[73R3任务](73R3_INDEPENDENT_LOGIC_FULL_REVIEW_PROMPT_20260914.md)为532a8aaa0385806ec36ee33c46d7fa3877bcef1d41135872093118c5df5b7783，5495 bytes / 27 LF（3dc15e）。本路完全不用skill、未读前两意见或含意见的导航/账本，只读固定候选及自足任务，不派子代理。当前实际已启动、尚未完整回执；不将准备提示、启动或前两路支持提前记成第三路完成。
+
+## 2026-09-14 并行推进有界FIT静态资格；新增标准hash首轮分支证据
+
+上一精确五件包经02d8a0核private/default main、4666ff核六件固定身份和入口链接、02c8d5默认cached空白检查后，在bb8561提交fc1771dca3d89f8315fbad21a34fab0a9e9fb32c。初次push14972在cabbd4真实TLS失败，沙箱外获准重试38692→82ef92/exit0成功；独立ls-remote26508的TLS失败亦按权限重试24651→188b43/exit0，远端main同值。旧网络句柄全终态，不再轮询。本节新增证据尚属下一包。
+
+最后一路已经确认971行全读且补足首批截断，正在独立推导/报告。根为缩短后续资格等待，followup原astra_ultra_paid_service_closure（原实际gpt-6-astra/ultra）复用既有构造，活工具核running；它不是新增审查，也不修改送审候选。限定目标是在源原类型域内给同一X/X_0/A的FIT相容静态候选，继续保留deadline/窗口等独立条件，不赋实验参数、不生成/读取实际输入、不实现或运行。代理已如实说明保留的是前版指定段阅读与已收源码计数，不冒称自己完整读源；本次只补现版参考合同和必要布局声明。尚无完整建设结果，不计FIT域已证非空。
+
+该代理把首轮标准EXPLORED的_M_next_bkt和新增拥有者布局定位为具体缺项。根仅并行处理前一个：892613只读本机dpkg元数据，g++-11与libstdc++-11-dev均为11.4.0-1ubuntu1~22.04.3；3470ea核c++config.h L34/L37分别为_GLIBCXX_RELEASE 11与__GLIBCXX__ 20230528。随后实际读[GCC官方镜像releases/gcc-11.4.0的hashtable_c++0x.cc](https://raw.githubusercontent.com/gcc-mirror/gcc/releases/gcc-11.4.0/libstdc++-v3/src/c++11/hashtable_c++0x.cc)全文，直接核_M_next_bkt及_M_need_rehash。n<14走有限fast表；n=0返回1且保next_resize为0，n=12/13返回13。若fresh对象初态bucket=1、next_resize=0、load_factor=1、growth=2，且没有额外reserve/rehash，首次单元素插入用min_bkts=11，向_M_next_bkt请求12，得到13桶和next_resize=13；第二次单插入不再rehash。这两个分支不访问长prime表的lower_bound，浮点小整数计算精确。
+
+上述只核指定上游11.4.0正常helper，源对象初态/调用前提须由建设代理另核；不称Ubuntu补丁或实际二进制已与它逐字相同，不自动绑定X，不认证所有AA历史的bucket数，也不复活全库逐指令审计。固定73记录“此前只读声明”的历史证据强度保持原字节，新资格证据在本节累积。根0e47e7/523591还只读核对象库为wp03_r0_evidence/diagnostic_fork/.git且固定0b5b336…commit存在，向代理提供路径，未读任何实际输入载荷。
+
+随后初态前提已补根直接证据：199b61核固定planner.cpp L125–145的fresh默认EXPLORED及首次插入；e1aa6f全文窗口核本机unordered_map.h L38–53/L135–145默认alias确用_Prime_rehash_policy，hashtable.h L385–410/L520–532默认bucket_count=1、element_count=0和内嵌single bucket，hashtable_policy.h L438–488默认load_factor=1.0、next_resize=0、growth_factor=2。初始内嵌桶没有独立动态桶申请；节点/key副本和后继13桶仍各自计。d87493核三头SHA依次为66fcfaa60b13e9de235dee633f5cb630f9e84bc4073a2566b59f6f863b862f33、3e65a55037331a49cd9be1c97dd7d11960ce6701f4f26f32fb8d7a8ee2eac2be、ed83bff2887cbba0018bfc203beb6829a923d59743a9a589c24bec7b195655b8（按hashtable.h、unordered_map.h、hashtable_policy.h）。这补强指定参考初态，不认证全部后继AA或发行包二进制。
+
+该代理还定位fresh原时限设置，根199b61亲核固定src/MAPFPlanner.cpp L35–64及inc/MAPF-LNS2/inc/LNS.h L60–67：纯LACAM首先setRuntimeLimit(time_limit)，fresh分支prepareDummy后原L56再setRuntimeLimit(1)，随后getInitialSolution；setter接int并重算time_limit/replan_time_limit。这是已有作者常量，不是现在给保护预算赋值。完整Deadline调用链与正常数值前提由资格构造继续连接；此定点读取不豁免更早参数读取、INIT/E和交付条件，也不把后继非fresh分支改成相同常量。
+
+## 2026-09-14 第三路完整收件、根逐项综合与73参数化设计接受
+
+第三路/root/review73_logic真实COMPLETE，报告fc67e7542af894f2be402449ec2a129e7255120272c67aff7dee1d880aab1ff2，38928 bytes / 224 LF及END_73R3_INDEPENDENT_LOGIC_FULL_REVIEW。根1cdd3a/3064d4/182667完整亲读1–224行，1cdd3a/4b0a3b核报告及候选身份正确。代理全读971行和15节，最初1–140截断已用1–100及101–190补齐；没有任何skill/他路意见/外部科学输入，不以部分阅读算全文。
+
+根不用skill完成全部三路意见综合，[73R4最新裁决](73R4_ROOT_DESIGN_ACCEPTANCE_20260914.md)为ea33b8b1a5eb0b8c6a08bbac164d47002732a7e2783605190aa5df51fa28a6ad，12851 bytes / 69 LF，末行为END_73R4_ROOT_DESIGN_ACCEPTANCE（4b0a3b）。覆盖M01–M08、NR1–NR8、R3-01–R3-10，保留各意见及证据层级。**固定73接受为下一阶段的参数化设计规格，本轮完整设计审查结束；六门2项限域PASS/4项UNKNOWN，未授实现/主实验资格。** 全实验前目标仍active，后续资格/实现/预注册/工具/论文前稿/复现包不能省略。
+
+R3-06是本次需回原源裁决的局部意见。47c11b核候选503–529，7fe273核固定Instance.cpp1–67：L26–27在L28入桶前按首agent距离过滤其它四邻分量。故正常距离与同分量前提下，B_bucket≤V_comp、K≤B_bucket与全M_grid扫描同时成立；添加分量外正度点不会入桶。不要求改全图V上界或强制全自由图连通，不需要新候选/新审查；未来说明该过滤位置可帮助阅读。没有把来源未正常初始化的状态当作满足条件的反例。
+
+入口已压缩为当前裁决、必要工作和原有效边界，移去进行中审查/旧建设流水，历史证据仍在本账及原件；导师一页说明同步阶段，不改数学主线。三路和73R4保持字节，所有审查任务终态，不再轮询。当前只有原paid_service_closure的有界FIT建设仍运行：已有最小双叶结构/源计数与具体缺项，根要求在属于X实例化选择的范围内尽量提出有限拥有者登记布局和请求界，不因未选布局重复交同义UNKNOWN；不写代码/伪代码、不改送审稿、保护参数或主roster。未有完整相容结果前FIT仍UNKNOWN；本建设不是三路已经审过的证据。
