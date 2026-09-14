@@ -274,3 +274,51 @@ scale_inference_check（实际Astra Ultra）限定核主稿§4.1/4.3/4.5；根�
 §13/18/19分别已通过组件检查，继续运行一个明确跨接口的有限单元：手工SD、LD、ECALL三条指令通过B1实际读写libriscv的两个预装普通页，再经§19参数/返回接口交接。按独立架构位型和11+11+5的入口费用核结果，并在每个基本步前插入零供给核状态/页面保持；另外核真实页面拒绝写入时的GuestFault与无副作用。允许该手工程序的B1有限执行，不调用上游CPU或运行编译生成的guest/研究程序；预装页面和InitialState仍为局部夹具，不冒称付费INIT已实现。根直接实施/运行该接通检查，复用§18已构建库，不重建依赖或扩指令用例。
 
 根已完成该跨接口检查：implementation/pie_rv64_memory/tests/b1_memory_integration.cpp，严格C++20编译738493、实际运行bf9478均exit0，65项通过、0失败。三条真实B1指令入口共27个已付基本步，付费参数读取/返回与PC收尾后累计31步；每步前零供给不改变机器或页面，真实只读数据页拒绝写入时按既定费用进入StorePermission且无数据副作用。源码SHA256为80878b27a19c0883de61007a72bae03189efae56ccfc81188fab517cff5cab79（根269a40核）；重现命令补入[内存包README](implementation/pie_rv64_memory/README.md)。本项接通B1、普通页及ABI交接口，不替代付费INIT、受限业务imports或完整world的实现证据。
+
+## 24. B4静态镜像的付费计算启动前缀
+
+沿§4/18/23落实implementation/pie_rv64_init/，由Astra Ultra直接实施跨接口部分。输入为事前绑定的静态RV64IMA镜像描述符：固定guest基址、整页槽数、文件字前缀、最终R/W/X及明确的x[32]/PC；不猜sp/gp/tp，不使用上游ELF/Linux构造器的免费复制或默认栈。升序、非重叠、地址可表示的普通私有页布局按声明字段检查；描述符读取、比较、寻址、取得8字节槽、镜像字读取/写入或零初始化及循环推进均按既定基本操作先付后做，以阶段/游标/已付锁存保留暂停。
+
+宿主PageData backing只提供私有表示，未付槽、半镜像及未完成的机器状态不能交给B1执行。零供给不读输入、不分配、不写；模型输入/范围错误终止且保留已付前缀，宿主异常毒化并重抛，公开撤权禁止继续。所有镜像页和B1的48字状态完成初始化后才允许一次计算启动交接。现有InitialState构造器只转移已经付费建立的表示，不额外免除应用初始化；后续动态构造仍由B1执行计量。
+
+该包允许固定小镜像描述符、手工机器字和普通页的有限native初始化/暂停/失败/交接检查，并可在完整交接后接§23已限定的手工B1指令；不执行编译业务guest或研究程序。该交接仅为ReadyToExecute，不等于固定73的INIT_READY：WORLD/bootstrap/角色核验、resident索引提交及严格后继发布仍在外层INIT作业内完成。描述符夹具不是实验config/map/task输入，不赋实验容量或保护参数，不扩大真实来源正文读取。根接源码与实际有限检查后记录结果，不因没有完整INIT而阻止这段已具名实现。
+
+本包已由Astra/Codex完成。根全文核310行头、231行测试和README，并独立严格C++20编译13dc59、运行f69a66，均exit0，58项通过、0失败。完整两页夹具初始化为8610步，逐边零供给不读/写/分配，1024次逐字初始化和2次权限封存无重做；交接后真实手工SD/LD/ECALL及参数/返回共31步。根6a2165核头SHA256 b0d3d2027e44590fe048a101d2083d66264c3bacf09f2f684dd4a16cf228c653、测试683e52ef102679d434dc73322208d8ab31a8ef7bdd625f3c627dface8a5637d3。费用表、16字INIT续体及48字B1状态、条件总式338+33n+8W+2K+5P见[INIT包README](implementation/pie_rv64_init/README.md)。该固定解释模板对已付锁存值操作，不重复收宿主相位/表示转移税；源输入读、寻址、逐槽及业务循环已分别展开。未执行编译guest、整体应用INIT或研究仿真。
+
+## 25. GMP/MPFR到guest arena的真实分配入口
+
+继续实施implementation/pie_guest_allocator/，先接一条可真实链接的数值库调用链：GMP 6.2.1的mp_set_memory_functions三回调到§20既有Arena；MPFR 4.1.0使用同一GMP分配入口。安装必须早于任何对应库活对象、缓存或可触发分配的初始化，Context、metadata与payload在其完整生命周期内独占有效，安装一次后不换绑。请求保持源实际大小及满足目标ABI的对齐，不使用宿主分配或前置隐藏分配头替代所选arena。
+
+alloc按既定零长度及ceil(n/8)映射。realloc使用GMP实际传入的old_size/new_size：核精确活块头与长度边界，先取得新块，按源语义逐字节复制min(old_size,new_size)，最后释放旧块；分配失败不先破坏旧块。free核精确活头及声明长度。GMP回调禁止返回空指针、longjmp或C++异常；具名失败记录后进入无分配终止路径，不能从部分失败的库调用热继续。实际运行在guest时这些检查、扫描、复制与清理均经B1计量，不引入native bulk旁路。
+
+允许该短源码包、只调用分配回调的固定有限native用例，以及固定RV64 GMP/MPFR真实调用链的目标静态链接与ABI/符号检查；不运行数值算法、目标guest或研究程序。必要的故意终止用例限隔离的微小native子进程，并禁写core文件。C46交真实Opus编码，根核源码和实际检查。C/C++全局malloc/realloc/new、无old_size的请求记录、异常运行库与FLINT完整六项hooks仍是明确后继；四项FLINT旧setter的对齐fallback会另加内部头，本包未启用，不把未接入部分写为已覆盖。
+
+C46本次实际调用已终态：e2e469 exit1，服务端402每日支出限额，token为零、无模型正文或代码，原RAW和stderr保持。根按已授权失败后接手方式交Codex继续同包，不归属Opus，不重复请求或修改共享路由；实际源和运行结果完成后另记。
+
+该分配调用链现已由Codex完成。根全文核头、实现、native测试、目标链接fixture及README；独立严格C++14编译dea1e2、有限native运行1fd455均exit0，输出`allocator finite native callbacks: passed`。唯一故意失败在禁core的子进程中以SIGILL终止；测试不调用数值算法。代理目标真实GMP/MPFR静态链接a1358d通过；根读ELF/ABI和具名反汇编证据，确认MPFR取GMP三回调、安装地址为pie_gmp_*，目标失败路径写状态后EBREAK。目标ELF未运行，其默认libc分配符号仍存在，未声称完整分配闭包。根4892a8核头89931aff7f36617d202cefab63785318f883993e9dd7f6a510b9cd85329c6c19、实现68d5c2dae26aa5fe026597c65b0d5f0a166fa8726ceb92cb39b50a627f488b30、测试8a7e99173933fb7a7bf2587fac5d8a9095ec1b6deb7af15fd1b965dbf5132fcf、链接fixture 2b321bac9221b7424403dd013f21b58ad3eb74858ada817024de1d3ab29191ea。原C46回执保持调用终态，本地实现证据见[包README](implementation/pie_guest_allocator/README.md)。
+
+## 26. PROCESS_SLICE的有限供给记账接口
+
+根实施implementation/pie_service_meter/，为B1及§24启动续体提供同一个try_pay_one/完整原子费支付口。一个受信ServerMeter对应一个固定服务站和已绑定NATURAL或STRICT制度；每个原PROCESS_SLICE用严格递增的公共行序及明确正容量开始，上一行须先关闭。支付先判足额再扣除，原子操作不足全费时余额不变；行关闭后不能继续支付，后继行不能携带未用余额。NATURAL收费等于本行实际已付工作，STRICT收费为原行全部供给并另报实际工作，支持空工作行。固定宽度计数只在本行容量内作差/扣除，不用累计回绕计数器充当模型总工作或CPU clock。
+
+该对象只实现固定73允许的理想供给判足额/扣账设施。业务guard计算、队列/任务选择、原子费用本身的具名来源、跨行发布及FIFO仍由原站点合同接入；观察接口仅供受信调度和宿主记录，不作为guest免费读取信息/时钟的入口。允许此头文件与明确容量/行序/支付请求的有限native语义检查，并用§13已验证的手工B1指令检查真实暂停接缝；不运行规划、控制服务、编译业务guest或研究仿真，不把局部供给常量作为实验参数。该包不新增服务站、公共机会或虚拟时间，主模型总账由实际各行记录汇总，不因此关闭完整B7。
+
+根已实现并完成实际检查：严格C++14编译f47137、运行2f4a7c均exit0，60项通过、0失败。核足额原子扣费、NATURAL/STRICT实际与收费分开、空行、关闭/重入/倒序拒绝、无剩余结转及uint64完整边界；真实B1 ECALL在两行供给中暂停/恢复，5步入口、1步返回和2步PC尾段均实际计量，两制度架构结果相同。根2ab95e核头SHA256 ec39fbbf1fea011adc440b61d6566dbd527660048640776833973f8f6b8756af、测试29d19ce4519c9102972b269148cdce49e953bd9069932ebee774aa46aa8c842b。接口和命令见[服务供给包README](implementation/pie_service_meter/README.md)，尚无完整站点或研究作业执行。
+
+## 27. 固定编译诊断程序的真实计量链
+
+继续implementation/pie_rv64_compiled_probe/，由Astra Ultra实施一份固定、无标准运行库的C++14诊断程序和链接脚本，以及受限ELF提取/运行检查。固定GNU11.4、rv64ima/lp64、freestanding，显式_start与栈，关闭异常/RTTI/stack protector/PIE及relax；实际可达指令仍须属于B1已支持集合。用volatile固定输入和栈中间值保留实际64位整数算术、32位定宽运算和访存，诊断结果有独立字面量答案，最后以明确EBREAK终止；不用数值库、规划/几何/查询/world、syscall/时钟/RNG或动态构造。
+
+链接固定有限RX代码页与RW数据/结果/栈页面，完整布局用脚本断言和显式初始寄存器绑定；这些地址/栈界和供给表仅是该诊断夹具。提取器只接本包新生成的ELF64、小端、RISC-V、ET_EXEC及flags=0的实际静态形态，核头/表/文件与内存范围、filesz≤memsz、对齐/权限、无重叠和入口，拒绝动态/解释器/TLS/重定位等非本形态；不建设通用Linux loader。文件不足一字的尾部及整页padding在固定镜像中明示为零，事前静态提取不替B4的逐字取得/安装费用。
+
+允许该诊断程序的真实目标编译、静态提取核验以及由Initializer→MemoryAdapter→B1执行；使用§26 ServerMeter和一个事先固定的有限正容量行表，NATURAL/STRICT同表，初始化交接后于下一切片继续同一诊断任务。核结果、实际工作、全供给收费和无余额结转。唯一通过终态为预期Breakpoint且全部结果匹配；其它GuestFault、ImportWait、用尽诊断行表或宿主失败均为检查失败，不补表追求成功。宿主只读诊断结果，不回流guest。该项首次准入的是具名有限编译诊断guest，不是研究/数值库业务guest或完整INIT_READY、服务world/实验；原受限输入与保护参数边界保持。
+
+本链已由Astra/Codex完成，根核源码、提取/运行检查及独立算术/费用答案，严格C++20编译cb4be0→bae118、实际运行3e3fbb均exit0。实际9496字节ELF映射为2段/3页，17项畸形ELF拒绝；10个独立结果字、32寄存器、三页全部字节/权限及1024行实际工作账在两制度间一致。初始化12769步、执行465步，NATURAL收费13234、STRICT收费31744；第412行完成计算启动、第427行在0x100ac预期EBREAK终止，剩余固定行为空工作，没有补表或事后调整答案。根ac4c15核guest SHA256 3cce70701d82dfa1b1bdba95e3dfb99b2a67fe9655549c698b471064c7e28b6c、linker 124209a2ba6ac51ca0652f95eafc089463ef07efd36a2644d5c53f8e4792a0e2、host 5dd420c1e76b3ad296458bbca9c5fed23a80ac66ec50a86b3178b65335a031eb、ELF 3c69034ba65fa7f1b8d8b483a7cbd28c289f60b4f6defff357ac62c9888b0312。精确复现命令、事前指令路径计数和首次链接修复见[编译诊断包README](implementation/pie_rv64_compiled_probe/README.md)。此项关闭具名编译诊断链，后继接数值运行库与业务服务；不重复增加诊断程序或冒称规模性能通过。
+
+## 28. 现行加权Hoeffding区间的数学实现
+
+继续pre_experiment_tools/paired_hoeffding.py和对应有限数学单元，由scale_inference_check实施。保持主稿§4.5现行统计合同：精确有理输入w/d/U和alpha，核维数、归一化、非负权重/界及|d|≤U，以精确有理求加权估计和已知目标范围，按原公式计算半径后裁剪区间。超越函数和平方根须有明确向外误差处理，不能用向内舍入的普通float区间声称原覆盖保证；全零界返回零点区间。允许标准库Decimal的一手文档定点核验、纯数学源码与固定小有理夹具的实际单元运行。
+
+本包不改变区间方法或错误预算，不采用§22的候选EB，不赋重复数或保护参数；不读/生成研究结果、实验roster或config，也不写结果补缺/筛选逻辑。内核只计算已给定合格数值的区间，不认证实际源映射、跨块独立性、评分完备性或总体资格；后续完整分析入口仍须按既有UNINSTANTIATED/UNESTIMABLE/INFERENCE_UNAVAILABLE合同接入。该纯数学检查不构成科研结果或主实验运行。
+
+本包已由Astra/Codex完成，根全文核两个Python文件并独立运行固定数学单元，ec6427 exit0，7项通过。精确有理求和及端点，正值转换/乘法向上舍入，正确舍入的ln/sqrt再取next_plus以形成半径上界，最后精确裁剪；测试以有理atanh级数和严格余项界提供独立对数答案。舍入口径依据[Python Decimal官方文档](https://docs.python.org/3/library/decimal.html)及代理定点核对的本机标准库，不用高精度近似互比代替向外性论证。根ac4c15核实现SHA256 1f07829fa78a107e3d51df62a5c3f81fd8536c58ca3546b5acbe2e6c881158ea、测试6a586f61ee402ae925589a87d2751000c08248ef52d54380dee1824be033d34e。复现：`rtk proxy python3 -B -m unittest discover -s pre_experiment_tools -p test_paired_hoeffding.py -v`。仅算术内核验收，完整分析资格入口仍未完成。
