@@ -7,7 +7,7 @@
 ## 当前设计与证据
 
 - [导师汇报一页说明](../RESEARCH_BRIEF_FOR_ADVISOR.md)：研究问题、核心机制、数学表达和结果边界；面向汇报使用，不替代科学候选和审查。
-- [73 完整送审候选](../73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)：FIXED-FOR-REVIEW / NOT-REVIEWED / NOT-ACCEPTED。当前 SHA256 `b64f5b555034655b2676226d051a70c03aab3679d67c00bc334fb588c4811a8a`，315128 bytes / 971 LF；自2026-09-14起保持原字节，文件名中的DRAFT与日期是历史名称。
+- [73 完整送审候选](../73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md)：FIXED-FOR-REVIEW，首路及根复核已完成，第二路进行中，尚未完整审查或最终接受。SHA256 `b64f5b555034655b2676226d051a70c03aab3679d67c00bc334fb588c4811a8a`，315128 bytes / 971 LF；自2026-09-14起保持原字节。文件名DRAFT及页内NOT-REVIEWED是固定时点名称/状态，实际审查进展以本入口和有效回执为准。
 - [本窗口决策和原始收件索引](../73A3_DESIGN_VERIFICATION_SESSION_20260912.md)：按具体问题查阅；其中早期状态、任务句柄、提交与 SHA 是历史记录，不能覆盖当前文件或活工具状态。
 - [72R4 原要求与 S1–S9](../72R4_THREE_REVIEW_ROOT_SYNTHESIS_AND_SUCCESSOR_REQUIREMENTS_20260907.md)：最后正式六门裁决属于冻结 72，G1/G2 限域 PASS、G3/G4/G5 UNKNOWN、G6 FAIL；不是对当前 73 的裁决。
 
@@ -56,7 +56,9 @@ R0 固定 `YueZhang-studyuse/LMAPF-delay@0b5b33649fc367abcb1cd0a7ad5ac03511bf935
 
 上述建设已整入完整73并固定为送审输入，当前进入下述正式顺序；固定不等于通过，审查发现的实际矛盾仍须修正。§13净收益/信息机制保留可证伪条件或假说，效果由后续实验回答。完整roster/连续WORLD实例、PIE-D/H19实际复现资格以及FIT/ABI/后端重放仍是全实验前目标的必要后续工作，已定义接口的未实现状态不单独阻止固定送审字节。S7只保留版本覆盖和再分发范围，前后研究用途口径已统一；不重做L23/同目录检索或新增逐hash许可。满足相应准入后，Opus承担明确范围的实现/修复，根验证整合，关键理论交Astra Ultra。
 
-当前固定73严格依次：research-mentor完整审查 → 根不用skill独立分析 → nature-reviewer完整审查 → 根独立分析 → 明确无任何skill、未读前两路意见的独立逻辑审查 → 根逐项验收。[首路完整任务](../73R1_RESEARCH_MENTOR_FULL_REVIEW_PROMPT_20260914.md)已写明固定身份、全文阅读及证据要求；实际任务句柄和终态见73A3最新记录。实际用skill时须读取并说明，不能以建设咨询或审稿数量代替。
+当前固定73严格依次：research-mentor完整审查 → 根不用skill独立分析 → nature-reviewer完整审查 → 根独立分析 → 明确无任何skill、未读前两路意见的独立逻辑审查 → 根逐项验收。[首路完整报告](../73R1_RESEARCH_MENTOR_FULL_REVIEW_20260914.md)已终态且根已全文阅读/逐项分析：接受参数化设计规格，六门2项限域PASS、4项UNKNOWN，未授实现/主实验资格。根分析见73A3最新段，不是三路最终裁决。
+
+第二路已实际派`/root/review73_nature`，gpt-6-astra/ultra；[完整任务](../73R2_NATURE_FULL_REVIEW_PROMPT_20260914.md)要求同一候选全文、nature-reviewer主skill及七参考、一个代理三种侧重＋综合，不读首路/根当前意见，不冒称三名独立审稿人。当前尚无完整第二路回执，第三路未启动。只有有效完整第二路及根直接分析后才启动盲于前两路且完全无skill的第三路；建设咨询或审稿数量均不替代。
 
 完整实验前工作还包括门控后的实现与资格检查、主实验预注册和执行/验证/分析工具冻结、结果留空的论文实验前稿与引用/主张/图表规划、复现包和最终逐项验收。当前没有主实验结果；不能把仅完成 73 设计或整理文件当成整个目标完成。
 
