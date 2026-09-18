@@ -377,6 +377,46 @@ PIE-D作者来源的共享修订及H19所用ECBS修复属于可复现比较的�
 
 [7] Berndt A, van Duijkeren N, Palmieri L, Kleiner A, Keviczky T. Receding Horizon Re-Ordering of Multi-Agent Execution Schedules. IEEE Transactions on Robotics, 2024, 40: 1356–1372. DOI: [10.1109/TRO.2023.3344051](https://doi.org/10.1109/TRO.2023.3344051). [作者预印本](https://arxiv.org/abs/2312.04190).
 
+[8] Stern R, Sturtevant N, Felner A, Koenig S, Ma H, Walker T, Li J, Atzmon D, Cohen L, Kumar T K, Barták R, Boyarski E. Multi-Agent Pathfinding: Definitions, Variants, and Benchmarks. Proceedings of the International Symposium on Combinatorial Search, 10(1): 151–158. DOI: [10.1609/socs.v10i1.18510](https://doi.org/10.1609/socs.v10i1.18510). 〔会议于2019年举行；Crossref登记出版年为2021〕
+
+[9] Li J, Tinka A, Kiesel S, Durham J W, Kumar T K S, Koenig S. Lifelong Multi-Agent Path Finding in Large-Scale Warehouses. Proceedings of the AAAI Conference on Artificial Intelligence, 2021, 35(13): 11272–11281. DOI: [10.1609/aaai.v35i13.17344](https://doi.org/10.1609/aaai.v35i13.17344).
+
+[10] Chen Z, Harabor D, Li J, Stuckey P J. Traffic Flow Optimisation for Lifelong Multi-Agent Path Finding. Proceedings of the AAAI Conference on Artificial Intelligence, 2024, 38(18): 20674–20682. DOI: [10.1609/aaai.v38i18.30054](https://doi.org/10.1609/aaai.v38i18.30054).
+
+[11] Chen J, Li J, Fan C, Williams B C. Scalable and Safe Multi-Agent Motion Planning with Nonlinear Dynamics and Bounded Disturbances. Proceedings of the AAAI Conference on Artificial Intelligence, 2021, 35(13): 11237–11245. DOI: [10.1609/aaai.v35i13.17340](https://doi.org/10.1609/aaai.v35i13.17340).
+
+[12] Okumura K, Tamura Y, Défago X. Time-Independent Planning for Multiple Moving Agents. Proceedings of the AAAI Conference on Artificial Intelligence, 2021, 35(13): 11299–11307. DOI: [10.1609/aaai.v35i13.17347](https://doi.org/10.1609/aaai.v35i13.17347).
+
+[13] Shahar T, Shekhar S, Atzmon D, Saffidine A, Juba B, Stern R. Safe Multi-Agent Pathfinding with Time Uncertainty. Journal of Artificial Intelligence Research, 2021, 70. DOI: [10.1613/jair.1.12397](https://doi.org/10.1613/jair.1.12397). 〔Crossref记录未含页码〕
+
+[14] Zhu H, Brito B, Alonso-Mora J. Decentralized probabilistic multi-robot collision avoidance using buffered uncertainty-aware Voronoi cells. Autonomous Robots, 2022, 46(2): 401–420. DOI: [10.1007/s10514-021-10029-2](https://doi.org/10.1007/s10514-021-10029-2).
+
+[15] Atzmon D, Stern R, Felner A, Wagner G, Barták R, Zhou N-F. Robust Multi-Agent Path Finding and Executing. Journal of Artificial Intelligence Research, 2020, 67: 549–579. DOI: [10.1613/jair.1.11734](https://doi.org/10.1613/jair.1.11734).
+
+[16] Chen M, Herbert S L, Hu H, Pu Y, Fisac J F, Bansal S, Han S, Tomlin C J. FaSTrack: A Modular Framework for Real-Time Motion Planning and Guaranteed Safe Tracking. IEEE Transactions on Automatic Control, 2021, 66(12): 5861–5876. DOI: [10.1109/TAC.2021.3059838](https://doi.org/10.1109/TAC.2021.3059838).
+
+[17] Fridovich-Keil D, Herbert S L, Fisac J F, Deglurkar S, Tomlin C J. Planning, Fast and Slow: A Framework for Adaptive Real-Time Safe Trajectory Planning. 2018 IEEE International Conference on Robotics and Automation, 2018: 387–394. DOI: [10.1109/ICRA.2018.8460863](https://doi.org/10.1109/ICRA.2018.8460863).
+
+[18] Chen M, Bansal S, Fisac J F, Tomlin C J. Robust Sequential Trajectory Planning Under Disturbances and Adversarial Intruder. IEEE Transactions on Control Systems Technology, 2019, 27(4): 1566–1582. DOI: [10.1109/TCST.2018.2828380](https://doi.org/10.1109/TCST.2018.2828380).
+
+[19] Kousik S, Vaskov S, Bu F, Johnson-Roberson M, Vasudevan R. Bridging the gap between safety and real-time performance in receding-horizon trajectory design for mobile robots. The International Journal of Robotics Research, 2020, 39(12): 1419–1469. DOI: [10.1177/0278364920943266](https://doi.org/10.1177/0278364920943266).
+
+[20] Gong Z, Li B, Herbert S. Safe Returning FaSTrack With Robust Control Lyapunov-Value Functions. IEEE Control Systems Letters, 2024, 8: 1373–1378. DOI: [10.1109/LCSYS.2024.3410636](https://doi.org/10.1109/LCSYS.2024.3410636).
+
+[21] dos Reis de Souza A, Efimov D, Raïssi T, Ping X. Robust output feedback model predictive control for constrained linear systems via interval observers. Automatica, 2022, 135: 109951. DOI: [10.1016/j.automatica.2021.109951](https://doi.org/10.1016/j.automatica.2021.109951).
+
+[22] Soleymani T, Baras J S, Hirche S, Johansson K H. Value of Information in Feedback Control: Global Optimality. IEEE Transactions on Automatic Control, 2023, 68(6): 3641–3647. DOI: [10.1109/TAC.2022.3194125](https://doi.org/10.1109/TAC.2022.3194125).
+
+[23] Zhong P, Rossi F, Shell D A. Planned synchronization for multi-robot systems with active observations. Autonomous Robots, 2025, 50(1). DOI: [10.1007/s10514-025-10225-4](https://doi.org/10.1007/s10514-025-10225-4). 〔Crossref记录未含页码〕
+
+[24] Okumura K, Yang G, Gao Z, Woo H, Prorok A. Concrete multi-agent path planning enabling kinodynamically aggressive maneuvers. npj Robotics, 2026, 4(1). DOI: [10.1038/s44182-026-00083-2](https://doi.org/10.1038/s44182-026-00083-2). 〔Crossref记录未含页码〕
+
+[25] Yan Y, Smith S L, Li J. WinkTPG: An Execution Framework for Multi-Agent Path Finding Using Temporal Reasoning. arXiv:2508.01495v2. DOI: [10.48550/arXiv.2508.01495](https://doi.org/10.48550/arXiv.2508.01495). 〔首页声明T-ASE已接受；出版商正式版与DOI未核〕
+
+[26] Cao B. From Real-Time Planning to Reliable Execution: Scalable Coordination for Heterogeneous Multi-Robot Fleets in Industrial Environments. arXiv:2607.00591v2. DOI: [10.48550/arXiv.2607.00591](https://doi.org/10.48550/arXiv.2607.00591). 〔作者预印本；期刊接受或正式发表未核〕
+
+参考文献的收录范围、每条的核验强度及其可支持的引用类型见[73L25](73L25_RELATED_WORK_MATRIX_AND_VERIFICATION_PLAN_20260918.md)。[8]–[14]与[23]、[24]的题名、作者、刊名、年、卷、期、页码于2026-09-18逐条按Crossref权威字段核验，凡该记录未含页码者已标注，不补写。[16]–[22]为摘要级核验，仅支持路线存在性与机制类别的引用，不支持对其定量结果或定理条件的引用。[25]、[26]为作者预印本，题录取自既有阅读包记录而非Crossref，正式发表状态未核，不按已发表期刊论文使用。
+
 ## 编写及复现说明（不纳入投稿正文）
 
 本稿由根完成问题、方法、安全归纳及整合；paper_experiment_section完成固定73实验合同的论文转写，paper_anchor_references完成以上四篇的正式题录和相关正文定点核验。两个任务均已完整终态。本次不冒称重新精读全部论文或完成近邻排除，未新调用Claude。固定73的§1、§3–7、§11–12为正文主要依据；数学证明沿用其条件，不新增审查门。
@@ -394,6 +434,10 @@ PIE-D作者来源的共享修订及H19所用ECBS修复属于可复现比较的�
 **2026-09-18该三段的复审补正。** 提交后复审发现四处，已改。其一为术语硬错：新增段落三次以“臂数”指agent数，而本文全篇“臂”指对照臂（D-S、R-S、E0、F_cap及两条H19），已全部改为agent数。其二，\(\rho\)原定义为“服务行数”，据此写机会上界为\(\rho\cdot\)agent数时隐含“每个agent在每一行都可服务”这一额外假设；现直接以\(\rho=Q^{\max}_b/(E_bn)\)定义，该假设随之消去。其三，\(a_{\mathrm{launch}}\le a_{\mathrm{hi}}\)相对固定73是新增条件，而本说明第一段声明“不新增审查门”；现明确该约束仅进入\(U_b\)计算、不进入§3.2两个命题的前提。其四，“加长窗口降低块内方差”为无证断言，现改为指出该效应属方差性质、须由实际数据支持，不由本式推出。
 
 **2026-09-18第三次补充。** §4.5增列收紧存在性的等价时间判据\(k>1\iff\Delta t<Tm\)。缘由是\(k=\rho Tm\)中的\(\rho\)由受保护的机会密度决定、当前无合法取值，因而\(k\)本身不可计算；而利用§4.3“每个agent在每个公共TASK\_SERVICE行至多完成一个服务”，\(\rho\)可写为机会行间隔的倒数，使存在性条件化为“机会表提供服务槽的频率高于实体往返所能达到的频率”这一可核不等式，在机会表实例化后由一次比较即可判定，不需重估任何量。该段同时写明\(\Delta t\)与density \(N\)同属受保护量、不由本文选取，而\(m\)由已登记ServiceRegion几何决定且此处须取下界——取大会高估\(k\)、使\(U_b\)偏小并使区间失效。此举不引入新参数，只是既有\(k>1\)的重述与责任归属声明。
+
+**2026-09-18第四次补充及一次撰写事故记录。** 参考文献自7条扩至26条，收录范围与每条核验强度见73L25；同时按同域已发表论文图注的实际抽取设计§6五项工件的骨架，见73L26。E组与F组八篇原为题录级，现已逐条取得出版方登记摘要全文升至摘要级，据此在73L25矩阵中补入其空间误差表达一列，使§2.1的式(2)可在正文对齐可达性／区间观测器谱系。
+
+须记的事故：本次首稿在补写[8]–[14]时，[11]的作者列表整条写错、[14]的题名与作者写错、[23]的年份与作者写错，[13]另补写了Crossref记录中不存在的页码。这些字段当时凭记忆写入而未核，与73L24§4刚记录的教训完全相同——**Crossref命中只证明题录存在，而题录字段本身同样必须逐项取自权威记录，不得凭记忆补写**。提交前已按Crossref逐条更正，凡该记录未含页码者一律标注而不补写。此事故记录在此，不因已改正而省略。
 
 固定R0来源为YueZhang-studyuse/LMAPF-delay，提交0b5b33649fc367abcb1cd0a7ad5ac03511bf9357。当前复用的是LACAM-only提议和承诺／未来切分，经明示共同修订；完整PIE-D候选另固定于improve_morereveal的74cfba3c81a0c165c2e7044dea6fd4dee8ddf415。复现材料应逐项区分原字节、论文规则和共同适配。
 
