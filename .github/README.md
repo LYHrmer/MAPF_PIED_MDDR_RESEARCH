@@ -1,10 +1,50 @@
 # MAPF 项目当前入口
 
-更新：2026-09-14。**主线是在PIE-D框架下处理有界跟踪误差的LMAPF执行：误差包络、原MOVE前缀授权、可信进度与空间释放。参数化设计已接受，当前实施并验证具体代码与完整闭环。几何/数值/参考控制、内存/arena、付费镜像初始化、GMP/MPFR分配回调与服务供给计量已有实际检查；固定编译诊断的加载/计量执行链及Hoeffding数学工具也已通过。下一步接其余必要运行库和真实服务。完整实验前目标、研究端到端核验和主实验启动条件尚未完成。ECBS既定修复已结束，不扩支线。**
+更新：2026-09-20。**主线是在PIE-D框架下处理有界跟踪误差的LMAPF执行。D_SRDC_v1的问题、确定算法和必要分析已收敛；独立SRDC/RR/COUNT及三个单项消融已实现，12组固定策略检查通过。COST本地封存七组检查也已获准首跑通过；guest导出、ECALL、付费ABI桥、执行拥有者及上下文INIT组合完成源码与静态检查。中心本地writer已实现，实际站点/job调度、保护块发布交付和原MOVE联合闭环仍缺。数值guest的FLINT冷缓存固定供给限制已定位。当前可以汇报问题与方法，下一里程碑是最小完整闭环及小规模联合验证，随后落实既定实验绑定。主稿原修改和冻结证据保留，完整实验准备尚未完成，ECBS不扩支线。**
 
 本页是导航和操作约束的唯一入口。按当前缺口读取对应章节与直接证据，不递归全文阅读历史交接、账本和咨询；已有正式审查不因换窗口重新启动。
 
+[公开进度一页表](../GITHUB_PROGRESS.md)及[导师汇报说明](../RESEARCH_BRIEF_FOR_ADVISOR.md)可直接在GitHub阅读。[本地详细准备表](../implementation_binding_evidence/SCALE_RUN_READINESS_20260920.md)和下文implementation路径指向尚未随本次进度同步上传的本地工件。
+
 ## 当前裁决、方案和证据
+
+- [本轮交付记录](../implementation_binding_evidence/IMPLEMENTATION_SESSION_20260919.md)、[查询算法合同](../implementation_binding_evidence/query_scheduler_contract_20260919.md)、[查询源码与检查](../implementation/pie_query/README.md)：直接接续所列接口，不重读全部历史。Q2 §29–31记录新增检查及真实归属；§25时点的FLINT六回调缺口已由§29关闭，全局C/C++入口和完整业务运行仍待接入。独立文献子任务围绕付费观测、依赖释放与互补收益检索，不恢复完整审查或新增流程前置。
+
+- [后继交付与验证记录](../implementation_binding_evidence/POSITION_COMMIT_AND_METHOD_20260920.md)、[组合提交接口](../implementation/pie_position_commit/README.md)、[方法补充稿](../implementation_binding_evidence/QUERY_METHOD_PAPER_SUPPLEMENT_20260920.md)、[定向文献启发](../implementation_binding_evidence/LITERATURE_INSPIRATION_20260920.md)：Q2 §32–33接续原子发布与局部写作修正。主稿原修改已逐字备份，修正依据/范围见[勘误记录](../implementation_binding_evidence/MANUSCRIPT_LOCAL_CORRECTIONS_20260920.md)。此后继尚无实际服务或规模实验结果，不因静态编译关闭真实来源/成本缺口。
+
+- Q2 §34–35记录[已授权有限运行](../implementation_binding_evidence/QUERY_POSITION_NATIVE_SCOPE_20260920.md)、零历时修复、[费用收据接法](../implementation_binding_evidence/QUERY_RECEIPT_BINDING_20260920.md)及[分配运行入口](../implementation/pie_guest_runtime/README.md)。两份native测试已经明确获准，不再次询问同范围修复复测；新runtime ELF没有运行资格。成本报告单列全费，不能把STRICT整行供给当查询业务成本。
+
+- Q2 §36记录[费用核心交付](../implementation_binding_evidence/QUERY_COST_CORE_20260920.md)、[源段/精确汇总接口](../implementation/pie_query_cost/README.md)和[一次性启动接口](../implementation/pie_guest_startup/README.md)。费用夹具随后已在新授权下通过，见§38；真实收据服务未被结构体和求和替代，producer载体不能递归自计。[启动后继](../implementation_binding_evidence/GUEST_STARTUP_BINDING_20260920.md)限当前真实路径，不扩大到全库普查。
+
+- Q2 §37：新的[显式数值启动镜像](../implementation/pie_guest_startup/image/README.md)及TLS/TCB/DTV准备器已接到固定ELF提取和Initializer/B1驱动；后继实际结果见§38，不重做旧组件或模拟整个Linux。另已接纳[成本终态线格式与责任树协议](../implementation_binding_evidence/QUERY_COST_WIRE_SPEC_20260920.md)用于独立候选，COST_DOMAIN_V1是明示的窄权限扩展，真实AUTH/站点接入仍未完成。
+
+- Q2 §38记录[两项有限运行结果](../implementation_binding_evidence/FINITE_NUMERIC_AND_COST_RESULTS_20260920.md)：费用核心通过，数值guest在NATURAL耗尽固定供给、STRICT未开始；[冷缓存成本诊断](../implementation_binding_evidence/NUMERIC_STARTUP_ALLOCATION_COST_20260920.md)给出仅used读取即203,134,976步的保守下界，超过67,100,672步整表。保留失败和原profile，不扩供给或以O2盲重跑。实际Opus交付的[终态codec](../implementation/pie_query_cost_wire/README.md)通过主机/RV64静态编译，其新native夹具未运行。
+
+- Q2 §39：[本地责任账本](../implementation/pie_query_cost_local/README.md)已实现，真实Opus核心加Codex组合接缝；主机/RV64严格静态编译通过，未运行。它把开放计费段、child预留/发布、引用清理和终态守卫落实为私有准备/原子根交换，支持同次发布多个责任变化；并未接通真实AUTH或站点。下一步是中心Collector、实际已发布根/成功POSITION事实和付费来源交付。
+
+- Q2 §40钉住[Collector实现规格](../implementation_binding_evidence/QUERY_COLLECTOR_IMPLEMENTATION_SPEC_20260920.md)和[三类来源接缝](../implementation_binding_evidence/QUERY_COLLECTOR_ADMISSION_BINDING_20260920.md)，明确由真实中心首次成功提交冻结唯一事实，后续合法副本全费而不替换事实。PositionCommit已补[组合预检/无异常提交](../implementation_binding_evidence/POSITION_COMMIT_PREFLIGHT_20260920.md)，两平台静态检查及原已授权序列复测通过；完整中心业务writer和AUTH仍未实现。
+
+- Q2 §41：[中心Collector](../implementation/pie_query_cost_collector/README.md)已实现完整责任图检查、家族封口、真实actual费用汇总和报价安装准备，严格主机/RV64静态编译通过，未运行。一次Opus调用超时且无可用源码，后由Astra/Codex完成，[原始归属与检查回执](../implementation_binding_evidence/opus_cost_collector_receipt_20260920.json)已保留。三类来源接口仍待真实中心writer/AUTH签发和付费站点接入，不以私有构造或静态编译代替业务验证。
+
+- Q2 §42：[收据组合安装](../implementation/pie_query_receipt_install/README.md)已将Collector实际算术输出与PositionCommit内Scheduler接成单writer双根事务，严格主机/RV64静态编译通过，未运行。真实Opus完整交付，Codex修正静态夹具及明确上下文边界，[调用与哈希回执](../implementation_binding_evidence/opus_receipt_install_terminal_20260920.json)保留。成本信封初次封存采用固定`{E,C}`收件范围，仍沿原`N→E→C`付费通道，不新增外套或直连。下一来源实现接B1/MemoryAdapter的实际受保护存储与付费接收，当前还没有AUTH或真实中心writer。
+
+- Q2 §43：[受保护存储](../implementation/pie_auth_memory/README.md)已实现真实MemoryAdapter保护后端与四个freestanding guest字循环，core主机/RV64对象及后端主机C++20静态编译通过；额外保护表计入R_aux，tail在原子操作最终写值处保护。Opus限时无源码后由Astra/Codex完成，不重试。六页固定[native/B1夹具](../implementation_binding_evidence/AUTH_MEMORY_NATIVE_SCOPE_20260920.md)随后获明确授权并[实际通过265项断言](../implementation_binding_evidence/AUTH_MEMORY_NATIVE_RESULTS_20260920.md)，exit0、无修复或重跑。真实可信worker、AUTH签发、付费交付和中心writer仍待接入；新kernel/worker运行不在本次授权中。
+
+- Q2 §44：[持久可信worker](../implementation/pie_auth_worker/README.md)已把额外CPU付费初始化、固定编译kernel、私有code/stack保护及原B1参数/返回接口接成源码路径，host实际组合与RV64对象静态编译通过。[交付记录](../implementation_binding_evidence/AUTH_WORKER_STATIC_DELIVERY_20260920.md)保留一次完整Opus CPU初始化器及Codex必要修正。普通ECALL停在无后续访存的既有B5边界，kernel停到下一PULL才恢复普通执行；没有免费寄存器快照。对象尚未接成实际镜像或运行，真实AUTH来源、角色业务和站点交付仍未完成。
+
+- Q2 §45：[编译worker固定镜像及驱动](../implementation_binding_evidence/AUTH_WORKER_FINITE_SCOPE_20260920.md)已实际链接，随后获得新增运行授权并[首次通过](../implementation_binding_evidence/AUTH_WORKER_FINITE_RESULTS_20260920.md)：11页/32槽、真实Context与六次kernel请求，两制度各83969步actual；NATURAL收费83969、STRICT收费393216，每制度27977次暂停检查，逐行收据独立复算一致。无需修复或重跑；§44的“未链接/未运行”仅描述当时阶段。真实AUTH/中心writer和原MOVE闭环仍待接通。
+
+- Q2 §46：[中心本地writer事务](../implementation/pie_center_writer/README.md)已实现完整outbox存储/不透明通道待办、SELECT与Position根组合发布，以及q不变仍可成立的唯一first_success锁存；实际能力接现有Collector，旧收据安装直接复用。严格host/RV64静态编译通过，未运行；生产CenterService、AUTH签发、通道复制/登记与付费发布仍未接通。[本包绑定](../implementation_binding_evidence/CENTER_WRITER_BINDING_SPEC_20260920.md)明确源码已闭与真实入口仍缺的范围，不以private构造或字节指针证明AUTH。
+
+- Q2 §47：[比较与消融登记草案](../implementation_binding_evidence/D_SRDC_COMPARISON_BINDING_DRAFT_20260920.md)已将新候选限定为共同协议下SRDC/RR/COUNT及work-only、wait-only、w=1，E0单列、正式臂不替换。[六选择器源码](../implementation_binding_evidence/QUERY_POLICIES_IMPLEMENTATION_20260920.md)已实际实现并通过host/RV64静态编译；COUNT沿原资源存在式计数和真实加入行解平，RR/COUNT不维护无用途SRDC图。原query/position夹具同范围回归通过；新增12组固定native程序随后获用户明确授权并[首次实际通过](../implementation_binding_evidence/QUERY_POLICIES_NATIVE_RESULTS_20260920.md)，无修复或重跑。生产来源和服务闭环仍待接入。
+
+- [本地终态导出与封存接缝](../implementation_binding_evidence/COST_TERMINAL_EXPORT_BINDING_20260920.md)：新增固定账本的规范正文导出和逐字来源接口，保持 TerminalPrepared→外层真实发布→TerminalPublished 的顺序；worker 另接可选私有状态区。新导出仍是结构组件，生产 AUTH、真实站点计费事件与付费封存尚未接通；具体静态证据见该记录，不将旧固定运行结果套用到新路径。
+
+- Q2 §49：[COST封存内核与worker后继](../implementation_binding_evidence/AUTH_COST_KERNEL_BINDING_20260920.md)已实现私有有限序号、Empty/Building/Sealed状态、实际逐字封存、保身份复制和擦除撤权，接入九字付费bootstrap及操作4–6。host组合和最终RV64对象编译通过；最终对象的保守栈上界为1264字节，不能沿用旧kernel的128字节。[七组固定native检查](../implementation_binding_evidence/AUTH_COST_NATIVE_RESULTS_20260920.md)随后获用户明确授权并首次实际通过，无修复或重跑。实际站点镜像/当前job准入、付费上下文安装、跨站验收与原MOVE闭环仍未接通。
+
+- Q2 §50：[站点guest导出与实际调用接缝](../implementation_binding_evidence/STATION_COST_GUEST_BINDING_20260920.md)已将真实账本编码、Context三块分配/逐字打包、Seal/Wipe真实RV64 ECALL及B1付费参数读取接成源码；host严格检查、RV64对象与ld -r组合通过，未执行。guest不读取保护表，清理逐块保留已做前缀；标记或普通a0返回都不自动成为AUTH/发布事实。生产站点owner、当前job准入、outbox和原通道仍须接入，下一步集中贯通这些真实入口，不再以孤立native通过替代完整业务证据。
+
+- Q2 §51：执行拥有者已统一实际INIT、两CPU、worker和调用桥的生命周期与付费推进；上下文工厂生成原INIT直接消费的Region，组合严格host静态检查通过。实际站点/job、发布及通道仍在接入，尚未运行新路径。下一步以小规模完整流程验证可运行性、机制区别和计入开销后的效果；已有检查按相关修改需要复用，不重开全面审查。
 
 - [73R4最新根裁决](../73R4_ROOT_DESIGN_ACCEPTANCE_20260914.md)：前两路各自根直接分析、第三路完整收件及全部意见综合完成。当前六门为2项限域PASS、4项UNKNOWN；参数化设计接受不替实际源/后端/全来源/外部复现资格，也不等于整个实验前目标完成。
 - [73Q1当前静态绑定](../73Q1_STATIC_CANDIDATE_BINDINGS_20260914.md)：首轮源容量存在性、R0具体跨job统计/路径容量和P的条件来源、priorities与原uint计数、H19编号/partial focal/数值接缝已具名接纳；§4的根源码修复/静态编译包已完成。Q1可随建设更新；G3/G4/G6整体尚未通过，不回改冻结R4。
@@ -30,7 +70,7 @@ DARI已淘汰，旧编号计划不恢复为待办。目标SCI二区/三区，JCR
 
 ## 当前必要工作与分工
 
-1. **优先完成PIE-D误差执行主线的具体绑定。** 接续已验收组件，完成其余必要C/C++/FLINT分配入口、整体应用INIT、受限imports及来源授权、观测/资源事务/真实任务服务和站点闭环，复用73 §8/9现成合同。Q1已接纳首轮源存储FIT存在性、R0跨job统计／路径容量、P的条件来源及priorities／计数语义；这些具体证据不重做，也不扩成全roster或实际二进制资格。剩余AA只补实际继续域及其它搜索／导入表示，不笼统重查所有字段。实现后符合性在实现阶段验证，不以尚无实现循环阻止已具备条件的实现。R3-06的入桶前分量过滤结论保持。
+1. **优先完成PIE-D误差执行主线的具体绑定。** 接续D_SRDC_v1、PositionCommit及已验收组件，沿已通过的有限组件接真实查询收据、观测核验与付费原子发布，再接已有C/C++分配入口的付费启动绑定、整体应用INIT、受限imports及来源授权、真实任务服务和站点闭环，复用73 §8/9现成合同。PositionCommit已完成源码、静态接缝和具名有限运行，不能重写为仍无原子组合实现，也不能冒称真实站点已接通。FLINT六回调已完成，不重复建设。Q1已接纳首轮源存储FIT存在性、R0跨job统计／路径容量、P的条件来源及priorities／计数语义；这些具体证据不重做，也不扩成全roster或实际二进制资格。剩余AA只补实际继续域及其它搜索／导入表示，不笼统重查所有字段。实现后符合性在实现阶段验证，不以尚无实现循环阻止已具备条件的实现。R3-06的入桶前分量过滤结论保持。
 2. **来源与外部共同域。** [L23](../73L23_LIMITED_PUBLIC_INPUT_STATIC_VERIFICATION_20260912.md)及[L23A](../73L23A_STATIC_INPUT_PARSER_CONTRACT_CHECK_20260912.md)四类首配置和13引用的基础有限静态核验已完成，不重做。完整selector/alias/全潜在ACTUATOR有效delay/WORLD/服务区和主roster仍须资格；已有研究用途依据，固定版本覆盖与第三方再分发范围分别处理。PIE-D/H19现成矩阵继续复用。Q1已关闭H19整批id守卫、失败fmin来源及partial focal具体身份/计数；实际Astra Ultra的`astra_ultra_ecbs_focal_closure`亦已终态，根在Q1 §2.3选定每轮重建FOCAL/默认cost阈值及不复制handle的数据复制构造，不把抽象风险冒成已运行反例。此前`external_static_binding`两轮建设均终态，不轮询或重做。
 3. **准入后的实现与验证。** GPT-6-Astra Ultra负责最难理论、路线及跨模块取舍；Claude Opus承担已获阶段授权且规格明确的代码实现、修复、调试与复现适配。C36首次网络错误、授权重试超过30分钟仍无正文后中止，两次均终态且实际模型未认证；根已接手同一ECBS包、核两处差异/固定来源并通过g++-11 C++14 -fsyntax-only实际模板实例化。原始回执和73C36_ATTEMPT_AND_ROOT_IMPLEMENTATION_RECEIPT_20260914.md、本地implementation/h19_ecbs/README.md分别保存真实调用与源码检查，不归为Claude交付。每包明确文件、输入输出、禁止改动、验收和停止条件，独立修改范围。不让模型无新证据往返审查；W01–99按共同不变量组织覆盖，复用驱动，当前研究运行验证仍未实施/运行。
 4. **完整实验前交付。** 结果留空的论文正文初稿、实验章节、图表计划及四篇承重引用已形成于MANUSCRIPT_PREEXPERIMENT.md；两项写作／文献子任务均完整终态。继续补具体预注册、执行／验证／分析工具冻结、完整相关工作与复现包，并完成最终逐项验收。已有至少十二项正文层来源和四份期刊全文历史阅读记录沿73A3查阅；新四篇核验只算相关正文定点阅读，不关闭未读近邻对强新颖性的限制。不得以正文初稿或参数化设计接受代替全部目标。
@@ -44,9 +84,15 @@ DARI已淘汰，旧编号计划不恢复为待办。目标SCI二区/三区，JCR
 3. 已冻结候选、已完成报告、提示和原回执保留字节，包括52/52R1、69–72、固定73及73R1–R4，不向52加sidecar；实质修复另立后继。73A3、本入口、工作记忆、导师说明可更新。删除授权只针对确认误导的旧交接/工作记忆，不等于删除科研证据或恢复旧失败路线。
 4. `/home/lyh/桌面/智能仓机器人分布式调度_文献备份`永久只读。仅既获准的`/home/lyh/桌面/MAPF_实验前必读论文_20260909`可在必读材料变化时更新；PDF不入Git。新工件写研究目录，编辑用apply_patch。
 5. shell每段前缀rtk，精确内容用rtk proxy；仅仓库实际有.codegraph时先用CodeGraph，不创建/重建索引。不绕过沙箱、审批拒绝或登录限制，不向外部人员发消息。
-6. 用户已授权既有仓库`LYHrmer/MAPF_PIED_MDDR_RESEARCH`的精确文档同步。2026-09-14根实际GitHub API核该仓库为公开（`private=false`），纠正原“私有”记录；用户随后明确允许公开推送已准备的七文件文档批次（含未发表主稿）。本次按该范围同步，不自行更改仓库可见性。先核实际工作树/远端，只暂存核过路径；不add .、不上传整个目录/受限材料、不跑hook、不改全局Git设置、不发release。历史提交号不是当前状态。
+6. 用户已授权既有仓库`LYHrmer/MAPF_PIED_MDDR_RESEARCH`的精确文档同步。2026-09-14根实际GitHub API核该仓库为公开（`private=false`），纠正原“私有”记录；用户随后明确允许公开推送已准备的七文件文档批次（含未发表主稿）。2026-09-20用户进一步要求“进度及时更新github”，后继进度文档可按此授权同步；本轮仅同步入口、GITHUB_PROGRESS、Q2和导师说明，主稿现有修改保留未提交。不自行更改仓库可见性；先核实际工作树/远端，只暂存核过路径，不add .、不上传整个目录/受限材料、不跑hook、不改全局Git设置、不发release。历史提交号不是当前状态。
 7. Claude C31取消，C32–C43及C45/46均已终态，不轮询旧句柄。C36–38无完整交付后的Codex接手代码不冒称Opus成果；C39–41及C43有完整Opus源码，C42截断后由Codex完成并实测。C44启动工具被中止，未返回CLI session、RAW或模型代码，不是provider推理失败或Opus交付，MemoryAdapter由Codex完成。C45实际CLI退出0，Opus头文件与Codex修正/测试/README为混合交付。C46实际HTTP402每日额度拒绝，零token/无代码，Codex随后完成§25；不重复请求或改共享路由，原调用与实现记录分开。旧一次性等待已于2026-09-12结束，不当作本次402的已知恢复时刻。已证本地代理网络在沙箱不可用，后续合法调用沿require_escalated路径；不绕过实际审批。保原RAW及终态，thinking只统计而不输出。
 8. 历史51失败链、失落69L1/69E1、73P7/73L7/73C2及所有终态咨询按原记录处理，不因旧文件写“运行中”重启。先核活句柄和实际工件，缺回执不算完成；有新证据的不同具体工作可继续。
+9. 用户2026-09-20已明确允许query_native与position_native两份程序内固定native组件测试及同范围必要修复复测；实际首次运行及零历时修复后的复测已通过，见Q2 §34。不再次请求这两份范围，也不据此运行新runtime ELF、研究服务/guest/world/仿真或扩读实验输入。Q2 §35分配入口只有静态编译/链接/调用路径证据，完整启动和实际业务执行仍待接通。
+10. 用户随后明确允许[固定数值guest与查询费用核心两项](../implementation_binding_evidence/NUMERIC_AND_COST_FINITE_SCOPE_20260920.md)及同范围必要修复复测：前者最多300秒、固定SHA镜像经付费INIT/B1执行真实数值组件并双制度核账；后者最多30秒、三组固定native费用检查。不再次请求该范围。授权不扩至新codec测试、规划/控制/站点业务、world/仿真、实验输入或保护参数。
+11. 用户另明确允许[受保护内存固定native/B1检查](../implementation_binding_evidence/AUTH_MEMORY_NATIVE_SCOPE_20260920.md)及同范围必要修复复测，每次最多30秒；实际首次通过265项断言，见[原始结果](../implementation_binding_evidence/AUTH_MEMORY_NATIVE_RESULTS_20260920.md)。不再次请求此范围，也不将其扩大到新编译可信kernel、CpuInitializer/worker运行、AUTH业务签发、站点或仿真。其它实现和静态编译继续推进。
+12. 用户随后明确允许[编译可信worker固定检查](../implementation_binding_evidence/AUTH_WORKER_FINITE_SCOPE_20260920.md)及同范围必要修复复测，每次最多60秒；根已首次实际通过，无修复/重跑，见[完整记录](../implementation_binding_evidence/AUTH_WORKER_FINITE_RESULTS_20260920.md)。该具名11页/32槽/六请求镜像及驱动的付费INIT、CpuInitializer、worker/普通B1执行已获准，不再询问同范围；不扩大到生产AUTH签发、中心writer/规划/控制/站点服务、world/仿真、研究输入或保护参数。
+13. 用户随后明确允许[六策略12组固定native检查](../implementation_binding_evidence/QUERY_POLICIES_NATIVE_SCOPE_20260920.md)及同范围必要修复复测，每次最多30秒；根6e76a6首次实际通过，无运行后修复/重跑，见[完整记录](../implementation_binding_evidence/QUERY_POLICIES_NATIVE_RESULTS_20260920.md)。不再次请求此范围，也不扩大到实际站点、guest/仿真、实验输入或保护参数。
+14. 用户随后明确允许[COST封存七组固定native检查](../implementation_binding_evidence/AUTH_COST_NATIVE_SCOPE_20260920.md)及同范围必要修复复测，每次最多30秒；根758559首次实际通过，无修复/重跑，见[完整记录](../implementation_binding_evidence/AUTH_COST_NATIVE_RESULTS_20260920.md)。不再次请求此范围。该授权不扩至新COST kernel/站点guest执行、生产签发或交付、服务/仿真、实验输入或保护参数；源码和静态接入继续推进。
 
 ## 历史材料与视频
 

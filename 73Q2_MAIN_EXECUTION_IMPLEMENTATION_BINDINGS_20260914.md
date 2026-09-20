@@ -322,3 +322,344 @@ C46本次实际调用已终态：e2e469 exit1，服务端402每日支出限额�
 本包不改变区间方法或错误预算，不采用§22的候选EB，不赋重复数或保护参数；不读/生成研究结果、实验roster或config，也不写结果补缺/筛选逻辑。内核只计算已给定合格数值的区间，不认证实际源映射、跨块独立性、评分完备性或总体资格；后续完整分析入口仍须按既有UNINSTANTIATED/UNESTIMABLE/INFERENCE_UNAVAILABLE合同接入。该纯数学检查不构成科研结果或主实验运行。
 
 本包已由Astra/Codex完成，根全文核两个Python文件并独立运行固定数学单元，ec6427 exit0，7项通过。精确有理求和及端点，正值转换/乘法向上舍入，正确舍入的ln/sqrt再取next_plus以形成半径上界，最后精确裁剪；测试以有理atanh级数和严格余项界提供独立对数答案。舍入口径依据[Python Decimal官方文档](https://docs.python.org/3/library/decimal.html)及代理定点核对的本机标准库，不用高精度近似互比代替向外性论证。根ac4c15核实现SHA256 1f07829fa78a107e3d51df62a5c3f81fd8536c58ca3546b5acbe2e6c881158ea、测试6a586f61ee402ae925589a87d2751000c08248ef52d54380dee1824be033d34e。复现：`rtk proxy python3 -B -m unittest discover -s pre_experiment_tools -p test_paired_hoeffding.py -v`。仅算术内核验收，完整分析资格入口仍未完成。
+
+## 29. 四位请求长度记录与 FLINT 六回调后继（2026-09-19）
+
+接续已明确的 tail 方案，在同一 allocator Context 增加外部四位请求记录：每16个数据槽使用一字，活头的请求长度为 `8*len[p]-tail`，tail=8仅用于一槽零请求。新增表在任何元数据初始化之前核完整地址、对齐、容量和不重叠；占用的 `ceil(A/16)` 字纳入原 R_aux，不为 A 或实验参数赋值。GMP sized 接口与 FLINT unsized 接口共用精确长度记录；重分配先申请、复制精确请求字节、最后释放，失败保留旧块。FLINT 使用实际六回调 setter，消除旧四回调对齐 fallback 的隐藏头。
+
+该后继限 Context、库分配回调及其微小 native 内存用例、真实库链接与 RV64 静态 ABI 检查。沿用§25分配回调检查范围，不执行数值业务、研究查询、目标guest或仿真，不新增全运行库普查。规格明确的源码包交实际 Claude Opus；根负责审阅、有限检查和记录真实归属。§25原时点证据不改写；本节完成状态以本轮回执为准。
+
+本包已完成。新的 Opus 流报告 `anthropic/claude-opus-5`，在900秒终止前返回完整核心与旧测试修改，新增测试输出中断；根只提取完整文件，补写独立六回调测试与目标链接夹具，未重试或更改路由。两组严格native编译5fc067/144e0e及实际运行1e74bc/896056均exit0；覆盖精确请求大小、tail跨字/邻字段、实际六hook指针、calloc精确字节、失败保留与不合法布局无副作用。RV64真实三库静态链接15c908→f4d2ef exit0；ABI与具名符号3f98c6/fc424b通过，目标未运行。是Opus核心＋Codex补完验收的混合交付；原RAW保留在本轮implementation_binding_evidence下，完整命令见[allocator README](implementation/pie_guest_allocator/README.md)。全局C/C++运行入口及完整应用仍未完成。
+
+## 30. 已验证 POSITION 到退休提案的接缝（2026-09-19）
+
+Codex 在 `implementation/pie_progress_retirement/` 实现接收侧的确定转换：以外层已经完成认证的证书接口为输入，核五项 geometry/MOVE binding、捕获≤交付≤提交时刻及进度域，按 max 保留非退化下界；只有进度增加时，调用现有 G 将 q 前移而保持 b 不变，产生私有只读退休提案并核没有新增资源。迟到证书不用交付时刻外推；无新进度返回 no-op，数值/构造失败不改变原快照。几何仍按严格退出保留接触和终点。
+
+根以真实 FlintOps 显式实例化接收器和证书接口，`g++-11 -std=c++14 -Wall -Wextra -Werror -pedantic -fsyntax-only` 实际退出0、无诊断（696b25）。夹具只有声明，无 main；没有执行服务或研究算法。该接缝不冒充 AUTH producer 或完整资源提交：真实来源认证、当前活动身份、所有者与base版本复核、付费原子发布和END驻留交接仍须外层完成。查询索引只接最终已提交增量，不使用此私有提案释放资源。命令及接口见[接收器README](implementation/pie_progress_retirement/README.md)。
+
+同一接口随后经既定RV64IMA/LP64工具链和目标数值SDK静态实例化，8d8bf6 exit0、无诊断；没有链接或运行目标业务。
+
+## 31. 空间阈值、依赖与实际成本的查询候选（2026-09-19 至 20）
+
+独立后继候选 `D_SRDC_v1` 已收敛为[确定算法合同](implementation_binding_evidence/query_scheduler_contract_20260919.md)，并实现于 [pie_query](implementation/pie_query/README.md)。固定 cap 下，用所有已进入闭区间的最大物理退出端点作为严格释放阈值；一个需求被同一 owner 占用的全部资源都可清除时，才计一次关系收益。立即准入与部分解除收益按字典序排序，结合一跳执行依赖权重，以已交付且实际结算的兼容查询收据估计工作量和响应等待。预测只选查询对象，不写进度、owner 或 cap；缺历史/真实报价或无正收益时使用成功发布才前进的稳定轮询。采样前等待参与预测，采样后等待只进入响应成本。
+
+源码复用现有 `Geometry::intervals()`，为 cap 建入口游标和退出值缓存，并维护资源/owner/请求反向索引。覆盖非凸重入导致净 mask 不变、无新入口但 cap 严格越过退出值两种必要更新。只接已提交增量，私有退休提案不能提前清 owner；准备与提交分开，发布游标也先完成所有可能失败的构造，再与外层同一次成功付费发布交换状态。初版事务仍复制 map 骨架及受影响反向集合，实际复制/回收和精确数值成本必须计费；并未达到全持久化局部更新成本，亦未宣称千级规模性能。
+
+初次完整主机/RV64严格静态实例化 567a1c/dad69d 均通过；有界接缝检查随后修复Choice移动误标noexcept，补齐无精度来源的可空字段与轮询路径，并把提交后旧根回收留给调用者持有的已消费准备对象。最终使用禁止复制消除的严格C++14主机静态实例化30da2e→8bbb30、RV64IMA/LP64静态实例化241583→1c080b，均exit0、无诊断，覆盖真实FlintOps与不可默认构造Real及移动异常合同。独立纯阈值数学检查编译9eb184、运行72892f均exit0，核严格接触、非凸重入、cap等号、终点、多资源整关系与物理单位。Index/Scheduler未运行；14项机制规范、增量对照重建及实际付费服务闭环的运行核验仍待相应运行范围具备，静态编译不充当这些证据。
+
+规格明确的查询实现曾交真实 Opus；900秒终态仅返回不完整声明，无可采用的实现，未重试或改路由，RAW 保留。实际增量索引由 Astra Ultra/Codex 完成，根完成阈值助手、调度器、检查和文档。候选未覆盖冻结 D、主稿公式或正式实验臂，参数仍未赋值，未运行研究作业或公开推送。本轮交付、文献启发与剩余接口见[本轮记录](implementation_binding_evidence/IMPLEMENTATION_SESSION_20260919.md)。
+
+## 32. POSITION、物理 owner 与查询视图的单根发布（2026-09-20）
+
+`implementation/pie_position_commit/` 将§30退休接收器与§31 Scheduler接通。外层已准入状态导入时从实际Action.geometry构造G快照；普通更新禁止q变化和POSITION证据旁路。认证POSITION准备同时更新q、逐项核对并删除原MOVE几何owner、更新查询关系；对CAP_EXTEND另维护全长未来快照，再用暂存owner表重算非owner条件，避免非凸重入资源在当前退休后从未来需求丢失。达到全长必须撤销CAP_EXTEND；POSITION到达终点仍保留终点责任，不生成END。cap/lifecycle准入和END驻留交接由原外层显式输入。
+
+一个实际不可变Root承载上述状态；准备失败不发布，commit核实际根身份且仅交换已完成状态。即使query发布沿用view字符串，仍改变根身份，使旧POSITION准备失效。旧根留在已消费准备对象中，回收须实际计费。此包没有认证producer、实际cap历史或Srv_C付费槽实现，不把接口名当作真实资格。全表骨架复制和结构校验扫描仍存在，不能宣称全程局部复杂度。
+
+本次Opus正常退出但仅给出准备检查目录的普通文本和形似工具回执的文本，没有真实工具调用或源码交付；根保留RAW后由Astra/Codex完成。同一头文件的严格C++14主机与RV64静态实例化782750→a48ac2、7f5475→a5b331均exit0；主机固定有限用例59061e→8375ad编译/链接exit0，尚未运行。用例覆盖闭接触、非凸未来需求、准备异常、迟到证书、query-only stale、cap扩展/全长与END后旧证书。原始调用、运行范围和局限见[后继记录](implementation_binding_evidence/POSITION_COMMIT_AND_METHOD_20260920.md)与[接口README](implementation/pie_position_commit/README.md)。
+
+随后查询器9组有限native夹具也已完成并严格编译/链接f2a6ad→edc292 exit0；根核源码及最终source/binary哈希d646d8。两份具名native程序的运行确认已一次提出，尚未获答或执行；不扩展科研载荷或服务运行。具体手算/重建对照及公式fixture可达性限制见[运行范围](implementation_binding_evidence/QUERY_POSITION_NATIVE_SCOPE_20260920.md)。真实报价接入仍需按query/job累计实际B1工作，不能把STRICT整行charged_work误接为查询成本。
+
+## 33. 查询方法正文与四类局部勘误（2026-09-20）
+
+独立[方法补充稿](implementation_binding_evidence/QUERY_METHOD_PAPER_SUPPLEMENT_20260920.md)已给问题、贡献、确定公式/伪代码、严格阈值/预测不释放/条件增量等价三项性质和最小验证矩阵。它明确费用乘积与一跳权重是启发式，不声称全局最优、普遍公平或已提高吞吐；新候选不静默替换冻结D或正式臂。定向文献已形成可用启发和近邻限制，不重开完整审查。
+
+主稿§2.2、§4.5及直接联动表述已按实际依据完成四类局部修正：有限窗整数界、效应与点估计区分、已有运动约束下的正时间界、固定裕量及引文归因。根修改前逐字备份了已有未提交稿，其SHA与接续起始一致；其它内容及历史证据保留，文末添加日期勘误。不是恢复远端旧稿，也没有赋实验参数或更换统计合同。具体证明、备份与集成状态见[局部修正记录](implementation_binding_evidence/MANUSCRIPT_LOCAL_CORRECTIONS_20260920.md)。
+
+## 34. 两份有限组件运行与零历时收据修复（2026-09-20）
+
+用户明确允许“这两份有限测试及必要修复复测”，§32所记待答已结束。根实际运行原9组query_native及position_native，9e514a/9d7752均exit0。人工夹具不读实验输入或赋保护参数，不运行规划、控制服务、业务guest或world；源码含独立手算oracle、增量对完整重建，以及q/历史/完整owner覆盖一致的预测例。部分纯评分fixture不冒称物理可达状态。
+
+定点费用接缝随后发现实际合同矛盾：固定73第552行允许不同公共行同物理时刻，B1工作供给不自动增加物理时间；独立候选却误拒正工作零历时收据。根修正Scheduler及候选合同：接纳该合法收据并保留最新身份，候选保持Unpriced/RR，不构造零分母、不补常数、不回用旧正历时报价。第10组回归核正→零→旧晚到→新正恢复、负时序/零工作拒绝及异常状态保持。最终查询器严格编译f2f558→34edba、运行f41bdd均exit0；PositionCommit重新编译d27b4c→d2e9d2、运行98e0c3均exit0；两者输出具名passed。组合RV64静态实例化5595b3→5c00f6 exit0，目标未运行。根df3f27核最新源/二进制哈希；范围与命令见[有限运行记录](implementation_binding_evidence/QUERY_POSITION_NATIVE_SCOPE_20260920.md)。
+
+根同时接纳[Q_CAUSAL_V1收据归属](implementation_binding_evidence/QUERY_RECEIPT_BINDING_20260920.md)作为独立候选后继接口：唯一触发query承担发布后实际业务工作和共享维护，业务尾部关闭后结算；收据报告/传输/安装/自身GC单列ReceiptAccounting全费，从报价标量排除以有限封口。全部工作仍在主总账，失败不退款，profile含归属版本。它不改变冻结73的总计费或正式臂，也不是现成真实收据producer；AUTH、成本schema与实际付费交付仍待接通。
+
+## 35. C/C++公共分配入口与真实目标库链接（2026-09-20）
+
+`implementation/pie_guest_runtime/` 提供不替换宿主的具名core及只显式链接到guest的符号TU。已有Context增加只读installed_context查询，继续唯一绑定；C malloc/calloc/realloc/free/aligned_alloc、C++14 throwing/nothrow/array/sized new/delete共用既有tail长度记录。C普通耗尽返回null、realloc失败保留旧块，坏状态/错误指针trap；new保留真实new_handler和bad_alloc语义。缺少初始化绑定时不建隐藏heap；free(null)可直接返回。GMP/FLINT原有失败终止语义不变。
+
+规格明确源码交实际Opus，68407 ms/单turn正常终态，模型用量标记claude-opus-5并返回完整五路径补丁；根核完整代码后应用，补精确状态类型、实际链接fixture与后继aligned入口。初次RV64链接5df471→cfce9c失败，map证明FLINT合并对象引用aligned_alloc而拉入libc malloc.o导致多定义。根复用已有aligned API补公共符号，未屏蔽重定义、改写库或引入fallback。最终严格host静态38b3bd、目标三库静态链接f767eb→718331均exit0；ELF/ABI6f5527及实际符号/反汇编b90eae、90b79b、acae2f、5b1ad6核new/异常分配至新malloc/core链。
+
+此为Opus核心＋Codex接入验证的混合交付，原task/RAW/patch保留。新runtime/ELF未运行，不受§34两份native授权覆盖。GCC异常池有main前malloc，实际paid INIT须先构造/绑定Context；最终ELF仍有libc内部minimal allocator/启动和其它imports，公共分配符号接通不等于完整运行库闭包。明确可达启动/异常/TLS路径与整体应用仍须后继，详细命令/边界见[运行入口README](implementation/pie_guest_runtime/README.md)。
+
+## 36. 真实费用段的归属/汇总与一次性启动接口（2026-09-20）
+
+`implementation/pie_query_cost/` 接续已采纳的Q_CAUSAL_V1。一个AttributionLane拥有真实ServerMeter，按server/Compute或Publication/制度固定身份；打开行之前复制已建立的唯一job/query账户，关闭行形成不可变源段。实际借记失败不退款，idle严格整行费和实际工作分开。ReceiptBuilder核已准入闭合bundle的段守恒、供给键唯一性、Query账户及时间次序，只将actual_work逐Word精确导入Real并求和，避免固定宽累计溢出；不把STRICT整行供给当查询成本，也不把零历时改成虚构正等待。
+
+核心实际由Opus交付完整单文件补丁，单turn正常终态132108 ms、模型用量标记claude-opus-5；原task/RAW/stderr/patch保留。根核源码并补计量层次、完整实例化和独立大整数夹具。主机2614b5、RV64 0ec1b3静态实例化均exit0；新三组native夹具eb89f0严格编译/链接exit0，**未运行**，不借用§34两程序的有限授权。源码/命令与界限见[费用接口README](implementation/pie_query_cost/README.md)及[交付记录](implementation_binding_evidence/QUERY_COST_CORE_20260920.md)。
+
+源记录载体不等于应用免费读取计量器。inspect至close间不得再借记，更不能把wrapper经同一meter递归自计；native记录开销由宿主记录，真正应用的归属创建/交接、导出/传送/验证/精确汇总仍走已有付费路径。ReceiptBuilder仅转换已认证、已验证完整性且业务尾部已关闭的数据；AUTH、闭合业务协议和实际交付没有被类型/字符串/求和自动建立。没有真实收据时，原调度器仍使用既定Unpriced/RR路径。
+
+同轮新增`implementation/pie_guest_startup/`：常量初始化的稳定Startup槽中真实placement构造Context，一次绑定GMP/FLINT后才可按镜像表运行真实构造器；重复、重入、双对象已有绑定均拒绝。构造器异常保留效果并记录失败后传播，不能解除绑定重跑。5项编译断言固定当前nonthrowing下层合同；最终严格host 01682b、RV64对象e5f744均exit0，未执行。定点真实镜像证据确认标准CRT在preinit前已走Linux/TLS，需显式入口和付费TLS/TCB；frame_dummy已触达线程状态，EH pool实际请求72704字节是该工具链事实，不是实验容量赋值。接口与有限后继见[启动README](implementation/pie_guest_startup/README.md)及[具名证据](implementation_binding_evidence/GUEST_STARTUP_BINDING_20260920.md)。它不构造TLS、不替代完整INIT_READY，也不扩大到整库审查或运行许可。
+
+## 37. 显式数值启动镜像、TLS描述符与成本责任树（2026-09-20）
+
+接续§36，新增`pie_guest_startup/image/`的显式_start、真实数值诊断和链接补充脚本。入口直接调用Startup绑定与真实init表，然后由FLINT计算并核`(2^64+1)^2`，完成本地对象析构才写完成相位。实际Opus交完整三文件，单turn172124 ms、模型用量标记claude-opus-5；根核SDK修正void转换API用法、C linkage及失败状态，保留原补丁/RAW。既定GNU11.4/rv64ima-lp64静态真实库链接708721→72e843 exit0；没有Linux主入口、fallback heap、pthread/syscall成功替身或宿主数值代执行。
+
+新ELF具名检查d97da7/3003d0/7c2158/f62b64：_start直接进入pie_numeric_probe_start，init数组仍只有frame_dummy与真实EH pool两项，无binder动态构造器；五项动态重定位均R_RISCV_NONE。真实LOAD/TLS/gp/栈/结果区及SHA见[镜像README](implementation/pie_guest_startup/image/README.md)。没有执行该镜像或据静态符号宣称所有其它libc路径不可达。固定诊断的payload/metadata/栈尺寸不作实验参数。
+
+TLS规格由Astra/Codex核当前glibc2.35上游与新ELF实际nptl只读描述符/指令，确定pthread1984字节、PRE2016、tid32位offset208、DTV指针tp−16及单模块48字节数组。保留真实112字节tdata和3744字节tbss，独立页存储，不在与init表重叠的.tbss显示地址清零。非零逻辑tid只表示此单hart域身份，不冒充Linux内核注册。所核源码、字段与单线程普通mutex范围见[TLS绑定规格](implementation_binding_evidence/GUEST_TLS_BINDING_SPEC_20260920.md)；不扩大到线程创建、动态TLS或整库模拟。
+
+第二个真实Opus包完整交`pie_guest_tls_image.hpp`，单turn193058 ms，根核后补全区域表示检查和host静态接缝。函数检查地址溢出、页面/模板尺寸、区域互斥及原寄存器合同，在私有StaticImage副本追加RW TLS区域，只设置x4，保留pc/sp/gp；失败不改原输入。严格host C++20编译0d48f9→866d39 exit0。它准备既有Initializer的固定设计输入，没有免费写guest存储或执行构造器；实际付费建立、固定新ELF提取和有限驱动仍待连接。§34两程序运行许可没有扩至此工件。
+
+查询成本后继协议同时收敛：[COST_JOB_TERMINAL_V1](implementation_binding_evidence/QUERY_COST_WIRE_SPEC_20260920.md)按实际发布根及单父业务责任树封口，所有在途/失败/GC责任必须终态，报告网络自身归ReceiptAccounting而不递归开Query成本消息。根限域接纳COST_DOMAIN_V1为独立候选配套的窄证明能力：各站仅证明自己已闭meter段和本地责任终态，经原通道/供给/AUTH交付；特别明示这不是冻结73原Srv_N复制权限。字段顺序、枚举字节值、排序、幂等/冲突处理已确定，独立候选与轮询对照须同协议；现正式臂不替换。真实AUTH、codec/闭合状态机与站点服务尚待实现，不能由接口名称推定完成。
+
+## 38. 两项已授权有限运行、冷缓存成本与终态codec（2026-09-20）
+
+用户明确回复“允许两项及同范围修复复测”，授权覆盖[固定数值guest及费用核心](implementation_binding_evidence/NUMERIC_AND_COST_FINITE_SCOPE_20260920.md)，不再请求同范围。费用核心原三组固定native检查实际9cecc4 exit0、具名passed、stderr空；源码无需修改。它通过实际源段载体/精确汇总检查，不等于AUTH、查询闭合或跨站业务通过。
+
+根完成固定SHA的数值ELF提取/页补齐/TLS接入及Initializer→B1有限驱动，独立核W/K/P和INIT费用、真实终点、数值答案、完整页/寄存器/续体及逐行账。guest在NATURAL实际INIT为14,183,545步、第1732行ReadyToExecute；随后Context绑定及真实两构造器返回。首次a9b2df→a8da77 exit1，为固定供给耗尽。根只补耗尽现场和完整关闭行日志，未改guest或供给，严格编译e188e6→76eb7d exit0；复测d1d572→67f029仍exit1。结果区为[3,0,2,0,0,0,0,0]，执行52,913,860步、总实际收费67,097,405；数值/本地清理尚未完成，STRICT尚未开始，不能写双制度已对账。原失败、8192行已闭账及源码副本保留于[实际结果记录](implementation_binding_evidence/FINITE_NUMERIC_AND_COST_RESULTS_20260920.md)。
+
+定点代码/真实指令诊断证明，FLINT首次缓存初始化必经4064次GMP 16字节申请；仅常驻EH池的9088槽前缀，就要求至少18,466,816次used字读取。现B1实际LD为11步，故保守下界203,134,976步，已超过67,100,672步整张固定表，尚不含INIT等其它工作。根独立-O2镜像只编译并静态核实际扫描，仍满足该下界，因此未运行；原build脚本恢复原字节，未改冻结first-fit、补表或免费预热。此为具体冷启动成本限制，不是错误数值/arena空间耗尽证据，更不据此赋保护参数。调用点、下界及指令出处见[成本诊断](implementation_binding_evidence/NUMERIC_STARTUP_ALLOCATION_COST_20260920.md)。
+
+另实际Opus完整交付独立[pie_query_cost_wire](implementation/pie_query_cost_wire/README.md)的COST_JOB_TERMINAL_V1编码器/解码器，单turn449132 ms、模型用量标记claude-opus-5。原task/RAW/完整补丁及回执保留；Codex只修补丁README前缀、夹具多行注释警告和交付记录，codec行为未改。严格主机7507d8、RV64 baabab静态编译均exit0；固定native夹具44d852编译/链接exit0但未运行，不扩当前两项授权。根定点核字段顺序、大小端、规范排序、剩余长度、供给守恒及结构校验。它只输出DecodedTerminal，不提供AUTH、可信工厂、Collector或真实传输；下一步接本地责任账本。完整证据见[Opus codec回执](implementation_binding_evidence/opus_cost_wire_receipt_20260920.json)。
+
+## 39. 本地查询责任账本与组合提交（2026-09-20）
+
+接续既定责任树协议，新增[pie_query_cost_local](implementation/pie_query_cost_local/README.md)。LocalJobLedger按单query/job/站点/制度绑定，记录实际站点所供的开放lane、已闭费用段、预留/已发布child及本地引用。close核server/job/query、供给身份、容量和actual/charged/unused守恒，转换为owned wire值；原枚举0/1与wire1/2显式switch映射，不靠cast。已取消child、已释放ref、已关闭供给键永久保留使用记录；终态保留失败/取消的全部费用，不能用这些结果删账。
+
+Working→BodyDone须先处理完所有child预留，但允许既有lane及本地尾部继续清理；BodyDone不能再增普通child/ref。只有无开放lane、预留child和活ref才生成完整规范终态，TerminalPrepared起禁止新增业务，Published child尚未完成交由后继Collector等待。所有事件先私有准备，基态/所属对象/消费状态守卫通过才无分配交换根；已消费Prepared继续持有旧根，回收留给调用者相应计费阶段，不在发布点隐式销毁整棵旧树。
+
+根补can_commit供原业务原子事务事前检查，并补prepare_batch：在私有draft上顺序准备多个事件，最后只给原ledger一个(base,next)。因此child发布及其引用交接、多个副本责任可同一次成功业务发布登记，不需先发布业务再补账本。callback仅作有限私有准备，不得进行实际业务发布/I/O或重入原ledger；中间根不公开，异常不改已提交根。首版仍按每事件复制map/set骨架，所有复制和私有/旧根回收按所在阶段计费，不冒称一次复制、最优增量或免费元数据。
+
+实际Opus单次完整交付三文件，session30852→912e82 exit0、414026 ms、terminal_reason=completed，模型metadata为anthropic/claude-opus-5；原task/RAW/完整补丁保留。Codex修字面多余补丁加号及原子发布注释，首次严格host 1bc084、RV64 48ba6c均exit0。根定点核全部状态转换后补上述组合接缝及编译调用形状，最终严格host f16c87、RV64 1244cf均exit0无诊断。编译夹具无main，未运行、未新增native执行请求；这不是功能或性能通过报告。真实归属和哈希见[本包回执](implementation_binding_evidence/opus_cost_local_receipt_20260920.json)。
+
+本地ledger只核站点提供事件的结构与封口条件，不会认证任意struct，也没有实际AUTH、跨站Collector、付费导出或服务dispatcher。原费用源载体仍不能递归自计，应用可见导出和业务引用操作仍须各自真实付费。下一实现接中心完整家族收集和已发布查询/成功POSITION事实，再接既定受保护来源与站点；不增加新的整体审查前置，不运行研究服务或补实验参数。
+
+## 40. 中心事实来源及组合提交预检（2026-09-20）
+
+为接成本Collector，根定点核现有Scheduler/PositionCommit与责任树，收敛[图汇集实现规格](implementation_binding_evidence/QUERY_COLLECTOR_IMPLEMENTATION_SPEC_20260920.md)及[三类准入事实落点](implementation_binding_evidence/QUERY_COLLECTOR_ADMISSION_BINDING_20260920.md)。PublishedRoot必须来自实际SELECT原子发布，CommittedSuccess只来自特定POSITION提交，AdmittedTerminal必须经真实AUTH及合法转发准入；普通struct、任意Prepared或View变化均不能制造能力。action/move_occurrence沿用已接受完整原MOVE规范key，不重新设计其身份；query与request_business_id分开，首网络票据origin绑定实际请求。网络原recipient可能为中继E，必须核最终collector的转发准入并保持原issuer，不能假设N→C直连。
+
+本轮补齐同query多个合法成功副本的确定选择：CenterPositionResultCommit在真实单writer首次成功提交的原子点唯一冻结first_success，后续副本不替换、不签发第二事实，其全部Query费用仍计入；能力重交只重放原记录。合法q不变也可首次成功；Collector不能按能力到达先后、相同物理时刻或job字典序选首次。此前协议未明确这项取舍，已在独立后继条款中明示，未改冻结73或正式臂。
+
+根同时实现PositionCommit的can_commit/try_commit两个noexcept接口，使外层能在所有参与根及付费槽合格后执行无分配、无异常的组合交换。原commit复用相同守卫，保留异常兼容接口。原已授权有限序列补核预检无副作用、查询发布后旧POSITION失效及消费后拒绝重用；严格host 92d234、RV64 f9a762静态实例化均exit0，新binary编译ae5a5a、实际运行32c133均exit0、具名passed。没有运行新服务/guest或扩大输入；源码/哈希和原binary保留记录见[预检接缝](implementation_binding_evidence/POSITION_COMMIT_PREFLIGHT_20260920.md)。真实中心writer/outbox/事实/AUTH组合仍须接入，预检方法不代替它们。
+
+## 41. 中心责任图封口与实际费用报价（2026-09-20）
+
+新增[pie_query_cost_collector](implementation/pie_query_cost_collector/README.md)三文件，将§40规格落实为Collector、限定来源接口及无main静态夹具。终态按完整票据与规范正文去重；核父终态完整清单、所有已知父边的环、跨job费用键重复和固定制度一致性。只有首票据可达责任全部终态且不存在未认领已接收链，才关闭业务家族；失败副本和清理责任保留全费。冲突进入吸收状态并保留触发证据，已安装报价仅保留历史身份。成功接收job的中心归属在成功先到和终态先到两个方向均检查。
+
+封口后将全部Query段按server/row/supply确定排序，显式映射wire枚举，再由现有ReceiptBuilder精确汇总actual，保持STRICT整行charged与业务工作分开。首次成功事实沿§40由真实源端冻结，Collector不按交付顺序决定；源码仅消费该能力。报价准备、准确交付时刻的安装准备及私有batch均使用owner/base/next守卫，无异常交换并保留旧根供相应付费回收。根定点核责任图、成功绑定、报价时序和静态调用形状；首版复制及全图检查的实际成本仍须付费，不宣称最优增量。
+
+一次实际Opus调用session56683→cd2c11在600秒终止，exit124、terminal_reason=aborted_streaming，text_delta为0，没有可采用源码。原始流、空完整补丁占位和终态保留，未再次调用；三文件全部由Astra/Codex接手完成。严格C++14主机f38351及RV64 8c138a均exit0、无诊断，包含真实FlintOps、不可默认构造Real、私有能力负向traits和组合准备接口。没有main、未运行新程序或服务，不能称功能或性能通过；最终源码SHA及真实归属见[交付回执](implementation_binding_evidence/opus_cost_collector_receipt_20260920.json)。
+
+CenterCommitBridge与TerminalAuthBridge仍只有具名声明，没有实际签发器；真实SELECT/POSITION单writer、首次成功latch、AUTH与中继权限、付费终态传输和Scheduler组合安装仍待接通。本节关闭图汇集源码缺口，未关闭来源和站点业务闭环，也未解决§38数值guest固定供给不足或赋实验参数。
+
+## 42. 收据安装的双根组合与原始收件范围（2026-09-20）
+
+新增[pie_query_receipt_install](implementation/pie_query_receipt_install/README.md)，直接绑定现有Collector和PositionCommit。prepare只允许Collector的BusinessClosed或ReceiptPrepared，内部私有batch重新在给定实际交付时刻准备收据并准备Settled，再从该真实Prepared取算术输出，构造只有receipts一项的Scheduler增量。它不接任意外部Receipt或Prepared，不修改q、owner、几何、需求或POSITION证据。旧报价错过交付时刻时重新准备；任一数值/分配或校验失败，两份已提交根均保持。
+
+组合Prepared不可复制或赋值；can_commit先核所属安装器、消费状态及两个真实基态，随后commit无回调、无分配、无异常地交换两根。普通拒绝发生于任何交换之前；单writer前提被破坏导致预检后出现不可能的子提交拒绝时显式fail-stop，不在半提交后返回普通false。消费后两个子Prepared均保留旧根，销毁按实际准备放弃或GC阶段计费。本包完成二组件组合代码，不替代Srv_C付费槽或线程同步。
+
+一次实际Opus调用session23364→976486正常exit0，269522 ms，实际assistant模型metadata为anthropic/claude-opus-5，完整交付三文件补丁。Codex纠正FlintOps命名空间、补两个Ops的完整类实例化、固定context读取的View寿命及文档边界。根全文核头文件及静态夹具；严格C++14主机e6631a→072c35、RV64 45a520→a95ed2均exit0、无诊断。没有链接或运行新程序，原PositionCommit/Collector头未改；原task/RAW/patch、实际结果和最终SHA见[回执](implementation_binding_evidence/opus_receipt_install_terminal_20260920.json)。
+
+上下文比较只核Collector根与外层声明的block/session/center一致；PositionCommit目前没有中心字段，故不得把该比较写成真实跨组件站点身份已验证。实际中心writer须持有并绑定两组件，真实SELECT/POSITION事实、first_success锁存、AUTH、终态交付及实际供给仍待接通。§38数值guest限制保持，不重复盲跑或改保护参数。
+
+根另明确COST_DOMAIN_V1的收件范围：N(u,E)在初次封存时即绑定`{该终点E, 本query中心C}`，合法复制保持完整原信封，实际仍经原N→E→C通道。固定73规定不可变收件范围而非仅单成员，不必新增转发外套格式；仅含E的旧信封不能据E外套扩权。此取舍已写入[成本协议§5](implementation_binding_evidence/QUERY_COST_WIRE_SPEC_20260920.md)及[来源接缝](implementation_binding_evidence/QUERY_COLLECTOR_ADMISSION_BINDING_20260920.md)，未改冻结73。定点确认现B1只有付费参数/返回入口、MemoryAdapter只有普通页权限，实际受保护描述符、合法副本与站点dispatcher仍须实现；不能再用声明式能力代替这个来源缺口。
+
+## 43. 受保护存储后端与实际 guest 字循环（2026-09-20）
+
+新增[pie_auth_memory](implementation/pie_auth_memory/README.md)，将§42的连续存储保护落到已有MemoryAdapter与B1接口。布局明确payload、used、lengths、tails及额外`1+A+ceil(A/16)`字保护表；五段检查包含末字节的可表示性与互不重叠，全部保护表计入真实站点R_aux。普通访问只作固定范围和固定字检查，受保护payload与私有表拒绝读写执行，used/lengths允许分配器读取但禁止改写。tail按最终写值保护对应四位记录，保留同字内其它普通分配的更新；原子操作与成功SC沿B1实际write口检查，失败SC不产生store。
+
+四个C++14 freestanding核函数实现初始化、完整分配claim、同长完整副本及清零后解除保护；无动态分配、数值库或外部memcpy/memset。参数及完整块检查成功后才置Busy并逐字修改，最后Ready；解除保护仍保留实际分配，后续Context释放须正常计费。真实RV64循环必须由原B1执行与跨行续接，不能把host调用或按字虚构单价当成已付执行。可信worker须在普通完整指令边界接管，故障后不伪造Ready；本包仅有该worker前置声明，没有实际worker、AUTH签发或业务来源能力。
+
+本包实际Opus调用在600秒限时结束，exit124、无可用源码，原始记录保留且未重试；代码由Astra/Codex接手。core严格host C++14静态e7ee27、RV64IMA/LP64对象f0a8ba均exit0；未定义符号检查42879f为空，36749b确认四个对运行时参数操作的外部Text符号非空。实际host C++20后端静态17c6f3 exit0，完整实例化真实B1路径。定点核对将tail写掩码检查延至底层Write资格通过后，仅读取一次；未改B1、旧Adapter或Context。源码、调用终态及编译命令见本包README与回执，不能据此声称功能或计费运行通过。
+
+根另备六个真实PageData、32槽Context和手工B1指令的有限native夹具，并独立严格编译/链接。它可检查保护、邻接tail、完整复制擦除、AMO进位及SC最终store，core函数在其中原生执行，不能冒称完整guest核的B1费用验证。最终工件/哈希及30秒具名范围见[有限检查说明](implementation_binding_evidence/AUTH_MEMORY_NATIVE_SCOPE_20260920.md)；该新增程序尚未运行，不扩原两批授权。下一步仍是实际B5 worker/受保护来源和中心业务提交接通；§38数值冷启动供给不足保持，未赋实验参数或启动仿真。
+
+随后用户明确回复“允许此测试及同范围修复复测”，上述待答已结束。根8642ee核待执行SHA仍与具名工件一致，首次实际运行e55253 exit0，输出265项断言通过、stderr为空；无需修复或重复运行。原始日志与哈希见[实际结果](implementation_binding_evidence/AUTH_MEMORY_NATIVE_RESULTS_20260920.md)。该结果推进固定native/手编码B1组件验证，不回改原静态交付回执，也不扩大到后继编译可信kernel、worker或真实AUTH/站点运行。
+
+## 44. 持久可信内核与付费B5执行接缝（2026-09-20）
+
+新增[pie_auth_worker](implementation/pie_auth_worker/README.md)。原普通Machine留在ECALL的ImportWait，持久kernel Machine在同一Memory、同一站点供给上顺序运行，不增加server或并行hart，不免费保存/重建普通寄存器。这里明示采用已有B5服务边界：原ECALL已读a7、清预约并付SYSTEM_EDGE，恢复时只有无Backend访问的NextValue/WriteNextPc两尾；不将ImportWait冒称Retired，也不允许load/store/AMO中途换权限。旧B1和MemoryAdapter未改。
+
+CpuInitializer在已映射Memory上逐字建立额外48字CPU及16字续体，成功334付费步，不加载页；完整Commit后才交唯一对象。普通Backend另拒绝全部kernel code/stack的R/W/X/probe，核与五个arena范围互斥。worker自有5字续体经10步取得/初始化，CPU初始化器仍保留时额外状态合计69字，code/stack/源描述符另计原R_aux。实际GNU11 kernel静态栈128字节，不将此组件事实当实验参数或默认应用容量。
+
+编译kernel启动时通过PULL取六个布局字，此后每请求取operation/first/second三字，实际执行§43四个core循环，再COMPLETE报告a0。所有输入/结果沿原B1付费ABI，worker推进至下一PULL才恢复普通执行；付款不足保留当前阶段和值，成功写不重做。只自动初始化一次，后继仅允许claim/copy/wipe；非法操作编号保留普通ImportWait供外层处理，内核失败或HostUnavailable封住恢复。内核编号不开放为普通AUTH导入，普通结构体不产生来源权限；真实角色准入和AUTH描述符业务仍待接通。
+
+实际Opus一次完整交CpuInitializer两文件，session22442→2576ea exit0、199009ms；Codex修撤权不能回收CPU/覆盖失败，补私有绑定访问器及寿命说明，最终host严格静态66ed56 exit0。root实现kernel/协议/worker，并实际以真实B1、ProtectedBackend、ServerMeter严格host C++20静态集成a75a2d exit0。kernel目标对象f2d598、entry最终430256均exit0；对象为RV64IMA/LP64、无外部运行库helpers、无C扩展，尚未链接或运行。命令、实际SHA与原始Opus归属见[交付记录](implementation_binding_evidence/AUTH_WORKER_STATIC_DELIVERY_20260920.md)。下一步接实际INIT镜像并验证续跑/计费，再接原角色签发和交付；没有以§43新授权执行此包。
+
+## 45. 编译内核固定镜像与双制度检查驱动（2026-09-20）
+
+§44对象已进一步链接成实际固定ELF，非运行通过。新增普通probe真实调用Context构造、分配/释放；六次普通ECALL依次claim源和目标、复制、拒绝非法自复制、wipe目标和源。protected头所在同一tail字的邻接零长度分配随后释放并以5字节请求复用，核四位更新。GNU11 RV64IMA/LP64 ELF严格构建75462f exit0，无未定义符号、重定位、CRT或数值运行库。11个LOAD各一页，普通/内核RX分离，五张arena表32/32/32/2/35字，两个私有用途栈及结果页具名；完整字节SHA及静态符号记录见[有限范围](implementation_binding_evidence/AUTH_WORKER_FINITE_SCOPE_20260920.md)。
+
+一次实际Opus镜像包调用session66664在300秒超时exit124、无可用源码，未重试；Codex完成三文件并保留[原始归属](implementation_binding_evidence/opus_auth_worker_probe_terminal_20260920.json)。两个提取头由Codex绑定实际全文件和全部程序头，严格host静态13d024 exit0，独立W5632/K1024/P11/n11导出INIT期望47860。根编写实际Initializer→CpuInitializer→TrustedAuthWorker/ordinary驱动，完整host C++20 -O2严格链接ad2001→e6dcdb exit0、无诊断，未执行提取器/driver或新guest。
+
+驱动固定两制度各131072行×3组件供给，按真实阶段结束换行，完成后的行空闲；它不是实验参数赋值。额外CPU期望334步、三字请求帧取得/零写6步、6次import比较加18次原B1参数读取24步，其余kernel/普通指令和返回按原实现实际计费。Starved在同一行再调用核无新增费和可见状态变化；部分初始化的页不被审计读取。独立oracle逐请求核payload/metadata和拒绝自复制不改133字arena，完成须精确普通EBREAK及结果同时符合。两制度比较全部映射页/权限、普通寄存器、公开CPU状态、每行actual/unused；不将未暴露的kernel隐藏状态冒称已全量比较。
+
+每行收据包括失败前缀均保留。具名60秒命令与二进制SHA已经具体可审，新增运行尚待明确批准，不重复旧native授权，也不据此改数值guest供给或研究输入。该程序的import17仅是固定夹具入口；无实际AUTH角色签发、中心首次成功writer或站点服务，不能据编译/预期值关闭这些业务缺口。下一步在该有限范围验证真实续跑，同时推进现有Collector/PositionCommit中心writer的具体源接入。
+
+并行已形成一页[中心writer实现顺序](implementation_binding_evidence/CENTER_WRITER_NEXT_IMPLEMENTATION_20260920.md)，限定SELECT发布、POSITION成功和收据安装三入口。首次合法成功即使q不变也在真实提交点锁存，后继副本全费不覆盖；outbox、已发布首责任和不可变事实须同次准备再提交，不能事后补造来源。该页仅施工草案，真实来源及writer实现尚未完成，不新增审查前置。
+
+随后用户明确批准该60秒固定检查及同范围必要修复复测。根a545be核工件SHA与原具名范围一致，首次实际执行87bd97 exit0、stderr为空、无需修复或重跑。两制度均完成全部六请求：镜像INIT47860、CPU334、请求帧6、kernel启动2514、普通Context/指令16058、导入参数24、请求及回传17173，合计actual83969；NATURAL charged83969，STRICT charged393216。每制度27977次Starved重复检查，row28000到达唯一普通EBREAK；全部存储预言、可观察最终状态及逐行actual/unused一致。根319100独立复算完整stdout，确认两份131072行计费均符合固定规则。原始日志/哈希和范围限制见[实际结果](implementation_binding_evidence/AUTH_WORKER_FINITE_RESULTS_20260920.md)，不改先前静态/Opus原回执，也不据此关闭生产AUTH、中心writer、数值启动或规模实验缺口。
+
+## 46. 中心本地请求所有权与首次成功组合提交（2026-09-20）
+
+新增[pie_center_writer](implementation/pie_center_writer/README.md)，在原friend名称CenterCommitBridge下实现真实本地事务；具体[源绑定](implementation_binding_evidence/CENTER_WRITER_BINDING_SPEC_20260920.md)沿固定73的异步通道合同。SELECT私有准备从实际Choice/Action冻结完整身份、几何与精度，按已准入(agent,source)路由核首N票据，调用实际PositionCommit发布准备；同一后继根持有完整不可变请求字节副本、outbox、已用业务身份和Published事实/事件。提交前事实与通道token不可见，提交时先核两根再无异常交换，保留旧根供付费回收。首网络责任在这次本地请求与待办发布成立，并不表示N已执行或可跨站提交N ledger；SELECT不被虚造为Query父job。
+
+POSITION路径核已发布query的source/profile/原请求/完整MOVE及中心接收票据，调用原PositionCommit::prepare_position。首次成功与POSITION同次安装first_success及唯一事件，即使q不变也可成立；后续合法副本不替换事实、不省略实际POSITION路径或费用。接收job保存完整不可变Ticket，同ID仅许同票据重放，且不能碰撞首网络job身份；票据一致性不替代AUTH、样本或生命周期准入。已提交View的实际能力可直接供已有Collector构造和prepare_success消费，收据安装仍复用§42，不另造报价或成功工厂。
+
+不透明ChannelToken持有已发布outbox存储，仅公开业务身份、目的server、票据、publication_row和provenance，没有公开payload接口；按发布行及unsigned-byte job key枚举。严格后继NETWORK资格、实际付费复制及token设施登记仍由真实通道入口承担。本包的生产prepare/commit只向具名但尚未实现的CenterService开放，ChannelTransfer亦仅前置声明；没有测试签发器、authenticated布尔或公共raw资料转能力工厂。它关闭本地事务源码缺口，未关闭生产AUTH/Srv_C槽/真实交付/回收，也未运行服务。
+
+单次实际Opus调用session61343→e79b74在300秒硬限exit124、零源码text delta、无可用patch，未延长或重试；三文件均由Astra/Codex接手。根c40f85/f06d04核完整头的事务/可见性路径，补既有FIFO的发布行/job排序要求，最终60bb14/9fa0cc核该改动及完整无main静态夹具。严格host C++14 c463dc与RV64IMA/LP64 8e4720均exit0、无诊断，覆盖实际FlintOps、无默认/整数构造且移动可抛的声明型Real、完整类和私有POSITION模板显式实例化。原始调用、实际命令与源码哈希保留于[归属回执](implementation_binding_evidence/opus_center_writer_terminal_20260920.json)。此处是静态编译证据，不是业务运行、AUTH来源或大规模仿真通过。
+
+## 47. 独立查询对照和三项消融选择器（2026-09-20）
+
+定点核实现发现原Scheduler只有SRDC及其RR回退，不能直接运行独立RR、COUNT或
+三项消融。本轮将研究比较收敛为[结果前登记草案](implementation_binding_evidence/D_SRDC_COMPARISON_BINDING_DRAFT_20260920.md)：共同COST_DOMAIN_V1下的SRDC/RR/COUNT，另分别改工作分母、等待分母或w=1；不交叉扩大矩阵。E0单列，继承主稿配对、Q/E、Hoeffding及失败/未知处理，正式臂和冻结D不被替换。两个候选主比较共同报告，不能结果后择优。
+
+Scheduler已实现六种构造时固定的QueryPolicy，Choice保留实际policy并沿原组合发布，
+没有外部拼接动作或运行期换规则。RR直接选稳定agent，不计算SRDC；COUNT逐需求扫
+原资源，外国活动owner只要有非原终点资源就计一次，不能用retirable/out代替。
+其正分按最早贡献需求加入公共行解平；SRDC原物理时刻解平保持。本轮Index增加
+深复制、同需求不可改变的可选joined_row和原endpoint缓存只读接口，真实公共行
+仍由生产中心提供，不能从时间猜行。RR/COUNT不维护不用的SRDC关系/out/资源反向图，
+也不保留预测历史/报价；共同几何和提交一致性、实际成本协议仍照常承担。
+
+三个消融各只改变指定评分因素，含work-only在内仍要求同一合法正历时报价；
+无报价/精度及零历时回退规则不被混入分母消融。完整源码与归属见
+[实施记录](implementation_binding_evidence/QUERY_POLICIES_IMPLEMENTATION_20260920.md)。一次实际Opus调用51081在256071ms成功结束c03ebc、exit0，四文件完整交付；Codex补齐独立RR必要工作边界、夹具输入和决策区分，根编写Index接缝。
+
+最终selector严格host65c122、RV64d9ed1c静态通过；根另将PositionCommit、收据安装、
+中心writer实际合同联合编译，host2e17e3→fe7deb、RV6461f440→ba1bb2均exit0。
+原query/position两份原样夹具在原授权内重链并运行153486/80fdf3，均exit0，
+分别输出具名passed。先完成Index时的独立回归及哈希另保存在
+[索引记录](implementation_binding_evidence/QUERY_INDEX_POLICY_PREPARATION_20260920.md)，不覆盖此前证据。
+
+新的12组policies_native仅编译/链接；其独立分支运行尚待具体授权，不据旧默认
+夹具通过称全部新策略已运行。生产AUTH、CenterService、通道、真实付费服务和
+原MOVE闭环仍未接通；本节完成可比较规则的源码与静态接入，未完成规模实验准备。
+
+随后用户明确批准具名12组固定native检查及同范围必要修复复测。根2fead7独立核
+最终源码/二进制SHA与送审范围一致，首次实际执行6e76a6、exit0，输出
+`QUERY policy selector fixtures: passed`；无需运行后修复或重跑。三分母和w=1
+的手算选择区分均通过，仍只是人工组件输入的机制证据。原始执行记录、哈希和
+非可达评分输入的范围见[实际结果](implementation_binding_evidence/QUERY_POLICIES_NATIVE_RESULTS_20260920.md)，
+不修改Opus交付时“未运行”的原始终态回执。完整业务与规模证据仍未关闭。
+
+## 48. 实际账本终态导出与私有状态存储接缝（2026-09-20）
+
+新增[pie_query_cost_export](implementation/pie_query_cost_export/README.md)，固定绑定
+一个LocalJobLedger，只从其已提交TerminalPrepared根保留View并调用真实wire::encode。
+准备同时持有原ledger的发布token，但不提前提交。外层封存/outbox完成准备并全根预检
+后，才在同一次实际发布中提交账本部分。规范字节自持不可变；byte_count、word_count
+和body_word给出确切长度及低字节先排的RV64逐字来源，原wire字段大端编码保持。
+移后读拒绝；stale/foreign/已消费token不能提交；成功后保留正文及旧根供付费回收。
+缓存正文不是封存信封，不授权新AUTH身份或替代原信封重放。
+
+唯一一次实际Opus调用45997→f00289 exit0完整交付三文件。Codex将其noexcept构造器
+中的动态分配改为直接持有已有可无异常移动的ledger token，修正源码来源及寿命说明，
+并恢复被嵌套代码围栏截断提取的完整README；原始输出不改。真实host07e559与
+RV64b77011严格C++14静态编译均exit0，无诊断。根8503ef全文核提交与逐字访问实现；
+本轮未运行该新组件，静态检查不能替代业务计费或AUTH验证。
+
+现有worker另增加默认关闭的private_data跨度，启用时与code/stack及五段arena严格
+分离，普通fetch/read/write/probe统一拒访。host实际组合a22ed8与原样driver兼容
+编译cbe1c8均exit0；旧具名ELF、driver二进制和运行日志保持，未复写原运行证据。
+这只落实后继kernel私有序号/封存状态的保护位置，没有实现该状态机或新INIT。
+
+具体[接缝记录](implementation_binding_evidence/COST_TERMINAL_EXPORT_BINDING_20260920.md)
+保留实现边界：账本是结构组件，真实站点仍须提供真正计费事件及角色绑定；导出、编码、
+封存和交付全部计入独立ReceiptAccounting，不回填Query造成自计递归。下一实现直接接
+生产COST封存入口和原付费通道，再接原MOVE闭环；不新开完整审查或扩大实验运行范围。
+
+## 49. COST本地封存内核与付费worker协议接入（2026-09-20）
+
+新增[pie_auth_cost](implementation/pie_auth_cost/README.md)，将§48的私有状态位置落实为
+固定context、有限不回绕序号及每head的Empty/Building/Sealed状态。封存从同一Memory
+的真实source读正文，精确核frame/source/target分配及分离、站点前缀与context；先消耗
+序号，置Building后实际保护和逐字写完整信封，最后置Sealed。MAX只用一次；后续返回
+IdExhausted。专用Copy保留原完整身份，不签发新序号；普通Claim/Copy不能制造Sealed，
+Wipe先撤状态再擦正文，实际Context后续释放。可信状态损坏为InvariantBroken并停止，
+不按普通拒绝继续。当前verify_local只核本站原件/同arena副本，不等于跨站接收能力。
+
+唯一一次实际Opus调用64907→1a2f7e，exit0、184959ms，完整交付core/静态夹具/README；
+原始流与终态保留。Codex修独立context字符串padding、短保护块读取长度守卫和损坏
+状态分类，最终host31af79、RV6463f481均exit0。根实现实际guest kernel及对象脚本，
+Codex接入worker九字布局、操作4–6和付费状态判断；默认旧六字布局/操作保持。实际
+worker组合73065c及原样旧driver静态b12b3e→184052均exit0，未覆盖旧ELF/运行日志。
+
+根首轮对象编译发现初始化函数ADL歧义后改本地函数名；最终c06409 exit0，RV64IMA/
+LP64、ELF flags0、无未定义辅助函数。最终对象内部调用无递归，全部静态栈帧和为
+1264字节，可作保守调用链上界；不沿用旧kernel的128字节，也不把此数当实测峰值。
+新kernel未链接成站点镜像、未执行，启用CostKernelBinding须由具体镜像绑定器给出
+实际context及所需私有栈。任意调用者填写绑定值或普通frame不构成角色/job来源证明。
+
+新七组固定native夹具调用真实Context/LocalJobLedger/LocalTerminalExport，检查
+109字节正文、34字封装、普通复制不能制造身份、擦除复用、Building及序号耗尽等。
+最终严格链接f53e6d exit0，根37225f复核哈希；[工件/命令](implementation_binding_evidence/AUTH_COST_NATIVE_SCOPE_20260920.md)
+已备，尚未执行，已请求该新增具名范围授权。不延用原policies_native或旧worker授权。
+该fixture不检验B1付费执行、实际暂停、真实站点准入或发布；完整生产来源、付费context
+安装、N→E→C原通道/跨站验收及原MOVE闭环仍待接通。具体工件、归属和静态证据见
+[封存绑定记录](implementation_binding_evidence/AUTH_COST_KERNEL_BINDING_20260920.md)。
+
+随后用户明确允许该七组固定native检查及同范围必要修复复测，每次最多30秒。
+根082a52再次核core/测试源码/产物SHA与具名范围完全一致，首次执行758559 exit0，
+完整合并输出为`COST native: 7 finite component groups passed`。没有运行后修复
+或重跑；[原始完整回执与结果](implementation_binding_evidence/AUTH_COST_NATIVE_RESULTS_20260920.md)
+已归档。验证覆盖真实Context分配、真实账本/codec正文及本地core状态行为；没有执行
+新RV64 kernel或站点业务，不能将其表述为B1计费、生产来源或跨站交付已经通过。
+
+下一接入点经具名源码确认：B1/worker已有实际执行、付费ABI及B5暂停，但没有生产
+公开业务import dispatcher；CenterService/ChannelTransfer仍为前置声明，ServerMeter
+只提供当前行扣费，不选择job或授发布机会。旧fixture的import17不进入生产权限表。
+继续实现窄站点当前job拥有者及COST入口，绑定真实登记镜像/独占Memory与worker、
+当前账本和原公共机会；guest执行实际导出/封存，outbox发布前保留Prepared。源码建设
+不等待另一个整体审查，不以普通JobBinding/角色枚举补造缺失的真实来源。
+
+## 50. 真实guest终态准备、ECALL与付费参数桥（2026-09-20）
+
+新增[pie_station_cost](implementation/pie_station_cost/README.md)的GuestExportJob，固定
+一个真实ledger/exporter与Context，实际编码、分配正文/完整目标/三字frame并逐字
+打包。prepare不提前发布，成功后仍持Prepared、正文和旧根。普通guest无权读取
+protection表；根取消不必要的跨块GC原子要求，不新增检查口或权限。显式清理按
+target→frame→source执行，先核可读完整分配，每次真实Context.release成功立即
+撤销该块所有权。已交内核目标先由真实Wipe处理或交外部owner；方法名/phase不
+证明Free，实际B1 metadata写仍由原保护后端逐步拒绝非法释放。
+
+一次真实Opus调用e6610e/session37884→05be39，exit0、179138ms、claude-opus-5，
+三文件完整交付。Codex修Status::ok命名和prepare失败态，移除bool驱动的伪生命周期
+示例与成功路径静态诊断缓冲；host a8bc7a、RV64对象efb221→a21e2f均exit0。
+原始task/RAW/complete与终态保留，最后注释/README调整单列，不伪称另一次运行。
+
+根另写实际guest Seal/Wipe ECALL：操作a0=4/3，a1取原job的frame/target，a2=0，
+a7由真实登记程序绑定提供，不沿用fixture17；Seal先记录Dispatched再ECALL，暂停
+保持CPU和job原位，返回a0仍须实际guest判断。CostCallBridge逐字付费取得/清零
+三个续体字，沿真实B1 ABI读A0/A1/A2，只在读齐后交原worker；不从host审计寄存器
+读参或免费调用exporter。已读参数跨Starved保留，运行期源不可变，实际owner须保持
+借用寿命。Complete只是调用返回，Rejected仍须原付费拒绝处理，不当作Seal成功。
+
+host实际worker/meter组合89f4b1 exit0；根calls对象c473a8及两guest对象ld -r组合
+6b5f3c均exit0。d8509e核ELF64/RISC-V REL、flags0；b325dd核两条实际ECALL与前置
+寄存器/标记写。对象仍含真实标准C++/Context/unwind依赖，没有入口或LOAD，不是
+已链接站点镜像；未运行新程序，不借旧七组native授权运行这些guest路径。
+
+具体源码、命令、哈希及[后继实施记录](implementation_binding_evidence/STATION_COST_GUEST_BINDING_20260920.md)
+已保留。本节关闭真实导出和普通guest→kernel传参的源码缺口；StationJobOwner、
+实际镜像/当前job准入、原公共供给/发布调度、业务费用/责任事件挂接、保护块outbox
+及原通道仍待接通。下一包直接贯通这些实际入口，再作完整集成，不增加一轮整体审查
+或拿新的零散测试数量解释大规模实验资格。
+
+## 51. 执行拥有者与上下文INIT组合（2026-09-20）
+
+新增CostExecutionOwner，在同一稳定生命周期内持有不可变镜像、Memory、两个
+初始化器、普通CPU、可信worker及参数桥。实际step依次完成原INIT和交接，再经
+worker执行普通指令；import读取、登记号读取和比较分别付费。匹配时交原bridge，
+未知import保持待处理，拒绝沿既有付费路径执行。异常或撤销后停止推进，保留原状态。
+该组件完成执行对象拥有与驱动，不替代真实站点当前job、角色及供给调度。
+
+上下文工厂按现有COST格式生成Region，逻辑状态为4+A+C，整页映射和尾部零写仍由
+原Initializer取得并计费。组合夹具将worker.private_data绑定逻辑state.words，
+将整页region.words保留给实际INIT，避免两种长度混用；所有输入由调用者显式提供。
+
+owner严格host C++20检查a908d5、上下文2c52f5均exit0。组合检查ff0e2b最初因命令
+漏include路径失败，补齐路径后68ab83 exit0，无源码修改；没有链接或运行新路径。
+根定点核源码，另一路针对移交、借用、付费及import状态核对未发现具体实现错误。
+唯一Opus调用在1210ms后API402/exit1，零token、无源码；本包为Astra/Codex实现，
+原始失败与终态独立保留，不重试或改变路由。
+
+具体接口见implementation/pie_station_cost/EXECUTION_OWNER.md及CONTEXT_IMAGE.md，
+组合夹具为checks/compile_context_owner.cpp；这些源码和原始回执仍保留本地。
+owner头SHA256为967d41895e5b4032ba26f85fe8feafb8841e3dfb9d8cd39e99b0099aa326a82d，
+上下文头为aa6a0b6d406ce3b86f5fe947f494ecd313185c2c2e78cb17e44536bd668a80b7。
+下一步集中接站点/job、发布及通道，形成POSITION→退休→继续执行和异步成本回传
+的完整业务流程。已有问题与方法不重开全面审查，准备工作以完整闭环、必要联合
+验证、输入与参数绑定收束；当前尚不能据静态组合声称规模运行已经具备条件。
