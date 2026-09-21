@@ -8,6 +8,8 @@
 
 ## 当前裁决、方案和证据
 
+- Q2 §60接续完整查询的[具体范围](../implementation_binding_evidence/FULL_QUERY_CHAIN_SCOPE_20260921.md)和[本批冷缓存定点证据](../implementation_binding_evidence/FULL_QUERY_NUMERIC_COLD_CACHE_STATIC_20260921.md)。原核账工具已增加显式full-query模式，AST/旧默认模式静态兼容检查通过；一次Opus超时无源码，由Codex完成增量，未执行核账器。首次冷缓存触发仍UNKNOWN；若在C setup首次成功完成，该分支仅EH扫描下界203134976步已超过原窗口53477376步。不能套用旧失败，也不由未知推为可通过；不扩成全库静态审查或增加供给。用户另明确中科院/JCR“两种都考虑”，桌面评估已补双口径、年份/类别分列说明。
+
 - Q2 §59记录[世界驱动静态装配](../implementation_binding_evidence/FULL_QUERY_WORLD_STATIC_20260921.md)与[普通发布图资格](../implementation_binding_evidence/FULL_QUERY_PUBLICATION_STATIC_20260921.md)，均为本机工件。固定流程接原B cap/RUN、四终态付费清退、Collector与下一choose；宿主严格编译链接通过，未执行。Publication最大整行静态阈值1262低于既定每行1048576，但不能推出整个Query或冷启动可负担。没有临时补供给或将节点数当费用。
 
 - Q2 §58记录开题文献交付：A空间误差/安全执行20篇、B信息滞后/付费更新20篇、C误差与延迟交叉及边界对照8篇、D直接MAPF近邻7篇；55份选定全文及阅读卡已归档，版本不重复计数。综合结论是有条件值得继续，但昂贵观测、中心选择对象、联合误差/延迟和资源互斥各有近邻，贡献须具体落在安全释放证据、阻塞依赖与实际查询净收益。一个高度相关候选尚未取得全文，未计入55篇，不宣称穷尽查新或首次。PDF与阅读包只在本机桌面保存。
