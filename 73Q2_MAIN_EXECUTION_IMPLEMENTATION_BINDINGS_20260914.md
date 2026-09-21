@@ -663,3 +663,34 @@ owner头SHA256为967d41895e5b4032ba26f85fe8feafb8841e3dfb9d8cd39e99b0099aa326a82
 下一步集中接站点/job、发布及通道，形成POSITION→退休→继续执行和异步成本回传
 的完整业务流程。已有问题与方法不重开全面审查，准备工作以完整闭环、必要联合
 验证、输入与参数绑定收束；当前尚不能据静态组合声称规模运行已经具备条件。
+
+## 52. 首轮原生机制闭环与实际B1工作量反馈（2026-09-21）
+
+用户将目标收束为先取得最小原生闭环，再总结、优化并交接完整计费链。
+新增implementation/pie_minimal_loop，两份程序均Astra/Codex实现，未再调用Opus。
+原生闭环复用真实ReferenceController、PositionNumeric、Geometry、PositionCommit
+和Scheduler。非零足迹/误差盒实际参加mask计算；观测只由冻结控制快照计算，不收
+手填lower。无报价时SRDC合法RR，不制造用于正分的费用输入。
+
+严格链接0e9b2a→fb87ed exit0；根首跑6465a7 exit0。10条JSON事件显示后车B先受阻
+静止，查询A后q由0推进到2，实际退休cell-1/cell-2；已提交owner允许B获cap/RUN，
+下一查询选B，最终两原MOVE终点关闭且无活动动作/需求。这是固定原生机制运行，
+不认证AUTH、完整世界/任务服务或任何吞吐优势。
+
+费用反馈程序用真实B1 ADDI跨行执行产生AttributionLane段，经LocalJobLedger的
+TerminalPrepared、实际导出/codec与ReceiptBuilder送入Scheduler。初次构建缺FLINT
+生成头路径，修正后链接523fa8→b327c3成功；首跑6d728f因诊断owner责任键错误
+被真实Index拒绝，保留原失败。仅将fixture responsibility改成原action键，没有
+放宽旧组件。最终重链338be8→9ce555、复测c2bc27均exit0。
+
+NATURAL/STRICT各三个负载actual21/56/7、总84步，19段、12条退休指令、16次暂停；
+收费分别84/95、未用供给11，下一选择A→B。几何/历史/成功时间属于数学诊断输入，
+原生ledger/codec/selector及INIT未计入该B1段，Collector/AUTH未接通；不将此当
+整次查询费用或与原生控制路径合称一条完整费用业务链。
+
+原始工具输出分别保存在本地implementation_binding_evidence下的
+minimal_native_loop_run_20260921.json、b1_cost_feedback_first_run_20260921.json及
+b1_cost_feedback_final_run_20260921.json。最终源/产物SHA、具体复现命令、优化方案
+及可复制话术见本地NEXT_CODEX_HANDOFF_20260921.md；主稿既有修改与冻结证据保留。
+下一步只补固定业务链的站点/job、费用SOURCE及终态交付来源，复用既有组件，
+先量首轮/续轮真实成本再做小规模同口径对照，不增加全面重审或通用框架前置。
