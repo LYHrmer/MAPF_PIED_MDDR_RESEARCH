@@ -1,6 +1,6 @@
 # MAPF 项目当前入口
 
-更新：2026-09-21。**原生机制闭环与独立B1费用反馈此前分别通过，固定三站点COST通道已静态链接。本次新增完整查询站点执行器、真实物理根CAPTURE来源、付费证据复制与中心请求至收据/下一选择的调用顺序，host/RV64组合静态检查通过。仍需C/N/E完整guest、实际ELF/发布图、唯一世界驱动及业务责任/全部费用贯通；没有整次查询成本或吞吐结果。用户最新明确“先只完成实现和静态检查”，没有运行新镜像。当前距扩量仍需完整查询验收、真实成本测量和小规模公平对照三个里程碑。主稿原修改和冻结证据保留。**
+更新：2026-09-21。**原生机制闭环与独立B1费用反馈此前分别通过。本轮C/N/E完整查询guest已实际链接为三份新RV64 ELF，接入请求、POSITION、真实业务责任发布、终态账本与后继报价路径；新双域loader严格静态编译通过，实际私有kernel闭包及1408-byte保守栈界已核。尚缺唯一世界驱动、固定站点脚本与普通guest真实发布图资格，完整查询没有运行，没有整次成本或吞吐结果。用户“先只完成实现和静态检查”的边界保持。当前按新增任务整理两条各约20篇及交叉文献的开题综述，全文与笔记在桌面独立备份。主稿原修改和冻结证据保留。**
 
 本页是导航和操作约束的唯一入口。按当前缺口读取对应章节与直接证据，不递归全文阅读历史交接、账本和咨询；已有正式审查不因换窗口重新启动。
 
@@ -8,7 +8,9 @@
 
 ## 当前裁决、方案和证据
 
-- Q2 §56为最新后继：[站点与中心顺序实现](../implementation_binding_evidence/FULL_QUERY_STATION_SUCCESSOR_20260921.md)及[源码入口](../implementation/pie_station_query/README.md)仍为本地工件。站点绑定真实owner/job/lane、独立计算与发布费用SOURCE及真实检查点；C请求用Selection、E与N用Query。已提交outbox持有实际封存请求，N付费完整复制并回收原件；真实CAPTURE冻结当前物理根、guest按发生历史精确重建。CenterQueryFlow沿同一bridge接至实际Collector/报价安装与下一选择。组合静态入口通过，未运行。下一步优先装配三个完整guest及ELF/实际发布图和唯一world驱动，补业务child责任发布、全费用与末尾回收；当前终态运输仍有保留对象，不称完整GC。新Opus Copy完整交付，首次网络失败和授权重试成功分开保留。
+- Q2 §57记录三完整guest与ELF后继：[本机静态证据](../implementation_binding_evidence/FULL_QUERY_ELF_STATIC_20260921.md)。C沿原Position根接真实POSITION提交、原后车需求放行准备、四终态Collector、收据和下一选择；N双向opaque转发及E快照证书生产接实际Query账本。RA终态逐字回收与真实movement发布边界已实现。三ELF已链接，实际kernel静态闭包及新loader检查通过；普通业务发布图、原MOVE的实际world接续和全链运行尚未验证。实际Claude Opus完整交付N业务体，归属与根集成修正分开保留。用户新要求的文献综述不改变实验运行或参数边界。
+
+- Q2 §56为上一后继：[站点与中心顺序实现](../implementation_binding_evidence/FULL_QUERY_STATION_SUCCESSOR_20260921.md)及[源码入口](../implementation/pie_station_query/README.md)仍为本地工件。站点绑定真实owner/job/lane、独立计算与发布费用SOURCE及真实检查点；C请求用Selection、E与N用Query。已提交outbox持有实际封存请求，N付费完整复制并回收原件；真实CAPTURE冻结当前物理根、guest按发生历史精确重建。CenterQueryFlow沿同一bridge接至实际Collector/报价安装与下一选择。组合静态入口通过，未运行。此时列出的guest与终态回收缺口已有§57后继，实际world/发布图和全链运行仍未完成。新Opus Copy完整交付，首次网络失败和授权重试成功分开保留。
 
 - Q2 §55记录上一后继：[完整查询实现进度](../implementation_binding_evidence/FULL_QUERY_IMPLEMENTATION_PROGRESS_20260921.md)。中心使用实际已发布根/首次成功事实，将真实准入终态准备到Collector，并把收据安装到原Position根；发布SOURCE以实际指令收费。请求和COST使用原INIT一次性安装的两个固定上下文，原COST镜像不能替代新十二字kernel登记。后继更新以§56为准，不由静态源码宣称完整闭环或规模就绪；复用同一组合编译入口，不新增完整审查或孤立测试前置。
 

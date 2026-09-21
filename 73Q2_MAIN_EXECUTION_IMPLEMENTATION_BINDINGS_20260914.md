@@ -845,3 +845,40 @@ child发布、原MOVE接续、全部费用与末尾回收，再验收真实报�
 尚无真实单次成本、等待改善或吞吐结果。完整查询验收→实测首轮/续轮成本→
 小规模同口径对照及既定实验绑定，仍是扩量前的三道关；不新增全面审查或孤立
 测试前置，不给无实测依据的百分比/日期。输入、参数和运行边界保持不变。
+
+## 57. 三完整查询guest与实际ELF静态交付；新增开题文献任务
+
+2026-09-21。C/N/E实际完整业务体及固定profile已链接为三份新RV64 ELF；没有执行
+guest、driver或测试。详细字节和静态资格见本机
+`implementation_binding_evidence/FULL_QUERY_ELF_STATIC_20260921.md`。
+
+C沿真实CenterQueryFlow接请求选择/封存、POSITION准入和原根提交；在已提交
+owner状态上准备原B需求的释放与cap，随后从真实movement发布见证停到world确认。
+Query输入清理后，真实关闭段SOURCE进入账本，RA准备/封存COST，实际导出先于
+终态发布，再Wipe/release。四个真实终态接Collector，收据装入原Position根，再
+读取下一次choose；没有人为指定后继对象。E完整核请求后冻结实际CAPTURE来源、
+构造证书并发布；N两方向保留原opaque消息，业务child发布与引用转交用同一
+账本事务。终态运输新增按字付费RA Reclaim，host析构不算收费回收。
+
+实际Claude Opus一次完整交付N双向业务体，exit0、CLI报告claude-opus-5，原流、
+任务和终态见本机`opus_full_network_*_20260921.*`；Codex只改共享finish次序
+注释并负责站点movement/reclaim、其余角色及最终集成。首次Ticket构造编译失败
+与修正后日志分开保留。三ELF实际链接成功，C随后针对Publication SOURCE非零
+异常出口修复重编重链，不抹去旧产物时点。
+
+新loader固定实际SHA、ELF、TLS、INIT、两个context端点和12字kernel布局，显式
+要求传入新kernel栈界；GNU11 C++20严格host静态组合通过。三ELF私有代码段逐字
+一致；19函数/4391指令实际控制转移闭包检查通过，唯一非return间接分支按实际
+0..9 guard与10目标只读表解析。保守栈界为1408 bytes，小于4096-byte实际预留；
+来自新双域kernel的调用图和本批.su，而非沿用旧COST默认界。
+
+后继仍需唯一world驱动、固定站点脚本/供给行，以及普通guest从Publication
+SOURCE到finish的真实图登记。私有kernel闭包不等于全业务发表图资格；实际B
+原MOVE的cap/RUN、全费用和最终GC仍没有运行验收。没有完整查询成本或吞吐数据，
+不修改任何保护输入/参数和只实现静态检查的边界。
+
+用户随后明确新增开题文献综述：有界空间跟踪误差约20篇，中心信息滞后及付费
+查询约20篇，另查两类交叉；以Introduction/Problem Formulation/Conclusion/Future
+分析问题、机制理由和局限，判断本课题价值。全文、阅读卡和综述写到授权新建
+桌面独立目录；旧文献备份只读、论文不入公共Git。当前开始执行，不把候选数量
+写成已经读完。本轮实现停在上述真实静态交付点，完整查询目标没有完成。
