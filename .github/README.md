@@ -1,12 +1,14 @@
 # MAPF 项目当前入口
 
-更新：2026-09-21。**原生机制闭环与独立B1费用反馈此前分别通过。本次已实现真实关闭段SOURCE、付费终态导出/通道、接收准入与窄站点驱动，三份固定N/E/C镜像和宿主驱动静态链接通过；CenterService发布接缝和Opus日志核账脚本也已交付。用户最新明确“先只完成实现和静态检查”，新驱动未运行。完整POSITION查询、公共发布及Collector结算/报价安装仍待接通，没有整次查询成本或吞吐结果。下一步围绕同一固定业务链复用组件，不重开全面审查、不扩ECBS支线。主稿原修改和冻结证据保留。**
+更新：2026-09-21。**原生机制闭环与独立B1费用反馈此前分别通过，固定三站点COST通道已静态链接。本次完整查询后继新增请求/POSITION证据链、原INIT双上下文、CenterService终态接收/收据安装及公共发布SOURCE源码，最新host/RV64组合静态检查通过；两次新Opus实现交付均成功。完整查询ELF与固定驱动、原子CAPTURE及全费用责任转交仍待集成，没有整次查询成本或吞吐结果。用户最新明确“先只完成实现和静态检查”，没有运行新镜像。当前距扩量仍需完整查询验收、真实成本测量和小规模公平对照三个里程碑。主稿原修改和冻结证据保留。**
 
 本页是导航和操作约束的唯一入口。按当前缺口读取对应章节与直接证据，不递归全文阅读历史交接、账本和咨询；已有正式审查不因换窗口重新启动。
 
 [公开进度一页表](../GITHUB_PROGRESS.md)及[导师汇报说明](../RESEARCH_BRIEF_FOR_ADVISOR.md)可直接在GitHub阅读。[本地详细准备表](../implementation_binding_evidence/SCALE_RUN_READINESS_20260920.md)和下文implementation路径指向尚未随本次进度同步上传的本地工件。
 
 ## 当前裁决、方案和证据
+
+- Q2 §55为最新后继：[完整查询实现进度](../implementation_binding_evidence/FULL_QUERY_IMPLEMENTATION_PROGRESS_20260921.md)与[源码入口](../implementation/pie_station_query/README.md)仍为本地工件。中心已使用实际已发布根/首次成功事实，将真实准入终态准备到Collector，并把收据安装到原Position根；新发布SOURCE以实际指令收费。请求和COST使用原INIT一次性安装的两个固定上下文，原COST镜像不能替代新十二字kernel登记。尚需完整查询ELF/实际发布指令图、原子CAPTURE与世界推进、付费转交及完整责任闭合；不由静态源码宣称完整闭环或规模就绪。复用同一组合编译入口，不新增完整审查或孤立测试前置。
 
 - Q2 §53–54为本次接续：[三站点接入源码](../implementation/pie_station_query/README.md)、[具体工件与运行边界](../implementation_binding_evidence/FIXED_COST_CHAIN_SCOPE_20260921.md)、[实际Opus交付](../implementation_binding_evidence/OPUS_COST_CHAIN_AUDITOR_RECEIPT_20260921.md)。这些路径仍为本机工件。COST部分只形成N→E→C的终态接入，不能代替完整C→N→E→N→C查询。已有真实关闭段经付费SOURCE进入账本，原issuer/收件范围经付费通道保留，C端实际guest准入产生Collector所需能力；以上新路径只有静态证据。用户选择仅实现/静态检查后，本轮不执行候选命令，不重复询问。另已核Robust MADER原文：分档固定注入延迟支持敏感性设计，不是随机抽样实验；当前不生成噪声或赋实验参数。
 

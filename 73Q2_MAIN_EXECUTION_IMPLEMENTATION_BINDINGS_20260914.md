@@ -751,3 +751,48 @@ III-A/Table VI和Fig.6明确仿真外加0/50/100/200/300ms固定档延迟，不�
 不直接搬论文毫秒值给T_delay或其它保护参数。当前只记设计启示，未生成RNG/输入。
 这不是新的完整文献审查。[作者终稿](https://arxiv.org/pdf/2303.06222v6)、
 [官方实现](https://github.com/mit-acl/rmader/blob/master/rmader/src/rmader_ros.cpp)。
+
+## 55. 完整查询的证据、中心结算与发布接线（2026-09-21）
+
+接续§53固定COST工件，用户“只实现和静态检查”的限制持续有效。本次没有运行
+新guest/驱动、生成研究输入或随机延迟、赋保护参数。新代码尚未组成完整查询ELF。
+
+CenterService新增实际终态SOURCE准入到Collector的准备，以及原bridge Position根上
+的ReceiptInstallation准备/提交；根事实来自实际已发布查询及已锁存FirstSuccess。
+提交前后调用同一真实发布进口，旧根保留到付费清理。公开行必须严格后继，物理
+时刻允许相等，遵循原机会次序。PublicationSource绑定实际job、原行和供给，先核
+已登记不可变指令图的整段可负担性，再逐条B1收费并在同一行结束发布。最长路径
+守卫不作实际费用，也未证明所有供给紧张情形下的最早发布等价；真实查询ELF与
+有限指令图仍待登记，不能由当前头文件关闭该缺口。
+
+新增pie_query_evidence：实际选择导出请求、原控制器快照生成精确POSITION证书、
+真实worker/kernel封存与验证、付费导出及接收SOURCE、guest准入。CAPTURE机会线
+格式和私有准入已有实现，但实际原子采样与公共世界时刻/控制根绑定仍待固定驱动。
+没有以外部下界或host解码制造证据。现有窄线格式仅接受可精确编码的有理数cap；
+不对非有理值近似或填默认值。
+
+根定位中心请求发往E而本地费用终态发往C的上下文冲突，后继实现原INIT一次性
+安装两个固定域，发行者身份一致、收件范围独立；新kernel共享唯一serial，分别
+核域并联合撤销头状态。逻辑私有区8+2A+C+E与INIT页补零分开，layout SOURCE为
+十二字。旧默认COST域及旧make_context_region保留；新kernel代码/栈需实际登记，
+不得沿用旧九字kernel配置后宣称完整AUTH已绑定。
+
+两次新Claude Opus调用实际exit0、完整交付：发布guest进口baf9d7/session58535→
+b8fc65，47395ms；owner证据进口路由d12ab4/session90153→9fa88a，148463ms。
+均为一次turn，CLI modelUsage报告claude-opus-5。根保留原正文/原流，并补发布结束
+进口与准确收费说明；owner路由使用实际worker的OperationComplete状态，不修改
+worker来迎合提示中的错误状态名。跨模块中心事务、发布SOURCE和双域实现由
+Codex完成，混合归属及SHA见本地FULL_QUERY_IMPLEMENTATION_PROGRESS_20260921.md。
+
+证据包严格RV64静态编译/可重定位链接通过，kernel无未解析符号。根将真实证书、
+终态/收据、PublicationSource实际worker模板及双域INIT→CostExecutionOwner接法
+纳入原组合静态入口，最后f8f525/session54743→7bf5e0 exit0；没有执行程序。
+query_kernel.o SHA为b06f0f6c54634d69072057d3d69f6202b9eca34ec5fcf2038c501b0e428385b6；
+center_query_bindings.o为c42e4f6dbaeccfc2859ba523d4243d349293a9bea9ef5b15472022f39b800472。
+本轮主稿与固定73/R1–R4哈希均保持接续前值，§53旧固定COST工件未覆盖。
+
+当前仍在完整查询集成阶段。剩余实物为新ELF/固定驱动和真实发布图登记、原子
+CAPTURE/物理推进、付费消息复制与业务child责任发布、全部Compute/Publication
+段及尾部清理进账，再由同一查询的收据驱动后续选择。之后量首轮/续轮真实成本
+并开展同口径小规模对照，落实既定输入/参数/运行绑定后扩量。既无完整查询运行
+耗时，也无稳态吞吐，当前不报完成百分比或剩余天数，不重开全面审查。
