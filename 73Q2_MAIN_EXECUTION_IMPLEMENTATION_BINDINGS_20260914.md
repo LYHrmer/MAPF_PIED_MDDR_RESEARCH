@@ -796,3 +796,52 @@ CAPTURE/物理推进、付费消息复制与业务child责任发布、全部Comp
 段及尾部清理进账，再由同一查询的收据驱动后续选择。之后量首轮/续轮真实成本
 并开展同口径小规模对照，落实既定输入/参数/运行绑定后扩量。既无完整查询运行
 耗时，也无稳态吞吐，当前不报完成百分比或剩余天数，不重开全面审查。
+
+## 56. 实际站点执行器、物理CAPTURE与中心业务顺序（2026-09-21）
+
+接续§55，仍只实现及静态检查。FixedQueryStation已接原owner、真实当前job、
+同一Compute lane、固定guest检查点及实际PublicationSource登记。owner支持多个
+独立关闭段SOURCE，发布准备行取实际关闭的计算段；Query的计算/发布费用可从
+各自来源进入同账本，SOURCE读取限定ReceiptAccounting。唯一world驱动仍须提供
+原公开行及原供给；station不内部扩表，也不代替原世界时间推进。
+
+中心outbox改为保留实际封存请求exporter，实际token经ChannelTransfer调用同一
+worker导出和Wipe。请求字段核实际选择/行动/精度/几何；C请求出站限Selection，
+E POSITION和N转发限Query。N两个方向完整复制原opaque envelope、付费回收原件，
+再在同Query lane逐步启动SOURCE至Idle；不读取接收者正文。对外放行必须已有
+真实发布且guest到达后继检查点。实际child责任预留/发布业务体仍待接入，不能
+由固定job标签或检查点冒充已闭合的责任家族。
+
+FixedCaptureWorld成为实际ReferenceController所有者，按原公开事件执行旧边界
+优先推进并保留实际发生的命令。SOURCE在原行原子pin当前不可变物理根，后续历史
+读取和guest精确重建分别付费，guest暂停不自行冻结世界。pin可负担性界包括
+十四项实际B5原语及原ECALL返回尾段，按实际步骤收费，不预付退款。E SOURCE与
+实际当前Query job/Compute lane绑定。原始系数、公开时刻及控制参数限精确有理
+profile，内部代数状态照旧精确；完整世界驱动和最终E镜像登记仍未完成。
+
+CenterQueryFlow沿同一bridge串起真实选择/封存/请求发布/运输、POSITION准入和
+提交、Query输入清理、终态Collector、原根收据安装及下一choose。POSITION可先
+释放/继续MOVE，费用家族异步结算，不人为保证下一对象变化。发布不可能失败
+在RV64改为实际EBREAK有限出口，图检查保留全部分支及真实GuestFault收费前缀；
+native保持terminate，LocalJobLedger旧base延至付费清理。实际完整ELF的间接目标、
+普通返回分支及紧供给下最早发布等价仍需具体绑定，不能由此声明已验证。
+
+新Opus Copy任务首次58ae5d/session13486→f4332d exit1，FailedToOpenSocket，
+原流保留；经原命令授权重试c9d576/session60681→0ebbb0 exit0，65808ms、1 turn，
+CLI报告claude-opus-5，正文完整。根核原Source未变后接入，再独立补Reclaim与
+实际调用链；其他Codex子任务不归为Opus。原始正文、失败/成功流、哈希及细节
+见本机FULL_QUERY_STATION_SUCCESSOR_20260921.md。
+
+复用原组合编译入口，纳入实际站点全部公共API、owner/CAPTURE/复制/回收及
+中心证书/Collector/收据路径。最终0fda28/session69889→8156c2 exit0，GNU11
+host C++14/C++20与RV64严格静态编译通过，没有执行新guest/测试/驱动。
+station头SHA为09ebdb7949c7fdf89dc3434052bc2d52047548fa1d88af36b468cf151de3bf6c；
+center_query_bindings.o为87bcb16ca537a4cc8bd89b48b3352edfe9a5463741d295e61d33683137e558df。
+主稿与冻结73/R1–R4、§53旧四份COST工件哈希均未变。
+
+下一步直接装配C/N/E完整guest、新ELF/发布图、固定脚本和唯一world驱动，接实际
+child发布、原MOVE接续、全部费用与末尾回收，再验收真实报价对后继选择的使用。
+当前最终COST输入SOURCE仍有保留对象，host析构不计为付费GC。完整查询仍未运行，
+尚无真实单次成本、等待改善或吞吐结果。完整查询验收→实测首轮/续轮成本→
+小规模同口径对照及既定实验绑定，仍是扩量前的三道关；不新增全面审查或孤立
+测试前置，不给无实测依据的百分比/日期。输入、参数和运行边界保持不变。
