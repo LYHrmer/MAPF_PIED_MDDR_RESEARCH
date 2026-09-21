@@ -694,3 +694,60 @@ b1_cost_feedback_final_run_20260921.json。最终源/产物SHA、具体复现命
 及可复制话术见本地NEXT_CODEX_HANDOFF_20260921.md；主稿既有修改与冻结证据保留。
 下一步只补固定业务链的站点/job、费用SOURCE及终态交付来源，复用既有组件，
 先量首轮/续轮真实成本再做小规模同口径对照，不增加全面重审或通用框架前置。
+
+## 53. 固定三站点COST接入及实际Opus核账交付（2026-09-21）
+
+接续§52，只围绕固定业务链补接缝。新增pie_station_query，复用原owner、worker、
+AttributionLane、ledger/export/codec、COST kernel和Collector类型，没有重启整体审查。
+ClosedSegmentSource只接收绑定lane真实close_slice所得段，有限FIFO不能插入手造段；
+付费SOURCE41经原B5参数读写送入guest，guest核job/制度后提交原账本，再确认源段。
+
+实际导出44先通过可信worker重新核封存，再付费取得并完整复制独立opaque envelope。
+原guest账本发布完成且Wipe/release后才放行到通道。两段付费完整复制保留N及{E,C}，
+E在真实guest验证转发身份，C经真实SOURCE45与parser/codec构造AdmittedTerminal；
+没有host解码正文后直接制造可信Collector输入。原AUTH serial保持私有。
+CenterService另接不可变当前job、私有SELECT/POSITION准备根和严格后继发布机会；
+其实际公共机会SOURCE、生产请求/POSITION AUTH仍未实现，不能由结构体冒称存在。
+
+固定N/E/C镜像均为带真实入口、构造器、分配器和TLS的静态RV64产物，分别绑定实际
+Memory、INIT和worker。付费检查点驱动同站持久生命周期内两轮，INIT不逐轮重建。
+内核私有helper用独立命名空间避免COMDAT落入普通代码；worker私有区绑定逻辑
+4+A+C长度，INIT仍覆盖整页。最终三镜像与真实宿主驱动严格静态链接通过；根最终
+驱动编译6121bd/session35434→efeed9 exit0，没有启动新二进制。
+
+产物SHA256：N为bb911d881db10d396f4faecff083202597e354d78afa55917962e20e5a931dc5；
+E为dc9dc5941b21ead8f0937c9c31fa9d80aa81f306858633b9d966b90b0d1ec2bd；
+C为8db83a291cce18d3e6835c1f569d52747eeefcab7513a878b7dad813e52ac9f2；
+宿主驱动为0e8dd145130b58cacfa3bc54ed7e08f27d0cf91e280daa2975fcb0d694307979。
+固定加载器仅接受实际派生并核SHA/ELF header一致的镜像，未读研究输入。
+
+用户随后要求更多明确任务交Claude Opus。本次新核账任务04e93a/session73189→
+e273f3实际exit0，187783ms、一次turn、完整Python源码；CLI modelUsage报告
+claude-opus-5。无工具权限，未重启旧402任务或修改共享路由。根接入并修正无效行
+污染失败前缀的顺序、补两轮实际Query段要求；57271f AST静态解析通过。它只独立
+核对一个显式新日志的逐段算术、站点汇总及顺序，不能证明AUTH或查询收益。原流、
+正文、终态和混合交付归属见本地OPUS_COST_CHAIN_AUDITOR_RECEIPT_20260921.md。
+
+源码及具体边界见本地implementation/pie_station_query/README.md和
+implementation_binding_evidence/FIXED_COST_CHAIN_SCOPE_20260921.md。用户对已做成的
+300秒/两制度各两轮候选明确回复“先只完成实现和静态检查”。因此本轮无新guest
+执行或核账运行，没有成本数值、Collector结算/新报价安装、完整POSITION查询或
+吞吐结果。人工负载只为费用通道接入，运输对象仍存活，host析构不冒作付费GC。
+继续补生产请求/POSITION、公共发布和完整责任家族；本次不是完整业务链验收通过。
+
+## 54. 通信延迟的定点文献启示（2026-09-21）
+
+按用户请求由单一子任务核Robust MADER的RA-L作者终稿及官方代码。RA-L 2024，
+9(2):1476–1483，DOI 10.1109/LRA.2023.3342561。Fig.1报告六机mesh平均49.8ms、
+最大483ms；Fig.7(a)为实验1–22的汇集直方图，不另造单次六机飞行的样本数量。
+III-A/Table VI和Fig.6明确仿真外加0/50/100/200/300ms固定档延迟，不能写作逐包
+随机抽样。实际收到消息的时延另受调度/计算影响。官方代码所测接收时间减消息
+生成时间属于单向应用消息年龄；缺论文运行commit和时钟校准证据，不改称RTT。
+
+对本研究的启示是另设外生通信延迟因素，先保留无额外注入基线，再做固定档敏感性，
+随机分布作为本研究明示扩展。内生查询服务/排队与外生时延分开记录；同规则对照
+使用按消息/通道身份对应的共同外生条件，避免按调用次数抽样使不同策略不可比。
+仍按原CAPTURE/MOVE版本与严格空间条件释放；已观测最大值不充当确定安全上界，
+不直接搬论文毫秒值给T_delay或其它保护参数。当前只记设计启示，未生成RNG/输入。
+这不是新的完整文献审查。[作者终稿](https://arxiv.org/pdf/2303.06222v6)、
+[官方实现](https://github.com/mit-acl/rmader/blob/master/rmader/src/rmader_ros.cpp)。

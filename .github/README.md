@@ -1,12 +1,14 @@
 # MAPF 项目当前入口
 
-更新：2026-09-21。**首轮最小原生机制闭环已实际通过：真实控制进度→数值观测→POSITION提交→资源退休→后车RUN→两原MOVE终点关闭。另一路实际B1工作量经账本/codec反馈到下一选择的诊断经场景绑定修正后通过。用户明确本轮先完成原生闭环，再交接完整计费链；两条结果分别成立，不冒称完整站点计费或规模收益。PIE-D有界误差LMAPF的问题、D_SRDC_v1方法、六选择规则和必要分析已定。下一步集中一次固定查询业务，补站点/job、费用SOURCE、终态通道/Collector来源三处接缝，再做小规模对照。主稿原修改和冻结证据保留，ECBS不扩支线。**
+更新：2026-09-21。**原生机制闭环与独立B1费用反馈此前分别通过。本次已实现真实关闭段SOURCE、付费终态导出/通道、接收准入与窄站点驱动，三份固定N/E/C镜像和宿主驱动静态链接通过；CenterService发布接缝和Opus日志核账脚本也已交付。用户最新明确“先只完成实现和静态检查”，新驱动未运行。完整POSITION查询、公共发布及Collector结算/报价安装仍待接通，没有整次查询成本或吞吐结果。下一步围绕同一固定业务链复用组件，不重开全面审查、不扩ECBS支线。主稿原修改和冻结证据保留。**
 
 本页是导航和操作约束的唯一入口。按当前缺口读取对应章节与直接证据，不递归全文阅读历史交接、账本和咨询；已有正式审查不因换窗口重新启动。
 
 [公开进度一页表](../GITHUB_PROGRESS.md)及[导师汇报说明](../RESEARCH_BRIEF_FOR_ADVISOR.md)可直接在GitHub阅读。[本地详细准备表](../implementation_binding_evidence/SCALE_RUN_READINESS_20260920.md)和下文implementation路径指向尚未随本次进度同步上传的本地工件。
 
 ## 当前裁决、方案和证据
+
+- Q2 §53–54为本次接续：[三站点接入源码](../implementation/pie_station_query/README.md)、[具体工件与运行边界](../implementation_binding_evidence/FIXED_COST_CHAIN_SCOPE_20260921.md)、[实际Opus交付](../implementation_binding_evidence/OPUS_COST_CHAIN_AUDITOR_RECEIPT_20260921.md)。这些路径仍为本机工件。COST部分只形成N→E→C的终态接入，不能代替完整C→N→E→N→C查询。已有真实关闭段经付费SOURCE进入账本，原issuer/收件范围经付费通道保留，C端实际guest准入产生Collector所需能力；以上新路径只有静态证据。用户选择仅实现/静态检查后，本轮不执行候选命令，不重复询问。另已核Robust MADER原文：分档固定注入延迟支持敏感性设计，不是随机抽样实验；当前不生成噪声或赋实验参数。
 
 - [本轮交付记录](../implementation_binding_evidence/IMPLEMENTATION_SESSION_20260919.md)、[查询算法合同](../implementation_binding_evidence/query_scheduler_contract_20260919.md)、[查询源码与检查](../implementation/pie_query/README.md)：直接接续所列接口，不重读全部历史。Q2 §29–31记录新增检查及真实归属；§25时点的FLINT六回调缺口已由§29关闭，全局C/C++入口和完整业务运行仍待接入。独立文献子任务围绕付费观测、依赖释放与互补收益检索，不恢复完整审查或新增流程前置。
 
@@ -87,7 +89,7 @@ DARI已淘汰，旧编号计划不恢复为待办。目标SCI二区/三区，JCR
 4. `/home/lyh/桌面/智能仓机器人分布式调度_文献备份`永久只读。仅既获准的`/home/lyh/桌面/MAPF_实验前必读论文_20260909`可在必读材料变化时更新；PDF不入Git。新工件写研究目录，编辑用apply_patch。
 5. shell每段前缀rtk，精确内容用rtk proxy；仅仓库实际有.codegraph时先用CodeGraph，不创建/重建索引。不绕过沙箱、审批拒绝或登录限制，不向外部人员发消息。
 6. 用户已授权既有仓库`LYHrmer/MAPF_PIED_MDDR_RESEARCH`的精确文档同步。2026-09-14根实际GitHub API核该仓库为公开（`private=false`），纠正原“私有”记录；用户随后明确允许公开推送已准备的七文件文档批次（含未发表主稿）。2026-09-20用户进一步要求“进度及时更新github”，后继进度文档可按此授权同步；本轮仅同步入口、GITHUB_PROGRESS、Q2和导师说明，主稿现有修改保留未提交。不自行更改仓库可见性；先核实际工作树/远端，只暂存核过路径，不add .、不上传整个目录/受限材料、不跑hook、不改全局Git设置、不发release。历史提交号不是当前状态。
-7. Claude C31取消，C32–C43及C45/46均已终态，不轮询旧句柄。C36–38无完整交付后的Codex接手代码不冒称Opus成果；C39–41及C43有完整Opus源码，C42截断后由Codex完成并实测。C44启动工具被中止，未返回CLI session、RAW或模型代码，不是provider推理失败或Opus交付，MemoryAdapter由Codex完成。C45实际CLI退出0，Opus头文件与Codex修正/测试/README为混合交付。C46实际HTTP402每日额度拒绝，零token/无代码，Codex随后完成§25；不重复请求或改共享路由，原调用与实现记录分开。旧一次性等待已于2026-09-12结束，不当作本次402的已知恢复时刻。已证本地代理网络在沙箱不可用，后续合法调用沿require_escalated路径；不绕过实际审批。保原RAW及终态，thinking只统计而不输出。
+7. Claude C31取消，C32–C43及C45/46均已终态，不轮询旧句柄。C36–38无完整交付后的Codex接手代码不冒称Opus成果；C39–41及C43有完整Opus源码，C42截断后由Codex完成并实测。C44启动工具被中止，未返回CLI session、RAW或模型代码，不是provider推理失败或Opus交付，MemoryAdapter由Codex完成。C45实际CLI退出0，Opus头文件与Codex修正/测试/README为混合交付。C46实际HTTP402每日额度拒绝，零token/无代码，Codex随后完成§25；不重复请求或改共享路由，原调用与实现记录分开。旧一次性等待已于2026-09-12结束，不当作402的已知恢复时刻。2026-09-21用户新要求提高Opus任务占比；新的日志核账任务实际exit0完整交付，modelUsage报告claude-opus-5，见Q2 §53及独立回执。明确文件范围的实现、工具、局部修复、文档整理优先交Opus；根负责难理论、安全/费用边界及跨模块验收，不为低难度任务默认增加Astra。新成功不抹去旧失败，也不保证以后额度。已证本地代理网络在沙箱不可用，后续合法调用沿require_escalated路径；不绕过实际审批。保原RAW及终态，thinking只统计而不输出。
 8. 历史51失败链、失落69L1/69E1、73P7/73L7/73C2及所有终态咨询按原记录处理，不因旧文件写“运行中”重启。先核活句柄和实际工件，缺回执不算完成；有新证据的不同具体工作可继续。
 9. 用户2026-09-20已明确允许query_native与position_native两份程序内固定native组件测试及同范围必要修复复测；实际首次运行及零历时修复后的复测已通过，见Q2 §34。不再次请求这两份范围，也不据此运行新runtime ELF、研究服务/guest/world/仿真或扩读实验输入。Q2 §35分配入口只有静态编译/链接/调用路径证据，完整启动和实际业务执行仍待接通。
 10. 用户随后明确允许[固定数值guest与查询费用核心两项](../implementation_binding_evidence/NUMERIC_AND_COST_FINITE_SCOPE_20260920.md)及同范围必要修复复测：前者最多300秒、固定SHA镜像经付费INIT/B1执行真实数值组件并双制度核账；后者最多30秒、三组固定native费用检查。不再次请求该范围。授权不扩至新codec测试、规划/控制/站点业务、world/仿真、实验输入或保护参数。
@@ -96,6 +98,7 @@ DARI已淘汰，旧编号计划不恢复为待办。目标SCI二区/三区，JCR
 13. 用户随后明确允许[六策略12组固定native检查](../implementation_binding_evidence/QUERY_POLICIES_NATIVE_SCOPE_20260920.md)及同范围必要修复复测，每次最多30秒；根6e76a6首次实际通过，无运行后修复/重跑，见[完整记录](../implementation_binding_evidence/QUERY_POLICIES_NATIVE_RESULTS_20260920.md)。不再次请求此范围，也不扩大到实际站点、guest/仿真、实验输入或保护参数。
 14. 用户随后明确允许[COST封存七组固定native检查](../implementation_binding_evidence/AUTH_COST_NATIVE_SCOPE_20260920.md)及同范围必要修复复测，每次最多30秒；根758559首次实际通过，无修复/重跑，见[完整记录](../implementation_binding_evidence/AUTH_COST_NATIVE_RESULTS_20260920.md)。不再次请求此范围。该授权不扩至新COST kernel/站点guest执行、生产签发或交付、服务/仿真、实验输入或保护参数；源码和静态接入继续推进。
 15. 用户随后将当前目标设为“尽快拿到一轮最小闭环结果”，再总结进度、优化后续方案并交接新终端，并于2026-09-21明确选择“先完成原生机制闭环，再交接完整计费链”。本轮据此实现并运行具名自包含原生机制闭环，以及实际B1工作量反馈的集成诊断，含必要修复复测。前者连接真实控制器、数值观测、PositionCommit和动作继续执行；后者连接实际B1扣费、账本、codec及下一次选择。两者分别报告，不合称完整站点/AUTH/全费用业务闭环。输入限程序内人工原型，不读取研究map/scen/config或旧结果，不赋既有保护参数，不启动规模实验。该新增目标覆盖这次最小运行，旧组件授权继续有效，不再逐项重复询问。
+16. 接续完整计费链后，三站点COST工件已静态链接。针对其最多300秒、两制度各两轮的具体新增运行范围，用户明确回复“先只完成实现和静态检查”。本轮据此不执行新驱动/镜像或日志核账，不生成运行与吞吐结果；运行范围文档保留为候选说明，不当作许可。生产请求/POSITION来源、公共发布及完整Collector收据安装继续按已有接口建设；旧已授权组件范围不变，保护输入和参数未赋值。
 
 ## 历史材料与视频
 
