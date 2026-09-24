@@ -1,4 +1,10 @@
-# MAPF 项目当前入口
+# 当前分支：学习型进度查询探索
+
+本页属于 `explore/learned-query`，当前工作见[分支入口](../README.md)和[学习探索目录](../exploration/learned_query/README.md)。同仓库的 [main](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/main) 保留主研究线，[explore/error-aware-guidance](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/explore/error-aware-guidance) 单独探索误差相关路径代价。三者不合并，结果按分支和验证范围区分。
+
+以下为分叉时继承的主线资料快照，其中旧“未运行/等待许可”状态不代表主线最新进展；最新主线以 [main 入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/.github/README.md) 为准。
+
+# 继承的主线入口快照
 
 更新：2026-09-21。**原生机制闭环与独立B1费用反馈此前分别通过。C/N/E三完整ELF、双域loader、固定站点脚本和唯一世界驱动现已静态装配并链接；17个发布进口对应8张实际ELF图，含全部条件边与已绑定间接目标。完整查询仍未运行，无整次成本或吞吐结果，Compute供给是否足够亦未证明，见Q2 §59。55篇开题综述及SCI二区/三区科研导师独立评估已在桌面交付：工程量充分，投稿证据不足；三区有条件潜力，二区仍需更强机制与推广证据。只实现/静态检查的边界、主稿原修改和冻结证据保持。**
 
