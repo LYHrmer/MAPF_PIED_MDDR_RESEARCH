@@ -1,5 +1,9 @@
 # 实验前进度入口
 
+2026-09-24 当前推进顺序（Q2 §67）：**完整查询闭环优先于继续扩展学习支线。** 本轮集中解决既有固定人工原型中的实际执行瓶颈，按请求传输、POSITION提交、后车RUN、费用归集、收据反馈和下一次choose逐段推进。两种计费制度完整结束且原始日志核账通过才算此项完成；单个Geometry返回不代替闭环验收。原固定供给、研究输入与主稿保持，下面§66及旧工作比例为阶段记录。
+
+本轮实测（Q2 §67）：C/N/E准备均已通过，完整C setup为20,402,877步；此前原窗口耗尽仍未完成准备。当前已执行请求编码、消息导出准备及中心发布准备，最终停在RootRecord校验的数值构造，首Selection仍耗尽1,048,576步。请求尚未交给N，Strict未启动，完整查询核账仍为invalid。下一步继续打通这条实际链；两支线本轮保持。
+
 2026-09-24 最新实施（Q2 §66）：三线均有代码与实跑。查询先完成3488检查的有限连续任务（每策略9任务/12原MOVE），再完成4376检查的历史拟合闭环：从先前独立Controller的END记录拟合D²=alpha·L，较快条件下不查询也保持与固定先验查C相同的任务曲线。拟合与单END解析校准同效，未证明复杂学习优势或净总费用下降。见[模型闭环报告](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/learned-query/exploration/learned_query/CALIBRATED_TASK_MODEL.md)。
 
 路径先通过2998检查确认原prefix普通分支/full-MOVE在单请求输入中相同；再以2962检查实测合法先验失配的选路损失；最后以3722检查证明评价前已交付的历史END尺度可修复该失误，t=2.5快条件到达5.750325→5.231320，提前0.519005。真实eta不进选择器，历史与评价的平稳关系明确声明。见[历史校准报告](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/HISTORY_CALIBRATION_PRECHECK.md)。

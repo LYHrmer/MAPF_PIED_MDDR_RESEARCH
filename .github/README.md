@@ -1,5 +1,9 @@
 # MAPF 项目当前入口
 
+2026-09-24 当前优先级（Q2 §67）：**先打通完整付费查询。** 本轮集中推进主线，两个探索分支保留现有结果。验收是既有固定人工输入下，两种计费制度均完成 C→N→E→N→C、真实 POSITION 提交使后车继续、四个查询费用终端收齐、收据安装并进入下一次实际选择，最后核账通过。几何初始化通过只是中间进度。原供给不增加；下面§66及更早的投入比例和待办按历史阶段阅读。
+
+本轮实测（Q2 §67）：C/N/E准备均已通过，完整C setup为20,402,877步；此前原窗口耗尽仍未完成准备。当前已执行请求编码、消息导出准备及中心发布准备，最终停在RootRecord校验的数值构造，首Selection仍耗尽1,048,576步。请求尚未交给N，Strict未启动，完整查询核账仍为invalid。下一步继续打通这条实际链；两支线本轮保持。
+
 2026-09-24 最新实施（Q2 §66）：**历史模型已进入真实组件决策闭环。** [查询线](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/learned-query/exploration/learned_query/CALIBRATED_TASK_MODEL.md)从先前已交付END拟合运动时长，4376检查通过；合法较快条件下，查询C改为等待，任务曲线相同而少查一次，较慢条件仍查C。[路径线](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/HISTORY_CALIBRATION_PRECHECK.md)3722检查通过：历史尺度修复失配先验选错路，实际到达5.750325→5.231320，改善约0.519005。两线拟合均与简单单END解析校准相同，已有历史适配机制结果，尚无复杂学习的独立优势或全费用净收益。
 
 主线连续实现活块跳跃和持久扫描下界两个隔离后继，差分与新三ELF/实际发布图绑定均通过；原供给实跑仍未让首Geometry返回。最新候选前四cell在row50完成、第五在51，3879次place入口；分配两函数合计19,984,061步、占setup37.37%，不能忽略新编译拆出的Arena函数。原setup仍53,477,376步，保留失败前缀。原实现/镜像/合同/主稿保持，详细本机证据为`implementation_binding_evidence/arena_firstfit_successor_20260924/REPORT.md`。下方§65及更早内容按阶段历史阅读。
