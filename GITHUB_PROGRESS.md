@@ -1,5 +1,7 @@
 # 实验前进度入口
 
+2026-09-24 最新路线（Q2 §65）：完成Astra Ultra技术判断和科研导师skill判断。下一阶段约25%工程、60%查询与任务桥梁、15%路径对照，比例是工作预算。工程优先试保持原布局的合法活块跳跃后继，EH分区备选；查询优先连续任务、正常报价阶段及完成曲线；路径先做授权粒度×解析等待2×2。小模型在合法日志出现非平凡变化后可并行，非学习两步先赢不是前提。本轮无新实现、训练或科学运行，下面§64保留上轮事实。
+
 2026-09-24 最新（Q2 §64）：三线有限验证完成。主线当前表示的必需扫描下界86,517,760步已超过53,477,376步预算；转向同总内存的异常池尾部分区候选设计，尚未实现。查询线完成原选择器/单步/两步的立即执行比较：截止6时单步1对0、截止7时1对2；两步与无报价的原SRDC/RR同解。路径线完成共同观察时机比较：t=2与阈值等号不释放，t=2.5上绕较快、t=4下绕较快。下一项分别为完成导向查询、原prefix与解析等待2×2对照；学习用于改善可观测历史下的证据/等待预测，其独立价值仍待实际比较。
 
 新增[查询执行报告](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/learned-query/exploration/learned_query/DECISION_EXECUTION.md)及[路径时机报告](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/TIMING_PRECHECK.md)，严格编译/原生运行分别通过321、3042项断言。根独立复核源指纹、真实事件与下界算术。文献子智能体核3篇锚点和10篇近邻，提示贡献应落在空间误差安全层上的动态证据与真实完成，而非AND或付费观察概念本身。本机详报：`implementation_binding_evidence/THREE_TRACK_VALIDATION_20260924.md`。以下§63及更早记录保留阶段历史。
