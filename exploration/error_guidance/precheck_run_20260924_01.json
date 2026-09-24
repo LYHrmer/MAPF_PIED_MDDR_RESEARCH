@@ -1,0 +1,162 @@
+{
+  "started_utc": "2026-09-24T07:45:15.571335+00:00",
+  "status": "passed",
+  "scope": "artificial_finite_offline_reference_potential",
+  "source_root": "/home/lyh/MAPF_PIED_MDDR_RESEARCH",
+  "source_header_sha256": {
+    "implementation/pie_position_commit/include/pie_position_commit.hpp": "2f7be5ec11293df2fdbda3919393f8a30b43b2a432f56879e59f26d0a3b9d7c6",
+    "implementation/pie_progress_retirement/include/pie_progress_retirement.hpp": "ddd94e49c3dd689b84d585ae374a65b99f49577bf9752342f46d688fbd0f7cb1",
+    "implementation/pie_query/include/pie_query_scheduler.hpp": "a1572501e39b711b9c8253e05083aa5799884145263d81352c9d71fd1965fefb",
+    "implementation/pie_query/include/pie_query_index.hpp": "936a30e4e19c85977ab187181dbe59130daffb49c71a60b41ba28d5c3c348c70",
+    "implementation/pie_query/include/pie_release_threshold.hpp": "00660d499c0169cd843527dd2b1b3e35cdb4035b8e0e9348dc6734a68cf30c79",
+    "implementation/pie_geometry/include/pie_geometry.hpp": "ff432b29d131165b1a95f3ffa737cfea47bd1c09ef05f19516b9847be72d1507",
+    "implementation/pie_geometry/include/pie_geometry_flint.hpp": "239040d62285b5f370233b9732824ea6ff2747193c8ad404f8ef93498a806900",
+    "implementation/pie_reference/include/pie_reference_controller.hpp": "a1cf2b7834efe3ccd344b8226a3c5e55c56857d3ac55a3c05281cfde087671ce",
+    "implementation/pie_reference/include/pie_reference_segment.hpp": "0e56a33e4b5d93ad751b81fee50e89f96e05d139810ddbfeb2a3fcbc10369d55"
+  },
+  "fixture_sha256": "6100de6a9325d1437e894daece234ab22dca32827730ee74a203a1032e0fec7f",
+  "runner_sha256": "0409780db9485353b597764171e1445d24840868c158e01d16c6064f56e3fcc7",
+  "commands": [
+    {
+      "argv": [
+        "rtk",
+        "proxy",
+        "g++-11",
+        "-std=c++14",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-fno-elide-constructors",
+        "-I",
+        "/tmp/mapf_error_guidance_maubooj1",
+        "-isystem",
+        "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/host_sdk/usr/include",
+        "-isystem",
+        "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/flint_host_config/src",
+        "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/precheck.cpp",
+        "-L",
+        "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/flint_host_config",
+        "-L",
+        "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/host_sdk/usr/lib/x86_64-linux-gnu",
+        "-Wl,-rpath,/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/flint_host_config",
+        "-lflint",
+        "-lmpfr",
+        "-lgmp",
+        "-o",
+        "/tmp/mapf_error_guidance_maubooj1/error_guidance_precheck"
+      ],
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "rtk",
+        "proxy",
+        "/tmp/mapf_error_guidance_maubooj1/error_guidance_precheck"
+      ],
+      "timeout_seconds": 60,
+      "exit_code": 0,
+      "stdout": "{\"event\":\"route_result\",\"path\":\"upper\",\"error_halfwidth\":\"0\",\"arrival\":{\"lower_numerator\":6928203,\"upper_numerator\":6928204,\"denominator\":1000000},\"waiting\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"completed_original_moves\":3,\"committed_observations\":1}\n{\"event\":\"route_result\",\"path\":\"lower\",\"error_halfwidth\":\"0\",\"arrival\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"waiting\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"completed_original_moves\":3,\"committed_observations\":1}\n{\"event\":\"waiting\",\"move\":\"bounded-upper-2\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"at\":{\"lower_numerator\":1732050,\"upper_numerator\":1732051,\"denominator\":1000000}}\n{\"event\":\"route_result\",\"path\":\"upper\",\"error_halfwidth\":\"1/5\",\"arrival\":{\"lower_numerator\":9196152,\"upper_numerator\":9196153,\"denominator\":1000000},\"waiting\":{\"lower_numerator\":2267949,\"upper_numerator\":2267950,\"denominator\":1000000},\"completed_original_moves\":3,\"committed_observations\":1}\n{\"event\":\"route_result\",\"path\":\"lower\",\"error_halfwidth\":\"1/5\",\"arrival\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"waiting\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"completed_original_moves\":3,\"committed_observations\":1}\n{\"event\":\"summary\",\"status\":\"passed\",\"checks\":790,\"zero_error_preferred\":\"upper\",\"bounded_error_preferred\":\"lower\",\"scope\":\"finite_offline_reference_potential_not_learning_or_full_cost\"}\n",
+      "stderr": ""
+    }
+  ],
+  "AUTH_or_production_lifecycle_verified": false,
+  "full_online_cost_measured": false,
+  "learning_or_lifelong_throughput_claim": false,
+  "research_payload_read": false,
+  "binary_sha256": "e84c75566ddfcd6348ba11504d3821db287a4ad74a510b5332ee926720fc2b55",
+  "events": [
+    {
+      "event": "route_result",
+      "path": "upper",
+      "error_halfwidth": "0",
+      "arrival": {
+        "lower_numerator": 6928203,
+        "upper_numerator": 6928204,
+        "denominator": 1000000
+      },
+      "waiting": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "completed_original_moves": 3,
+      "committed_observations": 1
+    },
+    {
+      "event": "route_result",
+      "path": "lower",
+      "error_halfwidth": "0",
+      "arrival": {
+        "lower_numerator": 8363081,
+        "upper_numerator": 8363082,
+        "denominator": 1000000
+      },
+      "waiting": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "completed_original_moves": 3,
+      "committed_observations": 1
+    },
+    {
+      "event": "waiting",
+      "move": "bounded-upper-2",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "at": {
+        "lower_numerator": 1732050,
+        "upper_numerator": 1732051,
+        "denominator": 1000000
+      }
+    },
+    {
+      "event": "route_result",
+      "path": "upper",
+      "error_halfwidth": "1/5",
+      "arrival": {
+        "lower_numerator": 9196152,
+        "upper_numerator": 9196153,
+        "denominator": 1000000
+      },
+      "waiting": {
+        "lower_numerator": 2267949,
+        "upper_numerator": 2267950,
+        "denominator": 1000000
+      },
+      "completed_original_moves": 3,
+      "committed_observations": 1
+    },
+    {
+      "event": "route_result",
+      "path": "lower",
+      "error_halfwidth": "1/5",
+      "arrival": {
+        "lower_numerator": 8363081,
+        "upper_numerator": 8363082,
+        "denominator": 1000000
+      },
+      "waiting": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "completed_original_moves": 3,
+      "committed_observations": 1
+    },
+    {
+      "event": "summary",
+      "status": "passed",
+      "checks": 790,
+      "zero_error_preferred": "upper",
+      "bounded_error_preferred": "lower",
+      "scope": "finite_offline_reference_potential_not_learning_or_full_cost"
+    }
+  ],
+  "finished_utc": "2026-09-24T07:45:23.326816+00:00"
+}

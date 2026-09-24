@@ -1,4 +1,18 @@
-# MAPF 项目当前入口
+# 当前分支：误差感知的路径引导探索
+
+本分支 `explore/error-aware-guidance` 从 `main@af17410` 建立，主入口是
+[分支导航](../README.md) 和 [探索说明](../exploration/error_guidance/README.md)。
+新增工作只在 `exploration/error_guidance/`，与 `explore/learned-query` 的查询选择
+探索分开，使用同一远端仓库。
+
+下方保留的是建分支时的主线快照；本分支状态以探索说明为准，主线最新进度请看
+[main](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/main)。当前仅进行
+程序内人工有限预检，不读取受保护研究输入、不赋保护参数、不改变冻结科学合同，
+学习预测不能作为安全释放证据。已有主线与查询支线的结果不转记成本分支的成果。
+
+---
+
+# MAPF 项目当前入口（继承快照）
 
 2026-09-24 当前主线：原供给下的调用来源与费用归属已完成。setup的53,477,376步中，98.937448%用于分配扫描，place整体占99.049535%；77次16字节申请均来自首个move-A几何的数值初构、返回移动和三层坐标/容器复制。只读观察版92条业务记录与原版逐字一致，86条费用段逐行守恒，仍自然exit1，未发布查询。批量冷入口仍为0；先前对齐特化仍撤回。详见Q2 §62及[本机归属报告](../implementation_binding_evidence/ALLOCATION_ATTRIBUTION_AND_LEGAL_AND_20260924.md)。
 
