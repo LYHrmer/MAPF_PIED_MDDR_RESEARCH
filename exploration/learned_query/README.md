@@ -1,6 +1,6 @@
 # 学习辅助进度查询：探索说明
 
-创建：2026-09-24。状态：独立分支与研究设计已建立；尚未实现候选模型、构造数据、训练或运行实验。
+创建及更新：2026-09-24。状态：独立分支、轻量概率模型、影子评分器及固定图两步前瞻诊断已建立；27 项软件检查通过。训练仅发生在明确标注的人工软件样例上，没有研究数据、原系统实验或吞吐收益结论。[两份独立评审](REVIEW_20260924.md)及精确图诊断已促使下一步优先检查组合查询价值，保留概率字典序作对照。运行命令和接口限制见 [实现说明](IMPLEMENTATION.md)。
 
 ## 工作区与基线
 
@@ -65,6 +65,6 @@ Git 起点只固定已跟踪文件。主线的 `implementation/` 及本次参考
 
 ## 本轮范围
 
-本轮仅建立本地分支、独立工作区及探索说明。未训练模型、生成研究数据、运行仿真、赋实验参数、修改主线实现或推送远端。沿用先实现/静态检查的当前范围；这份设计不宣称已获得科研结果或选题新颖性。
+用户随后要求先推送主线与探索分支、再继续探索，并明确允许 Claude Opus 协作。两分支已先行推送，主线未提交稿件仍留在原工作区。本轮新增独立 Python 原型及纯合成软件检查，未运行原有 guest、world、仿真或研究实验，未读取受限载荷、赋原研究保护参数或改写主线实现。候选模型没有接入真实执行；相关实现和费用边界见 [实现说明](IMPLEMENTATION.md)。
 
 方法依据：[Learning to Resolve Conflicts for Multi-Agent Path Finding with Conflict-Based Search，AAAI 2021](https://ojs.aaai.org/index.php/AAAI/article/view/17341)展示以监督排序近似昂贵冲突选择；它是设计参照，不是可直接使用的查询调度外部基线。[Planned synchronization for multi-robot systems with active observations，Autonomous Robots 2026](https://link.springer.com/article/10.1007/s10514-025-10225-4)说明有成本观测与后续动作联合规划已有研究，新增学习模块本身不构成新颖性。

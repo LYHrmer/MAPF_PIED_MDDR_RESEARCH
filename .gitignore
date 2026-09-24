@@ -1,5 +1,18 @@
-# Deny by default. Add exact, approved pre-experiment documents only.
+# Deny by default. Allow exact reviewed documents and exploration sources only.
 *
+!/exploration/
+!/exploration/learned_query/
+!/exploration/learned_query/README.md
+!/exploration/learned_query/IMPLEMENTATION.md
+!/exploration/learned_query/REVIEW_20260924.md
+!/exploration/learned_query/decision_structure.py
+!/exploration/learned_query/test_decision_structure.py
+!/exploration/learned_query/model.py
+!/exploration/learned_query/shadow.py
+!/exploration/learned_query/example.py
+!/exploration/learned_query/test_model.py
+!/exploration/learned_query/test_shadow.py
+!/exploration/learned_query/test_integration.py
 !/.gitignore
 !/.github/
 !/GITHUB_PROGRESS.md
