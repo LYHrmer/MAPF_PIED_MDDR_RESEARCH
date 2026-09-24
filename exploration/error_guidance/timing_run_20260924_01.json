@@ -1,0 +1,651 @@
+{
+  "started_utc": "2026-09-24T08:22:53.699167+00:00",
+  "status": "passed",
+  "scope": "artificial_finite_common_observation_timing",
+  "source_root": "/home/lyh/MAPF_PIED_MDDR_RESEARCH",
+  "protected_baseline_sha256": {
+    "precheck.cpp": "6100de6a9325d1437e894daece234ab22dca32827730ee74a203a1032e0fec7f",
+    "run_precheck.py": "0409780db9485353b597764171e1445d24840868c158e01d16c6064f56e3fcc7",
+    "precheck_run_20260924_01.json": "d6b2be8c302dd6adcf214adf3942540cae474e806b78ab722e8620d71e88dc31",
+    "source_pins.json": "f1374e56dafe6ecd6c5e553ffdb874364715c84a5399fdf61b0deb2091999152"
+  },
+  "source_header_sha256": {
+    "implementation/pie_position_commit/include/pie_position_commit.hpp": "2f7be5ec11293df2fdbda3919393f8a30b43b2a432f56879e59f26d0a3b9d7c6",
+    "implementation/pie_progress_retirement/include/pie_progress_retirement.hpp": "ddd94e49c3dd689b84d585ae374a65b99f49577bf9752342f46d688fbd0f7cb1",
+    "implementation/pie_query/include/pie_query_scheduler.hpp": "a1572501e39b711b9c8253e05083aa5799884145263d81352c9d71fd1965fefb",
+    "implementation/pie_query/include/pie_query_index.hpp": "936a30e4e19c85977ab187181dbe59130daffb49c71a60b41ba28d5c3c348c70",
+    "implementation/pie_query/include/pie_release_threshold.hpp": "00660d499c0169cd843527dd2b1b3e35cdb4035b8e0e9348dc6734a68cf30c79",
+    "implementation/pie_geometry/include/pie_geometry.hpp": "ff432b29d131165b1a95f3ffa737cfea47bd1c09ef05f19516b9847be72d1507",
+    "implementation/pie_geometry/include/pie_geometry_flint.hpp": "239040d62285b5f370233b9732824ea6ff2747193c8ad404f8ef93498a806900",
+    "implementation/pie_reference/include/pie_reference_controller.hpp": "a1cf2b7834efe3ccd344b8226a3c5e55c56857d3ac55a3c05281cfde087671ce",
+    "implementation/pie_reference/include/pie_reference_segment.hpp": "0e56a33e4b5d93ad751b81fee50e89f96e05d139810ddbfeb2a3fcbc10369d55"
+  },
+  "fixture_sha256": "387f3b6c5c1bdd837fdc4802c6c5344f027fb80918b2e3be9730a5916d10e60d",
+  "runner_sha256": "53ef62c9a330b7236f4f09f0f1cca95392a1d5c1c90b5990c6dfc5dad426925b",
+  "commands": [
+    {
+      "argv": [
+        "rtk",
+        "proxy",
+        "g++-11",
+        "-std=c++14",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-fno-elide-constructors",
+        "-I",
+        "/tmp/mapf_error_timing_c7mf_0l2",
+        "-isystem",
+        "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/host_sdk/usr/include",
+        "-isystem",
+        "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/flint_host_config/src",
+        "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/timing_precheck.cpp",
+        "-L",
+        "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/flint_host_config",
+        "-L",
+        "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/host_sdk/usr/lib/x86_64-linux-gnu",
+        "-Wl,-rpath,/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/flint_host_config",
+        "-lflint",
+        "-lmpfr",
+        "-lgmp",
+        "-o",
+        "/tmp/mapf_error_timing_c7mf_0l2/error_guidance_timing_precheck"
+      ],
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "rtk",
+        "proxy",
+        "/tmp/mapf_error_timing_c7mf_0l2/error_guidance_timing_precheck"
+      ],
+      "timeout_seconds": 60,
+      "exit_code": 0,
+      "stdout": "{\"event\":\"route_result\",\"opportunity\":\"early_2\",\"path\":\"upper\",\"error_halfwidth\":\"0\",\"status\":\"completed\",\"arrival\":{\"lower_numerator\":6928203,\"upper_numerator\":6928204,\"denominator\":1000000},\"stopped_at\":{\"lower_numerator\":6928203,\"upper_numerator\":6928204,\"denominator\":1000000},\"waiting_observed\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"observed_lower\":{\"lower_numerator\":2000000,\"upper_numerator\":2000000,\"denominator\":1000000},\"completed_original_moves\":3,\"committed_observations\":1}\n{\"event\":\"route_result\",\"opportunity\":\"early_2\",\"path\":\"lower\",\"error_halfwidth\":\"0\",\"status\":\"completed\",\"arrival\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"stopped_at\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"waiting_observed\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"observed_lower\":{\"lower_numerator\":2000000,\"upper_numerator\":2000000,\"denominator\":1000000},\"completed_original_moves\":3,\"committed_observations\":1}\n{\"event\":\"waiting\",\"opportunity\":\"early_2\",\"move\":\"early_2-bounded-upper-2\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"at\":{\"lower_numerator\":1732050,\"upper_numerator\":1732051,\"denominator\":1000000}}\n{\"event\":\"blocked_after_only_observation\",\"opportunity\":\"early_2\",\"move\":\"early_2-bounded-upper-2\",\"threshold\":\"61/20\",\"resident_retained\":true,\"observed_lower\":{\"lower_numerator\":2000000,\"upper_numerator\":2000000,\"denominator\":1000000}}\n{\"event\":\"route_result\",\"opportunity\":\"early_2\",\"path\":\"upper\",\"error_halfwidth\":\"1/5\",\"status\":\"blocked_after_only_observation\",\"arrival\":null,\"stopped_at\":{\"lower_numerator\":2000000,\"upper_numerator\":2000000,\"denominator\":1000000},\"waiting_observed\":{\"lower_numerator\":267949,\"upper_numerator\":267950,\"denominator\":1000000},\"observed_lower\":{\"lower_numerator\":2000000,\"upper_numerator\":2000000,\"denominator\":1000000},\"completed_original_moves\":1,\"committed_observations\":1}\n{\"event\":\"route_result\",\"opportunity\":\"early_2\",\"path\":\"lower\",\"error_halfwidth\":\"1/5\",\"status\":\"completed\",\"arrival\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"stopped_at\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"waiting_observed\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"observed_lower\":{\"lower_numerator\":2000000,\"upper_numerator\":2000000,\"denominator\":1000000},\"completed_original_moves\":3,\"committed_observations\":1}\n{\"event\":\"opportunity_summary\",\"opportunity\":\"early_2\",\"zero_error_preferred\":\"upper\",\"bounded_upper_complete\":false,\"bounded_error_completed_path_comparison\":\"not_comparable_upper_unfinished\"}\n{\"event\":\"route_result\",\"opportunity\":\"equal_threshold\",\"path\":\"upper\",\"error_halfwidth\":\"0\",\"status\":\"completed\",\"arrival\":{\"lower_numerator\":6928203,\"upper_numerator\":6928204,\"denominator\":1000000},\"stopped_at\":{\"lower_numerator\":6928203,\"upper_numerator\":6928204,\"denominator\":1000000},\"waiting_observed\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"observed_lower\":{\"lower_numerator\":3050000,\"upper_numerator\":3050000,\"denominator\":1000000},\"completed_original_moves\":3,\"committed_observations\":1}\n{\"event\":\"route_result\",\"opportunity\":\"equal_threshold\",\"path\":\"lower\",\"error_halfwidth\":\"0\",\"status\":\"completed\",\"arrival\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"stopped_at\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"waiting_observed\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"observed_lower\":{\"lower_numerator\":3050000,\"upper_numerator\":3050000,\"denominator\":1000000},\"completed_original_moves\":3,\"committed_observations\":1}\n{\"event\":\"waiting\",\"opportunity\":\"equal_threshold\",\"move\":\"equal_threshold-bounded-upper-2\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"at\":{\"lower_numerator\":1732050,\"upper_numerator\":1732051,\"denominator\":1000000}}\n{\"event\":\"blocked_after_only_observation\",\"opportunity\":\"equal_threshold\",\"move\":\"equal_threshold-bounded-upper-2\",\"threshold\":\"61/20\",\"resident_retained\":true,\"observed_lower\":{\"lower_numerator\":3050000,\"upper_numerator\":3050000,\"denominator\":1000000}}\n{\"event\":\"route_result\",\"opportunity\":\"equal_threshold\",\"path\":\"upper\",\"error_halfwidth\":\"1/5\",\"status\":\"blocked_after_only_observation\",\"arrival\":null,\"stopped_at\":{\"lower_numerator\":2469817,\"upper_numerator\":2469818,\"denominator\":1000000},\"waiting_observed\":{\"lower_numerator\":737766,\"upper_numerator\":737767,\"denominator\":1000000},\"observed_lower\":{\"lower_numerator\":3050000,\"upper_numerator\":3050000,\"denominator\":1000000},\"completed_original_moves\":1,\"committed_observations\":1}\n{\"event\":\"route_result\",\"opportunity\":\"equal_threshold\",\"path\":\"lower\",\"error_halfwidth\":\"1/5\",\"status\":\"completed\",\"arrival\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"stopped_at\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"waiting_observed\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"observed_lower\":{\"lower_numerator\":3050000,\"upper_numerator\":3050000,\"denominator\":1000000},\"completed_original_moves\":3,\"committed_observations\":1}\n{\"event\":\"opportunity_summary\",\"opportunity\":\"equal_threshold\",\"zero_error_preferred\":\"upper\",\"bounded_upper_complete\":false,\"bounded_error_completed_path_comparison\":\"not_comparable_upper_unfinished\"}\n{\"event\":\"route_result\",\"opportunity\":\"crossed_5_over_2\",\"path\":\"upper\",\"error_halfwidth\":\"0\",\"status\":\"completed\",\"arrival\":{\"lower_numerator\":6928203,\"upper_numerator\":6928204,\"denominator\":1000000},\"stopped_at\":{\"lower_numerator\":6928203,\"upper_numerator\":6928204,\"denominator\":1000000},\"waiting_observed\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"observed_lower\":{\"lower_numerator\":3125000,\"upper_numerator\":3125000,\"denominator\":1000000},\"completed_original_moves\":3,\"committed_observations\":1}\n{\"event\":\"route_result\",\"opportunity\":\"crossed_5_over_2\",\"path\":\"lower\",\"error_halfwidth\":\"0\",\"status\":\"completed\",\"arrival\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"stopped_at\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"waiting_observed\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"observed_lower\":{\"lower_numerator\":3125000,\"upper_numerator\":3125000,\"denominator\":1000000},\"completed_original_moves\":3,\"committed_observations\":1}\n{\"event\":\"waiting\",\"opportunity\":\"crossed_5_over_2\",\"move\":\"crossed_5_over_2-bounded-upper-2\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"at\":{\"lower_numerator\":1732050,\"upper_numerator\":1732051,\"denominator\":1000000}}\n{\"event\":\"route_result\",\"opportunity\":\"crossed_5_over_2\",\"path\":\"upper\",\"error_halfwidth\":\"1/5\",\"status\":\"completed\",\"arrival\":{\"lower_numerator\":7696152,\"upper_numerator\":7696153,\"denominator\":1000000},\"stopped_at\":{\"lower_numerator\":7696152,\"upper_numerator\":7696153,\"denominator\":1000000},\"waiting_observed\":{\"lower_numerator\":767949,\"upper_numerator\":767950,\"denominator\":1000000},\"observed_lower\":{\"lower_numerator\":3125000,\"upper_numerator\":3125000,\"denominator\":1000000},\"completed_original_moves\":3,\"committed_observations\":1}\n{\"event\":\"route_result\",\"opportunity\":\"crossed_5_over_2\",\"path\":\"lower\",\"error_halfwidth\":\"1/5\",\"status\":\"completed\",\"arrival\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"stopped_at\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"waiting_observed\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"observed_lower\":{\"lower_numerator\":3125000,\"upper_numerator\":3125000,\"denominator\":1000000},\"completed_original_moves\":3,\"committed_observations\":1}\n{\"event\":\"opportunity_summary\",\"opportunity\":\"crossed_5_over_2\",\"zero_error_preferred\":\"upper\",\"bounded_upper_complete\":true,\"bounded_error_completed_path_comparison\":\"upper_earlier\"}\n{\"event\":\"route_result\",\"opportunity\":\"late_4\",\"path\":\"upper\",\"error_halfwidth\":\"0\",\"status\":\"completed\",\"arrival\":{\"lower_numerator\":6928203,\"upper_numerator\":6928204,\"denominator\":1000000},\"stopped_at\":{\"lower_numerator\":6928203,\"upper_numerator\":6928204,\"denominator\":1000000},\"waiting_observed\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"observed_lower\":{\"lower_numerator\":5941125,\"upper_numerator\":5941126,\"denominator\":1000000},\"completed_original_moves\":3,\"committed_observations\":1}\n{\"event\":\"route_result\",\"opportunity\":\"late_4\",\"path\":\"lower\",\"error_halfwidth\":\"0\",\"status\":\"completed\",\"arrival\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"stopped_at\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"waiting_observed\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"observed_lower\":{\"lower_numerator\":5941125,\"upper_numerator\":5941126,\"denominator\":1000000},\"completed_original_moves\":3,\"committed_observations\":1}\n{\"event\":\"waiting\",\"opportunity\":\"late_4\",\"move\":\"late_4-bounded-upper-2\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"at\":{\"lower_numerator\":1732050,\"upper_numerator\":1732051,\"denominator\":1000000}}\n{\"event\":\"route_result\",\"opportunity\":\"late_4\",\"path\":\"upper\",\"error_halfwidth\":\"1/5\",\"status\":\"completed\",\"arrival\":{\"lower_numerator\":9196152,\"upper_numerator\":9196153,\"denominator\":1000000},\"stopped_at\":{\"lower_numerator\":9196152,\"upper_numerator\":9196153,\"denominator\":1000000},\"waiting_observed\":{\"lower_numerator\":2267949,\"upper_numerator\":2267950,\"denominator\":1000000},\"observed_lower\":{\"lower_numerator\":5941125,\"upper_numerator\":5941126,\"denominator\":1000000},\"completed_original_moves\":3,\"committed_observations\":1}\n{\"event\":\"route_result\",\"opportunity\":\"late_4\",\"path\":\"lower\",\"error_halfwidth\":\"1/5\",\"status\":\"completed\",\"arrival\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"stopped_at\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"waiting_observed\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"observed_lower\":{\"lower_numerator\":5941125,\"upper_numerator\":5941126,\"denominator\":1000000},\"completed_original_moves\":3,\"committed_observations\":1}\n{\"event\":\"opportunity_summary\",\"opportunity\":\"late_4\",\"zero_error_preferred\":\"upper\",\"bounded_upper_complete\":true,\"bounded_error_completed_path_comparison\":\"lower_earlier\"}\n{\"event\":\"summary\",\"status\":\"passed\",\"checks\":3042,\"named_opportunities\":4,\"paired_routes\":16,\"scope\":\"finite_common_timing_intervention_not_learning_or_full_cost\"}\n",
+      "stderr": ""
+    }
+  ],
+  "AUTH_or_production_lifecycle_verified": false,
+  "full_online_cost_measured": false,
+  "learning_or_lifelong_throughput_claim": false,
+  "research_payload_read": false,
+  "binary_sha256": "2388d7c05f3ff1bbf5e432582155eb4b407c350c64c2a98c43144ead1eca2b71",
+  "events": [
+    {
+      "event": "route_result",
+      "opportunity": "early_2",
+      "path": "upper",
+      "error_halfwidth": "0",
+      "status": "completed",
+      "arrival": {
+        "lower_numerator": 6928203,
+        "upper_numerator": 6928204,
+        "denominator": 1000000
+      },
+      "stopped_at": {
+        "lower_numerator": 6928203,
+        "upper_numerator": 6928204,
+        "denominator": 1000000
+      },
+      "waiting_observed": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "observed_lower": {
+        "lower_numerator": 2000000,
+        "upper_numerator": 2000000,
+        "denominator": 1000000
+      },
+      "completed_original_moves": 3,
+      "committed_observations": 1
+    },
+    {
+      "event": "route_result",
+      "opportunity": "early_2",
+      "path": "lower",
+      "error_halfwidth": "0",
+      "status": "completed",
+      "arrival": {
+        "lower_numerator": 8363081,
+        "upper_numerator": 8363082,
+        "denominator": 1000000
+      },
+      "stopped_at": {
+        "lower_numerator": 8363081,
+        "upper_numerator": 8363082,
+        "denominator": 1000000
+      },
+      "waiting_observed": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "observed_lower": {
+        "lower_numerator": 2000000,
+        "upper_numerator": 2000000,
+        "denominator": 1000000
+      },
+      "completed_original_moves": 3,
+      "committed_observations": 1
+    },
+    {
+      "event": "waiting",
+      "opportunity": "early_2",
+      "move": "early_2-bounded-upper-2",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "at": {
+        "lower_numerator": 1732050,
+        "upper_numerator": 1732051,
+        "denominator": 1000000
+      }
+    },
+    {
+      "event": "blocked_after_only_observation",
+      "opportunity": "early_2",
+      "move": "early_2-bounded-upper-2",
+      "threshold": "61/20",
+      "resident_retained": true,
+      "observed_lower": {
+        "lower_numerator": 2000000,
+        "upper_numerator": 2000000,
+        "denominator": 1000000
+      }
+    },
+    {
+      "event": "route_result",
+      "opportunity": "early_2",
+      "path": "upper",
+      "error_halfwidth": "1/5",
+      "status": "blocked_after_only_observation",
+      "arrival": null,
+      "stopped_at": {
+        "lower_numerator": 2000000,
+        "upper_numerator": 2000000,
+        "denominator": 1000000
+      },
+      "waiting_observed": {
+        "lower_numerator": 267949,
+        "upper_numerator": 267950,
+        "denominator": 1000000
+      },
+      "observed_lower": {
+        "lower_numerator": 2000000,
+        "upper_numerator": 2000000,
+        "denominator": 1000000
+      },
+      "completed_original_moves": 1,
+      "committed_observations": 1
+    },
+    {
+      "event": "route_result",
+      "opportunity": "early_2",
+      "path": "lower",
+      "error_halfwidth": "1/5",
+      "status": "completed",
+      "arrival": {
+        "lower_numerator": 8363081,
+        "upper_numerator": 8363082,
+        "denominator": 1000000
+      },
+      "stopped_at": {
+        "lower_numerator": 8363081,
+        "upper_numerator": 8363082,
+        "denominator": 1000000
+      },
+      "waiting_observed": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "observed_lower": {
+        "lower_numerator": 2000000,
+        "upper_numerator": 2000000,
+        "denominator": 1000000
+      },
+      "completed_original_moves": 3,
+      "committed_observations": 1
+    },
+    {
+      "event": "opportunity_summary",
+      "opportunity": "early_2",
+      "zero_error_preferred": "upper",
+      "bounded_upper_complete": false,
+      "bounded_error_completed_path_comparison": "not_comparable_upper_unfinished"
+    },
+    {
+      "event": "route_result",
+      "opportunity": "equal_threshold",
+      "path": "upper",
+      "error_halfwidth": "0",
+      "status": "completed",
+      "arrival": {
+        "lower_numerator": 6928203,
+        "upper_numerator": 6928204,
+        "denominator": 1000000
+      },
+      "stopped_at": {
+        "lower_numerator": 6928203,
+        "upper_numerator": 6928204,
+        "denominator": 1000000
+      },
+      "waiting_observed": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "observed_lower": {
+        "lower_numerator": 3050000,
+        "upper_numerator": 3050000,
+        "denominator": 1000000
+      },
+      "completed_original_moves": 3,
+      "committed_observations": 1
+    },
+    {
+      "event": "route_result",
+      "opportunity": "equal_threshold",
+      "path": "lower",
+      "error_halfwidth": "0",
+      "status": "completed",
+      "arrival": {
+        "lower_numerator": 8363081,
+        "upper_numerator": 8363082,
+        "denominator": 1000000
+      },
+      "stopped_at": {
+        "lower_numerator": 8363081,
+        "upper_numerator": 8363082,
+        "denominator": 1000000
+      },
+      "waiting_observed": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "observed_lower": {
+        "lower_numerator": 3050000,
+        "upper_numerator": 3050000,
+        "denominator": 1000000
+      },
+      "completed_original_moves": 3,
+      "committed_observations": 1
+    },
+    {
+      "event": "waiting",
+      "opportunity": "equal_threshold",
+      "move": "equal_threshold-bounded-upper-2",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "at": {
+        "lower_numerator": 1732050,
+        "upper_numerator": 1732051,
+        "denominator": 1000000
+      }
+    },
+    {
+      "event": "blocked_after_only_observation",
+      "opportunity": "equal_threshold",
+      "move": "equal_threshold-bounded-upper-2",
+      "threshold": "61/20",
+      "resident_retained": true,
+      "observed_lower": {
+        "lower_numerator": 3050000,
+        "upper_numerator": 3050000,
+        "denominator": 1000000
+      }
+    },
+    {
+      "event": "route_result",
+      "opportunity": "equal_threshold",
+      "path": "upper",
+      "error_halfwidth": "1/5",
+      "status": "blocked_after_only_observation",
+      "arrival": null,
+      "stopped_at": {
+        "lower_numerator": 2469817,
+        "upper_numerator": 2469818,
+        "denominator": 1000000
+      },
+      "waiting_observed": {
+        "lower_numerator": 737766,
+        "upper_numerator": 737767,
+        "denominator": 1000000
+      },
+      "observed_lower": {
+        "lower_numerator": 3050000,
+        "upper_numerator": 3050000,
+        "denominator": 1000000
+      },
+      "completed_original_moves": 1,
+      "committed_observations": 1
+    },
+    {
+      "event": "route_result",
+      "opportunity": "equal_threshold",
+      "path": "lower",
+      "error_halfwidth": "1/5",
+      "status": "completed",
+      "arrival": {
+        "lower_numerator": 8363081,
+        "upper_numerator": 8363082,
+        "denominator": 1000000
+      },
+      "stopped_at": {
+        "lower_numerator": 8363081,
+        "upper_numerator": 8363082,
+        "denominator": 1000000
+      },
+      "waiting_observed": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "observed_lower": {
+        "lower_numerator": 3050000,
+        "upper_numerator": 3050000,
+        "denominator": 1000000
+      },
+      "completed_original_moves": 3,
+      "committed_observations": 1
+    },
+    {
+      "event": "opportunity_summary",
+      "opportunity": "equal_threshold",
+      "zero_error_preferred": "upper",
+      "bounded_upper_complete": false,
+      "bounded_error_completed_path_comparison": "not_comparable_upper_unfinished"
+    },
+    {
+      "event": "route_result",
+      "opportunity": "crossed_5_over_2",
+      "path": "upper",
+      "error_halfwidth": "0",
+      "status": "completed",
+      "arrival": {
+        "lower_numerator": 6928203,
+        "upper_numerator": 6928204,
+        "denominator": 1000000
+      },
+      "stopped_at": {
+        "lower_numerator": 6928203,
+        "upper_numerator": 6928204,
+        "denominator": 1000000
+      },
+      "waiting_observed": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "observed_lower": {
+        "lower_numerator": 3125000,
+        "upper_numerator": 3125000,
+        "denominator": 1000000
+      },
+      "completed_original_moves": 3,
+      "committed_observations": 1
+    },
+    {
+      "event": "route_result",
+      "opportunity": "crossed_5_over_2",
+      "path": "lower",
+      "error_halfwidth": "0",
+      "status": "completed",
+      "arrival": {
+        "lower_numerator": 8363081,
+        "upper_numerator": 8363082,
+        "denominator": 1000000
+      },
+      "stopped_at": {
+        "lower_numerator": 8363081,
+        "upper_numerator": 8363082,
+        "denominator": 1000000
+      },
+      "waiting_observed": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "observed_lower": {
+        "lower_numerator": 3125000,
+        "upper_numerator": 3125000,
+        "denominator": 1000000
+      },
+      "completed_original_moves": 3,
+      "committed_observations": 1
+    },
+    {
+      "event": "waiting",
+      "opportunity": "crossed_5_over_2",
+      "move": "crossed_5_over_2-bounded-upper-2",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "at": {
+        "lower_numerator": 1732050,
+        "upper_numerator": 1732051,
+        "denominator": 1000000
+      }
+    },
+    {
+      "event": "route_result",
+      "opportunity": "crossed_5_over_2",
+      "path": "upper",
+      "error_halfwidth": "1/5",
+      "status": "completed",
+      "arrival": {
+        "lower_numerator": 7696152,
+        "upper_numerator": 7696153,
+        "denominator": 1000000
+      },
+      "stopped_at": {
+        "lower_numerator": 7696152,
+        "upper_numerator": 7696153,
+        "denominator": 1000000
+      },
+      "waiting_observed": {
+        "lower_numerator": 767949,
+        "upper_numerator": 767950,
+        "denominator": 1000000
+      },
+      "observed_lower": {
+        "lower_numerator": 3125000,
+        "upper_numerator": 3125000,
+        "denominator": 1000000
+      },
+      "completed_original_moves": 3,
+      "committed_observations": 1
+    },
+    {
+      "event": "route_result",
+      "opportunity": "crossed_5_over_2",
+      "path": "lower",
+      "error_halfwidth": "1/5",
+      "status": "completed",
+      "arrival": {
+        "lower_numerator": 8363081,
+        "upper_numerator": 8363082,
+        "denominator": 1000000
+      },
+      "stopped_at": {
+        "lower_numerator": 8363081,
+        "upper_numerator": 8363082,
+        "denominator": 1000000
+      },
+      "waiting_observed": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "observed_lower": {
+        "lower_numerator": 3125000,
+        "upper_numerator": 3125000,
+        "denominator": 1000000
+      },
+      "completed_original_moves": 3,
+      "committed_observations": 1
+    },
+    {
+      "event": "opportunity_summary",
+      "opportunity": "crossed_5_over_2",
+      "zero_error_preferred": "upper",
+      "bounded_upper_complete": true,
+      "bounded_error_completed_path_comparison": "upper_earlier"
+    },
+    {
+      "event": "route_result",
+      "opportunity": "late_4",
+      "path": "upper",
+      "error_halfwidth": "0",
+      "status": "completed",
+      "arrival": {
+        "lower_numerator": 6928203,
+        "upper_numerator": 6928204,
+        "denominator": 1000000
+      },
+      "stopped_at": {
+        "lower_numerator": 6928203,
+        "upper_numerator": 6928204,
+        "denominator": 1000000
+      },
+      "waiting_observed": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "observed_lower": {
+        "lower_numerator": 5941125,
+        "upper_numerator": 5941126,
+        "denominator": 1000000
+      },
+      "completed_original_moves": 3,
+      "committed_observations": 1
+    },
+    {
+      "event": "route_result",
+      "opportunity": "late_4",
+      "path": "lower",
+      "error_halfwidth": "0",
+      "status": "completed",
+      "arrival": {
+        "lower_numerator": 8363081,
+        "upper_numerator": 8363082,
+        "denominator": 1000000
+      },
+      "stopped_at": {
+        "lower_numerator": 8363081,
+        "upper_numerator": 8363082,
+        "denominator": 1000000
+      },
+      "waiting_observed": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "observed_lower": {
+        "lower_numerator": 5941125,
+        "upper_numerator": 5941126,
+        "denominator": 1000000
+      },
+      "completed_original_moves": 3,
+      "committed_observations": 1
+    },
+    {
+      "event": "waiting",
+      "opportunity": "late_4",
+      "move": "late_4-bounded-upper-2",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "at": {
+        "lower_numerator": 1732050,
+        "upper_numerator": 1732051,
+        "denominator": 1000000
+      }
+    },
+    {
+      "event": "route_result",
+      "opportunity": "late_4",
+      "path": "upper",
+      "error_halfwidth": "1/5",
+      "status": "completed",
+      "arrival": {
+        "lower_numerator": 9196152,
+        "upper_numerator": 9196153,
+        "denominator": 1000000
+      },
+      "stopped_at": {
+        "lower_numerator": 9196152,
+        "upper_numerator": 9196153,
+        "denominator": 1000000
+      },
+      "waiting_observed": {
+        "lower_numerator": 2267949,
+        "upper_numerator": 2267950,
+        "denominator": 1000000
+      },
+      "observed_lower": {
+        "lower_numerator": 5941125,
+        "upper_numerator": 5941126,
+        "denominator": 1000000
+      },
+      "completed_original_moves": 3,
+      "committed_observations": 1
+    },
+    {
+      "event": "route_result",
+      "opportunity": "late_4",
+      "path": "lower",
+      "error_halfwidth": "1/5",
+      "status": "completed",
+      "arrival": {
+        "lower_numerator": 8363081,
+        "upper_numerator": 8363082,
+        "denominator": 1000000
+      },
+      "stopped_at": {
+        "lower_numerator": 8363081,
+        "upper_numerator": 8363082,
+        "denominator": 1000000
+      },
+      "waiting_observed": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "observed_lower": {
+        "lower_numerator": 5941125,
+        "upper_numerator": 5941126,
+        "denominator": 1000000
+      },
+      "completed_original_moves": 3,
+      "committed_observations": 1
+    },
+    {
+      "event": "opportunity_summary",
+      "opportunity": "late_4",
+      "zero_error_preferred": "upper",
+      "bounded_upper_complete": true,
+      "bounded_error_completed_path_comparison": "lower_earlier"
+    },
+    {
+      "event": "summary",
+      "status": "passed",
+      "checks": 3042,
+      "named_opportunities": 4,
+      "paired_routes": 16,
+      "scope": "finite_common_timing_intervention_not_learning_or_full_cost"
+    }
+  ],
+  "protected_baseline_after_sha256": {
+    "precheck.cpp": "6100de6a9325d1437e894daece234ab22dca32827730ee74a203a1032e0fec7f",
+    "run_precheck.py": "0409780db9485353b597764171e1445d24840868c158e01d16c6064f56e3fcc7",
+    "precheck_run_20260924_01.json": "d6b2be8c302dd6adcf214adf3942540cae474e806b78ab722e8620d71e88dc31",
+    "source_pins.json": "f1374e56dafe6ecd6c5e553ffdb874364715c84a5399fdf61b0deb2091999152"
+  },
+  "finished_utc": "2026-09-24T08:23:06.280338+00:00"
+}
