@@ -9,6 +9,7 @@ Neither policy is a bound or a reproduction of the real execution system.
 """
 
 from dataclasses import dataclass
+from collections.abc import Mapping
 from fractions import Fraction as F
 from functools import lru_cache
 import json
@@ -32,17 +33,29 @@ class GraphCase:
             raise ValueError("query budget must be a nonnegative integer")
 
 
-def solve(case, *, lookahead):
+def solve(case, *, lookahead, estimates=None):
     """Return (exact expected final admissions, first query).
 
     lookahead=False evaluates adaptive soft lexicographic A/P selection.
-    lookahead=True exhaustively optimizes within this finite graph model.
-    The flag changes decision logic, not information or outcome probabilities.
-    Both use the true probabilities: this does not vary prediction quality.
+    lookahead=True optimizes using the supplied probability estimates.
+    Only evaluation uses case.probabilities (the outcome distribution).
+    estimates=None explicitly selects exact probabilities for diagnosis;
+    this default is not an interface to observations in the real system.
     Successful evidence removes satisfied relations. All-zero scores select
     by name here; production round-robin fallback is not reproduced.
     """
-    probabilities = dict(case.probabilities)
+    truth = dict(case.probabilities)
+    if estimates is None:
+        probabilities = dict(truth)
+    else:
+        if not isinstance(estimates, Mapping):
+            raise ValueError("estimates must be a mapping")
+        probabilities = dict(estimates)
+        if probabilities.keys() != truth.keys():
+            raise ValueError("estimates must cover exactly the case's owners")
+        if any(type(p) is not F or not 0 <= p <= 1
+               for p in probabilities.values()):
+            raise ValueError("estimates must be Fractions in [0, 1]")
 
     def reward(cleared):
         return F(sum(owners <= cleared for owners in case.demands))
@@ -61,15 +74,17 @@ def solve(case, *, lookahead):
         return immediate, partial
 
     @lru_cache(maxsize=None)
-    def visit(available, cleared, budget):
+    def plan(available, cleared, budget):
         if budget == 0 or not available:
             return reward(cleared), None
 
         def outcome(owner):
             rest = tuple(key for key in available if key != owner)
             p = probabilities[owner]
-            success = visit(rest, cleared | {owner}, budget - 1)[0]
-            failure = visit(rest, cleared, budget - 1)[0]
+            # Define the continuation on BOTH observations, including those
+            # assigned zero estimated probability. They can occur in truth.
+            success = plan(rest, cleared | {owner}, budget - 1)[0]
+            failure = plan(rest, cleared, budget - 1)[0]
             return p * success + (1 - p) * failure
 
         if not lookahead:
@@ -79,7 +94,19 @@ def solve(case, *, lookahead):
         values = [(outcome(owner), owner) for owner in available]
         return min(values, key=lambda item: (-item[0], item[1]))
 
-    return visit(tuple(sorted(probabilities)), frozenset(), case.query_budget)
+    @lru_cache(maxsize=None)
+    def evaluate(available, cleared, budget):
+        if budget == 0 or not available:
+            return reward(cleared)
+        # No maximization here: follow the estimated policy at every step.
+        owner = plan(available, cleared, budget)[1]
+        rest = tuple(key for key in available if key != owner)
+        p = truth[owner]
+        return (p * evaluate(rest, cleared | {owner}, budget - 1)
+                + (1 - p) * evaluate(rest, cleared, budget - 1))
+
+    initial = tuple(sorted(probabilities)), frozenset(), case.query_budget
+    return evaluate(*initial), plan(*initial)[1]
 
 
 def complementarity_case(rare_probability=F(1, 1000), chain_probability=F(1)):
