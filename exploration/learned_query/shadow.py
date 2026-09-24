@@ -120,6 +120,9 @@ class Relation:
     owner: str
     threshold: Fraction | None
     retirable: bool = True
+    # None preserves old synthetic fixtures where owner is also the MOVE ID.
+    # An explicit empty action denotes a non-query responsibility.
+    action: str | None = None
 
     def __post_init__(self) -> None:
         if self.threshold is not None:
@@ -318,7 +321,8 @@ def rank(snapshot: Snapshot, predictor: object | None = None) -> Decision:
         for rel in demand.relations:
             if not rel.retirable or rel.threshold is None:
                 continue
-            found = candidates.get(rel.owner)
+            action_key = rel.owner if rel.action is None else rel.action
+            found = candidates.get(action_key)
             if found is None:
                 continue  # absent owner action is not assumed queryable
             action, prediction = found
@@ -327,25 +331,33 @@ def rank(snapshot: Snapshot, predictor: object | None = None) -> Decision:
             p = _probability(action, rel.threshold, prediction, predictor)
             if p <= 0.0:
                 continue
-            row = acc.setdefault(rel.owner, [0.0, 0.0, None])
+            # Preserve exact indicator/count arithmetic for the secant path.
+            # Learned p is still a float estimate; Fraction preserves that
+            # returned value exactly without further accumulation rounding.
+            probability = Fraction(p)
+            row = acc.setdefault(action_key, [_ZERO, _ZERO, None])
             if owner_count == 1:
-                row[0] += demand.weight * p
-            row[1] += demand.weight * p / owner_count
+                row[0] += demand.weight * probability
+            row[1] += demand.weight * probability / owner_count
             if row[2] is None or demand.added_at < row[2]:
                 row[2] = demand.added_at
 
     rows = []
     for move_id, (a_score, p_score, added_at) in acc.items():
-        if not math.isfinite(a_score) or not math.isfinite(p_score):
+        try:
+            reported_a, reported_p = float(a_score), float(p_score)
+        except OverflowError as exc:
+            raise ValueError("expected scores exceed finite report range") from exc
+        if not math.isfinite(reported_a) or not math.isfinite(reported_p):
             raise ValueError("expected scores must remain finite")
         prediction = candidates[move_id][1]
         k = prediction.work * (prediction.capture_wait + prediction.return_wait)
         if k <= 0 or (a_score <= 0.0 and p_score <= 0.0):
             continue
-        # Exact rational comparison of float scores avoids denominator blowup.
-        rows.append((-(Fraction(a_score) / k), -(Fraction(p_score) / k),
+        # Float report fields never participate in selection or tie-breaking.
+        rows.append((-(a_score / k), -(p_score / k),
                      added_at, move_id,
-                     Advisory(move_id, a_score, p_score, k)))
+                     Advisory(move_id, reported_a, reported_p, k)))
     rows.sort(key=lambda row: row[:4])
     ranked = tuple(row[4] for row in rows)
     return Decision(snapshot.view_id, ranked,

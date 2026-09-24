@@ -1,6 +1,6 @@
 # 学习型进度查询探索工作区
 
-本工作区对应 `explore/learned-query`，探索范围与下一步见[学习型查询探索说明](exploration/learned_query/README.md)。已实现小型监督概率模型、独立影子评分器及[估计／决策分离诊断](exploration/learned_query/DECISION_ABLATION.md)，33 项软件检查通过；[数据接口契约](exploration/learned_query/DATA_INTERFACE.md)明确最外层成功提交后的导出边界。[独立评审](exploration/learned_query/REVIEW_20260924.md)与[实现说明](exploration/learned_query/IMPLEMENTATION.md)区分人工诊断和科研证据。尚未用研究数据训练、运行原系统实验或证明吞吐收益。
+本工作区对应 `explore/learned-query`，探索范围与下一步见[学习型查询探索说明](exploration/learned_query/README.md)。已实现小型监督概率模型、[估计／决策分离诊断](exploration/learned_query/DECISION_ABLATION.md)及[真实 C++ 组件状态到模型入口的导出验证](exploration/learned_query/COMPONENT_VALIDATION.md)：57 项 Python 检查和29项人工输入的 C++ 组件断言通过，并修复浮点累计导致的并列错排。尚未接生产查询链、用研究数据训练或证明吞吐收益；[实现说明](exploration/learned_query/IMPLEMENTATION.md)区分组件接口与科研性能证据。
 
 以下为继承的主线资料入口；当前实现含未纳入 Git 的本地工件，本工作区尚不具备完整可运行实现。
 

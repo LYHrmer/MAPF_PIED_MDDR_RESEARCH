@@ -40,6 +40,21 @@ def snapshot(candidate=None, relations=None, weight=1):
 
 
 class ShadowBoundaryTests(unittest.TestCase):
+    def test_exact_partial_tie_uses_join_time_not_float_accumulation(self):
+        a, b = action("move-A"), action("move-B")
+        retained = tuple(Relation(f"resident-{i}", None, False, action="")
+                         for i in range(9))
+        # Both have exact P=3/10 and identical costs. B joined first.
+        # Float accumulation makes 1/10+1/10+1/10 exceed 3/10.
+        demands = tuple(Demand(f"A-{i}", 1,
+                               (Relation(a.move_id, F(3)),) + retained, F(1))
+                        for i in range(3)) + (
+            Demand("B", 3, (Relation(b.move_id, F(3)),) + retained, F(0)),)
+        view = Snapshot("exact-tie", F(4), (a, b), demands)
+        for predictor in (None, ConstantPredictor(1.0)):
+            with self.subTest(predictor=predictor):
+                self.assertEqual(rank(view, predictor).ranked[0].move_id, "move-B")
+
     def test_strict_equality_has_no_predicted_release(self):
         a = action()
         predicted = forecast(a, F(4))

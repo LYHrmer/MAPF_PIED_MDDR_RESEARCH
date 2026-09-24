@@ -10,6 +10,7 @@
 - `decision_structure.py`：小型固定依赖图的精确有理数决策诊断，比较软 A/P 字典序与自适应两步前瞻；不调用机器人仿真。
 - `decision_ablation.py`：固定真实分布，分开预测估计与策略评估的四格诊断。人为粗估和准确概率都不是新训练的模型。[解析结果](DECISION_ABLATION.md)展示预测改善、组合决策改善和反例控制。
 - 四份 `test_*.py`：模型约束、信息时序、严格边界、AND 阻塞、端到端组合与已知解析反例检查。
+- 后续新增 C++ 组件导出、严格 Python 读取器和第五份测试；57 项 Python 检查与29项 C++ 组件断言通过。详见[组件验证](COMPONENT_VALIDATION.md)，其人工输入不作为研究训练数据。
 
 模型的六个输入按顺序为预计下界增益/剩余授权跨度、查询精度/跨度、采样信息年龄的 log1p、预计捕获等待的 log1p、是否有两次历史捕获、阈值距认证进度/跨度。只有最后一项随同一查询的阈值变化。
 
@@ -23,6 +24,8 @@
 
 `expected_admissions` 是当前冻结依赖视图下、条件于有效返回的加权预计准入量；它不预测后续图变化或全窗口任务完成量。部分收益仍保留全部 owner 数，包括不可查询/不可退休的阻塞者。费用时间乘积仍是启发式分母，不是已证明的最优目标。
 
+导出接线后，责任 owner 与查询 action 分开；空 action 的 nonquery 责任仍计入 AND 分母。已修复 A/P 浮点累计导致的精确并列错排：先把概率转 Fraction 再累计排序，仅报告字段转 float。学习概率仍是模型的浮点估计，该修复不构成概率校准保证。
+
 ## 如何运行
 
 在仓库根目录执行（Python 3.10 或更新版本）：
@@ -32,6 +35,8 @@ rtk proxy python3 -B -m unittest exploration.learned_query.test_model exploratio
 rtk proxy python3 -B -m exploration.learned_query.example
 rtk proxy python3 -B -m exploration.learned_query.decision_structure
 rtk proxy python3 -B -m exploration.learned_query.decision_ablation
+rtk proxy python3 -B -m unittest exploration.learned_query.test_component_io
+rtk proxy python3 -B -m exploration.learned_query.run_component_check --source-root /home/lyh/MAPF_PIED_MDDR_RESEARCH
 ```
 
 2026-09-24 实际运行：33 项联合测试通过；原有两份示例及新增四格诊断均 exit 0。覆盖训练标准化隔离、阈值概率单调、捕获前后等待区分、未来信息隔离、最新零历时报价不能回用旧报价、严格大于阈值、完整 owner 集、缺失标签和响应身份、只读建议、源费用非负及未来需求拒绝；新增检查覆盖评估时第二步也不能使用真实概率重选，以及估计零概率事件后的继续决策。
@@ -57,7 +62,7 @@ rtk proxy python3 -B -m exploration.learned_query.decision_ablation
 
 下一接缝是只读导出最外层成功提交后的状态，或镜像该发布点确认的已准入 Delta 流。不能把内部 `Scheduler::commit` 当成导出触发点，因为外层 prepare 也会调用它组成私有候选。不能读取 prepare 的私有后继、模拟器真值或未来扰动。真实代数边界不能简单转浮点后声称仍是原精确判断。具体字段、最小接线及来源见[数据接口契约](DATA_INTERFACE.md)。
 
-本原型信任调用者给出的 `valid/settled/retirable/other_ready` 标志，不自行验证来源或几何。尚无实际导出器、真实日志回放、B1 对应、模型失效后的在线接管或系统级收益检验。代码不能当安全控制器使用。
+原影子接口信任调用者给出的 `valid/settled/retirable/other_ready` 标志，不自行验证来源或几何。组件导出器与严格读取器已实现，但只接受明确人工来源、外层认证为false的fixture，不是生产导出或真实性认证。尚无真实query结果回放、B1 对应、模型失效后的在线接管或系统级收益检验。代码不能当安全控制器使用。
 
 ## Claude Opus 与 Codex 分工
 
@@ -74,8 +79,8 @@ Opus 交付 `shadow.py` 初稿。Codex 完成问题/接口规格、模型与各�
 | prompt | `9bd917b5823cb0bcdf741d802e3b76c8bc5c1aaf433a83c1da459801cffc1e12` |
 | 原始 JSON 返回 | `57e6bf6311c26eb80173069fd2cbff456a69c2ec25b20f2e0bee31e067cf342a` |
 | Opus 初稿 | `ec3d6c688ae94ad88a676341b6b8ec44f6288f8ef02741d0a43b7099a7a8ce38` |
-| 本轮整合 shadow.py | `d72d8b09fb37fbd645d68e785eaabf5f704bd73cf0af64d7ffee04e2b32bca00` |
+| 首版 eba26c3 的 shadow.py（后续已修订） | `d72d8b09fb37fbd645d68e785eaabf5f704bd73cf0af64d7ffee04e2b32bca00` |
 
 ## 下一项实质工作
 
-精确反例和估计／决策分离诊断已完成。下一步按数据接口契约建立最外层已提交快照导出与来源对应，再以代表性数据检查有效及时返回、候选覆盖及真实成本。学习模型与简单预测应在同一评分接口下比较，原规则与前瞻之间的目标变化单独说明。不要以概率截断或扩大模型掩盖字典序问题。首版两份独立评审见[评审记录](REVIEW_20260924.md)，后续进展见[分离诊断](DECISION_ABLATION.md)。
+精确反例、估计／决策分离诊断及组件状态到模型接口已完成。下一步仍需最外层实际发布query与后继证书的来源对应，再以代表性数据检查有效及时返回、候选覆盖及真实成本。学习模型与简单预测应在同一评分接口下比较，原规则与前瞻之间的目标变化单独说明。不要以概率截断或扩大模型掩盖字典序问题。首版两份独立评审见[评审记录](REVIEW_20260924.md)，最近进展见[组件验证](COMPONENT_VALIDATION.md)。
