@@ -1,0 +1,2014 @@
+{
+  "started_utc": "2026-09-24T10:08:47.369366+00:00",
+  "status": "passed",
+  "scope": "frozen_public_prior_private_requester_mismatch",
+  "source_root": "/home/lyh/MAPF_PIED_MDDR_RESEARCH",
+  "commands": [
+    {
+      "argv": [
+        "rtk",
+        "proxy",
+        "g++-11",
+        "-std=c++14",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-fno-elide-constructors",
+        "-I",
+        "/tmp/mapf_error_mismatch_hgheqjju",
+        "-isystem",
+        "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/host_sdk/usr/include",
+        "-isystem",
+        "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/flint_host_config/src",
+        "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/mismatch_precheck.cpp",
+        "-L",
+        "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/flint_host_config",
+        "-L",
+        "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/host_sdk/usr/lib/x86_64-linux-gnu",
+        "-Wl,-rpath,/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/flint_host_config",
+        "-lflint",
+        "-lmpfr",
+        "-lgmp",
+        "-o",
+        "/tmp/mapf_error_mismatch_hgheqjju/error_guidance_mismatch_precheck"
+      ],
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_seconds": 6.246097469000233
+    },
+    {
+      "argv": [
+        "rtk",
+        "proxy",
+        "/tmp/mapf_error_mismatch_hgheqjju/error_guidance_mismatch_precheck"
+      ],
+      "timeout_seconds": 60,
+      "exit_code": 0,
+      "stdout": "{\"event\":\"public_prediction_relation\",\"move\":\"upper-2\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"nominal_release\":true}\n{\"event\":\"public_prediction_relation\",\"move\":\"upper-3\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"nominal_release\":true}\n{\"event\":\"selection_before_either_execution\",\"condition\":\"matched_eta_minus_one\",\"opportunity\":\"crossed_5_over_2\",\"decision_time\":\"0\",\"nominal_requester_eta\":\"-1\",\"public_input_signature\":\"view=view-1;demands=0;a=blocker,blocker-agent,artificial-native-source,exact-fixture,blocker,6,0,6,1/100,1;o=cell-1-5,requester-resident,requester,,0;o=cell-1-6,requester-resident,requester,,0;o=cell-1-7,requester-resident,requester,,0;o=cell-10-10,blocker,blocker-agent,blocker,1;o=cell-10-8,blocker,blocker-agent,blocker,1;o=cell-10-9,blocker,blocker-agent,blocker,1;o=cell-11-10,blocker,blocker-agent,blocker,1;o=cell-11-8,blocker,blocker-agent,blocker,1;o=cell-11-9,blocker,blocker-agent,blocker,1;o=cell-12-10,blocker,blocker-agent,blocker,1;o=cell-12-8,blocker,blocker-agent,blocker,1;o=cell-12-9,blocker,blocker-agent,blocker,1;o=cell-13-10,blocker,blocker-agent,blocker,1;o=cell-13-8,blocker,blocker-agent,blocker,1;o=cell-13-9,blocker,blocker-agent,blocker,1;o=cell-14-10,blocker,blocker-agent,blocker,1;o=cell-14-8,blocker,blocker-agent,blocker,1;o=cell-14-9,blocker,blocker-agent,blocker,1;o=cell-15-10,blocker,blocker-agent,blocker,1;o=cell-15-8,blocker,blocker-agent,blocker,1;o=cell-15-9,blocker,blocker-agent,blocker,1;o=cell-16-10,blocker,blocker-agent,blocker,1;o=cell-16-8,blocker,blocker-agent,blocker,1;o=cell-16-9,blocker,blocker-agent,blocker,1;o=cell-17-10,blocker,blocker-agent,blocker,1;o=cell-17-8,blocker,blocker-agent,blocker,1;o=cell-17-9,blocker,blocker-agent,blocker,1;o=cell-18-10,blocker,blocker-agent,blocker,1;o=cell-18-8,blocker,blocker-agent,blocker,1;o=cell-18-9,blocker,blocker-agent,blocker,1;o=cell-19-10,blocker,blocker-agent,blocker,1;o=cell-19-8,blocker,blocker-agent,blocker,1;o=cell-19-9,blocker,blocker-agent,blocker,1;o=cell-2-5,requester-resident,requester,,0;o=cell-2-6,requester-resident,requester,,0;o=cell-2-7,requester-resident,requester,,0;o=cell-3-5,requester-resident,requester,,0;o=cell-3-6,requester-resident,requester,,0;o=cell-3-7,requester-resident,requester,,0;o=cell-5-10,blocker,blocker-agent,blocker,1;o=cell-5-8,blocker,blocker-agent,blocker,1;o=cell-5-9,blocker,blocker-agent,blocker,1;o=cell-6-10,blocker,blocker-agent,blocker,1;o=cell-6-8,blocker,blocker-agent,blocker,1;o=cell-6-9,blocker,blocker-agent,blocker,1;o=cell-7-10,blocker,blocker-agent,blocker,1;o=cell-7-8,blocker,blocker-agent,blocker,1;o=cell-7-9,blocker,blocker-agent,blocker,1;o=cell-8-10,blocker,blocker-agent,blocker,1;o=cell-8-8,blocker,blocker-agent,blocker,1;o=cell-8-9,blocker,blocker-agent,blocker,1;o=cell-9-10,blocker,blocker-agent,blocker,1;o=cell-9-8,blocker,blocker-agent,blocker,1;o=cell-9-9,blocker,blocker-agent,blocker,1;\",\"legal_completed_requester_history_count\":0,\"waiting_selected\":\"upper\",\"motion_selected\":\"upper\",\"upper_prediction\":{\"motion\":{\"lower_numerator\":6928203,\"upper_numerator\":6928204,\"denominator\":1000000},\"waiting_prior\":{\"lower_numerator\":767949,\"upper_numerator\":767950,\"denominator\":1000000},\"arrival_prior\":{\"lower_numerator\":7696152,\"upper_numerator\":7696153,\"denominator\":1000000},\"certificate_lower_prior\":{\"lower_numerator\":3115000,\"upper_numerator\":3115000,\"denominator\":1000000},\"conditional_prior_available\":true},\"lower_prediction\":{\"motion\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"waiting_prior\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"arrival_prior\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"certificate_lower_prior\":{\"lower_numerator\":3115000,\"upper_numerator\":3115000,\"denominator\":1000000},\"conditional_prior_available\":true}}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"upper-1\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"upper-1\",\"at\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"from\":\"0\",\"to\":\"1\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"upper-1\",\"at\":{\"lower_numerator\":1732050,\"upper_numerator\":1732051,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"upper-2\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"waiting\",\"opportunity\":\"crossed_5_over_2\",\"move\":\"upper-2\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"at\":{\"lower_numerator\":1732050,\"upper_numerator\":1732051,\"denominator\":1000000}}\n{\"event\":\"actual_position_committed\",\"at\":{\"lower_numerator\":2500000,\"upper_numerator\":2500000,\"denominator\":1000000},\"lower\":{\"lower_numerator\":3125000,\"upper_numerator\":3125000,\"denominator\":1000000},\"endpoint_retained\":true}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"upper-2\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"upper-2\",\"at\":{\"lower_numerator\":2500000,\"upper_numerator\":2500000,\"denominator\":1000000},\"from\":\"0\",\"to\":\"4\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"upper-2\",\"at\":{\"lower_numerator\":5964101,\"upper_numerator\":5964102,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"upper-3\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"upper-3\",\"at\":{\"lower_numerator\":5964101,\"upper_numerator\":5964102,\"denominator\":1000000},\"from\":\"0\",\"to\":\"1\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"upper-3\",\"at\":{\"lower_numerator\":7696152,\"upper_numerator\":7696153,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"paired_route_result\",\"condition\":\"matched_eta_minus_one\",\"private_requester_eta\":\"-1\",\"opportunity\":\"crossed_5_over_2\",\"path\":\"upper\",\"execution_role\":\"selected_by_frozen_waiting\",\"authorization\":\"original_prefix_ordinary\",\"completed\":true,\"arrival\":{\"lower_numerator\":7696152,\"upper_numerator\":7696153,\"denominator\":1000000},\"stopped_at\":{\"lower_numerator\":7696152,\"upper_numerator\":7696153,\"denominator\":1000000},\"waiting\":{\"lower_numerator\":767949,\"upper_numerator\":767950,\"denominator\":1000000},\"moving\":{\"lower_numerator\":6928203,\"upper_numerator\":6928204,\"denominator\":1000000},\"move_durations\":[{\"lower_numerator\":1732050,\"upper_numerator\":1732051,\"denominator\":1000000},{\"lower_numerator\":3464101,\"upper_numerator\":3464102,\"denominator\":1000000},{\"lower_numerator\":1732050,\"upper_numerator\":1732051,\"denominator\":1000000}],\"completed_original_moves\":3,\"committed_observations\":1,\"full_initial_cap_attempts\":4,\"requester_cap_installs\":3,\"requester_run_commands\":3,\"blocker_cap_installs\":1,\"blocker_run_commands\":1,\"partial_initial_caps\":0,\"cap_extensions\":0,\"group_admissions\":0}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"lower-1\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"lower-1\",\"at\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"from\":\"0\",\"to\":\"2\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"lower-1\",\"at\":{\"lower_numerator\":2449489,\"upper_numerator\":2449490,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"lower-2\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"lower-2\",\"at\":{\"lower_numerator\":2449489,\"upper_numerator\":2449490,\"denominator\":1000000},\"from\":\"0\",\"to\":\"4\",\"original_move_unchanged\":true}\n{\"event\":\"actual_position_committed\",\"at\":{\"lower_numerator\":2500000,\"upper_numerator\":2500000,\"denominator\":1000000},\"lower\":{\"lower_numerator\":3125000,\"upper_numerator\":3125000,\"denominator\":1000000},\"endpoint_retained\":true}\n{\"event\":\"original_move_end\",\"move\":\"lower-2\",\"at\":{\"lower_numerator\":5913591,\"upper_numerator\":5913592,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"lower-3\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"lower-3\",\"at\":{\"lower_numerator\":5913591,\"upper_numerator\":5913592,\"denominator\":1000000},\"from\":\"0\",\"to\":\"2\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"lower-3\",\"at\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"paired_route_result\",\"condition\":\"matched_eta_minus_one\",\"private_requester_eta\":\"-1\",\"opportunity\":\"crossed_5_over_2\",\"path\":\"lower\",\"execution_role\":\"offline_other_route\",\"authorization\":\"original_prefix_ordinary\",\"completed\":true,\"arrival\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"stopped_at\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"waiting\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"moving\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"move_durations\":[{\"lower_numerator\":2449489,\"upper_numerator\":2449490,\"denominator\":1000000},{\"lower_numerator\":3464101,\"upper_numerator\":3464102,\"denominator\":1000000},{\"lower_numerator\":2449489,\"upper_numerator\":2449490,\"denominator\":1000000}],\"completed_original_moves\":3,\"committed_observations\":1,\"full_initial_cap_attempts\":3,\"requester_cap_installs\":3,\"requester_run_commands\":3,\"blocker_cap_installs\":1,\"blocker_run_commands\":1,\"partial_initial_caps\":0,\"cap_extensions\":0,\"group_admissions\":0}\n{\"event\":\"mismatch_comparison\",\"condition\":\"matched_eta_minus_one\",\"opportunity\":\"crossed_5_over_2\",\"offline_best_of_two\":\"upper\",\"waiting_selected\":\"upper\",\"motion_selected\":\"upper\",\"waiting_selection_loss\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"motion_selection_loss\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"waiting_gain_over_motion\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"upper_arrival_actual_minus_prior\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"lower_arrival_actual_minus_prior\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"upper_wait_actual_minus_prior\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"lower_wait_actual_minus_prior\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"waiting_policy\":\"nominal_waiting\",\"motion_policy\":\"motion_only\",\"legal_completed_requester_history_count\":0}\n{\"event\":\"public_prediction_relation\",\"move\":\"upper-2\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"nominal_release\":true}\n{\"event\":\"public_prediction_relation\",\"move\":\"upper-3\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"nominal_release\":true}\n{\"event\":\"selection_before_either_execution\",\"condition\":\"mismatch_eta_plus_one\",\"opportunity\":\"crossed_5_over_2\",\"decision_time\":\"0\",\"nominal_requester_eta\":\"-1\",\"public_input_signature\":\"view=view-1;demands=0;a=blocker,blocker-agent,artificial-native-source,exact-fixture,blocker,6,0,6,1/100,1;o=cell-1-5,requester-resident,requester,,0;o=cell-1-6,requester-resident,requester,,0;o=cell-1-7,requester-resident,requester,,0;o=cell-10-10,blocker,blocker-agent,blocker,1;o=cell-10-8,blocker,blocker-agent,blocker,1;o=cell-10-9,blocker,blocker-agent,blocker,1;o=cell-11-10,blocker,blocker-agent,blocker,1;o=cell-11-8,blocker,blocker-agent,blocker,1;o=cell-11-9,blocker,blocker-agent,blocker,1;o=cell-12-10,blocker,blocker-agent,blocker,1;o=cell-12-8,blocker,blocker-agent,blocker,1;o=cell-12-9,blocker,blocker-agent,blocker,1;o=cell-13-10,blocker,blocker-agent,blocker,1;o=cell-13-8,blocker,blocker-agent,blocker,1;o=cell-13-9,blocker,blocker-agent,blocker,1;o=cell-14-10,blocker,blocker-agent,blocker,1;o=cell-14-8,blocker,blocker-agent,blocker,1;o=cell-14-9,blocker,blocker-agent,blocker,1;o=cell-15-10,blocker,blocker-agent,blocker,1;o=cell-15-8,blocker,blocker-agent,blocker,1;o=cell-15-9,blocker,blocker-agent,blocker,1;o=cell-16-10,blocker,blocker-agent,blocker,1;o=cell-16-8,blocker,blocker-agent,blocker,1;o=cell-16-9,blocker,blocker-agent,blocker,1;o=cell-17-10,blocker,blocker-agent,blocker,1;o=cell-17-8,blocker,blocker-agent,blocker,1;o=cell-17-9,blocker,blocker-agent,blocker,1;o=cell-18-10,blocker,blocker-agent,blocker,1;o=cell-18-8,blocker,blocker-agent,blocker,1;o=cell-18-9,blocker,blocker-agent,blocker,1;o=cell-19-10,blocker,blocker-agent,blocker,1;o=cell-19-8,blocker,blocker-agent,blocker,1;o=cell-19-9,blocker,blocker-agent,blocker,1;o=cell-2-5,requester-resident,requester,,0;o=cell-2-6,requester-resident,requester,,0;o=cell-2-7,requester-resident,requester,,0;o=cell-3-5,requester-resident,requester,,0;o=cell-3-6,requester-resident,requester,,0;o=cell-3-7,requester-resident,requester,,0;o=cell-5-10,blocker,blocker-agent,blocker,1;o=cell-5-8,blocker,blocker-agent,blocker,1;o=cell-5-9,blocker,blocker-agent,blocker,1;o=cell-6-10,blocker,blocker-agent,blocker,1;o=cell-6-8,blocker,blocker-agent,blocker,1;o=cell-6-9,blocker,blocker-agent,blocker,1;o=cell-7-10,blocker,blocker-agent,blocker,1;o=cell-7-8,blocker,blocker-agent,blocker,1;o=cell-7-9,blocker,blocker-agent,blocker,1;o=cell-8-10,blocker,blocker-agent,blocker,1;o=cell-8-8,blocker,blocker-agent,blocker,1;o=cell-8-9,blocker,blocker-agent,blocker,1;o=cell-9-10,blocker,blocker-agent,blocker,1;o=cell-9-8,blocker,blocker-agent,blocker,1;o=cell-9-9,blocker,blocker-agent,blocker,1;\",\"legal_completed_requester_history_count\":0,\"waiting_selected\":\"upper\",\"motion_selected\":\"upper\",\"upper_prediction\":{\"motion\":{\"lower_numerator\":6928203,\"upper_numerator\":6928204,\"denominator\":1000000},\"waiting_prior\":{\"lower_numerator\":767949,\"upper_numerator\":767950,\"denominator\":1000000},\"arrival_prior\":{\"lower_numerator\":7696152,\"upper_numerator\":7696153,\"denominator\":1000000},\"certificate_lower_prior\":{\"lower_numerator\":3115000,\"upper_numerator\":3115000,\"denominator\":1000000},\"conditional_prior_available\":true},\"lower_prediction\":{\"motion\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"waiting_prior\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"arrival_prior\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"certificate_lower_prior\":{\"lower_numerator\":3115000,\"upper_numerator\":3115000,\"denominator\":1000000},\"conditional_prior_available\":true}}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"upper-1\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"upper-1\",\"at\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"from\":\"0\",\"to\":\"1\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"upper-1\",\"at\":{\"lower_numerator\":1083441,\"upper_numerator\":1083442,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"upper-2\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"waiting\",\"opportunity\":\"crossed_5_over_2\",\"move\":\"upper-2\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"at\":{\"lower_numerator\":1083441,\"upper_numerator\":1083442,\"denominator\":1000000}}\n{\"event\":\"actual_position_committed\",\"at\":{\"lower_numerator\":2500000,\"upper_numerator\":2500000,\"denominator\":1000000},\"lower\":{\"lower_numerator\":3125000,\"upper_numerator\":3125000,\"denominator\":1000000},\"endpoint_retained\":true}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"upper-2\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"upper-2\",\"at\":{\"lower_numerator\":2500000,\"upper_numerator\":2500000,\"denominator\":1000000},\"from\":\"0\",\"to\":\"4\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"upper-2\",\"at\":{\"lower_numerator\":4666883,\"upper_numerator\":4666884,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"upper-3\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"upper-3\",\"at\":{\"lower_numerator\":4666883,\"upper_numerator\":4666884,\"denominator\":1000000},\"from\":\"0\",\"to\":\"1\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"upper-3\",\"at\":{\"lower_numerator\":5750325,\"upper_numerator\":5750326,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"paired_route_result\",\"condition\":\"mismatch_eta_plus_one\",\"private_requester_eta\":\"1\",\"opportunity\":\"crossed_5_over_2\",\"path\":\"upper\",\"execution_role\":\"selected_by_frozen_waiting\",\"authorization\":\"original_prefix_ordinary\",\"completed\":true,\"arrival\":{\"lower_numerator\":5750325,\"upper_numerator\":5750326,\"denominator\":1000000},\"stopped_at\":{\"lower_numerator\":5750325,\"upper_numerator\":5750326,\"denominator\":1000000},\"waiting\":{\"lower_numerator\":1416558,\"upper_numerator\":1416559,\"denominator\":1000000},\"moving\":{\"lower_numerator\":4333767,\"upper_numerator\":4333768,\"denominator\":1000000},\"move_durations\":[{\"lower_numerator\":1083441,\"upper_numerator\":1083442,\"denominator\":1000000},{\"lower_numerator\":2166883,\"upper_numerator\":2166884,\"denominator\":1000000},{\"lower_numerator\":1083441,\"upper_numerator\":1083442,\"denominator\":1000000}],\"completed_original_moves\":3,\"committed_observations\":1,\"full_initial_cap_attempts\":4,\"requester_cap_installs\":3,\"requester_run_commands\":3,\"blocker_cap_installs\":1,\"blocker_run_commands\":1,\"partial_initial_caps\":0,\"cap_extensions\":0,\"group_admissions\":0}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"lower-1\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"lower-1\",\"at\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"from\":\"0\",\"to\":\"2\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"lower-1\",\"at\":{\"lower_numerator\":1532218,\"upper_numerator\":1532219,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"lower-2\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"lower-2\",\"at\":{\"lower_numerator\":1532218,\"upper_numerator\":1532219,\"denominator\":1000000},\"from\":\"0\",\"to\":\"4\",\"original_move_unchanged\":true}\n{\"event\":\"actual_position_committed\",\"at\":{\"lower_numerator\":2500000,\"upper_numerator\":2500000,\"denominator\":1000000},\"lower\":{\"lower_numerator\":3125000,\"upper_numerator\":3125000,\"denominator\":1000000},\"endpoint_retained\":true}\n{\"event\":\"original_move_end\",\"move\":\"lower-2\",\"at\":{\"lower_numerator\":3699102,\"upper_numerator\":3699103,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"lower-3\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"lower-3\",\"at\":{\"lower_numerator\":3699102,\"upper_numerator\":3699103,\"denominator\":1000000},\"from\":\"0\",\"to\":\"2\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"lower-3\",\"at\":{\"lower_numerator\":5231320,\"upper_numerator\":5231321,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"paired_route_result\",\"condition\":\"mismatch_eta_plus_one\",\"private_requester_eta\":\"1\",\"opportunity\":\"crossed_5_over_2\",\"path\":\"lower\",\"execution_role\":\"offline_other_route\",\"authorization\":\"original_prefix_ordinary\",\"completed\":true,\"arrival\":{\"lower_numerator\":5231320,\"upper_numerator\":5231321,\"denominator\":1000000},\"stopped_at\":{\"lower_numerator\":5231320,\"upper_numerator\":5231321,\"denominator\":1000000},\"waiting\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"moving\":{\"lower_numerator\":5231320,\"upper_numerator\":5231321,\"denominator\":1000000},\"move_durations\":[{\"lower_numerator\":1532218,\"upper_numerator\":1532219,\"denominator\":1000000},{\"lower_numerator\":2166883,\"upper_numerator\":2166884,\"denominator\":1000000},{\"lower_numerator\":1532218,\"upper_numerator\":1532219,\"denominator\":1000000}],\"completed_original_moves\":3,\"committed_observations\":1,\"full_initial_cap_attempts\":3,\"requester_cap_installs\":3,\"requester_run_commands\":3,\"blocker_cap_installs\":1,\"blocker_run_commands\":1,\"partial_initial_caps\":0,\"cap_extensions\":0,\"group_admissions\":0}\n{\"event\":\"mismatch_comparison\",\"condition\":\"mismatch_eta_plus_one\",\"opportunity\":\"crossed_5_over_2\",\"offline_best_of_two\":\"lower\",\"waiting_selected\":\"upper\",\"motion_selected\":\"upper\",\"waiting_selection_loss\":{\"lower_numerator\":519005,\"upper_numerator\":519006,\"denominator\":1000000},\"motion_selection_loss\":{\"lower_numerator\":519005,\"upper_numerator\":519006,\"denominator\":1000000},\"waiting_gain_over_motion\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"upper_arrival_actual_minus_prior\":{\"lower_numerator\":-1945827,\"upper_numerator\":-1945826,\"denominator\":1000000},\"lower_arrival_actual_minus_prior\":{\"lower_numerator\":-3131761,\"upper_numerator\":-3131760,\"denominator\":1000000},\"upper_wait_actual_minus_prior\":{\"lower_numerator\":648608,\"upper_numerator\":648609,\"denominator\":1000000},\"lower_wait_actual_minus_prior\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"waiting_policy\":\"nominal_waiting\",\"motion_policy\":\"motion_only\",\"legal_completed_requester_history_count\":0}\n{\"event\":\"information_boundary\",\"opportunity\":\"crossed_5_over_2\",\"same_public_inputs_across_private_conditions\":true,\"same_frozen_decision\":true,\"legal_requester_history_at_decision\":0,\"private_eta_exposed_to_predictor\":false,\"exact_instance_inference_supported\":false}\n{\"event\":\"public_prediction_relation\",\"move\":\"upper-2\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"nominal_release\":true}\n{\"event\":\"public_prediction_relation\",\"move\":\"upper-3\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"nominal_release\":true}\n{\"event\":\"selection_before_either_execution\",\"condition\":\"matched_eta_minus_one\",\"opportunity\":\"late_4\",\"decision_time\":\"0\",\"nominal_requester_eta\":\"-1\",\"public_input_signature\":\"view=view-1;demands=0;a=blocker,blocker-agent,artificial-native-source,exact-fixture,blocker,6,0,6,1/100,1;o=cell-1-5,requester-resident,requester,,0;o=cell-1-6,requester-resident,requester,,0;o=cell-1-7,requester-resident,requester,,0;o=cell-10-10,blocker,blocker-agent,blocker,1;o=cell-10-8,blocker,blocker-agent,blocker,1;o=cell-10-9,blocker,blocker-agent,blocker,1;o=cell-11-10,blocker,blocker-agent,blocker,1;o=cell-11-8,blocker,blocker-agent,blocker,1;o=cell-11-9,blocker,blocker-agent,blocker,1;o=cell-12-10,blocker,blocker-agent,blocker,1;o=cell-12-8,blocker,blocker-agent,blocker,1;o=cell-12-9,blocker,blocker-agent,blocker,1;o=cell-13-10,blocker,blocker-agent,blocker,1;o=cell-13-8,blocker,blocker-agent,blocker,1;o=cell-13-9,blocker,blocker-agent,blocker,1;o=cell-14-10,blocker,blocker-agent,blocker,1;o=cell-14-8,blocker,blocker-agent,blocker,1;o=cell-14-9,blocker,blocker-agent,blocker,1;o=cell-15-10,blocker,blocker-agent,blocker,1;o=cell-15-8,blocker,blocker-agent,blocker,1;o=cell-15-9,blocker,blocker-agent,blocker,1;o=cell-16-10,blocker,blocker-agent,blocker,1;o=cell-16-8,blocker,blocker-agent,blocker,1;o=cell-16-9,blocker,blocker-agent,blocker,1;o=cell-17-10,blocker,blocker-agent,blocker,1;o=cell-17-8,blocker,blocker-agent,blocker,1;o=cell-17-9,blocker,blocker-agent,blocker,1;o=cell-18-10,blocker,blocker-agent,blocker,1;o=cell-18-8,blocker,blocker-agent,blocker,1;o=cell-18-9,blocker,blocker-agent,blocker,1;o=cell-19-10,blocker,blocker-agent,blocker,1;o=cell-19-8,blocker,blocker-agent,blocker,1;o=cell-19-9,blocker,blocker-agent,blocker,1;o=cell-2-5,requester-resident,requester,,0;o=cell-2-6,requester-resident,requester,,0;o=cell-2-7,requester-resident,requester,,0;o=cell-3-5,requester-resident,requester,,0;o=cell-3-6,requester-resident,requester,,0;o=cell-3-7,requester-resident,requester,,0;o=cell-5-10,blocker,blocker-agent,blocker,1;o=cell-5-8,blocker,blocker-agent,blocker,1;o=cell-5-9,blocker,blocker-agent,blocker,1;o=cell-6-10,blocker,blocker-agent,blocker,1;o=cell-6-8,blocker,blocker-agent,blocker,1;o=cell-6-9,blocker,blocker-agent,blocker,1;o=cell-7-10,blocker,blocker-agent,blocker,1;o=cell-7-8,blocker,blocker-agent,blocker,1;o=cell-7-9,blocker,blocker-agent,blocker,1;o=cell-8-10,blocker,blocker-agent,blocker,1;o=cell-8-8,blocker,blocker-agent,blocker,1;o=cell-8-9,blocker,blocker-agent,blocker,1;o=cell-9-10,blocker,blocker-agent,blocker,1;o=cell-9-8,blocker,blocker-agent,blocker,1;o=cell-9-9,blocker,blocker-agent,blocker,1;\",\"legal_completed_requester_history_count\":0,\"waiting_selected\":\"lower\",\"motion_selected\":\"upper\",\"upper_prediction\":{\"motion\":{\"lower_numerator\":6928203,\"upper_numerator\":6928204,\"denominator\":1000000},\"waiting_prior\":{\"lower_numerator\":2267949,\"upper_numerator\":2267950,\"denominator\":1000000},\"arrival_prior\":{\"lower_numerator\":9196152,\"upper_numerator\":9196153,\"denominator\":1000000},\"certificate_lower_prior\":{\"lower_numerator\":5931125,\"upper_numerator\":5931126,\"denominator\":1000000},\"conditional_prior_available\":true},\"lower_prediction\":{\"motion\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"waiting_prior\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"arrival_prior\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"certificate_lower_prior\":{\"lower_numerator\":5931125,\"upper_numerator\":5931126,\"denominator\":1000000},\"conditional_prior_available\":true}}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"lower-1\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"lower-1\",\"at\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"from\":\"0\",\"to\":\"2\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"lower-1\",\"at\":{\"lower_numerator\":2449489,\"upper_numerator\":2449490,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"lower-2\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"lower-2\",\"at\":{\"lower_numerator\":2449489,\"upper_numerator\":2449490,\"denominator\":1000000},\"from\":\"0\",\"to\":\"4\",\"original_move_unchanged\":true}\n{\"event\":\"actual_position_committed\",\"at\":{\"lower_numerator\":4000000,\"upper_numerator\":4000000,\"denominator\":1000000},\"lower\":{\"lower_numerator\":5941125,\"upper_numerator\":5941126,\"denominator\":1000000},\"endpoint_retained\":true}\n{\"event\":\"original_move_end\",\"move\":\"lower-2\",\"at\":{\"lower_numerator\":5913591,\"upper_numerator\":5913592,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"lower-3\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"lower-3\",\"at\":{\"lower_numerator\":5913591,\"upper_numerator\":5913592,\"denominator\":1000000},\"from\":\"0\",\"to\":\"2\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"lower-3\",\"at\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"paired_route_result\",\"condition\":\"matched_eta_minus_one\",\"private_requester_eta\":\"-1\",\"opportunity\":\"late_4\",\"path\":\"lower\",\"execution_role\":\"selected_by_frozen_waiting\",\"authorization\":\"original_prefix_ordinary\",\"completed\":true,\"arrival\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"stopped_at\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"waiting\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"moving\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"move_durations\":[{\"lower_numerator\":2449489,\"upper_numerator\":2449490,\"denominator\":1000000},{\"lower_numerator\":3464101,\"upper_numerator\":3464102,\"denominator\":1000000},{\"lower_numerator\":2449489,\"upper_numerator\":2449490,\"denominator\":1000000}],\"completed_original_moves\":3,\"committed_observations\":1,\"full_initial_cap_attempts\":3,\"requester_cap_installs\":3,\"requester_run_commands\":3,\"blocker_cap_installs\":1,\"blocker_run_commands\":1,\"partial_initial_caps\":0,\"cap_extensions\":0,\"group_admissions\":0}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"upper-1\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"upper-1\",\"at\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"from\":\"0\",\"to\":\"1\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"upper-1\",\"at\":{\"lower_numerator\":1732050,\"upper_numerator\":1732051,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"upper-2\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"waiting\",\"opportunity\":\"late_4\",\"move\":\"upper-2\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"at\":{\"lower_numerator\":1732050,\"upper_numerator\":1732051,\"denominator\":1000000}}\n{\"event\":\"actual_position_committed\",\"at\":{\"lower_numerator\":4000000,\"upper_numerator\":4000000,\"denominator\":1000000},\"lower\":{\"lower_numerator\":5941125,\"upper_numerator\":5941126,\"denominator\":1000000},\"endpoint_retained\":true}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"upper-2\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"upper-2\",\"at\":{\"lower_numerator\":4000000,\"upper_numerator\":4000000,\"denominator\":1000000},\"from\":\"0\",\"to\":\"4\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"upper-2\",\"at\":{\"lower_numerator\":7464101,\"upper_numerator\":7464102,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"upper-3\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"upper-3\",\"at\":{\"lower_numerator\":7464101,\"upper_numerator\":7464102,\"denominator\":1000000},\"from\":\"0\",\"to\":\"1\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"upper-3\",\"at\":{\"lower_numerator\":9196152,\"upper_numerator\":9196153,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"paired_route_result\",\"condition\":\"matched_eta_minus_one\",\"private_requester_eta\":\"-1\",\"opportunity\":\"late_4\",\"path\":\"upper\",\"execution_role\":\"offline_other_route\",\"authorization\":\"original_prefix_ordinary\",\"completed\":true,\"arrival\":{\"lower_numerator\":9196152,\"upper_numerator\":9196153,\"denominator\":1000000},\"stopped_at\":{\"lower_numerator\":9196152,\"upper_numerator\":9196153,\"denominator\":1000000},\"waiting\":{\"lower_numerator\":2267949,\"upper_numerator\":2267950,\"denominator\":1000000},\"moving\":{\"lower_numerator\":6928203,\"upper_numerator\":6928204,\"denominator\":1000000},\"move_durations\":[{\"lower_numerator\":1732050,\"upper_numerator\":1732051,\"denominator\":1000000},{\"lower_numerator\":3464101,\"upper_numerator\":3464102,\"denominator\":1000000},{\"lower_numerator\":1732050,\"upper_numerator\":1732051,\"denominator\":1000000}],\"completed_original_moves\":3,\"committed_observations\":1,\"full_initial_cap_attempts\":4,\"requester_cap_installs\":3,\"requester_run_commands\":3,\"blocker_cap_installs\":1,\"blocker_run_commands\":1,\"partial_initial_caps\":0,\"cap_extensions\":0,\"group_admissions\":0}\n{\"event\":\"mismatch_comparison\",\"condition\":\"matched_eta_minus_one\",\"opportunity\":\"late_4\",\"offline_best_of_two\":\"lower\",\"waiting_selected\":\"lower\",\"motion_selected\":\"upper\",\"waiting_selection_loss\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"motion_selection_loss\":{\"lower_numerator\":833071,\"upper_numerator\":833072,\"denominator\":1000000},\"waiting_gain_over_motion\":{\"lower_numerator\":833071,\"upper_numerator\":833072,\"denominator\":1000000},\"upper_arrival_actual_minus_prior\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"lower_arrival_actual_minus_prior\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"upper_wait_actual_minus_prior\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"lower_wait_actual_minus_prior\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"waiting_policy\":\"nominal_waiting\",\"motion_policy\":\"motion_only\",\"legal_completed_requester_history_count\":0}\n{\"event\":\"public_prediction_relation\",\"move\":\"upper-2\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"nominal_release\":true}\n{\"event\":\"public_prediction_relation\",\"move\":\"upper-3\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"nominal_release\":true}\n{\"event\":\"selection_before_either_execution\",\"condition\":\"mismatch_eta_plus_one\",\"opportunity\":\"late_4\",\"decision_time\":\"0\",\"nominal_requester_eta\":\"-1\",\"public_input_signature\":\"view=view-1;demands=0;a=blocker,blocker-agent,artificial-native-source,exact-fixture,blocker,6,0,6,1/100,1;o=cell-1-5,requester-resident,requester,,0;o=cell-1-6,requester-resident,requester,,0;o=cell-1-7,requester-resident,requester,,0;o=cell-10-10,blocker,blocker-agent,blocker,1;o=cell-10-8,blocker,blocker-agent,blocker,1;o=cell-10-9,blocker,blocker-agent,blocker,1;o=cell-11-10,blocker,blocker-agent,blocker,1;o=cell-11-8,blocker,blocker-agent,blocker,1;o=cell-11-9,blocker,blocker-agent,blocker,1;o=cell-12-10,blocker,blocker-agent,blocker,1;o=cell-12-8,blocker,blocker-agent,blocker,1;o=cell-12-9,blocker,blocker-agent,blocker,1;o=cell-13-10,blocker,blocker-agent,blocker,1;o=cell-13-8,blocker,blocker-agent,blocker,1;o=cell-13-9,blocker,blocker-agent,blocker,1;o=cell-14-10,blocker,blocker-agent,blocker,1;o=cell-14-8,blocker,blocker-agent,blocker,1;o=cell-14-9,blocker,blocker-agent,blocker,1;o=cell-15-10,blocker,blocker-agent,blocker,1;o=cell-15-8,blocker,blocker-agent,blocker,1;o=cell-15-9,blocker,blocker-agent,blocker,1;o=cell-16-10,blocker,blocker-agent,blocker,1;o=cell-16-8,blocker,blocker-agent,blocker,1;o=cell-16-9,blocker,blocker-agent,blocker,1;o=cell-17-10,blocker,blocker-agent,blocker,1;o=cell-17-8,blocker,blocker-agent,blocker,1;o=cell-17-9,blocker,blocker-agent,blocker,1;o=cell-18-10,blocker,blocker-agent,blocker,1;o=cell-18-8,blocker,blocker-agent,blocker,1;o=cell-18-9,blocker,blocker-agent,blocker,1;o=cell-19-10,blocker,blocker-agent,blocker,1;o=cell-19-8,blocker,blocker-agent,blocker,1;o=cell-19-9,blocker,blocker-agent,blocker,1;o=cell-2-5,requester-resident,requester,,0;o=cell-2-6,requester-resident,requester,,0;o=cell-2-7,requester-resident,requester,,0;o=cell-3-5,requester-resident,requester,,0;o=cell-3-6,requester-resident,requester,,0;o=cell-3-7,requester-resident,requester,,0;o=cell-5-10,blocker,blocker-agent,blocker,1;o=cell-5-8,blocker,blocker-agent,blocker,1;o=cell-5-9,blocker,blocker-agent,blocker,1;o=cell-6-10,blocker,blocker-agent,blocker,1;o=cell-6-8,blocker,blocker-agent,blocker,1;o=cell-6-9,blocker,blocker-agent,blocker,1;o=cell-7-10,blocker,blocker-agent,blocker,1;o=cell-7-8,blocker,blocker-agent,blocker,1;o=cell-7-9,blocker,blocker-agent,blocker,1;o=cell-8-10,blocker,blocker-agent,blocker,1;o=cell-8-8,blocker,blocker-agent,blocker,1;o=cell-8-9,blocker,blocker-agent,blocker,1;o=cell-9-10,blocker,blocker-agent,blocker,1;o=cell-9-8,blocker,blocker-agent,blocker,1;o=cell-9-9,blocker,blocker-agent,blocker,1;\",\"legal_completed_requester_history_count\":0,\"waiting_selected\":\"lower\",\"motion_selected\":\"upper\",\"upper_prediction\":{\"motion\":{\"lower_numerator\":6928203,\"upper_numerator\":6928204,\"denominator\":1000000},\"waiting_prior\":{\"lower_numerator\":2267949,\"upper_numerator\":2267950,\"denominator\":1000000},\"arrival_prior\":{\"lower_numerator\":9196152,\"upper_numerator\":9196153,\"denominator\":1000000},\"certificate_lower_prior\":{\"lower_numerator\":5931125,\"upper_numerator\":5931126,\"denominator\":1000000},\"conditional_prior_available\":true},\"lower_prediction\":{\"motion\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"waiting_prior\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"arrival_prior\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"certificate_lower_prior\":{\"lower_numerator\":5931125,\"upper_numerator\":5931126,\"denominator\":1000000},\"conditional_prior_available\":true}}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"lower-1\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"lower-1\",\"at\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"from\":\"0\",\"to\":\"2\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"lower-1\",\"at\":{\"lower_numerator\":1532218,\"upper_numerator\":1532219,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"lower-2\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"lower-2\",\"at\":{\"lower_numerator\":1532218,\"upper_numerator\":1532219,\"denominator\":1000000},\"from\":\"0\",\"to\":\"4\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"lower-2\",\"at\":{\"lower_numerator\":3699102,\"upper_numerator\":3699103,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"lower-3\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"lower-3\",\"at\":{\"lower_numerator\":3699102,\"upper_numerator\":3699103,\"denominator\":1000000},\"from\":\"0\",\"to\":\"2\",\"original_move_unchanged\":true}\n{\"event\":\"actual_position_committed\",\"at\":{\"lower_numerator\":4000000,\"upper_numerator\":4000000,\"denominator\":1000000},\"lower\":{\"lower_numerator\":5941125,\"upper_numerator\":5941126,\"denominator\":1000000},\"endpoint_retained\":true}\n{\"event\":\"original_move_end\",\"move\":\"lower-3\",\"at\":{\"lower_numerator\":5231320,\"upper_numerator\":5231321,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"paired_route_result\",\"condition\":\"mismatch_eta_plus_one\",\"private_requester_eta\":\"1\",\"opportunity\":\"late_4\",\"path\":\"lower\",\"execution_role\":\"selected_by_frozen_waiting\",\"authorization\":\"original_prefix_ordinary\",\"completed\":true,\"arrival\":{\"lower_numerator\":5231320,\"upper_numerator\":5231321,\"denominator\":1000000},\"stopped_at\":{\"lower_numerator\":5231320,\"upper_numerator\":5231321,\"denominator\":1000000},\"waiting\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"moving\":{\"lower_numerator\":5231320,\"upper_numerator\":5231321,\"denominator\":1000000},\"move_durations\":[{\"lower_numerator\":1532218,\"upper_numerator\":1532219,\"denominator\":1000000},{\"lower_numerator\":2166883,\"upper_numerator\":2166884,\"denominator\":1000000},{\"lower_numerator\":1532218,\"upper_numerator\":1532219,\"denominator\":1000000}],\"completed_original_moves\":3,\"committed_observations\":1,\"full_initial_cap_attempts\":3,\"requester_cap_installs\":3,\"requester_run_commands\":3,\"blocker_cap_installs\":1,\"blocker_run_commands\":1,\"partial_initial_caps\":0,\"cap_extensions\":0,\"group_admissions\":0}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"upper-1\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"upper-1\",\"at\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"from\":\"0\",\"to\":\"1\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"upper-1\",\"at\":{\"lower_numerator\":1083441,\"upper_numerator\":1083442,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"upper-2\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"waiting\",\"opportunity\":\"late_4\",\"move\":\"upper-2\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"at\":{\"lower_numerator\":1083441,\"upper_numerator\":1083442,\"denominator\":1000000}}\n{\"event\":\"actual_position_committed\",\"at\":{\"lower_numerator\":4000000,\"upper_numerator\":4000000,\"denominator\":1000000},\"lower\":{\"lower_numerator\":5941125,\"upper_numerator\":5941126,\"denominator\":1000000},\"endpoint_retained\":true}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"upper-2\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"upper-2\",\"at\":{\"lower_numerator\":4000000,\"upper_numerator\":4000000,\"denominator\":1000000},\"from\":\"0\",\"to\":\"4\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"upper-2\",\"at\":{\"lower_numerator\":6166883,\"upper_numerator\":6166884,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"upper-3\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"upper-3\",\"at\":{\"lower_numerator\":6166883,\"upper_numerator\":6166884,\"denominator\":1000000},\"from\":\"0\",\"to\":\"1\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"upper-3\",\"at\":{\"lower_numerator\":7250325,\"upper_numerator\":7250326,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"paired_route_result\",\"condition\":\"mismatch_eta_plus_one\",\"private_requester_eta\":\"1\",\"opportunity\":\"late_4\",\"path\":\"upper\",\"execution_role\":\"offline_other_route\",\"authorization\":\"original_prefix_ordinary\",\"completed\":true,\"arrival\":{\"lower_numerator\":7250325,\"upper_numerator\":7250326,\"denominator\":1000000},\"stopped_at\":{\"lower_numerator\":7250325,\"upper_numerator\":7250326,\"denominator\":1000000},\"waiting\":{\"lower_numerator\":2916558,\"upper_numerator\":2916559,\"denominator\":1000000},\"moving\":{\"lower_numerator\":4333767,\"upper_numerator\":4333768,\"denominator\":1000000},\"move_durations\":[{\"lower_numerator\":1083441,\"upper_numerator\":1083442,\"denominator\":1000000},{\"lower_numerator\":2166883,\"upper_numerator\":2166884,\"denominator\":1000000},{\"lower_numerator\":1083441,\"upper_numerator\":1083442,\"denominator\":1000000}],\"completed_original_moves\":3,\"committed_observations\":1,\"full_initial_cap_attempts\":4,\"requester_cap_installs\":3,\"requester_run_commands\":3,\"blocker_cap_installs\":1,\"blocker_run_commands\":1,\"partial_initial_caps\":0,\"cap_extensions\":0,\"group_admissions\":0}\n{\"event\":\"mismatch_comparison\",\"condition\":\"mismatch_eta_plus_one\",\"opportunity\":\"late_4\",\"offline_best_of_two\":\"lower\",\"waiting_selected\":\"lower\",\"motion_selected\":\"upper\",\"waiting_selection_loss\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"motion_selection_loss\":{\"lower_numerator\":2019005,\"upper_numerator\":2019006,\"denominator\":1000000},\"waiting_gain_over_motion\":{\"lower_numerator\":2019005,\"upper_numerator\":2019006,\"denominator\":1000000},\"upper_arrival_actual_minus_prior\":{\"lower_numerator\":-1945827,\"upper_numerator\":-1945826,\"denominator\":1000000},\"lower_arrival_actual_minus_prior\":{\"lower_numerator\":-3131761,\"upper_numerator\":-3131760,\"denominator\":1000000},\"upper_wait_actual_minus_prior\":{\"lower_numerator\":648608,\"upper_numerator\":648609,\"denominator\":1000000},\"lower_wait_actual_minus_prior\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"waiting_policy\":\"nominal_waiting\",\"motion_policy\":\"motion_only\",\"legal_completed_requester_history_count\":0}\n{\"event\":\"information_boundary\",\"opportunity\":\"late_4\",\"same_public_inputs_across_private_conditions\":true,\"same_frozen_decision\":true,\"legal_requester_history_at_decision\":0,\"private_eta_exposed_to_predictor\":false,\"exact_instance_inference_supported\":false}\n{\"event\":\"summary\",\"status\":\"passed\",\"checks\":2962,\"named_opportunities\":2,\"named_private_conditions\":2,\"actual_route_executions\":8,\"scope\":\"frozen_public_prior_private_requester_mismatch_not_learning_or_full_cost\"}\n",
+      "stderr": "",
+      "elapsed_seconds": 4.724504206002166
+    }
+  ],
+  "AUTH_or_production_lifecycle_verified": false,
+  "full_online_cost_measured": false,
+  "general_GROUP_ADMIT_implemented": false,
+  "learning_or_lifelong_throughput_claim": false,
+  "research_payload_read": false,
+  "protected_baseline_sha256": {
+    "README.md": "0ec128eb64658ee275ac3217446990d0111989652db6c4b12a5f68d2db9e5187",
+    "RESEARCH_CONTRACT.md": "1028e1f448fa19260feffcc882068d9ea87934e2758f194cd7d51942ec0075f7",
+    "OPUS_AUDIT.md": "f390e13ed858d55b7e64dd049415f44cb5bec52a900a84fd6b08505188199597",
+    "precheck.cpp": "6100de6a9325d1437e894daece234ab22dca32827730ee74a203a1032e0fec7f",
+    "run_precheck.py": "0409780db9485353b597764171e1445d24840868c158e01d16c6064f56e3fcc7",
+    "precheck_run_20260924_01.json": "d6b2be8c302dd6adcf214adf3942540cae474e806b78ab722e8620d71e88dc31",
+    "source_pins.json": "f1374e56dafe6ecd6c5e553ffdb874364715c84a5399fdf61b0deb2091999152",
+    "timing_precheck.cpp": "387f3b6c5c1bdd837fdc4802c6c5344f027fb80918b2e3be9730a5916d10e60d",
+    "run_timing_precheck.py": "53ef62c9a330b7236f4f09f0f1cca95392a1d5c1c90b5990c6dfc5dad426925b",
+    "TIMING_PRECHECK.md": "874595b72fad8721bbc71eba735c125fb7c9172fb518c9d4d9ea3df18697e540",
+    "timing_run_20260924_01.json": "071ddf848d9e47641660f9feade6069699c9715a3f67252439e74f2fe62e386c",
+    "prefix_precheck.cpp": "1ccbb1491f19fa19e4bb9736028df8257c1b3681191bf9f1af29884e5b3a32e7",
+    "run_prefix_precheck.py": "bc2d60bacd253aa2937153c8fb82e0e7dbb6531ee2f5d2f50262b010d94cb938",
+    "PREFIX_PRECHECK.md": "7ea2e17ef809b414130340a87b26eacc91149070c1ed7ea2d3ae2103345db124",
+    "prefix_run_20260924_01.json": "1727e53efcdd962b625f7d31215291065f6e87c3cd7ef1f93924c18e2d7ab2b3",
+    "prefix_run_20260924_02.json": "ed5070e75316cee58e5fd712b72359ae685a642e8dd6f3eca3c410709ac3805e"
+  },
+  "source_header_sha256": {
+    "implementation/pie_position_commit/include/pie_position_commit.hpp": "2f7be5ec11293df2fdbda3919393f8a30b43b2a432f56879e59f26d0a3b9d7c6",
+    "implementation/pie_progress_retirement/include/pie_progress_retirement.hpp": "ddd94e49c3dd689b84d585ae374a65b99f49577bf9752342f46d688fbd0f7cb1",
+    "implementation/pie_query/include/pie_query_scheduler.hpp": "a1572501e39b711b9c8253e05083aa5799884145263d81352c9d71fd1965fefb",
+    "implementation/pie_query/include/pie_query_index.hpp": "936a30e4e19c85977ab187181dbe59130daffb49c71a60b41ba28d5c3c348c70",
+    "implementation/pie_query/include/pie_release_threshold.hpp": "00660d499c0169cd843527dd2b1b3e35cdb4035b8e0e9348dc6734a68cf30c79",
+    "implementation/pie_geometry/include/pie_geometry.hpp": "ff432b29d131165b1a95f3ffa737cfea47bd1c09ef05f19516b9847be72d1507",
+    "implementation/pie_geometry/include/pie_geometry_flint.hpp": "239040d62285b5f370233b9732824ea6ff2747193c8ad404f8ef93498a806900",
+    "implementation/pie_reference/include/pie_reference_controller.hpp": "a1cf2b7834efe3ccd344b8226a3c5e55c56857d3ac55a3c05281cfde087671ce",
+    "implementation/pie_reference/include/pie_reference_segment.hpp": "0e56a33e4b5d93ad751b81fee50e89f96e05d139810ddbfeb2a3fcbc10369d55"
+  },
+  "fixture_sha256": "d9b754827820f121980fa8a88a581ed7b6fc6fdfa3be25d562de63a1dce1943a",
+  "runner_sha256": "fa0993088debbd9f8ef7379787013e2572a3d310175ab4772d3a59af89fb1c2b",
+  "normative_rule": {
+    "path": "73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md",
+    "sha256": "b64f5b555034655b2676226d051a70c03aab3679d67c00bc334fb588c4811a8a",
+    "sections": [
+      "4",
+      "5"
+    ]
+  },
+  "frozen_predictor_sha256": "e1d3c17500f3591d890e97c1803cc8e3f19de024f1a72990024d120a7a576664",
+  "frozen_predictor_matches_prefix": true,
+  "source_identity_command": {
+    "argv": [
+      "rtk",
+      "proxy",
+      "git",
+      "-C",
+      "/home/lyh/MAPF_PIED_MDDR_RESEARCH",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_code": 0,
+    "stdout": "ad3edd4f946e592cff12ff6426e0d31ba5cfd398\n",
+    "stderr": ""
+  },
+  "source_head": "ad3edd4f946e592cff12ff6426e0d31ba5cfd398",
+  "binary_sha256": "57129ac9392b8f0901e01e545f2e0f0917f99a81098ad8e2d086781440f7e9d6",
+  "events": [
+    {
+      "event": "public_prediction_relation",
+      "move": "upper-2",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "nominal_release": true
+    },
+    {
+      "event": "public_prediction_relation",
+      "move": "upper-3",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "nominal_release": true
+    },
+    {
+      "event": "selection_before_either_execution",
+      "condition": "matched_eta_minus_one",
+      "opportunity": "crossed_5_over_2",
+      "decision_time": "0",
+      "nominal_requester_eta": "-1",
+      "public_input_signature": "view=view-1;demands=0;a=blocker,blocker-agent,artificial-native-source,exact-fixture,blocker,6,0,6,1/100,1;o=cell-1-5,requester-resident,requester,,0;o=cell-1-6,requester-resident,requester,,0;o=cell-1-7,requester-resident,requester,,0;o=cell-10-10,blocker,blocker-agent,blocker,1;o=cell-10-8,blocker,blocker-agent,blocker,1;o=cell-10-9,blocker,blocker-agent,blocker,1;o=cell-11-10,blocker,blocker-agent,blocker,1;o=cell-11-8,blocker,blocker-agent,blocker,1;o=cell-11-9,blocker,blocker-agent,blocker,1;o=cell-12-10,blocker,blocker-agent,blocker,1;o=cell-12-8,blocker,blocker-agent,blocker,1;o=cell-12-9,blocker,blocker-agent,blocker,1;o=cell-13-10,blocker,blocker-agent,blocker,1;o=cell-13-8,blocker,blocker-agent,blocker,1;o=cell-13-9,blocker,blocker-agent,blocker,1;o=cell-14-10,blocker,blocker-agent,blocker,1;o=cell-14-8,blocker,blocker-agent,blocker,1;o=cell-14-9,blocker,blocker-agent,blocker,1;o=cell-15-10,blocker,blocker-agent,blocker,1;o=cell-15-8,blocker,blocker-agent,blocker,1;o=cell-15-9,blocker,blocker-agent,blocker,1;o=cell-16-10,blocker,blocker-agent,blocker,1;o=cell-16-8,blocker,blocker-agent,blocker,1;o=cell-16-9,blocker,blocker-agent,blocker,1;o=cell-17-10,blocker,blocker-agent,blocker,1;o=cell-17-8,blocker,blocker-agent,blocker,1;o=cell-17-9,blocker,blocker-agent,blocker,1;o=cell-18-10,blocker,blocker-agent,blocker,1;o=cell-18-8,blocker,blocker-agent,blocker,1;o=cell-18-9,blocker,blocker-agent,blocker,1;o=cell-19-10,blocker,blocker-agent,blocker,1;o=cell-19-8,blocker,blocker-agent,blocker,1;o=cell-19-9,blocker,blocker-agent,blocker,1;o=cell-2-5,requester-resident,requester,,0;o=cell-2-6,requester-resident,requester,,0;o=cell-2-7,requester-resident,requester,,0;o=cell-3-5,requester-resident,requester,,0;o=cell-3-6,requester-resident,requester,,0;o=cell-3-7,requester-resident,requester,,0;o=cell-5-10,blocker,blocker-agent,blocker,1;o=cell-5-8,blocker,blocker-agent,blocker,1;o=cell-5-9,blocker,blocker-agent,blocker,1;o=cell-6-10,blocker,blocker-agent,blocker,1;o=cell-6-8,blocker,blocker-agent,blocker,1;o=cell-6-9,blocker,blocker-agent,blocker,1;o=cell-7-10,blocker,blocker-agent,blocker,1;o=cell-7-8,blocker,blocker-agent,blocker,1;o=cell-7-9,blocker,blocker-agent,blocker,1;o=cell-8-10,blocker,blocker-agent,blocker,1;o=cell-8-8,blocker,blocker-agent,blocker,1;o=cell-8-9,blocker,blocker-agent,blocker,1;o=cell-9-10,blocker,blocker-agent,blocker,1;o=cell-9-8,blocker,blocker-agent,blocker,1;o=cell-9-9,blocker,blocker-agent,blocker,1;",
+      "legal_completed_requester_history_count": 0,
+      "waiting_selected": "upper",
+      "motion_selected": "upper",
+      "upper_prediction": {
+        "motion": {
+          "lower_numerator": 6928203,
+          "upper_numerator": 6928204,
+          "denominator": 1000000
+        },
+        "waiting_prior": {
+          "lower_numerator": 767949,
+          "upper_numerator": 767950,
+          "denominator": 1000000
+        },
+        "arrival_prior": {
+          "lower_numerator": 7696152,
+          "upper_numerator": 7696153,
+          "denominator": 1000000
+        },
+        "certificate_lower_prior": {
+          "lower_numerator": 3115000,
+          "upper_numerator": 3115000,
+          "denominator": 1000000
+        },
+        "conditional_prior_available": true
+      },
+      "lower_prediction": {
+        "motion": {
+          "lower_numerator": 8363081,
+          "upper_numerator": 8363082,
+          "denominator": 1000000
+        },
+        "waiting_prior": {
+          "lower_numerator": 0,
+          "upper_numerator": 0,
+          "denominator": 1000000
+        },
+        "arrival_prior": {
+          "lower_numerator": 8363081,
+          "upper_numerator": 8363082,
+          "denominator": 1000000
+        },
+        "certificate_lower_prior": {
+          "lower_numerator": 3115000,
+          "upper_numerator": 3115000,
+          "denominator": 1000000
+        },
+        "conditional_prior_available": true
+      }
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "upper-1",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "upper-1",
+      "at": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "1",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "upper-1",
+      "at": {
+        "lower_numerator": 1732050,
+        "upper_numerator": 1732051,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "upper-2",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "waiting",
+      "opportunity": "crossed_5_over_2",
+      "move": "upper-2",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "at": {
+        "lower_numerator": 1732050,
+        "upper_numerator": 1732051,
+        "denominator": 1000000
+      }
+    },
+    {
+      "event": "actual_position_committed",
+      "at": {
+        "lower_numerator": 2500000,
+        "upper_numerator": 2500000,
+        "denominator": 1000000
+      },
+      "lower": {
+        "lower_numerator": 3125000,
+        "upper_numerator": 3125000,
+        "denominator": 1000000
+      },
+      "endpoint_retained": true
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "upper-2",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "upper-2",
+      "at": {
+        "lower_numerator": 2500000,
+        "upper_numerator": 2500000,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "4",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "upper-2",
+      "at": {
+        "lower_numerator": 5964101,
+        "upper_numerator": 5964102,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "upper-3",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "upper-3",
+      "at": {
+        "lower_numerator": 5964101,
+        "upper_numerator": 5964102,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "1",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "upper-3",
+      "at": {
+        "lower_numerator": 7696152,
+        "upper_numerator": 7696153,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "paired_route_result",
+      "condition": "matched_eta_minus_one",
+      "private_requester_eta": "-1",
+      "opportunity": "crossed_5_over_2",
+      "path": "upper",
+      "execution_role": "selected_by_frozen_waiting",
+      "authorization": "original_prefix_ordinary",
+      "completed": true,
+      "arrival": {
+        "lower_numerator": 7696152,
+        "upper_numerator": 7696153,
+        "denominator": 1000000
+      },
+      "stopped_at": {
+        "lower_numerator": 7696152,
+        "upper_numerator": 7696153,
+        "denominator": 1000000
+      },
+      "waiting": {
+        "lower_numerator": 767949,
+        "upper_numerator": 767950,
+        "denominator": 1000000
+      },
+      "moving": {
+        "lower_numerator": 6928203,
+        "upper_numerator": 6928204,
+        "denominator": 1000000
+      },
+      "move_durations": [
+        {
+          "lower_numerator": 1732050,
+          "upper_numerator": 1732051,
+          "denominator": 1000000
+        },
+        {
+          "lower_numerator": 3464101,
+          "upper_numerator": 3464102,
+          "denominator": 1000000
+        },
+        {
+          "lower_numerator": 1732050,
+          "upper_numerator": 1732051,
+          "denominator": 1000000
+        }
+      ],
+      "completed_original_moves": 3,
+      "committed_observations": 1,
+      "full_initial_cap_attempts": 4,
+      "requester_cap_installs": 3,
+      "requester_run_commands": 3,
+      "blocker_cap_installs": 1,
+      "blocker_run_commands": 1,
+      "partial_initial_caps": 0,
+      "cap_extensions": 0,
+      "group_admissions": 0
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "lower-1",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "lower-1",
+      "at": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "2",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "lower-1",
+      "at": {
+        "lower_numerator": 2449489,
+        "upper_numerator": 2449490,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "lower-2",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "lower-2",
+      "at": {
+        "lower_numerator": 2449489,
+        "upper_numerator": 2449490,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "4",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "actual_position_committed",
+      "at": {
+        "lower_numerator": 2500000,
+        "upper_numerator": 2500000,
+        "denominator": 1000000
+      },
+      "lower": {
+        "lower_numerator": 3125000,
+        "upper_numerator": 3125000,
+        "denominator": 1000000
+      },
+      "endpoint_retained": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "lower-2",
+      "at": {
+        "lower_numerator": 5913591,
+        "upper_numerator": 5913592,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "lower-3",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "lower-3",
+      "at": {
+        "lower_numerator": 5913591,
+        "upper_numerator": 5913592,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "2",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "lower-3",
+      "at": {
+        "lower_numerator": 8363081,
+        "upper_numerator": 8363082,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "paired_route_result",
+      "condition": "matched_eta_minus_one",
+      "private_requester_eta": "-1",
+      "opportunity": "crossed_5_over_2",
+      "path": "lower",
+      "execution_role": "offline_other_route",
+      "authorization": "original_prefix_ordinary",
+      "completed": true,
+      "arrival": {
+        "lower_numerator": 8363081,
+        "upper_numerator": 8363082,
+        "denominator": 1000000
+      },
+      "stopped_at": {
+        "lower_numerator": 8363081,
+        "upper_numerator": 8363082,
+        "denominator": 1000000
+      },
+      "waiting": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "moving": {
+        "lower_numerator": 8363081,
+        "upper_numerator": 8363082,
+        "denominator": 1000000
+      },
+      "move_durations": [
+        {
+          "lower_numerator": 2449489,
+          "upper_numerator": 2449490,
+          "denominator": 1000000
+        },
+        {
+          "lower_numerator": 3464101,
+          "upper_numerator": 3464102,
+          "denominator": 1000000
+        },
+        {
+          "lower_numerator": 2449489,
+          "upper_numerator": 2449490,
+          "denominator": 1000000
+        }
+      ],
+      "completed_original_moves": 3,
+      "committed_observations": 1,
+      "full_initial_cap_attempts": 3,
+      "requester_cap_installs": 3,
+      "requester_run_commands": 3,
+      "blocker_cap_installs": 1,
+      "blocker_run_commands": 1,
+      "partial_initial_caps": 0,
+      "cap_extensions": 0,
+      "group_admissions": 0
+    },
+    {
+      "event": "mismatch_comparison",
+      "condition": "matched_eta_minus_one",
+      "opportunity": "crossed_5_over_2",
+      "offline_best_of_two": "upper",
+      "waiting_selected": "upper",
+      "motion_selected": "upper",
+      "waiting_selection_loss": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "motion_selection_loss": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "waiting_gain_over_motion": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "upper_arrival_actual_minus_prior": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "lower_arrival_actual_minus_prior": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "upper_wait_actual_minus_prior": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "lower_wait_actual_minus_prior": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "waiting_policy": "nominal_waiting",
+      "motion_policy": "motion_only",
+      "legal_completed_requester_history_count": 0
+    },
+    {
+      "event": "public_prediction_relation",
+      "move": "upper-2",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "nominal_release": true
+    },
+    {
+      "event": "public_prediction_relation",
+      "move": "upper-3",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "nominal_release": true
+    },
+    {
+      "event": "selection_before_either_execution",
+      "condition": "mismatch_eta_plus_one",
+      "opportunity": "crossed_5_over_2",
+      "decision_time": "0",
+      "nominal_requester_eta": "-1",
+      "public_input_signature": "view=view-1;demands=0;a=blocker,blocker-agent,artificial-native-source,exact-fixture,blocker,6,0,6,1/100,1;o=cell-1-5,requester-resident,requester,,0;o=cell-1-6,requester-resident,requester,,0;o=cell-1-7,requester-resident,requester,,0;o=cell-10-10,blocker,blocker-agent,blocker,1;o=cell-10-8,blocker,blocker-agent,blocker,1;o=cell-10-9,blocker,blocker-agent,blocker,1;o=cell-11-10,blocker,blocker-agent,blocker,1;o=cell-11-8,blocker,blocker-agent,blocker,1;o=cell-11-9,blocker,blocker-agent,blocker,1;o=cell-12-10,blocker,blocker-agent,blocker,1;o=cell-12-8,blocker,blocker-agent,blocker,1;o=cell-12-9,blocker,blocker-agent,blocker,1;o=cell-13-10,blocker,blocker-agent,blocker,1;o=cell-13-8,blocker,blocker-agent,blocker,1;o=cell-13-9,blocker,blocker-agent,blocker,1;o=cell-14-10,blocker,blocker-agent,blocker,1;o=cell-14-8,blocker,blocker-agent,blocker,1;o=cell-14-9,blocker,blocker-agent,blocker,1;o=cell-15-10,blocker,blocker-agent,blocker,1;o=cell-15-8,blocker,blocker-agent,blocker,1;o=cell-15-9,blocker,blocker-agent,blocker,1;o=cell-16-10,blocker,blocker-agent,blocker,1;o=cell-16-8,blocker,blocker-agent,blocker,1;o=cell-16-9,blocker,blocker-agent,blocker,1;o=cell-17-10,blocker,blocker-agent,blocker,1;o=cell-17-8,blocker,blocker-agent,blocker,1;o=cell-17-9,blocker,blocker-agent,blocker,1;o=cell-18-10,blocker,blocker-agent,blocker,1;o=cell-18-8,blocker,blocker-agent,blocker,1;o=cell-18-9,blocker,blocker-agent,blocker,1;o=cell-19-10,blocker,blocker-agent,blocker,1;o=cell-19-8,blocker,blocker-agent,blocker,1;o=cell-19-9,blocker,blocker-agent,blocker,1;o=cell-2-5,requester-resident,requester,,0;o=cell-2-6,requester-resident,requester,,0;o=cell-2-7,requester-resident,requester,,0;o=cell-3-5,requester-resident,requester,,0;o=cell-3-6,requester-resident,requester,,0;o=cell-3-7,requester-resident,requester,,0;o=cell-5-10,blocker,blocker-agent,blocker,1;o=cell-5-8,blocker,blocker-agent,blocker,1;o=cell-5-9,blocker,blocker-agent,blocker,1;o=cell-6-10,blocker,blocker-agent,blocker,1;o=cell-6-8,blocker,blocker-agent,blocker,1;o=cell-6-9,blocker,blocker-agent,blocker,1;o=cell-7-10,blocker,blocker-agent,blocker,1;o=cell-7-8,blocker,blocker-agent,blocker,1;o=cell-7-9,blocker,blocker-agent,blocker,1;o=cell-8-10,blocker,blocker-agent,blocker,1;o=cell-8-8,blocker,blocker-agent,blocker,1;o=cell-8-9,blocker,blocker-agent,blocker,1;o=cell-9-10,blocker,blocker-agent,blocker,1;o=cell-9-8,blocker,blocker-agent,blocker,1;o=cell-9-9,blocker,blocker-agent,blocker,1;",
+      "legal_completed_requester_history_count": 0,
+      "waiting_selected": "upper",
+      "motion_selected": "upper",
+      "upper_prediction": {
+        "motion": {
+          "lower_numerator": 6928203,
+          "upper_numerator": 6928204,
+          "denominator": 1000000
+        },
+        "waiting_prior": {
+          "lower_numerator": 767949,
+          "upper_numerator": 767950,
+          "denominator": 1000000
+        },
+        "arrival_prior": {
+          "lower_numerator": 7696152,
+          "upper_numerator": 7696153,
+          "denominator": 1000000
+        },
+        "certificate_lower_prior": {
+          "lower_numerator": 3115000,
+          "upper_numerator": 3115000,
+          "denominator": 1000000
+        },
+        "conditional_prior_available": true
+      },
+      "lower_prediction": {
+        "motion": {
+          "lower_numerator": 8363081,
+          "upper_numerator": 8363082,
+          "denominator": 1000000
+        },
+        "waiting_prior": {
+          "lower_numerator": 0,
+          "upper_numerator": 0,
+          "denominator": 1000000
+        },
+        "arrival_prior": {
+          "lower_numerator": 8363081,
+          "upper_numerator": 8363082,
+          "denominator": 1000000
+        },
+        "certificate_lower_prior": {
+          "lower_numerator": 3115000,
+          "upper_numerator": 3115000,
+          "denominator": 1000000
+        },
+        "conditional_prior_available": true
+      }
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "upper-1",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "upper-1",
+      "at": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "1",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "upper-1",
+      "at": {
+        "lower_numerator": 1083441,
+        "upper_numerator": 1083442,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "upper-2",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "waiting",
+      "opportunity": "crossed_5_over_2",
+      "move": "upper-2",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "at": {
+        "lower_numerator": 1083441,
+        "upper_numerator": 1083442,
+        "denominator": 1000000
+      }
+    },
+    {
+      "event": "actual_position_committed",
+      "at": {
+        "lower_numerator": 2500000,
+        "upper_numerator": 2500000,
+        "denominator": 1000000
+      },
+      "lower": {
+        "lower_numerator": 3125000,
+        "upper_numerator": 3125000,
+        "denominator": 1000000
+      },
+      "endpoint_retained": true
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "upper-2",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "upper-2",
+      "at": {
+        "lower_numerator": 2500000,
+        "upper_numerator": 2500000,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "4",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "upper-2",
+      "at": {
+        "lower_numerator": 4666883,
+        "upper_numerator": 4666884,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "upper-3",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "upper-3",
+      "at": {
+        "lower_numerator": 4666883,
+        "upper_numerator": 4666884,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "1",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "upper-3",
+      "at": {
+        "lower_numerator": 5750325,
+        "upper_numerator": 5750326,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "paired_route_result",
+      "condition": "mismatch_eta_plus_one",
+      "private_requester_eta": "1",
+      "opportunity": "crossed_5_over_2",
+      "path": "upper",
+      "execution_role": "selected_by_frozen_waiting",
+      "authorization": "original_prefix_ordinary",
+      "completed": true,
+      "arrival": {
+        "lower_numerator": 5750325,
+        "upper_numerator": 5750326,
+        "denominator": 1000000
+      },
+      "stopped_at": {
+        "lower_numerator": 5750325,
+        "upper_numerator": 5750326,
+        "denominator": 1000000
+      },
+      "waiting": {
+        "lower_numerator": 1416558,
+        "upper_numerator": 1416559,
+        "denominator": 1000000
+      },
+      "moving": {
+        "lower_numerator": 4333767,
+        "upper_numerator": 4333768,
+        "denominator": 1000000
+      },
+      "move_durations": [
+        {
+          "lower_numerator": 1083441,
+          "upper_numerator": 1083442,
+          "denominator": 1000000
+        },
+        {
+          "lower_numerator": 2166883,
+          "upper_numerator": 2166884,
+          "denominator": 1000000
+        },
+        {
+          "lower_numerator": 1083441,
+          "upper_numerator": 1083442,
+          "denominator": 1000000
+        }
+      ],
+      "completed_original_moves": 3,
+      "committed_observations": 1,
+      "full_initial_cap_attempts": 4,
+      "requester_cap_installs": 3,
+      "requester_run_commands": 3,
+      "blocker_cap_installs": 1,
+      "blocker_run_commands": 1,
+      "partial_initial_caps": 0,
+      "cap_extensions": 0,
+      "group_admissions": 0
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "lower-1",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "lower-1",
+      "at": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "2",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "lower-1",
+      "at": {
+        "lower_numerator": 1532218,
+        "upper_numerator": 1532219,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "lower-2",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "lower-2",
+      "at": {
+        "lower_numerator": 1532218,
+        "upper_numerator": 1532219,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "4",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "actual_position_committed",
+      "at": {
+        "lower_numerator": 2500000,
+        "upper_numerator": 2500000,
+        "denominator": 1000000
+      },
+      "lower": {
+        "lower_numerator": 3125000,
+        "upper_numerator": 3125000,
+        "denominator": 1000000
+      },
+      "endpoint_retained": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "lower-2",
+      "at": {
+        "lower_numerator": 3699102,
+        "upper_numerator": 3699103,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "lower-3",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "lower-3",
+      "at": {
+        "lower_numerator": 3699102,
+        "upper_numerator": 3699103,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "2",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "lower-3",
+      "at": {
+        "lower_numerator": 5231320,
+        "upper_numerator": 5231321,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "paired_route_result",
+      "condition": "mismatch_eta_plus_one",
+      "private_requester_eta": "1",
+      "opportunity": "crossed_5_over_2",
+      "path": "lower",
+      "execution_role": "offline_other_route",
+      "authorization": "original_prefix_ordinary",
+      "completed": true,
+      "arrival": {
+        "lower_numerator": 5231320,
+        "upper_numerator": 5231321,
+        "denominator": 1000000
+      },
+      "stopped_at": {
+        "lower_numerator": 5231320,
+        "upper_numerator": 5231321,
+        "denominator": 1000000
+      },
+      "waiting": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "moving": {
+        "lower_numerator": 5231320,
+        "upper_numerator": 5231321,
+        "denominator": 1000000
+      },
+      "move_durations": [
+        {
+          "lower_numerator": 1532218,
+          "upper_numerator": 1532219,
+          "denominator": 1000000
+        },
+        {
+          "lower_numerator": 2166883,
+          "upper_numerator": 2166884,
+          "denominator": 1000000
+        },
+        {
+          "lower_numerator": 1532218,
+          "upper_numerator": 1532219,
+          "denominator": 1000000
+        }
+      ],
+      "completed_original_moves": 3,
+      "committed_observations": 1,
+      "full_initial_cap_attempts": 3,
+      "requester_cap_installs": 3,
+      "requester_run_commands": 3,
+      "blocker_cap_installs": 1,
+      "blocker_run_commands": 1,
+      "partial_initial_caps": 0,
+      "cap_extensions": 0,
+      "group_admissions": 0
+    },
+    {
+      "event": "mismatch_comparison",
+      "condition": "mismatch_eta_plus_one",
+      "opportunity": "crossed_5_over_2",
+      "offline_best_of_two": "lower",
+      "waiting_selected": "upper",
+      "motion_selected": "upper",
+      "waiting_selection_loss": {
+        "lower_numerator": 519005,
+        "upper_numerator": 519006,
+        "denominator": 1000000
+      },
+      "motion_selection_loss": {
+        "lower_numerator": 519005,
+        "upper_numerator": 519006,
+        "denominator": 1000000
+      },
+      "waiting_gain_over_motion": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "upper_arrival_actual_minus_prior": {
+        "lower_numerator": -1945827,
+        "upper_numerator": -1945826,
+        "denominator": 1000000
+      },
+      "lower_arrival_actual_minus_prior": {
+        "lower_numerator": -3131761,
+        "upper_numerator": -3131760,
+        "denominator": 1000000
+      },
+      "upper_wait_actual_minus_prior": {
+        "lower_numerator": 648608,
+        "upper_numerator": 648609,
+        "denominator": 1000000
+      },
+      "lower_wait_actual_minus_prior": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "waiting_policy": "nominal_waiting",
+      "motion_policy": "motion_only",
+      "legal_completed_requester_history_count": 0
+    },
+    {
+      "event": "information_boundary",
+      "opportunity": "crossed_5_over_2",
+      "same_public_inputs_across_private_conditions": true,
+      "same_frozen_decision": true,
+      "legal_requester_history_at_decision": 0,
+      "private_eta_exposed_to_predictor": false,
+      "exact_instance_inference_supported": false
+    },
+    {
+      "event": "public_prediction_relation",
+      "move": "upper-2",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "nominal_release": true
+    },
+    {
+      "event": "public_prediction_relation",
+      "move": "upper-3",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "nominal_release": true
+    },
+    {
+      "event": "selection_before_either_execution",
+      "condition": "matched_eta_minus_one",
+      "opportunity": "late_4",
+      "decision_time": "0",
+      "nominal_requester_eta": "-1",
+      "public_input_signature": "view=view-1;demands=0;a=blocker,blocker-agent,artificial-native-source,exact-fixture,blocker,6,0,6,1/100,1;o=cell-1-5,requester-resident,requester,,0;o=cell-1-6,requester-resident,requester,,0;o=cell-1-7,requester-resident,requester,,0;o=cell-10-10,blocker,blocker-agent,blocker,1;o=cell-10-8,blocker,blocker-agent,blocker,1;o=cell-10-9,blocker,blocker-agent,blocker,1;o=cell-11-10,blocker,blocker-agent,blocker,1;o=cell-11-8,blocker,blocker-agent,blocker,1;o=cell-11-9,blocker,blocker-agent,blocker,1;o=cell-12-10,blocker,blocker-agent,blocker,1;o=cell-12-8,blocker,blocker-agent,blocker,1;o=cell-12-9,blocker,blocker-agent,blocker,1;o=cell-13-10,blocker,blocker-agent,blocker,1;o=cell-13-8,blocker,blocker-agent,blocker,1;o=cell-13-9,blocker,blocker-agent,blocker,1;o=cell-14-10,blocker,blocker-agent,blocker,1;o=cell-14-8,blocker,blocker-agent,blocker,1;o=cell-14-9,blocker,blocker-agent,blocker,1;o=cell-15-10,blocker,blocker-agent,blocker,1;o=cell-15-8,blocker,blocker-agent,blocker,1;o=cell-15-9,blocker,blocker-agent,blocker,1;o=cell-16-10,blocker,blocker-agent,blocker,1;o=cell-16-8,blocker,blocker-agent,blocker,1;o=cell-16-9,blocker,blocker-agent,blocker,1;o=cell-17-10,blocker,blocker-agent,blocker,1;o=cell-17-8,blocker,blocker-agent,blocker,1;o=cell-17-9,blocker,blocker-agent,blocker,1;o=cell-18-10,blocker,blocker-agent,blocker,1;o=cell-18-8,blocker,blocker-agent,blocker,1;o=cell-18-9,blocker,blocker-agent,blocker,1;o=cell-19-10,blocker,blocker-agent,blocker,1;o=cell-19-8,blocker,blocker-agent,blocker,1;o=cell-19-9,blocker,blocker-agent,blocker,1;o=cell-2-5,requester-resident,requester,,0;o=cell-2-6,requester-resident,requester,,0;o=cell-2-7,requester-resident,requester,,0;o=cell-3-5,requester-resident,requester,,0;o=cell-3-6,requester-resident,requester,,0;o=cell-3-7,requester-resident,requester,,0;o=cell-5-10,blocker,blocker-agent,blocker,1;o=cell-5-8,blocker,blocker-agent,blocker,1;o=cell-5-9,blocker,blocker-agent,blocker,1;o=cell-6-10,blocker,blocker-agent,blocker,1;o=cell-6-8,blocker,blocker-agent,blocker,1;o=cell-6-9,blocker,blocker-agent,blocker,1;o=cell-7-10,blocker,blocker-agent,blocker,1;o=cell-7-8,blocker,blocker-agent,blocker,1;o=cell-7-9,blocker,blocker-agent,blocker,1;o=cell-8-10,blocker,blocker-agent,blocker,1;o=cell-8-8,blocker,blocker-agent,blocker,1;o=cell-8-9,blocker,blocker-agent,blocker,1;o=cell-9-10,blocker,blocker-agent,blocker,1;o=cell-9-8,blocker,blocker-agent,blocker,1;o=cell-9-9,blocker,blocker-agent,blocker,1;",
+      "legal_completed_requester_history_count": 0,
+      "waiting_selected": "lower",
+      "motion_selected": "upper",
+      "upper_prediction": {
+        "motion": {
+          "lower_numerator": 6928203,
+          "upper_numerator": 6928204,
+          "denominator": 1000000
+        },
+        "waiting_prior": {
+          "lower_numerator": 2267949,
+          "upper_numerator": 2267950,
+          "denominator": 1000000
+        },
+        "arrival_prior": {
+          "lower_numerator": 9196152,
+          "upper_numerator": 9196153,
+          "denominator": 1000000
+        },
+        "certificate_lower_prior": {
+          "lower_numerator": 5931125,
+          "upper_numerator": 5931126,
+          "denominator": 1000000
+        },
+        "conditional_prior_available": true
+      },
+      "lower_prediction": {
+        "motion": {
+          "lower_numerator": 8363081,
+          "upper_numerator": 8363082,
+          "denominator": 1000000
+        },
+        "waiting_prior": {
+          "lower_numerator": 0,
+          "upper_numerator": 0,
+          "denominator": 1000000
+        },
+        "arrival_prior": {
+          "lower_numerator": 8363081,
+          "upper_numerator": 8363082,
+          "denominator": 1000000
+        },
+        "certificate_lower_prior": {
+          "lower_numerator": 5931125,
+          "upper_numerator": 5931126,
+          "denominator": 1000000
+        },
+        "conditional_prior_available": true
+      }
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "lower-1",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "lower-1",
+      "at": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "2",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "lower-1",
+      "at": {
+        "lower_numerator": 2449489,
+        "upper_numerator": 2449490,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "lower-2",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "lower-2",
+      "at": {
+        "lower_numerator": 2449489,
+        "upper_numerator": 2449490,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "4",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "actual_position_committed",
+      "at": {
+        "lower_numerator": 4000000,
+        "upper_numerator": 4000000,
+        "denominator": 1000000
+      },
+      "lower": {
+        "lower_numerator": 5941125,
+        "upper_numerator": 5941126,
+        "denominator": 1000000
+      },
+      "endpoint_retained": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "lower-2",
+      "at": {
+        "lower_numerator": 5913591,
+        "upper_numerator": 5913592,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "lower-3",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "lower-3",
+      "at": {
+        "lower_numerator": 5913591,
+        "upper_numerator": 5913592,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "2",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "lower-3",
+      "at": {
+        "lower_numerator": 8363081,
+        "upper_numerator": 8363082,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "paired_route_result",
+      "condition": "matched_eta_minus_one",
+      "private_requester_eta": "-1",
+      "opportunity": "late_4",
+      "path": "lower",
+      "execution_role": "selected_by_frozen_waiting",
+      "authorization": "original_prefix_ordinary",
+      "completed": true,
+      "arrival": {
+        "lower_numerator": 8363081,
+        "upper_numerator": 8363082,
+        "denominator": 1000000
+      },
+      "stopped_at": {
+        "lower_numerator": 8363081,
+        "upper_numerator": 8363082,
+        "denominator": 1000000
+      },
+      "waiting": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "moving": {
+        "lower_numerator": 8363081,
+        "upper_numerator": 8363082,
+        "denominator": 1000000
+      },
+      "move_durations": [
+        {
+          "lower_numerator": 2449489,
+          "upper_numerator": 2449490,
+          "denominator": 1000000
+        },
+        {
+          "lower_numerator": 3464101,
+          "upper_numerator": 3464102,
+          "denominator": 1000000
+        },
+        {
+          "lower_numerator": 2449489,
+          "upper_numerator": 2449490,
+          "denominator": 1000000
+        }
+      ],
+      "completed_original_moves": 3,
+      "committed_observations": 1,
+      "full_initial_cap_attempts": 3,
+      "requester_cap_installs": 3,
+      "requester_run_commands": 3,
+      "blocker_cap_installs": 1,
+      "blocker_run_commands": 1,
+      "partial_initial_caps": 0,
+      "cap_extensions": 0,
+      "group_admissions": 0
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "upper-1",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "upper-1",
+      "at": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "1",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "upper-1",
+      "at": {
+        "lower_numerator": 1732050,
+        "upper_numerator": 1732051,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "upper-2",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "waiting",
+      "opportunity": "late_4",
+      "move": "upper-2",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "at": {
+        "lower_numerator": 1732050,
+        "upper_numerator": 1732051,
+        "denominator": 1000000
+      }
+    },
+    {
+      "event": "actual_position_committed",
+      "at": {
+        "lower_numerator": 4000000,
+        "upper_numerator": 4000000,
+        "denominator": 1000000
+      },
+      "lower": {
+        "lower_numerator": 5941125,
+        "upper_numerator": 5941126,
+        "denominator": 1000000
+      },
+      "endpoint_retained": true
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "upper-2",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "upper-2",
+      "at": {
+        "lower_numerator": 4000000,
+        "upper_numerator": 4000000,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "4",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "upper-2",
+      "at": {
+        "lower_numerator": 7464101,
+        "upper_numerator": 7464102,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "upper-3",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "upper-3",
+      "at": {
+        "lower_numerator": 7464101,
+        "upper_numerator": 7464102,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "1",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "upper-3",
+      "at": {
+        "lower_numerator": 9196152,
+        "upper_numerator": 9196153,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "paired_route_result",
+      "condition": "matched_eta_minus_one",
+      "private_requester_eta": "-1",
+      "opportunity": "late_4",
+      "path": "upper",
+      "execution_role": "offline_other_route",
+      "authorization": "original_prefix_ordinary",
+      "completed": true,
+      "arrival": {
+        "lower_numerator": 9196152,
+        "upper_numerator": 9196153,
+        "denominator": 1000000
+      },
+      "stopped_at": {
+        "lower_numerator": 9196152,
+        "upper_numerator": 9196153,
+        "denominator": 1000000
+      },
+      "waiting": {
+        "lower_numerator": 2267949,
+        "upper_numerator": 2267950,
+        "denominator": 1000000
+      },
+      "moving": {
+        "lower_numerator": 6928203,
+        "upper_numerator": 6928204,
+        "denominator": 1000000
+      },
+      "move_durations": [
+        {
+          "lower_numerator": 1732050,
+          "upper_numerator": 1732051,
+          "denominator": 1000000
+        },
+        {
+          "lower_numerator": 3464101,
+          "upper_numerator": 3464102,
+          "denominator": 1000000
+        },
+        {
+          "lower_numerator": 1732050,
+          "upper_numerator": 1732051,
+          "denominator": 1000000
+        }
+      ],
+      "completed_original_moves": 3,
+      "committed_observations": 1,
+      "full_initial_cap_attempts": 4,
+      "requester_cap_installs": 3,
+      "requester_run_commands": 3,
+      "blocker_cap_installs": 1,
+      "blocker_run_commands": 1,
+      "partial_initial_caps": 0,
+      "cap_extensions": 0,
+      "group_admissions": 0
+    },
+    {
+      "event": "mismatch_comparison",
+      "condition": "matched_eta_minus_one",
+      "opportunity": "late_4",
+      "offline_best_of_two": "lower",
+      "waiting_selected": "lower",
+      "motion_selected": "upper",
+      "waiting_selection_loss": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "motion_selection_loss": {
+        "lower_numerator": 833071,
+        "upper_numerator": 833072,
+        "denominator": 1000000
+      },
+      "waiting_gain_over_motion": {
+        "lower_numerator": 833071,
+        "upper_numerator": 833072,
+        "denominator": 1000000
+      },
+      "upper_arrival_actual_minus_prior": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "lower_arrival_actual_minus_prior": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "upper_wait_actual_minus_prior": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "lower_wait_actual_minus_prior": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "waiting_policy": "nominal_waiting",
+      "motion_policy": "motion_only",
+      "legal_completed_requester_history_count": 0
+    },
+    {
+      "event": "public_prediction_relation",
+      "move": "upper-2",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "nominal_release": true
+    },
+    {
+      "event": "public_prediction_relation",
+      "move": "upper-3",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "nominal_release": true
+    },
+    {
+      "event": "selection_before_either_execution",
+      "condition": "mismatch_eta_plus_one",
+      "opportunity": "late_4",
+      "decision_time": "0",
+      "nominal_requester_eta": "-1",
+      "public_input_signature": "view=view-1;demands=0;a=blocker,blocker-agent,artificial-native-source,exact-fixture,blocker,6,0,6,1/100,1;o=cell-1-5,requester-resident,requester,,0;o=cell-1-6,requester-resident,requester,,0;o=cell-1-7,requester-resident,requester,,0;o=cell-10-10,blocker,blocker-agent,blocker,1;o=cell-10-8,blocker,blocker-agent,blocker,1;o=cell-10-9,blocker,blocker-agent,blocker,1;o=cell-11-10,blocker,blocker-agent,blocker,1;o=cell-11-8,blocker,blocker-agent,blocker,1;o=cell-11-9,blocker,blocker-agent,blocker,1;o=cell-12-10,blocker,blocker-agent,blocker,1;o=cell-12-8,blocker,blocker-agent,blocker,1;o=cell-12-9,blocker,blocker-agent,blocker,1;o=cell-13-10,blocker,blocker-agent,blocker,1;o=cell-13-8,blocker,blocker-agent,blocker,1;o=cell-13-9,blocker,blocker-agent,blocker,1;o=cell-14-10,blocker,blocker-agent,blocker,1;o=cell-14-8,blocker,blocker-agent,blocker,1;o=cell-14-9,blocker,blocker-agent,blocker,1;o=cell-15-10,blocker,blocker-agent,blocker,1;o=cell-15-8,blocker,blocker-agent,blocker,1;o=cell-15-9,blocker,blocker-agent,blocker,1;o=cell-16-10,blocker,blocker-agent,blocker,1;o=cell-16-8,blocker,blocker-agent,blocker,1;o=cell-16-9,blocker,blocker-agent,blocker,1;o=cell-17-10,blocker,blocker-agent,blocker,1;o=cell-17-8,blocker,blocker-agent,blocker,1;o=cell-17-9,blocker,blocker-agent,blocker,1;o=cell-18-10,blocker,blocker-agent,blocker,1;o=cell-18-8,blocker,blocker-agent,blocker,1;o=cell-18-9,blocker,blocker-agent,blocker,1;o=cell-19-10,blocker,blocker-agent,blocker,1;o=cell-19-8,blocker,blocker-agent,blocker,1;o=cell-19-9,blocker,blocker-agent,blocker,1;o=cell-2-5,requester-resident,requester,,0;o=cell-2-6,requester-resident,requester,,0;o=cell-2-7,requester-resident,requester,,0;o=cell-3-5,requester-resident,requester,,0;o=cell-3-6,requester-resident,requester,,0;o=cell-3-7,requester-resident,requester,,0;o=cell-5-10,blocker,blocker-agent,blocker,1;o=cell-5-8,blocker,blocker-agent,blocker,1;o=cell-5-9,blocker,blocker-agent,blocker,1;o=cell-6-10,blocker,blocker-agent,blocker,1;o=cell-6-8,blocker,blocker-agent,blocker,1;o=cell-6-9,blocker,blocker-agent,blocker,1;o=cell-7-10,blocker,blocker-agent,blocker,1;o=cell-7-8,blocker,blocker-agent,blocker,1;o=cell-7-9,blocker,blocker-agent,blocker,1;o=cell-8-10,blocker,blocker-agent,blocker,1;o=cell-8-8,blocker,blocker-agent,blocker,1;o=cell-8-9,blocker,blocker-agent,blocker,1;o=cell-9-10,blocker,blocker-agent,blocker,1;o=cell-9-8,blocker,blocker-agent,blocker,1;o=cell-9-9,blocker,blocker-agent,blocker,1;",
+      "legal_completed_requester_history_count": 0,
+      "waiting_selected": "lower",
+      "motion_selected": "upper",
+      "upper_prediction": {
+        "motion": {
+          "lower_numerator": 6928203,
+          "upper_numerator": 6928204,
+          "denominator": 1000000
+        },
+        "waiting_prior": {
+          "lower_numerator": 2267949,
+          "upper_numerator": 2267950,
+          "denominator": 1000000
+        },
+        "arrival_prior": {
+          "lower_numerator": 9196152,
+          "upper_numerator": 9196153,
+          "denominator": 1000000
+        },
+        "certificate_lower_prior": {
+          "lower_numerator": 5931125,
+          "upper_numerator": 5931126,
+          "denominator": 1000000
+        },
+        "conditional_prior_available": true
+      },
+      "lower_prediction": {
+        "motion": {
+          "lower_numerator": 8363081,
+          "upper_numerator": 8363082,
+          "denominator": 1000000
+        },
+        "waiting_prior": {
+          "lower_numerator": 0,
+          "upper_numerator": 0,
+          "denominator": 1000000
+        },
+        "arrival_prior": {
+          "lower_numerator": 8363081,
+          "upper_numerator": 8363082,
+          "denominator": 1000000
+        },
+        "certificate_lower_prior": {
+          "lower_numerator": 5931125,
+          "upper_numerator": 5931126,
+          "denominator": 1000000
+        },
+        "conditional_prior_available": true
+      }
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "lower-1",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "lower-1",
+      "at": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "2",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "lower-1",
+      "at": {
+        "lower_numerator": 1532218,
+        "upper_numerator": 1532219,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "lower-2",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "lower-2",
+      "at": {
+        "lower_numerator": 1532218,
+        "upper_numerator": 1532219,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "4",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "lower-2",
+      "at": {
+        "lower_numerator": 3699102,
+        "upper_numerator": 3699103,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "lower-3",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "lower-3",
+      "at": {
+        "lower_numerator": 3699102,
+        "upper_numerator": 3699103,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "2",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "actual_position_committed",
+      "at": {
+        "lower_numerator": 4000000,
+        "upper_numerator": 4000000,
+        "denominator": 1000000
+      },
+      "lower": {
+        "lower_numerator": 5941125,
+        "upper_numerator": 5941126,
+        "denominator": 1000000
+      },
+      "endpoint_retained": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "lower-3",
+      "at": {
+        "lower_numerator": 5231320,
+        "upper_numerator": 5231321,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "paired_route_result",
+      "condition": "mismatch_eta_plus_one",
+      "private_requester_eta": "1",
+      "opportunity": "late_4",
+      "path": "lower",
+      "execution_role": "selected_by_frozen_waiting",
+      "authorization": "original_prefix_ordinary",
+      "completed": true,
+      "arrival": {
+        "lower_numerator": 5231320,
+        "upper_numerator": 5231321,
+        "denominator": 1000000
+      },
+      "stopped_at": {
+        "lower_numerator": 5231320,
+        "upper_numerator": 5231321,
+        "denominator": 1000000
+      },
+      "waiting": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "moving": {
+        "lower_numerator": 5231320,
+        "upper_numerator": 5231321,
+        "denominator": 1000000
+      },
+      "move_durations": [
+        {
+          "lower_numerator": 1532218,
+          "upper_numerator": 1532219,
+          "denominator": 1000000
+        },
+        {
+          "lower_numerator": 2166883,
+          "upper_numerator": 2166884,
+          "denominator": 1000000
+        },
+        {
+          "lower_numerator": 1532218,
+          "upper_numerator": 1532219,
+          "denominator": 1000000
+        }
+      ],
+      "completed_original_moves": 3,
+      "committed_observations": 1,
+      "full_initial_cap_attempts": 3,
+      "requester_cap_installs": 3,
+      "requester_run_commands": 3,
+      "blocker_cap_installs": 1,
+      "blocker_run_commands": 1,
+      "partial_initial_caps": 0,
+      "cap_extensions": 0,
+      "group_admissions": 0
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "upper-1",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "upper-1",
+      "at": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "1",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "upper-1",
+      "at": {
+        "lower_numerator": 1083441,
+        "upper_numerator": 1083442,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "upper-2",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "waiting",
+      "opportunity": "late_4",
+      "move": "upper-2",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "at": {
+        "lower_numerator": 1083441,
+        "upper_numerator": 1083442,
+        "denominator": 1000000
+      }
+    },
+    {
+      "event": "actual_position_committed",
+      "at": {
+        "lower_numerator": 4000000,
+        "upper_numerator": 4000000,
+        "denominator": 1000000
+      },
+      "lower": {
+        "lower_numerator": 5941125,
+        "upper_numerator": 5941126,
+        "denominator": 1000000
+      },
+      "endpoint_retained": true
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "upper-2",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "upper-2",
+      "at": {
+        "lower_numerator": 4000000,
+        "upper_numerator": 4000000,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "4",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "upper-2",
+      "at": {
+        "lower_numerator": 6166883,
+        "upper_numerator": 6166884,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "upper-3",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "upper-3",
+      "at": {
+        "lower_numerator": 6166883,
+        "upper_numerator": 6166884,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "1",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "upper-3",
+      "at": {
+        "lower_numerator": 7250325,
+        "upper_numerator": 7250326,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "paired_route_result",
+      "condition": "mismatch_eta_plus_one",
+      "private_requester_eta": "1",
+      "opportunity": "late_4",
+      "path": "upper",
+      "execution_role": "offline_other_route",
+      "authorization": "original_prefix_ordinary",
+      "completed": true,
+      "arrival": {
+        "lower_numerator": 7250325,
+        "upper_numerator": 7250326,
+        "denominator": 1000000
+      },
+      "stopped_at": {
+        "lower_numerator": 7250325,
+        "upper_numerator": 7250326,
+        "denominator": 1000000
+      },
+      "waiting": {
+        "lower_numerator": 2916558,
+        "upper_numerator": 2916559,
+        "denominator": 1000000
+      },
+      "moving": {
+        "lower_numerator": 4333767,
+        "upper_numerator": 4333768,
+        "denominator": 1000000
+      },
+      "move_durations": [
+        {
+          "lower_numerator": 1083441,
+          "upper_numerator": 1083442,
+          "denominator": 1000000
+        },
+        {
+          "lower_numerator": 2166883,
+          "upper_numerator": 2166884,
+          "denominator": 1000000
+        },
+        {
+          "lower_numerator": 1083441,
+          "upper_numerator": 1083442,
+          "denominator": 1000000
+        }
+      ],
+      "completed_original_moves": 3,
+      "committed_observations": 1,
+      "full_initial_cap_attempts": 4,
+      "requester_cap_installs": 3,
+      "requester_run_commands": 3,
+      "blocker_cap_installs": 1,
+      "blocker_run_commands": 1,
+      "partial_initial_caps": 0,
+      "cap_extensions": 0,
+      "group_admissions": 0
+    },
+    {
+      "event": "mismatch_comparison",
+      "condition": "mismatch_eta_plus_one",
+      "opportunity": "late_4",
+      "offline_best_of_two": "lower",
+      "waiting_selected": "lower",
+      "motion_selected": "upper",
+      "waiting_selection_loss": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "motion_selection_loss": {
+        "lower_numerator": 2019005,
+        "upper_numerator": 2019006,
+        "denominator": 1000000
+      },
+      "waiting_gain_over_motion": {
+        "lower_numerator": 2019005,
+        "upper_numerator": 2019006,
+        "denominator": 1000000
+      },
+      "upper_arrival_actual_minus_prior": {
+        "lower_numerator": -1945827,
+        "upper_numerator": -1945826,
+        "denominator": 1000000
+      },
+      "lower_arrival_actual_minus_prior": {
+        "lower_numerator": -3131761,
+        "upper_numerator": -3131760,
+        "denominator": 1000000
+      },
+      "upper_wait_actual_minus_prior": {
+        "lower_numerator": 648608,
+        "upper_numerator": 648609,
+        "denominator": 1000000
+      },
+      "lower_wait_actual_minus_prior": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "waiting_policy": "nominal_waiting",
+      "motion_policy": "motion_only",
+      "legal_completed_requester_history_count": 0
+    },
+    {
+      "event": "information_boundary",
+      "opportunity": "late_4",
+      "same_public_inputs_across_private_conditions": true,
+      "same_frozen_decision": true,
+      "legal_requester_history_at_decision": 0,
+      "private_eta_exposed_to_predictor": false,
+      "exact_instance_inference_supported": false
+    },
+    {
+      "event": "summary",
+      "status": "passed",
+      "checks": 2962,
+      "named_opportunities": 2,
+      "named_private_conditions": 2,
+      "actual_route_executions": 8,
+      "scope": "frozen_public_prior_private_requester_mismatch_not_learning_or_full_cost"
+    }
+  ],
+  "protected_baseline_after_sha256": {
+    "README.md": "0ec128eb64658ee275ac3217446990d0111989652db6c4b12a5f68d2db9e5187",
+    "RESEARCH_CONTRACT.md": "1028e1f448fa19260feffcc882068d9ea87934e2758f194cd7d51942ec0075f7",
+    "OPUS_AUDIT.md": "f390e13ed858d55b7e64dd049415f44cb5bec52a900a84fd6b08505188199597",
+    "precheck.cpp": "6100de6a9325d1437e894daece234ab22dca32827730ee74a203a1032e0fec7f",
+    "run_precheck.py": "0409780db9485353b597764171e1445d24840868c158e01d16c6064f56e3fcc7",
+    "precheck_run_20260924_01.json": "d6b2be8c302dd6adcf214adf3942540cae474e806b78ab722e8620d71e88dc31",
+    "source_pins.json": "f1374e56dafe6ecd6c5e553ffdb874364715c84a5399fdf61b0deb2091999152",
+    "timing_precheck.cpp": "387f3b6c5c1bdd837fdc4802c6c5344f027fb80918b2e3be9730a5916d10e60d",
+    "run_timing_precheck.py": "53ef62c9a330b7236f4f09f0f1cca95392a1d5c1c90b5990c6dfc5dad426925b",
+    "TIMING_PRECHECK.md": "874595b72fad8721bbc71eba735c125fb7c9172fb518c9d4d9ea3df18697e540",
+    "timing_run_20260924_01.json": "071ddf848d9e47641660f9feade6069699c9715a3f67252439e74f2fe62e386c",
+    "prefix_precheck.cpp": "1ccbb1491f19fa19e4bb9736028df8257c1b3681191bf9f1af29884e5b3a32e7",
+    "run_prefix_precheck.py": "bc2d60bacd253aa2937153c8fb82e0e7dbb6531ee2f5d2f50262b010d94cb938",
+    "PREFIX_PRECHECK.md": "7ea2e17ef809b414130340a87b26eacc91149070c1ed7ea2d3ae2103345db124",
+    "prefix_run_20260924_01.json": "1727e53efcdd962b625f7d31215291065f6e87c3cd7ef1f93924c18e2d7ab2b3",
+    "prefix_run_20260924_02.json": "ed5070e75316cee58e5fd712b72359ae685a642e8dd6f3eca3c410709ac3805e"
+  },
+  "source_header_after_sha256": {
+    "implementation/pie_position_commit/include/pie_position_commit.hpp": "2f7be5ec11293df2fdbda3919393f8a30b43b2a432f56879e59f26d0a3b9d7c6",
+    "implementation/pie_progress_retirement/include/pie_progress_retirement.hpp": "ddd94e49c3dd689b84d585ae374a65b99f49577bf9752342f46d688fbd0f7cb1",
+    "implementation/pie_query/include/pie_query_scheduler.hpp": "a1572501e39b711b9c8253e05083aa5799884145263d81352c9d71fd1965fefb",
+    "implementation/pie_query/include/pie_query_index.hpp": "936a30e4e19c85977ab187181dbe59130daffb49c71a60b41ba28d5c3c348c70",
+    "implementation/pie_query/include/pie_release_threshold.hpp": "00660d499c0169cd843527dd2b1b3e35cdb4035b8e0e9348dc6734a68cf30c79",
+    "implementation/pie_geometry/include/pie_geometry.hpp": "ff432b29d131165b1a95f3ffa737cfea47bd1c09ef05f19516b9847be72d1507",
+    "implementation/pie_geometry/include/pie_geometry_flint.hpp": "239040d62285b5f370233b9732824ea6ff2747193c8ad404f8ef93498a806900",
+    "implementation/pie_reference/include/pie_reference_controller.hpp": "a1cf2b7834efe3ccd344b8226a3c5e55c56857d3ac55a3c05281cfde087671ce",
+    "implementation/pie_reference/include/pie_reference_segment.hpp": "0e56a33e4b5d93ad751b81fee50e89f96e05d139810ddbfeb2a3fcbc10369d55"
+  },
+  "normative_rule_after_sha256": "b64f5b555034655b2676226d051a70c03aab3679d67c00bc334fb588c4811a8a",
+  "finished_utc": "2026-09-24T10:08:58.364670+00:00"
+}

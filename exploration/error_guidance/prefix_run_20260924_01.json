@@ -1,0 +1,1829 @@
+{
+  "started_utc": "2026-09-24T09:39:58.766155+00:00",
+  "status": "passed",
+  "scope": "finite_original_prefix_ordinary_branch_x_public_nominal_waiting",
+  "source_root": "/home/lyh/MAPF_PIED_MDDR_RESEARCH",
+  "commands": [
+    {
+      "argv": [
+        "rtk",
+        "proxy",
+        "g++-11",
+        "-std=c++14",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-fno-elide-constructors",
+        "-I",
+        "/tmp/mapf_error_prefix_6x75bt_k",
+        "-isystem",
+        "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/host_sdk/usr/include",
+        "-isystem",
+        "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/flint_host_config/src",
+        "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/prefix_precheck.cpp",
+        "-L",
+        "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/flint_host_config",
+        "-L",
+        "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/host_sdk/usr/lib/x86_64-linux-gnu",
+        "-Wl,-rpath,/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/flint_host_config",
+        "-lflint",
+        "-lmpfr",
+        "-lgmp",
+        "-o",
+        "/tmp/mapf_error_prefix_6x75bt_k/error_guidance_prefix_precheck"
+      ],
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "rtk",
+        "proxy",
+        "/tmp/mapf_error_prefix_6x75bt_k/error_guidance_prefix_precheck"
+      ],
+      "timeout_seconds": 60,
+      "exit_code": 0,
+      "stdout": "{\"event\":\"public_prediction_relation\",\"move\":\"upper-2\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"nominal_release\":true}\n{\"event\":\"public_prediction_relation\",\"move\":\"upper-3\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"nominal_release\":true}\n{\"event\":\"selection_before_execution\",\"opportunity\":\"crossed_5_over_2\",\"authorization\":\"original_prefix_ordinary\",\"cost\":\"motion_only\",\"selected\":\"upper\",\"decision_time\":\"0\",\"committed_blocker_q\":\"0\",\"upper_prediction\":{\"motion\":{\"lower_numerator\":6928203,\"upper_numerator\":6928204,\"denominator\":1000000},\"waiting_prior\":{\"lower_numerator\":767949,\"upper_numerator\":767950,\"denominator\":1000000},\"arrival_prior\":{\"lower_numerator\":7696152,\"upper_numerator\":7696153,\"denominator\":1000000},\"certificate_lower_prior\":{\"lower_numerator\":3115000,\"upper_numerator\":3115000,\"denominator\":1000000},\"conditional_prior_available\":true},\"lower_prediction\":{\"motion\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"waiting_prior\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"arrival_prior\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"certificate_lower_prior\":{\"lower_numerator\":3115000,\"upper_numerator\":3115000,\"denominator\":1000000},\"conditional_prior_available\":true}}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"upper-1\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"upper-1\",\"at\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"from\":\"0\",\"to\":\"1\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"upper-1\",\"at\":{\"lower_numerator\":1732050,\"upper_numerator\":1732051,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"upper-2\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"waiting\",\"opportunity\":\"crossed_5_over_2\",\"move\":\"upper-2\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"at\":{\"lower_numerator\":1732050,\"upper_numerator\":1732051,\"denominator\":1000000}}\n{\"event\":\"actual_position_committed\",\"at\":{\"lower_numerator\":2500000,\"upper_numerator\":2500000,\"denominator\":1000000},\"lower\":{\"lower_numerator\":3125000,\"upper_numerator\":3125000,\"denominator\":1000000},\"endpoint_retained\":true}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"upper-2\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"upper-2\",\"at\":{\"lower_numerator\":2500000,\"upper_numerator\":2500000,\"denominator\":1000000},\"from\":\"0\",\"to\":\"4\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"upper-2\",\"at\":{\"lower_numerator\":5964101,\"upper_numerator\":5964102,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"upper-3\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"upper-3\",\"at\":{\"lower_numerator\":5964101,\"upper_numerator\":5964102,\"denominator\":1000000},\"from\":\"0\",\"to\":\"1\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"upper-3\",\"at\":{\"lower_numerator\":7696152,\"upper_numerator\":7696153,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"factorial_cell\",\"opportunity\":\"crossed_5_over_2\",\"authorization\":\"original_prefix_ordinary\",\"cost\":\"motion_only\",\"selected\":\"upper\",\"arrival\":{\"lower_numerator\":7696152,\"upper_numerator\":7696153,\"denominator\":1000000},\"waiting\":{\"lower_numerator\":767949,\"upper_numerator\":767950,\"denominator\":1000000},\"observed_lower\":{\"lower_numerator\":3125000,\"upper_numerator\":3125000,\"denominator\":1000000},\"completed_original_moves\":3,\"committed_observations\":1,\"full_initial_cap_attempts\":4,\"requester_cap_installs\":3,\"requester_run_commands\":3,\"blocker_cap_installs\":1,\"blocker_run_commands\":1,\"partial_initial_caps\":0,\"cap_extensions\":0,\"group_admissions\":0,\"prefix_no_group_checks\":4,\"native_ends\":3,\"prediction_arrival_error\":\"0\"}\n{\"event\":\"public_prediction_relation\",\"move\":\"upper-2\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"nominal_release\":true}\n{\"event\":\"public_prediction_relation\",\"move\":\"upper-3\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"nominal_release\":true}\n{\"event\":\"selection_before_execution\",\"opportunity\":\"crossed_5_over_2\",\"authorization\":\"original_prefix_ordinary\",\"cost\":\"nominal_waiting\",\"selected\":\"upper\",\"decision_time\":\"0\",\"committed_blocker_q\":\"0\",\"upper_prediction\":{\"motion\":{\"lower_numerator\":6928203,\"upper_numerator\":6928204,\"denominator\":1000000},\"waiting_prior\":{\"lower_numerator\":767949,\"upper_numerator\":767950,\"denominator\":1000000},\"arrival_prior\":{\"lower_numerator\":7696152,\"upper_numerator\":7696153,\"denominator\":1000000},\"certificate_lower_prior\":{\"lower_numerator\":3115000,\"upper_numerator\":3115000,\"denominator\":1000000},\"conditional_prior_available\":true},\"lower_prediction\":{\"motion\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"waiting_prior\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"arrival_prior\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"certificate_lower_prior\":{\"lower_numerator\":3115000,\"upper_numerator\":3115000,\"denominator\":1000000},\"conditional_prior_available\":true}}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"upper-1\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"upper-1\",\"at\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"from\":\"0\",\"to\":\"1\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"upper-1\",\"at\":{\"lower_numerator\":1732050,\"upper_numerator\":1732051,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"upper-2\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"waiting\",\"opportunity\":\"crossed_5_over_2\",\"move\":\"upper-2\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"at\":{\"lower_numerator\":1732050,\"upper_numerator\":1732051,\"denominator\":1000000}}\n{\"event\":\"actual_position_committed\",\"at\":{\"lower_numerator\":2500000,\"upper_numerator\":2500000,\"denominator\":1000000},\"lower\":{\"lower_numerator\":3125000,\"upper_numerator\":3125000,\"denominator\":1000000},\"endpoint_retained\":true}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"upper-2\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"upper-2\",\"at\":{\"lower_numerator\":2500000,\"upper_numerator\":2500000,\"denominator\":1000000},\"from\":\"0\",\"to\":\"4\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"upper-2\",\"at\":{\"lower_numerator\":5964101,\"upper_numerator\":5964102,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"upper-3\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"upper-3\",\"at\":{\"lower_numerator\":5964101,\"upper_numerator\":5964102,\"denominator\":1000000},\"from\":\"0\",\"to\":\"1\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"upper-3\",\"at\":{\"lower_numerator\":7696152,\"upper_numerator\":7696153,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"factorial_cell\",\"opportunity\":\"crossed_5_over_2\",\"authorization\":\"original_prefix_ordinary\",\"cost\":\"nominal_waiting\",\"selected\":\"upper\",\"arrival\":{\"lower_numerator\":7696152,\"upper_numerator\":7696153,\"denominator\":1000000},\"waiting\":{\"lower_numerator\":767949,\"upper_numerator\":767950,\"denominator\":1000000},\"observed_lower\":{\"lower_numerator\":3125000,\"upper_numerator\":3125000,\"denominator\":1000000},\"completed_original_moves\":3,\"committed_observations\":1,\"full_initial_cap_attempts\":4,\"requester_cap_installs\":3,\"requester_run_commands\":3,\"blocker_cap_installs\":1,\"blocker_run_commands\":1,\"partial_initial_caps\":0,\"cap_extensions\":0,\"group_admissions\":0,\"prefix_no_group_checks\":4,\"native_ends\":3,\"prediction_arrival_error\":\"0\"}\n{\"event\":\"public_prediction_relation\",\"move\":\"upper-2\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"nominal_release\":true}\n{\"event\":\"public_prediction_relation\",\"move\":\"upper-3\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"nominal_release\":true}\n{\"event\":\"selection_before_execution\",\"opportunity\":\"crossed_5_over_2\",\"authorization\":\"full_move\",\"cost\":\"motion_only\",\"selected\":\"upper\",\"decision_time\":\"0\",\"committed_blocker_q\":\"0\",\"upper_prediction\":{\"motion\":{\"lower_numerator\":6928203,\"upper_numerator\":6928204,\"denominator\":1000000},\"waiting_prior\":{\"lower_numerator\":767949,\"upper_numerator\":767950,\"denominator\":1000000},\"arrival_prior\":{\"lower_numerator\":7696152,\"upper_numerator\":7696153,\"denominator\":1000000},\"certificate_lower_prior\":{\"lower_numerator\":3115000,\"upper_numerator\":3115000,\"denominator\":1000000},\"conditional_prior_available\":true},\"lower_prediction\":{\"motion\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"waiting_prior\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"arrival_prior\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"certificate_lower_prior\":{\"lower_numerator\":3115000,\"upper_numerator\":3115000,\"denominator\":1000000},\"conditional_prior_available\":true}}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"upper-1\",\"at\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"from\":\"0\",\"to\":\"1\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"upper-1\",\"at\":{\"lower_numerator\":1732050,\"upper_numerator\":1732051,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"waiting\",\"opportunity\":\"crossed_5_over_2\",\"move\":\"upper-2\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"at\":{\"lower_numerator\":1732050,\"upper_numerator\":1732051,\"denominator\":1000000}}\n{\"event\":\"actual_position_committed\",\"at\":{\"lower_numerator\":2500000,\"upper_numerator\":2500000,\"denominator\":1000000},\"lower\":{\"lower_numerator\":3125000,\"upper_numerator\":3125000,\"denominator\":1000000},\"endpoint_retained\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"upper-2\",\"at\":{\"lower_numerator\":2500000,\"upper_numerator\":2500000,\"denominator\":1000000},\"from\":\"0\",\"to\":\"4\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"upper-2\",\"at\":{\"lower_numerator\":5964101,\"upper_numerator\":5964102,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"upper-3\",\"at\":{\"lower_numerator\":5964101,\"upper_numerator\":5964102,\"denominator\":1000000},\"from\":\"0\",\"to\":\"1\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"upper-3\",\"at\":{\"lower_numerator\":7696152,\"upper_numerator\":7696153,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"factorial_cell\",\"opportunity\":\"crossed_5_over_2\",\"authorization\":\"full_move\",\"cost\":\"motion_only\",\"selected\":\"upper\",\"arrival\":{\"lower_numerator\":7696152,\"upper_numerator\":7696153,\"denominator\":1000000},\"waiting\":{\"lower_numerator\":767949,\"upper_numerator\":767950,\"denominator\":1000000},\"observed_lower\":{\"lower_numerator\":3125000,\"upper_numerator\":3125000,\"denominator\":1000000},\"completed_original_moves\":3,\"committed_observations\":1,\"full_initial_cap_attempts\":4,\"requester_cap_installs\":3,\"requester_run_commands\":3,\"blocker_cap_installs\":1,\"blocker_run_commands\":1,\"partial_initial_caps\":0,\"cap_extensions\":0,\"group_admissions\":0,\"prefix_no_group_checks\":0,\"native_ends\":3,\"prediction_arrival_error\":\"0\"}\n{\"event\":\"public_prediction_relation\",\"move\":\"upper-2\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"nominal_release\":true}\n{\"event\":\"public_prediction_relation\",\"move\":\"upper-3\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"nominal_release\":true}\n{\"event\":\"selection_before_execution\",\"opportunity\":\"crossed_5_over_2\",\"authorization\":\"full_move\",\"cost\":\"nominal_waiting\",\"selected\":\"upper\",\"decision_time\":\"0\",\"committed_blocker_q\":\"0\",\"upper_prediction\":{\"motion\":{\"lower_numerator\":6928203,\"upper_numerator\":6928204,\"denominator\":1000000},\"waiting_prior\":{\"lower_numerator\":767949,\"upper_numerator\":767950,\"denominator\":1000000},\"arrival_prior\":{\"lower_numerator\":7696152,\"upper_numerator\":7696153,\"denominator\":1000000},\"certificate_lower_prior\":{\"lower_numerator\":3115000,\"upper_numerator\":3115000,\"denominator\":1000000},\"conditional_prior_available\":true},\"lower_prediction\":{\"motion\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"waiting_prior\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"arrival_prior\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"certificate_lower_prior\":{\"lower_numerator\":3115000,\"upper_numerator\":3115000,\"denominator\":1000000},\"conditional_prior_available\":true}}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"upper-1\",\"at\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"from\":\"0\",\"to\":\"1\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"upper-1\",\"at\":{\"lower_numerator\":1732050,\"upper_numerator\":1732051,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"waiting\",\"opportunity\":\"crossed_5_over_2\",\"move\":\"upper-2\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"at\":{\"lower_numerator\":1732050,\"upper_numerator\":1732051,\"denominator\":1000000}}\n{\"event\":\"actual_position_committed\",\"at\":{\"lower_numerator\":2500000,\"upper_numerator\":2500000,\"denominator\":1000000},\"lower\":{\"lower_numerator\":3125000,\"upper_numerator\":3125000,\"denominator\":1000000},\"endpoint_retained\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"upper-2\",\"at\":{\"lower_numerator\":2500000,\"upper_numerator\":2500000,\"denominator\":1000000},\"from\":\"0\",\"to\":\"4\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"upper-2\",\"at\":{\"lower_numerator\":5964101,\"upper_numerator\":5964102,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"upper-3\",\"at\":{\"lower_numerator\":5964101,\"upper_numerator\":5964102,\"denominator\":1000000},\"from\":\"0\",\"to\":\"1\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"upper-3\",\"at\":{\"lower_numerator\":7696152,\"upper_numerator\":7696153,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"factorial_cell\",\"opportunity\":\"crossed_5_over_2\",\"authorization\":\"full_move\",\"cost\":\"nominal_waiting\",\"selected\":\"upper\",\"arrival\":{\"lower_numerator\":7696152,\"upper_numerator\":7696153,\"denominator\":1000000},\"waiting\":{\"lower_numerator\":767949,\"upper_numerator\":767950,\"denominator\":1000000},\"observed_lower\":{\"lower_numerator\":3125000,\"upper_numerator\":3125000,\"denominator\":1000000},\"completed_original_moves\":3,\"committed_observations\":1,\"full_initial_cap_attempts\":4,\"requester_cap_installs\":3,\"requester_run_commands\":3,\"blocker_cap_installs\":1,\"blocker_run_commands\":1,\"partial_initial_caps\":0,\"cap_extensions\":0,\"group_admissions\":0,\"prefix_no_group_checks\":0,\"native_ends\":3,\"prediction_arrival_error\":\"0\"}\n{\"event\":\"factorial_summary\",\"opportunity\":\"crossed_5_over_2\",\"authorization_trajectories_equal\":true,\"waiting_rule_arrival_reduction\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000}}\n{\"event\":\"public_prediction_relation\",\"move\":\"upper-2\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"nominal_release\":true}\n{\"event\":\"public_prediction_relation\",\"move\":\"upper-3\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"nominal_release\":true}\n{\"event\":\"selection_before_execution\",\"opportunity\":\"late_4\",\"authorization\":\"original_prefix_ordinary\",\"cost\":\"motion_only\",\"selected\":\"upper\",\"decision_time\":\"0\",\"committed_blocker_q\":\"0\",\"upper_prediction\":{\"motion\":{\"lower_numerator\":6928203,\"upper_numerator\":6928204,\"denominator\":1000000},\"waiting_prior\":{\"lower_numerator\":2267949,\"upper_numerator\":2267950,\"denominator\":1000000},\"arrival_prior\":{\"lower_numerator\":9196152,\"upper_numerator\":9196153,\"denominator\":1000000},\"certificate_lower_prior\":{\"lower_numerator\":5931125,\"upper_numerator\":5931126,\"denominator\":1000000},\"conditional_prior_available\":true},\"lower_prediction\":{\"motion\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"waiting_prior\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"arrival_prior\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"certificate_lower_prior\":{\"lower_numerator\":5931125,\"upper_numerator\":5931126,\"denominator\":1000000},\"conditional_prior_available\":true}}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"upper-1\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"upper-1\",\"at\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"from\":\"0\",\"to\":\"1\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"upper-1\",\"at\":{\"lower_numerator\":1732050,\"upper_numerator\":1732051,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"upper-2\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"waiting\",\"opportunity\":\"late_4\",\"move\":\"upper-2\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"at\":{\"lower_numerator\":1732050,\"upper_numerator\":1732051,\"denominator\":1000000}}\n{\"event\":\"actual_position_committed\",\"at\":{\"lower_numerator\":4000000,\"upper_numerator\":4000000,\"denominator\":1000000},\"lower\":{\"lower_numerator\":5941125,\"upper_numerator\":5941126,\"denominator\":1000000},\"endpoint_retained\":true}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"upper-2\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"upper-2\",\"at\":{\"lower_numerator\":4000000,\"upper_numerator\":4000000,\"denominator\":1000000},\"from\":\"0\",\"to\":\"4\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"upper-2\",\"at\":{\"lower_numerator\":7464101,\"upper_numerator\":7464102,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"upper-3\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"upper-3\",\"at\":{\"lower_numerator\":7464101,\"upper_numerator\":7464102,\"denominator\":1000000},\"from\":\"0\",\"to\":\"1\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"upper-3\",\"at\":{\"lower_numerator\":9196152,\"upper_numerator\":9196153,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"factorial_cell\",\"opportunity\":\"late_4\",\"authorization\":\"original_prefix_ordinary\",\"cost\":\"motion_only\",\"selected\":\"upper\",\"arrival\":{\"lower_numerator\":9196152,\"upper_numerator\":9196153,\"denominator\":1000000},\"waiting\":{\"lower_numerator\":2267949,\"upper_numerator\":2267950,\"denominator\":1000000},\"observed_lower\":{\"lower_numerator\":5941125,\"upper_numerator\":5941126,\"denominator\":1000000},\"completed_original_moves\":3,\"committed_observations\":1,\"full_initial_cap_attempts\":4,\"requester_cap_installs\":3,\"requester_run_commands\":3,\"blocker_cap_installs\":1,\"blocker_run_commands\":1,\"partial_initial_caps\":0,\"cap_extensions\":0,\"group_admissions\":0,\"prefix_no_group_checks\":4,\"native_ends\":3,\"prediction_arrival_error\":\"0\"}\n{\"event\":\"public_prediction_relation\",\"move\":\"upper-2\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"nominal_release\":true}\n{\"event\":\"public_prediction_relation\",\"move\":\"upper-3\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"nominal_release\":true}\n{\"event\":\"selection_before_execution\",\"opportunity\":\"late_4\",\"authorization\":\"original_prefix_ordinary\",\"cost\":\"nominal_waiting\",\"selected\":\"lower\",\"decision_time\":\"0\",\"committed_blocker_q\":\"0\",\"upper_prediction\":{\"motion\":{\"lower_numerator\":6928203,\"upper_numerator\":6928204,\"denominator\":1000000},\"waiting_prior\":{\"lower_numerator\":2267949,\"upper_numerator\":2267950,\"denominator\":1000000},\"arrival_prior\":{\"lower_numerator\":9196152,\"upper_numerator\":9196153,\"denominator\":1000000},\"certificate_lower_prior\":{\"lower_numerator\":5931125,\"upper_numerator\":5931126,\"denominator\":1000000},\"conditional_prior_available\":true},\"lower_prediction\":{\"motion\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"waiting_prior\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"arrival_prior\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"certificate_lower_prior\":{\"lower_numerator\":5931125,\"upper_numerator\":5931126,\"denominator\":1000000},\"conditional_prior_available\":true}}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"lower-1\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"lower-1\",\"at\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"from\":\"0\",\"to\":\"2\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"lower-1\",\"at\":{\"lower_numerator\":2449489,\"upper_numerator\":2449490,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"lower-2\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"lower-2\",\"at\":{\"lower_numerator\":2449489,\"upper_numerator\":2449490,\"denominator\":1000000},\"from\":\"0\",\"to\":\"4\",\"original_move_unchanged\":true}\n{\"event\":\"actual_position_committed\",\"at\":{\"lower_numerator\":4000000,\"upper_numerator\":4000000,\"denominator\":1000000},\"lower\":{\"lower_numerator\":5941125,\"upper_numerator\":5941126,\"denominator\":1000000},\"endpoint_retained\":true}\n{\"event\":\"original_move_end\",\"move\":\"lower-2\",\"at\":{\"lower_numerator\":5913591,\"upper_numerator\":5913592,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"prefix_no_certified_group\",\"demand\":\"lower-3\",\"ungranted_vertices\":1,\"cross_request_edges\":0,\"cyclic_components\":0,\"granted_blocker_excluded\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"lower-3\",\"at\":{\"lower_numerator\":5913591,\"upper_numerator\":5913592,\"denominator\":1000000},\"from\":\"0\",\"to\":\"2\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"lower-3\",\"at\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"factorial_cell\",\"opportunity\":\"late_4\",\"authorization\":\"original_prefix_ordinary\",\"cost\":\"nominal_waiting\",\"selected\":\"lower\",\"arrival\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"waiting\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"observed_lower\":{\"lower_numerator\":5941125,\"upper_numerator\":5941126,\"denominator\":1000000},\"completed_original_moves\":3,\"committed_observations\":1,\"full_initial_cap_attempts\":3,\"requester_cap_installs\":3,\"requester_run_commands\":3,\"blocker_cap_installs\":1,\"blocker_run_commands\":1,\"partial_initial_caps\":0,\"cap_extensions\":0,\"group_admissions\":0,\"prefix_no_group_checks\":3,\"native_ends\":3,\"prediction_arrival_error\":\"0\"}\n{\"event\":\"public_prediction_relation\",\"move\":\"upper-2\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"nominal_release\":true}\n{\"event\":\"public_prediction_relation\",\"move\":\"upper-3\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"nominal_release\":true}\n{\"event\":\"selection_before_execution\",\"opportunity\":\"late_4\",\"authorization\":\"full_move\",\"cost\":\"motion_only\",\"selected\":\"upper\",\"decision_time\":\"0\",\"committed_blocker_q\":\"0\",\"upper_prediction\":{\"motion\":{\"lower_numerator\":6928203,\"upper_numerator\":6928204,\"denominator\":1000000},\"waiting_prior\":{\"lower_numerator\":2267949,\"upper_numerator\":2267950,\"denominator\":1000000},\"arrival_prior\":{\"lower_numerator\":9196152,\"upper_numerator\":9196153,\"denominator\":1000000},\"certificate_lower_prior\":{\"lower_numerator\":5931125,\"upper_numerator\":5931126,\"denominator\":1000000},\"conditional_prior_available\":true},\"lower_prediction\":{\"motion\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"waiting_prior\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"arrival_prior\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"certificate_lower_prior\":{\"lower_numerator\":5931125,\"upper_numerator\":5931126,\"denominator\":1000000},\"conditional_prior_available\":true}}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"upper-1\",\"at\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"from\":\"0\",\"to\":\"1\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"upper-1\",\"at\":{\"lower_numerator\":1732050,\"upper_numerator\":1732051,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"waiting\",\"opportunity\":\"late_4\",\"move\":\"upper-2\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"at\":{\"lower_numerator\":1732050,\"upper_numerator\":1732051,\"denominator\":1000000}}\n{\"event\":\"actual_position_committed\",\"at\":{\"lower_numerator\":4000000,\"upper_numerator\":4000000,\"denominator\":1000000},\"lower\":{\"lower_numerator\":5941125,\"upper_numerator\":5941126,\"denominator\":1000000},\"endpoint_retained\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"upper-2\",\"at\":{\"lower_numerator\":4000000,\"upper_numerator\":4000000,\"denominator\":1000000},\"from\":\"0\",\"to\":\"4\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"upper-2\",\"at\":{\"lower_numerator\":7464101,\"upper_numerator\":7464102,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"upper-3\",\"at\":{\"lower_numerator\":7464101,\"upper_numerator\":7464102,\"denominator\":1000000},\"from\":\"0\",\"to\":\"1\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"upper-3\",\"at\":{\"lower_numerator\":9196152,\"upper_numerator\":9196153,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"factorial_cell\",\"opportunity\":\"late_4\",\"authorization\":\"full_move\",\"cost\":\"motion_only\",\"selected\":\"upper\",\"arrival\":{\"lower_numerator\":9196152,\"upper_numerator\":9196153,\"denominator\":1000000},\"waiting\":{\"lower_numerator\":2267949,\"upper_numerator\":2267950,\"denominator\":1000000},\"observed_lower\":{\"lower_numerator\":5941125,\"upper_numerator\":5941126,\"denominator\":1000000},\"completed_original_moves\":3,\"committed_observations\":1,\"full_initial_cap_attempts\":4,\"requester_cap_installs\":3,\"requester_run_commands\":3,\"blocker_cap_installs\":1,\"blocker_run_commands\":1,\"partial_initial_caps\":0,\"cap_extensions\":0,\"group_admissions\":0,\"prefix_no_group_checks\":0,\"native_ends\":3,\"prediction_arrival_error\":\"0\"}\n{\"event\":\"public_prediction_relation\",\"move\":\"upper-2\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"nominal_release\":true}\n{\"event\":\"public_prediction_relation\",\"move\":\"upper-3\",\"owner\":\"blocker\",\"threshold\":\"61/20\",\"nominal_release\":true}\n{\"event\":\"selection_before_execution\",\"opportunity\":\"late_4\",\"authorization\":\"full_move\",\"cost\":\"nominal_waiting\",\"selected\":\"lower\",\"decision_time\":\"0\",\"committed_blocker_q\":\"0\",\"upper_prediction\":{\"motion\":{\"lower_numerator\":6928203,\"upper_numerator\":6928204,\"denominator\":1000000},\"waiting_prior\":{\"lower_numerator\":2267949,\"upper_numerator\":2267950,\"denominator\":1000000},\"arrival_prior\":{\"lower_numerator\":9196152,\"upper_numerator\":9196153,\"denominator\":1000000},\"certificate_lower_prior\":{\"lower_numerator\":5931125,\"upper_numerator\":5931126,\"denominator\":1000000},\"conditional_prior_available\":true},\"lower_prediction\":{\"motion\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"waiting_prior\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"arrival_prior\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"certificate_lower_prior\":{\"lower_numerator\":5931125,\"upper_numerator\":5931126,\"denominator\":1000000},\"conditional_prior_available\":true}}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"lower-1\",\"at\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"from\":\"0\",\"to\":\"2\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"lower-1\",\"at\":{\"lower_numerator\":2449489,\"upper_numerator\":2449490,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"lower-2\",\"at\":{\"lower_numerator\":2449489,\"upper_numerator\":2449490,\"denominator\":1000000},\"from\":\"0\",\"to\":\"4\",\"original_move_unchanged\":true}\n{\"event\":\"actual_position_committed\",\"at\":{\"lower_numerator\":4000000,\"upper_numerator\":4000000,\"denominator\":1000000},\"lower\":{\"lower_numerator\":5941125,\"upper_numerator\":5941126,\"denominator\":1000000},\"endpoint_retained\":true}\n{\"event\":\"original_move_end\",\"move\":\"lower-2\",\"at\":{\"lower_numerator\":5913591,\"upper_numerator\":5913592,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"requester_full_cap_installed\",\"move\":\"lower-3\",\"at\":{\"lower_numerator\":5913591,\"upper_numerator\":5913592,\"denominator\":1000000},\"from\":\"0\",\"to\":\"2\",\"original_move_unchanged\":true}\n{\"event\":\"original_move_end\",\"move\":\"lower-3\",\"at\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"endpoint_resident_retained\":true}\n{\"event\":\"factorial_cell\",\"opportunity\":\"late_4\",\"authorization\":\"full_move\",\"cost\":\"nominal_waiting\",\"selected\":\"lower\",\"arrival\":{\"lower_numerator\":8363081,\"upper_numerator\":8363082,\"denominator\":1000000},\"waiting\":{\"lower_numerator\":0,\"upper_numerator\":0,\"denominator\":1000000},\"observed_lower\":{\"lower_numerator\":5941125,\"upper_numerator\":5941126,\"denominator\":1000000},\"completed_original_moves\":3,\"committed_observations\":1,\"full_initial_cap_attempts\":3,\"requester_cap_installs\":3,\"requester_run_commands\":3,\"blocker_cap_installs\":1,\"blocker_run_commands\":1,\"partial_initial_caps\":0,\"cap_extensions\":0,\"group_admissions\":0,\"prefix_no_group_checks\":0,\"native_ends\":3,\"prediction_arrival_error\":\"0\"}\n{\"event\":\"factorial_summary\",\"opportunity\":\"late_4\",\"authorization_trajectories_equal\":true,\"waiting_rule_arrival_reduction\":{\"lower_numerator\":833071,\"upper_numerator\":833072,\"denominator\":1000000}}\n{\"event\":\"summary\",\"status\":\"passed\",\"checks\":2998,\"named_opportunities\":2,\"factorial_cells\":8,\"scope\":\"ordinary_prefix_contract_x_public_nominal_waiting_not_general_group_or_learning\"}\n",
+      "stderr": ""
+    }
+  ],
+  "AUTH_or_production_lifecycle_verified": false,
+  "full_online_cost_measured": false,
+  "general_GROUP_ADMIT_implemented": false,
+  "learning_or_lifelong_throughput_claim": false,
+  "research_payload_read": false,
+  "protected_baseline_sha256": {
+    "README.md": "a46cbcc013542da3808cf9f349c75b0c4fd7ca2962abc6516e6cd648f7915d60",
+    "RESEARCH_CONTRACT.md": "1028e1f448fa19260feffcc882068d9ea87934e2758f194cd7d51942ec0075f7",
+    "OPUS_AUDIT.md": "f390e13ed858d55b7e64dd049415f44cb5bec52a900a84fd6b08505188199597",
+    "precheck.cpp": "6100de6a9325d1437e894daece234ab22dca32827730ee74a203a1032e0fec7f",
+    "run_precheck.py": "0409780db9485353b597764171e1445d24840868c158e01d16c6064f56e3fcc7",
+    "precheck_run_20260924_01.json": "d6b2be8c302dd6adcf214adf3942540cae474e806b78ab722e8620d71e88dc31",
+    "source_pins.json": "f1374e56dafe6ecd6c5e553ffdb874364715c84a5399fdf61b0deb2091999152",
+    "timing_precheck.cpp": "387f3b6c5c1bdd837fdc4802c6c5344f027fb80918b2e3be9730a5916d10e60d",
+    "run_timing_precheck.py": "53ef62c9a330b7236f4f09f0f1cca95392a1d5c1c90b5990c6dfc5dad426925b",
+    "TIMING_PRECHECK.md": "874595b72fad8721bbc71eba735c125fb7c9172fb518c9d4d9ea3df18697e540",
+    "timing_run_20260924_01.json": "071ddf848d9e47641660f9feade6069699c9715a3f67252439e74f2fe62e386c"
+  },
+  "source_header_sha256": {
+    "implementation/pie_position_commit/include/pie_position_commit.hpp": "2f7be5ec11293df2fdbda3919393f8a30b43b2a432f56879e59f26d0a3b9d7c6",
+    "implementation/pie_progress_retirement/include/pie_progress_retirement.hpp": "ddd94e49c3dd689b84d585ae374a65b99f49577bf9752342f46d688fbd0f7cb1",
+    "implementation/pie_query/include/pie_query_scheduler.hpp": "a1572501e39b711b9c8253e05083aa5799884145263d81352c9d71fd1965fefb",
+    "implementation/pie_query/include/pie_query_index.hpp": "936a30e4e19c85977ab187181dbe59130daffb49c71a60b41ba28d5c3c348c70",
+    "implementation/pie_query/include/pie_release_threshold.hpp": "00660d499c0169cd843527dd2b1b3e35cdb4035b8e0e9348dc6734a68cf30c79",
+    "implementation/pie_geometry/include/pie_geometry.hpp": "ff432b29d131165b1a95f3ffa737cfea47bd1c09ef05f19516b9847be72d1507",
+    "implementation/pie_geometry/include/pie_geometry_flint.hpp": "239040d62285b5f370233b9732824ea6ff2747193c8ad404f8ef93498a806900",
+    "implementation/pie_reference/include/pie_reference_controller.hpp": "a1cf2b7834efe3ccd344b8226a3c5e55c56857d3ac55a3c05281cfde087671ce",
+    "implementation/pie_reference/include/pie_reference_segment.hpp": "0e56a33e4b5d93ad751b81fee50e89f96e05d139810ddbfeb2a3fcbc10369d55"
+  },
+  "fixture_sha256": "543e80818ce08b14f62100fd574166bcdaed7a0c1612bb9789bada48cfb9370b",
+  "runner_sha256": "86e271698bbcec92adf7c50036d68eeb0374d78de478fafe322faa09ae03a606",
+  "normative_rule": {
+    "path": "73_PIE_SPATIAL_EVIDENCE_TERMINAL_HANDOFF_AND_PAID_SERVICE_PREEXPERIMENT_DRAFT_20260908.md",
+    "sha256": "b64f5b555034655b2676226d051a70c03aab3679d67c00bc334fb588c4811a8a",
+    "sections": [
+      "4",
+      "5"
+    ]
+  },
+  "source_identity_command": {
+    "argv": [
+      "rtk",
+      "proxy",
+      "git",
+      "-C",
+      "/home/lyh/MAPF_PIED_MDDR_RESEARCH",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_code": 0,
+    "stdout": "ad3edd4f946e592cff12ff6426e0d31ba5cfd398\n",
+    "stderr": ""
+  },
+  "source_head": "ad3edd4f946e592cff12ff6426e0d31ba5cfd398",
+  "binary_sha256": "ce35acfd95fc399fce2bd7c30025db41da0be84b3b2eb8cc2a9804c3926c826e",
+  "events": [
+    {
+      "event": "public_prediction_relation",
+      "move": "upper-2",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "nominal_release": true
+    },
+    {
+      "event": "public_prediction_relation",
+      "move": "upper-3",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "nominal_release": true
+    },
+    {
+      "event": "selection_before_execution",
+      "opportunity": "crossed_5_over_2",
+      "authorization": "original_prefix_ordinary",
+      "cost": "motion_only",
+      "selected": "upper",
+      "decision_time": "0",
+      "committed_blocker_q": "0",
+      "upper_prediction": {
+        "motion": {
+          "lower_numerator": 6928203,
+          "upper_numerator": 6928204,
+          "denominator": 1000000
+        },
+        "waiting_prior": {
+          "lower_numerator": 767949,
+          "upper_numerator": 767950,
+          "denominator": 1000000
+        },
+        "arrival_prior": {
+          "lower_numerator": 7696152,
+          "upper_numerator": 7696153,
+          "denominator": 1000000
+        },
+        "certificate_lower_prior": {
+          "lower_numerator": 3115000,
+          "upper_numerator": 3115000,
+          "denominator": 1000000
+        },
+        "conditional_prior_available": true
+      },
+      "lower_prediction": {
+        "motion": {
+          "lower_numerator": 8363081,
+          "upper_numerator": 8363082,
+          "denominator": 1000000
+        },
+        "waiting_prior": {
+          "lower_numerator": 0,
+          "upper_numerator": 0,
+          "denominator": 1000000
+        },
+        "arrival_prior": {
+          "lower_numerator": 8363081,
+          "upper_numerator": 8363082,
+          "denominator": 1000000
+        },
+        "certificate_lower_prior": {
+          "lower_numerator": 3115000,
+          "upper_numerator": 3115000,
+          "denominator": 1000000
+        },
+        "conditional_prior_available": true
+      }
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "upper-1",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "upper-1",
+      "at": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "1",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "upper-1",
+      "at": {
+        "lower_numerator": 1732050,
+        "upper_numerator": 1732051,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "upper-2",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "waiting",
+      "opportunity": "crossed_5_over_2",
+      "move": "upper-2",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "at": {
+        "lower_numerator": 1732050,
+        "upper_numerator": 1732051,
+        "denominator": 1000000
+      }
+    },
+    {
+      "event": "actual_position_committed",
+      "at": {
+        "lower_numerator": 2500000,
+        "upper_numerator": 2500000,
+        "denominator": 1000000
+      },
+      "lower": {
+        "lower_numerator": 3125000,
+        "upper_numerator": 3125000,
+        "denominator": 1000000
+      },
+      "endpoint_retained": true
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "upper-2",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "upper-2",
+      "at": {
+        "lower_numerator": 2500000,
+        "upper_numerator": 2500000,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "4",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "upper-2",
+      "at": {
+        "lower_numerator": 5964101,
+        "upper_numerator": 5964102,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "upper-3",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "upper-3",
+      "at": {
+        "lower_numerator": 5964101,
+        "upper_numerator": 5964102,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "1",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "upper-3",
+      "at": {
+        "lower_numerator": 7696152,
+        "upper_numerator": 7696153,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "factorial_cell",
+      "opportunity": "crossed_5_over_2",
+      "authorization": "original_prefix_ordinary",
+      "cost": "motion_only",
+      "selected": "upper",
+      "arrival": {
+        "lower_numerator": 7696152,
+        "upper_numerator": 7696153,
+        "denominator": 1000000
+      },
+      "waiting": {
+        "lower_numerator": 767949,
+        "upper_numerator": 767950,
+        "denominator": 1000000
+      },
+      "observed_lower": {
+        "lower_numerator": 3125000,
+        "upper_numerator": 3125000,
+        "denominator": 1000000
+      },
+      "completed_original_moves": 3,
+      "committed_observations": 1,
+      "full_initial_cap_attempts": 4,
+      "requester_cap_installs": 3,
+      "requester_run_commands": 3,
+      "blocker_cap_installs": 1,
+      "blocker_run_commands": 1,
+      "partial_initial_caps": 0,
+      "cap_extensions": 0,
+      "group_admissions": 0,
+      "prefix_no_group_checks": 4,
+      "native_ends": 3,
+      "prediction_arrival_error": "0"
+    },
+    {
+      "event": "public_prediction_relation",
+      "move": "upper-2",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "nominal_release": true
+    },
+    {
+      "event": "public_prediction_relation",
+      "move": "upper-3",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "nominal_release": true
+    },
+    {
+      "event": "selection_before_execution",
+      "opportunity": "crossed_5_over_2",
+      "authorization": "original_prefix_ordinary",
+      "cost": "nominal_waiting",
+      "selected": "upper",
+      "decision_time": "0",
+      "committed_blocker_q": "0",
+      "upper_prediction": {
+        "motion": {
+          "lower_numerator": 6928203,
+          "upper_numerator": 6928204,
+          "denominator": 1000000
+        },
+        "waiting_prior": {
+          "lower_numerator": 767949,
+          "upper_numerator": 767950,
+          "denominator": 1000000
+        },
+        "arrival_prior": {
+          "lower_numerator": 7696152,
+          "upper_numerator": 7696153,
+          "denominator": 1000000
+        },
+        "certificate_lower_prior": {
+          "lower_numerator": 3115000,
+          "upper_numerator": 3115000,
+          "denominator": 1000000
+        },
+        "conditional_prior_available": true
+      },
+      "lower_prediction": {
+        "motion": {
+          "lower_numerator": 8363081,
+          "upper_numerator": 8363082,
+          "denominator": 1000000
+        },
+        "waiting_prior": {
+          "lower_numerator": 0,
+          "upper_numerator": 0,
+          "denominator": 1000000
+        },
+        "arrival_prior": {
+          "lower_numerator": 8363081,
+          "upper_numerator": 8363082,
+          "denominator": 1000000
+        },
+        "certificate_lower_prior": {
+          "lower_numerator": 3115000,
+          "upper_numerator": 3115000,
+          "denominator": 1000000
+        },
+        "conditional_prior_available": true
+      }
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "upper-1",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "upper-1",
+      "at": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "1",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "upper-1",
+      "at": {
+        "lower_numerator": 1732050,
+        "upper_numerator": 1732051,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "upper-2",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "waiting",
+      "opportunity": "crossed_5_over_2",
+      "move": "upper-2",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "at": {
+        "lower_numerator": 1732050,
+        "upper_numerator": 1732051,
+        "denominator": 1000000
+      }
+    },
+    {
+      "event": "actual_position_committed",
+      "at": {
+        "lower_numerator": 2500000,
+        "upper_numerator": 2500000,
+        "denominator": 1000000
+      },
+      "lower": {
+        "lower_numerator": 3125000,
+        "upper_numerator": 3125000,
+        "denominator": 1000000
+      },
+      "endpoint_retained": true
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "upper-2",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "upper-2",
+      "at": {
+        "lower_numerator": 2500000,
+        "upper_numerator": 2500000,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "4",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "upper-2",
+      "at": {
+        "lower_numerator": 5964101,
+        "upper_numerator": 5964102,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "upper-3",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "upper-3",
+      "at": {
+        "lower_numerator": 5964101,
+        "upper_numerator": 5964102,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "1",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "upper-3",
+      "at": {
+        "lower_numerator": 7696152,
+        "upper_numerator": 7696153,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "factorial_cell",
+      "opportunity": "crossed_5_over_2",
+      "authorization": "original_prefix_ordinary",
+      "cost": "nominal_waiting",
+      "selected": "upper",
+      "arrival": {
+        "lower_numerator": 7696152,
+        "upper_numerator": 7696153,
+        "denominator": 1000000
+      },
+      "waiting": {
+        "lower_numerator": 767949,
+        "upper_numerator": 767950,
+        "denominator": 1000000
+      },
+      "observed_lower": {
+        "lower_numerator": 3125000,
+        "upper_numerator": 3125000,
+        "denominator": 1000000
+      },
+      "completed_original_moves": 3,
+      "committed_observations": 1,
+      "full_initial_cap_attempts": 4,
+      "requester_cap_installs": 3,
+      "requester_run_commands": 3,
+      "blocker_cap_installs": 1,
+      "blocker_run_commands": 1,
+      "partial_initial_caps": 0,
+      "cap_extensions": 0,
+      "group_admissions": 0,
+      "prefix_no_group_checks": 4,
+      "native_ends": 3,
+      "prediction_arrival_error": "0"
+    },
+    {
+      "event": "public_prediction_relation",
+      "move": "upper-2",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "nominal_release": true
+    },
+    {
+      "event": "public_prediction_relation",
+      "move": "upper-3",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "nominal_release": true
+    },
+    {
+      "event": "selection_before_execution",
+      "opportunity": "crossed_5_over_2",
+      "authorization": "full_move",
+      "cost": "motion_only",
+      "selected": "upper",
+      "decision_time": "0",
+      "committed_blocker_q": "0",
+      "upper_prediction": {
+        "motion": {
+          "lower_numerator": 6928203,
+          "upper_numerator": 6928204,
+          "denominator": 1000000
+        },
+        "waiting_prior": {
+          "lower_numerator": 767949,
+          "upper_numerator": 767950,
+          "denominator": 1000000
+        },
+        "arrival_prior": {
+          "lower_numerator": 7696152,
+          "upper_numerator": 7696153,
+          "denominator": 1000000
+        },
+        "certificate_lower_prior": {
+          "lower_numerator": 3115000,
+          "upper_numerator": 3115000,
+          "denominator": 1000000
+        },
+        "conditional_prior_available": true
+      },
+      "lower_prediction": {
+        "motion": {
+          "lower_numerator": 8363081,
+          "upper_numerator": 8363082,
+          "denominator": 1000000
+        },
+        "waiting_prior": {
+          "lower_numerator": 0,
+          "upper_numerator": 0,
+          "denominator": 1000000
+        },
+        "arrival_prior": {
+          "lower_numerator": 8363081,
+          "upper_numerator": 8363082,
+          "denominator": 1000000
+        },
+        "certificate_lower_prior": {
+          "lower_numerator": 3115000,
+          "upper_numerator": 3115000,
+          "denominator": 1000000
+        },
+        "conditional_prior_available": true
+      }
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "upper-1",
+      "at": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "1",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "upper-1",
+      "at": {
+        "lower_numerator": 1732050,
+        "upper_numerator": 1732051,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "waiting",
+      "opportunity": "crossed_5_over_2",
+      "move": "upper-2",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "at": {
+        "lower_numerator": 1732050,
+        "upper_numerator": 1732051,
+        "denominator": 1000000
+      }
+    },
+    {
+      "event": "actual_position_committed",
+      "at": {
+        "lower_numerator": 2500000,
+        "upper_numerator": 2500000,
+        "denominator": 1000000
+      },
+      "lower": {
+        "lower_numerator": 3125000,
+        "upper_numerator": 3125000,
+        "denominator": 1000000
+      },
+      "endpoint_retained": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "upper-2",
+      "at": {
+        "lower_numerator": 2500000,
+        "upper_numerator": 2500000,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "4",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "upper-2",
+      "at": {
+        "lower_numerator": 5964101,
+        "upper_numerator": 5964102,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "upper-3",
+      "at": {
+        "lower_numerator": 5964101,
+        "upper_numerator": 5964102,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "1",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "upper-3",
+      "at": {
+        "lower_numerator": 7696152,
+        "upper_numerator": 7696153,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "factorial_cell",
+      "opportunity": "crossed_5_over_2",
+      "authorization": "full_move",
+      "cost": "motion_only",
+      "selected": "upper",
+      "arrival": {
+        "lower_numerator": 7696152,
+        "upper_numerator": 7696153,
+        "denominator": 1000000
+      },
+      "waiting": {
+        "lower_numerator": 767949,
+        "upper_numerator": 767950,
+        "denominator": 1000000
+      },
+      "observed_lower": {
+        "lower_numerator": 3125000,
+        "upper_numerator": 3125000,
+        "denominator": 1000000
+      },
+      "completed_original_moves": 3,
+      "committed_observations": 1,
+      "full_initial_cap_attempts": 4,
+      "requester_cap_installs": 3,
+      "requester_run_commands": 3,
+      "blocker_cap_installs": 1,
+      "blocker_run_commands": 1,
+      "partial_initial_caps": 0,
+      "cap_extensions": 0,
+      "group_admissions": 0,
+      "prefix_no_group_checks": 0,
+      "native_ends": 3,
+      "prediction_arrival_error": "0"
+    },
+    {
+      "event": "public_prediction_relation",
+      "move": "upper-2",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "nominal_release": true
+    },
+    {
+      "event": "public_prediction_relation",
+      "move": "upper-3",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "nominal_release": true
+    },
+    {
+      "event": "selection_before_execution",
+      "opportunity": "crossed_5_over_2",
+      "authorization": "full_move",
+      "cost": "nominal_waiting",
+      "selected": "upper",
+      "decision_time": "0",
+      "committed_blocker_q": "0",
+      "upper_prediction": {
+        "motion": {
+          "lower_numerator": 6928203,
+          "upper_numerator": 6928204,
+          "denominator": 1000000
+        },
+        "waiting_prior": {
+          "lower_numerator": 767949,
+          "upper_numerator": 767950,
+          "denominator": 1000000
+        },
+        "arrival_prior": {
+          "lower_numerator": 7696152,
+          "upper_numerator": 7696153,
+          "denominator": 1000000
+        },
+        "certificate_lower_prior": {
+          "lower_numerator": 3115000,
+          "upper_numerator": 3115000,
+          "denominator": 1000000
+        },
+        "conditional_prior_available": true
+      },
+      "lower_prediction": {
+        "motion": {
+          "lower_numerator": 8363081,
+          "upper_numerator": 8363082,
+          "denominator": 1000000
+        },
+        "waiting_prior": {
+          "lower_numerator": 0,
+          "upper_numerator": 0,
+          "denominator": 1000000
+        },
+        "arrival_prior": {
+          "lower_numerator": 8363081,
+          "upper_numerator": 8363082,
+          "denominator": 1000000
+        },
+        "certificate_lower_prior": {
+          "lower_numerator": 3115000,
+          "upper_numerator": 3115000,
+          "denominator": 1000000
+        },
+        "conditional_prior_available": true
+      }
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "upper-1",
+      "at": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "1",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "upper-1",
+      "at": {
+        "lower_numerator": 1732050,
+        "upper_numerator": 1732051,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "waiting",
+      "opportunity": "crossed_5_over_2",
+      "move": "upper-2",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "at": {
+        "lower_numerator": 1732050,
+        "upper_numerator": 1732051,
+        "denominator": 1000000
+      }
+    },
+    {
+      "event": "actual_position_committed",
+      "at": {
+        "lower_numerator": 2500000,
+        "upper_numerator": 2500000,
+        "denominator": 1000000
+      },
+      "lower": {
+        "lower_numerator": 3125000,
+        "upper_numerator": 3125000,
+        "denominator": 1000000
+      },
+      "endpoint_retained": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "upper-2",
+      "at": {
+        "lower_numerator": 2500000,
+        "upper_numerator": 2500000,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "4",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "upper-2",
+      "at": {
+        "lower_numerator": 5964101,
+        "upper_numerator": 5964102,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "upper-3",
+      "at": {
+        "lower_numerator": 5964101,
+        "upper_numerator": 5964102,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "1",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "upper-3",
+      "at": {
+        "lower_numerator": 7696152,
+        "upper_numerator": 7696153,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "factorial_cell",
+      "opportunity": "crossed_5_over_2",
+      "authorization": "full_move",
+      "cost": "nominal_waiting",
+      "selected": "upper",
+      "arrival": {
+        "lower_numerator": 7696152,
+        "upper_numerator": 7696153,
+        "denominator": 1000000
+      },
+      "waiting": {
+        "lower_numerator": 767949,
+        "upper_numerator": 767950,
+        "denominator": 1000000
+      },
+      "observed_lower": {
+        "lower_numerator": 3125000,
+        "upper_numerator": 3125000,
+        "denominator": 1000000
+      },
+      "completed_original_moves": 3,
+      "committed_observations": 1,
+      "full_initial_cap_attempts": 4,
+      "requester_cap_installs": 3,
+      "requester_run_commands": 3,
+      "blocker_cap_installs": 1,
+      "blocker_run_commands": 1,
+      "partial_initial_caps": 0,
+      "cap_extensions": 0,
+      "group_admissions": 0,
+      "prefix_no_group_checks": 0,
+      "native_ends": 3,
+      "prediction_arrival_error": "0"
+    },
+    {
+      "event": "factorial_summary",
+      "opportunity": "crossed_5_over_2",
+      "authorization_trajectories_equal": true,
+      "waiting_rule_arrival_reduction": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      }
+    },
+    {
+      "event": "public_prediction_relation",
+      "move": "upper-2",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "nominal_release": true
+    },
+    {
+      "event": "public_prediction_relation",
+      "move": "upper-3",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "nominal_release": true
+    },
+    {
+      "event": "selection_before_execution",
+      "opportunity": "late_4",
+      "authorization": "original_prefix_ordinary",
+      "cost": "motion_only",
+      "selected": "upper",
+      "decision_time": "0",
+      "committed_blocker_q": "0",
+      "upper_prediction": {
+        "motion": {
+          "lower_numerator": 6928203,
+          "upper_numerator": 6928204,
+          "denominator": 1000000
+        },
+        "waiting_prior": {
+          "lower_numerator": 2267949,
+          "upper_numerator": 2267950,
+          "denominator": 1000000
+        },
+        "arrival_prior": {
+          "lower_numerator": 9196152,
+          "upper_numerator": 9196153,
+          "denominator": 1000000
+        },
+        "certificate_lower_prior": {
+          "lower_numerator": 5931125,
+          "upper_numerator": 5931126,
+          "denominator": 1000000
+        },
+        "conditional_prior_available": true
+      },
+      "lower_prediction": {
+        "motion": {
+          "lower_numerator": 8363081,
+          "upper_numerator": 8363082,
+          "denominator": 1000000
+        },
+        "waiting_prior": {
+          "lower_numerator": 0,
+          "upper_numerator": 0,
+          "denominator": 1000000
+        },
+        "arrival_prior": {
+          "lower_numerator": 8363081,
+          "upper_numerator": 8363082,
+          "denominator": 1000000
+        },
+        "certificate_lower_prior": {
+          "lower_numerator": 5931125,
+          "upper_numerator": 5931126,
+          "denominator": 1000000
+        },
+        "conditional_prior_available": true
+      }
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "upper-1",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "upper-1",
+      "at": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "1",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "upper-1",
+      "at": {
+        "lower_numerator": 1732050,
+        "upper_numerator": 1732051,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "upper-2",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "waiting",
+      "opportunity": "late_4",
+      "move": "upper-2",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "at": {
+        "lower_numerator": 1732050,
+        "upper_numerator": 1732051,
+        "denominator": 1000000
+      }
+    },
+    {
+      "event": "actual_position_committed",
+      "at": {
+        "lower_numerator": 4000000,
+        "upper_numerator": 4000000,
+        "denominator": 1000000
+      },
+      "lower": {
+        "lower_numerator": 5941125,
+        "upper_numerator": 5941126,
+        "denominator": 1000000
+      },
+      "endpoint_retained": true
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "upper-2",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "upper-2",
+      "at": {
+        "lower_numerator": 4000000,
+        "upper_numerator": 4000000,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "4",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "upper-2",
+      "at": {
+        "lower_numerator": 7464101,
+        "upper_numerator": 7464102,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "upper-3",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "upper-3",
+      "at": {
+        "lower_numerator": 7464101,
+        "upper_numerator": 7464102,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "1",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "upper-3",
+      "at": {
+        "lower_numerator": 9196152,
+        "upper_numerator": 9196153,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "factorial_cell",
+      "opportunity": "late_4",
+      "authorization": "original_prefix_ordinary",
+      "cost": "motion_only",
+      "selected": "upper",
+      "arrival": {
+        "lower_numerator": 9196152,
+        "upper_numerator": 9196153,
+        "denominator": 1000000
+      },
+      "waiting": {
+        "lower_numerator": 2267949,
+        "upper_numerator": 2267950,
+        "denominator": 1000000
+      },
+      "observed_lower": {
+        "lower_numerator": 5941125,
+        "upper_numerator": 5941126,
+        "denominator": 1000000
+      },
+      "completed_original_moves": 3,
+      "committed_observations": 1,
+      "full_initial_cap_attempts": 4,
+      "requester_cap_installs": 3,
+      "requester_run_commands": 3,
+      "blocker_cap_installs": 1,
+      "blocker_run_commands": 1,
+      "partial_initial_caps": 0,
+      "cap_extensions": 0,
+      "group_admissions": 0,
+      "prefix_no_group_checks": 4,
+      "native_ends": 3,
+      "prediction_arrival_error": "0"
+    },
+    {
+      "event": "public_prediction_relation",
+      "move": "upper-2",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "nominal_release": true
+    },
+    {
+      "event": "public_prediction_relation",
+      "move": "upper-3",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "nominal_release": true
+    },
+    {
+      "event": "selection_before_execution",
+      "opportunity": "late_4",
+      "authorization": "original_prefix_ordinary",
+      "cost": "nominal_waiting",
+      "selected": "lower",
+      "decision_time": "0",
+      "committed_blocker_q": "0",
+      "upper_prediction": {
+        "motion": {
+          "lower_numerator": 6928203,
+          "upper_numerator": 6928204,
+          "denominator": 1000000
+        },
+        "waiting_prior": {
+          "lower_numerator": 2267949,
+          "upper_numerator": 2267950,
+          "denominator": 1000000
+        },
+        "arrival_prior": {
+          "lower_numerator": 9196152,
+          "upper_numerator": 9196153,
+          "denominator": 1000000
+        },
+        "certificate_lower_prior": {
+          "lower_numerator": 5931125,
+          "upper_numerator": 5931126,
+          "denominator": 1000000
+        },
+        "conditional_prior_available": true
+      },
+      "lower_prediction": {
+        "motion": {
+          "lower_numerator": 8363081,
+          "upper_numerator": 8363082,
+          "denominator": 1000000
+        },
+        "waiting_prior": {
+          "lower_numerator": 0,
+          "upper_numerator": 0,
+          "denominator": 1000000
+        },
+        "arrival_prior": {
+          "lower_numerator": 8363081,
+          "upper_numerator": 8363082,
+          "denominator": 1000000
+        },
+        "certificate_lower_prior": {
+          "lower_numerator": 5931125,
+          "upper_numerator": 5931126,
+          "denominator": 1000000
+        },
+        "conditional_prior_available": true
+      }
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "lower-1",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "lower-1",
+      "at": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "2",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "lower-1",
+      "at": {
+        "lower_numerator": 2449489,
+        "upper_numerator": 2449490,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "lower-2",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "lower-2",
+      "at": {
+        "lower_numerator": 2449489,
+        "upper_numerator": 2449490,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "4",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "actual_position_committed",
+      "at": {
+        "lower_numerator": 4000000,
+        "upper_numerator": 4000000,
+        "denominator": 1000000
+      },
+      "lower": {
+        "lower_numerator": 5941125,
+        "upper_numerator": 5941126,
+        "denominator": 1000000
+      },
+      "endpoint_retained": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "lower-2",
+      "at": {
+        "lower_numerator": 5913591,
+        "upper_numerator": 5913592,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "prefix_no_certified_group",
+      "demand": "lower-3",
+      "ungranted_vertices": 1,
+      "cross_request_edges": 0,
+      "cyclic_components": 0,
+      "granted_blocker_excluded": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "lower-3",
+      "at": {
+        "lower_numerator": 5913591,
+        "upper_numerator": 5913592,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "2",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "lower-3",
+      "at": {
+        "lower_numerator": 8363081,
+        "upper_numerator": 8363082,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "factorial_cell",
+      "opportunity": "late_4",
+      "authorization": "original_prefix_ordinary",
+      "cost": "nominal_waiting",
+      "selected": "lower",
+      "arrival": {
+        "lower_numerator": 8363081,
+        "upper_numerator": 8363082,
+        "denominator": 1000000
+      },
+      "waiting": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "observed_lower": {
+        "lower_numerator": 5941125,
+        "upper_numerator": 5941126,
+        "denominator": 1000000
+      },
+      "completed_original_moves": 3,
+      "committed_observations": 1,
+      "full_initial_cap_attempts": 3,
+      "requester_cap_installs": 3,
+      "requester_run_commands": 3,
+      "blocker_cap_installs": 1,
+      "blocker_run_commands": 1,
+      "partial_initial_caps": 0,
+      "cap_extensions": 0,
+      "group_admissions": 0,
+      "prefix_no_group_checks": 3,
+      "native_ends": 3,
+      "prediction_arrival_error": "0"
+    },
+    {
+      "event": "public_prediction_relation",
+      "move": "upper-2",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "nominal_release": true
+    },
+    {
+      "event": "public_prediction_relation",
+      "move": "upper-3",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "nominal_release": true
+    },
+    {
+      "event": "selection_before_execution",
+      "opportunity": "late_4",
+      "authorization": "full_move",
+      "cost": "motion_only",
+      "selected": "upper",
+      "decision_time": "0",
+      "committed_blocker_q": "0",
+      "upper_prediction": {
+        "motion": {
+          "lower_numerator": 6928203,
+          "upper_numerator": 6928204,
+          "denominator": 1000000
+        },
+        "waiting_prior": {
+          "lower_numerator": 2267949,
+          "upper_numerator": 2267950,
+          "denominator": 1000000
+        },
+        "arrival_prior": {
+          "lower_numerator": 9196152,
+          "upper_numerator": 9196153,
+          "denominator": 1000000
+        },
+        "certificate_lower_prior": {
+          "lower_numerator": 5931125,
+          "upper_numerator": 5931126,
+          "denominator": 1000000
+        },
+        "conditional_prior_available": true
+      },
+      "lower_prediction": {
+        "motion": {
+          "lower_numerator": 8363081,
+          "upper_numerator": 8363082,
+          "denominator": 1000000
+        },
+        "waiting_prior": {
+          "lower_numerator": 0,
+          "upper_numerator": 0,
+          "denominator": 1000000
+        },
+        "arrival_prior": {
+          "lower_numerator": 8363081,
+          "upper_numerator": 8363082,
+          "denominator": 1000000
+        },
+        "certificate_lower_prior": {
+          "lower_numerator": 5931125,
+          "upper_numerator": 5931126,
+          "denominator": 1000000
+        },
+        "conditional_prior_available": true
+      }
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "upper-1",
+      "at": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "1",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "upper-1",
+      "at": {
+        "lower_numerator": 1732050,
+        "upper_numerator": 1732051,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "waiting",
+      "opportunity": "late_4",
+      "move": "upper-2",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "at": {
+        "lower_numerator": 1732050,
+        "upper_numerator": 1732051,
+        "denominator": 1000000
+      }
+    },
+    {
+      "event": "actual_position_committed",
+      "at": {
+        "lower_numerator": 4000000,
+        "upper_numerator": 4000000,
+        "denominator": 1000000
+      },
+      "lower": {
+        "lower_numerator": 5941125,
+        "upper_numerator": 5941126,
+        "denominator": 1000000
+      },
+      "endpoint_retained": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "upper-2",
+      "at": {
+        "lower_numerator": 4000000,
+        "upper_numerator": 4000000,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "4",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "upper-2",
+      "at": {
+        "lower_numerator": 7464101,
+        "upper_numerator": 7464102,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "upper-3",
+      "at": {
+        "lower_numerator": 7464101,
+        "upper_numerator": 7464102,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "1",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "upper-3",
+      "at": {
+        "lower_numerator": 9196152,
+        "upper_numerator": 9196153,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "factorial_cell",
+      "opportunity": "late_4",
+      "authorization": "full_move",
+      "cost": "motion_only",
+      "selected": "upper",
+      "arrival": {
+        "lower_numerator": 9196152,
+        "upper_numerator": 9196153,
+        "denominator": 1000000
+      },
+      "waiting": {
+        "lower_numerator": 2267949,
+        "upper_numerator": 2267950,
+        "denominator": 1000000
+      },
+      "observed_lower": {
+        "lower_numerator": 5941125,
+        "upper_numerator": 5941126,
+        "denominator": 1000000
+      },
+      "completed_original_moves": 3,
+      "committed_observations": 1,
+      "full_initial_cap_attempts": 4,
+      "requester_cap_installs": 3,
+      "requester_run_commands": 3,
+      "blocker_cap_installs": 1,
+      "blocker_run_commands": 1,
+      "partial_initial_caps": 0,
+      "cap_extensions": 0,
+      "group_admissions": 0,
+      "prefix_no_group_checks": 0,
+      "native_ends": 3,
+      "prediction_arrival_error": "0"
+    },
+    {
+      "event": "public_prediction_relation",
+      "move": "upper-2",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "nominal_release": true
+    },
+    {
+      "event": "public_prediction_relation",
+      "move": "upper-3",
+      "owner": "blocker",
+      "threshold": "61/20",
+      "nominal_release": true
+    },
+    {
+      "event": "selection_before_execution",
+      "opportunity": "late_4",
+      "authorization": "full_move",
+      "cost": "nominal_waiting",
+      "selected": "lower",
+      "decision_time": "0",
+      "committed_blocker_q": "0",
+      "upper_prediction": {
+        "motion": {
+          "lower_numerator": 6928203,
+          "upper_numerator": 6928204,
+          "denominator": 1000000
+        },
+        "waiting_prior": {
+          "lower_numerator": 2267949,
+          "upper_numerator": 2267950,
+          "denominator": 1000000
+        },
+        "arrival_prior": {
+          "lower_numerator": 9196152,
+          "upper_numerator": 9196153,
+          "denominator": 1000000
+        },
+        "certificate_lower_prior": {
+          "lower_numerator": 5931125,
+          "upper_numerator": 5931126,
+          "denominator": 1000000
+        },
+        "conditional_prior_available": true
+      },
+      "lower_prediction": {
+        "motion": {
+          "lower_numerator": 8363081,
+          "upper_numerator": 8363082,
+          "denominator": 1000000
+        },
+        "waiting_prior": {
+          "lower_numerator": 0,
+          "upper_numerator": 0,
+          "denominator": 1000000
+        },
+        "arrival_prior": {
+          "lower_numerator": 8363081,
+          "upper_numerator": 8363082,
+          "denominator": 1000000
+        },
+        "certificate_lower_prior": {
+          "lower_numerator": 5931125,
+          "upper_numerator": 5931126,
+          "denominator": 1000000
+        },
+        "conditional_prior_available": true
+      }
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "lower-1",
+      "at": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "2",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "lower-1",
+      "at": {
+        "lower_numerator": 2449489,
+        "upper_numerator": 2449490,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "lower-2",
+      "at": {
+        "lower_numerator": 2449489,
+        "upper_numerator": 2449490,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "4",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "actual_position_committed",
+      "at": {
+        "lower_numerator": 4000000,
+        "upper_numerator": 4000000,
+        "denominator": 1000000
+      },
+      "lower": {
+        "lower_numerator": 5941125,
+        "upper_numerator": 5941126,
+        "denominator": 1000000
+      },
+      "endpoint_retained": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "lower-2",
+      "at": {
+        "lower_numerator": 5913591,
+        "upper_numerator": 5913592,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "requester_full_cap_installed",
+      "move": "lower-3",
+      "at": {
+        "lower_numerator": 5913591,
+        "upper_numerator": 5913592,
+        "denominator": 1000000
+      },
+      "from": "0",
+      "to": "2",
+      "original_move_unchanged": true
+    },
+    {
+      "event": "original_move_end",
+      "move": "lower-3",
+      "at": {
+        "lower_numerator": 8363081,
+        "upper_numerator": 8363082,
+        "denominator": 1000000
+      },
+      "endpoint_resident_retained": true
+    },
+    {
+      "event": "factorial_cell",
+      "opportunity": "late_4",
+      "authorization": "full_move",
+      "cost": "nominal_waiting",
+      "selected": "lower",
+      "arrival": {
+        "lower_numerator": 8363081,
+        "upper_numerator": 8363082,
+        "denominator": 1000000
+      },
+      "waiting": {
+        "lower_numerator": 0,
+        "upper_numerator": 0,
+        "denominator": 1000000
+      },
+      "observed_lower": {
+        "lower_numerator": 5941125,
+        "upper_numerator": 5941126,
+        "denominator": 1000000
+      },
+      "completed_original_moves": 3,
+      "committed_observations": 1,
+      "full_initial_cap_attempts": 3,
+      "requester_cap_installs": 3,
+      "requester_run_commands": 3,
+      "blocker_cap_installs": 1,
+      "blocker_run_commands": 1,
+      "partial_initial_caps": 0,
+      "cap_extensions": 0,
+      "group_admissions": 0,
+      "prefix_no_group_checks": 0,
+      "native_ends": 3,
+      "prediction_arrival_error": "0"
+    },
+    {
+      "event": "factorial_summary",
+      "opportunity": "late_4",
+      "authorization_trajectories_equal": true,
+      "waiting_rule_arrival_reduction": {
+        "lower_numerator": 833071,
+        "upper_numerator": 833072,
+        "denominator": 1000000
+      }
+    },
+    {
+      "event": "summary",
+      "status": "passed",
+      "checks": 2998,
+      "named_opportunities": 2,
+      "factorial_cells": 8,
+      "scope": "ordinary_prefix_contract_x_public_nominal_waiting_not_general_group_or_learning"
+    }
+  ],
+  "protected_baseline_after_sha256": {
+    "README.md": "a46cbcc013542da3808cf9f349c75b0c4fd7ca2962abc6516e6cd648f7915d60",
+    "RESEARCH_CONTRACT.md": "1028e1f448fa19260feffcc882068d9ea87934e2758f194cd7d51942ec0075f7",
+    "OPUS_AUDIT.md": "f390e13ed858d55b7e64dd049415f44cb5bec52a900a84fd6b08505188199597",
+    "precheck.cpp": "6100de6a9325d1437e894daece234ab22dca32827730ee74a203a1032e0fec7f",
+    "run_precheck.py": "0409780db9485353b597764171e1445d24840868c158e01d16c6064f56e3fcc7",
+    "precheck_run_20260924_01.json": "d6b2be8c302dd6adcf214adf3942540cae474e806b78ab722e8620d71e88dc31",
+    "source_pins.json": "f1374e56dafe6ecd6c5e553ffdb874364715c84a5399fdf61b0deb2091999152",
+    "timing_precheck.cpp": "387f3b6c5c1bdd837fdc4802c6c5344f027fb80918b2e3be9730a5916d10e60d",
+    "run_timing_precheck.py": "53ef62c9a330b7236f4f09f0f1cca95392a1d5c1c90b5990c6dfc5dad426925b",
+    "TIMING_PRECHECK.md": "874595b72fad8721bbc71eba735c125fb7c9172fb518c9d4d9ea3df18697e540",
+    "timing_run_20260924_01.json": "071ddf848d9e47641660f9feade6069699c9715a3f67252439e74f2fe62e386c"
+  },
+  "source_header_after_sha256": {
+    "implementation/pie_position_commit/include/pie_position_commit.hpp": "2f7be5ec11293df2fdbda3919393f8a30b43b2a432f56879e59f26d0a3b9d7c6",
+    "implementation/pie_progress_retirement/include/pie_progress_retirement.hpp": "ddd94e49c3dd689b84d585ae374a65b99f49577bf9752342f46d688fbd0f7cb1",
+    "implementation/pie_query/include/pie_query_scheduler.hpp": "a1572501e39b711b9c8253e05083aa5799884145263d81352c9d71fd1965fefb",
+    "implementation/pie_query/include/pie_query_index.hpp": "936a30e4e19c85977ab187181dbe59130daffb49c71a60b41ba28d5c3c348c70",
+    "implementation/pie_query/include/pie_release_threshold.hpp": "00660d499c0169cd843527dd2b1b3e35cdb4035b8e0e9348dc6734a68cf30c79",
+    "implementation/pie_geometry/include/pie_geometry.hpp": "ff432b29d131165b1a95f3ffa737cfea47bd1c09ef05f19516b9847be72d1507",
+    "implementation/pie_geometry/include/pie_geometry_flint.hpp": "239040d62285b5f370233b9732824ea6ff2747193c8ad404f8ef93498a806900",
+    "implementation/pie_reference/include/pie_reference_controller.hpp": "a1cf2b7834efe3ccd344b8226a3c5e55c56857d3ac55a3c05281cfde087671ce",
+    "implementation/pie_reference/include/pie_reference_segment.hpp": "0e56a33e4b5d93ad751b81fee50e89f96e05d139810ddbfeb2a3fcbc10369d55"
+  },
+  "normative_rule_after_sha256": "b64f5b555034655b2676226d051a70c03aab3679d67c00bc334fb588c4811a8a",
+  "finished_utc": "2026-09-24T09:40:12.598028+00:00"
+}
