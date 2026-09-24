@@ -1,4 +1,10 @@
-# MAPF 实验前研究工作区
+# 学习型进度查询探索工作区
+
+本工作区对应 `explore/learned-query`，探索范围与下一步见 [学习型查询探索说明](exploration/learned_query/README.md)。主线工作区保留在 `/home/lyh/MAPF_PIED_MDDR_RESEARCH`，本分支尚未训练模型或运行实验。
+
+以下为继承的主线资料入口；当前实现含未纳入 Git 的本地工件，本工作区尚不具备完整可运行实现。
+
+## 主线资料
 
 当前目标、设计、权限和下一步统一见 [.github/README.md](.github/README.md)。
 
