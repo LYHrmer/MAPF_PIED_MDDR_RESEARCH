@@ -1034,3 +1034,59 @@ OnlineGGO、S2M2、Dynamic Tube MPC等原论文和作者工件。建议优先预
 最低，动态误差管学习风险更高。没有实证支持立即换主线；动作完成时间不确定性
 不能替代横向空间误差，经验分位数也不替代确定性包络。完整限定与原始来源见
 本机`implementation_binding_evidence/LEARNING_LMAPF_DIRECTION_REVIEW_20260924.md`。
+
+## 62. 调用来源、实际费用归属与支线合法 AND 预检
+
+2026-09-24。完成用户明确指定的主线归属与支线并行预检。两个Astra Ultra子智能体
+分别实现只读观察宿主与合法空间夹具；真实Claude Opus一次完整返回，CLI报告
+claude-opus-5，限观察方法审计。根核代码和意见，实际执行主线、独立复算保存
+记录并综合结果。Opus未运行程序或审阅最终观察器，不以模型意见替代证据。
+
+主线保持原三ELF、固定头和供给，仅独立host副本观察。一次运行9.466697 host秒
+自然exit1，stdout与原版逐字一致，三站失败CPU快照也相同。真实meter actual
+差值逐次归到B1指令，86条关闭段的行、actual、charged与原业务记录相同，全部
+仍归scheme0/C/C-business/account2/Compute；没有转嫁准备费给未发布的Query。
+full-query审计接受92条有效前缀并正确按失败exit1。N/E未运行、STRICT未开始，
+完整查询、释放/原MOVE继续、终态清理及下一报价仍未在这条链上验证。
+
+boot actual35652096，其中初始化16937309、普通CPU5408098、kernel13306640、
+其他49。setup actual53477376，其中place指令区间[0x7e4f4,0x7e658)收费52969092
+（99.049535%）；其扫描子区间[0x7e54c,0x7e580)收费52909151（98.937448%）。
+扫描含推进、对齐、used读取与分支；不是仅load费用，不能与place重复相加。
+该阶段其余费用508284步。boot中的place/scan分别663948/399912，不混入setup分母。
+逐行、CPU/阶段、PC及每次分配的费用守恒；delta>1、行身份/PC错误、未归属
+place/used、计费回退和CPU歧义均0。398604次used-load与该指令4384644步相符。
+
+86次分配尝试中，boot为72704字节EH池申请一次，setup85次。77次16字节全部
+发生在首个geometry("move-A",1,4)：number局部初构10、两级返回移动10+9、
+rectangle临时Point复制16、内部Piece坐标复制16、geometry外层Piece复制16。
+都经qqbar_init及多项式两槽calloc到place，批量mpz冷入口仍0。另8次为几何
+容器4×960、2×24、56、112字节存储。77次小申请的place/scan为47893281/
+47851915步，另8次为5075811/5057236步。最后一笔16字节未返回，只计已付前缀；
+此前85次（含boot）均成功返回。没有把“尝试数”当全部完成次数。
+
+归属基于当前ELF的实际退休控制流后缀、符号与源码语义，ELF无DWARF行映射，
+不声称完整栈展开。3次未知转移均早于这些分配后缀，逐次prior计数保留。
+实际move构造先init有效零值再swap；不能删init或仅标noexcept。后继优先验证
+几何中间复制的等价减少，再绑定新镜像按原供给复测；本轮未修改生产实现或
+估计可省总费，不恢复§61被否决对齐候选。保护主稿与原arena SHA保持。
+
+支线`explore/learned-query`新增合法AND夹具与固定源SHA运行器，真实Geometry/
+Index/PositionCommit/ReferenceController编译、运行均exit0，530项断言通过。
+90闭单位格、共同非零足迹及二维误差盒；检查六个驻留起点互斥和A/B/C全原MOVE
+不碰等待起点后，才通过native admitted接口安装原cap。真实几何输出D1/D2均由
+A、B阻塞，严格阈值分别33/20、53/20；D3仅由C阻塞。所有比较保持相同原轨迹、
+两个固定机会，只提交被查询者证书。AB/BA第二次后可组件准入并安装2个新动作，
+AC/BC/CA/CB为1；等号不释放、未查询q不更新、直接mask一致、终点责任保留通过。
+
+该夹具人工证书不是AUTH，其他准入条件明确预设；标量控制器提供同原MOVE可达
+见证，未积分二维误差z（可取盒内z=0作为存在见证）。没有完整费用、任务服务
+或实际学习/SRDC比较，2对1不是任务完成或策略胜负。它只把此前抽象AND图推进为
+给定前提下空间合法的组件见证。后继先同输入/机会/成本隔离单步与有限前瞻，
+再固定决策器检验学习；不据此声称真实实例普遍或新模型已增加创新证据。
+
+详细归属、命令、守恒与分工见本机
+`implementation_binding_evidence/ALLOCATION_ATTRIBUTION_AND_LEGAL_AND_20260924.md`，
+原始日志及构建SHA在`allocation_attribution_20260924/`。支线源码和人工运行
+回执在`exploration/learned_query/legal_and_*`，九个依赖头仅只读临时复制；不
+公开主线源码/原始二进制。本轮无研究输入、保护参数赋值、扩供给或模型训练。
