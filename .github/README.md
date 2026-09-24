@@ -1,10 +1,20 @@
 # MAPF 项目当前入口
 
-2026-09-24 当前主线：原供给下的调用来源与费用归属已完成。setup的53,477,376步中，98.937448%用于分配扫描，place整体占99.049535%；77次16字节申请均来自首个move-A几何的数值初构、返回移动和三层坐标/容器复制。只读观察版92条业务记录与原版逐字一致，86条费用段逐行守恒，仍自然exit1，未发布查询。批量冷入口仍为0；先前对齐特化仍撤回。详见Q2 §62及[本机归属报告](../implementation_binding_evidence/ALLOCATION_ATTRIBUTION_AND_LEGAL_AND_20260924.md)。
+2026-09-24 最新主线：减少几何外层 Piece 复制的隔离候选已完成8954项原生差分检查、新镜像绑定及原供给实际复测。首个Geometry的第三cell开始位置从供给行98提前到87，窗口末也推进到更深的构造阶段；完整查询仍在C准备阶段自然exit1，原setup预算53,477,376步耗尽。观察版与候选plain的92条业务记录逐字一致、86条关闭费用段守恒；扫描仍占setup的99.012240%。候选留在本机隔离证据包，原生产profile和默认镜像保持，未宣布完整修复。详见Q2 §63及[本机交付报告](../implementation_binding_evidence/GEOMETRY_COPY_AND_ERROR_GUIDANCE_20260924.md)。
+
+同一远端仓库保留三条分支，不相互混入未验证结果：
+
+| 分支 | 研究职责与当前证据 |
+| --- | --- |
+| [main](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/main) | PIE-D空间误差执行、可信释放与付费查询；当前瓶颈是C准备阶段可负担性 |
+| [explore/learned-query](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/explore/learned-query) | 小型查询概率模型、组合查询决策；合法AND组件见证通过，尚无模型净收益 |
+| [explore/error-aware-guidance](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/explore/error-aware-guidance) | 新建的误差相关占用/等待代价及路径引导方向；790项断言支持共同t=4观测下路径排序反转，尚未训练模型 |
+
+新支线零误差时上绕/下绕到达时间约6.928/8.363，双方误差盒半宽1/5时约9.196/8.363。它是人工预定路径在共同安全、观察和准入条件下的存在见证；不代表在线路径规划、学习收益或LMAPF吞吐。先检查共同观察时机与几何间隙变化，再比较解析代价和学习。
 
 学习分支的[合法组合阻塞预检](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/learned-query/exploration/learned_query/legal_and_precheck.md)通过530项真实组件断言：两个需求共享A/B责任，固定两次机会下AB/BA可组件准入2个需求，其余四顺序为1。足迹、非零误差盒、严格阈值、起点互斥与同原MOVE可达性均有具名检查。人工证书和预设其他准入条件不替代生产AUTH或完整成本；未运行学习策略，不是任务收益结论。
 
-用户“推进主线”的当前要求覆盖源码内既有固定人工原型及必要诊断、修复、复测；下方旧只静态范围和未运行描述按历史阶段阅读。保护输入/参数、固定供给、冻结合同与规模实验边界保持，见操作边界第17项。下一项主线先验证几何中间复制的等价减少，支线先隔离有限前瞻的价值再评估学习；不把初始化费用直接判为可删除，也不重试已否决候选。
+用户“推进主线”的当前要求覆盖源码内既有固定人工原型及必要诊断、修复、复测；下方旧只静态范围和未运行描述按历史阶段阅读。保护输入/参数、固定供给、冻结合同与规模实验边界保持，见操作边界第17项。窄只读核验发现冻结73明确逐候选、单位步进扫描；跨占用槽/活块跳跃不能直接接入原基线。下一项主线分析该扫描的必要成本与可减少的源对象工作，不继续无依据堆叠微调；查询支线先隔离有限前瞻的价值。先前对齐特化仍撤回。
 
 2026-09-24 导师短样例：按“近3—5年”更新为正式卷期2022—2024年的五篇多机器人误差论文，约3000字LaTeX；2篇T-RO、1篇Autonomous Robots、2篇RA-L，Neural-Swarm2另注明2021年提前上线。两篇2018年样例已替换，原文和源文件集中在本机桌面独立目录，引用及结构静态检查、科研导师技能定点复核通过。未调用编译器，旧版及外部自动生成的编译产物已清理；原55份PDF和受保护主稿保持，详见[文献进度](../GITHUB_PROGRESS.md)。
 
@@ -21,6 +31,8 @@
 [公开进度一页表](../GITHUB_PROGRESS.md)及[导师汇报说明](../RESEARCH_BRIEF_FOR_ADVISOR.md)可直接在GitHub阅读。[本地详细准备表](../implementation_binding_evidence/SCALE_RUN_READINESS_20260920.md)和下文implementation路径指向尚未随本次进度同步上传的本地工件。
 
 ## 当前裁决、方案和证据
+
+- Q2 §63接续[几何复制候选及新支线首检](../implementation_binding_evidence/GEOMETRY_COPY_AND_ERROR_GUIDANCE_20260924.md)：两个Astra Ultra子智能体分别交付候选/观察器和路径见证，根核源码、实际执行主线与独立核账；真实Claude Opus只作新支线设计审计，未审最终程序或运行实验。主线候选各完整工厂减少40次直接C++ qqbar_init，仅支持局部改善。新支线以真实组件导出等待，不用任意成本表；人工AUTH/END前提、固定观测依赖和未计完整费用均保留。
 
 - Q2 §62接续[主线归属与支线合法预检](../implementation_binding_evidence/ALLOCATION_ATTRIBUTION_AND_LEGAL_AND_20260924.md)：主线观察器只读真实meter差值、实际PC及控制流后缀，分行/阶段/分配守恒；未知控制转移明确保留，不声称完整栈回溯。支线从真实空间几何导出AND关系并验证组件准入，尚无付费查询或学习净收益。实际Claude Opus只负责方法审计，Astra Ultra子智能体交付两项实现，根执行主线并独立复算。
 
