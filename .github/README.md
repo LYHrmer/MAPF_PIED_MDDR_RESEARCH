@@ -1,5 +1,9 @@
 # MAPF 项目当前入口
 
+2026-09-24 最新实施（Q2 §66）：**历史模型已进入真实组件决策闭环。** [查询线](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/learned-query/exploration/learned_query/CALIBRATED_TASK_MODEL.md)从先前已交付END拟合运动时长，4376检查通过；合法较快条件下，查询C改为等待，任务曲线相同而少查一次，较慢条件仍查C。[路径线](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/HISTORY_CALIBRATION_PRECHECK.md)3722检查通过：历史尺度修复失配先验选错路，实际到达5.750325→5.231320，改善约0.519005。两线拟合均与简单单END解析校准相同，已有历史适配机制结果，尚无复杂学习的独立优势或全费用净收益。
+
+主线连续实现活块跳跃和持久扫描下界两个隔离后继，差分与新三ELF/实际发布图绑定均通过；原供给实跑仍未让首Geometry返回。最新候选前四cell在row50完成、第五在51，3879次place入口；分配两函数合计19,984,061步、占setup37.37%，不能忽略新编译拆出的Arena函数。原setup仍53,477,376步，保留失败前缀。原实现/镜像/合同/主稿保持，详细本机证据为`implementation_binding_evidence/arena_firstfit_successor_20260924/REPORT.md`。下方§65及更早内容按阶段历史阅读。
+
 2026-09-24 最新路线（Q2 §65）：独立Astra Ultra技术评估与科研导师skill评估均建议把主要科研投入放到查询的连续任务闭环。主线先试合法活块跳跃的隔离实现后继，EH尾部分区改作备选；查询从原MOVE完成接到真实任务服务与下一任务，并对照不依赖最终评估停止时刻的滚动决策；路径先做prefix/full-MOVE×基础/解析等待2×2。有效多运行日志形成后，可并行轻量学习，不要求两步非学习先获胜。当前只是路线裁决，未新增实现或实验；§64实测结果保持。两份独立评估及根方案在本机`implementation_binding_evidence/THREE_TRACK_*POST_VALIDATION*20260924.md`。
 
 2026-09-24 接续验证（Q2 §64）：**研究继续，工程和决策目标各有明确改进点。** 当前几何候选仅140次必需分配穿过常驻异常池的扫描下界就达86,517,760步，超过原准备预算53,477,376；停止以少量复制微调闭合该窗口，下一项评估同总内存的异常池尾部分区后继。原生产与冻结合同保持，该后继尚未实现。
@@ -17,8 +21,8 @@
 | 分支 | 研究职责与当前证据 |
 | --- | --- |
 | [main](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/main) | PIE-D空间误差执行、可信释放与付费查询；当前瓶颈是C准备阶段可负担性 |
-| [explore/learned-query](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/explore/learned-query) | 小型查询概率模型、组合查询决策；已完成立即执行比较，转向完成导向选择 |
-| [explore/error-aware-guidance](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/explore/error-aware-guidance) | 误差相关占用/等待代价；已核观测时机效应，下一项原prefix与解析等待对照 |
+| [explore/learned-query](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/explore/learned-query) | 时长拟合已用于连续任务查询决策，有限例省去冗余查询；完整计费待接 |
+| [explore/error-aware-guidance](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/explore/error-aware-guidance) | 合法历史校准已修复失配先验选路；任务续接与非平稳条件待验 |
 
 新支线零误差时上绕/下绕到达时间约6.928/8.363，双方误差盒半宽1/5时约9.196/8.363。它是人工预定路径在共同安全、观察和准入条件下的存在见证；不代表在线路径规划、学习收益或LMAPF吞吐。先检查共同观察时机与几何间隙变化，再比较解析代价和学习。
 
