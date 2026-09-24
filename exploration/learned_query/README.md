@@ -2,6 +2,8 @@
 
 创建及更新：2026-09-24。状态：轻量概率模型、影子评分器及[估计／决策分离诊断](DECISION_ABLATION.md)已建立；后续已完成[组件已提交状态到模型入口的验证](COMPONENT_VALIDATION.md)，57 项 Python 检查及29项人工输入的真实 C++ 组件断言通过。[数据接口契约](DATA_INTERFACE.md)中的生产外层接线仍未完成。训练仅发生在明确标注的人工软件样例上，没有研究数据、原系统实验或吞吐收益结论。[独立评审](REVIEW_20260924.md)支持继续验证实际组合查询价值，保留原评分作对照。运行命令和限制见[实现说明](IMPLEMENTATION.md)。
 
+新增[组合阻塞合法几何预检](legal_and_precheck.md)：真实 Geometry/Index/PositionCommit 与同原 MOVE ReferenceController 上 530 项断言通过，两个需求确需 A/B 两责任都退休；两次固定查询机会下 A→B/B→A 可准入 2 个需求，其余四种顺序为 1。它是人工 native 机制与可达性见证，未接生产 AUTH、完整费用或任务完成链，不是学习收益。
+
 ## 工作区与基线
 
 - 分支：`explore/learned-query`。

@@ -1,0 +1,167 @@
+{
+  "started_utc": "2026-09-24T07:04:13.192840+00:00",
+  "status": "passed",
+  "source_kind": "artificial_native_legal_and_precheck",
+  "source_root_read_only": "/home/lyh/MAPF_PIED_MDDR_RESEARCH",
+  "source_header_sha256": {
+    "implementation/pie_position_commit/include/pie_position_commit.hpp": "2f7be5ec11293df2fdbda3919393f8a30b43b2a432f56879e59f26d0a3b9d7c6",
+    "implementation/pie_progress_retirement/include/pie_progress_retirement.hpp": "ddd94e49c3dd689b84d585ae374a65b99f49577bf9752342f46d688fbd0f7cb1",
+    "implementation/pie_query/include/pie_query_scheduler.hpp": "a1572501e39b711b9c8253e05083aa5799884145263d81352c9d71fd1965fefb",
+    "implementation/pie_query/include/pie_query_index.hpp": "936a30e4e19c85977ab187181dbe59130daffb49c71a60b41ba28d5c3c348c70",
+    "implementation/pie_query/include/pie_release_threshold.hpp": "00660d499c0169cd843527dd2b1b3e35cdb4035b8e0e9348dc6734a68cf30c79",
+    "implementation/pie_geometry/include/pie_geometry.hpp": "ff432b29d131165b1a95f3ffa737cfea47bd1c09ef05f19516b9847be72d1507",
+    "implementation/pie_geometry/include/pie_geometry_flint.hpp": "239040d62285b5f370233b9732824ea6ff2747193c8ad404f8ef93498a806900",
+    "implementation/pie_reference/include/pie_reference_controller.hpp": "a1cf2b7834efe3ccd344b8226a3c5e55c56857d3ac55a3c05281cfde087671ce",
+    "implementation/pie_reference/include/pie_reference_segment.hpp": "0e56a33e4b5d93ad751b81fee50e89f96e05d139810ddbfeb2a3fcbc10369d55"
+  },
+  "fixture_sha256": "a07e7c102a37f8c48e8c99d10cd59d62cd678e76c155b3ada6ee3853c084a3f0",
+  "runner_sha256": "342ae8a6b66139edcaad0692120290983b98d11df3be340198649d47c53faf13",
+  "commands": [
+    {
+      "argv": [
+        "rtk",
+        "proxy",
+        "g++-11",
+        "-std=c++14",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-fno-elide-constructors",
+        "-I",
+        "/tmp/mapf_legal_and_1vlz5z6c",
+        "-isystem",
+        "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/host_sdk/usr/include",
+        "-isystem",
+        "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/flint_host_config/src",
+        "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/legal_and_fixture.cpp",
+        "-L",
+        "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/flint_host_config",
+        "-L",
+        "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/host_sdk/usr/lib/x86_64-linux-gnu",
+        "-Wl,-rpath,/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/flint_host_config",
+        "-lflint",
+        "-lmpfr",
+        "-lgmp",
+        "-o",
+        "/tmp/mapf_legal_and_1vlz5z6c/legal_and_fixture"
+      ],
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "rtk",
+        "proxy",
+        "/tmp/mapf_legal_and_1vlz5z6c/legal_and_fixture"
+      ],
+      "timeout_seconds": 60,
+      "exit_code": 0,
+      "stdout": "{\"source_kind\":\"artificial_native_legal_and_precheck\",\"initial_relations\":{\"D1\":[{\"owner\":\"A\",\"threshold\":\"33/20\",\"retirable\":true},{\"owner\":\"B\",\"threshold\":\"33/20\",\"retirable\":true}],\"D2\":[{\"owner\":\"A\",\"threshold\":\"53/20\",\"retirable\":true},{\"owner\":\"B\",\"threshold\":\"53/20\",\"retirable\":true}],\"D3\":[{\"owner\":\"C\",\"threshold\":\"33/20\",\"retirable\":true}]},\"sequences\":[{\"order\":[\"A\",\"B\"],\"ready_after_first\":0,\"ready_after_second\":2,\"native_admitted_actions\":2},{\"order\":[\"A\",\"C\"],\"ready_after_first\":0,\"ready_after_second\":1,\"native_admitted_actions\":1},{\"order\":[\"B\",\"A\"],\"ready_after_first\":0,\"ready_after_second\":2,\"native_admitted_actions\":2},{\"order\":[\"B\",\"C\"],\"ready_after_first\":0,\"ready_after_second\":1,\"native_admitted_actions\":1},{\"order\":[\"C\",\"A\"],\"ready_after_first\":1,\"ready_after_second\":1,\"native_admitted_actions\":1},{\"order\":[\"C\",\"B\"],\"ready_after_first\":1,\"ready_after_second\":1,\"native_admitted_actions\":1}],\"checks\":530,\"endpoint_retained\":true}\n",
+      "stderr": ""
+    }
+  ],
+  "production_AUTH_or_publication_verified": false,
+  "full_fee_chain_or_B1_accounting": false,
+  "research_payload_or_model_training": false,
+  "original_scheduler_or_learning_improvement_claim": false,
+  "binary_sha256": "8873531ddbbd99daad0d374d19f766026894fcef81ce939489dd0ce4a6e4e319",
+  "result": {
+    "source_kind": "artificial_native_legal_and_precheck",
+    "initial_relations": {
+      "D1": [
+        {
+          "owner": "A",
+          "threshold": "33/20",
+          "retirable": true
+        },
+        {
+          "owner": "B",
+          "threshold": "33/20",
+          "retirable": true
+        }
+      ],
+      "D2": [
+        {
+          "owner": "A",
+          "threshold": "53/20",
+          "retirable": true
+        },
+        {
+          "owner": "B",
+          "threshold": "53/20",
+          "retirable": true
+        }
+      ],
+      "D3": [
+        {
+          "owner": "C",
+          "threshold": "33/20",
+          "retirable": true
+        }
+      ]
+    },
+    "sequences": [
+      {
+        "order": [
+          "A",
+          "B"
+        ],
+        "ready_after_first": 0,
+        "ready_after_second": 2,
+        "native_admitted_actions": 2
+      },
+      {
+        "order": [
+          "A",
+          "C"
+        ],
+        "ready_after_first": 0,
+        "ready_after_second": 1,
+        "native_admitted_actions": 1
+      },
+      {
+        "order": [
+          "B",
+          "A"
+        ],
+        "ready_after_first": 0,
+        "ready_after_second": 2,
+        "native_admitted_actions": 2
+      },
+      {
+        "order": [
+          "B",
+          "C"
+        ],
+        "ready_after_first": 0,
+        "ready_after_second": 1,
+        "native_admitted_actions": 1
+      },
+      {
+        "order": [
+          "C",
+          "A"
+        ],
+        "ready_after_first": 1,
+        "ready_after_second": 1,
+        "native_admitted_actions": 1
+      },
+      {
+        "order": [
+          "C",
+          "B"
+        ],
+        "ready_after_first": 1,
+        "ready_after_second": 1,
+        "native_admitted_actions": 1
+      }
+    ],
+    "checks": 530,
+    "endpoint_retained": true
+  },
+  "finished_utc": "2026-09-24T07:04:23.360306+00:00"
+}
