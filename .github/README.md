@@ -1,20 +1,28 @@
 # MAPF 项目当前入口
 
-2026-09-24 最新主线：减少几何外层 Piece 复制的隔离候选已完成8954项原生差分检查、新镜像绑定及原供给实际复测。首个Geometry的第三cell开始位置从供给行98提前到87，窗口末也推进到更深的构造阶段；完整查询仍在C准备阶段自然exit1，原setup预算53,477,376步耗尽。观察版与候选plain的92条业务记录逐字一致、86条关闭费用段守恒；扫描仍占setup的99.012240%。候选留在本机隔离证据包，原生产profile和默认镜像保持，未宣布完整修复。详见Q2 §63及[本机交付报告](../implementation_binding_evidence/GEOMETRY_COPY_AND_ERROR_GUIDANCE_20260924.md)。
+2026-09-24 接续验证（Q2 §64）：**研究继续，工程和决策目标各有明确改进点。** 当前几何候选仅140次必需分配穿过常驻异常池的扫描下界就达86,517,760步，超过原准备预算53,477,376；停止以少量复制微调闭合该窗口，下一项评估同总内存的异常池尾部分区后继。原生产与冻结合同保持，该后继尚未实现。
+
+查询分支已实际比较原 SRDC/RR 与同预测的单步/两步决策，逐次提交后立即执行，321项断言通过：截止6时单步完成1个 MOVE、其余0个；截止7时单步1个、其余2个。原 SRDC 无报价回退RR，两步没有胜过它。后继围绕预计完成时刻选择查询，详见[决策执行报告](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/learned-query/exploration/learned_query/DECISION_EXECUTION.md)。
+
+路径分支时机预检3042项断言通过：同一非零误差下，t=2与精确等号观察尚不释放，t=2.5上绕恢复较快，t=4下绕较快。下一项比较原prefix与full-MOVE授权、基础运动代价与解析等待代价的2×2组合，再确定学习应预测哪些剩余等待。见[时机报告](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/TIMING_PRECHECK.md)。两支线当前结果均是有限组件机制结果，尚无模型净任务收益。
+
+新增定点文献核查覆盖3篇锚点和10篇直接近邻。付费感知本身已有[AISTATS 2026方法](https://proceedings.mlr.press/v300/kapoor26a.html)；本项目拟聚焦空间误差约束下，怎样根据共享阻塞、证据时效与完成需求分配查询，而非将加入模型单独作为创新。本机综合报告为`implementation_binding_evidence/THREE_TRACK_VALIDATION_20260924.md`。
+
+上一轮（Q2 §63）：减少几何外层 Piece 复制的隔离候选已完成8954项原生差分检查、新镜像绑定及原供给实际复测。首个Geometry的第三cell开始位置从供给行98提前到87，窗口末也推进到更深的构造阶段；完整查询仍在C准备阶段自然exit1，原setup预算53,477,376步耗尽。观察版与候选plain的92条业务记录逐字一致、86条关闭费用段守恒；扫描仍占setup的99.012240%。候选留在本机隔离证据包，原生产profile和默认镜像保持，未宣布完整修复。详见[本机交付报告](../implementation_binding_evidence/GEOMETRY_COPY_AND_ERROR_GUIDANCE_20260924.md)。
 
 同一远端仓库保留三条分支，不相互混入未验证结果：
 
 | 分支 | 研究职责与当前证据 |
 | --- | --- |
 | [main](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/main) | PIE-D空间误差执行、可信释放与付费查询；当前瓶颈是C准备阶段可负担性 |
-| [explore/learned-query](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/explore/learned-query) | 小型查询概率模型、组合查询决策；合法AND组件见证通过，尚无模型净收益 |
-| [explore/error-aware-guidance](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/explore/error-aware-guidance) | 新建的误差相关占用/等待代价及路径引导方向；790项断言支持共同t=4观测下路径排序反转，尚未训练模型 |
+| [explore/learned-query](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/explore/learned-query) | 小型查询概率模型、组合查询决策；已完成立即执行比较，转向完成导向选择 |
+| [explore/error-aware-guidance](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/explore/error-aware-guidance) | 误差相关占用/等待代价；已核观测时机效应，下一项原prefix与解析等待对照 |
 
 新支线零误差时上绕/下绕到达时间约6.928/8.363，双方误差盒半宽1/5时约9.196/8.363。它是人工预定路径在共同安全、观察和准入条件下的存在见证；不代表在线路径规划、学习收益或LMAPF吞吐。先检查共同观察时机与几何间隙变化，再比较解析代价和学习。
 
 学习分支的[合法组合阻塞预检](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/learned-query/exploration/learned_query/legal_and_precheck.md)通过530项真实组件断言：两个需求共享A/B责任，固定两次机会下AB/BA可组件准入2个需求，其余四顺序为1。足迹、非零误差盒、严格阈值、起点互斥与同原MOVE可达性均有具名检查。人工证书和预设其他准入条件不替代生产AUTH或完整成本；未运行学习策略，不是任务收益结论。
 
-用户“推进主线”的当前要求覆盖源码内既有固定人工原型及必要诊断、修复、复测；下方旧只静态范围和未运行描述按历史阶段阅读。保护输入/参数、固定供给、冻结合同与规模实验边界保持，见操作边界第17项。窄只读核验发现冻结73明确逐候选、单位步进扫描；跨占用槽/活块跳跃不能直接接入原基线。下一项主线分析该扫描的必要成本与可减少的源对象工作，不继续无依据堆叠微调；查询支线先隔离有限前瞻的价值。先前对齐特化仍撤回。
+用户“推进主线”的当前要求覆盖源码内既有固定人工原型及必要诊断、修复、复测；下方旧只静态范围和未运行描述按历史阶段阅读。保护输入/参数、固定供给、冻结合同与规模实验边界保持，见操作边界第17项。已证明当前表示的必要费用超预算，下一项另立明确的实现布局后继，不能把改变扫描/内存制度说成原基线未变。先前对齐特化仍撤回。
 
 2026-09-24 导师短样例：按“近3—5年”更新为正式卷期2022—2024年的五篇多机器人误差论文，约3000字LaTeX；2篇T-RO、1篇Autonomous Robots、2篇RA-L，Neural-Swarm2另注明2021年提前上线。两篇2018年样例已替换，原文和源文件集中在本机桌面独立目录，引用及结构静态检查、科研导师技能定点复核通过。未调用编译器，旧版及外部自动生成的编译产物已清理；原55份PDF和受保护主稿保持，详见[文献进度](../GITHUB_PROGRESS.md)。
 

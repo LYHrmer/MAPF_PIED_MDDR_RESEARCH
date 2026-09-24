@@ -1,6 +1,10 @@
 # 实验前进度入口
 
-2026-09-24 最新主线：隔离的几何外层Piece复制候选已完成8954项原生差分检查，两个完整工厂各少40次直接C++ qqbar_init。实际新镜像按原供给复测，首个Geometry的第三cell从供给行98提前到87，窗口末构造位置更深；完整查询仍在C准备阶段自然exit1，setup仍耗尽53,477,376步。只读观察版与候选plain的92条记录逐字相同、86条费用段守恒，扫描仍占setup的99.012240%。只支持局部前缀改善，无整次费用或任务收益；候选留本机隔离，原生产profile/default镜像保持。详见Q2 §63及本机`implementation_binding_evidence/GEOMETRY_COPY_AND_ERROR_GUIDANCE_20260924.md`。
+2026-09-24 最新（Q2 §64）：三线有限验证完成。主线当前表示的必需扫描下界86,517,760步已超过53,477,376步预算；转向同总内存的异常池尾部分区候选设计，尚未实现。查询线完成原选择器/单步/两步的立即执行比较：截止6时单步1对0、截止7时1对2；两步与无报价的原SRDC/RR同解。路径线完成共同观察时机比较：t=2与阈值等号不释放，t=2.5上绕较快、t=4下绕较快。下一项分别为完成导向查询、原prefix与解析等待2×2对照；学习用于改善可观测历史下的证据/等待预测，其独立价值仍待实际比较。
+
+新增[查询执行报告](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/learned-query/exploration/learned_query/DECISION_EXECUTION.md)及[路径时机报告](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/TIMING_PRECHECK.md)，严格编译/原生运行分别通过321、3042项断言。根独立复核源指纹、真实事件与下界算术。文献子智能体核3篇锚点和10篇近邻，提示贡献应落在空间误差安全层上的动态证据与真实完成，而非AND或付费观察概念本身。本机详报：`implementation_binding_evidence/THREE_TRACK_VALIDATION_20260924.md`。以下§63及更早记录保留阶段历史。
+
+上一轮（Q2 §63）：隔离的几何外层Piece复制候选已完成8954项原生差分检查，两个完整工厂各少40次直接C++ qqbar_init。实际新镜像按原供给复测，首个Geometry的第三cell从供给行98提前到87，窗口末构造位置更深；完整查询仍在C准备阶段自然exit1，setup仍耗尽53,477,376步。只读观察版与候选plain的92条记录逐字相同、86条费用段守恒，扫描仍占setup的99.012240%。只支持局部前缀改善，无整次费用或任务收益；候选留本机隔离，原生产profile/default镜像保持。详见本机`implementation_binding_evidence/GEOMETRY_COPY_AND_ERROR_GUIDANCE_20260924.md`。
 
 同仓库新增 [explore/error-aware-guidance](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/explore/error-aware-guidance)，源于main@af17410，与现有查询学习分支并列。真实组件预检790项断言通过：共同t=4观测下，零误差上绕/下绕到达时间约6.928/8.363；双方误差盒半宽1/5时约9.196/8.363。空间误差、观察规则和保守准入共同造成这两条预定合法路径的排序反转。未训练模型、未运行在线规划/lifelong任务流，人工AUTH/END前提及未计全部费用的限制见[研究合同](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/RESEARCH_CONTRACT.md)。
 
@@ -8,7 +12,7 @@
 
 当前范围包含既有固定人工原型的必要诊断、修复和复测；旧“只静态/等待首次运行”描述为历史阶段。研究输入、保护参数、原固定供给和冻结科学合同保持。对分配器的窄只读核验查明：冻结73明确逐候选单位步进，跨已占槽/活块跳跃不能直接接入，即使first-fit输出可等价；本轮未实施或运行它们。主线下一步分析必要扫描费用及源对象表示，先前对齐特化仍撤回。查询支线先隔离有限前瞻；路径支线先检查共同观测时机、几何间隙/误差盒及解析代价对照。两个Astra Ultra子智能体交付实现，根执行主线并核账；真实Claude Opus完成新路径预检设计审计，未审最终程序或运行实验，采纳与纠正意见分别记录。
 
-以下2026-09-21实现表格及后续说明保留为历史快照，最新运行状态以本段与Q2 §63为准；文献工作按各自日期记录。
+以下2026-09-21实现表格及后续说明保留为历史快照，最新运行状态以页首与Q2 §64为准；文献工作按各自日期记录。
 
 2026-09-24 导师短样例：按用户“近3—5年、多机器人规划且与误差相关、优先高影响力期刊”的要求，交付约3000字LaTeX及同目录五篇原文，替换原样例两篇2018年论文。现选MA-STL（RA-L 2022）、Neural-Swarm2（T-RO 2022，注明2021年提前上线）、B-UAVC（Autonomous Robots 2022）、CC-K-CBS（RA-L 2024）及Filtered RL（T-RO 2024）。2篇T-RO、1篇Autonomous Robots、2篇RA-L，2025 JIF分别按11.1/6.0/5.3核官方来源。重点读引言、问题定义、结论与作者未来工作，区分已有全过程跟踪界、学习残差条件下的误差最终界及概率风险界；科研导师技能独立定点复核通过。五条引用、LaTeX结构、原文完整性和本地链接静态检查通过；未调用编译器，目录中旧版及外部自动生成的综述编译产物已清理，仅保留五篇原文PDF。原55份PDF和受保护主稿哈希不变，本轮未启动研究程序。
 
