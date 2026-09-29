@@ -1,5 +1,9 @@
 # 学习辅助进度查询：探索说明
 
+2026-09-29 接续：[当前任务流时目标结果](OBJECTIVE_TASK_RESULTS.md)与[独立导师审查](OBJECTIVE_TASK_MENTOR_REVIEW_20260929.md)已完成。六组98次完整episode、882任务；同一AR/lag2预测下慢例C→AB，全程flow40→39，同时多查询一次。快例冗余查询及隐藏突变损失保留，AR仍与lag2同效。最终六组native成功，原wrapper分析失败保留，独立offline恢复重算72次选择/596候选及旧62项结果通过；没有追加native重跑。active/不可行输入分支没有本表运行覆盖。这是目标消融，不是外部baseline或净收费收益。[复核入口](objective_task_recover.py)与[98行完整结果](objective_task_results_20260929.csv)已归档。
+
+下一步接主线真实查询费用、在新公开任务中覆盖active状态并验证泛化；外部论文基线遵循[三线共同设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/RESEARCH_DESIGN_AND_BASELINES_20260929.md)，内部规则不替代PIE-D/GPIBT/OnlineGGO作者方法。以下为此前时序预测与机制结果。
+
 最新[时序历史—任务后继](TEMPORAL_TASK_MODEL.md)已通过六个固定实例、62个完整评价episode（558任务、744条requester MOVE，30,900项native检查）。实际训练AR(1)，与last/mean3/median3/lag2同信息比较，并接入明确人工native报价的原SRDC PositiveScore诊断。AR与lag2完全同效；准确预测在短窗口规则下也未必改善全程流时，隐藏突变负结果保留。新增[事前方法合同](TEMPORAL_TASK_CONTRACT.md)、[完整CSV](temporal_task_results_20260929.csv)及[原始回执](temporal_task_run_20260929_03.json)。当前没有独立学习优势或生产完整费用收益证据。
 
 最新[历史时长拟合闭环](CALIBRATED_TASK_MODEL.md)已实际训练并运行，4376项检查通过：模型从此前独立MOVE的已交付END记录拟合时长，再参与查询/WAIT选择。合法较快条件下，拟合模型比固定先验少查询一次、任务曲线相同；较慢条件仍查C。单END解析校准与拟合相同，因此有历史适配收益，尚无学习优于解析或完整净费用证据。下面连续任务报告是此前阶段记录。
