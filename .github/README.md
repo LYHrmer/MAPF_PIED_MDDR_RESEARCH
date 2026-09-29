@@ -1,5 +1,13 @@
 # MAPF 项目当前入口
 
+2026-09-29 三线更新（Q2 §70）：**主线进入真实物理历史回放；两支线已从单动作推进到完整任务；公开作者基线开始实际复现。** 后续分别以完整收费查询、任务目标对齐、替代论文底座为目标。已分别完成Astra独立技术判断和科研导师skill判断，按“一篇当前主稿＋一条可替代底座路线”组织，不以加入学习模块充当贡献。
+
+主线四个隔离后继实现控制器直接构造、有理报文验证、精确有理/共享只读代数存储和整数规范检查去格式化。固定每行1,048,576供给下，C-business从有理验证后继54,769,862/54段降至42,568,936/42段（22.28%）；C row101实际877,185、余171,391。Natural/Strict均越过E控制器构造并进入历史回放，**仍在E row201耗尽，尚无POSITION/后车RUN/完整收据闭环**。原全链核账仍invalid；138+274项保存工件核验通过。详证本机`implementation_binding_evidence/NUMERIC_STORAGE_PROGRESS_20260929.md`；原稿已有修改保持。
+
+查询线已完成六条件62次完整任务episode（558任务），实际AR(1)与lag2同效；准确预测在旧窗口目标下仍可能选出全程流时更差的动作。新后继完成98次任务运行/882任务，以当前已揭示任务流时为目标：慢AR/lag2由C→AB，全任务flow40→39、末服务14→13，同时多查询一次；部分快条件多查却无收益、隐藏突变误判保留。72次选择及旧62项结果独立复算通过；AR仍无超lag2增益。两次日志/分析失败回执保留，最终native均成功，另行离线恢复分析没有重跑native。路径线64组合/124完成任务表明，正常END下非零误差仍可影响路线等待，但同信息解析解释全部完成到达，没有已证学习残差。[查询结果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/learned-query/exploration/learned_query/TEMPORAL_TASK_MODEL.md)、[路径结果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/CONTINUATION_RESULTS_20260929.md)。
+
+**论文主要基线必须来自已发表方法。** 完整作者PIE-D固定版本原码跑通100 robots×20步，52任务/2000动作独立核验；官方GPIBT原版及明确导出/seed适配跑通450步，并扩到两个作者工作负载×两个seed。OnlineGGO仅C++目标构建通过，学习策略评测仍待完成；LSMART有2 robots×200 ticks、3任务的闭环试运行，是试验台而非竞争算法。各运行设置不同，任务数不可横比。AR、lag2、解析、SRDC、RR、WAIT只列内部机制/消融。[设计与公平比较合同](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/RESEARCH_DESIGN_AND_BASELINES_20260929.md)、[作者工件报告](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/BASELINE_PREFLIGHT_20260929.md)。以下§69及更早文字为阶段历史，旧“只静态/两支线保持”不代表当前状态。
+
 2026-09-29 当前进展（Q2 §69）：**N费用封存阻点已通过，完整查询推进到E数值采样重建。** 原单行供给1,048,576下，Natural/Strict的N row155分别使用803,192/803,420，余245,384/245,156；发布和清理尾部row156–159均完成。Strict由仅切换制度循环的独立宿主入口实际验证。
 
 账本将不可变记录与小阶段根拆分，避免阶段转换深复制容器；23,640项历史差分及14,332项导入回归通过。随后用完整字段比较替换两份已验证REQUEST的重复编码，1,444组有效配对、80次非法拒绝检查通过。**E已读完物理历史并释放CAPTURE pin，仍在row201的参考控制器构造中耗尽；POSITION、后车RUN和费用反馈闭环尚未完成。** 全链核账仍invalid。

@@ -1,5 +1,13 @@
 # 实验前进度入口
 
+2026-09-29 三线更新（Q2 §70）：**主线进入真实物理历史回放；两支线已从单动作推进到完整任务；公开作者基线开始实际复现。** 后续分别以完整收费查询、任务目标对齐、替代论文底座为目标。已分别完成Astra独立技术判断和科研导师skill判断，按“一篇当前主稿＋一条可替代底座路线”组织，不以加入学习模块充当贡献。
+
+主线四个隔离后继实现控制器直接构造、有理报文验证、精确有理/共享只读代数存储和整数规范检查去格式化。固定每行1,048,576供给下，C-business从有理验证后继54,769,862/54段降至42,568,936/42段（22.28%）；C row101实际877,185、余171,391。Natural/Strict均越过E控制器构造并进入历史回放，**仍在E row201耗尽，尚无POSITION/后车RUN/完整收据闭环**。原全链核账仍invalid；138+274项保存工件核验通过。详证本机`implementation_binding_evidence/NUMERIC_STORAGE_PROGRESS_20260929.md`；原稿已有修改保持。
+
+查询线已完成六条件62次完整任务episode（558任务），实际AR(1)与lag2同效；准确预测在旧窗口目标下仍可能选出全程流时更差的动作。新后继完成98次任务运行/882任务，以当前已揭示任务流时为目标：慢AR/lag2由C→AB，全任务flow40→39、末服务14→13，同时多查询一次；部分快条件多查却无收益、隐藏突变误判保留。72次选择及旧62项结果独立复算通过；AR仍无超lag2增益。两次日志/分析失败回执保留，最终native均成功，另行离线恢复分析没有重跑native。路径线64组合/124完成任务表明，正常END下非零误差仍可影响路线等待，但同信息解析解释全部完成到达，没有已证学习残差。[查询结果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/learned-query/exploration/learned_query/TEMPORAL_TASK_MODEL.md)、[路径结果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/CONTINUATION_RESULTS_20260929.md)。
+
+**论文主要基线必须来自已发表方法。** 完整作者PIE-D固定版本原码跑通100 robots×20步，52任务/2000动作独立核验；官方GPIBT原版及明确导出/seed适配跑通450步，并扩到两个作者工作负载×两个seed。OnlineGGO仅C++目标构建通过，学习策略评测仍待完成；LSMART有2 robots×200 ticks、3任务的闭环试运行，是试验台而非竞争算法。各运行设置不同，任务数不可横比。AR、lag2、解析、SRDC、RR、WAIT只列内部机制/消融。[设计与公平比较合同](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/RESEARCH_DESIGN_AND_BASELINES_20260929.md)、[作者工件报告](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/BASELINE_PREFLIGHT_20260929.md)。以下§69及更早文字为阶段历史，旧“只静态/两支线保持”不代表当前状态。
+
 2026-09-29 主线进展（Q2 §69）：**N row155费用封存及后续发布/清理已在两制度下通过，原完整流程推进到E row201。** 原预算1,048,576不变；Natural实际803,192、余245,384，Strict实际803,420、余245,156。N-out-accounting五行完整实际分别952,862/953,090，Strict收费5,242,880。独立Strict入口仅改变制度循环。
 
 新增隔离后继将LedgerRecords只读共享与小LedgerState根分离；记录修改仍复制，阶段转换共享记录，Prepared/root/旧快照/终态语义保持。26历史、23,640项差分及190用例、14,332项导入回归通过。代价是Natural N-out四行实际从185,103增到215,511（增加约16.4%），不声称所有阶段均加速。
@@ -46,23 +54,15 @@
 
 历史自动目标曾因当时只静态的边界标记**受阻（blocked）**。该历史状态不代表2026-09-24仍未运行；当前已实际完成固定查询首跑和有限诊断，缺口转为准备阶段可负担性及完整闭环，见Q2 §61。
 
-| 工作 | 当前状态 |
+| 工作 | 当前状态（2026-09-29，Q2 §70） |
 | --- | --- |
-| 问题、算法与分析 | D_SRDC_v1确定；已有阈值条件、预测与安全释放分离、条件增量等价分析。 |
-| 比较与消融 | SRDC、RR、COUNT及三个单项消融已实现，12组固定策略检查通过；后继候选不替换冻结正式臂。 |
-| 已运行组件 | 查询/位置提交、费用核心、受保护存储、旧固定worker、COST本地封存等具名有限检查通过。 |
-| 最小原生闭环 | 首跑exit 0，10条实际事件。后车先受阻静止；前车认证进度0→2，退休两个资源单元，后车获准RUN，随后两原MOVE终点关闭。真实足迹与非零误差盒参与几何计算。SRDC无报价时合法轮询，未造费用数据。 |
-| 费用反馈诊断 | 真实B1三负载得到21/56/7步，经账本、codec与收据算术使下一选择A→B；两制度actual均84，收费84/95。首次场景owner绑定失败已保留，修正后通过。只计这些B1负载，不是完整查询费用。 |
-| 最新集成 | 真实关闭段付费SOURCE→guest账本/codec→COST封存→保留原issuer的N/E/C通道→接收准入已有源码；三份RV64镜像和实际宿主驱动静态链接通过。两轮共用各站INIT生命周期的固定驱动已成形，未执行。 |
-| 完整查询站点 | 新FixedQueryStation绑定实际owner/job/Compute lane及独立发布费用SOURCE。N双向证据复制、原件回收与来源启动均由同Query账户付费；消息放行需要真实发布与后继guest检查点。只有静态证据。 |
-| 中心与核账 | CenterQueryFlow沿同一bridge接通选择、封存请求outbox、实际POSITION准入/提交、Query输入清理、终态Collector、原Position根收据安装与下一choose。完整业务guest尚未执行，核账脚本无新日志可核。 |
-| 请求与POSITION | outbox保留实际封存exporter；真实CAPTURE在原行冻结物理控制器当前根，guest付费重建并计算证书。原始输入限精确有理profile，内部代数状态仍精确。COST与证据双上下文保持。host/RV64组合静态检查通过。 |
-| 完整查询ELF | C请求→N出向→E真实CAPTURE/POSITION→N入向→C提交，及实际child责任、Query关闭段SOURCE、COST导出/发布、Collector/收据/后继报价，均已写入真实guest并静态链接。新loader绑定SHA/TLS/INIT与双上下文；实际私有kernel所需栈保守界1408 bytes。源码路径不是运行通过。 |
-| 最新宿主装配 | 三站C/N/E的20/12/14项边界脚本已接唯一世界驱动；真实E采样、C发布后原后车cap/RUN、四终态Collector/付费清退和下一choose均有实物。GNU11 C++20严格组合编译链接通过，未运行。 |
-| 普通发布图 | 17进口复用8张实际ELF图，保留条件双边、EBREAK及两个C finish虚调用目标。最大整行静态阈值1262低于固定每行1048576；此界不是实际账单，也不保证整个Query的Compute窗口足够。 |
-| 完整查询核账入口 | 原audit_cost_chain.py新增显式--full-query模式，复用原reader/字段/算术助手；校验实际行/job/supply、重算四类账户和声明总量、保留失败前缀。AST及旧默认模式静态兼容检查通过，没有新日志，也未执行核账器。 |
-| 当前缺口 | 验收同一真实查询的释放、原MOVE继续、全部费用与清理、后继报价使用；落实本批固定Compute供给与数值冷启动可负担性。没有新运行结果，不能由静态链接宣布全链闭合或规模就绪。 |
-| 已知失败 | 固定数值guest在NATURAL制度耗尽既定供给，STRICT未开始；保留冷启动成本和失败记录，不写成通过。 |
+| 主稿问题 | 有界空间误差下的执行占用、合法进度反馈与任务查询决策；学习是否构成独立贡献仍待识别。 |
+| 完整查询 | C/N/E准备、REQUEST发布/转发及N费用封存/发布/清理已实际通过；E完成物理历史读取和控制器构造，正在回放，row201仍耗尽。POSITION之后各阶段未运行通过。 |
+| 实际费用 | 原Natural和独立Strict均保留失败前缀；分站/分job费用可核，完整查询审计invalid。人工报价和局部负载不能替代完整COST。 |
+| 查询支线 | 六历史预测器与真实连续任务比较已完成；AR=lag2，短窗目标与全程flow有反转。新cohort-flow目标98episode配对消融已完成，慢例flow40→39，同时保留额外查询和隐藏突变损失。 |
+| 第三线 | 正常END下的64路线组合验证完成，强解析解释全部完成到达；GPIBT/OnlineGGO＋LSMART作为替代PIE-D底座候选。 |
+| 外部方法 | 完整作者PIE-D与官方GPIBT已有原生R0、独立轨迹核验；OnlineGGO学习策略尚未复现。LSMART是执行环境，内部规则不充当外部baseline。 |
+| 正式实验缺口 | 完整费用链、统一误差执行接口、学习残差数据、完整运行划分及公开地图规模对照。工程检查数不作为统计样本。 |
 
 POSITION证据成功提交即可按原规则释放资源、继续执行；成本收据异步更新后续查询报价。准备工作围绕完整闭环、必要联合验证、实验绑定收束，不增加重复全面审查或以零散测试数量充当规模证据。
 
