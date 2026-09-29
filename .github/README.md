@@ -1,5 +1,11 @@
 # MAPF 项目当前入口
 
+2026-09-29 当前进展（Q2 §68）：**C请求发布阻点已解决，请求已实际经N送达E。** Natural与Strict均验证：C请求准备使用1,044,801步，原单行供给1,048,576步，余3,775；后续发布、导出与转发均执行。Strict使用仅将制度循环改为Strict的独立宿主入口，guest、输入和供给相同。
+
+隔离后继保持first-fit结果，跳过必然失败的重复扫描；原Context的16,178项状态差分及39条边界历史通过。随后将已关闭费用段的两次账本克隆合为一次，190用例、14,332检查通过，N已进入实际COST封存内核。**完整查询仍未完成：两制度均停在N费用封存row155，尚未执行POSITION回传、后车RUN及收据反馈。** 现有完整核账仍为invalid；下一步聚焦该行的实际封存费用。82项原始工件核验及17项Strict前缀核验通过，仅证明本段进度。
+
+实现与原始回执保留在本机隔离目录，详见`implementation_binding_evidence/QUERY_PUBLICATION_UNBLOCK_20260929.md`；远端同步四份进度文档。研究输入、原供给、冻结生产实现和主稿保持，两探索分支本轮未改。以下§67及更早内容为各阶段历史，最新状态以本段与Q2 §68为准。
+
 2026-09-24 当前优先级（Q2 §67）：**先打通完整付费查询。** 本轮集中推进主线，两个探索分支保留现有结果。验收是既有固定人工输入下，两种计费制度均完成 C→N→E→N→C、真实 POSITION 提交使后车继续、四个查询费用终端收齐、收据安装并进入下一次实际选择，最后核账通过。几何初始化通过只是中间进度。原供给不增加；下面§66及更早的投入比例和待办按历史阶段阅读。
 
 本轮实测（Q2 §67）：C/N/E准备均已通过，完整C setup为20,402,877步；此前原窗口耗尽仍未完成准备。当前已执行请求编码、消息导出准备及中心发布准备，最终停在RootRecord校验的数值构造，首Selection仍耗尽1,048,576步。请求尚未交给N，Strict未启动，完整查询核账仍为invalid。下一步继续打通这条实际链；两支线本轮保持。
@@ -24,7 +30,7 @@
 
 | 分支 | 研究职责与当前证据 |
 | --- | --- |
-| [main](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/main) | PIE-D空间误差执行、可信释放与付费查询；当前瓶颈是C准备阶段可负担性 |
+| [main](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/main) | PIE-D空间误差执行、可信释放与付费查询；请求已送达E，当前瓶颈为N费用封存 |
 | [explore/learned-query](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/explore/learned-query) | 时长拟合已用于连续任务查询决策，有限例省去冗余查询；完整计费待接 |
 | [explore/error-aware-guidance](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/explore/error-aware-guidance) | 合法历史校准已修复失配先验选路；任务续接与非平稳条件待验 |
 
@@ -44,7 +50,7 @@
 
 桌面55篇综述已完成第二版：强化近邻统一比较、证据→退休→准入→执行→任务表现的区分、现有SRDC边界及后续优先次序；科研导师技能独立审查的八项意见已落实并复核。该轮综述/汇报/提纲/审查Word及优化前备份现已按用户要求清理，当前使用2026-09-24 LaTeX版；选定PDF哈希未变。另按用户全流程图片整理项目内技能调用方案，主任务按阶段交付、独立评审定点复核；没有改技能源码、冻结方案或运行边界。详细文献进度见GITHUB_PROGRESS，不重启目标或全文审查。
 
-历史自动目标曾因当时只静态的边界标记**受阻（blocked）**；该记录不覆盖2026-09-24用户要求推进后的实际运行。当前缺口是C准备阶段可负担性和完整闭环，不是等待首次运行许可。
+历史自动目标曾因当时只静态的边界标记**受阻（blocked）**；该记录不覆盖2026-09-24用户要求推进后的实际运行。当前缺口是N费用封存及其后的完整闭环，不是等待首次运行许可。
 
 [公开进度一页表](../GITHUB_PROGRESS.md)及[导师汇报说明](../RESEARCH_BRIEF_FOR_ADVISOR.md)可直接在GitHub阅读。[本地详细准备表](../implementation_binding_evidence/SCALE_RUN_READINESS_20260920.md)和下文implementation路径指向尚未随本次进度同步上传的本地工件。
 

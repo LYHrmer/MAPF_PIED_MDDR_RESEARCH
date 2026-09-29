@@ -1459,3 +1459,60 @@ invalid，不声称完整查询或整次查询费用已获得。候选和失败�
 费用行与job总和、观察器实际符号及分类守恒。此处“通过”仅指工件与记录一致，
 四个business_complete均为false。回执与可复跑只读脚本分别为本机
 `MAIN_QUERY_PROGRESS_ROOT_VERIFICATION_20260924_LATE.json`和同名`.py`。
+
+## 68. 请求发布阻点已通过，推进至N费用封存
+
+2026-09-29。接续§67的具体阻点：**C请求准备row101已在Natural和Strict下
+实际通过，请求经N送达E输入。** 两制度C准备均为1,044,801步，原供给
+1,048,576步，余3,775；C发布/导出/清理row102–104与N转发row151–154均执行。
+完整C setup为18,979,251步，父版为20,402,877步。C Selection四行实际费用
+共1,206,462步；Natural按实际收费，Strict四行收费4,194,304，不能将准备
+单行或余量当作整次Query费用。
+
+**失败前缀跳跃。** 隔离后继`arena_failed_prefix_successor_20260929/`继承
+§67的wire_reserve版本。若候选p的r槽扫描在p+i首次遇到占用，i<r，则任何
+q∈[p,p+i]的r槽区间都含该占用槽，可将下一候选直接移到p+i+1。保留对齐、
+位图、下界和容量检查，first-fit结果不变；无新增状态或容量。它是显式的新
+实现身份，不改写冻结合同的原逐候选扫描。实际原Context的16,178项状态观察
+与40,010,152字节输出一致；39条具名历史的13,403项比较通过，包括新失败
+前缀、对齐、尾槽、位图和摘要边界。Arena/Context沿用父版4240/4312字节。
+
+该后继已跨过原C gate，但在N row155费用账本清理中耗尽：ordinary 1,047,234、
+kernel 0、other 1,342，仍为失败前缀。根据实际N符号和付费跟踪继续改进。
+
+**已关闭SOURCE段单次导入。** `ledger_import_successor_20260929/`新增
+`LocalJobLedger::prepare_record_closed_segment`，实际SOURCE接收器将原
+open-lane/close-segment的两次克隆合成一次。阶段、server/job/account/kind/
+scheme、费用算术、重复row/supply与已有lane限制保持，拥有段值并通过原
+Prepared/commit发布，旧根及过期/跨owner提交拒绝保持。两制度、四阶段的
+190用例、14,332项差分检查通过，含非法段、现有lane、最大word、旧快照、
+终态字节和二次提交；不承诺内存耗尽发生时点逐步相同。
+
+两个后继均新编三ELF、按实际PC重绑发布图并通过资格检查；实际编译依赖
+确认新头及新SOURCE接收器已使用，私有kernel实际section字节保持。第二
+后继Natural仍在N row155耗尽，但已进入真正的COST Seal内核：ordinary
+980,626、kernel 66,503、other 1,447，合计1,048,576；普通代码停在封存
+ECALL，owner处于kernel执行，cause为0。不同截断前缀不据分类差值声称
+完整同工作量加速。
+
+**Strict实际前缀。** 原完整驱动在Natural失败后不会启动Strict，故另编
+`strict_prefix/driver.cpp`，唯一源码差异是制度循环从`{Natural,Strict}`
+改为`{Strict}`，guest、完整调度正文、输入和供给相同。实际一次运行确认
+C gate及N转发通过，E输入live；随后同样在N row155的kernel中耗尽。
+这是独立Strict前缀验证，不称作原双制度完整流程成功。
+
+**完整查询仍未完成。** 两制度均尚未执行E采样、POSITION回传、后车RUN、
+四费用终端收集、收据反馈和下一次实际选择；原完整核账器对Natural正确报
+invalid。82项保存工件独立核验及17项Strict前缀核验通过，核实源/依赖/
+三ELF/日志指纹、实际费用、交付状态与只读观察守恒，不代替全链核账。
+两候选观察器的业务stdout均与各自plain逐字一致，health为0；曾出现的绑定、
+聚合输出和构建入口错误均另行修正并保留失败原件，没有覆盖原始业务记录。
+
+证据均在本机`implementation_binding_evidence/`：总报告
+`QUERY_PUBLICATION_UNBLOCK_20260929.md`、核验回执
+`QUERY_UNBLOCK_VERIFICATION_20260929.json`及
+`STRICT_QUERY_PREFIX_VERIFICATION_20260929.json`；各候选目录保存实现、
+镜像、原始命令与失败回执。远端本轮只同步四份进度文档，原生产实现、
+研究输入、固定供给、主稿修改和两探索分支保持。下一步聚焦N费用封存，
+减少可避免的普通账本/分配工作，再沿原完整流程继续；尚无策略净收益、
+AUTH或LMAPF吞吐结论。
