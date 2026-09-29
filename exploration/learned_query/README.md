@@ -1,5 +1,7 @@
 # 学习辅助进度查询：探索说明
 
+最新[时序历史—任务后继](TEMPORAL_TASK_MODEL.md)已通过六个固定实例、62个完整评价episode（558任务、744条requester MOVE，30,900项native检查）。实际训练AR(1)，与last/mean3/median3/lag2同信息比较，并接入明确人工native报价的原SRDC PositiveScore诊断。AR与lag2完全同效；准确预测在短窗口规则下也未必改善全程流时，隐藏突变负结果保留。新增[事前方法合同](TEMPORAL_TASK_CONTRACT.md)、[完整CSV](temporal_task_results_20260929.csv)及[原始回执](temporal_task_run_20260929_03.json)。当前没有独立学习优势或生产完整费用收益证据。
+
 最新[历史时长拟合闭环](CALIBRATED_TASK_MODEL.md)已实际训练并运行，4376项检查通过：模型从此前独立MOVE的已交付END记录拟合时长，再参与查询/WAIT选择。合法较快条件下，拟合模型比固定先验少查询一次、任务曲线相同；较慢条件仍查C。单END解析校准与拟合相同，因此有历史适配收益，尚无学习优于解析或完整净费用证据。下面连续任务报告是此前阶段记录。
 
 最新[连续任务后继](TASK_CONTINUATION.md)已通过3488项检查：每个机器人真实执行多段首任务并续接后两任务，共9个任务、12个requester原MOVE。完成导向只查C即可取得贪心查CA的同一任务完成曲线；AB与C在不同服务时刻互有领先，最终都完成9个任务。未查询blocker正常END，避免人为永久阻塞。当前模型是声明的解析先验，尚未运行学习器或完整付费服务。
