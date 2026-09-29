@@ -1516,3 +1516,63 @@ invalid。82项保存工件独立核验及17项Strict前缀核验通过，核实
 研究输入、固定供给、主稿修改和两探索分支保持。下一步聚焦N费用封存，
 减少可避免的普通账本/分配工作，再沿原完整流程继续；尚无策略净收益、
 AUTH或LMAPF吞吐结论。
+
+## 69. N费用封存通过，E推进至采样数值重建
+
+2026-09-29。接续§68：**Natural和Strict下N row155均实际通过，费用发布与
+清理row156–159完成；原完整查询推进到E row201。** 原单行供给1,048,576不变。
+Natural封存实际803,192、余245,384；Strict实际803,420、余245,156。N到
+boundary6，输入/输出/copy/reclaim均不live。N-out-accounting五行完整实际
+分别952,862/953,090，Natural按实际收费，Strict五行收费5,242,880。
+
+**不可变记录拆分。** 本机隔离`ledger_records_successor_20260929/`将账本
+八个容器放入LedgerRecords，小LedgerState保留阶段、结果和终态。十个记录
+修改prepare复制records；三个阶段转换prepare共享const records并创建新根。
+Prepared仍检查owner和原根，commit仍交换根；旧View和终态对象身份保持。
+分配、引用计数及销毁仍是实际付费工作，OOM时点不承诺相同。
+
+26条历史、23,640检查的父版/候选输出221,540字节完全相同，覆盖旧快照、
+非法batch原子性、双lane、二进制身份、终态字节及过期/跨owner/二次提交。
+单次SOURCE导入的190用例、14,332检查回归通过。该结构修复使N封存完成，
+同时Natural N-out转发查询四行从185,103增至215,511（约16.4%）；必须保留
+此代价，不用两个不同截断位置的差值宣称整次查询加速。
+
+**请求字段精确比较。** `request_compare_successor_20260929/`继承上项，
+只在shadow full_executor将已验证REQUEST的两次encode比较替换为全部19个
+独立字段比较。21个编码字段中issuer/recipient由center/executor决定；长度
+前缀编码单射，原expected validate、protected envelope/context、decode、
+规范数值及尾部检查保持。38有效记录的1,444配对、80非法拒绝检查通过，
+包括全字段、NUL、长字符串和拼接歧义。未声称完整AUTH集成测试或资源失败
+轨迹等价。独立代码复核支持这条已验证输入路径上的替换。
+
+**当前实际边界。** 前候选在CAPTURE历史第6条读取处耗尽；新候选已读完历史、
+Release物理pin，进入ReferenceController数值构造。末次qqbar_init调用者
+RA272168/272180在构造函数[271712,273880)；最终PC206048落在分配器。
+尚无历史replay或POSITION生成的执行证据。E row201仍耗尽，cause为0。
+普通工作1,033,521、kernel0、other15,055；allocate_slots150,108步、
+CaptureAdmission77,139步、vector追加67,080步，是该前缀的热点归属。
+
+原双制度driver在Natural失败后停止；独立Strict入口仅把制度循环改为
+`{Strict}`，guest/调度/输入/供给相同，实际确认N通过、E row201耗尽。
+两制度各138费用段；原完整核账仍invalid。POSITION回传、后车RUN、四终端
+收集、收据反馈和下一次实际选择均未完成。
+
+**诊断器核对。** 新候选观察器原health=2全部来自delta!=1断言：CAPTURE Pin
+一次计16、Release一次计8。实际SOURCE阶段16回到ordinary阶段6，import48，
+原入口op0/op5；源码原子段14/6加ECALL尾部2，逐项吻合。旧观察器单步假设
+不适用此处；两笔完整归入other，分类/符号费用守恒。原health不改成0。
+观察stdout与plain逐字一致，源/镜像保持，另存核对依据。
+
+两后继均新编三ELF、按实际PC重绑发布图、通过资格检查；实际编译依赖和
+private kernel真实section字节已核验。140项保存工件检查通过，覆盖原始
+命令/日志指纹、逐行制度收费与job总和、Strict唯一差异和观察原子段，
+不代替全链完成。报告`LEDGER_CAPTURE_PROGRESS_20260929.md`、回执
+`LEDGER_CAPTURE_PROGRESS_VERIFICATION_20260929.json`、只读脚本
+`verify_ledger_capture_progress_20260929.py`与独立代码复核意见均在本机
+`implementation_binding_evidence/`；候选实现和原始失败记录隔离保存。
+远端仅同步四份进度文档，冻结生产实现、研究输入、原供给、主稿已有修改
+及两探索分支保持。
+
+下一步集中E精确数值重建，先分离构造中的重复初始化/复制与必要历史回放，
+再做保持语义的结构优化；不将物理快照或结果搬到宿主免费预计算。继续原
+POSITION回传及费用反馈链，闭环通过后比较完整费用并恢复支线净收益验证。
