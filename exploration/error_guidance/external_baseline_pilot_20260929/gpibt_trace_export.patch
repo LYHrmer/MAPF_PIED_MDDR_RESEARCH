@@ -1,0 +1,150 @@
+--- Guided-PIBT/guided-pibt/src/CompetitionSystem.cpp
++++ gpibt_trace_successor/guided-pibt/src/CompetitionSystem.cpp
+@@ -356,27 +356,27 @@
+ 
+     //start locations[x,y,orientation]
+     json start = json::array();
+-    // for (int i = 0; i < num_of_agents; i++)
+-    //     {
+-    //         json s = json::array();
+-    //         s.push_back(starts[i].location/map.cols);
+-    //         s.push_back(starts[i].location%map.cols);
+-    //         switch (starts[i].orientation)
+-    //             {
+-    //             case 0:
+-    //                 s.push_back("E");
+-    //                 break;
+-    //             case 1:
+-    //                 s.push_back("S");
+-    //             case 2:
+-    //                 s.push_back("W");
+-    //                 break;
+-    //             case 3:
+-    //                 s.push_back("N");
+-    //                 break;
+-    //             }
+-    //         start.push_back(s);
+-    //     }
++    for (int i = 0; i < num_of_agents; i++)
++        {
++            json s = json::array();
++            s.push_back(starts[i].location/map.cols);
++            s.push_back(starts[i].location%map.cols);
++            switch (starts[i].orientation)
++                {
++                case 0:
++                    s.push_back("E");
++                    break;
++                case 1:
++                    s.push_back("S");
++                case 2:
++                    s.push_back("W");
++                    break;
++                case 3:
++                    s.push_back("N");
++                    break;
++                }
++            start.push_back(s);
++        }
+     js["start"] = start;
+ 
+     js["numTaskFinished"] = num_of_task_finish;
+@@ -399,22 +399,22 @@
+   
+     //actual paths
+     json apaths = json::array();
+-    // for (int i = 0; i < num_of_agents; i++)
+-    //     {
+-    //         std::string path;
+-    //         bool first = true;
+-    //         for (const auto action : actual_movements[i])
+-    //             {
+-    //                 if (!first){path+= ",";} else 
+-    //                     {
+-    //                         first = false;
+-    //                     }
+-
+-    //                     path+=action2symbol(action);
++    for (int i = 0; i < num_of_agents; i++)
++        {
++            std::string path;
++            bool first = true;
++            for (const auto action : actual_movements[i])
++                {
++                    if (!first){path+= ",";} else 
++                        {
++                            first = false;
++                        }
++
++                        path+=action2symbol(action);
+                     
+-    //             }  
+-    //         apaths.push_back(path);
+-    //     }
++                }  
++            apaths.push_back(path);
++        }
+     js["actualPaths"] = apaths;
+ 
+     //planned paths
+@@ -464,35 +464,35 @@
+   
+     //events
+     json events_json = json::array();
+-    // for (int i = 0; i < num_of_agents; i++)
+-    //     {
+-    //         json event = json::array();
+-    //         for(auto e: events[i])
+-    //             {
+-    //                 json ev = json::array();
+-    //                 std::string event_msg;
+-    //                 int task_id;
+-    //                 int timestep;
+-    //                 std::tie(task_id,timestep,event_msg) = e;
+-    //                 ev.push_back(task_id);
+-    //                 ev.push_back(timestep);
+-    //                 ev.push_back(event_msg);
+-    //                 event.push_back(ev);
+-    //             }
+-    //         events_json.push_back(event);
+-    //     }
++    for (int i = 0; i < num_of_agents; i++)
++        {
++            json event = json::array();
++            for(auto e: events[i])
++                {
++                    json ev = json::array();
++                    std::string event_msg;
++                    int task_id;
++                    int timestep;
++                    std::tie(task_id,timestep,event_msg) = e;
++                    ev.push_back(task_id);
++                    ev.push_back(timestep);
++                    ev.push_back(event_msg);
++                    event.push_back(ev);
++                }
++            events_json.push_back(event);
++        }
+     js["events"] = events_json;
+ 
+     //all tasks
+     json tasks = json::array();
+-    // for (auto t: all_tasks)
+-    //     {
+-    //         json task = json::array();
+-    //         task.push_back(t.task_id);
+-    //         task.push_back(t.location/map.cols);
+-    //         task.push_back(t.location%map.cols);
+-    //         tasks.push_back(task);
+-    //     }
++    for (auto t: all_tasks)
++        {
++            json task = json::array();
++            task.push_back(t.task_id);
++            task.push_back(t.location/map.cols);
++            task.push_back(t.location%map.cols);
++            tasks.push_back(task);
++        }
+     js["tasks"] = tasks;
+ 
+     std::ofstream f(fileName,std::ios_base::trunc |std::ios_base::out);

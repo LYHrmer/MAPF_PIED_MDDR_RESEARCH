@@ -1,0 +1,60 @@
+{
+  "upstream_commit": "7f4b91e4ed134229710945a4670a78639cf008d5",
+  "seed_adapter": true,
+  "observer_adapter": true,
+  "solver_variant": "GP-R100-Re10-F2",
+  "motion_mode": "nonrotation",
+  "fixed_cases": [
+    [
+      "n10_s42",
+      "visualizer_example_sts.json",
+      10,
+      42
+    ],
+    [
+      "n10_s43",
+      "visualizer_example_sts.json",
+      10,
+      43
+    ],
+    [
+      "n200_s42",
+      "sortation_small_0_200.json",
+      200,
+      42
+    ],
+    [
+      "n200_s43",
+      "sortation_small_0_200.json",
+      200,
+      43
+    ]
+  ],
+  "binary_sha256": "faa343622008efc546bac1dd18fc80223d5d64fca8860223623a8233a5e69694",
+  "source_changes": [
+    "guided-pibt/src/CompetitionSystem.cpp",
+    "guided-pibt/src/MAPFPlanner.cpp"
+  ],
+  "source_sha256": {
+    "guided-pibt/src/CompetitionSystem.cpp": "e237341fde70f951a5a941410fc4d5cc160e37812f1ca90473ed8a7b6c8819f1",
+    "guided-pibt/src/MAPFPlanner.cpp": "bc24e208bcae48465f9e1199afc822e67a39de2f90a57fbcd9128448cda5967d"
+  },
+  "author_input_sha256": {
+    "visualizer_example_sts.json": "e2faea72301fce9cf137f867fcb1c54dedb678b66c7e0ed8260b2c2df27170f2",
+    "sortation_small_0_200.json": "121338f0caba3d1785e050f2eee88b0e7e317371361f53c22ee7ded7776813ad",
+    "maps/sortation_small.map": "686d810cf2eb8cab83894af390eb5c5d0f2960b8c84e52176841583740a3c96f",
+    "agents/sortation_small_0_200.agents": "bc08a230d1f60c3cc8300d9ed276c2f7b379981e7345cd8c67a763c0f65953d7",
+    "tasks/sortation_small_0.task": "3c51e2421318cf37cf6de6473c20d192e4ba35aeb9b1c0d36c28fdad8302d2b8"
+  },
+  "map_height": 33,
+  "map_width": 57,
+  "free_cells": 1564,
+  "task_source_count": 50000,
+  "horizon": 450,
+  "planning_limit_seconds": 10,
+  "process_limit_seconds": 60,
+  "planned_new_runs": 3,
+  "paper_performance_benchmark": false,
+  "learned_method_executed": false,
+  "continuous_error_adapter_executed": false
+}

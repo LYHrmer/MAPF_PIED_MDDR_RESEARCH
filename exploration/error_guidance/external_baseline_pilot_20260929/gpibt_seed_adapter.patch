@@ -1,0 +1,37 @@
+--- gpibt_trace_successor/guided-pibt/src/MAPFPlanner.cpp
++++ gpibt_seeded_trace_successor/guided-pibt/src/MAPFPlanner.cpp
+@@ -1,5 +1,9 @@
+ #include <MAPFPlanner.h>
+ #include <random>
++#include <cstdlib>
++#include <cstdint>
++#include <limits>
++#include <stdexcept>
+ #include "pibt.hpp"
+ #include "flow.hpp"
+ #include "heuristics.hpp"
+@@ -49,7 +53,23 @@
+ 
+     env->init_neighbor();
+ 
+-    std::shuffle(ids.begin(), ids.end(), std::mt19937(std::random_device()()));
++    // R0 reproduction adapter: expose only the existing initialization seed.
++    // Unset preserves the author's random_device source; algorithm is unchanged.
++    std::uint32_t initialization_seed;
++    const char* seed_env = std::getenv("GPIBT_R0_SEED");
++    if (seed_env != nullptr) {
++        const std::string seed_text(seed_env);
++        if (seed_text.empty() || seed_text.find_first_not_of("0123456789") != std::string::npos)
++            throw std::invalid_argument("GPIBT_R0_SEED must be an unsigned decimal integer");
++        const unsigned long long parsed_seed = std::stoull(seed_text);
++        if (parsed_seed > std::numeric_limits<std::uint32_t>::max())
++            throw std::out_of_range("GPIBT_R0_SEED exceeds uint32");
++        initialization_seed = static_cast<std::uint32_t>(parsed_seed);
++    } else {
++        initialization_seed = std::random_device()();
++    }
++    std::cout << "---priority-initialization-seed," << initialization_seed << std::endl;
++    std::shuffle(ids.begin(), ids.end(), std::mt19937(initialization_seed));
+     for (int i = 0; i < ids.size();i++){
+         p[ids[i]] = ((double)(ids.size() - i))/((double)(ids.size()+1));
+     }

@@ -1,0 +1,25 @@
+{
+  "argv": [
+    "rtk",
+    "proxy",
+    "cmake",
+    "-B",
+    "../gpibt_seeded_build_gp_r100_re10_f2",
+    "./guided-pibt",
+    "-DGUIDANCE=ON",
+    "-DGUIDANCE_LNS=10",
+    "-DFLOW_GUIDANCE=OFF",
+    "-DINIT_PP=ON",
+    "-DRELAX=100",
+    "-DOBJECTIVE=1",
+    "-DFOCAL_SEARCH=2",
+    "-DCMAKE_BUILD_TYPE=RELEASE"
+  ],
+  "cwd": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/baseline_selection_20260929/gpibt_seeded_trace_successor",
+  "timeout_seconds": 120,
+  "started_utc": "2026-09-29T15:07:35.235969+00:00",
+  "exit_code": 0,
+  "elapsed_seconds": 0.5660112809996463,
+  "stdout.log_sha256": "0e921a9c98443e7efc8c47e5f5f3fa3187805456004b7363dc561130c73e4eb6",
+  "stderr.log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

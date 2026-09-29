@@ -1,0 +1,98 @@
+{
+  "status": "passed",
+  "identity": "official Guided-PIBT 7f4b91e plus observer and public seed adapter",
+  "author_native_seeded_release": false,
+  "source_changes_vs_author": [
+    "guided-pibt/src/CompetitionSystem.cpp",
+    "guided-pibt/src/MAPFPlanner.cpp"
+  ],
+  "source_changes_vs_trace": [
+    "guided-pibt/src/MAPFPlanner.cpp"
+  ],
+  "original_and_trace_protected_artifacts_unchanged": true,
+  "explicit_seed": 42,
+  "independent_process_runs": 2,
+  "runs": [
+    {
+      "run": 1,
+      "seed": 42,
+      "agents": 10,
+      "timesteps": 450,
+      "actions_checked": 4500,
+      "positions_checked": 4510,
+      "agent_pair_transitions_checked": 20250,
+      "obstacle_hits": 0,
+      "out_of_bounds": 0,
+      "nonadjacent_transitions": 0,
+      "vertex_conflicts": 0,
+      "opposite_edge_conflicts": 0,
+      "task_completions_from_actual_positions": 141,
+      "task_assignments_reconstructed": 151,
+      "pending_at_end": 10,
+      "wall_seconds": 1.7186006070000985,
+      "max_planner_seconds": 0.010747649,
+      "action_counts": {
+        "D": 900,
+        "R": 1341,
+        "L": 1367,
+        "U": 888,
+        "W": 4
+      }
+    },
+    {
+      "run": 2,
+      "seed": 42,
+      "agents": 10,
+      "timesteps": 450,
+      "actions_checked": 4500,
+      "positions_checked": 4510,
+      "agent_pair_transitions_checked": 20250,
+      "obstacle_hits": 0,
+      "out_of_bounds": 0,
+      "nonadjacent_transitions": 0,
+      "vertex_conflicts": 0,
+      "opposite_edge_conflicts": 0,
+      "task_completions_from_actual_positions": 141,
+      "task_assignments_reconstructed": 151,
+      "pending_at_end": 10,
+      "wall_seconds": 1.2682506749997629,
+      "max_planner_seconds": 0.006494731,
+      "action_counts": {
+        "D": 900,
+        "R": 1341,
+        "L": 1367,
+        "U": 888,
+        "W": 4
+      }
+    }
+  ],
+  "all_nonplanning_time_json_fields_equal": true,
+  "actions_exactly_equal": true,
+  "tasks_exactly_equal": true,
+  "events_exactly_equal": true,
+  "planning_times_equal": false,
+  "planning_times_excluded_from_deterministic_comparison": true,
+  "canonical_nonplanning_time_json_sha256": "83226ada81d71d4df0f2d2b0dfbfe769c97c6b9efa451426d39dc8db967cead3",
+  "canonical_actions_sha256": "ff4468a7bd8befda873d786ca9a0cf8137529d67c7ed5197c5a82f63ff0e9df0",
+  "independent_trajectory_and_task_validation": true,
+  "upstream_AllValid_or_empty_errors_used_as_evidence": false,
+  "negative_controls_rejected": [
+    "vertex conflict",
+    "edge swap",
+    "obstacle",
+    "out of bounds",
+    "unknown/nonexecuted action"
+  ],
+  "paper_benchmark_reproduction": false,
+  "continuous_spatial_error_test": false,
+  "algorithm_or_validator_repair": false,
+  "sha256": {
+    "gpibt_seed_adapter.patch": "a241de5576165c61ddea805c6591bd04a4aab698d3b9cb384231cbc1b5b6de98",
+    "gpibt_seeded_result_01.json": "f7ad2ad682150a907e9c21f42ee3af5b1ed71cb9965cb3d1592238be85eab092",
+    "gpibt_seeded_result_02.json": "9e90e9c416faf76328f28f9e393ab8228cb05be0947e257eb77fbe7a8ebf9dd7",
+    "gpibt_seeded_event_log_01.txt": "faa69c46c0be3b14dc166b87bff15edd9c3e62e6d4ecba53248d617fda99b2d4",
+    "gpibt_seeded_event_log_02.txt": "802b33cf4ccef88d13e247fdba449a22af1677548cc4329f632146183be29d7a",
+    "gpibt_seeded_build_gp_r100_re10_f2/lifelong": "faa343622008efc546bac1dd18fc80223d5d64fca8860223623a8233a5e69694",
+    "gpibt_seeded_verify.py": "5375c19c63561f56b36b98337a767a84e254c0e343726ccb04a35f7c97be72ea"
+  }
+}

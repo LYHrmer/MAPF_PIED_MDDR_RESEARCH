@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "validator_selfcheck": {
+    "positive_control": true,
+    "negative_controls_rejected": [
+      "vertex",
+      "reverse edge",
+      "out of bounds",
+      "obstacle",
+      "unknown action",
+      "task events",
+      "incomplete action matrix"
+    ]
+  },
+  "cases": [
+    {
+      "case": "n10_s42",
+      "agents": 10,
+      "horizon": 450,
+      "completed_tasks": 141,
+      "assigned_tasks": 151,
+      "pending_tasks": 10,
+      "actions_replayed": 4500,
+      "positions_checked": 4510
+    },
+    {
+      "case": "n10_s43",
+      "agents": 10,
+      "horizon": 450,
+      "completed_tasks": 141,
+      "assigned_tasks": 151,
+      "pending_tasks": 10,
+      "actions_replayed": 4500,
+      "positions_checked": 4510
+    },
+    {
+      "case": "n200_s42",
+      "agents": 200,
+      "horizon": 450,
+      "completed_tasks": 2244,
+      "assigned_tasks": 2444,
+      "pending_tasks": 200,
+      "actions_replayed": 90000,
+      "positions_checked": 90200
+    },
+    {
+      "case": "n200_s43",
+      "agents": 200,
+      "horizon": 450,
+      "completed_tasks": 2253,
+      "assigned_tasks": 2453,
+      "pending_tasks": 200,
+      "actions_replayed": 90000,
+      "positions_checked": 90200
+    }
+  ],
+  "total_actions": 189000,
+  "total_positions": 189420,
+  "native_runs_started": 0
+}
