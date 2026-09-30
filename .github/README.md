@@ -1,5 +1,13 @@
 # MAPF 项目当前入口
 
+2026-09-30 第二轮更新（Q2 §72）：**三线均已实现并实跑。主线完成真实控制历史重建，查询线接入公共作者轨迹，第三线完成官方规划器到真实任务服务；学习尚无独立收益。** 本轮分别由用户指定gpt-6.1-sol-ultra子智能体作技术判断，另一子智能体使用research-mentor作导师判断。两者建议围绕任务价值、空间误差证据与完整费用继续，模型暂作比较臂；[更新后三线设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20260930_R2.md)给出具体下一实验。
+
+主线共享成功验证的不可变运动profile，并以通用精确整数平方根替代机器字有理完平方的昂贵软件浮点路径。第15次advance从975,973经962,177到885,207，相对上轮提前90,766步；物理历史回放及原CAPTURE时间匹配已完成。Natural/Strict仍在E201原1,048,576供给耗尽，最终为receive返回前请求复制/字符串清理，**尚未进入compute_position/POSITION，完整查询核账仍invalid**。46场景精确差分及2393数值案例通过，root独立重核304保存检查、六实际ELF的kernel和两制度原费用。下一后继针对已准入请求的重复深复制，继续POSITION/后车RUN/四收据及报价反馈；不能把前缀提前当整次净费下降。详细本机`implementation_binding_evidence/rational_sqrt_successor_20260930_r2b/SOURCE_REVIEW_AND_HANDOFF.md`。
+
+[查询公共轨迹实验](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/learned-query/exploration/learned_query/public_trace_20260930_r2/RESULTS_20260930_r2.md)完成六run/120phase：10,746条实际END、4,260个局部WAIT/QUERY episode、96个匹配公开head的端点服务。全部2000源动作、355跟随关系、严格认证退休和560项END-only因果重放均核验；[原作者result/map/tasks/命令日志](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/learned-query/exploration/learned_query/public_trace_author_archive_20260930_r2/README.md)逐字归档。原native actor的private-helper缺口保留；新END-only是离线因果重放，不是第二次native。当前每phase最多一个正权任务候选，方向bin/categorical/解析/global/RR任务同效，方向反转Brier显著变差。下一项为真正END-only原生联合执行、多候选竞争、WAIT和真实收费。
+
+[官方GPIBT→LSMART](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/gpibt_lsmart_integration_20260930_r2/REPORT.md)本轮nominal/pause均完整200ticks，各5次官方plan、400位置样本、1次真实20tick驻留服务，RPC任务身份错误修复后严格审计通过。原暂停实际只延迟派发，尚未击中活动MOVE。[官方OnlineGGO OBJ4评估入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/onlineggo_neural_preflight_20260930_r2/REPORT.md)真实运行560参数quad引导代价，未训练常量诊断100步/27任务并经1000动作重放核验；已训练作者策略R0仍待权重/配置/日志。主要比较使用已发表作者方法，内部规则仅作消融。以下§71及更早为历史记录，旧RPC待许可状态已解决；本轮主稿已有修改逐字保持。
+
 2026-09-30 三线更新（Q2 §71）：**任务导向查询已出现更少查询、较低任务流时的具名机制结果；主线回放继续推进；官方规划器与连续执行器完成首步接通。** Astra技术判断与科研导师skill分别评估后，继续以“主线共同执行/费用基础＋查询方法候选＋替代底座探索”组织，学习是否保留由相同信息与资源下的独立收益决定。
 
 主线两个新后继消除同刻推进重算和相同时间戳重复精确解析。原每行1,048,576供给下，连续同刻回放间隔14,209→9,774→3,804步；第15次真实推进入口1,046,261→975,973，提前70,288步。Natural/Strict仍在E row201的Launch→Approach精确构造耗尽，**POSITION与完整查询/收据尚未通过，原核账仍invalid**；不能将行内推进写成整行费用节省。真实接收接口46场景精确差分及161项独立工件/费用核验通过；原供给、生产实现、private kernel与已有主稿修改保持。详细证据本机`implementation_binding_evidence/REPLAY_PROGRESS_20260930.md`。

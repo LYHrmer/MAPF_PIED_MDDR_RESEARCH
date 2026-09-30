@@ -1624,3 +1624,34 @@ E CaptureAdmission入口310,635，控制器构造584,384，首次advance_to665,4
 最终固定nominal/pause两次200tick试验尚待沙箱本机RPC许可；此前只批准旧attempt参数，新增目录触发权限等待。当前不宣称完整集成、配对任务流相同或连续安全通过。此处的权限来源是执行环境，非科研导师技能；用户已授权探索实现的范围不重新确认。桥接源码、补丁、协议与后续运行状态由第三线独立入口管理。OnlineGGO仍只有C++构建，未填为学习R0完成。
 
 **文献与论文推进。** 本轮核验JAIR2026 RL-RH-PP期刊、作者原文及仓库，以及Artificial Intelligence2026 LDG执行框架的出版社/作者记录。学习优先级和动态组合放行已有直接近邻；贡献应落实到空间误差下的有限证据、任务收益和完整费用，或明确可迁移的执行残差。主要外部比较仍采用已发表作者算法＋公开共同执行适配，内部规则只列消融；LSMART是试验台。下一周期分别补主线已验证profile的结构复用、查询公共场景/真实成本比较、第三线完整共同执行轨迹和OnlineGGO真实policy。SCI二区/三区为目标，不预写结果或录用结论。
+
+
+## 72. 验证profile共享、通用精确平方根、公共查询接口与真实任务服务
+
+2026-09-30第二轮。三个gpt-6.1-sol-ultra子智能体分别承担主线结构实现、导师独立诊断与公共查询、真实执行适配及外部评估核验。技术独立更新为本机`SOL_ULTRA_POSTUPDATE_ROUTES_20260930_R2.md`，主线实施者另写`SOL_ULTRA_ROUTES_POST_IMPLEMENTATION_20260930_R2.md`；技能评估为`MENTOR_POST_EXECUTION_20260930_R2.md`。双方未复制对方结论，root根据新源码/实际运行与自写复核作取舍。研究继续聚焦空间误差下合法反馈如何改变真实任务与费用，学习无独立收益时保留简单方法。
+
+**主线两个结构后继。** `profile_shared_successor_20260930_r2`由完整公开构造成功颁发私有immutable ValidatedProfile，共享固定coefficients/two/four；每次state/cap/eta守卫及原物理公式仍执行。46实际receive场景、4926精确检查、10旧快照、1500公开构造组合及18旧历史通过；POSITION/错误13260bytes和SOURCE182971bytes与直接父相同。首次native_profile_01夹具命名空间编译失败保留，仅修夹具后02通过。第15advance975973→962177，Approach prepare_state992697，仍在软件sqrt耗尽。
+
+`rational_sqrt_successor_20260930_r2b`只再改ordinary FlintOps::sqrt：保留valid/sign/negative/zero-one/degree前缀；canonical非负有理的两数均fits ulong后，用通用恢复式整数平方根及精确平方判定构造有理根。超word仍原FLINT，非平方/无理仍原QQBAR；无输入4特判、无浮点近似、无公式改变。[本机证明及报告](implementation_binding_evidence/rational_sqrt_successor_20260930_r2b/SOURCE_REVIEW_AND_HANDOFF.md)。2393数值例（2378 word/15 big）、独立FLINT oracle、ULONG_MAX/平方两侧/约分/2048确定性分数/负数及无理通过，另原102/50/278数值及segment/controller回归、18历史51558、profile31042、46receive全部差分相同。
+
+两个后继均真实重编三ELF/host及Strict/observer，actual .d绑定20普通TU/7 segment TU；三个私有kernel仍20480bytes/address0x11000/SHA c1942d2feb24492b3ace8844c8d092063507ead74ae066340ad6e8d254ac28a8。static31.959s、host6.766s、Strict6.959s、observer7.269s只记构建限额，不当生产费用。最后6412保护项及冻结sources保持。
+
+**原预算实际边界。** Natural、独立Strict、observer均E201耗尽1048576，原audit=invalid。第15advance依次975973/962177/885207，sqrt相对profile提前76970，相对上轮提前90766；t2sample888871、Approach prepare_state915727、sqrt961069。当前执行前缀的软件sqrt和浮点辅助入口消失；1025905真实时间一致性require(a0=1)表明原controller replay及CAPTURE时刻匹配完成。1028697进入Opportunity请求复制，末instruction_pc8566032/cause0在字符串_M_dispose，caller为receive。
+
+仍未进入compute_position/Authority/POSITION编码发布与回传，没有后车RUN、四费用终态、收据反馈及下一choose。失败行仍ordinary1033521+other15055=1048576，不报告整次净费用下降；Pin16/Release8旧health2原始保留。实际跨操作copy→清理约15882步不能全算可消除，后缀费用未知。下一项研究私有不可变已准入请求共享，避免Opportunity→Captured→PositionRecord重复拥有，保留所有身份/误差/owner检查与快照寿命；按原供给判完整业务可行性。
+
+profile最终147、sqrt157保存核验通过；sqrt真实审计为`final_sqrt_run_audit.py` SHA3cfecd7ab14864b61cd984508453db4f1829f9c98d78dd772174cce82cd7e49f，继承旧`final_run_audit.py`未执行/未修改。root自写`verify_main_profile_sqrt_20260930_r2.py`独立重建原费用/总和、核实际脚本身份、六ELF直接解析kernel、原native和主稿SHA，304保存检查绑定通过，输出`MAIN_PROFILE_SQRT_ROOT_VERIFICATION_20260930_R2.json`。保存核验不是新guest运行或独立统计样本。
+
+**查询公开接口。** 原作者PIE-D固定74cfba3的100×20轨迹重建全部2000动作（1791 MOVE/209 WAIT）及355跟随关系；8terminal分处8phase。六完整生成run/120phase实际10746原END、4260局部WAIT/QUERY、96公开head对应端点、288956 native检查。重复减epsilon的认证语义错误在02失败，预注册新semantic后完整执行；资源owner/mask由独立闭矩形相交复算，908实际反例拒绝双重扣精度，等阈保留。两旧失败和原native actor读取private旧标签的入口保留。
+
+另用原controller三个公开full-cap profile做qualification，以公开已交付END区间建立白名单actor，10746观测及560模型/历史/候选/选择与原native一致；此为离线因果重放绑定已实际运行的局部potential outcomes，不追认原actor为END-only，不是第二native。root独立重推全部源关系/END选择及92260历史时序检查，四新增decoder负例拒绝；24原件、81旧查询文件及9原组件头保持。原作者完整result/map/task/运行回执和日志185432bytes另归档，可不依赖原本机R0目录复核公共来源。
+
+IID方向bin Brier0.087375、global0.249796；反转方向0.725243、global0.250489。方向bin/categorical/解析/global/RR每测试run均8query；IID提前2局部端点、总1.166884±2e−6，reverse提前4、总2.333768±4e−6，eta0零收益。lag2为IID7query/2提前、reverse2query/1提前、eta0零query同服务。最多一个正权候选使复杂预测无法证明排序优势，categorical与强方向bin严格相同。下一门为真正白名单END-only原生联合执行、公开多任务竞争、WAIT与真实COST，不拼独立crop冒充全局100机器人吞吐。
+
+**第三线真实闭环。** 官方GPIBT对象＋公开group_size2送入LSMART parser/ADG/controller，本轮固定nominal/pause及唯一wire修复后的retry01均保留。首对发现S任务ID从未赋值task_ptr读成−1，严格审计拒绝；仅改为已有action.task_id，保留旧源码/二进制。最终两臂各200tick、5次plan、27parsed nodes、400实际姿态和1个任务服务。task1/agent1/cell7正常END nominal136/pause146，有20timer减计/21连续驻留点，最大误差0.021847m；task0/2未完成保留。末已交付姿态tick199，不称精确物理tick200。
+
+pause30–49全为空队列STOP，影响派发40→50，未验证活动MOVE扰动。采样中心最小距离约0.9726m不是连续足迹安全。原RPC权限已解决，本轮实际试验全部完成；77工件冻结及18真实对象/二进制由root另核，初对失败和15/16篡改负例真实拒绝，旧47文件保持。下一独立实验按实际活动MOVE事件预注册触发20tick扰动，并核占用/恢复/任务流，而非事后改窗。
+
+**官方模型评估入口。** OnlineGGO ff6d830原936tracked files不变，实际OBJECTIVE4/OBJ::NN的quad560参数模块33.0573s构建；公开作者GPIBT输入10robots/100steps的未训练常量5诊断完成1000动作/1010位置/27任务，独立FIFO轨迹核验。559shape实际被官方拒绝；首错map路径失败完整保留。33工件和真实moduleSHA经独立peer核验。此为官方优化引导代价入口，不是深度world model或合格trained R0；训练配置/日志/权重内容与原作者正式参数仍缺，trained_policy_qualified=false。weight schema只查声明/shape/hash，不冒称训练认证。
+
+公开详细结果及下一实验在[三线更新设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20260930_R2.md)。主要基线仍为已发表作者方法，R0原生与R1共同执行分开；不同设置52/27/1任务不能横比。主线远端只同步四份进度文档，实现/raw本机隔离；查询与第三线推送独立代码、协议、实际回执和审计。主稿已有修改保持不提交。
