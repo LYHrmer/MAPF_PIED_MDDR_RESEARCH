@@ -1,0 +1,53 @@
+{
+  "maps": [
+    {
+      "map": "empty-32-32",
+      "hm_GPIBT": 2.745,
+      "trained": 2.678,
+      "trained_minus_hm": -0.06700000000000017,
+      "both_native_and_trace_passed": true,
+      "identical_complete_future_task_input": true
+    },
+    {
+      "map": "random-32-32-10",
+      "hm_GPIBT": 2.673,
+      "trained": 2.62,
+      "trained_minus_hm": -0.052999999999999936,
+      "both_native_and_trace_passed": true,
+      "identical_complete_future_task_input": true
+    },
+    {
+      "map": "maze-32-32-2",
+      "hm_GPIBT": 0.932,
+      "trained": 0.946,
+      "trained_minus_hm": 0.013999999999999901,
+      "both_native_and_trace_passed": true,
+      "identical_complete_future_task_input": true
+    },
+    {
+      "map": "room-32-32-4",
+      "hm_GPIBT": 1.866,
+      "trained": 1.908,
+      "trained_minus_hm": 0.041999999999999815,
+      "both_native_and_trace_passed": true,
+      "identical_complete_future_task_input": true
+    }
+  ],
+  "native_runs": 8,
+  "native_failures": 0,
+  "audit_failures": 0,
+  "agents": 64,
+  "steps": 1000,
+  "seed": 930301,
+  "checkpoint_sha256": "2c93739f18e088c0c4d940f6a10f800770b6605f79c8be2385e58b71bce738d7",
+  "new_training": false,
+  "same_per_agent_exogenous_task_stream": true,
+  "planner_tie_randomness_paired": false,
+  "unchanged_published_native_algorithms": true,
+  "checkpoint_domain": "sortation_small_kiva 200 candidate finite training",
+  "pilot_kind": "official-map workload transfer of frozen published model and hm comparator",
+  "full_author_benchmark": false,
+  "statistical_superiority_established": false,
+  "execution_error_test": false,
+  "new_method_tested": false
+}
