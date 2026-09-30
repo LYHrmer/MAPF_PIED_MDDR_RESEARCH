@@ -1,0 +1,844 @@
+// Capacity x objective x predictor x public task structure, predeclared 2026-09-30.
+// Earlier files and nine component sources remain unchanged.
+#define main preserved_legal_and_task_entry
+#include "legal_and_fixture.cpp"
+#undef main
+#include <set>
+
+namespace {
+enum class TaskPolicy { Srdc, RR, AdmissionOne, AdmissionPair,
+                        CompletionOne, CompletionPair, CompletionPairLong, CohortFlowPair, Wait };
+const char* policy_name(TaskPolicy p) {
+    switch (p) {
+    case TaskPolicy::Srdc: return "original_srdc";
+    case TaskPolicy::RR: return "original_rr";
+    case TaskPolicy::AdmissionOne: return "unit_admission_one";
+    case TaskPolicy::AdmissionPair: return "unit_admission_pair";
+    case TaskPolicy::CompletionOne: return "nominal_completion_one_window6";
+    case TaskPolicy::CompletionPair: return "nominal_completion_pair_window6";
+    case TaskPolicy::CompletionPairLong: return "nominal_completion_pair_window7";
+    case TaskPolicy::CohortFlowPair: return "current_cohort_flow_pair";
+    case TaskPolicy::Wait: return "no_progress_queries";
+    }
+    throw std::logic_error("unknown task policy");
+}
+void interval(const R& x) {
+    check(O::cmp(x, rat(0)) >= 0 && O::cmp(x, rat(64)) < 0, "display range");
+    long lo = 0, hi = 64000000;
+    while (hi - lo > 1) {
+        const long mid = lo + (hi - lo) / 2;
+        if (O::cmp(rat(mid, 1000000), x) <= 0) lo = mid; else hi = mid;
+    }
+    std::cout << "{\"lower\":" << lo << ",\"upper\":"
+              << (same(x, rat(lo, 1000000)) ? lo : hi) << ",\"denominator\":1000000}";
+}
+R blocker_duration_prior(const R& length) { return O::sqrt(O::mul(rat(3), length)); }
+struct DurationModel {
+    R alpha;
+    std::string name;
+    R predict(const R& length) const { return O::sqrt(O::mul(alpha,length)); }
+};
+R end_delivery_prior() { return rat(1, 4); }
+R first_service_at_or_after(const R& arrival) {
+    long row = 8; // Public periodic service schedule; NO evaluation stop input.
+    while (O::cmp(rat(row), arrival) < 0) {
+        ++row; check(row < 64, "nominal service outside finite display domain");
+    }
+    return rat(row);
+}
+std::unique_ptr<P> task_initial(TaskPolicy policy) {
+    auto baseline = initial();
+    const auto state = baseline->view();
+    S s("task-empty", rat(0), policy == TaskPolicy::RR ?
+        pie_query::QueryPolicy::RoundRobin : pie_query::QueryPolicy::Srdc);
+    S::Delta d{{"task-empty", "task-initial", {}, {}, {}}, rat(0), {}, {}};
+    for (const auto& a : state.structure().actions) d.structure.actions.emplace(a.first, a.second->input);
+    for (const auto& o : state.structure().owners)
+        d.structure.owners.emplace(o.first, std::make_shared<const I::Owner>(o.second));
+    for (const auto& q : state.structure().demands) d.structure.demands.emplace(q.first, q.second->input);
+    auto update = s.prepare(d); s.commit(std::move(update));
+    pie_query::Map<P::SnapshotIds> ids;
+    for (const auto& a : d.structure.actions)
+        ids.emplace(a.first, P::SnapshotIds{a.first + "-task-seed", a.first + "-task-current", "", ""});
+    return std::unique_ptr<P>(new P(s, ids));
+}
+bool available(const P::View& v, const I::Demand& d) {
+    if (!d.non_owner_eligible) return false;
+    for (const auto& cell : d.resources) {
+        const auto o = v.structure().owners.find(cell);
+        if (o != v.structure().owners.end() && o->second.agent != d.agent) return false;
+    }
+    return true;
+}
+bool unit_clears(const I::State& s, const I::Relation& r,
+                 const std::set<std::string>& observed) {
+    if (!r.retirable || !r.threshold || !observed.count(r.action)) return false;
+    const auto& a = *s.actions.at(r.action)->input;
+    return a.eligible && a.epsilon && O::cmp(O::sub(a.b, *a.epsilon), *r.threshold) > 0;
+}
+unsigned admission_value(const I::State& s, const std::set<std::string>& selected) {
+    unsigned n = 0;
+    for (const auto& d : s.demands) {
+        bool all = d.second->input->non_owner_eligible && !d.second->relations.empty();
+        for (const auto& r : d.second->relations) if (!unit_clears(s, r, selected)) all = false;
+        if (all) ++n;
+    }
+    return n;
+}
+R partial_value(const I::State& s, const std::string& key) {
+    R result = rat(0);
+    for (const auto& d : s.demands) {
+        if (!d.second->input->non_owner_eligible || d.second->relations.empty()) continue;
+        for (const auto& r : d.second->relations)
+            if (unit_clears(s, r, {key})) result = O::add(result, rat(1, d.second->relations.size()));
+    }
+    return result;
+}
+using PublicPlans = pie_query::Map<std::vector<R>>;
+
+// Only committed relations, public current-task lengths, a declared nominal
+// controller prior and public opportunities enter this predictor. It sees no
+// Controller, world task queue, actual finish, future assigned task or stop time.
+// Waiting demands here have pairwise disjoint sweeps. This is a finite policy
+// probe, not a general collision-aware rollout or an optimality claim.
+unsigned completion_value(const I::State& s, const PublicPlans& plans,
+                          const std::vector<std::string>& sequence,
+                          const std::vector<R>& opportunities, const R& now,
+                          const R& window, const DurationModel& model) {
+    unsigned value = 0;
+    for (const auto& d : s.demands) {
+        if (!d.second->input->non_owner_eligible) continue;
+        R start = now; bool possible = true;
+        for (const auto& r : d.second->relations) {
+            if (!r.retirable || !r.threshold) { possible = false; break; }
+            const auto& a = *s.actions.at(r.action)->input;
+            // Nominal END delivery is available even without a progress query.
+            // Initial blockers' nominal launch at 0 is public fixture input.
+            R release = O::add(blocker_duration_prior(a.geometry.length()), end_delivery_prior());
+            for (std::size_t k = 0; k < sequence.size(); ++k)
+                if (sequence[k] == r.action && unit_clears(s, r, {r.action}) &&
+                    O::cmp(opportunities[k], release) < 0) release = opportunities[k];
+            if (O::cmp(release, start) > 0) start = release;
+        }
+        if (!possible) continue;
+        const auto& lengths = plans.at(d.first);
+        R arrival = start;
+        for (std::size_t k = 0; k < lengths.size(); ++k) {
+            arrival = O::add(arrival, model.predict(lengths[k]));
+            if (k + 1 < lengths.size()) arrival = O::add(arrival, end_delivery_prior());
+        }
+        // Service need not await final END/READY delivery.
+        if (O::cmp(first_service_at_or_after(arrival), O::add(now, window)) <= 0) ++value;
+    }
+    return value;
+}
+std::string choose_probe(const P::View& view, const PublicPlans& plans, TaskPolicy rule,
+                         const std::vector<R>& opportunities, const R& at,
+                         const DurationModel& model, unsigned capacity) {
+    if (capacity == 0) return "";
+    if (rule == TaskPolicy::Wait) return "";
+    const auto& state = view.structure();
+    std::vector<std::string> keys;
+    for (const auto& a : state.actions) if (a.second->input->eligible) keys.push_back(a.first);
+    check(!keys.empty(), "finite query candidates absent");
+    const bool admission = rule == TaskPolicy::AdmissionOne || rule == TaskPolicy::AdmissionPair;
+    if (admission) {
+        std::string best; unsigned score = 0; R partial = rat(0);
+        if (rule == TaskPolicy::AdmissionPair && opportunities.size() == 2 && capacity >= 2) {
+            for (const auto& a : keys) for (const auto& b : keys) {
+                if (a == b) continue;
+                const auto v = admission_value(state, {a,b});
+                if (best.empty() || v > score) { best = a; score = v; }
+            }
+            return best;
+        }
+        for (const auto& a : keys) {
+            const auto v = admission_value(state, {a}); const R p = partial_value(state, a);
+            if (best.empty() || v > score || (v == score && O::cmp(p, partial) > 0)) {
+                best = a; score = v; partial = p;
+            }
+        }
+        return best;
+    }
+    const unsigned depth = rule == TaskPolicy::CompletionOne ? 1u : static_cast<unsigned>(opportunities.size());
+    const R window = rule == TaskPolicy::CompletionPairLong ? rat(7) : rat(6);
+    keys.insert(keys.begin(), ""); // WAIT is a real option; no implicit query.
+    unsigned best_value = 0, best_queries = 3; std::vector<std::string> best;
+    auto consider = [&](const std::vector<std::string>& sequence) {
+        const unsigned v = completion_value(state, plans, sequence, opportunities, at, window,model);
+        unsigned count = 0; for (const auto& key : sequence) if (!key.empty()) ++count;
+        // Query count is a diagnostic tie-break, NOT a fabricated paid quote.
+        if (best.empty() || v > best_value || (v == best_value && count < best_queries)) {
+            best = sequence; best_value = v; best_queries = count;
+        }
+    };
+    for (const auto& a : keys) {
+        if (depth == 1) consider({a});
+        else for (const auto& b : keys) if (a.empty() || a != b) consider({a,b});
+    }
+    check(!best.empty(), "completion search produced no action");
+    std::cout << "{\"event\":\"completion_forecast\",\"rolling_window\":"
+              << exact(window) << ",\"predicted_pending_task_completions\":" << best_value
+              << ",\"diagnostic_query_count\":" << best_queries << "}\n";
+    return best.front();
+}
+
+
+// The predictor receives current public task plans and published MOVE launches
+// only. No world/private state is passed through this interface.
+struct PublicCohortTask {
+    std::string task, demand;
+    R assigned_at;
+    std::vector<R> lengths;
+    bool active;
+    R launched;
+};
+using PublicCohort = std::vector<PublicCohortTask>;
+struct CohortScore { bool feasible; R flow; };
+void emit_cohort_input(const I::State& state, const PublicCohort& tasks,
+                       const std::vector<R>& opportunities, const R& at,
+                       const DurationModel& model) {
+    std::cout << "{\"event\":\"cohort_input\",\"at\":\"" << exact(at)
+              << "\",\"alpha\":";
+    interval(model.alpha);
+    std::cout << ",\"opportunities\":[";
+    for (std::size_t k=0;k<opportunities.size();++k) {
+        if(k) std::cout<<',';
+        std::cout << '"' << exact(opportunities[k]) << '"';
+    }
+    std::cout << "],\"tasks\":[";
+    for (std::size_t k=0;k<tasks.size();++k) {
+        if(k) std::cout<<',';
+        const auto& t=tasks[k];
+        std::cout << "{\"task\":\"" << t.task << "\",\"demand\":\"" << t.demand
+                  << "\",\"assigned_at\":\"" << exact(t.assigned_at)
+                  << "\",\"non_owner_eligible\":"
+                  << (t.active || state.demands.at(t.demand)->input->non_owner_eligible?"true":"false")
+                  << ",\"active\":" << (t.active?"true":"false")
+                  << ",\"launched\":\"" << exact(t.launched) << "\",\"lengths\":[";
+        for(std::size_t j=0;j<t.lengths.size();++j) {
+            if(j) std::cout<<',';
+            std::cout << '"' << exact(t.lengths[j]) << '"';
+        }
+        std::cout << "],\"relations\":[";
+        if(!t.active) {
+            const auto& demand=*state.demands.at(t.demand);
+            for(std::size_t j=0;j<demand.relations.size();++j) {
+                if(j) std::cout<<',';
+                const auto& r=demand.relations[j];
+                const auto& a=*state.actions.at(r.action)->input;
+                std::cout << "{\"action\":\"" << r.action << "\",\"retirable\":"
+                          << (r.retirable?"true":"false") << ",\"eligible\":"
+                          << (a.eligible?"true":"false") << ",\"b\":\"" << exact(a.b)
+                          << "\",\"epsilon\":";
+                if(a.epsilon) std::cout << '"' << exact(*a.epsilon) << '"'; else std::cout << "null";
+                std::cout << ",\"threshold\":";
+                if(r.threshold) std::cout << '"' << exact(*r.threshold) << '"'; else std::cout << "null";
+                std::cout << ",\"blocker_length\":\"" << exact(a.geometry.length()) << "\"}";
+            }
+        }
+        std::cout << "]}";
+    }
+    std::cout << "],\"eligible_actions\":[";
+    bool comma=false;
+    for(const auto& a:state.actions) if(a.second->input->eligible) {
+        if(comma) std::cout<<',';
+        comma=true; std::cout<<'"'<<a.first<<'"';
+    }
+    std::cout << "]}\n";
+}
+CohortScore cohort_flow_value(const I::State& state, const PublicCohort& tasks,
+                             const std::vector<std::string>& sequence,
+                             const std::vector<R>& opportunities, const R& at,
+                             const DurationModel& model) {
+    R flow=rat(0); bool feasible=true;
+    std::cout << "{\"event\":\"cohort_candidate\",\"sequence\":[";
+    for(std::size_t k=0;k<sequence.size();++k) {
+        if(k) std::cout<<',';
+        std::cout<<'"'<<sequence[k]<<'"';
+    }
+    std::cout << "],\"terms\":[";
+    for(std::size_t k=0;k<tasks.size();++k) {
+        if(k) std::cout<<',';
+        const auto& task=tasks[k]; R start=task.active?task.launched:at; bool possible=true;
+        if(!task.active) {
+            const auto& demand=*state.demands.at(task.demand);
+            possible=demand.input->non_owner_eligible;
+            for(const auto& r:demand.relations) {
+                if(!r.retirable || !r.threshold) { possible=false; break; }
+                const auto& a=*state.actions.at(r.action)->input;
+                R release=O::add(blocker_duration_prior(a.geometry.length()),end_delivery_prior());
+                for(std::size_t j=0;j<sequence.size();++j)
+                    if(sequence[j]==r.action && unit_clears(state,r,{r.action}) &&
+                       O::cmp(opportunities[j],release)<0) release=opportunities[j];
+                if(O::cmp(release,start)>0) start=release;
+            }
+        }
+        R arrival=start;
+        for(std::size_t j=0;j<task.lengths.size();++j) {
+            arrival=O::add(arrival,model.predict(task.lengths[j]));
+            if(j+1<task.lengths.size()) arrival=O::add(arrival,end_delivery_prior());
+        }
+        const R service=first_service_at_or_after(arrival);
+        if(possible) flow=O::add(flow,O::sub(service,task.assigned_at));
+        else feasible=false;
+        std::cout << "{\"task\":\"" << task.task << "\",\"assigned_at\":\""
+                  << exact(task.assigned_at) << "\",\"predicted_service_at\":\"" << exact(service)
+                  << "\",\"feasible\":" << (possible?"true":"false") << '}';
+    }
+    std::cout << "],\"feasible\":" << (feasible?"true":"false")
+              << ",\"flow\":\"" << exact(flow) << "\"}\n";
+    return {feasible,flow};
+}
+std::string choose_budget_probe(const P::View& view, const PublicCohort& tasks,
+                               const PublicPlans& plans, TaskPolicy rule,
+                               const std::vector<R>& opportunities, const R& at,
+                               const DurationModel& model, unsigned capacity) {
+    const auto& state=view.structure();
+    emit_cohort_input(state,tasks,opportunities,at,model);
+    std::vector<std::string> keys={""};
+    for(const auto& a:state.actions) if(a.second->input->eligible) keys.push_back(a.first);
+    std::vector<std::string> best; R best_flow=rat(0);
+    unsigned best_queries=3, best_completion=0;
+    auto consider=[&](const std::vector<std::string>& sequence) {
+        unsigned count=0; for(const auto& key:sequence) if(!key.empty()) ++count;
+        if(count>capacity) return;
+        const auto score=cohort_flow_value(state,tasks,sequence,opportunities,at,model);
+        const unsigned completion=completion_value(state,plans,sequence,opportunities,at,rat(6),model);
+        std::cout << "{\"event\":\"budget_candidate_score\",\"window_count\":" << completion << "}\n";
+        const bool flow_rule=rule==TaskPolicy::CohortFlowPair;
+        const bool better=flow_rule ? O::cmp(score.flow,best_flow)<0 : completion>best_completion;
+        const bool tied=flow_rule ? same(score.flow,best_flow) : completion==best_completion;
+        if(score.feasible && (best.empty() || better || (tied && count<best_queries))) {
+            best=sequence; best_flow=score.flow; best_queries=count; best_completion=completion;
+        }
+    };
+    for(const auto& a:keys) {
+        if(opportunities.size()==1) consider({a});
+        else for(const auto& b:keys) if(a.empty() || a!=b) consider({a,b});
+    }
+    check(!best.empty(),"no feasible capacity-constrained candidate");
+    std::cout << "{\"event\":\"cohort_choice\",\"sequence\":[";
+    for(std::size_t k=0;k<best.size();++k) { if(k)std::cout<<','; std::cout<<'"'<<best[k]<<'"'; }
+    std::cout << "],\"flow\":\"" << exact(best_flow) << "\",\"window_count\":" << best_completion
+              << ",\"diagnostic_query_count\":" << best_queries << "}\n";
+    return best.front();
+}
+
+struct Leg { std::string key; long from, to, y; };
+struct Lane {
+    std::string key, agent;
+    long y, original_start, original_end, physical_x, goal;
+    unsigned task = 1, next_leg = 0, served = 0;
+    bool assigned = true, ready = true;
+    std::vector<Leg> plan;
+    R assigned_at;
+    Lane(const std::string& id, long row, long begin, long end)
+        : key(id), agent("agent-" + id), y(row), original_start(begin), original_end(end),
+          physical_x(begin), goal(end+1), plan{{id,begin,end,row},{id+"-task1-leg2",end,end+1,row}},
+          assigned_at(rat(0)) {}
+};
+struct Moving {
+    std::string key, agent;
+    G geometry;
+    R launched;
+    Controller controller;
+    int lane;
+    bool physical_end = false, native_end = false;
+    std::shared_ptr<const R> ended, delivery;
+    Moving(const std::string& id, const std::string& owner, const G& g, const R& at, int n,
+           const R& private_eta)
+        : key(id), agent(owner), geometry(g), launched(at),
+          controller({rat(1),rat(2),rat(6),rat(1)},g.length(),at,g.length(),private_eta,id), lane(n) {
+        check(O::cmp(private_eta,rat(-1))>=0 && O::cmp(private_eta,rat(1))<=0,"private disturbance outside promise");
+        check(controller.run(at), "new original MOVE did not RUN");
+    }
+};
+struct TaskResult { std::vector<std::string> queries; std::vector<unsigned> curve; unsigned served_before_ready; };
+class TaskWorld {
+    const unsigned query_capacity;
+    const unsigned ab_tail, c_tail;
+    const R requester_eta;
+    const DurationModel duration_model;
+    const std::string evaluation_id;
+    const bool native_quote_diagnostic;
+    std::unique_ptr<P> p;
+    std::vector<Lane> lanes;
+    std::vector<std::unique_ptr<Moving>> moves;
+    pie_query::Map<R> public_launch_times;
+    std::set<std::string> serviced;
+    std::vector<std::string> queried;
+    unsigned revision = 0, before_ready = 0, task_deliveries = 0, started_moves = 0;
+    std::vector<unsigned> curve;
+    R clock = rat(0);
+    R task_flow_sum = rat(0), last_service = rat(0);
+    unsigned common_observations = 0;
+
+    S::Delta change(const std::string& tag) {
+        return {{p->view().structure().view_id, tag+"-"+std::to_string(++revision), {},{},{}},clock,{}, {}};
+    }
+    bool active(unsigned lane) const {
+        for (const auto& m : moves) if (m->lane == static_cast<int>(lane) && !m->native_end) return true;
+        return false;
+    }
+    void event(const char* kind, const std::string& id) {
+        std::cout << "{\"event\":\"" << kind << "\",\"id\":\"" << id << "\",\"at\":";
+        interval(clock); std::cout << "}\n";
+    }
+    void advance(const R& at) {
+        clock = at;
+        for (auto& m : moves) {
+            if (m->physical_end) continue;
+            m->controller.advance_to(at);
+            const auto s = m->controller.snapshot();
+            if (!s.closed()) continue;
+            check(s.move_id() == m->key && same(s.state().s,s.length()) && same(s.state().v,rat(0)),
+                  "physical END lacks original endpoint at rest");
+            m->physical_end = true; m->ended = std::make_shared<const R>(at);
+            m->delivery = std::make_shared<const R>(O::add(at,end_delivery_prior()));
+            if (m->lane >= 0) {
+                auto& l = lanes.at(static_cast<unsigned>(m->lane));
+                check(l.next_leg > 0, "END without a planned current leg");
+                l.physical_x = l.plan.at(l.next_leg-1).to;
+            }
+            event("physical_original_end",m->key);
+            if (m->lane >= 0) {
+                const R elapsed=O::sub(at,m->launched);
+                const R alpha=O::div(O::mul(elapsed,elapsed),m->geometry.length());
+                R error=O::sub(alpha,duration_model.alpha);
+                if (O::cmp(error,rat(0))<0) error=O::sub(rat(0),error);
+                std::cout << "{\"event\":\"offline_duration_evaluation\",\"move_id\":\"" << m->key
+                          << "\",\"actual_alpha\":"; interval(alpha);
+                std::cout << ",\"predicted_alpha\":"; interval(duration_model.alpha);
+                std::cout << ",\"absolute_alpha_error\":"; interval(error);
+                std::cout << ",\"feeds_online_model\":false}\n";
+            }
+        }
+    }
+    void deliver_ends() {
+        for (auto& m : moves) {
+            if (!m->physical_end || m->native_end || !same(*m->delivery,clock)) continue;
+            const auto before = p->view();
+            const auto endpoint = m->geometry.n_mask(m->geometry.length(),m->geometry.length());
+            for (const auto& cell : endpoint.mask())
+                check(before.structure().owners.at(cell).action == m->key, "END endpoint lost ownership");
+            auto delta = change("native-END"); delta.structure.actions.emplace(m->key,nullptr);
+            // END itself releases the old responsibility. No extra POSITION
+            // query is silently added; endpoint resources become residents.
+            for (const auto& own : before.structure().owners) if (own.second.action == m->key) {
+                if (std::find(endpoint.mask().begin(),endpoint.mask().end(),own.first) != endpoint.mask().end())
+                    delta.structure.owners.emplace(own.first,std::make_shared<const I::Owner>(
+                        I::Owner{"resident-"+m->agent,m->agent,"",false}));
+                else delta.structure.owners.emplace(own.first,nullptr);
+            }
+            auto prepared = p->prepare_admitted_update(delta,{}); p->commit(std::move(prepared));
+            check(!p->view().structure().actions.count(m->key), "END retained old action");
+            m->native_end = true;
+            event("native_end_ownership_handoff",m->key);
+            if (m->lane >= 0) {
+                auto& l = lanes.at(static_cast<unsigned>(m->lane));
+                check(!l.ready, "READY consumed twice"); l.ready = true;
+                event("native_ready_consumed",m->key);
+            }
+        }
+    }
+    bool service_true(unsigned n) const {
+        const auto& l = lanes.at(n);
+        if (!l.assigned || l.physical_x != l.goal) return false;
+        // Active motion may have physically ENDed while its software delivery
+        // is pending. That stationary original endpoint can already serve.
+        for (const auto& m : moves) if (m->lane == static_cast<int>(n) && !m->native_end)
+            if (!m->physical_end || !same(m->controller.snapshot().state().v,rat(0))) return false;
+        // Actual z=0 witness, full square footprint half-width 1/10, closed
+        // task service square half-width 1/5. Test all four actual vertices.
+        for (long dx : {-1L,1L}) for (long dy : {-1L,1L}) {
+            const R x = O::add(rat(l.physical_x),rat(dx,10));
+            const R y = O::add(rat(l.y),rat(dy,10));
+            if (O::cmp(x,O::sub(rat(l.goal),rat(1,5))) < 0 ||
+                O::cmp(x,O::add(rat(l.goal),rat(1,5))) > 0 ||
+                O::cmp(y,O::sub(rat(l.y),rat(1,5))) < 0 ||
+                O::cmp(y,O::add(rat(l.y),rat(1,5))) > 0) return false;
+        }
+        return true;
+    }
+    void service_row() {
+        std::vector<unsigned> successes;
+        // First evaluate every OLD head, then apply services and replenishment.
+        for (unsigned n=0; n<lanes.size(); ++n) if (service_true(n)) successes.push_back(n);
+        for (const auto n : successes) {
+            auto& l=lanes[n]; const std::string task=l.key+"-task"+std::to_string(l.task);
+            check(serviced.insert(task).second, "task counted twice");
+            check(l.next_leg == l.plan.size(), "intermediate MOVE counted as a task");
+            if (!l.ready) ++before_ready;
+            ++l.served; l.assigned=false;
+            task_flow_sum = O::add(task_flow_sum,O::sub(clock,l.assigned_at));
+            last_service = clock;
+            std::cout << "{\"event\":\"task_service\",\"task\":\"" << task
+                      << "\",\"agent\":\"" << l.agent << "\",\"at\":";
+            interval(clock); std::cout << ",\"assigned_at\":"; interval(l.assigned_at);
+            std::cout << ",\"before_native_ready\":" << (!l.ready ? "true" : "false") << "}\n";
+        }
+        // This fixture's private fixed source contains three goals per agent.
+        // Future tasks only become public after this world-row replenishment.
+        for (const auto n : successes) {
+            auto& l=lanes[n]; if (l.task == 3) continue;
+            ++l.task; l.assigned=true; l.assigned_at=clock;
+            const bool tail = n == 2 ? c_tail != 0 : ab_tail != 0;
+            l.goal = l.original_end + (l.task == 2 ? (tail ? 0 : 1) : (tail ? 1 : 0));
+            check(l.physical_x != l.goal,"zero-MOVE replenishment task");
+            const std::string key=l.key+"-task"+std::to_string(l.task)+"-leg1";
+            l.plan={{key,l.physical_x,l.goal,l.y}}; l.next_leg=0;
+            event("task_assigned",l.key+"-task"+std::to_string(l.task));
+            ++task_deliveries; event("native_task_knowledge_delivered",key);
+        }
+        curve.push_back(static_cast<unsigned>(serviced.size()));
+    }
+    void start_ready() {
+        for (unsigned n=0; n<lanes.size(); ++n) {
+            auto& l=lanes[n];
+            if (!l.assigned || !l.ready || active(n) || l.next_leg == l.plan.size()) continue;
+            const auto& leg=l.plan.at(l.next_leg);
+            check(l.physical_x == leg.from, "successor MOVE teleported its start");
+            const G g=geometry(leg.key,leg.from,leg.y,leg.to,leg.y);
+            const auto full=g.n_mask(rat(0),g.length());
+            if (!p->view().structure().demands.count(leg.key)) {
+                auto request=change("request");
+                request.structure.demands.emplace(leg.key,std::make_shared<const I::Demand>(
+                    I::Demand{l.agent,"",full.mask(),clock,true}));
+                auto pending=p->prepare_admitted_update(request,{}); p->commit(std::move(pending));
+            }
+            const auto before=p->view();
+            if (!available(before,*before.structure().demands.at(leg.key)->input)) continue;
+            const auto residence=g.n_mask(rat(0),rat(0));
+            for (const auto& cell : residence.mask()) {
+                const auto& own=before.structure().owners.at(cell);
+                check(own.agent == l.agent && !own.geometric && own.action.empty(), "start lacks resident/READY handoff");
+            }
+            auto grant=change("grant"); auto a=std::make_shared<I::Action>(*action(l.agent,g));
+            a->eligible=false; grant.structure.actions.emplace(leg.key,a);
+            for (const auto& cell : full.mask()) {
+                const auto own=before.structure().owners.find(cell);
+                check(own == before.structure().owners.end() || own->second.agent == l.agent, "grant collided");
+                grant.structure.owners.emplace(cell,std::make_shared<const I::Owner>(
+                    I::Owner{leg.key,l.agent,leg.key,true}));
+            }
+            grant.structure.demands.emplace(leg.key,nullptr);
+            auto pending=p->prepare_admitted_update(grant,{{leg.key,{leg.key+"-seed",leg.key+"-current","",""}}});
+            p->commit(std::move(pending)); l.ready=false; ++l.next_leg; ++started_moves;
+            check(public_launch_times.emplace(leg.key,clock).second,"duplicate public launch record");
+            moves.emplace_back(new Moving(leg.key,l.agent,g,clock,static_cast<int>(n),requester_eta));
+            event("original_move_started",leg.key);
+        }
+    }
+    PublicPlans public_plans() const {
+        PublicPlans result;
+        for (const auto& l : lanes) {
+            if (!l.assigned || l.next_leg == l.plan.size()) continue;
+            const auto& first=l.plan.at(l.next_leg);
+            if (!p->view().structure().demands.count(first.key)) continue;
+            std::vector<R> lengths;
+            for (std::size_t k=l.next_leg;k<l.plan.size();++k) {
+                const R delta=O::sub(rat(l.plan[k].to),rat(l.plan[k].from));
+                lengths.push_back(O::cmp(delta,rat(0)) < 0 ? O::sub(rat(0),delta) : delta);
+            }
+            result.emplace(first.key,std::move(lengths));
+        }
+        return result;
+    }
+    PublicCohort public_cohort() const {
+        PublicCohort result;
+        for(const auto& l:lanes) {
+            // Only current assigned plans and published grant bookkeeping.
+            // Both declared opportunities precede any service/replenishment.
+            check(l.assigned && l.task==1 && same(l.assigned_at,rat(0)) && l.next_leg<=1,
+                  "current-cohort first-leg scope exceeded");
+            const bool launched=l.next_leg==1;
+            const auto& first=l.plan.front();
+            check(launched ? p->view().structure().actions.count(first.key)!=0 :
+                             p->view().structure().demands.count(first.key)!=0,
+                  "current task lacks public grant or demand");
+            std::vector<R> lengths;
+            for(const auto& leg:l.plan) {
+                const R delta=O::sub(rat(leg.to),rat(leg.from));
+                lengths.push_back(O::cmp(delta,rat(0))<0?O::sub(rat(0),delta):delta);
+            }
+            result.push_back({l.key+"-task1",first.key,l.assigned_at,std::move(lengths),
+                              launched,launched?public_launch_times.at(first.key):rat(0)});
+        }
+        check(result.size()==3,"current cohort differs from three assigned tasks");
+        return result;
+    }
+    void query_opportunity(TaskPolicy rule, unsigned step) {
+        const auto before=p->view(); std::string key;
+        check(queried.size()<=query_capacity,"capacity exceeded before decision");
+        const unsigned remaining=query_capacity-static_cast<unsigned>(queried.size());
+        std::cout << "{\"event\":\"budget_context\",\"capacity\":" << query_capacity
+                  << ",\"used\":" << queried.size() << ",\"remaining\":" << remaining
+                  << ",\"step\":" << step << "}\n";
+        if (remaining == 0 && (rule==TaskPolicy::Srdc || rule==TaskPolicy::RR || rule==TaskPolicy::AdmissionPair)) {
+            event("no_query",std::to_string(step)); return;
+        }
+        if (rule == TaskPolicy::Srdc || rule == TaskPolicy::RR) {
+            const auto chosen=p->choose(clock);
+            check(chosen.score(), "original selector returned no candidate");
+            const bool priced = native_quote_diagnostic && rule == TaskPolicy::Srdc;
+            check(chosen.kind() == (priced ? pie_query::ChoiceKind::PositiveScore : pie_query::ChoiceKind::RoundRobin),
+                  "original selector did not enter the declared score/RR path");
+            std::cout << "{\"event\":\"original_selector_kind\",\"kind\":\""
+                      << (priced ? "positive_score_native_quote" : "round_robin") << "\"}\n";
+            key=chosen.score()->action;
+            auto pub=p->prepare_query_publication(chosen,{chosen.view(),key,chosen.score()->source,
+                "native-task-query-not-AUTH",chosen.generation(),clock});
+            p->commit(std::move(pub));
+        } else {
+            const std::vector<R> opportunities=step == 0 ? std::vector<R>{rat(5,2),rat(11,4)} : std::vector<R>{rat(11,4)};
+            key=(rule==TaskPolicy::CohortFlowPair || rule==TaskPolicy::CompletionPair) ?
+                choose_budget_probe(before,public_cohort(),public_plans(),rule,opportunities,clock,duration_model,remaining) :
+                choose_probe(before,public_plans(),rule,opportunities,clock,duration_model,remaining);
+            check(p->view().same_identity(before), "prediction mutated actual owner state");
+        }
+        if (key.empty()) { event("no_query",std::to_string(step)); return; }
+        check(key == "A" || key == "B" || key == "C", "queried outside finite eligible blocker set");
+        check(std::find(queried.begin(),queried.end(),key) == queried.end(), "repeated query");
+        event("query_selected",key);
+        // Physical state enters the certificate ONLY after selection.
+        Moving& m=*moves.at(static_cast<unsigned>(key[0]-'A'));
+        query(*p,m.controller,clock,"task-probe-"+key);
+        queried.push_back(key);
+        check(queried.size()<=query_capacity,"submitted query exceeded declared capacity");
+        auto seen=change("observed"); auto a=std::make_shared<I::Action>(*p->view().structure().actions.at(key)->input);
+        a->eligible=false; seen.structure.actions.emplace(key,a);
+        auto pending=p->prepare_admitted_update(seen,{}); p->commit(std::move(pending));
+        for (unsigned k=0;k<3;++k) {
+            const auto& id=moves[k]->key;
+            if (std::find(queried.begin(),queried.end(),id) == queried.end())
+                check(same(p->view().structure().actions.at(id)->input->q,
+                           native_quote_diagnostic ? rat(9,8) : rat(0)), "unqueried progress leaked");
+        }
+    }
+public:
+    TaskWorld(TaskPolicy policy, const R& actual_eta, const DurationModel& model,
+              const std::string& run_id, unsigned budget, unsigned tail_ab, unsigned tail_c, bool quoted=false)
+        : query_capacity(budget), ab_tail(tail_ab), c_tail(tail_c), requester_eta(actual_eta), duration_model(model),
+        evaluation_id(run_id), native_quote_diagnostic(quoted), p(task_initial(policy)),
+        lanes{Lane("D1",1,-2,4),Lane("D2",2,-2,4),Lane("D3",1,6,10)} {
+        check(query_capacity<=2 && ab_tail<=1 && c_tail<=1,"outside frozen factor domain");
+        for(unsigned n=0;n<lanes.size();++n) {
+            if((n==2?c_tail:ab_tail)==0) {
+                lanes[n].plan.pop_back(); lanes[n].goal=lanes[n].original_end;
+            }
+        }
+        for (const std::string key : {"A","B","C"}) moves.emplace_back(new Moving(key,"agent-"+key,blocker(key),rat(0),-1,rat(-1)));
+        if (native_quote_diagnostic) {
+            // Same six REAL current-MOVE observations in every arm. Both
+            // captures precede all query decisions and all strict thresholds.
+            // They are counted separately, never treated as free strategy wins.
+            for (const R& at : {rat(1),rat(3,2)}) {
+                advance(at);
+                for (unsigned k=0;k<3;++k) {
+                    query(*p,moves[k]->controller,clock,"shared-warmup-"+moves[k]->key+"-"+exact(at));
+                    ++common_observations;
+                    event("common_initial_POSITION",moves[k]->key);
+                }
+            }
+            for (const auto& d : p->view().structure().demands)
+                check(!available(p->view(),*d.second->input),"warmup released a demand");
+            // Explicit artificial admitted quote, in a diagnostic unit. This
+            // neither reuses incomplete B1 costs nor claims production COST.
+            auto quoted_delta=change("native-diagnostic-quote");
+            quoted_delta.receipts.push_back({"exact-fixture-profile","artificial-native-source",
+                "declared-native-quote","artificial_admitted_quote_not_production_COST",
+                std::make_shared<const R>(rat(1,10)),rat(0),rat(1,8),rat(1,4),rat(1,2),rat(1)});
+            auto prepared=p->prepare_admitted_update(quoted_delta,{}); p->commit(std::move(prepared));
+            std::cout << "{\"event\":\"native_quote_installed\",\"charged_work\":1,"
+                      << "\"unit\":\"artificial_native_diagnostic_unit\",\"elapsed\":0.25,"
+                      << "\"source\":\"declared_artificial_admitted_receipt\",\"production_COST\":false}\n";
+        }
+        // Pairwise disjoint request sweeps justify the finite independent
+        // admission forecast. Production rollout must check general conflicts.
+        const auto v=p->view(); std::set<std::string> requested;
+        for (const auto& d : v.structure().demands) for (const auto& r : d.second->input->resources)
+            check(requested.insert(r).second,"fixture demands overlap each other");
+    }
+    TaskResult run(TaskPolicy policy) {
+        std::cout << "{\"event\":\"policy_begin\",\"policy\":\"" << policy_name(policy)
+                  << "\",\"run_id\":\"" << evaluation_id << "\",\"predictor\":\""
+                  << duration_model.name << "\",\"native_quote_diagnostic\":"
+                  << (native_quote_diagnostic ? "true" : "false") << ",\"capacity\":" << query_capacity
+                  << ",\"ab_tail\":" << ab_tail << ",\"c_tail\":" << c_tail << "}\n";
+        unsigned query_step=0; long service=8; unsigned events=0;
+        // The evaluation stop is deliberately only in the world event loop.
+        // Neither choose_probe nor completion_value receives it.
+        while (service <= 16) {
+            check(++events < 300, "finite world failed to progress");
+            R next=rat(service);
+            auto earlier=[&](const R& t) { if (O::cmp(t,next)<0) next=t; };
+            if (query_step<2) earlier(query_step == 0 ? rat(5,2) : rat(11,4));
+            for (const auto& m : moves) {
+                if (!m->physical_end) {
+                    const auto s=m->controller.snapshot(); earlier(O::add(s.segment_start(),s.segment().duration()));
+                } else if (!m->native_end) earlier(*m->delivery);
+            }
+            check(O::cmp(next,clock)>0,"event loop repeated a time");
+            advance(next); deliver_ends();
+            if (same(clock,rat(service))) { service_row(); ++service; }
+            if (query_step<2 && same(clock,query_step == 0 ? rat(5,2) : rat(11,4)))
+                query_opportunity(policy,query_step++);
+            start_ready();
+        }
+        check(serviced.size()==9 && task_deliveries==6 && started_moves==9+2*ab_tail+c_tail,"task loop did not execute all assigned work");
+        for (const auto& m : moves) check(m->physical_end && m->native_end,"end/READY lifecycle incomplete");
+        check(p->view().structure().actions.empty() && p->view().structure().demands.empty(),"old MOVE or request survived final handoff");
+        for (const auto& l : lanes) {
+            check(l.served==3 && !l.assigned && l.ready,"final task/resident state invalid");
+            const G g=geometry(l.key+"-final-check",l.physical_x-1,l.y,l.physical_x,l.y);
+            check(l.physical_x==l.goal,"final physical endpoint differs from final task");
+            const auto resident=g.n_mask(g.length(),g.length());
+            for (const auto& cell : resident.mask()) {
+                const auto& own=p->view().structure().owners.at(cell);
+                check(own.agent==l.agent && !own.geometric && own.action.empty(),"finished agent lost resident footprint");
+            }
+        }
+        std::cout << "{\"event\":\"policy_result\",\"policy\":\"" << policy_name(policy)
+                  << "\",\"run_id\":\"" << evaluation_id << "\",\"predictor\":\"" << duration_model.name
+                  << "\",\"queries\":[";
+        for (std::size_t k=0;k<queried.size();++k) { if(k) std::cout<<','; std::cout<<'"'<<queried[k]<<'"'; }
+        std::cout << "],\"service_times\":[8,9,10,11,12,13,14,15,16],\"completed_tasks\":[";
+        for (std::size_t k=0;k<curve.size();++k) { if(k) std::cout<<','; std::cout<<curve[k]; }
+        std::cout << "],\"served_before_native_ready\":" << before_ready
+                  << ",\"original_requester_moves\":" << started_moves << ",\"final_tasks\":" << serviced.size()
+                  << ",\"common_initial_observations\":" << common_observations
+                  << ",\"task_flow_sum\":" << exact(task_flow_sum)
+                  << ",\"last_task_service\":" << exact(last_service) << "}\n";
+        return {queried,curve,before_ready};
+    }
+};
+struct DeliveredDuration {
+    std::string run_id, move_id;
+    R length, start, end, received;
+};
+// A history row is a completed independent EPISODE; the later finite task
+// world is a new episode. Within each episode requester conditions persist.
+DeliveredDuration historical_move(const std::string& id, const R& length,
+                                  const R& private_eta, const R& start) {
+    const std::string move_id=id+"-move";
+    Controller controller({rat(1),rat(2),rat(6),rat(1)},length,start,length,private_eta,move_id);
+    check(controller.run(start),"historical native RUN failed");
+    unsigned boundaries=0;
+    while (!controller.snapshot().closed()) {
+        check(++boundaries<=3,"history control did not end");
+        const auto s=controller.snapshot();
+        controller.advance_to(O::add(s.segment_start(),s.segment().duration()));
+    }
+    const auto s=controller.snapshot();
+    check(s.move_id()==move_id && same(s.state().s,length) && same(s.state().v,rat(0)),"invalid historical original END");
+    DeliveredDuration row{id,move_id,length,start,s.time(),O::add(s.time(),end_delivery_prior())};
+    check(O::cmp(row.received,rat(32))<0,"history label after evaluation origin");
+    std::cout << "{\"event\":\"historical_native_END_delivered\",\"run_id\":\"" << id
+              << "\",\"move_id\":\"" << row.move_id << "\",\"length\":" << exact(length)
+              << ",\"started\":"; interval(row.start);
+    std::cout << ",\"ended\":"; interval(row.end);
+    std::cout << ",\"received\":"; interval(row.received);
+    std::cout << ",\"full_cap_uninterrupted\":true,\"clock_domain\":\"global_history\"}\n";
+    return row;
+}
+std::vector<DurationModel> frozen_models(const std::vector<DeliveredDuration>& rows) {
+    check(rows.size()==6,"fixed six-episode history required");
+    std::vector<R> alpha; std::set<std::string> ids;
+    for (const auto& row : rows) {
+        check(ids.insert(row.run_id).second,"duplicate historical run");
+        check(O::cmp(row.received,rat(32))<0 && O::cmp(row.end,row.start)>0,
+              "undelivered training label");
+        const R d=O::sub(row.end,row.start);
+        alpha.push_back(O::div(O::mul(d,d),row.length));
+    }
+    const std::size_t n=alpha.size();
+    const R mean=O::div(O::add(O::add(alpha[n-3],alpha[n-2]),alpha[n-1]),rat(3));
+    std::vector<R> recent={alpha[n-3],alpha[n-2],alpha[n-1]};
+    std::sort(recent.begin(),recent.end(),[](const R& a,const R& b){return O::cmp(a,b)<0;});
+    // Fixed AR(1) OLS with intercept, using only five historical transitions.
+    // Degenerate constant design uses the recent mean. No test tuning.
+    R sx=rat(0),sy=rat(0),sxx=rat(0),sxy=rat(0);
+    for (std::size_t k=1;k<n;++k) {
+        sx=O::add(sx,alpha[k-1]); sy=O::add(sy,alpha[k]);
+        sxx=O::add(sxx,O::mul(alpha[k-1],alpha[k-1]));
+        sxy=O::add(sxy,O::mul(alpha[k-1],alpha[k]));
+    }
+    const R count=rat(n-1),den=O::sub(O::mul(count,sxx),O::mul(sx,sx));
+    R prediction=mean;
+    if (!same(den,rat(0))) {
+        const R slope=O::div(O::sub(O::mul(count,sxy),O::mul(sx,sy)),den);
+        const R intercept=O::div(O::sub(sy,O::mul(slope,sx)),count);
+        prediction=O::add(intercept,O::mul(slope,alpha.back()));
+    }
+    const auto bounds=std::minmax_element(alpha.begin(),alpha.end(),
+        [](const R& a,const R& b){return O::cmp(a,b)<0;});
+    if (O::cmp(prediction,*bounds.first)<0) prediction=*bounds.first;
+    if (O::cmp(prediction,*bounds.second)>0) prediction=*bounds.second;
+    const std::vector<DurationModel> models={{rat(3),"frozen_nominal"},
+        {alpha.back(),"last_END"},{mean,"sliding_mean3"},{recent[1],"robust_median3"},
+        {alpha[n-2],"seasonal_lag2"},{prediction,"historical_AR1_OLS"}};
+    for (const auto& model : models) {
+        std::cout << "{\"event\":\"frozen_predictor\",\"predictor\":\"" << model.name
+                  << "\",\"training_episodes\":6,\"alpha\":"; interval(model.alpha);
+        std::cout << ",\"frozen_before_test\":true,\"evaluation_global_origin\":32}\n";
+    }
+    return models;
+}
+struct Condition {
+    std::string id, history_id;
+    std::vector<long> history_eta;
+    long test_eta;
+    bool native_quote;
+};
+Condition condition(unsigned id) {
+    switch(id) {
+    case 0: return {"alternating_next_slow","alternating_end_fast",{-1,1,-1,1,-1,1},-1,false};
+    case 1: return {"alternating_next_fast","alternating_end_slow",{1,-1,1,-1,1,-1},1,false};
+    case 2: return {"stable_fast","identical_fast_history",{1,1,1,1,1,1},1,false};
+    case 3: return {"unpredictable_slow_shock","identical_fast_history",{1,1,1,1,1,1},-1,false};
+    case 4: return {"native_quote_alternating_next_slow","alternating_end_fast",{-1,1,-1,1,-1,1},-1,true};
+    case 5: return {"native_quote_alternating_next_fast","alternating_end_slow",{1,-1,1,-1,1,-1},1,true};
+    default: throw std::invalid_argument("instance must be in the fixed range 0..5");
+    }
+}
+void budget_comparison(unsigned instance) {
+    const unsigned workload=instance/12, regime=(instance/3)%4, budget=instance%3;
+    const unsigned ab=workload/2, ctail=workload%2;
+    const auto c=condition(regime);
+    const std::string instance_id="w"+std::to_string(workload)+"-"+c.id+"-b"+std::to_string(budget);
+    std::cout << "{\"event\":\"condition\",\"id\":\"" << instance_id
+              << "\",\"history_identity\":\"" << c.history_id
+              << "\",\"ab_tail\":" << ab << ",\"c_tail\":" << ctail
+              << ",\"capacity\":" << budget << "}\n";
+    std::vector<DeliveredDuration> history;
+    for(unsigned k=0;k<6;++k) history.push_back(historical_move(c.history_id+"-episode"+std::to_string(k),
+        rat(1+k%2),rat(c.history_eta[k]),rat(4*k)));
+    const auto models=frozen_models(history);
+    for(const unsigned m:{0u,4u,5u}) for(const auto rule:{TaskPolicy::CompletionPair,TaskPolicy::CohortFlowPair}) {
+        const auto& model=models.at(m);
+        const std::string run=instance_id+"-"+model.name+"-"+policy_name(rule);
+        TaskWorld world(rule,rat(c.test_eta),model,run,budget,ab,ctail);
+        world.run(rule);
+    }
+    for(const auto rule:{TaskPolicy::AdmissionPair,TaskPolicy::RR}) {
+        const DurationModel model{models.back().alpha,policy_name(rule)};
+        TaskWorld world(rule,rat(c.test_eta),model,instance_id+"-"+model.name,budget,ab,ctail);
+        world.run(rule);
+    }
+    std::cout << "{\"event\":\"summary\",\"status\":\"passed\",\"checks\":" << checks
+              << ",\"finite_task_service\":true,\"production_AUTH\":false,\"full_paid_cost\":false"
+              << ",\"independent_learning_advantage_claim\":false,\"lifelong_performance_claim\":false}\n";
+}
+} // namespace
+int main(int argc,char** argv) {
+    try {
+        check(argc==2,"one predeclared instance index is required");
+        const std::string id=argv[1];
+        const unsigned instance=static_cast<unsigned>(std::stoul(id));
+        check(instance<48 && std::to_string(instance)==id,"invalid frozen instance index");
+        budget_comparison(instance); return 0;
+    } catch(const std::exception& e) {
+        std::cerr << "budget task failed after " << checks << " checks: " << e.what() << '\n'; return 1;
+    }
+}

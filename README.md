@@ -1,5 +1,7 @@
 # 学习型进度查询探索工作区
 
+2026-09-30 最新：[同容量、公共任务结构与active任务实验](exploration/learned_query/BUDGET_TASK_RESULTS_20260930.md)完成384次运行、3456任务。任务导向规则已在一个预声明结构下以1次查询、流时36优于内部admission/RR的2次查询、流时37；AR仍与lag2同效，未证明学习独立增益。完整原始回执、CSV和root独立复核均链接于该报告。主要基线仍须使用已发表作者方法，内部规则仅用于机制消融。下一步接真实费用与公开场景；[2026近作核查](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/LITERATURE_DELTA_20260930.md)进一步限定贡献。以下旧“最新”说明按其日期阅读。
+
 2026-09-24 最新：[查询决策到立即执行的比较](exploration/learned_query/DECISION_EXECUTION.md)已通过321项断言。原 SRDC（无报价回退）/RR 与两步准入前瞻均选 AB；单步选 CA。截止6时后者完成1个 MOVE、前者0个，截止7时前者完成2个、后者1个。后继改进改为围绕完成时刻选择查询，并把学习增益与决策目标改进分开检验。
 
 同一仓库保留三条清楚分工的分支：[main 主线](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/main)验证空间误差下的安全执行和付费查询；本分支 `explore/learned-query` 研究查询预测与组合决策；新建的 [explore/error-aware-guidance](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/explore/error-aware-guidance) 研究固定误差安全层上的路径占用/等待代价。新分支已有条件性的路径排序反转见证，尚未训练模型，不替换本分支或主线。

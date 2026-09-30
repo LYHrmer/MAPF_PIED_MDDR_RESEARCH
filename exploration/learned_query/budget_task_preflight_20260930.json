@@ -1,0 +1,3771 @@
+{
+  "status": "passed",
+  "kind": "public-model feasibility preflight, not native result",
+  "source": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/objective_task_run_20260929_02.json",
+  "source_sha256": "73e898313d97d6a37ad9b8f35ef80f4d9586f7ec1b3d1fa8684c0c2d3f1a3520",
+  "active_case_witnesses": 2,
+  "rows": [
+    {
+      "ab_tail": 0,
+      "c_tail": 0,
+      "capacity": 0,
+      "public_input": {
+        "event": "cohort_input",
+        "at": "5/2",
+        "alpha": {
+          "lower": 3000000,
+          "upper": 3000000,
+          "denominator": 1000000
+        },
+        "opportunities": [
+          "5/2",
+          "11/4"
+        ],
+        "tasks": [
+          {
+            "task": "D1-task1",
+            "demand": "D1",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "6"
+            ],
+            "relations": [
+              {
+                "action": "A",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              },
+              {
+                "action": "B",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              }
+            ]
+          },
+          {
+            "task": "D2-task1",
+            "demand": "D2",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "6"
+            ],
+            "relations": [
+              {
+                "action": "A",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "53/20",
+                "blocker_length": "3"
+              },
+              {
+                "action": "B",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "53/20",
+                "blocker_length": "3"
+              }
+            ]
+          },
+          {
+            "task": "D3-task1",
+            "demand": "D3",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "4"
+            ],
+            "relations": [
+              {
+                "action": "C",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              }
+            ]
+          }
+        ],
+        "eligible_actions": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      "candidates": [
+        {
+          "sequence": [
+            "",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "24"
+        }
+      ],
+      "winner": [
+        "",
+        ""
+      ],
+      "flow": "24"
+    },
+    {
+      "ab_tail": 0,
+      "c_tail": 0,
+      "capacity": 1,
+      "public_input": {
+        "event": "cohort_input",
+        "at": "5/2",
+        "alpha": {
+          "lower": 3000000,
+          "upper": 3000000,
+          "denominator": 1000000
+        },
+        "opportunities": [
+          "5/2",
+          "11/4"
+        ],
+        "tasks": [
+          {
+            "task": "D1-task1",
+            "demand": "D1",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "6"
+            ],
+            "relations": [
+              {
+                "action": "A",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              },
+              {
+                "action": "B",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              }
+            ]
+          },
+          {
+            "task": "D2-task1",
+            "demand": "D2",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "6"
+            ],
+            "relations": [
+              {
+                "action": "A",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "53/20",
+                "blocker_length": "3"
+              },
+              {
+                "action": "B",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "53/20",
+                "blocker_length": "3"
+              }
+            ]
+          },
+          {
+            "task": "D3-task1",
+            "demand": "D3",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "4"
+            ],
+            "relations": [
+              {
+                "action": "C",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              }
+            ]
+          }
+        ],
+        "eligible_actions": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      "candidates": [
+        {
+          "sequence": [
+            "",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "24"
+        },
+        {
+          "sequence": [
+            "",
+            "A"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "24"
+        },
+        {
+          "sequence": [
+            "",
+            "B"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "24"
+        },
+        {
+          "sequence": [
+            "",
+            "C"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "24"
+        },
+        {
+          "sequence": [
+            "A",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "24"
+        },
+        {
+          "sequence": [
+            "B",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "24"
+        },
+        {
+          "sequence": [
+            "C",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "24"
+        }
+      ],
+      "winner": [
+        "",
+        ""
+      ],
+      "flow": "24"
+    },
+    {
+      "ab_tail": 0,
+      "c_tail": 0,
+      "capacity": 2,
+      "public_input": {
+        "event": "cohort_input",
+        "at": "5/2",
+        "alpha": {
+          "lower": 3000000,
+          "upper": 3000000,
+          "denominator": 1000000
+        },
+        "opportunities": [
+          "5/2",
+          "11/4"
+        ],
+        "tasks": [
+          {
+            "task": "D1-task1",
+            "demand": "D1",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "6"
+            ],
+            "relations": [
+              {
+                "action": "A",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              },
+              {
+                "action": "B",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              }
+            ]
+          },
+          {
+            "task": "D2-task1",
+            "demand": "D2",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "6"
+            ],
+            "relations": [
+              {
+                "action": "A",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "53/20",
+                "blocker_length": "3"
+              },
+              {
+                "action": "B",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "53/20",
+                "blocker_length": "3"
+              }
+            ]
+          },
+          {
+            "task": "D3-task1",
+            "demand": "D3",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "4"
+            ],
+            "relations": [
+              {
+                "action": "C",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              }
+            ]
+          }
+        ],
+        "eligible_actions": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      "candidates": [
+        {
+          "sequence": [
+            "",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "24"
+        },
+        {
+          "sequence": [
+            "",
+            "A"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "24"
+        },
+        {
+          "sequence": [
+            "",
+            "B"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "24"
+        },
+        {
+          "sequence": [
+            "",
+            "C"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "24"
+        },
+        {
+          "sequence": [
+            "A",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "24"
+        },
+        {
+          "sequence": [
+            "A",
+            "B"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "24"
+        },
+        {
+          "sequence": [
+            "A",
+            "C"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "24"
+        },
+        {
+          "sequence": [
+            "B",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "24"
+        },
+        {
+          "sequence": [
+            "B",
+            "A"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "24"
+        },
+        {
+          "sequence": [
+            "B",
+            "C"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "24"
+        },
+        {
+          "sequence": [
+            "C",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "24"
+        },
+        {
+          "sequence": [
+            "C",
+            "A"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "24"
+        },
+        {
+          "sequence": [
+            "C",
+            "B"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "24"
+        }
+      ],
+      "winner": [
+        "",
+        ""
+      ],
+      "flow": "24"
+    },
+    {
+      "ab_tail": 0,
+      "c_tail": 1,
+      "capacity": 0,
+      "public_input": {
+        "event": "cohort_input",
+        "at": "5/2",
+        "alpha": {
+          "lower": 3000000,
+          "upper": 3000000,
+          "denominator": 1000000
+        },
+        "opportunities": [
+          "5/2",
+          "11/4"
+        ],
+        "tasks": [
+          {
+            "task": "D1-task1",
+            "demand": "D1",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "6"
+            ],
+            "relations": [
+              {
+                "action": "A",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              },
+              {
+                "action": "B",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              }
+            ]
+          },
+          {
+            "task": "D2-task1",
+            "demand": "D2",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "6"
+            ],
+            "relations": [
+              {
+                "action": "A",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "53/20",
+                "blocker_length": "3"
+              },
+              {
+                "action": "B",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "53/20",
+                "blocker_length": "3"
+              }
+            ]
+          },
+          {
+            "task": "D3-task1",
+            "demand": "D3",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "4",
+              "1"
+            ],
+            "relations": [
+              {
+                "action": "C",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              }
+            ]
+          }
+        ],
+        "eligible_actions": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      "candidates": [
+        {
+          "sequence": [
+            "",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "25"
+        }
+      ],
+      "winner": [
+        "",
+        ""
+      ],
+      "flow": "25"
+    },
+    {
+      "ab_tail": 0,
+      "c_tail": 1,
+      "capacity": 1,
+      "public_input": {
+        "event": "cohort_input",
+        "at": "5/2",
+        "alpha": {
+          "lower": 3000000,
+          "upper": 3000000,
+          "denominator": 1000000
+        },
+        "opportunities": [
+          "5/2",
+          "11/4"
+        ],
+        "tasks": [
+          {
+            "task": "D1-task1",
+            "demand": "D1",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "6"
+            ],
+            "relations": [
+              {
+                "action": "A",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              },
+              {
+                "action": "B",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              }
+            ]
+          },
+          {
+            "task": "D2-task1",
+            "demand": "D2",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "6"
+            ],
+            "relations": [
+              {
+                "action": "A",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "53/20",
+                "blocker_length": "3"
+              },
+              {
+                "action": "B",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "53/20",
+                "blocker_length": "3"
+              }
+            ]
+          },
+          {
+            "task": "D3-task1",
+            "demand": "D3",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "4",
+              "1"
+            ],
+            "relations": [
+              {
+                "action": "C",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              }
+            ]
+          }
+        ],
+        "eligible_actions": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      "candidates": [
+        {
+          "sequence": [
+            "",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "25"
+        },
+        {
+          "sequence": [
+            "",
+            "A"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "25"
+        },
+        {
+          "sequence": [
+            "",
+            "B"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "25"
+        },
+        {
+          "sequence": [
+            "",
+            "C"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "25"
+        },
+        {
+          "sequence": [
+            "A",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "25"
+        },
+        {
+          "sequence": [
+            "B",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "25"
+        },
+        {
+          "sequence": [
+            "C",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "24"
+        }
+      ],
+      "winner": [
+        "C",
+        ""
+      ],
+      "flow": "24"
+    },
+    {
+      "ab_tail": 0,
+      "c_tail": 1,
+      "capacity": 2,
+      "public_input": {
+        "event": "cohort_input",
+        "at": "5/2",
+        "alpha": {
+          "lower": 3000000,
+          "upper": 3000000,
+          "denominator": 1000000
+        },
+        "opportunities": [
+          "5/2",
+          "11/4"
+        ],
+        "tasks": [
+          {
+            "task": "D1-task1",
+            "demand": "D1",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "6"
+            ],
+            "relations": [
+              {
+                "action": "A",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              },
+              {
+                "action": "B",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              }
+            ]
+          },
+          {
+            "task": "D2-task1",
+            "demand": "D2",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "6"
+            ],
+            "relations": [
+              {
+                "action": "A",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "53/20",
+                "blocker_length": "3"
+              },
+              {
+                "action": "B",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "53/20",
+                "blocker_length": "3"
+              }
+            ]
+          },
+          {
+            "task": "D3-task1",
+            "demand": "D3",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "4",
+              "1"
+            ],
+            "relations": [
+              {
+                "action": "C",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              }
+            ]
+          }
+        ],
+        "eligible_actions": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      "candidates": [
+        {
+          "sequence": [
+            "",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "25"
+        },
+        {
+          "sequence": [
+            "",
+            "A"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "25"
+        },
+        {
+          "sequence": [
+            "",
+            "B"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "25"
+        },
+        {
+          "sequence": [
+            "",
+            "C"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "25"
+        },
+        {
+          "sequence": [
+            "A",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "25"
+        },
+        {
+          "sequence": [
+            "A",
+            "B"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "25"
+        },
+        {
+          "sequence": [
+            "A",
+            "C"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "25"
+        },
+        {
+          "sequence": [
+            "B",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "25"
+        },
+        {
+          "sequence": [
+            "B",
+            "A"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "25"
+        },
+        {
+          "sequence": [
+            "B",
+            "C"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "25"
+        },
+        {
+          "sequence": [
+            "C",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "24"
+        },
+        {
+          "sequence": [
+            "C",
+            "A"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "24"
+        },
+        {
+          "sequence": [
+            "C",
+            "B"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "24"
+        }
+      ],
+      "winner": [
+        "C",
+        ""
+      ],
+      "flow": "24"
+    },
+    {
+      "ab_tail": 1,
+      "c_tail": 0,
+      "capacity": 0,
+      "public_input": {
+        "event": "cohort_input",
+        "at": "5/2",
+        "alpha": {
+          "lower": 3000000,
+          "upper": 3000000,
+          "denominator": 1000000
+        },
+        "opportunities": [
+          "5/2",
+          "11/4"
+        ],
+        "tasks": [
+          {
+            "task": "D1-task1",
+            "demand": "D1",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "6",
+              "1"
+            ],
+            "relations": [
+              {
+                "action": "A",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              },
+              {
+                "action": "B",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              }
+            ]
+          },
+          {
+            "task": "D2-task1",
+            "demand": "D2",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "6",
+              "1"
+            ],
+            "relations": [
+              {
+                "action": "A",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "53/20",
+                "blocker_length": "3"
+              },
+              {
+                "action": "B",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "53/20",
+                "blocker_length": "3"
+              }
+            ]
+          },
+          {
+            "task": "D3-task1",
+            "demand": "D3",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "4"
+            ],
+            "relations": [
+              {
+                "action": "C",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              }
+            ]
+          }
+        ],
+        "eligible_actions": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      "candidates": [
+        {
+          "sequence": [
+            "",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "28"
+        }
+      ],
+      "winner": [
+        "",
+        ""
+      ],
+      "flow": "28"
+    },
+    {
+      "ab_tail": 1,
+      "c_tail": 0,
+      "capacity": 1,
+      "public_input": {
+        "event": "cohort_input",
+        "at": "5/2",
+        "alpha": {
+          "lower": 3000000,
+          "upper": 3000000,
+          "denominator": 1000000
+        },
+        "opportunities": [
+          "5/2",
+          "11/4"
+        ],
+        "tasks": [
+          {
+            "task": "D1-task1",
+            "demand": "D1",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "6",
+              "1"
+            ],
+            "relations": [
+              {
+                "action": "A",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              },
+              {
+                "action": "B",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              }
+            ]
+          },
+          {
+            "task": "D2-task1",
+            "demand": "D2",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "6",
+              "1"
+            ],
+            "relations": [
+              {
+                "action": "A",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "53/20",
+                "blocker_length": "3"
+              },
+              {
+                "action": "B",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "53/20",
+                "blocker_length": "3"
+              }
+            ]
+          },
+          {
+            "task": "D3-task1",
+            "demand": "D3",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "4"
+            ],
+            "relations": [
+              {
+                "action": "C",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              }
+            ]
+          }
+        ],
+        "eligible_actions": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      "candidates": [
+        {
+          "sequence": [
+            "",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "28"
+        },
+        {
+          "sequence": [
+            "",
+            "A"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "28"
+        },
+        {
+          "sequence": [
+            "",
+            "B"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "28"
+        },
+        {
+          "sequence": [
+            "",
+            "C"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "28"
+        },
+        {
+          "sequence": [
+            "A",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "28"
+        },
+        {
+          "sequence": [
+            "B",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "28"
+        },
+        {
+          "sequence": [
+            "C",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "28"
+        }
+      ],
+      "winner": [
+        "",
+        ""
+      ],
+      "flow": "28"
+    },
+    {
+      "ab_tail": 1,
+      "c_tail": 0,
+      "capacity": 2,
+      "public_input": {
+        "event": "cohort_input",
+        "at": "5/2",
+        "alpha": {
+          "lower": 3000000,
+          "upper": 3000000,
+          "denominator": 1000000
+        },
+        "opportunities": [
+          "5/2",
+          "11/4"
+        ],
+        "tasks": [
+          {
+            "task": "D1-task1",
+            "demand": "D1",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "6",
+              "1"
+            ],
+            "relations": [
+              {
+                "action": "A",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              },
+              {
+                "action": "B",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              }
+            ]
+          },
+          {
+            "task": "D2-task1",
+            "demand": "D2",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "6",
+              "1"
+            ],
+            "relations": [
+              {
+                "action": "A",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "53/20",
+                "blocker_length": "3"
+              },
+              {
+                "action": "B",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "53/20",
+                "blocker_length": "3"
+              }
+            ]
+          },
+          {
+            "task": "D3-task1",
+            "demand": "D3",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "4"
+            ],
+            "relations": [
+              {
+                "action": "C",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              }
+            ]
+          }
+        ],
+        "eligible_actions": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      "candidates": [
+        {
+          "sequence": [
+            "",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "28"
+        },
+        {
+          "sequence": [
+            "",
+            "A"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "28"
+        },
+        {
+          "sequence": [
+            "",
+            "B"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "28"
+        },
+        {
+          "sequence": [
+            "",
+            "C"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "28"
+        },
+        {
+          "sequence": [
+            "A",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "28"
+        },
+        {
+          "sequence": [
+            "A",
+            "B"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "26"
+        },
+        {
+          "sequence": [
+            "A",
+            "C"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "28"
+        },
+        {
+          "sequence": [
+            "B",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "28"
+        },
+        {
+          "sequence": [
+            "B",
+            "A"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "26"
+        },
+        {
+          "sequence": [
+            "B",
+            "C"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "28"
+        },
+        {
+          "sequence": [
+            "C",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "28"
+        },
+        {
+          "sequence": [
+            "C",
+            "A"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "28"
+        },
+        {
+          "sequence": [
+            "C",
+            "B"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "28"
+        }
+      ],
+      "winner": [
+        "A",
+        "B"
+      ],
+      "flow": "26"
+    },
+    {
+      "ab_tail": 1,
+      "c_tail": 1,
+      "capacity": 0,
+      "public_input": {
+        "event": "cohort_input",
+        "at": "5/2",
+        "alpha": {
+          "lower": 3000000,
+          "upper": 3000000,
+          "denominator": 1000000
+        },
+        "opportunities": [
+          "5/2",
+          "11/4"
+        ],
+        "tasks": [
+          {
+            "task": "D1-task1",
+            "demand": "D1",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "6",
+              "1"
+            ],
+            "relations": [
+              {
+                "action": "A",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              },
+              {
+                "action": "B",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              }
+            ]
+          },
+          {
+            "task": "D2-task1",
+            "demand": "D2",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "6",
+              "1"
+            ],
+            "relations": [
+              {
+                "action": "A",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "53/20",
+                "blocker_length": "3"
+              },
+              {
+                "action": "B",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "53/20",
+                "blocker_length": "3"
+              }
+            ]
+          },
+          {
+            "task": "D3-task1",
+            "demand": "D3",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "4",
+              "1"
+            ],
+            "relations": [
+              {
+                "action": "C",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              }
+            ]
+          }
+        ],
+        "eligible_actions": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      "candidates": [
+        {
+          "sequence": [
+            "",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "29"
+        }
+      ],
+      "winner": [
+        "",
+        ""
+      ],
+      "flow": "29"
+    },
+    {
+      "ab_tail": 1,
+      "c_tail": 1,
+      "capacity": 1,
+      "public_input": {
+        "event": "cohort_input",
+        "at": "5/2",
+        "alpha": {
+          "lower": 3000000,
+          "upper": 3000000,
+          "denominator": 1000000
+        },
+        "opportunities": [
+          "5/2",
+          "11/4"
+        ],
+        "tasks": [
+          {
+            "task": "D1-task1",
+            "demand": "D1",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "6",
+              "1"
+            ],
+            "relations": [
+              {
+                "action": "A",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              },
+              {
+                "action": "B",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              }
+            ]
+          },
+          {
+            "task": "D2-task1",
+            "demand": "D2",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "6",
+              "1"
+            ],
+            "relations": [
+              {
+                "action": "A",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "53/20",
+                "blocker_length": "3"
+              },
+              {
+                "action": "B",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "53/20",
+                "blocker_length": "3"
+              }
+            ]
+          },
+          {
+            "task": "D3-task1",
+            "demand": "D3",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "4",
+              "1"
+            ],
+            "relations": [
+              {
+                "action": "C",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              }
+            ]
+          }
+        ],
+        "eligible_actions": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      "candidates": [
+        {
+          "sequence": [
+            "",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "29"
+        },
+        {
+          "sequence": [
+            "",
+            "A"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "29"
+        },
+        {
+          "sequence": [
+            "",
+            "B"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "29"
+        },
+        {
+          "sequence": [
+            "",
+            "C"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "29"
+        },
+        {
+          "sequence": [
+            "A",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "29"
+        },
+        {
+          "sequence": [
+            "B",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "29"
+        },
+        {
+          "sequence": [
+            "C",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "28"
+        }
+      ],
+      "winner": [
+        "C",
+        ""
+      ],
+      "flow": "28"
+    },
+    {
+      "ab_tail": 1,
+      "c_tail": 1,
+      "capacity": 2,
+      "public_input": {
+        "event": "cohort_input",
+        "at": "5/2",
+        "alpha": {
+          "lower": 3000000,
+          "upper": 3000000,
+          "denominator": 1000000
+        },
+        "opportunities": [
+          "5/2",
+          "11/4"
+        ],
+        "tasks": [
+          {
+            "task": "D1-task1",
+            "demand": "D1",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "6",
+              "1"
+            ],
+            "relations": [
+              {
+                "action": "A",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              },
+              {
+                "action": "B",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              }
+            ]
+          },
+          {
+            "task": "D2-task1",
+            "demand": "D2",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "6",
+              "1"
+            ],
+            "relations": [
+              {
+                "action": "A",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "53/20",
+                "blocker_length": "3"
+              },
+              {
+                "action": "B",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "53/20",
+                "blocker_length": "3"
+              }
+            ]
+          },
+          {
+            "task": "D3-task1",
+            "demand": "D3",
+            "assigned_at": "0",
+            "non_owner_eligible": true,
+            "active": false,
+            "launched": "0",
+            "lengths": [
+              "4",
+              "1"
+            ],
+            "relations": [
+              {
+                "action": "C",
+                "retirable": true,
+                "eligible": true,
+                "b": "3",
+                "epsilon": "1/10",
+                "threshold": "33/20",
+                "blocker_length": "3"
+              }
+            ]
+          }
+        ],
+        "eligible_actions": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      "candidates": [
+        {
+          "sequence": [
+            "",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "29"
+        },
+        {
+          "sequence": [
+            "",
+            "A"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "29"
+        },
+        {
+          "sequence": [
+            "",
+            "B"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "29"
+        },
+        {
+          "sequence": [
+            "",
+            "C"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "29"
+        },
+        {
+          "sequence": [
+            "A",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "29"
+        },
+        {
+          "sequence": [
+            "A",
+            "B"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "27"
+        },
+        {
+          "sequence": [
+            "A",
+            "C"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "29"
+        },
+        {
+          "sequence": [
+            "B",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "29"
+        },
+        {
+          "sequence": [
+            "B",
+            "A"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "27"
+        },
+        {
+          "sequence": [
+            "B",
+            "C"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "9",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "29"
+        },
+        {
+          "sequence": [
+            "C",
+            ""
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "28"
+        },
+        {
+          "sequence": [
+            "C",
+            "A"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "28"
+        },
+        {
+          "sequence": [
+            "C",
+            "B"
+          ],
+          "terms": [
+            {
+              "task": "D1-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D2-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "10",
+              "feasible": true
+            },
+            {
+              "task": "D3-task1",
+              "assigned_at": "0",
+              "predicted_service_at": "8",
+              "feasible": true
+            }
+          ],
+          "feasible": true,
+          "flow": "28"
+        }
+      ],
+      "winner": [
+        "A",
+        "B"
+      ],
+      "flow": "27"
+    }
+  ]
+}

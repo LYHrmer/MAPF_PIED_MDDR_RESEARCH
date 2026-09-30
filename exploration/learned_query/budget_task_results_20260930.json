@@ -1,0 +1,6719 @@
+{
+  "status": "passed",
+  "source": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/budget_task_run_20260930_01.json",
+  "source_sha256": "356d0d0f63fe8ef77cd38a8c0165ecc88d3acb3bd135cbb59f9d619bbc2184ed",
+  "episodes": 384,
+  "tasks": 3456,
+  "requester_moves": 4032,
+  "native_checks": 181934,
+  "audited_decisions": 576,
+  "audited_candidates": 2778,
+  "active_input_terms": 42,
+  "active_episodes": 42,
+  "active_episode_ids": [
+    "w1-alternating_next_slow-b1-frozen_nominal-nominal_completion_pair_window6",
+    "w1-alternating_next_slow-b1-frozen_nominal-current_cohort_flow_pair",
+    "w1-alternating_next_slow-b1-seasonal_lag2-nominal_completion_pair_window6",
+    "w1-alternating_next_slow-b1-seasonal_lag2-current_cohort_flow_pair",
+    "w1-alternating_next_slow-b1-historical_AR1_OLS-nominal_completion_pair_window6",
+    "w1-alternating_next_slow-b1-historical_AR1_OLS-current_cohort_flow_pair",
+    "w1-alternating_next_slow-b2-frozen_nominal-nominal_completion_pair_window6",
+    "w1-alternating_next_slow-b2-frozen_nominal-current_cohort_flow_pair",
+    "w1-alternating_next_slow-b2-seasonal_lag2-nominal_completion_pair_window6",
+    "w1-alternating_next_slow-b2-seasonal_lag2-current_cohort_flow_pair",
+    "w1-alternating_next_slow-b2-historical_AR1_OLS-nominal_completion_pair_window6",
+    "w1-alternating_next_slow-b2-historical_AR1_OLS-current_cohort_flow_pair",
+    "w1-alternating_next_fast-b1-frozen_nominal-nominal_completion_pair_window6",
+    "w1-alternating_next_fast-b1-frozen_nominal-current_cohort_flow_pair",
+    "w1-alternating_next_fast-b2-frozen_nominal-nominal_completion_pair_window6",
+    "w1-alternating_next_fast-b2-frozen_nominal-current_cohort_flow_pair",
+    "w1-stable_fast-b1-frozen_nominal-nominal_completion_pair_window6",
+    "w1-stable_fast-b1-frozen_nominal-current_cohort_flow_pair",
+    "w1-stable_fast-b2-frozen_nominal-nominal_completion_pair_window6",
+    "w1-stable_fast-b2-frozen_nominal-current_cohort_flow_pair",
+    "w1-unpredictable_slow_shock-b1-frozen_nominal-nominal_completion_pair_window6",
+    "w1-unpredictable_slow_shock-b1-frozen_nominal-current_cohort_flow_pair",
+    "w1-unpredictable_slow_shock-b2-frozen_nominal-nominal_completion_pair_window6",
+    "w1-unpredictable_slow_shock-b2-frozen_nominal-current_cohort_flow_pair",
+    "w3-alternating_next_slow-b1-frozen_nominal-nominal_completion_pair_window6",
+    "w3-alternating_next_slow-b1-frozen_nominal-current_cohort_flow_pair",
+    "w3-alternating_next_slow-b1-seasonal_lag2-nominal_completion_pair_window6",
+    "w3-alternating_next_slow-b1-seasonal_lag2-current_cohort_flow_pair",
+    "w3-alternating_next_slow-b1-historical_AR1_OLS-nominal_completion_pair_window6",
+    "w3-alternating_next_slow-b1-historical_AR1_OLS-current_cohort_flow_pair",
+    "w3-alternating_next_slow-b2-frozen_nominal-nominal_completion_pair_window6",
+    "w3-alternating_next_slow-b2-seasonal_lag2-nominal_completion_pair_window6",
+    "w3-alternating_next_slow-b2-historical_AR1_OLS-nominal_completion_pair_window6",
+    "w3-alternating_next_fast-b1-frozen_nominal-nominal_completion_pair_window6",
+    "w3-alternating_next_fast-b1-frozen_nominal-current_cohort_flow_pair",
+    "w3-alternating_next_fast-b2-frozen_nominal-nominal_completion_pair_window6",
+    "w3-stable_fast-b1-frozen_nominal-nominal_completion_pair_window6",
+    "w3-stable_fast-b1-frozen_nominal-current_cohort_flow_pair",
+    "w3-stable_fast-b2-frozen_nominal-nominal_completion_pair_window6",
+    "w3-unpredictable_slow_shock-b1-frozen_nominal-nominal_completion_pair_window6",
+    "w3-unpredictable_slow_shock-b1-frozen_nominal-current_cohort_flow_pair",
+    "w3-unpredictable_slow_shock-b2-frozen_nominal-nominal_completion_pair_window6"
+  ],
+  "protected_old_files": 65,
+  "source_headers": 9,
+  "all_sources_unchanged": true,
+  "compile_seconds": 8.873526,
+  "native_seconds_min": 11.979406,
+  "native_seconds_max": 15.563486,
+  "objective_pair_counts": {
+    "improved": 8,
+    "equal": 136,
+    "worse": 0
+  },
+  "all_AR_lag2_pairs_equal": true,
+  "hidden_shock_public_inputs_identical": true,
+  "objective_pairs": [
+    {
+      "index": 0,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 0,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 0,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 1,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 1,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 1,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 2,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 2,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 2,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 3,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 3,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 3,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 4,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 4,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 4,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 5,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 5,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 5,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 6,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 6,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 6,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 7,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 7,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 7,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 8,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 8,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 8,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 9,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 9,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 9,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 10,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 10,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 10,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 11,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 11,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 11,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 12,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 12,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 12,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 13,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 13,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 13,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 14,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 14,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 14,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 15,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 15,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 15,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 16,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 16,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 16,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 17,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 17,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 17,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 18,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 18,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 18,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 19,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 19,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 19,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 20,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 20,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 20,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 21,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 21,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 21,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 22,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 22,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 22,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 23,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 23,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 23,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 24,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 24,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 24,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 25,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 25,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 25,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 26,
+      "model": "frozen_nominal",
+      "flow_delta": -2,
+      "cohort_delta": -2,
+      "query_delta": 2
+    },
+    {
+      "index": 26,
+      "model": "seasonal_lag2",
+      "flow_delta": -2,
+      "cohort_delta": -2,
+      "query_delta": 2
+    },
+    {
+      "index": 26,
+      "model": "historical_AR1_OLS",
+      "flow_delta": -2,
+      "cohort_delta": -2,
+      "query_delta": 2
+    },
+    {
+      "index": 27,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 27,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 27,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 28,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 28,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 28,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 29,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 2
+    },
+    {
+      "index": 29,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 29,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 30,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 30,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 30,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 31,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 31,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 31,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 32,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 2
+    },
+    {
+      "index": 32,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 32,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 33,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 33,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 33,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 34,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 34,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 34,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 35,
+      "model": "frozen_nominal",
+      "flow_delta": -2,
+      "cohort_delta": -2,
+      "query_delta": 2
+    },
+    {
+      "index": 35,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 35,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 36,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 36,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 36,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 37,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 37,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 37,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 38,
+      "model": "frozen_nominal",
+      "flow_delta": -1,
+      "cohort_delta": -1,
+      "query_delta": 1
+    },
+    {
+      "index": 38,
+      "model": "seasonal_lag2",
+      "flow_delta": -1,
+      "cohort_delta": -1,
+      "query_delta": 1
+    },
+    {
+      "index": 38,
+      "model": "historical_AR1_OLS",
+      "flow_delta": -1,
+      "cohort_delta": -1,
+      "query_delta": 1
+    },
+    {
+      "index": 39,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 39,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 39,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 40,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 40,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 40,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 41,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 1
+    },
+    {
+      "index": 41,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 41,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 42,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 42,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 42,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 43,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 43,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 43,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 44,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 1
+    },
+    {
+      "index": 44,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 44,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 45,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 45,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 45,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 46,
+      "model": "frozen_nominal",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 46,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 46,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 47,
+      "model": "frozen_nominal",
+      "flow_delta": -1,
+      "cohort_delta": -1,
+      "query_delta": 1
+    },
+    {
+      "index": 47,
+      "model": "seasonal_lag2",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    },
+    {
+      "index": 47,
+      "model": "historical_AR1_OLS",
+      "flow_delta": 0,
+      "cohort_delta": 0,
+      "query_delta": 0
+    }
+  ],
+  "model_pairs": [
+    {
+      "index": 0,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 0,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 1,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 1,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 2,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 2,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 3,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 3,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 4,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 4,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 5,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 5,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 6,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 6,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 7,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 7,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 8,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 8,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 9,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 9,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 10,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 10,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 11,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 11,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 12,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 12,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 13,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 13,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 14,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 14,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 15,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 15,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 16,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 16,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 17,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 17,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 18,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 18,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 19,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 19,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 20,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 20,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 21,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 21,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 22,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 22,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 23,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 23,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 24,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 24,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 25,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 25,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 26,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 26,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 27,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 27,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 28,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 28,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 29,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 29,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 30,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 30,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 31,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 31,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 32,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 32,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 33,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 33,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 34,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 34,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 35,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 35,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 36,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 36,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 37,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 37,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 38,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 38,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 39,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 39,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 40,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 40,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 41,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 41,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 42,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 42,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 43,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 43,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 44,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 44,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 45,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 45,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 46,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 46,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 47,
+      "policy": "nominal_completion_pair_window6",
+      "AR_equals_lag2": true
+    },
+    {
+      "index": 47,
+      "policy": "current_cohort_flow_pair",
+      "AR_equals_lag2": true
+    }
+  ],
+  "comparator_pairs": [
+    {
+      "index": 0,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": []
+    },
+    {
+      "index": 0,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": []
+    },
+    {
+      "index": 1,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": [
+        "C"
+      ]
+    },
+    {
+      "index": 1,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": [
+        "A"
+      ]
+    },
+    {
+      "index": 2,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "index": 2,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "index": 3,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": []
+    },
+    {
+      "index": 3,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": []
+    },
+    {
+      "index": 4,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": [
+        "C"
+      ]
+    },
+    {
+      "index": 4,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": [
+        "A"
+      ]
+    },
+    {
+      "index": 5,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "index": 5,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "index": 6,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": []
+    },
+    {
+      "index": 6,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": []
+    },
+    {
+      "index": 7,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": [
+        "C"
+      ]
+    },
+    {
+      "index": 7,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": [
+        "A"
+      ]
+    },
+    {
+      "index": 8,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "index": 8,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "index": 9,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": []
+    },
+    {
+      "index": 9,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": []
+    },
+    {
+      "index": 10,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": [
+        "C"
+      ]
+    },
+    {
+      "index": 10,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": [
+        "A"
+      ]
+    },
+    {
+      "index": 11,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "index": 11,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "index": 12,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 25,
+      "simple_cohort_flow": 25,
+      "nominal_all_flow": 37,
+      "simple_all_flow": 37,
+      "nominal_queries": [],
+      "simple_queries": []
+    },
+    {
+      "index": 12,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 25,
+      "simple_cohort_flow": 25,
+      "nominal_all_flow": 37,
+      "simple_all_flow": 37,
+      "nominal_queries": [],
+      "simple_queries": []
+    },
+    {
+      "index": 13,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [
+        "C"
+      ],
+      "simple_queries": [
+        "C"
+      ]
+    },
+    {
+      "index": 13,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 25,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 37,
+      "nominal_queries": [
+        "C"
+      ],
+      "simple_queries": [
+        "A"
+      ]
+    },
+    {
+      "index": 14,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 25,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 37,
+      "nominal_queries": [
+        "C"
+      ],
+      "simple_queries": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "index": 14,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 25,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 37,
+      "nominal_queries": [
+        "C"
+      ],
+      "simple_queries": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "index": 15,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": []
+    },
+    {
+      "index": 15,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": []
+    },
+    {
+      "index": 16,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [
+        "C"
+      ],
+      "simple_queries": [
+        "C"
+      ]
+    },
+    {
+      "index": 16,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [
+        "C"
+      ],
+      "simple_queries": [
+        "A"
+      ]
+    },
+    {
+      "index": 17,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [
+        "C"
+      ],
+      "simple_queries": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "index": 17,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [
+        "C"
+      ],
+      "simple_queries": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "index": 18,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": []
+    },
+    {
+      "index": 18,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": []
+    },
+    {
+      "index": 19,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [
+        "C"
+      ],
+      "simple_queries": [
+        "C"
+      ]
+    },
+    {
+      "index": 19,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [
+        "C"
+      ],
+      "simple_queries": [
+        "A"
+      ]
+    },
+    {
+      "index": 20,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [
+        "C"
+      ],
+      "simple_queries": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "index": 20,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [
+        "C"
+      ],
+      "simple_queries": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "index": 21,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 25,
+      "simple_cohort_flow": 25,
+      "nominal_all_flow": 37,
+      "simple_all_flow": 37,
+      "nominal_queries": [],
+      "simple_queries": []
+    },
+    {
+      "index": 21,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 25,
+      "simple_cohort_flow": 25,
+      "nominal_all_flow": 37,
+      "simple_all_flow": 37,
+      "nominal_queries": [],
+      "simple_queries": []
+    },
+    {
+      "index": 22,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [
+        "C"
+      ],
+      "simple_queries": [
+        "C"
+      ]
+    },
+    {
+      "index": 22,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 25,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 37,
+      "nominal_queries": [
+        "C"
+      ],
+      "simple_queries": [
+        "A"
+      ]
+    },
+    {
+      "index": 23,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 25,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 37,
+      "nominal_queries": [
+        "C"
+      ],
+      "simple_queries": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "index": 23,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 25,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 37,
+      "nominal_queries": [
+        "C"
+      ],
+      "simple_queries": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "index": 24,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 28,
+      "simple_cohort_flow": 28,
+      "nominal_all_flow": 40,
+      "simple_all_flow": 40,
+      "nominal_queries": [],
+      "simple_queries": []
+    },
+    {
+      "index": 24,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 28,
+      "simple_cohort_flow": 28,
+      "nominal_all_flow": 40,
+      "simple_all_flow": 40,
+      "nominal_queries": [],
+      "simple_queries": []
+    },
+    {
+      "index": 25,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 28,
+      "simple_cohort_flow": 28,
+      "nominal_all_flow": 40,
+      "simple_all_flow": 40,
+      "nominal_queries": [],
+      "simple_queries": [
+        "C"
+      ]
+    },
+    {
+      "index": 25,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 28,
+      "simple_cohort_flow": 28,
+      "nominal_all_flow": 40,
+      "simple_all_flow": 40,
+      "nominal_queries": [],
+      "simple_queries": [
+        "A"
+      ]
+    },
+    {
+      "index": 26,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 26,
+      "simple_cohort_flow": 26,
+      "nominal_all_flow": 38,
+      "simple_all_flow": 38,
+      "nominal_queries": [
+        "A",
+        "B"
+      ],
+      "simple_queries": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "index": 26,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 26,
+      "simple_cohort_flow": 26,
+      "nominal_all_flow": 38,
+      "simple_all_flow": 38,
+      "nominal_queries": [
+        "A",
+        "B"
+      ],
+      "simple_queries": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "index": 27,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": []
+    },
+    {
+      "index": 27,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": []
+    },
+    {
+      "index": 28,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": [
+        "C"
+      ]
+    },
+    {
+      "index": 28,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": [
+        "A"
+      ]
+    },
+    {
+      "index": 29,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [
+        "A",
+        "B"
+      ],
+      "simple_queries": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "index": 29,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [
+        "A",
+        "B"
+      ],
+      "simple_queries": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "index": 30,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": []
+    },
+    {
+      "index": 30,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": []
+    },
+    {
+      "index": 31,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": [
+        "C"
+      ]
+    },
+    {
+      "index": 31,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": [
+        "A"
+      ]
+    },
+    {
+      "index": 32,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [
+        "A",
+        "B"
+      ],
+      "simple_queries": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "index": 32,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [
+        "A",
+        "B"
+      ],
+      "simple_queries": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "index": 33,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 28,
+      "simple_cohort_flow": 28,
+      "nominal_all_flow": 40,
+      "simple_all_flow": 40,
+      "nominal_queries": [],
+      "simple_queries": []
+    },
+    {
+      "index": 33,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 28,
+      "simple_cohort_flow": 28,
+      "nominal_all_flow": 40,
+      "simple_all_flow": 40,
+      "nominal_queries": [],
+      "simple_queries": []
+    },
+    {
+      "index": 34,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 28,
+      "simple_cohort_flow": 28,
+      "nominal_all_flow": 40,
+      "simple_all_flow": 40,
+      "nominal_queries": [],
+      "simple_queries": [
+        "C"
+      ]
+    },
+    {
+      "index": 34,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 28,
+      "simple_cohort_flow": 28,
+      "nominal_all_flow": 40,
+      "simple_all_flow": 40,
+      "nominal_queries": [],
+      "simple_queries": [
+        "A"
+      ]
+    },
+    {
+      "index": 35,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 26,
+      "simple_cohort_flow": 26,
+      "nominal_all_flow": 38,
+      "simple_all_flow": 38,
+      "nominal_queries": [
+        "A",
+        "B"
+      ],
+      "simple_queries": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "index": 35,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 26,
+      "simple_cohort_flow": 26,
+      "nominal_all_flow": 38,
+      "simple_all_flow": 38,
+      "nominal_queries": [
+        "A",
+        "B"
+      ],
+      "simple_queries": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "index": 36,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 29,
+      "simple_cohort_flow": 29,
+      "nominal_all_flow": 41,
+      "simple_all_flow": 41,
+      "nominal_queries": [],
+      "simple_queries": []
+    },
+    {
+      "index": 36,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 29,
+      "simple_cohort_flow": 29,
+      "nominal_all_flow": 41,
+      "simple_all_flow": 41,
+      "nominal_queries": [],
+      "simple_queries": []
+    },
+    {
+      "index": 37,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 28,
+      "simple_cohort_flow": 28,
+      "nominal_all_flow": 40,
+      "simple_all_flow": 40,
+      "nominal_queries": [
+        "C"
+      ],
+      "simple_queries": [
+        "C"
+      ]
+    },
+    {
+      "index": 37,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 28,
+      "simple_cohort_flow": 29,
+      "nominal_all_flow": 40,
+      "simple_all_flow": 41,
+      "nominal_queries": [
+        "C"
+      ],
+      "simple_queries": [
+        "A"
+      ]
+    },
+    {
+      "index": 38,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 27,
+      "simple_cohort_flow": 27,
+      "nominal_all_flow": 39,
+      "simple_all_flow": 39,
+      "nominal_queries": [
+        "A",
+        "B"
+      ],
+      "simple_queries": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "index": 38,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 27,
+      "simple_cohort_flow": 27,
+      "nominal_all_flow": 39,
+      "simple_all_flow": 39,
+      "nominal_queries": [
+        "A",
+        "B"
+      ],
+      "simple_queries": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "index": 39,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": []
+    },
+    {
+      "index": 39,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": []
+    },
+    {
+      "index": 40,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [
+        "C"
+      ],
+      "simple_queries": [
+        "C"
+      ]
+    },
+    {
+      "index": 40,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [
+        "C"
+      ],
+      "simple_queries": [
+        "A"
+      ]
+    },
+    {
+      "index": 41,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [
+        "A",
+        "B"
+      ],
+      "simple_queries": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "index": 41,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [
+        "A",
+        "B"
+      ],
+      "simple_queries": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "index": 42,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": []
+    },
+    {
+      "index": 42,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [],
+      "simple_queries": []
+    },
+    {
+      "index": 43,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [
+        "C"
+      ],
+      "simple_queries": [
+        "C"
+      ]
+    },
+    {
+      "index": 43,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [
+        "C"
+      ],
+      "simple_queries": [
+        "A"
+      ]
+    },
+    {
+      "index": 44,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [
+        "A",
+        "B"
+      ],
+      "simple_queries": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "index": 44,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 24,
+      "simple_cohort_flow": 24,
+      "nominal_all_flow": 36,
+      "simple_all_flow": 36,
+      "nominal_queries": [
+        "A",
+        "B"
+      ],
+      "simple_queries": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "index": 45,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 29,
+      "simple_cohort_flow": 29,
+      "nominal_all_flow": 41,
+      "simple_all_flow": 41,
+      "nominal_queries": [],
+      "simple_queries": []
+    },
+    {
+      "index": 45,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 29,
+      "simple_cohort_flow": 29,
+      "nominal_all_flow": 41,
+      "simple_all_flow": 41,
+      "nominal_queries": [],
+      "simple_queries": []
+    },
+    {
+      "index": 46,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 28,
+      "simple_cohort_flow": 28,
+      "nominal_all_flow": 40,
+      "simple_all_flow": 40,
+      "nominal_queries": [
+        "C"
+      ],
+      "simple_queries": [
+        "C"
+      ]
+    },
+    {
+      "index": 46,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 28,
+      "simple_cohort_flow": 29,
+      "nominal_all_flow": 40,
+      "simple_all_flow": 41,
+      "nominal_queries": [
+        "C"
+      ],
+      "simple_queries": [
+        "A"
+      ]
+    },
+    {
+      "index": 47,
+      "comparator": "unit_admission_pair",
+      "nominal_cohort_flow": 27,
+      "simple_cohort_flow": 27,
+      "nominal_all_flow": 39,
+      "simple_all_flow": 39,
+      "nominal_queries": [
+        "A",
+        "B"
+      ],
+      "simple_queries": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "index": 47,
+      "comparator": "original_rr",
+      "nominal_cohort_flow": 27,
+      "simple_cohort_flow": 27,
+      "nominal_all_flow": 39,
+      "simple_all_flow": 39,
+      "nominal_queries": [
+        "A",
+        "B"
+      ],
+      "simple_queries": [
+        "A",
+        "B"
+      ]
+    }
+  ],
+  "capacity_pairs": [
+    {
+      "workload": 0,
+      "regime": 0,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "frozen_nominal",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 0,
+      "regime": 0,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "frozen_nominal",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 0,
+      "regime": 0,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "seasonal_lag2",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 0,
+      "regime": 0,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "seasonal_lag2",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 0,
+      "regime": 0,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "historical_AR1_OLS",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 0,
+      "regime": 0,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "historical_AR1_OLS",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 0,
+      "regime": 0,
+      "policy": "unit_admission_pair",
+      "predictor": "unit_admission_pair",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 0,
+      "regime": 0,
+      "policy": "original_rr",
+      "predictor": "original_rr",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 0,
+      "regime": 1,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "frozen_nominal",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 0,
+      "regime": 1,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "frozen_nominal",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 0,
+      "regime": 1,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "seasonal_lag2",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 0,
+      "regime": 1,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "seasonal_lag2",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 0,
+      "regime": 1,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "historical_AR1_OLS",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 0,
+      "regime": 1,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "historical_AR1_OLS",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 0,
+      "regime": 1,
+      "policy": "unit_admission_pair",
+      "predictor": "unit_admission_pair",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 0,
+      "regime": 1,
+      "policy": "original_rr",
+      "predictor": "original_rr",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 0,
+      "regime": 2,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "frozen_nominal",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 0,
+      "regime": 2,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "frozen_nominal",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 0,
+      "regime": 2,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "seasonal_lag2",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 0,
+      "regime": 2,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "seasonal_lag2",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 0,
+      "regime": 2,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "historical_AR1_OLS",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 0,
+      "regime": 2,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "historical_AR1_OLS",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 0,
+      "regime": 2,
+      "policy": "unit_admission_pair",
+      "predictor": "unit_admission_pair",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 0,
+      "regime": 2,
+      "policy": "original_rr",
+      "predictor": "original_rr",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 0,
+      "regime": 3,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "frozen_nominal",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 0,
+      "regime": 3,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "frozen_nominal",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 0,
+      "regime": 3,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "seasonal_lag2",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 0,
+      "regime": 3,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "seasonal_lag2",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 0,
+      "regime": 3,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "historical_AR1_OLS",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 0,
+      "regime": 3,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "historical_AR1_OLS",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 0,
+      "regime": 3,
+      "policy": "unit_admission_pair",
+      "predictor": "unit_admission_pair",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 0,
+      "regime": 3,
+      "policy": "original_rr",
+      "predictor": "original_rr",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 1,
+      "regime": 0,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "frozen_nominal",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        1
+      ],
+      "cohort_flow": [
+        25,
+        24,
+        24
+      ],
+      "all_flow": [
+        37,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 1,
+      "regime": 0,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "frozen_nominal",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        1
+      ],
+      "cohort_flow": [
+        25,
+        24,
+        24
+      ],
+      "all_flow": [
+        37,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 1,
+      "regime": 0,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "seasonal_lag2",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        1
+      ],
+      "cohort_flow": [
+        25,
+        24,
+        24
+      ],
+      "all_flow": [
+        37,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 1,
+      "regime": 0,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "seasonal_lag2",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        1
+      ],
+      "cohort_flow": [
+        25,
+        24,
+        24
+      ],
+      "all_flow": [
+        37,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 1,
+      "regime": 0,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "historical_AR1_OLS",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        1
+      ],
+      "cohort_flow": [
+        25,
+        24,
+        24
+      ],
+      "all_flow": [
+        37,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 1,
+      "regime": 0,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "historical_AR1_OLS",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        1
+      ],
+      "cohort_flow": [
+        25,
+        24,
+        24
+      ],
+      "all_flow": [
+        37,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 1,
+      "regime": 0,
+      "policy": "unit_admission_pair",
+      "predictor": "unit_admission_pair",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        25,
+        24,
+        25
+      ],
+      "all_flow": [
+        37,
+        36,
+        37
+      ]
+    },
+    {
+      "workload": 1,
+      "regime": 0,
+      "policy": "original_rr",
+      "predictor": "original_rr",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        25,
+        25,
+        25
+      ],
+      "all_flow": [
+        37,
+        37,
+        37
+      ]
+    },
+    {
+      "workload": 1,
+      "regime": 1,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "frozen_nominal",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        1
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 1,
+      "regime": 1,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "frozen_nominal",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        1
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 1,
+      "regime": 1,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "seasonal_lag2",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 1,
+      "regime": 1,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "seasonal_lag2",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 1,
+      "regime": 1,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "historical_AR1_OLS",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 1,
+      "regime": 1,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "historical_AR1_OLS",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 1,
+      "regime": 1,
+      "policy": "unit_admission_pair",
+      "predictor": "unit_admission_pair",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 1,
+      "regime": 1,
+      "policy": "original_rr",
+      "predictor": "original_rr",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 1,
+      "regime": 2,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "frozen_nominal",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        1
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 1,
+      "regime": 2,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "frozen_nominal",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        1
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 1,
+      "regime": 2,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "seasonal_lag2",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 1,
+      "regime": 2,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "seasonal_lag2",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 1,
+      "regime": 2,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "historical_AR1_OLS",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 1,
+      "regime": 2,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "historical_AR1_OLS",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 1,
+      "regime": 2,
+      "policy": "unit_admission_pair",
+      "predictor": "unit_admission_pair",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 1,
+      "regime": 2,
+      "policy": "original_rr",
+      "predictor": "original_rr",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 1,
+      "regime": 3,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "frozen_nominal",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        1
+      ],
+      "cohort_flow": [
+        25,
+        24,
+        24
+      ],
+      "all_flow": [
+        37,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 1,
+      "regime": 3,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "frozen_nominal",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        1
+      ],
+      "cohort_flow": [
+        25,
+        24,
+        24
+      ],
+      "all_flow": [
+        37,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 1,
+      "regime": 3,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "seasonal_lag2",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        25,
+        25,
+        25
+      ],
+      "all_flow": [
+        37,
+        37,
+        37
+      ]
+    },
+    {
+      "workload": 1,
+      "regime": 3,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "seasonal_lag2",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        25,
+        25,
+        25
+      ],
+      "all_flow": [
+        37,
+        37,
+        37
+      ]
+    },
+    {
+      "workload": 1,
+      "regime": 3,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "historical_AR1_OLS",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        25,
+        25,
+        25
+      ],
+      "all_flow": [
+        37,
+        37,
+        37
+      ]
+    },
+    {
+      "workload": 1,
+      "regime": 3,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "historical_AR1_OLS",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        25,
+        25,
+        25
+      ],
+      "all_flow": [
+        37,
+        37,
+        37
+      ]
+    },
+    {
+      "workload": 1,
+      "regime": 3,
+      "policy": "unit_admission_pair",
+      "predictor": "unit_admission_pair",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        25,
+        24,
+        25
+      ],
+      "all_flow": [
+        37,
+        36,
+        37
+      ]
+    },
+    {
+      "workload": 1,
+      "regime": 3,
+      "policy": "original_rr",
+      "predictor": "original_rr",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        25,
+        25,
+        25
+      ],
+      "all_flow": [
+        37,
+        37,
+        37
+      ]
+    },
+    {
+      "workload": 2,
+      "regime": 0,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "frozen_nominal",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        28,
+        28,
+        28
+      ],
+      "all_flow": [
+        40,
+        40,
+        40
+      ]
+    },
+    {
+      "workload": 2,
+      "regime": 0,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "frozen_nominal",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        2
+      ],
+      "cohort_flow": [
+        28,
+        28,
+        26
+      ],
+      "all_flow": [
+        40,
+        40,
+        38
+      ]
+    },
+    {
+      "workload": 2,
+      "regime": 0,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "seasonal_lag2",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        28,
+        28,
+        28
+      ],
+      "all_flow": [
+        40,
+        40,
+        40
+      ]
+    },
+    {
+      "workload": 2,
+      "regime": 0,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "seasonal_lag2",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        2
+      ],
+      "cohort_flow": [
+        28,
+        28,
+        26
+      ],
+      "all_flow": [
+        40,
+        40,
+        38
+      ]
+    },
+    {
+      "workload": 2,
+      "regime": 0,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "historical_AR1_OLS",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        28,
+        28,
+        28
+      ],
+      "all_flow": [
+        40,
+        40,
+        40
+      ]
+    },
+    {
+      "workload": 2,
+      "regime": 0,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "historical_AR1_OLS",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        2
+      ],
+      "cohort_flow": [
+        28,
+        28,
+        26
+      ],
+      "all_flow": [
+        40,
+        40,
+        38
+      ]
+    },
+    {
+      "workload": 2,
+      "regime": 0,
+      "policy": "unit_admission_pair",
+      "predictor": "unit_admission_pair",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        28,
+        28,
+        26
+      ],
+      "all_flow": [
+        40,
+        40,
+        38
+      ]
+    },
+    {
+      "workload": 2,
+      "regime": 0,
+      "policy": "original_rr",
+      "predictor": "original_rr",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        28,
+        28,
+        26
+      ],
+      "all_flow": [
+        40,
+        40,
+        38
+      ]
+    },
+    {
+      "workload": 2,
+      "regime": 1,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "frozen_nominal",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 2,
+      "regime": 1,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "frozen_nominal",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        2
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 2,
+      "regime": 1,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "seasonal_lag2",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 2,
+      "regime": 1,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "seasonal_lag2",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 2,
+      "regime": 1,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "historical_AR1_OLS",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 2,
+      "regime": 1,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "historical_AR1_OLS",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 2,
+      "regime": 1,
+      "policy": "unit_admission_pair",
+      "predictor": "unit_admission_pair",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 2,
+      "regime": 1,
+      "policy": "original_rr",
+      "predictor": "original_rr",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 2,
+      "regime": 2,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "frozen_nominal",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 2,
+      "regime": 2,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "frozen_nominal",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        2
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 2,
+      "regime": 2,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "seasonal_lag2",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 2,
+      "regime": 2,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "seasonal_lag2",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 2,
+      "regime": 2,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "historical_AR1_OLS",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 2,
+      "regime": 2,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "historical_AR1_OLS",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 2,
+      "regime": 2,
+      "policy": "unit_admission_pair",
+      "predictor": "unit_admission_pair",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 2,
+      "regime": 2,
+      "policy": "original_rr",
+      "predictor": "original_rr",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 2,
+      "regime": 3,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "frozen_nominal",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        28,
+        28,
+        28
+      ],
+      "all_flow": [
+        40,
+        40,
+        40
+      ]
+    },
+    {
+      "workload": 2,
+      "regime": 3,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "frozen_nominal",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        2
+      ],
+      "cohort_flow": [
+        28,
+        28,
+        26
+      ],
+      "all_flow": [
+        40,
+        40,
+        38
+      ]
+    },
+    {
+      "workload": 2,
+      "regime": 3,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "seasonal_lag2",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        28,
+        28,
+        28
+      ],
+      "all_flow": [
+        40,
+        40,
+        40
+      ]
+    },
+    {
+      "workload": 2,
+      "regime": 3,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "seasonal_lag2",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        28,
+        28,
+        28
+      ],
+      "all_flow": [
+        40,
+        40,
+        40
+      ]
+    },
+    {
+      "workload": 2,
+      "regime": 3,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "historical_AR1_OLS",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        28,
+        28,
+        28
+      ],
+      "all_flow": [
+        40,
+        40,
+        40
+      ]
+    },
+    {
+      "workload": 2,
+      "regime": 3,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "historical_AR1_OLS",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        28,
+        28,
+        28
+      ],
+      "all_flow": [
+        40,
+        40,
+        40
+      ]
+    },
+    {
+      "workload": 2,
+      "regime": 3,
+      "policy": "unit_admission_pair",
+      "predictor": "unit_admission_pair",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        28,
+        28,
+        26
+      ],
+      "all_flow": [
+        40,
+        40,
+        38
+      ]
+    },
+    {
+      "workload": 2,
+      "regime": 3,
+      "policy": "original_rr",
+      "predictor": "original_rr",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        28,
+        28,
+        26
+      ],
+      "all_flow": [
+        40,
+        40,
+        38
+      ]
+    },
+    {
+      "workload": 3,
+      "regime": 0,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "frozen_nominal",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        1
+      ],
+      "cohort_flow": [
+        29,
+        28,
+        28
+      ],
+      "all_flow": [
+        41,
+        40,
+        40
+      ]
+    },
+    {
+      "workload": 3,
+      "regime": 0,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "frozen_nominal",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        29,
+        28,
+        27
+      ],
+      "all_flow": [
+        41,
+        40,
+        39
+      ]
+    },
+    {
+      "workload": 3,
+      "regime": 0,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "seasonal_lag2",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        1
+      ],
+      "cohort_flow": [
+        29,
+        28,
+        28
+      ],
+      "all_flow": [
+        41,
+        40,
+        40
+      ]
+    },
+    {
+      "workload": 3,
+      "regime": 0,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "seasonal_lag2",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        29,
+        28,
+        27
+      ],
+      "all_flow": [
+        41,
+        40,
+        39
+      ]
+    },
+    {
+      "workload": 3,
+      "regime": 0,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "historical_AR1_OLS",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        1
+      ],
+      "cohort_flow": [
+        29,
+        28,
+        28
+      ],
+      "all_flow": [
+        41,
+        40,
+        40
+      ]
+    },
+    {
+      "workload": 3,
+      "regime": 0,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "historical_AR1_OLS",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        29,
+        28,
+        27
+      ],
+      "all_flow": [
+        41,
+        40,
+        39
+      ]
+    },
+    {
+      "workload": 3,
+      "regime": 0,
+      "policy": "unit_admission_pair",
+      "predictor": "unit_admission_pair",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        29,
+        28,
+        27
+      ],
+      "all_flow": [
+        41,
+        40,
+        39
+      ]
+    },
+    {
+      "workload": 3,
+      "regime": 0,
+      "policy": "original_rr",
+      "predictor": "original_rr",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        29,
+        29,
+        27
+      ],
+      "all_flow": [
+        41,
+        41,
+        39
+      ]
+    },
+    {
+      "workload": 3,
+      "regime": 1,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "frozen_nominal",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        1
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 3,
+      "regime": 1,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "frozen_nominal",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 3,
+      "regime": 1,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "seasonal_lag2",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 3,
+      "regime": 1,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "seasonal_lag2",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 3,
+      "regime": 1,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "historical_AR1_OLS",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 3,
+      "regime": 1,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "historical_AR1_OLS",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 3,
+      "regime": 1,
+      "policy": "unit_admission_pair",
+      "predictor": "unit_admission_pair",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 3,
+      "regime": 1,
+      "policy": "original_rr",
+      "predictor": "original_rr",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 3,
+      "regime": 2,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "frozen_nominal",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        1
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 3,
+      "regime": 2,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "frozen_nominal",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 3,
+      "regime": 2,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "seasonal_lag2",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 3,
+      "regime": 2,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "seasonal_lag2",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 3,
+      "regime": 2,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "historical_AR1_OLS",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 3,
+      "regime": 2,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "historical_AR1_OLS",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 3,
+      "regime": 2,
+      "policy": "unit_admission_pair",
+      "predictor": "unit_admission_pair",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 3,
+      "regime": 2,
+      "policy": "original_rr",
+      "predictor": "original_rr",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        24,
+        24,
+        24
+      ],
+      "all_flow": [
+        36,
+        36,
+        36
+      ]
+    },
+    {
+      "workload": 3,
+      "regime": 3,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "frozen_nominal",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        1
+      ],
+      "cohort_flow": [
+        29,
+        28,
+        28
+      ],
+      "all_flow": [
+        41,
+        40,
+        40
+      ]
+    },
+    {
+      "workload": 3,
+      "regime": 3,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "frozen_nominal",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        29,
+        28,
+        27
+      ],
+      "all_flow": [
+        41,
+        40,
+        39
+      ]
+    },
+    {
+      "workload": 3,
+      "regime": 3,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "seasonal_lag2",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        29,
+        29,
+        29
+      ],
+      "all_flow": [
+        41,
+        41,
+        41
+      ]
+    },
+    {
+      "workload": 3,
+      "regime": 3,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "seasonal_lag2",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        29,
+        29,
+        29
+      ],
+      "all_flow": [
+        41,
+        41,
+        41
+      ]
+    },
+    {
+      "workload": 3,
+      "regime": 3,
+      "policy": "nominal_completion_pair_window6",
+      "predictor": "historical_AR1_OLS",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        29,
+        29,
+        29
+      ],
+      "all_flow": [
+        41,
+        41,
+        41
+      ]
+    },
+    {
+      "workload": 3,
+      "regime": 3,
+      "policy": "current_cohort_flow_pair",
+      "predictor": "historical_AR1_OLS",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        0,
+        0
+      ],
+      "cohort_flow": [
+        29,
+        29,
+        29
+      ],
+      "all_flow": [
+        41,
+        41,
+        41
+      ]
+    },
+    {
+      "workload": 3,
+      "regime": 3,
+      "policy": "unit_admission_pair",
+      "predictor": "unit_admission_pair",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        29,
+        28,
+        27
+      ],
+      "all_flow": [
+        41,
+        40,
+        39
+      ]
+    },
+    {
+      "workload": 3,
+      "regime": 3,
+      "policy": "original_rr",
+      "predictor": "original_rr",
+      "capacity": [
+        0,
+        1,
+        2
+      ],
+      "queries": [
+        0,
+        1,
+        2
+      ],
+      "cohort_flow": [
+        29,
+        29,
+        27
+      ],
+      "all_flow": [
+        41,
+        41,
+        39
+      ]
+    }
+  ],
+  "pareto": [
+    {
+      "workload": 0,
+      "regime": 0,
+      "metric_order": [
+        "queries",
+        "cohort_flow",
+        "all_task_flow"
+      ],
+      "tested_policy_points": [
+        [
+          0,
+          24,
+          36
+        ],
+        [
+          1,
+          24,
+          36
+        ],
+        [
+          2,
+          24,
+          36
+        ]
+      ],
+      "non_dominated_points": [
+        [
+          0,
+          24,
+          36
+        ]
+      ],
+      "global_optimality_claim": false
+    },
+    {
+      "workload": 0,
+      "regime": 1,
+      "metric_order": [
+        "queries",
+        "cohort_flow",
+        "all_task_flow"
+      ],
+      "tested_policy_points": [
+        [
+          0,
+          24,
+          36
+        ],
+        [
+          1,
+          24,
+          36
+        ],
+        [
+          2,
+          24,
+          36
+        ]
+      ],
+      "non_dominated_points": [
+        [
+          0,
+          24,
+          36
+        ]
+      ],
+      "global_optimality_claim": false
+    },
+    {
+      "workload": 0,
+      "regime": 2,
+      "metric_order": [
+        "queries",
+        "cohort_flow",
+        "all_task_flow"
+      ],
+      "tested_policy_points": [
+        [
+          0,
+          24,
+          36
+        ],
+        [
+          1,
+          24,
+          36
+        ],
+        [
+          2,
+          24,
+          36
+        ]
+      ],
+      "non_dominated_points": [
+        [
+          0,
+          24,
+          36
+        ]
+      ],
+      "global_optimality_claim": false
+    },
+    {
+      "workload": 0,
+      "regime": 3,
+      "metric_order": [
+        "queries",
+        "cohort_flow",
+        "all_task_flow"
+      ],
+      "tested_policy_points": [
+        [
+          0,
+          24,
+          36
+        ],
+        [
+          1,
+          24,
+          36
+        ],
+        [
+          2,
+          24,
+          36
+        ]
+      ],
+      "non_dominated_points": [
+        [
+          0,
+          24,
+          36
+        ]
+      ],
+      "global_optimality_claim": false
+    },
+    {
+      "workload": 1,
+      "regime": 0,
+      "metric_order": [
+        "queries",
+        "cohort_flow",
+        "all_task_flow"
+      ],
+      "tested_policy_points": [
+        [
+          0,
+          25,
+          37
+        ],
+        [
+          1,
+          24,
+          36
+        ],
+        [
+          1,
+          25,
+          37
+        ],
+        [
+          2,
+          25,
+          37
+        ]
+      ],
+      "non_dominated_points": [
+        [
+          0,
+          25,
+          37
+        ],
+        [
+          1,
+          24,
+          36
+        ]
+      ],
+      "global_optimality_claim": false
+    },
+    {
+      "workload": 1,
+      "regime": 1,
+      "metric_order": [
+        "queries",
+        "cohort_flow",
+        "all_task_flow"
+      ],
+      "tested_policy_points": [
+        [
+          0,
+          24,
+          36
+        ],
+        [
+          1,
+          24,
+          36
+        ],
+        [
+          2,
+          24,
+          36
+        ]
+      ],
+      "non_dominated_points": [
+        [
+          0,
+          24,
+          36
+        ]
+      ],
+      "global_optimality_claim": false
+    },
+    {
+      "workload": 1,
+      "regime": 2,
+      "metric_order": [
+        "queries",
+        "cohort_flow",
+        "all_task_flow"
+      ],
+      "tested_policy_points": [
+        [
+          0,
+          24,
+          36
+        ],
+        [
+          1,
+          24,
+          36
+        ],
+        [
+          2,
+          24,
+          36
+        ]
+      ],
+      "non_dominated_points": [
+        [
+          0,
+          24,
+          36
+        ]
+      ],
+      "global_optimality_claim": false
+    },
+    {
+      "workload": 1,
+      "regime": 3,
+      "metric_order": [
+        "queries",
+        "cohort_flow",
+        "all_task_flow"
+      ],
+      "tested_policy_points": [
+        [
+          0,
+          25,
+          37
+        ],
+        [
+          1,
+          24,
+          36
+        ],
+        [
+          1,
+          25,
+          37
+        ],
+        [
+          2,
+          25,
+          37
+        ]
+      ],
+      "non_dominated_points": [
+        [
+          0,
+          25,
+          37
+        ],
+        [
+          1,
+          24,
+          36
+        ]
+      ],
+      "global_optimality_claim": false
+    },
+    {
+      "workload": 2,
+      "regime": 0,
+      "metric_order": [
+        "queries",
+        "cohort_flow",
+        "all_task_flow"
+      ],
+      "tested_policy_points": [
+        [
+          0,
+          28,
+          40
+        ],
+        [
+          1,
+          28,
+          40
+        ],
+        [
+          2,
+          26,
+          38
+        ]
+      ],
+      "non_dominated_points": [
+        [
+          0,
+          28,
+          40
+        ],
+        [
+          2,
+          26,
+          38
+        ]
+      ],
+      "global_optimality_claim": false
+    },
+    {
+      "workload": 2,
+      "regime": 1,
+      "metric_order": [
+        "queries",
+        "cohort_flow",
+        "all_task_flow"
+      ],
+      "tested_policy_points": [
+        [
+          0,
+          24,
+          36
+        ],
+        [
+          1,
+          24,
+          36
+        ],
+        [
+          2,
+          24,
+          36
+        ]
+      ],
+      "non_dominated_points": [
+        [
+          0,
+          24,
+          36
+        ]
+      ],
+      "global_optimality_claim": false
+    },
+    {
+      "workload": 2,
+      "regime": 2,
+      "metric_order": [
+        "queries",
+        "cohort_flow",
+        "all_task_flow"
+      ],
+      "tested_policy_points": [
+        [
+          0,
+          24,
+          36
+        ],
+        [
+          1,
+          24,
+          36
+        ],
+        [
+          2,
+          24,
+          36
+        ]
+      ],
+      "non_dominated_points": [
+        [
+          0,
+          24,
+          36
+        ]
+      ],
+      "global_optimality_claim": false
+    },
+    {
+      "workload": 2,
+      "regime": 3,
+      "metric_order": [
+        "queries",
+        "cohort_flow",
+        "all_task_flow"
+      ],
+      "tested_policy_points": [
+        [
+          0,
+          28,
+          40
+        ],
+        [
+          1,
+          28,
+          40
+        ],
+        [
+          2,
+          26,
+          38
+        ]
+      ],
+      "non_dominated_points": [
+        [
+          0,
+          28,
+          40
+        ],
+        [
+          2,
+          26,
+          38
+        ]
+      ],
+      "global_optimality_claim": false
+    },
+    {
+      "workload": 3,
+      "regime": 0,
+      "metric_order": [
+        "queries",
+        "cohort_flow",
+        "all_task_flow"
+      ],
+      "tested_policy_points": [
+        [
+          0,
+          29,
+          41
+        ],
+        [
+          1,
+          28,
+          40
+        ],
+        [
+          1,
+          29,
+          41
+        ],
+        [
+          2,
+          27,
+          39
+        ]
+      ],
+      "non_dominated_points": [
+        [
+          0,
+          29,
+          41
+        ],
+        [
+          1,
+          28,
+          40
+        ],
+        [
+          2,
+          27,
+          39
+        ]
+      ],
+      "global_optimality_claim": false
+    },
+    {
+      "workload": 3,
+      "regime": 1,
+      "metric_order": [
+        "queries",
+        "cohort_flow",
+        "all_task_flow"
+      ],
+      "tested_policy_points": [
+        [
+          0,
+          24,
+          36
+        ],
+        [
+          1,
+          24,
+          36
+        ],
+        [
+          2,
+          24,
+          36
+        ]
+      ],
+      "non_dominated_points": [
+        [
+          0,
+          24,
+          36
+        ]
+      ],
+      "global_optimality_claim": false
+    },
+    {
+      "workload": 3,
+      "regime": 2,
+      "metric_order": [
+        "queries",
+        "cohort_flow",
+        "all_task_flow"
+      ],
+      "tested_policy_points": [
+        [
+          0,
+          24,
+          36
+        ],
+        [
+          1,
+          24,
+          36
+        ],
+        [
+          2,
+          24,
+          36
+        ]
+      ],
+      "non_dominated_points": [
+        [
+          0,
+          24,
+          36
+        ]
+      ],
+      "global_optimality_claim": false
+    },
+    {
+      "workload": 3,
+      "regime": 3,
+      "metric_order": [
+        "queries",
+        "cohort_flow",
+        "all_task_flow"
+      ],
+      "tested_policy_points": [
+        [
+          0,
+          29,
+          41
+        ],
+        [
+          1,
+          28,
+          40
+        ],
+        [
+          1,
+          29,
+          41
+        ],
+        [
+          2,
+          27,
+          39
+        ]
+      ],
+      "non_dominated_points": [
+        [
+          0,
+          29,
+          41
+        ],
+        [
+          1,
+          28,
+          40
+        ],
+        [
+          2,
+          27,
+          39
+        ]
+      ],
+      "global_optimality_claim": false
+    }
+  ],
+  "full_paid_cost": false,
+  "external_baseline_result": false,
+  "independent_random_sample_claim": false
+}
