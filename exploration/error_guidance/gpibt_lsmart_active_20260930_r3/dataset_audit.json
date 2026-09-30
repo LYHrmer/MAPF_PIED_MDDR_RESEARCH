@@ -1,0 +1,85 @@
+{
+  "status": "PASSED_SEPARATE_VISIBILITY_AND_TARGET_AUDIT",
+  "trials": {
+    "nominal": {
+      "causal_context_rows_checked": 400,
+      "offline_target_rows_checked": 400,
+      "MOVE_residual_rows_checked": 195,
+      "features_actual_pose_or_future_labels": false,
+      "all_historical_ENDs_strictly_prior_to_freeze": true,
+      "negative_checks": {
+        "actual_pose_in_features": {
+          "rejected": true,
+          "reason": "private_or_unknown_online_feature"
+        },
+        "future_END_in_features": {
+          "rejected": true,
+          "reason": "current_future_or_undelivered_END"
+        },
+        "future_intervention_start": {
+          "rejected": true,
+          "reason": "future_trigger_or_pause_time_leaked"
+        },
+        "future_or_wrong_task_owner": {
+          "rejected": true,
+          "reason": "future_or_unrevealed_task"
+        },
+        "wrong_motion_target_progress": {
+          "rejected": true,
+          "reason": "false_offline_progress"
+        },
+        "wrong_ACK_target": {
+          "rejected": true,
+          "reason": "false_future_ACK_target"
+        },
+        "wrong_feedback_residual": {
+          "rejected": true,
+          "reason": "false_offline_residual"
+        }
+      },
+      "audit_passed": true
+    },
+    "pause": {
+      "causal_context_rows_checked": 400,
+      "offline_target_rows_checked": 400,
+      "MOVE_residual_rows_checked": 200,
+      "features_actual_pose_or_future_labels": false,
+      "all_historical_ENDs_strictly_prior_to_freeze": true,
+      "negative_checks": {
+        "actual_pose_in_features": {
+          "rejected": true,
+          "reason": "private_or_unknown_online_feature"
+        },
+        "future_END_in_features": {
+          "rejected": true,
+          "reason": "current_future_or_undelivered_END"
+        },
+        "future_intervention_start": {
+          "rejected": true,
+          "reason": "future_trigger_or_pause_time_leaked"
+        },
+        "future_or_wrong_task_owner": {
+          "rejected": true,
+          "reason": "future_or_unrevealed_task"
+        },
+        "wrong_motion_target_progress": {
+          "rejected": true,
+          "reason": "false_offline_progress"
+        },
+        "wrong_ACK_target": {
+          "rejected": true,
+          "reason": "false_future_ACK_target"
+        },
+        "wrong_feedback_residual": {
+          "rejected": true,
+          "reason": "false_offline_residual"
+        }
+      },
+      "audit_passed": true
+    }
+  },
+  "raw_not_rerun": true,
+  "current_planner_used_dataset": false,
+  "dataset_manifest_sha256": "ee5d282f952ec2d5793211fef1efa7799373fb4a94a48ae6c5babebfe2f849da",
+  "auditor_sha256": "e8618e67478ff785aa8c4a70ec336b9d0f38f395e45df4312cbb7cd31f1b3afa"
+}

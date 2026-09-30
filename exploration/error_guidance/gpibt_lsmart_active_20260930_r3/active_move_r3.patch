@@ -1,0 +1,134 @@
+--- a/client/controllers/footbot_diffusion/footbot_diffusion.h
++++ b/client/controllers/footbot_diffusion/footbot_diffusion.h
+@@ -162,6 +162,12 @@
+     }
+ 
+ private:
++    // Observe the actual arguments sent to the actuator; native control laws
++    // and every original argument expression remain unchanged.
++    void integrationSetWheels(Real left, Real right) const {
++        integration_left_command=left; integration_right_command=right;
++        m_pcWheels->SetLinearVelocity(left,right);
++    }
+     Real pidLinear(Real error);
+     pair<Real, Real> Move(const CVector3 &targetPos, const CVector3 &currPos,
+                           Real currAngle, Real tolerance);
+@@ -202,6 +208,10 @@
+     queue<Real> velocityQueue;
+     int moveForwardFlag;
+     int count = 0;
++    mutable Real integration_left_command = 0.0;
++    mutable Real integration_right_command = 0.0;
++    int integration_trigger_tick = -1;
++    bool integration_resumed = false;
+     bool previous_zero_command = true;
+     CVector3 previous_observed_position;
+     bool have_previous_observation = false;
+--- a/client/controllers/footbot_diffusion/footbot_diffusion.cpp
++++ b/client/controllers/footbot_diffusion/footbot_diffusion.cpp
+@@ -222,6 +222,7 @@
+     if (currAngle < 0.0) {
+         currAngle = currAngle + 360.0;
+     }
++    const int integration_step_tick=count;
+     Real left_v, right_v;
+     CVector3 currPos = m_pcPosSens->GetReading().Position;
+     const double displacement = have_previous_observation ? (currPos - previous_observed_position).Length() : 0.0;
+@@ -233,23 +234,42 @@
+                 << ",\"speed_cm_s\":" << prevVelocity_
+                 << ",\"queue_size\":" << q.size()
+                 << ",\"previous_zero_command\":" << (previous_zero_command?"true":"false")
++                << ",\"previous_wheel_left_cm_s\":" << integration_left_command
++                << ",\"previous_wheel_right_cm_s\":" << integration_right_command
+                 << ",\"displacement_m\":" << displacement
+                 << ",\"idle\":" << ((q.empty() && previous_zero_command && displacement <= 1e-6)?"true":"false") << "}";
+     client->call("observe",robot_id,observation.str());
++    const char* pause=std::getenv("INTEGRATION_PAUSE");
++    const bool integration_pause=pause && std::string(pause)=="1";
+     auto controlTrace = [&](const char* phase, const Action &current, bool paused) {
+         nlohmann::json detail={{"phase",phase},{"type",static_cast<int>(current.type)},
+             {"nodes",current.nodeIDS},{"task_id",current.task_id},{"timer",current.timer},
+-            {"target_x",current.x},{"target_y",current.y},{"paused",paused},{"queue_size",q.size()}};
++            {"target_x",current.x},{"target_y",current.y},{"paused",paused},{"queue_size",q.size()},
++            {"controller_tick",integration_step_tick},{"trigger_tick",integration_trigger_tick},
++            {"mode",integration_pause?"pause":"nominal"},{"displacement_m",displacement},
++            {"issued_left_cm_s",integration_left_command},{"issued_right_cm_s",integration_right_command}};
+         client->call("control_observe",robot_id,detail.dump());
+     };
+-    const char* pause=std::getenv("INTEGRATION_PAUSE");
+-    if (pause && std::string(pause)=="1" && robot_id=="0" && count>=30 && count<50) {
+-        const Action current=q.empty()?a:q.front();
++    if (robot_id=="0" && integration_trigger_tick<0 && !q.empty() &&
++        q.front().type==Action::MOVE && !q.front().nodeIDS.empty() &&
++        (integration_left_command!=0.0 || integration_right_command!=0.0) && displacement>1e-6) {
++        integration_trigger_tick=count;
++        controlTrace("active_trigger",q.front(),false);
++    }
++    if (integration_pause && robot_id=="0" && integration_trigger_tick>=0 &&
++        count>=integration_trigger_tick && count<integration_trigger_tick+20) {
++        const Action current=q.front();
++        integrationSetWheels(0.0f,0.0f);
++        previous_zero_command=true;
+         controlTrace("pause",current,true);
+-        m_pcWheels->SetLinearVelocity(0.0f,0.0f);
+-        previous_zero_command=true;
++        controlTrace("wheel_command",current,true);
+         ++count; ++step_count_;
+         return;
++    }
++    if (integration_pause && robot_id=="0" && integration_trigger_tick>=0 &&
++        count==integration_trigger_tick+20 && !integration_resumed) {
++        integration_resumed=true;
++        controlTrace("active_resume",q.front(),false);
+     }
+     if (count % 10 == 0) {
+         auto updateActions =
+@@ -358,18 +378,19 @@
+         left_v = turn_velocities.first;
+         right_v = turn_velocities.second;
+     } else if (a.type == Action::STATION) {
+-        m_pcWheels->SetLinearVelocity(0.0f, 0.0f);
++        integrationSetWheels(0.0f, 0.0f);
+         curr_station = CVector3{a.x, a.y, 0.0f};
+         controlTrace("service_decrement",q.front(),false);
+         q.front().timer--;
+     } else {
+         // stop state, waiting for next instruction
+-        m_pcWheels->SetLinearVelocity(0.0f, 0.0f);
++        integrationSetWheels(0.0f, 0.0f);
+         left_v = 0.0f;
+         right_v = 0.0f;
+     }
+ 
+     previous_zero_command = (a.type == Action::STOP || a.type == Action::STATION);
++    controlTrace("wheel_command",q.empty()?Action{}:q.front(),false);
+     auto end = std::chrono::high_resolution_clock::now();
+     std::chrono::duration<double, milli> exec_duration_ms = end - end_find_act;
+     std::chrono::duration<double, milli> total_duration_ms = end - start;
+@@ -440,7 +461,7 @@
+ 
+     //    cout << "PID::Left_v: " << left_v << ", right_v: " << right_v <<
+     //    endl;
+-    m_pcWheels->SetLinearVelocity(left_v, right_v);
++    integrationSetWheels(left_v, right_v);
+     return make_pair(left_v, right_v);
+ }
+ 
+@@ -548,7 +569,7 @@
+     prevVelocity_ = linearVelocity;
+     // cout << "PID::Left_v: " << left_v_total << ", right_v: " <<
+     // right_v_total << ", refer speed: " << refer_velocity << endl;
+-    m_pcWheels->SetLinearVelocity(left_v_total, right_v_total);
++    integrationSetWheels(left_v_total, right_v_total);
+     // if (debug_id == robot_id){
+     // cout << "target position: " << targetPos.GetX() << ", " <<
+     // targetPos.GetY() << endl; cout << "PID modified velocity" <<
+@@ -580,7 +601,7 @@
+     }
+     ////  cout cout << "Left_v: " << : " << << " left_v <: " << right_v <<
+     /// endl;
+-    m_pcWheels->SetLinearVelocity(left_v, right_v);
++    integrationSetWheels(left_v, right_v);
+ }
+ 
+ Real CFootBotDiffusion::ChangeCoordinateFromMapToArgos(Real x) {

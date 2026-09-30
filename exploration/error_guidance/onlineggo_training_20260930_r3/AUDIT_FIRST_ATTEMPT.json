@@ -1,0 +1,7 @@
+{
+  "status": "auditor_file_handling_failed_before_training_review",
+  "exception": "IsADirectoryError: CMAES/WPPL/pybind11",
+  "reason": "Git mode 120000 symlink was incorrectly dereferenced by the initial offline source verifier",
+  "fix": "Hash symlink target bytes via readlink, matching Git blob semantics",
+  "native_training_or_holdout_rerun": false
+}

@@ -1,0 +1,7 @@
+{
+  "status": "auditor_assumed_all_tree_entries_are_blobs",
+  "exception": "AssertionError at kind == blob",
+  "reason": "Upstream tree has three gitlinks in addition to source blobs",
+  "fix": "Verify every blob, report the three gitlink commit references separately without claiming submodule content verification",
+  "native_training_or_holdout_rerun": false
+}

@@ -1,0 +1,15 @@
+# 每tick已交付context与离线监督target
+
+数据为真实r3原始事件的只读导出，不参与当前GPIBT决策、ADG放行或ACK。每个机器人每tick在`wheel_command`已经交付execution manager之后冻结一个context，以(raw sequence,tick,agent)标识，200tick×2agents×2arms预计800行。该执行监视器接口包含本轮新增实际轮速日志；不能声称原GPIBT逐tick接收了这些信息。新学习策略接入前要单独固定同信息接口。
+
+`delivered_context.jsonl`内`features`仅包含此边界已发出的命令、公开task/view、已送达正常END和这些事件的因果摘要。未来END、未来task、private PID、cached speed、真实pose、投影progress、横向偏差、未来trigger/恢复时刻都不进入features。已开始的干预状态/已发生暂停tick数可见；future干预不补回早期行。trial/agent/sequence是对齐及按run划分元数据，禁止把trial名称拟合为未来regime。current node身份和公开原命令目标属于intent，不是未来实际位置。
+
+`offline_targets.jsonl`单独提供当前已经采样的真实pose和沿公开原MOVE段的signed progress/lateral、下一tick位移/投影变化、该节点和完整原格MOVE最后节点的未来正常ACK时间、remaining-ticks和horizon删失。它们是离线监督/审计target，没有装成在线证书；signed值保留不clip，1e-6触发阈值、0.03端点EPS均保持。当前采样为ControlStep物理推进之前，最后tick199无法提供tick200 exact target。
+
+`feedback_residuals.jsonl`独立报告因果简单基线：此前已完成**已派发原生MOVE队列段**的elapsed ticks / 公开段长度的滚动中位数，乘当前段公开长度，并扣除从首非零MOVE命令起经过的tick（已发生暂停tick不计运动elapsed）。没有历史时预测unknown，不用未来nominal或整run均值填补。未来真实final-ACK的剩余tick减这一预测形成离线残差；已发生暂停只是合法context，不预知还将暂停多久。它是分析参照，不替代主动训练，不声称存在不可解析学习残差。half-MOVE ACK仍逐个保留，episode以首次实际MOVE命令时**当时已派发**队列尾node作为final节点；作者ADG可能只派发0.5m半MOVE，不能把该episode自动称作原格MOVE。
+
+首版scope文字、manifest和audit已保留，参见DATA_SCOPE_CLARIFICATION.md。`original_step_targets.jsonl`另外提供按公开proposal整格start/goal重建的完整原MOVE进度/横偏和最后M节点正常END/删失，独立离线target；没有将未来后半MOVE ACK偷偷加入原online context。
+
+`motion_progress.csv`用于人工复核，不作为在线features入口。两臂配对差只能在实际task/action/native-node前缀相等后解释；不同prefix不强行对齐。训练/留出按完整run/任务流分组，不能随机拆同一episode/tick；当前只有nominal/pause两run的pilot，后续训练、反转或新扰动留出应另登记，不将同一run训练误差写成泛化。
+
+dataset audit重新从raw重建所有features/targets/residual，执行context泄漏与未来END负例；raw和输出SHA绑定。监督target仅用于离线训练与测试，不能直接释放空间资源、ACK节点或签发权限。

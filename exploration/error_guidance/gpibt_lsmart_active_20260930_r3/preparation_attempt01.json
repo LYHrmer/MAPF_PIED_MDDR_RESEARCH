@@ -1,0 +1,8 @@
+{
+  "command": ["rtk", "proxy", "python3", "-B", "exploration/error_guidance/gpibt_lsmart_active_20260930_r3/prepare.py"],
+  "exit_code": 1,
+  "native_trial_started": false,
+  "failure": "AssertionError at prepare.py:47: expected5 actuator calls; direct parent has6 including unused const TurnLeft",
+  "correction": "copy preparation assertion6; no input/control/intervention rule changed",
+  "partial_native_tree_retained": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gpibt_lsmart_active_20260930_r3_prepare_attempt01"
+}

@@ -1,0 +1,53 @@
+{
+  "status": "SEPARATE_CAUSAL_CONTEXT_AND_OFFLINE_TARGETS",
+  "context_has_actual_pose_or_future_targets": false,
+  "current_planner_used_dataset": false,
+  "trained_policy_evaluated": false,
+  "schema_sha256": "3ef27fda8c24911df37cac768299488bd45573fcbed2976196f306556f16089f",
+  "exporter_sha256": "42e0a4666fb313d56f8990383c65117de5e1599fa22cb2d4df6e7231a68fe84b",
+  "trials": {
+    "nominal": {
+      "raw_sha256": "1130941116e13ed188aeb1b85edfaa10a0638f1eb68dc6aed655143ab269890f",
+      "context_rows": 400,
+      "target_rows": 400,
+      "MOVE_context_rows": 195,
+      "residual_rows_with_prior_history_and_uncensored_ACK": 158,
+      "max_abs_lateral_m": 0.02273292424752338,
+      "residual_range_ticks": [
+        -3.0,
+        4.5
+      ],
+      "files": {
+        "motion_progress.csv": "7c0baeec1399ca7f4e52ba8f9e697f0cf5eb60c3944b6c0ae915bf3035c91f47",
+        "offline_targets.jsonl": "62f1374307d28a3cf1c915dc2c274e1f4514790be4b3919ceca120f746cf3f6d",
+        "feedback_residuals.jsonl": "68b3254285eb06ff30c474fe1878452cddbf5066ebdade3ed86fe222c4594b16",
+        "delivered_context.jsonl": "024dd44c389a9fd716524193faf6b0936dd7b703de87f4dd4fcb3d74d66466e3"
+      }
+    },
+    "pause": {
+      "raw_sha256": "5bdb85b036de07fefa68ba29b188f72084685876a39c674f44aaf46e39b41a86",
+      "context_rows": 400,
+      "target_rows": 400,
+      "MOVE_context_rows": 200,
+      "residual_rows_with_prior_history_and_uncensored_ACK": 162,
+      "max_abs_lateral_m": 0.02337715563883347,
+      "residual_range_ticks": [
+        -4.0,
+        17.0
+      ],
+      "files": {
+        "motion_progress.csv": "e4c897bf9617b36947ea8873c4c7150d781c537575897cd1670467940d7fcef7",
+        "offline_targets.jsonl": "eea231fc414cfce316b7c71dfddde83e84b16d6a8dc99897f8aab477c97407ae",
+        "feedback_residuals.jsonl": "00657c96f68c1326bcf26fdb526ab0c60cc934819750989d44c033ab2ef04e2f",
+        "delivered_context.jsonl": "7f32a629f320fef705c4b5579a8180861bbdaf2513791ae257c02a1136fec032"
+      }
+    }
+  },
+  "initial_schema_retained": "DATA_SCHEMA_initial.md",
+  "initial_manifest_retained": "dataset_manifest_initial.json",
+  "scope_correction": "queue-native MOVE span, not necessarily full original grid MOVE",
+  "additional_full_original_step_targets": {
+    "nominal": "efec4cfb9b62b7c33a0907b188b1b7293e3192109c027056f308ab8511bc5efa",
+    "pause": "bff090f892460385791f62cb150773ea02eb429f9a697e6a2b9327aeab81e903"
+  }
+}

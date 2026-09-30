@@ -1,0 +1,98 @@
+{
+  "trial": "nominal",
+  "commands": [
+    [
+      "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gpibt_lsmart_active_20260930_r3/server_build/ExecutionManager",
+      "--num_robots=2",
+      "--port_number=9351",
+      "--output_file=/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gpibt_lsmart_active_20260930_r3/attempts/nominal/stats.json",
+      "--save_stats=true",
+      "--screen=0",
+      "--total_sim_step_tick=200",
+      "--ticks_per_second=10",
+      "--look_ahead_dist=0",
+      "--look_ahead_tick=0",
+      "--seed=42",
+      "--sim_window_tick=10",
+      "--sim_window_timestep=1",
+      "--plan_window_timestep=1",
+      "--planner_invoke_policy=joint_settled",
+      "--backup_planner=PIBT",
+      "--map=/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gpibt_lsmart_active_20260930_r3/map.json",
+      "--grid_type=regular",
+      "--rotation=false",
+      "--task_assigner_type=one_goal"
+    ],
+    [
+      "argos3",
+      "-c",
+      "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gpibt_lsmart_active_20260930_r3/attempts/nominal/experiment.argos",
+      "--no-color"
+    ],
+    [
+      "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gpibt_lsmart_active_20260930_r3/gpibt_bridge"
+    ]
+  ],
+  "launch_prefix": [
+    "rtk",
+    "proxy"
+  ],
+  "wall_seconds": 1.9496477529901313,
+  "decisions": 5,
+  "error": null,
+  "processes": [
+    {
+      "before_cleanup": 0,
+      "returncode": 0
+    },
+    {
+      "before_cleanup": 0,
+      "returncode": 0
+    },
+    {
+      "before_cleanup": null,
+      "returncode": -15
+    }
+  ],
+  "pause_agent": null,
+  "trigger_ticks": [
+    59
+  ],
+  "actual_pause_ticks_inclusive": null,
+  "fixed_rule": "first_agent0_front_MOVE_unACK_prior_actual_nonzero_wheels_displacement_gt_1e-6",
+  "protocol_sha256": "93e31d7fc21e746162d45f95abff630f9520e03e92d7d3f86ce85d3d43c9443e",
+  "fixed_horizon_ticks": 200,
+  "ticks_per_second": 10,
+  "seed": 42,
+  "blocking_guard_seconds": 49,
+  "whole_trial_limit_seconds_including_cleanup": 54,
+  "binary_identities": {
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gpibt_lsmart_active_20260930_r3/gpibt_bridge": "ceb3e7f7b311dd1f76b6f9b06d7496e44502ca5b32399a086ff41fc77c59e2a6",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gpibt_lsmart_active_20260930_r3/server_build/ExecutionManager": "ceecb90658c53e327cbd4c0b0ec35862a222a510ae5e78a8bd7ce5396bd5b003",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gpibt_lsmart_active_20260930_r3/client_build/controllers/footbot_diffusion/libfootbot_diffusion.so": "7e240321a88313acfe9f58965e3b71739a2b4897e7eeed2fe3723470f8078942",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gpibt_lsmart_active_20260930_r3/client_build/loop_functions/trajectory_loop_functions/libtrajectory_loop_functions.so": "1aae5d435fb26fd5b1be128a0fbd641092e446005eb7d57579840363b03628ce",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/baseline_selection_20260929/gpibt_seeded_build_gp_r100_re10_f2/CMakeFiles/lifelong.dir/traffic_mapf/search.cpp.o": "c72ac9fa49bb6eb7d027089e7cd26091ed0a94e0ccae6a85a7983a4599b0c9eb",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/baseline_selection_20260929/gpibt_seeded_build_gp_r100_re10_f2/CMakeFiles/lifelong.dir/traffic_mapf/utils.cpp.o": "29d746b64d83da33cae89d17f177679b3a8ea10f7106376d643f6d705b5003ad",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/baseline_selection_20260929/gpibt_seeded_build_gp_r100_re10_f2/CMakeFiles/lifelong.dir/traffic_mapf/heuristics.cpp.o": "d5092fa4caeabc459ff2b2e87a0c803905695dd810b33aadd823a7c3572130bc",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/baseline_selection_20260929/gpibt_seeded_build_gp_r100_re10_f2/CMakeFiles/lifelong.dir/traffic_mapf/flow.cpp.o": "99da864d8d4db2820079a6170f55fdf435b57d0b0da323d0f76ad88d08dcbffa",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/baseline_selection_20260929/gpibt_seeded_build_gp_r100_re10_f2/CMakeFiles/lifelong.dir/traffic_mapf/pibt.cpp.o": "3eeb4f521953ecb476f1f73989385e7e7bdaa7dec182168935f4446d4bdb624f",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/baseline_selection_20260929/gpibt_seeded_build_gp_r100_re10_f2/CMakeFiles/lifelong.dir/src/Validator.cpp.o": "0eba7d224c8b6919e24b67a94ac31803f1f14ca9c5a84ed07655ed0e4b611593",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/baseline_selection_20260929/gpibt_seeded_build_gp_r100_re10_f2/CMakeFiles/lifelong.dir/src/CompetitionSystem.cpp.o": "70dd1edd6c6458895a770146f81b1066773e9a3d27deaf496e426e5d06751b81",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/baseline_selection_20260929/gpibt_seeded_build_gp_r100_re10_f2/CMakeFiles/lifelong.dir/src/ActionModel.cpp.o": "92a492ea82ca613e44c0347ae88a52b363feb77f72bb51036f8a954f331aeacd",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/baseline_selection_20260929/gpibt_seeded_build_gp_r100_re10_f2/CMakeFiles/lifelong.dir/src/common.cpp.o": "d7fd1b33570702f06f6ae352b35d4640d58fc6b513e82970d8488e94b3a79357",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/baseline_selection_20260929/gpibt_seeded_build_gp_r100_re10_f2/CMakeFiles/lifelong.dir/src/Logger.cpp.o": "cd74a155ba1ad2c9f9b97a1fa5a6b0b68ebfd740c93a816b8d9701ea63f60e8a",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/baseline_selection_20260929/gpibt_seeded_build_gp_r100_re10_f2/CMakeFiles/lifelong.dir/src/Evaluation.cpp.o": "2a079cb91c6eddc116615f5836670b3ecb4834836062db4aeec64a9af7d696a7",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/baseline_selection_20260929/gpibt_seeded_build_gp_r100_re10_f2/CMakeFiles/lifelong.dir/src/States.cpp.o": "adb9a654131271908017f91c4defdf754c18812f78f516cf222336cc8fbc45ed",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/baseline_selection_20260929/gpibt_seeded_build_gp_r100_re10_f2/CMakeFiles/lifelong.dir/src/MAPFPlanner.cpp.o": "5b8e2262e38d4c5a91ff277653196fc8bf901c8c478fd30b7aa1ee193b2c694e",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/baseline_selection_20260929/gpibt_seeded_build_gp_r100_re10_f2/CMakeFiles/lifelong.dir/src/Grid.cpp.o": "8194558f9dec1dffa4cfa7ee6b97b2d127ae4363fd8930691aa98d3ccbc6dded"
+  },
+  "files": {
+    "process1.log": "a3b9dd7901a767957ed36710e468f449402927ed7d6e9908c4a4eea311eda3e5",
+    "decisions.jsonl": "1f6cde816aba116dd8b862e3a6223757829d2189116887c53507ff54d852e6ca",
+    "process2.log": "89b5235053a4399af7b6154ba634e82e502bbd97278f13cfee84d974e288305b",
+    "stats.json": "1a7371c012c852717fc1161629264bb6456d6e3060b3aaf8e566b367c11bffaf",
+    "experiment.argos": "bb9590ab8b293bf6f2dc4b7c9604b2de5366be34116dc88e6cef8e06f627c890",
+    "process0.log": "60ba808d9a8861870daace35c5960794a67ceefb50edaf79eb31f3ef4f00b29f",
+    "events.jsonl": "1130941116e13ed188aeb1b85edfaa10a0638f1eb68dc6aed655143ab269890f"
+  }
+}
