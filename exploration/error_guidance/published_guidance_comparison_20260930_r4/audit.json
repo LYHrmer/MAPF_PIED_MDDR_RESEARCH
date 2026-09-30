@@ -1,0 +1,83 @@
+{
+  "passed": true,
+  "source_after": {
+    "unchanged_tracked_blobs": 939,
+    "gitlink_references": {
+      "third_party/MiniDNN": "ece9aa0ff7726ff15a89f0dfa209f8dc7c4398c2",
+      "third_party/eigen": "7cf1c0179eb0f5499dfc1bffbd229783a7865fe1",
+      "third_party/pybind11": "51c2aa16de5b50fe4be6a0016d6090d4a831899e"
+    },
+    "gitlink_contents_reaudited": false
+  },
+  "new_full_trajectory_audits": {
+    "hm_seed_930101": {
+      "actions_replayed": 800000,
+      "joint_positions": 800800,
+      "finished_tasks": 12236,
+      "pending_tasks": 800,
+      "throughput": 12.236,
+      "trace_sha256": "af3d8094c66f9aac7c570bd1799ecd7da70b0789600480e0c1c8b9cd90946012"
+    },
+    "hm_seed_930103": {
+      "actions_replayed": 800000,
+      "joint_positions": 800800,
+      "finished_tasks": 12314,
+      "pending_tasks": 800,
+      "throughput": 12.314,
+      "trace_sha256": "4b1529a01bcfb07d63fa7ed4bf5694f851e810d2b0bb84d3d2b9e4085466885b"
+    },
+    "hm_seed_930107": {
+      "actions_replayed": 800000,
+      "joint_positions": 800800,
+      "finished_tasks": 12210,
+      "pending_tasks": 800,
+      "throughput": 12.21,
+      "trace_sha256": "87552ebc41c545de8656b62235fbbd48e14fc876b98b62c07bcb3670fc379c3d"
+    }
+  },
+  "task_stream_agreement": [
+    {
+      "seed": 930101,
+      "comparator": "initial",
+      "same_starts": true,
+      "same_initial_task_goals": true,
+      "agents_with_different_full_task_streams": 800
+    },
+    {
+      "seed": 930101,
+      "comparator": "trained",
+      "same_starts": true,
+      "same_initial_task_goals": true,
+      "agents_with_different_full_task_streams": 800
+    },
+    {
+      "seed": 930103,
+      "comparator": "initial",
+      "same_starts": true,
+      "same_initial_task_goals": true,
+      "agents_with_different_full_task_streams": 800
+    },
+    {
+      "seed": 930103,
+      "comparator": "trained",
+      "same_starts": true,
+      "same_initial_task_goals": true,
+      "agents_with_different_full_task_streams": 800
+    },
+    {
+      "seed": 930107,
+      "comparator": "initial",
+      "same_starts": true,
+      "same_initial_task_goals": true,
+      "agents_with_different_full_task_streams": 800
+    },
+    {
+      "seed": 930107,
+      "comparator": "trained",
+      "same_starts": true,
+      "same_initial_task_goals": true,
+      "agents_with_different_full_task_streams": 800
+    }
+  ],
+  "frozen_input_hashes_unchanged": true
+}
