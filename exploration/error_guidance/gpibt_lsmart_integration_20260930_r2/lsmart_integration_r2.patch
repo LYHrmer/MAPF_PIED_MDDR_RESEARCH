@@ -1,0 +1,117 @@
+--- a/server/inc/ADG.h
++++ b/server/inc/ADG.h
+@@ -93,6 +93,9 @@
+         return robot_states[agent_id].position;
+     }
+     bool isTaskNode(int robot_id, int node_id);
++    int integrationTaskID(int agent_id, int node_id) {
++        return graph[agent_id][node_id].action.task_id;
++    }
+ 
+     pair<double, double> getActionGoal(int agent_id, int node_id) {
+         return make_pair(graph[agent_id][node_id].action.goal.first,
+--- a/server/src/ExecutionManager.cpp
++++ b/server/src/ExecutionManager.cpp
+@@ -357,6 +357,7 @@
+     }
+ 
+     set<int> new_finished_tasks = this->adg->updateFinishedTasks();
++    trace({{"kind","task_bookkeeping"},{"new_finished_tasks",new_finished_tasks}});
+ 
+     this->tasks_finished_per_sec.push_back(
+         make_tuple(new_finished_tasks.size(),
+@@ -471,6 +472,15 @@
+     vector<vector<Action>> actions;
+     actions = this->parser.StepsToActions(steps, this->flipped_coord);
+ 
++    json parsed=json::array();
++    for(const auto &plan:actions) {
++        json agent=json::array();
++        for(const auto &action:plan) agent.push_back({{"type",string(1,action.type)},
++            {"start",action.start},{"goal",action.goal},{"orientation",action.orientation},
++            {"task_id",action.task_id}});
++        parsed.push_back(agent);
++    }
++    trace({{"kind","parsed"},{"proposal_id",new_plan_json.at("proposal_id")},{"actions",parsed}});
+     this->adg->addMAPFPlan(actions);
+ 
+     // Defreeze the simulation if it was frozen
+@@ -520,9 +530,10 @@
+     int agent_id = this->adg->startIndexToRobotID[robot_id_str];
+     auto goal = adg->getActionGoal(agent_id,node_ID);
+     bool task=adg->isTaskNode(agent_id,node_ID);
++    int task_id=adg->integrationTaskID(agent_id,node_ID);
+     bool status_update = this->adg->updateFinishedNode(agent_id, node_ID);
+     trace({{"kind","end"},{"robot",robot_id_str},{"agent",agent_id},{"node",node_ID},
+-           {"goal",goal},{"task",task},{"accepted",status_update},{"observation",delivered_observations.value(robot_id_str,json())}});
++           {"goal",goal},{"task",task},{"task_id",task_id},{"accepted",status_update},{"observation",delivered_observations.value(robot_id_str,json())}});
+ 
+     return "None";
+ }
+@@ -567,6 +578,7 @@
+     //              this->curr_tick + 1);
+ 
+     this->curr_tick++;
++    if(simulationFinished()) trace({{"kind","horizon"},{"snapshot",snapshot()}});
+ }
+ 
+ bool ExecutionManager::invokePlanner() {
+--- a/server/src/server.cpp
++++ b/server/src/server.cpp
+@@ -246,6 +246,10 @@
+         rpc_api::em->delivered_observations[robot]=o;
+         rpc_api::em->trace({{"kind","observation"},{"robot",robot},{"observation",o}});
+     });
++    srv.bind("control_observe", [](string robot, string control) {
++        lock_guard<mutex> guard(rpc_api::globalMutex);
++        rpc_api::em->trace({{"kind","control"},{"robot",robot},{"control",json::parse(control)}});
++    });
+     srv.bind("snapshot", []() {
+         lock_guard<mutex> guard(rpc_api::globalMutex);
+         return rpc_api::em->snapshot().dump();
+--- a/client/controllers/footbot_diffusion/footbot_diffusion.cpp
++++ b/client/controllers/footbot_diffusion/footbot_diffusion.cpp
+@@ -1,5 +1,6 @@
+ /* Include the controller definition */
+ #include "footbot_diffusion.h"
++#include "utils/json.hpp"
+ /* Function definitions for XML parsing */
+ #include <argos3/core/utility/configuration/argos_configuration.h>
+ /* 2D vector definition */
+@@ -231,10 +232,20 @@
+                 << ",\"y\":" << currPos.GetY() << ",\"angle\":" << currAngle
+                 << ",\"speed_cm_s\":" << prevVelocity_
+                 << ",\"queue_size\":" << q.size()
++                << ",\"previous_zero_command\":" << (previous_zero_command?"true":"false")
++                << ",\"displacement_m\":" << displacement
+                 << ",\"idle\":" << ((q.empty() && previous_zero_command && displacement <= 1e-6)?"true":"false") << "}";
+     client->call("observe",robot_id,observation.str());
++    auto controlTrace = [&](const char* phase, const Action &current, bool paused) {
++        nlohmann::json detail={{"phase",phase},{"type",static_cast<int>(current.type)},
++            {"nodes",current.nodeIDS},{"task_id",current.task_id},{"timer",current.timer},
++            {"target_x",current.x},{"target_y",current.y},{"paused",paused},{"queue_size",q.size()}};
++        client->call("control_observe",robot_id,detail.dump());
++    };
+     const char* pause=std::getenv("INTEGRATION_PAUSE");
+     if (pause && std::string(pause)=="1" && robot_id=="0" && count>=30 && count<50) {
++        const Action current=q.empty()?a:q.front();
++        controlTrace("pause",current,true);
+         m_pcWheels->SetLinearVelocity(0.0f,0.0f);
+         previous_zero_command=true;
+         ++count; ++step_count_;
+@@ -259,6 +270,7 @@
+         end_queue_update - end_update;
+     while (!q.empty()) {
+         a = q.front();
++        controlTrace("front",a,false);
+         CVector3 targetPos = CVector3(a.x, a.y, 0.0f);
+         if (a.type == Action::MOVE && ((currPos - targetPos).Length() < EPS) and
+             (abs(prevVelocity_)) <= dt * m_fWheelVelocity) {
+@@ -348,6 +360,7 @@
+     } else if (a.type == Action::STATION) {
+         m_pcWheels->SetLinearVelocity(0.0f, 0.0f);
+         curr_station = CVector3{a.x, a.y, 0.0f};
++        controlTrace("service_decrement",q.front(),false);
+         q.front().timer--;
+     } else {
+         // stop state, waiting for next instruction

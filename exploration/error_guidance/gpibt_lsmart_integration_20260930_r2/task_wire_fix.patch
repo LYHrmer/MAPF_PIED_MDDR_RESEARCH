@@ -1,0 +1,18 @@
+--- a/server/src/ADG.cpp
++++ b/server/src/ADG.cpp
+@@ -577,12 +577,9 @@
+         // static_cast<double>(intStart.second)}; pair<double, double>
+         // doubleEnd = {static_cast<double>(intEnd.first),
+         // static_cast<double>(intEnd.second)};
+-        int task_id;
+-        if (action.task_ptr == nullptr) {
+-            task_id = -1;
+-        } else {
+-            task_id = action.task_ptr->id;
+-        }
++        // Integration correction: task_ptr is never populated by this parser.
++        // Preserve the existing native task identity on the RPC wire.
++        int task_id = action.task_id;
+         sim_plan.emplace_back(robotIDToStartIndex[action.robot_id], enque_id,
+                               action.orientation, string(1, action.type),
+                               action.start, action.goal, task_id);

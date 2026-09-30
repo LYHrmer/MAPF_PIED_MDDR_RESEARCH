@@ -1,0 +1,91 @@
+{
+  "trial": "nominal",
+  "commands": [
+    [
+      "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gpibt_lsmart_integration_20260930_r2/server_build/ExecutionManager",
+      "--num_robots=2",
+      "--port_number=9251",
+      "--output_file=/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gpibt_lsmart_integration_20260930_r2/attempts/nominal/stats.json",
+      "--save_stats=true",
+      "--screen=0",
+      "--total_sim_step_tick=200",
+      "--ticks_per_second=10",
+      "--look_ahead_dist=0",
+      "--look_ahead_tick=0",
+      "--seed=42",
+      "--sim_window_tick=10",
+      "--sim_window_timestep=1",
+      "--plan_window_timestep=1",
+      "--planner_invoke_policy=joint_settled",
+      "--backup_planner=PIBT",
+      "--map=/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gpibt_lsmart_integration_20260930_r2/map.json",
+      "--grid_type=regular",
+      "--rotation=false",
+      "--task_assigner_type=one_goal"
+    ],
+    [
+      "argos3",
+      "-c",
+      "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gpibt_lsmart_integration_20260930_r2/attempts/nominal/experiment.argos",
+      "--no-color"
+    ],
+    [
+      "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gpibt_lsmart_integration_20260930_r2/gpibt_bridge"
+    ]
+  ],
+  "launch_prefix": [
+    "rtk",
+    "proxy"
+  ],
+  "wall_seconds": 1.9577047810016666,
+  "decisions": 5,
+  "error": null,
+  "processes": [
+    {
+      "before_cleanup": 0,
+      "returncode": 0
+    },
+    {
+      "before_cleanup": 0,
+      "returncode": 0
+    },
+    {
+      "before_cleanup": null,
+      "returncode": -15
+    }
+  ],
+  "pause_agent": null,
+  "pause_ticks_inclusive": null,
+  "fixed_horizon_ticks": 200,
+  "ticks_per_second": 10,
+  "seed": 42,
+  "binary_identities": {
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gpibt_lsmart_integration_20260930_r2/gpibt_bridge": "ceb3e7f7b311dd1f76b6f9b06d7496e44502ca5b32399a086ff41fc77c59e2a6",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gpibt_lsmart_integration_20260930_r2/server_build/ExecutionManager": "128bf76262a137d351e74227399072fe10906c5af0a0c93fb774590c33bea21d",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gpibt_lsmart_integration_20260930_r2/client_build/controllers/footbot_diffusion/libfootbot_diffusion.so": "3500551ab9db2b62baddd25381a10b4ab4200057fd885a9b7afd88e4646701f8",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gpibt_lsmart_integration_20260930_r2/client_build/loop_functions/trajectory_loop_functions/libtrajectory_loop_functions.so": "8c348dcd7ce0c7cc2d2df5dc6a3e2474e30c3a03d67e195ad09bce8013b1bfb5",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/baseline_selection_20260929/gpibt_seeded_build_gp_r100_re10_f2/CMakeFiles/lifelong.dir/traffic_mapf/search.cpp.o": "c72ac9fa49bb6eb7d027089e7cd26091ed0a94e0ccae6a85a7983a4599b0c9eb",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/baseline_selection_20260929/gpibt_seeded_build_gp_r100_re10_f2/CMakeFiles/lifelong.dir/traffic_mapf/utils.cpp.o": "29d746b64d83da33cae89d17f177679b3a8ea10f7106376d643f6d705b5003ad",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/baseline_selection_20260929/gpibt_seeded_build_gp_r100_re10_f2/CMakeFiles/lifelong.dir/traffic_mapf/heuristics.cpp.o": "d5092fa4caeabc459ff2b2e87a0c803905695dd810b33aadd823a7c3572130bc",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/baseline_selection_20260929/gpibt_seeded_build_gp_r100_re10_f2/CMakeFiles/lifelong.dir/traffic_mapf/flow.cpp.o": "99da864d8d4db2820079a6170f55fdf435b57d0b0da323d0f76ad88d08dcbffa",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/baseline_selection_20260929/gpibt_seeded_build_gp_r100_re10_f2/CMakeFiles/lifelong.dir/traffic_mapf/pibt.cpp.o": "3eeb4f521953ecb476f1f73989385e7e7bdaa7dec182168935f4446d4bdb624f",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/baseline_selection_20260929/gpibt_seeded_build_gp_r100_re10_f2/CMakeFiles/lifelong.dir/src/Validator.cpp.o": "0eba7d224c8b6919e24b67a94ac31803f1f14ca9c5a84ed07655ed0e4b611593",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/baseline_selection_20260929/gpibt_seeded_build_gp_r100_re10_f2/CMakeFiles/lifelong.dir/src/CompetitionSystem.cpp.o": "70dd1edd6c6458895a770146f81b1066773e9a3d27deaf496e426e5d06751b81",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/baseline_selection_20260929/gpibt_seeded_build_gp_r100_re10_f2/CMakeFiles/lifelong.dir/src/ActionModel.cpp.o": "92a492ea82ca613e44c0347ae88a52b363feb77f72bb51036f8a954f331aeacd",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/baseline_selection_20260929/gpibt_seeded_build_gp_r100_re10_f2/CMakeFiles/lifelong.dir/src/common.cpp.o": "d7fd1b33570702f06f6ae352b35d4640d58fc6b513e82970d8488e94b3a79357",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/baseline_selection_20260929/gpibt_seeded_build_gp_r100_re10_f2/CMakeFiles/lifelong.dir/src/Logger.cpp.o": "cd74a155ba1ad2c9f9b97a1fa5a6b0b68ebfd740c93a816b8d9701ea63f60e8a",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/baseline_selection_20260929/gpibt_seeded_build_gp_r100_re10_f2/CMakeFiles/lifelong.dir/src/Evaluation.cpp.o": "2a079cb91c6eddc116615f5836670b3ecb4834836062db4aeec64a9af7d696a7",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/baseline_selection_20260929/gpibt_seeded_build_gp_r100_re10_f2/CMakeFiles/lifelong.dir/src/States.cpp.o": "adb9a654131271908017f91c4defdf754c18812f78f516cf222336cc8fbc45ed",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/baseline_selection_20260929/gpibt_seeded_build_gp_r100_re10_f2/CMakeFiles/lifelong.dir/src/MAPFPlanner.cpp.o": "5b8e2262e38d4c5a91ff277653196fc8bf901c8c478fd30b7aa1ee193b2c694e",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/baseline_selection_20260929/gpibt_seeded_build_gp_r100_re10_f2/CMakeFiles/lifelong.dir/src/Grid.cpp.o": "8194558f9dec1dffa4cfa7ee6b97b2d127ae4363fd8930691aa98d3ccbc6dded"
+  },
+  "files": {
+    "process1.log": "59963821d14de36a91fe3bce469ef20e048c585f8148c548037225f730a4976c",
+    "decisions.jsonl": "2b07c8d39d3c2a8f896046f2d305db8570b315336fcf79b434ae052bf7ca2bbb",
+    "process2.log": "3c893394b873a13303c10f527c6b7348dc550a51117cc43226aeb1374b3ae822",
+    "stats.json": "4a7eb3cb7335e152fcdff56f62fb86d5d87bef382e931bd2bdd2efbe0fbed126",
+    "experiment.argos": "3e5e018a68be9069986364b073b73c659a195ada03e0452f9da253b87f7dc066",
+    "process0.log": "37b7e4e7661023b62777da50be57f45e3e336d2d39b2dbd50ad972caebff1d97",
+    "events.jsonl": "6a5b5ad750217b5ffa24881e5657a8378335395f868e4a71eac23c38173b7d55"
+  }
+}

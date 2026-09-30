@@ -1,5 +1,7 @@
 # 当前分支：误差感知的路径引导探索
 
+2026-09-30 R2 当前分支更新：官方GPIBT/LSMART固定两臂均完整200tick并有真实任务服务，OnlineGGO官方OBJ4评估入口已运行但尚未取得合格训练策略。当前完整报告、独立核验及三线下一实验见[探索入口](../exploration/error_guidance/README.md)。活动MOVE扰动与连续空间安全是下一项验证，原时窗只造成派发延迟；下方旧状态按其日期阅读。
+
 本分支 `explore/error-aware-guidance` 从 `main@af17410` 建立，主入口是
 [分支导航](../README.md) 和 [探索说明](../exploration/error_guidance/README.md)。
 新增工作只在 `exploration/error_guidance/`，与 `explore/learned-query` 的查询选择

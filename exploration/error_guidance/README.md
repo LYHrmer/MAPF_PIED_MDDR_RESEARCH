@@ -1,10 +1,12 @@
 # 空间误差约束下的路径引导探索
 
-2026-09-30：[官方GPIBT→LSMART连续执行适配](gpibt_lsmart_integration_20260930/PROTOCOL.md)已形成可运行桥接源码并实际完成首步规划/连续运动/正常END。默认get_location含未来commit cut，新接口只在全队列完成且真实停稳后调用作者规划器；原ADG/parser/controller继续执行。作者默认group_size10不适用于2机器人，第二次plan失败保留，改公开参数2后构建通过。最终nominal/pause两次200ticks尚待本机RPC权限，不报告整段运行或安全验证成功。
+2026-09-30 R2 最终路线：[gpt-6.1-sol-ultra与科研导师分别判断及下一实验](THREE_ROUTE_POSTUPDATE_20260930_R2.md)。[官方OnlineGGO OBJ4评估入口](onlineggo_neural_preflight_20260930_r2/REPORT.md)现已实际构建运行；560参数的未训练常量诊断完成100步、27任务，并经1000动作重放核验。它是官方quad引导代价入口，已训练策略资格仍为false；正式权重/配置/训练日志尚待核验。[GPIBT/LSMART root独立核验](gpibt_lsmart_root_review_20260930_r2.json)已通过77工件、18二进制/对象身份及真实服务重建。
 
-完整[适配报告与失败回执](gpibt_lsmart_integration_20260930/REPORT.md)、[部分轨迹审计](gpibt_lsmart_integration_20260930/audit.json)已归档。root另[独立核验](gpibt_lsmart_root_review_20260930.json)46份工件、最终源/二进制SHA，并将真实GPIBT首提案逐项绑定到两个0.5m ADG节点。76个位姿、2个MOVE ACK、0个任务服务；旧trace被新停稳守卫拒绝，因此不计作最终同步接口通过。
+2026-09-30第二轮：[官方GPIBT→LSMART真实闭环](gpibt_lsmart_integration_20260930_r2/REPORT.md)已完成固定nominal/pause两例200ticks，每例5次持久官方plan、400个实际位置样本和1个真实任务服务。全部27个parser节点、admit/ACK、任务身份、20次STATION减计及21个连续驻留样本通过[独立审计](gpibt_lsmart_integration_20260930_r2/audit.json)。GPIBT算法对象保持官方身份，公开group_size2修正支持2机器人；LSMART仍是执行试验台。真实两臂任务前缀一致；末尾未完成任务／节点保留删失，最后已送达位置为tick199，不冒充精确物理tick200终态。
 
-这条线现已推进到真实外部规划器与执行器的接缝；下一步先取得完整、因果一致的共同执行轨迹，再检验强解析之外的可学习残差。OnlineGGO真实学习策略仍需R0。[新增文献核查](LITERATURE_DELTA_20260930.md)核实JAIR2026 RL-RH-PP及AI2026 LDG执行框架，进一步限定学习优先级和组合放行的新颖性边界。已有内部规则不替代已发表作者基线；以下9月29日及更早结果保持各自范围。
+首次第二轮pair发现作者ADG.getPlan把S任务ID从未赋值的task_ptr读成-1，严格映射审计拒绝；保留原始两臂及旧server二进制后，仅把wire字段改为已有action.task_id，固定retry01两臂通过15／16个篡改负例。原暂停ticks30–49实际全部为空队列STOP，只造成派发延迟，未验证活动MOVE暂停或一般执行误差鲁棒性；中心间距采样不构成连续足迹安全。上一轮[首步与失败证据](gpibt_lsmart_integration_20260930/REPORT.md)47份文件字节保持，并保留[旧root核验](gpibt_lsmart_root_review_20260930.json)。
+
+这条线已取得包含真实任务服务的因果一致官方共同执行轨迹；下一步在正式可比任务流和确实作用活动执行的扰动下，检验强解析／历史校准之外是否留下合法可观察的学习残差。OnlineGGO的真实评估接口已推进，合格训练策略R0仍待完成。[新增文献核查](LITERATURE_DELTA_20260930.md)核实JAIR2026 RL-RH-PP及AI2026 LDG执行框架，进一步限定学习优先级和组合放行的新颖性边界。已有内部规则不替代已发表作者基线；以下9月29日及更早结果保持各自范围。
 
 2026-09-29 设计收敛：见[三线设计与外部基线合同](RESEARCH_DESIGN_AND_BASELINES_20260929.md)。第三线优先评估作者 GPIBT／OnlineGGO 引导接口与 LSMART 执行环境；原作者复现和共同误差执行器上的适配比较分表。本文已有 motion-only、解析与历史校准均为内部机制对照，不冒充已发表外部基线。论文主比较须有作者源码、固定版本、可复核运行和公平预算。
 

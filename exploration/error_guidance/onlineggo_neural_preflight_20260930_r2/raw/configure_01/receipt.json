@@ -1,0 +1,33 @@
+{
+  "argv": [
+    "rtk",
+    "proxy",
+    "timeout",
+    "--kill-after=5s",
+    "120s",
+    "cmake",
+    "-S",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/baseline_selection_20260929/OnlineGGO/Guided-PIBT/guided-pibt",
+    "-B",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/onlineggo_neural_r0_20260930_r2/build_nn",
+    "-DDEV=OFF",
+    "-DSWAP=ON",
+    "-DGUIDANCE=ON",
+    "-DGUIDANCE_LNS=OFF",
+    "-DFLOW_GUIDANCE=OFF",
+    "-DINIT_PP=ON",
+    "-DRELAX=100",
+    "-DOBJECTIVE=4",
+    "-DFOCAL_SEARCH=OFF",
+    "-DCMAKE_BUILD_TYPE=Release",
+    "-DEIGEN3_INCLUDE_DIR=/usr/include/eigen3",
+    "-DMINIDNN_DIR=/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/baseline_selection_20260929/OnlineGGO/third_party/MiniDNN/include"
+  ],
+  "cwd": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/baseline_selection_20260929/OnlineGGO",
+  "exit_code": 0,
+  "elapsed_seconds": 1.1298299670015695,
+  "limit_seconds": 120,
+  "finished_utc": "2026-09-30T10:05:40.537790+00:00",
+  "stdout_sha256": "6f771c769304534a230143abe919dd2ad7f9341a9edc4a5a04631fcedca8fdd8",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

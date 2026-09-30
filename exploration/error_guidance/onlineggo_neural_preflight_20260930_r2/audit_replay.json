@@ -1,0 +1,566 @@
+{
+  "status": "passed",
+  "scope": "official OBJ4 evaluator and untrained diagnostic only",
+  "trained_policy_qualified": false,
+  "continuous_error_experiment": false,
+  "priority_RNG_deterministic": false,
+  "official_parameter_count": 560,
+  "wrong_dimension_rejected_by_official_module": true,
+  "checkpoint_identity_negative_controls_rejected": [
+    "wrong shape",
+    "boolean parameter",
+    "nonfinite parameter",
+    "missing lineage",
+    "wrong weights hash",
+    "overlapping train/test",
+    "wrong author version",
+    "missing weights has no fallback"
+  ],
+  "independent_actual_action_and_task_replay": {
+    "status": "passed",
+    "agents": 10,
+    "horizon": 100,
+    "actions_replayed": 1000,
+    "positions_checked": 1010,
+    "joint_state_checks": 101,
+    "directed_edge_lookup_checks": 1000,
+    "boundary_obstacle_adjacency_vertex_reverse_edge_violations": 0,
+    "completed_tasks": 27,
+    "assigned_tasks": 37,
+    "pending_tasks": 10,
+    "completed_task_flow_sum": 751,
+    "completed_task_flow_mean": 27.814814814814813,
+    "completed_task_flow_p95_nearest_rank": 72,
+    "pending_restricted_flow_sum": 249,
+    "all_assigned_restricted_flow_sum": 1000,
+    "cumulative_completed_tasks": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      5,
+      6,
+      6,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      9,
+      10,
+      10,
+      11,
+      11,
+      11,
+      11,
+      13,
+      13,
+      13,
+      13,
+      15,
+      15,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      17,
+      18,
+      18,
+      18,
+      19,
+      21,
+      21,
+      21,
+      21,
+      21,
+      22,
+      23,
+      24,
+      24,
+      25,
+      26,
+      26,
+      27,
+      27,
+      27,
+      27,
+      27,
+      27,
+      27,
+      27,
+      27,
+      27,
+      27,
+      27,
+      27
+    ],
+    "action_counts": {
+      "D": 222,
+      "R": 289,
+      "L": 302,
+      "U": 186,
+      "W": 1
+    },
+    "event_stream": [
+      [
+        0,
+        "assigned",
+        0,
+        0
+      ],
+      [
+        0,
+        "assigned",
+        1,
+        1
+      ],
+      [
+        0,
+        "assigned",
+        2,
+        2
+      ],
+      [
+        0,
+        "assigned",
+        3,
+        3
+      ],
+      [
+        0,
+        "assigned",
+        4,
+        4
+      ],
+      [
+        0,
+        "assigned",
+        5,
+        5
+      ],
+      [
+        0,
+        "assigned",
+        6,
+        6
+      ],
+      [
+        0,
+        "assigned",
+        7,
+        7
+      ],
+      [
+        0,
+        "assigned",
+        8,
+        8
+      ],
+      [
+        0,
+        "assigned",
+        9,
+        9
+      ],
+      [
+        12,
+        "finished",
+        3,
+        3
+      ],
+      [
+        12,
+        "assigned",
+        3,
+        10
+      ],
+      [
+        14,
+        "finished",
+        6,
+        6
+      ],
+      [
+        14,
+        "assigned",
+        6,
+        11
+      ],
+      [
+        18,
+        "finished",
+        0,
+        0
+      ],
+      [
+        18,
+        "finished",
+        8,
+        8
+      ],
+      [
+        18,
+        "assigned",
+        0,
+        12
+      ],
+      [
+        18,
+        "assigned",
+        8,
+        13
+      ],
+      [
+        27,
+        "finished",
+        9,
+        9
+      ],
+      [
+        27,
+        "assigned",
+        9,
+        14
+      ],
+      [
+        28,
+        "finished",
+        8,
+        13
+      ],
+      [
+        28,
+        "assigned",
+        8,
+        15
+      ],
+      [
+        30,
+        "finished",
+        7,
+        7
+      ],
+      [
+        30,
+        "assigned",
+        7,
+        16
+      ],
+      [
+        38,
+        "finished",
+        1,
+        1
+      ],
+      [
+        38,
+        "assigned",
+        1,
+        17
+      ],
+      [
+        45,
+        "finished",
+        2,
+        2
+      ],
+      [
+        45,
+        "assigned",
+        2,
+        18
+      ],
+      [
+        46,
+        "finished",
+        0,
+        12
+      ],
+      [
+        46,
+        "assigned",
+        0,
+        19
+      ],
+      [
+        48,
+        "finished",
+        0,
+        19
+      ],
+      [
+        48,
+        "assigned",
+        0,
+        20
+      ],
+      [
+        52,
+        "finished",
+        0,
+        20
+      ],
+      [
+        52,
+        "finished",
+        5,
+        5
+      ],
+      [
+        52,
+        "assigned",
+        0,
+        21
+      ],
+      [
+        52,
+        "assigned",
+        5,
+        22
+      ],
+      [
+        56,
+        "finished",
+        0,
+        21
+      ],
+      [
+        56,
+        "finished",
+        8,
+        15
+      ],
+      [
+        56,
+        "assigned",
+        0,
+        23
+      ],
+      [
+        56,
+        "assigned",
+        8,
+        24
+      ],
+      [
+        58,
+        "finished",
+        3,
+        10
+      ],
+      [
+        58,
+        "assigned",
+        3,
+        25
+      ],
+      [
+        71,
+        "finished",
+        2,
+        18
+      ],
+      [
+        71,
+        "assigned",
+        2,
+        26
+      ],
+      [
+        72,
+        "finished",
+        5,
+        22
+      ],
+      [
+        72,
+        "assigned",
+        5,
+        27
+      ],
+      [
+        75,
+        "finished",
+        4,
+        4
+      ],
+      [
+        75,
+        "assigned",
+        4,
+        28
+      ],
+      [
+        76,
+        "finished",
+        0,
+        23
+      ],
+      [
+        76,
+        "finished",
+        1,
+        17
+      ],
+      [
+        76,
+        "assigned",
+        0,
+        29
+      ],
+      [
+        76,
+        "assigned",
+        1,
+        30
+      ],
+      [
+        81,
+        "finished",
+        2,
+        26
+      ],
+      [
+        81,
+        "assigned",
+        2,
+        31
+      ],
+      [
+        82,
+        "finished",
+        8,
+        24
+      ],
+      [
+        82,
+        "assigned",
+        8,
+        32
+      ],
+      [
+        83,
+        "finished",
+        9,
+        14
+      ],
+      [
+        83,
+        "assigned",
+        9,
+        33
+      ],
+      [
+        85,
+        "finished",
+        9,
+        33
+      ],
+      [
+        85,
+        "assigned",
+        9,
+        34
+      ],
+      [
+        86,
+        "finished",
+        6,
+        11
+      ],
+      [
+        86,
+        "assigned",
+        6,
+        35
+      ],
+      [
+        88,
+        "finished",
+        3,
+        25
+      ],
+      [
+        88,
+        "assigned",
+        3,
+        36
+      ]
+    ],
+    "upstream_AllValid_or_errors_used": false
+  },
+  "build_seconds": 33.05730530300934,
+  "source_commit": "ff6d830e2fd5bf85ccbb72eaec0fb8df1cf1c256",
+  "module_sha256": "bd781d4ba753f53fdd02ef0fa6919498e0bab417c1e050a73484d84b698cf923",
+  "prior_missing_input_failures_retained": true,
+  "raw_sha256": {
+    "source_identity.json": "3d8ab6e9e1e6642baed77c3f13c9c0286eaa428cf9c15952ba1faf3ae5fc6e71",
+    "untrained_initial_mean_02_job.json": "c0576cd052535a8f167ce5d8cdbc9aac4fee29d091e057890dfcf86f16560955",
+    "untrained_initial_mean_01_job.json": "6ad52db80f5705299a616ad4b1275414641531a6d8c44dd6a0c6c6bb20be1832",
+    "untrained_initial_mean_02_job_result.json": "03791400f7805c24113bc12bf692804d7d7083baa155ad0b88e635cc7a1fa978",
+    "untrained_initial_mean_02_trace.json": "a36fa7a25afcafcb10e99cc0e4793737084e12a27eef910722b024020c361b3f",
+    "invalid_shape_02_job.json": "77975b49796d8c3403c3f98c8db6ee4f9aa9aca8c3fbf86d8ca730d7bd6753fd",
+    "invalid_shape_01_job.json": "32f9ebe2d27025fec5df71c2e283e875cc37f2bac2f1eeb2d8d463626e053560",
+    "binary_identity.json": "f944a538cdd8ee00bcb505baa986c2aea5ab830e95f2f777ad2647bd3f2303ef",
+    "invalid_shape_02/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invalid_shape_02/receipt.json": "067eaa4af984eb7fccccc61342e6f097ebb951eb2fb1066d5bf127011bbabef4",
+    "invalid_shape_02/stdout.log": "f9e86278d224a190989a0d81575a4ac6f0b963c880bcf68672d10afd79834a50",
+    "invalid_shape_01/stderr.log": "0e3b1e80c21656efcf7e88e897cf9bc343b7a10c7ea6598c13dfdc5865351cac",
+    "invalid_shape_01/receipt.json": "565f3e4cbb209fd337e80f53b58f6e5c518bfcf7ec79d24e672c1228645dc82d",
+    "invalid_shape_01/stdout.log": "84ee9e765f4034facdba15cd201a8905b9a4f4531ea63d1156869d907b75ba31",
+    "configure_01/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "configure_01/receipt.json": "692e2bc8fc8900108873550c98fe7ba0f00ba4e798b1d4a517296511f81aeade",
+    "configure_01/stdout.log": "6f771c769304534a230143abe919dd2ad7f9341a9edc4a5a04631fcedca8fdd8",
+    "untrained_initial_mean_01/stderr.log": "0e3b1e80c21656efcf7e88e897cf9bc343b7a10c7ea6598c13dfdc5865351cac",
+    "untrained_initial_mean_01/receipt.json": "4378da8d727df4cf7d6c554479c5c7a400410ba90d46fb116ae405f2336ac50f",
+    "untrained_initial_mean_01/stdout.log": "84ee9e765f4034facdba15cd201a8905b9a4f4531ea63d1156869d907b75ba31",
+    "untrained_initial_mean_02/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "untrained_initial_mean_02/receipt.json": "6c620255d4c4d9c8b703a6013aa52ff9c68b5c659341502ee70f2d3e2be55366",
+    "untrained_initial_mean_02/stdout.log": "48bc205dcab10ba2827ff82eaa3b3192bd4fe1ce57708e56d497851194ddd492",
+    "build_01/stderr.log": "f9b18390fee750d69b2cbb9f9ccd35fde7abb8b860762fbed70fa62466edea3d",
+    "build_01/receipt.json": "4a0bdc96ace0470c87246e666279050bd2160d916c0aea4c652fd2e11a75fcbc",
+    "build_01/stdout.log": "e757b7f7f5b17c1eb42503733caddce586339082ef000f5d1c8642c7765eb206"
+  }
+}

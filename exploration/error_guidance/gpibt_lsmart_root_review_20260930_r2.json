@@ -1,0 +1,95 @@
+{
+  "status": "passed",
+  "checks": [
+    "all archived bytes equal frozen manifest",
+    "current official objects and final execution binaries",
+    "wire correction changes only ExecutionManager identity"
+  ],
+  "archived_files_verified": 77,
+  "binary_and_objects_verified": 18,
+  "trials": {
+    "nominal": {
+      "native_complete": true,
+      "strict_audit": false,
+      "failure": "task wire omitted"
+    },
+    "pause": {
+      "native_complete": true,
+      "strict_audit": false,
+      "failure": "task wire omitted"
+    },
+    "nominal_retry01": {
+      "native_complete": true,
+      "strict_audit": true,
+      "actual_pose_samples": 400,
+      "official_plan_calls": 5,
+      "task_services": 1,
+      "service_tick": 136,
+      "independent_residence_samples": 21,
+      "independent_max_service_error_m": 0.021847247848587777,
+      "actual_public_task_prefix": [
+        [
+          0,
+          0,
+          21
+        ],
+        [
+          1,
+          1,
+          7
+        ],
+        [
+          2,
+          1,
+          20
+        ]
+      ],
+      "pending_at_horizon": [
+        2,
+        2
+      ],
+      "latest_delivered_pose_tick": 199,
+      "active_move_pause": false,
+      "negative_controls": 15
+    },
+    "pause_retry01": {
+      "native_complete": true,
+      "strict_audit": true,
+      "actual_pose_samples": 400,
+      "official_plan_calls": 5,
+      "task_services": 1,
+      "service_tick": 146,
+      "independent_residence_samples": 21,
+      "independent_max_service_error_m": 0.021847247848587777,
+      "actual_public_task_prefix": [
+        [
+          0,
+          0,
+          21
+        ],
+        [
+          1,
+          1,
+          7
+        ],
+        [
+          2,
+          1,
+          20
+        ]
+      ],
+      "pending_at_horizon": [
+        2,
+        3
+      ],
+      "latest_delivered_pose_tick": 199,
+      "active_move_pause": false,
+      "negative_controls": 16
+    }
+  },
+  "scope": "two support trials plus independently replayed physical service; not a performance comparison",
+  "continuous_footprint_safety_established": false,
+  "active_move_disturbance_established": false,
+  "trained_policy_baseline_qualified": false,
+  "frozen_manifest_sha256": "229efe0aa79f4168089b1bc69637715879ca8772dd293f9ae1ab8ba5cf4c93cd"
+}

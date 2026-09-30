@@ -1,0 +1,984 @@
+{
+  "trials": {
+    "nominal": {
+      "audit_passed": false,
+      "audit_error": "admit_not_native_proposal_decomposition",
+      "native_error": null,
+      "trace_sha256": "6a5b5ad750217b5ffa24881e5657a8378335395f868e4a71eac23c38173b7d55",
+      "native_receipt_sha256": "0664d707f99d09e39da3eace1afd1aabdf9d59d1feef30d0d706da642bdb64d4",
+      "full_fixed_trial_passed": false
+    },
+    "nominal_retry01": {
+      "event_count": 784,
+      "last_event_tick": 200,
+      "horizon_tick": 200,
+      "observation_count": 400,
+      "views": 5,
+      "proposals": 5,
+      "parsed_nodes": 27,
+      "admitted_nodes": 26,
+      "acknowledged_nodes": 23,
+      "pending_admitted_nodes": [
+        [
+          "0",
+          10
+        ],
+        [
+          "0",
+          11
+        ],
+        [
+          "1",
+          13
+        ]
+      ],
+      "pending_admitted_commands": [
+        [
+          "0",
+          10,
+          2.0,
+          "M",
+          [
+            1.0,
+            2.0
+          ],
+          [
+            1.0,
+            2.5
+          ],
+          -1
+        ],
+        [
+          "0",
+          11,
+          2.0,
+          "M",
+          [
+            1.0,
+            2.5
+          ],
+          [
+            1.0,
+            3.0
+          ],
+          -1
+        ],
+        [
+          "1",
+          13,
+          2.0,
+          "M",
+          [
+            1.0,
+            1.0
+          ],
+          [
+            1.0,
+            1.5
+          ],
+          -1
+        ]
+      ],
+      "pending_unadmitted_nodes": {
+        "0": [],
+        "1": [
+          {
+            "type": "M",
+            "start": [
+              1.0,
+              1.5
+            ],
+            "goal": [
+              1,
+              2
+            ],
+            "orientation": 2,
+            "task_id": -1
+          }
+        ]
+      },
+      "assigned_task_prefix": [
+        [
+          0,
+          0,
+          21
+        ],
+        [
+          1,
+          1,
+          7
+        ],
+        [
+          2,
+          1,
+          20
+        ]
+      ],
+      "task_services": 1,
+      "completed_tasks": {
+        "1": {
+          "robot": "1",
+          "node": 7,
+          "tick": 136,
+          "start_tick": 116,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.021847247848587777
+        }
+      },
+      "bookkept_tasks": [
+        1
+      ],
+      "ends": [
+        {
+          "robot": "1",
+          "node": 0,
+          "tick": 20,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.01590698000707902
+        },
+        {
+          "robot": "1",
+          "node": 1,
+          "tick": 36,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.022780120871413123
+        },
+        {
+          "robot": "0",
+          "node": 0,
+          "tick": 49,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0
+        },
+        {
+          "robot": "1",
+          "node": 2,
+          "tick": 49,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.020926881276705833
+        },
+        {
+          "robot": "0",
+          "node": 1,
+          "tick": 58,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0
+        },
+        {
+          "robot": "1",
+          "node": 3,
+          "tick": 59,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.014661169385392086
+        },
+        {
+          "robot": "0",
+          "node": 2,
+          "tick": 68,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.022920544028238468
+        },
+        {
+          "robot": "1",
+          "node": 4,
+          "tick": 74,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.029831616890776246
+        },
+        {
+          "robot": "0",
+          "node": 3,
+          "tick": 84,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.024658014816247114
+        },
+        {
+          "robot": "0",
+          "node": 4,
+          "tick": 99,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.022733772696374454
+        },
+        {
+          "robot": "1",
+          "node": 5,
+          "tick": 100,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.013199494577485713
+        },
+        {
+          "robot": "0",
+          "node": 5,
+          "tick": 113,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.007153080950700308
+        },
+        {
+          "robot": "1",
+          "node": 6,
+          "tick": 116,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.021847247848587777
+        },
+        {
+          "robot": "0",
+          "node": 6,
+          "tick": 129,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.018535107442135507
+        },
+        {
+          "robot": "1",
+          "node": 7,
+          "tick": 136,
+          "type": "S",
+          "task_id": 1,
+          "endpoint_error_m": 0.0200343821069072
+        },
+        {
+          "robot": "0",
+          "node": 7,
+          "tick": 149,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.016872038636400324
+        },
+        {
+          "robot": "1",
+          "node": 8,
+          "tick": 149,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0200343821069072
+        },
+        {
+          "robot": "1",
+          "node": 9,
+          "tick": 158,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0200343821069072
+        },
+        {
+          "robot": "0",
+          "node": 8,
+          "tick": 159,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.012536684054863615
+        },
+        {
+          "robot": "1",
+          "node": 10,
+          "tick": 168,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.004768145275808357
+        },
+        {
+          "robot": "0",
+          "node": 9,
+          "tick": 174,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.029538248761567312
+        },
+        {
+          "robot": "1",
+          "node": 11,
+          "tick": 184,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.01749454708762788
+        },
+        {
+          "robot": "1",
+          "node": 12,
+          "tick": 199,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.01585581521421401
+        }
+      ],
+      "sampled_min_center_distance_m": 0.9726382081327968,
+      "pause_controls": [],
+      "pause_overlaps_active_move": false,
+      "terminal_observations": {
+        "0": {
+          "angle": 180.08406364326066,
+          "displacement_m": 0.05106060420745371,
+          "idle": false,
+          "previous_zero_command": false,
+          "queue_size": 1,
+          "speed_cm_s": 50.8545278196261,
+          "tick": 199,
+          "x": -2.4389873895737946,
+          "y": -1.0037725863373481
+        },
+        "1": {
+          "angle": 179.67813095059887,
+          "displacement_m": 0,
+          "idle": false,
+          "previous_zero_command": false,
+          "queue_size": 2,
+          "speed_cm_s": 12.658069488874741,
+          "tick": 199,
+          "x": -1.0000860421926396,
+          "y": -1.0158555817568573
+        }
+      },
+      "unfinished_tasks": [
+        [
+          0,
+          0,
+          21
+        ],
+        [
+          2,
+          1,
+          20
+        ]
+      ],
+      "horizon_unfinished_nodes": [
+        2,
+        2
+      ],
+      "latest_terminal_pose_tick": 199,
+      "sampled_center_metric_only": true,
+      "continuous_footprint_safety_established": false,
+      "server_online_forged_END_rejection_established": false,
+      "audit_passed": true,
+      "negative_checks": {
+        "task_wire_omission": {
+          "rejected": true,
+          "reason": "admit_not_native_proposal_decomposition"
+        },
+        "wrong_service_end_task_id": {
+          "rejected": true,
+          "reason": "end_task_identity"
+        },
+        "wrong_visible_task_owner": {
+          "rejected": true,
+          "reason": "visible_task_owner"
+        },
+        "half_cell_wrong_endpoint": {
+          "rejected": true,
+          "reason": "admit_not_native_proposal_decomposition"
+        },
+        "wrong_native_decomposition": {
+          "rejected": true,
+          "reason": "complete_parser_decomposition"
+        },
+        "wrong_view_hash": {
+          "rejected": true,
+          "reason": "view_hash"
+        },
+        "unknown_end": {
+          "rejected": true,
+          "reason": "unknown_end"
+        },
+        "future_end_pose": {
+          "rejected": true,
+          "reason": "forged_or_future_end_observation"
+        },
+        "duplicate_end": {
+          "rejected": true,
+          "reason": "duplicate_end"
+        },
+        "premature_task_bookkeeping": {
+          "rejected": true,
+          "reason": "bookkeeping_without_unique_real_service"
+        },
+        "wrong_service_timer": {
+          "rejected": true,
+          "reason": "service_dwell_timer_sequence"
+        },
+        "missing_service_decrement": {
+          "rejected": true,
+          "reason": "service_dwell_timer_sequence"
+        },
+        "wrong_control_service_task_id": {
+          "rejected": true,
+          "reason": "control_task_identity"
+        },
+        "fake_horizon_no_pending_nodes": {
+          "rejected": true,
+          "reason": "horizon_unfinished_identity"
+        },
+        "false_idle": {
+          "rejected": true,
+          "reason": "false_idle"
+        }
+      },
+      "native_error": null,
+      "trace_sha256": "9ceb793d7066c721adc01398b1352bbb5c3e3b47a0396089b2d722aba6f01563",
+      "native_receipt_sha256": "ba825fbce159a90bb41f1e7fd40740c33984af6f8bd39b918b2bace92b3e7236",
+      "full_fixed_trial_passed": true
+    },
+    "pause": {
+      "audit_passed": false,
+      "audit_error": "admit_not_native_proposal_decomposition",
+      "native_error": null,
+      "trace_sha256": "eeee989aaad41b40a63b38027e4b03cfa50112554d9873f291e07b3c30fbbb5d",
+      "native_receipt_sha256": "d601848eae7fa1a68e3b8b63caf42adfe7f4cac305e1f940ef00457c6bdbd584",
+      "full_fixed_trial_passed": false
+    },
+    "pause_retry01": {
+      "event_count": 780,
+      "last_event_tick": 200,
+      "horizon_tick": 200,
+      "observation_count": 400,
+      "views": 5,
+      "proposals": 5,
+      "parsed_nodes": 27,
+      "admitted_nodes": 22,
+      "acknowledged_nodes": 22,
+      "pending_admitted_nodes": [],
+      "pending_admitted_commands": [],
+      "pending_unadmitted_nodes": {
+        "0": [
+          {
+            "type": "M",
+            "start": [
+              1,
+              2
+            ],
+            "goal": [
+              1.0,
+              2.5
+            ],
+            "orientation": 2,
+            "task_id": -1
+          },
+          {
+            "type": "M",
+            "start": [
+              1.0,
+              2.5
+            ],
+            "goal": [
+              1,
+              3
+            ],
+            "orientation": 2,
+            "task_id": -1
+          }
+        ],
+        "1": [
+          {
+            "type": "T",
+            "start": [
+              1,
+              1
+            ],
+            "goal": [
+              1,
+              1
+            ],
+            "orientation": 2,
+            "task_id": -1
+          },
+          {
+            "type": "M",
+            "start": [
+              1,
+              1
+            ],
+            "goal": [
+              1.0,
+              1.5
+            ],
+            "orientation": 2,
+            "task_id": -1
+          },
+          {
+            "type": "M",
+            "start": [
+              1.0,
+              1.5
+            ],
+            "goal": [
+              1,
+              2
+            ],
+            "orientation": 2,
+            "task_id": -1
+          }
+        ]
+      },
+      "assigned_task_prefix": [
+        [
+          0,
+          0,
+          21
+        ],
+        [
+          1,
+          1,
+          7
+        ],
+        [
+          2,
+          1,
+          20
+        ]
+      ],
+      "task_services": 1,
+      "completed_tasks": {
+        "1": {
+          "robot": "1",
+          "node": 7,
+          "tick": 146,
+          "start_tick": 126,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.021847247848587777
+        }
+      },
+      "bookkept_tasks": [
+        1
+      ],
+      "ends": [
+        {
+          "robot": "1",
+          "node": 0,
+          "tick": 20,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.01590698000707902
+        },
+        {
+          "robot": "1",
+          "node": 1,
+          "tick": 36,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.022780120871413123
+        },
+        {
+          "robot": "1",
+          "node": 2,
+          "tick": 49,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.020926881276705833
+        },
+        {
+          "robot": "0",
+          "node": 0,
+          "tick": 59,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0
+        },
+        {
+          "robot": "1",
+          "node": 3,
+          "tick": 59,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.014661169385392086
+        },
+        {
+          "robot": "0",
+          "node": 1,
+          "tick": 68,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0
+        },
+        {
+          "robot": "1",
+          "node": 4,
+          "tick": 74,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.029831616890776246
+        },
+        {
+          "robot": "0",
+          "node": 2,
+          "tick": 78,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.015917561450212638
+        },
+        {
+          "robot": "0",
+          "node": 3,
+          "tick": 94,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.022780827021100188
+        },
+        {
+          "robot": "0",
+          "node": 4,
+          "tick": 109,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.020927606533698906
+        },
+        {
+          "robot": "1",
+          "node": 5,
+          "tick": 110,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.013199494577485713
+        },
+        {
+          "robot": "0",
+          "node": 5,
+          "tick": 123,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.006582194683776368
+        },
+        {
+          "robot": "1",
+          "node": 6,
+          "tick": 126,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.021847247848587777
+        },
+        {
+          "robot": "0",
+          "node": 6,
+          "tick": 139,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.018533164535121802
+        },
+        {
+          "robot": "1",
+          "node": 7,
+          "tick": 146,
+          "type": "S",
+          "task_id": 1,
+          "endpoint_error_m": 0.0200343821069072
+        },
+        {
+          "robot": "0",
+          "node": 7,
+          "tick": 159,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.016867315482646056
+        },
+        {
+          "robot": "1",
+          "node": 8,
+          "tick": 159,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0200343821069072
+        },
+        {
+          "robot": "1",
+          "node": 9,
+          "tick": 168,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0200343821069072
+        },
+        {
+          "robot": "0",
+          "node": 8,
+          "tick": 169,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.01247677061904003
+        },
+        {
+          "robot": "1",
+          "node": 10,
+          "tick": 178,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.004768145275808357
+        },
+        {
+          "robot": "0",
+          "node": 9,
+          "tick": 184,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.0295779769703394
+        },
+        {
+          "robot": "1",
+          "node": 11,
+          "tick": 194,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.01749454708762788
+        }
+      ],
+      "sampled_min_center_distance_m": 0.9726001681547,
+      "pause_controls": [
+        {
+          "tick": 30,
+          "type": 2,
+          "nodes": [],
+          "queue_size": 0
+        },
+        {
+          "tick": 31,
+          "type": 2,
+          "nodes": [],
+          "queue_size": 0
+        },
+        {
+          "tick": 32,
+          "type": 2,
+          "nodes": [],
+          "queue_size": 0
+        },
+        {
+          "tick": 33,
+          "type": 2,
+          "nodes": [],
+          "queue_size": 0
+        },
+        {
+          "tick": 34,
+          "type": 2,
+          "nodes": [],
+          "queue_size": 0
+        },
+        {
+          "tick": 35,
+          "type": 2,
+          "nodes": [],
+          "queue_size": 0
+        },
+        {
+          "tick": 36,
+          "type": 2,
+          "nodes": [],
+          "queue_size": 0
+        },
+        {
+          "tick": 37,
+          "type": 2,
+          "nodes": [],
+          "queue_size": 0
+        },
+        {
+          "tick": 38,
+          "type": 2,
+          "nodes": [],
+          "queue_size": 0
+        },
+        {
+          "tick": 39,
+          "type": 2,
+          "nodes": [],
+          "queue_size": 0
+        },
+        {
+          "tick": 40,
+          "type": 2,
+          "nodes": [],
+          "queue_size": 0
+        },
+        {
+          "tick": 41,
+          "type": 2,
+          "nodes": [],
+          "queue_size": 0
+        },
+        {
+          "tick": 42,
+          "type": 2,
+          "nodes": [],
+          "queue_size": 0
+        },
+        {
+          "tick": 43,
+          "type": 2,
+          "nodes": [],
+          "queue_size": 0
+        },
+        {
+          "tick": 44,
+          "type": 2,
+          "nodes": [],
+          "queue_size": 0
+        },
+        {
+          "tick": 45,
+          "type": 2,
+          "nodes": [],
+          "queue_size": 0
+        },
+        {
+          "tick": 46,
+          "type": 2,
+          "nodes": [],
+          "queue_size": 0
+        },
+        {
+          "tick": 47,
+          "type": 2,
+          "nodes": [],
+          "queue_size": 0
+        },
+        {
+          "tick": 48,
+          "type": 2,
+          "nodes": [],
+          "queue_size": 0
+        },
+        {
+          "tick": 49,
+          "type": 2,
+          "nodes": [],
+          "queue_size": 0
+        }
+      ],
+      "pause_overlaps_active_move": false,
+      "terminal_observations": {
+        "0": {
+          "angle": 181.30590709792392,
+          "displacement_m": 0,
+          "idle": true,
+          "previous_zero_command": true,
+          "queue_size": 0,
+          "speed_cm_s": 14.964846880188023,
+          "tick": 199,
+          "x": -1.9725401416208783,
+          "y": -0.9989999714219021
+        },
+        "1": {
+          "angle": 90.01013888102392,
+          "displacement_m": 0,
+          "idle": true,
+          "previous_zero_command": true,
+          "queue_size": 0,
+          "speed_cm_s": 12.658069488874741,
+          "tick": 199,
+          "x": -1.0000860421926396,
+          "y": -1.0158555817568573
+        }
+      },
+      "unfinished_tasks": [
+        [
+          0,
+          0,
+          21
+        ],
+        [
+          2,
+          1,
+          20
+        ]
+      ],
+      "horizon_unfinished_nodes": [
+        2,
+        3
+      ],
+      "latest_terminal_pose_tick": 199,
+      "sampled_center_metric_only": true,
+      "continuous_footprint_safety_established": false,
+      "server_online_forged_END_rejection_established": false,
+      "audit_passed": true,
+      "negative_checks": {
+        "task_wire_omission": {
+          "rejected": true,
+          "reason": "admit_not_native_proposal_decomposition"
+        },
+        "wrong_service_end_task_id": {
+          "rejected": true,
+          "reason": "end_task_identity"
+        },
+        "wrong_visible_task_owner": {
+          "rejected": true,
+          "reason": "visible_task_owner"
+        },
+        "half_cell_wrong_endpoint": {
+          "rejected": true,
+          "reason": "admit_not_native_proposal_decomposition"
+        },
+        "wrong_native_decomposition": {
+          "rejected": true,
+          "reason": "complete_parser_decomposition"
+        },
+        "wrong_view_hash": {
+          "rejected": true,
+          "reason": "view_hash"
+        },
+        "unknown_end": {
+          "rejected": true,
+          "reason": "unknown_end"
+        },
+        "future_end_pose": {
+          "rejected": true,
+          "reason": "forged_or_future_end_observation"
+        },
+        "duplicate_end": {
+          "rejected": true,
+          "reason": "duplicate_end"
+        },
+        "premature_task_bookkeeping": {
+          "rejected": true,
+          "reason": "bookkeeping_without_unique_real_service"
+        },
+        "wrong_service_timer": {
+          "rejected": true,
+          "reason": "service_dwell_timer_sequence"
+        },
+        "missing_service_decrement": {
+          "rejected": true,
+          "reason": "service_dwell_timer_sequence"
+        },
+        "wrong_control_service_task_id": {
+          "rejected": true,
+          "reason": "control_task_identity"
+        },
+        "fake_horizon_no_pending_nodes": {
+          "rejected": true,
+          "reason": "horizon_unfinished_identity"
+        },
+        "false_idle": {
+          "rejected": true,
+          "reason": "false_idle"
+        },
+        "forged_active_move_pause": {
+          "rejected": true,
+          "reason": "forged_active_pause"
+        }
+      },
+      "native_error": null,
+      "trace_sha256": "0051e46eb863b6af5408b7bfb2d6da5c5cb3df05e4e9af1cf97b7eefb22c4ca9",
+      "native_receipt_sha256": "ef84a7d20e3f805a4bd222c30d21b52a979bc9e2dd2430a6af31bf5e68d1c3a2",
+      "full_fixed_trial_passed": true
+    }
+  },
+  "prior_archive_preserved": true,
+  "reported_fixed_trials": [
+    "nominal_retry01",
+    "pause_retry01"
+  ],
+  "selection_reason": "declared sole task_id wire correction; initial pair retained and rejected",
+  "fixed_pair_passed": true,
+  "actual_task_prefix_equal": true,
+  "pause_active_move_intervention_validated": false
+}
