@@ -1,0 +1,180 @@
+--- a/server/inc/ExecutionManager.h
++++ b/server/inc/ExecutionManager.h
+@@ -91,6 +91,11 @@
+         return this->port;
+     }
+ 
++public:
++    json delivered_observations = json::object();
++    void trace(json record);
++    bool jointSettled();
++    json snapshot();
+ private:
+     // Setup the heuristic table
+     void setupHeuristicTable();
+--- a/server/src/ExecutionManager.cpp
++++ b/server/src/ExecutionManager.cpp
+@@ -1,4 +1,31 @@
+ #include "ExecutionManager.h"
++#include <cstdlib>
++void ExecutionManager::trace(json record) {
++    static std::ofstream out(std::getenv("INTEGRATION_TRACE"));
++    static unsigned long long sequence = 0;
++    record["sequence"] = sequence++;
++    record["tick"] = getCurrSimStep();
++    out << record.dump() << std::endl;
++}
++bool ExecutionManager::jointSettled() {
++    if (!isADGInitialized()) return false;
++    if (plannerNeverInvoked()) return true;
++    for(int a=0; a<numRobots; ++a) {
++        if(adg->getNumUnfinishedActions(a) != 0) return false;
++        const auto id=adg->robotIDToStartIndex.at(a);
++        if(!delivered_observations.contains(id)) return false;
++        const auto o=delivered_observations.at(id);
++        if(!o.at("idle").get<bool>() || o.at("tick").get<int>() < getCurrSimStep()-1) return false;
++    }
++    return true;
++}
++json ExecutionManager::snapshot() {
++    json r={{"tick",getCurrSimStep()},{"observations",delivered_observations},{"joint_settled",jointSettled()}};
++    r["unfinished"]=json::array();
++    for(int a=0;a<numRobots;++a) r["unfinished"].push_back(adg->getNumUnfinishedActions(a));
++    return r;
++}
++
+ 
+ ExecutionManager::ExecutionManager(
+     const boost::program_options::variables_map vm)
+@@ -248,6 +275,10 @@
+ }
+ 
+ void ExecutionManager::freezeSimulationIfNecessary() {
++    if (planner_invoke_policy == "joint_settled") {
++        if (jointSettled() && !simulationFinished()) freeze_simulation = true;
++        return;
++    }
+     // int robot_id = this->adg->startIndexToRobotID[RobotID];
+     // Logic 1: freeze the simulation if at least one robot has no actions
+     // if (this->adg->getNumUnfinishedActions(robot_id) <= 0) {
+@@ -350,6 +381,7 @@
+         mapf_instance_file << result_message["mapf_instance"].dump(4);
+     }
+ 
++    trace({{"kind","view"},{"view",result_message},{"snapshot",snapshot()}});
+     return result_message.dump();
+ }
+ 
+@@ -358,6 +390,7 @@
+ // Raw plan --> points --> Steps --> Actions
+ void ExecutionManager::addNewPlan(string &new_plan_json_str) {
+     json new_plan_json = json::parse(new_plan_json_str);
++    trace({{"kind","proposal"},{"proposal",new_plan_json}});
+ 
+     // Sanity check for the necessary fields
+     if (!new_plan_json.contains("plan")) {
+@@ -485,7 +518,11 @@
+         exit(-1);
+     }
+     int agent_id = this->adg->startIndexToRobotID[robot_id_str];
++    auto goal = adg->getActionGoal(agent_id,node_ID);
++    bool task=adg->isTaskNode(agent_id,node_ID);
+     bool status_update = this->adg->updateFinishedNode(agent_id, node_ID);
++    trace({{"kind","end"},{"robot",robot_id_str},{"agent",agent_id},{"node",node_ID},
++           {"goal",goal},{"task",task},{"accepted",status_update},{"observation",delivered_observations.value(robot_id_str,json())}});
+ 
+     return "None";
+ }
+@@ -513,7 +550,9 @@
+ 
+     int Robot_ID = this->adg->startIndexToRobotID[RobotID];
+ 
+-    return this->adg->getPlan(Robot_ID);
++    auto actions=this->adg->getPlan(Robot_ID);
++    if(!actions.empty()) trace({{"kind","admit"},{"robot",RobotID},{"agent",Robot_ID},{"actions",actions}});
++    return actions;
+ }
+ 
+ void ExecutionManager::updateSimStep() {
+@@ -531,6 +570,15 @@
+ }
+ 
+ bool ExecutionManager::invokePlanner() {
++    if (planner_invoke_policy == "joint_settled") {
++        if (!freeze_simulation || planner_running || !jointSettled() || simulationFinished()) return false;
++        if (plannerNeverInvoked()) start_time=std::chrono::steady_clock::now();
++        prev_invoke_planner_tick=getCurrSimStep();
++        planner_running=true;
++        planner_invoke_ticks.push_back(getCurrSimStep());
++        trace({{"kind","invoke"},{"snapshot",snapshot()}});
++        return true;
++    }
+     // Should take the min of the ticks of all the robots
+     int sim_step = this->getCurrSimStep();
+     bool invoke = false;
+--- a/server/src/server.cpp
++++ b/server/src/server.cpp
+@@ -239,6 +239,17 @@
+     rpc::server srv(port_number);
+ 
+     // Bind the function to the server
++    srv.bind("observe", [](string robot, string observation) {
++        lock_guard<mutex> guard(rpc_api::globalMutex);
++        auto o=json::parse(observation);
++        o["tick"]=rpc_api::em->getCurrSimStep();
++        rpc_api::em->delivered_observations[robot]=o;
++        rpc_api::em->trace({{"kind","observation"},{"robot",robot},{"observation",o}});
++    });
++    srv.bind("snapshot", []() {
++        lock_guard<mutex> guard(rpc_api::globalMutex);
++        return rpc_api::em->snapshot().dump();
++    });
+     srv.bind("receive_update", &rpc_api::actionFinished);
+     srv.bind("init", &rpc_api::init);
+     srv.bind("is_initialized", &rpc_api::isInitialized);
+--- a/client/controllers/footbot_diffusion/footbot_diffusion.h
++++ b/client/controllers/footbot_diffusion/footbot_diffusion.h
+@@ -202,6 +202,9 @@
+     queue<Real> velocityQueue;
+     int moveForwardFlag;
+     int count = 0;
++    bool previous_zero_command = true;
++    CVector3 previous_observed_position;
++    bool have_previous_observation = false;
+     Real offset = 15.0;
+     shared_ptr<rpc::client> client;
+ 
+--- a/client/controllers/footbot_diffusion/footbot_diffusion.cpp
++++ b/client/controllers/footbot_diffusion/footbot_diffusion.cpp
+@@ -223,6 +223,23 @@
+     }
+     Real left_v, right_v;
+     CVector3 currPos = m_pcPosSens->GetReading().Position;
++    const double displacement = have_previous_observation ? (currPos - previous_observed_position).Length() : 0.0;
++    previous_observed_position = currPos;
++    have_previous_observation = true;
++    std::ostringstream observation;
++    observation << std::setprecision(17) << "{\"x\":" << currPos.GetX()
++                << ",\"y\":" << currPos.GetY() << ",\"angle\":" << currAngle
++                << ",\"speed_cm_s\":" << prevVelocity_
++                << ",\"queue_size\":" << q.size()
++                << ",\"idle\":" << ((q.empty() && previous_zero_command && displacement <= 1e-6)?"true":"false") << "}";
++    client->call("observe",robot_id,observation.str());
++    const char* pause=std::getenv("INTEGRATION_PAUSE");
++    if (pause && std::string(pause)=="1" && robot_id=="0" && count>=30 && count<50) {
++        m_pcWheels->SetLinearVelocity(0.0f,0.0f);
++        previous_zero_command=true;
++        ++count; ++step_count_;
++        return;
++    }
+     if (count % 10 == 0) {
+         auto updateActions =
+             client->call("obtain_actions", robot_id).as<SIM_PLAN>();
+@@ -339,6 +356,7 @@
+         right_v = 0.0f;
+     }
+ 
++    previous_zero_command = (a.type == Action::STOP || a.type == Action::STATION);
+     auto end = std::chrono::high_resolution_clock::now();
+     std::chrono::duration<double, milli> exec_duration_ms = end - end_find_act;
+     std::chrono::duration<double, milli> total_duration_ms = end - start;

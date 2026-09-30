@@ -1,0 +1,108 @@
+{
+  "event_count": 84,
+  "observation_count": 76,
+  "last_event_tick": 38,
+  "views": 2,
+  "proposals": 1,
+  "admitted_nodes": 2,
+  "acknowledged_nodes": 2,
+  "pending_admitted_nodes": 0,
+  "assigned_tasks": 2,
+  "task_services": 0,
+  "task_prefix": [
+    [
+      0,
+      0,
+      21
+    ],
+    [
+      1,
+      1,
+      7
+    ]
+  ],
+  "ends": [
+    {
+      "robot": "1",
+      "node": 0,
+      "tick": 20,
+      "type": "M",
+      "endpoint_error_m": 0.01590698000707902
+    },
+    {
+      "robot": "1",
+      "node": 1,
+      "tick": 36,
+      "type": "M",
+      "endpoint_error_m": 0.022780120871413123
+    }
+  ],
+  "sampled_min_center_distance_m": 1.0209268812767058,
+  "sampled_settled_violations": [
+    {
+      "kind": "invoke",
+      "tick": 38,
+      "robot": "1",
+      "displacement_m": 0.00185323959470729
+    },
+    {
+      "kind": "view",
+      "tick": 38,
+      "robot": "1",
+      "displacement_m": 0.00185323959470729
+    }
+  ],
+  "footprint_radius_m": null,
+  "footprint_reason": "not extracted from installed ARGoS binary; center distances only",
+  "actual_terminal_residence": {
+    "robot0_observations": 38,
+    "robot0_max_distance_from_initial_m": 0.0
+  },
+  "no_continuous_collision_or_error_envelope_claim": true,
+  "status": "INCOMPLETE_NATIVE_CRASH_AFTER_FIRST_JOINT_STEP",
+  "full_200_tick_trial_passed": false,
+  "final_group2_nominal_run": "NOT_RUN_PERMISSION_WAIT_STOPPED",
+  "final_group2_pause_run": "NOT_RUN_PERMISSION_WAIT_STOPPED",
+  "pause_intervention_validated": false,
+  "task_service_validation": "NOT_EXERCISED_NO_TASK_ENDS",
+  "trace_sha256": "048b5ed5e70a874801ae3fad5e4bfeb72e72379aa41c21be3f4c2e94bb6c0924",
+  "audit_scope_limits": [
+    "admit decomposition is not yet matched against the complete proposal",
+    "no S/P service nodes observed; task identity and dwell service checks remain unimplemented",
+    "server online rejection of forged END is not established"
+  ],
+  "negative_checks": {
+    "nonadjacent_proposal": {
+      "rejected": true,
+      "reason": "nonadjacent_action"
+    },
+    "wrong_view_hash": {
+      "rejected": true,
+      "reason": "view_hash"
+    },
+    "unknown_command_end": {
+      "rejected": true,
+      "reason": "unknown_end"
+    },
+    "forged_end_pose": {
+      "rejected": true,
+      "reason": "forged_or_future_end_observation"
+    },
+    "forged_task_end": {
+      "rejected": true,
+      "reason": "task_end_type"
+    },
+    "future_observation": {
+      "rejected": true,
+      "reason": "observation_time"
+    },
+    "duplicate_command_end": {
+      "rejected": true,
+      "reason": "duplicate_end"
+    },
+    "real_old_trace_fails_new_settled_gate": {
+      "rejected": true,
+      "reason": "sampled_settled_gate"
+    }
+  }
+}

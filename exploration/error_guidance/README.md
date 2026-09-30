@@ -1,5 +1,11 @@
 # 空间误差约束下的路径引导探索
 
+2026-09-30：[官方GPIBT→LSMART连续执行适配](gpibt_lsmart_integration_20260930/PROTOCOL.md)已形成可运行桥接源码并实际完成首步规划/连续运动/正常END。默认get_location含未来commit cut，新接口只在全队列完成且真实停稳后调用作者规划器；原ADG/parser/controller继续执行。作者默认group_size10不适用于2机器人，第二次plan失败保留，改公开参数2后构建通过。最终nominal/pause两次200ticks尚待本机RPC权限，不报告整段运行或安全验证成功。
+
+完整[适配报告与失败回执](gpibt_lsmart_integration_20260930/REPORT.md)、[部分轨迹审计](gpibt_lsmart_integration_20260930/audit.json)已归档。root另[独立核验](gpibt_lsmart_root_review_20260930.json)46份工件、最终源/二进制SHA，并将真实GPIBT首提案逐项绑定到两个0.5m ADG节点。76个位姿、2个MOVE ACK、0个任务服务；旧trace被新停稳守卫拒绝，因此不计作最终同步接口通过。
+
+这条线现已推进到真实外部规划器与执行器的接缝；下一步先取得完整、因果一致的共同执行轨迹，再检验强解析之外的可学习残差。OnlineGGO真实学习策略仍需R0。[新增文献核查](LITERATURE_DELTA_20260930.md)核实JAIR2026 RL-RH-PP及AI2026 LDG执行框架，进一步限定学习优先级和组合放行的新颖性边界。已有内部规则不替代已发表作者基线；以下9月29日及更早结果保持各自范围。
+
 2026-09-29 设计收敛：见[三线设计与外部基线合同](RESEARCH_DESIGN_AND_BASELINES_20260929.md)。第三线优先评估作者 GPIBT／OnlineGGO 引导接口与 LSMART 执行环境；原作者复现和共同误差执行器上的适配比较分表。本文已有 motion-only、解析与历史校准均为内部机制对照，不冒充已发表外部基线。论文主比较须有作者源码、固定版本、可复核运行和公平预算。
 
 本轮新增[作者基线实际构建/运行记录](BASELINE_PREFLIGHT_20260929.md)和[官方GPIBT固定2×2先导](external_baseline_pilot_20260929/REPORT.md)：两个作者工作负载×seed42/43均完成450步，独立重放189,000动作通过，全部原始数据、补丁、脚本及[共同误差执行接口合同](external_baseline_pilot_20260929/COMMON_EXECUTION_ERROR_CONTRACT.md)已归档。这里只验证外部方法实验入口，尚未接连续误差或学习臂；OnlineGGO的学习策略仍未完成R0。下一项实现共同接口并验零误差/反馈因果性，再从真实执行日志检验可学习残差。

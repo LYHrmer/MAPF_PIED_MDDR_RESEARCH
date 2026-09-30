@@ -1,0 +1,51 @@
+{
+  "trial": "nominal_attempt01",
+  "commands": [
+    [
+      "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gpibt_lsmart_integration_20260930/server_build/ExecutionManager",
+      "--num_robots=2",
+      "--port_number=9241",
+      "--output_file=/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gpibt_lsmart_integration_20260930/nominal_attempt01/stats.json",
+      "--save_stats=true",
+      "--screen=0",
+      "--total_sim_step_tick=200",
+      "--ticks_per_second=10",
+      "--look_ahead_dist=0",
+      "--look_ahead_tick=0",
+      "--seed=42",
+      "--sim_window_tick=10",
+      "--sim_window_timestep=1",
+      "--plan_window_timestep=1",
+      "--planner_invoke_policy=joint_settled",
+      "--backup_planner=PIBT",
+      "--map=/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gpibt_lsmart_integration_20260930/map.json",
+      "--grid_type=regular",
+      "--rotation=false",
+      "--task_assigner_type=one_goal"
+    ],
+    [
+      "argos3",
+      "-c",
+      "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gpibt_lsmart_integration_20260930/nominal_attempt01/experiment.argos",
+      "--no-color"
+    ],
+    [
+      "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gpibt_lsmart_integration_20260930/gpibt_bridge"
+    ]
+  ],
+  "wall_seconds": 0.003838709002593532,
+  "decisions": 0,
+  "error": "Traceback (most recent call last):\n  File \"/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gpibt_lsmart_integration_20260930/run_trial.py\", line 43, in main\n    try: rpc=RPC(port);break\n  File \"/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gpibt_lsmart_integration_20260930/run_trial.py\", line 10, in __init__\n    self.s=socket.create_connection(('127.0.0.1',port),timeout=2)\n  File \"/usr/lib/python3.10/socket.py\", line 845, in create_connection\n    raise err\n  File \"/usr/lib/python3.10/socket.py\", line 828, in create_connection\n    sock = socket(af, socktype, proto)\n  File \"/usr/lib/python3.10/socket.py\", line 232, in __init__\n    _socket.socket.__init__(self, family, type, proto, fileno)\nPermissionError: [Errno 1] Operation not permitted\n",
+  "processes": [
+    {
+      "before_cleanup": null,
+      "returncode": -15
+    }
+  ],
+  "pause_agent": null,
+  "pause_ticks": null,
+  "files": {
+    "experiment.argos": "148de80340a47a5012f8acf0a25a67cb0f756c2e91ad15ec185761cd4918a0a1",
+    "process0.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

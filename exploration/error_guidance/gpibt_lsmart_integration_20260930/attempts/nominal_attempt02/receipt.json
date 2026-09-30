@@ -1,0 +1,63 @@
+{
+  "trial": "nominal_attempt02",
+  "commands": [
+    [
+      "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gpibt_lsmart_integration_20260930/server_build/ExecutionManager",
+      "--num_robots=2",
+      "--port_number=9241",
+      "--output_file=/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gpibt_lsmart_integration_20260930/nominal_attempt02/stats.json",
+      "--save_stats=true",
+      "--screen=0",
+      "--total_sim_step_tick=200",
+      "--ticks_per_second=10",
+      "--look_ahead_dist=0",
+      "--look_ahead_tick=0",
+      "--seed=42",
+      "--sim_window_tick=10",
+      "--sim_window_timestep=1",
+      "--plan_window_timestep=1",
+      "--planner_invoke_policy=joint_settled",
+      "--backup_planner=PIBT",
+      "--map=/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gpibt_lsmart_integration_20260930/map.json",
+      "--grid_type=regular",
+      "--rotation=false",
+      "--task_assigner_type=one_goal"
+    ],
+    [
+      "argos3",
+      "-c",
+      "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gpibt_lsmart_integration_20260930/nominal_attempt02/experiment.argos",
+      "--no-color"
+    ],
+    [
+      "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gpibt_lsmart_integration_20260930/gpibt_bridge"
+    ]
+  ],
+  "wall_seconds": 0.35517276800237596,
+  "decisions": 1,
+  "error": "Traceback (most recent call last):\n  File \"/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gpibt_lsmart_integration_20260930/run_trial.py\", line 57, in main\n    result=json.loads(ps[2].stdout.readline())\n  File \"/usr/lib/python3.10/json/__init__.py\", line 346, in loads\n    return _default_decoder.decode(s)\n  File \"/usr/lib/python3.10/json/decoder.py\", line 337, in decode\n    obj, end = self.raw_decode(s, idx=_w(s, 0).end())\n  File \"/usr/lib/python3.10/json/decoder.py\", line 355, in raw_decode\n    raise JSONDecodeError(\"Expecting value\", s, err.value) from None\njson.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)\n",
+  "processes": [
+    {
+      "before_cleanup": null,
+      "returncode": -15
+    },
+    {
+      "before_cleanup": null,
+      "returncode": -15
+    },
+    {
+      "before_cleanup": -11,
+      "returncode": -11
+    }
+  ],
+  "pause_agent": null,
+  "pause_ticks": null,
+  "files": {
+    "process1.log": "c635b788960417e0b791b8b87008e1a4a9693a1021987f195b998a653e247e94",
+    "decisions.jsonl": "ac6df0539981911dc113c7ec57e45aac9e7f8419199dce8a96fa4e48cb02f9f5",
+    "process2.log": "f3c102ecd7057fb316fb367af4765a8bfa22125f764aad8c7610bd51904f1004",
+    "experiment.argos": "148de80340a47a5012f8acf0a25a67cb0f756c2e91ad15ec185761cd4918a0a1",
+    "process0.log": "b7304c34b92ee39caf6fd6a62dc705eb80de2c875468719e4553ef47e02dd040",
+    "events.jsonl": "048b5ed5e70a874801ae3fad5e4bfeb72e72379aa41c21be3f4c2e94bb6c0924"
+  }
+}

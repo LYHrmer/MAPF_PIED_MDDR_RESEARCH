@@ -1,5 +1,9 @@
 # LMAPF 空间误差与执行占用引导探索
 
+2026-09-30 最新：官方GPIBT已接到LSMART的实际连续执行链，首步运动与END有真实记录；后续默认LNS邻域大于两机器人数量导致崩溃，已用作者公开group_size=2修复构建。最终两次200tick验证尚待本机RPC沙箱权限，未计为完成。当前交付见[同步执行适配协议](exploration/error_guidance/gpibt_lsmart_integration_20260930/PROTOCOL.md)及[2026近作核查](exploration/error_guidance/LITERATURE_DELTA_20260930.md)。它是公开适配R1，LSMART是试验台；旧机制结果及作者原生GPIBT先导保留，尚未证明学习残差或连续空间误差安全。以下原预检说明按其阶段阅读。
+
+本次源码、补丁、构建记录及首步原始轨迹详见[适配报告](exploration/error_guidance/gpibt_lsmart_integration_20260930/REPORT.md)，另有[root独立工件/提案—执行映射复核](exploration/error_guidance/gpibt_lsmart_root_review_20260930.json)。
+
 当前分支：`explore/error-aware-guidance`。从 `main@af17410` 建立，使用同一远端
 仓库 `LYHrmer/MAPF_PIED_MDDR_RESEARCH`。本目录是独立 Git worktree。
 
