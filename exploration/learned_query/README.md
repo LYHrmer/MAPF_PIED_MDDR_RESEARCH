@@ -1,5 +1,9 @@
 # 学习辅助进度查询：探索说明
 
+2026-10-01 最新（20260930_R5批次）：[历史模型实验](public_history_20260930_r5/RESULTS.md)完成156原生臂及同架构有/无历史真实训练，但14留出world全无合法查询机会，不能评价模型收益。[事件查询后继](public_history_events_20260930_r5b/REPORT.md)完成24机械臂，RR/条件规则各19次真实查询，最多同时1候选；已验证多次查询时机，尚无多agent竞争或新学习优势。
+
+[更新后三线实绩与两份独立复判](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20260930_R5.md)明确下一步：以共同执行误差平台和完整公开任务流承载查询价值检验，主线继续必要的消费/费用闭环。所有模型、失败、原生raw归档与核验保留；下面R2及更早说明属于历史快照，旧“尚未训练/待运行”不代表当前状态。
+
 2026-09-29 接续：[当前任务流时目标结果](OBJECTIVE_TASK_RESULTS.md)与[独立导师审查](OBJECTIVE_TASK_MENTOR_REVIEW_20260929.md)已完成。六组98次完整episode、882任务；同一AR/lag2预测下慢例C→AB，全程flow40→39，同时多查询一次。快例冗余查询及隐藏突变损失保留，AR仍与lag2同效。最终六组native成功，原wrapper分析失败保留，独立offline恢复重算72次选择/596候选及旧62项结果通过；没有追加native重跑。active/不可行输入分支没有本表运行覆盖。这是目标消融，不是外部baseline或净收费收益。[复核入口](objective_task_recover.py)与[98行完整结果](objective_task_results_20260929.csv)已归档。
 
 下一步接主线真实查询费用、在新公开任务中覆盖active状态并验证泛化；外部论文基线遵循[三线共同设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/RESEARCH_DESIGN_AND_BASELINES_20260929.md)，内部规则不替代PIE-D/GPIBT/OnlineGGO作者方法。以下为此前时序预测与机制结果。
