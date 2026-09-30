@@ -1694,3 +1694,25 @@ root独立核400训练job/权重/seed/目标/选模及939官方Git blobs，六�
 该40run null包冻结后另立R4b，复用原训练权重，将三预测共同映射为固定rank±1、1tick deadband，先在原cal公共状态验证官方动作敏感性，再用未见seed62×六条件×四策略。此为根据null产生的新探索协议，不能回写为R4成功。判断时R4b尚未完成。
 
 正式published_guidance_comparison_20260930_r4使用同一官方OnlineGGO ff6d830e新构建OBJECTIVE3 SUM_OVC，按作者§4.1对应hm+GPIBT；800agents/1000ticks、原sortation_small_kiva、swap/guidance/INIT_PP开启、LNS关闭。三个固定seed930101/930103/930107的hm吞吐12.236/12.314/12.210，均值12.2533333333；复用R3冻结训练策略11.509/12.050/12.055，均值11.8713333333，相对hm为-3.1175%。训练预算200候选而作者完整10000，不能外推作者方法失败。新增240万动作及2402400位置、FIFO任务/目标/吞吐独立重放通过，939作者blobs保持。初始starts/tasks相同，但作者共享随机流随完成次序消费，所有六方法对的每个agent共享长度未来task前缀均可不同；不是严格配对任务流或连续误差执行比较。13payload+manifest冻结、原raw归档2.23MB。近邻REMAP v2的执行时长预测、ESADG及昂贵预测器调用gating已补入定位，不能再以泛称“模型+误差/信息价值”声称首次。
+
+## 75. 真实POSITION发布、事件查询与官方MAPF试跑（20260930_R5，2026-10-01汇总）
+
+本轮三线均继续实际实现与运行。公开结果统一见第三分支 `exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20260930_R5.md`，模型下一设计在 `LEARNING_DECISION_DESIGN_20260930_R5.md`。本节区分原供给实现结果、另立供给诊断、真实模型试验、机械接口验证和作者方法复现，不将它们混成性能排名。
+
+主线R5私有已验证exact时间缓存使capture重复parse 2→0、gcd 1→0，保留原cmp/身份/sample检查；compute1034073，较R4提前236。46/50/57旧案例与24新exact时间案例通过，最终147项保存检查通过，原E201仍在Captured复制中耗尽。R5b显式rvalue在检查成功后消费，旧案例及新增38case/457checks通过，保存169检查通过；compute1034404比R5晚331，实际SSO move16字节不优于原短sample copy9字节。原Natural/Strict/observer均在1048576失败，根独立132运行pin、3原kernel、费用与stdout核验通过。主稿SHA保持204316c27e17ecb37a8646d53cb5941a9b11b6c8eff3378ce55e80878b271452。
+
+随后有限诊断R5c复用冻结R5b三guest ELF/kernel，仅E201供给4194304、其余原1048576，Natural及observer实际运行。authority.enclose1050600、PositionNumeric1067897、PositionRecord.encode1171911、GuestMessageExport.prepare1406537、evidence kernel1459819、evidence_export1513958、await_publication1805795；E201闭合actual1805837，65分配，ordinary1709672+kernel80459+other15706守恒。E302完成真实evidence(e,n)发布，E-position六段actual2008598；E306 accounting在原1048576耗尽。旧observer的固定1m容量断言不适配诊断，health1806155不合格；原stdout与plain逐字相同，根从真实费用与输入另核295pin及所有段，不将守恒核验表述为observer健康通过。
+
+R5d另立目录 `query_accounting_budget_diagnostic_20260930_r5d`，只有E201/E306同为4194304，其余1048576；仅一次Natural运行，未重建guest。推进至N入/出费用及E两次relay，C POSITION输入live但C451消费1048576耗尽。root从原始段核157pin、费用/总账及失败终态；无后车RUN、完整四终端收据、完整报价反馈，完整查询仍未闭合。这里停止预算扩张，不回写旧结果，不声称原供给或论文整体成本优越。下一项C451分阶段剖析；原ISA计费和MAPF wall-clock/吞吐分别报告。
+
+查询R5从原作者200tick/100agent新源获得固定10组、80不同任务，6train/2cal/2test；四机器人各两FIFO head，54完整world。22train/10cal实际单query反事实，同18槽有/无历史ridge固定lambda1且19有理系数真实拟合。156成功native、15993 MOVE/END、55653frame、32query、619后head揭示经独立Decimal复核；root另从训练重拟合及全raw核模型、标签、测试物理流。模型bundle SHA e134ec8eec3a2064d2536cd1bea1983469914b171072039b4a101bb8e7206384。14留出world×6方法全0机会/0score/0query，各110/112任务和局部completion sum3361.877687相同；测试无法评价学习，不能判模型零收益。432冻结文件、407归档成员完整保留。
+
+新R5b以公开END/WAIT需求变化和age>=3/4触发，多次决策均只用本world已交付历史。第19槽为公开age，不调用旧18槽模型；条件解析剔除与END尚未交付不相容的hypothesis。24机械native覆盖8个train/cal组和WAIT/真实循环RR/条件规则，2385 MOVE/END、8951frame、38query、93后head、105生存hypothesis剔除及六负控通过。RR/condition各19query、56/64任务，WAIT同任务数；局部completion sum2546.8118589→2543.1808735。所有时刻最多一个候选，无学习、无test、无多agent竞争结论。76冻结文件、61raw归档成员核验并发布。下一接更完整公开任务流，自然多源竞争出现后才训跨agent分配；known9:1解析先验须与学习信息口径对齐。
+
+第三线R4b新rank映射在冷/暖校准探针仍未改变动作，冻结失败，不隐去。另立R4c合法FIFO36run/800ticks，沿用真实R4模型及原14官方搜索对象，唯一新作者源码是共同FIFO任务环境适配。四条件在相同公开状态前缀的实际proposal4改变搜索动作并传播到服务时刻；完整任务数各方法相同，三预测的动作/END全同但内部order并非处处同。942整MOVE行=884正常+58删失，57378逐tick输入/离线标签分开保存。8/36run中间半MOVE严格点距离>=0.03，原径向ACK通过，失败保留，不宣称连续足迹安全。509原冻成员、120424470bytes压缩7887147bytes逐项核验，root另核473forecast和全36任务流。
+
+正式paired_published_guidance R5将作者原Kiva完成次序依赖的随机未来任务改为共同逐agent预冻FIFO，障碍拓扑保持；800agents/1000步/3seed六native，480万动作重放通过。hm12.394、旧小训练预算OnlineGGO11.821666667，差-4.6178%；未来输入严格相同但内部tie随机未配对，非充分作者训练或误差模型结论。输入生成规则预定，具体hash生成后且首native前冻结；每agent相同揭示上限1，各方法按自身完成揭示下一项，累计揭示数可不同。
+
+标准输入新增四MovingAI原地图与各25官方random场景，四规模32/64/128/256共400合法输入登记，不等于400运行。实际另做random-1/64agents/1000ticks的8作者native；512000动作/512512位置及FIFO通过。hm/旧模型完成任务：empty2745/2678、random2673/2620、maze932/946、room1866/1908。结果有正有负，为单seed旧sortation权重迁移pilot；无新误差算法或统计优势。原始官方zips/归属、规模重复/删失/成本与安全口径已发布 `mapf_evaluation_20260930_r5`。主要性能仍需同完整任务/误差/信息/成本下的公开规模实验；内部RR/WAIT/历史规则是消融，不包装成已发表基线。
+
+更新后独立复判也已实际完成：未参与实现的新GPT-6.1-sol-ultra子智能体仅读五份本轮结果及root主线原raw事实，不读导师/root结论；research-mentor判断不读技术/root结论，查询实施角色公开。技术评审建议第三线共同误差平台优先，导师建议以有限证据查询价值为候选核心，二者均不主张已建立学习优势。root综合为共同执行平台/完整公开任务流先行，在其中验证query竞争与全任务价值，主线固定预算并收敛C451消费/终端费用；不继续扩大无支持模型或将微优化当主要科研进度。原报告SHA分别acfd149f34b4832a5154e62212306af9d9f8f63e74597164b09215e68011d222、6a45e1b3f4be6dd7f187798cb6e7d2a3469b8285e7992102e0ee1da3aab28898，按原字节公开于第三分支SOL_FRESH_POSTUPDATE_20260930_R5.md与MENTOR_POSTUPDATE_20260930_R5.md；角色与来源见POSTUPDATE_REVIEW_PROVENANCE_20260930_R5.json。下一实验设计与本轮实际结果分开。

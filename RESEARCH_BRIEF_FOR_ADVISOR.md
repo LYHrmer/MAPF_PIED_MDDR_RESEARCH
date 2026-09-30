@@ -1,5 +1,17 @@
 # 导师汇报：研究问题、数学表达与当前阶段
 
+更新后另由未参与实现的GPT-6.1-sol-ultra复判，建议优先第三线共同执行误差平台；research-mentor独立判断更看重查询价值作为候选核心。采纳的实施顺序是平台与完整公开任务流先行、查询在其中验证多源竞争/全任务收益、主线集中C451消费及费用闭环；两份原报告及差异完整公开于下方R5报告，不把分歧抹成一致结论。
+
+2026-10-01 第五轮更新（20260930_R5批次，Q2 §75）：**主线在独立预算诊断中已生成真实POSITION并传至中心输入；查询线已实现多次事件查询；第三线预测已改变真实动作，并完成公开地图作者基线试跑。完整查询和学习独立优势仍未成立。** [三线实绩、独立复判与下一设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20260930_R5.md)。
+
+主线私有精确时间缓存越过原重复比较；rvalue消费在当前SSO短字符串上反而晚331步，未当作优化成功。原1048576预算仍失败。另立E201四倍供给诊断，主体实耗1805837并完成包络/POSITION发布；再单独将E306同设四倍，推进至C451位置输入消费，在该行原预算耗尽。原失败与诊断分开保留，尚无后车RUN、完整四收据/报价或整次净费结论。下一优化按阶段实际费用定位，不以微小复制差异替代完整链路。
+
+[查询R5](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/learned-query/exploration/learned_query/public_history_20260930_r5/RESULTS.md)实际训练同架构有/无历史模型并完成156原生臂，但14个留出world均无合法查询机会，无法评价模型。新[R5b事件接口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/learned-query/exploration/learned_query/public_history_events_20260930_r5b/REPORT.md)完成24机械臂，RR与条件规则各19次真实查询/8world；均56/64任务，最大同时候选仍1。已经验证多次查询时机，尚未验证“向谁查询”的竞争分配，下一接完整公开持续任务流。
+
+[误差R4c](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/gpibt_lsmart_error_model_20260930_r4c/REPORT.md)完成36真实连续执行；四条件下预测改变官方动作及服务时刻，各方法完成任务数仍相同，三预测全动作/END一致。8次中间半MOVE严格点距离失败完整保留，未宣称连续安全。[严格相同未来任务流比较](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/paired_published_guidance_20260930_r5/REPORT.md)中800机器人/1000步的hm平均吞吐12.394，旧小预算OnlineGGO为11.821667。
+
+按MAPF／LMAPF认可口径新增[官方地图试跑](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/standard_map_pilot_20260930_r5/REPORT.md)：4图×64agents×1000步×2作者方法，8native及512000动作审计通过；学习在maze/room略好、empty/random略差。它是旧模型跨图pilot，无新误差模型或统计优越结论。[实验规范与输入](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/mapf_evaluation_20260930_r5/README.md)登记4图100场景×4规模的400组输入，400不等于已跑实验数。学习继续推进，论文贡献以同任务/误差/信息/成本下的任务收益判断，内部规则不冒充发表基线。以下第四轮及更早记录保留为历史快照。
+
 2026-09-30 第四轮更新（Q2 §74）：**两个探索分支均已真正训练模型并完成原生留出；当前均未建立学习相对强规则的独立收益。主线首次在原预算进入compute_position和Authority.capture。** 用户指定GPT-6.1-sol-ultra与research-mentor分别独立评审后，继续三线实作：[本轮结果与后继设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20260930_R4.md)。学习作为主动研究候选，是否进入论文主贡献由真实决策与任务收益判断。
 
 主线用保留原SOURCE读取/Release顺序的私有内联历史存储消除15-command临时堆清理。第15次advance885223→865279，compute_position在1034309、Authority.capture在1034387真实进入；原1048576供给仍在重复精确时间比较耗尽。221项保存检查与根独立费用/指令/ELF核验通过；**尚无enclosure/POSITION或完整查询净费结论**。下一隔离后继复用接收阶段已付费解析并验证的私有精确时间，保持原比较、所有权、供给和kernel。
