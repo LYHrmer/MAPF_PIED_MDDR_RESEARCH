@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "complete_unique_joint_episodes": 63,
+  "private_leg_inputs_bound": 147,
+  "training_public_END_rows_bound": 3582,
+  "first_audit_sha256": "60ccada786547040ae3591a5e186530c8523c33c4bec1189cf6041032f91c299",
+  "first_audit_source_sha256": "b753c3789c1896d3ecb59c344e361dbf6694683ff5d141246985bd41b8928521",
+  "hardened_source_sha256": "8503a1a7fe868e8686d7479f7d777e55fe165c9046ec11883e9940ecf8262cb9",
+  "mutation_controls": [
+    {
+      "test": "false actor choice",
+      "rejected": true,
+      "reason": "independent public-END actor selection"
+    },
+    {
+      "test": "certificate private physics mismatch",
+      "rejected": true,
+      "reason": "actual controller certified lower"
+    },
+    {
+      "test": "private progress END schema leak",
+      "rejected": true,
+      "reason": "public END schema/private field leak"
+    },
+    {
+      "test": "deleted original END",
+      "rejected": true,
+      "reason": "END missing physical predecessor/duplicate"
+    }
+  ]
+}

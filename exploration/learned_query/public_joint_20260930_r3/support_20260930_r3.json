@@ -1,0 +1,314 @@
+{
+  "source_tick": 4,
+  "agents": [
+    7,
+    11,
+    49,
+    59
+  ],
+  "initial_follow_pairs": [
+    [
+      49,
+      11
+    ],
+    [
+      7,
+      59
+    ]
+  ],
+  "robots": [
+    {
+      "agent": 7,
+      "task": 14,
+      "goal": [
+        16,
+        14
+      ],
+      "start": [
+        14,
+        13
+      ],
+      "source_assigned_tick": 0,
+      "source_finish_tick": 7,
+      "route": [
+        "SO",
+        "EA",
+        "EA"
+      ],
+      "route_points": [
+        [
+          14,
+          13
+        ],
+        [
+          14,
+          14
+        ],
+        [
+          15,
+          14
+        ],
+        [
+          16,
+          14
+        ]
+      ],
+      "source_revealed_queue": [
+        14,
+        15
+      ]
+    },
+    {
+      "agent": 11,
+      "task": 22,
+      "goal": [
+        16,
+        12
+      ],
+      "start": [
+        17,
+        12
+      ],
+      "source_assigned_tick": 0,
+      "source_finish_tick": 5,
+      "route": [
+        "WE"
+      ],
+      "route_points": [
+        [
+          17,
+          12
+        ],
+        [
+          16,
+          12
+        ]
+      ],
+      "source_revealed_queue": [
+        22,
+        23
+      ]
+    },
+    {
+      "agent": 49,
+      "task": 99,
+      "goal": [
+        13,
+        10
+      ],
+      "start": [
+        16,
+        12
+      ],
+      "source_assigned_tick": 0,
+      "source_finish_tick": 10,
+      "route": [
+        "NO",
+        "WE",
+        "W",
+        "WE",
+        "WE",
+        "NO"
+      ],
+      "route_points": [
+        [
+          16,
+          12
+        ],
+        [
+          16,
+          11
+        ],
+        [
+          15,
+          11
+        ],
+        [
+          15,
+          11
+        ],
+        [
+          14,
+          11
+        ],
+        [
+          13,
+          11
+        ],
+        [
+          13,
+          10
+        ]
+      ],
+      "source_revealed_queue": [
+        99,
+        204
+      ]
+    },
+    {
+      "agent": 59,
+      "task": 118,
+      "goal": [
+        12,
+        5
+      ],
+      "start": [
+        13,
+        13
+      ],
+      "source_assigned_tick": 0,
+      "source_finish_tick": 15,
+      "route": [
+        "EA",
+        "NO",
+        "NO",
+        "WE",
+        "NO",
+        "NO",
+        "NO",
+        "NO",
+        "NO",
+        "WE",
+        "NO"
+      ],
+      "route_points": [
+        [
+          13,
+          13
+        ],
+        [
+          14,
+          13
+        ],
+        [
+          14,
+          12
+        ],
+        [
+          14,
+          11
+        ],
+        [
+          13,
+          11
+        ],
+        [
+          13,
+          10
+        ],
+        [
+          13,
+          9
+        ],
+        [
+          13,
+          8
+        ],
+        [
+          13,
+          7
+        ],
+        [
+          13,
+          6
+        ],
+        [
+          12,
+          6
+        ],
+        [
+          12,
+          5
+        ]
+      ],
+      "source_revealed_queue": [
+        118,
+        119
+      ]
+    }
+  ],
+  "source": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/baseline_selection_20260929/pied_run_01/result.json",
+  "source_sha256": "67c10baa0faa4b10200591982d970368c6f8292e87959a47b8f7d0d832849b10",
+  "source_commit": "74cfba3c81a0c165c2e7044dea6fd4dee8ddf415",
+  "resource_cells": [
+    [
+      12,
+      5
+    ],
+    [
+      12,
+      6
+    ],
+    [
+      13,
+      6
+    ],
+    [
+      13,
+      7
+    ],
+    [
+      13,
+      8
+    ],
+    [
+      13,
+      9
+    ],
+    [
+      13,
+      10
+    ],
+    [
+      13,
+      11
+    ],
+    [
+      13,
+      13
+    ],
+    [
+      14,
+      11
+    ],
+    [
+      14,
+      12
+    ],
+    [
+      14,
+      13
+    ],
+    [
+      14,
+      14
+    ],
+    [
+      15,
+      11
+    ],
+    [
+      15,
+      14
+    ],
+    [
+      16,
+      11
+    ],
+    [
+      16,
+      12
+    ],
+    [
+      16,
+      14
+    ],
+    [
+      17,
+      12
+    ]
+  ],
+  "only_current_heads": true,
+  "future_tasks_replenished": false,
+  "selection": "earliest source tick, first source-order pair pair with 4 distinct robots, two initial unblocked sources, current-head routes connected by cell intersection; no R1 execution outcome used"
+}
