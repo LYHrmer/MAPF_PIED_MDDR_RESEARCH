@@ -1,6 +1,6 @@
 # 73Q2：PIE-D误差执行主线的具体实现绑定
 
-最新：2026-09-30第三轮实作见§73。不可变请求共享和私有payload转移已实跑，原预算仍在E201清理阶段耗尽；查询联合任务、真实活动MOVE误差传播和官方学习训练均形成新结果。完整查询尚未闭合。
+最新：2026-09-30第四轮实作见§74。主线原预算已进入compute_position/capture；查询与执行误差模型均完成真训练及留出，尚无相对强规则的学习收益。正式hm+GPIBT比较已补齐。双独立判断后的三条隔离后继正在实施，完整查询尚未闭合。
 
 2026-09-14，建设中，可更新。承接固定73与73R4，主线是误差包络、原MOVE前缀授权、可信进度和空间释放。这里补具体接口与代码包，不重开完整设计审查，不改变参数化模型、比较或主roster。ECBS包保持既有完成状态。
 
@@ -1676,3 +1676,21 @@ pause30–49全为空队列STOP，影响派发40→50，未验证活动MOVE扰�
 第三分支并行完成`onlineggo_training_20260930_r3`：官方OnlineGGO固定ff6d830e、原sortation_small_kiva800 agents/1000ticks/quad560，实际加载未经修改的四个优化器类和原kwargs方法，2代5emitters共200候选、每候选2seed，共400训练native。第一次并行加载config race导致42项job前失败，158项native及原程序保留；第二次预加载template后完整通过。作者旧best_elite辅助函数的只读字段不兼容用pyribs0.5自己的property读取，不改训练规则。训练最高均值12.1475选模后固定三未见seed，初始8.814/9.056/8.878，训练11.509/12.050/12.055，均值8.916→11.871333（约+33.1%）。该结果是作者方法对自身初始化，不能算我们新方法或相对原GPIBT收益；10000候选作者预算未满，无显著性/跨图声明。
 
 root独立核400训练job/权重/seed/目标/选模及939官方Git blobs，六留出重放480万动作/4804800联合位置、无顶点/交换冲突且任务完成与吞吐吻合。三个Git子模块commit引用单列，不虚报内容核验；系统Eigen3及Python/NumPy/Numba环境差异保留。训练实际raw压缩归档、作者MIT与配置/地图/核心类随包，已训练checkpoint可审计。下一步是新执行误差模型训练—推理—规划闭环及正式作者比较，不把模型名称或这些工程检查数作为论文创新/统计样本。
+
+## 74. 真实计算入口、查询价值训练与误差模型零动作结果（2026-09-30 R4）
+
+本轮三个隔离实现均完成实际运行，再分别由GPT-6.1-sol-ultra与research-mentor作独立判断，二者没有互读本轮结论。技术判断强调实际作用链：私有数值复用、决策前可见历史和排序敏感性；导师判断强调同信息强规则、独立任务流、正式发表基线和连续空间证据。两者均支持继续实现学习候选，不接受“传统算法已穷尽”或“有模型就有创新”的推断。报告本机位于implementation_binding_evidence/SOL_POSTUPDATE_20260930_R4.md与MENTOR_POSTUPDATE_20260930_R4.md；公开合并结果见第三分支THREE_ROUTE_POSTUPDATE_20260930_R4.md。
+
+主线capture_inline_history_successor_20260930_r4只变更私有历史存储：16个未初始化aligned槽位按实际前缀placement构造，超过16走原vector/max_size路径，不增加输入上限。SOURCE仍倒序读取及结构校验，全部完成后Release，再正序数值回放；没有在Release后读取或把流式计算提前。15-command临时2280bytes堆容器及其删除消失，receive栈2384→4832bytes，原普通栈65536不变。第15advance885223→865279，分配25→24；原CAPTURE匹配后首次真实返回receive，compute_position1034309、Authority.capture1034387，分别剩14267/14189供给。最终PC1070936位于实际ELF _fmpq_cmp内，原E201 ordinary1033521+other15055=1048576，init/kernel均0。未进入enclose/PositionNumeric、无POSITION；完整费用审计仍invalid。
+
+46接收、50生命周期和57新增容量/错误顺序案例，以及继承数值/控制验证通过。实际Natural/Strict/observer原预算均耗尽；final_inline_history_run_audit_v2核221项通过。v1审计只解JAL而实际-fno-relax采用AUIPC/JALR，修复审计并保留初版，未重跑改变guest。根verify_inline_history_20260930_r4.py独立重核三actual ELF kernel、raw费用、真实入口/指令和源码pins，kernel仍20480bytes@0x11000、SHA c1942d2feb24492b3ace8844c8d092063507ead74ae066340ad6e8d254ac28a8。下一R5将接收阶段已付费解析/成功比较的exact时间私有转移给capture，在原短路位置保留同一次cmp、owner/sample/去重顺序；不能免费host计算、跳过比较或提高供给。
+
+查询public_value_20260930_r4保持官方PIE-D 74cfba3c原binary，新60tick/100机器人源经6000动作及206任务核验；按固定规则得到12个任务不重叠四机器人组，48不同head，8train/2cal/2test。每组13外生世界；首B1的WAIT/强制A/B真实反事实给出208训练候选标签，10公开特征、ridge lambda1、11有理系数冻结后测试。共598成功native臂、23738 MOVE/正常END、71915frames、442查询；串行原126成功逐字复用，后继scheduler并行补472，原中断130及未完整捕获一臂保留。模型SHA70df421875fe3c68d8c16b792a22709295b1708abf0d9128c68f8b3c0ae17131。数据与共同物理/资源审计通过，根另从train重拟合并独立核全部反事实标签、26真实模型决策与留出任务。
+
+两留出cohort/26世界全部策略104/104任务，WAIT flow2063.299166、RR/概率/task_rank/结构规则2056.297864、ridge2060.381957，学习未胜强简单规则。root事后min(WAIT,A,B)的flow2054.547539，即该已运行首次决策族最大收益仅0.4241569591%，不是可执行baseline。首B1在本世界任何正常END之前，13世界公开特征一致，当前模型学到静态结构条件价值。后继R5须用独立任务流与决策前真实交付残差、后续多次选择；同架构有无历史和强条件规则分别比较。原12组及模型不改，不能筛选测试正收益组。完整1558成员冻结，1532raw压缩为8.67MB归档且逐成员核验，旧R3 154文件保持。
+
+第三分支gpibt_lsmart_error_model_20260930_r4完成40/40真实400tick运行。原官方GPIBT14算法对象与LSMART核心保持；12train/4cal整run划分，102未删失原整MOVE标签、48cal标签实际拟合并选ridge lambda1，模型SHA16fac44d6d23c7c472a5caed4bdce87ba19bca632e6a70f7fa16a9ccf14c8094。模型目标first nonzero MOVE→whole-grid END，前置等待另导出，不能称完整占用时长。校准MAE解析5.1875、历史1.614583、学习2.074607ticks。seed61六条件×四策略24留出均实际运行；预测及非零bias从已交付历史进入原p/p_copy，计划后恢复aging，但全部search-order flip=0，四臂动作及END一致，各合计12任务。±2探针曾改变动作不能替代实际幅值0.5的敏感性证据。根独立重拟合模型、1704实时预测/bias/原优先级恢复及所有真实服务通过。seed44原作者WAIT持续等待完整保留。两例中间半节点ACK不满足更严0.03m点距离要求，原作者径向谓词仍通过，严格标准失败单列且未改阈值；不能据采样中心距离声称连续安全。
+
+该40run null包冻结后另立R4b，复用原训练权重，将三预测共同映射为固定rank±1、1tick deadband，先在原cal公共状态验证官方动作敏感性，再用未见seed62×六条件×四策略。此为根据null产生的新探索协议，不能回写为R4成功。判断时R4b尚未完成。
+
+正式published_guidance_comparison_20260930_r4使用同一官方OnlineGGO ff6d830e新构建OBJECTIVE3 SUM_OVC，按作者§4.1对应hm+GPIBT；800agents/1000ticks、原sortation_small_kiva、swap/guidance/INIT_PP开启、LNS关闭。三个固定seed930101/930103/930107的hm吞吐12.236/12.314/12.210，均值12.2533333333；复用R3冻结训练策略11.509/12.050/12.055，均值11.8713333333，相对hm为-3.1175%。训练预算200候选而作者完整10000，不能外推作者方法失败。新增240万动作及2402400位置、FIFO任务/目标/吞吐独立重放通过，939作者blobs保持。初始starts/tasks相同，但作者共享随机流随完成次序消费，所有六方法对的每个agent共享长度未来task前缀均可不同；不是严格配对任务流或连续误差执行比较。13payload+manifest冻结、原raw归档2.23MB。近邻REMAP v2的执行时长预测、ESADG及昂贵预测器调用gating已补入定位，不能再以泛称“模型+误差/信息价值”声称首次。

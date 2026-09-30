@@ -1,5 +1,15 @@
 # 实验前进度入口
 
+2026-09-30 第四轮更新（Q2 §74）：**两个探索分支均已真正训练模型并完成原生留出；当前均未建立学习相对强规则的独立收益。主线首次在原预算进入compute_position和Authority.capture。** 用户指定GPT-6.1-sol-ultra与research-mentor分别独立评审后，继续三线实作：[本轮结果与后继设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20260930_R4.md)。学习作为主动研究候选，是否进入论文主贡献由真实决策与任务收益判断。
+
+主线用保留原SOURCE读取/Release顺序的私有内联历史存储消除15-command临时堆清理。第15次advance885223→865279，compute_position在1034309、Authority.capture在1034387真实进入；原1048576供给仍在重复精确时间比较耗尽。221项保存检查与根独立费用/指令/ELF核验通过；**尚无enclosure/POSITION或完整查询净费结论**。下一隔离后继复用接收阶段已付费解析并验证的私有精确时间，保持原比较、所有权、供给和kernel。
+
+[查询价值模型](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/learned-query/exploration/learned_query/public_value_20260930_r4/RESULTS.md)从官方新60tick源抽12个任务不重叠组，固定8/2/2训练/校准/测试，完成598个原生臂并冻结ridge。两留出组均104/104任务；WAIT总流时2063.299166，强内部规则2056.297864，模型2060.381957。模型未胜规则；当前首次决策前没有本世界END，已运行候选的事后最好收益上限仅约0.4242%。下一实验接入持续任务与已交付历史，在新的完整run划分检验后续多次查询，不在已见测试组换网络追收益。
+
+[真实执行误差模型](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/gpibt_lsmart_error_model_20260930_r4/REPORT.md)完成40次400tick官方GPIBT→LSMART运行、102训练与48校准整MOVE标签及24原生留出。校准MAE为解析5.1875、历史1.6146、学习2.0746ticks；四策略全部测试动作一致，实际排序翻转为0。原40run与模型保持，另立共同rank映射后继，先验证校准公共状态的动作敏感性再跑未见seed。两例中间ACK不满足更严0.03m点误差标准已单列，未更换原控制阈值。
+
+[正式hm+GPIBT比较](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/published_guidance_comparison_20260930_r4/REPORT.md)补齐已发表方法：同作者800机器人/1000步、三个seed，hm平均吞吐12.253333，高于缩短训练预算的OnlineGGO模型11.871333。作者学习方法对自身初始化的+33.1%不能替代强基线比较；未来任务因作者共用随机流而随策略分叉，不能当严格配对样本。以下§73及以前均为历史快照。
+
 2026-09-30 第三轮更新（Q2 §73）：**三线均已继续实作。查询首次完成END-only原生四机器人联合执行，第三线完成真实活动MOVE扰动，官方OnlineGGO首次完成实际训练与独立留出。下一阶段主动加入执行误差学习候选。** [本轮三线方法设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20260930_R3.md)区分已得结果、作者复现与我们尚待验证的新方法；不要求传统方法彻底失败才开始训练。
 
 主线两个新隔离后继完成不可变请求共享与五处私有payload转移。共享曾使第15次advance885207→901566变慢，转移修正恢复至885223；原CAPTURE时间检查通过，末端已到15-command临时容器清理的live_record/free_head。Natural/Strict仍在E201原1048576供给耗尽，**尚未compute_position/POSITION，完整查询仍未闭合**。root从原始费用/指令/源码身份重核366保存检查、6实际ELF kernel和主稿SHA；主稿既有修改保持。下一步只解决具名存储生命周期/清理阻点，不把工程优化写作论文创新。
