@@ -1,5 +1,15 @@
 # 实验前进度入口
 
+2026-09-30 第三轮更新（Q2 §73）：**三线均已继续实作。查询首次完成END-only原生四机器人联合执行，第三线完成真实活动MOVE扰动，官方OnlineGGO首次完成实际训练与独立留出。下一阶段主动加入执行误差学习候选。** [本轮三线方法设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20260930_R3.md)区分已得结果、作者复现与我们尚待验证的新方法；不要求传统方法彻底失败才开始训练。
+
+主线两个新隔离后继完成不可变请求共享与五处私有payload转移。共享曾使第15次advance885207→901566变慢，转移修正恢复至885223；原CAPTURE时间检查通过，末端已到15-command临时容器清理的live_record/free_head。Natural/Strict仍在E201原1048576供给耗尽，**尚未compute_position/POSITION，完整查询仍未闭合**。root从原始费用/指令/源码身份重核366保存检查、6实际ELF kernel和主稿SHA；主稿既有修改保持。下一步只解决具名存储生命周期/清理阻点，不把工程优化写作论文创新。
+
+[查询联合运行](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/learned-query/exploration/learned_query/public_joint_20260930_r3/RESULTS_20260930_r3.md)完成63臂、973原MOVE/END、77真实证书查询，共享资源与任务状态。一个预注册世界中RR B1完成4/4，当前释放概率排序B1仅3/4；方向条件率和global率所有任务结果相同。END-only从离线重放落实到真正原生actor，root核154冻结工件及全部任务流时。支持域是一个公开trace的四当前head，非100机器人全局benchmark；下一模型目标是查询的边际任务价值与后续驻留阻塞影响。
+
+[真实活动MOVE暂停](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/gpibt_lsmart_active_20260930_r3/REPORT.md)首次击中在途运动：tick59触发、59..78暂停，原半MOVE ACK68→88、整格END84→104，另一机器人的真实驻留服务完成136→156。两完整run已输出800行公开可交付context、800离线target及独立原整格监督；保留惯性尾移/未完成任务，不宣称连续足迹安全或学习收益。
+
+[官方OnlineGGO真实训练](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/onlineggo_training_20260930_r3/REPORT.md)保持作者800机器人/1000步和quad560，2代200候选×2训练seed，共400次native；训练选模后3个留出seed两臂6次评估，初始权重平均吞吐8.916→训练权重11.871333（约+33.1%）。root独立重放480万留出动作并核400训练目标/权重/种子。收益属于作者方法对自身初始化，不是我们新方法胜GPIBT；作者10000候选完整预算仍未完成。下一步将新剩余占用时间/阻塞传播模型接入共同误差执行域，与正式作者方法和同信息内部消融比较。以下§72及以前保留为历史快照。
+
 2026-09-30 第二轮更新（Q2 §72）：**三线均已实现并实跑。主线完成真实控制历史重建，查询线接入公共作者轨迹，第三线完成官方规划器到真实任务服务；学习尚无独立收益。** 本轮分别由用户指定gpt-6.1-sol-ultra子智能体作技术判断，另一子智能体使用research-mentor作导师判断。两者建议围绕任务价值、空间误差证据与完整费用继续，模型暂作比较臂；[更新后三线设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20260930_R2.md)给出具体下一实验。
 
 主线共享成功验证的不可变运动profile，并以通用精确整数平方根替代机器字有理完平方的昂贵软件浮点路径。第15次advance从975,973经962,177到885,207，相对上轮提前90,766步；物理历史回放及原CAPTURE时间匹配已完成。Natural/Strict仍在E201原1,048,576供给耗尽，最终为receive返回前请求复制/字符串清理，**尚未进入compute_position/POSITION，完整查询核账仍invalid**。46场景精确差分及2393数值案例通过，root独立重核304保存检查、六实际ELF的kernel和两制度原费用。下一后继针对已准入请求的重复深复制，继续POSITION/后车RUN/四收据及报价反馈；不能把前缀提前当整次净费下降。详细本机`implementation_binding_evidence/rational_sqrt_successor_20260930_r2b/SOURCE_REVIEW_AND_HANDOFF.md`。

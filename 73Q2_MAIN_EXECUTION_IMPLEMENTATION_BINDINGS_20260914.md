@@ -1,5 +1,7 @@
 # 73Q2：PIE-D误差执行主线的具体实现绑定
 
+最新：2026-09-30第三轮实作见§73。不可变请求共享和私有payload转移已实跑，原预算仍在E201清理阶段耗尽；查询联合任务、真实活动MOVE误差传播和官方学习训练均形成新结果。完整查询尚未闭合。
+
 2026-09-14，建设中，可更新。承接固定73与73R4，主线是误差包络、原MOVE前缀授权、可信进度和空间释放。这里补具体接口与代码包，不重开完整设计审查，不改变参数化模型、比较或主roster。ECBS包保持既有完成状态。
 
 ## 1. 纯几何核心：根接受的数域、数据和操作
@@ -1655,3 +1657,22 @@ pause30–49全为空队列STOP，影响派发40→50，未验证活动MOVE扰�
 **官方模型评估入口。** OnlineGGO ff6d830原936tracked files不变，实际OBJECTIVE4/OBJ::NN的quad560参数模块33.0573s构建；公开作者GPIBT输入10robots/100steps的未训练常量5诊断完成1000动作/1010位置/27任务，独立FIFO轨迹核验。559shape实际被官方拒绝；首错map路径失败完整保留。33工件和真实moduleSHA经独立peer核验。此为官方优化引导代价入口，不是深度world model或合格trained R0；训练配置/日志/权重内容与原作者正式参数仍缺，trained_policy_qualified=false。weight schema只查声明/shape/hash，不冒称训练认证。
 
 公开详细结果及下一实验在[三线更新设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20260930_R2.md)。主要基线仍为已发表作者方法，R0原生与R1共同执行分开；不同设置52/27/1任务不能横比。主线远端只同步四份进度文档，实现/raw本机隔离；查询与第三线推送独立代码、协议、实际回执和审计。主稿已有修改保持不提交。
+
+
+## 73. 请求生命周期后继、联合任务选择与官方学习训练（2026-09-30 R3）
+
+本轮继续三线授权实作，不修改旧冻结科学合同、生产头、原固定供给或主稿已有修改。根分别接收技术判断与research-mentor导师判断，整合结论是主动训练执行误差/任务决策模型，不把传统方法穷举或学习标签当作创新性判断。公开路线见第三分支`exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20260930_R3.md`。
+
+主线直接父`rational_sqrt_successor_20260930_r2b`后新增`request_shared_successor_20260930_r3`：完整Admission校验后私有共享不可变RequestRecord，最终公开PositionRecord仍按原规则materialize。新45生命周期case/259checks与46真实receive/4926checks/10快照均等父；新增分配有真实成本，第15advance885207→901566，原CAPTURE时间检查1043284。Natural/Strict原E201仍耗尽，未到compute_position。两次错误runner/fixture调用失败保留，未修改语义迎合错误fixture。
+
+下一直接后继`request_forward_successor_20260930_r3b`只将已有全部std::move调用的五个私有payload构造参数改为&&，移除中间对象。公开prepare/enclose/certificate等路径补差分，原numeric/profile/history保持。第15advance901566→885223，成功CAPTURE时间检查1026868；尚未返回receive，最终进入15-command vector的2280bytes删除，live_record1035236→1048204后在free_head耗尽。Natural/Strict/observer均保留原退出1和invalid全链核账；E201仍ordinary1033521+other15055=1048576。没有完整POSITION/后车RUN/四收据/下一报价闭环，也没有整次净费下降结论。
+
+两个新后继final_request_run_audit.py/final_forward_run_audit.py分别176/190保存检查通过。根另用`implementation_binding_evidence/verify_main_request_20260930_r3.py`从实际raw/源码pins/ELF节/分站job费用重核366项及六private kernel，均20480bytes、0x11000、SHA c1942d2feb24492b3ace8844c8d092063507ead74ae066340ad6e8d254ac28a8；实际root结果在MAIN_REQUEST_ROOT_VERIFICATION_20260930_R3.json。两个候选未合入生产。下一项围绕已定位临时存储生命周期，避免无限扩张通用allocator优化；未重写冻结逐槽扫描、未抬供给。
+
+查询分支新`public_joint_20260930_r3`从固定作者trace静态选择tick4的7/11/49/59四当前head、共同19格，真正END-only原生actor只用3582公开训练END及已交付反馈。完整七因素×九策略预算臂=63个联合run，973原MOVE/END、2803frames、706选择、77查询。首7/49皆快时，WAIT3/4、RR B1问7后4/4，而方向/global概率排序B1问49后3/4；后者只加快短任务，没有避免49终点驻留阻59。方向率/global所有任务结果相同，当前模型无独立任务增益。全部无收益/零误差/反转/死锁保留。独立闭矩形/Decimal/owner审计与root154冻结文件、任务服务流时核验通过。下一学习候选面向查询边际任务价值，使用公开后续路径交汇/终点驻留/当前任务链，另取新run划分与标签，不在本七条件按收益调参。本包不是原100机器人benchmark或生产COST闭环。
+
+第三分支`gpibt_lsmart_active_20260930_r3`保持官方GPIBT算法对象、R1共同停稳view和原task wire修正。nominal/pause首次实际活动MOVE条件均于tick59满足；pause59..78实际发零轮速，tick60有3.321mm惯性尾移，61..79实测平台零位移，80恢复运动。原半MOVE ACK68→88、整格END84→104、agent1真实服务136→156。各200ticks，计划5/4次，任务前缀实际相同、各1真实20tick驻留服务；pending占用保持。原始raw和独立审计/负例/69成员冻结、root物理因果重放均通过。800可交付context与800离线targets分离；初版episode实为queue span的语义已单列纠正，并另导出720原完整MOVE监督。数据是学习接口，不是现有GPIBT已读输入，未训练新误差模型，不据采样中心距离宣称连续足迹安全。
+
+第三分支并行完成`onlineggo_training_20260930_r3`：官方OnlineGGO固定ff6d830e、原sortation_small_kiva800 agents/1000ticks/quad560，实际加载未经修改的四个优化器类和原kwargs方法，2代5emitters共200候选、每候选2seed，共400训练native。第一次并行加载config race导致42项job前失败，158项native及原程序保留；第二次预加载template后完整通过。作者旧best_elite辅助函数的只读字段不兼容用pyribs0.5自己的property读取，不改训练规则。训练最高均值12.1475选模后固定三未见seed，初始8.814/9.056/8.878，训练11.509/12.050/12.055，均值8.916→11.871333（约+33.1%）。该结果是作者方法对自身初始化，不能算我们新方法或相对原GPIBT收益；10000候选作者预算未满，无显著性/跨图声明。
+
+root独立核400训练job/权重/seed/目标/选模及939官方Git blobs，六留出重放480万动作/4804800联合位置、无顶点/交换冲突且任务完成与吞吐吻合。三个Git子模块commit引用单列，不虚报内容核验；系统Eigen3及Python/NumPy/Numba环境差异保留。训练实际raw压缩归档、作者MIT与配置/地图/核心类随包，已训练checkpoint可审计。下一步是新执行误差模型训练—推理—规划闭环及正式作者比较，不把模型名称或这些工程检查数作为论文创新/统计样本。
