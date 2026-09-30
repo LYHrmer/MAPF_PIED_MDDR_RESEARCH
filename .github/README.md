@@ -1,5 +1,15 @@
 # MAPF 项目当前入口
 
+2026-09-30 三线更新（Q2 §71）：**任务导向查询已出现更少查询、较低任务流时的具名机制结果；主线回放继续推进；官方规划器与连续执行器完成首步接通。** Astra技术判断与科研导师skill分别评估后，继续以“主线共同执行/费用基础＋查询方法候选＋替代底座探索”组织，学习是否保留由相同信息与资源下的独立收益决定。
+
+主线两个新后继消除同刻推进重算和相同时间戳重复精确解析。原每行1,048,576供给下，连续同刻回放间隔14,209→9,774→3,804步；第15次真实推进入口1,046,261→975,973，提前70,288步。Natural/Strict仍在E row201的Launch→Approach精确构造耗尽，**POSITION与完整查询/收据尚未通过，原核账仍invalid**；不能将行内推进写成整行费用节省。真实接收接口46场景精确差分及161项独立工件/费用核验通过；原供给、生产实现、private kernel与已有主稿修改保持。详细证据本机`implementation_binding_evidence/REPLAY_PROGRESS_20260930.md`。
+
+[查询线完整新表](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/learned-query/exploration/learned_query/BUDGET_TASK_RESULTS_20260930.md)首次完成384次运行、3456任务、4032原MOVE，覆盖容量0/1/2与四种公共任务结构、42份真实active输入。同容量2的一个慢组，任务规则查C一次/全流时36，内部admission/RR查AB两次/37；另一结构，新目标将旧窗口目标40降到38。144个目标配对8改善、136相同，同时保留4项多查无益；AR与lag2全部96配对同效。后续六任务不产生新策略分歧，当前仍属人工机制/内部消融，不冒充公开benchmark或学习独立优势。
+
+第三线已让作者GPIBT输出实际送入LSMART的parser/ADG/ARGoS控制链，并收到首步真实连续运动与END。适配发现默认get_location可能是未来承诺格点，改在全队列完成且实际停稳时使用当前视图；这是明确的同步R1接口。两机器人实例的作者LNS默认group_size10造成第二次规划崩溃，已改其公开参数为2，算法对象不改；失败保留。最终nominal/pause两例仍待本机RPC沙箱权限，**未报告200ticks完整集成成功或连续安全通过**。LSMART是试验台，OnlineGGO真实学习策略R0仍待完成。
+
+[2026近作核查](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/LITERATURE_DELTA_20260930.md)新增已发表RL-RH-PP（JAIR2026）与LDG执行框架（Artificial Intelligence2026）：泛化的学习优先级、动态组合放行均已有直接工作。下一步围绕空间误差下的任务收益/完整成本和公共场景外部比较。主要对照使用已发表作者方法，AR/lag2/RR/admission只作消融。以下§70及更早记录为历史阶段。
+
 2026-09-29 三线更新（Q2 §70）：**主线进入真实物理历史回放；两支线已从单动作推进到完整任务；公开作者基线开始实际复现。** 后续分别以完整收费查询、任务目标对齐、替代论文底座为目标。已分别完成Astra独立技术判断和科研导师skill判断，按“一篇当前主稿＋一条可替代底座路线”组织，不以加入学习模块充当贡献。
 
 主线四个隔离后继实现控制器直接构造、有理报文验证、精确有理/共享只读代数存储和整数规范检查去格式化。固定每行1,048,576供给下，C-business从有理验证后继54,769,862/54段降至42,568,936/42段（22.28%）；C row101实际877,185、余171,391。Natural/Strict均越过E控制器构造并进入历史回放，**仍在E row201耗尽，尚无POSITION/后车RUN/完整收据闭环**。原全链核账仍invalid；138+274项保存工件核验通过。详证本机`implementation_binding_evidence/NUMERIC_STORAGE_PROGRESS_20260929.md`；原稿已有修改保持。

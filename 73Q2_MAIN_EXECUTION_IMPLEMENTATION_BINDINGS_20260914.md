@@ -1604,3 +1604,23 @@ E CaptureAdmission入口310,635，控制器构造584,384，首次advance_to665,4
 §70 接续完成：查询cohort-flow新后继六组98episode、882task、1176 requester MOVE实际执行通过；50,856项native检查，72次决策/596候选经独立严格区间重算，旧62结果逐项复现。慢条件AR/lag2从C改AB，当前批flow28→27、全任务40→39、末服务14→13；多查询一次的代价保留。部分快速/偏慢预测条件多查无任务收益，隐藏突变五个历史模型仍WAIT/flow41，AR仍同lag2。active输入分支已实现但本表未触发，仅有源码审查。首轮非有理alpha日志异常、次轮native全部通过但wrapper末尾误解析未来launch失败均保留；新增offline恢复分析，不再编译或重跑native。root与科研导师独立复核通过，目标修正不充当学习或净收费收益。
 
 外部GPIBT先导最终4格完成141/141/2244/2253任务，189,000动作/189,420位置独立核验及7种负例拒绝通过。两个作者输入、seed42/43、每格450步，新增3次native（seed42小例复用），57文件/约3.29MB的脚本/patch/输入/原始回执已归档至第三线。只是一地图两工作负载的可复现先导，团队规模同时改变roundrobin任务切片；已完成flow是条件统计，总受限flow在此制度下恒N×450，不能用来声称优势。下一步完成共同执行适配、OnlineGGO真实policy评测及按完整运行留出的误差残差验证。
+
+## 71. 同刻回放、同容量任务查询与连续执行适配
+
+2026-09-30。Astra技术判断和research-mentor技能分别独立评估三线，原件为本机`ASTRA_ROUTES_20260930.md`、`MENTOR_ROUTES_20260930.md`。两者都把主线看作共同执行/真实费用基础，把查询看作当前方法候选，把GPIBT/OnlineGGO＋LSMART看作可替代论文底座；本轮按此分工实际实现并运行，没有用额外模型数量替代证据。导师六项资格卡保留外部比较、公共数据及完整费用的具体缺口，不增加审批门槛。
+
+**主线两个后继。** `same_time_advance_successor_20260930`只改控制器头：对每个已消费所有当时边界的immutable root，同刻advance保留数值合法性和PastTime检查后直接返回。52,470项新差分、18旧历史51,558项差分及原controller/segment回归通过。`timestamp_reuse_successor_20260930`只再改CaptureAdmission头：一次receive中两有理wire字段字节均相同，且此前已成功解析，才复用精确时间值；每事件顺序、非负守卫、全部命令/参数与最后CAPTURE核对保持。46场景4,926检查、10旧快照通过，POSITION/错误结果13,260bytes及SOURCE转录182,971bytes与直接父版相同。原15事件的整数解析48→24、validator gcd24→12。首baseline夹具错误预期及当时源码保留。
+
+原单行供给1,048,576未变。前版/同刻/复用三版，同刻advance连续入口间隔14,209/9,774/3,804；前版仅到11个入口，后两版均到15个。第15次真实t=2入口由1,046,261提前到975,973，留出多70,288步；在979,637采样原段、1,001,845进入Launch→Approach新段构造。最终仍在该算术路径耗尽，末PC238552/cause0，尚未进入后续compute_position/authority。Natural及独立Strict均exit1、原完整核账invalid，POSITION/后车RUN/收据闭环未完成；不能把重复段节省误报成完整行费用减少。
+
+两后继实际重编三ELF/host、重绑发布图及dependencies；20普通TU与host数值头一致，复用逻辑仅在guest pipeline绑定，未搬到host免费执行。三个私有kernel真实字节/地址/尺寸/SHA保持，原件/前序保护数5,395与5,713。root独立161项工件及费用核验通过；observer/plain字节相同、行与job费用守恒，Pin16/Release8导致的原health2保留。主稿SHA保持。报告`REPLAY_PROGRESS_20260930.md`、`REPLAY_VERIFICATION_20260930_2.json`与全部候选/raw本机隔离；远端主线只同步四份进度文档。下一步评估可复用的已验证控制器profile，处理反复segment构造，而非无限叠加小型数字特判。
+
+**查询新机制表。** 冻结容量B=0/1/2、公开首任务尾段2×2、四旧历史/真实条件及nominal/lag2/AR×window6/cohort-flow，再加内部admission/RR；48实例、384episode首次全部通过，3456任务、4032原MOVE、162策略查询。原65文件与9组件头保持。576决策、2778候选经过严格区间复算；root另从raw独立重建全部实际服务/曲线/容量与配对。42份active输入真正执行，修补旧表仅有源码覆盖的缺口；不可行候选仍未触发。
+
+同B=2慢组：仅D3有尾段时，任务规则C一次查询/全流时36，admission/RR的AB两次/37；仅D1/D2有尾段时，window WAIT/40，新cohort AB/38且与admission/RR相同。144个目标配对8改善、136同，4项多查无益；8项改善均多查询，不能称同实付费用净收益。AR与lag2全部96配对相同，隐藏突变负例保留。全部完整流时=首cohort+12，后续六任务没有新策略分歧；这是完整执行的人工机制表，非公共benchmark/开放lifelong优势。完整代码、raw、CSV、两类复核已提交查询分支`6caa4fd`。
+
+**第三线真实接口。** 作者GPIBT首步已实际经过LSMART parser/ADG/ARGoS控制器并产生运动/END；默认get_location是commit cut，不能未经检查当作当前位置。新R1在全部ADG动作/队列完成、前tick零轮速命令且实测位移≤1e-6m时调用规划器；正常任务来自作者OneGoalTaskAssigner，未来扰动不进模型。作者将格点动作拆成0.5m控制node，途中node可带速度ACK，不把每次ACK都等同主线静止END。两机器人场景默认LNS group_size10使第二次plan崩溃，已改作者公开参数2，原算法对象保持。修复和失败记录均披露，不扫描参数。
+
+最终固定nominal/pause两次200tick试验尚待沙箱本机RPC许可；此前只批准旧attempt参数，新增目录触发权限等待。当前不宣称完整集成、配对任务流相同或连续安全通过。此处的权限来源是执行环境，非科研导师技能；用户已授权探索实现的范围不重新确认。桥接源码、补丁、协议与后续运行状态由第三线独立入口管理。OnlineGGO仍只有C++构建，未填为学习R0完成。
+
+**文献与论文推进。** 本轮核验JAIR2026 RL-RH-PP期刊、作者原文及仓库，以及Artificial Intelligence2026 LDG执行框架的出版社/作者记录。学习优先级和动态组合放行已有直接近邻；贡献应落实到空间误差下的有限证据、任务收益和完整费用，或明确可迁移的执行残差。主要外部比较仍采用已发表作者算法＋公开共同执行适配，内部规则只列消融；LSMART是试验台。下一周期分别补主线已验证profile的结构复用、查询公共场景/真实成本比较、第三线完整共同执行轨迹和OnlineGGO真实policy。SCI二区/三区为目标，不预写结果或录用结论。
