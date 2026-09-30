@@ -1,0 +1,386 @@
+{
+  "status": "PASSED_REAL_OFFICIAL_ACTION_INFLUENCE",
+  "fixture_source_sha256": "1f6cde816aba116dd8b862e3a6223757829d2189116887c53507ff54d852e6ca",
+  "bridge_sha256": "e0f62c804d00a14adef4413578300f869fbcca841b92bd1a5c41d9da3d2a1b0d",
+  "cases": {
+    "zero": {
+      "request": {
+        "mapf_instance": {
+          "goals": [
+            [
+              {
+                "agent_id": 0,
+                "finish_t": -1,
+                "hold_time": 0,
+                "id": 0,
+                "is_parking": false,
+                "location": 21,
+                "movable": false,
+                "orientation": -1,
+                "task_wait_time": 0
+              }
+            ],
+            [
+              {
+                "agent_id": 1,
+                "finish_t": -1,
+                "hold_time": 0,
+                "id": 1,
+                "is_parking": false,
+                "location": 7,
+                "movable": false,
+                "orientation": -1,
+                "task_wait_time": 0
+              }
+            ]
+          ],
+          "starts": [
+            {
+              "is_rotating": false,
+              "is_tasking_wait": false,
+              "location": 0,
+              "orientation": 1,
+              "timestep": 0
+            },
+            {
+              "is_rotating": false,
+              "is_tasking_wait": false,
+              "location": 10,
+              "orientation": 1,
+              "timestep": 0
+            }
+          ]
+        },
+        "rows": 5,
+        "cols": 5,
+        "map": [
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "priority_bias": [
+          0.0,
+          0.0
+        ]
+      },
+      "result": {
+        "actions": [
+          4,
+          3
+        ],
+        "planner_us": 42,
+        "priority_adapter": {
+          "bias": [
+            0.0,
+            0.0
+          ],
+          "effective_applied": [
+            0.3333333333333333,
+            0.6666666666666666
+          ],
+          "effective_base": [
+            0.3333333333333333,
+            0.6666666666666666
+          ],
+          "p_after_restore": [
+            0.3333333333333333,
+            0.6666666666666666
+          ],
+          "p_before": [
+            0.3333333333333333,
+            0.6666666666666666
+          ],
+          "p_copy_after_restore": [
+            0.3333333333333333,
+            0.6666666666666666
+          ],
+          "p_copy_before": [
+            0.3333333333333333,
+            0.6666666666666666
+          ],
+          "search_order": [
+            1,
+            0
+          ]
+        },
+        "step": 0
+      },
+      "stderr": "---priority-initialization-seed,42\n---timestep,0\n---t-update,0\n---init-agents:2\n---t-init,28\n---t-lns,30\n---t-done,32\n"
+    },
+    "agent0": {
+      "request": {
+        "mapf_instance": {
+          "goals": [
+            [
+              {
+                "agent_id": 0,
+                "finish_t": -1,
+                "hold_time": 0,
+                "id": 0,
+                "is_parking": false,
+                "location": 21,
+                "movable": false,
+                "orientation": -1,
+                "task_wait_time": 0
+              }
+            ],
+            [
+              {
+                "agent_id": 1,
+                "finish_t": -1,
+                "hold_time": 0,
+                "id": 1,
+                "is_parking": false,
+                "location": 7,
+                "movable": false,
+                "orientation": -1,
+                "task_wait_time": 0
+              }
+            ]
+          ],
+          "starts": [
+            {
+              "is_rotating": false,
+              "is_tasking_wait": false,
+              "location": 0,
+              "orientation": 1,
+              "timestep": 0
+            },
+            {
+              "is_rotating": false,
+              "is_tasking_wait": false,
+              "location": 10,
+              "orientation": 1,
+              "timestep": 0
+            }
+          ]
+        },
+        "rows": 5,
+        "cols": 5,
+        "map": [
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "priority_bias": [
+          2.0,
+          -2.0
+        ]
+      },
+      "result": {
+        "actions": [
+          1,
+          0
+        ],
+        "planner_us": 40,
+        "priority_adapter": {
+          "bias": [
+            2.0,
+            -2.0
+          ],
+          "effective_applied": [
+            2.3333333333333335,
+            -1.3333333333333335
+          ],
+          "effective_base": [
+            0.3333333333333333,
+            0.6666666666666666
+          ],
+          "p_after_restore": [
+            0.3333333333333335,
+            0.6666666666666665
+          ],
+          "p_before": [
+            0.3333333333333333,
+            0.6666666666666666
+          ],
+          "p_copy_after_restore": [
+            0.3333333333333335,
+            0.6666666666666665
+          ],
+          "p_copy_before": [
+            0.3333333333333333,
+            0.6666666666666666
+          ],
+          "search_order": [
+            0,
+            1
+          ]
+        },
+        "step": 0
+      },
+      "stderr": "---priority-initialization-seed,42\n---timestep,0\n---t-update,0\n---init-agents:2\n---t-init,23\n---t-lns,25\n---t-done,28\n"
+    },
+    "agent1": {
+      "request": {
+        "mapf_instance": {
+          "goals": [
+            [
+              {
+                "agent_id": 0,
+                "finish_t": -1,
+                "hold_time": 0,
+                "id": 0,
+                "is_parking": false,
+                "location": 21,
+                "movable": false,
+                "orientation": -1,
+                "task_wait_time": 0
+              }
+            ],
+            [
+              {
+                "agent_id": 1,
+                "finish_t": -1,
+                "hold_time": 0,
+                "id": 1,
+                "is_parking": false,
+                "location": 7,
+                "movable": false,
+                "orientation": -1,
+                "task_wait_time": 0
+              }
+            ]
+          ],
+          "starts": [
+            {
+              "is_rotating": false,
+              "is_tasking_wait": false,
+              "location": 0,
+              "orientation": 1,
+              "timestep": 0
+            },
+            {
+              "is_rotating": false,
+              "is_tasking_wait": false,
+              "location": 10,
+              "orientation": 1,
+              "timestep": 0
+            }
+          ]
+        },
+        "rows": 5,
+        "cols": 5,
+        "map": [
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "priority_bias": [
+          -2.0,
+          2.0
+        ]
+      },
+      "result": {
+        "actions": [
+          4,
+          3
+        ],
+        "planner_us": 52,
+        "priority_adapter": {
+          "bias": [
+            -2.0,
+            2.0
+          ],
+          "effective_applied": [
+            -1.6666666666666667,
+            2.6666666666666665
+          ],
+          "effective_base": [
+            0.3333333333333333,
+            0.6666666666666666
+          ],
+          "p_after_restore": [
+            0.33333333333333326,
+            0.6666666666666665
+          ],
+          "p_before": [
+            0.3333333333333333,
+            0.6666666666666666
+          ],
+          "p_copy_after_restore": [
+            0.33333333333333326,
+            0.6666666666666665
+          ],
+          "p_copy_before": [
+            0.3333333333333333,
+            0.6666666666666666
+          ],
+          "search_order": [
+            1,
+            0
+          ]
+        },
+        "step": 0
+      },
+      "stderr": "---priority-initialization-seed,42\n---timestep,0\n---t-update,0\n---init-agents:2\n---t-init,32\n---t-lns,33\n---t-done,41\n"
+    }
+  },
+  "not_a_trajectory_run": true
+}

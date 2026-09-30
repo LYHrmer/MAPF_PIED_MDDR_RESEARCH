@@ -1,0 +1,140 @@
+{
+  "model": "ridge_original_MOVE_duration_residual",
+  "feature_names": [
+    "analytic_ticks",
+    "agent_median",
+    "axis_median",
+    "last_duration",
+    "max_command_cm_s",
+    "mean_command_cm_s",
+    "same_last_axis",
+    "history_count",
+    "axis"
+  ],
+  "mean": [
+    31.519607843137255,
+    28.691176470588236,
+    28.50980392156863,
+    29.029411764705884,
+    80.56701755212738,
+    47.057279728541346,
+    0.47058823529411764,
+    2.5098039215686274,
+    0.3137254901960784
+  ],
+  "scale": [
+    4.27883618077384,
+    5.184367583743257,
+    5.23233741873687,
+    5.415040568625651,
+    59.43355560469311,
+    26.59536128686348,
+    0.49913419848462154,
+    1.8616095610067322,
+    0.4640062574980092
+  ],
+  "intercept": -1.401960784313724,
+  "coefficients": [
+    0.19878672115375193,
+    -2.314564099251266,
+    4.428923487678685,
+    0.2497082275501782,
+    1.7972816956678637,
+    3.092999147598873,
+    1.273327081052004,
+    0.8300016929131112,
+    0.013662539530391034
+  ],
+  "lambda": 1.0,
+  "trained": true,
+  "training_rows": 102,
+  "calibration_rows": 48,
+  "training_run_ids": [
+    "train_s42_axis_zero",
+    "train_s42_nominal_zero",
+    "train_s42_slow065_zero",
+    "train_s42_slow085_zero",
+    "train_s43_axis_zero",
+    "train_s43_nominal_zero",
+    "train_s43_slow065_zero",
+    "train_s43_slow085_zero",
+    "train_s44_axis_zero",
+    "train_s44_nominal_zero",
+    "train_s44_slow065_zero",
+    "train_s44_slow085_zero"
+  ],
+  "calibration_run_ids": [
+    "cal_s51_axis_zero",
+    "cal_s51_nominal_zero",
+    "cal_s51_slow065_zero",
+    "cal_s51_slow085_zero"
+  ],
+  "train_source_sha256": {
+    "train_s42_nominal_zero": {
+      "delivered_context.jsonl": "b7ab15dd5cafd3dfd6f6300cf33b86aeaab443ba29110b956771de89d10f3d49",
+      "offline_original_MOVE_targets.jsonl": "8d725a976b175acb9ddf9a15d50266b719109e202a07636716de77beb41d2669"
+    },
+    "train_s42_slow065_zero": {
+      "delivered_context.jsonl": "0da2c69cf17a906e52a127429cf0ac3cf529b823f16fa22a87ba1867dac9ed5c",
+      "offline_original_MOVE_targets.jsonl": "4daa3ffc98d06922b7b557c890f4ab2c35b57d25322203ca16291d4116b7d1ef"
+    },
+    "train_s42_slow085_zero": {
+      "delivered_context.jsonl": "afc8936b28be74ade1c4b87908b80205f844510bf1c73d769fdaf24d63d60d2e",
+      "offline_original_MOVE_targets.jsonl": "d7051806423a27a5e31be0ec35f3ffb9cb6d32a9462f38b6f54fe2309540a95a"
+    },
+    "train_s42_axis_zero": {
+      "delivered_context.jsonl": "5667c0e334fdfcd80835ca9dbee21160393c8b447cc5a938da2a8092e57dfbe7",
+      "offline_original_MOVE_targets.jsonl": "31a22f1985c9c42de34af47a9a89a14ac844ebcceace7cba0204b18b693ec6c9"
+    },
+    "train_s43_nominal_zero": {
+      "delivered_context.jsonl": "cea109395a6968bd1f9bc878444e3860a4bb212686530b912da39a3e32c97560",
+      "offline_original_MOVE_targets.jsonl": "315370ab8dcdfec322d115a2aaf9aacdf49e0e8e81e5be98866a578bb39c53e2"
+    },
+    "train_s43_slow065_zero": {
+      "delivered_context.jsonl": "a2574a59f7d5b36ed50a77a9d95b3f5224eca5f68b72c147167782daddd0b65e",
+      "offline_original_MOVE_targets.jsonl": "ca6cd79d0121d6b58769a21e696c9118ba59c933b96707fbbbbbf261c94669d1"
+    },
+    "train_s43_slow085_zero": {
+      "delivered_context.jsonl": "908b430eea6dd40398f7798082197c338fff7fb23e8000cc042d493a7ed226f3",
+      "offline_original_MOVE_targets.jsonl": "413a2ff41afdb43a64f692b1ccb39f644641bdb40a9ae90b18b0e90bdabd43ad"
+    },
+    "train_s43_axis_zero": {
+      "delivered_context.jsonl": "e75f097af778ec0b9be131d8e1f29bb499a9d4bc79431ac686f4299f0292591d",
+      "offline_original_MOVE_targets.jsonl": "7f36c10fe20997ff63c98bcb8efb0f4727f6f7a7561c8133a951b347cfe73911"
+    },
+    "train_s44_nominal_zero": {
+      "delivered_context.jsonl": "605ec6f7eece44832b7fbfb54a71b91155d0553b5b18e8ce9f52f2fec1118b43",
+      "offline_original_MOVE_targets.jsonl": "02ba82a7bd0dc0c010830123e06ddd96e685fdea5d04fc6372bccf8d140fabd4"
+    },
+    "train_s44_slow065_zero": {
+      "delivered_context.jsonl": "0124c0b3d7aff8e7c27bd3a5430cfdca00f34d09df2a294338472a50ddd3c066",
+      "offline_original_MOVE_targets.jsonl": "a17700a7a0275fcd84619fa848428a7b1bfd01c394792e521efc9f270654fe4f"
+    },
+    "train_s44_slow085_zero": {
+      "delivered_context.jsonl": "a0c716a015f50d186eca2c72ea9c4475d7f0db40c8c192a54ffdf8f6eca186f7",
+      "offline_original_MOVE_targets.jsonl": "4c37f97b11c5a3771f9e76e788e7a74f662790ff4ff142f134c3ea7479460198"
+    },
+    "train_s44_axis_zero": {
+      "delivered_context.jsonl": "a32b1835712d564ec39e7f3efe2f0f0549e1bc1f604a25e7127329bff5a77a57",
+      "offline_original_MOVE_targets.jsonl": "b9ed3f6b907190fedd0689e54971191191bd2807d4942a507583411932d8f746"
+    }
+  },
+  "calibration_source_sha256": {
+    "cal_s51_nominal_zero": {
+      "delivered_context.jsonl": "a1f80b63bdd2add13ad9d0d5e3b87b2d44c88c822b1312d9fb7292f58e7292f8",
+      "offline_original_MOVE_targets.jsonl": "fed49a9371c2ee736b41138b5804638ff977cf61f7453c69458b6bf21209c3a8"
+    },
+    "cal_s51_slow065_zero": {
+      "delivered_context.jsonl": "09031f1b6573eecc74746bf9c7b84c114c73eb77442f8d9fc53d4d0ac0e7d6c9",
+      "offline_original_MOVE_targets.jsonl": "1e3c4c82f39886705e81059f4a28f125c7e5bbd11ec13e41ca4fa315a6ce8ecc"
+    },
+    "cal_s51_slow085_zero": {
+      "delivered_context.jsonl": "b58c49767597ff827782fa14c22ff39c3126a95c0bee130e09f7aadf2fbc960d",
+      "offline_original_MOVE_targets.jsonl": "ce12d85629a4baef8bc15348e1b02f390b55009eea2dcddfdcad9d8c16adf1e4"
+    },
+    "cal_s51_axis_zero": {
+      "delivered_context.jsonl": "61cb9202af26cd981287b56bdbfde06ed2a3311ccac38c84dc25ea15d5999925",
+      "offline_original_MOVE_targets.jsonl": "6deb223de3a8c5312968972258d3eaf1e46bed47e7488524e4c9756dce78e133"
+    }
+  }
+}

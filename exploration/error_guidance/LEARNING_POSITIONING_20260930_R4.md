@@ -7,12 +7,20 @@
 |---|---|---|
 |[Learning Selective Communication for MAPF / DCC](https://arxiv.org/abs/2109.05413)|按决策需要选择通信对象，使用请求—回复通信。|“学习向谁查询”本身已不是空白；我们须说明实际进度证据、连续MOVE空间释放及付费服务的区别。|
 |[Online Guidance Graph Optimization，AAAI 2025](https://ojs.aaai.org/index.php/AAAI/article/download/33614/35769)|学习局部交通信息到引导代价，与PIBT/GPIBT结合；正式比较包含手工SUM_OVC。|学习改变引导权重已有强方法。本轮已实际训练作者模型并补跑其正式手工基线，不能只比初始权重。|
-|[REMAP / ExecTimeNet](https://arxiv.org/html/2511.21886v1)，2025-11预印本|从计划及ADG用Transformer/GNN预测执行时间或其分布，将预测接入LNS/CBS处理实际deadline；标签来自SMART执行。|“学习实际耗时，再反馈规划”已经有高度相关工作。转向该方向时它是重要方法近邻，不能只用OnlineGGO做学习对照。|
+|[REMAP / ExecTimeNet / ESADG，2026-06 v2](https://arxiv.org/html/2511.21886v2)|当前版本已将模型扩展至逐动作完成时间和终端运动学状态，并结合规划搜索及执行次序优化；作者报告仿真与实物验证。|“世界模型预测执行，再优化规划/调度”已有直接近邻。第三线应将它列为主要方法基线候选，不能只用OnlineGGO做学习对照。|
 |[Should I Replan?](https://arxiv.org/html/2604.25567v1)，2026-04预印本|用ADG执行历史等特征，学习同一扰动场景下重规划相对不重规划的SOC改善。|“依赖图＋历史＋反事实收益监督”也已有直接先例。查询的受限证据获取与重规划须在决策对象、成本、信息及安全语义上区分。|
 |[RL-RH-PP](https://arxiv.org/html/2603.23838v1)，JAIR 2026；[作者代码](https://github.com/MikeZheng777/RL-RH-PP)|在滚动时域优先规划中学习产生机器人优先级排序。|学习优先级不是独立新贡献；第三线R2临时优先级接口首先是检验误差历史价值的原型。|
 
-检索日期为2026-09-30。REMAP和Should I Replan?按此次取得的arXiv版本讨论，
-不据此认定当前正式录用状态或期刊分区。RL-RH-PP的JAIR身份另由作者页面与代码引用确认。
+检索日期为2026-09-30。REMAP最初定点阅读了2025-11的v1，独立技术复核随后找到
+2026-06-21更新的v2；根已打开v2原文核其新题名、摘要和方法概述，表格据此更新。
+v2题名为 *From Discrete Plans to Real-World Execution: A World-Model-Driven Framework
+for Execution-Aware Multi-Agent Path Finding*。根随后核了§IV-C：其在线贝叶斯门控还会
+根据廉价计划代价信号选择是否调用较昂贵的预测器；因此“学习有代价的信息调用”也
+不能笼统称为新问题。我们的物理执行证据查询与它的计划预测器调用须明确区分。
+§VI脚注写作者代码将在录用后公开；此次没有取得可用作者实现，先列方法近邻及
+待复现候选，不列已完成的实验baseline。v2的完整逐项复现尚未完成，
+不把v1阅读等同于v2全文精读。REMAP和Should I Replan?均按具名arXiv版本讨论，
+不据此认定正式录用状态或期刊分区。RL-RH-PP的JAIR身份另由作者页面与代码引用确认。
 
 ## 这改变了什么
 

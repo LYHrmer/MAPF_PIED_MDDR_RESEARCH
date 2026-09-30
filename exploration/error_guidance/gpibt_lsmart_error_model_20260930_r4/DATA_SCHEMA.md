@@ -1,0 +1,13 @@
+# R4 输入与目标范围
+
+`common.py` 是共享输入入口，明确不读取 observation、pose、位移、private PID或未来扰动字段。每次停稳请求先冻结raw sequence，context只从该序号之前已交付proposal/admit/实际wheel_command/正常END重建完成的原整格MOVE历史。各policy共享同一context：analytic使用过去实际最大轮速和公开速度/加速度的梯形时长公式；history使用agent/匹配轴的最近三次完整MOVE duration中位数；learned使用同一历史的九个已声明features拟合ridge residual。给对照同样可得字段不意味着强制所有对照采用同一预测公式。
+
+`delivered_context.jsonl` 与 `offline_original_MOVE_targets.jsonl` 用key对齐；run_id/split用于分组而非feature。离线target显式分离两半节点，只把原proposal整格endpoint的最终正常MOVE END作为wholeMOVE标签。原目标是first_nonzero_MOVE_command→wholeMOVE_END，不含proposal后的转向/派发等待；另保留proposal_received→whole_END、first_dispatch→whole_END及前置间隔诊断。没有事后改训练目标。
+
+`active_delivered_context.jsonl` 与 `offline_remaining_targets.jsonl` 分离每tick已交付轮速/节点/elapsed与未来整格END，target删失为null，不作0标签。活动remaining诊断沿用step-start history，不宣称更新每tick新完成历史或曾喂活动中的GPIBT。当前真正接入规划的是joint-settled处的forecast-priority。
+
+模型仅12个完整train run的102个uncensored rows拟合；四个完整cal run的48rows选lambda与幅值；seed61的24test不参与任何选择。四个seed44持续WAIT run各只有agent1一次完整MOVE，agent0无活动触发/无服务，均保留，不把无样本或未完成记为0。
+
+协议lambda段写MAE，幅值段引用MAPE最低模型；实际train.py按cal MAE选lambda1。root独立重算cal MAPE三lambda也同选1，故本数据没有改变选择或依据test调整。原协议字节保持，该口径差异照实记录。
+
+初版offline verifier假定首次所有goal变化，遗漏作者 `TrajLNS::tasks` 构造默认0；seed44的agent1首次goal0按原算法应aging+1。修正只改离线验证器，旧audit/代码保存为initial，无native重跑。初版还把所有半节点ACK要求为点距离<0.03；原合并MOVE的on-the-fly ACK实际上使用到最终目标的径向距离减剩余半格。最终审计分别给出原谓词符合性与更严格点距离指标，train42slow065/cal51axis存在半节点点误差超0.03；阈值、原controller和raw没有改。不能将原谓词通过称全时域安全。

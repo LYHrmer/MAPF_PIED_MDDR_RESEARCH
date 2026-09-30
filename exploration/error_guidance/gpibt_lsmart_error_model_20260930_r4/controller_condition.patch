@@ -1,0 +1,49 @@
+--- a/client/controllers/footbot_diffusion/footbot_diffusion.h
++++ b/client/controllers/footbot_diffusion/footbot_diffusion.h
+@@ -165,8 +165,17 @@
+     // Observe the actual arguments sent to the actuator; native control laws
+     // and every original argument expression remain unchanged.
+     void integrationSetWheels(Real left, Real right) const {
+-        integration_left_command=left; integration_right_command=right;
+-        m_pcWheels->SetLinearVelocity(left,right);
++        const char* raw=std::getenv("R4_CONDITION");
++        const std::string condition=raw?raw:"nominal";
++        Real factor=1.0;
++        if(robot_id=="0") {
++            if(condition=="slow065") factor=0.65;
++            if(condition=="slow085") factor=0.85;
++            if(condition=="axis" && integration_current_axis==0) factor=0.65;
++            if(condition=="unknown_shift" && integration_trigger_tick>=0) factor=0.55;
++        }
++        integration_left_command=left*factor; integration_right_command=right*factor;
++        m_pcWheels->SetLinearVelocity(integration_left_command,integration_right_command);
+     }
+     Real pidLinear(Real error);
+     pair<Real, Real> Move(const CVector3 &targetPos, const CVector3 &currPos,
+@@ -210,6 +219,8 @@
+     int count = 0;
+     mutable Real integration_left_command = 0.0;
+     mutable Real integration_right_command = 0.0;
++    mutable int integration_current_axis = -1;
++    map<int,int> integration_node_axes;
+     int integration_trigger_tick = -1;
+     bool integration_resumed = false;
+     bool previous_zero_command = true;
+--- a/client/controllers/footbot_diffusion/footbot_diffusion.cpp
++++ b/client/controllers/footbot_diffusion/footbot_diffusion.cpp
+@@ -53,6 +53,7 @@
+                  << endl;
+         }
+         if (action1 == "M") {
++            integration_node_axes[nodeID]=(x!=start_x?0:1);
+             deque<int> prev_ids;
+             if (not q.empty() and q.back().type == Action::MOVE) {
+                 prev_ids = q.back().nodeIDS;
+@@ -367,6 +368,7 @@
+     std::chrono::duration<double, milli> find_act_duration_ms =
+         end_find_act - end_queue_update;
+ 
++    integration_current_axis = a.type==Action::MOVE ? integration_node_axes.at(a.nodeIDS.front()) : -1;
+     if (a.type == Action::MOVE) {
+         CVector3 targetPos = CVector3(a.x, a.y, 0.0f);
+         pair<Real, Real> velocities = Move(targetPos, currPos, currAngle, 1.0f);

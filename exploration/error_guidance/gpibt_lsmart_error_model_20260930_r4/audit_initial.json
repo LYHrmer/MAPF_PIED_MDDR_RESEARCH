@@ -1,0 +1,5700 @@
+{
+  "all_available_passed": false,
+  "runs": {
+    "train_s42_nominal_zero": {
+      "event_count": 1639,
+      "last_event_tick": 400,
+      "horizon_tick": 400,
+      "observation_count": 800,
+      "views": 9,
+      "proposals": 9,
+      "parsed_nodes": 50,
+      "admitted_nodes": 50,
+      "acknowledged_nodes": 45,
+      "pending_admitted_nodes": [
+        [
+          "0",
+          22
+        ],
+        [
+          "0",
+          23
+        ],
+        [
+          "1",
+          23
+        ],
+        [
+          "1",
+          24
+        ],
+        [
+          "1",
+          25
+        ]
+      ],
+      "pending_admitted_commands": [
+        [
+          "0",
+          22,
+          0.0,
+          "M",
+          [
+            2.0,
+            3.0
+          ],
+          [
+            2.0,
+            2.5
+          ],
+          -1
+        ],
+        [
+          "0",
+          23,
+          0.0,
+          "M",
+          [
+            2.0,
+            2.5
+          ],
+          [
+            2.0,
+            2.0
+          ],
+          -1
+        ],
+        [
+          "1",
+          23,
+          0.0,
+          "T",
+          [
+            0.0,
+            4.0
+          ],
+          [
+            0.0,
+            4.0
+          ],
+          -1
+        ],
+        [
+          "1",
+          24,
+          0.0,
+          "M",
+          [
+            0.0,
+            4.0
+          ],
+          [
+            0.0,
+            3.5
+          ],
+          -1
+        ],
+        [
+          "1",
+          25,
+          0.0,
+          "M",
+          [
+            0.0,
+            3.5
+          ],
+          [
+            0.0,
+            3.0
+          ],
+          -1
+        ]
+      ],
+      "pending_unadmitted_nodes": {
+        "0": [],
+        "1": []
+      },
+      "assigned_task_prefix": [
+        [
+          0,
+          0,
+          21
+        ],
+        [
+          1,
+          1,
+          7
+        ],
+        [
+          2,
+          1,
+          20
+        ],
+        [
+          3,
+          0,
+          17
+        ],
+        [
+          4,
+          0,
+          13
+        ],
+        [
+          5,
+          1,
+          5
+        ]
+      ],
+      "task_services": 4,
+      "completed_tasks": {
+        "1": {
+          "robot": "1",
+          "node": 7,
+          "tick": 136,
+          "start_tick": 116,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.021847247848587777
+        },
+        "0": {
+          "robot": "0",
+          "node": 14,
+          "tick": 276,
+          "start_tick": 256,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.020730144529244786
+        },
+        "2": {
+          "robot": "1",
+          "node": 22,
+          "tick": 374,
+          "start_tick": 354,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.02994392029123181
+        },
+        "3": {
+          "robot": "0",
+          "node": 21,
+          "tick": 388,
+          "start_tick": 368,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.029988888674273934
+        }
+      },
+      "bookkept_tasks": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "ends": [
+        {
+          "robot": "1",
+          "node": 0,
+          "tick": 20,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.01590698000707902
+        },
+        {
+          "robot": "1",
+          "node": 1,
+          "tick": 36,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.022780120871413123
+        },
+        {
+          "robot": "0",
+          "node": 0,
+          "tick": 49,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0
+        },
+        {
+          "robot": "1",
+          "node": 2,
+          "tick": 49,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.020926881276705833
+        },
+        {
+          "robot": "0",
+          "node": 1,
+          "tick": 58,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0
+        },
+        {
+          "robot": "1",
+          "node": 3,
+          "tick": 59,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.014661169385392086
+        },
+        {
+          "robot": "0",
+          "node": 2,
+          "tick": 68,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.022920544028238468
+        },
+        {
+          "robot": "1",
+          "node": 4,
+          "tick": 74,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.029831616890776246
+        },
+        {
+          "robot": "0",
+          "node": 3,
+          "tick": 84,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.024658014816247114
+        },
+        {
+          "robot": "0",
+          "node": 4,
+          "tick": 99,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.022733772696374454
+        },
+        {
+          "robot": "1",
+          "node": 5,
+          "tick": 100,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.013199494577485713
+        },
+        {
+          "robot": "0",
+          "node": 5,
+          "tick": 113,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.007153080950700308
+        },
+        {
+          "robot": "1",
+          "node": 6,
+          "tick": 116,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.021847247848587777
+        },
+        {
+          "robot": "0",
+          "node": 6,
+          "tick": 129,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.018535107442135507
+        },
+        {
+          "robot": "1",
+          "node": 7,
+          "tick": 136,
+          "type": "S",
+          "task_id": 1,
+          "endpoint_error_m": 0.0200343821069072
+        },
+        {
+          "robot": "0",
+          "node": 7,
+          "tick": 149,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.016872038636400324
+        },
+        {
+          "robot": "1",
+          "node": 8,
+          "tick": 149,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0200343821069072
+        },
+        {
+          "robot": "1",
+          "node": 9,
+          "tick": 158,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0200343821069072
+        },
+        {
+          "robot": "0",
+          "node": 8,
+          "tick": 159,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.012536684054863615
+        },
+        {
+          "robot": "1",
+          "node": 10,
+          "tick": 168,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.004768145275808357
+        },
+        {
+          "robot": "0",
+          "node": 9,
+          "tick": 174,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.029538248761567312
+        },
+        {
+          "robot": "1",
+          "node": 11,
+          "tick": 184,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.01749454708762788
+        },
+        {
+          "robot": "1",
+          "node": 12,
+          "tick": 199,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.01585581521421401
+        },
+        {
+          "robot": "0",
+          "node": 10,
+          "tick": 200,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.012639746005935527
+        },
+        {
+          "robot": "1",
+          "node": 13,
+          "tick": 209,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.010709844963161136
+        },
+        {
+          "robot": "0",
+          "node": 11,
+          "tick": 216,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.021785846555905743
+        },
+        {
+          "robot": "1",
+          "node": 14,
+          "tick": 225,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.017488333590015503
+        },
+        {
+          "robot": "0",
+          "node": 12,
+          "tick": 240,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.008227397773859757
+        },
+        {
+          "robot": "1",
+          "node": 15,
+          "tick": 243,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.02793125713346423
+        },
+        {
+          "robot": "0",
+          "node": 13,
+          "tick": 256,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.020730144529244786
+        },
+        {
+          "robot": "1",
+          "node": 16,
+          "tick": 259,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.026435847491945472
+        },
+        {
+          "robot": "0",
+          "node": 14,
+          "tick": 276,
+          "type": "S",
+          "task_id": 0,
+          "endpoint_error_m": 0.018958078560275444
+        },
+        {
+          "robot": "0",
+          "node": 15,
+          "tick": 289,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.018958078560275444
+        },
+        {
+          "robot": "1",
+          "node": 17,
+          "tick": 297,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.021780302394816337
+        },
+        {
+          "robot": "0",
+          "node": 16,
+          "tick": 299,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.013242751016954442
+        },
+        {
+          "robot": "0",
+          "node": 17,
+          "tick": 315,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.017247504615040692
+        },
+        {
+          "robot": "1",
+          "node": 18,
+          "tick": 317,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.020739961046551368
+        },
+        {
+          "robot": "1",
+          "node": 19,
+          "tick": 329,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.018966785189943016
+        },
+        {
+          "robot": "1",
+          "node": 20,
+          "tick": 339,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.013322290302337648
+        },
+        {
+          "robot": "0",
+          "node": 18,
+          "tick": 343,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.015620565775701614
+        },
+        {
+          "robot": "0",
+          "node": 19,
+          "tick": 353,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.01438363807232162
+        },
+        {
+          "robot": "1",
+          "node": 21,
+          "tick": 354,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.02994392029123181
+        },
+        {
+          "robot": "0",
+          "node": 20,
+          "tick": 368,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.029988888674273934
+        },
+        {
+          "robot": "1",
+          "node": 22,
+          "tick": 374,
+          "type": "S",
+          "task_id": 2,
+          "endpoint_error_m": 0.027831676070854107
+        },
+        {
+          "robot": "0",
+          "node": 21,
+          "tick": 388,
+          "type": "S",
+          "task_id": 3,
+          "endpoint_error_m": 0.02787711205988696
+        }
+      ],
+      "sampled_min_center_distance_m": 0.6034777380146943,
+      "pause_controls": [],
+      "pause_overlaps_active_move": false,
+      "terminal_observations": {
+        "0": {
+          "angle": 359.841888342719,
+          "displacement_m": 0.05107048331363862,
+          "idle": false,
+          "previous_wheel_left_cm_s": 50.73574411511858,
+          "previous_wheel_right_cm_s": 50.99308949960182,
+          "previous_zero_command": false,
+          "queue_size": 1,
+          "speed_cm_s": 50.8644168073602,
+          "tick": 399,
+          "x": -2.5612419167878975,
+          "y": -2.004864845215662
+        },
+        "1": {
+          "angle": 0.5003607768072578,
+          "displacement_m": 0,
+          "idle": false,
+          "previous_wheel_left_cm_s": 10.223003547840335,
+          "previous_wheel_right_cm_s": -10.223003547840335,
+          "previous_zero_command": false,
+          "queue_size": 2,
+          "speed_cm_s": 15.027416525843794,
+          "tick": 399,
+          "x": -3.9987120711838684,
+          "y": -0.0278018602305229
+        }
+      },
+      "unfinished_tasks": [
+        [
+          4,
+          0,
+          13
+        ],
+        [
+          5,
+          1,
+          5
+        ]
+      ],
+      "horizon_unfinished_nodes": [
+        2,
+        3
+      ],
+      "latest_terminal_pose_tick": 399,
+      "sampled_center_metric_only": true,
+      "continuous_footprint_safety_established": false,
+      "server_online_forged_END_rejection_established": false,
+      "priority_search_order_flips": 0,
+      "actual_trigger_tick": 59,
+      "raw_event_count": 2440,
+      "actual_wheel_commands": 800,
+      "negative_checks": {
+        "private_pose_feature": {
+          "rejected": true,
+          "reason": "forecast_not_causal_shared_interface"
+        },
+        "wrong_bias": {
+          "rejected": true,
+          "reason": "request_forecast_binding"
+        },
+        "unrestored_aging": {
+          "rejected": true,
+          "reason": "aging_restore"
+        }
+      },
+      "passed": true,
+      "trace_sha256": "fc4794ed7a880098043779e3002aee0790dc052685bbd8f649b15fa79421accd",
+      "decisions_sha256": "aed579f04753879db8b4e4c7573447bc51f774bd9f75014937ee71d11618f80f"
+    },
+    "train_s42_slow065_zero": {
+      "passed": false,
+      "error": "end_outside_tolerance"
+    },
+    "train_s42_slow085_zero": {
+      "event_count": 1549,
+      "last_event_tick": 400,
+      "horizon_tick": 400,
+      "observation_count": 800,
+      "views": 8,
+      "proposals": 8,
+      "parsed_nodes": 45,
+      "admitted_nodes": 45,
+      "acknowledged_nodes": 40,
+      "pending_admitted_nodes": [
+        [
+          "0",
+          19
+        ],
+        [
+          "0",
+          20
+        ],
+        [
+          "0",
+          21
+        ],
+        [
+          "1",
+          21
+        ],
+        [
+          "1",
+          22
+        ]
+      ],
+      "pending_admitted_commands": [
+        [
+          "0",
+          19,
+          0.0,
+          "M",
+          [
+            2.0,
+            4.0
+          ],
+          [
+            2.0,
+            3.5
+          ],
+          -1
+        ],
+        [
+          "0",
+          20,
+          0.0,
+          "M",
+          [
+            2.0,
+            3.5
+          ],
+          [
+            2.0,
+            3.0
+          ],
+          -1
+        ],
+        [
+          "0",
+          21,
+          0.0,
+          "S",
+          [
+            2.0,
+            3.5
+          ],
+          [
+            2.0,
+            3.0
+          ],
+          3
+        ],
+        [
+          "1",
+          21,
+          3.0,
+          "M",
+          [
+            0.5,
+            4.0
+          ],
+          [
+            0.0,
+            4.0
+          ],
+          -1
+        ],
+        [
+          "1",
+          22,
+          3.0,
+          "S",
+          [
+            0.5,
+            4.0
+          ],
+          [
+            0.0,
+            4.0
+          ],
+          2
+        ]
+      ],
+      "pending_unadmitted_nodes": {
+        "0": [],
+        "1": []
+      },
+      "assigned_task_prefix": [
+        [
+          0,
+          0,
+          21
+        ],
+        [
+          1,
+          1,
+          7
+        ],
+        [
+          2,
+          1,
+          20
+        ],
+        [
+          3,
+          0,
+          17
+        ]
+      ],
+      "task_services": 2,
+      "completed_tasks": {
+        "1": {
+          "robot": "1",
+          "node": 7,
+          "tick": 156,
+          "start_tick": 136,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.021847247848587777
+        },
+        "0": {
+          "robot": "0",
+          "node": 14,
+          "tick": 320,
+          "start_tick": 300,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.029193170911546006
+        }
+      },
+      "bookkept_tasks": [
+        0,
+        1
+      ],
+      "ends": [
+        {
+          "robot": "1",
+          "node": 0,
+          "tick": 20,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.01590698000707902
+        },
+        {
+          "robot": "1",
+          "node": 1,
+          "tick": 36,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.022780120871413123
+        },
+        {
+          "robot": "1",
+          "node": 2,
+          "tick": 49,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.020926881276705833
+        },
+        {
+          "robot": "0",
+          "node": 0,
+          "tick": 55,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0
+        },
+        {
+          "robot": "1",
+          "node": 3,
+          "tick": 59,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.014661169385392086
+        },
+        {
+          "robot": "0",
+          "node": 1,
+          "tick": 70,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0
+        },
+        {
+          "robot": "1",
+          "node": 4,
+          "tick": 74,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.029831616890776246
+        },
+        {
+          "robot": "0",
+          "node": 2,
+          "tick": 82,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.00302315831071048
+        },
+        {
+          "robot": "0",
+          "node": 3,
+          "tick": 101,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.019799676994312943
+        },
+        {
+          "robot": "1",
+          "node": 5,
+          "tick": 120,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.013199494577485713
+        },
+        {
+          "robot": "0",
+          "node": 4,
+          "tick": 125,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.01858542852961642
+        },
+        {
+          "robot": "1",
+          "node": 6,
+          "tick": 136,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.021847247848587777
+        },
+        {
+          "robot": "0",
+          "node": 5,
+          "tick": 138,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.011842651037405302
+        },
+        {
+          "robot": "0",
+          "node": 6,
+          "tick": 156,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.028936072002537335
+        },
+        {
+          "robot": "1",
+          "node": 7,
+          "tick": 156,
+          "type": "S",
+          "task_id": 1,
+          "endpoint_error_m": 0.0200343821069072
+        },
+        {
+          "robot": "1",
+          "node": 8,
+          "tick": 169,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0200343821069072
+        },
+        {
+          "robot": "0",
+          "node": 7,
+          "tick": 175,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.02742381112385453
+        },
+        {
+          "robot": "1",
+          "node": 9,
+          "tick": 178,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0200343821069072
+        },
+        {
+          "robot": "0",
+          "node": 8,
+          "tick": 186,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.02579964949142186
+        },
+        {
+          "robot": "1",
+          "node": 10,
+          "tick": 192,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.013188563465917935
+        },
+        {
+          "robot": "0",
+          "node": 9,
+          "tick": 205,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.025204083185920226
+        },
+        {
+          "robot": "1",
+          "node": 11,
+          "tick": 208,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.023238940941499725
+        },
+        {
+          "robot": "1",
+          "node": 12,
+          "tick": 229,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.02136832066921747
+        },
+        {
+          "robot": "0",
+          "node": 10,
+          "tick": 232,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.00798231549823613
+        },
+        {
+          "robot": "1",
+          "node": 13,
+          "tick": 243,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.006746643076811551
+        },
+        {
+          "robot": "0",
+          "node": 11,
+          "tick": 251,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.019495981776376334
+        },
+        {
+          "robot": "1",
+          "node": 14,
+          "tick": 259,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.018477954147859462
+        },
+        {
+          "robot": "0",
+          "node": 12,
+          "tick": 282,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.007645030064477868
+        },
+        {
+          "robot": "1",
+          "node": 15,
+          "tick": 287,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.020008774017756317
+        },
+        {
+          "robot": "0",
+          "node": 13,
+          "tick": 300,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.029193170911546006
+        },
+        {
+          "robot": "1",
+          "node": 16,
+          "tick": 307,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.02036589679977356
+        },
+        {
+          "robot": "0",
+          "node": 14,
+          "tick": 320,
+          "type": "S",
+          "task_id": 0,
+          "endpoint_error_m": 0.027674286760433903
+        },
+        {
+          "robot": "0",
+          "node": 15,
+          "tick": 345,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.027674286760433903
+        },
+        {
+          "robot": "1",
+          "node": 17,
+          "tick": 347,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.02043496947952572
+        },
+        {
+          "robot": "0",
+          "node": 16,
+          "tick": 356,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.026382556459825873
+        },
+        {
+          "robot": "0",
+          "node": 17,
+          "tick": 375,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.02538046760909569
+        },
+        {
+          "robot": "1",
+          "node": 18,
+          "tick": 377,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.0204524984785642
+        },
+        {
+          "robot": "1",
+          "node": 19,
+          "tick": 389,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.01869088876805018
+        },
+        {
+          "robot": "0",
+          "node": 18,
+          "tick": 396,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.023979278751186706
+        },
+        {
+          "robot": "1",
+          "node": 20,
+          "tick": 399,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.013116760296195644
+        }
+      ],
+      "sampled_min_center_distance_m": 0.49751772549504086,
+      "pause_controls": [],
+      "pause_overlaps_active_move": false,
+      "terminal_observations": {
+        "0": {
+          "angle": 359.1806616909765,
+          "displacement_m": 0.04796515153905728,
+          "idle": false,
+          "previous_wheel_left_cm_s": 48.61208499242961,
+          "previous_wheel_right_cm_s": 48.36478245299177,
+          "previous_zero_command": false,
+          "queue_size": 2,
+          "speed_cm_s": 57.04521614436552,
+          "tick": 399,
+          "x": -3.886558599891522,
+          "y": -1.9772835439962615
+        },
+        "1": {
+          "angle": 91.09719692212845,
+          "displacement_m": 0.048159631368673544,
+          "idle": false,
+          "previous_wheel_left_cm_s": 47.90756430176701,
+          "previous_wheel_right_cm_s": 47.99351144343453,
+          "previous_zero_command": false,
+          "queue_size": 2,
+          "speed_cm_s": 47.95053787260077,
+          "tick": 399,
+          "x": -3.9885579007728653,
+          "y": -0.49358690667896854
+        }
+      },
+      "unfinished_tasks": [
+        [
+          2,
+          1,
+          20
+        ],
+        [
+          3,
+          0,
+          17
+        ]
+      ],
+      "horizon_unfinished_nodes": [
+        3,
+        2
+      ],
+      "latest_terminal_pose_tick": 399,
+      "sampled_center_metric_only": true,
+      "continuous_footprint_safety_established": false,
+      "server_online_forged_END_rejection_established": false,
+      "priority_search_order_flips": 0,
+      "actual_trigger_tick": 71,
+      "raw_event_count": 2350,
+      "actual_wheel_commands": 800,
+      "negative_checks": {
+        "private_pose_feature": {
+          "rejected": true,
+          "reason": "forecast_not_causal_shared_interface"
+        },
+        "wrong_bias": {
+          "rejected": true,
+          "reason": "request_forecast_binding"
+        },
+        "unrestored_aging": {
+          "rejected": true,
+          "reason": "aging_restore"
+        }
+      },
+      "passed": true,
+      "trace_sha256": "8ad58a7da4028bc48ae2700277c09be7c7825c95e8d62cbae4462ba1912db451",
+      "decisions_sha256": "452bd059caf21ae701e2af587a42866a7b8d28f60292117719e7eee07cc46f74"
+    },
+    "train_s42_axis_zero": {
+      "event_count": 1551,
+      "last_event_tick": 400,
+      "horizon_tick": 400,
+      "observation_count": 800,
+      "views": 8,
+      "proposals": 8,
+      "parsed_nodes": 45,
+      "admitted_nodes": 45,
+      "acknowledged_nodes": 40,
+      "pending_admitted_nodes": [
+        [
+          "0",
+          19
+        ],
+        [
+          "0",
+          20
+        ],
+        [
+          "0",
+          21
+        ],
+        [
+          "1",
+          21
+        ],
+        [
+          "1",
+          22
+        ]
+      ],
+      "pending_admitted_commands": [
+        [
+          "0",
+          19,
+          0.0,
+          "M",
+          [
+            2.0,
+            4.0
+          ],
+          [
+            2.0,
+            3.5
+          ],
+          -1
+        ],
+        [
+          "0",
+          20,
+          0.0,
+          "M",
+          [
+            2.0,
+            3.5
+          ],
+          [
+            2.0,
+            3.0
+          ],
+          -1
+        ],
+        [
+          "0",
+          21,
+          0.0,
+          "S",
+          [
+            2.0,
+            3.5
+          ],
+          [
+            2.0,
+            3.0
+          ],
+          3
+        ],
+        [
+          "1",
+          21,
+          3.0,
+          "M",
+          [
+            0.5,
+            4.0
+          ],
+          [
+            0.0,
+            4.0
+          ],
+          -1
+        ],
+        [
+          "1",
+          22,
+          3.0,
+          "S",
+          [
+            0.5,
+            4.0
+          ],
+          [
+            0.0,
+            4.0
+          ],
+          2
+        ]
+      ],
+      "pending_unadmitted_nodes": {
+        "0": [],
+        "1": []
+      },
+      "assigned_task_prefix": [
+        [
+          0,
+          0,
+          21
+        ],
+        [
+          1,
+          1,
+          7
+        ],
+        [
+          2,
+          1,
+          20
+        ],
+        [
+          3,
+          0,
+          17
+        ]
+      ],
+      "task_services": 2,
+      "completed_tasks": {
+        "1": {
+          "robot": "1",
+          "node": 7,
+          "tick": 156,
+          "start_tick": 136,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.021847247848587777
+        },
+        "0": {
+          "robot": "0",
+          "node": 14,
+          "tick": 330,
+          "start_tick": 310,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.0270244392070718
+        }
+      },
+      "bookkept_tasks": [
+        0,
+        1
+      ],
+      "ends": [
+        {
+          "robot": "1",
+          "node": 0,
+          "tick": 20,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.01590698000707902
+        },
+        {
+          "robot": "1",
+          "node": 1,
+          "tick": 36,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.022780120871413123
+        },
+        {
+          "robot": "0",
+          "node": 0,
+          "tick": 49,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0
+        },
+        {
+          "robot": "1",
+          "node": 2,
+          "tick": 49,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.020926881276705833
+        },
+        {
+          "robot": "0",
+          "node": 1,
+          "tick": 58,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0
+        },
+        {
+          "robot": "1",
+          "node": 3,
+          "tick": 59,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.014661169385392086
+        },
+        {
+          "robot": "0",
+          "node": 2,
+          "tick": 73,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.01253435900166104
+        },
+        {
+          "robot": "1",
+          "node": 4,
+          "tick": 74,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.029831616890776246
+        },
+        {
+          "robot": "0",
+          "node": 3,
+          "tick": 98,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.02685442265843966
+        },
+        {
+          "robot": "0",
+          "node": 4,
+          "tick": 119,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.02601784261308938
+        },
+        {
+          "robot": "1",
+          "node": 5,
+          "tick": 120,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.013199494577485713
+        },
+        {
+          "robot": "0",
+          "node": 5,
+          "tick": 133,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.008148510130931949
+        },
+        {
+          "robot": "1",
+          "node": 6,
+          "tick": 136,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.021847247848587777
+        },
+        {
+          "robot": "0",
+          "node": 6,
+          "tick": 149,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.018686814350814106
+        },
+        {
+          "robot": "1",
+          "node": 7,
+          "tick": 156,
+          "type": "S",
+          "task_id": 1,
+          "endpoint_error_m": 0.0200343821069072
+        },
+        {
+          "robot": "0",
+          "node": 7,
+          "tick": 169,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.017022151799468182
+        },
+        {
+          "robot": "1",
+          "node": 8,
+          "tick": 169,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0200343821069072
+        },
+        {
+          "robot": "1",
+          "node": 9,
+          "tick": 178,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0200343821069072
+        },
+        {
+          "robot": "0",
+          "node": 8,
+          "tick": 183,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.025133781089351083
+        },
+        {
+          "robot": "1",
+          "node": 10,
+          "tick": 192,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.013188563465917935
+        },
+        {
+          "robot": "0",
+          "node": 9,
+          "tick": 208,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.029495190577371835
+        },
+        {
+          "robot": "1",
+          "node": 11,
+          "tick": 208,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.023238940941499725
+        },
+        {
+          "robot": "1",
+          "node": 12,
+          "tick": 229,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.02136832066921747
+        },
+        {
+          "robot": "0",
+          "node": 10,
+          "tick": 235,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.015030007183569505
+        },
+        {
+          "robot": "1",
+          "node": 13,
+          "tick": 243,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.006746643076811551
+        },
+        {
+          "robot": "1",
+          "node": 14,
+          "tick": 259,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.018477954147859462
+        },
+        {
+          "robot": "0",
+          "node": 11,
+          "tick": 260,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.027376715729734675
+        },
+        {
+          "robot": "0",
+          "node": 12,
+          "tick": 285,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.013238360817944867
+        },
+        {
+          "robot": "1",
+          "node": 15,
+          "tick": 287,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.020008774017756317
+        },
+        {
+          "robot": "1",
+          "node": 16,
+          "tick": 307,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.02036589679977356
+        },
+        {
+          "robot": "0",
+          "node": 13,
+          "tick": 310,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.0270244392070718
+        },
+        {
+          "robot": "0",
+          "node": 14,
+          "tick": 330,
+          "type": "S",
+          "task_id": 0,
+          "endpoint_error_m": 0.026185945409402982
+        },
+        {
+          "robot": "0",
+          "node": 15,
+          "tick": 349,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.026185945409402982
+        },
+        {
+          "robot": "1",
+          "node": 17,
+          "tick": 357,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.02043496947952572
+        },
+        {
+          "robot": "0",
+          "node": 16,
+          "tick": 359,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.017844274552322105
+        },
+        {
+          "robot": "0",
+          "node": 17,
+          "tick": 375,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.017434493382119342
+        },
+        {
+          "robot": "1",
+          "node": 18,
+          "tick": 377,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.0204524984785642
+        },
+        {
+          "robot": "1",
+          "node": 19,
+          "tick": 389,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.01869088876805018
+        },
+        {
+          "robot": "0",
+          "node": 18,
+          "tick": 391,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.01580151747222263
+        },
+        {
+          "robot": "1",
+          "node": 20,
+          "tick": 399,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.013116760296195644
+        }
+      ],
+      "sampled_min_center_distance_m": 0.5947688831253234,
+      "pause_controls": [],
+      "pause_overlaps_active_move": false,
+      "terminal_observations": {
+        "0": {
+          "angle": 359.5914663046461,
+          "displacement_m": 0.03647832819456425,
+          "idle": false,
+          "previous_wheel_left_cm_s": 36.52164710310566,
+          "previous_wheel_right_cm_s": 36.2729911755884,
+          "previous_zero_command": false,
+          "queue_size": 2,
+          "speed_cm_s": 55.995875598995426,
+          "tick": 399,
+          "x": -3.7241376065458205,
+          "y": -1.9837571194479204
+        },
+        "1": {
+          "angle": 91.09719692212845,
+          "displacement_m": 0.048159631368673544,
+          "idle": false,
+          "previous_wheel_left_cm_s": 47.90756430176701,
+          "previous_wheel_right_cm_s": 47.99351144343453,
+          "previous_zero_command": false,
+          "queue_size": 2,
+          "speed_cm_s": 47.95053787260077,
+          "tick": 399,
+          "x": -3.9885579007728653,
+          "y": -0.49358690667896854
+        }
+      },
+      "unfinished_tasks": [
+        [
+          2,
+          1,
+          20
+        ],
+        [
+          3,
+          0,
+          17
+        ]
+      ],
+      "horizon_unfinished_nodes": [
+        3,
+        2
+      ],
+      "latest_terminal_pose_tick": 399,
+      "sampled_center_metric_only": true,
+      "continuous_footprint_safety_established": false,
+      "server_online_forged_END_rejection_established": false,
+      "priority_search_order_flips": 0,
+      "actual_trigger_tick": 59,
+      "raw_event_count": 2352,
+      "actual_wheel_commands": 800,
+      "negative_checks": {
+        "private_pose_feature": {
+          "rejected": true,
+          "reason": "forecast_not_causal_shared_interface"
+        },
+        "wrong_bias": {
+          "rejected": true,
+          "reason": "request_forecast_binding"
+        },
+        "unrestored_aging": {
+          "rejected": true,
+          "reason": "aging_restore"
+        }
+      },
+      "passed": true,
+      "trace_sha256": "483b2956636d39fe1447ad501696b31185517cb3f1f6b720d338d4e5c9209c1c",
+      "decisions_sha256": "0658d62aa37334bd4784c43b5e611aabfa570260de3d32a3752be9a28d829ed5"
+    },
+    "train_s43_nominal_zero": {
+      "event_count": 1662,
+      "last_event_tick": 400,
+      "horizon_tick": 400,
+      "observation_count": 800,
+      "views": 8,
+      "proposals": 8,
+      "parsed_nodes": 49,
+      "admitted_nodes": 49,
+      "acknowledged_nodes": 45,
+      "pending_admitted_nodes": [
+        [
+          "0",
+          21
+        ],
+        [
+          "0",
+          22
+        ],
+        [
+          "1",
+          24
+        ],
+        [
+          "1",
+          25
+        ]
+      ],
+      "pending_admitted_commands": [
+        [
+          "0",
+          21,
+          2.0,
+          "M",
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.5
+          ],
+          -1
+        ],
+        [
+          "0",
+          22,
+          2.0,
+          "M",
+          [
+            0.0,
+            0.5
+          ],
+          [
+            0.0,
+            1.0
+          ],
+          -1
+        ],
+        [
+          "1",
+          24,
+          0.0,
+          "M",
+          [
+            1.0,
+            4.0
+          ],
+          [
+            1.0,
+            3.5
+          ],
+          -1
+        ],
+        [
+          "1",
+          25,
+          0.0,
+          "M",
+          [
+            1.0,
+            3.5
+          ],
+          [
+            1.0,
+            3.0
+          ],
+          -1
+        ]
+      ],
+      "pending_unadmitted_nodes": {
+        "0": [],
+        "1": []
+      },
+      "assigned_task_prefix": [
+        [
+          0,
+          0,
+          15
+        ],
+        [
+          1,
+          1,
+          5
+        ],
+        [
+          2,
+          1,
+          6
+        ],
+        [
+          3,
+          1,
+          7
+        ],
+        [
+          4,
+          1,
+          21
+        ],
+        [
+          5,
+          0,
+          5
+        ],
+        [
+          6,
+          0,
+          0
+        ],
+        [
+          7,
+          0,
+          17
+        ],
+        [
+          8,
+          1,
+          17
+        ]
+      ],
+      "task_services": 7,
+      "completed_tasks": {
+        "1": {
+          "robot": "1",
+          "node": 2,
+          "tick": 56,
+          "start_tick": 36,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.022780120871413123
+        },
+        "2": {
+          "robot": "1",
+          "node": 6,
+          "tick": 114,
+          "start_tick": 94,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.029831616890776246
+        },
+        "3": {
+          "robot": "1",
+          "node": 9,
+          "tick": 166,
+          "start_tick": 146,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.021847247848587777
+        },
+        "0": {
+          "robot": "0",
+          "node": 8,
+          "tick": 216,
+          "start_tick": 196,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.020639356110094657
+        },
+        "5": {
+          "robot": "0",
+          "node": 15,
+          "tick": 316,
+          "start_tick": 296,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.021259685218074392
+        },
+        "6": {
+          "robot": "0",
+          "node": 18,
+          "tick": 366,
+          "start_tick": 346,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.020659688583155745
+        },
+        "4": {
+          "robot": "1",
+          "node": 21,
+          "tick": 375,
+          "start_tick": 355,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.01749797851497159
+        }
+      },
+      "bookkept_tasks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "ends": [
+        {
+          "robot": "1",
+          "node": 0,
+          "tick": 20,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.01590698000707902
+        },
+        {
+          "robot": "1",
+          "node": 1,
+          "tick": 36,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.022780120871413123
+        },
+        {
+          "robot": "1",
+          "node": 2,
+          "tick": 56,
+          "type": "S",
+          "task_id": 1,
+          "endpoint_error_m": 0.020926881276705833
+        },
+        {
+          "robot": "0",
+          "node": 0,
+          "tick": 69,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0
+        },
+        {
+          "robot": "1",
+          "node": 3,
+          "tick": 69,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.020926881276705833
+        },
+        {
+          "robot": "0",
+          "node": 1,
+          "tick": 78,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0
+        },
+        {
+          "robot": "1",
+          "node": 4,
+          "tick": 79,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.014661169385392086
+        },
+        {
+          "robot": "0",
+          "node": 2,
+          "tick": 88,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.022920544028238468
+        },
+        {
+          "robot": "1",
+          "node": 5,
+          "tick": 94,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.029831616890776246
+        },
+        {
+          "robot": "0",
+          "node": 3,
+          "tick": 104,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.024658014816247114
+        },
+        {
+          "robot": "1",
+          "node": 6,
+          "tick": 114,
+          "type": "S",
+          "task_id": 2,
+          "endpoint_error_m": 0.02772336722648231
+        },
+        {
+          "robot": "0",
+          "node": 4,
+          "tick": 130,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.009508978505160933
+        },
+        {
+          "robot": "1",
+          "node": 7,
+          "tick": 130,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.013199494577485713
+        },
+        {
+          "robot": "0",
+          "node": 5,
+          "tick": 146,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.021099618732845344
+        },
+        {
+          "robot": "1",
+          "node": 8,
+          "tick": 146,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.021847247848587777
+        },
+        {
+          "robot": "1",
+          "node": 9,
+          "tick": 166,
+          "type": "S",
+          "task_id": 3,
+          "endpoint_error_m": 0.0200343821069072
+        },
+        {
+          "robot": "1",
+          "node": 10,
+          "tick": 179,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0200343821069072
+        },
+        {
+          "robot": "0",
+          "node": 6,
+          "tick": 180,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.007727554160016531
+        },
+        {
+          "robot": "1",
+          "node": 11,
+          "tick": 189,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.013974720774412749
+        },
+        {
+          "robot": "0",
+          "node": 7,
+          "tick": 196,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.020639356110094657
+        },
+        {
+          "robot": "1",
+          "node": 12,
+          "tick": 205,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.0173804827671336
+        },
+        {
+          "robot": "0",
+          "node": 8,
+          "tick": 216,
+          "type": "S",
+          "task_id": 0,
+          "endpoint_error_m": 0.018870202838397226
+        },
+        {
+          "robot": "0",
+          "node": 9,
+          "tick": 229,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.018870202838397226
+        },
+        {
+          "robot": "1",
+          "node": 13,
+          "tick": 230,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.008060923523741749
+        },
+        {
+          "robot": "0",
+          "node": 10,
+          "tick": 238,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.018870202838397226
+        },
+        {
+          "robot": "1",
+          "node": 14,
+          "tick": 246,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.020244075971454754
+        },
+        {
+          "robot": "0",
+          "node": 11,
+          "tick": 247,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.027357050151289496
+        },
+        {
+          "robot": "0",
+          "node": 12,
+          "tick": 263,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.025865855789837883
+        },
+        {
+          "robot": "1",
+          "node": 15,
+          "tick": 279,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.01849613277248719
+        },
+        {
+          "robot": "0",
+          "node": 13,
+          "tick": 280,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.010128378345706544
+        },
+        {
+          "robot": "1",
+          "node": 16,
+          "tick": 289,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.012896010203237425
+        },
+        {
+          "robot": "0",
+          "node": 14,
+          "tick": 296,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.021259685218074392
+        },
+        {
+          "robot": "1",
+          "node": 17,
+          "tick": 305,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.01747166795736031
+        },
+        {
+          "robot": "0",
+          "node": 15,
+          "tick": 316,
+          "type": "S",
+          "task_id": 5,
+          "endpoint_error_m": 0.019465840272385005
+        },
+        {
+          "robot": "1",
+          "node": 18,
+          "tick": 329,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.015835346800077237
+        },
+        {
+          "robot": "0",
+          "node": 16,
+          "tick": 330,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.007807299959602883
+        },
+        {
+          "robot": "1",
+          "node": 19,
+          "tick": 339,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.011397921702783653
+        },
+        {
+          "robot": "0",
+          "node": 17,
+          "tick": 346,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.020659688583155745
+        },
+        {
+          "robot": "1",
+          "node": 20,
+          "tick": 355,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.01749797851497159
+        },
+        {
+          "robot": "0",
+          "node": 18,
+          "tick": 366,
+          "type": "S",
+          "task_id": 6,
+          "endpoint_error_m": 0.018889724804539893
+        },
+        {
+          "robot": "1",
+          "node": 21,
+          "tick": 375,
+          "type": "S",
+          "task_id": 4,
+          "endpoint_error_m": 0.015860243234404457
+        },
+        {
+          "robot": "0",
+          "node": 19,
+          "tick": 389,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.018889724804539893
+        },
+        {
+          "robot": "1",
+          "node": 22,
+          "tick": 389,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.015860243234404457
+        },
+        {
+          "robot": "0",
+          "node": 20,
+          "tick": 398,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.018889724804539893
+        },
+        {
+          "robot": "1",
+          "node": 23,
+          "tick": 398,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.015860243234404457
+        }
+      ],
+      "sampled_min_center_distance_m": 0.9728117158620239,
+      "pause_controls": [],
+      "pause_overlaps_active_move": false,
+      "terminal_observations": {
+        "0": {
+          "angle": 180.1221739998724,
+          "displacement_m": 0.025345626087354297,
+          "idle": false,
+          "previous_wheel_left_cm_s": 32.073583017630696,
+          "previous_wheel_right_cm_s": 34.55469468249939,
+          "previous_zero_command": false,
+          "queue_size": 1,
+          "speed_cm_s": 33.31413885006504,
+          "tick": 399,
+          "x": -0.044235167420536015,
+          "y": 1.3504147355736618e-05
+        },
+        "1": {
+          "angle": 0.092606156188117,
+          "displacement_m": 0.024951798563532013,
+          "idle": false,
+          "previous_wheel_left_cm_s": 31.41765688869305,
+          "previous_wheel_right_cm_s": 33.89786239869749,
+          "previous_zero_command": false,
+          "queue_size": 1,
+          "speed_cm_s": 32.65775964369527,
+          "tick": 399,
+          "x": -3.9592172178684497,
+          "y": -1.0009191015123104
+        }
+      },
+      "unfinished_tasks": [
+        [
+          7,
+          0,
+          17
+        ],
+        [
+          8,
+          1,
+          17
+        ]
+      ],
+      "horizon_unfinished_nodes": [
+        2,
+        2
+      ],
+      "latest_terminal_pose_tick": 399,
+      "sampled_center_metric_only": true,
+      "continuous_footprint_safety_established": false,
+      "server_online_forged_END_rejection_established": false,
+      "priority_search_order_flips": 0,
+      "actual_trigger_tick": 79,
+      "raw_event_count": 2463,
+      "actual_wheel_commands": 800,
+      "negative_checks": {
+        "private_pose_feature": {
+          "rejected": true,
+          "reason": "forecast_not_causal_shared_interface"
+        },
+        "wrong_bias": {
+          "rejected": true,
+          "reason": "request_forecast_binding"
+        },
+        "unrestored_aging": {
+          "rejected": true,
+          "reason": "aging_restore"
+        }
+      },
+      "passed": true,
+      "trace_sha256": "0ad79d7cda2a5d5dde798613572603c2b8a5fd6d341a613ad8a4905739c3ab28",
+      "decisions_sha256": "ce33faac2b022f5b531cc6a54685d94f1946c4fd0a09a423a6c93d0486b504af"
+    },
+    "train_s43_slow065_zero": {
+      "event_count": 1551,
+      "last_event_tick": 400,
+      "horizon_tick": 400,
+      "observation_count": 800,
+      "views": 6,
+      "proposals": 6,
+      "parsed_nodes": 34,
+      "admitted_nodes": 34,
+      "acknowledged_nodes": 33,
+      "pending_admitted_nodes": [
+        [
+          "0",
+          15
+        ]
+      ],
+      "pending_admitted_commands": [
+        [
+          "0",
+          15,
+          0.0,
+          "S",
+          [
+            0.0,
+            1.5
+          ],
+          [
+            0.0,
+            1.0
+          ],
+          5
+        ]
+      ],
+      "pending_unadmitted_nodes": {
+        "0": [],
+        "1": []
+      },
+      "assigned_task_prefix": [
+        [
+          0,
+          0,
+          15
+        ],
+        [
+          1,
+          1,
+          5
+        ],
+        [
+          2,
+          1,
+          6
+        ],
+        [
+          3,
+          1,
+          7
+        ],
+        [
+          4,
+          1,
+          21
+        ],
+        [
+          5,
+          0,
+          5
+        ]
+      ],
+      "task_services": 4,
+      "completed_tasks": {
+        "1": {
+          "robot": "1",
+          "node": 2,
+          "tick": 56,
+          "start_tick": 36,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.022780120871413123
+        },
+        "2": {
+          "robot": "1",
+          "node": 6,
+          "tick": 114,
+          "start_tick": 94,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.029831616890776246
+        },
+        "3": {
+          "robot": "1",
+          "node": 9,
+          "tick": 186,
+          "start_tick": 166,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.021847247848587777
+        },
+        "0": {
+          "robot": "0",
+          "node": 8,
+          "tick": 250,
+          "start_tick": 230,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.02692966912861416
+        }
+      },
+      "bookkept_tasks": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "ends": [
+        {
+          "robot": "1",
+          "node": 0,
+          "tick": 20,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.01590698000707902
+        },
+        {
+          "robot": "1",
+          "node": 1,
+          "tick": 36,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.022780120871413123
+        },
+        {
+          "robot": "1",
+          "node": 2,
+          "tick": 56,
+          "type": "S",
+          "task_id": 1,
+          "endpoint_error_m": 0.020926881276705833
+        },
+        {
+          "robot": "1",
+          "node": 3,
+          "tick": 69,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.020926881276705833
+        },
+        {
+          "robot": "0",
+          "node": 0,
+          "tick": 78,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0
+        },
+        {
+          "robot": "1",
+          "node": 4,
+          "tick": 79,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.014661169385392086
+        },
+        {
+          "robot": "1",
+          "node": 5,
+          "tick": 94,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.029831616890776246
+        },
+        {
+          "robot": "0",
+          "node": 1,
+          "tick": 96,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0
+        },
+        {
+          "robot": "0",
+          "node": 2,
+          "tick": 111,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.00830599177567047
+        },
+        {
+          "robot": "1",
+          "node": 6,
+          "tick": 114,
+          "type": "S",
+          "task_id": 2,
+          "endpoint_error_m": 0.02772336722648231
+        },
+        {
+          "robot": "0",
+          "node": 3,
+          "tick": 136,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.025728453725580636
+        },
+        {
+          "robot": "1",
+          "node": 7,
+          "tick": 150,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.013199494577485713
+        },
+        {
+          "robot": "0",
+          "node": 4,
+          "tick": 155,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.012173885987269583
+        },
+        {
+          "robot": "1",
+          "node": 8,
+          "tick": 166,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.021847247848587777
+        },
+        {
+          "robot": "0",
+          "node": 5,
+          "tick": 180,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.026772177881153526
+        },
+        {
+          "robot": "1",
+          "node": 9,
+          "tick": 186,
+          "type": "S",
+          "task_id": 3,
+          "endpoint_error_m": 0.0200343821069072
+        },
+        {
+          "robot": "1",
+          "node": 10,
+          "tick": 199,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0200343821069072
+        },
+        {
+          "robot": "0",
+          "node": 6,
+          "tick": 205,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.012759039877912085
+        },
+        {
+          "robot": "1",
+          "node": 11,
+          "tick": 209,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.013974720774412749
+        },
+        {
+          "robot": "1",
+          "node": 12,
+          "tick": 225,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.0173804827671336
+        },
+        {
+          "robot": "0",
+          "node": 7,
+          "tick": 230,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.02692966912861416
+        },
+        {
+          "robot": "0",
+          "node": 8,
+          "tick": 250,
+          "type": "S",
+          "task_id": 0,
+          "endpoint_error_m": 0.026092113808930714
+        },
+        {
+          "robot": "1",
+          "node": 13,
+          "tick": 270,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.008060923523741749
+        },
+        {
+          "robot": "0",
+          "node": 9,
+          "tick": 278,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.026092113808930714
+        },
+        {
+          "robot": "1",
+          "node": 14,
+          "tick": 286,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.020244075971454754
+        },
+        {
+          "robot": "0",
+          "node": 10,
+          "tick": 296,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.026092113808930714
+        },
+        {
+          "robot": "0",
+          "node": 11,
+          "tick": 310,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.0052563008687589825
+        },
+        {
+          "robot": "0",
+          "node": 12,
+          "tick": 335,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.024926060918570168
+        },
+        {
+          "robot": "1",
+          "node": 15,
+          "tick": 349,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.01849613277248719
+        },
+        {
+          "robot": "0",
+          "node": 13,
+          "tick": 355,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.01170987932187896
+        },
+        {
+          "robot": "1",
+          "node": 16,
+          "tick": 359,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.012896010203237425
+        },
+        {
+          "robot": "1",
+          "node": 17,
+          "tick": 375,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.01747166795736031
+        },
+        {
+          "robot": "0",
+          "node": 14,
+          "tick": 380,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.026651336192909256
+        }
+      ],
+      "sampled_min_center_distance_m": 0.9721173704688418,
+      "pause_controls": [],
+      "pause_overlaps_active_move": false,
+      "terminal_observations": {
+        "0": {
+          "angle": 0.18432080114929353,
+          "displacement_m": 0,
+          "idle": false,
+          "previous_wheel_left_cm_s": 0,
+          "previous_wheel_right_cm_s": 0,
+          "previous_zero_command": true,
+          "queue_size": 1,
+          "speed_cm_s": 12.833473463613645,
+          "tick": 399,
+          "x": -1.0258154581763803,
+          "y": -0.0002990547746264061
+        },
+        "1": {
+          "angle": 91.70095306838141,
+          "displacement_m": 0,
+          "idle": true,
+          "previous_wheel_left_cm_s": 0,
+          "previous_wheel_right_cm_s": 0,
+          "previous_zero_command": true,
+          "queue_size": 0,
+          "speed_cm_s": 12.65185199640236,
+          "tick": 399,
+          "x": -2.998916412119451,
+          "y": -1.015798229191395
+        }
+      },
+      "unfinished_tasks": [
+        [
+          4,
+          1,
+          21
+        ],
+        [
+          5,
+          0,
+          5
+        ]
+      ],
+      "horizon_unfinished_nodes": [
+        1,
+        0
+      ],
+      "latest_terminal_pose_tick": 399,
+      "sampled_center_metric_only": true,
+      "continuous_footprint_safety_established": false,
+      "server_online_forged_END_rejection_established": false,
+      "priority_search_order_flips": 0,
+      "actual_trigger_tick": 97,
+      "raw_event_count": 2352,
+      "actual_wheel_commands": 800,
+      "negative_checks": {
+        "private_pose_feature": {
+          "rejected": true,
+          "reason": "forecast_not_causal_shared_interface"
+        },
+        "wrong_bias": {
+          "rejected": true,
+          "reason": "request_forecast_binding"
+        },
+        "unrestored_aging": {
+          "rejected": true,
+          "reason": "aging_restore"
+        }
+      },
+      "passed": true,
+      "trace_sha256": "809d33d9f33919861d098303921d37ad51eb18a1e455843ad5eb48c792c0af70",
+      "decisions_sha256": "b645dfcbef32c2abc48b4797a04291780314a5a10b77c6c1eaae77938cb6db9b"
+    },
+    "train_s43_slow085_zero": {
+      "event_count": 1565,
+      "last_event_tick": 400,
+      "horizon_tick": 400,
+      "observation_count": 800,
+      "views": 7,
+      "proposals": 7,
+      "parsed_nodes": 41,
+      "admitted_nodes": 41,
+      "acknowledged_nodes": 37,
+      "pending_admitted_nodes": [
+        [
+          "0",
+          17
+        ],
+        [
+          "0",
+          18
+        ],
+        [
+          "1",
+          20
+        ],
+        [
+          "1",
+          21
+        ]
+      ],
+      "pending_admitted_commands": [
+        [
+          "0",
+          17,
+          0.0,
+          "M",
+          [
+            0.0,
+            0.5
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          -1
+        ],
+        [
+          "0",
+          18,
+          0.0,
+          "S",
+          [
+            0.0,
+            0.5
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          6
+        ],
+        [
+          "1",
+          20,
+          2.0,
+          "M",
+          [
+            1.0,
+            3.5
+          ],
+          [
+            1.0,
+            4.0
+          ],
+          -1
+        ],
+        [
+          "1",
+          21,
+          2.0,
+          "S",
+          [
+            1.0,
+            3.5
+          ],
+          [
+            1.0,
+            4.0
+          ],
+          4
+        ]
+      ],
+      "pending_unadmitted_nodes": {
+        "0": [],
+        "1": []
+      },
+      "assigned_task_prefix": [
+        [
+          0,
+          0,
+          15
+        ],
+        [
+          1,
+          1,
+          5
+        ],
+        [
+          2,
+          1,
+          6
+        ],
+        [
+          3,
+          1,
+          7
+        ],
+        [
+          4,
+          1,
+          21
+        ],
+        [
+          5,
+          0,
+          5
+        ],
+        [
+          6,
+          0,
+          0
+        ]
+      ],
+      "task_services": 5,
+      "completed_tasks": {
+        "1": {
+          "robot": "1",
+          "node": 2,
+          "tick": 56,
+          "start_tick": 36,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.022780120871413123
+        },
+        "2": {
+          "robot": "1",
+          "node": 6,
+          "tick": 114,
+          "start_tick": 94,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.029831616890776246
+        },
+        "3": {
+          "robot": "1",
+          "node": 9,
+          "tick": 176,
+          "start_tick": 156,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.021847247848587777
+        },
+        "0": {
+          "robot": "0",
+          "node": 8,
+          "tick": 231,
+          "start_tick": 211,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.01993461539245052
+        },
+        "5": {
+          "robot": "0",
+          "node": 15,
+          "tick": 360,
+          "start_tick": 340,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.02953231654666284
+        }
+      },
+      "bookkept_tasks": [
+        0,
+        1,
+        2,
+        3,
+        5
+      ],
+      "ends": [
+        {
+          "robot": "1",
+          "node": 0,
+          "tick": 20,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.01590698000707902
+        },
+        {
+          "robot": "1",
+          "node": 1,
+          "tick": 36,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.022780120871413123
+        },
+        {
+          "robot": "1",
+          "node": 2,
+          "tick": 56,
+          "type": "S",
+          "task_id": 1,
+          "endpoint_error_m": 0.020926881276705833
+        },
+        {
+          "robot": "1",
+          "node": 3,
+          "tick": 69,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.020926881276705833
+        },
+        {
+          "robot": "0",
+          "node": 0,
+          "tick": 75,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0
+        },
+        {
+          "robot": "1",
+          "node": 4,
+          "tick": 79,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.014661169385392086
+        },
+        {
+          "robot": "0",
+          "node": 1,
+          "tick": 90,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0
+        },
+        {
+          "robot": "1",
+          "node": 5,
+          "tick": 94,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.029831616890776246
+        },
+        {
+          "robot": "0",
+          "node": 2,
+          "tick": 102,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.00302315831071048
+        },
+        {
+          "robot": "1",
+          "node": 6,
+          "tick": 114,
+          "type": "S",
+          "task_id": 2,
+          "endpoint_error_m": 0.02772336722648231
+        },
+        {
+          "robot": "0",
+          "node": 3,
+          "tick": 121,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.019799676994312943
+        },
+        {
+          "robot": "1",
+          "node": 7,
+          "tick": 140,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.013199494577485713
+        },
+        {
+          "robot": "0",
+          "node": 4,
+          "tick": 142,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.006738096853598668
+        },
+        {
+          "robot": "1",
+          "node": 8,
+          "tick": 156,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.021847247848587777
+        },
+        {
+          "robot": "0",
+          "node": 5,
+          "tick": 160,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.029231925104598933
+        },
+        {
+          "robot": "1",
+          "node": 9,
+          "tick": 176,
+          "type": "S",
+          "task_id": 3,
+          "endpoint_error_m": 0.0200343821069072
+        },
+        {
+          "robot": "1",
+          "node": 10,
+          "tick": 189,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0200343821069072
+        },
+        {
+          "robot": "0",
+          "node": 6,
+          "tick": 192,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.0017419749922130414
+        },
+        {
+          "robot": "1",
+          "node": 11,
+          "tick": 199,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.013974720774412749
+        },
+        {
+          "robot": "0",
+          "node": 7,
+          "tick": 211,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.01993461539245052
+        },
+        {
+          "robot": "1",
+          "node": 12,
+          "tick": 215,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.0173804827671336
+        },
+        {
+          "robot": "0",
+          "node": 8,
+          "tick": 231,
+          "type": "S",
+          "task_id": 0,
+          "endpoint_error_m": 0.018715170329958508
+        },
+        {
+          "robot": "1",
+          "node": 13,
+          "tick": 250,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.008060923523741749
+        },
+        {
+          "robot": "0",
+          "node": 9,
+          "tick": 255,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.018715170329958508
+        },
+        {
+          "robot": "1",
+          "node": 14,
+          "tick": 266,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.020244075971454754
+        },
+        {
+          "robot": "0",
+          "node": 10,
+          "tick": 270,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.018715170329958508
+        },
+        {
+          "robot": "0",
+          "node": 11,
+          "tick": 281,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.006178098432506952
+        },
+        {
+          "robot": "0",
+          "node": 12,
+          "tick": 300,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.021838512182531404
+        },
+        {
+          "robot": "1",
+          "node": 15,
+          "tick": 319,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.01849613277248719
+        },
+        {
+          "robot": "0",
+          "node": 13,
+          "tick": 322,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.005695547544270585
+        },
+        {
+          "robot": "1",
+          "node": 16,
+          "tick": 329,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.012896010203237425
+        },
+        {
+          "robot": "0",
+          "node": 14,
+          "tick": 340,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.02953231654666284
+        },
+        {
+          "robot": "1",
+          "node": 17,
+          "tick": 345,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.01747166795736031
+        },
+        {
+          "robot": "0",
+          "node": 15,
+          "tick": 360,
+          "type": "S",
+          "task_id": 5,
+          "endpoint_error_m": 0.028002287031745527
+        },
+        {
+          "robot": "1",
+          "node": 18,
+          "tick": 379,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.015835346800077237
+        },
+        {
+          "robot": "0",
+          "node": 16,
+          "tick": 382,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.001577459115508963
+        },
+        {
+          "robot": "1",
+          "node": 19,
+          "tick": 389,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.011397921702783653
+        }
+      ],
+      "sampled_min_center_distance_m": 0.9719277996679202,
+      "pause_controls": [],
+      "pause_overlaps_active_move": false,
+      "terminal_observations": {
+        "0": {
+          "angle": 359.91977899525875,
+          "displacement_m": 0.014133368850522248,
+          "idle": false,
+          "previous_wheel_left_cm_s": 13.976894273141278,
+          "previous_wheel_right_cm_s": 13.960048492592588,
+          "previous_zero_command": false,
+          "queue_size": 2,
+          "speed_cm_s": 16.433495744549333,
+          "tick": 399,
+          "x": -0.043172584234319925,
+          "y": 0.00017877936523543527
+        },
+        "1": {
+          "angle": 178.76389107400422,
+          "displacement_m": 0.02674940240236897,
+          "idle": false,
+          "previous_wheel_left_cm_s": 26.56419928340456,
+          "previous_wheel_right_cm_s": 26.494251023633,
+          "previous_zero_command": false,
+          "queue_size": 2,
+          "speed_cm_s": 26.52922515351878,
+          "tick": 399,
+          "x": -3.869779718498632,
+          "y": -1.003568800007369
+        }
+      },
+      "unfinished_tasks": [
+        [
+          4,
+          1,
+          21
+        ],
+        [
+          6,
+          0,
+          0
+        ]
+      ],
+      "horizon_unfinished_nodes": [
+        2,
+        2
+      ],
+      "latest_terminal_pose_tick": 399,
+      "sampled_center_metric_only": true,
+      "continuous_footprint_safety_established": false,
+      "server_online_forged_END_rejection_established": false,
+      "priority_search_order_flips": 0,
+      "actual_trigger_tick": 91,
+      "raw_event_count": 2366,
+      "actual_wheel_commands": 800,
+      "negative_checks": {
+        "private_pose_feature": {
+          "rejected": true,
+          "reason": "forecast_not_causal_shared_interface"
+        },
+        "wrong_bias": {
+          "rejected": true,
+          "reason": "request_forecast_binding"
+        },
+        "unrestored_aging": {
+          "rejected": true,
+          "reason": "aging_restore"
+        }
+      },
+      "passed": true,
+      "trace_sha256": "987694703404050843c03e48b5cefb8b3191865a47dc86b24cf71759b36e7749",
+      "decisions_sha256": "ba8dafb495948a92a6dca7f61fae924bf8bed59a11494cec665979ea7fee6290"
+    },
+    "train_s43_axis_zero": {
+      "event_count": 1568,
+      "last_event_tick": 400,
+      "horizon_tick": 400,
+      "observation_count": 800,
+      "views": 7,
+      "proposals": 7,
+      "parsed_nodes": 41,
+      "admitted_nodes": 41,
+      "acknowledged_nodes": 37,
+      "pending_admitted_nodes": [
+        [
+          "0",
+          17
+        ],
+        [
+          "0",
+          18
+        ],
+        [
+          "1",
+          20
+        ],
+        [
+          "1",
+          21
+        ]
+      ],
+      "pending_admitted_commands": [
+        [
+          "0",
+          17,
+          0.0,
+          "M",
+          [
+            0.0,
+            0.5
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          -1
+        ],
+        [
+          "0",
+          18,
+          0.0,
+          "S",
+          [
+            0.0,
+            0.5
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          6
+        ],
+        [
+          "1",
+          20,
+          2.0,
+          "M",
+          [
+            1.0,
+            3.5
+          ],
+          [
+            1.0,
+            4.0
+          ],
+          -1
+        ],
+        [
+          "1",
+          21,
+          2.0,
+          "S",
+          [
+            1.0,
+            3.5
+          ],
+          [
+            1.0,
+            4.0
+          ],
+          4
+        ]
+      ],
+      "pending_unadmitted_nodes": {
+        "0": [],
+        "1": []
+      },
+      "assigned_task_prefix": [
+        [
+          0,
+          0,
+          15
+        ],
+        [
+          1,
+          1,
+          5
+        ],
+        [
+          2,
+          1,
+          6
+        ],
+        [
+          3,
+          1,
+          7
+        ],
+        [
+          4,
+          1,
+          21
+        ],
+        [
+          5,
+          0,
+          5
+        ],
+        [
+          6,
+          0,
+          0
+        ]
+      ],
+      "task_services": 5,
+      "completed_tasks": {
+        "1": {
+          "robot": "1",
+          "node": 2,
+          "tick": 56,
+          "start_tick": 36,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.022780120871413123
+        },
+        "2": {
+          "robot": "1",
+          "node": 6,
+          "tick": 114,
+          "start_tick": 94,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.029831616890776246
+        },
+        "3": {
+          "robot": "1",
+          "node": 9,
+          "tick": 176,
+          "start_tick": 156,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.021847247848587777
+        },
+        "0": {
+          "robot": "0",
+          "node": 8,
+          "tick": 240,
+          "start_tick": 220,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.026955507032652638
+        },
+        "5": {
+          "robot": "0",
+          "node": 15,
+          "tick": 370,
+          "start_tick": 350,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.026649332106267336
+        }
+      },
+      "bookkept_tasks": [
+        0,
+        1,
+        2,
+        3,
+        5
+      ],
+      "ends": [
+        {
+          "robot": "1",
+          "node": 0,
+          "tick": 20,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.01590698000707902
+        },
+        {
+          "robot": "1",
+          "node": 1,
+          "tick": 36,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.022780120871413123
+        },
+        {
+          "robot": "1",
+          "node": 2,
+          "tick": 56,
+          "type": "S",
+          "task_id": 1,
+          "endpoint_error_m": 0.020926881276705833
+        },
+        {
+          "robot": "0",
+          "node": 0,
+          "tick": 69,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0
+        },
+        {
+          "robot": "1",
+          "node": 3,
+          "tick": 69,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.020926881276705833
+        },
+        {
+          "robot": "0",
+          "node": 1,
+          "tick": 78,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0
+        },
+        {
+          "robot": "1",
+          "node": 4,
+          "tick": 79,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.014661169385392086
+        },
+        {
+          "robot": "0",
+          "node": 2,
+          "tick": 93,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.01253435900166104
+        },
+        {
+          "robot": "1",
+          "node": 5,
+          "tick": 94,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.029831616890776246
+        },
+        {
+          "robot": "1",
+          "node": 6,
+          "tick": 114,
+          "type": "S",
+          "task_id": 2,
+          "endpoint_error_m": 0.02772336722648231
+        },
+        {
+          "robot": "0",
+          "node": 3,
+          "tick": 118,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.02685442265843966
+        },
+        {
+          "robot": "1",
+          "node": 7,
+          "tick": 140,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.013199494577485713
+        },
+        {
+          "robot": "0",
+          "node": 4,
+          "tick": 145,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.012815668900022984
+        },
+        {
+          "robot": "1",
+          "node": 8,
+          "tick": 156,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.021847247848587777
+        },
+        {
+          "robot": "0",
+          "node": 5,
+          "tick": 170,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.026942404656847264
+        },
+        {
+          "robot": "1",
+          "node": 9,
+          "tick": 176,
+          "type": "S",
+          "task_id": 3,
+          "endpoint_error_m": 0.0200343821069072
+        },
+        {
+          "robot": "1",
+          "node": 10,
+          "tick": 189,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0200343821069072
+        },
+        {
+          "robot": "0",
+          "node": 6,
+          "tick": 195,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.012856044401365034
+        },
+        {
+          "robot": "1",
+          "node": 11,
+          "tick": 199,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.013974720774412749
+        },
+        {
+          "robot": "1",
+          "node": 12,
+          "tick": 215,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.0173804827671336
+        },
+        {
+          "robot": "0",
+          "node": 7,
+          "tick": 220,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.026955507032652638
+        },
+        {
+          "robot": "0",
+          "node": 8,
+          "tick": 240,
+          "type": "S",
+          "task_id": 0,
+          "endpoint_error_m": 0.02611763517079192
+        },
+        {
+          "robot": "0",
+          "node": 9,
+          "tick": 259,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.02611763517079192
+        },
+        {
+          "robot": "1",
+          "node": 13,
+          "tick": 260,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.008060923523741749
+        },
+        {
+          "robot": "0",
+          "node": 10,
+          "tick": 268,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.02611763517079192
+        },
+        {
+          "robot": "1",
+          "node": 14,
+          "tick": 276,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.020244075971454754
+        },
+        {
+          "robot": "0",
+          "node": 11,
+          "tick": 282,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.0049659600903606636
+        },
+        {
+          "robot": "0",
+          "node": 12,
+          "tick": 307,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.024915377142562038
+        },
+        {
+          "robot": "1",
+          "node": 15,
+          "tick": 319,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.01849613277248719
+        },
+        {
+          "robot": "0",
+          "node": 13,
+          "tick": 325,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.011681531677911581
+        },
+        {
+          "robot": "1",
+          "node": 16,
+          "tick": 329,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.012896010203237425
+        },
+        {
+          "robot": "1",
+          "node": 17,
+          "tick": 345,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.01747166795736031
+        },
+        {
+          "robot": "0",
+          "node": 14,
+          "tick": 350,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.026649332106267336
+        },
+        {
+          "robot": "0",
+          "node": 15,
+          "tick": 370,
+          "type": "S",
+          "task_id": 5,
+          "endpoint_error_m": 0.025815178269731592
+        },
+        {
+          "robot": "1",
+          "node": 18,
+          "tick": 389,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.015835346800077237
+        },
+        {
+          "robot": "0",
+          "node": 16,
+          "tick": 395,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.012683281622362786
+        },
+        {
+          "robot": "1",
+          "node": 19,
+          "tick": 399,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.011397921702783653
+        }
+      ],
+      "sampled_min_center_distance_m": 0.9731504471681894,
+      "pause_controls": [],
+      "pause_overlaps_active_move": false,
+      "terminal_observations": {
+        "0": {
+          "angle": 0.0011754498775044628,
+          "displacement_m": 0.027473740662342785,
+          "idle": false,
+          "previous_wheel_left_cm_s": 27.384858312912744,
+          "previous_wheel_right_cm_s": 27.386863681176603,
+          "previous_zero_command": false,
+          "queue_size": 2,
+          "speed_cm_s": 42.13209384160719,
+          "tick": 399,
+          "x": -0.3975202268842777,
+          "y": -7.237743541572502e-05
+        },
+        "1": {
+          "angle": 179.0689110893302,
+          "displacement_m": 0.04822757918541672,
+          "idle": false,
+          "previous_wheel_left_cm_s": 48.06731512064489,
+          "previous_wheel_right_cm_s": 47.969762981895954,
+          "previous_zero_command": false,
+          "queue_size": 2,
+          "speed_cm_s": 48.01853905127042,
+          "tick": 399,
+          "x": -3.504863235662359,
+          "y": -1.0103083246958537
+        }
+      },
+      "unfinished_tasks": [
+        [
+          4,
+          1,
+          21
+        ],
+        [
+          6,
+          0,
+          0
+        ]
+      ],
+      "horizon_unfinished_nodes": [
+        2,
+        2
+      ],
+      "latest_terminal_pose_tick": 399,
+      "sampled_center_metric_only": true,
+      "continuous_footprint_safety_established": false,
+      "server_online_forged_END_rejection_established": false,
+      "priority_search_order_flips": 0,
+      "actual_trigger_tick": 79,
+      "raw_event_count": 2369,
+      "actual_wheel_commands": 800,
+      "negative_checks": {
+        "private_pose_feature": {
+          "rejected": true,
+          "reason": "forecast_not_causal_shared_interface"
+        },
+        "wrong_bias": {
+          "rejected": true,
+          "reason": "request_forecast_binding"
+        },
+        "unrestored_aging": {
+          "rejected": true,
+          "reason": "aging_restore"
+        }
+      },
+      "passed": true,
+      "trace_sha256": "fc6c04c0c6f7cb9d0212817845510be74967e22eb0b7339a0aaefd1d61e314d5",
+      "decisions_sha256": "b6f310a6fd46d32e80e9a6acc326f88c5557a968e5141ffe9e1f44df299c0dd8"
+    },
+    "train_s44_nominal_zero": {
+      "passed": false,
+      "error": "original_effective_priority"
+    },
+    "train_s44_slow065_zero": {
+      "passed": false,
+      "error": "original_effective_priority"
+    },
+    "train_s44_slow085_zero": {
+      "passed": false,
+      "error": "original_effective_priority"
+    },
+    "train_s44_axis_zero": {
+      "passed": false,
+      "error": "original_effective_priority"
+    },
+    "cal_s51_nominal_zero": {
+      "event_count": 1626,
+      "last_event_tick": 400,
+      "horizon_tick": 400,
+      "observation_count": 800,
+      "views": 8,
+      "proposals": 8,
+      "parsed_nodes": 51,
+      "admitted_nodes": 51,
+      "acknowledged_nodes": 46,
+      "pending_admitted_nodes": [
+        [
+          "0",
+          23
+        ],
+        [
+          "0",
+          24
+        ],
+        [
+          "0",
+          25
+        ],
+        [
+          "1",
+          23
+        ],
+        [
+          "1",
+          24
+        ]
+      ],
+      "pending_admitted_commands": [
+        [
+          "0",
+          23,
+          1.0,
+          "M",
+          [
+            3.0,
+            4.0
+          ],
+          [
+            3.5,
+            4.0
+          ],
+          -1
+        ],
+        [
+          "0",
+          24,
+          1.0,
+          "M",
+          [
+            3.5,
+            4.0
+          ],
+          [
+            4.0,
+            4.0
+          ],
+          -1
+        ],
+        [
+          "0",
+          25,
+          1.0,
+          "S",
+          [
+            3.5,
+            4.0
+          ],
+          [
+            4.0,
+            4.0
+          ],
+          4
+        ],
+        [
+          "1",
+          23,
+          3.0,
+          "M",
+          [
+            2.0,
+            3.0
+          ],
+          [
+            1.5,
+            3.0
+          ],
+          -1
+        ],
+        [
+          "1",
+          24,
+          3.0,
+          "M",
+          [
+            1.5,
+            3.0
+          ],
+          [
+            1.0,
+            3.0
+          ],
+          -1
+        ]
+      ],
+      "pending_unadmitted_nodes": {
+        "0": [],
+        "1": []
+      },
+      "assigned_task_prefix": [
+        [
+          0,
+          0,
+          11
+        ],
+        [
+          1,
+          1,
+          15
+        ],
+        [
+          2,
+          1,
+          23
+        ],
+        [
+          3,
+          0,
+          16
+        ],
+        [
+          4,
+          0,
+          24
+        ],
+        [
+          5,
+          1,
+          15
+        ]
+      ],
+      "task_services": 4,
+      "completed_tasks": {
+        "1": {
+          "robot": "1",
+          "node": 4,
+          "tick": 74,
+          "start_tick": 54,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.022780827021096968
+        },
+        "0": {
+          "robot": "0",
+          "node": 10,
+          "tick": 174,
+          "start_tick": 154,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.029801686311773642
+        },
+        "3": {
+          "robot": "0",
+          "node": 13,
+          "tick": 226,
+          "start_tick": 206,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.021893917437600455
+        },
+        "2": {
+          "robot": "1",
+          "node": 16,
+          "tick": 276,
+          "start_tick": 256,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.02192360336440962
+        }
+      },
+      "bookkept_tasks": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "ends": [
+        {
+          "robot": "0",
+          "node": 0,
+          "tick": 19,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0
+        },
+        {
+          "robot": "1",
+          "node": 0,
+          "tick": 19,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0
+        },
+        {
+          "robot": "0",
+          "node": 1,
+          "tick": 28,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0
+        },
+        {
+          "robot": "1",
+          "node": 1,
+          "tick": 28,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0
+        },
+        {
+          "robot": "0",
+          "node": 2,
+          "tick": 38,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.015917561450212638
+        },
+        {
+          "robot": "1",
+          "node": 2,
+          "tick": 38,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.01591756145020715
+        },
+        {
+          "robot": "0",
+          "node": 3,
+          "tick": 54,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.022780827021100188
+        },
+        {
+          "robot": "1",
+          "node": 3,
+          "tick": 54,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.022780827021096968
+        },
+        {
+          "robot": "1",
+          "node": 4,
+          "tick": 74,
+          "type": "S",
+          "task_id": 1,
+          "endpoint_error_m": 0.02092760653369613
+        },
+        {
+          "robot": "0",
+          "node": 4,
+          "tick": 89,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.020927606533698906
+        },
+        {
+          "robot": "1",
+          "node": 5,
+          "tick": 89,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.02092760653369613
+        },
+        {
+          "robot": "0",
+          "node": 5,
+          "tick": 99,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.01465365899478874
+        },
+        {
+          "robot": "1",
+          "node": 6,
+          "tick": 99,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.014653658994784083
+        },
+        {
+          "robot": "0",
+          "node": 6,
+          "tick": 114,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.029871876500184007
+        },
+        {
+          "robot": "1",
+          "node": 7,
+          "tick": 114,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.029871876500184278
+        },
+        {
+          "robot": "0",
+          "node": 7,
+          "tick": 129,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.02776227458861687
+        },
+        {
+          "robot": "1",
+          "node": 8,
+          "tick": 129,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.027762274588617138
+        },
+        {
+          "robot": "0",
+          "node": 8,
+          "tick": 139,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.019723725247154975
+        },
+        {
+          "robot": "1",
+          "node": 9,
+          "tick": 139,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.01972372524715508
+        },
+        {
+          "robot": "0",
+          "node": 9,
+          "tick": 154,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.029801686311773642
+        },
+        {
+          "robot": "1",
+          "node": 10,
+          "tick": 154,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.029801686311775332
+        },
+        {
+          "robot": "0",
+          "node": 10,
+          "tick": 174,
+          "type": "S",
+          "task_id": 0,
+          "endpoint_error_m": 0.02769582002696098
+        },
+        {
+          "robot": "1",
+          "node": 11,
+          "tick": 189,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.027695820026962668
+        },
+        {
+          "robot": "0",
+          "node": 11,
+          "tick": 190,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.014131205708949766
+        },
+        {
+          "robot": "1",
+          "node": 12,
+          "tick": 199,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.019779083520254623
+        },
+        {
+          "robot": "0",
+          "node": 12,
+          "tick": 206,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.021893917437600455
+        },
+        {
+          "robot": "1",
+          "node": 13,
+          "tick": 214,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.029997568583568193
+        },
+        {
+          "robot": "0",
+          "node": 13,
+          "tick": 226,
+          "type": "S",
+          "task_id": 3,
+          "endpoint_error_m": 0.02008365812886482
+        },
+        {
+          "robot": "1",
+          "node": 14,
+          "tick": 240,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.014267777195987555
+        },
+        {
+          "robot": "0",
+          "node": 14,
+          "tick": 253,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.02008365812886482
+        },
+        {
+          "robot": "1",
+          "node": 15,
+          "tick": 256,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.02192360336440962
+        },
+        {
+          "robot": "0",
+          "node": 15,
+          "tick": 263,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.01799732551861932
+        },
+        {
+          "robot": "1",
+          "node": 16,
+          "tick": 276,
+          "type": "S",
+          "task_id": 2,
+          "endpoint_error_m": 0.020112480540723114
+        },
+        {
+          "robot": "0",
+          "node": 16,
+          "tick": 278,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.029420380391539193
+        },
+        {
+          "robot": "0",
+          "node": 17,
+          "tick": 299,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.027329144088593917
+        },
+        {
+          "robot": "1",
+          "node": 17,
+          "tick": 299,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.020112480540723114
+        },
+        {
+          "robot": "0",
+          "node": 18,
+          "tick": 309,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.019382880023576923
+        },
+        {
+          "robot": "1",
+          "node": 18,
+          "tick": 309,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.014006065149219295
+        },
+        {
+          "robot": "0",
+          "node": 19,
+          "tick": 325,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.017243195799002842
+        },
+        {
+          "robot": "1",
+          "node": 19,
+          "tick": 325,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.017518616927850464
+        },
+        {
+          "robot": "0",
+          "node": 20,
+          "tick": 339,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.015620007665285757
+        },
+        {
+          "robot": "0",
+          "node": 21,
+          "tick": 349,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.011411694655437937
+        },
+        {
+          "robot": "1",
+          "node": 20,
+          "tick": 353,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.015880832647606234
+        },
+        {
+          "robot": "1",
+          "node": 21,
+          "tick": 363,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.014632947679993572
+        },
+        {
+          "robot": "0",
+          "node": 22,
+          "tick": 365,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.01765252367321017
+        },
+        {
+          "robot": "1",
+          "node": 22,
+          "tick": 378,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.029917300898360064
+        }
+      ],
+      "sampled_min_center_distance_m": 0.9788188956179822,
+      "pause_controls": [],
+      "pause_overlaps_active_move": false,
+      "terminal_observations": {
+        "0": {
+          "angle": 269.9029239721127,
+          "displacement_m": 0.05079681515034364,
+          "idle": false,
+          "previous_wheel_left_cm_s": 50.483777980538925,
+          "previous_wheel_right_cm_s": 50.69812689761989,
+          "previous_zero_command": false,
+          "queue_size": 2,
+          "speed_cm_s": 50.59095243907941,
+          "tick": 399,
+          "x": -4.004366681026093,
+          "y": -3.4451961289421558
+        },
+        "1": {
+          "angle": 89.84038820228359,
+          "displacement_m": 0.05106883622599492,
+          "idle": false,
+          "previous_wheel_left_cm_s": 50.73252514158257,
+          "previous_wheel_right_cm_s": 50.99301806940467,
+          "previous_zero_command": false,
+          "queue_size": 1,
+          "speed_cm_s": 50.86277160549362,
+          "tick": 399,
+          "x": -2.9950715561020087,
+          "y": -1.561202672884043
+        }
+      },
+      "unfinished_tasks": [
+        [
+          4,
+          0,
+          24
+        ],
+        [
+          5,
+          1,
+          15
+        ]
+      ],
+      "horizon_unfinished_nodes": [
+        3,
+        2
+      ],
+      "latest_terminal_pose_tick": 399,
+      "sampled_center_metric_only": true,
+      "continuous_footprint_safety_established": false,
+      "server_online_forged_END_rejection_established": false,
+      "priority_search_order_flips": 0,
+      "actual_trigger_tick": 29,
+      "raw_event_count": 2427,
+      "actual_wheel_commands": 800,
+      "negative_checks": {
+        "private_pose_feature": {
+          "rejected": true,
+          "reason": "forecast_not_causal_shared_interface"
+        },
+        "wrong_bias": {
+          "rejected": true,
+          "reason": "request_forecast_binding"
+        },
+        "unrestored_aging": {
+          "rejected": true,
+          "reason": "aging_restore"
+        }
+      },
+      "passed": true,
+      "trace_sha256": "2aa60cede89897a419c6f07ad1f4f1b25a32b484c0de9317d650b264c2e40956",
+      "decisions_sha256": "07a3156a092bec6d211e63bd58b8ad3faadea2f1b86bab36152ecc981cef44e5"
+    },
+    "cal_s51_slow065_zero": {
+      "event_count": 1587,
+      "last_event_tick": 400,
+      "horizon_tick": 400,
+      "observation_count": 800,
+      "views": 6,
+      "proposals": 6,
+      "parsed_nodes": 40,
+      "admitted_nodes": 40,
+      "acknowledged_nodes": 37,
+      "pending_admitted_nodes": [
+        [
+          "0",
+          18
+        ],
+        [
+          "0",
+          19
+        ],
+        [
+          "1",
+          19
+        ]
+      ],
+      "pending_admitted_commands": [
+        [
+          "0",
+          18,
+          2.0,
+          "M",
+          [
+            2.0,
+            3.0
+          ],
+          [
+            2.0,
+            3.5
+          ],
+          -1
+        ],
+        [
+          "0",
+          19,
+          2.0,
+          "M",
+          [
+            2.0,
+            3.5
+          ],
+          [
+            2.0,
+            4.0
+          ],
+          -1
+        ],
+        [
+          "1",
+          19,
+          0.0,
+          "M",
+          [
+            3.0,
+            3.5
+          ],
+          [
+            3.0,
+            3.0
+          ],
+          -1
+        ]
+      ],
+      "pending_unadmitted_nodes": {
+        "0": [],
+        "1": []
+      },
+      "assigned_task_prefix": [
+        [
+          0,
+          0,
+          11
+        ],
+        [
+          1,
+          1,
+          15
+        ],
+        [
+          2,
+          1,
+          23
+        ],
+        [
+          3,
+          0,
+          16
+        ],
+        [
+          4,
+          0,
+          24
+        ],
+        [
+          5,
+          1,
+          15
+        ]
+      ],
+      "task_services": 4,
+      "completed_tasks": {
+        "1": {
+          "robot": "1",
+          "node": 4,
+          "tick": 74,
+          "start_tick": 54,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.022780827021096968
+        },
+        "0": {
+          "robot": "0",
+          "node": 10,
+          "tick": 238,
+          "start_tick": 218,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.022647691193865855
+        },
+        "3": {
+          "robot": "0",
+          "node": 13,
+          "tick": 300,
+          "start_tick": 280,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.02635802691695016
+        },
+        "2": {
+          "robot": "1",
+          "node": 16,
+          "tick": 356,
+          "start_tick": 336,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.02192360336440962
+        }
+      },
+      "bookkept_tasks": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "ends": [
+        {
+          "robot": "1",
+          "node": 0,
+          "tick": 19,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0
+        },
+        {
+          "robot": "0",
+          "node": 0,
+          "tick": 28,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0
+        },
+        {
+          "robot": "1",
+          "node": 1,
+          "tick": 28,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0
+        },
+        {
+          "robot": "1",
+          "node": 2,
+          "tick": 38,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.01591756145020715
+        },
+        {
+          "robot": "0",
+          "node": 1,
+          "tick": 46,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0
+        },
+        {
+          "robot": "1",
+          "node": 3,
+          "tick": 54,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.022780827021096968
+        },
+        {
+          "robot": "0",
+          "node": 2,
+          "tick": 61,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.00830599177567047
+        },
+        {
+          "robot": "1",
+          "node": 4,
+          "tick": 74,
+          "type": "S",
+          "task_id": 1,
+          "endpoint_error_m": 0.02092760653369613
+        },
+        {
+          "robot": "0",
+          "node": 3,
+          "tick": 86,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.025728453725580636
+        },
+        {
+          "robot": "1",
+          "node": 5,
+          "tick": 99,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.02092760653369613
+        },
+        {
+          "robot": "0",
+          "node": 4,
+          "tick": 108,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.02490573019378815
+        },
+        {
+          "robot": "1",
+          "node": 6,
+          "tick": 109,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.014653658994784083
+        },
+        {
+          "robot": "0",
+          "node": 5,
+          "tick": 122,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.029214447611858946
+        },
+        {
+          "robot": "1",
+          "node": 7,
+          "tick": 124,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.029871876500184278
+        },
+        {
+          "robot": "0",
+          "node": 6,
+          "tick": 148,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.022166690850109787
+        },
+        {
+          "robot": "1",
+          "node": 8,
+          "tick": 169,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.027762274588617138
+        },
+        {
+          "robot": "0",
+          "node": 7,
+          "tick": 178,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.021390041770335374
+        },
+        {
+          "robot": "1",
+          "node": 9,
+          "tick": 179,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.01972372524715508
+        },
+        {
+          "robot": "0",
+          "node": 8,
+          "tick": 192,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.029699793054748607
+        },
+        {
+          "robot": "1",
+          "node": 10,
+          "tick": 194,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.029801686311775332
+        },
+        {
+          "robot": "0",
+          "node": 9,
+          "tick": 218,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.022647691193865855
+        },
+        {
+          "robot": "0",
+          "node": 10,
+          "tick": 238,
+          "type": "S",
+          "task_id": 0,
+          "endpoint_error_m": 0.021864481183669095
+        },
+        {
+          "robot": "1",
+          "node": 11,
+          "tick": 249,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.027695820026962668
+        },
+        {
+          "robot": "0",
+          "node": 11,
+          "tick": 255,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.011759104113014429
+        },
+        {
+          "robot": "1",
+          "node": 12,
+          "tick": 259,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.019779083520254623
+        },
+        {
+          "robot": "1",
+          "node": 13,
+          "tick": 274,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.029997568583568193
+        },
+        {
+          "robot": "0",
+          "node": 12,
+          "tick": 280,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.02635802691695016
+        },
+        {
+          "robot": "0",
+          "node": 13,
+          "tick": 300,
+          "type": "S",
+          "task_id": 3,
+          "endpoint_error_m": 0.025528607378294984
+        },
+        {
+          "robot": "1",
+          "node": 14,
+          "tick": 320,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.014267777195987555
+        },
+        {
+          "robot": "0",
+          "node": 14,
+          "tick": 328,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.025528607378294984
+        },
+        {
+          "robot": "1",
+          "node": 15,
+          "tick": 336,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.02192360336440962
+        },
+        {
+          "robot": "0",
+          "node": 15,
+          "tick": 342,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.028614588209218028
+        },
+        {
+          "robot": "1",
+          "node": 16,
+          "tick": 356,
+          "type": "S",
+          "task_id": 2,
+          "endpoint_error_m": 0.020112480540723114
+        },
+        {
+          "robot": "0",
+          "node": 16,
+          "tick": 367,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.029762784313326338
+        },
+        {
+          "robot": "1",
+          "node": 17,
+          "tick": 379,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.020112480540723114
+        },
+        {
+          "robot": "0",
+          "node": 17,
+          "tick": 388,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.02889203721589652
+        },
+        {
+          "robot": "1",
+          "node": 18,
+          "tick": 389,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.014006065149219295
+        }
+      ],
+      "sampled_min_center_distance_m": 1.017658973223696,
+      "pause_controls": [],
+      "pause_overlaps_active_move": false,
+      "terminal_observations": {
+        "0": {
+          "angle": 181.48520678421625,
+          "displacement_m": 0.033971026261092434,
+          "idle": false,
+          "previous_wheel_left_cm_s": 33.812465445753915,
+          "previous_wheel_right_cm_s": 33.95598084099567,
+          "previous_zero_command": false,
+          "queue_size": 1,
+          "speed_cm_s": 52.12957406673045,
+          "tick": 399,
+          "x": -3.377992788654354,
+          "y": -1.9779938035900957
+        },
+        "1": {
+          "angle": 358.4239844793475,
+          "displacement_m": 0.026752192243887515,
+          "idle": false,
+          "previous_wheel_left_cm_s": 26.577821876981655,
+          "previous_wheel_right_cm_s": 26.48621751403549,
+          "previous_zero_command": false,
+          "queue_size": 1,
+          "speed_cm_s": 26.532019695508573,
+          "tick": 399,
+          "x": -3.1302216877312086,
+          "y": -2.9954229016520246
+        }
+      },
+      "unfinished_tasks": [
+        [
+          4,
+          0,
+          24
+        ],
+        [
+          5,
+          1,
+          15
+        ]
+      ],
+      "horizon_unfinished_nodes": [
+        2,
+        1
+      ],
+      "latest_terminal_pose_tick": 399,
+      "sampled_center_metric_only": true,
+      "continuous_footprint_safety_established": false,
+      "server_online_forged_END_rejection_established": false,
+      "priority_search_order_flips": 0,
+      "actual_trigger_tick": 47,
+      "raw_event_count": 2388,
+      "actual_wheel_commands": 800,
+      "negative_checks": {
+        "private_pose_feature": {
+          "rejected": true,
+          "reason": "forecast_not_causal_shared_interface"
+        },
+        "wrong_bias": {
+          "rejected": true,
+          "reason": "request_forecast_binding"
+        },
+        "unrestored_aging": {
+          "rejected": true,
+          "reason": "aging_restore"
+        }
+      },
+      "passed": true,
+      "trace_sha256": "2801e29c44bfd29cae8a2d38536fc7183d881dfebf15ebb03d94edc64267584d",
+      "decisions_sha256": "3504c40bd508601db93804be6fe67c11f72b06c2028a4a29436bfa083f39fa31"
+    },
+    "cal_s51_slow085_zero": {
+      "event_count": 1644,
+      "last_event_tick": 400,
+      "horizon_tick": 400,
+      "observation_count": 800,
+      "views": 7,
+      "proposals": 7,
+      "parsed_nodes": 46,
+      "admitted_nodes": 46,
+      "acknowledged_nodes": 44,
+      "pending_admitted_nodes": [
+        [
+          "0",
+          22
+        ],
+        [
+          "1",
+          22
+        ]
+      ],
+      "pending_admitted_commands": [
+        [
+          "0",
+          22,
+          1.0,
+          "M",
+          [
+            2.5,
+            4.0
+          ],
+          [
+            3.0,
+            4.0
+          ],
+          -1
+        ],
+        [
+          "1",
+          22,
+          3.0,
+          "M",
+          [
+            2.5,
+            3.0
+          ],
+          [
+            2.0,
+            3.0
+          ],
+          -1
+        ]
+      ],
+      "pending_unadmitted_nodes": {
+        "0": [],
+        "1": []
+      },
+      "assigned_task_prefix": [
+        [
+          0,
+          0,
+          11
+        ],
+        [
+          1,
+          1,
+          15
+        ],
+        [
+          2,
+          1,
+          23
+        ],
+        [
+          3,
+          0,
+          16
+        ],
+        [
+          4,
+          0,
+          24
+        ],
+        [
+          5,
+          1,
+          15
+        ]
+      ],
+      "task_services": 4,
+      "completed_tasks": {
+        "1": {
+          "robot": "1",
+          "node": 4,
+          "tick": 74,
+          "start_tick": 54,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.022780827021096968
+        },
+        "0": {
+          "robot": "0",
+          "node": 10,
+          "tick": 195,
+          "start_tick": 175,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.025468381061135022
+        },
+        "3": {
+          "robot": "0",
+          "node": 13,
+          "tick": 251,
+          "start_tick": 231,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.01950555285447086
+        },
+        "2": {
+          "robot": "1",
+          "node": 16,
+          "tick": 306,
+          "start_tick": 286,
+          "timer_decrements": 20,
+          "residence_samples_inclusive": 21,
+          "max_endpoint_error_m": 0.02192360336440962
+        }
+      },
+      "bookkept_tasks": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "ends": [
+        {
+          "robot": "1",
+          "node": 0,
+          "tick": 19,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0
+        },
+        {
+          "robot": "0",
+          "node": 0,
+          "tick": 25,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0
+        },
+        {
+          "robot": "1",
+          "node": 1,
+          "tick": 28,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0
+        },
+        {
+          "robot": "1",
+          "node": 2,
+          "tick": 38,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.01591756145020715
+        },
+        {
+          "robot": "0",
+          "node": 1,
+          "tick": 40,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.0
+        },
+        {
+          "robot": "0",
+          "node": 2,
+          "tick": 52,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.00302315831071048
+        },
+        {
+          "robot": "1",
+          "node": 3,
+          "tick": 54,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.022780827021096968
+        },
+        {
+          "robot": "0",
+          "node": 3,
+          "tick": 71,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.019799676994312943
+        },
+        {
+          "robot": "1",
+          "node": 4,
+          "tick": 74,
+          "type": "S",
+          "task_id": 1,
+          "endpoint_error_m": 0.02092760653369613
+        },
+        {
+          "robot": "1",
+          "node": 5,
+          "tick": 89,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.02092760653369613
+        },
+        {
+          "robot": "0",
+          "node": 4,
+          "tick": 95,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.01858542852961642
+        },
+        {
+          "robot": "1",
+          "node": 6,
+          "tick": 99,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.014653658994784083
+        },
+        {
+          "robot": "0",
+          "node": 5,
+          "tick": 106,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.022592805102081684
+        },
+        {
+          "robot": "1",
+          "node": 7,
+          "tick": 114,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.029871876500184278
+        },
+        {
+          "robot": "0",
+          "node": 6,
+          "tick": 125,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.02538538235845007
+        },
+        {
+          "robot": "1",
+          "node": 8,
+          "tick": 139,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.027762274588617138
+        },
+        {
+          "robot": "0",
+          "node": 7,
+          "tick": 145,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.023983218587348695
+        },
+        {
+          "robot": "1",
+          "node": 9,
+          "tick": 149,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.01972372524715508
+        },
+        {
+          "robot": "0",
+          "node": 8,
+          "tick": 156,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.024993635169562482
+        },
+        {
+          "robot": "1",
+          "node": 10,
+          "tick": 164,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.029801686311775332
+        },
+        {
+          "robot": "0",
+          "node": 9,
+          "tick": 175,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.025468381061135022
+        },
+        {
+          "robot": "0",
+          "node": 10,
+          "tick": 195,
+          "type": "S",
+          "task_id": 0,
+          "endpoint_error_m": 0.0240640100746106
+        },
+        {
+          "robot": "1",
+          "node": 11,
+          "tick": 209,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.027695820026962668
+        },
+        {
+          "robot": "0",
+          "node": 11,
+          "tick": 212,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.007054734195091963
+        },
+        {
+          "robot": "1",
+          "node": 12,
+          "tick": 219,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.019779083520254623
+        },
+        {
+          "robot": "0",
+          "node": 12,
+          "tick": 231,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.01950555285447086
+        },
+        {
+          "robot": "1",
+          "node": 13,
+          "tick": 234,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.029997568583568193
+        },
+        {
+          "robot": "0",
+          "node": 13,
+          "tick": 251,
+          "type": "S",
+          "task_id": 3,
+          "endpoint_error_m": 0.01830583309619021
+        },
+        {
+          "robot": "1",
+          "node": 14,
+          "tick": 270,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.014267777195987555
+        },
+        {
+          "robot": "0",
+          "node": 14,
+          "tick": 276,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.01830583309619021
+        },
+        {
+          "robot": "1",
+          "node": 15,
+          "tick": 286,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.02192360336440962
+        },
+        {
+          "robot": "0",
+          "node": 15,
+          "tick": 287,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.02190424900680968
+        },
+        {
+          "robot": "0",
+          "node": 16,
+          "tick": 306,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.025152190659816186
+        },
+        {
+          "robot": "1",
+          "node": 16,
+          "tick": 306,
+          "type": "S",
+          "task_id": 2,
+          "endpoint_error_m": 0.020112480540723114
+        },
+        {
+          "robot": "1",
+          "node": 17,
+          "tick": 319,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.020112480540723114
+        },
+        {
+          "robot": "0",
+          "node": 17,
+          "tick": 325,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.02375758579246675
+        },
+        {
+          "robot": "1",
+          "node": 18,
+          "tick": 329,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.014006065149219295
+        },
+        {
+          "robot": "0",
+          "node": 18,
+          "tick": 336,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.02497907537648969
+        },
+        {
+          "robot": "1",
+          "node": 19,
+          "tick": 345,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.017518616927850464
+        },
+        {
+          "robot": "0",
+          "node": 19,
+          "tick": 355,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.02549595195257671
+        },
+        {
+          "robot": "0",
+          "node": 20,
+          "tick": 375,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.024090681380797774
+        },
+        {
+          "robot": "1",
+          "node": 20,
+          "tick": 383,
+          "type": "T",
+          "task_id": -1,
+          "endpoint_error_m": 0.015880832647606234
+        },
+        {
+          "robot": "0",
+          "node": 21,
+          "tick": 386,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.025307869767990036
+        },
+        {
+          "robot": "1",
+          "node": 21,
+          "tick": 393,
+          "type": "M",
+          "task_id": -1,
+          "endpoint_error_m": 0.014632947679993572
+        }
+      ],
+      "sampled_min_center_distance_m": 0.9732411797588103,
+      "pause_controls": [],
+      "pause_overlaps_active_move": false,
+      "terminal_observations": {
+        "0": {
+          "angle": 268.19959434157647,
+          "displacement_m": 0.02145655790917269,
+          "idle": false,
+          "previous_wheel_left_cm_s": 21.33585647380115,
+          "previous_wheel_right_cm_s": 21.26216297126101,
+          "previous_zero_command": false,
+          "queue_size": 1,
+          "speed_cm_s": 25.05765849709539,
+          "tick": 399,
+          "x": -3.9953022711196127,
+          "y": -2.8796758843802595
+        },
+        "1": {
+          "angle": 88.63273519556661,
+          "displacement_m": 0.035386910736408254,
+          "idle": false,
+          "previous_wheel_left_cm_s": 35.246877267690984,
+          "previous_wheel_right_cm_s": 35.096943661531235,
+          "previous_zero_command": false,
+          "queue_size": 1,
+          "speed_cm_s": 35.17191046461111,
+          "tick": 399,
+          "x": -3.0082913364429418,
+          "y": -2.249049488637473
+        }
+      },
+      "unfinished_tasks": [
+        [
+          4,
+          0,
+          24
+        ],
+        [
+          5,
+          1,
+          15
+        ]
+      ],
+      "horizon_unfinished_nodes": [
+        1,
+        1
+      ],
+      "latest_terminal_pose_tick": 399,
+      "sampled_center_metric_only": true,
+      "continuous_footprint_safety_established": false,
+      "server_online_forged_END_rejection_established": false,
+      "priority_search_order_flips": 0,
+      "actual_trigger_tick": 41,
+      "raw_event_count": 2445,
+      "actual_wheel_commands": 800,
+      "negative_checks": {
+        "private_pose_feature": {
+          "rejected": true,
+          "reason": "forecast_not_causal_shared_interface"
+        },
+        "wrong_bias": {
+          "rejected": true,
+          "reason": "request_forecast_binding"
+        },
+        "unrestored_aging": {
+          "rejected": true,
+          "reason": "aging_restore"
+        }
+      },
+      "passed": true,
+      "trace_sha256": "fa084f8567e5c24e517263aaa8579a6445c9bb0f704bbebb15f5d763cd08a3a2",
+      "decisions_sha256": "0d4bab38f112a346c7d852b09be2130a1c3809c01c978d64bd66c69d2339b3e7"
+    },
+    "cal_s51_axis_zero": {
+      "passed": false,
+      "error": "end_outside_tolerance"
+    }
+  },
+  "auditor_sha256": "d93ff64ce41fb6016d74348912172d6d1be0ff924ddd903961a8bdbb4b93c5c6",
+  "mapping_replay_sha256": "e39724f92ac7234c294025a2a45c024caa74ea33d295acaa9373063d85434a2b"
+}
