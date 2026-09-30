@@ -1,0 +1,15 @@
+# R5 paired task-stream comparison of published methods
+
+Frozen before task generation and all native runs. This extends the R4 published comparator, not our learning method.
+
+Use unchanged OnlineGGO author native modules: hm+GPIBT OBJECTIVE3 SUM_OVC and the frozen R3 trained OBJECTIVE4 quad560 checkpoint. Keep original 800 agents, 1000 steps, obstacle geometry and all planner flags. Use the existing author roundrobin_fixed / FixedAssignSystem input branch. No author source or binary edits, no new training, no outcome-dependent choice.
+
+The Kiva loader unconditionally overrides task_assignment_strategy when W cells are present. Therefore produce a separately named copy of the same map with W/E annotations converted to '.'; obstacles and edges are identical. Supply explicit task files that preserve alternating original workstation W / endpoint E semantics. This is a declared paired workload adapter, not the unchanged Kiva stochastic workload or a new baseline. Planner observation remains one revealed current task.
+
+Three fixed schedule identifiers are 930101, 930103, 930107. Preserve the corresponding frozen R4 initial positions and first task goals. For each robot generate future alternating goals before any run using random.Random('paired-r5:<seed>:<agent>') and uniform choice over the original target cell class. These are independent per-agent streams; neither method chooses future assignment or reads unrevealed tasks. The schedules do not reproduce the original shared generator draws. Produce enough tasks per robot from the obstacle-free W-to-E Manhattan minimum d: floor(1000/d)+2. This exceeds the maximum possible completions, even allowing a zero-length first task, and prevents artificial queue exhaustion.
+
+Run each method once on each schedule in fresh sequential processes, 120-second limit. Preserve every failure; no seed or horizon tuning, no selected reruns. All task inputs, source/model/module hashes and protocol are frozen before the first run. Output task throughput, each paired difference, min/mean; three schedules on one map are a pilot, not statistical superiority or cross-map evidence. Planner tie randomness is not controlled by the task seed, so paired exogenous inputs do not mean fully paired internal random choices.
+
+Independently replay all 4.8 million actions and task completions. Verify graph identity, exact paired starts, one-task FIFO exposure, per-agent task identities/goals equal the predeclared full schedules, unrevealed tail remaining, no vertex/edge collision, throughput, and all upstream tracked source blobs. The original FixedAssignSystem records each task in all_tasks at construction and again at reveal; duplicated task definitions must agree exactly and be distinguished from duplicate assignment events. Preserve raw traces rather than deduplicating them.
+
+No execution error or continuous physical controller is included. This strengthens formal algorithm benchmarking; it cannot establish the proposed error-aware model's benefit.
