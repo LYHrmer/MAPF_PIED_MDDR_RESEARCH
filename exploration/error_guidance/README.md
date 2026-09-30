@@ -1,5 +1,9 @@
 # 空间误差约束下的路径引导探索
 
+2026-10-01 最新（20260930_R5批次）：[真实误差模型36次执行](gpibt_lsmart_error_model_20260930_r4c/REPORT.md)已让预测改变官方动作和服务时刻，但学习/解析/历史全动作相同、完成任务数无增益；严格半MOVE点误差失败保留。[800机器人同未来任务流正式比较](paired_published_guidance_20260930_r5/REPORT.md)及[四官方地图64机器人试跑](standard_map_pilot_20260930_r5/REPORT.md)均已真实完成。训练模型、实际运行及原始归档已有完整结果，下面旧“尚未训练/待权限”只是历史阶段。
+
+[三线更新与两份独立复判](THREE_ROUTE_POSTUPDATE_20260930_R5.md)保留技术与导师的不同优先级；当前采纳共同执行误差平台优先，在其中验证查询价值，主线收敛证据消费/费用。[下一模型设计](LEARNING_DECISION_DESIGN_20260930_R5.md)与[MAPF／LMAPF实验规范](mapf_evaluation_20260930_r5/README.md)区分已运行的先导与尚待完成的正式规模实验。
+
 2026-09-30 R2 最终路线：[gpt-6.1-sol-ultra与科研导师分别判断及下一实验](THREE_ROUTE_POSTUPDATE_20260930_R2.md)。[官方OnlineGGO OBJ4评估入口](onlineggo_neural_preflight_20260930_r2/REPORT.md)现已实际构建运行；560参数的未训练常量诊断完成100步、27任务，并经1000动作重放核验。它是官方quad引导代价入口，已训练策略资格仍为false；正式权重/配置/训练日志尚待核验。[GPIBT/LSMART root独立核验](gpibt_lsmart_root_review_20260930_r2.json)已通过77工件、18二进制/对象身份及真实服务重建。
 
 2026-09-30第二轮：[官方GPIBT→LSMART真实闭环](gpibt_lsmart_integration_20260930_r2/REPORT.md)已完成固定nominal/pause两例200ticks，每例5次持久官方plan、400个实际位置样本和1个真实任务服务。全部27个parser节点、admit/ACK、任务身份、20次STATION减计及21个连续驻留样本通过[独立审计](gpibt_lsmart_integration_20260930_r2/audit.json)。GPIBT算法对象保持官方身份，公开group_size2修正支持2机器人；LSMART仍是执行试验台。真实两臂任务前缀一致；末尾未完成任务／节点保留删失，最后已送达位置为tick199，不冒充精确物理tick200终态。

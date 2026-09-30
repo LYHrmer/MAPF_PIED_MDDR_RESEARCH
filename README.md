@@ -1,5 +1,9 @@
 # LMAPF 空间误差与执行占用引导探索
 
+2026-10-01 最新（20260930_R5批次）：[真实误差模型36次执行](exploration/error_guidance/gpibt_lsmart_error_model_20260930_r4c/REPORT.md)已让预测改变官方动作和服务时刻，但学习/解析/历史全动作相同、完成任务数无增益；严格半MOVE点误差失败保留。[800机器人同未来任务流正式比较](exploration/error_guidance/paired_published_guidance_20260930_r5/REPORT.md)及[四官方地图64机器人试跑](exploration/error_guidance/standard_map_pilot_20260930_r5/REPORT.md)均已真实完成。训练模型、实际运行及原始归档已有完整结果，下面旧“尚未训练/待权限”只是历史阶段。
+
+[三线更新与两份独立复判](exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20260930_R5.md)保留技术与导师的不同优先级；当前采纳共同执行误差平台优先，在其中验证查询价值，主线收敛证据消费/费用。[下一模型设计](exploration/error_guidance/LEARNING_DECISION_DESIGN_20260930_R5.md)与[MAPF／LMAPF实验规范](exploration/error_guidance/mapf_evaluation_20260930_r5/README.md)区分已运行的先导与尚待完成的正式规模实验。
+
 2026-09-30 R2 当前分支更新：官方GPIBT/LSMART固定两臂均完整200tick并有真实任务服务，OnlineGGO官方OBJ4评估入口已运行但尚未取得合格训练策略。当前完整报告、独立核验及三线下一实验见[探索入口](exploration/error_guidance/README.md)。活动MOVE扰动与连续空间安全是下一项验证，原时窗只造成派发延迟；下方旧状态按其日期阅读。
 
 2026-09-30 最新：官方GPIBT已接到LSMART的实际连续执行链，首步运动与END有真实记录；后续默认LNS邻域大于两机器人数量导致崩溃，已用作者公开group_size=2修复构建。最终两次200tick验证尚待本机RPC沙箱权限，未计为完成。当前交付见[同步执行适配协议](exploration/error_guidance/gpibt_lsmart_integration_20260930/PROTOCOL.md)及[2026近作核查](exploration/error_guidance/LITERATURE_DELTA_20260930.md)。它是公开适配R1，LSMART是试验台；旧机制结果及作者原生GPIBT先导保留，尚未证明学习残差或连续空间误差安全。以下原预检说明按其阶段阅读。
