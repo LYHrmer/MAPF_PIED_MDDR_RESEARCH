@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "original_source_action_bindings_checked": 2000,
+  "original_pair_bindings_checked": 355,
+  "native_private_input_seed_geometry_task_bindings_checked": 120,
+  "requester_original_durations_independently_checked": 4260,
+  "actual_corruption_tests_rejected": {
+    "certified_lower_at_closed_threshold": true,
+    "wrong_double_subtraction_release": true,
+    "wrong_actual_head_task": true,
+    "future_or_forged_head_goal_in_public_crop": true
+  },
+  "END_only_actor_negative_controls": {
+    "private_progress_rejected": true,
+    "current_or_future_END_as_past_history_rejected": true,
+    "unsupported_interrupted_motion_rejected": true
+  },
+  "clean_END_only_actor_choice_comparisons": 560,
+  "END_only_choices_equal_native_selected_potentials": true
+}

@@ -1,0 +1,323 @@
+{
+  "status": "passed",
+  "receipt_sha256": "48b294ea618cbdbfd646ae0d122ed7f7c962ffc0d210598c5eff5a5cc449aa33",
+  "native_checks": 288956,
+  "source_native_END_feedback": 10746,
+  "complete_pair_episodes": 4260,
+  "native_terminal_endpoints": 96,
+  "all_actual_feedback_labels_recoverable_from_delivered_END_only": true,
+  "all_native_owner_masks_recomputed_by_closed_rectangle_intersection": true,
+  "negative_controls": {
+    "equal_threshold_release_rejected": true,
+    "epsilon_double_subtraction_disagrees_with_actual_native_resource": 908,
+    "current_phase_END_as_history_rejected": true,
+    "wrong_terminal_task_id_rejected": true
+  },
+  "training_feedback_rows": 3582,
+  "brier": {
+    "cal_3301": {
+      "global": 0.24968703195009012,
+      "direction": 0.09476570480715099
+    },
+    "test_4409": {
+      "global": 0.24979639573329185,
+      "direction": 0.08737513238372019
+    },
+    "test_reverse_5501": {
+      "global": 0.25048903302690273,
+      "direction": 0.7252427235757026
+    },
+    "test_zero_6607": {
+      "global": 0.23923671488859216,
+      "direction": 0.39494740333343936
+    }
+  },
+  "summaries": [
+    {
+      "run_id": "cal_3301",
+      "split": "calibration",
+      "regime": "iid",
+      "arms": {
+        "WAIT": {
+          "queries": 0,
+          "terminal_tasks": 8,
+          "early_terminal_tasks": 0,
+          "gain_lo": "0",
+          "gain_hi": "0",
+          "completion_lo": "25550943/1000000",
+          "completion_hi": "25550951/1000000"
+        },
+        "global_bin": {
+          "queries": 8,
+          "terminal_tasks": 8,
+          "early_terminal_tasks": 1,
+          "gain_lo": "583441/1000000",
+          "gain_hi": "583443/1000000",
+          "completion_lo": "24967501/1000000",
+          "completion_hi": "24967509/1000000"
+        },
+        "direction_bin": {
+          "queries": 8,
+          "terminal_tasks": 8,
+          "early_terminal_tasks": 1,
+          "gain_lo": "583441/1000000",
+          "gain_hi": "583443/1000000",
+          "completion_lo": "24967501/1000000",
+          "completion_hi": "24967509/1000000"
+        },
+        "categorical_supervised": {
+          "queries": 8,
+          "terminal_tasks": 8,
+          "early_terminal_tasks": 1,
+          "gain_lo": "583441/1000000",
+          "gain_hi": "583443/1000000",
+          "completion_lo": "24967501/1000000",
+          "completion_hi": "24967509/1000000"
+        },
+        "analytic_direction": {
+          "queries": 8,
+          "terminal_tasks": 8,
+          "early_terminal_tasks": 1,
+          "gain_lo": "583441/1000000",
+          "gain_hi": "583443/1000000",
+          "completion_lo": "24967501/1000000",
+          "completion_hi": "24967509/1000000"
+        },
+        "lag2": {
+          "queries": 6,
+          "terminal_tasks": 8,
+          "early_terminal_tasks": 1,
+          "gain_lo": "583441/1000000",
+          "gain_hi": "583443/1000000",
+          "completion_lo": "24967501/1000000",
+          "completion_hi": "24967509/1000000"
+        },
+        "RR": {
+          "queries": 8,
+          "terminal_tasks": 8,
+          "early_terminal_tasks": 1,
+          "gain_lo": "583441/1000000",
+          "gain_hi": "583443/1000000",
+          "completion_lo": "24967501/1000000",
+          "completion_hi": "24967509/1000000"
+        }
+      }
+    },
+    {
+      "run_id": "test_4409",
+      "split": "test",
+      "regime": "iid",
+      "arms": {
+        "WAIT": {
+          "queries": 0,
+          "terminal_tasks": 8,
+          "early_terminal_tasks": 0,
+          "gain_lo": "0",
+          "gain_hi": "0",
+          "completion_lo": "12451167/500000",
+          "completion_hi": "12451171/500000"
+        },
+        "global_bin": {
+          "queries": 8,
+          "terminal_tasks": 8,
+          "early_terminal_tasks": 2,
+          "gain_lo": "583441/500000",
+          "gain_hi": "583443/500000",
+          "completion_lo": "474709/20000",
+          "completion_hi": "11867729/500000"
+        },
+        "direction_bin": {
+          "queries": 8,
+          "terminal_tasks": 8,
+          "early_terminal_tasks": 2,
+          "gain_lo": "583441/500000",
+          "gain_hi": "583443/500000",
+          "completion_lo": "474709/20000",
+          "completion_hi": "11867729/500000"
+        },
+        "categorical_supervised": {
+          "queries": 8,
+          "terminal_tasks": 8,
+          "early_terminal_tasks": 2,
+          "gain_lo": "583441/500000",
+          "gain_hi": "583443/500000",
+          "completion_lo": "474709/20000",
+          "completion_hi": "11867729/500000"
+        },
+        "analytic_direction": {
+          "queries": 8,
+          "terminal_tasks": 8,
+          "early_terminal_tasks": 2,
+          "gain_lo": "583441/500000",
+          "gain_hi": "583443/500000",
+          "completion_lo": "474709/20000",
+          "completion_hi": "11867729/500000"
+        },
+        "lag2": {
+          "queries": 7,
+          "terminal_tasks": 8,
+          "early_terminal_tasks": 2,
+          "gain_lo": "583441/500000",
+          "gain_hi": "583443/500000",
+          "completion_lo": "474709/20000",
+          "completion_hi": "11867729/500000"
+        },
+        "RR": {
+          "queries": 8,
+          "terminal_tasks": 8,
+          "early_terminal_tasks": 2,
+          "gain_lo": "583441/500000",
+          "gain_hi": "583443/500000",
+          "completion_lo": "474709/20000",
+          "completion_hi": "11867729/500000"
+        }
+      }
+    },
+    {
+      "run_id": "test_reverse_5501",
+      "split": "test",
+      "regime": "reverse",
+      "arms": {
+        "WAIT": {
+          "queries": 0,
+          "terminal_tasks": 8,
+          "early_terminal_tasks": 0,
+          "gain_lo": "0",
+          "gain_hi": "0",
+          "completion_lo": "5901279/250000",
+          "completion_hi": "5901281/250000"
+        },
+        "global_bin": {
+          "queries": 8,
+          "terminal_tasks": 8,
+          "early_terminal_tasks": 4,
+          "gain_lo": "583441/250000",
+          "gain_hi": "583443/250000",
+          "completion_lo": "5317837/250000",
+          "completion_hi": "5317839/250000"
+        },
+        "direction_bin": {
+          "queries": 8,
+          "terminal_tasks": 8,
+          "early_terminal_tasks": 4,
+          "gain_lo": "583441/250000",
+          "gain_hi": "583443/250000",
+          "completion_lo": "5317837/250000",
+          "completion_hi": "5317839/250000"
+        },
+        "categorical_supervised": {
+          "queries": 8,
+          "terminal_tasks": 8,
+          "early_terminal_tasks": 4,
+          "gain_lo": "583441/250000",
+          "gain_hi": "583443/250000",
+          "completion_lo": "5317837/250000",
+          "completion_hi": "5317839/250000"
+        },
+        "analytic_direction": {
+          "queries": 8,
+          "terminal_tasks": 8,
+          "early_terminal_tasks": 4,
+          "gain_lo": "583441/250000",
+          "gain_hi": "583443/250000",
+          "completion_lo": "5317837/250000",
+          "completion_hi": "5317839/250000"
+        },
+        "lag2": {
+          "queries": 2,
+          "terminal_tasks": 8,
+          "early_terminal_tasks": 1,
+          "gain_lo": "583441/1000000",
+          "gain_hi": "583443/1000000",
+          "completion_lo": "11510837/500000",
+          "completion_hi": "11510841/500000"
+        },
+        "RR": {
+          "queries": 8,
+          "terminal_tasks": 8,
+          "early_terminal_tasks": 4,
+          "gain_lo": "583441/250000",
+          "gain_hi": "583443/250000",
+          "completion_lo": "5317837/250000",
+          "completion_hi": "5317839/250000"
+        }
+      }
+    },
+    {
+      "run_id": "test_zero_6607",
+      "split": "test",
+      "regime": "zero",
+      "arms": {
+        "WAIT": {
+          "queries": 0,
+          "terminal_tasks": 8,
+          "early_terminal_tasks": 0,
+          "gain_lo": "0",
+          "gain_hi": "0",
+          "completion_lo": "1417893/62500",
+          "completion_hi": "2835787/125000"
+        },
+        "global_bin": {
+          "queries": 8,
+          "terminal_tasks": 8,
+          "early_terminal_tasks": 0,
+          "gain_lo": "0",
+          "gain_hi": "0",
+          "completion_lo": "1417893/62500",
+          "completion_hi": "2835787/125000"
+        },
+        "direction_bin": {
+          "queries": 8,
+          "terminal_tasks": 8,
+          "early_terminal_tasks": 0,
+          "gain_lo": "0",
+          "gain_hi": "0",
+          "completion_lo": "1417893/62500",
+          "completion_hi": "2835787/125000"
+        },
+        "categorical_supervised": {
+          "queries": 8,
+          "terminal_tasks": 8,
+          "early_terminal_tasks": 0,
+          "gain_lo": "0",
+          "gain_hi": "0",
+          "completion_lo": "1417893/62500",
+          "completion_hi": "2835787/125000"
+        },
+        "analytic_direction": {
+          "queries": 8,
+          "terminal_tasks": 8,
+          "early_terminal_tasks": 0,
+          "gain_lo": "0",
+          "gain_hi": "0",
+          "completion_lo": "1417893/62500",
+          "completion_hi": "2835787/125000"
+        },
+        "lag2": {
+          "queries": 0,
+          "terminal_tasks": 8,
+          "early_terminal_tasks": 0,
+          "gain_lo": "0",
+          "gain_hi": "0",
+          "completion_lo": "1417893/62500",
+          "completion_hi": "2835787/125000"
+        },
+        "RR": {
+          "queries": 8,
+          "terminal_tasks": 8,
+          "early_terminal_tasks": 0,
+          "gain_lo": "0",
+          "gain_hi": "0",
+          "completion_lo": "1417893/62500",
+          "completion_hi": "2835787/125000"
+        }
+      }
+    }
+  ],
+  "supervised_and_strong_simple_direction_model_identical": true,
+  "independent_learning_advantage": false,
+  "full_100_robot_safety": false,
+  "public_benchmark_throughput": false,
+  "production_AUTH_or_COST": false,
+  "old_files_unchanged": 81
+}

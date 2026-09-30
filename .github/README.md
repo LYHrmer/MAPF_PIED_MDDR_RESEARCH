@@ -1,5 +1,7 @@
 # 当前分支：学习型进度查询探索
 
+2026-09-30 R2 当前分支更新：六完整run的[公共作者轨迹查询实验](../exploration/learned_query/public_trace_20260930_r2/RESULTS_20260930_r2.md)与[原作者输入/实际轨迹归档](../exploration/learned_query/public_trace_author_archive_20260930_r2/README.md)已交付。10746实际END、4260局部episode、96端点；强简单模型同效，未证独立学习收益。[三线后续设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20260930_R2.md)明确联合执行、多候选竞争、WAIT和真实费用。下方旧状态按其日期阅读。
+
 本页属于 `explore/learned-query`，当前工作见[分支入口](../README.md)和[学习探索目录](../exploration/learned_query/README.md)。同仓库的 [main](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/main) 保留主研究线，[explore/error-aware-guidance](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/explore/error-aware-guidance) 单独探索误差相关路径代价。三者不合并，结果按分支和验证范围区分。
 
 以下为分叉时继承的主线资料快照，其中旧“未运行/等待许可”状态不代表主线最新进展；最新主线以 [main 入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/.github/README.md) 为准。

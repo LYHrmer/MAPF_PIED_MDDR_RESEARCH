@@ -1,0 +1,99 @@
+{
+  "status": "passed",
+  "purpose": "original full-cap profile inverse qualification, not test fitting",
+  "commands": [
+    {
+      "argv": [
+        "rtk",
+        "proxy",
+        "g++-11",
+        "-std=c++14",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-fno-elide-constructors",
+        "-I",
+        "/tmp/query_END_only_vyif1trh",
+        "-isystem",
+        "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/host_sdk/usr/include",
+        "-isystem",
+        "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/flint_host_config/src",
+        "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/public_trace_20260930_r2/semantic_successor_20260930_r2/native_semantic_20260930_r2.cpp",
+        "-L",
+        "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/flint_host_config",
+        "-L",
+        "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/host_sdk/usr/lib/x86_64-linux-gnu",
+        "-Wl,-rpath,/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/flint_host_config",
+        "-lflint",
+        "-lmpfr",
+        "-lgmp",
+        "-o",
+        "/tmp/query_END_only_vyif1trh/native"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "timeout_seconds": 120
+    },
+    {
+      "argv": [
+        "rtk",
+        "proxy",
+        "/tmp/query_END_only_vyif1trh/native",
+        "/tmp/query_END_only_vyif1trh/qualification.txt"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"event\":\"source_original_END_delivered\",\"agent\":0,\"alpha\":{\"lower\":3000000,\"upper\":3000000,\"denominator\":1000000},\"at_query_progress\":{\"lower\":281250,\"upper\":281250,\"denominator\":1000000},\"original_END\":{\"lower\":1732050,\"upper\":1732051,\"denominator\":1000000},\"received\":{\"lower\":1982050,\"upper\":1982051,\"denominator\":1000000},\"started\":0,\"full_cap_uninterrupted\":true,\"length\":1,\"offline_label_only\":true}\n{\"event\":\"source_original_END_delivered\",\"agent\":1,\"alpha\":{\"lower\":1671572,\"upper\":1671573,\"denominator\":1000000},\"at_query_progress\":{\"lower\":559684,\"upper\":559685,\"denominator\":1000000},\"original_END\":{\"lower\":1292893,\"upper\":1292894,\"denominator\":1000000},\"received\":{\"lower\":1542893,\"upper\":1542894,\"denominator\":1000000},\"started\":0,\"full_cap_uninterrupted\":true,\"length\":1,\"offline_label_only\":true}\n{\"event\":\"source_original_END_delivered\",\"agent\":2,\"alpha\":{\"lower\":1173846,\"upper\":1173847,\"denominator\":1000000},\"at_query_progress\":{\"lower\":744197,\"upper\":744198,\"denominator\":1000000},\"original_END\":{\"lower\":1083441,\"upper\":1083442,\"denominator\":1000000},\"received\":{\"lower\":1333441,\"upper\":1333442,\"denominator\":1000000},\"started\":0,\"full_cap_uninterrupted\":true,\"length\":1,\"offline_label_only\":true}\n{\"event\":\"summary\",\"status\":\"passed\",\"source_MOVEs\":3,\"pairs\":0,\"pair_episodes\":0,\"checks\":33}\n",
+      "stderr": "",
+      "timeout_seconds": 60
+    }
+  ],
+  "native_binary_sha256": "7fc0ac69c3aa5f0e8a39f28de729b68c321e0d351cb071821799d287730658d8",
+  "native_source_sha256": "f3b1bd594bf5e1e43d91845ad1f00bb58dbaff1ec09d57b165ed0ca32ebbe73d",
+  "profiles": [
+    {
+      "public_eta": -1,
+      "public_END": {
+        "lower": 1732050,
+        "upper": 1732051,
+        "denominator": 1000000
+      },
+      "END_only_class": 0,
+      "offline_progress_validation": {
+        "lower": 281250,
+        "upper": 281250,
+        "denominator": 1000000
+      }
+    },
+    {
+      "public_eta": 0,
+      "public_END": {
+        "lower": 1292893,
+        "upper": 1292894,
+        "denominator": 1000000
+      },
+      "END_only_class": 0,
+      "offline_progress_validation": {
+        "lower": 559684,
+        "upper": 559685,
+        "denominator": 1000000
+      }
+    },
+    {
+      "public_eta": 1,
+      "public_END": {
+        "lower": 1083441,
+        "upper": 1083442,
+        "denominator": 1000000
+      },
+      "END_only_class": 1,
+      "offline_progress_validation": {
+        "lower": 744197,
+        "upper": 744198,
+        "denominator": 1000000
+      }
+    }
+  ]
+}

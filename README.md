@@ -1,5 +1,9 @@
 # 学习型进度查询探索工作区
 
+本轮另归档[原作者实际轨迹与输入/日志](exploration/learned_query/public_trace_author_archive_20260930_r2/README.md)，可直接复核355关系的来源。[root独立重放](exploration/learned_query/public_trace_root_review_20260930_r2.json)核对2000源动作、10746公开END、560选择、92260历史因果检查和四个新增decoder负例；原24份实验工件、81份旧查询文件及9组件头保持。[更新后的三线判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20260930_R2.md)明确下一项为完整共同执行、多候选任务竞争与真实费用，而非继续堆方向模型。
+
+2026-09-30 R2 最新：[公共轨迹→真实查询接口](exploration/learned_query/public_trace_20260930_r2/RESULTS_20260930_r2.md)已完整运行六个独立生成run：10,746条原MOVE反馈、4,260个局部真实执行episode，96个匹配公开任务的端点服务；END-only因果重放560项选择与native结果相同。公共PIE-D原100×20 trace、355真实跟随依赖及任务出处均独立核验。方向预测在IID下改善、反转时失效；强简单方向bin、监督categorical、解析与内部RR任务结果同效，没有学习独立收益。它是公共map的局部R1机制，尚非100机器人联合在线运行或正式外部benchmark比较。完整失败、严格几何审计和信息合同纠正见报告。
+
 2026-09-30 最新：[同容量、公共任务结构与active任务实验](exploration/learned_query/BUDGET_TASK_RESULTS_20260930.md)完成384次运行、3456任务。任务导向规则已在一个预声明结构下以1次查询、流时36优于内部admission/RR的2次查询、流时37；AR仍与lag2同效，未证明学习独立增益。完整原始回执、CSV和root独立复核均链接于该报告。主要基线仍须使用已发表作者方法，内部规则仅用于机制消融。下一步接真实费用与公开场景；[2026近作核查](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/LITERATURE_DELTA_20260930.md)进一步限定贡献。以下旧“最新”说明按其日期阅读。
 
 2026-09-24 最新：[查询决策到立即执行的比较](exploration/learned_query/DECISION_EXECUTION.md)已通过321项断言。原 SRDC（无报价回退）/RR 与两步准入前瞻均选 AB；单步选 CA。截止6时后者完成1个 MOVE、前者0个，截止7时前者完成2个、后者1个。后继改进改为围绕完成时刻选择查询，并把学习增益与决策目标改进分开检验。
