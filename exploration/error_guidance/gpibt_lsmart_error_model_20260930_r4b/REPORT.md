@@ -1,0 +1,5 @@
+# R4b：校准接口诊断未通过，未启动随机seed62轨迹
+
+28个cal51公开fixture的实际rank±1冷启动探针：learned18次非零bias、1次排序改变、0次动作改变；所有case与原assert-before-save失败均保留。随后以原zero公共请求前缀逐一重建真实持久官方对象再fork最后请求，zero动作与priority逐值核对原cal通过；四条件learned非零bias3/5/6/4、每条件1次排序改变、动作全0。共享下一顶点争用处原priority差2.667，大于rank差2；其他排序改变处无实际动作争用。完整分项见calibration_gap_diagnostic.json/warm_calibration_probe.json。
+
+模型、幅值、seed没有调优，0条seed62 native轨迹。ready_for_trial未生成；不能称动作闭环。失败校准门保留，后继R4c另冻结合法FIFO机制场景，仍固定模型/rank，明确不是随机benchmark。

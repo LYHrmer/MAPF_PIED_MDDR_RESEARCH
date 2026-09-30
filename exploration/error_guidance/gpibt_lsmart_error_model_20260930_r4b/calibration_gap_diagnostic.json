@@ -1,0 +1,1638 @@
+{
+  "nominal": {
+    "fixtures": 8,
+    "priority_gap_range": [
+      0.3333333333333333,
+      2.6666666666666665
+    ],
+    "adjacent_states": 0,
+    "shared_next_vertex_states": 1,
+    "policies": {
+      "analytic": {
+        "prediction_gap_range": [
+          -1.0,
+          1.0
+        ],
+        "deadband_count": 6,
+        "nonzero_bias": 2,
+        "order_flips": 0,
+        "action_changes": 0
+      },
+      "history": {
+        "prediction_gap_range": [
+          0.0,
+          0.5
+        ],
+        "deadband_count": 8,
+        "nonzero_bias": 0,
+        "order_flips": 0,
+        "action_changes": 0
+      },
+      "learned": {
+        "prediction_gap_range": [
+          -1.8720770949969499,
+          2.944852971205407
+        ],
+        "deadband_count": 5,
+        "nonzero_bias": 3,
+        "order_flips": 1,
+        "action_changes": 0
+      }
+    },
+    "rows": [
+      {
+        "fixture_index": 0,
+        "starts": [
+          0,
+          10
+        ],
+        "goals": [
+          11,
+          15
+        ],
+        "manhattan_goal_decreasing_candidates": [
+          [
+            5
+          ],
+          [
+            15
+          ]
+        ],
+        "shared_next_vertices": [],
+        "adjacent_current_cells": false,
+        "original_priority_gap": 0.3333333333333333,
+        "policies": {
+          "analytic": {
+            "signed_prediction_gap": 0.0,
+            "bias": [
+              0.0,
+              0.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "history": {
+            "signed_prediction_gap": 0.0,
+            "bias": [
+              0.0,
+              0.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "learned": {
+            "signed_prediction_gap": 0.0,
+            "bias": [
+              0.0,
+              0.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          }
+        }
+      },
+      {
+        "fixture_index": 1,
+        "starts": [
+          5,
+          15
+        ],
+        "goals": [
+          11,
+          23
+        ],
+        "manhattan_goal_decreasing_candidates": [
+          [
+            6,
+            10
+          ],
+          [
+            16,
+            20
+          ]
+        ],
+        "shared_next_vertices": [],
+        "adjacent_current_cells": false,
+        "original_priority_gap": 1.3333333333333333,
+        "policies": {
+          "analytic": {
+            "signed_prediction_gap": 0.0,
+            "bias": [
+              0.0,
+              0.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "history": {
+            "signed_prediction_gap": 0.0,
+            "bias": [
+              0.0,
+              0.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "learned": {
+            "signed_prediction_gap": 4.973799150320701e-14,
+            "bias": [
+              0.0,
+              0.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          }
+        }
+      },
+      {
+        "fixture_index": 2,
+        "starts": [
+          6,
+          16
+        ],
+        "goals": [
+          11,
+          23
+        ],
+        "manhattan_goal_decreasing_candidates": [
+          [
+            11
+          ],
+          [
+            17,
+            21
+          ]
+        ],
+        "shared_next_vertices": [],
+        "adjacent_current_cells": false,
+        "original_priority_gap": 1.3333333333333333,
+        "policies": {
+          "analytic": {
+            "signed_prediction_gap": 0.0,
+            "bias": [
+              0.0,
+              0.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "history": {
+            "signed_prediction_gap": 0.5,
+            "bias": [
+              0.0,
+              0.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "learned": {
+            "signed_prediction_gap": -0.8670320713325488,
+            "bias": [
+              0.0,
+              0.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          }
+        }
+      },
+      {
+        "fixture_index": 3,
+        "starts": [
+          11,
+          21
+        ],
+        "goals": [
+          16,
+          23
+        ],
+        "manhattan_goal_decreasing_candidates": [
+          [
+            16
+          ],
+          [
+            22
+          ]
+        ],
+        "shared_next_vertices": [],
+        "adjacent_current_cells": false,
+        "original_priority_gap": 1.6666666666666665,
+        "policies": {
+          "analytic": {
+            "signed_prediction_gap": 0.0,
+            "bias": [
+              0.0,
+              0.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "history": {
+            "signed_prediction_gap": 0.5,
+            "bias": [
+              0.0,
+              0.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "learned": {
+            "signed_prediction_gap": 2.944852971205407,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": true,
+            "actions_changed": false
+          }
+        }
+      },
+      {
+        "fixture_index": 4,
+        "starts": [
+          16,
+          22
+        ],
+        "goals": [
+          24,
+          23
+        ],
+        "manhattan_goal_decreasing_candidates": [
+          [
+            17,
+            21
+          ],
+          [
+            23
+          ]
+        ],
+        "shared_next_vertices": [],
+        "adjacent_current_cells": false,
+        "original_priority_gap": 2.6666666666666665,
+        "policies": {
+          "analytic": {
+            "signed_prediction_gap": -1.0,
+            "bias": [
+              -1.0,
+              1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "history": {
+            "signed_prediction_gap": 0.5,
+            "bias": [
+              0.0,
+              0.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "learned": {
+            "signed_prediction_gap": -1.8720770949969499,
+            "bias": [
+              -1.0,
+              1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          }
+        }
+      },
+      {
+        "fixture_index": 5,
+        "starts": [
+          17,
+          23
+        ],
+        "goals": [
+          24,
+          15
+        ],
+        "manhattan_goal_decreasing_candidates": [
+          [
+            18,
+            22
+          ],
+          [
+            22,
+            18
+          ]
+        ],
+        "shared_next_vertices": [
+          18,
+          22
+        ],
+        "adjacent_current_cells": false,
+        "original_priority_gap": 1.3333333333333333,
+        "policies": {
+          "analytic": {
+            "signed_prediction_gap": 1.0,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "history": {
+            "signed_prediction_gap": 0.25,
+            "bias": [
+              0.0,
+              0.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "learned": {
+            "signed_prediction_gap": 1.1885471765596343,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          }
+        }
+      },
+      {
+        "fixture_index": 6,
+        "starts": [
+          22,
+          18
+        ],
+        "goals": [
+          24,
+          15
+        ],
+        "manhattan_goal_decreasing_candidates": [
+          [
+            23
+          ],
+          [
+            17
+          ]
+        ],
+        "shared_next_vertices": [],
+        "adjacent_current_cells": false,
+        "original_priority_gap": 1.3333333333333333,
+        "policies": {
+          "analytic": {
+            "signed_prediction_gap": 0.0,
+            "bias": [
+              0.0,
+              0.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "history": {
+            "signed_prediction_gap": 0.0,
+            "bias": [
+              0.0,
+              0.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "learned": {
+            "signed_prediction_gap": 0.006009390899134104,
+            "bias": [
+              0.0,
+              0.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          }
+        }
+      },
+      {
+        "fixture_index": 7,
+        "starts": [
+          23,
+          17
+        ],
+        "goals": [
+          24,
+          15
+        ],
+        "manhattan_goal_decreasing_candidates": [
+          [
+            24
+          ],
+          [
+            16
+          ]
+        ],
+        "shared_next_vertices": [],
+        "adjacent_current_cells": false,
+        "original_priority_gap": 1.3333333333333335,
+        "policies": {
+          "analytic": {
+            "signed_prediction_gap": 0.0,
+            "bias": [
+              0.0,
+              0.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "history": {
+            "signed_prediction_gap": 0.0,
+            "bias": [
+              0.0,
+              0.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "learned": {
+            "signed_prediction_gap": -0.05846989357643295,
+            "bias": [
+              0.0,
+              0.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          }
+        }
+      }
+    ]
+  },
+  "slow065": {
+    "fixtures": 6,
+    "priority_gap_range": [
+      0.3333333333333333,
+      2.6666666666666665
+    ],
+    "adjacent_states": 0,
+    "shared_next_vertex_states": 1,
+    "policies": {
+      "analytic": {
+        "prediction_gap_range": [
+          0.0,
+          8.0
+        ],
+        "deadband_count": 1,
+        "nonzero_bias": 5,
+        "order_flips": 1,
+        "action_changes": 0
+      },
+      "history": {
+        "prediction_gap_range": [
+          0.0,
+          15.0
+        ],
+        "deadband_count": 1,
+        "nonzero_bias": 5,
+        "order_flips": 1,
+        "action_changes": 0
+      },
+      "learned": {
+        "prediction_gap_range": [
+          0.0,
+          14.239521962259392
+        ],
+        "deadband_count": 1,
+        "nonzero_bias": 5,
+        "order_flips": 1,
+        "action_changes": 0
+      }
+    },
+    "rows": [
+      {
+        "fixture_index": 0,
+        "starts": [
+          0,
+          10
+        ],
+        "goals": [
+          11,
+          15
+        ],
+        "manhattan_goal_decreasing_candidates": [
+          [
+            5
+          ],
+          [
+            15
+          ]
+        ],
+        "shared_next_vertices": [],
+        "adjacent_current_cells": false,
+        "original_priority_gap": 0.3333333333333333,
+        "policies": {
+          "analytic": {
+            "signed_prediction_gap": 0.0,
+            "bias": [
+              0.0,
+              0.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "history": {
+            "signed_prediction_gap": 0.0,
+            "bias": [
+              0.0,
+              0.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "learned": {
+            "signed_prediction_gap": 0.0,
+            "bias": [
+              0.0,
+              0.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          }
+        }
+      },
+      {
+        "fixture_index": 1,
+        "starts": [
+          5,
+          15
+        ],
+        "goals": [
+          11,
+          23
+        ],
+        "manhattan_goal_decreasing_candidates": [
+          [
+            6,
+            10
+          ],
+          [
+            16,
+            20
+          ]
+        ],
+        "shared_next_vertices": [],
+        "adjacent_current_cells": false,
+        "original_priority_gap": 1.3333333333333333,
+        "policies": {
+          "analytic": {
+            "signed_prediction_gap": 7.0,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "history": {
+            "signed_prediction_gap": 14.0,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "learned": {
+            "signed_prediction_gap": 11.436382913390062,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          }
+        }
+      },
+      {
+        "fixture_index": 2,
+        "starts": [
+          6,
+          16
+        ],
+        "goals": [
+          11,
+          23
+        ],
+        "manhattan_goal_decreasing_candidates": [
+          [
+            11
+          ],
+          [
+            17,
+            21
+          ]
+        ],
+        "shared_next_vertices": [],
+        "adjacent_current_cells": false,
+        "original_priority_gap": 1.3333333333333333,
+        "policies": {
+          "analytic": {
+            "signed_prediction_gap": 7.0,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "history": {
+            "signed_prediction_gap": 14.5,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "learned": {
+            "signed_prediction_gap": 10.233361873307185,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          }
+        }
+      },
+      {
+        "fixture_index": 3,
+        "starts": [
+          11,
+          21
+        ],
+        "goals": [
+          16,
+          23
+        ],
+        "manhattan_goal_decreasing_candidates": [
+          [
+            16
+          ],
+          [
+            22
+          ]
+        ],
+        "shared_next_vertices": [],
+        "adjacent_current_cells": false,
+        "original_priority_gap": 1.6666666666666665,
+        "policies": {
+          "analytic": {
+            "signed_prediction_gap": 7.0,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": true,
+            "actions_changed": false
+          },
+          "history": {
+            "signed_prediction_gap": 15.0,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": true,
+            "actions_changed": false
+          },
+          "learned": {
+            "signed_prediction_gap": 14.239521962259392,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": true,
+            "actions_changed": false
+          }
+        }
+      },
+      {
+        "fixture_index": 4,
+        "starts": [
+          16,
+          22
+        ],
+        "goals": [
+          24,
+          23
+        ],
+        "manhattan_goal_decreasing_candidates": [
+          [
+            17,
+            21
+          ],
+          [
+            23
+          ]
+        ],
+        "shared_next_vertices": [],
+        "adjacent_current_cells": false,
+        "original_priority_gap": 2.6666666666666665,
+        "policies": {
+          "analytic": {
+            "signed_prediction_gap": 7.0,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "history": {
+            "signed_prediction_gap": 15.0,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "learned": {
+            "signed_prediction_gap": 10.484110029008544,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          }
+        }
+      },
+      {
+        "fixture_index": 5,
+        "starts": [
+          17,
+          23
+        ],
+        "goals": [
+          24,
+          15
+        ],
+        "manhattan_goal_decreasing_candidates": [
+          [
+            18,
+            22
+          ],
+          [
+            22,
+            18
+          ]
+        ],
+        "shared_next_vertices": [
+          18,
+          22
+        ],
+        "adjacent_current_cells": false,
+        "original_priority_gap": 1.3333333333333333,
+        "policies": {
+          "analytic": {
+            "signed_prediction_gap": 8.0,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "history": {
+            "signed_prediction_gap": 14.5,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "learned": {
+            "signed_prediction_gap": 12.289701653582522,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          }
+        }
+      }
+    ]
+  },
+  "slow085": {
+    "fixtures": 7,
+    "priority_gap_range": [
+      0.3333333333333333,
+      2.6666666666666665
+    ],
+    "adjacent_states": 0,
+    "shared_next_vertex_states": 1,
+    "policies": {
+      "analytic": {
+        "prediction_gap_range": [
+          0.0,
+          3.0
+        ],
+        "deadband_count": 1,
+        "nonzero_bias": 6,
+        "order_flips": 1,
+        "action_changes": 0
+      },
+      "history": {
+        "prediction_gap_range": [
+          0.0,
+          5.5
+        ],
+        "deadband_count": 1,
+        "nonzero_bias": 6,
+        "order_flips": 1,
+        "action_changes": 0
+      },
+      "learned": {
+        "prediction_gap_range": [
+          0.0,
+          6.259956452684936
+        ],
+        "deadband_count": 1,
+        "nonzero_bias": 6,
+        "order_flips": 1,
+        "action_changes": 0
+      }
+    },
+    "rows": [
+      {
+        "fixture_index": 0,
+        "starts": [
+          0,
+          10
+        ],
+        "goals": [
+          11,
+          15
+        ],
+        "manhattan_goal_decreasing_candidates": [
+          [
+            5
+          ],
+          [
+            15
+          ]
+        ],
+        "shared_next_vertices": [],
+        "adjacent_current_cells": false,
+        "original_priority_gap": 0.3333333333333333,
+        "policies": {
+          "analytic": {
+            "signed_prediction_gap": 0.0,
+            "bias": [
+              0.0,
+              0.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "history": {
+            "signed_prediction_gap": 0.0,
+            "bias": [
+              0.0,
+              0.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "learned": {
+            "signed_prediction_gap": 0.0,
+            "bias": [
+              0.0,
+              0.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          }
+        }
+      },
+      {
+        "fixture_index": 1,
+        "starts": [
+          5,
+          15
+        ],
+        "goals": [
+          11,
+          23
+        ],
+        "manhattan_goal_decreasing_candidates": [
+          [
+            6,
+            10
+          ],
+          [
+            16,
+            20
+          ]
+        ],
+        "shared_next_vertices": [],
+        "adjacent_current_cells": false,
+        "original_priority_gap": 1.3333333333333333,
+        "policies": {
+          "analytic": {
+            "signed_prediction_gap": 2.0,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "history": {
+            "signed_prediction_gap": 5.0,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "learned": {
+            "signed_prediction_gap": 3.375412489505109,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          }
+        }
+      },
+      {
+        "fixture_index": 2,
+        "starts": [
+          6,
+          16
+        ],
+        "goals": [
+          11,
+          23
+        ],
+        "manhattan_goal_decreasing_candidates": [
+          [
+            11
+          ],
+          [
+            17,
+            21
+          ]
+        ],
+        "shared_next_vertices": [],
+        "adjacent_current_cells": false,
+        "original_priority_gap": 1.3333333333333333,
+        "policies": {
+          "analytic": {
+            "signed_prediction_gap": 2.0,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "history": {
+            "signed_prediction_gap": 5.5,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "learned": {
+            "signed_prediction_gap": 2.4495767731624163,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          }
+        }
+      },
+      {
+        "fixture_index": 3,
+        "starts": [
+          11,
+          21
+        ],
+        "goals": [
+          16,
+          23
+        ],
+        "manhattan_goal_decreasing_candidates": [
+          [
+            16
+          ],
+          [
+            22
+          ]
+        ],
+        "shared_next_vertices": [],
+        "adjacent_current_cells": false,
+        "original_priority_gap": 1.6666666666666665,
+        "policies": {
+          "analytic": {
+            "signed_prediction_gap": 2.0,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": true,
+            "actions_changed": false
+          },
+          "history": {
+            "signed_prediction_gap": 5.5,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": true,
+            "actions_changed": false
+          },
+          "learned": {
+            "signed_prediction_gap": 6.259956452684936,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": true,
+            "actions_changed": false
+          }
+        }
+      },
+      {
+        "fixture_index": 4,
+        "starts": [
+          16,
+          22
+        ],
+        "goals": [
+          24,
+          23
+        ],
+        "manhattan_goal_decreasing_candidates": [
+          [
+            17,
+            21
+          ],
+          [
+            23
+          ]
+        ],
+        "shared_next_vertices": [],
+        "adjacent_current_cells": false,
+        "original_priority_gap": 2.6666666666666665,
+        "policies": {
+          "analytic": {
+            "signed_prediction_gap": 2.0,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "history": {
+            "signed_prediction_gap": 5.5,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "learned": {
+            "signed_prediction_gap": 2.493043185237571,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          }
+        }
+      },
+      {
+        "fixture_index": 5,
+        "starts": [
+          17,
+          23
+        ],
+        "goals": [
+          24,
+          15
+        ],
+        "manhattan_goal_decreasing_candidates": [
+          [
+            18,
+            22
+          ],
+          [
+            22,
+            18
+          ]
+        ],
+        "shared_next_vertices": [
+          18,
+          22
+        ],
+        "adjacent_current_cells": false,
+        "original_priority_gap": 1.3333333333333333,
+        "policies": {
+          "analytic": {
+            "signed_prediction_gap": 3.0,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "history": {
+            "signed_prediction_gap": 5.25,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "learned": {
+            "signed_prediction_gap": 4.51206023533193,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          }
+        }
+      },
+      {
+        "fixture_index": 6,
+        "starts": [
+          22,
+          18
+        ],
+        "goals": [
+          24,
+          15
+        ],
+        "manhattan_goal_decreasing_candidates": [
+          [
+            23
+          ],
+          [
+            17
+          ]
+        ],
+        "shared_next_vertices": [],
+        "adjacent_current_cells": false,
+        "original_priority_gap": 1.3333333333333333,
+        "policies": {
+          "analytic": {
+            "signed_prediction_gap": 2.0,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "history": {
+            "signed_prediction_gap": 5.0,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "learned": {
+            "signed_prediction_gap": 3.8359326619650282,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          }
+        }
+      }
+    ]
+  },
+  "axis": {
+    "fixtures": 7,
+    "priority_gap_range": [
+      0.3333333333333333,
+      2.6666666666666665
+    ],
+    "adjacent_states": 0,
+    "shared_next_vertex_states": 1,
+    "policies": {
+      "analytic": {
+        "prediction_gap_range": [
+          0.0,
+          7.0
+        ],
+        "deadband_count": 2,
+        "nonzero_bias": 5,
+        "order_flips": 1,
+        "action_changes": 0
+      },
+      "history": {
+        "prediction_gap_range": [
+          0.0,
+          15.0
+        ],
+        "deadband_count": 2,
+        "nonzero_bias": 5,
+        "order_flips": 1,
+        "action_changes": 0
+      },
+      "learned": {
+        "prediction_gap_range": [
+          -0.02957579139813049,
+          14.239525901372726
+        ],
+        "deadband_count": 3,
+        "nonzero_bias": 4,
+        "order_flips": 1,
+        "action_changes": 0
+      }
+    },
+    "rows": [
+      {
+        "fixture_index": 0,
+        "starts": [
+          0,
+          10
+        ],
+        "goals": [
+          11,
+          15
+        ],
+        "manhattan_goal_decreasing_candidates": [
+          [
+            5
+          ],
+          [
+            15
+          ]
+        ],
+        "shared_next_vertices": [],
+        "adjacent_current_cells": false,
+        "original_priority_gap": 0.3333333333333333,
+        "policies": {
+          "analytic": {
+            "signed_prediction_gap": 0.0,
+            "bias": [
+              0.0,
+              0.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "history": {
+            "signed_prediction_gap": 0.0,
+            "bias": [
+              0.0,
+              0.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "learned": {
+            "signed_prediction_gap": 0.0,
+            "bias": [
+              0.0,
+              0.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          }
+        }
+      },
+      {
+        "fixture_index": 1,
+        "starts": [
+          5,
+          15
+        ],
+        "goals": [
+          11,
+          23
+        ],
+        "manhattan_goal_decreasing_candidates": [
+          [
+            6,
+            10
+          ],
+          [
+            16,
+            20
+          ]
+        ],
+        "shared_next_vertices": [],
+        "adjacent_current_cells": false,
+        "original_priority_gap": 1.3333333333333333,
+        "policies": {
+          "analytic": {
+            "signed_prediction_gap": 7.0,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "history": {
+            "signed_prediction_gap": 14.0,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "learned": {
+            "signed_prediction_gap": 11.43637370973557,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          }
+        }
+      },
+      {
+        "fixture_index": 2,
+        "starts": [
+          6,
+          16
+        ],
+        "goals": [
+          11,
+          23
+        ],
+        "manhattan_goal_decreasing_candidates": [
+          [
+            11
+          ],
+          [
+            17,
+            21
+          ]
+        ],
+        "shared_next_vertices": [],
+        "adjacent_current_cells": false,
+        "original_priority_gap": 1.3333333333333333,
+        "policies": {
+          "analytic": {
+            "signed_prediction_gap": 0.0,
+            "bias": [
+              0.0,
+              0.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "history": {
+            "signed_prediction_gap": 14.5,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "learned": {
+            "signed_prediction_gap": 7.560700593606111,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          }
+        }
+      },
+      {
+        "fixture_index": 3,
+        "starts": [
+          11,
+          21
+        ],
+        "goals": [
+          16,
+          23
+        ],
+        "manhattan_goal_decreasing_candidates": [
+          [
+            16
+          ],
+          [
+            22
+          ]
+        ],
+        "shared_next_vertices": [],
+        "adjacent_current_cells": false,
+        "original_priority_gap": 1.6666666666666665,
+        "policies": {
+          "analytic": {
+            "signed_prediction_gap": 7.0,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": true,
+            "actions_changed": false
+          },
+          "history": {
+            "signed_prediction_gap": 15.0,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": true,
+            "actions_changed": false
+          },
+          "learned": {
+            "signed_prediction_gap": 14.239525901372726,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": true,
+            "actions_changed": false
+          }
+        }
+      },
+      {
+        "fixture_index": 4,
+        "starts": [
+          16,
+          22
+        ],
+        "goals": [
+          24,
+          23
+        ],
+        "manhattan_goal_decreasing_candidates": [
+          [
+            17,
+            21
+          ],
+          [
+            23
+          ]
+        ],
+        "shared_next_vertices": [],
+        "adjacent_current_cells": false,
+        "original_priority_gap": 2.6666666666666665,
+        "policies": {
+          "analytic": {
+            "signed_prediction_gap": 7.0,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "history": {
+            "signed_prediction_gap": 8.0,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "learned": {
+            "signed_prediction_gap": 4.558418802943645,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          }
+        }
+      },
+      {
+        "fixture_index": 5,
+        "starts": [
+          17,
+          23
+        ],
+        "goals": [
+          24,
+          15
+        ],
+        "manhattan_goal_decreasing_candidates": [
+          [
+            18,
+            22
+          ],
+          [
+            22,
+            18
+          ]
+        ],
+        "shared_next_vertices": [
+          18,
+          22
+        ],
+        "adjacent_current_cells": false,
+        "original_priority_gap": 1.3333333333333333,
+        "policies": {
+          "analytic": {
+            "signed_prediction_gap": 1.0,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "history": {
+            "signed_prediction_gap": 7.5,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "learned": {
+            "signed_prediction_gap": 0.6293889261469552,
+            "bias": [
+              0.0,
+              0.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          }
+        }
+      },
+      {
+        "fixture_index": 6,
+        "starts": [
+          22,
+          18
+        ],
+        "goals": [
+          24,
+          15
+        ],
+        "manhattan_goal_decreasing_candidates": [
+          [
+            23
+          ],
+          [
+            17
+          ]
+        ],
+        "shared_next_vertices": [],
+        "adjacent_current_cells": false,
+        "original_priority_gap": 1.3333333333333333,
+        "policies": {
+          "analytic": {
+            "signed_prediction_gap": 7.0,
+            "bias": [
+              1.0,
+              -1.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "history": {
+            "signed_prediction_gap": 0.5,
+            "bias": [
+              0.0,
+              0.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          },
+          "learned": {
+            "signed_prediction_gap": -0.02957579139813049,
+            "bias": [
+              0.0,
+              0.0
+            ],
+            "order_changed": false,
+            "actions_changed": false
+          }
+        }
+      }
+    ]
+  }
+}
