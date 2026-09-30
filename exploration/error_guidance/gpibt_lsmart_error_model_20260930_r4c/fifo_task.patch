@@ -1,0 +1,17 @@
+--- a/server/src/task_assigners/OneGoalTaskAssigner.cpp
++++ b/server/src/task_assigners/OneGoalTaskAssigner.cpp
+@@ -65,6 +65,14 @@
+ // Return the goal loc and if the goal is a backup goal.
+ int OneGoalTaskAssigner::genGoal(int curr_goal, int start_loc, int agent_id) {
+     int next_goal;
++    // Explicit task-file FIFO environment adapter. The controller/planner
++    // receives only the currently revealed goal via the unchanged view API.
++    if (!random_task) {
++        if(tasks.at(agent_id).empty()) throw std::runtime_error("FIFO task file exhausted");
++        next_goal=tasks.at(agent_id).front().location;
++        tasks.at(agent_id).pop_front();
++        return next_goal;
++    }
+     if (screen > 1) {
+         spdlog::info("Generating a goal location from start location {}.",
+                      start_loc);
