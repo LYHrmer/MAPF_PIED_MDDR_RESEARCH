@@ -1,0 +1,245 @@
+{
+  "models": {
+    "ridge_history": {
+      "lambda_value": 1,
+      "intercept_penalized": false,
+      "train_rows": 22,
+      "train_cohorts": [
+        "cohort_00",
+        "cohort_01",
+        "cohort_02",
+        "cohort_05",
+        "cohort_06"
+      ],
+      "used_calibration_for_fit": false,
+      "used_test_for_fit": false,
+      "features": 18,
+      "nohistory_zero_slots": [],
+      "coefficients": [
+        "8033249/40000000",
+        "0",
+        "0",
+        "-9801671/500000000",
+        "-175093913/1000000000",
+        "0",
+        "99106677/1000000000",
+        "-16605723/1000000000",
+        "-21795011/1000000000",
+        "-3113573/200000000",
+        "86149251/500000000",
+        "12192601/250000000",
+        "29176353/500000000",
+        "384405969/1000000000",
+        "31484469/250000000",
+        "-1856471/8000000",
+        "-180782423/1000000000",
+        "-33587849/250000000",
+        "-5647863/40000000"
+      ],
+      "fit_float_coefficients": [
+        0.2008312248916125,
+        0.0,
+        3.964400218681102e-16,
+        -0.019603342323687996,
+        -0.1750939129675163,
+        2.0174451941951143e-16,
+        0.09910667678848044,
+        -0.016605722666023993,
+        -0.021795010999156483,
+        -0.015567864999397498,
+        0.17229850167439895,
+        0.04877040401576569,
+        0.05835270564554394,
+        0.3844059693947375,
+        0.1259378759539057,
+        -0.23205887494216831,
+        -0.18078242325516886,
+        -0.1343513958782839,
+        -0.14119657548222408
+      ],
+      "train_rmse": 0.29892298875291506
+    },
+    "ridge_nohistory": {
+      "lambda_value": 1,
+      "intercept_penalized": false,
+      "train_rows": 22,
+      "train_cohorts": [
+        "cohort_00",
+        "cohort_01",
+        "cohort_02",
+        "cohort_05",
+        "cohort_06"
+      ],
+      "used_calibration_for_fit": false,
+      "used_test_for_fit": false,
+      "features": 18,
+      "nohistory_zero_slots": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "coefficients": [
+        "132170433/500000000",
+        "0",
+        "0",
+        "645249/10000000",
+        "-260977677/1000000000",
+        "0",
+        "40124077/250000000",
+        "-38599671/500000000",
+        "-12665517/125000000",
+        "-72374383/1000000000",
+        "227504777/1000000000",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "fit_float_coefficients": [
+        0.26434086570383236,
+        0.0,
+        6.783876508066883e-16,
+        0.06452489961232698,
+        -0.26097767740389116,
+        6.514798359093845e-16,
+        0.1604963081042752,
+        -0.07719934182133177,
+        -0.10132413614049791,
+        -0.07237438295749854,
+        0.2275047766341767,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "train_rmse": 0.4076128281545845
+    }
+  },
+  "train_label_sha256": "2ec37ffe95caaf5abd3d66597746875e19c894feeb074b3684ab625175ab83d4",
+  "train_row_bindings": [
+    {
+      "world_id": "cohort_00__IID_5101",
+      "opportunity": 1,
+      "source": 17
+    },
+    {
+      "world_id": "cohort_00__IID_5102",
+      "opportunity": 1,
+      "source": 17
+    },
+    {
+      "world_id": "cohort_00__IID_5103",
+      "opportunity": 1,
+      "source": 17
+    },
+    {
+      "world_id": "cohort_00__IID_5104",
+      "opportunity": 1,
+      "source": 17
+    },
+    {
+      "world_id": "cohort_00__eta0",
+      "opportunity": 1,
+      "source": 17
+    },
+    {
+      "world_id": "cohort_01__IID_5101",
+      "opportunity": 1,
+      "source": 11
+    },
+    {
+      "world_id": "cohort_01__IID_5102",
+      "opportunity": 1,
+      "source": 76
+    },
+    {
+      "world_id": "cohort_01__IID_5103",
+      "opportunity": 1,
+      "source": 76
+    },
+    {
+      "world_id": "cohort_01__IID_5104",
+      "opportunity": 1,
+      "source": 11
+    },
+    {
+      "world_id": "cohort_01__eta0",
+      "opportunity": 1,
+      "source": 76
+    },
+    {
+      "world_id": "cohort_02__IID_5101",
+      "opportunity": 1,
+      "source": 6
+    },
+    {
+      "world_id": "cohort_02__IID_5102",
+      "opportunity": 1,
+      "source": 6
+    },
+    {
+      "world_id": "cohort_02__IID_5103",
+      "opportunity": 1,
+      "source": 6
+    },
+    {
+      "world_id": "cohort_02__IID_5104",
+      "opportunity": 1,
+      "source": 6
+    },
+    {
+      "world_id": "cohort_02__eta0",
+      "opportunity": 1,
+      "source": 6
+    },
+    {
+      "world_id": "cohort_05__IID_5103",
+      "opportunity": 1,
+      "source": 16
+    },
+    {
+      "world_id": "cohort_05__IID_5104",
+      "opportunity": 1,
+      "source": 89
+    },
+    {
+      "world_id": "cohort_06__IID_5101",
+      "opportunity": 1,
+      "source": 43
+    },
+    {
+      "world_id": "cohort_06__IID_5102",
+      "opportunity": 1,
+      "source": 43
+    },
+    {
+      "world_id": "cohort_06__IID_5103",
+      "opportunity": 1,
+      "source": 43
+    },
+    {
+      "world_id": "cohort_06__IID_5104",
+      "opportunity": 1,
+      "source": 43
+    },
+    {
+      "world_id": "cohort_06__eta0",
+      "opportunity": 1,
+      "source": 43
+    }
+  ],
+  "same_architecture_labels_budget_split": true
+}
