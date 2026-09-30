@@ -1,0 +1,2 @@
+首audit_attempt_01继承R3错误地要求资源格恰为19，因新多几何支持不同拒绝；其source/stdout/stderr/回执保留。R4本来已登记每cohort全部路线格并原生支持任意至少4格。本次只把独立source-binder固定19改为完整union相等且>=4；不改native/训练/数据/模型/选择。
+第二audit_attempt_02在独立70位Decimal重建的WAIT终点使用==，闭式时间经不同加法路径发生约1e-68舍入差而拒绝；原native精确algebraic时钟/WAIT不变。改为既有独立时间核验统一1e-60误差界（仍小于1e-6raw包围区间54个数量级），保留第二失败source/raw/receipt，不重跑任何native或改变标签。
