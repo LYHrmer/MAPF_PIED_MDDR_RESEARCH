@@ -1,5 +1,7 @@
 # 73Q2：PIE-D误差执行主线的具体实现绑定
 
+当前更新：2026-10-01 R6 见§76。原 POSITION、后车 RUN、四终端收集、收据安装和下一选择已真实闭合；R6e 同合同 Natural 全查询净费降低 9.61%，另立统一 8,388,608 供给的 Natural/Strict 均完整成功。原 1m 合同失败仍保留。查询 R6 完成 70 次成功原生执行、40 次完整留出，尚无模型优势；第三线作者 OBJ3/OBJ4 在共同严格点 ACK 下完成24/24次800s连续执行，12个配对均为旧小预算迁移模型少于hm。以下原“最新”说明及§1–75保持为历史记录。
+
 最新：2026-09-30第四轮实作见§74。主线原预算已进入compute_position/capture；查询与执行误差模型均完成真训练及留出，尚无相对强规则的学习收益。正式hm+GPIBT比较已补齐。双独立判断后的三条隔离后继正在实施，完整查询尚未闭合。
 
 2026-09-14，建设中，可更新。承接固定73与73R4，主线是误差包络、原MOVE前缀授权、可信进度和空间释放。这里补具体接口与代码包，不重开完整设计审查，不改变参数化模型、比较或主roster。ECBS包保持既有完成状态。
@@ -1716,3 +1718,41 @@ R5d另立目录 `query_accounting_budget_diagnostic_20260930_r5d`，只有E201/E
 标准输入新增四MovingAI原地图与各25官方random场景，四规模32/64/128/256共400合法输入登记，不等于400运行。实际另做random-1/64agents/1000ticks的8作者native；512000动作/512512位置及FIFO通过。hm/旧模型完成任务：empty2745/2678、random2673/2620、maze932/946、room1866/1908。结果有正有负，为单seed旧sortation权重迁移pilot；无新误差算法或统计优势。原始官方zips/归属、规模重复/删失/成本与安全口径已发布 `mapf_evaluation_20260930_r5`。主要性能仍需同完整任务/误差/信息/成本下的公开规模实验；内部RR/WAIT/历史规则是消融，不包装成已发表基线。
 
 更新后独立复判也已实际完成：未参与实现的新GPT-6.1-sol-ultra子智能体仅读五份本轮结果及root主线原raw事实，不读导师/root结论；research-mentor判断不读技术/root结论，查询实施角色公开。技术评审建议第三线共同误差平台优先，导师建议以有限证据查询价值为候选核心，二者均不主张已建立学习优势。root综合为共同执行平台/完整公开任务流先行，在其中验证query竞争与全任务价值，主线固定预算并收敛C451消费/终端费用；不继续扩大无支持模型或将微优化当主要科研进度。原报告SHA分别acfd149f34b4832a5154e62212306af9d9f8f63e74597164b09215e68011d222、6a45e1b3f4be6dd7f187798cb6e7d2a3469b8285e7992102e0ee1da3aab28898，按原字节公开于第三分支SOL_FRESH_POSTUPDATE_20260930_R5.md与MENTOR_POSTUPDATE_20260930_R5.md；角色与来源见POSTUPDATE_REVIEW_PROVENANCE_20260930_R5.json。下一实验设计与本轮实际结果分开。
+
+## 76. 完整收费查询闭合、精确收据优化与公开共同执行（2026-10-01 R6）
+
+本轮继续三线实际实现。主线所有新实现保存在忽略目录 `implementation_binding_evidence`，没有改写生产头、原冻结工件或主稿；公共仓库只更新四份进度文档。R5及以前“完整查询尚未闭合”均为当时结果，本节给出随后真实完成的资源合同及费用。三线汇总入口为第三分支 [THREE_ROUTE_POSTUPDATE_20261001_R6.md](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261001_R6.md)。第三线最终24次完整执行及适配失败的保留口径见本节末。
+
+R6 `codec_buffer_successor_20261001_r6` 为 Admission body 及公共 codec 合法总量预分配，按原检查顺序逐槽写入。E201 实际 1,696,340，比 R5d 同合同少 109,497；E306 实际 1,277,106，少 42,022。R6b `validated_body_successor_20261001_r6b` 保留首次完整 canonical encode-equality 与完整原请求绑定，私有 PositionCertificate 复用已验证 body 建立独立拥有的 provenance 字符串，去掉第二次 encode 和一次分配。原 guard、SOURCE/Release 顺序、输入销毁后的所有权及全部 guest 费用保持。Native 编码、接口、生命周期及旧接收差分通过，但该合同下 Natural/Strict/observer 仍在 C451 的 1,048,576 供给耗尽；这两项优化未冒称完整查询成功。
+
+R6c `full_query_resource_diagnostic_20261001_r6c` 复用 R6b 三个 guest ELF，另立所有 compute/publication 段统一 8,388,608 的有限合同。真实完成 C451=3,499,122、C502=1,395,815、C602=134,502，后车在物理 t6 消费原 rear-cap RUN，并完成四 terminal 收集；最终 C1401 收据在 8m 耗尽。R6d `final_receipt_resource_diagnostic_20261001_r6d` 再另立只有 C1401 为 67,108,864、其他段仍 8,388,608 的合同，Natural/Strict 真实 exit0，最终 guest 检查可用 quote 后执行下一选择。98 段 Natural 实际总费 158,804,076；其中 Business 114,298,077、Selection 1,367,781、Query 业务 7,644,113、独立 ReceiptAccounting 35,494,105。C1401 实际 19,843,111。此前 1m/4m/统一8m的失败及回执全部保留。
+
+R6d 的只读 paid observer 定位到精确 `ReceiptBuilder::word_to_real` 固定 64 位翻倍：即使 segment 的 Word 很小，也构造不会使用的大权重并触发 FLINT/GMP 冷缓存分配。R6e `receipt_word_successor_20261001_r6e` 仅将该转换改为零直接返回 `Ops::zero()`、其余按原低位到高位顺序迭代到最高置位。原有效 `Ops::add` 顺序、逐 segment 验证、原顺序 Real 累加、正总额检查及独立 RA 归属不变；没有机器字总价、浮点近似、host 代算或豁免费用。
+
+402 组 Natural/Strict 边界差分覆盖 0/1、所有 64 位幂及邻界、最高位、UINT64_MAX、3×UINT64_MAX 和常见实际 segment Word，原/candidate 公开输出逐字节一致；原 source/guard 套件通过。首次测试 fixture 因未用 helper 在 `-Werror` 编译失败，源码快照及失败保留，删除无用 fixture helper 后二次通过。继承 header 和五份 ordinary source 本体逐字节不变；实际编译依赖确认采用新转换头。三 guest 重新编译、按实际 ELF 重扫发布入口并通过原全路径 qualifier/binder；private kernel 仍为原 20,480bytes、0x11000、flags6，SHA `c1942d2feb24492b3ace8844c8d092063507ead74ae066340ad6e8d254ac28a8`，原 1,408bytes stack bound 的复用依据保持。
+
+R6e 首先按与 R6d 完全相同的物理输入和供给合同运行 Natural、Strict、observer，三次均完整 exit0。以下 actual 来自真实关闭 segment，不由容量或原生运行时间换算；Strict charged 是容量收费，不能当成报价中的实际 Query 业务成本。
+
+|费用归属|R6e Natural actual=charged|R6e Strict actual|R6e Strict charged（R6d合同）|
+|---|---:|---:|---:|
+|Business/setup|114,298,261|114,298,261|176,160,768|
+|Selection|1,436,119|1,436,119|41,943,040|
+|Query业务|7,644,113|7,644,225|184,549,376|
+|独立ReceiptAccounting|20,158,975|20,160,137|478,150,656|
+|全部98段|143,537,468|143,538,742|880,803,840|
+
+同合同 Natural 总费净省 **15,266,608（9.61%）**；Strict actual 净省 15,267,616。C1401 为 **19,843,111 → 4,510,263（−77.27%）**，Strict 对应为 19,843,455 → 4,510,607。完整净值已经计入回弹：下一选择 C1501 **391,983 → 460,314（+68,331）**，Business 总体 +184、Selection 总体 +68,338，不只报告局部收据下降。Query 业务费用保持不变，独立 RA 不转入 quote。observer health0，C1401 actual=observed=4,510,263，ordinary4,510,234+other29 守恒；分配次数 4,184→106，其中小16B aligned 分配 4,065→0。observer 与 Natural 的全部非 `host_elapsed` 事件一致，未宣称完整 stdout SHA 相同。
+
+因新 C1401 已低于 8m，随后另立统一 **8,388,608** 合同，取消其 64m 特例，Natural/Strict 又各真实完成 98 段。每段 actual 与上述 R6d 合同完全相同，总 actual 仍为 143,537,468/143,538,742，Strict charged 为 **822,083,584**。两个合同均完成原 POSITION 消费→rear RUN t6→四 terminal 收集→原 ReceiptInstallation→guest 可用 quote 检查→下一选择，最终 C/N/E boundary19/11/13，输入/输出/引用/copy/reclaim 均关闭。**这是独立统一8m合同成功，不是原1m合同成功**；单一既有物理输入的实现与计费结果，不是 MAPF 科研样本、planner wall-clock/吞吐改善或 authenticated END/连续 footprint 安全实验。
+
+主线保存证据在 `receipt_word_successor_20261001_r6e/HANDOFF.md`、`RESULT.json`、`STAGE_COSTS.csv`、`handoff_manifest.json`。`audit_receipt_word.py` 与 `audit_uniform_8m.py` 对保存 raw、实际费用守恒、pins、三 ELF kernel、源码依赖、原生差分和 observer 复核，结果分别为 `final_run_verification.json` 与 `uniform_8m_verification.json`。root另从原始回执独立复核2,982项输入pins、5个各98段的真实run、完整生命周期及逐段/类别费用守恒，结果为 `implementation_binding_evidence/RECEIPT_WORD_SUCCESSOR_20261001_R6E_ROOT_VERIFICATION.json`。这些是同一固定输入的实现核验，不能当作MAPF实验规模。公共文档只给结果和证据位置，私有实现未混入公共 Git。
+
+[查询 R6 完整报告](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/learned-query/exploration/learned_query/public_joint_20261001_r6/REPORT.md)记录 70 次成功 native：6 次机械、24 次训练/校准反事实、40 次完整留出。六个预定 16-agent 块各取前三个作者已完成 FIFO 任务，组00–02训练、03校准、04–05留出，每组48固定任务；保留相同公开 law、survival 条件与已交付 END 信息。两份同架构有/无历史 ridge 真正拟合、冻结并在共享 Geometry/Index/PositionCommit、原 Controller 和真实任务服务中评分/选择。12训练、4校准标签来自前两个非空机会的单query原生继续，这些机会均仅一个候选，不能称已经训练出多source排序。
+
+40留出运行中，IID四 world 五方法均125/192任务，非WAIT同61query和受限固定任务时间和34505.538635；SHIFT两 world 均50/96任务，非WAIT同27query和20946.342437。六个 IID/SHIFT 的 history/nohistory/RR 物理、END、任务序列一致，未建立模型优势。历史模型只在组04 eta0诊断多1query、少0.542893受限时间、任务数不变，不能据此声称同费用优势。全部8个留出 world 最终死锁；静态裁剪计划丢失全局顺序以及有限第三head末端驻留是明确限制。此为公开来源16-agent既定计划机制pilot，不是原100-agent作者完整系统、在线无限LMAPF或生产AUTH/COST闭环。70位十进制精度的独立物理/资源重放覆盖55,912MOVE/END、180,667帧、533查询，并核标签、精确有理ridge重拟合及六泄漏/预算负控；初始两次超时和原编译缺口保留。下一需接合法全局依赖保持执行或作者在线任务/planner，再在新完整run划分评价边际证据价值，不能继续筛这两个测试组的阳性子集。
+
+第三线 [published_continuous_execution_20261001_r6c](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/published_continuous_execution_20261001_r6c/REPORT.md)已完成24/24次运行，每次到8,000tick（800s）：2maps×N8/16×作者hm_GPIBT OBJ3/冻结训练OBJ4×nominal/slow065/unknown_pause。两作者方法共享严格点ACK、预冻逐agent FIFO任务及同一连续执行器，原始FIFO、实际服务、ACK、动作和官方对象身份审计全通过。真实OBJ4神经模型调用154,434次、hm为0，证明确实进入官方调用路径。12个配对中旧小预算sortation模型完成任务均少于hm，累计hm780、模型648；这是单seed跨图迁移pilot，不是作者充分训练预算下的结论，也不将方法名当成新学习贡献。
+
+2,304,000次物理观测另经独立圆footprint采样检查，最小机器人间净空0.291639778m、障碍净空0.373202651m，均为正；这些是采样证据，不是连续时间footprint安全证明。共同global joint-settled barrier要求全队停稳，会压制局部进度信息的价值，因此该R1共同执行比较不能当原异步LMAPF benchmark，也不能据模型较弱推断局部执行误差学习无价值。
+
+适配失败没有覆盖：旧R6的24run全部保留，因适配错误将主指标置为null；R6b预检失败，没有native执行；R6c修复两处合并及坐标映射后重新冻结并运行上述24组。最终 `summary.json` 与 `REPORT.md` 位于第三分支同名目录，4份归档含192个raw文件，原始总量2,386,357,609bytes，压缩后186,507,495bytes。失败历史、最终正确输入、作者对象身份与实际任务结果分开保存，任务780/648只归属于最终R6c。

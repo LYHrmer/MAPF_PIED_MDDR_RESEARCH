@@ -1,5 +1,15 @@
 # MAPF 项目当前入口
 
+2026-10-01 第六轮更新（R6，Q2 §76）：**主线已真实完成 POSITION、后车 RUN、四终端收集、收据安装及下一次选择；精确费用优化后，另立统一 8,388,608 供给的 Natural/Strict 完整查询均成功。** 原 1,048,576 供给失败仍保留，统一 8m 成功不等于原 1m 合同成功。[R6 三线结果与后续设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261001_R6.md)。
+
+主线先在 R6d 的独立合同下完成全查询，再将精确 `Word → Real` 转换限制到最高置位，保留全部 segment guard、有效加法顺序与真实 guest 计费。同合同 Natural 总实际费用 **158,804,076 → 143,537,468，净降 9.61%**；C1401 收据安装 **19,843,111 → 4,510,263**，已计入下一选择增加 68,331 的回弹。Query 业务实际费用仍为 7,644,113，独立收据记账不混入报价。随后取消 C1401 的 64m 特例，统一 8m 两制度再次完整通过；这是固定物理输入上的工程费用结果，尚非 MAPF 吞吐或学习收益。
+
+[查询 R6](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/learned-query/exploration/learned_query/public_joint_20261001_r6/REPORT.md)完成 **70 次成功原生执行，其中 40 次完整留出**，扩展至 16 机器人、每组 48 个固定任务，并实际训练同架构有/无历史价值模型。IID/SHIFT 中 history、nohistory 与 RR 的真实物理、END 和任务轨迹相同，尚未建立模型优势；8 个留出 world 均最终死锁，限制来自既定静态计划与有限末端驻留，不能当作在线 LMAPF 结论。
+
+[第三线 R6c](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/published_continuous_execution_20261001_r6c/REPORT.md)已完成 **24/24 次真实连续执行，每次 8,000tick（800s）**：2图×8/16机器人×作者 hm_GPIBT OBJ3/冻结训练 OBJ4×nominal/slow065/unknown_pause，共同严格点 ACK、固定 FIFO 任务和服务审计通过。12个配对中旧小预算 sortation 模型任务数均低于 hm，累计 **hm 780、模型 648**；这是单seed迁移 pilot，不能否定作者充分训练方法。独立圆 footprint 采样净空全正，但不是连续安全证明；共同全队停稳屏障也限制了局部进度价值，不能当原异步 LMAPF benchmark。旧适配错误运行完整保留并将主指标置空。
+
+以下 R5 及更早内容逐字保留为历史快照，其中“完整查询尚未闭合”描述的是当时状态。
+
 更新后另由未参与实现的GPT-6.1-sol-ultra复判，建议优先第三线共同执行误差平台；research-mentor独立判断更看重查询价值作为候选核心。采纳的实施顺序是平台与完整公开任务流先行、查询在其中验证多源竞争/全任务收益、主线集中C451消费及费用闭环；两份原报告及差异完整公开于下方R5报告，不把分歧抹成一致结论。
 
 2026-10-01 第五轮更新（20260930_R5批次，Q2 §75）：**主线在独立预算诊断中已生成真实POSITION并传至中心输入；查询线已实现多次事件查询；第三线预测已改变真实动作，并完成公开地图作者基线试跑。完整查询和学习独立优势仍未成立。** [三线实绩、独立复判与下一设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20260930_R5.md)。

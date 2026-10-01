@@ -1,5 +1,15 @@
 # 导师汇报：研究问题、数学表达与当前阶段
 
+2026-10-01 第六轮更新（R6，Q2 §76）：**完整收费查询已在独立资源合同下闭合，并得到一次可核实的整次净费下降；查询模型尚未取得独立任务收益。** [R6 三线结果与后续设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261001_R6.md)。
+
+主线已真实执行 POSITION 消费、后车 RUN、四终端收集、收据安装、guest 可用报价检查及下一选择。精确转换优化保持全部验证和计费语义，在同 R6d 合同下把 Natural 总实际费用 **158,804,076 降至 143,537,468（净降 9.61%）**；最终收据 **19,843,111 → 4,510,263**，下一选择增加 68,331 已扣除。Query 业务实际费用仍为 7,644,113。随后另立统一 8,388,608 供给，两种制度各完整通过 98 段，取消了最终收据的 64m 特例；原 1m 失败没有改写。这是固定输入的工程可实现性与费用结果，尚不构成 MAPF 任务性能贡献。
+
+[查询 R6](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/learned-query/exploration/learned_query/public_joint_20261001_r6/REPORT.md)完成 70 次成功原生执行，其中 40 次完整留出；16 机器人在共同物理与资源状态中运行，同架构有/无历史模型均已训练并真实选择查询。IID/SHIFT 上两模型与 RR 的物理、END 和任务轨迹相同，未建立历史模型优势。8 个留出 world 最终均死锁，说明下一接口需保留合法全局依赖或接作者在线任务/planner，不能靠更换网络掩盖静态裁剪计划与末端驻留限制。
+
+[第三线 R6c](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/published_continuous_execution_20261001_r6c/REPORT.md)已完成24/24次800s连续执行，覆盖2图、8/16机器人、作者hm_GPIBT OBJ3/冻结训练OBJ4及三种误差条件，共同严格点ACK、预冻FIFO任务、实际服务和动作审计通过。12个配对中旧小预算sortation模型任务数均低于hm，累计 **hm780、模型648**。这使作者方法真正进入共同连续执行比较，但单seed迁移结果不能否定充分训练方法；全队停稳屏障会压制局部进度价值，也不是原异步LMAPF benchmark。圆footprint采样净空均为正，尚非连续安全证明；旧适配错误运行保留且主指标置空。
+
+以下独立判断与 R5 及更早记录按原字节保留为历史；其中“完整查询尚未闭合”不再代表 R6 当前状态。
+
 更新后另由未参与实现的GPT-6.1-sol-ultra复判，建议优先第三线共同执行误差平台；research-mentor独立判断更看重查询价值作为候选核心。采纳的实施顺序是平台与完整公开任务流先行、查询在其中验证多源竞争/全任务收益、主线集中C451消费及费用闭环；两份原报告及差异完整公开于下方R5报告，不把分歧抹成一致结论。
 
 2026-10-01 第五轮更新（20260930_R5批次，Q2 §75）：**主线在独立预算诊断中已生成真实POSITION并传至中心输入；查询线已实现多次事件查询；第三线预测已改变真实动作，并完成公开地图作者基线试跑。完整查询和学习独立优势仍未成立。** [三线实绩、独立复判与下一设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20260930_R5.md)。

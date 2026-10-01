@@ -1,5 +1,15 @@
 # 实验前进度入口
 
+2026-10-01 第六轮更新（R6，Q2 §76）：**主线已完成原 POSITION → 后车 RUN → 四终端收集 → ReceiptInstallation → 可用报价 → 下一选择，并在另立统一 8,388,608 供给下通过 Natural/Strict 完整执行。** 原 1,048,576 供给的失败保留；本次不声称 1m 合同成功。[R6 三线结果与后续设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261001_R6.md)。
+
+R6e 只优化精确 `Word → Real` 的无用高位翻倍，402 组边界差分和原 guard 测试通过，三个重绑 guest 的 private kernel 字节与映射不变。同 R6d 合同 Natural 全查询实际费用 **158,804,076 → 143,537,468，净省 15,266,608（9.61%）**；最终收据 C1401 **19,843,111 → 4,510,263**，下一选择增加 68,331 的回弹已计入净值。Query 业务仍为 7,644,113。另立统一 8m 后两制度各完成全部 98 段，逐段 actual 不变，Strict charged 为 822,083,584；最终 C/N/E 边界 19/11/13，输入、输出、引用与回收均关闭。
+
+[查询 R6](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/learned-query/exploration/learned_query/public_joint_20261001_r6/REPORT.md)完成 70 次成功原生执行、其中 40 次完整留出，16 机器人共同执行与两份历史价值模型真实接通。IID/SHIFT 上有历史、无历史与 RR 的物理、END、任务轨迹一致，不能由校准预测改善推出任务收益。所有 8 个留出 world 最终死锁，当前支持仍是公开作者轨迹裁剪后的静态既定计划 pilot。
+
+[第三线 R6c](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/published_continuous_execution_20261001_r6c/REPORT.md)完成2图×8/16机器人×hm_GPIBT OBJ3/冻结训练 OBJ4×nominal/slow065/unknown_pause的 **24/24 次执行，各8,000tick（800s）**，原始FIFO、服务、严格点ACK、动作和官方对象身份审计通过。12个配对均为旧小预算 sortation 模型少于 hm，累计任务 **780 对 648**；实际模型调用154,434次，hm为0。2,304,000次物理观测的独立圆footprint采样最小机器人间净空0.291639778m、障碍净空0.373202651m，全正不等于连续安全。共同全队停稳屏障会压制局部进度价值；结果仅属单seed迁移pilot。旧R6适配错误24run保留且主指标置空，R6b仅预检失败，R6c修复两处合并与坐标映射后重新冻结运行。
+
+以下 R5 及以前记录保持原字节；“完整查询尚未闭合”等句子是对应轮次的历史状态，不是 R6 当前结论。
+
 更新后另由未参与实现的GPT-6.1-sol-ultra复判，建议优先第三线共同执行误差平台；research-mentor独立判断更看重查询价值作为候选核心。采纳的实施顺序是平台与完整公开任务流先行、查询在其中验证多源竞争/全任务收益、主线集中C451消费及费用闭环；两份原报告及差异完整公开于下方R5报告，不把分歧抹成一致结论。
 
 2026-10-01 第五轮更新（20260930_R5批次，Q2 §75）：**主线在独立预算诊断中已生成真实POSITION并传至中心输入；查询线已实现多次事件查询；第三线预测已改变真实动作，并完成公开地图作者基线试跑。完整查询和学习独立优势仍未成立。** [三线实绩、独立复判与下一设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20260930_R5.md)。
