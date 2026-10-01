@@ -1,0 +1,9 @@
+# Exact registered-domain resource culling
+
+For a cardinal unit route from integer u to v, every point of the original reference MOVE lies on the segment [u,v]. The square footprint has half-width1/10 and the error rectangle half-width1/20. Their Minkowski sum has half-width3/20. Thus the entire original swept responsibility at every progress interval [q,1], and every instantaneous footprint, lies inside the closed box [min(u,v)-3/20,max(u,v)+3/20] in both coordinates.
+
+Each unchanged resource square centered at integer c has closed bounds[c-1/2,c+1/2]. If it is strictly separated from that sweep box on either coordinate, its intersection with every suffix/instantaneous responsibility is empty. The adapter keeps all closed-box intersections using integer units1/20 (resource half10, sweep half3), then calls the unchanged production Geometry on the retained original pieces. Equality stays in the candidate set. No nominal distance, progress estimate, seed, task outcome, or learned value determines this filtering.
+
+The registered source supports only unit cardinal movements and waits, with nonnegative integer resource names; a native guard rejects movements outside that support. Root independently checked all4956 registered distinct directed edges and six exact suffix thresholds. Native full-resource versus retained-resource Geometry checks8 representative cases across all four directions and first/last whole cohorts: full masks plus six suffix and point masks,104 comparisons, all equal. In addition both old full-resource300-second WAIT raw prefixes are byte-for-byte identical prefixes of the new successful raws. Original timeouts and unsuccessful first differential compile are preserved.
+
+This changes repeated polygon construction cost only. Shared global owner IDs, original input resource pool, motion, Controller, masks, event clocks, tasks, actors and query budget remain the registered scientific execution.

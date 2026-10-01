@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "model_sha256": "17867890852e2e0aae156d15764d8114fac184a568f91e7bd51de41aa45f9b94",
+  "refits": {
+    "ridge_history": {
+      "rows": 12,
+      "parameters": 21,
+      "augmented_least_squares_refit": true
+    },
+    "ridge_nohistory": {
+      "rows": 12,
+      "parameters": 21,
+      "augmented_least_squares_refit": true
+    }
+  },
+  "heldout_native_runs": 40,
+  "exact_model_choices": 320,
+  "exact_candidate_scores": 324,
+  "IID_SHIFT_equal_causal_worlds": [
+    "group_04__IID_12101",
+    "group_04__IID_12102",
+    "group_04__SHIFT_12201",
+    "group_05__IID_12101",
+    "group_05__IID_12102",
+    "group_05__SHIFT_12201"
+  ],
+  "totals": {
+    "WAIT": {
+      "served": 250,
+      "queries": 0
+    },
+    "RR": {
+      "served": 250,
+      "queries": 116
+    },
+    "condition": {
+      "served": 247,
+      "queries": 120
+    },
+    "ridge_history": {
+      "served": 250,
+      "queries": 117
+    },
+    "ridge_nohistory": {
+      "served": 250,
+      "queries": 116
+    }
+  },
+  "new_native_runs": 0,
+  "scope": "Saved training refit and logged public-feature choice/service replay; independent full geometry/history audit is separate."
+}

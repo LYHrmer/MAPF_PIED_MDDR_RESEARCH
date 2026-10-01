@@ -1,0 +1,739 @@
+{
+  "runs": [
+    {
+      "raw": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/public_joint_20261001_r6/mechanical_attempt_02/mechanical_n08__9101__RR.jsonl",
+      "sha256": "8be23db71fc52a330e14f1ce34d191a9768f0865d542a294d53e6524ef17de69",
+      "deadlock": true,
+      "served": 23,
+      "tasks": 24,
+      "finished_stationary_agents": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "direct_wait_edges": [
+        [
+          1,
+          3
+        ]
+      ],
+      "unique_cycles": [],
+      "agents_by_root_cause": {
+        "completed_third_head_standing_owner": 1
+      },
+      "unfinished_heads_by_root_cause": {
+        "completed_third_head_standing_owner": 1
+      },
+      "blocked_agents": [
+        {
+          "agent": 1,
+          "blocker_chain": [
+            1,
+            3
+          ],
+          "reason": "completed_third_head_standing_owner",
+          "cycle": null,
+          "unfinished_fixed_heads": 1
+        }
+      ],
+      "scope": "Static post-run causal classification; not proof that a query or replanner can or cannot prevent earlier deadlock formation."
+    },
+    {
+      "raw": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/public_joint_20261001_r6/mechanical_attempt_02/mechanical_n08__9101__WAIT.jsonl",
+      "sha256": "09e65fedadac8da04d0f61004a28174c28764a3c5208710542fa72aadbecab71",
+      "deadlock": true,
+      "served": 23,
+      "tasks": 24,
+      "finished_stationary_agents": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "direct_wait_edges": [
+        [
+          1,
+          3
+        ]
+      ],
+      "unique_cycles": [],
+      "agents_by_root_cause": {
+        "completed_third_head_standing_owner": 1
+      },
+      "unfinished_heads_by_root_cause": {
+        "completed_third_head_standing_owner": 1
+      },
+      "blocked_agents": [
+        {
+          "agent": 1,
+          "blocker_chain": [
+            1,
+            3
+          ],
+          "reason": "completed_third_head_standing_owner",
+          "cycle": null,
+          "unfinished_fixed_heads": 1
+        }
+      ],
+      "scope": "Static post-run causal classification; not proof that a query or replanner can or cannot prevent earlier deadlock formation."
+    },
+    {
+      "raw": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/public_joint_20261001_r6/mechanical_attempt_02/mechanical_n08__9101__condition.jsonl",
+      "sha256": "7444588dab67a2bea27aa2673a2f2b142cebba751c18fef09c8dc0a2a77a06a5",
+      "deadlock": true,
+      "served": 23,
+      "tasks": 24,
+      "finished_stationary_agents": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "direct_wait_edges": [
+        [
+          1,
+          3
+        ]
+      ],
+      "unique_cycles": [],
+      "agents_by_root_cause": {
+        "completed_third_head_standing_owner": 1
+      },
+      "unfinished_heads_by_root_cause": {
+        "completed_third_head_standing_owner": 1
+      },
+      "blocked_agents": [
+        {
+          "agent": 1,
+          "blocker_chain": [
+            1,
+            3
+          ],
+          "reason": "completed_third_head_standing_owner",
+          "cycle": null,
+          "unfinished_fixed_heads": 1
+        }
+      ],
+      "scope": "Static post-run causal classification; not proof that a query or replanner can or cannot prevent earlier deadlock formation."
+    },
+    {
+      "raw": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/public_joint_20261001_r6/mechanical_attempt_02/mechanical_n16__9101__RR.jsonl",
+      "sha256": "357fa1f01fc681c361009361cd4c8fd1f5652b7fa5ef80f1a253328f30d8cd59",
+      "deadlock": true,
+      "served": 31,
+      "tasks": 48,
+      "finished_stationary_agents": [
+        0,
+        3,
+        4,
+        6,
+        8,
+        9,
+        13
+      ],
+      "direct_wait_edges": [
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          12
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          7,
+          12
+        ],
+        [
+          10,
+          5
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          12,
+          2
+        ],
+        [
+          14,
+          11
+        ],
+        [
+          15,
+          11
+        ]
+      ],
+      "unique_cycles": [
+        [
+          2,
+          12
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          11,
+          14
+        ]
+      ],
+      "agents_by_root_cause": {
+        "completed_third_head_standing_owner": 1,
+        "unfinished_static_route_cycle": 8
+      },
+      "unfinished_heads_by_root_cause": {
+        "completed_third_head_standing_owner": 1,
+        "unfinished_static_route_cycle": 16
+      },
+      "blocked_agents": [
+        {
+          "agent": 1,
+          "blocker_chain": [
+            1,
+            3
+          ],
+          "reason": "completed_third_head_standing_owner",
+          "cycle": null,
+          "unfinished_fixed_heads": 1
+        },
+        {
+          "agent": 2,
+          "blocker_chain": [
+            2,
+            12,
+            2
+          ],
+          "reason": "unfinished_static_route_cycle",
+          "cycle": [
+            2,
+            12
+          ],
+          "unfinished_fixed_heads": 2
+        },
+        {
+          "agent": 5,
+          "blocker_chain": [
+            5,
+            10,
+            5
+          ],
+          "reason": "unfinished_static_route_cycle",
+          "cycle": [
+            5,
+            10
+          ],
+          "unfinished_fixed_heads": 3
+        },
+        {
+          "agent": 7,
+          "blocker_chain": [
+            7,
+            12,
+            2,
+            12
+          ],
+          "reason": "unfinished_static_route_cycle",
+          "cycle": [
+            2,
+            12
+          ],
+          "unfinished_fixed_heads": 1
+        },
+        {
+          "agent": 10,
+          "blocker_chain": [
+            10,
+            5,
+            10
+          ],
+          "reason": "unfinished_static_route_cycle",
+          "cycle": [
+            5,
+            10
+          ],
+          "unfinished_fixed_heads": 3
+        },
+        {
+          "agent": 11,
+          "blocker_chain": [
+            11,
+            14,
+            11
+          ],
+          "reason": "unfinished_static_route_cycle",
+          "cycle": [
+            11,
+            14
+          ],
+          "unfinished_fixed_heads": 1
+        },
+        {
+          "agent": 12,
+          "blocker_chain": [
+            12,
+            2,
+            12
+          ],
+          "reason": "unfinished_static_route_cycle",
+          "cycle": [
+            2,
+            12
+          ],
+          "unfinished_fixed_heads": 2
+        },
+        {
+          "agent": 14,
+          "blocker_chain": [
+            14,
+            11,
+            14
+          ],
+          "reason": "unfinished_static_route_cycle",
+          "cycle": [
+            11,
+            14
+          ],
+          "unfinished_fixed_heads": 3
+        },
+        {
+          "agent": 15,
+          "blocker_chain": [
+            15,
+            11,
+            14,
+            11
+          ],
+          "reason": "unfinished_static_route_cycle",
+          "cycle": [
+            11,
+            14
+          ],
+          "unfinished_fixed_heads": 1
+        }
+      ],
+      "scope": "Static post-run causal classification; not proof that a query or replanner can or cannot prevent earlier deadlock formation."
+    },
+    {
+      "raw": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/public_joint_20261001_r6/mechanical_attempt_02/mechanical_n16__9101__WAIT.jsonl",
+      "sha256": "ba0783d3df5bb59478abae3588858e1d77c938d72e210a667ce74555fd7ef5b4",
+      "deadlock": true,
+      "served": 31,
+      "tasks": 48,
+      "finished_stationary_agents": [
+        0,
+        3,
+        4,
+        6,
+        8,
+        9,
+        13
+      ],
+      "direct_wait_edges": [
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          12
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          7,
+          12
+        ],
+        [
+          10,
+          5
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          12,
+          2
+        ],
+        [
+          14,
+          11
+        ],
+        [
+          15,
+          11
+        ]
+      ],
+      "unique_cycles": [
+        [
+          2,
+          12
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          11,
+          14
+        ]
+      ],
+      "agents_by_root_cause": {
+        "completed_third_head_standing_owner": 1,
+        "unfinished_static_route_cycle": 8
+      },
+      "unfinished_heads_by_root_cause": {
+        "completed_third_head_standing_owner": 1,
+        "unfinished_static_route_cycle": 16
+      },
+      "blocked_agents": [
+        {
+          "agent": 1,
+          "blocker_chain": [
+            1,
+            3
+          ],
+          "reason": "completed_third_head_standing_owner",
+          "cycle": null,
+          "unfinished_fixed_heads": 1
+        },
+        {
+          "agent": 2,
+          "blocker_chain": [
+            2,
+            12,
+            2
+          ],
+          "reason": "unfinished_static_route_cycle",
+          "cycle": [
+            2,
+            12
+          ],
+          "unfinished_fixed_heads": 2
+        },
+        {
+          "agent": 5,
+          "blocker_chain": [
+            5,
+            10,
+            5
+          ],
+          "reason": "unfinished_static_route_cycle",
+          "cycle": [
+            5,
+            10
+          ],
+          "unfinished_fixed_heads": 3
+        },
+        {
+          "agent": 7,
+          "blocker_chain": [
+            7,
+            12,
+            2,
+            12
+          ],
+          "reason": "unfinished_static_route_cycle",
+          "cycle": [
+            2,
+            12
+          ],
+          "unfinished_fixed_heads": 1
+        },
+        {
+          "agent": 10,
+          "blocker_chain": [
+            10,
+            5,
+            10
+          ],
+          "reason": "unfinished_static_route_cycle",
+          "cycle": [
+            5,
+            10
+          ],
+          "unfinished_fixed_heads": 3
+        },
+        {
+          "agent": 11,
+          "blocker_chain": [
+            11,
+            14,
+            11
+          ],
+          "reason": "unfinished_static_route_cycle",
+          "cycle": [
+            11,
+            14
+          ],
+          "unfinished_fixed_heads": 1
+        },
+        {
+          "agent": 12,
+          "blocker_chain": [
+            12,
+            2,
+            12
+          ],
+          "reason": "unfinished_static_route_cycle",
+          "cycle": [
+            2,
+            12
+          ],
+          "unfinished_fixed_heads": 2
+        },
+        {
+          "agent": 14,
+          "blocker_chain": [
+            14,
+            11,
+            14
+          ],
+          "reason": "unfinished_static_route_cycle",
+          "cycle": [
+            11,
+            14
+          ],
+          "unfinished_fixed_heads": 3
+        },
+        {
+          "agent": 15,
+          "blocker_chain": [
+            15,
+            11,
+            14,
+            11
+          ],
+          "reason": "unfinished_static_route_cycle",
+          "cycle": [
+            11,
+            14
+          ],
+          "unfinished_fixed_heads": 1
+        }
+      ],
+      "scope": "Static post-run causal classification; not proof that a query or replanner can or cannot prevent earlier deadlock formation."
+    },
+    {
+      "raw": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/public_joint_20261001_r6/mechanical_attempt_02/mechanical_n16__9101__condition.jsonl",
+      "sha256": "8de44e87849105ab307ec53aa9fce85aa45b5a48d33069064ff0deed61b5829f",
+      "deadlock": true,
+      "served": 31,
+      "tasks": 48,
+      "finished_stationary_agents": [
+        0,
+        3,
+        4,
+        6,
+        8,
+        9,
+        13
+      ],
+      "direct_wait_edges": [
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          12
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          7,
+          12
+        ],
+        [
+          10,
+          5
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          12,
+          2
+        ],
+        [
+          14,
+          11
+        ],
+        [
+          15,
+          11
+        ]
+      ],
+      "unique_cycles": [
+        [
+          2,
+          12
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          11,
+          14
+        ]
+      ],
+      "agents_by_root_cause": {
+        "completed_third_head_standing_owner": 1,
+        "unfinished_static_route_cycle": 8
+      },
+      "unfinished_heads_by_root_cause": {
+        "completed_third_head_standing_owner": 1,
+        "unfinished_static_route_cycle": 16
+      },
+      "blocked_agents": [
+        {
+          "agent": 1,
+          "blocker_chain": [
+            1,
+            3
+          ],
+          "reason": "completed_third_head_standing_owner",
+          "cycle": null,
+          "unfinished_fixed_heads": 1
+        },
+        {
+          "agent": 2,
+          "blocker_chain": [
+            2,
+            12,
+            2
+          ],
+          "reason": "unfinished_static_route_cycle",
+          "cycle": [
+            2,
+            12
+          ],
+          "unfinished_fixed_heads": 2
+        },
+        {
+          "agent": 5,
+          "blocker_chain": [
+            5,
+            10,
+            5
+          ],
+          "reason": "unfinished_static_route_cycle",
+          "cycle": [
+            5,
+            10
+          ],
+          "unfinished_fixed_heads": 3
+        },
+        {
+          "agent": 7,
+          "blocker_chain": [
+            7,
+            12,
+            2,
+            12
+          ],
+          "reason": "unfinished_static_route_cycle",
+          "cycle": [
+            2,
+            12
+          ],
+          "unfinished_fixed_heads": 1
+        },
+        {
+          "agent": 10,
+          "blocker_chain": [
+            10,
+            5,
+            10
+          ],
+          "reason": "unfinished_static_route_cycle",
+          "cycle": [
+            5,
+            10
+          ],
+          "unfinished_fixed_heads": 3
+        },
+        {
+          "agent": 11,
+          "blocker_chain": [
+            11,
+            14,
+            11
+          ],
+          "reason": "unfinished_static_route_cycle",
+          "cycle": [
+            11,
+            14
+          ],
+          "unfinished_fixed_heads": 1
+        },
+        {
+          "agent": 12,
+          "blocker_chain": [
+            12,
+            2,
+            12
+          ],
+          "reason": "unfinished_static_route_cycle",
+          "cycle": [
+            2,
+            12
+          ],
+          "unfinished_fixed_heads": 2
+        },
+        {
+          "agent": 14,
+          "blocker_chain": [
+            14,
+            11,
+            14
+          ],
+          "reason": "unfinished_static_route_cycle",
+          "cycle": [
+            11,
+            14
+          ],
+          "unfinished_fixed_heads": 3
+        },
+        {
+          "agent": 15,
+          "blocker_chain": [
+            15,
+            11,
+            14,
+            11
+          ],
+          "reason": "unfinished_static_route_cycle",
+          "cycle": [
+            11,
+            14
+          ],
+          "unfinished_fixed_heads": 1
+        }
+      ],
+      "scope": "Static post-run causal classification; not proof that a query or replanner can or cannot prevent earlier deadlock formation."
+    }
+  ]
+}

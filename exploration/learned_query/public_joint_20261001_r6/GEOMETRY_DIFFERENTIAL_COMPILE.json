@@ -1,0 +1,33 @@
+{
+  "command": [
+    "g++-11",
+    "-std=c++14",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-pedantic",
+    "-fno-elide-constructors",
+    "-I",
+    "/tmp/pied-history-r5-2syz967c",
+    "-isystem",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/host_sdk/usr/include",
+    "-isystem",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/flint_host_config/src",
+    "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/public_joint_20261001_r6/geometry_differential.cpp",
+    "-L",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/flint_host_config",
+    "-L",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/host_sdk/usr/lib/x86_64-linux-gnu",
+    "-Wl,-rpath,/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/flint_host_config",
+    "-lflint",
+    "-lmpfr",
+    "-lgmp",
+    "-o",
+    "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/public_joint_20261001_r6/geometry_differential"
+  ],
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "In file included from /home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/public_joint_20261001_r6/geometry_differential.cpp:2:\n/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/public_joint_20261001_r6/../legal_and_fixture.cpp:4:10: fatal error: pie_geometry_flint.hpp: \u6ca1\u6709\u90a3\u4e2a\u6587\u4ef6\u6216\u76ee\u5f55\n    4 | #include \"pie_geometry_flint.hpp\"\n      |          ^~~~~~~~~~~~~~~~~~~~~~~~\ncompilation terminated.\n",
+  "seconds": 0.029192082001827657
+}

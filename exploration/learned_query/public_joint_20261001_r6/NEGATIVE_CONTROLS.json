@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "audit_source_sha256": "897993f9c92b8f61b12858bb114e2bd32e8e7e5bcd264741eeb01da01c088060",
+  "source_raw_sha256": "357fa1f01fc681c361009361cd4c8fd1f5652b7fa5ef80f1a253328f30d8cd59",
+  "tests": [
+    {
+      "name": "private_eta_END_rejected",
+      "rejected": true,
+      "reason": "public END schema/private field leak",
+      "event_index": 28
+    },
+    {
+      "name": "missing_legal_candidate_rejected",
+      "rejected": true,
+      "reason": "candidate completeness/current-world END gate",
+      "event_index": 280
+    },
+    {
+      "name": "false_budget_rejected",
+      "rejected": true,
+      "reason": "causal history/capacity count",
+      "event_index": 280
+    },
+    {
+      "name": "false_controller_lower_rejected",
+      "rejected": true,
+      "reason": "actual controller certified lower",
+      "event_index": 281
+    },
+    {
+      "name": "skipped_future_head_rejected",
+      "rejected": true,
+      "reason": "original FIFO head order",
+      "event_index": 402
+    },
+    {
+      "name": "false_normal_END_time_rejected",
+      "rejected": true,
+      "reason": "event time differs from independently reconstructed earliest physics/END/WAIT/opportunity",
+      "event_index": 28
+    }
+  ]
+}

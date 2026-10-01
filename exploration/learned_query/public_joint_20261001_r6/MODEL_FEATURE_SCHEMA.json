@@ -1,0 +1,111 @@
+{
+  "features": [
+    {
+      "slot": 0,
+      "name": "known-law nohistory survival-conditioned release probability",
+      "historical_ablation_zero": false
+    },
+    {
+      "slot": 1,
+      "name": "current requester count/(N-1)",
+      "historical_ablation_zero": false
+    },
+    {
+      "slot": 2,
+      "name": "current blocked remaining route items/64",
+      "historical_ablation_zero": false
+    },
+    {
+      "slot": 3,
+      "name": "sum inverse current requester remaining items",
+      "historical_ablation_zero": false
+    },
+    {
+      "slot": 4,
+      "name": "current foreign owner count/(N-1)",
+      "historical_ablation_zero": false
+    },
+    {
+      "slot": 5,
+      "name": "current-head path intersections/256",
+      "historical_ablation_zero": false
+    },
+    {
+      "slot": 6,
+      "name": "current-head terminal intrusions/(N-1)",
+      "historical_ablation_zero": false
+    },
+    {
+      "slot": 7,
+      "name": "current terminal first intrusion indices/64",
+      "historical_ablation_zero": false
+    },
+    {
+      "slot": 8,
+      "name": "current intruder remaining route items/64",
+      "historical_ablation_zero": false
+    },
+    {
+      "slot": 9,
+      "name": "current goal in other current-head paths/(N-1)",
+      "historical_ablation_zero": false
+    },
+    {
+      "slot": 10,
+      "name": "same-agent last3 END conditioned survival release probability",
+      "historical_ablation_zero": true
+    },
+    {
+      "slot": 11,
+      "name": "last3 fast-END Laplace rate",
+      "historical_ablation_zero": true
+    },
+    {
+      "slot": 12,
+      "name": "last decoded fast-END class",
+      "historical_ablation_zero": true
+    },
+    {
+      "slot": 13,
+      "name": "same-heading delivered-END Laplace rate",
+      "historical_ablation_zero": true
+    },
+    {
+      "slot": 14,
+      "name": "min(agent delivered END count,8)/8",
+      "historical_ablation_zero": true
+    },
+    {
+      "slot": 15,
+      "name": "floor1e-6 time since latest delivered END/16 capped1",
+      "historical_ablation_zero": true
+    },
+    {
+      "slot": 16,
+      "name": "history release probability times inverse remaining",
+      "historical_ablation_zero": true
+    },
+    {
+      "slot": 17,
+      "name": "history release probability times blocked remaining/64",
+      "historical_ablation_zero": true
+    },
+    {
+      "slot": 18,
+      "name": "floor1e-6 source age/2",
+      "historical_ablation_zero": false
+    },
+    {
+      "slot": 19,
+      "name": "nohistory release probability times inverse remaining",
+      "historical_ablation_zero": false
+    }
+  ],
+  "current_head_only": true,
+  "future_heads_not_featured": true,
+  "persistent_9_to_1_law_disclosed_to_all_nonWAIT": true,
+  "survival_conditions_on_absence_of_delivered_END": true,
+  "private_eta_progress_regime_or_test_labels": false,
+  "END_decoder_support": "fixed fullcap cardinal unit original-controller intervals only; otherwise UNKNOWN",
+  "model_architecture": "ridge20+intercept lambda1 unpenalizedintercept rationalrounded1e-9"
+}

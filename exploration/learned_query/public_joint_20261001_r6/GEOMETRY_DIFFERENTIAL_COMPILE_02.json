@@ -1,0 +1,33 @@
+{
+  "command": [
+    "g++-11",
+    "-std=c++14",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-pedantic",
+    "-fno-elide-constructors",
+    "-I",
+    "/tmp/r6-geometry-diff-ne4fphrb",
+    "-isystem",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/host_sdk/usr/include",
+    "-isystem",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/flint_host_config/src",
+    "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/public_joint_20261001_r6/geometry_differential.cpp",
+    "-L",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/flint_host_config",
+    "-L",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/host_sdk/usr/lib/x86_64-linux-gnu",
+    "-Wl,-rpath,/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/flint_host_config",
+    "-lflint",
+    "-lmpfr",
+    "-lgmp",
+    "-o",
+    "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/public_joint_20261001_r6/geometry_differential"
+  ],
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "seconds": 148.24196648300858
+}
