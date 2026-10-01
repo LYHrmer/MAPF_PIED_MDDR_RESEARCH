@@ -1,0 +1,148 @@
+{
+  "status": "PASS",
+  "scope": "Independent root event reconstruction + augmented least-squares solver; no experiment-module imports",
+  "model_sha256": "15f3d3042a71c9b851d9e6b0ade27318748abddcbea47f2f2718533bfb57b2b3",
+  "script_sha256": "9e2eff446d517c9b3763910f49e1ef84a1dbc060a98fcba99c66cdb8ace1f528",
+  "train_rows": 6062,
+  "calibration_rows": 3010,
+  "censored": 94,
+  "max_coefficient_difference": 2.5463020580929197e-11,
+  "seeds": {
+    "train": [
+      931701,
+      931702
+    ],
+    "calibration": [
+      931711
+    ],
+    "test": [
+      931721
+    ]
+  },
+  "calibration": {
+    "history": {
+      "rows": 3010,
+      "rank": 2710,
+      "q90_absolute_error": 19.5,
+      "MAE": 9.365962664135422,
+      "RMSE": 11.669799373271896
+    },
+    "learned": {
+      "rows": 3010,
+      "rank": 2710,
+      "q90_absolute_error": 14.493563259872353,
+      "MAE": 6.828582818196488,
+      "RMSE": 8.708557645618297
+    }
+  },
+  "runs": {
+    "train_empty-32-32_931701_nominal_hm_GPIBT": {
+      "events": 2015,
+      "completed": 544,
+      "censored": 8,
+      "public_events_sha256": "9c9d9f0f84e03f02c9b0d1a931cccae05890ee5bddaef79afdb2cc6e68860684"
+    },
+    "train_empty-32-32_931701_slow065_hm_GPIBT": {
+      "events": 1695,
+      "completed": 456,
+      "censored": 8,
+      "public_events_sha256": "a48e17f4db857cc1740ad0f7ae2937cbb85dc3037a55c22ea13937be0a0922dd"
+    },
+    "train_empty-32-32_931701_axis_hm_GPIBT": {
+      "events": 1943,
+      "completed": 526,
+      "censored": 2,
+      "public_events_sha256": "8a93040cfecacd223fd3734603df1583a5f5f0f56575fcd45b5a37d2ba83e787"
+    },
+    "train_random-32-32-10_931701_nominal_hm_GPIBT": {
+      "events": 1998,
+      "completed": 535,
+      "censored": 8,
+      "public_events_sha256": "dddc4d65f59ea23153652489545f8f3dc319e3d2b9a95a5c71ce7edefd4ec761"
+    },
+    "train_random-32-32-10_931701_slow065_hm_GPIBT": {
+      "events": 1693,
+      "completed": 456,
+      "censored": 8,
+      "public_events_sha256": "eefeec85551f0aebe350870941dc52a3d90d420d2f019a3bd477d4188f5448ef"
+    },
+    "train_random-32-32-10_931701_axis_hm_GPIBT": {
+      "events": 1888,
+      "completed": 510,
+      "censored": 1,
+      "public_events_sha256": "c0b07c1e04dccd2fa28fc7a89b808bfa123f69d14bdc373d709a8a50ce34999b"
+    },
+    "train_empty-32-32_931702_nominal_hm_GPIBT": {
+      "events": 2012,
+      "completed": 542,
+      "censored": 8,
+      "public_events_sha256": "dd7c5a17e3f2818b2e118edc4b423757ded98fd32129d50e57c21fa03ad3e8c2"
+    },
+    "train_empty-32-32_931702_slow065_hm_GPIBT": {
+      "events": 1750,
+      "completed": 476,
+      "censored": 2,
+      "public_events_sha256": "f4aaf84f78eaf89b82f0d459b94900a49caf1d57448a5a7b9771c2a7b5be4162"
+    },
+    "train_empty-32-32_931702_axis_hm_GPIBT": {
+      "events": 1867,
+      "completed": 509,
+      "censored": 1,
+      "public_events_sha256": "1b5d0ed5e723838e59be278d9579776f478a4f2032f3e900e499d5e31e1b0a76"
+    },
+    "train_random-32-32-10_931702_nominal_hm_GPIBT": {
+      "events": 1998,
+      "completed": 535,
+      "censored": 8,
+      "public_events_sha256": "e95a5467d5cb2e38429641885b957f5d4d1a294dad241b7fe1cc29f01ad5686a"
+    },
+    "train_random-32-32-10_931702_slow065_hm_GPIBT": {
+      "events": 1719,
+      "completed": 462,
+      "censored": 1,
+      "public_events_sha256": "d093b5ecc450605d8d8106c9a11eab2ee48a3b76c1c1b60721da4a8aa24b271e"
+    },
+    "train_random-32-32-10_931702_axis_hm_GPIBT": {
+      "events": 1911,
+      "completed": 511,
+      "censored": 8,
+      "public_events_sha256": "772a736a5a1460f84db45445de008de7daaf00e1d6536f11ac7b943aed37d7ce"
+    },
+    "calibration_empty-32-32_931711_nominal_hm_GPIBT": {
+      "events": 1983,
+      "completed": 532,
+      "censored": 1,
+      "public_events_sha256": "0aab019a01f4d4aed99c116385afe926a91f520e20a691cafe704be45f909bcf"
+    },
+    "calibration_empty-32-32_931711_slow065_hm_GPIBT": {
+      "events": 1760,
+      "completed": 469,
+      "censored": 8,
+      "public_events_sha256": "fdff1ff70da19b8da4a26c9bb46b64a3a2f2d0907356ba4e4ea6689df7354737"
+    },
+    "calibration_empty-32-32_931711_axis_hm_GPIBT": {
+      "events": 1945,
+      "completed": 517,
+      "censored": 8,
+      "public_events_sha256": "fccbcf91d37de221584856ca378554d282d6827e43c827dea5a720edffa8a541"
+    },
+    "calibration_random-32-32-10_931711_nominal_hm_GPIBT": {
+      "events": 1957,
+      "completed": 526,
+      "censored": 8,
+      "public_events_sha256": "3fe3e64f5e9890ed41f2ff316a8d7b1f7aa9b0b3c174fc86acb8f6bd321db207"
+    },
+    "calibration_random-32-32-10_931711_slow065_hm_GPIBT": {
+      "events": 1703,
+      "completed": 457,
+      "censored": 5,
+      "public_events_sha256": "777c81629951d9f0672efb58a5432ab47462b2973b865a4fb47a428fb54ce337"
+    },
+    "calibration_random-32-32-10_931711_axis_hm_GPIBT": {
+      "events": 1891,
+      "completed": 509,
+      "censored": 1,
+      "public_events_sha256": "bd94a65c53402b897b6d1bc0e95eb12bb7d4a5545395d1c2eb4292fcd3fe66c6"
+    }
+  }
+}

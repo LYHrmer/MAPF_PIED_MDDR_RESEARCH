@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-01",
+  "technical_review_model": "gpt-6-astra",
+  "technical_review_reasoning_effort": "ultra",
+  "pre_execution_reviews_independent_of_each_other_and_root_conclusions": true,
+  "roles_after_pre_execution_review": {
+    "astra_reviewer": "main implementation",
+    "mentor_reviewer": "third-line implementation",
+    "query_agent": "online query implementation",
+    "root": "independent recomputation and synthesis"
+  },
+  "post_execution_judgments_are_not_new_blind_reviews": true,
+  "research_mentor_skill": "/home/lyh/.codex/skills/research-mentor/SKILL.md",
+  "review_sha256": {
+    "ASTRA_PREEXEC_20261001_R7.md": "379399664c3f6fdd78f6e1a048ca66049b840a9d30e60f68f5c1ff3ca60fc918",
+    "MENTOR_PREEXEC_20261001_R7.md": "34b404d74744732d95d74270f657c53d64b6559f55968d3d85b3e708647f85dd",
+    "ASTRA_POSTEXEC_20261001_R7.md": "ce55bf05c253de9ce9536250a21bc05ddaeceee8d6bf722790068f90e0aeaf5f",
+    "execution_residual_20261001_r7/POSTEXEC_MENTOR.md": "ef9ce9c32e341caa0fa069d17d6cb1d18ab3cbe6a9a8d7a548f83549dbb15117"
+  },
+  "root_publication_pin_checks": 230,
+  "manuscript_unchanged_sha256": "204316c27e17ecb37a8646d53cb5941a9b11b6c8eff3378ce55e80878b271452"
+}

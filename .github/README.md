@@ -1,5 +1,9 @@
 # 当前分支：误差感知的路径引导探索
 
+R7（2026-10-01）已训练新执行残差模型并完成42次真实运行。留出预测MAE由同历史规则9.386降至6.897 ticks，4/6场景实际动作改变，一个场景累计完成时刻少14.2秒；总任务模型/规则119、原作者hm120，尚无整体任务优势。原始失败、完整数据及root独立模型/服务核验均保留。
+
+详见[当前探索入口](../exploration/error_guidance/README.md)；[本轮Astra/科研导师判断与三线后续设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261001_R7.md)。下方旧轮次文字按历史记录阅读。
+
 2026-09-30 R2 当前分支更新：官方GPIBT/LSMART固定两臂均完整200tick并有真实任务服务，OnlineGGO官方OBJ4评估入口已运行但尚未取得合格训练策略。当前完整报告、独立核验及三线下一实验见[探索入口](../exploration/error_guidance/README.md)。活动MOVE扰动与连续空间安全是下一项验证，原时窗只造成派发延迟；下方旧状态按其日期阅读。
 
 本分支 `explore/error-aware-guidance` 从 `main@af17410` 建立，主入口是

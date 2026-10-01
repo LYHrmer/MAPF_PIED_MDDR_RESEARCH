@@ -1,0 +1,137 @@
+{
+  "status": "PASS",
+  "scope": "Root independent accepted native task END counts and same-prefix actual action divergence; timing sum conditional on matched tasks",
+  "script_sha256": "cb2deec15039cd633a6e4ca3b8b2003c245c5fcb3be7357da9c432dc62b196e9",
+  "totals": {
+    "hm_GPIBT": 120,
+    "trained": 100,
+    "history": 119,
+    "learned": 119
+  },
+  "comparisons": [
+    {
+      "map": "empty-32-32",
+      "condition": "axis",
+      "counts": {
+        "hm_GPIBT": 23,
+        "trained": 19,
+        "history": 22,
+        "learned": 22
+      },
+      "first_action_divergence": {
+        "decision": 33,
+        "tick": 2023,
+        "identical_public_and_physical_prefix": true
+      },
+      "matched_tasks": 22,
+      "learned_earlier": 8,
+      "learned_equal": 12,
+      "learned_later": 2,
+      "learned_minus_history_matched_tick_sum": -142,
+      "only_history_tasks": 0,
+      "only_learned_tasks": 0
+    },
+    {
+      "map": "empty-32-32",
+      "condition": "nominal",
+      "counts": {
+        "hm_GPIBT": 25,
+        "trained": 20,
+        "history": 25,
+        "learned": 25
+      },
+      "first_action_divergence": null,
+      "matched_tasks": 25,
+      "learned_earlier": 0,
+      "learned_equal": 25,
+      "learned_later": 0,
+      "learned_minus_history_matched_tick_sum": 0,
+      "only_history_tasks": 0,
+      "only_learned_tasks": 0
+    },
+    {
+      "map": "empty-32-32",
+      "condition": "unknown_shift",
+      "counts": {
+        "hm_GPIBT": 17,
+        "trained": 15,
+        "history": 17,
+        "learned": 17
+      },
+      "first_action_divergence": null,
+      "matched_tasks": 17,
+      "learned_earlier": 0,
+      "learned_equal": 17,
+      "learned_later": 0,
+      "learned_minus_history_matched_tick_sum": 0,
+      "only_history_tasks": 0,
+      "only_learned_tasks": 0
+    },
+    {
+      "map": "random-32-32-10",
+      "condition": "axis",
+      "counts": {
+        "hm_GPIBT": 19,
+        "trained": 16,
+        "history": 19,
+        "learned": 19
+      },
+      "first_action_divergence": {
+        "decision": 52,
+        "tick": 3249,
+        "identical_public_and_physical_prefix": true
+      },
+      "matched_tasks": 19,
+      "learned_earlier": 0,
+      "learned_equal": 19,
+      "learned_later": 0,
+      "learned_minus_history_matched_tick_sum": 0,
+      "only_history_tasks": 0,
+      "only_learned_tasks": 0
+    },
+    {
+      "map": "random-32-32-10",
+      "condition": "nominal",
+      "counts": {
+        "hm_GPIBT": 21,
+        "trained": 17,
+        "history": 21,
+        "learned": 21
+      },
+      "first_action_divergence": {
+        "decision": 52,
+        "tick": 3059,
+        "identical_public_and_physical_prefix": true
+      },
+      "matched_tasks": 21,
+      "learned_earlier": 0,
+      "learned_equal": 21,
+      "learned_later": 0,
+      "learned_minus_history_matched_tick_sum": 0,
+      "only_history_tasks": 0,
+      "only_learned_tasks": 0
+    },
+    {
+      "map": "random-32-32-10",
+      "condition": "unknown_shift",
+      "counts": {
+        "hm_GPIBT": 15,
+        "trained": 13,
+        "history": 15,
+        "learned": 15
+      },
+      "first_action_divergence": {
+        "decision": 52,
+        "tick": 3935,
+        "identical_public_and_physical_prefix": true
+      },
+      "matched_tasks": 15,
+      "learned_earlier": 0,
+      "learned_equal": 15,
+      "learned_later": 0,
+      "learned_minus_history_matched_tick_sum": 0,
+      "only_history_tasks": 0,
+      "only_learned_tasks": 0
+    }
+  ]
+}

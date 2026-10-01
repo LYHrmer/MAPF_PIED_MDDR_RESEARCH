@@ -1,5 +1,9 @@
 # LMAPF 空间误差与执行占用引导探索
 
+R7（2026-10-01）已训练新执行残差模型并完成42次真实运行。留出预测MAE由同历史规则9.386降至6.897 ticks，4/6场景实际动作改变，一个场景累计完成时刻少14.2秒；总任务模型/规则119、原作者hm120，尚无整体任务优势。原始失败、完整数据及root独立模型/服务核验均保留。
+
+详见[当前探索入口](exploration/error_guidance/README.md)；[本轮Astra/科研导师判断与三线后续设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261001_R7.md)。下方旧轮次文字按历史记录阅读。
+
 2026-10-01 R6 当前结果：[共同物理执行的 24 组作者方法实验](exploration/error_guidance/published_continuous_execution_20261001_r6c/REPORT.md)全部实际完成 800 秒并通过 FIFO、真实服务、动作及严格点 ACK 审计。两个地图、8/16 机器人、三个执行条件下，hm+GPIBT 共完成 780 任务，旧冻结 OnlineGGO 迁移模型 648；12 个配对全部旧模型较低。模型真实调用 154,434 次，但这不是新执行误差模型，也不是充分训练的作者学习方法结论。原错误配置的 24 组及 R6b 预检完整保留。
 
 [三线结果与两份独立后评审](exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261001_R6.md)：主线完整收费查询已闭合，精确收据优化后统一 8m 合同成功、总实际费用净降 9.61%；查询线 70 次成功原生运行与 40 次留出已完成，主要条件下模型未胜 RR。[下一方法设计](exploration/error_guidance/NEXT_METHOD_DESIGN_20261001_R6.md)优先把真实进度证书接入在线任务/资源阻塞释放，再评价学习选择查询的边际任务收益。以下 R5 及更早文字是历史记录。

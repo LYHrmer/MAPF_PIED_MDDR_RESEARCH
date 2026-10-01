@@ -1,0 +1,18 @@
+--- official/search.cpp
++++ R7/search_overlay.cpp
+@@ -4,6 +4,7 @@
+ #include "search.hpp"
+ 
+ namespace TrafficMAPF{
++extern double r7_edge_penalty(int search_start, int destination);
+ std::chrono::nanoseconds t;
+ //a astar minimized the opposide traffic flow with existing traffic flow
+ 
+@@ -610,6 +611,7 @@
+             }
+ 
+ 
++            cost += r7_edge_penalty(start, next);
+             s_node temp_node(next,cost,h,op_flow, depth);
+             temp_node.tie_breaker = tie_breaker;
+             temp_node.set_all_flow(op_flow,  all_vertex_flow);

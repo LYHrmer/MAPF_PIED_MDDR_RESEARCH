@@ -1,0 +1,951 @@
+{
+  "publication_role": "Complete R7 protocol/source/checkpoint, 42 completed native runs, all zero-decision sandbox denials, native candidate build, independent root model/test audits, and mentor pre/post judgments. No cache directories. Inherited external native dependencies are pinned by path/SHA, not claimed self-contained.",
+  "path_base": "exploration/error_guidance",
+  "directories": [
+    "execution_residual_20261001_r7"
+  ],
+  "extra_files": [
+    "MENTOR_PREEXEC_20261001_R7.md"
+  ],
+  "file_count": 193,
+  "bytes": 122183650,
+  "verified_archives": [
+    {
+      "path": "execution_residual_20261001_r7/raw_archives/train_empty-32-32_931701_nominal.tar.gz",
+      "members": 10,
+      "sha256": "dbca05df78e10f9f4d281cd6f226372f296257dfe4c859eb7831848b8a152f52",
+      "bytes": 2867009
+    },
+    {
+      "path": "execution_residual_20261001_r7/raw_archives/train_empty-32-32_931701_slow065.tar.gz",
+      "members": 10,
+      "sha256": "9a6544a61f11731f7dec89fb8435974b10b434995939ca5c81285890c7dc36ed",
+      "bytes": 2632231
+    },
+    {
+      "path": "execution_residual_20261001_r7/raw_archives/train_empty-32-32_931701_axis.tar.gz",
+      "members": 10,
+      "sha256": "0bcbfd1255ed91a495c7285c5b3c17f58390f54dfad935b2dc27767a1eb21733",
+      "bytes": 2833451
+    },
+    {
+      "path": "execution_residual_20261001_r7/raw_archives/train_random-32-32-10_931701_nominal.tar.gz",
+      "members": 10,
+      "sha256": "34ac920fb06c7ec033915d7a5b968e11c8b86eade6b9437ba6510f2d236c14ec",
+      "bytes": 2850884
+    },
+    {
+      "path": "execution_residual_20261001_r7/raw_archives/train_random-32-32-10_931701_slow065.tar.gz",
+      "members": 10,
+      "sha256": "314506b5e831bc126cbdf179a9dd35e754cf7687f28c19fff7f88a1951c4522a",
+      "bytes": 2632021
+    },
+    {
+      "path": "execution_residual_20261001_r7/raw_archives/train_random-32-32-10_931701_axis.tar.gz",
+      "members": 10,
+      "sha256": "fbe0818396ff2110e6668639a9ca1952a70cd5a3acb9dd35a2002c42bf2910c7",
+      "bytes": 2798357
+    },
+    {
+      "path": "execution_residual_20261001_r7/raw_archives/train_empty-32-32_931702_nominal.tar.gz",
+      "members": 10,
+      "sha256": "648b9c69583a4ca7c3272aab4f55c58b15e4685ab603267cb593c7de21714573",
+      "bytes": 2818195
+    },
+    {
+      "path": "execution_residual_20261001_r7/raw_archives/train_empty-32-32_931702_slow065.tar.gz",
+      "members": 10,
+      "sha256": "3a1aac187cd1c2f53054dfb9662bdb9ddb647637b590843862cf7b7ceebc78fe",
+      "bytes": 2658861
+    },
+    {
+      "path": "execution_residual_20261001_r7/raw_archives/train_empty-32-32_931702_axis.tar.gz",
+      "members": 10,
+      "sha256": "d4692b74805ae7bee9f8bbc1d2f16ebbb287c0c567abf124844d4c28bf9307b2",
+      "bytes": 2766118
+    },
+    {
+      "path": "execution_residual_20261001_r7/raw_archives/train_random-32-32-10_931702_nominal.tar.gz",
+      "members": 10,
+      "sha256": "4cf8d30bf576343525476e15ef986170a45eff6fa06ba6b5e8712722a9f5822c",
+      "bytes": 2865368
+    },
+    {
+      "path": "execution_residual_20261001_r7/raw_archives/train_random-32-32-10_931702_slow065.tar.gz",
+      "members": 10,
+      "sha256": "3c25dcbe60a1526a1194622636a57bec2d771eee18b644a3ba8f35eeed6eb34d",
+      "bytes": 2683273
+    },
+    {
+      "path": "execution_residual_20261001_r7/raw_archives/train_random-32-32-10_931702_axis.tar.gz",
+      "members": 10,
+      "sha256": "ddf93e1618bc267f2e7bd3809f2dc15dae66beaed2757edbbb6ab8667c2ac851",
+      "bytes": 2806821
+    },
+    {
+      "path": "execution_residual_20261001_r7/raw_archives/calibration_empty-32-32_931711_nominal.tar.gz",
+      "members": 10,
+      "sha256": "e639d1982b0b519fdfb19d9857fd4617d1233c29eb018db7bc6486a92eb6c224",
+      "bytes": 2790724
+    },
+    {
+      "path": "execution_residual_20261001_r7/raw_archives/calibration_empty-32-32_931711_slow065.tar.gz",
+      "members": 10,
+      "sha256": "aaa266ed3a864dadfc9938cb97e34d3d20c6cdc8a4e90f1411e4e989c2d2a106",
+      "bytes": 2668375
+    },
+    {
+      "path": "execution_residual_20261001_r7/raw_archives/calibration_empty-32-32_931711_axis.tar.gz",
+      "members": 10,
+      "sha256": "6cbc9598bb0db8ec8c2959083180eb01a52824c1fa0b29a0d1797a6b0f0bae38",
+      "bytes": 2797719
+    },
+    {
+      "path": "execution_residual_20261001_r7/raw_archives/calibration_random-32-32-10_931711_nominal.tar.gz",
+      "members": 10,
+      "sha256": "1cd6819492e16de44b6b91f94239ee5ff4da8ad44cfbc6c5fb026139da4ad5b2",
+      "bytes": 2809656
+    },
+    {
+      "path": "execution_residual_20261001_r7/raw_archives/calibration_random-32-32-10_931711_slow065.tar.gz",
+      "members": 10,
+      "sha256": "9737d1a936a6c0665e3829428cf44418c521060b8c6d729ff264088737330a21",
+      "bytes": 2651135
+    },
+    {
+      "path": "execution_residual_20261001_r7/raw_archives/calibration_random-32-32-10_931711_axis.tar.gz",
+      "members": 10,
+      "sha256": "0a00ef26ba4641511d0c1c52873f2eb8bdc052a9ecc7633ddcda7de278fabaab",
+      "bytes": 2801644
+    },
+    {
+      "path": "execution_residual_20261001_r7/raw_archives/test_empty-32-32_931721_nominal.tar.gz",
+      "members": 40,
+      "sha256": "55c06a270b6d5a135471cc5af2504110a60b2694dbc26eef9961ef167ef2a32c",
+      "bytes": 11761349
+    },
+    {
+      "path": "execution_residual_20261001_r7/raw_archives/test_empty-32-32_931721_axis.tar.gz",
+      "members": 40,
+      "sha256": "7bc8cf92d721b12b33d3b62ef60ecb5d427b094adbc5fe571e6f9da314008a68",
+      "bytes": 11596300
+    },
+    {
+      "path": "execution_residual_20261001_r7/raw_archives/test_empty-32-32_931721_unknown_shift.tar.gz",
+      "members": 40,
+      "sha256": "7f72390e48cd17482877fe8292c7ae01e85e01ae13d18d212651e5e03e76e883",
+      "bytes": 10108370
+    },
+    {
+      "path": "execution_residual_20261001_r7/raw_archives/test_random-32-32-10_931721_nominal.tar.gz",
+      "members": 40,
+      "sha256": "aa4dac3bcefee2a8780ab269d902dc3dfd5e03582801f36b7dd756884372db5b",
+      "bytes": 11727037
+    },
+    {
+      "path": "execution_residual_20261001_r7/raw_archives/test_random-32-32-10_931721_axis.tar.gz",
+      "members": 40,
+      "sha256": "50016fa03b0655959e3059942fec3045fb22feb424460e3da9f4fc03d19d1cbf",
+      "bytes": 11641411
+    },
+    {
+      "path": "execution_residual_20261001_r7/raw_archives/test_random-32-32-10_931721_unknown_shift.tar.gz",
+      "members": 40,
+      "sha256": "cc5edabaf8812a492b9da42e3b5f6825b18324d77bd2f0d9b03ce52106d88454",
+      "bytes": 10364649
+    },
+    {
+      "path": "execution_residual_20261001_r7/raw_archives/sandbox_denied_attempts.tar.gz",
+      "members": 90,
+      "sha256": "99b44139ddb0276937aea3fea3e47176f1b5e814a77781192db9a886383fe1fe",
+      "bytes": 145107
+    },
+    {
+      "path": "execution_residual_20261001_r7/raw_archives/candidate_native_build.tar.gz",
+      "members": 2,
+      "sha256": "264a6142d76eacf2de15a220056c302fcf989563817f93a1cdb7cf103f78f84d",
+      "bytes": 1160815
+    },
+    {
+      "path": "execution_residual_20261001_r7/reproduction_sources.tar.gz",
+      "members": 164,
+      "sha256": "7882a353184a5981660240ab93560eb80e13d7af1f55f99e279f1091f374e0a5",
+      "bytes": 486559
+    }
+  ],
+  "files": {
+    "MENTOR_PREEXEC_20261001_R7.md": {
+      "sha256": "34b404d74744732d95d74270f657c53d64b6559f55968d3d85b3e708647f85dd",
+      "bytes": 5436
+    },
+    "execution_residual_20261001_r7/CALIBRATION_SENSITIVITY.md": {
+      "sha256": "de41e1d6589f19abfe0d312cafcb896efa1229cd3b4b0d705fc8f64e138f0aa9",
+      "bytes": 759
+    },
+    "execution_residual_20261001_r7/LSMART_LICENSE.txt": {
+      "sha256": "4515f966d72ebb49440e50e49fc1f6e5dd61c203ba0553b36f2f8c2b6627fad3",
+      "bytes": 1043
+    },
+    "execution_residual_20261001_r7/OnlineGGO_LICENSE.txt": {
+      "sha256": "1465eac9fbe24d1e1754841eee839aeaa5ad829fa5c9cc4b2f18f0c2027674dc",
+      "bytes": 1067
+    },
+    "execution_residual_20261001_r7/POSTEXEC_MENTOR.md": {
+      "sha256": "ef9ce9c32e341caa0fa069d17d6cb1d18ab3cbe6a9a8d7a548f83549dbb15117",
+      "bytes": 967
+    },
+    "execution_residual_20261001_r7/PROTOCOL.md": {
+      "sha256": "6ac7168fa27a3190df293fadfee7db5e76b32321d27b50f326041516ee3c8fff",
+      "bytes": 4600
+    },
+    "execution_residual_20261001_r7/README.md": {
+      "sha256": "29ba13c6ad78b9170ee5e4e762beaeb46370f5844aabc27a0ae25900bc4c19bb",
+      "bytes": 2776
+    },
+    "execution_residual_20261001_r7/REPORT.md": {
+      "sha256": "6269f4df334cc0924c8edff67c385a6486c330fb5c63e49b5c48281f6a69bfe0",
+      "bytes": 8727
+    },
+    "execution_residual_20261001_r7/ROOT_MODEL_AUDIT.json": {
+      "sha256": "8f38ae0cdf1d8db514838458087f0afe110e27653f6926278c88aa77e9fb3ab1",
+      "bytes": 5004
+    },
+    "execution_residual_20261001_r7/ROOT_TEST_AUDIT.json": {
+      "sha256": "40a53328863a5bd71b78b21d74ce89fffaf04947c9886d2a5f7de2f7f201afad",
+      "bytes": 3508
+    },
+    "execution_residual_20261001_r7/SOURCE_AND_LICENSE.md": {
+      "sha256": "a48d377aa52455308777b1db1d1028de2d6d702f3267dee54598450a17685e70",
+      "bytes": 1598
+    },
+    "execution_residual_20261001_r7/archive_manifest.json": {
+      "sha256": "a15c0756db85c2eddc51345217b8bc72e800d6d4e32b850d6d1c716feacc8b9d",
+      "bytes": 109806
+    },
+    "execution_residual_20261001_r7/archive_raw.py": {
+      "sha256": "37db8ee409820b1b4048d0356b34cc25d71734b7b51ac7f2e7c67f4cc55d2edb",
+      "bytes": 2132
+    },
+    "execution_residual_20261001_r7/archive_sources.py": {
+      "sha256": "215195b3449e21844eab4d7ebb94cd7157fb7cad9bf035c8db2b3648ef054574",
+      "bytes": 1293
+    },
+    "execution_residual_20261001_r7/audit.py": {
+      "sha256": "2c225bc0937b951856c137185ee6a5187ed445c23c3ffda6b247f1ab2831738d",
+      "bytes": 5159
+    },
+    "execution_residual_20261001_r7/audit_test.json": {
+      "sha256": "4bcf8eeeeec4174ba69da8ac9424c99cadb918c4bfae83931fd9c73f51159346",
+      "bytes": 168774
+    },
+    "execution_residual_20261001_r7/audit_train.json": {
+      "sha256": "3abc967ddf6c26bb5acb35f9de2fc933e71134075ad324c2c279d198a9df85f0",
+      "bytes": 123920
+    },
+    "execution_residual_20261001_r7/build_0.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "execution_residual_20261001_r7/build_0.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "execution_residual_20261001_r7/build_1.stderr": {
+      "sha256": "ed98e37e8dddf98f0ce074c8ed211c1e481f7bec834ecc0b91098fd617c0ee45",
+      "bytes": 64
+    },
+    "execution_residual_20261001_r7/build_1.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "execution_residual_20261001_r7/build_candidate.py": {
+      "sha256": "875f144fe1000a21772b526df7eac5c5cd9ce778ae5865753167e82ff4c30656",
+      "bytes": 4312
+    },
+    "execution_residual_20261001_r7/build_receipts.json": {
+      "sha256": "77ee5dbbd0ba762e629c940dff16beb8bfc04c73c503ee76d355bce24aa71f25",
+      "bytes": 6444
+    },
+    "execution_residual_20261001_r7/calibration_sensitivity.json": {
+      "sha256": "8d88b04a499543e426337a79148cee2cc99b9fbaa6a3f7240eac40e957b7dbff",
+      "bytes": 27452
+    },
+    "execution_residual_20261001_r7/candidate_bridge.cpp": {
+      "sha256": "d8ac9b1bc3f97b2d8e3832cdcf3c7e95e3a34d775b36ada53150e2d0d5514a4f",
+      "bytes": 6153
+    },
+    "execution_residual_20261001_r7/candidate_identity.json": {
+      "sha256": "5e4cb2846c5e242d13f7212cd78ce6ba3f4db31fcea96b7f239d0f837bd96539",
+      "bytes": 4580
+    },
+    "execution_residual_20261001_r7/configs/calibration_empty-32-32_931711_axis_hm_GPIBT.json": {
+      "sha256": "25e9cc5f765a2c9ffad36e3a539f7e9db0bbb8b2757c6601746d3908e19f7626",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/calibration_empty-32-32_931711_nominal_hm_GPIBT.json": {
+      "sha256": "25e9cc5f765a2c9ffad36e3a539f7e9db0bbb8b2757c6601746d3908e19f7626",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/calibration_empty-32-32_931711_slow065_hm_GPIBT.json": {
+      "sha256": "25e9cc5f765a2c9ffad36e3a539f7e9db0bbb8b2757c6601746d3908e19f7626",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/calibration_random-32-32-10_931711_axis_hm_GPIBT.json": {
+      "sha256": "25e9cc5f765a2c9ffad36e3a539f7e9db0bbb8b2757c6601746d3908e19f7626",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/calibration_random-32-32-10_931711_nominal_hm_GPIBT.json": {
+      "sha256": "25e9cc5f765a2c9ffad36e3a539f7e9db0bbb8b2757c6601746d3908e19f7626",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/calibration_random-32-32-10_931711_slow065_hm_GPIBT.json": {
+      "sha256": "25e9cc5f765a2c9ffad36e3a539f7e9db0bbb8b2757c6601746d3908e19f7626",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/test_empty-32-32_931721_axis_history.json": {
+      "sha256": "857ee69af694bb56f660878ecea72a7b89b6bcd58964327a95948fe029c3fd83",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/test_empty-32-32_931721_axis_hm_GPIBT.json": {
+      "sha256": "857ee69af694bb56f660878ecea72a7b89b6bcd58964327a95948fe029c3fd83",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/test_empty-32-32_931721_axis_learned.json": {
+      "sha256": "857ee69af694bb56f660878ecea72a7b89b6bcd58964327a95948fe029c3fd83",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/test_empty-32-32_931721_axis_trained.json": {
+      "sha256": "00e4a729ed8111aa4d43f5508f32d681b1aa4041093dcbd4f4a0f5bd0c5824f6",
+      "bytes": 13586
+    },
+    "execution_residual_20261001_r7/configs/test_empty-32-32_931721_nominal_history.json": {
+      "sha256": "857ee69af694bb56f660878ecea72a7b89b6bcd58964327a95948fe029c3fd83",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/test_empty-32-32_931721_nominal_hm_GPIBT.json": {
+      "sha256": "857ee69af694bb56f660878ecea72a7b89b6bcd58964327a95948fe029c3fd83",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/test_empty-32-32_931721_nominal_learned.json": {
+      "sha256": "857ee69af694bb56f660878ecea72a7b89b6bcd58964327a95948fe029c3fd83",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/test_empty-32-32_931721_nominal_trained.json": {
+      "sha256": "00e4a729ed8111aa4d43f5508f32d681b1aa4041093dcbd4f4a0f5bd0c5824f6",
+      "bytes": 13586
+    },
+    "execution_residual_20261001_r7/configs/test_empty-32-32_931721_unknown_shift_history.json": {
+      "sha256": "857ee69af694bb56f660878ecea72a7b89b6bcd58964327a95948fe029c3fd83",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/test_empty-32-32_931721_unknown_shift_hm_GPIBT.json": {
+      "sha256": "857ee69af694bb56f660878ecea72a7b89b6bcd58964327a95948fe029c3fd83",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/test_empty-32-32_931721_unknown_shift_learned.json": {
+      "sha256": "857ee69af694bb56f660878ecea72a7b89b6bcd58964327a95948fe029c3fd83",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/test_empty-32-32_931721_unknown_shift_trained.json": {
+      "sha256": "00e4a729ed8111aa4d43f5508f32d681b1aa4041093dcbd4f4a0f5bd0c5824f6",
+      "bytes": 13586
+    },
+    "execution_residual_20261001_r7/configs/test_random-32-32-10_931721_axis_history.json": {
+      "sha256": "857ee69af694bb56f660878ecea72a7b89b6bcd58964327a95948fe029c3fd83",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/test_random-32-32-10_931721_axis_hm_GPIBT.json": {
+      "sha256": "857ee69af694bb56f660878ecea72a7b89b6bcd58964327a95948fe029c3fd83",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/test_random-32-32-10_931721_axis_learned.json": {
+      "sha256": "857ee69af694bb56f660878ecea72a7b89b6bcd58964327a95948fe029c3fd83",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/test_random-32-32-10_931721_axis_trained.json": {
+      "sha256": "00e4a729ed8111aa4d43f5508f32d681b1aa4041093dcbd4f4a0f5bd0c5824f6",
+      "bytes": 13586
+    },
+    "execution_residual_20261001_r7/configs/test_random-32-32-10_931721_nominal_history.json": {
+      "sha256": "857ee69af694bb56f660878ecea72a7b89b6bcd58964327a95948fe029c3fd83",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/test_random-32-32-10_931721_nominal_hm_GPIBT.json": {
+      "sha256": "857ee69af694bb56f660878ecea72a7b89b6bcd58964327a95948fe029c3fd83",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/test_random-32-32-10_931721_nominal_learned.json": {
+      "sha256": "857ee69af694bb56f660878ecea72a7b89b6bcd58964327a95948fe029c3fd83",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/test_random-32-32-10_931721_nominal_trained.json": {
+      "sha256": "00e4a729ed8111aa4d43f5508f32d681b1aa4041093dcbd4f4a0f5bd0c5824f6",
+      "bytes": 13586
+    },
+    "execution_residual_20261001_r7/configs/test_random-32-32-10_931721_unknown_shift_history.json": {
+      "sha256": "857ee69af694bb56f660878ecea72a7b89b6bcd58964327a95948fe029c3fd83",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/test_random-32-32-10_931721_unknown_shift_hm_GPIBT.json": {
+      "sha256": "857ee69af694bb56f660878ecea72a7b89b6bcd58964327a95948fe029c3fd83",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/test_random-32-32-10_931721_unknown_shift_learned.json": {
+      "sha256": "857ee69af694bb56f660878ecea72a7b89b6bcd58964327a95948fe029c3fd83",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/test_random-32-32-10_931721_unknown_shift_trained.json": {
+      "sha256": "00e4a729ed8111aa4d43f5508f32d681b1aa4041093dcbd4f4a0f5bd0c5824f6",
+      "bytes": 13586
+    },
+    "execution_residual_20261001_r7/configs/train_empty-32-32_931701_axis_hm_GPIBT.json": {
+      "sha256": "6b03284176522f6a006a98dfc7c40486a15701df89ca0a2ff1523d8b7e361b97",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/train_empty-32-32_931701_nominal_hm_GPIBT.json": {
+      "sha256": "6b03284176522f6a006a98dfc7c40486a15701df89ca0a2ff1523d8b7e361b97",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/train_empty-32-32_931701_slow065_hm_GPIBT.json": {
+      "sha256": "6b03284176522f6a006a98dfc7c40486a15701df89ca0a2ff1523d8b7e361b97",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/train_empty-32-32_931702_axis_hm_GPIBT.json": {
+      "sha256": "049a15f4bd756f45ed79393da24e9f91b855aee7cd28c262b461c819f774acc5",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/train_empty-32-32_931702_nominal_hm_GPIBT.json": {
+      "sha256": "049a15f4bd756f45ed79393da24e9f91b855aee7cd28c262b461c819f774acc5",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/train_empty-32-32_931702_slow065_hm_GPIBT.json": {
+      "sha256": "049a15f4bd756f45ed79393da24e9f91b855aee7cd28c262b461c819f774acc5",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/train_random-32-32-10_931701_axis_hm_GPIBT.json": {
+      "sha256": "6b03284176522f6a006a98dfc7c40486a15701df89ca0a2ff1523d8b7e361b97",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/train_random-32-32-10_931701_nominal_hm_GPIBT.json": {
+      "sha256": "6b03284176522f6a006a98dfc7c40486a15701df89ca0a2ff1523d8b7e361b97",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/train_random-32-32-10_931701_slow065_hm_GPIBT.json": {
+      "sha256": "6b03284176522f6a006a98dfc7c40486a15701df89ca0a2ff1523d8b7e361b97",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/train_random-32-32-10_931702_axis_hm_GPIBT.json": {
+      "sha256": "049a15f4bd756f45ed79393da24e9f91b855aee7cd28c262b461c819f774acc5",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/train_random-32-32-10_931702_nominal_hm_GPIBT.json": {
+      "sha256": "049a15f4bd756f45ed79393da24e9f91b855aee7cd28c262b461c819f774acc5",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/configs/train_random-32-32-10_931702_slow065_hm_GPIBT.json": {
+      "sha256": "049a15f4bd756f45ed79393da24e9f91b855aee7cd28c262b461c819f774acc5",
+      "bytes": 5432
+    },
+    "execution_residual_20261001_r7/diagnose.py": {
+      "sha256": "ca95800471bd019029607015c8e06087f77afa3e8839101c1b77319eebacd3d4",
+      "bytes": 6721
+    },
+    "execution_residual_20261001_r7/fit_model.py": {
+      "sha256": "1032374227efb0ee708a334a510ffb1e4511e7c0feceba78876cbe9679920943",
+      "bytes": 2363
+    },
+    "execution_residual_20261001_r7/freeze.py": {
+      "sha256": "57e8e6a4dd43396628c518a227658888d47234caa89d75c13007363e13ecd058",
+      "bytes": 962
+    },
+    "execution_residual_20261001_r7/freeze_recheck.json": {
+      "sha256": "547305fbe2a928aad2f9ac3b76c67d5a0ab2f39e5778a0116bee0bfeefca9c25",
+      "bytes": 138
+    },
+    "execution_residual_20261001_r7/freeze_test.json": {
+      "sha256": "799ada01450f8dc1e4aa26cd13d07d83484ff29dc554d9f9d5c2d776529c7e5e",
+      "bytes": 34230
+    },
+    "execution_residual_20261001_r7/freeze_train.json": {
+      "sha256": "d6ba52b3ec7667a3530b6b4d018be3746300a873129dd234a3a615411447bfa2",
+      "bytes": 33061
+    },
+    "execution_residual_20261001_r7/geometry_audit.py": {
+      "sha256": "4ae6beffec0e8650a6c93919595e6582a71e6b03c1b1ed98ff3644689a10395e",
+      "bytes": 1113
+    },
+    "execution_residual_20261001_r7/inherited_binary_manifest.json": {
+      "sha256": "84c41ac1f9ac211dc776c8112ad413a201a1776b11d3e71055950a2c10f04ba0",
+      "bytes": 1132
+    },
+    "execution_residual_20261001_r7/inherited_freeze_pin.json": {
+      "sha256": "332eb22e4cb782edb9a97a413109e513fa2dae6a63d9d257a048a9f280b488b3",
+      "bytes": 223
+    },
+    "execution_residual_20261001_r7/inputs/empty-32-32_931701/environment.json": {
+      "sha256": "a49e45ad4859ee3b1c60f2aa42bddd1dd5fb12befdbc7113841391429fea0149",
+      "bytes": 88015
+    },
+    "execution_residual_20261001_r7/inputs/empty-32-32_931701/map.json": {
+      "sha256": "f9afb60d19a374eb7b7288144e556b8557aa8aded72d621e07a6400bee2b20c4",
+      "bytes": 1483
+    },
+    "execution_residual_20261001_r7/inputs/empty-32-32_931701/tasks_n8.txt": {
+      "sha256": "1e2378e47d892f6dae9ae8c1d111d5bcf48399e9c6c9a45c7e5f511d39641285",
+      "bytes": 87561
+    },
+    "execution_residual_20261001_r7/inputs/empty-32-32_931702/environment.json": {
+      "sha256": "28f9c3c770a33b673ba5c35bf42dc396b83b32fbdd55039f215af395c6dcbd23",
+      "bytes": 87920
+    },
+    "execution_residual_20261001_r7/inputs/empty-32-32_931702/map.json": {
+      "sha256": "f9afb60d19a374eb7b7288144e556b8557aa8aded72d621e07a6400bee2b20c4",
+      "bytes": 1483
+    },
+    "execution_residual_20261001_r7/inputs/empty-32-32_931702/tasks_n8.txt": {
+      "sha256": "14c4fca39235571aa40d3d3c7e5db0ca19dd21ed62307cfb31e68031fda1c4e0",
+      "bytes": 87466
+    },
+    "execution_residual_20261001_r7/inputs/empty-32-32_931711/environment.json": {
+      "sha256": "e33ee92001f863008c3dda49c5b0507e576e91592adcb004f9cc8de9ef30db5c",
+      "bytes": 87950
+    },
+    "execution_residual_20261001_r7/inputs/empty-32-32_931711/map.json": {
+      "sha256": "f9afb60d19a374eb7b7288144e556b8557aa8aded72d621e07a6400bee2b20c4",
+      "bytes": 1483
+    },
+    "execution_residual_20261001_r7/inputs/empty-32-32_931711/tasks_n8.txt": {
+      "sha256": "cc34ff452163749a2762a6b35658d8bf913b33de5a4646fb6a2ab1b955cbac5d",
+      "bytes": 87496
+    },
+    "execution_residual_20261001_r7/inputs/empty-32-32_931721/environment.json": {
+      "sha256": "81bc02e8dbbc3241eab1c36ca3c2050159ff82b49049b51d6fa685428b665b5b",
+      "bytes": 87943
+    },
+    "execution_residual_20261001_r7/inputs/empty-32-32_931721/map.json": {
+      "sha256": "f9afb60d19a374eb7b7288144e556b8557aa8aded72d621e07a6400bee2b20c4",
+      "bytes": 1483
+    },
+    "execution_residual_20261001_r7/inputs/empty-32-32_931721/tasks_n8.txt": {
+      "sha256": "5ccf83066e07db31e90c73b83ad927c9c75224ad28e64e92aea4e2ea233e81bc",
+      "bytes": 87489
+    },
+    "execution_residual_20261001_r7/inputs/random-32-32-10_931701/environment.json": {
+      "sha256": "7957778c84a8cef63cf26139174f8939236b18c51506264e96eac316ad200bef",
+      "bytes": 87946
+    },
+    "execution_residual_20261001_r7/inputs/random-32-32-10_931701/map.json": {
+      "sha256": "67fd8f4a06f754c921a50cebd89a7198444295124ffaa2c7871bbcf81298be34",
+      "bytes": 1487
+    },
+    "execution_residual_20261001_r7/inputs/random-32-32-10_931701/tasks_n8.txt": {
+      "sha256": "6ad6fcc238842a85e3a4e803a34585307795bf2049e2564bcd1595bb7c11892d",
+      "bytes": 87494
+    },
+    "execution_residual_20261001_r7/inputs/random-32-32-10_931702/environment.json": {
+      "sha256": "9eb8020e12946fa3ceacb112821b3225ad841698701d967139221da914035952",
+      "bytes": 87934
+    },
+    "execution_residual_20261001_r7/inputs/random-32-32-10_931702/map.json": {
+      "sha256": "67fd8f4a06f754c921a50cebd89a7198444295124ffaa2c7871bbcf81298be34",
+      "bytes": 1487
+    },
+    "execution_residual_20261001_r7/inputs/random-32-32-10_931702/tasks_n8.txt": {
+      "sha256": "778c0f3ac5d0f5e8c4e67491ed66e4b6704e43b344cbd66b85d0f43465b18cf9",
+      "bytes": 87482
+    },
+    "execution_residual_20261001_r7/inputs/random-32-32-10_931711/environment.json": {
+      "sha256": "9373aa50c11940f7ee87f7fedf3b88087f72c2f7d83aa90f6a3c5963f6213932",
+      "bytes": 88017
+    },
+    "execution_residual_20261001_r7/inputs/random-32-32-10_931711/map.json": {
+      "sha256": "67fd8f4a06f754c921a50cebd89a7198444295124ffaa2c7871bbcf81298be34",
+      "bytes": 1487
+    },
+    "execution_residual_20261001_r7/inputs/random-32-32-10_931711/tasks_n8.txt": {
+      "sha256": "d305029fb3020e0a6d0bb3845b5d80afa1960d2c3ba4a3be3ae53c31215963f3",
+      "bytes": 87565
+    },
+    "execution_residual_20261001_r7/inputs/random-32-32-10_931721/environment.json": {
+      "sha256": "e341ad9406f6884e8270ff2938b5952072ee50ac9df6b7da90646f1908453749",
+      "bytes": 88014
+    },
+    "execution_residual_20261001_r7/inputs/random-32-32-10_931721/map.json": {
+      "sha256": "67fd8f4a06f754c921a50cebd89a7198444295124ffaa2c7871bbcf81298be34",
+      "bytes": 1487
+    },
+    "execution_residual_20261001_r7/inputs/random-32-32-10_931721/tasks_n8.txt": {
+      "sha256": "a9fced4cb9d586209181f9d1634a907b22d2f4af1d0197b2def7f2de5fac1e71",
+      "bytes": 87562
+    },
+    "execution_residual_20261001_r7/matrix_test.json": {
+      "sha256": "2aeda5ca5cdd66930801a781a23c15a6d24d23fb170a64b9ee9f8358bd94e49f",
+      "bytes": 6844
+    },
+    "execution_residual_20261001_r7/matrix_train.json": {
+      "sha256": "f96f57fe9364bae3e5a5350b7061010162043dc631bb67ebe87a362236c068e0",
+      "bytes": 5195
+    },
+    "execution_residual_20261001_r7/matrix_train_sandbox_denied.json": {
+      "sha256": "3d19f136db60d0d82711f45a6b90f5f82b13de31e851e45e9e5977fa846567a6",
+      "bytes": 21871
+    },
+    "execution_residual_20261001_r7/model_freeze.json": {
+      "sha256": "15f3d3042a71c9b851d9e6b0ade27318748abddcbea47f2f2718533bfb57b2b3",
+      "bytes": 8290
+    },
+    "execution_residual_20261001_r7/prepare.py": {
+      "sha256": "4a5a835c62de82cbc1060cb543d43f1c396539a299658cd8c9a2097d4557e6cb",
+      "bytes": 3252
+    },
+    "execution_residual_20261001_r7/public_input_negative_checks.json": {
+      "sha256": "c8373524ee26c9a41ca21e25c7867040e5d7a7fc6c2b17ac14efbdb28e0a4cc6",
+      "bytes": 196
+    },
+    "execution_residual_20261001_r7/public_model.py": {
+      "sha256": "d21fe4c270b87c0db31ea18026daf0eab44234b55a6ff4095ebc80c01a8ee30e",
+      "bytes": 6731
+    },
+    "execution_residual_20261001_r7/r6_agent_tick_accounting.csv": {
+      "sha256": "14d48585fe9f9e2f7cc8a1c5c83a687cbfa231920916eab2e9fa535529acac1a",
+      "bytes": 34012
+    },
+    "execution_residual_20261001_r7/r6_diagnosis.json": {
+      "sha256": "032a48bd7c9cc594d977502a021b6c9a77be9f90b61a03deb35c1b05ce6973da",
+      "bytes": 218443
+    },
+    "execution_residual_20261001_r7/raw_archives/calibration_empty-32-32_931711_axis.tar.gz": {
+      "sha256": "6cbc9598bb0db8ec8c2959083180eb01a52824c1fa0b29a0d1797a6b0f0bae38",
+      "bytes": 2797719
+    },
+    "execution_residual_20261001_r7/raw_archives/calibration_empty-32-32_931711_nominal.tar.gz": {
+      "sha256": "e639d1982b0b519fdfb19d9857fd4617d1233c29eb018db7bc6486a92eb6c224",
+      "bytes": 2790724
+    },
+    "execution_residual_20261001_r7/raw_archives/calibration_empty-32-32_931711_slow065.tar.gz": {
+      "sha256": "aaa266ed3a864dadfc9938cb97e34d3d20c6cdc8a4e90f1411e4e989c2d2a106",
+      "bytes": 2668375
+    },
+    "execution_residual_20261001_r7/raw_archives/calibration_random-32-32-10_931711_axis.tar.gz": {
+      "sha256": "0a00ef26ba4641511d0c1c52873f2eb8bdc052a9ecc7633ddcda7de278fabaab",
+      "bytes": 2801644
+    },
+    "execution_residual_20261001_r7/raw_archives/calibration_random-32-32-10_931711_nominal.tar.gz": {
+      "sha256": "1cd6819492e16de44b6b91f94239ee5ff4da8ad44cfbc6c5fb026139da4ad5b2",
+      "bytes": 2809656
+    },
+    "execution_residual_20261001_r7/raw_archives/calibration_random-32-32-10_931711_slow065.tar.gz": {
+      "sha256": "9737d1a936a6c0665e3829428cf44418c521060b8c6d729ff264088737330a21",
+      "bytes": 2651135
+    },
+    "execution_residual_20261001_r7/raw_archives/candidate_native_build.tar.gz": {
+      "sha256": "264a6142d76eacf2de15a220056c302fcf989563817f93a1cdb7cf103f78f84d",
+      "bytes": 1160815
+    },
+    "execution_residual_20261001_r7/raw_archives/sandbox_denied_attempts.tar.gz": {
+      "sha256": "99b44139ddb0276937aea3fea3e47176f1b5e814a77781192db9a886383fe1fe",
+      "bytes": 145107
+    },
+    "execution_residual_20261001_r7/raw_archives/test_empty-32-32_931721_axis.tar.gz": {
+      "sha256": "7bc8cf92d721b12b33d3b62ef60ecb5d427b094adbc5fe571e6f9da314008a68",
+      "bytes": 11596300
+    },
+    "execution_residual_20261001_r7/raw_archives/test_empty-32-32_931721_nominal.tar.gz": {
+      "sha256": "55c06a270b6d5a135471cc5af2504110a60b2694dbc26eef9961ef167ef2a32c",
+      "bytes": 11761349
+    },
+    "execution_residual_20261001_r7/raw_archives/test_empty-32-32_931721_unknown_shift.tar.gz": {
+      "sha256": "7f72390e48cd17482877fe8292c7ae01e85e01ae13d18d212651e5e03e76e883",
+      "bytes": 10108370
+    },
+    "execution_residual_20261001_r7/raw_archives/test_random-32-32-10_931721_axis.tar.gz": {
+      "sha256": "50016fa03b0655959e3059942fec3045fb22feb424460e3da9f4fc03d19d1cbf",
+      "bytes": 11641411
+    },
+    "execution_residual_20261001_r7/raw_archives/test_random-32-32-10_931721_nominal.tar.gz": {
+      "sha256": "aa4dac3bcefee2a8780ab269d902dc3dfd5e03582801f36b7dd756884372db5b",
+      "bytes": 11727037
+    },
+    "execution_residual_20261001_r7/raw_archives/test_random-32-32-10_931721_unknown_shift.tar.gz": {
+      "sha256": "cc5edabaf8812a492b9da42e3b5f6825b18324d77bd2f0d9b03ce52106d88454",
+      "bytes": 10364649
+    },
+    "execution_residual_20261001_r7/raw_archives/train_empty-32-32_931701_axis.tar.gz": {
+      "sha256": "0bcbfd1255ed91a495c7285c5b3c17f58390f54dfad935b2dc27767a1eb21733",
+      "bytes": 2833451
+    },
+    "execution_residual_20261001_r7/raw_archives/train_empty-32-32_931701_nominal.tar.gz": {
+      "sha256": "dbca05df78e10f9f4d281cd6f226372f296257dfe4c859eb7831848b8a152f52",
+      "bytes": 2867009
+    },
+    "execution_residual_20261001_r7/raw_archives/train_empty-32-32_931701_slow065.tar.gz": {
+      "sha256": "9a6544a61f11731f7dec89fb8435974b10b434995939ca5c81285890c7dc36ed",
+      "bytes": 2632231
+    },
+    "execution_residual_20261001_r7/raw_archives/train_empty-32-32_931702_axis.tar.gz": {
+      "sha256": "d4692b74805ae7bee9f8bbc1d2f16ebbb287c0c567abf124844d4c28bf9307b2",
+      "bytes": 2766118
+    },
+    "execution_residual_20261001_r7/raw_archives/train_empty-32-32_931702_nominal.tar.gz": {
+      "sha256": "648b9c69583a4ca7c3272aab4f55c58b15e4685ab603267cb593c7de21714573",
+      "bytes": 2818195
+    },
+    "execution_residual_20261001_r7/raw_archives/train_empty-32-32_931702_slow065.tar.gz": {
+      "sha256": "3a1aac187cd1c2f53054dfb9662bdb9ddb647637b590843862cf7b7ceebc78fe",
+      "bytes": 2658861
+    },
+    "execution_residual_20261001_r7/raw_archives/train_random-32-32-10_931701_axis.tar.gz": {
+      "sha256": "fbe0818396ff2110e6668639a9ca1952a70cd5a3acb9dd35a2002c42bf2910c7",
+      "bytes": 2798357
+    },
+    "execution_residual_20261001_r7/raw_archives/train_random-32-32-10_931701_nominal.tar.gz": {
+      "sha256": "34ac920fb06c7ec033915d7a5b968e11c8b86eade6b9437ba6510f2d236c14ec",
+      "bytes": 2850884
+    },
+    "execution_residual_20261001_r7/raw_archives/train_random-32-32-10_931701_slow065.tar.gz": {
+      "sha256": "314506b5e831bc126cbdf179a9dd35e754cf7687f28c19fff7f88a1951c4522a",
+      "bytes": 2632021
+    },
+    "execution_residual_20261001_r7/raw_archives/train_random-32-32-10_931702_axis.tar.gz": {
+      "sha256": "ddf93e1618bc267f2e7bd3809f2dc15dae66beaed2757edbbb6ab8667c2ac851",
+      "bytes": 2806821
+    },
+    "execution_residual_20261001_r7/raw_archives/train_random-32-32-10_931702_nominal.tar.gz": {
+      "sha256": "4cf8d30bf576343525476e15ef986170a45eff6fa06ba6b5e8712722a9f5822c",
+      "bytes": 2865368
+    },
+    "execution_residual_20261001_r7/raw_archives/train_random-32-32-10_931702_slow065.tar.gz": {
+      "sha256": "3c25dcbe60a1526a1194622636a57bec2d771eee18b644a3ba8f35eeed6eb34d",
+      "bytes": 2683273
+    },
+    "execution_residual_20261001_r7/reproduction_sources.tar.gz": {
+      "sha256": "7882a353184a5981660240ab93560eb80e13d7af1f55f99e279f1091f374e0a5",
+      "bytes": 486559
+    },
+    "execution_residual_20261001_r7/resume_native.py": {
+      "sha256": "cd232c37bddc547e24270bbd450f2ea1b6ab746384c99c6b08728b01c21d7676",
+      "bytes": 674
+    },
+    "execution_residual_20261001_r7/root_model_audit.py": {
+      "sha256": "9e2eff446d517c9b3763910f49e1ef84a1dbc060a98fcba99c66cdb8ace1f528",
+      "bytes": 8099
+    },
+    "execution_residual_20261001_r7/root_test_audit.py": {
+      "sha256": "cb2deec15039cd633a6e4ca3b8b2003c245c5fcb3be7357da9c432dc62b196e9",
+      "bytes": 3560
+    },
+    "execution_residual_20261001_r7/run_matrix.py": {
+      "sha256": "b34e5d201dfb365119bc2397e7287e3b14493d6d4db9b3dfb75f4f001c888edd",
+      "bytes": 732
+    },
+    "execution_residual_20261001_r7/run_trial.py": {
+      "sha256": "991e890f4f9603d063ba8119faebd6b81f9c6f44bb66c1ae4aeef40162dc3f74",
+      "bytes": 6915
+    },
+    "execution_residual_20261001_r7/runs.json": {
+      "sha256": "1cb40f85ac91753be28656d070e7de72fef973034fb51cd2bec0bb3aebdf74fe",
+      "bytes": 14178
+    },
+    "execution_residual_20261001_r7/sampled_geometry.json": {
+      "sha256": "d8030ee877febf6a663f4a67d4e524ee5841915081042ae219b7ca652d6493ef",
+      "bytes": 70714
+    },
+    "execution_residual_20261001_r7/search_overlay.cpp": {
+      "sha256": "28b0bb76c91bb588fc1e257fb80fb826357354df3e0a07ca0ddf41656dddcabd",
+      "bytes": 25743
+    },
+    "execution_residual_20261001_r7/search_overlay.patch": {
+      "sha256": "f772cc751760ae8c1e2b9167cfb99d7ed125aa61400035a76cee42ecf04870ae",
+      "bytes": 550
+    },
+    "execution_residual_20261001_r7/sensitivity.py": {
+      "sha256": "62e9b783c5664970e41b22e2c184808796b01ab3c35978707c730d246d8d6e42",
+      "bytes": 3387
+    },
+    "execution_residual_20261001_r7/source_archive_manifest.json": {
+      "sha256": "aeef1e4ad4bd01a256d33eab94a32e5a6a582b60e669e327a3719a2935a4098f",
+      "bytes": 19177
+    },
+    "execution_residual_20261001_r7/summarize.py": {
+      "sha256": "ce6570f9987137fe085f84f766a3de140d97811c9767dd073455f6e7e508935a",
+      "bytes": 5050
+    },
+    "execution_residual_20261001_r7/summary.csv": {
+      "sha256": "b4117cf45a80a979a21068134a7be66ecfdc4e7d320263343f26d795e92947e1",
+      "bytes": 4797
+    },
+    "execution_residual_20261001_r7/summary.json": {
+      "sha256": "6a5e5965d51545a36a5a5faf7e02305d5e986ab144ac0d266cd2507b7ee78c56",
+      "bytes": 369065
+    },
+    "execution_residual_20261001_r7/xml/calibration_empty-32-32_931711_axis_hm_GPIBT.argos": {
+      "sha256": "b7726ecce5906aa501a74adb23cf3d9c17bdd2de6f732f3a141b24401a8d561a",
+      "bytes": 2657
+    },
+    "execution_residual_20261001_r7/xml/calibration_empty-32-32_931711_nominal_hm_GPIBT.argos": {
+      "sha256": "6359a61d9eb9981f3e3912279c68a37b38d90f177896a5d0d27fae67b85079fd",
+      "bytes": 2657
+    },
+    "execution_residual_20261001_r7/xml/calibration_empty-32-32_931711_slow065_hm_GPIBT.argos": {
+      "sha256": "2687c0407ebc38f7010d0cb4f5e9a140d21989e1bb6c5bb3089a8494137f9265",
+      "bytes": 2657
+    },
+    "execution_residual_20261001_r7/xml/calibration_random-32-32-10_931711_axis_hm_GPIBT.argos": {
+      "sha256": "f380e4d33902fe99714906c0b5790997c99ea1f6e19225f4589bcb96b6af7516",
+      "bytes": 14220
+    },
+    "execution_residual_20261001_r7/xml/calibration_random-32-32-10_931711_nominal_hm_GPIBT.argos": {
+      "sha256": "d92bd4ee81b19ad589fea6e2d3cb80232cd6bbed287d0914f4604523aef3fac0",
+      "bytes": 14220
+    },
+    "execution_residual_20261001_r7/xml/calibration_random-32-32-10_931711_slow065_hm_GPIBT.argos": {
+      "sha256": "f53b54f2de8c7ff0a1bf19d8f795bfc52158396e0cb2c55e5d3e47d1f842c379",
+      "bytes": 14220
+    },
+    "execution_residual_20261001_r7/xml/test_empty-32-32_931721_axis_history.argos": {
+      "sha256": "da6389a9c868ebe9f2ede0c62b1614376ef2529436107f2314f74aed2e3e83a2",
+      "bytes": 2657
+    },
+    "execution_residual_20261001_r7/xml/test_empty-32-32_931721_axis_hm_GPIBT.argos": {
+      "sha256": "a8fbbe9e5605b6c1d5f2e0653e4ca4fb8e702ee78e27ed9f83e685fd685c2f75",
+      "bytes": 2657
+    },
+    "execution_residual_20261001_r7/xml/test_empty-32-32_931721_axis_learned.argos": {
+      "sha256": "4f96fa2b5fb537ef87ec6b2846fed018a13c41492f4314cb44b1d41ff61f20c1",
+      "bytes": 2657
+    },
+    "execution_residual_20261001_r7/xml/test_empty-32-32_931721_axis_trained.argos": {
+      "sha256": "2568ad5e0f1ea5120a8746b073c40a686549ca8711a791efcbf3dd2cd3aef685",
+      "bytes": 2657
+    },
+    "execution_residual_20261001_r7/xml/test_empty-32-32_931721_nominal_history.argos": {
+      "sha256": "6ebb4665e7ef6c4781ce08530fae8bd21280ff07500cb8aa8770a7649badac7b",
+      "bytes": 2657
+    },
+    "execution_residual_20261001_r7/xml/test_empty-32-32_931721_nominal_hm_GPIBT.argos": {
+      "sha256": "0fd245c96b1ee23bd7753f24883584a8a3ca4c23e0a14f5510bd2a19ff763cc7",
+      "bytes": 2657
+    },
+    "execution_residual_20261001_r7/xml/test_empty-32-32_931721_nominal_learned.argos": {
+      "sha256": "83a2def42cbccfc89ff305d564a408b2fc5d6f54673da1cd37579045164e9d68",
+      "bytes": 2657
+    },
+    "execution_residual_20261001_r7/xml/test_empty-32-32_931721_nominal_trained.argos": {
+      "sha256": "37cdca00c5ba1d435eb6e70cb7476678325f8aa9f51595834369db3def345381",
+      "bytes": 2657
+    },
+    "execution_residual_20261001_r7/xml/test_empty-32-32_931721_unknown_shift_history.argos": {
+      "sha256": "867fd2fde4ded16abb7c1909df58bc0b250c484b31f3c7f0c7c49f3dc9e9025f",
+      "bytes": 2657
+    },
+    "execution_residual_20261001_r7/xml/test_empty-32-32_931721_unknown_shift_hm_GPIBT.argos": {
+      "sha256": "58d753c684c51662510ad87c1979fa093ab036f0b5276e56fbea1706cdfb9276",
+      "bytes": 2657
+    },
+    "execution_residual_20261001_r7/xml/test_empty-32-32_931721_unknown_shift_learned.argos": {
+      "sha256": "acc66e1dd39dd7bc3aae457d486bda199685c1498c12ead6fddcfc8aaf329a3a",
+      "bytes": 2657
+    },
+    "execution_residual_20261001_r7/xml/test_empty-32-32_931721_unknown_shift_trained.argos": {
+      "sha256": "6bdef41c70249d7869d969c1d2ea47755e8960d4bc3b6b08978b9f69aa27e2db",
+      "bytes": 2657
+    },
+    "execution_residual_20261001_r7/xml/test_random-32-32-10_931721_axis_history.argos": {
+      "sha256": "edd8b6284d4774054178f75e9e3ab2c04dac8bcdea0d4c4eb46e1e308ca79540",
+      "bytes": 14220
+    },
+    "execution_residual_20261001_r7/xml/test_random-32-32-10_931721_axis_hm_GPIBT.argos": {
+      "sha256": "349775c3db6edeff07824c23c8c855d145a29ac1d54b5c30c47a1260941999f5",
+      "bytes": 14220
+    },
+    "execution_residual_20261001_r7/xml/test_random-32-32-10_931721_axis_learned.argos": {
+      "sha256": "81bfd9a60b748e707b2b2bf7ee9e5c727762e7ec632c3379e15d92d98ec40dd7",
+      "bytes": 14220
+    },
+    "execution_residual_20261001_r7/xml/test_random-32-32-10_931721_axis_trained.argos": {
+      "sha256": "27bad1d7abe333ff5efb1c68c44dfae3cce3e1848436b53925cbe9fb62a9601a",
+      "bytes": 14220
+    },
+    "execution_residual_20261001_r7/xml/test_random-32-32-10_931721_nominal_history.argos": {
+      "sha256": "c4ff6baac52959273f4104422ce76494ccb052c69e2f94115db8423b36db13c4",
+      "bytes": 14220
+    },
+    "execution_residual_20261001_r7/xml/test_random-32-32-10_931721_nominal_hm_GPIBT.argos": {
+      "sha256": "7540df2aef3b331c6a45ff58854c983c59a3e7980eb13ba5011d67c476f05bb0",
+      "bytes": 14220
+    },
+    "execution_residual_20261001_r7/xml/test_random-32-32-10_931721_nominal_learned.argos": {
+      "sha256": "3dba6d96aa60194133696372325dd0bdfcf5ff3a90f44cb6783fbb8838672aad",
+      "bytes": 14220
+    },
+    "execution_residual_20261001_r7/xml/test_random-32-32-10_931721_nominal_trained.argos": {
+      "sha256": "5f75006a3dec43d5d1146fc17f71e940f9dc5afd2f11420c481ea24ea825a001",
+      "bytes": 14220
+    },
+    "execution_residual_20261001_r7/xml/test_random-32-32-10_931721_unknown_shift_history.argos": {
+      "sha256": "c871a6bbf1c1eaac28c1f5589531357b974bf53024994353e00af70dbbbcf0a9",
+      "bytes": 14220
+    },
+    "execution_residual_20261001_r7/xml/test_random-32-32-10_931721_unknown_shift_hm_GPIBT.argos": {
+      "sha256": "b42e0387edc7d6d484b67fc5de9578366bf78f627c8ebd6da4540f7dc72e84ca",
+      "bytes": 14220
+    },
+    "execution_residual_20261001_r7/xml/test_random-32-32-10_931721_unknown_shift_learned.argos": {
+      "sha256": "054b22e2f7edf7bc8cb79f9a3ffe9c058fd17db20bf06b75e9310695072d1002",
+      "bytes": 14220
+    },
+    "execution_residual_20261001_r7/xml/test_random-32-32-10_931721_unknown_shift_trained.argos": {
+      "sha256": "f296dcc1618384c4855279617ea432ed91a6aea0ebb75f001722157e05a6d012",
+      "bytes": 14220
+    },
+    "execution_residual_20261001_r7/xml/train_empty-32-32_931701_axis_hm_GPIBT.argos": {
+      "sha256": "e1b829c62e9ff1ab27babce453d7bb09df5f62f76650b49f4aa641cfbb7a8b3d",
+      "bytes": 2657
+    },
+    "execution_residual_20261001_r7/xml/train_empty-32-32_931701_nominal_hm_GPIBT.argos": {
+      "sha256": "785d7536ac6eda6db090c200a44111b5350ab8998577bead10964629196f0183",
+      "bytes": 2657
+    },
+    "execution_residual_20261001_r7/xml/train_empty-32-32_931701_slow065_hm_GPIBT.argos": {
+      "sha256": "7be9469ba1259a30f83e516ff8361a2b0408bab7e427124a988820019fedbc84",
+      "bytes": 2657
+    },
+    "execution_residual_20261001_r7/xml/train_empty-32-32_931702_axis_hm_GPIBT.argos": {
+      "sha256": "2f7779a313b94b53f5b55973ac8deb027a86631f0e7d45c2f240ae70aa8e0bed",
+      "bytes": 2657
+    },
+    "execution_residual_20261001_r7/xml/train_empty-32-32_931702_nominal_hm_GPIBT.argos": {
+      "sha256": "89855b06811d11338f2b93f428ab9c7358973db48d08449cd8781e01e3010ad1",
+      "bytes": 2657
+    },
+    "execution_residual_20261001_r7/xml/train_empty-32-32_931702_slow065_hm_GPIBT.argos": {
+      "sha256": "cd66cc57740f6d92faad0d8a5aa257af20001ef8e3b1adacfc8c3d1087afabcf",
+      "bytes": 2657
+    },
+    "execution_residual_20261001_r7/xml/train_random-32-32-10_931701_axis_hm_GPIBT.argos": {
+      "sha256": "696085567dc187e7ba17f412203a4a9884b0c72a1cecb55096d039c30865462a",
+      "bytes": 14220
+    },
+    "execution_residual_20261001_r7/xml/train_random-32-32-10_931701_nominal_hm_GPIBT.argos": {
+      "sha256": "db094ac0ad4f2a7646df85dead68d7d4453dcd7714c0a19dbcc4020d5f1e710a",
+      "bytes": 14220
+    },
+    "execution_residual_20261001_r7/xml/train_random-32-32-10_931701_slow065_hm_GPIBT.argos": {
+      "sha256": "7c7687546e218e945bfc368cd66dd919033df6300163e456aecbc6654b973f0e",
+      "bytes": 14220
+    },
+    "execution_residual_20261001_r7/xml/train_random-32-32-10_931702_axis_hm_GPIBT.argos": {
+      "sha256": "4fec23335b9bc716677eeccd46bba1ac57e68e52b11b15d90112f518e0336cc0",
+      "bytes": 14220
+    },
+    "execution_residual_20261001_r7/xml/train_random-32-32-10_931702_nominal_hm_GPIBT.argos": {
+      "sha256": "96cd41d3b390f4cda3544b46f7e019020770faafed535c6169a222fa815135b9",
+      "bytes": 14220
+    },
+    "execution_residual_20261001_r7/xml/train_random-32-32-10_931702_slow065_hm_GPIBT.argos": {
+      "sha256": "ceeb0a5e1fe36861daa7ce253f39718d1b9b37f2949bd191fccd3222aff4cd3b",
+      "bytes": 14220
+    }
+  },
+  "manifest_self_excluded": true
+}
