@@ -1756,3 +1756,33 @@ R6e 首先按与 R6d 完全相同的物理输入和供给合同运行 Natural、
 2,304,000次物理观测另经独立圆footprint采样检查，最小机器人间净空0.291639778m、障碍净空0.373202651m，均为正；这些是采样证据，不是连续时间footprint安全证明。共同global joint-settled barrier要求全队停稳，会压制局部进度信息的价值，因此该R1共同执行比较不能当原异步LMAPF benchmark，也不能据模型较弱推断局部执行误差学习无价值。
 
 适配失败没有覆盖：旧R6的24run全部保留，因适配错误将主指标置为null；R6b预检失败，没有native执行；R6c修复两处合并及坐标映射后重新冻结并运行上述24组。最终 `summary.json` 与 `REPORT.md` 位于第三分支同名目录，4份归档含192个raw文件，原始总量2,386,357,609bytes，压缩后186,507,495bytes。失败历史、最终正确输入、作者对象身份与实际任务结果分开保存，任务780/648只归属于最终R6c。
+
+## 77. 未闭合运动下的付费放行、在线查询与新执行误差模型（2026-10-01 R7）
+
+本轮实际指定 GPT-6-Astra / ultra 与 research-mentor 分别读取R6工件独立预审，再三线实施；原判断与实施后结果见第三分支 [THREE_ROUTE_POSTUPDATE_20261001_R7.md](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261001_R7.md)。Astra随后承担主线实现，导师智能体承担第三线实现，实施后建议不称新的盲审。主线源及raw继续只存忽略目录，公共Git只改四文档，主稿不动。
+
+主线 `paid_position_service_pair_20261001_r7` 在R6e完整计费链外增加只读物理事件与目标停稳fixture，做WAIT/paid POSITION配对。原短MOVE长度3在t3自然END，付费cap仍t6到达：δ0普通END先到，原固定付费脚本无正常END生命周期入口，实际32段后exit77（Natural actual117,165,340；Strict actual117,165,624、charged268,435,456），没有虚报完整服务；δ3两臂零收益；δ4/8仅有通知迟到的1/5时间单位收益。这些零/不支持结果与原输入原raw保持。
+
+为验证真实未闭合运动下的进度价值，另立length27长输入，前车从x1至x28，29资源cell覆盖0..28，geometry与session另绑，保持原t2capture/t6cap物理时序、控制参数与每段统一8,388,608供给。首次较长session字符串被原binder在执行前拒绝，其两制度raw及源码保留；独立bindfix后继用新单字节session L重新全编译、限定发布入口并绑定。源码差分限于声明输入和只读host观察入口，原POSITION/guard业务未替换；三实际ELF的private kernel仍为20,480bytes@0x11000/flags6、SHA c1942d2feb24492b3ace8844c8d092063507ead74ae066340ad6e8d254ac28a8。
+
+长输入δ0真实配对结果：前车原控制器END=9；WAIT正常END后通过原owner/demand释放，rear RUN=9、END=9+√3；paid原guest消费证书并经资源guard放行，rear RUN=6、END=6+√3。paid RUN时前车物理s=18、closed=false，因此后车提前3来自真正的运动中进度证据。s不是内部committed q；另外原Numeric对t2/s2重算enclosure=[2,2]是离线核验，不是给actor的host代算。goal-at-rest停稳1tick fixture服务和WAIT22/paid19；该正常END与服务均明确不是生产AUTH END或作者STATION。
+
+两制度长输入均真实exit0，完成102段、四terminal、原ReceiptInstallation、guest usable quote检查与下一选择；最终C/N/E boundary19/11/13，资源生命周期关闭。几何变长在原startup窗口多用4段，不能将此102段与R6e短输入98段当同合同优化。
+
+|长输入费用归属|Natural actual=charged|Strict actual|Strict charged|
+|---|---:|---:|---:|
+|Business/setup|144,850,475|144,850,475|209,715,200|
+|Selection|1,769,729|1,769,729|41,943,040|
+|Query业务|13,833,678|13,833,790|184,549,376|
+|独立ReceiptAccounting|23,479,042|23,478,031|419,430,400|
+|全部102段|183,932,924|183,932,025|855,638,016|
+
+WAIT和fixture CPU尚未完整计费，不给净费用胜负。15最终登记臂及3个首次长输入记录分别保存；实施审计重建874个物理状态、全部费用/事件，根另独立核2,214项文件哈希、三实际ELF节、15账流、长输入因果事件与端点。主要入口 `paid_position_service_pair_20261001_r7/{HANDOFF.md,AUDIT.json,BINDINGS.json,COST_SEGMENTS.csv,PAIR_RESULTS.csv,HANDOFF_IDENTITIES.json}`；根检查为 `R7_MAIN_ROOT_VERIFY.py/json`。下一是把普通END加入同一真实计费循环，让短δ0也合法结束，正确处理过期POSITION并结清已付费用，再接持续任务/多source竞争。
+
+查询 `online_fifo_20261001_r7` 已把R6静态裁剪计划换成持久作者OBJ3在线planner、公开承诺frontier、每agent最多4在途承诺及256项私有FIFO。原访问依赖、资源guard、Geometry/PositionCommit和正常END保持，后续head只在服务/END后揭示；规划无需全队停稳。12机械+48统计=60成功native全部达到H128，当前窗口0死锁，不能据此证明一般无死锁；6,364次planner调用发生于实际MOVE在途，239query在END前、144query释放后立即RUN。第一次12机械因任务ID超32位失败另存。
+
+3个新train、1cal整run按事前首2single/首2multi、全部候选得到24反事实：18训练/6校准，20零/3正/1负。同架构history/nohistory ridge真实训练并冻结，20留出为2任务seed×IID/SHIFT×5方法。总任务WAIT180、RR179、condition179、history178、nohistory180；查询0/64/64/14/0。history实际评分并决策，但测试12个有预算多候选机会都选择等待，未证明学会竞争排序。全部60臂独立Decimal/资源/FIFO/候选/特征/分数重放及8负控通过；root独立再核完整反事实前缀、标签、采样全集及不同求解法ridge复算。该接口有公开作者来源，仍非作者完整benchmark；规则是内部消融，生产COST未接。
+
+第三线 `execution_residual_20261001_r7` 先分解旧2,304,000 agent-tick，26.61%为共同屏障空闲、0.11%为明确依赖等待。另在2图/N8/400秒完成12train+6cal+24test：6,062训练、3,010校准完整动作标签及94截尾。新ridge仅读已交付公开执行历史，学习proposal到最终MOVE ACK的超额耗时；预测与校准误差余量转为两步非负占用代价，加入原作者OBJ3搜索，不修改安全机制。root独立重建所有训练/校准事件标签/事前特征并以增广最小二乘复算通过。
+
+六留出world正常STATION任务原hm120、旧小预算OBJ4迁移模型100、同历史规则119、新模型119。在相同hm留出轨迹的2,904标签上MAE由9.3860降至6.8969 ticks。与同历史规则相比，模型4/6world出现同公开/物理前缀下的真实动作分叉；empty-axis的22共同服务任务8提前、12同、2延迟，累计完成时刻净少142ticks=14.2秒，另3world的动作变化未影响已完成服务。预测/动作/部分服务作用链已成立，仍无相对原hm的整体任务优势。42run全部正常ACK/FIFO/服务审计通过，采样圆包络最小机间/障碍净空0.303549/0.371155m；这不是连续安全证明。18次0decision的sandbox socket失败单独保存。下一先做合法局部依赖执行机制，再以共同输入比较规则/学习；公开多地图多任务种子的正式结果仍待新增，不能用旧小预算OBJ4较弱代替强作者基线。

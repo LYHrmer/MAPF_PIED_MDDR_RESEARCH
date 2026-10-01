@@ -1,5 +1,15 @@
 # 实验前进度入口
 
+2026-10-01 第七轮更新（R7，Q2 §77）：**主线首次在前车尚未结束时，通过真实付费 POSITION 让后车到达提前3个时间单位；查询线完成在线持续任务接口；第三线新误差模型独立改变动作和部分服务时刻。两条学习线尚无整体任务优势。** 本轮实际由 GPT-6-Astra / ultra 与 research-mentor 分别预审后实施，[完整判断、三线结果与下一设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261001_R7.md)。
+
+主线新长度27 MOVE 同输入、无额外END通知延迟配对：前车原控制器END=9，付费后车RUN=6，而WAIT=9，后车真实END分别6+√3与9+√3。RUN时前车s=18且未闭合。三guest重新绑定后Natural/Strict均完成102段，实际费用183,932,924/183,932,025；每段统一8,388,608，Strict charged855,638,016。服务fixture时间和22→19，但它不是生产AUTH END或作者STATION，WAIT尚未完整计费，不能称净费用优越。短输入δ0早到END不支持及首次长session绑定拒绝全部保留。
+
+[查询R7](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/learned-query/exploration/learned_query/online_fifo_20261001_r7/REPORT.md)已接持久作者planner、公开承诺frontier与当前head FIFO，没有全队END屏障。60有效native全部完成H128，当前窗口0死锁；24配对标签训练同架构有/无历史ridge，20留出合计WAIT180、RR179、条件179、历史178、无历史180任务；历史14query，RR/条件各64，无历史选择全部WAIT。模型没有任务优势，内部规则不是发表基线。
+
+[第三线R7](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/execution_residual_20261001_r7/REPORT.md)完成12训练+6校准+24留出、每run400秒；新残差模型由6,062标签实际训练，进入原作者搜索边代价。与同历史规则相比，4/6留出world实际动作不同，其中一组22个共同服务任务8提前、2延迟、12相同，累计完成时刻净少14.2秒；总任务仍同119，原hm120、旧小预算OBJ4迁移权重100。新模型有真实作用但未胜作者强对照；当前共同执行仍受全队屏障限制。
+
+下一步主线接普通END与WAIT真实计费，查询扩大新任务流的边际价值训练，第三线先实现合法局部依赖执行，再比较规则/学习。正式结果须采用作者方法、统一信息/任务/误差和多地图多任务种子；原R6及更早记录按阶段历史阅读。
+
 2026-10-01 第六轮更新（R6，Q2 §76）：**主线已完成原 POSITION → 后车 RUN → 四终端收集 → ReceiptInstallation → 可用报价 → 下一选择，并在另立统一 8,388,608 供给下通过 Natural/Strict 完整执行。** 原 1,048,576 供给的失败保留；本次不声称 1m 合同成功。[R6 三线结果与后续设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261001_R6.md)。
 
 R6e 只优化精确 `Word → Real` 的无用高位翻倍，402 组边界差分和原 guard 测试通过，三个重绑 guest 的 private kernel 字节与映射不变。同 R6d 合同 Natural 全查询实际费用 **158,804,076 → 143,537,468，净省 15,266,608（9.61%）**；最终收据 C1401 **19,843,111 → 4,510,263**，下一选择增加 68,331 的回弹已计入净值。Query 业务仍为 7,644,113。另立统一 8m 后两制度各完成全部 98 段，逐段 actual 不变，Strict charged 为 822,083,584；最终 C/N/E 边界 19/11/13，输入、输出、引用与回收均关闭。

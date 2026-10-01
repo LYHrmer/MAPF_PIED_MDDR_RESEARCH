@@ -1,5 +1,15 @@
 # 导师汇报：研究问题、数学表达与当前阶段
 
+2026-10-01 第七轮更新（R7，Q2 §77）：**主线首次在前车尚未结束时，通过真实付费 POSITION 让后车到达提前3个时间单位；查询线完成在线持续任务接口；第三线新误差模型独立改变动作和部分服务时刻。两条学习线尚无整体任务优势。** 本轮实际由 GPT-6-Astra / ultra 与 research-mentor 分别预审后实施，[完整判断、三线结果与下一设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261001_R7.md)。
+
+主线新长度27 MOVE 同输入、无额外END通知延迟配对：前车原控制器END=9，付费后车RUN=6，而WAIT=9，后车真实END分别6+√3与9+√3。RUN时前车s=18且未闭合。三guest重新绑定后Natural/Strict均完成102段，实际费用183,932,924/183,932,025；每段统一8,388,608，Strict charged855,638,016。服务fixture时间和22→19，但它不是生产AUTH END或作者STATION，WAIT尚未完整计费，不能称净费用优越。短输入δ0早到END不支持及首次长session绑定拒绝全部保留。
+
+[查询R7](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/learned-query/exploration/learned_query/online_fifo_20261001_r7/REPORT.md)已接持久作者planner、公开承诺frontier与当前head FIFO，没有全队END屏障。60有效native全部完成H128，当前窗口0死锁；24配对标签训练同架构有/无历史ridge，20留出合计WAIT180、RR179、条件179、历史178、无历史180任务；历史14query，RR/条件各64，无历史选择全部WAIT。模型没有任务优势，内部规则不是发表基线。
+
+[第三线R7](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/execution_residual_20261001_r7/REPORT.md)完成12训练+6校准+24留出、每run400秒；新残差模型由6,062标签实际训练，进入原作者搜索边代价。与同历史规则相比，4/6留出world实际动作不同，其中一组22个共同服务任务8提前、2延迟、12相同，累计完成时刻净少14.2秒；总任务仍同119，原hm120、旧小预算OBJ4迁移权重100。新模型有真实作用但未胜作者强对照；当前共同执行仍受全队屏障限制。
+
+下一步主线接普通END与WAIT真实计费，查询扩大新任务流的边际价值训练，第三线先实现合法局部依赖执行，再比较规则/学习。正式结果须采用作者方法、统一信息/任务/误差和多地图多任务种子；原R6及更早记录按阶段历史阅读。
+
 2026-10-01 第六轮更新（R6，Q2 §76）：**完整收费查询已在独立资源合同下闭合，并得到一次可核实的整次净费下降；查询模型尚未取得独立任务收益。** [R6 三线结果与后续设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261001_R6.md)。
 
 主线已真实执行 POSITION 消费、后车 RUN、四终端收集、收据安装、guest 可用报价检查及下一选择。精确转换优化保持全部验证和计费语义，在同 R6d 合同下把 Natural 总实际费用 **158,804,076 降至 143,537,468（净降 9.61%）**；最终收据 **19,843,111 → 4,510,263**，下一选择增加 68,331 已扣除。Query 业务实际费用仍为 7,644,113。随后另立统一 8,388,608 供给，两种制度各完整通过 98 段，取消了最终收据的 64m 特例；原 1m 失败没有改写。这是固定输入的工程可实现性与费用结果，尚不构成 MAPF 任务性能贡献。
