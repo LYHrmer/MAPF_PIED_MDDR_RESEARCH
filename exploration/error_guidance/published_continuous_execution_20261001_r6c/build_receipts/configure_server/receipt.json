@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "cmake",
+    "-S",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/published_continuous_execution_20261001_r6c/lsmart_successor/server",
+    "-B",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/published_continuous_execution_20261001_r6c/server_build",
+    "-DCMAKE_BUILD_TYPE=Release",
+    "-DCMAKE_INSTALL_PREFIX=/home/lyh/.local",
+    "-DARGoS_DIR=/home/lyh/.local/share/argos3/cmake",
+    "-DCMAKE_CXX_FLAGS=-I/home/lyh/.local/include",
+    "-DCMAKE_EXE_LINKER_FLAGS=-L/home/lyh/.local/lib -Wl,-rpath,/home/lyh/.local/lib"
+  ],
+  "exit_code": 0,
+  "wall_seconds": 0.5158697770093568
+}

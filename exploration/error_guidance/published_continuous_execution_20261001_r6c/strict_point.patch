@@ -1,0 +1,20 @@
+--- R0/client/controllers/footbot_diffusion/footbot_diffusion.cpp
++++ S1/client/controllers/footbot_diffusion/footbot_diffusion.cpp
+@@ -55,7 +55,7 @@
+         if (action1 == "M") {
+             integration_node_axes[nodeID]=(x!=start_x?0:1);
+             deque<int> prev_ids;
+-            if (not q.empty() and q.back().type == Action::MOVE) {
++            if (false && not q.empty() and q.back().type == Action::MOVE) { // R6b S1: keep every original MOVE endpoint
+                 prev_ids = q.back().nodeIDS;
+                 q.pop_back();
+             }
+@@ -185,7 +185,7 @@
+     auto first_act = q.front();
+     if (first_act.type == Action::MOVE) {
+         q.pop_front();
+-        while (not q.empty() and q.front().type == Action::MOVE) {
++        while (false && not q.empty() and q.front().type == Action::MOVE) { // R6b S1: prevent per-tick re-merging
+             auto next_act = q.front();
+             q.pop_front();
+             first_act.x = next_act.x;

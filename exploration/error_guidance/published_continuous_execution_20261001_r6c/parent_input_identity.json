@@ -1,0 +1,31 @@
+{
+  "all_non_argos_inputs_config_model_official_bridge_byte_identical_to_R6": true,
+  "identical_paths": [
+    "inputs/empty-32-32/empty-32-32-random-1.scen",
+    "inputs/empty-32-32/map.json",
+    "inputs/empty-32-32/empty-32-32.map",
+    "inputs/empty-32-32/environment.json",
+    "inputs/empty-32-32/tasks_n8.txt",
+    "inputs/empty-32-32/tasks_n16.txt",
+    "inputs/random-32-32-10/random-32-32-10-random-1.scen",
+    "inputs/random-32-32-10/map.json",
+    "inputs/random-32-32-10/environment.json",
+    "inputs/random-32-32-10/tasks_n8.txt",
+    "inputs/random-32-32-10/tasks_n16.txt",
+    "inputs/random-32-32-10/random-32-32-10.map",
+    "trained_config.json",
+    "hm_GPIBT_config.json",
+    "model_identity.json",
+    "official_bridge.cpp"
+  ],
+  "all_24_run_specs_identical_to_R6": true,
+  "argos_changes": "absolute library root r6 -> r6c; physical robot and obstacle coordinates correctly mapped to author (-row,-col)",
+  "geometry_preflight": {
+    "passed": true,
+    "checks": 252,
+    "error_count": 0,
+    "errors": [],
+    "mapping": "planner(row,col) -> ADG(col,row) -> physical(x,y)=(-row,-col)",
+    "scope": "input/parser coordinate contract; not a native run or continuous safety test"
+  }
+}

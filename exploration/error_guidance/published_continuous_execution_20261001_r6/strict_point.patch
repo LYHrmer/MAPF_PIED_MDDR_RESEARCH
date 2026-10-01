@@ -1,0 +1,11 @@
+--- R0/client/controllers/footbot_diffusion/footbot_diffusion.cpp
++++ S1/client/controllers/footbot_diffusion/footbot_diffusion.cpp
+@@ -55,7 +55,7 @@
+         if (action1 == "M") {
+             integration_node_axes[nodeID]=(x!=start_x?0:1);
+             deque<int> prev_ids;
+-            if (not q.empty() and q.back().type == Action::MOVE) {
++            if (false && not q.empty() and q.back().type == Action::MOVE) { // R6 S1: each ADG point has its own MOVE target
+                 prev_ids = q.back().nodeIDS;
+                 q.pop_back();
+             }

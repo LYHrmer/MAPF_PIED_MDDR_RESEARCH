@@ -1,0 +1,73 @@
+id,map,N,policy,condition,native_error,audit_passed,true_horizon_reached,task_services_per_800_seconds,pending_current_task_count,planner_requests,planner_wall_total_seconds,planner_wall_p50_seconds,planner_wall_p95_seconds,network_forward_calls,strict_all_ACK_points_passed,maximum_ACK_endpoint_error_m,wall_seconds
+empty-32-32_n8_hm_GPIBT_nominal,empty-32-32,8,hm_GPIBT,nominal,,False,True,,8,177,0.17037871712818742,0.0009494310070294887,0.0012977890146430582,0,False,,49.795110879000276
+empty-32-32_n8_hm_GPIBT_slow065,empty-32-32,8,hm_GPIBT,slow065,,False,True,,8,138,0.13123665016610175,0.0009539905149722472,0.0012686080008279532,0,False,,43.75964705797378
+empty-32-32_n8_hm_GPIBT_unknown_pause,empty-32-32,8,hm_GPIBT,unknown_pause,,False,True,,8,177,0.17388018875499256,0.0009580650075804442,0.00122793298214674,0,False,,49.42598474599072
+empty-32-32_n8_trained_nominal,empty-32-32,8,trained,nominal,,False,True,,8,185,0.28174669382860884,0.0012031510123051703,0.003593961999285966,12515,False,,48.56963856500806
+empty-32-32_n8_trained_slow065,empty-32-32,8,trained,slow065,,False,True,,8,139,0.2150245078082662,0.0011816250043921173,0.003602238983148709,10278,False,,43.72210961399833
+empty-32-32_n8_trained_unknown_pause,empty-32-32,8,trained,unknown_pause,,False,True,,8,184,0.26296427310444415,0.0011315600131638348,0.0037979820044711232,12515,False,,46.76366133798729
+empty-32-32_n16_hm_GPIBT_nominal,empty-32-32,16,hm_GPIBT,nominal,,False,True,,16,162,0.1699739861069247,0.001014990994008258,0.0013007610104978085,0,False,,66.84075262499391
+empty-32-32_n16_hm_GPIBT_slow065,empty-32-32,16,hm_GPIBT,slow065,,False,True,,16,135,0.14274980395566672,0.0010355670237913728,0.0013179109955672175,0,False,,64.15135500900215
+empty-32-32_n16_hm_GPIBT_unknown_pause,empty-32-32,16,hm_GPIBT,unknown_pause,,False,True,,16,162,0.1686065099784173,0.0010040880151791498,0.00136581901460886,0,False,,67.01843587501207
+empty-32-32_n16_trained_nominal,empty-32-32,16,trained,nominal,,False,True,,16,160,0.31268203727086075,0.0013949014974059537,0.0038089959998615086,23537,False,,66.82765910000307
+empty-32-32_n16_trained_slow065,empty-32-32,16,trained,slow065,,False,True,,16,139,0.27028425014577806,0.0014103020075708628,0.003901716001564637,19740,False,,64.30795602299622
+empty-32-32_n16_trained_unknown_pause,empty-32-32,16,trained,unknown_pause,,False,True,,16,160,0.3036931049718987,0.0014069975150050595,0.0036378380027599633,23537,False,,65.94103831300163
+random-32-32-10_n8_hm_GPIBT_nominal,random-32-32-10,8,hm_GPIBT,nominal,"Traceback (most recent call last):
+  File ""/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/published_continuous_execution_20261001_r6/run_trial.py"", line 70, in main
+    if not line:raise RuntimeError(f'official bridge exit{ps[2].poll()}')
+RuntimeError: official bridge exit1
+",False,False,,8,0,0,,,0,False,,0.5438901549787261
+random-32-32-10_n8_hm_GPIBT_slow065,random-32-32-10,8,hm_GPIBT,slow065,"Traceback (most recent call last):
+  File ""/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/published_continuous_execution_20261001_r6/run_trial.py"", line 70, in main
+    if not line:raise RuntimeError(f'official bridge exit{ps[2].poll()}')
+RuntimeError: official bridge exit1
+",False,False,,8,0,0,,,0,False,,0.5355763800034765
+random-32-32-10_n8_hm_GPIBT_unknown_pause,random-32-32-10,8,hm_GPIBT,unknown_pause,"Traceback (most recent call last):
+  File ""/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/published_continuous_execution_20261001_r6/run_trial.py"", line 70, in main
+    if not line:raise RuntimeError(f'official bridge exit{ps[2].poll()}')
+RuntimeError: official bridge exit1
+",False,False,,8,0,0,,,0,False,,0.5373105680046137
+random-32-32-10_n8_trained_nominal,random-32-32-10,8,trained,nominal,"Traceback (most recent call last):
+  File ""/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/published_continuous_execution_20261001_r6/run_trial.py"", line 70, in main
+    if not line:raise RuntimeError(f'official bridge exit{ps[2].poll()}')
+RuntimeError: official bridge exit1
+",False,False,,8,0,0,,,0,False,,0.5295763030007947
+random-32-32-10_n8_trained_slow065,random-32-32-10,8,trained,slow065,"Traceback (most recent call last):
+  File ""/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/published_continuous_execution_20261001_r6/run_trial.py"", line 70, in main
+    if not line:raise RuntimeError(f'official bridge exit{ps[2].poll()}')
+RuntimeError: official bridge exit1
+",False,False,,8,0,0,,,0,False,,0.5297712920000777
+random-32-32-10_n8_trained_unknown_pause,random-32-32-10,8,trained,unknown_pause,"Traceback (most recent call last):
+  File ""/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/published_continuous_execution_20261001_r6/run_trial.py"", line 70, in main
+    if not line:raise RuntimeError(f'official bridge exit{ps[2].poll()}')
+RuntimeError: official bridge exit1
+",False,False,,8,0,0,,,0,False,,0.5376322089869063
+random-32-32-10_n16_hm_GPIBT_nominal,random-32-32-10,16,hm_GPIBT,nominal,"Traceback (most recent call last):
+  File ""/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/published_continuous_execution_20261001_r6/run_trial.py"", line 70, in main
+    if not line:raise RuntimeError(f'official bridge exit{ps[2].poll()}')
+RuntimeError: official bridge exit1
+",False,False,,16,0,0,,,0,False,,0.5588706999842543
+random-32-32-10_n16_hm_GPIBT_slow065,random-32-32-10,16,hm_GPIBT,slow065,"Traceback (most recent call last):
+  File ""/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/published_continuous_execution_20261001_r6/run_trial.py"", line 70, in main
+    if not line:raise RuntimeError(f'official bridge exit{ps[2].poll()}')
+RuntimeError: official bridge exit1
+",False,False,,16,0,0,,,0,False,,0.553713172004791
+random-32-32-10_n16_hm_GPIBT_unknown_pause,random-32-32-10,16,hm_GPIBT,unknown_pause,"Traceback (most recent call last):
+  File ""/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/published_continuous_execution_20261001_r6/run_trial.py"", line 70, in main
+    if not line:raise RuntimeError(f'official bridge exit{ps[2].poll()}')
+RuntimeError: official bridge exit1
+",False,False,,16,0,0,,,0,False,,0.5790069239737932
+random-32-32-10_n16_trained_nominal,random-32-32-10,16,trained,nominal,"Traceback (most recent call last):
+  File ""/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/published_continuous_execution_20261001_r6/run_trial.py"", line 70, in main
+    if not line:raise RuntimeError(f'official bridge exit{ps[2].poll()}')
+RuntimeError: official bridge exit1
+",False,False,,16,0,0,,,0,False,,0.5683004469901789
+random-32-32-10_n16_trained_slow065,random-32-32-10,16,trained,slow065,"Traceback (most recent call last):
+  File ""/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/published_continuous_execution_20261001_r6/run_trial.py"", line 70, in main
+    if not line:raise RuntimeError(f'official bridge exit{ps[2].poll()}')
+RuntimeError: official bridge exit1
+",False,False,,16,0,0,,,0,False,,0.5754949130059686
+random-32-32-10_n16_trained_unknown_pause,random-32-32-10,16,trained,unknown_pause,"Traceback (most recent call last):
+  File ""/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/published_continuous_execution_20261001_r6/run_trial.py"", line 70, in main
+    if not line:raise RuntimeError(f'official bridge exit{ps[2].poll()}')
+RuntimeError: official bridge exit1
+",False,False,,16,0,0,,,0,False,,0.5712201689893845

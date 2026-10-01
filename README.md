@@ -1,5 +1,9 @@
 # LMAPF 空间误差与执行占用引导探索
 
+2026-10-01 R6 当前结果：[共同物理执行的 24 组作者方法实验](exploration/error_guidance/published_continuous_execution_20261001_r6c/REPORT.md)全部实际完成 800 秒并通过 FIFO、真实服务、动作及严格点 ACK 审计。两个地图、8/16 机器人、三个执行条件下，hm+GPIBT 共完成 780 任务，旧冻结 OnlineGGO 迁移模型 648；12 个配对全部旧模型较低。模型真实调用 154,434 次，但这不是新执行误差模型，也不是充分训练的作者学习方法结论。原错误配置的 24 组及 R6b 预检完整保留。
+
+[三线结果与两份独立后评审](exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261001_R6.md)：主线完整收费查询已闭合，精确收据优化后统一 8m 合同成功、总实际费用净降 9.61%；查询线 70 次成功原生运行与 40 次留出已完成，主要条件下模型未胜 RR。[下一方法设计](exploration/error_guidance/NEXT_METHOD_DESIGN_20261001_R6.md)优先把真实进度证书接入在线任务/资源阻塞释放，再评价学习选择查询的边际任务收益。以下 R5 及更早文字是历史记录。
+
 2026-10-01 最新（20260930_R5批次）：[真实误差模型36次执行](exploration/error_guidance/gpibt_lsmart_error_model_20260930_r4c/REPORT.md)已让预测改变官方动作和服务时刻，但学习/解析/历史全动作相同、完成任务数无增益；严格半MOVE点误差失败保留。[800机器人同未来任务流正式比较](exploration/error_guidance/paired_published_guidance_20260930_r5/REPORT.md)及[四官方地图64机器人试跑](exploration/error_guidance/standard_map_pilot_20260930_r5/REPORT.md)均已真实完成。训练模型、实际运行及原始归档已有完整结果，下面旧“尚未训练/待权限”只是历史阶段。
 
 [三线更新与两份独立复判](exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20260930_R5.md)保留技术与导师的不同优先级；当前采纳共同执行误差平台优先，在其中验证查询价值，主线收敛证据消费/费用。[下一模型设计](exploration/error_guidance/LEARNING_DECISION_DESIGN_20260930_R5.md)与[MAPF／LMAPF实验规范](exploration/error_guidance/mapf_evaluation_20260930_r5/README.md)区分已运行的先导与尚待完成的正式规模实验。
