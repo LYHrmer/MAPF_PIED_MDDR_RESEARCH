@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "scope": "Root independent labels, complete prefixes, predeclared sample coverage and augmented least-squares refit; physical audit separate",
+  "script_sha256": "8494fcf0b49579ec4602b589124b8f24b805fe0e924fb3eb7e887aec3a40e2cf",
+  "model_sha256": "5cb3fdef0cf16b85986c7075cf21849d8d8ac4f4118ead08c97baaee153f7cb7",
+  "labels": 24,
+  "train": 18,
+  "calibration": 6,
+  "effects": {
+    "zero": 20,
+    "positive": 3,
+    "negative": 1
+  },
+  "models": {
+    "ridge_history": {
+      "unrounded_max_difference": 5.828670879282072e-16,
+      "deployed_rounding_max_difference": 4.910806969404824e-10
+    },
+    "ridge_nohistory": {
+      "unrounded_max_difference": 2.983724378680108e-16,
+      "deployed_rounding_max_difference": 4.939686888694172e-10
+    }
+  }
+}

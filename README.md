@@ -1,5 +1,9 @@
 # 学习型进度查询探索工作区
 
+R7（2026-10-01）已完成作者在线planner、公开承诺frontier与持续FIFO，允许在途执行。60次有效运行全部达到H128，24配对标签训练模型、20完整留出；任务总数WAIT/无历史180、RR/条件179、历史178，尚无学习任务收益。历史实际14次查询，无历史全部WAIT。所有失败、原始数据与独立审计保留。
+
+详见[当前探索入口](exploration/learned_query/README.md)；[本轮Astra/科研导师判断与三线后续设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261001_R7.md)。下方旧轮次文字按历史记录阅读。
+
 2026-10-01 R6：[16机器人共同执行与历史价值训练](exploration/learned_query/public_joint_20261001_r6/REPORT.md)完成6机械臂、24训练/校准反事实臂、40留出臂，实际训练并运行同架构有/无历史ridge。IID/SHIFT中模型与RR的任务和物理执行相同，尚无学习独立收益。全固定组中的静态循环、末任务驻留及两个旧超时均保留；下一步接合法依赖保持执行或作者在线任务接口。[根独立复核](exploration/learned_query/public_joint_root_review_20261001_r6/README.md)重拟合权重并复算320选择/324分数，不能把来源公开的静态轨迹机制称完整PIE-D或正式LMAPF对比。下列R5及更早内容为阶段历史。
 
 2026-10-01 最新（20260930_R5批次）：[历史模型实验](exploration/learned_query/public_history_20260930_r5/RESULTS.md)完成156原生臂及同架构有/无历史真实训练，但14留出world全无合法查询机会，不能评价模型收益。[事件查询后继](exploration/learned_query/public_history_events_20260930_r5b/REPORT.md)完成24机械臂，RR/条件规则各19次真实查询，最多同时1候选；已验证多次查询时机，尚无多agent竞争或新学习优势。

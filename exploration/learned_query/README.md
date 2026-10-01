@@ -1,5 +1,9 @@
 # 学习辅助进度查询：探索说明
 
+2026-10-01 R7：[持续在线 FIFO 与查询学习](online_fifo_20261001_r7/REPORT.md)已完成持久作者planner、公开承诺frontier、原资源依赖和异步执行，60有效native全部达到H128、当前窗口0死锁。24同前缀反事实训练同架构有/无历史ridge；20留出合计WAIT180、RR179、条件179、历史178、无历史180任务，查询分别0/64/64/14/0。历史模型没有任务优势，无历史实际选择全部WAIT。多候选训练已覆盖，但历史模型测试时的12个有预算多候选机会均等待，不能声称已学会排序。
+
+[原始证据、失败与核验](online_fifo_20261001_r7/PUBLICATION_MEMBERS.json)完整冻结：60臂独立物理/资源/FIFO/特征/选择重放、8负控及root独立label/拟合复算通过。公开作者代码和地图不等于原作者完整benchmark，内部规则只作消融。[本轮Astra/科研导师判断与三线下一设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261001_R7.md)。以下R6及更早记录为历史状态。
+
 2026-10-01 R6：[16机器人共同执行与历史价值训练](public_joint_20261001_r6/REPORT.md)完成6机械臂、24训练/校准反事实臂、40留出臂，实际训练并运行同架构有/无历史ridge。IID/SHIFT中模型与RR的任务和物理执行相同，尚无学习独立收益。全固定组中的静态循环、末任务驻留及两个旧超时均保留；下一步接合法依赖保持执行或作者在线任务接口。[根独立复核](public_joint_root_review_20261001_r6/README.md)重拟合权重并复算320选择/324分数，不能把来源公开的静态轨迹机制称完整PIE-D或正式LMAPF对比。下列R5及更早内容为阶段历史。
 
 2026-10-01 最新（20260930_R5批次）：[历史模型实验](public_history_20260930_r5/RESULTS.md)完成156原生臂及同架构有/无历史真实训练，但14留出world全无合法查询机会，不能评价模型收益。[事件查询后继](public_history_events_20260930_r5b/REPORT.md)完成24机械臂，RR/条件规则各19次真实查询，最多同时1候选；已验证多次查询时机，尚无多agent竞争或新学习优势。

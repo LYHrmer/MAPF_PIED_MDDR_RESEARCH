@@ -1,0 +1,42 @@
+[
+  {
+    "control": "future_goal",
+    "rejected": true,
+    "reason": "future goal leakage"
+  },
+  {
+    "control": "plan_order",
+    "rejected": true,
+    "reason": "official visit order mismatch"
+  },
+  {
+    "control": "wrong_service",
+    "rejected": true,
+    "reason": ""
+  },
+  {
+    "control": "false_certificate",
+    "rejected": true,
+    "reason": "actual controller certified lower"
+  },
+  {
+    "control": "END_early",
+    "rejected": true,
+    "reason": "original END time"
+  },
+  {
+    "control": "history_feature",
+    "rejected": true,
+    "reason": "independent current-head/END/history/age feature 10"
+  },
+  {
+    "control": "missing_candidate",
+    "rejected": true,
+    "reason": "candidate completeness/current-world END gate"
+  },
+  {
+    "control": "budget",
+    "rejected": true,
+    "reason": "causal history/capacity count"
+  }
+]
