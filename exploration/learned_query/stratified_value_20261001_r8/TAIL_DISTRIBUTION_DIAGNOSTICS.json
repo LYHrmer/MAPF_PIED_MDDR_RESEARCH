@@ -1,0 +1,1032 @@
+{
+  "post_outcome_not_used_for_selection": true,
+  "training_target": "single current query, then WAIT to H128",
+  "deployment_tail": "up to16 adaptive queries with cumulative public-time pacing for paced policies",
+  "tail_policy_mismatch_not_corrected_by_more_labels": true,
+  "training_cal_probe_checks": 115,
+  "all_probe_subsequent_query_counts_zero": true,
+  "training_negative_task_labels": 0,
+  "calibration_negative_task_labels": 0,
+  "heldout": [
+    {
+      "world": "empty-32-32_test_85301_IID",
+      "split": "test",
+      "policy": "WAIT",
+      "whole_task_delta": 0,
+      "queries": 0,
+      "queries_after_first": 0,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "0",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "empty-32-32_test_85301_IID",
+      "split": "test",
+      "policy": "RR",
+      "whole_task_delta": 0,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "15215079/1000000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "empty-32-32_test_85301_IID",
+      "split": "test",
+      "policy": "condition",
+      "whole_task_delta": 0,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "15215079/1000000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "empty-32-32_test_85301_IID",
+      "split": "test",
+      "policy": "paced_condition",
+      "whole_task_delta": 0,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "19114013/1000000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "empty-32-32_test_85301_IID",
+      "split": "test",
+      "policy": "paced_ridge_history",
+      "whole_task_delta": 0,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "19726397/1000000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "empty-32-32_test_85301_IID",
+      "split": "test",
+      "policy": "paced_ridge_nohistory",
+      "whole_task_delta": 0,
+      "queries": 14,
+      "queries_after_first": 13,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "19726397/1000000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "empty-32-32_test_85301_SHIFT",
+      "split": "test",
+      "policy": "WAIT",
+      "whole_task_delta": 0,
+      "queries": 0,
+      "queries_after_first": 0,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "0",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "empty-32-32_test_85301_SHIFT",
+      "split": "test",
+      "policy": "RR",
+      "whole_task_delta": 0,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "2064037/125000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "empty-32-32_test_85301_SHIFT",
+      "split": "test",
+      "policy": "condition",
+      "whole_task_delta": 0,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "2064037/125000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "empty-32-32_test_85301_SHIFT",
+      "split": "test",
+      "policy": "paced_condition",
+      "whole_task_delta": 0,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "19114013/1000000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "empty-32-32_test_85301_SHIFT",
+      "split": "test",
+      "policy": "paced_ridge_history",
+      "whole_task_delta": 0,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "19726397/1000000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "empty-32-32_test_85301_SHIFT",
+      "split": "test",
+      "policy": "paced_ridge_nohistory",
+      "whole_task_delta": 0,
+      "queries": 14,
+      "queries_after_first": 13,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "19726397/1000000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "empty-32-32_test_85302_IID",
+      "split": "test",
+      "policy": "WAIT",
+      "whole_task_delta": 0,
+      "queries": 0,
+      "queries_after_first": 0,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "0",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "empty-32-32_test_85302_IID",
+      "split": "test",
+      "policy": "RR",
+      "whole_task_delta": -1,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [
+        {
+          "task": 853023332,
+          "agent": 13,
+          "FIFO_ordinal": 5,
+          "in_fixed_first4": false
+        }
+      ],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "368532/15625",
+      "secondary_improvement_with_primary_loss": true
+    },
+    {
+      "world": "empty-32-32_test_85302_IID",
+      "split": "test",
+      "policy": "condition",
+      "whole_task_delta": -1,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [
+        {
+          "task": 853023332,
+          "agent": 13,
+          "FIFO_ordinal": 5,
+          "in_fixed_first4": false
+        }
+      ],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "368532/15625",
+      "secondary_improvement_with_primary_loss": true
+    },
+    {
+      "world": "empty-32-32_test_85302_IID",
+      "split": "test",
+      "policy": "paced_condition",
+      "whole_task_delta": -1,
+      "queries": 13,
+      "queries_after_first": 12,
+      "lost_vs_WAIT": [
+        {
+          "task": 853023332,
+          "agent": 13,
+          "FIFO_ordinal": 5,
+          "in_fixed_first4": false
+        }
+      ],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "3282909/500000",
+      "secondary_improvement_with_primary_loss": true
+    },
+    {
+      "world": "empty-32-32_test_85302_IID",
+      "split": "test",
+      "policy": "paced_ridge_history",
+      "whole_task_delta": -1,
+      "queries": 14,
+      "queries_after_first": 13,
+      "lost_vs_WAIT": [
+        {
+          "task": 853023332,
+          "agent": 13,
+          "FIFO_ordinal": 5,
+          "in_fixed_first4": false
+        }
+      ],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "12008257/1000000",
+      "secondary_improvement_with_primary_loss": true
+    },
+    {
+      "world": "empty-32-32_test_85302_IID",
+      "split": "test",
+      "policy": "paced_ridge_nohistory",
+      "whole_task_delta": -1,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [
+        {
+          "task": 853023332,
+          "agent": 13,
+          "FIFO_ordinal": 5,
+          "in_fixed_first4": false
+        }
+      ],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "1313521/62500",
+      "secondary_improvement_with_primary_loss": true
+    },
+    {
+      "world": "empty-32-32_test_85302_SHIFT",
+      "split": "test",
+      "policy": "WAIT",
+      "whole_task_delta": 0,
+      "queries": 0,
+      "queries_after_first": 0,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "0",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "empty-32-32_test_85302_SHIFT",
+      "split": "test",
+      "policy": "RR",
+      "whole_task_delta": 0,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "22828767/1000000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "empty-32-32_test_85302_SHIFT",
+      "split": "test",
+      "policy": "condition",
+      "whole_task_delta": 0,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "22828767/1000000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "empty-32-32_test_85302_SHIFT",
+      "split": "test",
+      "policy": "paced_condition",
+      "whole_task_delta": 0,
+      "queries": 13,
+      "queries_after_first": 12,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "1422607/200000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "empty-32-32_test_85302_SHIFT",
+      "split": "test",
+      "policy": "paced_ridge_history",
+      "whole_task_delta": 0,
+      "queries": 14,
+      "queries_after_first": 13,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "2495149/200000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "empty-32-32_test_85302_SHIFT",
+      "split": "test",
+      "policy": "paced_ridge_nohistory",
+      "whole_task_delta": 0,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "10129527/500000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "empty-32-32_scale_85401_IID",
+      "split": "scale",
+      "policy": "WAIT",
+      "whole_task_delta": 0,
+      "queries": 0,
+      "queries_after_first": 0,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "0",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "empty-32-32_scale_85401_IID",
+      "split": "scale",
+      "policy": "RR",
+      "whole_task_delta": -1,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [
+        {
+          "task": 854011538,
+          "agent": 6,
+          "FIFO_ordinal": 3,
+          "in_fixed_first4": true
+        },
+        {
+          "task": 854014610,
+          "agent": 18,
+          "FIFO_ordinal": 3,
+          "in_fixed_first4": true
+        }
+      ],
+      "gained_vs_WAIT": [
+        {
+          "task": 854011793,
+          "agent": 7,
+          "FIFO_ordinal": 2,
+          "in_fixed_first4": true
+        }
+      ],
+      "fixed_first4_time_gain": "-8516681/400000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "empty-32-32_scale_85401_IID",
+      "split": "scale",
+      "policy": "condition",
+      "whole_task_delta": -1,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [
+        {
+          "task": 854011538,
+          "agent": 6,
+          "FIFO_ordinal": 3,
+          "in_fixed_first4": true
+        },
+        {
+          "task": 854014610,
+          "agent": 18,
+          "FIFO_ordinal": 3,
+          "in_fixed_first4": true
+        }
+      ],
+      "gained_vs_WAIT": [
+        {
+          "task": 854011793,
+          "agent": 7,
+          "FIFO_ordinal": 2,
+          "in_fixed_first4": true
+        }
+      ],
+      "fixed_first4_time_gain": "-8516681/400000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "empty-32-32_scale_85401_IID",
+      "split": "scale",
+      "policy": "paced_condition",
+      "whole_task_delta": 0,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [
+        {
+          "task": 854011538,
+          "agent": 6,
+          "FIFO_ordinal": 3,
+          "in_fixed_first4": true
+        },
+        {
+          "task": 854014610,
+          "agent": 18,
+          "FIFO_ordinal": 3,
+          "in_fixed_first4": true
+        },
+        {
+          "task": 854015890,
+          "agent": 23,
+          "FIFO_ordinal": 3,
+          "in_fixed_first4": true
+        }
+      ],
+      "gained_vs_WAIT": [
+        {
+          "task": 854011283,
+          "agent": 5,
+          "FIFO_ordinal": 4,
+          "in_fixed_first4": true
+        },
+        {
+          "task": 854011793,
+          "agent": 7,
+          "FIFO_ordinal": 2,
+          "in_fixed_first4": true
+        },
+        {
+          "task": 854013331,
+          "agent": 13,
+          "FIFO_ordinal": 4,
+          "in_fixed_first4": true
+        }
+      ],
+      "fixed_first4_time_gain": "-9534123/200000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "empty-32-32_scale_85401_IID",
+      "split": "scale",
+      "policy": "paced_ridge_history",
+      "whole_task_delta": -1,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [
+        {
+          "task": 854011538,
+          "agent": 6,
+          "FIFO_ordinal": 3,
+          "in_fixed_first4": true
+        },
+        {
+          "task": 854014610,
+          "agent": 18,
+          "FIFO_ordinal": 3,
+          "in_fixed_first4": true
+        }
+      ],
+      "gained_vs_WAIT": [
+        {
+          "task": 854011793,
+          "agent": 7,
+          "FIFO_ordinal": 2,
+          "in_fixed_first4": true
+        }
+      ],
+      "fixed_first4_time_gain": "-71484441/2000000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "empty-32-32_scale_85401_IID",
+      "split": "scale",
+      "policy": "paced_ridge_nohistory",
+      "whole_task_delta": -1,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [
+        {
+          "task": 854011538,
+          "agent": 6,
+          "FIFO_ordinal": 3,
+          "in_fixed_first4": true
+        },
+        {
+          "task": 854014610,
+          "agent": 18,
+          "FIFO_ordinal": 3,
+          "in_fixed_first4": true
+        }
+      ],
+      "gained_vs_WAIT": [
+        {
+          "task": 854011793,
+          "agent": 7,
+          "FIFO_ordinal": 2,
+          "in_fixed_first4": true
+        }
+      ],
+      "fixed_first4_time_gain": "-70390007/2000000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "random-32-32-10_test_86301_IID",
+      "split": "test",
+      "policy": "WAIT",
+      "whole_task_delta": 0,
+      "queries": 0,
+      "queries_after_first": 0,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "0",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "random-32-32-10_test_86301_IID",
+      "split": "test",
+      "policy": "RR",
+      "whole_task_delta": 0,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "291721/500000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "random-32-32-10_test_86301_IID",
+      "split": "test",
+      "policy": "condition",
+      "whole_task_delta": 0,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "291721/500000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "random-32-32-10_test_86301_IID",
+      "split": "test",
+      "policy": "paced_condition",
+      "whole_task_delta": 0,
+      "queries": 15,
+      "queries_after_first": 14,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "0",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "random-32-32-10_test_86301_IID",
+      "split": "test",
+      "policy": "paced_ridge_history",
+      "whole_task_delta": 0,
+      "queries": 15,
+      "queries_after_first": 14,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "-3424167/1000000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "random-32-32-10_test_86301_IID",
+      "split": "test",
+      "policy": "paced_ridge_nohistory",
+      "whole_task_delta": 0,
+      "queries": 15,
+      "queries_after_first": 14,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "806233/62500",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "random-32-32-10_test_86301_SHIFT",
+      "split": "test",
+      "policy": "WAIT",
+      "whole_task_delta": 0,
+      "queries": 0,
+      "queries_after_first": 0,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "0",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "random-32-32-10_test_86301_SHIFT",
+      "split": "test",
+      "policy": "RR",
+      "whole_task_delta": 0,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "291721/500000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "random-32-32-10_test_86301_SHIFT",
+      "split": "test",
+      "policy": "condition",
+      "whole_task_delta": 0,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "291721/500000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "random-32-32-10_test_86301_SHIFT",
+      "split": "test",
+      "policy": "paced_condition",
+      "whole_task_delta": 0,
+      "queries": 15,
+      "queries_after_first": 14,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "0",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "random-32-32-10_test_86301_SHIFT",
+      "split": "test",
+      "policy": "paced_ridge_history",
+      "whole_task_delta": 0,
+      "queries": 15,
+      "queries_after_first": 14,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "-518153/125000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "random-32-32-10_test_86301_SHIFT",
+      "split": "test",
+      "policy": "paced_ridge_nohistory",
+      "whole_task_delta": 0,
+      "queries": 15,
+      "queries_after_first": 14,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "12142447/1000000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "random-32-32-10_test_86302_IID",
+      "split": "test",
+      "policy": "WAIT",
+      "whole_task_delta": 0,
+      "queries": 0,
+      "queries_after_first": 0,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "0",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "random-32-32-10_test_86302_IID",
+      "split": "test",
+      "policy": "RR",
+      "whole_task_delta": 2,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [
+        {
+          "task": 863022562,
+          "agent": 10,
+          "FIFO_ordinal": 3,
+          "in_fixed_first4": true
+        },
+        {
+          "task": 863022819,
+          "agent": 11,
+          "FIFO_ordinal": 4,
+          "in_fixed_first4": true
+        }
+      ],
+      "fixed_first4_time_gain": "40035981/500000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "random-32-32-10_test_86302_IID",
+      "split": "test",
+      "policy": "condition",
+      "whole_task_delta": 2,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [
+        {
+          "task": 863022562,
+          "agent": 10,
+          "FIFO_ordinal": 3,
+          "in_fixed_first4": true
+        },
+        {
+          "task": 863022819,
+          "agent": 11,
+          "FIFO_ordinal": 4,
+          "in_fixed_first4": true
+        }
+      ],
+      "fixed_first4_time_gain": "40035981/500000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "random-32-32-10_test_86302_IID",
+      "split": "test",
+      "policy": "paced_condition",
+      "whole_task_delta": -1,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [
+        {
+          "task": 863023588,
+          "agent": 14,
+          "FIFO_ordinal": 5,
+          "in_fixed_first4": false
+        }
+      ],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "27571629/1000000",
+      "secondary_improvement_with_primary_loss": true
+    },
+    {
+      "world": "random-32-32-10_test_86302_IID",
+      "split": "test",
+      "policy": "paced_ridge_history",
+      "whole_task_delta": 0,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "823041/62500",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "random-32-32-10_test_86302_IID",
+      "split": "test",
+      "policy": "paced_ridge_nohistory",
+      "whole_task_delta": 0,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "823041/62500",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "random-32-32-10_test_86302_SHIFT",
+      "split": "test",
+      "policy": "WAIT",
+      "whole_task_delta": 0,
+      "queries": 0,
+      "queries_after_first": 0,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "0",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "random-32-32-10_test_86302_SHIFT",
+      "split": "test",
+      "policy": "RR",
+      "whole_task_delta": 3,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [
+        {
+          "task": 863022562,
+          "agent": 10,
+          "FIFO_ordinal": 3,
+          "in_fixed_first4": true
+        },
+        {
+          "task": 863022819,
+          "agent": 11,
+          "FIFO_ordinal": 4,
+          "in_fixed_first4": true
+        },
+        {
+          "task": 863023588,
+          "agent": 14,
+          "FIFO_ordinal": 5,
+          "in_fixed_first4": false
+        }
+      ],
+      "fixed_first4_time_gain": "165043/2000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "random-32-32-10_test_86302_SHIFT",
+      "split": "test",
+      "policy": "condition",
+      "whole_task_delta": 3,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [
+        {
+          "task": 863022562,
+          "agent": 10,
+          "FIFO_ordinal": 3,
+          "in_fixed_first4": true
+        },
+        {
+          "task": 863022819,
+          "agent": 11,
+          "FIFO_ordinal": 4,
+          "in_fixed_first4": true
+        },
+        {
+          "task": 863023588,
+          "agent": 14,
+          "FIFO_ordinal": 5,
+          "in_fixed_first4": false
+        }
+      ],
+      "fixed_first4_time_gain": "165043/2000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "random-32-32-10_test_86302_SHIFT",
+      "split": "test",
+      "policy": "paced_condition",
+      "whole_task_delta": 0,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "5903491/200000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "random-32-32-10_test_86302_SHIFT",
+      "split": "test",
+      "policy": "paced_ridge_history",
+      "whole_task_delta": 0,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "823041/62500",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "random-32-32-10_test_86302_SHIFT",
+      "split": "test",
+      "policy": "paced_ridge_nohistory",
+      "whole_task_delta": 0,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "823041/62500",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "random-32-32-10_scale_86401_IID",
+      "split": "scale",
+      "policy": "WAIT",
+      "whole_task_delta": 0,
+      "queries": 0,
+      "queries_after_first": 0,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "0",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "random-32-32-10_scale_86401_IID",
+      "split": "scale",
+      "policy": "RR",
+      "whole_task_delta": 0,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "31813/10000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "random-32-32-10_scale_86401_IID",
+      "split": "scale",
+      "policy": "condition",
+      "whole_task_delta": 0,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "31813/10000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "random-32-32-10_scale_86401_IID",
+      "split": "scale",
+      "policy": "paced_condition",
+      "whole_task_delta": -2,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [
+        {
+          "task": 864011796,
+          "agent": 7,
+          "FIFO_ordinal": 5,
+          "in_fixed_first4": false
+        },
+        {
+          "task": 864017938,
+          "agent": 31,
+          "FIFO_ordinal": 3,
+          "in_fixed_first4": true
+        }
+      ],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "-16240841/2000000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "random-32-32-10_scale_86401_IID",
+      "split": "scale",
+      "policy": "paced_ridge_history",
+      "whole_task_delta": -4,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [
+        {
+          "task": 864010001,
+          "agent": 0,
+          "FIFO_ordinal": 2,
+          "in_fixed_first4": true
+        },
+        {
+          "task": 864010514,
+          "agent": 2,
+          "FIFO_ordinal": 3,
+          "in_fixed_first4": true
+        },
+        {
+          "task": 864011796,
+          "agent": 7,
+          "FIFO_ordinal": 5,
+          "in_fixed_first4": false
+        },
+        {
+          "task": 864012818,
+          "agent": 11,
+          "FIFO_ordinal": 3,
+          "in_fixed_first4": true
+        },
+        {
+          "task": 864016913,
+          "agent": 27,
+          "FIFO_ordinal": 2,
+          "in_fixed_first4": true
+        },
+        {
+          "task": 864017938,
+          "agent": 31,
+          "FIFO_ordinal": 3,
+          "in_fixed_first4": true
+        }
+      ],
+      "gained_vs_WAIT": [
+        {
+          "task": 864010769,
+          "agent": 3,
+          "FIFO_ordinal": 2,
+          "in_fixed_first4": true
+        },
+        {
+          "task": 864015121,
+          "agent": 20,
+          "FIFO_ordinal": 2,
+          "in_fixed_first4": true
+        }
+      ],
+      "fixed_first4_time_gain": "-237144361/2000000",
+      "secondary_improvement_with_primary_loss": false
+    },
+    {
+      "world": "random-32-32-10_scale_86401_IID",
+      "split": "scale",
+      "policy": "paced_ridge_nohistory",
+      "whole_task_delta": -2,
+      "queries": 16,
+      "queries_after_first": 15,
+      "lost_vs_WAIT": [
+        {
+          "task": 864011796,
+          "agent": 7,
+          "FIFO_ordinal": 5,
+          "in_fixed_first4": false
+        },
+        {
+          "task": 864017938,
+          "agent": 31,
+          "FIFO_ordinal": 3,
+          "in_fixed_first4": true
+        }
+      ],
+      "gained_vs_WAIT": [],
+      "fixed_first4_time_gain": "-17349839/2000000",
+      "secondary_improvement_with_primary_loss": false
+    }
+  ]
+}

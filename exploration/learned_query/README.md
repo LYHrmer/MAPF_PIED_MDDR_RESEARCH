@@ -1,5 +1,9 @@
 # 学习辅助进度查询：探索说明
 
+2026-10-01 R8：[分层价值学习报告](stratified_value_20261001_r8/REPORT.md)已完成115标签、同架构有/无历史ridge及真实部署。123个WAIT/探针全部完成，48个N16留出任务WAIT346、普通RR/条件350、分时条件344、有/无历史345；12个N32兼容后继依次171/170/169/166/168。183个成功物理运行和原12个启动上限失败全部归档，后继只改N≤16为N≤32，没有更换场景或模型。
+
+[完整任务/查询配对图](stratified_value_20261001_r8/ROOT_FIGURE_CAPTION.md)包含全部10个留出world，IID/SHIFT按同family处理。有历史模型未胜普通规则、WAIT或无历史模型；下一步使用同冻结续策的预算优势数据，先一次学习替换再扩多次干预。[Astra/导师判断与三线实绩](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261001_R8.md)、[具体方法合同](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/NEXT_METHOD_CONTRACT_20261001_R8.md)。以下均为此前轮次记录。
+
 2026-10-01 R7：[持续在线 FIFO 与查询学习](online_fifo_20261001_r7/REPORT.md)已完成持久作者planner、公开承诺frontier、原资源依赖和异步执行，60有效native全部达到H128、当前窗口0死锁。24同前缀反事实训练同架构有/无历史ridge；20留出合计WAIT180、RR179、条件179、历史178、无历史180任务，查询分别0/64/64/14/0。历史模型没有任务优势，无历史实际选择全部WAIT。多候选训练已覆盖，但历史模型测试时的12个有预算多候选机会均等待，不能声称已学会排序。
 
 [原始证据、失败与核验](online_fifo_20261001_r7/PUBLICATION_MEMBERS.json)完整冻结：60臂独立物理/资源/FIFO/特征/选择重放、8负控及root独立label/拟合复算通过。公开作者代码和地图不等于原作者完整benchmark，内部规则只作消融。[本轮Astra/科研导师判断与三线下一设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261001_R7.md)。以下R6及更早记录为历史状态。

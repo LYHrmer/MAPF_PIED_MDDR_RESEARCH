@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "case": "future_head",
+      "rejected": true,
+      "reason": "future goal leakage"
+    },
+    {
+      "case": "history_feature",
+      "rejected": true,
+      "reason": "independent current-head/END/history/age feature 10"
+    },
+    {
+      "case": "missing_candidate",
+      "rejected": true,
+      "reason": "candidate completeness/current-world END gate"
+    },
+    {
+      "case": "capacity",
+      "rejected": true,
+      "reason": "causal history/capacity count"
+    },
+    {
+      "case": "certificate",
+      "rejected": true,
+      "reason": "interval resolution"
+    },
+    {
+      "case": "dependency",
+      "rejected": true,
+      "reason": "official visit order mismatch"
+    },
+    {
+      "case": "true_service",
+      "rejected": true,
+      "reason": ""
+    },
+    {
+      "case": "pacing_gate",
+      "rejected": true,
+      "reason": "independent END actor selection"
+    },
+    {
+      "case": "obstacle",
+      "rejected": true,
+      "reason": ""
+    }
+  ]
+}

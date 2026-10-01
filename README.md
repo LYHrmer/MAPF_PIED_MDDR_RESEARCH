@@ -1,5 +1,9 @@
 # 学习型进度查询探索工作区
 
+R8（2026-10-01）已完成123个训练/校准WAIT及探针运行、48个N16冻结留出和12个N32兼容后继，115标签用于同架构有/无历史ridge。N16任务WAIT346、RR/条件350、分时条件344、有/无历史均345；N32依次171/170/169/166/168。模型确实训练并部署，但尚无学习优势。原12个N32启动guard失败另存，后继仅修复输入上限，全部195attempt可追溯。
+
+[R8完整报告](exploration/learned_query/stratified_value_20261001_r8/REPORT.md) · [全部留出配对图](exploration/learned_query/stratified_value_20261001_r8/ROOT_FIGURE_CAPTION.md) · [三线判断及下一方法](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261001_R8.md)。下一步将单次查询标签改为相同后续策略、剩余预算下的价值；不以少量查询或局部预测改善代替任务收益。下方R7及更早内容为历史记录。
+
 R7（2026-10-01）已完成作者在线planner、公开承诺frontier与持续FIFO，允许在途执行。60次有效运行全部达到H128，24配对标签训练模型、20完整留出；任务总数WAIT/无历史180、RR/条件179、历史178，尚无学习任务收益。历史实际14次查询，无历史全部WAIT。所有失败、原始数据与独立审计保留。
 
 详见[当前探索入口](exploration/learned_query/README.md)；[本轮Astra/科研导师判断与三线后续设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261001_R7.md)。下方旧轮次文字按历史记录阅读。
