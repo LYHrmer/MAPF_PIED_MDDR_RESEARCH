@@ -1,5 +1,9 @@
 # LMAPF 空间误差与执行占用引导探索
 
+[R8三线结果与两类判断](exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261001_R8.md) · [下一方法合同](exploration/error_guidance/NEXT_METHOD_CONTRACT_20261001_R8.md)。
+
+R8（2026-10-01）已完成合法两步缓冲内的局部依赖执行，6个机械验证及48个新留出全部结束。相同作者hm规划器的global/local总任务为174/200；同历史规则与学习模型在local均201任务，学习没有独立任务优势。根审重建全部ADG前驱ACK、正常服务与固定FIFO时间，另修正了转弯编码并重训冻结模型。新诊断定位到累计第二步标签与单步训练的单位不一致，下一步先统一监督目标。[完整结果与图](exploration/error_guidance/local_dependency_20261001_r8/REPORT.md)、[近邻及已发表基线](exploration/error_guidance/NEIGHBOR_COMPARISON_20261001_R8.md)。下方R7及以前保留为历史记录。
+
 R7（2026-10-01）已训练新执行残差模型并完成42次真实运行。留出预测MAE由同历史规则9.386降至6.897 ticks，4/6场景实际动作改变，一个场景累计完成时刻少14.2秒；总任务模型/规则119、原作者hm120，尚无整体任务优势。原始失败、完整数据及root独立模型/服务核验均保留。
 
 详见[当前探索入口](exploration/error_guidance/README.md)；[本轮Astra/科研导师判断与三线后续设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261001_R7.md)。下方旧轮次文字按历史记录阅读。

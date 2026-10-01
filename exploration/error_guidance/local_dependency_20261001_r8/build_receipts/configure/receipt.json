@@ -1,0 +1,15 @@
+{
+  "command": [
+    "cmake",
+    "-S",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/local_dependency_20261001_r8/lsmart_successor/server",
+    "-B",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/local_dependency_20261001_r8/server_build",
+    "-DCMAKE_BUILD_TYPE=Release",
+    "-DCMAKE_INSTALL_PREFIX=/home/lyh/.local",
+    "-DCMAKE_CXX_FLAGS=-I/home/lyh/.local/include",
+    "-DCMAKE_EXE_LINKER_FLAGS=-L/home/lyh/.local/lib -Wl,-rpath,/home/lyh/.local/lib"
+  ],
+  "exit": 0,
+  "wall": 0.8040671659982763
+}

@@ -1,0 +1,11 @@
+--- 
++++ 
+@@ -477,7 +477,7 @@
+         json agent=json::array();
+         for(const auto &action:plan) agent.push_back({{"type",string(1,action.type)},
+             {"start",action.start},{"goal",action.goal},{"orientation",action.orientation},
+-            {"task_id",action.task_id}});
++            {"task_id",action.task_id},{"time",action.time}});
+         parsed.push_back(agent);
+     }
+     trace({{"kind","parsed"},{"proposal_id",new_plan_json.at("proposal_id")},{"actions",parsed}});

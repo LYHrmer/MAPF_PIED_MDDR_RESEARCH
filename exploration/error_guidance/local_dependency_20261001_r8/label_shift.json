@@ -1,0 +1,76 @@
+{
+  "posthoc_diagnostic": true,
+  "same_original_hm_event_rows_for_both_predictors": true,
+  "groups": {
+    "global_step0": {
+      "n": 2097,
+      "mean_batch_to_END": 43.04053409632809,
+      "mean_actual_nominal": 49.34907010014306,
+      "mean_batch_residual": -6.308536003814973,
+      "mean_previous_MOVE_prefix_ticks": 0,
+      "mean_after_previous_MOVE_END_ticks": 43.04053409632809,
+      "mean_feature_recent_history_residual": 23.60506238383563,
+      "history": {
+        "MAE": 22.46661273474578,
+        "bias": 21.924584440356973
+      },
+      "learned": {
+        "MAE": 24.003141243657737,
+        "bias": 23.981909650587866
+      }
+    },
+    "global_step1": {
+      "n": 1984,
+      "mean_batch_to_END": 103.47076612903226,
+      "mean_actual_nominal": 48.840725806451616,
+      "mean_batch_residual": 54.63004032258065,
+      "mean_previous_MOVE_prefix_ticks": 42.96118951612903,
+      "mean_after_previous_MOVE_END_ticks": 60.509576612903224,
+      "mean_feature_recent_history_residual": 23.570014153633107,
+      "history": {
+        "MAE": 39.12272205421147,
+        "bias": -39.12272205421147
+      },
+      "learned": {
+        "MAE": 37.13917686821933,
+        "bias": -37.13917686821933
+      }
+    },
+    "local_step0": {
+      "n": 2286,
+      "mean_batch_to_END": 45.725284339457566,
+      "mean_actual_nominal": 49.40507436570429,
+      "mean_batch_residual": -3.679790026246719,
+      "mean_previous_MOVE_prefix_ticks": 0,
+      "mean_after_previous_MOVE_END_ticks": 45.725284339457566,
+      "mean_feature_recent_history_residual": 16.113888430637118,
+      "history": {
+        "MAE": 15.196099272313184,
+        "bias": 14.41889364523879
+      },
+      "learned": {
+        "MAE": 15.799312993837313,
+        "bias": 15.737323032597653
+      }
+    },
+    "local_step1": {
+      "n": 2176,
+      "mean_batch_to_END": 85.40441176470588,
+      "mean_actual_nominal": 48.85569852941177,
+      "mean_batch_residual": 36.548713235294116,
+      "mean_previous_MOVE_prefix_ticks": 45.62637867647059,
+      "mean_after_previous_MOVE_END_ticks": 39.7780330882353,
+      "mean_feature_recent_history_residual": 16.103624288803516,
+      "history": {
+        "MAE": 26.08231592116013,
+        "bias": -26.035509490254434
+      },
+      "learned": {
+        "MAE": 24.66767076637018,
+        "bias": -24.666242420379625
+      }
+    }
+  },
+  "after_previous_MOVE_END_not_used_to_train_or_act": true,
+  "warning": "second-step cumulative duration enters history as if a single move; domain and target mismatch, not pure motor residual"
+}

@@ -1,0 +1,171 @@
+{
+  "ridge": {
+    "features": [
+      "quarter_turns/2",
+      "east",
+      "south",
+      "west",
+      "north",
+      "history_count/16",
+      "mean_residual/50",
+      "direction_shrunk_residual/50",
+      "last_residual/50",
+      "residual_sd/50"
+    ],
+    "mean": [
+      0.49818541735400856,
+      0.2518970636753547,
+      0.2705377763114484,
+      0.2509072913229957,
+      0.22665786869020124,
+      0.8653909600791818,
+      -0.21514036571954778,
+      -0.13644869810895882,
+      -0.2239524909270896,
+      0.19351551762432048
+    ],
+    "scale": [
+      0.4050326834877855,
+      0.4341024452673404,
+      0.4442376479992527,
+      0.4335352609465107,
+      0.4186694152323625,
+      0.272807846876064,
+      0.1459019257634975,
+      0.1354440595535097,
+      0.24904664753588018,
+      0.077755886058707
+    ],
+    "intercept": -11.40399208182121,
+    "coef": [
+      -6.548034716444746,
+      -0.4554412150012457,
+      0.31085140672445416,
+      -0.3545298424361334,
+      0.5095128214733521,
+      -0.00602937191752315,
+      0.6056300827468873,
+      2.6524497050462528,
+      2.328618242075782,
+      0.29678000487418876
+    ],
+    "lambda": 1.0,
+    "target": "normal final MOVE ACK tick minus proposal tick minus (45+10*quarter_turns)"
+  },
+  "calibration": {
+    "history": {
+      "rows": 3010,
+      "q90_absolute_error": 19.5,
+      "rank": 2710,
+      "MAE": 9.365962664135422,
+      "RMSE": 11.669799373271896
+    },
+    "learned": {
+      "rows": 3010,
+      "q90_absolute_error": 14.493563259872452,
+      "rank": 2710,
+      "MAE": 6.828582818196495,
+      "RMSE": 8.708557645618296
+    }
+  },
+  "rows_by_run": {
+    "train_empty-32-32_931701_nominal_hm_GPIBT": {
+      "completed": 544,
+      "censored": 8
+    },
+    "train_empty-32-32_931701_slow065_hm_GPIBT": {
+      "completed": 456,
+      "censored": 8
+    },
+    "train_empty-32-32_931701_axis_hm_GPIBT": {
+      "completed": 526,
+      "censored": 2
+    },
+    "train_random-32-32-10_931701_nominal_hm_GPIBT": {
+      "completed": 535,
+      "censored": 8
+    },
+    "train_random-32-32-10_931701_slow065_hm_GPIBT": {
+      "completed": 456,
+      "censored": 8
+    },
+    "train_random-32-32-10_931701_axis_hm_GPIBT": {
+      "completed": 510,
+      "censored": 1
+    },
+    "train_empty-32-32_931702_nominal_hm_GPIBT": {
+      "completed": 542,
+      "censored": 8
+    },
+    "train_empty-32-32_931702_slow065_hm_GPIBT": {
+      "completed": 476,
+      "censored": 2
+    },
+    "train_empty-32-32_931702_axis_hm_GPIBT": {
+      "completed": 509,
+      "censored": 1
+    },
+    "train_random-32-32-10_931702_nominal_hm_GPIBT": {
+      "completed": 535,
+      "censored": 8
+    },
+    "train_random-32-32-10_931702_slow065_hm_GPIBT": {
+      "completed": 462,
+      "censored": 1
+    },
+    "train_random-32-32-10_931702_axis_hm_GPIBT": {
+      "completed": 511,
+      "censored": 8
+    },
+    "calibration_empty-32-32_931711_nominal_hm_GPIBT": {
+      "completed": 532,
+      "censored": 1
+    },
+    "calibration_empty-32-32_931711_slow065_hm_GPIBT": {
+      "completed": 469,
+      "censored": 8
+    },
+    "calibration_empty-32-32_931711_axis_hm_GPIBT": {
+      "completed": 517,
+      "censored": 8
+    },
+    "calibration_random-32-32-10_931711_nominal_hm_GPIBT": {
+      "completed": 526,
+      "censored": 8
+    },
+    "calibration_random-32-32-10_931711_slow065_hm_GPIBT": {
+      "completed": 457,
+      "censored": 5
+    },
+    "calibration_random-32-32-10_931711_axis_hm_GPIBT": {
+      "completed": 509,
+      "censored": 1
+    }
+  },
+  "train_rows": 6062,
+  "calibration_rows": 3010,
+  "source_pins": {
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_empty-32-32_931701_nominal_hm_GPIBT/supervised_rows.json": "551f00942c48b49603d4354f61fd847c3871f972870783dd9df4de79b76e4694",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_empty-32-32_931701_slow065_hm_GPIBT/supervised_rows.json": "47a33b36b56d02ae84f79f5572c89d9401b1ed64e2c2c8fdb7379ca0da01dc44",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_empty-32-32_931701_axis_hm_GPIBT/supervised_rows.json": "50d3f2e0b97632d0666ce29d7f43d46744da3b1144183b025c58ce4ed1300d2c",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_random-32-32-10_931701_nominal_hm_GPIBT/supervised_rows.json": "5cb96d912df0b9276c95d8508f531e7303c1a30fc4f8bc577ba9c09f066501e2",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_random-32-32-10_931701_slow065_hm_GPIBT/supervised_rows.json": "729945aeba9f2d903f7bc28e68d7cb1268f05b2ff025adb94367ca5d017aa7bb",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_random-32-32-10_931701_axis_hm_GPIBT/supervised_rows.json": "47da95f41445913994c9c97bf18db4fb303acf8eb10fc3f14969da60c4054224",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_empty-32-32_931702_nominal_hm_GPIBT/supervised_rows.json": "bf413c5c7279d7a37766e45fc31f47882b72fab9a2df9234bcfdf29713402018",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_empty-32-32_931702_slow065_hm_GPIBT/supervised_rows.json": "008baaf4fa08f4389f48395191d6fb303477eae155cad04d594280f373d03d4a",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_empty-32-32_931702_axis_hm_GPIBT/supervised_rows.json": "73f9b3267f705c71bb6abb452b55e935e7e982a0892e23a20f18f011b7dd0cda",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_random-32-32-10_931702_nominal_hm_GPIBT/supervised_rows.json": "6c18e74cb444e486ef6fdda0b83d62f2f47560a02e1f8104acefb5f41828389f",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_random-32-32-10_931702_slow065_hm_GPIBT/supervised_rows.json": "e21087e7cd65e09f59f7aba6ec7accf2bdb3a66b8eedef5afc41a1b6c7bf5352",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_random-32-32-10_931702_axis_hm_GPIBT/supervised_rows.json": "08f1b56db81c19740e23ca3c5dc636f62c84764381ed807aacb0cf964e8c5183",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/calibration_empty-32-32_931711_nominal_hm_GPIBT/supervised_rows.json": "b33be9faac1a84776d1d95e62d93bb899bb7dd2be8cb67b1c7c7df1d8a9c96c0",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/calibration_empty-32-32_931711_slow065_hm_GPIBT/supervised_rows.json": "43da28f0435f7940288d42f117ecd00637a7490973bd33dd5672ceedd1ac51ed",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/calibration_empty-32-32_931711_axis_hm_GPIBT/supervised_rows.json": "853226ad95d4a6f7cbae271ac8a662c548ea54c4b5a79fe6410dcf637c58396f",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/calibration_random-32-32-10_931711_nominal_hm_GPIBT/supervised_rows.json": "a0563b44119d303237df4df2222bfd92d89a8f94c6229846db6b867325f74256",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/calibration_random-32-32-10_931711_slow065_hm_GPIBT/supervised_rows.json": "aeee05af3beb42b710815374a0b5881a9353717b746649e8d5b06bdd84c7dd9c",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/calibration_random-32-32-10_931711_axis_hm_GPIBT/supervised_rows.json": "ae0b66deb14a6267c92195d023035671d831cfdd62e93213e70dd95c85a81d71"
+  },
+  "protocol_sha256": "6ac7168fa27a3190df293fadfee7db5e76b32321d27b50f326041516ee3c8fff",
+  "training_script_sha256": "1032374227efb0ee708a334a510ffb1e4511e7c0feceba78876cbe9679920943",
+  "public_model_sha256": "d21fe4c270b87c0db31ea18026daf0eab44234b55a6ff4095ebc80c01a8ee30e",
+  "test_seen": false
+}

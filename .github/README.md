@@ -1,5 +1,9 @@
 # 当前分支：误差感知的路径引导探索
 
+[R8三线结果与两类判断](../exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261001_R8.md) · [下一方法合同](../exploration/error_guidance/NEXT_METHOD_CONTRACT_20261001_R8.md)。
+
+R8（2026-10-01）完成6个机械验证＋48个新留出。两步缓冲内恢复原ADG局部放行，作者hm的global/local任务174/200；local历史规则/学习均201，尚无学习独立任务优势。转弯编码已在测试前修正并重训冻结模型；累计第二步标签的单位混用已定位，作为下一改进重点。[完整报告](../exploration/error_guidance/local_dependency_20261001_r8/REPORT.md)、[根审结果图](../exploration/error_guidance/local_dependency_20261001_r8/FIGURE_CAPTION.md)。全队附加门是内部消融，不是发表基线。
+
 R7（2026-10-01）已训练新执行残差模型并完成42次真实运行。留出预测MAE由同历史规则9.386降至6.897 ticks，4/6场景实际动作改变，一个场景累计完成时刻少14.2秒；总任务模型/规则119、原作者hm120，尚无整体任务优势。原始失败、完整数据及root独立模型/服务核验均保留。
 
 详见[当前探索入口](../exploration/error_guidance/README.md)；[本轮Astra/科研导师判断与三线后续设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261001_R7.md)。下方旧轮次文字按历史记录阅读。

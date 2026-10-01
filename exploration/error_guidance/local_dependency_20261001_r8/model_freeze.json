@@ -1,0 +1,173 @@
+{
+  "ridge": {
+    "features": [
+      "quarter_turns/2",
+      "east",
+      "south",
+      "west",
+      "north",
+      "history_count/16",
+      "mean_residual/50",
+      "direction_shrunk_residual/50",
+      "last_residual/50",
+      "residual_sd/50"
+    ],
+    "mean": [
+      0.1956450016496206,
+      0.2518970636753547,
+      0.2705377763114484,
+      0.2509072913229957,
+      0.22665786869020124,
+      0.8653909600791818,
+      -0.10130470478969338,
+      -0.06812573381931729,
+      -0.10524579346750428,
+      0.09167221068899957
+    ],
+    "scale": [
+      0.2672504487978284,
+      0.4341024452673404,
+      0.4442376479992527,
+      0.4335352609465107,
+      0.4186694152323625,
+      0.272807846876064,
+      0.09416663132250763,
+      0.07272110041694395,
+      0.13648869042625564,
+      0.03546632859496754
+    ],
+    "intercept": -5.353183767733438,
+    "coef": [
+      1.688235924381621,
+      -0.05877415657095111,
+      0.031179864650536758,
+      -0.12284926277095316,
+      0.15506798484777243,
+      0.7705176846587144,
+      3.7866736010003015,
+      -0.41603948143963576,
+      1.1404600852744617,
+      -0.5054168327561386
+    ],
+    "lambda": 1.0,
+    "target": "normal final MOVE ACK minus proposal tick minus45+10actual quarter turns; public orientation explicitly converted"
+  },
+  "calibration": {
+    "history": {
+      "rows": 3010,
+      "q90_absolute_error": 10.0,
+      "rank": 2710,
+      "MAE": 5.245719559141486,
+      "RMSE": 6.350369319766424
+    },
+    "learned": {
+      "rows": 3010,
+      "q90_absolute_error": 8.669985808675257,
+      "rank": 2710,
+      "MAE": 4.186197037163051,
+      "RMSE": 5.41938368276684
+    }
+  },
+  "rows_by_run": {
+    "train_empty-32-32_931701_nominal_hm_GPIBT": {
+      "completed": 544,
+      "censored": 8
+    },
+    "train_empty-32-32_931701_slow065_hm_GPIBT": {
+      "completed": 456,
+      "censored": 8
+    },
+    "train_empty-32-32_931701_axis_hm_GPIBT": {
+      "completed": 526,
+      "censored": 2
+    },
+    "train_random-32-32-10_931701_nominal_hm_GPIBT": {
+      "completed": 535,
+      "censored": 8
+    },
+    "train_random-32-32-10_931701_slow065_hm_GPIBT": {
+      "completed": 456,
+      "censored": 8
+    },
+    "train_random-32-32-10_931701_axis_hm_GPIBT": {
+      "completed": 510,
+      "censored": 1
+    },
+    "train_empty-32-32_931702_nominal_hm_GPIBT": {
+      "completed": 542,
+      "censored": 8
+    },
+    "train_empty-32-32_931702_slow065_hm_GPIBT": {
+      "completed": 476,
+      "censored": 2
+    },
+    "train_empty-32-32_931702_axis_hm_GPIBT": {
+      "completed": 509,
+      "censored": 1
+    },
+    "train_random-32-32-10_931702_nominal_hm_GPIBT": {
+      "completed": 535,
+      "censored": 8
+    },
+    "train_random-32-32-10_931702_slow065_hm_GPIBT": {
+      "completed": 462,
+      "censored": 1
+    },
+    "train_random-32-32-10_931702_axis_hm_GPIBT": {
+      "completed": 511,
+      "censored": 8
+    },
+    "calibration_empty-32-32_931711_nominal_hm_GPIBT": {
+      "completed": 532,
+      "censored": 1
+    },
+    "calibration_empty-32-32_931711_slow065_hm_GPIBT": {
+      "completed": 469,
+      "censored": 8
+    },
+    "calibration_empty-32-32_931711_axis_hm_GPIBT": {
+      "completed": 517,
+      "censored": 8
+    },
+    "calibration_random-32-32-10_931711_nominal_hm_GPIBT": {
+      "completed": 526,
+      "censored": 8
+    },
+    "calibration_random-32-32-10_931711_slow065_hm_GPIBT": {
+      "completed": 457,
+      "censored": 5
+    },
+    "calibration_random-32-32-10_931711_axis_hm_GPIBT": {
+      "completed": 509,
+      "censored": 1
+    }
+  },
+  "train_rows": 6062,
+  "calibration_rows": 3010,
+  "source_pins": {
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_empty-32-32_931701_nominal_hm_GPIBT/public_events.jsonl": "9c9d9f0f84e03f02c9b0d1a931cccae05890ee5bddaef79afdb2cc6e68860684",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_empty-32-32_931701_slow065_hm_GPIBT/public_events.jsonl": "a48e17f4db857cc1740ad0f7ae2937cbb85dc3037a55c22ea13937be0a0922dd",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_empty-32-32_931701_axis_hm_GPIBT/public_events.jsonl": "8a93040cfecacd223fd3734603df1583a5f5f0f56575fcd45b5a37d2ba83e787",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_random-32-32-10_931701_nominal_hm_GPIBT/public_events.jsonl": "dddc4d65f59ea23153652489545f8f3dc319e3d2b9a95a5c71ce7edefd4ec761",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_random-32-32-10_931701_slow065_hm_GPIBT/public_events.jsonl": "eefeec85551f0aebe350870941dc52a3d90d420d2f019a3bd477d4188f5448ef",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_random-32-32-10_931701_axis_hm_GPIBT/public_events.jsonl": "c0b07c1e04dccd2fa28fc7a89b808bfa123f69d14bdc373d709a8a50ce34999b",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_empty-32-32_931702_nominal_hm_GPIBT/public_events.jsonl": "dd7c5a17e3f2818b2e118edc4b423757ded98fd32129d50e57c21fa03ad3e8c2",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_empty-32-32_931702_slow065_hm_GPIBT/public_events.jsonl": "f4aaf84f78eaf89b82f0d459b94900a49caf1d57448a5a7b9771c2a7b5be4162",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_empty-32-32_931702_axis_hm_GPIBT/public_events.jsonl": "1b5d0ed5e723838e59be278d9579776f478a4f2032f3e900e499d5e31e1b0a76",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_random-32-32-10_931702_nominal_hm_GPIBT/public_events.jsonl": "e95a5467d5cb2e38429641885b957f5d4d1a294dad241b7fe1cc29f01ad5686a",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_random-32-32-10_931702_slow065_hm_GPIBT/public_events.jsonl": "d093b5ecc450605d8d8106c9a11eab2ee48a3b76c1c1b60721da4a8aa24b271e",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_random-32-32-10_931702_axis_hm_GPIBT/public_events.jsonl": "772a736a5a1460f84db45445de008de7daaf00e1d6536f11ac7b943aed37d7ce",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/calibration_empty-32-32_931711_nominal_hm_GPIBT/public_events.jsonl": "0aab019a01f4d4aed99c116385afe926a91f520e20a691cafe704be45f909bcf",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/calibration_empty-32-32_931711_slow065_hm_GPIBT/public_events.jsonl": "fdff1ff70da19b8da4a26c9bb46b64a3a2f2d0907356ba4e4ea6689df7354737",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/calibration_empty-32-32_931711_axis_hm_GPIBT/public_events.jsonl": "fccbcf91d37de221584856ca378554d282d6827e43c827dea5a720edffa8a541",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/calibration_random-32-32-10_931711_nominal_hm_GPIBT/public_events.jsonl": "3fe3e64f5e9890ed41f2ff316a8d7b1f7aa9b0b3c174fc86acb8f6bd321db207",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/calibration_random-32-32-10_931711_slow065_hm_GPIBT/public_events.jsonl": "777c81629951d9f0672efb58a5432ab47462b2973b865a4fb47a428fb54ce337",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/calibration_random-32-32-10_931711_axis_hm_GPIBT/public_events.jsonl": "bd94a65c53402b897b6d1bc0e95eb12bb7d4a5545395d1c2eb4292fcd3fe66c6"
+  },
+  "protocol_sha256": "ed61844a24add54d7d00318fcf47a706bfe7fb5edfcfb1524e44d22a7906d087",
+  "training_script_sha256": "15edda76d3d5006fa1cfadd140482455089810ab48b1e238f278839c9df21a0c",
+  "public_model_sha256": "28edaefe9fe2514943da9d7417c5796e897352de9242b0b3c11a5ee4fc5f1e39",
+  "public_model_parent_sha256": "a8192ad38172d5f3ffa9f3b38a7c8ef5581e5792b9e850b2c290a55ef7eb545e",
+  "test_seen": false,
+  "source_data": "same R7 training/calibration runs; corrected orientation before R8test"
+}

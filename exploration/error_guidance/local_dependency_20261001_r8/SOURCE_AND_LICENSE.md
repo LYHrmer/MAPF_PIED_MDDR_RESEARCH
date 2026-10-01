@@ -1,0 +1,9 @@
+# Source and interface identity
+
+Official source LSMART https://github.com/smart-mapf/lifelong-smart at a3780a45eb101f5b6834236f86bad39025f1e99f; OnlineGGO https://github.com/zanghz21/OnlineGGO at ff6d830e2fd5bf85ccbb72eaec0fb8df1cf1c256. Both MIT notices are included. This is an exploration on the previously audited S1 continuous execution/FIFO adapter; it is not numerical reproduction of original published results.
+
+R8 native source differs from R6c only in ADG.cpp (extra gate active exclusively for R8_EXECUTION=global) and ExecutionManager.cpp (parsed action time in trace). Local admission and every normal ACK update function remain byte-identical. The exact two changed files, patches, parent/new SHA and full freeze are provided. The client controller and loop binaries are the unchanged R6c S1 binaries; MOVE merging stays disabled and normal point ACK EPS stays0.03m. No in-flight commitment is replaced; planning only occurs at actual joint settlement after complete two-step batch.
+
+Official hm bridge retains all original OBJ3 objects, listed in binary_manifest.json. Candidate links the unchanged R7 search_overlay.o instead of official search.cpp.o, with same public nonnegative edge cost callback. R8 wrappers differ only by removing false completed traffic accumulation: planned frontiers are never labeled as physical completion. OBJ3 is required, network input_type=flow and has_previous=false are fixed; every recorded official call has zero network-forward calls. Policy histories use only public normal delivered events.
+
+The corrected checkpoint uses the original R7train/cal event files exclusively and newly recomputed causal turn/residual/history features. It is a new parameter fit on reused data, not new native training. R7test data were not used. Both model mean and calibration margin differ between history/learned, so service differences cannot be attributed solely to predicted mean.

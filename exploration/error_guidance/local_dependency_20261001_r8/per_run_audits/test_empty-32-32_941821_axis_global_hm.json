@@ -1,0 +1,179 @@
+{
+  "passed": true,
+  "spec": {
+    "id": "test_empty-32-32_941821_axis_global_hm",
+    "split": "test",
+    "map": "empty-32-32",
+    "seed": 941821,
+    "N": 8,
+    "cols": 32,
+    "condition": "axis",
+    "execution": "global",
+    "policy": "hm",
+    "horizon_ticks": 4000,
+    "port": 9770,
+    "input_id": "empty-32-32_941821"
+  },
+  "normal_station_END": 21,
+  "services": [
+    {
+      "agent": 1,
+      "ordinal": 0,
+      "tick": 364,
+      "task_id": 1
+    },
+    {
+      "agent": 7,
+      "ordinal": 0,
+      "tick": 484,
+      "task_id": 7
+    },
+    {
+      "agent": 3,
+      "ordinal": 0,
+      "tick": 802,
+      "task_id": 3
+    },
+    {
+      "agent": 2,
+      "ordinal": 0,
+      "tick": 864,
+      "task_id": 2
+    },
+    {
+      "agent": 6,
+      "ordinal": 0,
+      "tick": 1024,
+      "task_id": 6
+    },
+    {
+      "agent": 1,
+      "ordinal": 1,
+      "tick": 1454,
+      "task_id": 8
+    },
+    {
+      "agent": 4,
+      "ordinal": 0,
+      "tick": 1454,
+      "task_id": 4
+    },
+    {
+      "agent": 0,
+      "ordinal": 0,
+      "tick": 1652,
+      "task_id": 0
+    },
+    {
+      "agent": 1,
+      "ordinal": 2,
+      "tick": 1714,
+      "task_id": 13
+    },
+    {
+      "agent": 2,
+      "ordinal": 1,
+      "tick": 1904,
+      "task_id": 10
+    },
+    {
+      "agent": 7,
+      "ordinal": 1,
+      "tick": 2412,
+      "task_id": 9
+    },
+    {
+      "agent": 5,
+      "ordinal": 0,
+      "tick": 2676,
+      "task_id": 5
+    },
+    {
+      "agent": 2,
+      "ordinal": 2,
+      "tick": 2734,
+      "task_id": 17
+    },
+    {
+      "agent": 3,
+      "ordinal": 1,
+      "tick": 3094,
+      "task_id": 11
+    },
+    {
+      "agent": 6,
+      "ordinal": 1,
+      "tick": 3094,
+      "task_id": 12
+    },
+    {
+      "agent": 7,
+      "ordinal": 2,
+      "tick": 3094,
+      "task_id": 18
+    },
+    {
+      "agent": 2,
+      "ordinal": 3,
+      "tick": 3222,
+      "task_id": 19
+    },
+    {
+      "agent": 0,
+      "ordinal": 1,
+      "tick": 3232,
+      "task_id": 15
+    },
+    {
+      "agent": 4,
+      "ordinal": 1,
+      "tick": 3294,
+      "task_id": 14
+    },
+    {
+      "agent": 1,
+      "ordinal": 3,
+      "tick": 3584,
+      "task_id": 16
+    },
+    {
+      "agent": 2,
+      "ordinal": 4,
+      "tick": 3774,
+      "task_id": 25
+    }
+  ],
+  "fixed_first10_restricted_ticks": 281926,
+  "views": 33,
+  "rows": 510,
+  "censored": 9,
+  "original_ADG_edges": 15,
+  "candidate_nonzero_calls": 0,
+  "prediction_by_logical_step": {
+    "0": {
+      "history": {
+        "n": 263,
+        "MAE": 22.702682720743557
+      },
+      "learned": {
+        "n": 263,
+        "MAE": 24.14321584366433
+      }
+    },
+    "1": {
+      "history": {
+        "n": 247,
+        "MAE": 41.30878478246899
+      },
+      "learned": {
+        "n": 247,
+        "MAE": 37.63333170737176
+      }
+    }
+  },
+  "max_ACK_endpoint_error_m": 0.029752999981483286,
+  "min_center_distance_m": 0.5187443823007646,
+  "planner_wall": 0.043291698006214574,
+  "forecast_wall": 2.8080976335331798e-05,
+  "mechanism": null
+}

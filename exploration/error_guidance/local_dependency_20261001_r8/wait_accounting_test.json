@@ -1,0 +1,411 @@
+{
+  "agent_tick_conservation": true,
+  "precedence": "queue active; settling; original dependency; extra global gate; dispatch; batch boundary; all complete",
+  "runs": {
+    "test_empty-32-32_941821_nominal_global_hm": {
+      "all_complete_boundary": 561,
+      "dispatch_wait": 2534,
+      "queue_active": 21185,
+      "physical_settling": 517,
+      "extra_global_gate": 3601,
+      "batch_boundary_wait": 3581,
+      "original_ADG_dependency": 21
+    },
+    "test_empty-32-32_941821_nominal_global_history": {
+      "all_complete_boundary": 495,
+      "dispatch_wait": 2334,
+      "queue_active": 21141,
+      "physical_settling": 512,
+      "extra_global_gate": 3985,
+      "batch_boundary_wait": 3497,
+      "original_ADG_dependency": 36
+    },
+    "test_empty-32-32_941821_nominal_global_learned": {
+      "all_complete_boundary": 495,
+      "dispatch_wait": 2334,
+      "queue_active": 21141,
+      "physical_settling": 512,
+      "extra_global_gate": 3985,
+      "batch_boundary_wait": 3497,
+      "original_ADG_dependency": 36
+    },
+    "test_empty-32-32_941821_nominal_local_hm": {
+      "all_complete_boundary": 627,
+      "dispatch_wait": 2030,
+      "queue_active": 23200,
+      "physical_settling": 278,
+      "batch_boundary_wait": 5850,
+      "original_ADG_dependency": 15
+    },
+    "test_empty-32-32_941821_nominal_local_history": {
+      "all_complete_boundary": 607,
+      "dispatch_wait": 2177,
+      "queue_active": 22925,
+      "physical_settling": 274,
+      "batch_boundary_wait": 5946,
+      "original_ADG_dependency": 71
+    },
+    "test_empty-32-32_941821_nominal_local_learned": {
+      "all_complete_boundary": 607,
+      "dispatch_wait": 2177,
+      "queue_active": 22925,
+      "physical_settling": 274,
+      "batch_boundary_wait": 5946,
+      "original_ADG_dependency": 71
+    },
+    "test_empty-32-32_941821_axis_global_hm": {
+      "all_complete_boundary": 567,
+      "dispatch_wait": 2678,
+      "queue_active": 20945,
+      "physical_settling": 492,
+      "extra_global_gate": 3711,
+      "batch_boundary_wait": 3570,
+      "original_ADG_dependency": 37
+    },
+    "test_empty-32-32_941821_axis_global_history": {
+      "all_complete_boundary": 563,
+      "dispatch_wait": 2451,
+      "queue_active": 20592,
+      "physical_settling": 475,
+      "extra_global_gate": 3724,
+      "batch_boundary_wait": 4165,
+      "original_ADG_dependency": 30
+    },
+    "test_empty-32-32_941821_axis_global_learned": {
+      "all_complete_boundary": 563,
+      "dispatch_wait": 2451,
+      "queue_active": 20592,
+      "physical_settling": 475,
+      "extra_global_gate": 3724,
+      "batch_boundary_wait": 4165,
+      "original_ADG_dependency": 30
+    },
+    "test_empty-32-32_941821_axis_local_hm": {
+      "all_complete_boundary": 676,
+      "dispatch_wait": 1611,
+      "queue_active": 23071,
+      "physical_settling": 269,
+      "batch_boundary_wait": 6337,
+      "original_ADG_dependency": 36
+    },
+    "test_empty-32-32_941821_axis_local_history": {
+      "all_complete_boundary": 674,
+      "dispatch_wait": 1612,
+      "queue_active": 22945,
+      "physical_settling": 265,
+      "batch_boundary_wait": 6424,
+      "original_ADG_dependency": 80
+    },
+    "test_empty-32-32_941821_axis_local_learned": {
+      "all_complete_boundary": 660,
+      "dispatch_wait": 1673,
+      "queue_active": 22530,
+      "physical_settling": 259,
+      "batch_boundary_wait": 6798,
+      "original_ADG_dependency": 80
+    },
+    "test_random-32-32-10_941821_nominal_global_hm": {
+      "all_complete_boundary": 517,
+      "dispatch_wait": 2177,
+      "queue_active": 20708,
+      "physical_settling": 490,
+      "extra_global_gate": 4151,
+      "batch_boundary_wait": 3957
+    },
+    "test_random-32-32-10_941821_nominal_global_history": {
+      "all_complete_boundary": 557,
+      "dispatch_wait": 2104,
+      "queue_active": 21108,
+      "physical_settling": 497,
+      "extra_global_gate": 3781,
+      "batch_boundary_wait": 3940,
+      "original_ADG_dependency": 13
+    },
+    "test_random-32-32-10_941821_nominal_global_learned": {
+      "all_complete_boundary": 541,
+      "dispatch_wait": 2125,
+      "queue_active": 20962,
+      "physical_settling": 497,
+      "extra_global_gate": 3683,
+      "batch_boundary_wait": 4179,
+      "original_ADG_dependency": 13
+    },
+    "test_random-32-32-10_941821_nominal_local_hm": {
+      "all_complete_boundary": 623,
+      "dispatch_wait": 2090,
+      "queue_active": 22786,
+      "physical_settling": 263,
+      "batch_boundary_wait": 6172,
+      "original_ADG_dependency": 66
+    },
+    "test_random-32-32-10_941821_nominal_local_history": {
+      "all_complete_boundary": 619,
+      "dispatch_wait": 2428,
+      "queue_active": 22773,
+      "physical_settling": 257,
+      "batch_boundary_wait": 5899,
+      "original_ADG_dependency": 24
+    },
+    "test_random-32-32-10_941821_nominal_local_learned": {
+      "all_complete_boundary": 619,
+      "dispatch_wait": 2428,
+      "queue_active": 22773,
+      "physical_settling": 257,
+      "batch_boundary_wait": 5899,
+      "original_ADG_dependency": 24
+    },
+    "test_random-32-32-10_941821_axis_global_hm": {
+      "all_complete_boundary": 582,
+      "dispatch_wait": 2251,
+      "queue_active": 20619,
+      "physical_settling": 483,
+      "extra_global_gate": 3962,
+      "batch_boundary_wait": 4103
+    },
+    "test_random-32-32-10_941821_axis_global_history": {
+      "all_complete_boundary": 560,
+      "dispatch_wait": 2303,
+      "queue_active": 21284,
+      "physical_settling": 494,
+      "extra_global_gate": 3643,
+      "batch_boundary_wait": 3694,
+      "original_ADG_dependency": 22
+    },
+    "test_random-32-32-10_941821_axis_global_learned": {
+      "all_complete_boundary": 546,
+      "dispatch_wait": 2356,
+      "queue_active": 21044,
+      "physical_settling": 490,
+      "extra_global_gate": 3635,
+      "batch_boundary_wait": 3907,
+      "original_ADG_dependency": 22
+    },
+    "test_random-32-32-10_941821_axis_local_hm": {
+      "all_complete_boundary": 662,
+      "dispatch_wait": 1642,
+      "queue_active": 23185,
+      "physical_settling": 261,
+      "batch_boundary_wait": 6184,
+      "original_ADG_dependency": 66
+    },
+    "test_random-32-32-10_941821_axis_local_history": {
+      "all_complete_boundary": 653,
+      "dispatch_wait": 2021,
+      "queue_active": 22837,
+      "physical_settling": 255,
+      "batch_boundary_wait": 6201,
+      "original_ADG_dependency": 33
+    },
+    "test_random-32-32-10_941821_axis_local_learned": {
+      "all_complete_boundary": 653,
+      "dispatch_wait": 2021,
+      "queue_active": 22837,
+      "physical_settling": 255,
+      "batch_boundary_wait": 6201,
+      "original_ADG_dependency": 33
+    },
+    "test_empty-32-32_941822_nominal_global_hm": {
+      "all_complete_boundary": 544,
+      "dispatch_wait": 1999,
+      "queue_active": 21022,
+      "physical_settling": 493,
+      "extra_global_gate": 3594,
+      "batch_boundary_wait": 4292,
+      "original_ADG_dependency": 56
+    },
+    "test_empty-32-32_941822_nominal_global_history": {
+      "all_complete_boundary": 526,
+      "dispatch_wait": 2274,
+      "queue_active": 21360,
+      "physical_settling": 496,
+      "extra_global_gate": 3327,
+      "batch_boundary_wait": 3996,
+      "original_ADG_dependency": 21
+    },
+    "test_empty-32-32_941822_nominal_global_learned": {
+      "all_complete_boundary": 526,
+      "dispatch_wait": 2274,
+      "queue_active": 21360,
+      "physical_settling": 496,
+      "extra_global_gate": 3327,
+      "batch_boundary_wait": 3996,
+      "original_ADG_dependency": 21
+    },
+    "test_empty-32-32_941822_nominal_local_hm": {
+      "all_complete_boundary": 594,
+      "dispatch_wait": 2076,
+      "queue_active": 22377,
+      "physical_settling": 263,
+      "batch_boundary_wait": 6626,
+      "original_ADG_dependency": 64
+    },
+    "test_empty-32-32_941822_nominal_local_history": {
+      "all_complete_boundary": 592,
+      "dispatch_wait": 2020,
+      "queue_active": 22717,
+      "physical_settling": 258,
+      "batch_boundary_wait": 6355,
+      "original_ADG_dependency": 58
+    },
+    "test_empty-32-32_941822_nominal_local_learned": {
+      "all_complete_boundary": 592,
+      "dispatch_wait": 2020,
+      "queue_active": 22717,
+      "physical_settling": 258,
+      "batch_boundary_wait": 6355,
+      "original_ADG_dependency": 58
+    },
+    "test_empty-32-32_941822_axis_global_hm": {
+      "all_complete_boundary": 570,
+      "dispatch_wait": 2326,
+      "queue_active": 20465,
+      "physical_settling": 475,
+      "extra_global_gate": 3739,
+      "batch_boundary_wait": 4369,
+      "original_ADG_dependency": 56
+    },
+    "test_empty-32-32_941822_axis_global_history": {
+      "all_complete_boundary": 542,
+      "dispatch_wait": 2291,
+      "queue_active": 20916,
+      "physical_settling": 479,
+      "extra_global_gate": 3453,
+      "batch_boundary_wait": 4298,
+      "original_ADG_dependency": 21
+    },
+    "test_empty-32-32_941822_axis_global_learned": {
+      "all_complete_boundary": 542,
+      "dispatch_wait": 2291,
+      "queue_active": 20916,
+      "physical_settling": 479,
+      "extra_global_gate": 3453,
+      "batch_boundary_wait": 4298,
+      "original_ADG_dependency": 21
+    },
+    "test_empty-32-32_941822_axis_local_hm": {
+      "all_complete_boundary": 637,
+      "dispatch_wait": 1908,
+      "queue_active": 22464,
+      "physical_settling": 256,
+      "batch_boundary_wait": 6671,
+      "original_ADG_dependency": 64
+    },
+    "test_empty-32-32_941822_axis_local_history": {
+      "all_complete_boundary": 608,
+      "dispatch_wait": 1970,
+      "queue_active": 22649,
+      "physical_settling": 251,
+      "batch_boundary_wait": 6473,
+      "original_ADG_dependency": 49
+    },
+    "test_empty-32-32_941822_axis_local_learned": {
+      "all_complete_boundary": 608,
+      "dispatch_wait": 1970,
+      "queue_active": 22649,
+      "physical_settling": 251,
+      "batch_boundary_wait": 6473,
+      "original_ADG_dependency": 49
+    },
+    "test_random-32-32-10_941822_nominal_global_hm": {
+      "all_complete_boundary": 502,
+      "dispatch_wait": 2322,
+      "queue_active": 21364,
+      "physical_settling": 507,
+      "extra_global_gate": 3464,
+      "batch_boundary_wait": 3821,
+      "original_ADG_dependency": 20
+    },
+    "test_random-32-32-10_941822_nominal_global_history": {
+      "all_complete_boundary": 500,
+      "dispatch_wait": 2318,
+      "queue_active": 21447,
+      "physical_settling": 504,
+      "extra_global_gate": 3443,
+      "batch_boundary_wait": 3781,
+      "original_ADG_dependency": 7
+    },
+    "test_random-32-32-10_941822_nominal_global_learned": {
+      "all_complete_boundary": 529,
+      "dispatch_wait": 2296,
+      "queue_active": 21473,
+      "physical_settling": 505,
+      "extra_global_gate": 3382,
+      "batch_boundary_wait": 3808,
+      "original_ADG_dependency": 7
+    },
+    "test_random-32-32-10_941822_nominal_local_hm": {
+      "all_complete_boundary": 607,
+      "dispatch_wait": 1989,
+      "queue_active": 23001,
+      "physical_settling": 267,
+      "batch_boundary_wait": 6097,
+      "original_ADG_dependency": 39
+    },
+    "test_random-32-32-10_941822_nominal_local_history": {
+      "all_complete_boundary": 573,
+      "dispatch_wait": 2015,
+      "queue_active": 22595,
+      "physical_settling": 254,
+      "batch_boundary_wait": 6536,
+      "original_ADG_dependency": 27
+    },
+    "test_random-32-32-10_941822_nominal_local_learned": {
+      "all_complete_boundary": 606,
+      "dispatch_wait": 2170,
+      "queue_active": 22511,
+      "physical_settling": 258,
+      "batch_boundary_wait": 6435,
+      "original_ADG_dependency": 20
+    },
+    "test_random-32-32-10_941822_axis_global_hm": {
+      "all_complete_boundary": 572,
+      "dispatch_wait": 2518,
+      "queue_active": 20742,
+      "physical_settling": 483,
+      "extra_global_gate": 3289,
+      "batch_boundary_wait": 4376,
+      "original_ADG_dependency": 20
+    },
+    "test_random-32-32-10_941822_axis_global_history": {
+      "all_complete_boundary": 532,
+      "dispatch_wait": 2446,
+      "queue_active": 20860,
+      "physical_settling": 477,
+      "extra_global_gate": 3862,
+      "batch_boundary_wait": 3823
+    },
+    "test_random-32-32-10_941822_axis_global_learned": {
+      "all_complete_boundary": 524,
+      "dispatch_wait": 2335,
+      "queue_active": 20747,
+      "physical_settling": 476,
+      "extra_global_gate": 3735,
+      "batch_boundary_wait": 4176,
+      "original_ADG_dependency": 7
+    },
+    "test_random-32-32-10_941822_axis_local_hm": {
+      "all_complete_boundary": 617,
+      "dispatch_wait": 1629,
+      "queue_active": 22761,
+      "physical_settling": 259,
+      "batch_boundary_wait": 6695,
+      "original_ADG_dependency": 39
+    },
+    "test_random-32-32-10_941822_axis_local_history": {
+      "all_complete_boundary": 654,
+      "dispatch_wait": 1831,
+      "queue_active": 22554,
+      "physical_settling": 251,
+      "batch_boundary_wait": 6683,
+      "original_ADG_dependency": 27
+    },
+    "test_random-32-32-10_941822_axis_local_learned": {
+      "all_complete_boundary": 644,
+      "dispatch_wait": 1850,
+      "queue_active": 22318,
+      "physical_settling": 250,
+      "batch_boundary_wait": 6918,
+      "original_ADG_dependency": 20
+    }
+  }
+}

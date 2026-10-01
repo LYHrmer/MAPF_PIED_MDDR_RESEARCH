@@ -1,0 +1,26 @@
+--- 
++++ 
+@@ -1,4 +1,5 @@
+ #include "ADG.h"
++#include <cstdlib>
+ 
+ ADG::ADG(int num_robots, int screen, int look_ahead_dist)
+     : num_robots(num_robots), screen(screen), look_ahead_dist(look_ahead_dist) {
+@@ -432,7 +433,16 @@
+         }
+ 
+         // or available_nodes.size() >= num_additional_nodes
+-        if (curr_agent_plan[i].has_valid_in_edge or
++        // R8 diagnostic global-step gate: a strict extra restriction. All
++        // original ADG dependency tests and original ACK mutation remain.
++        bool r8_global_blocked = false;
++        const char* r8_mode = std::getenv("R8_EXECUTION");
++        if (r8_mode && std::string(r8_mode)=="global" && curr_agent_plan[i].action.time >= 1.0) {
++            for (int a=0; a<num_robots; ++a)
++                for (int j=finished_node_idx[a]+1; j<graph[a].size(); ++j)
++                    if (graph[a][j].action.time < 1.0) r8_global_blocked=true;
++        }
++        if (r8_global_blocked || curr_agent_plan[i].has_valid_in_edge or
+             available_nodes.size() >= num_additional_nodes) {
+             break;
+         }
