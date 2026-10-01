@@ -1,5 +1,17 @@
 # 实验前进度入口
 
+2026-10-01 第八轮更新（R8，Q2 §78）：**主线普通END、过期查询结账与WAIT真实费用已闭合；查询价值模型与第三线合法局部执行均完成新留出。** 本轮实际由GPT-6-Astra/ultra与research-mentor分别预审后实施，详见[三线结果与下一设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261001_R8.md)。
+
+主线长度3/12/27×WAIT/paid×Natural/Strict共12臂全部exit0、728闭合计费段。新增绑定Center Business的普通END SOURCE，由guest重放原控制器、核真实终点零速，再更新原资源root；短paid过期POSITION仍收四terminal，但没有成功receipt。短/中两例后车均不提前；长例RUN为WAIT9、paid6。Natural完整guest费用分别WAIT49,687,854/67,774,408/111,707,051，paid138,931,620/168,450,776/221,131,986。费用增加与长例提前3并列报告，不作未定义的净收益换算。普通END为direct registered SOURCE，后车END/服务仍fixture。
+
+[第三线R8](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/local_dependency_20261001_r8/REPORT.md)完成6机械＋48留出。相同两步缓冲下global/local原hm任务174/200，history与learned均177/201。16个学习/历史配对任务数全相同；local学习固定FIFO时间还多98ticks。公开朝向错误已在测试前修正并重新拟合；本轮另定位到累计第二步标签污染单步历史，下一先统一监督单位。两步局部执行收益不归因于学习，附加global门是内部消融。
+
+[查询R8](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/learned-query/exploration/learned_query/stratified_value_20261001_r8/REPORT.md)以123个训练/校准WAIT及反事实探针得到115标签，冻结同架构有/无历史模型。N16的48臂留出：WAIT346、RR/条件350、分时条件344、有/无历史均345任务；两模型查询均122次。模型只比同分时规则多1，仍少于WAIT和普通规则，历史也无独立任务优势。下一步改为相同续策、显式预算下的价值学习，不能继续把单query后全WAIT标签当多次查询策略价值。
+
+N32两图留出任务WAIT171、RR/条件170、分时条件169、history166、nohistory168。原12臂因N≤16上限启动拒绝保留，独立后继仅改上限且保持输入/模型，12重跑成功。查询共195attempt＝183成功＋12旧guard失败，根审全60完成留出及唯一兼容差异通过。下一方法和作者基线计划已落盘，不按测试结果回调本轮模型。
+
+以下R7及更早记录按历史阶段阅读，R7转弯特征的语义缺陷由R8纠正；旧数据、模型与报告保留。
+
 2026-10-01 第七轮更新（R7，Q2 §77）：**主线首次在前车尚未结束时，通过真实付费 POSITION 让后车到达提前3个时间单位；查询线完成在线持续任务接口；第三线新误差模型独立改变动作和部分服务时刻。两条学习线尚无整体任务优势。** 本轮实际由 GPT-6-Astra / ultra 与 research-mentor 分别预审后实施，[完整判断、三线结果与下一设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261001_R7.md)。
 
 主线新长度27 MOVE 同输入、无额外END通知延迟配对：前车原控制器END=9，付费后车RUN=6，而WAIT=9，后车真实END分别6+√3与9+√3。RUN时前车s=18且未闭合。三guest重新绑定后Natural/Strict均完成102段，实际费用183,932,924/183,932,025；每段统一8,388,608，Strict charged855,638,016。服务fixture时间和22→19，但它不是生产AUTH END或作者STATION，WAIT尚未完整计费，不能称净费用优越。短输入δ0早到END不支持及首次长session绑定拒绝全部保留。

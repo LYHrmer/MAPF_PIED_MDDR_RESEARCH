@@ -1786,3 +1786,51 @@ WAIT和fixture CPU尚未完整计费，不给净费用胜负。15最终登记臂
 第三线 `execution_residual_20261001_r7` 先分解旧2,304,000 agent-tick，26.61%为共同屏障空闲、0.11%为明确依赖等待。另在2图/N8/400秒完成12train+6cal+24test：6,062训练、3,010校准完整动作标签及94截尾。新ridge仅读已交付公开执行历史，学习proposal到最终MOVE ACK的超额耗时；预测与校准误差余量转为两步非负占用代价，加入原作者OBJ3搜索，不修改安全机制。root独立重建所有训练/校准事件标签/事前特征并以增广最小二乘复算通过。
 
 六留出world正常STATION任务原hm120、旧小预算OBJ4迁移模型100、同历史规则119、新模型119。在相同hm留出轨迹的2,904标签上MAE由9.3860降至6.8969 ticks。与同历史规则相比，模型4/6world出现同公开/物理前缀下的真实动作分叉；empty-axis的22共同服务任务8提前、12同、2延迟，累计完成时刻净少142ticks=14.2秒，另3world的动作变化未影响已完成服务。预测/动作/部分服务作用链已成立，仍无相对原hm的整体任务优势。42run全部正常ACK/FIFO/服务审计通过，采样圆包络最小机间/障碍净空0.303549/0.371155m；这不是连续安全证明。18次0decision的sandbox socket失败单独保存。下一先做合法局部依赖执行机制，再以共同输入比较规则/学习；公开多地图多任务种子的正式结果仍待新增，不能用旧小预算OBJ4较弱代替强作者基线。
+
+## 78. 普通END计费闭环、分层查询价值与两步缓冲局部执行（2026-10-01 R8）
+
+本轮实际指定GPT-6-Astra/ultra与research-mentor分别独立预审，再由预审智能体实施主线/第三线、另一智能体实施查询线，root独立复核。后评已接触实施证据，不称盲审。三线判断、文献差异和后继设计见第三分支 `THREE_ROUTE_POSTUPDATE_20261001_R8.md` 与 `NEIGHBOR_COMPARISON_20261001_R8.md`。主线公共Git仍限四文档，原实现、R7工件和既有主稿不改。
+
+主线新增 `normal_end_lifecycle_20261001_r8`：固定Center/C-END Business job绑定SOURCE49，使用原付费历史读取原语，guest核block/session/agent/action/geometry身份，重放原ReferenceController，确认closed、终点、零速。通过原PositionCommit移除前车非终点owner、保留终点resident，从真实后车demand与full geometry检查并放行。该路径是新direct registered SOURCE，尚非跨通道AUTH END。各有限准备窗口和每段8,388,608容量事前固定，发布前增加实际付费prepared checkpoint以匹配固定publication行；没有根据结果扩容。
+
+长度3/12/27对应原前车END t3/t6/t9；每长度WAIT/paid、Natural/Strict共12最终臂全部exit0。短paid的guest END于t3提交并RUN，t4原AUTH POSITION解码后按closed MOVE拒绝，没有root更新或FirstSuccess；新增UnsuccessfulSettled只结清真实闭合family，收四terminal且不装成功receipt。等时长度12的POSITION在t5已成功提交，t6 END优先放行、跳过冗余movement，因此仍有成功receipt但没有时间收益。长paid在前车未闭合时RUN6，WAIT等END至RUN9。成功receipt安装与下一选择调用完成不等同于断言下一选择存在可用quote。
+
+|长度|后车RUN WAIT/paid|fixture服务时间和 WAIT/paid|Natural完整guest actual WAIT/paid|Strict charged WAIT/paid|闭segment数 WAIT/paid|
+|---|---|---|---|---|---|
+|3|3 / 3|10 / 10|49,687,854 / 138,931,620|109,051,904 / 838,860,800|13 / 100|
+|12|6 / 6|16 / 16|67,774,408 / 168,450,776|125,829,120 / 872,415,232|15 / 104|
+|27|9 / 6|22 / 19|111,707,051 / 221,131,986|176,160,768 / 931,135,488|21 / 111|
+
+Natural费用含Business、Selection、Query和独立ReceiptAccounting；WAIT不发行query，但其启动、END和下一选择均实际付费。严格制度的actual与charged分别保存，没有用容量冒充实际消耗。长paid Natural分项为183,634,143 / 1,546,811 / 13,872,570 / 22,078,462；短paid虽无成功quote，Query实耗3,359,472与RA12,914,619仍保留。未定义物理时间与计算费用的兑换率，因此仅给时间/费用配对，不声称净收益。后车END、目标服务及host fixture CPU尚不在完整生产合同，模型clock也未映射成硬件wallclock吞吐。
+
+原生错identity/未闭合SOURCE负控无END publication和rear RUN；异常诊断最终fail-stop，不能称可恢复错误处理。所有12成功臂均在guest重复调用END handler并断言false且root不变。初始编译、发布行绑定、checkpoint角色及过期异常路径失败完整保留。实施审计以80位物理重建792帧；root另核715父文件、18个实际ELF的原20,480bytes kernel节、12账流728段、job/category守恒、真实因果事件和transport关闭。根记录 `R8_MAIN_ROOT_VERIFY.py/json`，逐臂原raw、重绑、费用和失败在同名R8目录。
+
+第三线 `local_dependency_20261001_r8` 不删除原commit-cut规则、不重写在途动作：停稳边界用持久作者OBJ3 planner、同一当前head生成两步承诺，再交原多点parser/ADG。local只用原前驱ACK，global在同一两步buffer内额外增加步间全队门，是内部消融。六机械包含原活动MOVE暂停和第一步中途到目标：独立第二步可在tick53执行，而暂停leader第一整格END73；依赖后继仍等待真实前驱ACK。目标STATION只标一次，原20tick驻留与normalEND完成。
+
+两图×两个新任务seed×nominal/axis×global/local×hm/history/learned共48留出，每臂4000tick；全部正常完成。公开朝向E,N,W,S与动作E,S,W,N混用的错误在留出前修正，仅复用R7的12train/6cal公共事件重建6062/3010行并固定lambda1重拟合，保留94截尾。新checkpoint `9af5824e879761a2cd4fbb435533830ca63fca9b61c5e973e01bc75cd7790669` 在测试前冻结；root用几何向量独立重建转弯/历史，并用增广最小二乘复核权重，最大差2.40e-12。
+
+|执行|hm任务|history任务|learned任务|固定前10 FIFO时间和 hm/history/learned（tick）|
+|---|---:|---:|---:|---|
+|global|174|177|177|2,230,276 / 2,230,630 / 2,229,594|
+|local|200|201|201|2,195,952 / 2,199,444 / 2,199,542|
+
+局部执行收益在三策略都存在，不能归于模型。全部16个learned/history配对任务差为0；local learned时间和还多98tick。事后在相同hm事件上分步核验，第二步batch→END累计时长混入单步历史，导致第1步预测偏大；local第1步MAE为history15.20/learned15.80，第2步累计为26.08/24.67。该诊断未用于本轮调参，下一应统一单步监督单位并拆开物理执行/依赖等待。root独立复核全54臂原type2前驱ACK、FIFO和固定任务指标；1,543,200次物理采样的包络最小机间/障碍净空0.292790/0.371457m，采样不构成连续证明。全部失败、67raw包和源/native包归档；配对图明确global是内部消融，正式执行算法贡献还需GSES/P3GASUS等对应作者基线。
+
+查询线 `stratified_value_20261001_r8` 在原在线FIFO/在途承诺接口上，按4个公开时间段与single/multi候选数事前采样，每机会全候选续跑，取得87训练＋28校准标签，来自6train/2cal世界和88机会；123个WAIT/反事实运行全部完成。任务增益4个+1、111个0，标量优势也无负样本；不把115行视为115独立实验。任务为主、固定前4项FIFO截尾时间为次，每机会总权重1；相同20公开特征、lambda1和模型架构。模型测试前冻结SHA `c7d744e6a5dce31c41cd458d5a6894a416388e7fab8cfda28d01dafab29e6004`。
+
+|查询策略|N16八条件任务 / queries|N32两图任务 / queries|
+|---|---|---|
+|WAIT|346 / 0|171 / 0|
+|RR|350 / 128|170 / 32|
+|条件规则|350 / 128|170 / 32|
+|分时条件规则|344 / 120|169 / 32|
+|分时history ridge|345 / 122|166 / 32|
+|分时nohistory ridge|345 / 122|168 / 32|
+
+N16共4地图/任务family，各有IID/SHIFT，48策略臂不当作独立world。N32原12臂被继承的N≤16输入guard拒绝、未进入物理运行，完整保留；独立 `scale_guard_successor` 仅改上限至32，另行冻结源码/二进制，保持原12输入/模型哈希，重跑后12均成功。这是事后兼容修复，非新增独立测试集。全部195attempt为183成功、12旧输入guard失败；183成功臂均H128且当前窗口0deadlock。作者持久planner、正常END/FIFO和原资源检查继续使用，未接生产COST/AUTH，次数预算不等于guest工作费用。
+
+183成功臂精确重放、115标签/前缀及增广最小二乘复算、9项语义负控通过。root独立核全部60完成留出的真实任务、固定FIFO、逐候选评分/选择、分时预算及每次POSITION，再核唯一guard源码差异、同输入和原12失败，见 `ROOT_HELDOUT_AUDIT.json`、`ROOT_SCALE_SUCCESSOR_AUDIT.json`、`ROOT_COMPLETE_AUDIT.json`。原始训练及留出数据分别压缩逐成员核验，所有失败和模型保留，附SVG/PDF/PNG全world配对图。主线隔离重编18份实际ELF亦由root逐文件再哈希确认。
+
+两模型在N16逐world任务均相同，N32历史还比无历史少2、比WAIT少5。历史校准加权RMSE0.15226，未优于无历史0.15123；多候选校准全部目标并列，不能据此证明排序。一个新任务family中，学习使前4项FIFO时间改善12.008257，却少完成agent13的第5项任务，说明有限前缀改善不能代替主任务收益。训练的单次query→一直WAIT目标与部署的多次有预算tail不一致，下一方法使用同冻结续策π₀的query/当前WAIT成对优势，先单次学习替换验证，再以新训练运行逐轮更新策略。
+
+第三线后评另核原ADG可提前入队多个自身primitive：真实节点A10、自身前序END36、自身END53，admit→END43含前序等待；下一目标需明确 `D=E-max(A,E_prev)` 等公共队列时间定义，不能直接当电机运动时间或混用半格/整格名义时长。三线下一合同与两份独立预审/非盲后评均在第三分支R8文档归档。

@@ -1,5 +1,13 @@
 # MAPF 项目当前入口
 
+2026-10-01 R8：主线12臂全部完成，普通END已由绑定guest接收、重放、提交；过期查询完整计费但不安装成功receipt，WAIT费用也已核账。短/中输入无提前收益，长输入后车RUN9→6，付费总成本相应增加。第三线6机械＋48留出完成，同作者hm的global/local任务174/200，local学习与历史规则同201，尚无学习独立优势。
+
+R8查询线补充：115标签训练/校准、N16共48新留出完成；WAIT346、RR/条件350、分时条件344、有/无历史模型均345任务。两模型都实际部署和查询，但仍无学习独立优势。下一方法已具体定义为同续策、剩余预算下的价值，而非继续复用单次查询标签反复干预。
+
+N32规模补充：WAIT171、RR/条件170、分时条件169、有历史166、无历史168任务。仅修输入上限的12个兼容后继全部完成，原12启动拒绝保留；查询总计183成功＋12旧guard失败。当前模型仍未建立任务优势。
+
+[三线判断与结果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261001_R8.md)；[第三线根审图](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/local_dependency_20261001_r8/FIGURE_CAPTION.md)。主线实现仍只存本机忽略目录，公共main只更新四份进度文档，既有主稿保持。下方R7及更早按历史记录阅读。
+
 2026-10-01 第七轮更新（R7，Q2 §77）：**主线首次在前车尚未结束时，通过真实付费 POSITION 让后车到达提前3个时间单位；查询线完成在线持续任务接口；第三线新误差模型独立改变动作和部分服务时刻。两条学习线尚无整体任务优势。** 本轮实际由 GPT-6-Astra / ultra 与 research-mentor 分别预审后实施，[完整判断、三线结果与下一设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261001_R7.md)。
 
 主线新长度27 MOVE 同输入、无额外END通知延迟配对：前车原控制器END=9，付费后车RUN=6，而WAIT=9，后车真实END分别6+√3与9+√3。RUN时前车s=18且未闭合。三guest重新绑定后Natural/Strict均完成102段，实际费用183,932,924/183,932,025；每段统一8,388,608，Strict charged855,638,016。服务fixture时间和22→19，但它不是生产AUTH END或作者STATION，WAIT尚未完整计费，不能称净费用优越。短输入δ0早到END不支持及首次长session绑定拒绝全部保留。

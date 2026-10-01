@@ -1,5 +1,13 @@
 # 导师汇报：研究问题、数学表达与当前阶段
 
+2026-10-01 R8：普通END生命周期已进入真实guest，12臂覆盖END早于/同于/晚于付费放行。过期POSITION拒绝改变root，四terminal结清且不伪造成功receipt；WAIT也有完整guest费用。短、中输入多付费但不提前，长输入后车提前3模型时间单位、Natural费用111,707,051→221,131,986。因而下一核心是付费证据的任务价值和机会选择，不能把查询本身当收益。
+
+R8查询线已扩大到115个成对标签并完成N16的48臂新留出：WAIT346、普通RR/条件350、分时条件344、有/无历史模型均345任务。模型比同分时规则多1，但没有超过更简单的普通规则或证明历史增益。下一学习目标应改为有限预算下、相同后续策略的查询优势，先单次替换验证，再逐轮扩展多次决策；不靠加深网络增加工作量。三线详细结论见下方本轮链接。
+
+N32规模补充：WAIT171、RR/条件170、分时条件169、有历史166、无历史168任务。原12启动上限失败保留，独立兼容后继只改机器人数量上限、固定原输入和模型。查询共183成功＋12旧guard失败，当前模型尚未建立任务增益；三线下一具体交付见R8方法合同。
+
+第三线6机械＋48新留出完成，相同官方hm规划器由global附加门转为原ADG局部放行，任务174→200；历史规则与模型均177→201，没有学习独立任务优势。已在测试前修正朝向编码并重训冻结模型，事后又定位出“第二步累计耗时混入单步history”的监督单位问题。下一先拆开单步执行与依赖等待，在新任务种子检验模型作用。[本轮三线判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261001_R8.md)、[已核验近邻和作者基线入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/NEIGHBOR_COMPARISON_20261001_R8.md)。以下是前轮历史。
+
 2026-10-01 第七轮更新（R7，Q2 §77）：**主线首次在前车尚未结束时，通过真实付费 POSITION 让后车到达提前3个时间单位；查询线完成在线持续任务接口；第三线新误差模型独立改变动作和部分服务时刻。两条学习线尚无整体任务优势。** 本轮实际由 GPT-6-Astra / ultra 与 research-mentor 分别预审后实施，[完整判断、三线结果与下一设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261001_R7.md)。
 
 主线新长度27 MOVE 同输入、无额外END通知延迟配对：前车原控制器END=9，付费后车RUN=6，而WAIT=9，后车真实END分别6+√3与9+√3。RUN时前车s=18且未闭合。三guest重新绑定后Natural/Strict均完成102段，实际费用183,932,924/183,932,025；每段统一8,388,608，Strict charged855,638,016。服务fixture时间和22→19，但它不是生产AUTH END或作者STATION，WAIT尚未完整计费，不能称净费用优越。短输入δ0早到END不支持及首次长session绑定拒绝全部保留。
