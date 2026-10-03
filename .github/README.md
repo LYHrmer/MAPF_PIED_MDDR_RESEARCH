@@ -1,5 +1,9 @@
 # 当前分支：误差感知的路径引导探索
 
+2026-10-03 R9：[primitive时长模型](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/primitive_duration_20261003_r9/REPORT.md)修正队列等待混入标签的问题，6机械＋24新留出完成。hm/history/learned任务184/186/188；学习相对历史只在一个条件多2，其余7相同。12个primitive×方向组的预测MAE全部更差，两个条件零历史时已分叉。下一先分离离线几何先验与在线历史，再扩大验证。
+
+[作者Improved GSES预检](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/gses_author_preflight_20261003_r9/REPORT.md)已跑通原始代码，四组成功；尚未与连续FIFO任务统一对照。保留作者原版结果，并另做固定路径依赖映射。[本轮Astra与科研导师分别判断、三线实绩](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261003_R9.md)。下方R8及更早为保留历史。
+
 [R8三线结果与两类判断](../exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261001_R8.md) · [下一方法合同](../exploration/error_guidance/NEXT_METHOD_CONTRACT_20261001_R8.md)。
 
 R8（2026-10-01）完成6个机械验证＋48个新留出。两步缓冲内恢复原ADG局部放行，作者hm的global/local任务174/200；local历史规则/学习均201，尚无学习独立任务优势。转弯编码已在测试前修正并重训冻结模型；累计第二步标签的单位混用已定位，作为下一改进重点。[完整报告](../exploration/error_guidance/local_dependency_20261001_r8/REPORT.md)、[根审结果图](../exploration/error_guidance/local_dependency_20261001_r8/FIGURE_CAPTION.md)。全队附加门是内部消融，不是发表基线。

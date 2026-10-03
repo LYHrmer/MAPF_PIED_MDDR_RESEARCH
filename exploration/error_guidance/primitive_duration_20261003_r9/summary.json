@@ -1,0 +1,329 @@
+{
+  "runs": 24,
+  "aggregate": {
+    "hm": {
+      "tasks": 184,
+      "restricted_first10": 2233212,
+      "rows": 10847,
+      "censored": 116,
+      "nonzero_edge_calls": 0,
+      "planner_wall": 0.423841770999843,
+      "forecast_wall": 0.00021856200010006432
+    },
+    "history": {
+      "tasks": 186,
+      "restricted_first10": 2237230,
+      "rows": 10895,
+      "censored": 163,
+      "nonzero_edge_calls": 871,
+      "planner_wall": 1.6953309870002613,
+      "forecast_wall": 16.39812723899854
+    },
+    "learned": {
+      "tasks": 188,
+      "restricted_first10": 2232200,
+      "rows": 10979,
+      "censored": 163,
+      "nonzero_edge_calls": 865,
+      "planner_wall": 1.7674088010026026,
+      "forecast_wall": 17.70808194700112
+    }
+  },
+  "worlds": [
+    {
+      "map": "empty-32-32",
+      "seed": 951921,
+      "condition": "nominal",
+      "hm": {
+        "tasks": 25,
+        "restricted": 275050
+      },
+      "history": {
+        "tasks": 26,
+        "restricted": 274668
+      },
+      "learned": {
+        "tasks": 26,
+        "restricted": 274668
+      }
+    },
+    {
+      "map": "empty-32-32",
+      "seed": 951921,
+      "condition": "axis",
+      "hm": {
+        "tasks": 25,
+        "restricted": 277520
+      },
+      "history": {
+        "tasks": 25,
+        "restricted": 277126
+      },
+      "learned": {
+        "tasks": 25,
+        "restricted": 277126
+      }
+    },
+    {
+      "map": "empty-32-32",
+      "seed": 951922,
+      "condition": "nominal",
+      "hm": {
+        "tasks": 23,
+        "restricted": 277798
+      },
+      "history": {
+        "tasks": 23,
+        "restricted": 278228
+      },
+      "learned": {
+        "tasks": 23,
+        "restricted": 278228
+      }
+    },
+    {
+      "map": "empty-32-32",
+      "seed": 951922,
+      "condition": "axis",
+      "hm": {
+        "tasks": 23,
+        "restricted": 278482
+      },
+      "history": {
+        "tasks": 23,
+        "restricted": 279416
+      },
+      "learned": {
+        "tasks": 23,
+        "restricted": 279416
+      }
+    },
+    {
+      "map": "random-32-32-10",
+      "seed": 951921,
+      "condition": "nominal",
+      "hm": {
+        "tasks": 22,
+        "restricted": 282657
+      },
+      "history": {
+        "tasks": 23,
+        "restricted": 282980
+      },
+      "learned": {
+        "tasks": 23,
+        "restricted": 281216
+      }
+    },
+    {
+      "map": "random-32-32-10",
+      "seed": 951921,
+      "condition": "axis",
+      "hm": {
+        "tasks": 22,
+        "restricted": 283403
+      },
+      "history": {
+        "tasks": 22,
+        "restricted": 284352
+      },
+      "learned": {
+        "tasks": 22,
+        "restricted": 283136
+      }
+    },
+    {
+      "map": "random-32-32-10",
+      "seed": 951922,
+      "condition": "nominal",
+      "hm": {
+        "tasks": 22,
+        "restricted": 278190
+      },
+      "history": {
+        "tasks": 22,
+        "restricted": 279333
+      },
+      "learned": {
+        "tasks": 24,
+        "restricted": 277577
+      }
+    },
+    {
+      "map": "random-32-32-10",
+      "seed": 951922,
+      "condition": "axis",
+      "hm": {
+        "tasks": 22,
+        "restricted": 280112
+      },
+      "history": {
+        "tasks": 22,
+        "restricted": 281127
+      },
+      "learned": {
+        "tasks": 22,
+        "restricted": 280833
+      }
+    }
+  ],
+  "history_learned_divergence": [
+    {
+      "world": [
+        "empty-32-32",
+        951921,
+        "nominal"
+      ],
+      "first_action_divergence": null,
+      "common_served": 26,
+      "learned_earlier": 0,
+      "same": 26,
+      "later": 0,
+      "common_tick_delta": 0,
+      "tasks_delta": 0,
+      "fixed_first10_delta": 0
+    },
+    {
+      "world": [
+        "empty-32-32",
+        951921,
+        "axis"
+      ],
+      "first_action_divergence": null,
+      "common_served": 25,
+      "learned_earlier": 0,
+      "same": 25,
+      "later": 0,
+      "common_tick_delta": 0,
+      "tasks_delta": 0,
+      "fixed_first10_delta": 0
+    },
+    {
+      "world": [
+        "empty-32-32",
+        951922,
+        "nominal"
+      ],
+      "first_action_divergence": {
+        "batch": 33,
+        "logical_step": 0,
+        "tick": 3611,
+        "same_actual_view": true,
+        "same_snapshot": true,
+        "same_frontier": true
+      },
+      "common_served": 23,
+      "learned_earlier": 0,
+      "same": 23,
+      "later": 0,
+      "common_tick_delta": 0,
+      "tasks_delta": 0,
+      "fixed_first10_delta": 0
+    },
+    {
+      "world": [
+        "empty-32-32",
+        951922,
+        "axis"
+      ],
+      "first_action_divergence": null,
+      "common_served": 23,
+      "learned_earlier": 0,
+      "same": 23,
+      "later": 0,
+      "common_tick_delta": 0,
+      "tasks_delta": 0,
+      "fixed_first10_delta": 0
+    },
+    {
+      "world": [
+        "random-32-32-10",
+        951921,
+        "nominal"
+      ],
+      "first_action_divergence": {
+        "batch": 0,
+        "logical_step": 0,
+        "tick": 1,
+        "same_actual_view": true,
+        "same_snapshot": true,
+        "same_frontier": true
+      },
+      "common_served": 23,
+      "learned_earlier": 20,
+      "same": 0,
+      "later": 3,
+      "common_tick_delta": -1764,
+      "tasks_delta": 0,
+      "fixed_first10_delta": -1764
+    },
+    {
+      "world": [
+        "random-32-32-10",
+        951921,
+        "axis"
+      ],
+      "first_action_divergence": {
+        "batch": 0,
+        "logical_step": 0,
+        "tick": 1,
+        "same_actual_view": true,
+        "same_snapshot": true,
+        "same_frontier": true
+      },
+      "common_served": 22,
+      "learned_earlier": 19,
+      "same": 0,
+      "later": 3,
+      "common_tick_delta": -1216,
+      "tasks_delta": 0,
+      "fixed_first10_delta": -1216
+    },
+    {
+      "world": [
+        "random-32-32-10",
+        951922,
+        "nominal"
+      ],
+      "first_action_divergence": {
+        "batch": 11,
+        "logical_step": 0,
+        "tick": 1225,
+        "same_actual_view": true,
+        "same_snapshot": true,
+        "same_frontier": true
+      },
+      "common_served": 22,
+      "learned_earlier": 14,
+      "same": 8,
+      "later": 0,
+      "common_tick_delta": -1646,
+      "tasks_delta": 2,
+      "fixed_first10_delta": -1756
+    },
+    {
+      "world": [
+        "random-32-32-10",
+        951922,
+        "axis"
+      ],
+      "first_action_divergence": {
+        "batch": 11,
+        "logical_step": 0,
+        "tick": 1296,
+        "same_actual_view": true,
+        "same_snapshot": true,
+        "same_frontier": true
+      },
+      "common_served": 22,
+      "learned_earlier": 8,
+      "same": 12,
+      "later": 2,
+      "common_tick_delta": -294,
+      "tasks_delta": 0,
+      "fixed_first10_delta": -294
+    }
+  ],
+  "independent_task_families": 4,
+  "conditions_paired_within_family": true
+}

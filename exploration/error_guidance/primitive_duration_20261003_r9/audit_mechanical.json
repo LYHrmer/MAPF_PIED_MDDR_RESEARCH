@@ -1,0 +1,1049 @@
+{
+  "all_passed": true,
+  "runs": {
+    "mechanical_mechanical_951900_nominal_local_hm": {
+      "passed": true,
+      "spec": {
+        "id": "mechanical_mechanical_951900_nominal_local_hm",
+        "split": "mechanical",
+        "map": "mechanical",
+        "seed": 951900,
+        "N": 4,
+        "cols": 8,
+        "condition": "nominal",
+        "execution": "local",
+        "policy": "hm",
+        "horizon_ticks": 300,
+        "port": 10860,
+        "input_id": "mechanical_951900"
+      },
+      "normal_station_END": 5,
+      "services": [
+        {
+          "agent": 0,
+          "ordinal": 0,
+          "tick": 107,
+          "task_id": 0
+        },
+        {
+          "agent": 2,
+          "ordinal": 0,
+          "tick": 107,
+          "task_id": 2
+        },
+        {
+          "agent": 3,
+          "ordinal": 0,
+          "tick": 107,
+          "task_id": 3
+        },
+        {
+          "agent": 1,
+          "ordinal": 0,
+          "tick": 114,
+          "task_id": 1
+        },
+        {
+          "agent": 1,
+          "ordinal": 1,
+          "tick": 274,
+          "task_id": 5
+        }
+      ],
+      "fixed_first10_restricted_ticks": 11209,
+      "views": 4,
+      "rows": 62,
+      "censored": 20,
+      "original_ADG_edges": 9,
+      "candidate_nonzero_calls": 0,
+      "prediction_by_logical_step": {
+        "0": {
+          "history": {
+            "n": 32,
+            "MAE": 0.16536458333333326
+          },
+          "learned": {
+            "n": 32,
+            "MAE": 0.6409760483576575
+          }
+        },
+        "1": {
+          "history": {
+            "n": 30,
+            "MAE": 0.1888888888888888
+          },
+          "learned": {
+            "n": 30,
+            "MAE": 0.5178513104625508
+          }
+        }
+      },
+      "max_ACK_endpoint_error_m": 0.02865918278199103,
+      "min_center_distance_m": 0.578955317619789,
+      "planner_wall": 0.0029741790001480695,
+      "forecast_wall": 2.6389996037323726e-06,
+      "mechanism": {
+        "leader_first_END": 53,
+        "leader_first_half_END": 36,
+        "dependent_first_final_admit": 40,
+        "independent_second_start": 53,
+        "initial_service_ticks": {
+          "0": 107,
+          "2": 107,
+          "3": 107,
+          "1": 114
+        },
+        "first_plan": [
+          [
+            [
+              3,
+              2,
+              0,
+              -1
+            ],
+            [
+              3,
+              3,
+              1,
+              -1
+            ],
+            [
+              3,
+              4,
+              2,
+              0
+            ]
+          ],
+          [
+            [
+              3,
+              1,
+              0,
+              -1
+            ],
+            [
+              3,
+              2,
+              1,
+              -1
+            ],
+            [
+              3,
+              3,
+              2,
+              1
+            ]
+          ],
+          [
+            [
+              5,
+              2,
+              0,
+              -1
+            ],
+            [
+              5,
+              3,
+              1,
+              -1
+            ],
+            [
+              5,
+              4,
+              2,
+              2
+            ]
+          ],
+          [
+            [
+              6,
+              2,
+              0,
+              -1
+            ],
+            [
+              6,
+              3,
+              1,
+              -1
+            ],
+            [
+              6,
+              4,
+              2,
+              3
+            ]
+          ]
+        ]
+      }
+    },
+    "mechanical_mechanical_951900_nominal_local_history": {
+      "passed": true,
+      "spec": {
+        "id": "mechanical_mechanical_951900_nominal_local_history",
+        "split": "mechanical",
+        "map": "mechanical",
+        "seed": 951900,
+        "N": 4,
+        "cols": 8,
+        "condition": "nominal",
+        "execution": "local",
+        "policy": "history",
+        "horizon_ticks": 300,
+        "port": 10861,
+        "input_id": "mechanical_951900"
+      },
+      "normal_station_END": 5,
+      "services": [
+        {
+          "agent": 0,
+          "ordinal": 0,
+          "tick": 107,
+          "task_id": 0
+        },
+        {
+          "agent": 2,
+          "ordinal": 0,
+          "tick": 107,
+          "task_id": 2
+        },
+        {
+          "agent": 3,
+          "ordinal": 0,
+          "tick": 107,
+          "task_id": 3
+        },
+        {
+          "agent": 1,
+          "ordinal": 0,
+          "tick": 114,
+          "task_id": 1
+        },
+        {
+          "agent": 1,
+          "ordinal": 1,
+          "tick": 292,
+          "task_id": 5
+        }
+      ],
+      "fixed_first10_restricted_ticks": 11227,
+      "views": 3,
+      "rows": 61,
+      "censored": 3,
+      "original_ADG_edges": 6,
+      "candidate_nonzero_calls": 34,
+      "prediction_by_logical_step": {
+        "0": {
+          "history": {
+            "n": 34,
+            "MAE": 0.6193137254901961
+          },
+          "learned": {
+            "n": 34,
+            "MAE": 1.0899241112554259
+          }
+        },
+        "1": {
+          "history": {
+            "n": 27,
+            "MAE": 0.6296296296296297
+          },
+          "learned": {
+            "n": 27,
+            "MAE": 0.9087961021684522
+          }
+        }
+      },
+      "max_ACK_endpoint_error_m": 0.028972431847216727,
+      "min_center_distance_m": 0.8459907453726091,
+      "planner_wall": 0.0030535539999618777,
+      "forecast_wall": 0.01501564000000144,
+      "mechanism": {
+        "leader_first_END": 53,
+        "leader_first_half_END": 36,
+        "dependent_first_final_admit": 40,
+        "independent_second_start": 53,
+        "initial_service_ticks": {
+          "0": 107,
+          "2": 107,
+          "3": 107,
+          "1": 114
+        },
+        "first_plan": [
+          [
+            [
+              3,
+              2,
+              0,
+              -1
+            ],
+            [
+              3,
+              3,
+              1,
+              -1
+            ],
+            [
+              3,
+              4,
+              2,
+              0
+            ]
+          ],
+          [
+            [
+              3,
+              1,
+              0,
+              -1
+            ],
+            [
+              3,
+              2,
+              1,
+              -1
+            ],
+            [
+              3,
+              3,
+              2,
+              1
+            ]
+          ],
+          [
+            [
+              5,
+              2,
+              0,
+              -1
+            ],
+            [
+              5,
+              3,
+              1,
+              -1
+            ],
+            [
+              5,
+              4,
+              2,
+              2
+            ]
+          ],
+          [
+            [
+              6,
+              2,
+              0,
+              -1
+            ],
+            [
+              6,
+              3,
+              1,
+              -1
+            ],
+            [
+              6,
+              4,
+              2,
+              3
+            ]
+          ]
+        ]
+      }
+    },
+    "mechanical_mechanical_951900_nominal_local_learned": {
+      "passed": true,
+      "spec": {
+        "id": "mechanical_mechanical_951900_nominal_local_learned",
+        "split": "mechanical",
+        "map": "mechanical",
+        "seed": 951900,
+        "N": 4,
+        "cols": 8,
+        "condition": "nominal",
+        "execution": "local",
+        "policy": "learned",
+        "horizon_ticks": 300,
+        "port": 10862,
+        "input_id": "mechanical_951900"
+      },
+      "normal_station_END": 5,
+      "services": [
+        {
+          "agent": 0,
+          "ordinal": 0,
+          "tick": 107,
+          "task_id": 0
+        },
+        {
+          "agent": 2,
+          "ordinal": 0,
+          "tick": 107,
+          "task_id": 2
+        },
+        {
+          "agent": 3,
+          "ordinal": 0,
+          "tick": 107,
+          "task_id": 3
+        },
+        {
+          "agent": 1,
+          "ordinal": 0,
+          "tick": 114,
+          "task_id": 1
+        },
+        {
+          "agent": 1,
+          "ordinal": 1,
+          "tick": 292,
+          "task_id": 5
+        }
+      ],
+      "fixed_first10_restricted_ticks": 11227,
+      "views": 3,
+      "rows": 61,
+      "censored": 3,
+      "original_ADG_edges": 6,
+      "candidate_nonzero_calls": 34,
+      "prediction_by_logical_step": {
+        "0": {
+          "history": {
+            "n": 34,
+            "MAE": 0.6193137254901961
+          },
+          "learned": {
+            "n": 34,
+            "MAE": 1.0899241112554259
+          }
+        },
+        "1": {
+          "history": {
+            "n": 27,
+            "MAE": 0.6296296296296297
+          },
+          "learned": {
+            "n": 27,
+            "MAE": 0.9087961021684522
+          }
+        }
+      },
+      "max_ACK_endpoint_error_m": 0.028972431847216727,
+      "min_center_distance_m": 0.8459907453726091,
+      "planner_wall": 0.003397774000177378,
+      "forecast_wall": 0.020214739000039117,
+      "mechanism": {
+        "leader_first_END": 53,
+        "leader_first_half_END": 36,
+        "dependent_first_final_admit": 40,
+        "independent_second_start": 53,
+        "initial_service_ticks": {
+          "0": 107,
+          "2": 107,
+          "3": 107,
+          "1": 114
+        },
+        "first_plan": [
+          [
+            [
+              3,
+              2,
+              0,
+              -1
+            ],
+            [
+              3,
+              3,
+              1,
+              -1
+            ],
+            [
+              3,
+              4,
+              2,
+              0
+            ]
+          ],
+          [
+            [
+              3,
+              1,
+              0,
+              -1
+            ],
+            [
+              3,
+              2,
+              1,
+              -1
+            ],
+            [
+              3,
+              3,
+              2,
+              1
+            ]
+          ],
+          [
+            [
+              5,
+              2,
+              0,
+              -1
+            ],
+            [
+              5,
+              3,
+              1,
+              -1
+            ],
+            [
+              5,
+              4,
+              2,
+              2
+            ]
+          ],
+          [
+            [
+              6,
+              2,
+              0,
+              -1
+            ],
+            [
+              6,
+              3,
+              1,
+              -1
+            ],
+            [
+              6,
+              4,
+              2,
+              3
+            ]
+          ]
+        ]
+      }
+    },
+    "mechanical_mechanical_951900_unknown_pause_local_hm": {
+      "passed": true,
+      "spec": {
+        "id": "mechanical_mechanical_951900_unknown_pause_local_hm",
+        "split": "mechanical",
+        "map": "mechanical",
+        "seed": 951900,
+        "N": 4,
+        "cols": 8,
+        "condition": "unknown_pause",
+        "execution": "local",
+        "policy": "hm",
+        "horizon_ticks": 300,
+        "port": 10863,
+        "input_id": "mechanical_951900"
+      },
+      "normal_station_END": 5,
+      "services": [
+        {
+          "agent": 2,
+          "ordinal": 0,
+          "tick": 107,
+          "task_id": 2
+        },
+        {
+          "agent": 3,
+          "ordinal": 0,
+          "tick": 107,
+          "task_id": 3
+        },
+        {
+          "agent": 0,
+          "ordinal": 0,
+          "tick": 127,
+          "task_id": 0
+        },
+        {
+          "agent": 1,
+          "ordinal": 0,
+          "tick": 134,
+          "task_id": 1
+        },
+        {
+          "agent": 1,
+          "ordinal": 1,
+          "tick": 294,
+          "task_id": 5
+        }
+      ],
+      "fixed_first10_restricted_ticks": 11269,
+      "views": 3,
+      "rows": 59,
+      "censored": 3,
+      "original_ADG_edges": 9,
+      "candidate_nonzero_calls": 0,
+      "prediction_by_logical_step": {
+        "0": {
+          "history": {
+            "n": 32,
+            "MAE": 0.8684895833333333
+          },
+          "learned": {
+            "n": 32,
+            "MAE": 1.4902710977975382
+          }
+        },
+        "1": {
+          "history": {
+            "n": 27,
+            "MAE": 0.4320987654320987
+          },
+          "learned": {
+            "n": 27,
+            "MAE": 0.8909222346570144
+          }
+        }
+      },
+      "max_ACK_endpoint_error_m": 0.02865918278199103,
+      "min_center_distance_m": 0.5388712434983426,
+      "planner_wall": 0.002243250999981683,
+      "forecast_wall": 1.91399954019289e-06,
+      "mechanism": {
+        "leader_first_END": 73,
+        "leader_first_half_END": 56,
+        "dependent_first_final_admit": 60,
+        "independent_second_start": 53,
+        "initial_service_ticks": {
+          "2": 107,
+          "3": 107,
+          "0": 127,
+          "1": 134
+        },
+        "first_plan": [
+          [
+            [
+              3,
+              2,
+              0,
+              -1
+            ],
+            [
+              3,
+              3,
+              1,
+              -1
+            ],
+            [
+              3,
+              4,
+              2,
+              0
+            ]
+          ],
+          [
+            [
+              3,
+              1,
+              0,
+              -1
+            ],
+            [
+              3,
+              2,
+              1,
+              -1
+            ],
+            [
+              3,
+              3,
+              2,
+              1
+            ]
+          ],
+          [
+            [
+              5,
+              2,
+              0,
+              -1
+            ],
+            [
+              5,
+              3,
+              1,
+              -1
+            ],
+            [
+              5,
+              4,
+              2,
+              2
+            ]
+          ],
+          [
+            [
+              6,
+              2,
+              0,
+              -1
+            ],
+            [
+              6,
+              3,
+              1,
+              -1
+            ],
+            [
+              6,
+              4,
+              2,
+              3
+            ]
+          ]
+        ]
+      }
+    },
+    "mechanical_mechanical_951900_unknown_pause_local_history": {
+      "passed": true,
+      "spec": {
+        "id": "mechanical_mechanical_951900_unknown_pause_local_history",
+        "split": "mechanical",
+        "map": "mechanical",
+        "seed": 951900,
+        "N": 4,
+        "cols": 8,
+        "condition": "unknown_pause",
+        "execution": "local",
+        "policy": "history",
+        "horizon_ticks": 300,
+        "port": 10864,
+        "input_id": "mechanical_951900"
+      },
+      "normal_station_END": 4,
+      "services": [
+        {
+          "agent": 2,
+          "ordinal": 0,
+          "tick": 107,
+          "task_id": 2
+        },
+        {
+          "agent": 3,
+          "ordinal": 0,
+          "tick": 107,
+          "task_id": 3
+        },
+        {
+          "agent": 0,
+          "ordinal": 0,
+          "tick": 127,
+          "task_id": 0
+        },
+        {
+          "agent": 1,
+          "ordinal": 0,
+          "tick": 134,
+          "task_id": 1
+        }
+      ],
+      "fixed_first10_restricted_ticks": 11275,
+      "views": 3,
+      "rows": 56,
+      "censored": 8,
+      "original_ADG_edges": 6,
+      "candidate_nonzero_calls": 34,
+      "prediction_by_logical_step": {
+        "0": {
+          "history": {
+            "n": 32,
+            "MAE": 1.4883333333333333
+          },
+          "learned": {
+            "n": 32,
+            "MAE": 2.040010339506219
+          }
+        },
+        "1": {
+          "history": {
+            "n": 24,
+            "MAE": 0.9270833333333334
+          },
+          "learned": {
+            "n": 24,
+            "MAE": 1.2742522963354335
+          }
+        }
+      },
+      "max_ACK_endpoint_error_m": 0.02890332372643148,
+      "min_center_distance_m": 0.5388712434983426,
+      "planner_wall": 0.0031167839995305258,
+      "forecast_wall": 0.013975890000210711,
+      "mechanism": {
+        "leader_first_END": 73,
+        "leader_first_half_END": 56,
+        "dependent_first_final_admit": 60,
+        "independent_second_start": 53,
+        "initial_service_ticks": {
+          "2": 107,
+          "3": 107,
+          "0": 127,
+          "1": 134
+        },
+        "first_plan": [
+          [
+            [
+              3,
+              2,
+              0,
+              -1
+            ],
+            [
+              3,
+              3,
+              1,
+              -1
+            ],
+            [
+              3,
+              4,
+              2,
+              0
+            ]
+          ],
+          [
+            [
+              3,
+              1,
+              0,
+              -1
+            ],
+            [
+              3,
+              2,
+              1,
+              -1
+            ],
+            [
+              3,
+              3,
+              2,
+              1
+            ]
+          ],
+          [
+            [
+              5,
+              2,
+              0,
+              -1
+            ],
+            [
+              5,
+              3,
+              1,
+              -1
+            ],
+            [
+              5,
+              4,
+              2,
+              2
+            ]
+          ],
+          [
+            [
+              6,
+              2,
+              0,
+              -1
+            ],
+            [
+              6,
+              3,
+              1,
+              -1
+            ],
+            [
+              6,
+              4,
+              2,
+              3
+            ]
+          ]
+        ]
+      }
+    },
+    "mechanical_mechanical_951900_unknown_pause_local_learned": {
+      "passed": true,
+      "spec": {
+        "id": "mechanical_mechanical_951900_unknown_pause_local_learned",
+        "split": "mechanical",
+        "map": "mechanical",
+        "seed": 951900,
+        "N": 4,
+        "cols": 8,
+        "condition": "unknown_pause",
+        "execution": "local",
+        "policy": "learned",
+        "horizon_ticks": 300,
+        "port": 10865,
+        "input_id": "mechanical_951900"
+      },
+      "normal_station_END": 4,
+      "services": [
+        {
+          "agent": 2,
+          "ordinal": 0,
+          "tick": 107,
+          "task_id": 2
+        },
+        {
+          "agent": 3,
+          "ordinal": 0,
+          "tick": 107,
+          "task_id": 3
+        },
+        {
+          "agent": 0,
+          "ordinal": 0,
+          "tick": 127,
+          "task_id": 0
+        },
+        {
+          "agent": 1,
+          "ordinal": 0,
+          "tick": 134,
+          "task_id": 1
+        }
+      ],
+      "fixed_first10_restricted_ticks": 11275,
+      "views": 3,
+      "rows": 56,
+      "censored": 8,
+      "original_ADG_edges": 6,
+      "candidate_nonzero_calls": 34,
+      "prediction_by_logical_step": {
+        "0": {
+          "history": {
+            "n": 32,
+            "MAE": 1.4883333333333333
+          },
+          "learned": {
+            "n": 32,
+            "MAE": 2.040010339506219
+          }
+        },
+        "1": {
+          "history": {
+            "n": 24,
+            "MAE": 0.9270833333333334
+          },
+          "learned": {
+            "n": 24,
+            "MAE": 1.2742522963354335
+          }
+        }
+      },
+      "max_ACK_endpoint_error_m": 0.02890332372643148,
+      "min_center_distance_m": 0.5388712434983426,
+      "planner_wall": 0.0036805039999308065,
+      "forecast_wall": 0.01492384499988475,
+      "mechanism": {
+        "leader_first_END": 73,
+        "leader_first_half_END": 56,
+        "dependent_first_final_admit": 60,
+        "independent_second_start": 53,
+        "initial_service_ticks": {
+          "2": 107,
+          "3": 107,
+          "0": 127,
+          "1": 134
+        },
+        "first_plan": [
+          [
+            [
+              3,
+              2,
+              0,
+              -1
+            ],
+            [
+              3,
+              3,
+              1,
+              -1
+            ],
+            [
+              3,
+              4,
+              2,
+              0
+            ]
+          ],
+          [
+            [
+              3,
+              1,
+              0,
+              -1
+            ],
+            [
+              3,
+              2,
+              1,
+              -1
+            ],
+            [
+              3,
+              3,
+              2,
+              1
+            ]
+          ],
+          [
+            [
+              5,
+              2,
+              0,
+              -1
+            ],
+            [
+              5,
+              3,
+              1,
+              -1
+            ],
+            [
+              5,
+              4,
+              2,
+              2
+            ]
+          ],
+          [
+            [
+              6,
+              2,
+              0,
+              -1
+            ],
+            [
+              6,
+              3,
+              1,
+              -1
+            ],
+            [
+              6,
+              4,
+              2,
+              3
+            ]
+          ]
+        ]
+      }
+    }
+  }
+}

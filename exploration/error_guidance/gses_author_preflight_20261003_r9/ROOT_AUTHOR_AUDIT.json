@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "registered_runs": 8,
+  "matched_input_pairs": 4,
+  "original_source_delta": 0,
+  "binary_sha256": "bda9f8ec4c89cfe0604bfd6e5a2e883e39644009e458f663e06d92be769010cb",
+  "returncode_zero": 8,
+  "status_counts": {
+    "GSES": {
+      "Succ": 2,
+      "Timeout": 2
+    },
+    "Improved_GSES": {
+      "Succ": 4,
+      "Timeout": 0
+    }
+  },
+  "stdout_stuck_or_collision_markers": 0,
+  "limitations": [
+    "author discrete simulator internal checks only; independent trajectory replay not available because single-situation CLI does not emit requested paths",
+    "four deterministic cases selected before outcome, no statistical performance claim",
+    "native author costs and source models do not match current continuous FIFO execution task"
+  ]
+}

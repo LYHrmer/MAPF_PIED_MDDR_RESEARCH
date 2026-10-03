@@ -1,0 +1,68 @@
+{
+  "author_commit": "25fb931eff03f1cce23a22a68ab42b7533f85ab3",
+  "selection": "four author map minima, instance1 situation0, chosen before outcomes",
+  "time_limit_seconds": 16,
+  "random_seed": 10,
+  "cases": [
+    {
+      "map": "random-32-32-10",
+      "agents": 60,
+      "instance": 1,
+      "situation": 0,
+      "path": "data/benchmark/test_PBS2_delay_p01/path/map_random-32-32-10_ins_1_an_60.path",
+      "path_sha256": "3f469674ed306de4c2a04ff0cf74074a15e7edd83f5104831a903ce55ecb1091",
+      "situation_file": "data/benchmark/test_PBS2_delay_p01/sit/map_random-32-32-10_ins_1_an_60_sit_0.json",
+      "situation_sha256": "7ea939dc8f8add4a59662e733a7ad80fa1fd219ce91e694a7611fe94acd65d11"
+    },
+    {
+      "map": "warehouse-10-20-10-2-1",
+      "agents": 110,
+      "instance": 1,
+      "situation": 0,
+      "path": "data/benchmark/test_PBS2_delay_p01/path/map_warehouse-10-20-10-2-1_ins_1_an_110.path",
+      "path_sha256": "42c8dcdf914a3fe849460709252b3c0a2b697c8942b2b8ee305ebd86fe95ade2",
+      "situation_file": "data/benchmark/test_PBS2_delay_p01/sit/map_warehouse-10-20-10-2-1_ins_1_an_110_sit_0.json",
+      "situation_sha256": "439369dc155f7420b1c122231abc831a4dee1a5362b2eb7e8315136372b78d9c"
+    },
+    {
+      "map": "Paris_1_256",
+      "agents": 120,
+      "instance": 1,
+      "situation": 0,
+      "path": "data/benchmark/test_PBS2_delay_p01/path/map_Paris_1_256_ins_1_an_120.path",
+      "path_sha256": "fcbd983e203cdadc790addcf3f8fafec51c95a6ff7c30bc8c0fe09e8d670dfe5",
+      "situation_file": "data/benchmark/test_PBS2_delay_p01/sit/map_Paris_1_256_ins_1_an_120_sit_0.json",
+      "situation_sha256": "80dc5b3c0291bbe70c075f1a2741247d3a09cee29ac3bf9531579a78a9aedff2"
+    },
+    {
+      "map": "lak303d",
+      "agents": 41,
+      "instance": 1,
+      "situation": 0,
+      "path": "data/benchmark/test_PBS2_delay_p01/path/map_lak303d_ins_1_an_41.path",
+      "path_sha256": "54332a48d024bacd3a579c8fa856e6ec701407ccf4ffad31e6e9d369688e9b5d",
+      "situation_file": "data/benchmark/test_PBS2_delay_p01/sit/map_lak303d_ins_1_an_41_sit_0.json",
+      "situation_sha256": "f8c94de8e79e2dccd9855f448aae0fca86312b11d61e4ca7e200054244a45fc5"
+    }
+  ],
+  "methods": {
+    "GSES": [
+      "search",
+      "default",
+      "none",
+      "zero",
+      "true",
+      "false",
+      1.0
+    ],
+    "Improved_GSES": [
+      "search",
+      "largest_diff",
+      "all",
+      "wcg_greedy",
+      "true",
+      "true",
+      1.0
+    ]
+  }
+}
