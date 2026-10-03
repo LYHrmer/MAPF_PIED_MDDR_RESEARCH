@@ -1,5 +1,13 @@
 # 实验前进度入口
 
+2026-10-03 R10：三线已完成实作和新实验。[完整三线结果与两份判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261003_R10.md)。
+
+主线12臂将正常服务与查询结账解耦。长27付费后车两次服务12/15→9/12，服务时间和50→44，均完成4任务；Natural多134,174,531实际步。短/中没有查询时间收益。两策略C-END均读取完整历史，当前代码仅用其判END/服务，故不将结果称作WAIT完全未知的新信息价值。3022计费段、792物理帧和18份ELF/隔离重编通过，原稿与2533父文件保持，详Q2 §80。
+
+查询156原生成功，48留出WAIT348任务、condition及全部once策略344；persistent SKIP有效，但模型无新增服务收益。根在登记30个TRAIN/CAL机会全部98分支中核出：最佳单次干预相对原π0增加任务的机会为0。误差64留出hm/history/geometry/full为371/363/363/363；另立32臂残差修正为185/184/185/182，仍无学习优势。当前ridge转为诊断，不列核心性能贡献。
+
+原作者GSES接口已有完整图、轨迹和16次独立重放，8配置与原CLI一致，43作者源未改。下一推进统一信息合同、可产生真实任务改进的决策集合与共同primitive作者比较，见[下一合同](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/NEXT_METHOD_CONTRACT_20261003_R10.md)。以下R9及更早按历史阶段阅读。
+
 2026-10-03 R9：**同一计费guest内的连续任务生命周期已跑通；两条学习线完成冻结留出；作者Improved GSES已编译并通过原始实例预检。** [三线实绩、Astra与科研导师分别判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261003_R9.md)。
 
 主线四个最终臂中，每机器人完成两次原MOVE和两次guest服务，任务头与资源根联合提交，最终actions/demands归零。服务均为16/17/19/20；Natural费用WAIT189,292,737、paid282,683,143；Strict charged603,979,776 / 1,333,788,672。462费用段、396物理帧及6份隔离重编ELF通过核验。它是有限预置FIFO闭环，固定日程无时间或任务收益；下一步接事件驱动的及时服务与查询结账并发。

@@ -1,5 +1,13 @@
 # 导师汇报：研究问题、数学表达与当前阶段
 
+2026-10-03 R10：建议保留执行与费用主线，**现有ridge暂不作为论文核心性能贡献**。这来自新实验及独立机会诊断，不是因模型未训练或未接入。[Astra与科研导师分别判断、完整实绩](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261003_R10.md)。
+
+主线12臂已打通整数公共时钟上的正常END、服务、后继RUN与在途查询。长例付费后车两次服务各早3，四项时间和50→44，任务仍4/4；Natural实际步多134,174,531。短/中无查询收益。Astra特别指出共同C-END SOURCE也包含完整history，当前仅允许其用于END/服务；长例证明额外认证POSITION的合法放行价值，尚非两策略物理信息有无的严格比较。
+
+查询156次成功运行、48留出显示WAIT348任务，condition与模型均344。根枚举已登记30个训练/校准机会的完整分支，最佳单次选择相对原π0也没有任务改进空间；单纯放大模型不能补足这个问题。误差64臂拆开几何先验与历史后，原hm371、三个预测版本均363；随后新32臂只改残差接法，hm185、残差history185、残差full182，仍不支持学习吞吐贡献。
+
+本轮还将真正作者GSES从可运行推进到完整图/轨迹独立重放，明确了未来时长边权不能直接接原离散执行器。下一先以共同执行口径检验有任务后果的合法查询或依赖选择，学习输出改为行动价值候选；传统算法和学习均按任务结果判断。具体方法、作者对照与证据标准见[下一合同](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/NEXT_METHOD_CONTRACT_20261003_R10.md)。原稿保持；下方是历史进度。
+
 2026-10-03 R9：**同一计费guest内的连续任务生命周期已跑通；两条学习线完成冻结留出；作者Improved GSES已编译并通过原始实例预检。** [三线实绩、Astra与科研导师分别判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261003_R9.md)。
 
 主线四个最终臂中，每机器人完成两次原MOVE和两次guest服务，任务头与资源根联合提交，最终actions/demands归零。服务均为16/17/19/20；Natural费用WAIT189,292,737、paid282,683,143；Strict charged603,979,776 / 1,333,788,672。462费用段、396物理帧及6份隔离重编ELF通过核验。它是有限预置FIFO闭环，固定日程无时间或任务收益；下一步接事件驱动的及时服务与查询结账并发。

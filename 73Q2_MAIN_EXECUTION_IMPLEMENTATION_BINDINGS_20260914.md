@@ -1872,3 +1872,31 @@ paid多93,390,406个Natural工作步，没有增加任务或提前服务。短�
 三线结果及两类判断：[R9综述](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261003_R9.md)；下一明确设计见第三分支 `NEXT_METHOD_CONTRACT_20261003_R9.md`。
 
 R9最终查询诊断：history/nohistory各4/8、nobudget6/8确实把当前query改为WAIT，但24模型臂逐任务服务时刻字典均同condition。history/nohistory在empty91302、random92302分别约0.101391/0.648609模型时间后被尾策略再次查询同一MOVE；24替换全部单候选，且在ordinal64切换前。下一明确区分当前WAIT和公开登记的skip-current-occurrence，不把本轮零收益归结为没有训练或只因模型太小。
+
+## 80. R10：正常服务与查询结账交错推进（2026-10-03）
+
+主线新实现位于本机 `implementation_binding_evidence/event_driven_lifecycle_20261003_r10/`。长度3/12/27 × WAIT/paid POSITION × Natural/Strict共12个登记臂全部成功，固定终点16，未延长窗口或扩容。每个公开整数tick，guest从原SOURCE读取当前FIFO头的真实历史并重建快照，闭合后接收正常END，下一合法poll完成一单位驻留服务，再由真实task/resource publication授cap并启动后继。查询的POSITION/COST同时按原会计流程推进；它是整数公开时钟轮询，不称零延迟异步服务。
+
+|长度|服务A1/B1/A2/B2：WAIT → paid|Natural总实际步：WAIT / paid|Strict总收费步：WAIT / paid|
+|---:|---|---:|---:|
+|3|4/6/7/9 → 4/6/7/9|196,573,123 / 288,125,948|1,627,389,952 / 2,373,976,064|
+|12|7/9/10/12 → 7/9/10/12|275,657,691 / 396,107,459|1,711,276,032 / 2,474,639,360|
+|27|10/12/13/15 → 10/9/13/12|436,963,572 / 571,138,103|1,845,493,760 / 2,642,411,520|
+
+短/中查询没有任务或时间收益；长例后车RUN9→6，两次真实guest服务各提前3，四服务时间和50→44，两策略完成数均4。该收益需要额外134,174,531个Natural实际工作步；没有预设步数兑时间汇率，不能宣称净收益。短例去掉R9固定日程后时间和72→26是共同执行机制的修复，不当作paid相对WAIT的算法收益。
+
+每臂预注册32次生命周期publication、64个可用SOURCE、每阶段64个准备行，容量仍8,388,608，段存储上限8192。SOURCE必须在绑定行取得；先读取并核验两个当前头完整历史、付费释放pin，再跨行付费重建。有限8bit事件经原checkpoint ABI范围/身份校验和真实publication守卫后出站，host不以诊断内存决定服务。空poll与全历史重放仍收费。SOURCE取得数由已执行循环和头状态推导为17/23/长WAIT29、paid26，并非独立调用日志。与R9的费用差还含冗余同时间Advance表示变化，不把差额全部解释为查询或SOURCE单项开销。
+
+Astra后评特别核清信息边界：两策略的C-END SOURCE都包含完整原历史，guest可重建未闭合快照；当前绑定代码仅用它判END/服务，不交给查询选择器或q释放。因此长例严格支持额外认证POSITION的合法提前放行价值，不能说WAIT完全不知道相应物理进度。下一观测价值研究需将正常END通知、验证器内部信息和付费progress的策略可见性分开。
+
+short中A2于tick4先RUN，旧A1 POSITION稍后到达时被拒绝改变当前root，四COST终端仍结清；正常END、驻留、后继动作与晚到会计正确分离。中/长成功查询receipt与short失败结算分别绑定正确的原子提交后缀。所有窗口/ABI/绑定开发失败与消耗前缀保留，没有放宽CFG资格器来通过测试。
+
+独立80位解析审计覆盖792物理帧及连续分离，12臂最小中心距均1；3022个费用段逐段、逐作业闭合。根直接重算全部费用、32次有序poll和逐occurrence END/service/RUN，并核18个实际ELF及20,480bytes私有kernel，隔离重编逐字节一致；2533父文件和用户原稿不变，见本机 `ROOT_VERIFY.json`。服务是有限预加载FIFO的guest合同，尚非原作者STATION或开放任务流，普通END也不冒充跨通道AUTH END。
+
+第三线原64个新留出已完成几何/历史归因：hm/history/geometry/full任务371/363/363/363；full相对history固定FIFO累计仅少130ticks、无任务增量。根另补作者GSES原接口图/轨迹导出：8配置的16次独立重放完全匹配原执行，43作者源未改，公开源码归档离线重编也逐字节相同。三例原API机械验证明确未来边权不能直接表示连续primitive时长；这项外部基线接口进展不与连续FIFO任务数混排。
+
+查询持久SKIP已实现，156原生运行（10收集＋98完整反事实＋48留出）全部成功。相对原condition，history/nohistory均无任务或逐服务序列改善；全程WAIT348任务，其他五策略均344，所有非WAIT均128次query。SKIP诊断改善两支服务序列、固定FIFO时间合计少2.333768，但任务不变。root另从30个登记TRAIN/CAL机会的全部分支核出：相对原pi0的最佳单次干预任务提升空间为0；唯一相对当前WAIT的+1标签没有超越原策略。不能将这个有限诊断扩大成整程策略最优性或SHIFT后适应。
+
+针对完整时长投影可能重复惩罚名义运动，第三线另于看到64臂结果后登记32个全新world臂，仅改为相对同几何训练参考时长的非负超额代价。hm/旧full/residual-history/residual-full任务185/184/185/182；该修正仍无学习优势。32臂与64臂分别冻结，不能合并成事前96臂；不再用这批测试调倍率或挑条件。本轮建议当前ridge退出核心性能贡献，后续学习围绕具有可验证任务改进空间的查询/依赖选择展开。
+
+完整三线结果、分别形成的Astra与科研导师判断，以及后续修正实验的边界见[本轮汇总](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261003_R10.md)。公共main仍仅更新四份进度文档，主线实现/原始工件本机隔离，既有原稿不修改或提交。
