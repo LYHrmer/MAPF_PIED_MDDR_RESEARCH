@@ -1,0 +1,432 @@
+{
+  "post_R10_new_exploration": true,
+  "not_pooled_with_R10": true,
+  "runs": 32,
+  "independent_task_families": 4,
+  "aggregate": {
+    "hm": {
+      "tasks": 185,
+      "restricted_first10": 2262836,
+      "completed_rows": 10977,
+      "censored": 155,
+      "planner_wall": 0.45746481800233596,
+      "forecast_wall": 0.00024381300499953795
+    },
+    "learned": {
+      "tasks": 184,
+      "restricted_first10": 2268832,
+      "completed_rows": 10878,
+      "censored": 94,
+      "planner_wall": 1.8820533119878746,
+      "forecast_wall": 18.874351228996602
+    },
+    "residual_history": {
+      "tasks": 185,
+      "restricted_first10": 2262276,
+      "completed_rows": 10939,
+      "censored": 130,
+      "planner_wall": 1.8448442029994112,
+      "forecast_wall": 18.982687005989646
+    },
+    "residual_learned": {
+      "tasks": 182,
+      "restricted_first10": 2266442,
+      "completed_rows": 10928,
+      "censored": 121,
+      "planner_wall": 1.8707609749853873,
+      "forecast_wall": 19.153449308991185
+    }
+  },
+  "worlds": [
+    {
+      "map": "empty-32-32",
+      "seed": 971041,
+      "condition": "axis",
+      "hm": {
+        "tasks": 24,
+        "restricted": 281186
+      },
+      "learned": {
+        "tasks": 25,
+        "restricted": 281702
+      },
+      "residual_history": {
+        "tasks": 26,
+        "restricted": 280554
+      },
+      "residual_learned": {
+        "tasks": 26,
+        "restricted": 280994
+      }
+    },
+    {
+      "map": "empty-32-32",
+      "seed": 971041,
+      "condition": "nominal",
+      "hm": {
+        "tasks": 26,
+        "restricted": 279486
+      },
+      "learned": {
+        "tasks": 26,
+        "restricted": 278172
+      },
+      "residual_history": {
+        "tasks": 26,
+        "restricted": 279168
+      },
+      "residual_learned": {
+        "tasks": 27,
+        "restricted": 277504
+      }
+    },
+    {
+      "map": "empty-32-32",
+      "seed": 971042,
+      "condition": "axis",
+      "hm": {
+        "tasks": 21,
+        "restricted": 290772
+      },
+      "learned": {
+        "tasks": 20,
+        "restricted": 292786
+      },
+      "residual_history": {
+        "tasks": 20,
+        "restricted": 291238
+      },
+      "residual_learned": {
+        "tasks": 20,
+        "restricted": 292068
+      }
+    },
+    {
+      "map": "empty-32-32",
+      "seed": 971042,
+      "condition": "nominal",
+      "hm": {
+        "tasks": 21,
+        "restricted": 288796
+      },
+      "learned": {
+        "tasks": 21,
+        "restricted": 291160
+      },
+      "residual_history": {
+        "tasks": 21,
+        "restricted": 289110
+      },
+      "residual_learned": {
+        "tasks": 21,
+        "restricted": 289202
+      }
+    },
+    {
+      "map": "random-32-32-10",
+      "seed": 971041,
+      "condition": "axis",
+      "hm": {
+        "tasks": 22,
+        "restricted": 284212
+      },
+      "learned": {
+        "tasks": 20,
+        "restricted": 285118
+      },
+      "residual_history": {
+        "tasks": 21,
+        "restricted": 284688
+      },
+      "residual_learned": {
+        "tasks": 20,
+        "restricted": 285184
+      }
+    },
+    {
+      "map": "random-32-32-10",
+      "seed": 971041,
+      "condition": "nominal",
+      "hm": {
+        "tasks": 24,
+        "restricted": 282388
+      },
+      "learned": {
+        "tasks": 24,
+        "restricted": 283664
+      },
+      "residual_history": {
+        "tasks": 24,
+        "restricted": 282350
+      },
+      "residual_learned": {
+        "tasks": 22,
+        "restricted": 283922
+      }
+    },
+    {
+      "map": "random-32-32-10",
+      "seed": 971042,
+      "condition": "axis",
+      "hm": {
+        "tasks": 23,
+        "restricted": 278828
+      },
+      "learned": {
+        "tasks": 24,
+        "restricted": 279164
+      },
+      "residual_history": {
+        "tasks": 23,
+        "restricted": 278654
+      },
+      "residual_learned": {
+        "tasks": 23,
+        "restricted": 279478
+      }
+    },
+    {
+      "map": "random-32-32-10",
+      "seed": 971042,
+      "condition": "nominal",
+      "hm": {
+        "tasks": 24,
+        "restricted": 277168
+      },
+      "learned": {
+        "tasks": 24,
+        "restricted": 277066
+      },
+      "residual_history": {
+        "tasks": 24,
+        "restricted": 276514
+      },
+      "residual_learned": {
+        "tasks": 23,
+        "restricted": 278090
+      }
+    }
+  ],
+  "paired_family_effects": {
+    "learned_minus_hm": {
+      "families": [
+        {
+          "map": "empty-32-32",
+          "seed": 971041,
+          "tasks_delta": 1,
+          "fixed_first10_delta": -798
+        },
+        {
+          "map": "empty-32-32",
+          "seed": 971042,
+          "tasks_delta": -1,
+          "fixed_first10_delta": 4378
+        },
+        {
+          "map": "random-32-32-10",
+          "seed": 971041,
+          "tasks_delta": -2,
+          "fixed_first10_delta": 2182
+        },
+        {
+          "map": "random-32-32-10",
+          "seed": 971042,
+          "tasks_delta": 1,
+          "fixed_first10_delta": 234
+        }
+      ],
+      "means": {
+        "tasks_delta": -0.25,
+        "fixed_first10_delta": 1499
+      },
+      "negative_zero_positive": {
+        "tasks_delta": [
+          2,
+          0,
+          2
+        ],
+        "fixed_first10_delta": [
+          1,
+          0,
+          3
+        ]
+      }
+    },
+    "residual_history_minus_hm": {
+      "families": [
+        {
+          "map": "empty-32-32",
+          "seed": 971041,
+          "tasks_delta": 2,
+          "fixed_first10_delta": -950
+        },
+        {
+          "map": "empty-32-32",
+          "seed": 971042,
+          "tasks_delta": -1,
+          "fixed_first10_delta": 780
+        },
+        {
+          "map": "random-32-32-10",
+          "seed": 971041,
+          "tasks_delta": -1,
+          "fixed_first10_delta": 438
+        },
+        {
+          "map": "random-32-32-10",
+          "seed": 971042,
+          "tasks_delta": 0,
+          "fixed_first10_delta": -828
+        }
+      ],
+      "means": {
+        "tasks_delta": 0,
+        "fixed_first10_delta": -140
+      },
+      "negative_zero_positive": {
+        "tasks_delta": [
+          2,
+          1,
+          1
+        ],
+        "fixed_first10_delta": [
+          2,
+          0,
+          2
+        ]
+      }
+    },
+    "residual_learned_minus_hm": {
+      "families": [
+        {
+          "map": "empty-32-32",
+          "seed": 971041,
+          "tasks_delta": 3,
+          "fixed_first10_delta": -2174
+        },
+        {
+          "map": "empty-32-32",
+          "seed": 971042,
+          "tasks_delta": -1,
+          "fixed_first10_delta": 1702
+        },
+        {
+          "map": "random-32-32-10",
+          "seed": 971041,
+          "tasks_delta": -4,
+          "fixed_first10_delta": 2506
+        },
+        {
+          "map": "random-32-32-10",
+          "seed": 971042,
+          "tasks_delta": -1,
+          "fixed_first10_delta": 1572
+        }
+      ],
+      "means": {
+        "tasks_delta": -0.75,
+        "fixed_first10_delta": 901.5
+      },
+      "negative_zero_positive": {
+        "tasks_delta": [
+          3,
+          0,
+          1
+        ],
+        "fixed_first10_delta": [
+          1,
+          0,
+          3
+        ]
+      }
+    },
+    "residual_learned_minus_learned": {
+      "families": [
+        {
+          "map": "empty-32-32",
+          "seed": 971041,
+          "tasks_delta": 2,
+          "fixed_first10_delta": -1376
+        },
+        {
+          "map": "empty-32-32",
+          "seed": 971042,
+          "tasks_delta": 0,
+          "fixed_first10_delta": -2676
+        },
+        {
+          "map": "random-32-32-10",
+          "seed": 971041,
+          "tasks_delta": -2,
+          "fixed_first10_delta": 324
+        },
+        {
+          "map": "random-32-32-10",
+          "seed": 971042,
+          "tasks_delta": -2,
+          "fixed_first10_delta": 1338
+        }
+      ],
+      "means": {
+        "tasks_delta": -0.5,
+        "fixed_first10_delta": -597.5
+      },
+      "negative_zero_positive": {
+        "tasks_delta": [
+          2,
+          1,
+          1
+        ],
+        "fixed_first10_delta": [
+          2,
+          0,
+          2
+        ]
+      }
+    },
+    "residual_learned_minus_residual_history": {
+      "families": [
+        {
+          "map": "empty-32-32",
+          "seed": 971041,
+          "tasks_delta": 1,
+          "fixed_first10_delta": -1224
+        },
+        {
+          "map": "empty-32-32",
+          "seed": 971042,
+          "tasks_delta": 0,
+          "fixed_first10_delta": 922
+        },
+        {
+          "map": "random-32-32-10",
+          "seed": 971041,
+          "tasks_delta": -3,
+          "fixed_first10_delta": 2068
+        },
+        {
+          "map": "random-32-32-10",
+          "seed": 971042,
+          "tasks_delta": -1,
+          "fixed_first10_delta": 2400
+        }
+      ],
+      "means": {
+        "tasks_delta": -0.75,
+        "fixed_first10_delta": 1041.5
+      },
+      "negative_zero_positive": {
+        "tasks_delta": [
+          2,
+          1,
+          1
+        ],
+        "fixed_first10_delta": [
+          1,
+          0,
+          3
+        ]
+      }
+    }
+  }
+}

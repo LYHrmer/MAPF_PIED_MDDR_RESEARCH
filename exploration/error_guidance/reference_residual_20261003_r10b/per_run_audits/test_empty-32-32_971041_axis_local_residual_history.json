@@ -1,0 +1,209 @@
+{
+  "passed": true,
+  "spec": {
+    "id": "test_empty-32-32_971041_axis_local_residual_history",
+    "split": "test",
+    "map": "empty-32-32",
+    "seed": 971041,
+    "N": 8,
+    "cols": 32,
+    "condition": "axis",
+    "execution": "local",
+    "policy": "residual_history",
+    "horizon_ticks": 4000,
+    "port": 12266,
+    "input_id": "empty-32-32_971041"
+  },
+  "normal_station_END": 26,
+  "services": [
+    {
+      "agent": 0,
+      "ordinal": 0,
+      "tick": 622,
+      "task_id": 0
+    },
+    {
+      "agent": 5,
+      "ordinal": 0,
+      "tick": 878,
+      "task_id": 5
+    },
+    {
+      "agent": 2,
+      "ordinal": 0,
+      "tick": 978,
+      "task_id": 2
+    },
+    {
+      "agent": 3,
+      "ordinal": 0,
+      "tick": 1078,
+      "task_id": 3
+    },
+    {
+      "agent": 7,
+      "ordinal": 0,
+      "tick": 1154,
+      "task_id": 7
+    },
+    {
+      "agent": 2,
+      "ordinal": 1,
+      "tick": 1218,
+      "task_id": 10
+    },
+    {
+      "agent": 1,
+      "ordinal": 0,
+      "tick": 1274,
+      "task_id": 1
+    },
+    {
+      "agent": 7,
+      "ordinal": 1,
+      "tick": 1832,
+      "task_id": 13
+    },
+    {
+      "agent": 5,
+      "ordinal": 1,
+      "tick": 1978,
+      "task_id": 9
+    },
+    {
+      "agent": 4,
+      "ordinal": 0,
+      "tick": 2088,
+      "task_id": 4
+    },
+    {
+      "agent": 6,
+      "ordinal": 0,
+      "tick": 2198,
+      "task_id": 6
+    },
+    {
+      "agent": 0,
+      "ordinal": 1,
+      "tick": 2292,
+      "task_id": 8
+    },
+    {
+      "agent": 1,
+      "ordinal": 1,
+      "tick": 2316,
+      "task_id": 14
+    },
+    {
+      "agent": 3,
+      "ordinal": 1,
+      "tick": 2418,
+      "task_id": 11
+    },
+    {
+      "agent": 1,
+      "ordinal": 2,
+      "tick": 2978,
+      "task_id": 20
+    },
+    {
+      "agent": 0,
+      "ordinal": 2,
+      "tick": 3184,
+      "task_id": 19
+    },
+    {
+      "agent": 1,
+      "ordinal": 3,
+      "tick": 3218,
+      "task_id": 22
+    },
+    {
+      "agent": 3,
+      "ordinal": 2,
+      "tick": 3274,
+      "task_id": 21
+    },
+    {
+      "agent": 7,
+      "ordinal": 2,
+      "tick": 3418,
+      "task_id": 15
+    },
+    {
+      "agent": 3,
+      "ordinal": 3,
+      "tick": 3536,
+      "task_id": 25
+    },
+    {
+      "agent": 0,
+      "ordinal": 3,
+      "tick": 3594,
+      "task_id": 23
+    },
+    {
+      "agent": 2,
+      "ordinal": 2,
+      "tick": 3594,
+      "task_id": 12
+    },
+    {
+      "agent": 5,
+      "ordinal": 2,
+      "tick": 3704,
+      "task_id": 16
+    },
+    {
+      "agent": 7,
+      "ordinal": 3,
+      "tick": 3814,
+      "task_id": 26
+    },
+    {
+      "agent": 6,
+      "ordinal": 1,
+      "tick": 3932,
+      "task_id": 18
+    },
+    {
+      "agent": 0,
+      "ordinal": 4,
+      "tick": 3984,
+      "task_id": 28
+    }
+  ],
+  "fixed_first10_restricted_ticks": 280554,
+  "views": 37,
+  "rows": 1344,
+  "censored": 36,
+  "original_ADG_edges": 8,
+  "candidate_nonzero_calls": 36,
+  "prediction_by_logical_step": {
+    "0": {
+      "history": {
+        "n": 702,
+        "MAE": 1.199697716325076
+      },
+      "learned": {
+        "n": 702,
+        "MAE": 1.442206250706076
+      }
+    },
+    "1": {
+      "history": {
+        "n": 642,
+        "MAE": 1.136397419794239
+      },
+      "learned": {
+        "n": 642,
+        "MAE": 1.212515144427835
+      }
+    }
+  },
+  "max_ACK_endpoint_error_m": 0.029723642454502125,
+  "min_center_distance_m": 0.5373374160940982,
+  "planner_wall": 0.23284371399768133,
+  "forecast_wall": 2.358887187995606,
+  "mechanism": null
+}

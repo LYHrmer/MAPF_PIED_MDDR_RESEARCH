@@ -1,0 +1,51 @@
+{
+  "run": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/geometry_history_20261003_r10/runs/test_empty-32-32_961034_axis_local_hm",
+  "robots": 8,
+  "ticks": 4000,
+  "observations": 32000,
+  "boxes": 4,
+  "assumed_circular_footprint_radius_m": 0.095036758,
+  "closest_pair": {
+    "center_distance_m": 0.7077009480699967,
+    "tick": 3689,
+    "robots": [
+      "3",
+      "7"
+    ],
+    "positions_m": [
+      [
+        -12.480144500646134,
+        -19.999709667586167
+      ],
+      [
+        -12.000271023309779,
+        -20.519865488132556
+      ]
+    ],
+    "circular_footprint_gap_m": 0.5176274320699967
+  },
+  "closest_obstacle": {
+    "center_to_box_signed_distance_m": 0.4666538762757601,
+    "circular_footprint_gap_m": 0.3716171182757601,
+    "tick": 2427,
+    "robot": "0",
+    "box": "wall_west",
+    "position_m": [
+      0.00834612372423989,
+      -28.11339842837777
+    ],
+    "box_center_halfextents_m": [
+      0.5,
+      -15.5,
+      0.025,
+      16.5
+    ]
+  },
+  "all_sampled_circular_envelopes_separated": true,
+  "continuous_safety_verified": false,
+  "scope": "Sampled circle/box geometry only; not collision contacts, substep trajectory, or online certificate.",
+  "input_sha256": {
+    "experiment.argos": "33ff02f257d093a39d1460093d86d16f0845959e81e5f3c95a866dcbbeabe8d4",
+    "events.jsonl": "32c99f7625677076fbf08fbcbd5293a4170a3636a39f093b09cf20388094ba0e"
+  }
+}

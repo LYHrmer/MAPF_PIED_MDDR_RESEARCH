@@ -1,0 +1,213 @@
+{
+  "verdict": "PASS",
+  "runs": 8,
+  "replays": 16,
+  "checks": [
+    {
+      "case": "random-32-32-10",
+      "method": "GSES",
+      "status": "Succ",
+      "r9_original_cli_status_and_cost_match": true,
+      "reversed_dependencies": 12,
+      "original": {
+        "cost": 1375,
+        "ticks": 54,
+        "agents": 60,
+        "state_observations": 3300,
+        "type1_edges": 1248,
+        "type2_edges": 1071
+      },
+      "selected": {
+        "cost": 1292,
+        "ticks": 50,
+        "agents": 60,
+        "state_observations": 3060,
+        "type1_edges": 1248,
+        "type2_edges": 1071
+      }
+    },
+    {
+      "case": "random-32-32-10",
+      "method": "Improved_GSES",
+      "status": "Succ",
+      "r9_original_cli_status_and_cost_match": true,
+      "reversed_dependencies": 14,
+      "original": {
+        "cost": 1375,
+        "ticks": 54,
+        "agents": 60,
+        "state_observations": 3300,
+        "type1_edges": 1248,
+        "type2_edges": 1071
+      },
+      "selected": {
+        "cost": 1292,
+        "ticks": 50,
+        "agents": 60,
+        "state_observations": 3060,
+        "type1_edges": 1248,
+        "type2_edges": 1071
+      }
+    },
+    {
+      "case": "warehouse-10-20-10-2-1",
+      "method": "GSES",
+      "status": "Succ",
+      "r9_original_cli_status_and_cost_match": true,
+      "reversed_dependencies": 4,
+      "original": {
+        "cost": 10816,
+        "ticks": 200,
+        "agents": 110,
+        "state_observations": 22110,
+        "type1_edges": 10743,
+        "type2_edges": 15789
+      },
+      "selected": {
+        "cost": 10804,
+        "ticks": 201,
+        "agents": 110,
+        "state_observations": 22220,
+        "type1_edges": 10743,
+        "type2_edges": 15789
+      }
+    },
+    {
+      "case": "warehouse-10-20-10-2-1",
+      "method": "Improved_GSES",
+      "status": "Succ",
+      "r9_original_cli_status_and_cost_match": true,
+      "reversed_dependencies": 41,
+      "original": {
+        "cost": 10816,
+        "ticks": 200,
+        "agents": 110,
+        "state_observations": 22110,
+        "type1_edges": 10743,
+        "type2_edges": 15789
+      },
+      "selected": {
+        "cost": 10804,
+        "ticks": 201,
+        "agents": 110,
+        "state_observations": 22220,
+        "type1_edges": 10743,
+        "type2_edges": 15789
+      }
+    },
+    {
+      "case": "Paris_1_256",
+      "method": "GSES",
+      "status": "Timeout",
+      "r9_original_cli_status_and_cost_match": true,
+      "reversed_dependencies": 0,
+      "original": {
+        "cost": 29860,
+        "ticks": 530,
+        "agents": 120,
+        "state_observations": 63720,
+        "type1_edges": 29753,
+        "type2_edges": 36738
+      },
+      "selected": {
+        "cost": 29860,
+        "ticks": 530,
+        "agents": 120,
+        "state_observations": 63720,
+        "type1_edges": 29753,
+        "type2_edges": 36738
+      }
+    },
+    {
+      "case": "Paris_1_256",
+      "method": "Improved_GSES",
+      "status": "Succ",
+      "r9_original_cli_status_and_cost_match": true,
+      "reversed_dependencies": 218,
+      "original": {
+        "cost": 29860,
+        "ticks": 530,
+        "agents": 120,
+        "state_observations": 63720,
+        "type1_edges": 29753,
+        "type2_edges": 36738
+      },
+      "selected": {
+        "cost": 29786,
+        "ticks": 522,
+        "agents": 120,
+        "state_observations": 62760,
+        "type1_edges": 29753,
+        "type2_edges": 36738
+      }
+    },
+    {
+      "case": "lak303d",
+      "method": "GSES",
+      "status": "Timeout",
+      "r9_original_cli_status_and_cost_match": true,
+      "reversed_dependencies": 0,
+      "original": {
+        "cost": 10496,
+        "ticks": 528,
+        "agents": 41,
+        "state_observations": 21689,
+        "type1_edges": 10169,
+        "type2_edges": 27877
+      },
+      "selected": {
+        "cost": 10496,
+        "ticks": 528,
+        "agents": 41,
+        "state_observations": 21689,
+        "type1_edges": 10169,
+        "type2_edges": 27877
+      }
+    },
+    {
+      "case": "lak303d",
+      "method": "Improved_GSES",
+      "status": "Succ",
+      "r9_original_cli_status_and_cost_match": true,
+      "reversed_dependencies": 88,
+      "original": {
+        "cost": 10496,
+        "ticks": 528,
+        "agents": 41,
+        "state_observations": 21689,
+        "type1_edges": 10169,
+        "type2_edges": 27877
+      },
+      "selected": {
+        "cost": 10229,
+        "ticks": 511,
+        "agents": 41,
+        "state_observations": 20992,
+        "type1_edges": 10169,
+        "type2_edges": 27877
+      }
+    }
+  ],
+  "negative_controls": [
+    {
+      "mutation": "state",
+      "rejected": true,
+      "reason": "state time series mismatch"
+    },
+    {
+      "mutation": "cost",
+      "rejected": true,
+      "reason": "sum of costs mismatch"
+    },
+    {
+      "mutation": "trajectory",
+      "rejected": true,
+      "reason": "native trajectory mismatch"
+    },
+    {
+      "mutation": "future_weight",
+      "rejected": true,
+      "reason": "future weighted primitive unsupported by author simulator"
+    }
+  ]
+}

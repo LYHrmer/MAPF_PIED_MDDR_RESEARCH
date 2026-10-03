@@ -1,0 +1,769 @@
+{
+  "runs": 64,
+  "independent_task_families": 8,
+  "conditions_paired_within_family": true,
+  "aggregate": {
+    "hm": {
+      "tasks": 371,
+      "restricted_first10": 4449470,
+      "completed_rows": 21937,
+      "censored": 330,
+      "planner_wall": 0.8858892879898121,
+      "forecast_wall": 0.0004703259683083161
+    },
+    "history": {
+      "tasks": 363,
+      "restricted_first10": 4456952,
+      "completed_rows": 21678,
+      "censored": 304,
+      "planner_wall": 3.5925862710209913,
+      "forecast_wall": 35.0078293850047
+    },
+    "geometry": {
+      "tasks": 363,
+      "restricted_first10": 4456942,
+      "completed_rows": 21666,
+      "censored": 286,
+      "planner_wall": 3.5972572539876637,
+      "forecast_wall": 36.06592230600381
+    },
+    "learned": {
+      "tasks": 363,
+      "restricted_first10": 4456822,
+      "completed_rows": 21704,
+      "censored": 277,
+      "planner_wall": 3.6212648799837552,
+      "forecast_wall": 35.84518390700396
+    }
+  },
+  "worlds": [
+    {
+      "map": "empty-32-32",
+      "seed": 961031,
+      "condition": "axis",
+      "hm": {
+        "tasks": 22,
+        "restricted": 282446
+      },
+      "history": {
+        "tasks": 20,
+        "restricted": 283556
+      },
+      "geometry": {
+        "tasks": 20,
+        "restricted": 283556
+      },
+      "learned": {
+        "tasks": 20,
+        "restricted": 283556
+      }
+    },
+    {
+      "map": "empty-32-32",
+      "seed": 961031,
+      "condition": "nominal",
+      "hm": {
+        "tasks": 23,
+        "restricted": 280982
+      },
+      "history": {
+        "tasks": 22,
+        "restricted": 282642
+      },
+      "geometry": {
+        "tasks": 22,
+        "restricted": 282642
+      },
+      "learned": {
+        "tasks": 22,
+        "restricted": 282642
+      }
+    },
+    {
+      "map": "empty-32-32",
+      "seed": 961032,
+      "condition": "axis",
+      "hm": {
+        "tasks": 26,
+        "restricted": 272575
+      },
+      "history": {
+        "tasks": 25,
+        "restricted": 274313
+      },
+      "geometry": {
+        "tasks": 25,
+        "restricted": 274313
+      },
+      "learned": {
+        "tasks": 25,
+        "restricted": 274313
+      }
+    },
+    {
+      "map": "empty-32-32",
+      "seed": 961032,
+      "condition": "nominal",
+      "hm": {
+        "tasks": 27,
+        "restricted": 268929
+      },
+      "history": {
+        "tasks": 26,
+        "restricted": 271845
+      },
+      "geometry": {
+        "tasks": 26,
+        "restricted": 271845
+      },
+      "learned": {
+        "tasks": 26,
+        "restricted": 271845
+      }
+    },
+    {
+      "map": "empty-32-32",
+      "seed": 961033,
+      "condition": "axis",
+      "hm": {
+        "tasks": 29,
+        "restricted": 263873
+      },
+      "history": {
+        "tasks": 28,
+        "restricted": 264562
+      },
+      "geometry": {
+        "tasks": 28,
+        "restricted": 264562
+      },
+      "learned": {
+        "tasks": 28,
+        "restricted": 264562
+      }
+    },
+    {
+      "map": "empty-32-32",
+      "seed": 961033,
+      "condition": "nominal",
+      "hm": {
+        "tasks": 31,
+        "restricted": 262063
+      },
+      "history": {
+        "tasks": 30,
+        "restricted": 261684
+      },
+      "geometry": {
+        "tasks": 30,
+        "restricted": 261690
+      },
+      "learned": {
+        "tasks": 30,
+        "restricted": 261684
+      }
+    },
+    {
+      "map": "empty-32-32",
+      "seed": 961034,
+      "condition": "axis",
+      "hm": {
+        "tasks": 21,
+        "restricted": 283475
+      },
+      "history": {
+        "tasks": 20,
+        "restricted": 283851
+      },
+      "geometry": {
+        "tasks": 20,
+        "restricted": 283851
+      },
+      "learned": {
+        "tasks": 20,
+        "restricted": 283851
+      }
+    },
+    {
+      "map": "empty-32-32",
+      "seed": 961034,
+      "condition": "nominal",
+      "hm": {
+        "tasks": 22,
+        "restricted": 281909
+      },
+      "history": {
+        "tasks": 22,
+        "restricted": 282607
+      },
+      "geometry": {
+        "tasks": 22,
+        "restricted": 282607
+      },
+      "learned": {
+        "tasks": 22,
+        "restricted": 282607
+      }
+    },
+    {
+      "map": "random-32-32-10",
+      "seed": 961031,
+      "condition": "axis",
+      "hm": {
+        "tasks": 19,
+        "restricted": 282341
+      },
+      "history": {
+        "tasks": 20,
+        "restricted": 281259
+      },
+      "geometry": {
+        "tasks": 20,
+        "restricted": 281259
+      },
+      "learned": {
+        "tasks": 20,
+        "restricted": 281129
+      }
+    },
+    {
+      "map": "random-32-32-10",
+      "seed": 961031,
+      "condition": "nominal",
+      "hm": {
+        "tasks": 20,
+        "restricted": 280657
+      },
+      "history": {
+        "tasks": 21,
+        "restricted": 279225
+      },
+      "geometry": {
+        "tasks": 21,
+        "restricted": 279225
+      },
+      "learned": {
+        "tasks": 21,
+        "restricted": 279225
+      }
+    },
+    {
+      "map": "random-32-32-10",
+      "seed": 961032,
+      "condition": "axis",
+      "hm": {
+        "tasks": 23,
+        "restricted": 278661
+      },
+      "history": {
+        "tasks": 23,
+        "restricted": 279409
+      },
+      "geometry": {
+        "tasks": 23,
+        "restricted": 279409
+      },
+      "learned": {
+        "tasks": 23,
+        "restricted": 279409
+      }
+    },
+    {
+      "map": "random-32-32-10",
+      "seed": 961032,
+      "condition": "nominal",
+      "hm": {
+        "tasks": 23,
+        "restricted": 277259
+      },
+      "history": {
+        "tasks": 23,
+        "restricted": 277275
+      },
+      "geometry": {
+        "tasks": 23,
+        "restricted": 277275
+      },
+      "learned": {
+        "tasks": 23,
+        "restricted": 277275
+      }
+    },
+    {
+      "map": "random-32-32-10",
+      "seed": 961033,
+      "condition": "axis",
+      "hm": {
+        "tasks": 21,
+        "restricted": 282406
+      },
+      "history": {
+        "tasks": 20,
+        "restricted": 283030
+      },
+      "geometry": {
+        "tasks": 20,
+        "restricted": 283030
+      },
+      "learned": {
+        "tasks": 20,
+        "restricted": 283030
+      }
+    },
+    {
+      "map": "random-32-32-10",
+      "seed": 961033,
+      "condition": "nominal",
+      "hm": {
+        "tasks": 22,
+        "restricted": 279844
+      },
+      "history": {
+        "tasks": 21,
+        "restricted": 281326
+      },
+      "geometry": {
+        "tasks": 21,
+        "restricted": 281326
+      },
+      "learned": {
+        "tasks": 21,
+        "restricted": 281326
+      }
+    },
+    {
+      "map": "random-32-32-10",
+      "seed": 961034,
+      "condition": "axis",
+      "hm": {
+        "tasks": 21,
+        "restricted": 286614
+      },
+      "history": {
+        "tasks": 21,
+        "restricted": 286110
+      },
+      "geometry": {
+        "tasks": 21,
+        "restricted": 286110
+      },
+      "learned": {
+        "tasks": 21,
+        "restricted": 286110
+      }
+    },
+    {
+      "map": "random-32-32-10",
+      "seed": 961034,
+      "condition": "nominal",
+      "hm": {
+        "tasks": 21,
+        "restricted": 285436
+      },
+      "history": {
+        "tasks": 21,
+        "restricted": 284258
+      },
+      "geometry": {
+        "tasks": 21,
+        "restricted": 284242
+      },
+      "learned": {
+        "tasks": 21,
+        "restricted": 284258
+      }
+    }
+  ],
+  "paired_family_effects": {
+    "learned_minus_history": {
+      "families": [
+        {
+          "map": "empty-32-32",
+          "seed": 961031,
+          "tasks_delta_sum_two_conditions": 0,
+          "fixed_first10_delta_sum_two_conditions": 0
+        },
+        {
+          "map": "empty-32-32",
+          "seed": 961032,
+          "tasks_delta_sum_two_conditions": 0,
+          "fixed_first10_delta_sum_two_conditions": 0
+        },
+        {
+          "map": "empty-32-32",
+          "seed": 961033,
+          "tasks_delta_sum_two_conditions": 0,
+          "fixed_first10_delta_sum_two_conditions": 0
+        },
+        {
+          "map": "empty-32-32",
+          "seed": 961034,
+          "tasks_delta_sum_two_conditions": 0,
+          "fixed_first10_delta_sum_two_conditions": 0
+        },
+        {
+          "map": "random-32-32-10",
+          "seed": 961031,
+          "tasks_delta_sum_two_conditions": 0,
+          "fixed_first10_delta_sum_two_conditions": -130
+        },
+        {
+          "map": "random-32-32-10",
+          "seed": 961032,
+          "tasks_delta_sum_two_conditions": 0,
+          "fixed_first10_delta_sum_two_conditions": 0
+        },
+        {
+          "map": "random-32-32-10",
+          "seed": 961033,
+          "tasks_delta_sum_two_conditions": 0,
+          "fixed_first10_delta_sum_two_conditions": 0
+        },
+        {
+          "map": "random-32-32-10",
+          "seed": 961034,
+          "tasks_delta_sum_two_conditions": 0,
+          "fixed_first10_delta_sum_two_conditions": 0
+        }
+      ],
+      "descriptive_intervals": {
+        "tasks_delta_sum_two_conditions": {
+          "family_mean": 0.0,
+          "bootstrap95_mean": [
+            0.0,
+            0.0
+          ],
+          "negative_zero_positive": [
+            0,
+            8,
+            0
+          ]
+        },
+        "fixed_first10_delta_sum_two_conditions": {
+          "family_mean": -16.25,
+          "bootstrap95_mean": [
+            -48.75,
+            0.0
+          ],
+          "negative_zero_positive": [
+            1,
+            7,
+            0
+          ]
+        }
+      }
+    },
+    "learned_minus_geometry": {
+      "families": [
+        {
+          "map": "empty-32-32",
+          "seed": 961031,
+          "tasks_delta_sum_two_conditions": 0,
+          "fixed_first10_delta_sum_two_conditions": 0
+        },
+        {
+          "map": "empty-32-32",
+          "seed": 961032,
+          "tasks_delta_sum_two_conditions": 0,
+          "fixed_first10_delta_sum_two_conditions": 0
+        },
+        {
+          "map": "empty-32-32",
+          "seed": 961033,
+          "tasks_delta_sum_two_conditions": 0,
+          "fixed_first10_delta_sum_two_conditions": -6
+        },
+        {
+          "map": "empty-32-32",
+          "seed": 961034,
+          "tasks_delta_sum_two_conditions": 0,
+          "fixed_first10_delta_sum_two_conditions": 0
+        },
+        {
+          "map": "random-32-32-10",
+          "seed": 961031,
+          "tasks_delta_sum_two_conditions": 0,
+          "fixed_first10_delta_sum_two_conditions": -130
+        },
+        {
+          "map": "random-32-32-10",
+          "seed": 961032,
+          "tasks_delta_sum_two_conditions": 0,
+          "fixed_first10_delta_sum_two_conditions": 0
+        },
+        {
+          "map": "random-32-32-10",
+          "seed": 961033,
+          "tasks_delta_sum_two_conditions": 0,
+          "fixed_first10_delta_sum_two_conditions": 0
+        },
+        {
+          "map": "random-32-32-10",
+          "seed": 961034,
+          "tasks_delta_sum_two_conditions": 0,
+          "fixed_first10_delta_sum_two_conditions": 16
+        }
+      ],
+      "descriptive_intervals": {
+        "tasks_delta_sum_two_conditions": {
+          "family_mean": 0.0,
+          "bootstrap95_mean": [
+            0.0,
+            0.0
+          ],
+          "negative_zero_positive": [
+            0,
+            8,
+            0
+          ]
+        },
+        "fixed_first10_delta_sum_two_conditions": {
+          "family_mean": -15.0,
+          "bootstrap95_mean": [
+            -49.5,
+            5.25
+          ],
+          "negative_zero_positive": [
+            2,
+            5,
+            1
+          ]
+        }
+      }
+    },
+    "geometry_minus_history": {
+      "families": [
+        {
+          "map": "empty-32-32",
+          "seed": 961031,
+          "tasks_delta_sum_two_conditions": 0,
+          "fixed_first10_delta_sum_two_conditions": 0
+        },
+        {
+          "map": "empty-32-32",
+          "seed": 961032,
+          "tasks_delta_sum_two_conditions": 0,
+          "fixed_first10_delta_sum_two_conditions": 0
+        },
+        {
+          "map": "empty-32-32",
+          "seed": 961033,
+          "tasks_delta_sum_two_conditions": 0,
+          "fixed_first10_delta_sum_two_conditions": 6
+        },
+        {
+          "map": "empty-32-32",
+          "seed": 961034,
+          "tasks_delta_sum_two_conditions": 0,
+          "fixed_first10_delta_sum_two_conditions": 0
+        },
+        {
+          "map": "random-32-32-10",
+          "seed": 961031,
+          "tasks_delta_sum_two_conditions": 0,
+          "fixed_first10_delta_sum_two_conditions": 0
+        },
+        {
+          "map": "random-32-32-10",
+          "seed": 961032,
+          "tasks_delta_sum_two_conditions": 0,
+          "fixed_first10_delta_sum_two_conditions": 0
+        },
+        {
+          "map": "random-32-32-10",
+          "seed": 961033,
+          "tasks_delta_sum_two_conditions": 0,
+          "fixed_first10_delta_sum_two_conditions": 0
+        },
+        {
+          "map": "random-32-32-10",
+          "seed": 961034,
+          "tasks_delta_sum_two_conditions": 0,
+          "fixed_first10_delta_sum_two_conditions": -16
+        }
+      ],
+      "descriptive_intervals": {
+        "tasks_delta_sum_two_conditions": {
+          "family_mean": 0.0,
+          "bootstrap95_mean": [
+            0.0,
+            0.0
+          ],
+          "negative_zero_positive": [
+            0,
+            8,
+            0
+          ]
+        },
+        "fixed_first10_delta_sum_two_conditions": {
+          "family_mean": -1.25,
+          "bootstrap95_mean": [
+            -6.0,
+            2.25
+          ],
+          "negative_zero_positive": [
+            1,
+            6,
+            1
+          ]
+        }
+      }
+    },
+    "learned_minus_hm": {
+      "families": [
+        {
+          "map": "empty-32-32",
+          "seed": 961031,
+          "tasks_delta_sum_two_conditions": -3,
+          "fixed_first10_delta_sum_two_conditions": 2770
+        },
+        {
+          "map": "empty-32-32",
+          "seed": 961032,
+          "tasks_delta_sum_two_conditions": -2,
+          "fixed_first10_delta_sum_two_conditions": 4654
+        },
+        {
+          "map": "empty-32-32",
+          "seed": 961033,
+          "tasks_delta_sum_two_conditions": -2,
+          "fixed_first10_delta_sum_two_conditions": 310
+        },
+        {
+          "map": "empty-32-32",
+          "seed": 961034,
+          "tasks_delta_sum_two_conditions": -1,
+          "fixed_first10_delta_sum_two_conditions": 1074
+        },
+        {
+          "map": "random-32-32-10",
+          "seed": 961031,
+          "tasks_delta_sum_two_conditions": 2,
+          "fixed_first10_delta_sum_two_conditions": -2644
+        },
+        {
+          "map": "random-32-32-10",
+          "seed": 961032,
+          "tasks_delta_sum_two_conditions": 0,
+          "fixed_first10_delta_sum_two_conditions": 764
+        },
+        {
+          "map": "random-32-32-10",
+          "seed": 961033,
+          "tasks_delta_sum_two_conditions": -2,
+          "fixed_first10_delta_sum_two_conditions": 2106
+        },
+        {
+          "map": "random-32-32-10",
+          "seed": 961034,
+          "tasks_delta_sum_two_conditions": 0,
+          "fixed_first10_delta_sum_two_conditions": -1682
+        }
+      ],
+      "descriptive_intervals": {
+        "tasks_delta_sum_two_conditions": {
+          "family_mean": -1.0,
+          "bootstrap95_mean": [
+            -2.0,
+            0.125
+          ],
+          "negative_zero_positive": [
+            5,
+            2,
+            1
+          ]
+        },
+        "fixed_first10_delta_sum_two_conditions": {
+          "family_mean": 919.0,
+          "bootstrap95_mean": [
+            -595.5437499999999,
+            2450.8687499999983
+          ],
+          "negative_zero_positive": [
+            2,
+            0,
+            6
+          ]
+        }
+      }
+    },
+    "geometry_minus_hm": {
+      "families": [
+        {
+          "map": "empty-32-32",
+          "seed": 961031,
+          "tasks_delta_sum_two_conditions": -3,
+          "fixed_first10_delta_sum_two_conditions": 2770
+        },
+        {
+          "map": "empty-32-32",
+          "seed": 961032,
+          "tasks_delta_sum_two_conditions": -2,
+          "fixed_first10_delta_sum_two_conditions": 4654
+        },
+        {
+          "map": "empty-32-32",
+          "seed": 961033,
+          "tasks_delta_sum_two_conditions": -2,
+          "fixed_first10_delta_sum_two_conditions": 316
+        },
+        {
+          "map": "empty-32-32",
+          "seed": 961034,
+          "tasks_delta_sum_two_conditions": -1,
+          "fixed_first10_delta_sum_two_conditions": 1074
+        },
+        {
+          "map": "random-32-32-10",
+          "seed": 961031,
+          "tasks_delta_sum_two_conditions": 2,
+          "fixed_first10_delta_sum_two_conditions": -2514
+        },
+        {
+          "map": "random-32-32-10",
+          "seed": 961032,
+          "tasks_delta_sum_two_conditions": 0,
+          "fixed_first10_delta_sum_two_conditions": 764
+        },
+        {
+          "map": "random-32-32-10",
+          "seed": 961033,
+          "tasks_delta_sum_two_conditions": -2,
+          "fixed_first10_delta_sum_two_conditions": 2106
+        },
+        {
+          "map": "random-32-32-10",
+          "seed": 961034,
+          "tasks_delta_sum_two_conditions": 0,
+          "fixed_first10_delta_sum_two_conditions": -1698
+        }
+      ],
+      "descriptive_intervals": {
+        "tasks_delta_sum_two_conditions": {
+          "family_mean": -1.0,
+          "bootstrap95_mean": [
+            -2.0,
+            0.125
+          ],
+          "negative_zero_positive": [
+            5,
+            2,
+            1
+          ]
+        },
+        "fixed_first10_delta_sum_two_conditions": {
+          "family_mean": 934.0,
+          "bootstrap95_mean": [
+            -560.4062499999999,
+            2455.25
+          ],
+          "negative_zero_positive": [
+            2,
+            0,
+            6
+          ]
+        }
+      }
+    }
+  }
+}

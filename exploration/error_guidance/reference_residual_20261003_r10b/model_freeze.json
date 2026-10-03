@@ -1,0 +1,478 @@
+{
+  "d0": {
+    "M_first": 17.0,
+    "M_second": 17.0,
+    "T": 9.0,
+    "S": 20.0
+  },
+  "ridge": {
+    "features": [
+      "M_first",
+      "M_second",
+      "T",
+      "east",
+      "south",
+      "west",
+      "north",
+      "agent_geometry_count/16",
+      "direction_count/8",
+      "pool_count/64",
+      "history_residual/20",
+      "agent_mean_residual/20",
+      "last_residual/20",
+      "sd/20"
+    ],
+    "mean": [
+      0.41864942923944437,
+      0.4168615046073442,
+      0.16448906615321138,
+      0.2518910741301059,
+      0.26880759180305325,
+      0.252303672122129,
+      0.22699766194471188,
+      0.8312388254710493,
+      0.5949147297483153,
+      0.6783863120616146,
+      0.047902588943484425,
+      0.05027649319880462,
+      0.05902901939210874,
+      0.05600725708011332
+    ],
+    "scale": [
+      0.4933376983740492,
+      0.49303954261692073,
+      0.37071877922385355,
+      0.4340990220026788,
+      0.44333967834162874,
+      0.43433458203996383,
+      0.41889106390131703,
+      0.2963030118571152,
+      0.3612104010230737,
+      0.34356281114872944,
+      0.11488780638824637,
+      0.12912098418766424,
+      0.19158555820906825,
+      0.10770305763494425
+    ],
+    "intercept": 1.186975656718476,
+    "coef": [
+      -0.21265593772155816,
+      -0.24489739791157078,
+      0.6086966845082247,
+      -0.028193125729096723,
+      0.03437034697245927,
+      -0.03416493794976536,
+      0.028264827734133562,
+      -0.10616700403475683,
+      0.1931659173950417,
+      -0.032433741707411555,
+      0.719503060551224,
+      1.7621028323153067,
+      -0.065023229964848,
+      -0.3860289807077136
+    ],
+    "lambda": 1.0
+  },
+  "shared_margin_ticks": 0.0,
+  "test_seen": false,
+  "target": "primitive E-max(A,own previous accepted END); ticks, not motor time",
+  "source_pins": {
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_empty-32-32_931701_nominal_hm_GPIBT/public_events.jsonl": "9c9d9f0f84e03f02c9b0d1a931cccae05890ee5bddaef79afdb2cc6e68860684",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_empty-32-32_931701_nominal_hm_GPIBT/events.jsonl": "289cbcc1cb49cadf109c1f212b20b942fa4351673811d5f8ce442a1f39377996",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_empty-32-32_931701_slow065_hm_GPIBT/public_events.jsonl": "a48e17f4db857cc1740ad0f7ae2937cbb85dc3037a55c22ea13937be0a0922dd",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_empty-32-32_931701_slow065_hm_GPIBT/events.jsonl": "e9202704ea52b4e34be37e3d43e83a560807de24a6e98d69ee7d52614daae088",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_empty-32-32_931701_axis_hm_GPIBT/public_events.jsonl": "8a93040cfecacd223fd3734603df1583a5f5f0f56575fcd45b5a37d2ba83e787",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_empty-32-32_931701_axis_hm_GPIBT/events.jsonl": "0909973f257140ad11e36bf9327f741cfad05d39148b99a4e1e439303ca8ec92",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_random-32-32-10_931701_nominal_hm_GPIBT/public_events.jsonl": "dddc4d65f59ea23153652489545f8f3dc319e3d2b9a95a5c71ce7edefd4ec761",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_random-32-32-10_931701_nominal_hm_GPIBT/events.jsonl": "08cee70d03f9e612e1f83aaa6cd7cfc076b4467942934b553519d621a2bc898e",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_random-32-32-10_931701_slow065_hm_GPIBT/public_events.jsonl": "eefeec85551f0aebe350870941dc52a3d90d420d2f019a3bd477d4188f5448ef",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_random-32-32-10_931701_slow065_hm_GPIBT/events.jsonl": "56718d6c5ed878d48719477cd6c261557ccdb0ab9e10425ecf7728c900ea7a13",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_random-32-32-10_931701_axis_hm_GPIBT/public_events.jsonl": "c0b07c1e04dccd2fa28fc7a89b808bfa123f69d14bdc373d709a8a50ce34999b",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_random-32-32-10_931701_axis_hm_GPIBT/events.jsonl": "61a858eea95f6e4d2a0a72b4809724d5c43e7e304aa5a33402fb84ea562777f9",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_empty-32-32_931702_nominal_hm_GPIBT/public_events.jsonl": "dd7c5a17e3f2818b2e118edc4b423757ded98fd32129d50e57c21fa03ad3e8c2",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_empty-32-32_931702_nominal_hm_GPIBT/events.jsonl": "fa908330913156f83425f06bdd96eb57265ef770a210ffe1f2bc9931180337b6",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_empty-32-32_931702_slow065_hm_GPIBT/public_events.jsonl": "f4aaf84f78eaf89b82f0d459b94900a49caf1d57448a5a7b9771c2a7b5be4162",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_empty-32-32_931702_slow065_hm_GPIBT/events.jsonl": "d200308680c2d1c3cc9e341cac6043db92d674e8181d83ff764d94fd821eb3df",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_empty-32-32_931702_axis_hm_GPIBT/public_events.jsonl": "1b5d0ed5e723838e59be278d9579776f478a4f2032f3e900e499d5e31e1b0a76",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_empty-32-32_931702_axis_hm_GPIBT/events.jsonl": "3415c68502bc60bc8563cecc6d4e233b65c5709cf2d18e14832ed5c5f5d91e76",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_random-32-32-10_931702_nominal_hm_GPIBT/public_events.jsonl": "e95a5467d5cb2e38429641885b957f5d4d1a294dad241b7fe1cc29f01ad5686a",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_random-32-32-10_931702_nominal_hm_GPIBT/events.jsonl": "e684810a5934c5c6854252fe8ee9c201c3044dc183f3a33ff0fa19a9d7ef1722",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_random-32-32-10_931702_slow065_hm_GPIBT/public_events.jsonl": "d093b5ecc450605d8d8106c9a11eab2ee48a3b76c1c1b60721da4a8aa24b271e",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_random-32-32-10_931702_slow065_hm_GPIBT/events.jsonl": "a38d4245e89ae4c9c10363b0afc30c0ce30cf89d9e45a771bf54cd1ded8b6d10",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_random-32-32-10_931702_axis_hm_GPIBT/public_events.jsonl": "772a736a5a1460f84db45445de008de7daaf00e1d6536f11ac7b943aed37d7ce",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/train_random-32-32-10_931702_axis_hm_GPIBT/events.jsonl": "899f9b5b625298b3590e3aa10c8bf31aa9e31c41bf4fccd775c9116bb9b8e6ac",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/calibration_empty-32-32_931711_nominal_hm_GPIBT/public_events.jsonl": "0aab019a01f4d4aed99c116385afe926a91f520e20a691cafe704be45f909bcf",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/calibration_empty-32-32_931711_nominal_hm_GPIBT/events.jsonl": "9a5b548902cff3d4a73d05ad08241ecabd4e13e08ecf4ffb45418fba74048c02",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/calibration_empty-32-32_931711_slow065_hm_GPIBT/public_events.jsonl": "fdff1ff70da19b8da4a26c9bb46b64a3a2f2d0907356ba4e4ea6689df7354737",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/calibration_empty-32-32_931711_slow065_hm_GPIBT/events.jsonl": "2c65ed081b91e4933d88028013c3e4527be2315e85a642f933703f371e3fa649",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/calibration_empty-32-32_931711_axis_hm_GPIBT/public_events.jsonl": "fccbcf91d37de221584856ca378554d282d6827e43c827dea5a720edffa8a541",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/calibration_empty-32-32_931711_axis_hm_GPIBT/events.jsonl": "a1f1cf8de530a2ac66a17b34a635090ba3cc0a563f24d9247de22ad3fb119ebc",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/calibration_random-32-32-10_931711_nominal_hm_GPIBT/public_events.jsonl": "3fe3e64f5e9890ed41f2ff316a8d7b1f7aa9b0b3c174fc86acb8f6bd321db207",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/calibration_random-32-32-10_931711_nominal_hm_GPIBT/events.jsonl": "eb5faf30e24f004fbbe47fe4c4be33f3e84c723c9310a5268b3e9d243fe0f571",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/calibration_random-32-32-10_931711_slow065_hm_GPIBT/public_events.jsonl": "777c81629951d9f0672efb58a5432ab47462b2973b865a4fb47a428fb54ce337",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/calibration_random-32-32-10_931711_slow065_hm_GPIBT/events.jsonl": "d6bb302601590c7c3ba69aa4a9780695386656fe6e60fd84c288492855317cfd",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/calibration_random-32-32-10_931711_axis_hm_GPIBT/public_events.jsonl": "bd94a65c53402b897b6d1bc0e95eb12bb7d4a5545395d1c2eb4292fcd3fe66c6",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/execution_residual_20261001_r7/runs/calibration_random-32-32-10_931711_axis_hm_GPIBT/events.jsonl": "f162582397d33538c5f251550277d38e29099e501ee824a8b74125db3951092c"
+  },
+  "raw_lineage_checks": {
+    "train_empty-32-32_931701_nominal_hm_GPIBT": {
+      "parsed": 1337,
+      "accepted_END": 1320,
+      "censored": 17
+    },
+    "train_empty-32-32_931701_slow065_hm_GPIBT": {
+      "parsed": 1120,
+      "accepted_END": 1110,
+      "censored": 10
+    },
+    "train_empty-32-32_931701_axis_hm_GPIBT": {
+      "parsed": 1280,
+      "accepted_END": 1278,
+      "censored": 2
+    },
+    "train_random-32-32-10_931701_nominal_hm_GPIBT": {
+      "parsed": 1323,
+      "accepted_END": 1315,
+      "censored": 8
+    },
+    "train_random-32-32-10_931701_slow065_hm_GPIBT": {
+      "parsed": 1139,
+      "accepted_END": 1119,
+      "censored": 20
+    },
+    "train_random-32-32-10_931701_axis_hm_GPIBT": {
+      "parsed": 1247,
+      "accepted_END": 1245,
+      "censored": 2
+    },
+    "train_empty-32-32_931702_nominal_hm_GPIBT": {
+      "parsed": 1324,
+      "accepted_END": 1313,
+      "censored": 11
+    },
+    "train_empty-32-32_931702_slow065_hm_GPIBT": {
+      "parsed": 1143,
+      "accepted_END": 1141,
+      "censored": 2
+    },
+    "train_empty-32-32_931702_axis_hm_GPIBT": {
+      "parsed": 1219,
+      "accepted_END": 1218,
+      "censored": 1
+    },
+    "train_random-32-32-10_931702_nominal_hm_GPIBT": {
+      "parsed": 1335,
+      "accepted_END": 1317,
+      "censored": 18
+    },
+    "train_random-32-32-10_931702_slow065_hm_GPIBT": {
+      "parsed": 1139,
+      "accepted_END": 1138,
+      "censored": 1
+    },
+    "train_random-32-32-10_931702_axis_hm_GPIBT": {
+      "parsed": 1276,
+      "accepted_END": 1260,
+      "censored": 16
+    },
+    "calibration_empty-32-32_931711_nominal_hm_GPIBT": {
+      "parsed": 1299,
+      "accepted_END": 1298,
+      "censored": 1
+    },
+    "calibration_empty-32-32_931711_slow065_hm_GPIBT": {
+      "parsed": 1171,
+      "accepted_END": 1154,
+      "censored": 17
+    },
+    "calibration_empty-32-32_931711_axis_hm_GPIBT": {
+      "parsed": 1279,
+      "accepted_END": 1270,
+      "censored": 9
+    },
+    "calibration_random-32-32-10_931711_nominal_hm_GPIBT": {
+      "parsed": 1311,
+      "accepted_END": 1291,
+      "censored": 20
+    },
+    "calibration_random-32-32-10_931711_slow065_hm_GPIBT": {
+      "parsed": 1124,
+      "accepted_END": 1119,
+      "censored": 5
+    },
+    "calibration_random-32-32-10_931711_axis_hm_GPIBT": {
+      "parsed": 1248,
+      "accepted_END": 1247,
+      "censored": 1
+    }
+  },
+  "train_motion_rows": 14542,
+  "train_total_rows": 14774,
+  "calibration_total_rows": 7379,
+  "censored_rows": 161,
+  "protocol_sha256": "4439c9de776c4dcba422421f6dbc12d58504cec4dbcc2008659ffd45ac714298",
+  "script_sha256": "5b8812fe27eaac70286a97f39614d5f1138ca8c61fa8823cdfebbd0cf1ee539b",
+  "public_model_sha256": "28fd14b43eaf124513be49048f67bfca90f218c803b214b720b9642069895b4a",
+  "calibration": {
+    "M_first": {
+      "history": {
+        "n": 3024,
+        "MAE": 0.6298349143501697,
+        "RMSE": 1.0783684736513972,
+        "bias": -0.030420638965784966
+      },
+      "learned": {
+        "n": 3024,
+        "MAE": 0.5556290202651056,
+        "RMSE": 0.9838411490952388,
+        "bias": 0.009120641054155032
+      }
+    },
+    "M_second": {
+      "history": {
+        "n": 3010,
+        "MAE": 0.3111438328560321,
+        "RMSE": 0.958478047458975,
+        "bias": -0.02827025376838782
+      },
+      "learned": {
+        "n": 3010,
+        "MAE": 0.342094555404453,
+        "RMSE": 0.883925356526318,
+        "bias": -0.005892466087248613
+      }
+    },
+    "T": {
+      "history": {
+        "n": 1218,
+        "MAE": 5.914647216323896,
+        "RMSE": 6.948957282052147,
+        "bias": -0.8925611934804015
+      },
+      "learned": {
+        "n": 1218,
+        "MAE": 6.155730657216774,
+        "RMSE": 6.688519716717491,
+        "bias": 0.2982577740162715
+      }
+    },
+    "S": {
+      "history": {
+        "n": 127,
+        "MAE": 0.0,
+        "RMSE": 0.0,
+        "bias": 0.0
+      },
+      "learned": {
+        "n": 127,
+        "MAE": 0.0,
+        "RMSE": 0.0,
+        "bias": 0.0
+      }
+    },
+    "motion": {
+      "history": {
+        "n": 7252,
+        "MAE": 1.3851632690808156,
+        "RMSE": 2.9960574614619877,
+        "bias": -0.17432777299152097
+      },
+      "learned": {
+        "n": 7252,
+        "MAE": 1.4075574613264084,
+        "RMSE": 2.870808408483476,
+        "bias": 0.0514509741280978
+      }
+    }
+  },
+  "geometry_ridge": {
+    "features": [
+      "M_first",
+      "M_second",
+      "T",
+      "east",
+      "south",
+      "west",
+      "north",
+      "agent_geometry_count/16",
+      "direction_count/8",
+      "pool_count/64",
+      "history_residual/20",
+      "agent_mean_residual/20",
+      "last_residual/20",
+      "sd/20"
+    ],
+    "mean": [
+      0.41864942923944437,
+      0.4168615046073442,
+      0.16448906615321138,
+      0.2518910741301059,
+      0.26880759180305325,
+      0.252303672122129,
+      0.22699766194471188,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.4933376983740492,
+      0.49303954261692073,
+      0.37071877922385355,
+      0.4340990220026788,
+      0.44333967834162874,
+      0.43433458203996383,
+      0.41889106390131703,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "intercept": 1.1869756567184702,
+    "coef": [
+      -0.6348575164851793,
+      -0.46324132584172906,
+      1.4609333749188627,
+      -0.08555205887333102,
+      0.07134967350180693,
+      -0.08004782626446631,
+      0.09614304624575967,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "lambda": 1.0,
+    "masked_raw_slots": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ]
+  },
+  "R10_provenance": {
+    "original_full_model_sha256": "415b905515d034e628e79a6f26bb1b3de8d0282906ca64ae3b33f8756ddb95d7",
+    "training_rows_path": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/primitive_duration_20261003_r9/training_rows.json",
+    "training_rows_sha256": "0eaabd16604f6e3854b8e5ce0c575f0b3c35e035f8a53c35ca66b4a353f4feda",
+    "full_ridge_unchanged": true,
+    "train_motion_rows": 14542,
+    "test_seen": false,
+    "protocol_sha256": "4d1d2184ea510584568053b5fb17237adff0965007685b0f85a661d8b3d4b9f0",
+    "fit_sha256": "f9509706fe3a0bf75253d02479529f76abe5074cf587be75e0f5e1129c581024",
+    "public_model_sha256": "97dcdb2c66b6d90c496a8a37dde5c16c15c17368cd3607f644710af46278b8cc"
+  },
+  "R10_calibration": {
+    "M_first": {
+      "history": {
+        "n": 3024,
+        "MAE": 0.6298349143501697,
+        "RMSE": 1.0783684736513972,
+        "bias": -0.030420638965784966
+      },
+      "geometry": {
+        "n": 3024,
+        "MAE": 1.0054952551472345,
+        "RMSE": 2.1429742962025693,
+        "bias": 0.04832565911694036
+      },
+      "learned": {
+        "n": 3024,
+        "MAE": 0.5556290202651056,
+        "RMSE": 0.9838411490952388,
+        "bias": 0.009120641054155032
+      }
+    },
+    "M_second": {
+      "history": {
+        "n": 3010,
+        "MAE": 0.3111438328560321,
+        "RMSE": 0.958478047458975,
+        "bias": -0.02827025376838782
+      },
+      "geometry": {
+        "n": 3010,
+        "MAE": 0.9813618283761967,
+        "RMSE": 2.069981260299774,
+        "bias": 0.03968011052044146
+      },
+      "learned": {
+        "n": 3010,
+        "MAE": 0.342094555404453,
+        "RMSE": 0.883925356526318,
+        "bias": -0.005892466087248613
+      }
+    },
+    "T": {
+      "history": {
+        "n": 1218,
+        "MAE": 5.914647216323896,
+        "RMSE": 6.948957282052147,
+        "bias": -0.8925611934804015
+      },
+      "geometry": {
+        "n": 1218,
+        "MAE": 6.431714152307549,
+        "RMSE": 6.630876753603365,
+        "bias": 0.27927158336428254
+      },
+      "learned": {
+        "n": 1218,
+        "MAE": 6.155730657216774,
+        "RMSE": 6.688519716717491,
+        "bias": 0.2982577740162715
+      }
+    },
+    "S": {
+      "history": {
+        "n": 127,
+        "MAE": 0.0,
+        "RMSE": 0.0,
+        "bias": 0.0
+      },
+      "geometry": {
+        "n": 127,
+        "MAE": 0.0,
+        "RMSE": 0.0,
+        "bias": 0.0
+      },
+      "learned": {
+        "n": 127,
+        "MAE": 0.0,
+        "RMSE": 0.0,
+        "bias": 0.0
+      }
+    },
+    "motion": {
+      "history": {
+        "n": 7252,
+        "MAE": 1.3851632690808156,
+        "RMSE": 2.9960574614619877,
+        "bias": -0.17432777299152097
+      },
+      "geometry": {
+        "n": 7252,
+        "MAE": 1.9068318522460261,
+        "RMSE": 3.3283745077359823,
+        "bias": 0.08352547081823672
+      },
+      "learned": {
+        "n": 7252,
+        "MAE": 1.4075574613264084,
+        "RMSE": 2.870808408483476,
+        "bias": 0.0514509741280978
+      }
+    }
+  }
+}

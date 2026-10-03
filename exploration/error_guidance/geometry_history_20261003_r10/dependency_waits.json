@@ -1,0 +1,1637 @@
+{
+  "scope": "same16 hm test traces, reconstructed existing local ADG; diagnostic only, not available as future planner input",
+  "runs": {
+    "test_empty-32-32_961031_nominal_local_hm": {
+      "M_first": {
+        "n": 566,
+        "cross_dependent_nodes": 0,
+        "cross_dependency_wait": {
+          "mean": 0,
+          "max": 0
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 6.178445229681979,
+          "max": 31
+        },
+        "own_prefix_wait": {
+          "mean": 25.024734982332156,
+          "max": 79
+        },
+        "D": {
+          "mean": 16.62897526501767,
+          "max": 17
+        }
+      },
+      "M_second": {
+        "n": 564,
+        "cross_dependent_nodes": 2,
+        "cross_dependency_wait": {
+          "mean": 0.19680851063829788,
+          "max": 85
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 8.134751773049645,
+          "max": 39
+        },
+        "own_prefix_wait": {
+          "mean": 39.43971631205674,
+          "max": 73
+        },
+        "D": {
+          "mean": 17,
+          "max": 17
+        }
+      },
+      "T": {
+        "n": 232,
+        "cross_dependent_nodes": 1,
+        "cross_dependency_wait": {
+          "mean": 0.11206896551724138,
+          "max": 26
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 6.060344827586207,
+          "max": 9
+        },
+        "own_prefix_wait": {
+          "mean": 19.862068965517242,
+          "max": 56
+        },
+        "D": {
+          "mean": 14.189655172413794,
+          "max": 23
+        }
+      },
+      "S": {
+        "n": 23,
+        "cross_dependent_nodes": 0,
+        "cross_dependency_wait": {
+          "mean": 0,
+          "max": 0
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 9.478260869565217,
+          "max": 49
+        },
+        "own_prefix_wait": {
+          "mean": 53.56521739130435,
+          "max": 72
+        },
+        "D": {
+          "mean": 20,
+          "max": 20
+        }
+      },
+      "all": {
+        "n": 1385,
+        "cross_dependent_nodes": 3,
+        "cross_dependency_wait": {
+          "mean": 0.09891696750902527,
+          "max": 85
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 7.010108303249098,
+          "max": 49
+        },
+        "own_prefix_wait": {
+          "mean": 30.503971119133574,
+          "max": 79
+        },
+        "D": {
+          "mean": 16.427436823104692,
+          "max": 23
+        }
+      }
+    },
+    "test_empty-32-32_961031_axis_local_hm": {
+      "M_first": {
+        "n": 551,
+        "cross_dependent_nodes": 0,
+        "cross_dependency_wait": {
+          "mean": 0,
+          "max": 0
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 5.818511796733213,
+          "max": 33
+        },
+        "own_prefix_wait": {
+          "mean": 25.370235934664247,
+          "max": 85
+        },
+        "D": {
+          "mean": 17.17059891107078,
+          "max": 26
+        }
+      },
+      "M_second": {
+        "n": 551,
+        "cross_dependent_nodes": 2,
+        "cross_dependency_wait": {
+          "mean": 0.20508166969147004,
+          "max": 85
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 7.773139745916516,
+          "max": 39
+        },
+        "own_prefix_wait": {
+          "mean": 40.457350272232304,
+          "max": 86
+        },
+        "D": {
+          "mean": 17.53901996370236,
+          "max": 26
+        }
+      },
+      "T": {
+        "n": 225,
+        "cross_dependent_nodes": 1,
+        "cross_dependency_wait": {
+          "mean": 0.12444444444444444,
+          "max": 28
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 5.8,
+          "max": 9
+        },
+        "own_prefix_wait": {
+          "mean": 20.124444444444446,
+          "max": 62
+        },
+        "D": {
+          "mean": 13.933333333333334,
+          "max": 23
+        }
+      },
+      "S": {
+        "n": 22,
+        "cross_dependent_nodes": 0,
+        "cross_dependency_wait": {
+          "mean": 0,
+          "max": 0
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 9,
+          "max": 49
+        },
+        "own_prefix_wait": {
+          "mean": 55.27272727272727,
+          "max": 72
+        },
+        "D": {
+          "mean": 20,
+          "max": 20
+        }
+      },
+      "all": {
+        "n": 1349,
+        "cross_dependent_nodes": 3,
+        "cross_dependency_wait": {
+          "mean": 0.10452186805040771,
+          "max": 85
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 6.665678280207561,
+          "max": 49
+        },
+        "own_prefix_wait": {
+          "mean": 31.14529280948851,
+          "max": 86
+        },
+        "D": {
+          "mean": 16.82727946627131,
+          "max": 26
+        }
+      }
+    },
+    "test_random-32-32-10_961031_nominal_local_hm": {
+      "M_first": {
+        "n": 571,
+        "cross_dependent_nodes": 0,
+        "cross_dependency_wait": {
+          "mean": 0,
+          "max": 0
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 5.9562171628721545,
+          "max": 19
+        },
+        "own_prefix_wait": {
+          "mean": 24.768826619964972,
+          "max": 79
+        },
+        "D": {
+          "mean": 16.642732049036777,
+          "max": 17
+        }
+      },
+      "M_second": {
+        "n": 570,
+        "cross_dependent_nodes": 4,
+        "cross_dependency_wait": {
+          "mean": 0.3192982456140351,
+          "max": 90
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 7.614035087719298,
+          "max": 39
+        },
+        "own_prefix_wait": {
+          "mean": 39.43333333333333,
+          "max": 73
+        },
+        "D": {
+          "mean": 17,
+          "max": 17
+        }
+      },
+      "T": {
+        "n": 228,
+        "cross_dependent_nodes": 0,
+        "cross_dependency_wait": {
+          "mean": 0,
+          "max": 0
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 5.947368421052632,
+          "max": 9
+        },
+        "own_prefix_wait": {
+          "mean": 18.149122807017545,
+          "max": 56
+        },
+        "D": {
+          "mean": 14.280701754385966,
+          "max": 23
+        }
+      },
+      "S": {
+        "n": 20,
+        "cross_dependent_nodes": 0,
+        "cross_dependency_wait": {
+          "mean": 0,
+          "max": 0
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 7.6,
+          "max": 32
+        },
+        "own_prefix_wait": {
+          "mean": 47.35,
+          "max": 68
+        },
+        "D": {
+          "mean": 20,
+          "max": 20
+        }
+      },
+      "all": {
+        "n": 1389,
+        "cross_dependent_nodes": 4,
+        "cross_dependency_wait": {
+          "mean": 0.13102951763858892,
+          "max": 90
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 6.658747300215983,
+          "max": 39
+        },
+        "own_prefix_wait": {
+          "mean": 30.025197984161267,
+          "max": 79
+        },
+        "D": {
+          "mean": 16.44996400287977,
+          "max": 23
+        }
+      }
+    },
+    "test_random-32-32-10_961031_axis_local_hm": {
+      "M_first": {
+        "n": 548,
+        "cross_dependent_nodes": 0,
+        "cross_dependency_wait": {
+          "mean": 0,
+          "max": 0
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 4.518248175182482,
+          "max": 19
+        },
+        "own_prefix_wait": {
+          "mean": 25.41058394160584,
+          "max": 85
+        },
+        "D": {
+          "mean": 17.523722627737225,
+          "max": 26
+        }
+      },
+      "M_second": {
+        "n": 548,
+        "cross_dependent_nodes": 3,
+        "cross_dependency_wait": {
+          "mean": 0.24087591240875914,
+          "max": 84
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 6.193430656934306,
+          "max": 39
+        },
+        "own_prefix_wait": {
+          "mean": 41.018248175182485,
+          "max": 88
+        },
+        "D": {
+          "mean": 17.87043795620438,
+          "max": 26
+        }
+      },
+      "T": {
+        "n": 214,
+        "cross_dependent_nodes": 0,
+        "cross_dependency_wait": {
+          "mean": 0,
+          "max": 0
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 4.588785046728972,
+          "max": 9
+        },
+        "own_prefix_wait": {
+          "mean": 18.953271028037385,
+          "max": 62
+        },
+        "D": {
+          "mean": 13.785046728971963,
+          "max": 23
+        }
+      },
+      "S": {
+        "n": 19,
+        "cross_dependent_nodes": 0,
+        "cross_dependency_wait": {
+          "mean": 0,
+          "max": 0
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 5.315789473684211,
+          "max": 32
+        },
+        "own_prefix_wait": {
+          "mean": 49,
+          "max": 68
+        },
+        "D": {
+          "mean": 20,
+          "max": 20
+        }
+      },
+      "all": {
+        "n": 1329,
+        "cross_dependent_nodes": 3,
+        "cross_dependency_wait": {
+          "mean": 0.09932279909706546,
+          "max": 84
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 5.231753197893153,
+          "max": 39
+        },
+        "own_prefix_wait": {
+          "mean": 31.143717080511664,
+          "max": 88
+        },
+        "D": {
+          "mean": 17.10007524454477,
+          "max": 26
+        }
+      }
+    },
+    "test_empty-32-32_961032_nominal_local_hm": {
+      "M_first": {
+        "n": 603,
+        "cross_dependent_nodes": 4,
+        "cross_dependency_wait": {
+          "mean": 0.2620232172470978,
+          "max": 43
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 5.434494195688226,
+          "max": 22
+        },
+        "own_prefix_wait": {
+          "mean": 22.87396351575456,
+          "max": 79
+        },
+        "D": {
+          "mean": 16.70149253731343,
+          "max": 17
+        }
+      },
+      "M_second": {
+        "n": 598,
+        "cross_dependent_nodes": 12,
+        "cross_dependency_wait": {
+          "mean": 0.8260869565217391,
+          "max": 60
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 6.548494983277592,
+          "max": 39
+        },
+        "own_prefix_wait": {
+          "mean": 38.05685618729097,
+          "max": 73
+        },
+        "D": {
+          "mean": 17,
+          "max": 17
+        }
+      },
+      "T": {
+        "n": 204,
+        "cross_dependent_nodes": 1,
+        "cross_dependency_wait": {
+          "mean": 0.12745098039215685,
+          "max": 26
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 5.450980392156863,
+          "max": 9
+        },
+        "own_prefix_wait": {
+          "mean": 15.490196078431373,
+          "max": 56
+        },
+        "D": {
+          "mean": 13.186274509803921,
+          "max": 23
+        }
+      },
+      "S": {
+        "n": 27,
+        "cross_dependent_nodes": 1,
+        "cross_dependency_wait": {
+          "mean": 2.037037037037037,
+          "max": 55
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 5.851851851851852,
+          "max": 20
+        },
+        "own_prefix_wait": {
+          "mean": 50.333333333333336,
+          "max": 68
+        },
+        "D": {
+          "mean": 20,
+          "max": 20
+        }
+      },
+      "all": {
+        "n": 1432,
+        "cross_dependent_nodes": 18,
+        "cross_dependency_wait": {
+          "mean": 0.5118715083798883,
+          "max": 60
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 5.909916201117318,
+          "max": 39
+        },
+        "own_prefix_wait": {
+          "mean": 28.68016759776536,
+          "max": 79
+        },
+        "D": {
+          "mean": 16.387569832402235,
+          "max": 23
+        }
+      }
+    },
+    "test_empty-32-32_961032_axis_local_hm": {
+      "M_first": {
+        "n": 576,
+        "cross_dependent_nodes": 4,
+        "cross_dependency_wait": {
+          "mean": 0.2690972222222222,
+          "max": 43
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 5.102430555555555,
+          "max": 25
+        },
+        "own_prefix_wait": {
+          "mean": 23.272569444444443,
+          "max": 85
+        },
+        "D": {
+          "mean": 17.20659722222222,
+          "max": 26
+        }
+      },
+      "M_second": {
+        "n": 571,
+        "cross_dependent_nodes": 12,
+        "cross_dependency_wait": {
+          "mean": 0.8633975481611208,
+          "max": 62
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 6.140105078809107,
+          "max": 39
+        },
+        "own_prefix_wait": {
+          "mean": 38.78108581436077,
+          "max": 86
+        },
+        "D": {
+          "mean": 17.504378283712786,
+          "max": 26
+        }
+      },
+      "T": {
+        "n": 193,
+        "cross_dependent_nodes": 1,
+        "cross_dependency_wait": {
+          "mean": 0.13471502590673576,
+          "max": 26
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 4.9689119170984455,
+          "max": 9
+        },
+        "own_prefix_wait": {
+          "mean": 15.896373056994818,
+          "max": 62
+        },
+        "D": {
+          "mean": 12.875647668393782,
+          "max": 23
+        }
+      },
+      "S": {
+        "n": 26,
+        "cross_dependent_nodes": 1,
+        "cross_dependency_wait": {
+          "mean": 2.1153846153846154,
+          "max": 55
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 5.653846153846154,
+          "max": 20
+        },
+        "own_prefix_wait": {
+          "mean": 51.73076923076923,
+          "max": 104
+        },
+        "D": {
+          "mean": 20,
+          "max": 20
+        }
+      },
+      "all": {
+        "n": 1366,
+        "cross_dependent_nodes": 18,
+        "cross_dependency_wait": {
+          "mean": 0.5336749633967789,
+          "max": 62
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 5.527818448023426,
+          "max": 39
+        },
+        "own_prefix_wait": {
+          "mean": 29.25475841874085,
+          "max": 104
+        },
+        "D": {
+          "mean": 16.772327964860906,
+          "max": 26
+        }
+      }
+    },
+    "test_random-32-32-10_961032_nominal_local_hm": {
+      "M_first": {
+        "n": 565,
+        "cross_dependent_nodes": 1,
+        "cross_dependency_wait": {
+          "mean": 0.07610619469026549,
+          "max": 43
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 5.895575221238938,
+          "max": 49
+        },
+        "own_prefix_wait": {
+          "mean": 25.113274336283187,
+          "max": 79
+        },
+        "D": {
+          "mean": 16.62300884955752,
+          "max": 17
+        }
+      },
+      "M_second": {
+        "n": 562,
+        "cross_dependent_nodes": 13,
+        "cross_dependency_wait": {
+          "mean": 1.2117437722419928,
+          "max": 104
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 7.669039145907473,
+          "max": 49
+        },
+        "own_prefix_wait": {
+          "mean": 39.30071174377224,
+          "max": 73
+        },
+        "D": {
+          "mean": 17,
+          "max": 17
+        }
+      },
+      "T": {
+        "n": 244,
+        "cross_dependent_nodes": 1,
+        "cross_dependency_wait": {
+          "mean": 0.10655737704918032,
+          "max": 26
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 5.549180327868853,
+          "max": 9
+        },
+        "own_prefix_wait": {
+          "mean": 19.2827868852459,
+          "max": 65
+        },
+        "D": {
+          "mean": 14.10655737704918,
+          "max": 23
+        }
+      },
+      "S": {
+        "n": 23,
+        "cross_dependent_nodes": 2,
+        "cross_dependency_wait": {
+          "mean": 4.260869565217392,
+          "max": 76
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 11.608695652173912,
+          "max": 49
+        },
+        "own_prefix_wait": {
+          "mean": 46.91304347826087,
+          "max": 72
+        },
+        "D": {
+          "mean": 20,
+          "max": 20
+        }
+      },
+      "all": {
+        "n": 1394,
+        "cross_dependent_nodes": 17,
+        "cross_dependency_wait": {
+          "mean": 0.6083213773314203,
+          "max": 104
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 6.644189383070302,
+          "max": 49
+        },
+        "own_prefix_wait": {
+          "mean": 30.172166427546628,
+          "max": 79
+        },
+        "D": {
+          "mean": 16.390243902439025,
+          "max": 23
+        }
+      }
+    },
+    "test_random-32-32-10_961032_axis_local_hm": {
+      "M_first": {
+        "n": 546,
+        "cross_dependent_nodes": 1,
+        "cross_dependency_wait": {
+          "mean": 0.07875457875457875,
+          "max": 43
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 5.263736263736264,
+          "max": 49
+        },
+        "own_prefix_wait": {
+          "mean": 25.716117216117215,
+          "max": 85
+        },
+        "D": {
+          "mean": 17.173992673992675,
+          "max": 26
+        }
+      },
+      "M_second": {
+        "n": 543,
+        "cross_dependent_nodes": 13,
+        "cross_dependency_wait": {
+          "mean": 1.2357274401473297,
+          "max": 100
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 6.955801104972376,
+          "max": 49
+        },
+        "own_prefix_wait": {
+          "mean": 40.12338858195212,
+          "max": 88
+        },
+        "D": {
+          "mean": 17.54696132596685,
+          "max": 26
+        }
+      },
+      "T": {
+        "n": 239,
+        "cross_dependent_nodes": 1,
+        "cross_dependency_wait": {
+          "mean": 0.1087866108786611,
+          "max": 26
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 5.00836820083682,
+          "max": 9
+        },
+        "own_prefix_wait": {
+          "mean": 20.05439330543933,
+          "max": 65
+        },
+        "D": {
+          "mean": 13.736401673640167,
+          "max": 23
+        }
+      },
+      "S": {
+        "n": 23,
+        "cross_dependent_nodes": 2,
+        "cross_dependency_wait": {
+          "mean": 4.260869565217392,
+          "max": 76
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 11.391304347826088,
+          "max": 49
+        },
+        "own_prefix_wait": {
+          "mean": 48.73913043478261,
+          "max": 94
+        },
+        "D": {
+          "mean": 20,
+          "max": 20
+        }
+      },
+      "all": {
+        "n": 1351,
+        "cross_dependent_nodes": 17,
+        "cross_dependency_wait": {
+          "mean": 0.6202812731310141,
+          "max": 100
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 6.002960769800148,
+          "max": 49
+        },
+        "own_prefix_wait": {
+          "mean": 30.897113249444857,
+          "max": 94
+        },
+        "D": {
+          "mean": 16.763878608438194,
+          "max": 26
+        }
+      }
+    },
+    "test_empty-32-32_961033_nominal_local_hm": {
+      "M_first": {
+        "n": 566,
+        "cross_dependent_nodes": 0,
+        "cross_dependency_wait": {
+          "mean": 0,
+          "max": 0
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 6.742049469964664,
+          "max": 45
+        },
+        "own_prefix_wait": {
+          "mean": 25.25971731448763,
+          "max": 79
+        },
+        "D": {
+          "mean": 16.6113074204947,
+          "max": 17
+        }
+      },
+      "M_second": {
+        "n": 559,
+        "cross_dependent_nodes": 8,
+        "cross_dependency_wait": {
+          "mean": 0.7513416815742398,
+          "max": 88
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 8.69767441860465,
+          "max": 45
+        },
+        "own_prefix_wait": {
+          "mean": 39.82826475849732,
+          "max": 73
+        },
+        "D": {
+          "mean": 17,
+          "max": 17
+        }
+      },
+      "T": {
+        "n": 251,
+        "cross_dependent_nodes": 0,
+        "cross_dependency_wait": {
+          "mean": 0,
+          "max": 0
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 6.6892430278884465,
+          "max": 9
+        },
+        "own_prefix_wait": {
+          "mean": 18.669322709163346,
+          "max": 56
+        },
+        "D": {
+          "mean": 14.187250996015937,
+          "max": 23
+        }
+      },
+      "S": {
+        "n": 31,
+        "cross_dependent_nodes": 0,
+        "cross_dependency_wait": {
+          "mean": 0,
+          "max": 0
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 10.193548387096774,
+          "max": 45
+        },
+        "own_prefix_wait": {
+          "mean": 54.29032258064516,
+          "max": 72
+        },
+        "D": {
+          "mean": 20,
+          "max": 20
+        }
+      },
+      "all": {
+        "n": 1407,
+        "cross_dependent_nodes": 8,
+        "cross_dependency_wait": {
+          "mean": 0.29850746268656714,
+          "max": 88
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 7.585643212508884,
+          "max": 45
+        },
+        "own_prefix_wait": {
+          "mean": 30.51172707889126,
+          "max": 79
+        },
+        "D": {
+          "mean": 16.407960199004975,
+          "max": 23
+        }
+      }
+    },
+    "test_empty-32-32_961033_axis_local_hm": {
+      "M_first": {
+        "n": 543,
+        "cross_dependent_nodes": 0,
+        "cross_dependency_wait": {
+          "mean": 0,
+          "max": 0
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 5.550644567219153,
+          "max": 45
+        },
+        "own_prefix_wait": {
+          "mean": 25.76243093922652,
+          "max": 82
+        },
+        "D": {
+          "mean": 17.18232044198895,
+          "max": 26
+        }
+      },
+      "M_second": {
+        "n": 543,
+        "cross_dependent_nodes": 8,
+        "cross_dependency_wait": {
+          "mean": 0.7569060773480663,
+          "max": 84
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 7.500920810313075,
+          "max": 45
+        },
+        "own_prefix_wait": {
+          "mean": 40.523020257826886,
+          "max": 88
+        },
+        "D": {
+          "mean": 17.58011049723757,
+          "max": 26
+        }
+      },
+      "T": {
+        "n": 248,
+        "cross_dependent_nodes": 0,
+        "cross_dependency_wait": {
+          "mean": 0,
+          "max": 0
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 5.125,
+          "max": 9
+        },
+        "own_prefix_wait": {
+          "mean": 19.072580645161292,
+          "max": 70
+        },
+        "D": {
+          "mean": 13.588709677419354,
+          "max": 23
+        }
+      },
+      "S": {
+        "n": 29,
+        "cross_dependent_nodes": 0,
+        "cross_dependency_wait": {
+          "mean": 0,
+          "max": 0
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 8.758620689655173,
+          "max": 45
+        },
+        "own_prefix_wait": {
+          "mean": 53.206896551724135,
+          "max": 72
+        },
+        "D": {
+          "mean": 20,
+          "max": 20
+        }
+      },
+      "all": {
+        "n": 1363,
+        "cross_dependent_nodes": 8,
+        "cross_dependency_wait": {
+          "mean": 0.30154071900220103,
+          "max": 84
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 6.318415260454879,
+          "max": 45
+        },
+        "own_prefix_wait": {
+          "mean": 31.00953778429934,
+          "max": 88
+        },
+        "D": {
+          "mean": 16.74688187820983,
+          "max": 26
+        }
+      }
+    },
+    "test_random-32-32-10_961033_nominal_local_hm": {
+      "M_first": {
+        "n": 575,
+        "cross_dependent_nodes": 0,
+        "cross_dependency_wait": {
+          "mean": 0,
+          "max": 0
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 5.7043478260869565,
+          "max": 19
+        },
+        "own_prefix_wait": {
+          "mean": 24.624347826086957,
+          "max": 79
+        },
+        "D": {
+          "mean": 16.641739130434782,
+          "max": 17
+        }
+      },
+      "M_second": {
+        "n": 575,
+        "cross_dependent_nodes": 3,
+        "cross_dependency_wait": {
+          "mean": 0.16869565217391305,
+          "max": 40
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 7.222608695652174,
+          "max": 39
+        },
+        "own_prefix_wait": {
+          "mean": 39.579130434782606,
+          "max": 73
+        },
+        "D": {
+          "mean": 17,
+          "max": 17
+        }
+      },
+      "T": {
+        "n": 229,
+        "cross_dependent_nodes": 0,
+        "cross_dependency_wait": {
+          "mean": 0,
+          "max": 0
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 5.467248908296943,
+          "max": 9
+        },
+        "own_prefix_wait": {
+          "mean": 19.187772925764193,
+          "max": 56
+        },
+        "D": {
+          "mean": 14.074235807860262,
+          "max": 23
+        }
+      },
+      "S": {
+        "n": 22,
+        "cross_dependent_nodes": 0,
+        "cross_dependency_wait": {
+          "mean": 0,
+          "max": 0
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 9.590909090909092,
+          "max": 39
+        },
+        "own_prefix_wait": {
+          "mean": 43.81818181818182,
+          "max": 68
+        },
+        "D": {
+          "mean": 20,
+          "max": 20
+        }
+      },
+      "all": {
+        "n": 1401,
+        "cross_dependent_nodes": 3,
+        "cross_dependency_wait": {
+          "mean": 0.06923625981441828,
+          "max": 40
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 6.349750178443968,
+          "max": 39
+        },
+        "own_prefix_wait": {
+          "mean": 30.174875089221985,
+          "max": 79
+        },
+        "D": {
+          "mean": 16.42184154175589,
+          "max": 23
+        }
+      }
+    },
+    "test_random-32-32-10_961033_axis_local_hm": {
+      "M_first": {
+        "n": 553,
+        "cross_dependent_nodes": 0,
+        "cross_dependency_wait": {
+          "mean": 0,
+          "max": 0
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 5.215189873417722,
+          "max": 15
+        },
+        "own_prefix_wait": {
+          "mean": 24.42133815551537,
+          "max": 79
+        },
+        "D": {
+          "mean": 17.1627486437613,
+          "max": 26
+        }
+      },
+      "M_second": {
+        "n": 550,
+        "cross_dependent_nodes": 3,
+        "cross_dependency_wait": {
+          "mean": 0.1690909090909091,
+          "max": 42
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 6.607272727272727,
+          "max": 39
+        },
+        "own_prefix_wait": {
+          "mean": 40.016363636363636,
+          "max": 86
+        },
+        "D": {
+          "mean": 17.523636363636363,
+          "max": 26
+        }
+      },
+      "T": {
+        "n": 222,
+        "cross_dependent_nodes": 0,
+        "cross_dependency_wait": {
+          "mean": 0,
+          "max": 0
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 5.112612612612613,
+          "max": 9
+        },
+        "own_prefix_wait": {
+          "mean": 19.08108108108108,
+          "max": 60
+        },
+        "D": {
+          "mean": 13.27927927927928,
+          "max": 23
+        }
+      },
+      "S": {
+        "n": 21,
+        "cross_dependent_nodes": 0,
+        "cross_dependency_wait": {
+          "mean": 0,
+          "max": 0
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 9.333333333333334,
+          "max": 39
+        },
+        "own_prefix_wait": {
+          "mean": 44.095238095238095,
+          "max": 68
+        },
+        "D": {
+          "mean": 20,
+          "max": 20
+        }
+      },
+      "all": {
+        "n": 1346,
+        "cross_dependent_nodes": 3,
+        "cross_dependency_wait": {
+          "mean": 0.06909361069836553,
+          "max": 42
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 5.831352154531946,
+          "max": 39
+        },
+        "own_prefix_wait": {
+          "mean": 30.219910846953937,
+          "max": 86
+        },
+        "D": {
+          "mean": 16.713967310549776,
+          "max": 26
+        }
+      }
+    },
+    "test_empty-32-32_961034_nominal_local_hm": {
+      "M_first": {
+        "n": 574,
+        "cross_dependent_nodes": 0,
+        "cross_dependency_wait": {
+          "mean": 0,
+          "max": 0
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 6.679442508710801,
+          "max": 28
+        },
+        "own_prefix_wait": {
+          "mean": 24.11672473867596,
+          "max": 79
+        },
+        "D": {
+          "mean": 16.6602787456446,
+          "max": 17
+        }
+      },
+      "M_second": {
+        "n": 567,
+        "cross_dependent_nodes": 4,
+        "cross_dependency_wait": {
+          "mean": 0.23809523809523808,
+          "max": 66
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 7.925925925925926,
+          "max": 39
+        },
+        "own_prefix_wait": {
+          "mean": 39.613756613756614,
+          "max": 73
+        },
+        "D": {
+          "mean": 17,
+          "max": 17
+        }
+      },
+      "T": {
+        "n": 211,
+        "cross_dependent_nodes": 0,
+        "cross_dependency_wait": {
+          "mean": 0,
+          "max": 0
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 6.644549763033176,
+          "max": 9
+        },
+        "own_prefix_wait": {
+          "mean": 18.10900473933649,
+          "max": 56
+        },
+        "D": {
+          "mean": 14.175355450236967,
+          "max": 23
+        }
+      },
+      "S": {
+        "n": 22,
+        "cross_dependent_nodes": 0,
+        "cross_dependency_wait": {
+          "mean": 0,
+          "max": 0
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 12.727272727272727,
+          "max": 45
+        },
+        "own_prefix_wait": {
+          "mean": 54.04545454545455,
+          "max": 72
+        },
+        "D": {
+          "mean": 20,
+          "max": 20
+        }
+      },
+      "all": {
+        "n": 1374,
+        "cross_dependent_nodes": 4,
+        "cross_dependency_wait": {
+          "mean": 0.0982532751091703,
+          "max": 66
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 7.285298398835517,
+          "max": 45
+        },
+        "own_prefix_wait": {
+          "mean": 30.068413391557495,
+          "max": 79
+        },
+        "D": {
+          "mean": 16.472343522561864,
+          "max": 23
+        }
+      }
+    },
+    "test_empty-32-32_961034_axis_local_hm": {
+      "M_first": {
+        "n": 556,
+        "cross_dependent_nodes": 0,
+        "cross_dependency_wait": {
+          "mean": 0,
+          "max": 0
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 5.073741007194244,
+          "max": 23
+        },
+        "own_prefix_wait": {
+          "mean": 24.586330935251798,
+          "max": 85
+        },
+        "D": {
+          "mean": 17.357913669064747,
+          "max": 26
+        }
+      },
+      "M_second": {
+        "n": 551,
+        "cross_dependent_nodes": 4,
+        "cross_dependency_wait": {
+          "mean": 0.22141560798548093,
+          "max": 62
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 6.259528130671506,
+          "max": 39
+        },
+        "own_prefix_wait": {
+          "mean": 40.780399274047184,
+          "max": 88
+        },
+        "D": {
+          "mean": 17.702359346642467,
+          "max": 26
+        }
+      },
+      "T": {
+        "n": 205,
+        "cross_dependent_nodes": 0,
+        "cross_dependency_wait": {
+          "mean": 0,
+          "max": 0
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 5.024390243902439,
+          "max": 9
+        },
+        "own_prefix_wait": {
+          "mean": 18.214634146341464,
+          "max": 62
+        },
+        "D": {
+          "mean": 13.64390243902439,
+          "max": 23
+        }
+      },
+      "S": {
+        "n": 21,
+        "cross_dependent_nodes": 0,
+        "cross_dependency_wait": {
+          "mean": 0,
+          "max": 0
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 12.142857142857142,
+          "max": 45
+        },
+        "own_prefix_wait": {
+          "mean": 55.95238095238095,
+          "max": 104
+        },
+        "D": {
+          "mean": 20,
+          "max": 20
+        }
+      },
+      "all": {
+        "n": 1333,
+        "cross_dependent_nodes": 4,
+        "cross_dependency_wait": {
+          "mean": 0.09152288072018004,
+          "max": 62
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 5.667666916729182,
+          "max": 45
+        },
+        "own_prefix_wait": {
+          "mean": 30.794448612153037,
+          "max": 104
+        },
+        "D": {
+          "mean": 16.970742685671418,
+          "max": 26
+        }
+      }
+    },
+    "test_random-32-32-10_961034_nominal_local_hm": {
+      "M_first": {
+        "n": 570,
+        "cross_dependent_nodes": 2,
+        "cross_dependency_wait": {
+          "mean": 0.1280701754385965,
+          "max": 38
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 6.396491228070175,
+          "max": 36
+        },
+        "own_prefix_wait": {
+          "mean": 24.40877192982456,
+          "max": 79
+        },
+        "D": {
+          "mean": 16.645614035087718,
+          "max": 17
+        }
+      },
+      "M_second": {
+        "n": 569,
+        "cross_dependent_nodes": 8,
+        "cross_dependency_wait": {
+          "mean": 0.5307557117750439,
+          "max": 75
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 7.978910369068541,
+          "max": 39
+        },
+        "own_prefix_wait": {
+          "mean": 39.1195079086116,
+          "max": 73
+        },
+        "D": {
+          "mean": 17,
+          "max": 17
+        }
+      },
+      "T": {
+        "n": 226,
+        "cross_dependent_nodes": 1,
+        "cross_dependency_wait": {
+          "mean": 0.09292035398230089,
+          "max": 21
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 6.146017699115045,
+          "max": 9
+        },
+        "own_prefix_wait": {
+          "mean": 18.694690265486727,
+          "max": 56
+        },
+        "D": {
+          "mean": 14.389380530973451,
+          "max": 23
+        }
+      },
+      "S": {
+        "n": 21,
+        "cross_dependent_nodes": 0,
+        "cross_dependency_wait": {
+          "mean": 0,
+          "max": 0
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 7.857142857142857,
+          "max": 41
+        },
+        "own_prefix_wait": {
+          "mean": 52.19047619047619,
+          "max": 72
+        },
+        "D": {
+          "mean": 20,
+          "max": 20
+        }
+      },
+      "all": {
+        "n": 1386,
+        "cross_dependent_nodes": 11,
+        "cross_dependency_wait": {
+          "mean": 0.2857142857142857,
+          "max": 75
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 7.027417027417028,
+          "max": 41
+        },
+        "own_prefix_wait": {
+          "mean": 29.937229437229437,
+          "max": 79
+        },
+        "D": {
+          "mean": 16.474025974025974,
+          "max": 23
+        }
+      }
+    },
+    "test_random-32-32-10_961034_axis_local_hm": {
+      "M_first": {
+        "n": 546,
+        "cross_dependent_nodes": 2,
+        "cross_dependency_wait": {
+          "mean": 0.13553113553113552,
+          "max": 37
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 5.038461538461538,
+          "max": 36
+        },
+        "own_prefix_wait": {
+          "mean": 25.205128205128204,
+          "max": 85
+        },
+        "D": {
+          "mean": 17.36813186813187,
+          "max": 26
+        }
+      },
+      "M_second": {
+        "n": 546,
+        "cross_dependent_nodes": 8,
+        "cross_dependency_wait": {
+          "mean": 0.5457875457875457,
+          "max": 71
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 6.642857142857143,
+          "max": 39
+        },
+        "own_prefix_wait": {
+          "mean": 40.608058608058606,
+          "max": 88
+        },
+        "D": {
+          "mean": 17.725274725274726,
+          "max": 26
+        }
+      },
+      "T": {
+        "n": 219,
+        "cross_dependent_nodes": 1,
+        "cross_dependency_wait": {
+          "mean": 0.091324200913242,
+          "max": 20
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 4.858447488584475,
+          "max": 9
+        },
+        "own_prefix_wait": {
+          "mean": 19.356164383561644,
+          "max": 62
+        },
+        "D": {
+          "mean": 14.02283105022831,
+          "max": 23
+        }
+      },
+      "S": {
+        "n": 21,
+        "cross_dependent_nodes": 0,
+        "cross_dependency_wait": {
+          "mean": 0,
+          "max": 0
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 7.190476190476191,
+          "max": 43
+        },
+        "own_prefix_wait": {
+          "mean": 53.04761904761905,
+          "max": 72
+        },
+        "D": {
+          "mean": 20,
+          "max": 20
+        }
+      },
+      "all": {
+        "n": 1332,
+        "cross_dependent_nodes": 11,
+        "cross_dependency_wait": {
+          "mean": 0.29429429429429427,
+          "max": 71
+        },
+        "post_cross_ready_admit_wait": {
+          "mean": 5.70045045045045,
+          "max": 43
+        },
+        "own_prefix_wait": {
+          "mean": 30.996246246246248,
+          "max": 88
+        },
+        "D": {
+          "mean": 17.006006006006007,
+          "max": 26
+        }
+      }
+    }
+  }
+}

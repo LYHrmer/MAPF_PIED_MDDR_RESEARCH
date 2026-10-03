@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "train_runs": [
+    "train_empty-32-32_931701_axis_hm_GPIBT",
+    "train_empty-32-32_931701_nominal_hm_GPIBT",
+    "train_empty-32-32_931701_slow065_hm_GPIBT",
+    "train_empty-32-32_931702_axis_hm_GPIBT",
+    "train_empty-32-32_931702_nominal_hm_GPIBT",
+    "train_empty-32-32_931702_slow065_hm_GPIBT",
+    "train_random-32-32-10_931701_axis_hm_GPIBT",
+    "train_random-32-32-10_931701_nominal_hm_GPIBT",
+    "train_random-32-32-10_931701_slow065_hm_GPIBT",
+    "train_random-32-32-10_931702_axis_hm_GPIBT",
+    "train_random-32-32-10_931702_nominal_hm_GPIBT",
+    "train_random-32-32-10_931702_slow065_hm_GPIBT"
+  ],
+  "calibration_runs": [
+    "calibration_empty-32-32_931711_axis_hm_GPIBT",
+    "calibration_empty-32-32_931711_nominal_hm_GPIBT",
+    "calibration_empty-32-32_931711_slow065_hm_GPIBT",
+    "calibration_random-32-32-10_931711_axis_hm_GPIBT",
+    "calibration_random-32-32-10_931711_nominal_hm_GPIBT",
+    "calibration_random-32-32-10_931711_slow065_hm_GPIBT"
+  ],
+  "training_motion_rows": 14542,
+  "new_test_seeds": [
+    961031,
+    961032,
+    961033,
+    961034
+  ],
+  "new_seed_disjoint_R7_R9": true,
+  "same14_feature_architecture": true,
+  "full_ridge_unchanged": true,
+  "geometry_lambda": 1.0,
+  "mask_slots": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "source_pin_count": 36,
+  "r9_test_used_only_to_form_attribution_hypothesis_not_fit": true,
+  "new_test_input_hashes": {
+    "inputs/random-32-32-10_961032/map.json": "67fd8f4a06f754c921a50cebd89a7198444295124ffaa2c7871bbcf81298be34",
+    "inputs/random-32-32-10_961032/environment.json": "944b12e519bf239efc51b67e6609f7f280c7c3379ceb2bbd9188eed33480757c",
+    "inputs/random-32-32-10_961032/tasks_n8.txt": "87871aed6f1255963ee41f7d1721d7b7fd751bf0abbb635f606cb9fd8221e089",
+    "inputs/empty-32-32_961034/map.json": "f9afb60d19a374eb7b7288144e556b8557aa8aded72d621e07a6400bee2b20c4",
+    "inputs/empty-32-32_961034/environment.json": "76b4ad4d7272a57ca11c053882b80eff4ab10f89eb43a702be60b9979a58affd",
+    "inputs/empty-32-32_961034/tasks_n8.txt": "1f47aa8ce41f537e82fb270d876ebdbe23a3814f4706530321b88740b9816a5c",
+    "inputs/empty-32-32_961033/map.json": "f9afb60d19a374eb7b7288144e556b8557aa8aded72d621e07a6400bee2b20c4",
+    "inputs/empty-32-32_961033/environment.json": "e60077c023dfef7f088afbaa0167306e0b6cffce83ad3d1e082c75babbe00672",
+    "inputs/empty-32-32_961033/tasks_n8.txt": "3e0f440f036b25e529630d46fab8f96258c9124f948de925f4778757a0c315cd",
+    "inputs/random-32-32-10_961034/map.json": "67fd8f4a06f754c921a50cebd89a7198444295124ffaa2c7871bbcf81298be34",
+    "inputs/random-32-32-10_961034/environment.json": "a5b3d70252d85505cd2cd7f1ab67c43d7f69c5195384a2f1ae525803d4a0ee4b",
+    "inputs/random-32-32-10_961034/tasks_n8.txt": "2cf5e77b03556e743d91e182bfac0485c0b768a7d685201b74a631ef11a84c97",
+    "inputs/random-32-32-10_961033/map.json": "67fd8f4a06f754c921a50cebd89a7198444295124ffaa2c7871bbcf81298be34",
+    "inputs/random-32-32-10_961033/environment.json": "eb99f117d9529f29fb8d3a7bf10d0b31cd8e4dbff3e7416e11bec3aea145d76b",
+    "inputs/random-32-32-10_961033/tasks_n8.txt": "717fab6f5f6a102ea63b1aa90d82fe20cf4ed788e8417d7e8ca91238dc42851b",
+    "inputs/empty-32-32_961031/map.json": "f9afb60d19a374eb7b7288144e556b8557aa8aded72d621e07a6400bee2b20c4",
+    "inputs/empty-32-32_961031/environment.json": "2c066850e1bb718e1123d14e61444d2adb43dbd2aa4e2462ab8fa7be7e3d9b7b",
+    "inputs/empty-32-32_961031/tasks_n8.txt": "7f5e26ca3460ac4a3852192e89e40fe9807d6f1917d4ec569ecfe5a854588757",
+    "inputs/random-32-32-10_961031/map.json": "67fd8f4a06f754c921a50cebd89a7198444295124ffaa2c7871bbcf81298be34",
+    "inputs/random-32-32-10_961031/environment.json": "564bd2ca28c57ac8704e3894d893c06ad0dde154c628103da64200ba40da5530",
+    "inputs/random-32-32-10_961031/tasks_n8.txt": "eda4544c493750cb1f1bb9db017bb96bd31f9123607c5e5c8386e179e4ac65d6",
+    "inputs/empty-32-32_961032/map.json": "f9afb60d19a374eb7b7288144e556b8557aa8aded72d621e07a6400bee2b20c4",
+    "inputs/empty-32-32_961032/environment.json": "191f35d107b13e276921d69b624209ce1518f33533206599fc8b41dac1ad77b2",
+    "inputs/empty-32-32_961032/tasks_n8.txt": "703b17a16cc2f7fda5862666a48d663c1556ceee65310dbf0b48768a953a70df"
+  }
+}

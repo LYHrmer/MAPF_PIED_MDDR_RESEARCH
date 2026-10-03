@@ -1,5 +1,11 @@
 # 空间误差约束下的路径引导探索
 
+2026-10-03 R10：[几何/历史归因64臂](geometry_history_20261003_r10/REPORT.md)完成，hm/history/geometry/full任务371/363/363/363。模型有局部动作作用，尚无学习吞吐优势；[全部配对条件图](r10_root_review/FIGURE_CAPTION.md)保留收益、退化与零变化。
+
+随后另登记[训练参考残差修正32臂](reference_residual_20261003_r10b/REPORT.md)，冻结模型只改代价接法，hm/旧full/残差history/残差full任务185/184/185/182。64与32分别封存，不混为事前96臂；当前ridge保留作诊断，停止该overlay的测试调参。
+
+[原作者GSES图与轨迹接口](gses_fixed_path_20261003_r10/REPORT.md)已完成8配置、16次独立重放，作者源码不变，公开归档离线重编一致。未来边权不能直接表示连续primitive，下一优先做共同执行映射再评价模型。[本轮三线结果与Astra/科研导师分别判断](THREE_ROUTE_POSTUPDATE_20261003_R10.md) · [下一方法合同](NEXT_METHOD_CONTRACT_20261003_R10.md)。以下R9及更早按历史阅读。
+
 2026-10-03 R9：[primitive时长模型](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/primitive_duration_20261003_r9/REPORT.md)修正队列等待混入标签的问题，6机械＋24新留出完成。hm/history/learned任务184/186/188；学习相对历史只在一个条件多2，其余7相同。12个primitive×方向组的预测MAE全部更差，两个条件零历史时已分叉。下一先分离离线几何先验与在线历史，再扩大验证。
 
 [作者Improved GSES预检](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/gses_author_preflight_20261003_r9/REPORT.md)已跑通原始代码，四组成功；尚未与连续FIFO任务统一对照。保留作者原版结果，并另做固定路径依赖映射。[本轮Astra与科研导师分别判断、三线实绩](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261003_R9.md)。下方R8及更早为保留历史。

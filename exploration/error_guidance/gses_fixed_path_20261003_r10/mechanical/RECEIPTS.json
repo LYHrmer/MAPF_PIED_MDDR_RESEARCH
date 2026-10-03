@@ -1,0 +1,36 @@
+[
+  {
+    "step": "build",
+    "command": [
+      "rtk",
+      "proxy",
+      "g++",
+      "-std=c++17",
+      "-O3",
+      "-DNDEBUG",
+      "-I/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_fixed_path_20261003_r10/archive_rebuild/STPG/inc",
+      "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_fixed_path_20261003_r10/probe_duration_contract.cpp",
+      "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_fixed_path_20261003_r10/archive_rebuild/STPG/src/Algorithm/Astar.cpp",
+      "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_fixed_path_20261003_r10/archive_rebuild/STPG/src/Algorithm/graph_algo.cpp",
+      "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_fixed_path_20261003_r10/archive_rebuild/STPG/src/Algorithm/heuristic.cpp",
+      "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_fixed_path_20261003_r10/archive_rebuild/STPG/src/graph/graph.cpp",
+      "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_fixed_path_20261003_r10/archive_rebuild/STPG/src/graph/generate_graph.cpp",
+      "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_fixed_path_20261003_r10/archive_rebuild/STPG/src/util/Timer.cpp",
+      "-o",
+      "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_fixed_path_20261003_r10/probe_duration_contract"
+    ],
+    "returncode": 0,
+    "wall_seconds": 12.15738938100003
+  },
+  {
+    "step": "run",
+    "command": [
+      "rtk",
+      "proxy",
+      "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_fixed_path_20261003_r10/probe_duration_contract",
+      "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_fixed_path_20261003_r10/mechanical/RESULTS.json"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.03207778599971789
+  }
+]
