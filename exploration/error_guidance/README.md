@@ -1,5 +1,9 @@
 # 空间误差约束下的路径引导探索
 
+2026-10-03 R11：[真实作者图的共同primitive执行](gses_primitive_20261003_r11/REPORT.md)完成27项验证。16项单位模式逐时刻复现作者原图/GSES/Improved，另外9项random60 primitive与2项lak41真实超时原图回退均完成；43作者源不变，未新跑优化器。分段线性事件层不是原ARGoS控制器；独立根审覆盖239,222 MOVE、523,274连续段和全部资源/前驱条件。
+
+random60三条件均出现完工时间和改善而makespan变差，不能称整体支配。实际半MOVE checkpoint同图恢复逐事件一致、非法承诺反转被拒绝；尚未在执行中采用不同图。本轮未训练新模型，也未把旧时长ridge重新列为核心收益。[三线实绩与两份判断](THREE_ROUTE_POSTUPDATE_20261003_R11.md)、[下一方法合同](NEXT_METHOD_CONTRACT_20261003_R11.md)已给出：先合法异图采用及真实控制器/信息接口，再检验模型的完整任务价值，并与执行预测和重规划门控近邻明确区分。以下R10及更早为历史。
+
 2026-10-03 R10：[几何/历史归因64臂](geometry_history_20261003_r10/REPORT.md)完成，hm/history/geometry/full任务371/363/363/363。模型有局部动作作用，尚无学习吞吐优势；[全部配对条件图](r10_root_review/FIGURE_CAPTION.md)保留收益、退化与零变化。
 
 随后另登记[训练参考残差修正32臂](reference_residual_20261003_r10b/REPORT.md)，冻结模型只改代价接法，hm/旧full/残差history/残差full任务185/184/185/182。64与32分别封存，不混为事前96臂；当前ridge保留作诊断，停止该overlay的测试调参。

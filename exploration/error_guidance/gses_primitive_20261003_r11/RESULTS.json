@@ -1,0 +1,752 @@
+{
+  "scope": "Finite R2 event and affine-geometry interface regressions, no heldout performance claim",
+  "passed": true,
+  "registered_runs": 27,
+  "completed_runs": 27,
+  "failed_runs": 0,
+  "author_unit_regressions": 16,
+  "primitive_runs": 11,
+  "author_sources_unchanged": 43,
+  "freezes": {
+    "FREEZE_01.json": {
+      "pins": 60,
+      "unchanged": true
+    },
+    "MECHANICS_FREEZE.json": {
+      "pins": 5,
+      "unchanged": true
+    }
+  },
+  "local_event_audit_runs": 27,
+  "root_independent_audit": {
+    "path": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/r11_root_review/ROOT_GSES_EXECUTION.json",
+    "sha256": "8212de462d659a3b16435b3703ee085af28ba218ed99765a78cedd3b89b24401",
+    "runs": 27,
+    "candidate_executor_imports": false,
+    "moves": 239222,
+    "segments": 523274,
+    "exact_candidate_pairs": 72636,
+    "geometry_negative_controls": 4,
+    "event_negative_controls": 2
+  },
+  "local_negative_controls": 9,
+  "checkpoint": {
+    "time": "1/2",
+    "active_moves": 57,
+    "full_resumed_trace_exact": true
+  },
+  "trace_archive_count": 27,
+  "trace_archive_bytes": 34873897,
+  "largest_trace_archive_bytes": 4164872,
+  "runs": [
+    {
+      "spec": {
+        "id": "random-32-32-10__GSES__original__author_unit",
+        "source": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_fixed_path_20261003_r10/raw/attempt01/random-32-32-10__GSES.json.gz",
+        "part": "original",
+        "profile": "author_unit",
+        "author_status": "Succ",
+        "case": "random-32-32-10",
+        "method": "GSES"
+      },
+      "started_UTC": "2026-10-03T15:07:44.976100+00:00",
+      "error": null,
+      "author_equivalence": {
+        "passed": true,
+        "cost": 1375,
+        "ticks": 54,
+        "state_observations": 3300,
+        "recorded_states_used_as_actions": false
+      },
+      "makespan": "54",
+      "sum_completion_time": "1375",
+      "events": 11351,
+      "segments": 2575,
+      "raw": "raw/attempt01/random-32-32-10__GSES__original__author_unit.json.gz",
+      "raw_sha256": "58fd45841fb9e0da0f2e45c4c07c74ba8d517a6cec1032b77f434ae58f6c978d",
+      "uncompressed_sha256": "313c786ce133c86f53a5a42cf1ec001bdd4ad7ef75575893f5d5c20b971dd525",
+      "bytes": 161164,
+      "wall_seconds": 0.24913853399993968
+    },
+    {
+      "spec": {
+        "id": "random-32-32-10__GSES__selected__author_unit",
+        "source": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_fixed_path_20261003_r10/raw/attempt01/random-32-32-10__GSES.json.gz",
+        "part": "selected",
+        "profile": "author_unit",
+        "author_status": "Succ",
+        "case": "random-32-32-10",
+        "method": "GSES"
+      },
+      "started_UTC": "2026-10-03T15:07:45.225656+00:00",
+      "error": null,
+      "author_equivalence": {
+        "passed": true,
+        "cost": 1292,
+        "ticks": 50,
+        "state_observations": 3060,
+        "recorded_states_used_as_actions": false
+      },
+      "makespan": "50",
+      "sum_completion_time": "1292",
+      "events": 11351,
+      "segments": 2564,
+      "raw": "raw/attempt01/random-32-32-10__GSES__selected__author_unit.json.gz",
+      "raw_sha256": "123399c0eab1783c24cc9c4a7df1a203e61f20879eda4d2581adb9d29d91075a",
+      "uncompressed_sha256": "ff4933ef3c7435e2851f7613eb49135f49e44813b3aeeb949b4d963b8ea1b12e",
+      "bytes": 159492,
+      "wall_seconds": 0.27075185400099144
+    },
+    {
+      "spec": {
+        "id": "random-32-32-10__Improved_GSES__original__author_unit",
+        "source": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_fixed_path_20261003_r10/raw/attempt01/random-32-32-10__Improved_GSES.json.gz",
+        "part": "original",
+        "profile": "author_unit",
+        "author_status": "Succ",
+        "case": "random-32-32-10",
+        "method": "Improved_GSES"
+      },
+      "started_UTC": "2026-10-03T15:07:45.496732+00:00",
+      "error": null,
+      "author_equivalence": {
+        "passed": true,
+        "cost": 1375,
+        "ticks": 54,
+        "state_observations": 3300,
+        "recorded_states_used_as_actions": false
+      },
+      "makespan": "54",
+      "sum_completion_time": "1375",
+      "events": 11351,
+      "segments": 2575,
+      "raw": "raw/attempt01/random-32-32-10__Improved_GSES__original__author_unit.json.gz",
+      "raw_sha256": "58fd45841fb9e0da0f2e45c4c07c74ba8d517a6cec1032b77f434ae58f6c978d",
+      "uncompressed_sha256": "313c786ce133c86f53a5a42cf1ec001bdd4ad7ef75575893f5d5c20b971dd525",
+      "bytes": 161164,
+      "wall_seconds": 0.2646570540000539
+    },
+    {
+      "spec": {
+        "id": "random-32-32-10__Improved_GSES__selected__author_unit",
+        "source": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_fixed_path_20261003_r10/raw/attempt01/random-32-32-10__Improved_GSES.json.gz",
+        "part": "selected",
+        "profile": "author_unit",
+        "author_status": "Succ",
+        "case": "random-32-32-10",
+        "method": "Improved_GSES"
+      },
+      "started_UTC": "2026-10-03T15:07:45.761753+00:00",
+      "error": null,
+      "author_equivalence": {
+        "passed": true,
+        "cost": 1292,
+        "ticks": 50,
+        "state_observations": 3060,
+        "recorded_states_used_as_actions": false
+      },
+      "makespan": "50",
+      "sum_completion_time": "1292",
+      "events": 11351,
+      "segments": 2564,
+      "raw": "raw/attempt01/random-32-32-10__Improved_GSES__selected__author_unit.json.gz",
+      "raw_sha256": "a76874dff2adf2ab08a383f36d2f53a535700a9c271da4aeeb5641afb5ecdfe6",
+      "uncompressed_sha256": "e243269578933a4ffc36b14ccbd3dc782508cba772685185ccf5e0ded368153e",
+      "bytes": 159358,
+      "wall_seconds": 0.24353064800016
+    },
+    {
+      "spec": {
+        "id": "random60__original__primitive_nominal",
+        "source": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_fixed_path_20261003_r10/raw/attempt01/random-32-32-10__GSES.json.gz",
+        "part": "original",
+        "profile": "primitive_nominal",
+        "author_status": "Succ",
+        "case": "random-32-32-10",
+        "method": "original"
+      },
+      "started_UTC": "2026-10-03T15:08:30.085536+00:00",
+      "error": null,
+      "makespan": "309/4",
+      "sum_completion_time": "8343/4",
+      "events": 14681,
+      "segments": 4243,
+      "raw": "raw/attempt02/random60__original__primitive_nominal.json.gz",
+      "raw_sha256": "513bc7ef94d93b06ce43ce3abbf9701d3227ad5cf237709ed12d200053b09edf",
+      "uncompressed_sha256": "0e74feda9dae051f3fb84e34f892acce67f79a403df580c747a0fb71842b9c37",
+      "bytes": 216399,
+      "wall_seconds": 0.3476682520013128
+    },
+    {
+      "spec": {
+        "id": "random60__GSES__primitive_nominal",
+        "source": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_fixed_path_20261003_r10/raw/attempt01/random-32-32-10__GSES.json.gz",
+        "part": "selected",
+        "profile": "primitive_nominal",
+        "author_status": "Succ",
+        "case": "random-32-32-10",
+        "method": "GSES"
+      },
+      "started_UTC": "2026-10-03T15:08:30.434176+00:00",
+      "error": null,
+      "makespan": "159/2",
+      "sum_completion_time": "8171/4",
+      "events": 14681,
+      "segments": 4233,
+      "raw": "raw/attempt02/random60__GSES__primitive_nominal.json.gz",
+      "raw_sha256": "b3e13647c7d3901ff37730272eafa463b1a21d5b3d47efd8ed1847bc27994a1a",
+      "uncompressed_sha256": "c29c0033ed067a0887da42ee36aa6e7d1b3ef0315ac040bba4ace620b719bed2",
+      "bytes": 214623,
+      "wall_seconds": 0.3578590229990368
+    },
+    {
+      "spec": {
+        "id": "random60__Improved_GSES__primitive_nominal",
+        "source": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_fixed_path_20261003_r10/raw/attempt01/random-32-32-10__Improved_GSES.json.gz",
+        "part": "selected",
+        "profile": "primitive_nominal",
+        "author_status": "Succ",
+        "case": "random-32-32-10",
+        "method": "Improved_GSES"
+      },
+      "started_UTC": "2026-10-03T15:08:30.792364+00:00",
+      "error": null,
+      "makespan": "159/2",
+      "sum_completion_time": "8175/4",
+      "events": 14681,
+      "segments": 4234,
+      "raw": "raw/attempt02/random60__Improved_GSES__primitive_nominal.json.gz",
+      "raw_sha256": "178e12c0e9b799de427df8b65056bce3f4ac3fa3317d80f952464f0c7a1acead",
+      "uncompressed_sha256": "83049225afeced3921111eea6727dd57af88e2c24f6606f66ad9b385be193d1f",
+      "bytes": 214347,
+      "wall_seconds": 0.33182383899838896
+    },
+    {
+      "spec": {
+        "id": "random60__original__axis_slow",
+        "source": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_fixed_path_20261003_r10/raw/attempt01/random-32-32-10__GSES.json.gz",
+        "part": "original",
+        "profile": "axis_slow",
+        "author_status": "Succ",
+        "case": "random-32-32-10",
+        "method": "original"
+      },
+      "started_UTC": "2026-10-03T15:08:31.124494+00:00",
+      "error": null,
+      "makespan": "175/2",
+      "sum_completion_time": "2362",
+      "events": 14681,
+      "segments": 4248,
+      "raw": "raw/attempt02/random60__original__axis_slow.json.gz",
+      "raw_sha256": "57d2ebe3b346f8abe2679cdfa1710326d54f3de013b9c241afa0ce4c2370bd79",
+      "uncompressed_sha256": "e9afe5701fa1f5a198077e70e0a4b31e05885d7c9ef686b50baa87d8d16c5557",
+      "bytes": 220527,
+      "wall_seconds": 0.3861466929993185
+    },
+    {
+      "spec": {
+        "id": "random60__GSES__axis_slow",
+        "source": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_fixed_path_20261003_r10/raw/attempt01/random-32-32-10__GSES.json.gz",
+        "part": "selected",
+        "profile": "axis_slow",
+        "author_status": "Succ",
+        "case": "random-32-32-10",
+        "method": "GSES"
+      },
+      "started_UTC": "2026-10-03T15:08:31.511065+00:00",
+      "error": null,
+      "makespan": "181/2",
+      "sum_completion_time": "2341",
+      "events": 14681,
+      "segments": 4246,
+      "raw": "raw/attempt02/random60__GSES__axis_slow.json.gz",
+      "raw_sha256": "e23b60bc6d7c3b4481833b8a8df6ef6efff735466136396994cd5eb5d91d8594",
+      "uncompressed_sha256": "f7ccb77e2a2775876e3e9f9b89dd327dbb6a7e31f2bdbafd5c4da5019f166fb1",
+      "bytes": 220109,
+      "wall_seconds": 0.41178774800027895
+    },
+    {
+      "spec": {
+        "id": "random60__Improved_GSES__axis_slow",
+        "source": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_fixed_path_20261003_r10/raw/attempt01/random-32-32-10__Improved_GSES.json.gz",
+        "part": "selected",
+        "profile": "axis_slow",
+        "author_status": "Succ",
+        "case": "random-32-32-10",
+        "method": "Improved_GSES"
+      },
+      "started_UTC": "2026-10-03T15:08:31.938872+00:00",
+      "error": null,
+      "makespan": "181/2",
+      "sum_completion_time": "2345",
+      "events": 14681,
+      "segments": 4246,
+      "raw": "raw/attempt02/random60__Improved_GSES__axis_slow.json.gz",
+      "raw_sha256": "92346d2634f5cf36760f4e126a6a3620459e5676042cd1f4b74957022a36a770",
+      "uncompressed_sha256": "820e063e37968819f9e17f30b68d4dd05b432b0c5839f60437029d0ab7af7c70",
+      "bytes": 220196,
+      "wall_seconds": 0.3790121549991454
+    },
+    {
+      "spec": {
+        "id": "random60__original__midpoint_pause",
+        "source": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_fixed_path_20261003_r10/raw/attempt01/random-32-32-10__GSES.json.gz",
+        "part": "original",
+        "profile": "midpoint_pause",
+        "author_status": "Succ",
+        "case": "random-32-32-10",
+        "method": "original"
+      },
+      "started_UTC": "2026-10-03T15:08:32.318376+00:00",
+      "error": null,
+      "makespan": "159/2",
+      "sum_completion_time": "2172",
+      "events": 14790,
+      "segments": 4354,
+      "raw": "raw/attempt02/random60__original__midpoint_pause.json.gz",
+      "raw_sha256": "f88dcbabeb9b7351b36d740e2f0a3090d2140724be6d8434abe5de651ad127ca",
+      "uncompressed_sha256": "a0a997aebe95aa62ea157b8301bd8431b1a447331a4448afd04e7b6cc6095139",
+      "bytes": 220115,
+      "wall_seconds": 0.4423748520002846
+    },
+    {
+      "spec": {
+        "id": "random60__GSES__midpoint_pause",
+        "source": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_fixed_path_20261003_r10/raw/attempt01/random-32-32-10__GSES.json.gz",
+        "part": "selected",
+        "profile": "midpoint_pause",
+        "author_status": "Succ",
+        "case": "random-32-32-10",
+        "method": "GSES"
+      },
+      "started_UTC": "2026-10-03T15:08:32.761135+00:00",
+      "error": null,
+      "makespan": "333/4",
+      "sum_completion_time": "4267/2",
+      "events": 14790,
+      "segments": 4346,
+      "raw": "raw/attempt02/random60__GSES__midpoint_pause.json.gz",
+      "raw_sha256": "558c53426f8919a28e93c12045248e7076635ea9b16590a631032e5fccbe4bde",
+      "uncompressed_sha256": "60952467465b486aad6c02dfd65fe78a39431d58556e61e870b8467c91305511",
+      "bytes": 218352,
+      "wall_seconds": 0.38445856799989997
+    },
+    {
+      "spec": {
+        "id": "random60__Improved_GSES__midpoint_pause",
+        "source": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_fixed_path_20261003_r10/raw/attempt01/random-32-32-10__Improved_GSES.json.gz",
+        "part": "selected",
+        "profile": "midpoint_pause",
+        "author_status": "Succ",
+        "case": "random-32-32-10",
+        "method": "Improved_GSES"
+      },
+      "started_UTC": "2026-10-03T15:08:33.146061+00:00",
+      "error": null,
+      "makespan": "333/4",
+      "sum_completion_time": "2133",
+      "events": 14790,
+      "segments": 4347,
+      "raw": "raw/attempt02/random60__Improved_GSES__midpoint_pause.json.gz",
+      "raw_sha256": "5fc213cb3aa03dba5e92b3a2924651af229c8f8b5bbafd45c16770061095ea8a",
+      "uncompressed_sha256": "c20ac85471218d3b7950662e763d307d7deef3fcca5e8fe1e40cd3c614ecccaf",
+      "bytes": 218138,
+      "wall_seconds": 0.4472419069988973
+    },
+    {
+      "spec": {
+        "id": "warehouse-10-20-10-2-1__GSES__original__author_unit",
+        "source": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_fixed_path_20261003_r10/raw/attempt01/warehouse-10-20-10-2-1__GSES.json.gz",
+        "part": "original",
+        "profile": "author_unit",
+        "author_status": "Succ",
+        "case": "warehouse-10-20-10-2-1",
+        "method": "GSES"
+      },
+      "started_UTC": "2026-10-03T15:08:31.274456+00:00",
+      "error": null,
+      "author_equivalence": {
+        "passed": true,
+        "cost": 10816,
+        "ticks": 200,
+        "state_observations": 22110,
+        "recorded_states_used_as_actions": false
+      },
+      "makespan": "200",
+      "sum_completion_time": "10816",
+      "events": 96908,
+      "segments": 21611,
+      "raw": "raw/attempt03/warehouse-10-20-10-2-1__GSES__original__author_unit.json.gz",
+      "raw_sha256": "964674f95f198a6e545b4c14bb8cdd103d89bc0146e3aaa0bb37b55e2270c7d3",
+      "uncompressed_sha256": "16bfd8fc1ffcc8a091d6149260eb1e83d6ee56dec1d077b89c55ee12be9334fd",
+      "bytes": 1463694,
+      "wall_seconds": 2.753685495001264
+    },
+    {
+      "spec": {
+        "id": "warehouse-10-20-10-2-1__GSES__selected__author_unit",
+        "source": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_fixed_path_20261003_r10/raw/attempt01/warehouse-10-20-10-2-1__GSES.json.gz",
+        "part": "selected",
+        "profile": "author_unit",
+        "author_status": "Succ",
+        "case": "warehouse-10-20-10-2-1",
+        "method": "GSES"
+      },
+      "started_UTC": "2026-10-03T15:08:34.028586+00:00",
+      "error": null,
+      "author_equivalence": {
+        "passed": true,
+        "cost": 10804,
+        "ticks": 201,
+        "state_observations": 22220,
+        "recorded_states_used_as_actions": false
+      },
+      "makespan": "201",
+      "sum_completion_time": "10804",
+      "events": 96908,
+      "segments": 21610,
+      "raw": "raw/attempt03/warehouse-10-20-10-2-1__GSES__selected__author_unit.json.gz",
+      "raw_sha256": "ffdb087abfb9cf24555a758b64f5edc2f5aa6d8083b6ce52d726c7e1ffbe6a72",
+      "uncompressed_sha256": "84d7ecedee90901d7d5b40bedee6642f1e39a42745b841736a62d07d0434324b",
+      "bytes": 1463584,
+      "wall_seconds": 3.2954249150006945
+    },
+    {
+      "spec": {
+        "id": "warehouse-10-20-10-2-1__Improved_GSES__original__author_unit",
+        "source": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_fixed_path_20261003_r10/raw/attempt01/warehouse-10-20-10-2-1__Improved_GSES.json.gz",
+        "part": "original",
+        "profile": "author_unit",
+        "author_status": "Succ",
+        "case": "warehouse-10-20-10-2-1",
+        "method": "Improved_GSES"
+      },
+      "started_UTC": "2026-10-03T15:08:37.325351+00:00",
+      "error": null,
+      "author_equivalence": {
+        "passed": true,
+        "cost": 10816,
+        "ticks": 200,
+        "state_observations": 22110,
+        "recorded_states_used_as_actions": false
+      },
+      "makespan": "200",
+      "sum_completion_time": "10816",
+      "events": 96908,
+      "segments": 21611,
+      "raw": "raw/attempt03/warehouse-10-20-10-2-1__Improved_GSES__original__author_unit.json.gz",
+      "raw_sha256": "964674f95f198a6e545b4c14bb8cdd103d89bc0146e3aaa0bb37b55e2270c7d3",
+      "uncompressed_sha256": "16bfd8fc1ffcc8a091d6149260eb1e83d6ee56dec1d077b89c55ee12be9334fd",
+      "bytes": 1463694,
+      "wall_seconds": 3.0713130950007326
+    },
+    {
+      "spec": {
+        "id": "warehouse-10-20-10-2-1__Improved_GSES__selected__author_unit",
+        "source": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_fixed_path_20261003_r10/raw/attempt01/warehouse-10-20-10-2-1__Improved_GSES.json.gz",
+        "part": "selected",
+        "profile": "author_unit",
+        "author_status": "Succ",
+        "case": "warehouse-10-20-10-2-1",
+        "method": "Improved_GSES"
+      },
+      "started_UTC": "2026-10-03T15:08:40.397323+00:00",
+      "error": null,
+      "author_equivalence": {
+        "passed": true,
+        "cost": 10804,
+        "ticks": 201,
+        "state_observations": 22220,
+        "recorded_states_used_as_actions": false
+      },
+      "makespan": "201",
+      "sum_completion_time": "10804",
+      "events": 96908,
+      "segments": 21611,
+      "raw": "raw/attempt03/warehouse-10-20-10-2-1__Improved_GSES__selected__author_unit.json.gz",
+      "raw_sha256": "a54eff10dc3dce0f24e52de7e37ed6716a3479436955c3ef6ae414a2834e0ad0",
+      "uncompressed_sha256": "f2bfdcbbd59eea59594031d507923b504ec7e1d62688c3299f54b8f10679be64",
+      "bytes": 1464623,
+      "wall_seconds": 3.129131026000323
+    },
+    {
+      "spec": {
+        "id": "Paris_1_256__GSES__original__author_unit",
+        "source": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_fixed_path_20261003_r10/raw/attempt01/Paris_1_256__GSES.json.gz",
+        "part": "original",
+        "profile": "author_unit",
+        "author_status": "Timeout",
+        "case": "Paris_1_256",
+        "method": "GSES"
+      },
+      "started_UTC": "2026-10-03T15:08:32.458793+00:00",
+      "error": null,
+      "author_equivalence": {
+        "passed": true,
+        "cost": 29860,
+        "ticks": 530,
+        "state_observations": 63720,
+        "recorded_states_used_as_actions": false
+      },
+      "makespan": "530",
+      "sum_completion_time": "29860",
+      "events": 268018,
+      "segments": 59644,
+      "raw": "raw/attempt04/Paris_1_256__GSES__original__author_unit.json.gz",
+      "raw_sha256": "b293233edbb7e9fefc1a804b7c893049c9e0ce83dcc09c9e2986aea1d0e2b717",
+      "uncompressed_sha256": "14bdcd045341040a2ab5c81a2196c9c9af84adc2274c727031ab061ff6bab221",
+      "bytes": 4164872,
+      "wall_seconds": 8.100936700000602
+    },
+    {
+      "spec": {
+        "id": "Paris_1_256__GSES__selected__author_unit",
+        "source": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_fixed_path_20261003_r10/raw/attempt01/Paris_1_256__GSES.json.gz",
+        "part": "selected",
+        "profile": "author_unit",
+        "author_status": "Timeout",
+        "case": "Paris_1_256",
+        "method": "GSES"
+      },
+      "started_UTC": "2026-10-03T15:08:40.560249+00:00",
+      "error": null,
+      "author_equivalence": {
+        "passed": true,
+        "cost": 29860,
+        "ticks": 530,
+        "state_observations": 63720,
+        "recorded_states_used_as_actions": false
+      },
+      "author_timeout_fallback_exact": true,
+      "makespan": "530",
+      "sum_completion_time": "29860",
+      "events": 268018,
+      "segments": 59644,
+      "raw": "raw/attempt04/Paris_1_256__GSES__selected__author_unit.json.gz",
+      "raw_sha256": "b293233edbb7e9fefc1a804b7c893049c9e0ce83dcc09c9e2986aea1d0e2b717",
+      "uncompressed_sha256": "14bdcd045341040a2ab5c81a2196c9c9af84adc2274c727031ab061ff6bab221",
+      "bytes": 4164872,
+      "wall_seconds": 8.423767561000204
+    },
+    {
+      "spec": {
+        "id": "Paris_1_256__Improved_GSES__original__author_unit",
+        "source": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_fixed_path_20261003_r10/raw/attempt01/Paris_1_256__Improved_GSES.json.gz",
+        "part": "original",
+        "profile": "author_unit",
+        "author_status": "Succ",
+        "case": "Paris_1_256",
+        "method": "Improved_GSES"
+      },
+      "started_UTC": "2026-10-03T15:08:48.984397+00:00",
+      "error": null,
+      "author_equivalence": {
+        "passed": true,
+        "cost": 29860,
+        "ticks": 530,
+        "state_observations": 63720,
+        "recorded_states_used_as_actions": false
+      },
+      "makespan": "530",
+      "sum_completion_time": "29860",
+      "events": 268018,
+      "segments": 59644,
+      "raw": "raw/attempt04/Paris_1_256__Improved_GSES__original__author_unit.json.gz",
+      "raw_sha256": "b293233edbb7e9fefc1a804b7c893049c9e0ce83dcc09c9e2986aea1d0e2b717",
+      "uncompressed_sha256": "14bdcd045341040a2ab5c81a2196c9c9af84adc2274c727031ab061ff6bab221",
+      "bytes": 4164872,
+      "wall_seconds": 7.79200740899978
+    },
+    {
+      "spec": {
+        "id": "Paris_1_256__Improved_GSES__selected__author_unit",
+        "source": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_fixed_path_20261003_r10/raw/attempt01/Paris_1_256__Improved_GSES.json.gz",
+        "part": "selected",
+        "profile": "author_unit",
+        "author_status": "Succ",
+        "case": "Paris_1_256",
+        "method": "Improved_GSES"
+      },
+      "started_UTC": "2026-10-03T15:08:56.776935+00:00",
+      "error": null,
+      "author_equivalence": {
+        "passed": true,
+        "cost": 29786,
+        "ticks": 522,
+        "state_observations": 62760,
+        "recorded_states_used_as_actions": false
+      },
+      "makespan": "522",
+      "sum_completion_time": "29786",
+      "events": 268018,
+      "segments": 59638,
+      "raw": "raw/attempt04/Paris_1_256__Improved_GSES__selected__author_unit.json.gz",
+      "raw_sha256": "5964297a4cb1f462bbcf4464c3913fe040559117c4e55c592193658f63bd746f",
+      "uncompressed_sha256": "9d5b1fbb7855b1a1d84637f0649dfdeb5b0da9ed92e848c086cbcfd492b223ec",
+      "bytes": 4136491,
+      "wall_seconds": 7.715389620001588
+    },
+    {
+      "spec": {
+        "id": "lak303d__GSES__original__author_unit",
+        "source": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_fixed_path_20261003_r10/raw/attempt01/lak303d__GSES.json.gz",
+        "part": "original",
+        "profile": "author_unit",
+        "author_status": "Timeout",
+        "case": "lak303d",
+        "method": "GSES"
+      },
+      "started_UTC": "2026-10-03T15:08:33.614706+00:00",
+      "error": null,
+      "author_equivalence": {
+        "passed": true,
+        "cost": 10496,
+        "ticks": 528,
+        "state_observations": 21689,
+        "recorded_states_used_as_actions": false
+      },
+      "makespan": "528",
+      "sum_completion_time": "10496",
+      "events": 91605,
+      "segments": 20408,
+      "raw": "raw/attempt05/lak303d__GSES__original__author_unit.json.gz",
+      "raw_sha256": "f5cae67f2a1ade2d8b9871aa3f27536293f4403ca50e7d488740704428ac8fbe",
+      "uncompressed_sha256": "a76a25177a48d470577406ff138cc7ee2a926c126401438a68ed09b5d9ccc649",
+      "bytes": 1470099,
+      "wall_seconds": 2.8839835689996107
+    },
+    {
+      "spec": {
+        "id": "lak303d__GSES__selected__author_unit",
+        "source": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_fixed_path_20261003_r10/raw/attempt01/lak303d__GSES.json.gz",
+        "part": "selected",
+        "profile": "author_unit",
+        "author_status": "Timeout",
+        "case": "lak303d",
+        "method": "GSES"
+      },
+      "started_UTC": "2026-10-03T15:08:36.499088+00:00",
+      "error": null,
+      "author_equivalence": {
+        "passed": true,
+        "cost": 10496,
+        "ticks": 528,
+        "state_observations": 21689,
+        "recorded_states_used_as_actions": false
+      },
+      "author_timeout_fallback_exact": true,
+      "makespan": "528",
+      "sum_completion_time": "10496",
+      "events": 91605,
+      "segments": 20408,
+      "raw": "raw/attempt05/lak303d__GSES__selected__author_unit.json.gz",
+      "raw_sha256": "f5cae67f2a1ade2d8b9871aa3f27536293f4403ca50e7d488740704428ac8fbe",
+      "uncompressed_sha256": "a76a25177a48d470577406ff138cc7ee2a926c126401438a68ed09b5d9ccc649",
+      "bytes": 1470099,
+      "wall_seconds": 3.0371044459989207
+    },
+    {
+      "spec": {
+        "id": "lak303d__Improved_GSES__original__author_unit",
+        "source": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_fixed_path_20261003_r10/raw/attempt01/lak303d__Improved_GSES.json.gz",
+        "part": "original",
+        "profile": "author_unit",
+        "author_status": "Succ",
+        "case": "lak303d",
+        "method": "Improved_GSES"
+      },
+      "started_UTC": "2026-10-03T15:08:39.536708+00:00",
+      "error": null,
+      "author_equivalence": {
+        "passed": true,
+        "cost": 10496,
+        "ticks": 528,
+        "state_observations": 21689,
+        "recorded_states_used_as_actions": false
+      },
+      "makespan": "528",
+      "sum_completion_time": "10496",
+      "events": 91605,
+      "segments": 20408,
+      "raw": "raw/attempt05/lak303d__Improved_GSES__original__author_unit.json.gz",
+      "raw_sha256": "f5cae67f2a1ade2d8b9871aa3f27536293f4403ca50e7d488740704428ac8fbe",
+      "uncompressed_sha256": "a76a25177a48d470577406ff138cc7ee2a926c126401438a68ed09b5d9ccc649",
+      "bytes": 1470099,
+      "wall_seconds": 3.1079304839986435
+    },
+    {
+      "spec": {
+        "id": "lak303d__Improved_GSES__selected__author_unit",
+        "source": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_fixed_path_20261003_r10/raw/attempt01/lak303d__Improved_GSES.json.gz",
+        "part": "selected",
+        "profile": "author_unit",
+        "author_status": "Succ",
+        "case": "lak303d",
+        "method": "Improved_GSES"
+      },
+      "started_UTC": "2026-10-03T15:08:42.645239+00:00",
+      "error": null,
+      "author_equivalence": {
+        "passed": true,
+        "cost": 10229,
+        "ticks": 511,
+        "state_observations": 20992,
+        "recorded_states_used_as_actions": false
+      },
+      "makespan": "511",
+      "sum_completion_time": "10229",
+      "events": 91605,
+      "segments": 20388,
+      "raw": "raw/attempt05/lak303d__Improved_GSES__selected__author_unit.json.gz",
+      "raw_sha256": "6ad472e30ed1a14cbf5ed8e6f461a534fecac6b9b379f2972365deed0c7fb913",
+      "uncompressed_sha256": "6f0412da311b5e6d39dd83603b17bde9d4ed8609a30f11d6baf138df30daf54e",
+      "bytes": 1441034,
+      "wall_seconds": 2.8867283609997685
+    },
+    {
+      "spec": {
+        "id": "lak41__timeout_original__primitive_nominal",
+        "source": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_fixed_path_20261003_r10/raw/attempt01/lak303d__GSES.json.gz",
+        "part": "original",
+        "profile": "primitive_nominal",
+        "author_status": "Timeout",
+        "case": "lak303d",
+        "method": "original"
+      },
+      "started_UTC": "2026-10-03T15:08:34.789020+00:00",
+      "error": null,
+      "makespan": "3305/4",
+      "sum_completion_time": "16380",
+      "events": 118617,
+      "segments": 33937,
+      "raw": "raw/attempt06/lak41__timeout_original__primitive_nominal.json.gz",
+      "raw_sha256": "26d959a65ba7cd87190684772b9fb2b529d901ffec26a6488ddcae7648147e60",
+      "uncompressed_sha256": "3f0a1ba505a2f7fbe0f917f6fe1e116ce0fda5d254007194570f8cf3becfc4a0",
+      "bytes": 1965940,
+      "wall_seconds": 3.614543846999368
+    },
+    {
+      "spec": {
+        "id": "lak41__timeout_selected__primitive_nominal",
+        "source": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_fixed_path_20261003_r10/raw/attempt01/lak303d__GSES.json.gz",
+        "part": "selected",
+        "profile": "primitive_nominal",
+        "author_status": "Timeout",
+        "case": "lak303d",
+        "method": "GSES_timeout"
+      },
+      "started_UTC": "2026-10-03T15:08:38.403996+00:00",
+      "error": null,
+      "author_timeout_fallback_exact": true,
+      "makespan": "3305/4",
+      "sum_completion_time": "16380",
+      "events": 118617,
+      "segments": 33937,
+      "raw": "raw/attempt06/lak41__timeout_selected__primitive_nominal.json.gz",
+      "raw_sha256": "26d959a65ba7cd87190684772b9fb2b529d901ffec26a6488ddcae7648147e60",
+      "uncompressed_sha256": "3f0a1ba505a2f7fbe0f917f6fe1e116ce0fda5d254007194570f8cf3becfc4a0",
+      "bytes": 1965940,
+      "wall_seconds": 4.21805764400051
+    }
+  ]
+}

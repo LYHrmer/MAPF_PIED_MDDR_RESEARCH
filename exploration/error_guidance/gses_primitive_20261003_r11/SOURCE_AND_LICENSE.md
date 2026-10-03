@@ -1,0 +1,17 @@
+# Source, license and provenance
+
+The adopted graphs and complete paths are from the original author [STPG repository](https://github.com/DiligentPanda/STPG), commit `25fb931eff03f1cce23a22a68ab42b7533f85ab3`. The upstream paper link recorded by the earlier author preflight is [AAAI article 34487](https://ojs.aaai.org/index.php/AAAI/article/view/34487). These identifiers are inherited from the audited R9/R10 source acquisition; R11 performs no new network acquisition or author search.
+
+The MIT notice is copied verbatim in `AUTHOR_LICENSE.txt` (copyright 2024 ARCS Lab, Robotics Institute, CMU). The 43 author compilation sources are unchanged and pinned by absolute path and SHA-256 in `FREEZE_01.json`, matching `../gses_fixed_path_20261003_r10/SOURCE_BINDINGS_01.json`. R11 compiles no native binary and modifies no author file. The earlier author-source archive, native build and byte-identical offline rebuild remain in the frozen R9/R10 evidence directories.
+
+`REGISTRATION.json` lists the exact eight prior R10 gzip exports supplying 16 original/selected graph records and the additional 11 registered primitive cases. Every source export is pinned in `FREEZE_01.json`. Each contains genuine full author paths, current prefix, type1/type2 edges and author recorded time-state trajectories. The executor accepts only a graph and a registered profile. Recorded future states are read only by the separate unit-equivalence checker after execution.
+
+The Python executor, resource/event audit, commitment guard and mechanical controls are new research adapters. They are not upstream author algorithms or a port of the ARGoS feedback controller. They require Python's standard library only. `RUNTIME.json` records the actual runtime. Source-specific author notices do not imply that the authors endorse these adapters.
+
+The author graph optimizer and primitive executor serve different roles: the former supplies an already selected partial order; the latter realizes it under the same declared motion/service model for original, GSES and Improved GSES. Current type1 weight is interpreted using the author's pre-move hold rule. Future type1 weights are required to remain one, and are not converted into future movement times. The synthetic TURN/STATION and axis/midpoint profiles are explicitly declared mechanism inputs, not measured robot dynamics.
+
+`FREEZE_01.json` was created before the 27 registered executions (60 pins); `MECHANICS_FREEZE.json` freezes five sources before the separate commitment/negative-control run. Both sets remain unchanged. `COMMANDS.json` is an honestly transcribed command ledger; actual start times, wall times, errors and data hashes are preserved in all 27 copied receipts. No startup or execution failure occurred in this R11 suite.
+
+`ROOT_AUDIT_BINDING.json` pins the separate root auditor and its completed report. That auditor imports no candidate executor and independently reconstructs continuous pairwise disk clearance and event/resource rules. It is an external dependency of this package, not a duplicate implementation hidden in the executor.
+
+Publication is restricted to the exact list in `PUBLICATION_MEMBERS.json`; the manifest excludes itself from its hash map. Expanded temporary traces under the main repository's ignored evidence directory and `__pycache__` are not publication members. The package is a research artifact with explicit dependencies on the prior author exports and separate root audit, not a self-contained environment image.
