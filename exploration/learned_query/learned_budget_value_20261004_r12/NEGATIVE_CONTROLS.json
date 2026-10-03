@@ -1,0 +1,125 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "case": "macro_total_score",
+      "rejected": true,
+      "reason": "exact frozen macro scores"
+    },
+    {
+      "case": "macro_task_head",
+      "rejected": true,
+      "reason": "exact frozen macro scores"
+    },
+    {
+      "case": "gate_budget_feature",
+      "rejected": true,
+      "reason": "public 25-dimensional gate means"
+    },
+    {
+      "case": "gate_history_feature",
+      "rejected": true,
+      "reason": "public 25-dimensional gate means"
+    },
+    {
+      "case": "gate_candidate_count",
+      "rejected": true,
+      "reason": "public 25-dimensional gate means"
+    },
+    {
+      "case": "shared_margin",
+      "rejected": true,
+      "reason": ""
+    },
+    {
+      "case": "selected_complete_macro",
+      "rejected": true,
+      "reason": "macro score/margin/fixed-order tie"
+    },
+    {
+      "case": "repeated_inference_count",
+      "rejected": true,
+      "reason": ""
+    },
+    {
+      "case": "duplicate_macro_choice",
+      "rejected": true,
+      "reason": "macro selection must happen exactly once before any query"
+    },
+    {
+      "case": "missing_macro_choice",
+      "rejected": true,
+      "reason": ""
+    },
+    {
+      "case": "second_stage",
+      "rejected": true,
+      "reason": "macro first/second stage"
+    },
+    {
+      "case": "old_occurrence_anchor",
+      "rejected": true,
+      "reason": "full macro anchor binding"
+    },
+    {
+      "case": "wrong_agent_anchor",
+      "rejected": true,
+      "reason": "full macro anchor binding"
+    },
+    {
+      "case": "wrong_second_set",
+      "rejected": true,
+      "reason": "earliest public distinct-trigger candidate set"
+    },
+    {
+      "case": "second_on_first_event",
+      "rejected": true,
+      "reason": "macro first/second stage"
+    },
+    {
+      "case": "wrong_fixed_tail",
+      "rejected": true,
+      "reason": "fixed shared complete-macro tail"
+    },
+    {
+      "case": "budget_not_consumed",
+      "rejected": true,
+      "reason": "causal history/capacity count"
+    },
+    {
+      "case": "candidate_omission",
+      "rejected": true,
+      "reason": "candidate completeness/current-world END gate"
+    },
+    {
+      "case": "future_head",
+      "rejected": true,
+      "reason": "future goal leakage"
+    },
+    {
+      "case": "false_certificate",
+      "rejected": true,
+      "reason": "interval resolution"
+    },
+    {
+      "case": "wrong_task_service",
+      "rejected": true,
+      "reason": ""
+    },
+    {
+      "case": "SKIP_alias",
+      "rejected": true,
+      "reason": "public persistent skip state mismatch"
+    },
+    {
+      "case": "SKIP_missing_clear",
+      "rejected": true,
+      "reason": "public persistent skip state mismatch"
+    },
+    {
+      "case": "SKIP_private_END_clear",
+      "rejected": true,
+      "reason": ""
+    }
+  ]
+}

@@ -1,5 +1,11 @@
 # 学习辅助进度查询：探索说明
 
+2026-10-04 R12：[条件选择、预算使用与完成时间价值学习](learned_budget_value_20261004_r12/ROOT_CONCLUSION.md)已完成152次原生运行（96 TRAIN/CAL、56 TEST）、30个ridge价值头的真实拟合和冻结部署。四个独立TEST family配对B8/B16，七策略均完成340任务。TRAIN任务差全部0；CAL选出共同∞门槛，四种学习器均执行condition，实际32次推理没有新增查询分配、任务或服务收益。模型与condition同88次查询，不能把condition相对WAIT的时间改善归给学习。
+
+存在局部正向预算结果：TRAIN预选的B16后期双SKIP宏，在四个留出family保持170任务，查询由56降至52，固定FIFO受限完成时间和减少约4.073（时间改善来自一个family，另三个服务记录相同）。B8预选WAIT则合计慢约17.009，两个预算汇总的查表时间仍落后condition约12.936。这个小幅留出信号支持继续研究条件性时间/查询权衡，尚未证明条件模型有效，也不能由被∞门槛关闭的消融判断特征无用。
+
+[完整报告](learned_budget_value_20261004_r12/REPORT.md)、[配对结果图](learned_budget_value_20261004_r12/figures/r12_test_comparison.png)、[Astra判断](learned_budget_value_20261004_r12/ASTRA_POSTEXEC.md)和[科研导师判断](learned_budget_value_20261004_r12/MENTOR_POSTEXEC.md)分别保留。根独立152次raw核验、导师96标签/780量化系数/56部署核验均通过；8个原始归档可由[离线重放](learned_budget_value_20261004_r12/offline_replay.py)复现根审计。下一步应在新family检验条件性时间预测并保留强预算查表对照，不在旧TEST上调参或以更大模型代替有效性证据。以下R11及更早内容均为历史。
+
 2026-10-03 R11：[公开机会与有限双次干预](public_opportunity_20261003_r11/REPORT.md)完成94原生运行及独立审计：8参考、26单次、60双次，均为四个新TRAIN family，未训练新模型、未使用TEST。固定condition/全程WAIT各188任务，逐族事后最佳189，也等于逐族较好参考的包络；存在小幅条件选择空间，尚无已部署策略或超包络任务收益。
 
 11个分支对两参考均有稳健J收益（任务数主项、固定前4FIFO时间次项）；random一支同48任务，时间和比condition少约6.99、比WAIT少约20.62，仍用16query对WAIT0。双次对同首动作单次没有任务正增益；successor第二触发仅5/12，未触发完整保留。根[原始服务/谱系/预算/选择复算](public_opportunity_20261003_r11/ROOT_VALUE_SPACE.json)、94同尾、38整程对照、58SKIP生命周期及22负控均通过。
