@@ -1,0 +1,1464 @@
+{
+  "post_freeze_reporting_only": true,
+  "no_hyperparameter_selection": true,
+  "summary": {
+    "train": {
+      "ridge_history": {
+        "opportunities": 14,
+        "queries": 11,
+        "optimal_tied_choices": 11,
+        "task_advantage_sum": 0,
+        "advantage_sum": "25875333/16385000000",
+        "regret_sum": "3387941/16385000000"
+      },
+      "ridge_nohistory": {
+        "opportunities": 14,
+        "queries": 11,
+        "optimal_tied_choices": 9,
+        "task_advantage_sum": 0,
+        "advantage_sum": "25190501/16385000000",
+        "regret_sum": "4072773/16385000000"
+      },
+      "ridge_nobudget": {
+        "opportunities": 14,
+        "queries": 9,
+        "optimal_tied_choices": 11,
+        "task_advantage_sum": 0,
+        "advantage_sum": "25875333/16385000000",
+        "regret_sum": "3387941/16385000000"
+      }
+    },
+    "calibration": {
+      "ridge_history": {
+        "opportunities": 7,
+        "queries": 2,
+        "optimal_tied_choices": 7,
+        "task_advantage_sum": 0,
+        "advantage_sum": "0",
+        "regret_sum": "0"
+      },
+      "ridge_nohistory": {
+        "opportunities": 7,
+        "queries": 2,
+        "optimal_tied_choices": 7,
+        "task_advantage_sum": 0,
+        "advantage_sum": "0",
+        "regret_sum": "0"
+      },
+      "ridge_nobudget": {
+        "opportunities": 7,
+        "queries": 2,
+        "optimal_tied_choices": 6,
+        "task_advantage_sum": 0,
+        "advantage_sum": "-648609/16385000000",
+        "regret_sum": "648609/16385000000"
+      }
+    }
+  },
+  "decisions": [
+    {
+      "world": "empty-32-32_cal_91201",
+      "opportunity": 1,
+      "split": "calibration",
+      "model": "ridge_history",
+      "remaining": 16,
+      "candidates": 1,
+      "selected": "WAIT",
+      "predicted": "0",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "10": "-40450506494417/68000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "10": "-32856051343/32770000000"
+      }
+    },
+    {
+      "world": "empty-32-32_cal_91201",
+      "opportunity": 1,
+      "split": "calibration",
+      "model": "ridge_nohistory",
+      "remaining": 16,
+      "candidates": 1,
+      "selected": "WAIT",
+      "predicted": "0",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "10": "-2282091887469/8000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "10": "-32856051343/32770000000"
+      }
+    },
+    {
+      "world": "empty-32-32_cal_91201",
+      "opportunity": 1,
+      "split": "calibration",
+      "model": "ridge_nobudget",
+      "remaining": 16,
+      "candidates": 1,
+      "selected": "WAIT",
+      "predicted": "0",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "10": "-11514129446631/17000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "10": "-32856051343/32770000000"
+      }
+    },
+    {
+      "world": "empty-32-32_cal_91201",
+      "opportunity": 7,
+      "split": "calibration",
+      "model": "ridge_history",
+      "remaining": 10,
+      "candidates": 1,
+      "selected": "10",
+      "predicted": "8989148854201/32000000000000000",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "10": "8989148854201/32000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "10": "0"
+      }
+    },
+    {
+      "world": "empty-32-32_cal_91201",
+      "opportunity": 7,
+      "split": "calibration",
+      "model": "ridge_nohistory",
+      "remaining": 10,
+      "candidates": 1,
+      "selected": "10",
+      "predicted": "927696201319/16000000000000000",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "10": "927696201319/16000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "10": "0"
+      }
+    },
+    {
+      "world": "empty-32-32_cal_91201",
+      "opportunity": 7,
+      "split": "calibration",
+      "model": "ridge_nobudget",
+      "remaining": 10,
+      "candidates": 1,
+      "selected": "10",
+      "predicted": "5734293826597/16000000000000000",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "10": "5734293826597/16000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "10": "0"
+      }
+    },
+    {
+      "world": "empty-32-32_cal_91201",
+      "opportunity": 13,
+      "split": "calibration",
+      "model": "ridge_history",
+      "remaining": 4,
+      "candidates": 1,
+      "selected": "WAIT",
+      "predicted": "0",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "8": "-1999488156171/1168000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "8": "0"
+      }
+    },
+    {
+      "world": "empty-32-32_cal_91201",
+      "opportunity": 13,
+      "split": "calibration",
+      "model": "ridge_nohistory",
+      "remaining": 4,
+      "candidates": 1,
+      "selected": "WAIT",
+      "predicted": "0",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "8": "-2128813327/2000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "8": "0"
+      }
+    },
+    {
+      "world": "empty-32-32_cal_91201",
+      "opportunity": 13,
+      "split": "calibration",
+      "model": "ridge_nobudget",
+      "remaining": 4,
+      "candidates": 1,
+      "selected": "WAIT",
+      "predicted": "0",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "8": "-1728655338301/292000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "8": "0"
+      }
+    },
+    {
+      "world": "empty-32-32_cal_91201",
+      "opportunity": 16,
+      "split": "calibration",
+      "model": "ridge_history",
+      "remaining": 1,
+      "candidates": 2,
+      "selected": "WAIT",
+      "predicted": "0",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "3": "-164784764109361/1022000000000000000",
+        "5": "-42233769171869/438000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "3": "-648609/16385000000",
+        "5": "-648609/16385000000"
+      }
+    },
+    {
+      "world": "empty-32-32_cal_91201",
+      "opportunity": 16,
+      "split": "calibration",
+      "model": "ridge_nohistory",
+      "remaining": 1,
+      "candidates": 2,
+      "selected": "WAIT",
+      "predicted": "0",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "3": "-279096454123/2000000000000000",
+        "5": "-279096454123/2000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "3": "-648609/16385000000",
+        "5": "-648609/16385000000"
+      }
+    },
+    {
+      "world": "empty-32-32_cal_91201",
+      "opportunity": 16,
+      "split": "calibration",
+      "model": "ridge_nobudget",
+      "remaining": 1,
+      "candidates": 2,
+      "selected": "5",
+      "predicted": "18295409978383/292000000000000000",
+      "actual_advantage": "-648609/16385000000",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "648609/16385000000",
+      "scores": {
+        "WAIT": "0",
+        "3": "-50396872651319/2044000000000000000",
+        "5": "18295409978383/292000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "3": "-648609/16385000000",
+        "5": "-648609/16385000000"
+      }
+    },
+    {
+      "world": "empty-32-32_train_91101",
+      "opportunity": 1,
+      "split": "train",
+      "model": "ridge_history",
+      "remaining": 16,
+      "candidates": 1,
+      "selected": "7",
+      "predicted": "7061578944599/24000000000000000",
+      "actual_advantage": "-648609/16385000000",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "648609/16385000000",
+      "scores": {
+        "WAIT": "0",
+        "7": "7061578944599/24000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "7": "-648609/16385000000"
+      }
+    },
+    {
+      "world": "empty-32-32_train_91101",
+      "opportunity": 1,
+      "split": "train",
+      "model": "ridge_nohistory",
+      "remaining": 16,
+      "candidates": 1,
+      "selected": "7",
+      "predicted": "4318027237327/16000000000000000",
+      "actual_advantage": "-648609/16385000000",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "648609/16385000000",
+      "scores": {
+        "WAIT": "0",
+        "7": "4318027237327/16000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "7": "-648609/16385000000"
+      }
+    },
+    {
+      "world": "empty-32-32_train_91101",
+      "opportunity": 1,
+      "split": "train",
+      "model": "ridge_nobudget",
+      "remaining": 16,
+      "candidates": 1,
+      "selected": "7",
+      "predicted": "1197584720313/4000000000000000",
+      "actual_advantage": "-648609/16385000000",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "648609/16385000000",
+      "scores": {
+        "WAIT": "0",
+        "7": "1197584720313/4000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "7": "-648609/16385000000"
+      }
+    },
+    {
+      "world": "empty-32-32_train_91101",
+      "opportunity": 7,
+      "split": "train",
+      "model": "ridge_history",
+      "remaining": 10,
+      "candidates": 1,
+      "selected": "6",
+      "predicted": "8190225164667/1216000000000000000",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "6": "8190225164667/1216000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "6": "0"
+      }
+    },
+    {
+      "world": "empty-32-32_train_91101",
+      "opportunity": 7,
+      "split": "train",
+      "model": "ridge_nohistory",
+      "remaining": 10,
+      "candidates": 1,
+      "selected": "6",
+      "predicted": "946459483167/32000000000000000",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "6": "946459483167/32000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "6": "0"
+      }
+    },
+    {
+      "world": "empty-32-32_train_91101",
+      "opportunity": 7,
+      "split": "train",
+      "model": "ridge_nobudget",
+      "remaining": 10,
+      "candidates": 1,
+      "selected": "6",
+      "predicted": "378649531837/30400000000000000",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "6": "378649531837/30400000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "6": "0"
+      }
+    },
+    {
+      "world": "empty-32-32_train_91101",
+      "opportunity": 13,
+      "split": "train",
+      "model": "ridge_history",
+      "remaining": 4,
+      "candidates": 1,
+      "selected": "WAIT",
+      "predicted": "0",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "1": "-7120268642949917/74168000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "1": "0"
+      }
+    },
+    {
+      "world": "empty-32-32_train_91101",
+      "opportunity": 13,
+      "split": "train",
+      "model": "ridge_nohistory",
+      "remaining": 4,
+      "candidates": 1,
+      "selected": "WAIT",
+      "predicted": "0",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "1": "-110357845527/1000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "1": "0"
+      }
+    },
+    {
+      "world": "empty-32-32_train_91101",
+      "opportunity": 13,
+      "split": "train",
+      "model": "ridge_nobudget",
+      "remaining": 4,
+      "candidates": 1,
+      "selected": "WAIT",
+      "predicted": "0",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "1": "-2855652176598479/37084000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "1": "0"
+      }
+    },
+    {
+      "world": "empty-32-32_train_91102",
+      "opportunity": 1,
+      "split": "train",
+      "model": "ridge_history",
+      "remaining": 16,
+      "candidates": 1,
+      "selected": "7",
+      "predicted": "411227657/4000000000000000",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "7": "411227657/4000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "7": "0"
+      }
+    },
+    {
+      "world": "empty-32-32_train_91102",
+      "opportunity": 1,
+      "split": "train",
+      "model": "ridge_nohistory",
+      "remaining": 16,
+      "candidates": 1,
+      "selected": "7",
+      "predicted": "20728455103/4000000000000000",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "7": "20728455103/4000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "7": "0"
+      }
+    },
+    {
+      "world": "empty-32-32_train_91102",
+      "opportunity": 1,
+      "split": "train",
+      "model": "ridge_nobudget",
+      "remaining": 16,
+      "candidates": 1,
+      "selected": "WAIT",
+      "predicted": "0",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "7": "-131352780721/48000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "7": "0"
+      }
+    },
+    {
+      "world": "empty-32-32_train_91102",
+      "opportunity": 7,
+      "split": "train",
+      "model": "ridge_history",
+      "remaining": 10,
+      "candidates": 1,
+      "selected": "5",
+      "predicted": "87396791959833/3212000000000000000",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "5": "87396791959833/3212000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "5": "0"
+      }
+    },
+    {
+      "world": "empty-32-32_train_91102",
+      "opportunity": 7,
+      "split": "train",
+      "model": "ridge_nohistory",
+      "remaining": 10,
+      "candidates": 1,
+      "selected": "5",
+      "predicted": "2510102367/200000000000000",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "5": "2510102367/200000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "5": "0"
+      }
+    },
+    {
+      "world": "empty-32-32_train_91102",
+      "opportunity": 7,
+      "split": "train",
+      "model": "ridge_nobudget",
+      "remaining": 10,
+      "candidates": 1,
+      "selected": "WAIT",
+      "predicted": "0",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "5": "-8486551783579/3212000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "5": "0"
+      }
+    },
+    {
+      "world": "empty-32-32_train_91102",
+      "opportunity": 13,
+      "split": "train",
+      "model": "ridge_history",
+      "remaining": 4,
+      "candidates": 1,
+      "selected": "8",
+      "predicted": "350388716351363/68678400000000000000",
+      "actual_advantage": "-1132/256015625",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "1132/256015625",
+      "scores": {
+        "WAIT": "0",
+        "8": "350388716351363/68678400000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "8": "-1132/256015625"
+      }
+    },
+    {
+      "world": "empty-32-32_train_91102",
+      "opportunity": 13,
+      "split": "train",
+      "model": "ridge_nohistory",
+      "remaining": 4,
+      "candidates": 1,
+      "selected": "8",
+      "predicted": "261260528519/2400000000000000",
+      "actual_advantage": "-1132/256015625",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "1132/256015625",
+      "scores": {
+        "WAIT": "0",
+        "8": "261260528519/2400000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "8": "-1132/256015625"
+      }
+    },
+    {
+      "world": "empty-32-32_train_91102",
+      "opportunity": 13,
+      "split": "train",
+      "model": "ridge_nobudget",
+      "remaining": 4,
+      "candidates": 1,
+      "selected": "8",
+      "predicted": "215682501841939/8584800000000000000",
+      "actual_advantage": "-1132/256015625",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "1132/256015625",
+      "scores": {
+        "WAIT": "0",
+        "8": "215682501841939/8584800000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "8": "-1132/256015625"
+      }
+    },
+    {
+      "world": "random-32-32-10_cal_92201",
+      "opportunity": 1,
+      "split": "calibration",
+      "model": "ridge_history",
+      "remaining": 16,
+      "candidates": 1,
+      "selected": "WAIT",
+      "predicted": "0",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "15": "-12025101853/2000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "15": "0"
+      }
+    },
+    {
+      "world": "random-32-32-10_cal_92201",
+      "opportunity": 1,
+      "split": "calibration",
+      "model": "ridge_nohistory",
+      "remaining": 16,
+      "candidates": 1,
+      "selected": "WAIT",
+      "predicted": "0",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "15": "-352142699689/8000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "15": "0"
+      }
+    },
+    {
+      "world": "random-32-32-10_cal_92201",
+      "opportunity": 1,
+      "split": "calibration",
+      "model": "ridge_nobudget",
+      "remaining": 16,
+      "candidates": 1,
+      "selected": "WAIT",
+      "predicted": "0",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "15": "-117215905457/4000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "15": "0"
+      }
+    },
+    {
+      "world": "random-32-32-10_cal_92201",
+      "opportunity": 7,
+      "split": "calibration",
+      "model": "ridge_history",
+      "remaining": 10,
+      "candidates": 1,
+      "selected": "4",
+      "predicted": "35639549625271/26864000000000000000",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "4": "35639549625271/26864000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "4": "0"
+      }
+    },
+    {
+      "world": "random-32-32-10_cal_92201",
+      "opportunity": 7,
+      "split": "calibration",
+      "model": "ridge_nohistory",
+      "remaining": 10,
+      "candidates": 1,
+      "selected": "4",
+      "predicted": "19911983763/8000000000000000",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "4": "19911983763/8000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "4": "0"
+      }
+    },
+    {
+      "world": "random-32-32-10_cal_92201",
+      "opportunity": 7,
+      "split": "calibration",
+      "model": "ridge_nobudget",
+      "remaining": 10,
+      "candidates": 1,
+      "selected": "WAIT",
+      "predicted": "0",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "4": "-41371344909047/13432000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "4": "0"
+      }
+    },
+    {
+      "world": "random-32-32-10_cal_92201",
+      "opportunity": 13,
+      "split": "calibration",
+      "model": "ridge_history",
+      "remaining": 4,
+      "candidates": 1,
+      "selected": "WAIT",
+      "predicted": "0",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "3": "-261733413456199/744000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "3": "0"
+      }
+    },
+    {
+      "world": "random-32-32-10_cal_92201",
+      "opportunity": 13,
+      "split": "calibration",
+      "model": "ridge_nohistory",
+      "remaining": 4,
+      "candidates": 1,
+      "selected": "WAIT",
+      "predicted": "0",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "3": "-2050217061577/3000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "3": "0"
+      }
+    },
+    {
+      "world": "random-32-32-10_cal_92201",
+      "opportunity": 13,
+      "split": "calibration",
+      "model": "ridge_nobudget",
+      "remaining": 4,
+      "candidates": 1,
+      "selected": "WAIT",
+      "predicted": "0",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "3": "-116498781598481/496000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "3": "0"
+      }
+    },
+    {
+      "world": "random-32-32-10_train_92101",
+      "opportunity": 1,
+      "split": "train",
+      "model": "ridge_history",
+      "remaining": 16,
+      "candidates": 1,
+      "selected": "7",
+      "predicted": "44844557009909/492000000000000000",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "7": "44844557009909/492000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "7": "0"
+      }
+    },
+    {
+      "world": "random-32-32-10_train_92101",
+      "opportunity": 1,
+      "split": "train",
+      "model": "ridge_nohistory",
+      "remaining": 16,
+      "candidates": 1,
+      "selected": "7",
+      "predicted": "246894396377/8000000000000000",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "7": "246894396377/8000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "7": "0"
+      }
+    },
+    {
+      "world": "random-32-32-10_train_92101",
+      "opportunity": 1,
+      "split": "train",
+      "model": "ridge_nobudget",
+      "remaining": 16,
+      "candidates": 1,
+      "selected": "7",
+      "predicted": "8002153557783/82000000000000000",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "7": "8002153557783/82000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "7": "0"
+      }
+    },
+    {
+      "world": "random-32-32-10_train_92101",
+      "opportunity": 4,
+      "split": "train",
+      "model": "ridge_history",
+      "remaining": 13,
+      "candidates": 2,
+      "selected": "10",
+      "predicted": "87068253667982881/162585600000000000000",
+      "actual_advantage": "14289221/8192500000",
+      "actual_task_gain": 0,
+      "best_advantage": "14289221/8192500000",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "1": "679924923101117/11136000000000000000",
+        "10": "87068253667982881/162585600000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "1": "0",
+        "10": "14289221/8192500000"
+      }
+    },
+    {
+      "world": "random-32-32-10_train_92101",
+      "opportunity": 4,
+      "split": "train",
+      "model": "ridge_nohistory",
+      "remaining": 13,
+      "candidates": 2,
+      "selected": "10",
+      "predicted": "1063992510079/2560000000000000",
+      "actual_advantage": "14289221/8192500000",
+      "actual_task_gain": 0,
+      "best_advantage": "14289221/8192500000",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "1": "265135710079/2560000000000000",
+        "10": "1063992510079/2560000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "1": "0",
+        "10": "14289221/8192500000"
+      }
+    },
+    {
+      "world": "random-32-32-10_train_92101",
+      "opportunity": 4,
+      "split": "train",
+      "model": "ridge_nobudget",
+      "remaining": 13,
+      "candidates": 2,
+      "selected": "10",
+      "predicted": "836158309659853/1693600000000000000",
+      "actual_advantage": "14289221/8192500000",
+      "actual_task_gain": 0,
+      "best_advantage": "14289221/8192500000",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "1": "17036949330091/464000000000000000",
+        "10": "836158309659853/1693600000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "1": "0",
+        "10": "14289221/8192500000"
+      }
+    },
+    {
+      "world": "random-32-32-10_train_92101",
+      "opportunity": 7,
+      "split": "train",
+      "model": "ridge_history",
+      "remaining": 10,
+      "candidates": 1,
+      "selected": "13",
+      "predicted": "707111577759781/25536000000000000000",
+      "actual_advantage": "566/256015625",
+      "actual_task_gain": 0,
+      "best_advantage": "566/256015625",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "13": "707111577759781/25536000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "13": "566/256015625"
+      }
+    },
+    {
+      "world": "random-32-32-10_train_92101",
+      "opportunity": 7,
+      "split": "train",
+      "model": "ridge_nohistory",
+      "remaining": 10,
+      "candidates": 1,
+      "selected": "13",
+      "predicted": "2386763885911/96000000000000000",
+      "actual_advantage": "566/256015625",
+      "actual_task_gain": 0,
+      "best_advantage": "566/256015625",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "13": "2386763885911/96000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "13": "566/256015625"
+      }
+    },
+    {
+      "world": "random-32-32-10_train_92101",
+      "opportunity": 7,
+      "split": "train",
+      "model": "ridge_nobudget",
+      "remaining": 10,
+      "candidates": 1,
+      "selected": "13",
+      "predicted": "62522433298939/2128000000000000000",
+      "actual_advantage": "566/256015625",
+      "actual_task_gain": 0,
+      "best_advantage": "566/256015625",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "13": "62522433298939/2128000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "13": "566/256015625"
+      }
+    },
+    {
+      "world": "random-32-32-10_train_92101",
+      "opportunity": 10,
+      "split": "train",
+      "model": "ridge_history",
+      "remaining": 7,
+      "candidates": 2,
+      "selected": "14",
+      "predicted": "61947877919443853/267238400000000000000",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "2": "32109525236382127/368153600000000000000",
+        "14": "61947877919443853/267238400000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "2": "0",
+        "14": "0"
+      }
+    },
+    {
+      "world": "random-32-32-10_train_92101",
+      "opportunity": 10,
+      "split": "train",
+      "model": "ridge_nohistory",
+      "remaining": 7,
+      "candidates": 2,
+      "selected": "14",
+      "predicted": "11218335373867/64000000000000000",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "2": "9530327373867/64000000000000000",
+        "14": "11218335373867/64000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "2": "0",
+        "14": "0"
+      }
+    },
+    {
+      "world": "random-32-32-10_train_92101",
+      "opportunity": 10,
+      "split": "train",
+      "model": "ridge_nobudget",
+      "remaining": 7,
+      "candidates": 2,
+      "selected": "14",
+      "predicted": "8541266528317111/41756000000000000000",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "2": "5898670377913663/115048000000000000000",
+        "14": "8541266528317111/41756000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "2": "0",
+        "14": "0"
+      }
+    },
+    {
+      "world": "random-32-32-10_train_92101",
+      "opportunity": 13,
+      "split": "train",
+      "model": "ridge_history",
+      "remaining": 4,
+      "candidates": 1,
+      "selected": "3",
+      "predicted": "467917831896059/176368000000000000000",
+      "actual_advantage": "20269/512031250",
+      "actual_task_gain": 0,
+      "best_advantage": "20269/512031250",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "3": "467917831896059/176368000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "3": "20269/512031250"
+      }
+    },
+    {
+      "world": "random-32-32-10_train_92101",
+      "opportunity": 13,
+      "split": "train",
+      "model": "ridge_nohistory",
+      "remaining": 4,
+      "candidates": 1,
+      "selected": "WAIT",
+      "predicted": "0",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "20269/512031250",
+      "regret": "20269/512031250",
+      "scores": {
+        "WAIT": "0",
+        "3": "-136844315767/2000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "3": "20269/512031250"
+      }
+    },
+    {
+      "world": "random-32-32-10_train_92101",
+      "opportunity": 13,
+      "split": "train",
+      "model": "ridge_nobudget",
+      "remaining": 4,
+      "candidates": 1,
+      "selected": "3",
+      "predicted": "556332898796977/22046000000000000000",
+      "actual_advantage": "20269/512031250",
+      "actual_task_gain": 0,
+      "best_advantage": "20269/512031250",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "3": "556332898796977/22046000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "3": "20269/512031250"
+      }
+    },
+    {
+      "world": "random-32-32-10_train_92102",
+      "opportunity": 1,
+      "split": "train",
+      "model": "ridge_history",
+      "remaining": 16,
+      "candidates": 1,
+      "selected": "WAIT",
+      "predicted": "0",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "9": "-166954145303/2400000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "9": "-566/256015625"
+      }
+    },
+    {
+      "world": "random-32-32-10_train_92102",
+      "opportunity": 1,
+      "split": "train",
+      "model": "ridge_nohistory",
+      "remaining": 16,
+      "candidates": 1,
+      "selected": "9",
+      "predicted": "22968178181/1600000000000000",
+      "actual_advantage": "-566/256015625",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "566/256015625",
+      "scores": {
+        "WAIT": "0",
+        "9": "22968178181/1600000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "9": "-566/256015625"
+      }
+    },
+    {
+      "world": "random-32-32-10_train_92102",
+      "opportunity": 1,
+      "split": "train",
+      "model": "ridge_nobudget",
+      "remaining": 16,
+      "candidates": 1,
+      "selected": "WAIT",
+      "predicted": "0",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "9": "-83901835783/1200000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "9": "-566/256015625"
+      }
+    },
+    {
+      "world": "random-32-32-10_train_92102",
+      "opportunity": 7,
+      "split": "train",
+      "model": "ridge_history",
+      "remaining": 10,
+      "candidates": 1,
+      "selected": "WAIT",
+      "predicted": "0",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "3": "-20554401969757161/275648000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "3": "-566/256015625"
+      }
+    },
+    {
+      "world": "random-32-32-10_train_92102",
+      "opportunity": 7,
+      "split": "train",
+      "model": "ridge_nohistory",
+      "remaining": 10,
+      "candidates": 1,
+      "selected": "WAIT",
+      "predicted": "0",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "3": "-2329408788117/32000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "3": "-566/256015625"
+      }
+    },
+    {
+      "world": "random-32-32-10_train_92102",
+      "opportunity": 7,
+      "split": "train",
+      "model": "ridge_nobudget",
+      "remaining": 10,
+      "candidates": 1,
+      "selected": "WAIT",
+      "predicted": "0",
+      "actual_advantage": "0",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "0",
+      "scores": {
+        "WAIT": "0",
+        "3": "-773529858823463/13782400000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "3": "-566/256015625"
+      }
+    },
+    {
+      "world": "random-32-32-10_train_92102",
+      "opportunity": 13,
+      "split": "train",
+      "model": "ridge_history",
+      "remaining": 4,
+      "candidates": 1,
+      "selected": "6",
+      "predicted": "3892970622573913/129064000000000000000",
+      "actual_advantage": "-666721/4096250000",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "666721/4096250000",
+      "scores": {
+        "WAIT": "0",
+        "6": "3892970622573913/129064000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "6": "-666721/4096250000"
+      }
+    },
+    {
+      "world": "random-32-32-10_train_92102",
+      "opportunity": 13,
+      "split": "train",
+      "model": "ridge_nohistory",
+      "remaining": 4,
+      "candidates": 1,
+      "selected": "6",
+      "predicted": "36454527861/1000000000000000",
+      "actual_advantage": "-666721/4096250000",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "666721/4096250000",
+      "scores": {
+        "WAIT": "0",
+        "6": "36454527861/1000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "6": "-666721/4096250000"
+      }
+    },
+    {
+      "world": "random-32-32-10_train_92102",
+      "opportunity": 13,
+      "split": "train",
+      "model": "ridge_nobudget",
+      "remaining": 4,
+      "candidates": 1,
+      "selected": "6",
+      "predicted": "1859805936880231/64532000000000000000",
+      "actual_advantage": "-666721/4096250000",
+      "actual_task_gain": 0,
+      "best_advantage": "0",
+      "regret": "666721/4096250000",
+      "scores": {
+        "WAIT": "0",
+        "6": "1859805936880231/64532000000000000000"
+      },
+      "truth": {
+        "WAIT": "0",
+        "6": "-666721/4096250000"
+      }
+    }
+  ]
+}

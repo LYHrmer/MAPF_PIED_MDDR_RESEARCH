@@ -1,5 +1,9 @@
 # 学习辅助进度查询：探索说明
 
+2026-10-03 R9：[同续策预算价值实验](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/learned-query/exploration/learned_query/matched_tail_20261003_r9/REPORT.md)已完成91次成功原生运行，包括40个冻结留出。24个query标签和21个WAIT分支明确比较“当前选择后均继续同一π₀”，三模型实际训练部署。WAIT366任务；condition与history/nohistory/nobudget均367任务、123query，逐world固定FIFO时间也完全一致。没有新增学习收益，+1来自原condition策略。
+
+本轮修正了估计目标，但16个训练query标签的主任务差全部0；下一优先增加真实决策分歧与可用训练信号，再检验历史/预算作用。生产COST尚未接入。[三线判断与后续设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261003_R9.md)。下方R8及更早为保留历史。
+
 2026-10-01 R8：[分层价值学习报告](stratified_value_20261001_r8/REPORT.md)已完成115标签、同架构有/无历史ridge及真实部署。123个WAIT/探针全部完成，48个N16留出任务WAIT346、普通RR/条件350、分时条件344、有/无历史345；12个N32兼容后继依次171/170/169/166/168。183个成功物理运行和原12个启动上限失败全部归档，后继只改N≤16为N≤32，没有更换场景或模型。
 
 [完整任务/查询配对图](stratified_value_20261001_r8/ROOT_FIGURE_CAPTION.md)包含全部10个留出world，IID/SHIFT按同family处理。有历史模型未胜普通规则、WAIT或无历史模型；下一步使用同冻结续策的预算优势数据，先一次学习替换再扩多次干预。[Astra/导师判断与三线实绩](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261001_R8.md)、[具体方法合同](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/NEXT_METHOD_CONTRACT_20261001_R8.md)。以下均为此前轮次记录。

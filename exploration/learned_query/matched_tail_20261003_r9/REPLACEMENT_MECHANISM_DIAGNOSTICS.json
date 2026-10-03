@@ -1,0 +1,446 @@
+{
+  "post_test_only": true,
+  "changed_replacements": 14,
+  "baseline_empty_releases": 8,
+  "identical_motion_and_service": 0,
+  "event_type_identical_counts": {
+    "task_service": 14,
+    "original_RUN": 0,
+    "planner_request": 14,
+    "physical_original_END": 0
+  },
+  "cases": [
+    {
+      "world": "empty-32-32_test_91301_IID",
+      "policy": "once_nobudget",
+      "baseline_source": "m-14-29",
+      "baseline_removed": [],
+      "baseline_certified_progress": {
+        "lower": 281250,
+        "upper": 281250,
+        "denominator": 1000000
+      },
+      "learned_action": "",
+      "next_learned_decision": {
+        "opportunity": 8,
+        "selected": "m-14-29",
+        "remaining": 10,
+        "at": {
+          "lower": 60794966,
+          "upper": 60794967,
+          "denominator": 1000000
+        },
+        "elapsed_midpoint": "482051/1000000"
+      },
+      "full_planner_motion_END_service_projection_identical": false,
+      "event_type_identical": {
+        "task_service": true,
+        "original_RUN": false,
+        "planner_request": true,
+        "physical_original_END": false
+      }
+    },
+    {
+      "world": "empty-32-32_test_91301_SHIFT",
+      "policy": "once_nobudget",
+      "baseline_source": "m-14-29",
+      "baseline_removed": [],
+      "baseline_certified_progress": {
+        "lower": 281250,
+        "upper": 281250,
+        "denominator": 1000000
+      },
+      "learned_action": "",
+      "next_learned_decision": {
+        "opportunity": 8,
+        "selected": "m-14-29",
+        "remaining": 10,
+        "at": {
+          "lower": 60794966,
+          "upper": 60794967,
+          "denominator": 1000000
+        },
+        "elapsed_midpoint": "482051/1000000"
+      },
+      "full_planner_motion_END_service_projection_identical": false,
+      "event_type_identical": {
+        "task_service": true,
+        "original_RUN": false,
+        "planner_request": true,
+        "physical_original_END": false
+      }
+    },
+    {
+      "world": "empty-32-32_test_91302_IID",
+      "policy": "once_nohistory",
+      "baseline_source": "m-12-12",
+      "baseline_removed": [
+        "cell-12-23"
+      ],
+      "baseline_certified_progress": {
+        "lower": 744197,
+        "upper": 744198,
+        "denominator": 1000000
+      },
+      "learned_action": "",
+      "next_learned_decision": {
+        "opportunity": 8,
+        "selected": "m-12-12",
+        "remaining": 10,
+        "at": {
+          "lower": 18689848,
+          "upper": 18689849,
+          "denominator": 1000000
+        },
+        "elapsed_midpoint": "101391/1000000"
+      },
+      "full_planner_motion_END_service_projection_identical": false,
+      "event_type_identical": {
+        "task_service": true,
+        "original_RUN": false,
+        "planner_request": true,
+        "physical_original_END": false
+      }
+    },
+    {
+      "world": "empty-32-32_test_91302_IID",
+      "policy": "once_history",
+      "baseline_source": "m-12-12",
+      "baseline_removed": [
+        "cell-12-23"
+      ],
+      "baseline_certified_progress": {
+        "lower": 744197,
+        "upper": 744198,
+        "denominator": 1000000
+      },
+      "learned_action": "",
+      "next_learned_decision": {
+        "opportunity": 8,
+        "selected": "m-12-12",
+        "remaining": 10,
+        "at": {
+          "lower": 18689848,
+          "upper": 18689849,
+          "denominator": 1000000
+        },
+        "elapsed_midpoint": "101391/1000000"
+      },
+      "full_planner_motion_END_service_projection_identical": false,
+      "event_type_identical": {
+        "task_service": true,
+        "original_RUN": false,
+        "planner_request": true,
+        "physical_original_END": false
+      }
+    },
+    {
+      "world": "empty-32-32_test_91302_IID",
+      "policy": "once_nobudget",
+      "baseline_source": "m-12-12",
+      "baseline_removed": [
+        "cell-12-23"
+      ],
+      "baseline_certified_progress": {
+        "lower": 744197,
+        "upper": 744198,
+        "denominator": 1000000
+      },
+      "learned_action": "",
+      "next_learned_decision": {
+        "opportunity": 8,
+        "selected": "m-12-12",
+        "remaining": 10,
+        "at": {
+          "lower": 18689848,
+          "upper": 18689849,
+          "denominator": 1000000
+        },
+        "elapsed_midpoint": "101391/1000000"
+      },
+      "full_planner_motion_END_service_projection_identical": false,
+      "event_type_identical": {
+        "task_service": true,
+        "original_RUN": false,
+        "planner_request": true,
+        "physical_original_END": false
+      }
+    },
+    {
+      "world": "empty-32-32_test_91302_SHIFT",
+      "policy": "once_nohistory",
+      "baseline_source": "m-12-12",
+      "baseline_removed": [
+        "cell-12-23"
+      ],
+      "baseline_certified_progress": {
+        "lower": 744197,
+        "upper": 744198,
+        "denominator": 1000000
+      },
+      "learned_action": "",
+      "next_learned_decision": {
+        "opportunity": 8,
+        "selected": "m-12-12",
+        "remaining": 10,
+        "at": {
+          "lower": 18689848,
+          "upper": 18689849,
+          "denominator": 1000000
+        },
+        "elapsed_midpoint": "101391/1000000"
+      },
+      "full_planner_motion_END_service_projection_identical": false,
+      "event_type_identical": {
+        "task_service": true,
+        "original_RUN": false,
+        "planner_request": true,
+        "physical_original_END": false
+      }
+    },
+    {
+      "world": "empty-32-32_test_91302_SHIFT",
+      "policy": "once_history",
+      "baseline_source": "m-12-12",
+      "baseline_removed": [
+        "cell-12-23"
+      ],
+      "baseline_certified_progress": {
+        "lower": 744197,
+        "upper": 744198,
+        "denominator": 1000000
+      },
+      "learned_action": "",
+      "next_learned_decision": {
+        "opportunity": 8,
+        "selected": "m-12-12",
+        "remaining": 10,
+        "at": {
+          "lower": 18689848,
+          "upper": 18689849,
+          "denominator": 1000000
+        },
+        "elapsed_midpoint": "101391/1000000"
+      },
+      "full_planner_motion_END_service_projection_identical": false,
+      "event_type_identical": {
+        "task_service": true,
+        "original_RUN": false,
+        "planner_request": true,
+        "physical_original_END": false
+      }
+    },
+    {
+      "world": "empty-32-32_test_91302_SHIFT",
+      "policy": "once_nobudget",
+      "baseline_source": "m-12-12",
+      "baseline_removed": [
+        "cell-12-23"
+      ],
+      "baseline_certified_progress": {
+        "lower": 744197,
+        "upper": 744198,
+        "denominator": 1000000
+      },
+      "learned_action": "",
+      "next_learned_decision": {
+        "opportunity": 8,
+        "selected": "m-12-12",
+        "remaining": 10,
+        "at": {
+          "lower": 18689848,
+          "upper": 18689849,
+          "denominator": 1000000
+        },
+        "elapsed_midpoint": "101391/1000000"
+      },
+      "full_planner_motion_END_service_projection_identical": false,
+      "event_type_identical": {
+        "task_service": true,
+        "original_RUN": false,
+        "planner_request": true,
+        "physical_original_END": false
+      }
+    },
+    {
+      "world": "random-32-32-10_test_92302_IID",
+      "policy": "once_history",
+      "baseline_source": "m-3-15",
+      "baseline_removed": [],
+      "baseline_certified_progress": {
+        "lower": 281250,
+        "upper": 281250,
+        "denominator": 1000000
+      },
+      "learned_action": "",
+      "next_learned_decision": {
+        "opportunity": 8,
+        "selected": "m-3-15",
+        "remaining": 10,
+        "at": {
+          "lower": 30480762,
+          "upper": 30480763,
+          "denominator": 1000000
+        },
+        "elapsed_midpoint": "648609/1000000"
+      },
+      "full_planner_motion_END_service_projection_identical": false,
+      "event_type_identical": {
+        "task_service": true,
+        "original_RUN": false,
+        "planner_request": true,
+        "physical_original_END": false
+      }
+    },
+    {
+      "world": "random-32-32-10_test_92302_IID",
+      "policy": "once_nohistory",
+      "baseline_source": "m-3-15",
+      "baseline_removed": [],
+      "baseline_certified_progress": {
+        "lower": 281250,
+        "upper": 281250,
+        "denominator": 1000000
+      },
+      "learned_action": "",
+      "next_learned_decision": {
+        "opportunity": 8,
+        "selected": "m-3-15",
+        "remaining": 10,
+        "at": {
+          "lower": 30480762,
+          "upper": 30480763,
+          "denominator": 1000000
+        },
+        "elapsed_midpoint": "648609/1000000"
+      },
+      "full_planner_motion_END_service_projection_identical": false,
+      "event_type_identical": {
+        "task_service": true,
+        "original_RUN": false,
+        "planner_request": true,
+        "physical_original_END": false
+      }
+    },
+    {
+      "world": "random-32-32-10_test_92302_IID",
+      "policy": "once_nobudget",
+      "baseline_source": "m-3-15",
+      "baseline_removed": [],
+      "baseline_certified_progress": {
+        "lower": 281250,
+        "upper": 281250,
+        "denominator": 1000000
+      },
+      "learned_action": "",
+      "next_learned_decision": {
+        "opportunity": 8,
+        "selected": "m-3-15",
+        "remaining": 10,
+        "at": {
+          "lower": 30480762,
+          "upper": 30480763,
+          "denominator": 1000000
+        },
+        "elapsed_midpoint": "648609/1000000"
+      },
+      "full_planner_motion_END_service_projection_identical": false,
+      "event_type_identical": {
+        "task_service": true,
+        "original_RUN": false,
+        "planner_request": true,
+        "physical_original_END": false
+      }
+    },
+    {
+      "world": "random-32-32-10_test_92302_SHIFT",
+      "policy": "once_nobudget",
+      "baseline_source": "m-3-15",
+      "baseline_removed": [],
+      "baseline_certified_progress": {
+        "lower": 281250,
+        "upper": 281250,
+        "denominator": 1000000
+      },
+      "learned_action": "",
+      "next_learned_decision": {
+        "opportunity": 8,
+        "selected": "m-3-15",
+        "remaining": 10,
+        "at": {
+          "lower": 30480762,
+          "upper": 30480763,
+          "denominator": 1000000
+        },
+        "elapsed_midpoint": "648609/1000000"
+      },
+      "full_planner_motion_END_service_projection_identical": false,
+      "event_type_identical": {
+        "task_service": true,
+        "original_RUN": false,
+        "planner_request": true,
+        "physical_original_END": false
+      }
+    },
+    {
+      "world": "random-32-32-10_test_92302_SHIFT",
+      "policy": "once_history",
+      "baseline_source": "m-3-15",
+      "baseline_removed": [],
+      "baseline_certified_progress": {
+        "lower": 281250,
+        "upper": 281250,
+        "denominator": 1000000
+      },
+      "learned_action": "",
+      "next_learned_decision": {
+        "opportunity": 8,
+        "selected": "m-3-15",
+        "remaining": 10,
+        "at": {
+          "lower": 30480762,
+          "upper": 30480763,
+          "denominator": 1000000
+        },
+        "elapsed_midpoint": "648609/1000000"
+      },
+      "full_planner_motion_END_service_projection_identical": false,
+      "event_type_identical": {
+        "task_service": true,
+        "original_RUN": false,
+        "planner_request": true,
+        "physical_original_END": false
+      }
+    },
+    {
+      "world": "random-32-32-10_test_92302_SHIFT",
+      "policy": "once_nohistory",
+      "baseline_source": "m-3-15",
+      "baseline_removed": [],
+      "baseline_certified_progress": {
+        "lower": 281250,
+        "upper": 281250,
+        "denominator": 1000000
+      },
+      "learned_action": "",
+      "next_learned_decision": {
+        "opportunity": 8,
+        "selected": "m-3-15",
+        "remaining": 10,
+        "at": {
+          "lower": 30480762,
+          "upper": 30480763,
+          "denominator": 1000000
+        },
+        "elapsed_midpoint": "648609/1000000"
+      },
+      "full_planner_motion_END_service_projection_identical": false,
+      "event_type_identical": {
+        "task_service": true,
+        "original_RUN": false,
+        "planner_request": true,
+        "physical_original_END": false
+      }
+    }
+  ]
+}

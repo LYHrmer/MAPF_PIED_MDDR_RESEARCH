@@ -1,0 +1,77 @@
+--- R8/joint_history_native.cpp
++++ R9/joint_history_native.cpp
+@@ -49,6 +49,7 @@
+     struct Agent { Count c;std::vector<unsigned> recent;std::vector<int> eta_history;std::shared_ptr<const R> delivered; };
+     std::map<std::string,Count> counts;std::map<unsigned,Agent> agents;
+     std::map<std::string,std::vector<R>> parameters;long rr_cursor=-1;
++    mutable bool intervention_done=false;
+ public:
+     struct Claim { unsigned task,remaining,owners; };
+     struct Candidate { std::string key,heading;unsigned agent;R launch;std::vector<Claim> claims;std::vector<R> features; };
+@@ -115,30 +116,42 @@
+         check(O::cmp(age,rat(16))<=0,"candidate source age support");c.features.push_back(O::div(floor6(age),rat(2)));c.features.push_back(O::mul(prior,structural.at(2)));
+     }
+     std::string choose(const std::vector<Candidate>& input,const R& at,unsigned capacity,const std::string& policy,unsigned opportunity,const std::string& trigger)const{
+-        const bool paced=policy.substr(0,6)=="paced_";
+-        const std::string scoring_policy=paced?policy.substr(6):policy;
+-        unsigned allowance=4;for(unsigned boundary=32;boundary<=96;boundary+=32)if(O::cmp(at,rat(boundary))>=0)allowance+=4;
+-        const bool admitted=!paced || 16-capacity<allowance;
++        std::string scoring_policy=policy;
++        if(policy.substr(0,3)=="cf_"){
++            const auto pos=policy.find('_',3);check(pos!=std::string::npos,"invalid counterfactual policy");
++            const unsigned target=static_cast<unsigned>(std::stoul(policy.substr(3,pos-3)));
++            scoring_policy=opportunity==target?"force_"+policy.substr(pos+1):"condition";
++            if(opportunity==target){check(!intervention_done&&capacity>0,"counterfactual repeated or exhausted");intervention_done=true;}
++        } else if(policy.substr(0,5)=="once_"){
++            scoring_policy="condition";
++            if(!intervention_done&&capacity>0&&16-capacity>=6){scoring_policy="ridge_"+policy.substr(5);intervention_done=true;}
++        }
+         std::string selected;R best=rat(0);unsigned best_agent=1000;
+         std::cout<<"{\"event\":\"actor_decision\",\"at\":";bound3(at);
+-        std::cout<<",\"policy\":\""<<policy<<"\",\"remaining_capacity\":"<<capacity<<",\"opportunity\":"<<opportunity<<",\"trigger\":\""<<trigger<<"\",\"RR_cursor\":"<<rr_cursor<<",\"candidates\":[";
++        std::cout<<",\"policy\":\""<<policy<<"\",\"remaining_capacity\":"<<capacity<<",\"decision_mode\":\""<<scoring_policy<<"\",\"opportunity\":"<<opportunity<<",\"trigger\":\""<<trigger<<"\",\"RR_cursor\":"<<rr_cursor<<",\"candidates\":[";
+         bool comma=false;
+-        for(const auto& c:input){
++        for(auto c:input){
++            const R budget=rat(capacity,16),time=O::div(floor6(O::div(at,rat(8))),rat(16));
++            c.features.push_back(budget);c.features.push_back(time);
++            c.features.push_back(O::mul(budget,c.features.at(19)));c.features.push_back(O::mul(budget,O::sub(rat(1),time)));
+             check(O::cmp(O::sub(at,c.launch),rat(3,4))>=0,"R5b actor source below age gate");
+             check(has_history(c.agent)&&known>=2,"R5 actor before same-world END history");
+             const R p=survival_release_probability(c.agent,O::sub(at,c.launch));R score=rat(0);
+             if(scoring_policy=="RR")score=rat(100-((static_cast<long>(c.agent)+100-(rr_cursor+1))%100));
+-            else if(scoring_policy.substr(0,6)=="probe_"){
+-                const auto pos=scoring_policy.find('_',6);check(pos!=std::string::npos,"invalid probe scoring_policy");
+-                score=opportunity==static_cast<unsigned>(std::stoul(scoring_policy.substr(6,pos-6)))&&c.agent==static_cast<unsigned>(std::stoul(scoring_policy.substr(pos+1)))?rat(1):rat(0);
+-            }
+-            else if(scoring_policy=="ridge_history"||scoring_policy=="ridge_nohistory"){
+-                const auto& coefficients=parameters.at(scoring_policy);check(coefficients.size()==21&&c.features.size()==20,"R6 ridge parameters/features");score=coefficients[0];
+-                for(unsigned j=0;j<20;++j)if(scoring_policy!="ridge_nohistory"||j<10||j>=18)score=O::add(score,O::mul(coefficients[j+1],c.features[j]));
++            else if(scoring_policy.substr(0,6)=="force_"){
++                const std::string target=scoring_policy.substr(6);
++                score=target!="WAIT"&&c.agent==static_cast<unsigned>(std::stoul(target))?rat(1):rat(0);
++            }
++            else if(scoring_policy=="ridge_history"||scoring_policy=="ridge_nohistory"||scoring_policy=="ridge_nobudget"){
++                const auto& coefficients=parameters.at(scoring_policy);check(coefficients.size()==25&&c.features.size()==24,"R9 ridge parameters/features");score=coefficients[0];
++                for(unsigned j=0;j<24;++j){
++                    const bool masked=(scoring_policy=="ridge_nohistory"&&j>=10&&j<18)||(scoring_policy=="ridge_nobudget"&&(j==20||j==22||j==23));
++                    if(!masked)score=O::add(score,O::mul(coefficients[j+1],c.features[j]));
++                }
+             }
+             else if(scoring_policy=="condition")for(const auto& cl:c.claims)score=O::add(score,O::div(p,rat(cl.remaining*cl.owners)));
+-            check(c.features.size()==20,"R5 public feature dimensions");
+-            if(capacity&&admitted&&O::cmp(score,rat(0))>0&&(selected.empty()||O::cmp(score,best)>0||(same(score,best)&&c.agent<best_agent))){selected=c.key;best=score;best_agent=c.agent;}
++            check(c.features.size()==24,"R9 public feature dimensions");
++            if(capacity&&O::cmp(score,rat(0))>0&&(selected.empty()||O::cmp(score,best)>0||(same(score,best)&&c.agent<best_agent))){selected=c.key;best=score;best_agent=c.agent;}
+             if(comma)std::cout<<',';
+             comma=true;
+             std::cout<<"{\"move\":\""<<c.key<<"\",\"agent\":"<<c.agent<<",\"heading\":\""<<c.heading<<"\",\"public_launch\":";bound3(c.launch);
+@@ -447,7 +460,7 @@
+ }
+ int main(int argc,char** argv) {
+     try {check(argc==4,"joint input policy capacity arguments required");const unsigned b=static_cast<unsigned>(std::stoul(argv[3]));check(b<=64,"joint capacity outside contract");
+-        const std::string p=argv[2];check(p=="WAIT"||p=="RR"||p=="condition"||p=="ridge_history"||p=="ridge_nohistory"||p.substr(0,6)=="probe_"||p=="paced_condition"||p=="paced_ridge_history"||p=="paced_ridge_nohistory","unknown joint policy");
++        const std::string p=argv[2];check(p=="WAIT"||p=="RR"||p=="condition"||p.substr(0,3)=="cf_"||p=="once_history"||p=="once_nohistory"||p=="once_nobudget","unknown joint policy");
+         World3 world(argv[1],p,b);world.run();return 0;}
+     catch(const std::exception& e){std::cerr<<"joint native failed after "<<checks<<" checks: "<<e.what()<<'\n';return 1;}
+ }

@@ -1,5 +1,9 @@
 # 学习型进度查询探索工作区
 
+2026-10-03 R9：[同续策预算价值实验](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/learned-query/exploration/learned_query/matched_tail_20261003_r9/REPORT.md)已完成91次成功原生运行，包括40个冻结留出。24个query标签和21个WAIT分支明确比较“当前选择后均继续同一π₀”，三模型实际训练部署。WAIT366任务；condition与history/nohistory/nobudget均367任务、123query，逐world固定FIFO时间也完全一致。没有新增学习收益，+1来自原condition策略。
+
+本轮修正了估计目标，但16个训练query标签的主任务差全部0；下一优先增加真实决策分歧与可用训练信号，再检验历史/预算作用。生产COST尚未接入。[三线判断与后续设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261003_R9.md)。下方R8及更早为保留历史。
+
 R8（2026-10-01）已完成123个训练/校准WAIT及探针运行、48个N16冻结留出和12个N32兼容后继，115标签用于同架构有/无历史ridge。N16任务WAIT346、RR/条件350、分时条件344、有/无历史均345；N32依次171/170/169/166/168。模型确实训练并部署，但尚无学习优势。原12个N32启动guard失败另存，后继仅修复输入上限，全部195attempt可追溯。
 
 [R8完整报告](exploration/learned_query/stratified_value_20261001_r8/REPORT.md) · [全部留出配对图](exploration/learned_query/stratified_value_20261001_r8/ROOT_FIGURE_CAPTION.md) · [三线判断及下一方法](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261001_R8.md)。下一步将单次查询标签改为相同后续策略、剩余预算下的价值；不以少量查询或局部预测改善代替任务收益。下方R7及更早内容为历史记录。

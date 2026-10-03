@@ -1,0 +1,55 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "case": "explicit_budget_feature",
+      "rejected": true,
+      "reason": "independent current-head/END/history/age feature 20"
+    },
+    {
+      "case": "budget_interaction_feature",
+      "rejected": true,
+      "reason": "independent current-head/END/history/age feature 22"
+    },
+    {
+      "case": "history_feature",
+      "rejected": true,
+      "reason": "independent current-head/END/history/age feature 10"
+    },
+    {
+      "case": "tail_not_pi0",
+      "rejected": true,
+      "reason": "independent single replacement/tail mode"
+    },
+    {
+      "case": "query_budget_not_consumed",
+      "rejected": true,
+      "reason": "causal history/capacity count"
+    },
+    {
+      "case": "candidate_omission",
+      "rejected": true,
+      "reason": "candidate completeness/current-world END gate"
+    },
+    {
+      "case": "future_head",
+      "rejected": true,
+      "reason": "future goal leakage"
+    },
+    {
+      "case": "certificate",
+      "rejected": true,
+      "reason": "interval resolution"
+    },
+    {
+      "case": "task_service",
+      "rejected": true,
+      "reason": ""
+    },
+    {
+      "case": "WAIT_same_time_compensation",
+      "rejected": true,
+      "reason": "WAIT must advance to next native decision event"
+    }
+  ]
+}

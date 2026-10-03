@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "models": {
+    "ridge_history": {
+      "train_rows": 16,
+      "opportunity_weight_sum": 14.0,
+      "max_unrounded_coefficient_difference": 2.0816681711721685e-17,
+      "masked_slots": []
+    },
+    "ridge_nohistory": {
+      "train_rows": 16,
+      "opportunity_weight_sum": 14.0,
+      "max_unrounded_coefficient_difference": 2.0816681711721685e-17,
+      "masked_slots": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    "ridge_nobudget": {
+      "train_rows": 16,
+      "opportunity_weight_sum": 14.0,
+      "max_unrounded_coefficient_difference": 1.3877787807814457e-17,
+      "masked_slots": [
+        20,
+        22,
+        23
+      ]
+    }
+  },
+  "explicit_WAIT_rows": 21,
+  "query_rows": 24,
+  "model_sha256": "ec96643b3b4bc8d81b26731c983ed05b4578b5595a13aad59456ceff596a1f76",
+  "candidate_imports": false,
+  "scope": "independent augmented weighted least-squares and saved model freeze/rounding; physical branch-label replay separately audited"
+}
