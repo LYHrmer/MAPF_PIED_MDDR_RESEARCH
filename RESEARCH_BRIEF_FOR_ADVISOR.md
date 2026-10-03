@@ -1,5 +1,13 @@
 # 导师汇报：研究问题、数学表达与当前阶段
 
+2026-10-03 R11：**原十二输入的实际重建费用下降，合法执行和服务时刻不变；查询即时组合结构已核清，作者固定路径方法已接共同 primitive 执行层。** [三线结果与 Astra/科研导师分别判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261003_R11.md)。
+
+主线仍完整付费读取 SOURCE，核验旧 history 前缀后仅重放新增命令。Natural actual 减少11.63%–21.14%，Strict charged 减少1.36%–2.54%；1388条非费用/非host事件及792物理帧保持，2964费用段和18份隔离重编ELF通过。缓存保留完整历史，未测峰值guest字节，不称常量空间。长例服务时间和仍50→44，paid比WAIT多118,894,306个Natural实际步，均完成4任务；详Q2 §81。
+
+查询四个新TRAIN family共94次运行及独立审计全部完成；固定condition/WAIT各188任务，逐族事后最佳189，等于两参考逐族包络。11个分支在任务数优先的登记目标J上稳健超两参考，包含真实时间次项收益；没有新训练或TEST。当前接口的即时多owner/多head组合受结构排除，但跨时刻选择仍有上述有限空间。第三线完成27项作者接口验证，其中16项完整单位轨迹等价；新分段线性事件层通过独立资源与连续圆盘检查。random60的三种primitive条件均出现时间和改善而makespan变差；同图checkpoint恢复及非法前缀修改拒绝已验证，尚未执行中采用不同重规划图。
+
+[下一方法设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/NEXT_METHOD_CONTRACT_20261003_R11.md)优先隔离主线信息合同、检验查询完整动作价值、实现作者后缀图的实际合法采用，再让模型参与选择。公共main仍仅更新四份进度文档；实现、原始主线证据和费用图留本机，既有原稿保持。以下R10及更早均为历史。
+
 2026-10-03 R10：建议保留执行与费用主线，**现有ridge暂不作为论文核心性能贡献**。这来自新实验及独立机会诊断，不是因模型未训练或未接入。[Astra与科研导师分别判断、完整实绩](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261003_R10.md)。
 
 主线12臂已打通整数公共时钟上的正常END、服务、后继RUN与在途查询。长例付费后车两次服务各早3，四项时间和50→44，任务仍4/4；Natural实际步多134,174,531。短/中无查询收益。Astra特别指出共同C-END SOURCE也包含完整history，当前仅允许其用于END/服务；长例证明额外认证POSITION的合法放行价值，尚非两策略物理信息有无的严格比较。

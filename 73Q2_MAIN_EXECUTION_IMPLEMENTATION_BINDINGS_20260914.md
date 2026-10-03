@@ -1900,3 +1900,34 @@ short中A2于tick4先RUN，旧A1 POSITION稍后到达时被拒绝改变当前roo
 针对完整时长投影可能重复惩罚名义运动，第三线另于看到64臂结果后登记32个全新world臂，仅改为相对同几何训练参考时长的非负超额代价。hm/旧full/residual-history/residual-full任务185/184/185/182；该修正仍无学习优势。32臂与64臂分别冻结，不能合并成事前96臂；不再用这批测试调倍率或挑条件。本轮建议当前ridge退出核心性能贡献，后续学习围绕具有可验证任务改进空间的查询/依赖选择展开。
 
 完整三线结果、分别形成的Astra与科研导师判断，以及后续修正实验的边界见[本轮汇总](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261003_R10.md)。公共main仍仅更新四份进度文档，主线实现/原始工件本机隔离，既有原稿不修改或提交。
+
+## 81. R11：完整输入核验后的增量精确重建（2026-10-03）
+
+实现与原始证据位于本机 `implementation_binding_evidence/incremental_lifecycle_20261003_r11/`。每次poll仍在真实登记行pin、完整读取35字段及全部history，再付费释放；仅当会话/occurrence/种子/账户和完整旧命令前缀一致时，复用guest内原ReferenceController不可变根并执行新增后缀。字段15只是原SOURCE的sample标签，仍完整读取，跨poll变化不代表控制器状态变化。身份或旧前缀改写/截短先清缓存、从实际新输入完整重建；新状态在校验通过后才安装，服务换头立即失效。
+
+|长度/策略|R10 Natural actual|R11 Natural actual|R10 Strict charged|R11 Strict charged|
+|---|---:|---:|---:|---:|
+|3 WAIT|196,573,123|155,022,891|1,627,389,952|1,602,224,128|
+|3 paid|288,125,948|248,455,204|2,373,976,064|2,332,033,024|
+|12 WAIT|275,657,691|235,468,736|1,711,276,032|1,669,332,992|
+|12 paid|396,107,459|345,001,806|2,474,639,360|2,441,084,928|
+|27 WAIT|436,963,572|385,829,407|1,845,493,760|1,811,939,328|
+|27 paid|571,138,103|504,723,713|2,642,411,520|2,575,302,656|
+
+原12臂仍固定16tick、8,388,608每段供给，全部成功。Natural实际步减少11.63%–21.14%，Strict实际收费减少3/5/5/4/4/8段，即1.36%–2.54%，不能用前者替代后者。Strict actual由原始段另行复算，paid三个值为248,456,911 / 345,002,009 / 504,723,916，并非直接复制Natural。C-END实际工作减少14.09%–27.15%，其他Center作业也发生费用变化；没有分配/精确运算独立消融，不把总差归于单一环节。
+
+服务A1/B1/A2/B2仍为短4/6/7/9、中7/9/10/12；长WAIT10/12/13/15、paid10/9/13/12。长例服务时间和仍50→44，需要额外118,894,306个Natural实际步，均完成4任务。短/中无查询时间优势。实现优化不等于新增算法吞吐收益，也不建立工作步与物理时间的换算。
+
+缓存包含每agent的完整历史和原不可变控制器句柄，仍随history增长；每次完整SOURCE扫描和前缀比较继续收费，批量读两头时旧缓存与新历史会短暂共存。复制、引用计数、持有、局部诊断和析构均在真实guest内付费；每agent两次冷启动/两次服务失效、非零复用及最终空缓存已断言。没有测峰值guest驻留字节，不能称O(1)空间或免读取缓存。负控覆盖身份/种子变化、旧前缀改写/截短拒绝、空后缀/仅sample变化接受、增量与完整重放一致，以及独立保存旧time/s/v/cap不受新根修改污染。
+
+审计逐段核2964费用段守恒；1388条非费用/非host事件与R10逐项一致，包括792物理帧。根独立 `ROOT_COMPARE.json` 再从十二臂原始receipt/log重算费用和物理/公开事件；18个guest ELF隔离重编逐字一致，Network/Executor与R10相同，私有kernel 20,480bytes及栈界1408不变。10350父pin和原稿SHA保持。49个构建/资格/原生/重编命令成功；两次过早读取尚未写出的RESULTS导致后处理失败，原失败保留，仅待前置完成后重跑后处理，未重跑实验。
+
+R10的信息边界没有改变：WAIT/paid的生命周期内部同样读取完整未闭合history，只用于END与服务；现有正例是额外认证POSITION的合法放行价值，不是WAIT物理信息完全缺失。下一明确隔离END公开通知、验证器history、策略可见状态与收费证据，再扩公开任务流。
+
+本轮查询以四个新TRAIN family登记公开分层单/双干预，完整结论由查询R11报告与根原始服务复算给出。独立源码分析说明当前单位MOVE、排他cell、单next请求、END后ready和last_depart访问先序使每个合法candidate只有一条当前claim且owners=1；增加密度不能构造这个接口中的coupled层，但不同候选仍可竞争预算，跨时刻任务价值仍需实测。该条件结论不否定通用Index或旧人工组件的组合阻塞见证。
+
+查询最终8参考＋26单次＋60双次，共94原生及独立物理/策略审计全部通过。condition/全程WAIT各188任务，逐族事后最佳189，恰等于逐族max两参考；1/8单机会有相对condition的+1，不将该弱空间否定为完全不可学习。60双次对相同首动作单次无任务正增益，59相同、1少2；distinct第二触发48/48，successor5/12，7不可达完整保留。11个分支对两参考均有严格正J差下界，J=tasks−固定前4FIFO受限时间和/16385：random112101的一支同48任务、时间和比condition少[6.988960,6.989052]、比WAIT少[20.621247,20.621339]，均16query对WAIT0。未接生产COST，不称净费胜出或学习已部署。根从94原始服务复核上述值、完整公开谱系、预算/SKIP/评分与触发；94前缀/同尾核验、38同动作或不可达整程对照、58 SKIP生命周期及22负控均通过。
+
+第三线27项共同执行验证已完成，其中16项原作者单位模式的完整时序一致。新层为明确声明的分段线性MOVE/原地TURN/STATION，非原ARGoS控制器。独立根审覆盖239,222 MOVE、523,274段及72,636潜在相撞对的精确连续最小距离，保留完工驻留；型2依赖仍在真实ARRIVE解锁。原图/GSES/Improved在random60三种primitive条件下均出现总完工时间和与makespan取舍；checkpoint只证明实际半MOVE时同图恢复以及非法承诺修改拒绝，未证明执行中采用不同求解图或学习收益。
+
+三线完整数字、两份独立判断和下一方法分别见[本轮综述](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261003_R11.md)与[方法合同](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/NEXT_METHOD_CONTRACT_20261003_R11.md)。公共main只更新既有四份进度文档，原稿保持。
