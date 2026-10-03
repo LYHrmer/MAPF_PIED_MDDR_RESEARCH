@@ -1,0 +1,106 @@
+{
+  "stage": "new TRAIN-only finite mechanism exploration; no fit/no TEST",
+  "native_episodes": 94,
+  "failed": 0,
+  "baseline_episodes": 8,
+  "single_branches": 26,
+  "pair_branches": 60,
+  "selected_opportunities": 8,
+  "selected_two_candidate_opportunities": 1,
+  "selected_coupled_opportunities": 0,
+  "families": [
+    {
+      "world": "empty-32-32_scen1_offset448_train_111101",
+      "condition_tasks": 48,
+      "whole_WAIT_tasks": 49,
+      "condition_queries": 16,
+      "whole_WAIT_queries": 0,
+      "single_branches": 6,
+      "pair_branches": 15,
+      "best_single_tasks": 49,
+      "best_pair_tasks": 49,
+      "best_registered_probe_tasks": 49,
+      "task_improving_arms_vs_condition": 4,
+      "task_improving_arms_vs_both": 0,
+      "robust_J_improving_arms_vs_condition": 4,
+      "robust_J_improving_arms_vs_both": 4
+    },
+    {
+      "world": "empty-32-32_scen1_offset464_train_111102",
+      "condition_tasks": 41,
+      "whole_WAIT_tasks": 40,
+      "condition_queries": 16,
+      "whole_WAIT_queries": 0,
+      "single_branches": 6,
+      "pair_branches": 15,
+      "best_single_tasks": 41,
+      "best_pair_tasks": 41,
+      "best_registered_probe_tasks": 41,
+      "task_improving_arms_vs_condition": 0,
+      "task_improving_arms_vs_both": 0,
+      "robust_J_improving_arms_vs_condition": 0,
+      "robust_J_improving_arms_vs_both": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset0_train_112101",
+      "condition_tasks": 48,
+      "whole_WAIT_tasks": 48,
+      "condition_queries": 16,
+      "whole_WAIT_queries": 0,
+      "single_branches": 8,
+      "pair_branches": 15,
+      "best_single_tasks": 48,
+      "best_pair_tasks": 48,
+      "best_registered_probe_tasks": 48,
+      "task_improving_arms_vs_condition": 0,
+      "task_improving_arms_vs_both": 0,
+      "robust_J_improving_arms_vs_condition": 7,
+      "robust_J_improving_arms_vs_both": 7
+    },
+    {
+      "world": "random-32-32-10_scen2_offset16_train_112102",
+      "condition_tasks": 51,
+      "whole_WAIT_tasks": 51,
+      "condition_queries": 16,
+      "whole_WAIT_queries": 0,
+      "single_branches": 6,
+      "pair_branches": 15,
+      "best_single_tasks": 51,
+      "best_pair_tasks": 51,
+      "best_registered_probe_tasks": 51,
+      "task_improving_arms_vs_condition": 0,
+      "task_improving_arms_vs_both": 0,
+      "robust_J_improving_arms_vs_condition": 3,
+      "robust_J_improving_arms_vs_both": 0
+    }
+  ],
+  "pairs_by_trigger": {
+    "distinct": {
+      "arms": 48,
+      "second_reached": 48,
+      "task_gain_vs_first_only": {
+        "0": 47,
+        "-2": 1
+      },
+      "robust_J_improvements_vs_first_only": 5
+    },
+    "successor": {
+      "arms": 12,
+      "second_reached": 5,
+      "task_gain_vs_first_only": {
+        "0": 12
+      },
+      "robust_J_improvements_vs_first_only": 0
+    }
+  },
+  "single_opportunities_task_headroom_vs_condition": 1,
+  "single_opportunities_task_headroom_vs_both": 0,
+  "all_registered_branches_retained": true,
+  "global_policy_optimality_claim": false,
+  "whole_run_visible_census": {
+    "episodes_with_multi_candidates": 84,
+    "multi_candidate_decisions": 180,
+    "episodes_with_coupled_blocking": 0,
+    "coupled_blocking_decisions": 0
+  }
+}

@@ -1,0 +1,7 @@
+# R11 query handoff
+
+94 complete TRAIN-only native arms; no training or TEST experiment. Read REPORT.md and SUMMARY.json first. RESULTS.json/CSV includes whole-FIFO service counts and interval-valued fixed-first-four objective; PAIR_REACHABILITY and OPPORTUNITY_VALUE_SPACE retain unavailable/zero-space cases. Registered cap 140 produced 94 arms by public rules, with no refill.
+
+Entry scripts: pipeline.py register/base/probes; audit_all.py; verify_matched_tail.py; summarize.py; skip_lifetimes.py; negative_controls.py; archive.py; write_report.py; publish_manifest.py. Do not rerun frozen scientific outputs in place. Root owns root_value_space.py / ROOT_VALUE_SPACE.json, all Git and publication. Source pins, input provenance, import-only auditor exception and raw archive hashes are included in the whitelist. Production COST/AUTH, external-baseline victory, held-out learning and combined-blocking validation are not established.
+
+Familywise retrospective best gives 189 tasks vs fixed pi0 188 and whole WAIT 188, equal to the 189-task familywise reference envelope. This preserves modest conditional-selection learning potential while providing no trained or held-out improvement evidence. Per-family task gains strictly over both references: 0 registered probe arms. Positive task effects of second intervention over its same-first single: 0/60. Pair/candidate arms are not independent statistical samples; there are four new TRAIN families.

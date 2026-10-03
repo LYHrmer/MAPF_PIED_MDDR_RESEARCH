@@ -1,0 +1,835 @@
+{
+  "passed": true,
+  "episodes": 94,
+  "public_branch_set_reconstructed": true,
+  "same_action_full_trajectory_controls": 38,
+  "current_WAIT_advances_event": true,
+  "selection": [
+    {
+      "world": "empty-32-32_scen1_offset448_train_111101",
+      "selected_opportunities": [
+        1,
+        9
+      ],
+      "branches": 6,
+      "absent_strata": [
+        [
+          false,
+          true
+        ],
+        [
+          true,
+          true
+        ]
+      ]
+    },
+    {
+      "world": "empty-32-32_scen1_offset464_train_111102",
+      "selected_opportunities": [
+        1,
+        9
+      ],
+      "branches": 6,
+      "absent_strata": [
+        [
+          false,
+          true
+        ],
+        [
+          true,
+          true
+        ]
+      ]
+    },
+    {
+      "world": "random-32-32-10_scen2_offset0_train_112101",
+      "selected_opportunities": [
+        1,
+        9
+      ],
+      "branches": 8,
+      "absent_strata": [
+        [
+          false,
+          true
+        ],
+        [
+          true,
+          true
+        ]
+      ]
+    },
+    {
+      "world": "random-32-32-10_scen2_offset16_train_112102",
+      "selected_opportunities": [
+        1,
+        9
+      ],
+      "branches": 6,
+      "absent_strata": [
+        [
+          false,
+          true
+        ],
+        [
+          true,
+          true
+        ]
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "world": "empty-32-32_scen1_offset448_train_111101",
+      "policy": "pair_9_WAIT5_SKIP_distinct",
+      "interventions": 2,
+      "prefix_events": 3237,
+      "second_prefix_events": 3553,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "empty-32-32_scen1_offset448_train_111101",
+      "policy": "pair_1_WAIT6_QUERY_distinct",
+      "interventions": 2,
+      "prefix_events": 1109,
+      "second_prefix_events": 1148,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "empty-32-32_scen1_offset448_train_111101",
+      "policy": "pair_1_QUERY6_SKIP_successor",
+      "interventions": 2,
+      "prefix_events": 1109,
+      "second_prefix_events": 2383,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "empty-32-32_scen1_offset448_train_111101",
+      "policy": "cf_9_SKIP5",
+      "interventions": 1,
+      "prefix_events": 3237,
+      "second_prefix_events": null,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "empty-32-32_scen1_offset448_train_111101",
+      "policy": "cf_1_WAIT",
+      "interventions": 1,
+      "prefix_events": 1109,
+      "second_prefix_events": null,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "empty-32-32_scen1_offset448_train_111101",
+      "policy": "condition",
+      "interventions": 0,
+      "prefix_events": 0,
+      "second_prefix_events": null,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "empty-32-32_scen1_offset448_train_111101",
+      "policy": "WAIT",
+      "interventions": 0,
+      "prefix_events": 0,
+      "second_prefix_events": null,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "empty-32-32_scen1_offset448_train_111101",
+      "policy": "pair_9_SKIP5_SKIP_distinct",
+      "interventions": 2,
+      "prefix_events": 3237,
+      "second_prefix_events": 3553,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "empty-32-32_scen1_offset448_train_111101",
+      "policy": "pair_9_QUERY5_QUERY_distinct",
+      "interventions": 2,
+      "prefix_events": 3237,
+      "second_prefix_events": 3552,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "empty-32-32_scen1_offset448_train_111101",
+      "policy": "cf_9_QUERY5",
+      "interventions": 1,
+      "prefix_events": 3237,
+      "second_prefix_events": null,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "empty-32-32_scen1_offset448_train_111101",
+      "policy": "pair_1_WAIT6_SKIP_distinct",
+      "interventions": 2,
+      "prefix_events": 1109,
+      "second_prefix_events": 1148,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "empty-32-32_scen1_offset448_train_111101",
+      "policy": "pair_1_SKIP6_SKIP_distinct",
+      "interventions": 2,
+      "prefix_events": 1109,
+      "second_prefix_events": 1146,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "empty-32-32_scen1_offset448_train_111101",
+      "policy": "pair_1_WAIT6_SKIP_successor",
+      "interventions": 2,
+      "prefix_events": 1109,
+      "second_prefix_events": 2369,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "empty-32-32_scen1_offset448_train_111101",
+      "policy": "pair_9_SKIP5_QUERY_distinct",
+      "interventions": 2,
+      "prefix_events": 3237,
+      "second_prefix_events": 3553,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "empty-32-32_scen1_offset448_train_111101",
+      "policy": "pair_1_QUERY6_SKIP_distinct",
+      "interventions": 2,
+      "prefix_events": 1109,
+      "second_prefix_events": 1148,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "empty-32-32_scen1_offset448_train_111101",
+      "policy": "pair_9_WAIT5_QUERY_distinct",
+      "interventions": 2,
+      "prefix_events": 3237,
+      "second_prefix_events": 3553,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "empty-32-32_scen1_offset448_train_111101",
+      "policy": "pair_1_SKIP6_QUERY_distinct",
+      "interventions": 2,
+      "prefix_events": 1109,
+      "second_prefix_events": 1146,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "empty-32-32_scen1_offset448_train_111101",
+      "policy": "pair_1_SKIP6_SKIP_successor",
+      "interventions": 1,
+      "prefix_events": 1109,
+      "second_prefix_events": null,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "empty-32-32_scen1_offset448_train_111101",
+      "policy": "cf_9_WAIT",
+      "interventions": 1,
+      "prefix_events": 3237,
+      "second_prefix_events": null,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "empty-32-32_scen1_offset448_train_111101",
+      "policy": "cf_1_SKIP6",
+      "interventions": 1,
+      "prefix_events": 1109,
+      "second_prefix_events": null,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "empty-32-32_scen1_offset448_train_111101",
+      "policy": "cf_1_QUERY6",
+      "interventions": 1,
+      "prefix_events": 1109,
+      "second_prefix_events": null,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "empty-32-32_scen1_offset448_train_111101",
+      "policy": "pair_9_QUERY5_SKIP_distinct",
+      "interventions": 2,
+      "prefix_events": 3237,
+      "second_prefix_events": 3552,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "empty-32-32_scen1_offset448_train_111101",
+      "policy": "pair_1_QUERY6_QUERY_distinct",
+      "interventions": 2,
+      "prefix_events": 1109,
+      "second_prefix_events": 1148,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "empty-32-32_scen1_offset464_train_111102",
+      "policy": "pair_1_WAIT4_QUERY_distinct",
+      "interventions": 2,
+      "prefix_events": 865,
+      "second_prefix_events": 1304,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "empty-32-32_scen1_offset464_train_111102",
+      "policy": "pair_1_WAIT4_SKIP_successor",
+      "interventions": 1,
+      "prefix_events": 865,
+      "second_prefix_events": null,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "empty-32-32_scen1_offset464_train_111102",
+      "policy": "pair_9_QUERY7_QUERY_distinct",
+      "interventions": 2,
+      "prefix_events": 3020,
+      "second_prefix_events": 3748,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "empty-32-32_scen1_offset464_train_111102",
+      "policy": "pair_1_QUERY4_SKIP_distinct",
+      "interventions": 2,
+      "prefix_events": 865,
+      "second_prefix_events": 1303,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "empty-32-32_scen1_offset464_train_111102",
+      "policy": "pair_9_SKIP7_QUERY_distinct",
+      "interventions": 2,
+      "prefix_events": 3020,
+      "second_prefix_events": 3749,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "empty-32-32_scen1_offset464_train_111102",
+      "policy": "pair_9_WAIT7_SKIP_distinct",
+      "interventions": 2,
+      "prefix_events": 3020,
+      "second_prefix_events": 3749,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "empty-32-32_scen1_offset464_train_111102",
+      "policy": "cf_1_SKIP4",
+      "interventions": 1,
+      "prefix_events": 865,
+      "second_prefix_events": null,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "empty-32-32_scen1_offset464_train_111102",
+      "policy": "pair_1_SKIP4_QUERY_distinct",
+      "interventions": 2,
+      "prefix_events": 865,
+      "second_prefix_events": 1304,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "empty-32-32_scen1_offset464_train_111102",
+      "policy": "WAIT",
+      "interventions": 0,
+      "prefix_events": 0,
+      "second_prefix_events": null,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "empty-32-32_scen1_offset464_train_111102",
+      "policy": "pair_9_QUERY7_SKIP_distinct",
+      "interventions": 2,
+      "prefix_events": 3020,
+      "second_prefix_events": 3748,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "empty-32-32_scen1_offset464_train_111102",
+      "policy": "pair_1_QUERY4_SKIP_successor",
+      "interventions": 1,
+      "prefix_events": 865,
+      "second_prefix_events": null,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "empty-32-32_scen1_offset464_train_111102",
+      "policy": "cf_9_QUERY7",
+      "interventions": 1,
+      "prefix_events": 3020,
+      "second_prefix_events": null,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "empty-32-32_scen1_offset464_train_111102",
+      "policy": "pair_9_WAIT7_QUERY_distinct",
+      "interventions": 2,
+      "prefix_events": 3020,
+      "second_prefix_events": 3749,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "empty-32-32_scen1_offset464_train_111102",
+      "policy": "cf_9_SKIP7",
+      "interventions": 1,
+      "prefix_events": 3020,
+      "second_prefix_events": null,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "empty-32-32_scen1_offset464_train_111102",
+      "policy": "condition",
+      "interventions": 0,
+      "prefix_events": 0,
+      "second_prefix_events": null,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "empty-32-32_scen1_offset464_train_111102",
+      "policy": "pair_9_SKIP7_SKIP_distinct",
+      "interventions": 2,
+      "prefix_events": 3020,
+      "second_prefix_events": 3749,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "empty-32-32_scen1_offset464_train_111102",
+      "policy": "pair_1_SKIP4_SKIP_distinct",
+      "interventions": 2,
+      "prefix_events": 865,
+      "second_prefix_events": 1304,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "empty-32-32_scen1_offset464_train_111102",
+      "policy": "pair_1_SKIP4_SKIP_successor",
+      "interventions": 1,
+      "prefix_events": 865,
+      "second_prefix_events": null,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "empty-32-32_scen1_offset464_train_111102",
+      "policy": "cf_9_WAIT",
+      "interventions": 1,
+      "prefix_events": 3020,
+      "second_prefix_events": null,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "empty-32-32_scen1_offset464_train_111102",
+      "policy": "pair_1_WAIT4_SKIP_distinct",
+      "interventions": 2,
+      "prefix_events": 865,
+      "second_prefix_events": 1304,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "empty-32-32_scen1_offset464_train_111102",
+      "policy": "cf_1_WAIT",
+      "interventions": 1,
+      "prefix_events": 865,
+      "second_prefix_events": null,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "empty-32-32_scen1_offset464_train_111102",
+      "policy": "cf_1_QUERY4",
+      "interventions": 1,
+      "prefix_events": 865,
+      "second_prefix_events": null,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "empty-32-32_scen1_offset464_train_111102",
+      "policy": "pair_1_QUERY4_QUERY_distinct",
+      "interventions": 2,
+      "prefix_events": 865,
+      "second_prefix_events": 1303,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "random-32-32-10_scen2_offset0_train_112101",
+      "policy": "pair_1_WAIT2_SKIP_successor",
+      "interventions": 2,
+      "prefix_events": 206,
+      "second_prefix_events": 2711,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "random-32-32-10_scen2_offset0_train_112101",
+      "policy": "WAIT",
+      "interventions": 0,
+      "prefix_events": 0,
+      "second_prefix_events": null,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "random-32-32-10_scen2_offset0_train_112101",
+      "policy": "pair_9_WAIT5_SKIP_distinct",
+      "interventions": 2,
+      "prefix_events": 2996,
+      "second_prefix_events": 3000,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "random-32-32-10_scen2_offset0_train_112101",
+      "policy": "pair_9_QUERY5_SKIP_distinct",
+      "interventions": 2,
+      "prefix_events": 2996,
+      "second_prefix_events": 3002,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "random-32-32-10_scen2_offset0_train_112101",
+      "policy": "cf_1_WAIT",
+      "interventions": 1,
+      "prefix_events": 206,
+      "second_prefix_events": null,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "random-32-32-10_scen2_offset0_train_112101",
+      "policy": "pair_1_QUERY2_SKIP_successor",
+      "interventions": 2,
+      "prefix_events": 206,
+      "second_prefix_events": 2717,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "random-32-32-10_scen2_offset0_train_112101",
+      "policy": "cf_9_QUERY5",
+      "interventions": 1,
+      "prefix_events": 2996,
+      "second_prefix_events": null,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "random-32-32-10_scen2_offset0_train_112101",
+      "policy": "cf_9_WAIT",
+      "interventions": 1,
+      "prefix_events": 2996,
+      "second_prefix_events": null,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "random-32-32-10_scen2_offset0_train_112101",
+      "policy": "pair_9_QUERY5_QUERY_distinct",
+      "interventions": 2,
+      "prefix_events": 2996,
+      "second_prefix_events": 3002,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "random-32-32-10_scen2_offset0_train_112101",
+      "policy": "pair_1_SKIP2_SKIP_successor",
+      "interventions": 2,
+      "prefix_events": 206,
+      "second_prefix_events": 2690,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "random-32-32-10_scen2_offset0_train_112101",
+      "policy": "cf_9_SKIP13",
+      "interventions": 1,
+      "prefix_events": 2996,
+      "second_prefix_events": null,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "random-32-32-10_scen2_offset0_train_112101",
+      "policy": "cf_1_SKIP2",
+      "interventions": 1,
+      "prefix_events": 206,
+      "second_prefix_events": null,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "random-32-32-10_scen2_offset0_train_112101",
+      "policy": "pair_1_QUERY2_QUERY_distinct",
+      "interventions": 2,
+      "prefix_events": 206,
+      "second_prefix_events": 1176,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "random-32-32-10_scen2_offset0_train_112101",
+      "policy": "pair_9_WAIT5_QUERY_distinct",
+      "interventions": 2,
+      "prefix_events": 2996,
+      "second_prefix_events": 3000,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "random-32-32-10_scen2_offset0_train_112101",
+      "policy": "pair_9_SKIP5_SKIP_distinct",
+      "interventions": 2,
+      "prefix_events": 2996,
+      "second_prefix_events": 3001,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "random-32-32-10_scen2_offset0_train_112101",
+      "policy": "pair_1_WAIT2_QUERY_distinct",
+      "interventions": 2,
+      "prefix_events": 206,
+      "second_prefix_events": 1170,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "random-32-32-10_scen2_offset0_train_112101",
+      "policy": "cf_9_QUERY13",
+      "interventions": 1,
+      "prefix_events": 2996,
+      "second_prefix_events": null,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "random-32-32-10_scen2_offset0_train_112101",
+      "policy": "pair_1_SKIP2_SKIP_distinct",
+      "interventions": 2,
+      "prefix_events": 206,
+      "second_prefix_events": 1149,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "random-32-32-10_scen2_offset0_train_112101",
+      "policy": "cf_1_QUERY2",
+      "interventions": 1,
+      "prefix_events": 206,
+      "second_prefix_events": null,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "random-32-32-10_scen2_offset0_train_112101",
+      "policy": "pair_9_SKIP5_QUERY_distinct",
+      "interventions": 2,
+      "prefix_events": 2996,
+      "second_prefix_events": 3001,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "random-32-32-10_scen2_offset0_train_112101",
+      "policy": "pair_1_WAIT2_SKIP_distinct",
+      "interventions": 2,
+      "prefix_events": 206,
+      "second_prefix_events": 1170,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "random-32-32-10_scen2_offset0_train_112101",
+      "policy": "cf_9_SKIP5",
+      "interventions": 1,
+      "prefix_events": 2996,
+      "second_prefix_events": null,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "random-32-32-10_scen2_offset0_train_112101",
+      "policy": "pair_1_QUERY2_SKIP_distinct",
+      "interventions": 2,
+      "prefix_events": 206,
+      "second_prefix_events": 1176,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "random-32-32-10_scen2_offset0_train_112101",
+      "policy": "condition",
+      "interventions": 0,
+      "prefix_events": 0,
+      "second_prefix_events": null,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "random-32-32-10_scen2_offset0_train_112101",
+      "policy": "pair_1_SKIP2_QUERY_distinct",
+      "interventions": 2,
+      "prefix_events": 206,
+      "second_prefix_events": 1149,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "random-32-32-10_scen2_offset16_train_112102",
+      "policy": "cf_9_QUERY3",
+      "interventions": 1,
+      "prefix_events": 3306,
+      "second_prefix_events": null,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "random-32-32-10_scen2_offset16_train_112102",
+      "policy": "pair_1_QUERY14_SKIP_distinct",
+      "interventions": 2,
+      "prefix_events": 1819,
+      "second_prefix_events": 2014,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "random-32-32-10_scen2_offset16_train_112102",
+      "policy": "pair_1_SKIP14_SKIP_successor",
+      "interventions": 1,
+      "prefix_events": 1819,
+      "second_prefix_events": null,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "random-32-32-10_scen2_offset16_train_112102",
+      "policy": "pair_1_QUERY14_SKIP_successor",
+      "interventions": 1,
+      "prefix_events": 1819,
+      "second_prefix_events": null,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "random-32-32-10_scen2_offset16_train_112102",
+      "policy": "pair_1_WAIT14_SKIP_distinct",
+      "interventions": 2,
+      "prefix_events": 1819,
+      "second_prefix_events": 2013,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "random-32-32-10_scen2_offset16_train_112102",
+      "policy": "pair_9_SKIP3_QUERY_distinct",
+      "interventions": 2,
+      "prefix_events": 3306,
+      "second_prefix_events": 3439,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "random-32-32-10_scen2_offset16_train_112102",
+      "policy": "pair_1_WAIT14_SKIP_successor",
+      "interventions": 1,
+      "prefix_events": 1819,
+      "second_prefix_events": null,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "random-32-32-10_scen2_offset16_train_112102",
+      "policy": "pair_9_SKIP3_SKIP_distinct",
+      "interventions": 2,
+      "prefix_events": 3306,
+      "second_prefix_events": 3439,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "random-32-32-10_scen2_offset16_train_112102",
+      "policy": "pair_9_WAIT3_QUERY_distinct",
+      "interventions": 2,
+      "prefix_events": 3306,
+      "second_prefix_events": 3445,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "random-32-32-10_scen2_offset16_train_112102",
+      "policy": "pair_1_QUERY14_QUERY_distinct",
+      "interventions": 2,
+      "prefix_events": 1819,
+      "second_prefix_events": 2014,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "random-32-32-10_scen2_offset16_train_112102",
+      "policy": "pair_9_QUERY3_SKIP_distinct",
+      "interventions": 2,
+      "prefix_events": 3306,
+      "second_prefix_events": 3444,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "random-32-32-10_scen2_offset16_train_112102",
+      "policy": "pair_1_SKIP14_QUERY_distinct",
+      "interventions": 2,
+      "prefix_events": 1819,
+      "second_prefix_events": 2015,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "random-32-32-10_scen2_offset16_train_112102",
+      "policy": "cf_1_QUERY14",
+      "interventions": 1,
+      "prefix_events": 1819,
+      "second_prefix_events": null,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "random-32-32-10_scen2_offset16_train_112102",
+      "policy": "cf_9_SKIP3",
+      "interventions": 1,
+      "prefix_events": 3306,
+      "second_prefix_events": null,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "random-32-32-10_scen2_offset16_train_112102",
+      "policy": "condition",
+      "interventions": 0,
+      "prefix_events": 0,
+      "second_prefix_events": null,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "random-32-32-10_scen2_offset16_train_112102",
+      "policy": "cf_1_WAIT",
+      "interventions": 1,
+      "prefix_events": 1819,
+      "second_prefix_events": null,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "random-32-32-10_scen2_offset16_train_112102",
+      "policy": "cf_1_SKIP14",
+      "interventions": 1,
+      "prefix_events": 1819,
+      "second_prefix_events": null,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "random-32-32-10_scen2_offset16_train_112102",
+      "policy": "pair_9_QUERY3_QUERY_distinct",
+      "interventions": 2,
+      "prefix_events": 3306,
+      "second_prefix_events": 3444,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "random-32-32-10_scen2_offset16_train_112102",
+      "policy": "pair_1_WAIT14_QUERY_distinct",
+      "interventions": 2,
+      "prefix_events": 1819,
+      "second_prefix_events": 2013,
+      "full_trajectory_control": true
+    },
+    {
+      "world": "random-32-32-10_scen2_offset16_train_112102",
+      "policy": "cf_9_WAIT",
+      "interventions": 1,
+      "prefix_events": 3306,
+      "second_prefix_events": null,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "random-32-32-10_scen2_offset16_train_112102",
+      "policy": "pair_9_WAIT3_SKIP_distinct",
+      "interventions": 2,
+      "prefix_events": 3306,
+      "second_prefix_events": 3445,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "random-32-32-10_scen2_offset16_train_112102",
+      "policy": "WAIT",
+      "interventions": 0,
+      "prefix_events": 0,
+      "second_prefix_events": null,
+      "full_trajectory_control": false
+    },
+    {
+      "world": "random-32-32-10_scen2_offset16_train_112102",
+      "policy": "pair_1_SKIP14_SKIP_distinct",
+      "interventions": 2,
+      "prefix_events": 1819,
+      "second_prefix_events": 2015,
+      "full_trajectory_control": false
+    }
+  ]
+}

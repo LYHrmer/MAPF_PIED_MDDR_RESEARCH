@@ -1,5 +1,11 @@
 # 学习辅助进度查询：探索说明
 
+2026-10-03 R11：[公开机会与有限双次干预](public_opportunity_20261003_r11/REPORT.md)完成94原生运行及独立审计：8参考、26单次、60双次，均为四个新TRAIN family，未训练新模型、未使用TEST。固定condition/全程WAIT各188任务，逐族事后最佳189，也等于逐族较好参考的包络；存在小幅条件选择空间，尚无已部署策略或超包络任务收益。
+
+11个分支对两参考均有稳健J收益（任务数主项、固定前4FIFO时间次项）；random一支同48任务，时间和比condition少约6.99、比WAIT少约20.62，仍用16query对WAIT0。双次对同首动作单次没有任务正增益；successor第二触发仅5/12，未触发完整保留。根[原始服务/谱系/预算/选择复算](public_opportunity_20261003_r11/ROOT_VALUE_SPACE.json)、94同尾、38整程对照、58SKIP生命周期及22负控均通过。
+
+当前单位MOVE、单next需求和last_depart合法先序使即时多owner/多head层不可达，不能靠加密度或换GNN制造样本；不同候选和跨时刻预算仍可研究。[Astra/科研导师分别判断与下一设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261003_R11.md)保留学习方向，转向明确的完整任务价值。以下R10及更早为历史。
+
 2026-10-03 R10：[持续SKIP实现与156次原生运行](skip_occurrence_20261003_r10/REPORT.md)已完成。SKIP绑定当前agent/action，到accepted正常END才清除；42次安装、118次重现屏蔽与后继资格均核验。48留出WAIT348任务，condition、once WAIT/SKIP及有/无历史模型均344，非WAIT均128query；模型没有新增任务或服务序列收益。
 
 根的[机会改进空间诊断](skip_occurrence_20261003_r10/ROOT_OPPORTUNITY_HEADROOM.json)发现：30个已登记TRAIN/CAL机会的全部98分支，最佳单次动作相对原condition主任务提升空间为0；唯一QUERY+1标签只是胜过当前WAIT。下一应先识别有真实任务后果的合法决策集合，不靠加大模型解释当前零增益。代码、冻结模型、9个互斥raw包与6份root核验工件完整发布；[三线判断及下一合同](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261003_R10.md)。以下R9及更早为历史。

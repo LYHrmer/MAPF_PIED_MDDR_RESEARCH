@@ -1,0 +1,4382 @@
+[
+  {
+    "world": "empty-32-32_scen1_offset448_train_111101",
+    "policy": "pair_9_WAIT5_SKIP_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_9_WAIT",
+    "first_opportunity": 9,
+    "first_action": "WAIT",
+    "anchor_identity": [
+      5,
+      "m-5-22"
+    ],
+    "anchor_tasks": [
+      1111013073
+    ],
+    "second_reached": true,
+    "second_opportunity": 11,
+    "second_at": {
+      "lower": 55598813,
+      "upper": 55598814,
+      "denominator": 1000000
+    },
+    "second_action": "SKIP",
+    "second_move": "m-8-26",
+    "second_eligible": [
+      "m-8-26"
+    ],
+    "remaining_at_first": 8,
+    "remaining_at_second": 7,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-9/200000",
+      "time_gain_upper": "9/200000",
+      "J_gain_lower": "-9/3277000000",
+      "J_gain_upper": "9/3277000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-9/200000",
+      "time_gain_upper": "9/200000",
+      "J_gain_lower": "-9/3277000000",
+      "J_gain_upper": "9/3277000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": -1,
+      "query_delta": 16,
+      "time_gain_lower": "-8187611/200000",
+      "time_gain_upper": "-10234491/250000",
+      "J_gain_lower": "-3285187611/3277000000",
+      "J_gain_upper": "-4106484491/4096250000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "empty-32-32_scen1_offset448_train_111101",
+    "policy": "pair_1_WAIT6_QUERY_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_1_WAIT",
+    "first_opportunity": 1,
+    "first_action": "WAIT",
+    "anchor_identity": [
+      6,
+      "m-6-11"
+    ],
+    "anchor_tasks": [
+      1111013840
+    ],
+    "second_reached": true,
+    "second_opportunity": 3,
+    "second_at": {
+      "lower": 17291239,
+      "upper": 17291240,
+      "denominator": 1000000
+    },
+    "second_action": "QUERY",
+    "second_move": "m-12-9",
+    "second_eligible": [
+      "m-12-9"
+    ],
+    "remaining_at_first": 16,
+    "remaining_at_second": 15,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-9/200000",
+      "time_gain_upper": "9/200000",
+      "J_gain_lower": "-9/3277000000",
+      "J_gain_upper": "9/3277000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-94963/200000",
+      "time_gain_upper": "-18989/40000",
+      "J_gain_lower": "-94963/3277000000",
+      "J_gain_upper": "-18989/655400000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    },
+    "vs_whole_WAIT": {
+      "task_gain": -1,
+      "query_delta": 16,
+      "time_gain_lower": "-1656513/40000",
+      "time_gain_upper": "-20706367/500000",
+      "J_gain_lower": "-657056513/655400000",
+      "J_gain_upper": "-8213206367/8192500000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "empty-32-32_scen1_offset448_train_111101",
+    "policy": "pair_1_QUERY6_SKIP_successor",
+    "trigger": "successor",
+    "first_only_policy": "cf_1_QUERY6",
+    "first_opportunity": 1,
+    "first_action": "QUERY",
+    "anchor_identity": [
+      6,
+      "m-6-11"
+    ],
+    "anchor_tasks": [
+      1111013840
+    ],
+    "second_reached": true,
+    "second_opportunity": 6,
+    "second_at": {
+      "lower": 35778305,
+      "upper": 35778306,
+      "denominator": 1000000
+    },
+    "second_action": "SKIP",
+    "second_move": "m-8-18",
+    "second_eligible": [
+      "m-8-18"
+    ],
+    "remaining_at_first": 16,
+    "remaining_at_second": 11,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": {
+      "public_descendant_heads_revealed": [
+        {
+          "task": 1111013841,
+          "at": {
+            "lower": 19381962,
+            "upper": 19381963,
+            "denominator": 1000000
+          }
+        },
+        {
+          "task": 1111013842,
+          "at": {
+            "lower": 33046254,
+            "upper": 33046255,
+            "denominator": 1000000
+          }
+        },
+        {
+          "task": 1111013843,
+          "at": {
+            "lower": 65443900,
+            "upper": 65443901,
+            "denominator": 1000000
+          }
+        },
+        {
+          "task": 1111013844,
+          "at": {
+            "lower": 71390053,
+            "upper": 71390054,
+            "denominator": 1000000
+          }
+        },
+        {
+          "task": 1111013845,
+          "at": {
+            "lower": 113150735,
+            "upper": 113150736,
+            "denominator": 1000000
+          }
+        }
+      ],
+      "public_descendants_before_budget_exhaustion": [
+        1111013841,
+        1111013842,
+        1111013843,
+        1111013844
+      ],
+      "budget_exhaustion_at": {
+        "lower": 101287373,
+        "upper": 101287374,
+        "denominator": 1000000
+      }
+    },
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-9/200000",
+      "time_gain_upper": "9/200000",
+      "J_gain_lower": "-9/3277000000",
+      "J_gain_upper": "9/3277000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-9/200000",
+      "time_gain_upper": "9/200000",
+      "J_gain_lower": "-9/3277000000",
+      "J_gain_upper": "9/3277000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": -1,
+      "query_delta": 16,
+      "time_gain_lower": "-8187611/200000",
+      "time_gain_upper": "-10234491/250000",
+      "J_gain_lower": "-3285187611/3277000000",
+      "J_gain_upper": "-4106484491/4096250000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "empty-32-32_scen1_offset448_train_111101",
+    "policy": "pair_9_SKIP5_SKIP_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_9_SKIP5",
+    "first_opportunity": 9,
+    "first_action": "SKIP",
+    "anchor_identity": [
+      5,
+      "m-5-22"
+    ],
+    "anchor_tasks": [
+      1111013073
+    ],
+    "second_reached": true,
+    "second_opportunity": 10,
+    "second_at": {
+      "lower": 55598813,
+      "upper": 55598814,
+      "denominator": 1000000
+    },
+    "second_action": "SKIP",
+    "second_move": "m-8-26",
+    "second_eligible": [
+      "m-8-26"
+    ],
+    "remaining_at_first": 8,
+    "remaining_at_second": 8,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-9/200000",
+      "time_gain_upper": "9/200000",
+      "J_gain_lower": "-9/3277000000",
+      "J_gain_upper": "9/3277000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-9/200000",
+      "time_gain_upper": "9/200000",
+      "J_gain_lower": "-9/3277000000",
+      "J_gain_upper": "9/3277000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": -1,
+      "query_delta": 16,
+      "time_gain_lower": "-8187611/200000",
+      "time_gain_upper": "-10234491/250000",
+      "J_gain_lower": "-3285187611/3277000000",
+      "J_gain_upper": "-4106484491/4096250000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "empty-32-32_scen1_offset448_train_111101",
+    "policy": "pair_9_QUERY5_QUERY_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_9_QUERY5",
+    "first_opportunity": 9,
+    "first_action": "QUERY",
+    "anchor_identity": [
+      5,
+      "m-5-22"
+    ],
+    "anchor_tasks": [
+      1111013073
+    ],
+    "second_reached": true,
+    "second_opportunity": 10,
+    "second_at": {
+      "lower": 55598813,
+      "upper": 55598814,
+      "denominator": 1000000
+    },
+    "second_action": "QUERY",
+    "second_move": "m-8-26",
+    "second_eligible": [
+      "m-8-26"
+    ],
+    "remaining_at_first": 8,
+    "remaining_at_second": 7,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-9/200000",
+      "time_gain_upper": "9/200000",
+      "J_gain_lower": "-9/3277000000",
+      "J_gain_upper": "9/3277000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-9/200000",
+      "time_gain_upper": "9/200000",
+      "J_gain_lower": "-9/3277000000",
+      "J_gain_upper": "9/3277000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": -1,
+      "query_delta": 16,
+      "time_gain_lower": "-8187611/200000",
+      "time_gain_upper": "-10234491/250000",
+      "J_gain_lower": "-3285187611/3277000000",
+      "J_gain_upper": "-4106484491/4096250000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "empty-32-32_scen1_offset448_train_111101",
+    "policy": "pair_1_WAIT6_SKIP_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_1_WAIT",
+    "first_opportunity": 1,
+    "first_action": "WAIT",
+    "anchor_identity": [
+      6,
+      "m-6-11"
+    ],
+    "anchor_tasks": [
+      1111013840
+    ],
+    "second_reached": true,
+    "second_opportunity": 3,
+    "second_at": {
+      "lower": 17291239,
+      "upper": 17291240,
+      "denominator": 1000000
+    },
+    "second_action": "SKIP",
+    "second_move": "m-12-9",
+    "second_eligible": [
+      "m-12-9"
+    ],
+    "remaining_at_first": 16,
+    "remaining_at_second": 15,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-9/200000",
+      "time_gain_upper": "9/200000",
+      "J_gain_lower": "-9/3277000000",
+      "J_gain_upper": "9/3277000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-94963/200000",
+      "time_gain_upper": "-18989/40000",
+      "J_gain_lower": "-94963/3277000000",
+      "J_gain_upper": "-18989/655400000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    },
+    "vs_whole_WAIT": {
+      "task_gain": -1,
+      "query_delta": 16,
+      "time_gain_lower": "-1656513/40000",
+      "time_gain_upper": "-20706367/500000",
+      "J_gain_lower": "-657056513/655400000",
+      "J_gain_upper": "-8213206367/8192500000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "empty-32-32_scen1_offset448_train_111101",
+    "policy": "pair_1_SKIP6_SKIP_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_1_SKIP6",
+    "first_opportunity": 1,
+    "first_action": "SKIP",
+    "anchor_identity": [
+      6,
+      "m-6-11"
+    ],
+    "anchor_tasks": [
+      1111013840
+    ],
+    "second_reached": true,
+    "second_opportunity": 2,
+    "second_at": {
+      "lower": 17291239,
+      "upper": 17291240,
+      "denominator": 1000000
+    },
+    "second_action": "SKIP",
+    "second_move": "m-12-9",
+    "second_eligible": [
+      "m-12-9"
+    ],
+    "remaining_at_first": 16,
+    "remaining_at_second": 16,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "116679/200000",
+      "time_gain_upper": "583487/1000000",
+      "J_gain_lower": "116679/3277000000",
+      "J_gain_upper": "583487/16385000000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    },
+    "service_equal_first_only": false,
+    "vs_condition": {
+      "task_gain": 1,
+      "query_delta": 0,
+      "time_gain_lower": "21103119/500000",
+      "time_gain_upper": "42206329/1000000",
+      "J_gain_lower": "8213603119/8192500000",
+      "J_gain_upper": "16427206329/16385000000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 0,
+      "query_delta": 16,
+      "time_gain_lower": "317057/250000",
+      "time_gain_upper": "7927/6250",
+      "J_gain_lower": "10933/141250000",
+      "J_gain_upper": "7927/102406250",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "empty-32-32_scen1_offset448_train_111101",
+    "policy": "pair_1_WAIT6_SKIP_successor",
+    "trigger": "successor",
+    "first_only_policy": "cf_1_WAIT",
+    "first_opportunity": 1,
+    "first_action": "WAIT",
+    "anchor_identity": [
+      6,
+      "m-6-11"
+    ],
+    "anchor_tasks": [
+      1111013840
+    ],
+    "second_reached": true,
+    "second_opportunity": 7,
+    "second_at": {
+      "lower": 35778305,
+      "upper": 35778306,
+      "denominator": 1000000
+    },
+    "second_action": "SKIP",
+    "second_move": "m-8-18",
+    "second_eligible": [
+      "m-8-18"
+    ],
+    "remaining_at_first": 16,
+    "remaining_at_second": 11,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": {
+      "public_descendant_heads_revealed": [
+        {
+          "task": 1111013841,
+          "at": {
+            "lower": 19856732,
+            "upper": 19856733,
+            "denominator": 1000000
+          }
+        },
+        {
+          "task": 1111013842,
+          "at": {
+            "lower": 33046254,
+            "upper": 33046255,
+            "denominator": 1000000
+          }
+        },
+        {
+          "task": 1111013843,
+          "at": {
+            "lower": 65443900,
+            "upper": 65443901,
+            "denominator": 1000000
+          }
+        },
+        {
+          "task": 1111013844,
+          "at": {
+            "lower": 71390053,
+            "upper": 71390054,
+            "denominator": 1000000
+          }
+        },
+        {
+          "task": 1111013845,
+          "at": {
+            "lower": 113150735,
+            "upper": 113150736,
+            "denominator": 1000000
+          }
+        }
+      ],
+      "public_descendants_before_budget_exhaustion": [
+        1111013841,
+        1111013842,
+        1111013843,
+        1111013844
+      ],
+      "budget_exhaustion_at": {
+        "lower": 101287373,
+        "upper": 101287374,
+        "denominator": 1000000
+      }
+    },
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-9/200000",
+      "time_gain_upper": "9/200000",
+      "J_gain_lower": "-9/3277000000",
+      "J_gain_upper": "9/3277000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-94963/200000",
+      "time_gain_upper": "-18989/40000",
+      "J_gain_lower": "-94963/3277000000",
+      "J_gain_upper": "-18989/655400000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    },
+    "vs_whole_WAIT": {
+      "task_gain": -1,
+      "query_delta": 16,
+      "time_gain_lower": "-1656513/40000",
+      "time_gain_upper": "-20706367/500000",
+      "J_gain_lower": "-657056513/655400000",
+      "J_gain_upper": "-8213206367/8192500000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "empty-32-32_scen1_offset448_train_111101",
+    "policy": "pair_9_SKIP5_QUERY_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_9_SKIP5",
+    "first_opportunity": 9,
+    "first_action": "SKIP",
+    "anchor_identity": [
+      5,
+      "m-5-22"
+    ],
+    "anchor_tasks": [
+      1111013073
+    ],
+    "second_reached": true,
+    "second_opportunity": 10,
+    "second_at": {
+      "lower": 55598813,
+      "upper": 55598814,
+      "denominator": 1000000
+    },
+    "second_action": "QUERY",
+    "second_move": "m-8-26",
+    "second_eligible": [
+      "m-8-26"
+    ],
+    "remaining_at_first": 8,
+    "remaining_at_second": 8,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-9/200000",
+      "time_gain_upper": "9/200000",
+      "J_gain_lower": "-9/3277000000",
+      "J_gain_upper": "9/3277000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-9/200000",
+      "time_gain_upper": "9/200000",
+      "J_gain_lower": "-9/3277000000",
+      "J_gain_upper": "9/3277000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": -1,
+      "query_delta": 16,
+      "time_gain_lower": "-8187611/200000",
+      "time_gain_upper": "-10234491/250000",
+      "J_gain_lower": "-3285187611/3277000000",
+      "J_gain_upper": "-4106484491/4096250000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "empty-32-32_scen1_offset448_train_111101",
+    "policy": "pair_1_QUERY6_SKIP_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_1_QUERY6",
+    "first_opportunity": 1,
+    "first_action": "QUERY",
+    "anchor_identity": [
+      6,
+      "m-6-11"
+    ],
+    "anchor_tasks": [
+      1111013840
+    ],
+    "second_reached": true,
+    "second_opportunity": 2,
+    "second_at": {
+      "lower": 17291239,
+      "upper": 17291240,
+      "denominator": 1000000
+    },
+    "second_action": "SKIP",
+    "second_move": "m-12-9",
+    "second_eligible": [
+      "m-12-9"
+    ],
+    "remaining_at_first": 16,
+    "remaining_at_second": 15,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-9/200000",
+      "time_gain_upper": "9/200000",
+      "J_gain_lower": "-9/3277000000",
+      "J_gain_upper": "9/3277000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-9/200000",
+      "time_gain_upper": "9/200000",
+      "J_gain_lower": "-9/3277000000",
+      "J_gain_upper": "9/3277000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": -1,
+      "query_delta": 16,
+      "time_gain_lower": "-8187611/200000",
+      "time_gain_upper": "-10234491/250000",
+      "J_gain_lower": "-3285187611/3277000000",
+      "J_gain_upper": "-4106484491/4096250000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "empty-32-32_scen1_offset448_train_111101",
+    "policy": "pair_9_WAIT5_QUERY_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_9_WAIT",
+    "first_opportunity": 9,
+    "first_action": "WAIT",
+    "anchor_identity": [
+      5,
+      "m-5-22"
+    ],
+    "anchor_tasks": [
+      1111013073
+    ],
+    "second_reached": true,
+    "second_opportunity": 11,
+    "second_at": {
+      "lower": 55598813,
+      "upper": 55598814,
+      "denominator": 1000000
+    },
+    "second_action": "QUERY",
+    "second_move": "m-8-26",
+    "second_eligible": [
+      "m-8-26"
+    ],
+    "remaining_at_first": 8,
+    "remaining_at_second": 7,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-9/200000",
+      "time_gain_upper": "9/200000",
+      "J_gain_lower": "-9/3277000000",
+      "J_gain_upper": "9/3277000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-9/200000",
+      "time_gain_upper": "9/200000",
+      "J_gain_lower": "-9/3277000000",
+      "J_gain_upper": "9/3277000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": -1,
+      "query_delta": 16,
+      "time_gain_lower": "-8187611/200000",
+      "time_gain_upper": "-10234491/250000",
+      "J_gain_lower": "-3285187611/3277000000",
+      "J_gain_upper": "-4106484491/4096250000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "empty-32-32_scen1_offset448_train_111101",
+    "policy": "pair_1_SKIP6_QUERY_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_1_SKIP6",
+    "first_opportunity": 1,
+    "first_action": "SKIP",
+    "anchor_identity": [
+      6,
+      "m-6-11"
+    ],
+    "anchor_tasks": [
+      1111013840
+    ],
+    "second_reached": true,
+    "second_opportunity": 2,
+    "second_at": {
+      "lower": 17291239,
+      "upper": 17291240,
+      "denominator": 1000000
+    },
+    "second_action": "QUERY",
+    "second_move": "m-12-9",
+    "second_eligible": [
+      "m-12-9"
+    ],
+    "remaining_at_first": 16,
+    "remaining_at_second": 16,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-23/500000",
+      "time_gain_upper": "23/500000",
+      "J_gain_lower": "-23/8192500000",
+      "J_gain_upper": "23/8192500000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 1,
+      "query_delta": 0,
+      "time_gain_lower": "41622797/1000000",
+      "time_gain_upper": "5202861/125000",
+      "J_gain_lower": "16426622797/16385000000",
+      "J_gain_upper": "70804409/70625000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 0,
+      "query_delta": 16,
+      "time_gain_lower": "684787/1000000",
+      "time_gain_upper": "684879/1000000",
+      "J_gain_lower": "684787/16385000000",
+      "J_gain_upper": "684879/16385000000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "empty-32-32_scen1_offset448_train_111101",
+    "policy": "pair_1_SKIP6_SKIP_successor",
+    "trigger": "successor",
+    "first_only_policy": "cf_1_SKIP6",
+    "first_opportunity": 1,
+    "first_action": "SKIP",
+    "anchor_identity": [
+      6,
+      "m-6-11"
+    ],
+    "anchor_tasks": [
+      1111013840
+    ],
+    "second_reached": false,
+    "second_opportunity": null,
+    "second_at": null,
+    "second_action": null,
+    "second_move": null,
+    "second_eligible": [],
+    "remaining_at_first": 16,
+    "remaining_at_second": null,
+    "final_remaining": 0,
+    "unreached_observation": "no_qualifying_public_trigger_before_budget_exhaustion",
+    "successor_evidence": {
+      "public_descendant_heads_revealed": [
+        {
+          "task": 1111013841,
+          "at": {
+            "lower": 19965404,
+            "upper": 19965405,
+            "denominator": 1000000
+          }
+        },
+        {
+          "task": 1111013842,
+          "at": {
+            "lower": 37010356,
+            "upper": 37010357,
+            "denominator": 1000000
+          }
+        },
+        {
+          "task": 1111013843,
+          "at": {
+            "lower": 65443900,
+            "upper": 65443901,
+            "denominator": 1000000
+          }
+        },
+        {
+          "task": 1111013844,
+          "at": {
+            "lower": 71390053,
+            "upper": 71390054,
+            "denominator": 1000000
+          }
+        },
+        {
+          "task": 1111013845,
+          "at": {
+            "lower": 111752126,
+            "upper": 111752127,
+            "denominator": 1000000
+          }
+        }
+      ],
+      "public_descendants_before_budget_exhaustion": [
+        1111013841,
+        1111013842,
+        1111013843,
+        1111013844
+      ],
+      "budget_exhaustion_at": {
+        "lower": 82086531,
+        "upper": 82086532,
+        "denominator": 1000000
+      }
+    },
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-23/500000",
+      "time_gain_upper": "23/500000",
+      "J_gain_lower": "-23/8192500000",
+      "J_gain_upper": "23/8192500000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 1,
+      "query_delta": 0,
+      "time_gain_lower": "41622797/1000000",
+      "time_gain_upper": "5202861/125000",
+      "J_gain_lower": "16426622797/16385000000",
+      "J_gain_upper": "70804409/70625000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 0,
+      "query_delta": 16,
+      "time_gain_lower": "684787/1000000",
+      "time_gain_upper": "684879/1000000",
+      "J_gain_lower": "684787/16385000000",
+      "J_gain_upper": "684879/16385000000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "empty-32-32_scen1_offset448_train_111101",
+    "policy": "pair_9_QUERY5_SKIP_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_9_QUERY5",
+    "first_opportunity": 9,
+    "first_action": "QUERY",
+    "anchor_identity": [
+      5,
+      "m-5-22"
+    ],
+    "anchor_tasks": [
+      1111013073
+    ],
+    "second_reached": true,
+    "second_opportunity": 10,
+    "second_at": {
+      "lower": 55598813,
+      "upper": 55598814,
+      "denominator": 1000000
+    },
+    "second_action": "SKIP",
+    "second_move": "m-8-26",
+    "second_eligible": [
+      "m-8-26"
+    ],
+    "remaining_at_first": 8,
+    "remaining_at_second": 7,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-9/200000",
+      "time_gain_upper": "9/200000",
+      "J_gain_lower": "-9/3277000000",
+      "J_gain_upper": "9/3277000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-9/200000",
+      "time_gain_upper": "9/200000",
+      "J_gain_lower": "-9/3277000000",
+      "J_gain_upper": "9/3277000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": -1,
+      "query_delta": 16,
+      "time_gain_lower": "-8187611/200000",
+      "time_gain_upper": "-10234491/250000",
+      "J_gain_lower": "-3285187611/3277000000",
+      "J_gain_upper": "-4106484491/4096250000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "empty-32-32_scen1_offset448_train_111101",
+    "policy": "pair_1_QUERY6_QUERY_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_1_QUERY6",
+    "first_opportunity": 1,
+    "first_action": "QUERY",
+    "anchor_identity": [
+      6,
+      "m-6-11"
+    ],
+    "anchor_tasks": [
+      1111013840
+    ],
+    "second_reached": true,
+    "second_opportunity": 2,
+    "second_at": {
+      "lower": 17291239,
+      "upper": 17291240,
+      "denominator": 1000000
+    },
+    "second_action": "QUERY",
+    "second_move": "m-12-9",
+    "second_eligible": [
+      "m-12-9"
+    ],
+    "remaining_at_first": 16,
+    "remaining_at_second": 15,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-9/200000",
+      "time_gain_upper": "9/200000",
+      "J_gain_lower": "-9/3277000000",
+      "J_gain_upper": "9/3277000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-9/200000",
+      "time_gain_upper": "9/200000",
+      "J_gain_lower": "-9/3277000000",
+      "J_gain_upper": "9/3277000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": -1,
+      "query_delta": 16,
+      "time_gain_lower": "-8187611/200000",
+      "time_gain_upper": "-10234491/250000",
+      "J_gain_lower": "-3285187611/3277000000",
+      "J_gain_upper": "-4106484491/4096250000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "empty-32-32_scen1_offset464_train_111102",
+    "policy": "pair_1_WAIT4_QUERY_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_1_WAIT",
+    "first_opportunity": 1,
+    "first_action": "WAIT",
+    "anchor_identity": [
+      4,
+      "m-4-6"
+    ],
+    "anchor_tasks": [
+      1111022816
+    ],
+    "second_reached": true,
+    "second_opportunity": 3,
+    "second_at": {
+      "lower": 21153949,
+      "upper": 21153950,
+      "denominator": 1000000
+    },
+    "second_action": "QUERY",
+    "second_move": "m-4-10",
+    "second_eligible": [
+      "m-4-10",
+      "m-6-10"
+    ],
+    "remaining_at_first": 16,
+    "remaining_at_second": 15,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-41/1000000",
+      "time_gain_upper": "41/1000000",
+      "J_gain_lower": "-41/16385000000",
+      "J_gain_upper": "41/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-41/1000000",
+      "time_gain_upper": "41/1000000",
+      "J_gain_lower": "-41/16385000000",
+      "J_gain_upper": "41/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 1,
+      "query_delta": 16,
+      "time_gain_lower": "879093/200000",
+      "time_gain_upper": "2197773/500000",
+      "J_gain_lower": "3277879093/3277000000",
+      "J_gain_upper": "8194697773/8192500000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "empty-32-32_scen1_offset464_train_111102",
+    "policy": "pair_1_WAIT4_SKIP_successor",
+    "trigger": "successor",
+    "first_only_policy": "cf_1_WAIT",
+    "first_opportunity": 1,
+    "first_action": "WAIT",
+    "anchor_identity": [
+      4,
+      "m-4-6"
+    ],
+    "anchor_tasks": [
+      1111022816
+    ],
+    "second_reached": false,
+    "second_opportunity": null,
+    "second_at": null,
+    "second_action": null,
+    "second_move": null,
+    "second_eligible": [],
+    "remaining_at_first": 16,
+    "remaining_at_second": null,
+    "final_remaining": 0,
+    "unreached_observation": "no_qualifying_public_trigger_before_budget_exhaustion",
+    "successor_evidence": {
+      "public_descendant_heads_revealed": [
+        {
+          "task": 1111022817,
+          "at": {
+            "lower": 76002763,
+            "upper": 76002764,
+            "denominator": 1000000
+          }
+        },
+        {
+          "task": 1111022818,
+          "at": {
+            "lower": 98490155,
+            "upper": 98490156,
+            "denominator": 1000000
+          }
+        }
+      ],
+      "public_descendants_before_budget_exhaustion": [
+        1111022817,
+        1111022818
+      ],
+      "budget_exhaustion_at": {
+        "lower": 103102866,
+        "upper": 103102867,
+        "denominator": 1000000
+      }
+    },
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-41/1000000",
+      "time_gain_upper": "41/1000000",
+      "J_gain_lower": "-41/16385000000",
+      "J_gain_upper": "41/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-41/1000000",
+      "time_gain_upper": "41/1000000",
+      "J_gain_lower": "-41/16385000000",
+      "J_gain_upper": "41/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 1,
+      "query_delta": 16,
+      "time_gain_lower": "879093/200000",
+      "time_gain_upper": "2197773/500000",
+      "J_gain_lower": "3277879093/3277000000",
+      "J_gain_upper": "8194697773/8192500000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "empty-32-32_scen1_offset464_train_111102",
+    "policy": "pair_9_QUERY7_QUERY_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_9_QUERY7",
+    "first_opportunity": 9,
+    "first_action": "QUERY",
+    "anchor_identity": [
+      7,
+      "m-7-24"
+    ],
+    "anchor_tasks": [
+      1111020257
+    ],
+    "second_reached": true,
+    "second_opportunity": 10,
+    "second_at": {
+      "lower": 63527016,
+      "upper": 63527017,
+      "denominator": 1000000
+    },
+    "second_action": "QUERY",
+    "second_move": "m-7-30",
+    "second_eligible": [
+      "m-7-30"
+    ],
+    "remaining_at_first": 8,
+    "remaining_at_second": 7,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-41/1000000",
+      "time_gain_upper": "41/1000000",
+      "J_gain_lower": "-41/16385000000",
+      "J_gain_upper": "41/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-41/1000000",
+      "time_gain_upper": "41/1000000",
+      "J_gain_lower": "-41/16385000000",
+      "J_gain_upper": "41/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 1,
+      "query_delta": 16,
+      "time_gain_lower": "879093/200000",
+      "time_gain_upper": "2197773/500000",
+      "J_gain_lower": "3277879093/3277000000",
+      "J_gain_upper": "8194697773/8192500000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "empty-32-32_scen1_offset464_train_111102",
+    "policy": "pair_1_QUERY4_SKIP_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_1_QUERY4",
+    "first_opportunity": 1,
+    "first_action": "QUERY",
+    "anchor_identity": [
+      4,
+      "m-4-6"
+    ],
+    "anchor_tasks": [
+      1111022816
+    ],
+    "second_reached": true,
+    "second_opportunity": 2,
+    "second_at": {
+      "lower": 21153949,
+      "upper": 21153950,
+      "denominator": 1000000
+    },
+    "second_action": "SKIP",
+    "second_move": "m-4-10",
+    "second_eligible": [
+      "m-4-10",
+      "m-6-10"
+    ],
+    "remaining_at_first": 16,
+    "remaining_at_second": 15,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-41/1000000",
+      "time_gain_upper": "41/1000000",
+      "J_gain_lower": "-41/16385000000",
+      "J_gain_upper": "41/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-41/1000000",
+      "time_gain_upper": "41/1000000",
+      "J_gain_lower": "-41/16385000000",
+      "J_gain_upper": "41/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 1,
+      "query_delta": 16,
+      "time_gain_lower": "879093/200000",
+      "time_gain_upper": "2197773/500000",
+      "J_gain_lower": "3277879093/3277000000",
+      "J_gain_upper": "8194697773/8192500000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "empty-32-32_scen1_offset464_train_111102",
+    "policy": "pair_9_SKIP7_QUERY_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_9_SKIP7",
+    "first_opportunity": 9,
+    "first_action": "SKIP",
+    "anchor_identity": [
+      7,
+      "m-7-24"
+    ],
+    "anchor_tasks": [
+      1111020257
+    ],
+    "second_reached": true,
+    "second_opportunity": 10,
+    "second_at": {
+      "lower": 63527016,
+      "upper": 63527017,
+      "denominator": 1000000
+    },
+    "second_action": "QUERY",
+    "second_move": "m-7-30",
+    "second_eligible": [
+      "m-7-30"
+    ],
+    "remaining_at_first": 8,
+    "remaining_at_second": 8,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-41/1000000",
+      "time_gain_upper": "41/1000000",
+      "J_gain_lower": "-41/16385000000",
+      "J_gain_upper": "41/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-41/1000000",
+      "time_gain_upper": "41/1000000",
+      "J_gain_lower": "-41/16385000000",
+      "J_gain_upper": "41/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 1,
+      "query_delta": 16,
+      "time_gain_lower": "879093/200000",
+      "time_gain_upper": "2197773/500000",
+      "J_gain_lower": "3277879093/3277000000",
+      "J_gain_upper": "8194697773/8192500000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "empty-32-32_scen1_offset464_train_111102",
+    "policy": "pair_9_WAIT7_SKIP_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_9_WAIT",
+    "first_opportunity": 9,
+    "first_action": "WAIT",
+    "anchor_identity": [
+      7,
+      "m-7-24"
+    ],
+    "anchor_tasks": [
+      1111020257
+    ],
+    "second_reached": true,
+    "second_opportunity": 11,
+    "second_at": {
+      "lower": 63527016,
+      "upper": 63527017,
+      "denominator": 1000000
+    },
+    "second_action": "SKIP",
+    "second_move": "m-7-30",
+    "second_eligible": [
+      "m-7-30"
+    ],
+    "remaining_at_first": 8,
+    "remaining_at_second": 7,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-41/1000000",
+      "time_gain_upper": "41/1000000",
+      "J_gain_lower": "-41/16385000000",
+      "J_gain_upper": "41/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-41/1000000",
+      "time_gain_upper": "41/1000000",
+      "J_gain_lower": "-41/16385000000",
+      "J_gain_upper": "41/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 1,
+      "query_delta": 16,
+      "time_gain_lower": "879093/200000",
+      "time_gain_upper": "2197773/500000",
+      "J_gain_lower": "3277879093/3277000000",
+      "J_gain_upper": "8194697773/8192500000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "empty-32-32_scen1_offset464_train_111102",
+    "policy": "pair_1_SKIP4_QUERY_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_1_SKIP4",
+    "first_opportunity": 1,
+    "first_action": "SKIP",
+    "anchor_identity": [
+      4,
+      "m-4-6"
+    ],
+    "anchor_tasks": [
+      1111022816
+    ],
+    "second_reached": true,
+    "second_opportunity": 2,
+    "second_at": {
+      "lower": 21153949,
+      "upper": 21153950,
+      "denominator": 1000000
+    },
+    "second_action": "QUERY",
+    "second_move": "m-4-10",
+    "second_eligible": [
+      "m-4-10",
+      "m-6-10"
+    ],
+    "remaining_at_first": 16,
+    "remaining_at_second": 16,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-41/1000000",
+      "time_gain_upper": "41/1000000",
+      "J_gain_lower": "-41/16385000000",
+      "J_gain_upper": "41/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-41/1000000",
+      "time_gain_upper": "41/1000000",
+      "J_gain_lower": "-41/16385000000",
+      "J_gain_upper": "41/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 1,
+      "query_delta": 16,
+      "time_gain_lower": "879093/200000",
+      "time_gain_upper": "2197773/500000",
+      "J_gain_lower": "3277879093/3277000000",
+      "J_gain_upper": "8194697773/8192500000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "empty-32-32_scen1_offset464_train_111102",
+    "policy": "pair_9_QUERY7_SKIP_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_9_QUERY7",
+    "first_opportunity": 9,
+    "first_action": "QUERY",
+    "anchor_identity": [
+      7,
+      "m-7-24"
+    ],
+    "anchor_tasks": [
+      1111020257
+    ],
+    "second_reached": true,
+    "second_opportunity": 10,
+    "second_at": {
+      "lower": 63527016,
+      "upper": 63527017,
+      "denominator": 1000000
+    },
+    "second_action": "SKIP",
+    "second_move": "m-7-30",
+    "second_eligible": [
+      "m-7-30"
+    ],
+    "remaining_at_first": 8,
+    "remaining_at_second": 7,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-41/1000000",
+      "time_gain_upper": "41/1000000",
+      "J_gain_lower": "-41/16385000000",
+      "J_gain_upper": "41/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-41/1000000",
+      "time_gain_upper": "41/1000000",
+      "J_gain_lower": "-41/16385000000",
+      "J_gain_upper": "41/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 1,
+      "query_delta": 16,
+      "time_gain_lower": "879093/200000",
+      "time_gain_upper": "2197773/500000",
+      "J_gain_lower": "3277879093/3277000000",
+      "J_gain_upper": "8194697773/8192500000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "empty-32-32_scen1_offset464_train_111102",
+    "policy": "pair_1_QUERY4_SKIP_successor",
+    "trigger": "successor",
+    "first_only_policy": "cf_1_QUERY4",
+    "first_opportunity": 1,
+    "first_action": "QUERY",
+    "anchor_identity": [
+      4,
+      "m-4-6"
+    ],
+    "anchor_tasks": [
+      1111022816
+    ],
+    "second_reached": false,
+    "second_opportunity": null,
+    "second_at": null,
+    "second_action": null,
+    "second_move": null,
+    "second_eligible": [],
+    "remaining_at_first": 16,
+    "remaining_at_second": null,
+    "final_remaining": 0,
+    "unreached_observation": "no_qualifying_public_trigger_before_budget_exhaustion",
+    "successor_evidence": {
+      "public_descendant_heads_revealed": [
+        {
+          "task": 1111022817,
+          "at": {
+            "lower": 76002763,
+            "upper": 76002764,
+            "denominator": 1000000
+          }
+        },
+        {
+          "task": 1111022818,
+          "at": {
+            "lower": 98490155,
+            "upper": 98490156,
+            "denominator": 1000000
+          }
+        }
+      ],
+      "public_descendants_before_budget_exhaustion": [
+        1111022817,
+        1111022818
+      ],
+      "budget_exhaustion_at": {
+        "lower": 103102866,
+        "upper": 103102867,
+        "denominator": 1000000
+      }
+    },
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-41/1000000",
+      "time_gain_upper": "41/1000000",
+      "J_gain_lower": "-41/16385000000",
+      "J_gain_upper": "41/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-41/1000000",
+      "time_gain_upper": "41/1000000",
+      "J_gain_lower": "-41/16385000000",
+      "J_gain_upper": "41/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 1,
+      "query_delta": 16,
+      "time_gain_lower": "879093/200000",
+      "time_gain_upper": "2197773/500000",
+      "J_gain_lower": "3277879093/3277000000",
+      "J_gain_upper": "8194697773/8192500000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "empty-32-32_scen1_offset464_train_111102",
+    "policy": "pair_9_WAIT7_QUERY_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_9_WAIT",
+    "first_opportunity": 9,
+    "first_action": "WAIT",
+    "anchor_identity": [
+      7,
+      "m-7-24"
+    ],
+    "anchor_tasks": [
+      1111020257
+    ],
+    "second_reached": true,
+    "second_opportunity": 11,
+    "second_at": {
+      "lower": 63527016,
+      "upper": 63527017,
+      "denominator": 1000000
+    },
+    "second_action": "QUERY",
+    "second_move": "m-7-30",
+    "second_eligible": [
+      "m-7-30"
+    ],
+    "remaining_at_first": 8,
+    "remaining_at_second": 7,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-41/1000000",
+      "time_gain_upper": "41/1000000",
+      "J_gain_lower": "-41/16385000000",
+      "J_gain_upper": "41/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-41/1000000",
+      "time_gain_upper": "41/1000000",
+      "J_gain_lower": "-41/16385000000",
+      "J_gain_upper": "41/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 1,
+      "query_delta": 16,
+      "time_gain_lower": "879093/200000",
+      "time_gain_upper": "2197773/500000",
+      "J_gain_lower": "3277879093/3277000000",
+      "J_gain_upper": "8194697773/8192500000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "empty-32-32_scen1_offset464_train_111102",
+    "policy": "pair_9_SKIP7_SKIP_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_9_SKIP7",
+    "first_opportunity": 9,
+    "first_action": "SKIP",
+    "anchor_identity": [
+      7,
+      "m-7-24"
+    ],
+    "anchor_tasks": [
+      1111020257
+    ],
+    "second_reached": true,
+    "second_opportunity": 10,
+    "second_at": {
+      "lower": 63527016,
+      "upper": 63527017,
+      "denominator": 1000000
+    },
+    "second_action": "SKIP",
+    "second_move": "m-7-30",
+    "second_eligible": [
+      "m-7-30"
+    ],
+    "remaining_at_first": 8,
+    "remaining_at_second": 8,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-41/1000000",
+      "time_gain_upper": "41/1000000",
+      "J_gain_lower": "-41/16385000000",
+      "J_gain_upper": "41/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-41/1000000",
+      "time_gain_upper": "41/1000000",
+      "J_gain_lower": "-41/16385000000",
+      "J_gain_upper": "41/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 1,
+      "query_delta": 16,
+      "time_gain_lower": "879093/200000",
+      "time_gain_upper": "2197773/500000",
+      "J_gain_lower": "3277879093/3277000000",
+      "J_gain_upper": "8194697773/8192500000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "empty-32-32_scen1_offset464_train_111102",
+    "policy": "pair_1_SKIP4_SKIP_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_1_SKIP4",
+    "first_opportunity": 1,
+    "first_action": "SKIP",
+    "anchor_identity": [
+      4,
+      "m-4-6"
+    ],
+    "anchor_tasks": [
+      1111022816
+    ],
+    "second_reached": true,
+    "second_opportunity": 2,
+    "second_at": {
+      "lower": 21153949,
+      "upper": 21153950,
+      "denominator": 1000000
+    },
+    "second_action": "SKIP",
+    "second_move": "m-4-10",
+    "second_eligible": [
+      "m-4-10",
+      "m-6-10"
+    ],
+    "remaining_at_first": 16,
+    "remaining_at_second": 16,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-41/1000000",
+      "time_gain_upper": "41/1000000",
+      "J_gain_lower": "-41/16385000000",
+      "J_gain_upper": "41/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-41/1000000",
+      "time_gain_upper": "41/1000000",
+      "J_gain_lower": "-41/16385000000",
+      "J_gain_upper": "41/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 1,
+      "query_delta": 16,
+      "time_gain_lower": "879093/200000",
+      "time_gain_upper": "2197773/500000",
+      "J_gain_lower": "3277879093/3277000000",
+      "J_gain_upper": "8194697773/8192500000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "empty-32-32_scen1_offset464_train_111102",
+    "policy": "pair_1_SKIP4_SKIP_successor",
+    "trigger": "successor",
+    "first_only_policy": "cf_1_SKIP4",
+    "first_opportunity": 1,
+    "first_action": "SKIP",
+    "anchor_identity": [
+      4,
+      "m-4-6"
+    ],
+    "anchor_tasks": [
+      1111022816
+    ],
+    "second_reached": false,
+    "second_opportunity": null,
+    "second_at": null,
+    "second_action": null,
+    "second_move": null,
+    "second_eligible": [],
+    "remaining_at_first": 16,
+    "remaining_at_second": null,
+    "final_remaining": 0,
+    "unreached_observation": "no_qualifying_public_trigger_before_budget_exhaustion",
+    "successor_evidence": {
+      "public_descendant_heads_revealed": [
+        {
+          "task": 1111022817,
+          "at": {
+            "lower": 76002763,
+            "upper": 76002764,
+            "denominator": 1000000
+          }
+        },
+        {
+          "task": 1111022818,
+          "at": {
+            "lower": 98490155,
+            "upper": 98490156,
+            "denominator": 1000000
+          }
+        }
+      ],
+      "public_descendants_before_budget_exhaustion": [
+        1111022817,
+        1111022818
+      ],
+      "budget_exhaustion_at": {
+        "lower": 107816967,
+        "upper": 107816968,
+        "denominator": 1000000
+      }
+    },
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-41/1000000",
+      "time_gain_upper": "41/1000000",
+      "J_gain_lower": "-41/16385000000",
+      "J_gain_upper": "41/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-41/1000000",
+      "time_gain_upper": "41/1000000",
+      "J_gain_lower": "-41/16385000000",
+      "J_gain_upper": "41/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 1,
+      "query_delta": 16,
+      "time_gain_lower": "879093/200000",
+      "time_gain_upper": "2197773/500000",
+      "J_gain_lower": "3277879093/3277000000",
+      "J_gain_upper": "8194697773/8192500000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "empty-32-32_scen1_offset464_train_111102",
+    "policy": "pair_1_WAIT4_SKIP_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_1_WAIT",
+    "first_opportunity": 1,
+    "first_action": "WAIT",
+    "anchor_identity": [
+      4,
+      "m-4-6"
+    ],
+    "anchor_tasks": [
+      1111022816
+    ],
+    "second_reached": true,
+    "second_opportunity": 3,
+    "second_at": {
+      "lower": 21153949,
+      "upper": 21153950,
+      "denominator": 1000000
+    },
+    "second_action": "SKIP",
+    "second_move": "m-4-10",
+    "second_eligible": [
+      "m-4-10",
+      "m-6-10"
+    ],
+    "remaining_at_first": 16,
+    "remaining_at_second": 15,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-41/1000000",
+      "time_gain_upper": "41/1000000",
+      "J_gain_lower": "-41/16385000000",
+      "J_gain_upper": "41/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-41/1000000",
+      "time_gain_upper": "41/1000000",
+      "J_gain_lower": "-41/16385000000",
+      "J_gain_upper": "41/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 1,
+      "query_delta": 16,
+      "time_gain_lower": "879093/200000",
+      "time_gain_upper": "2197773/500000",
+      "J_gain_lower": "3277879093/3277000000",
+      "J_gain_upper": "8194697773/8192500000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "empty-32-32_scen1_offset464_train_111102",
+    "policy": "pair_1_QUERY4_QUERY_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_1_QUERY4",
+    "first_opportunity": 1,
+    "first_action": "QUERY",
+    "anchor_identity": [
+      4,
+      "m-4-6"
+    ],
+    "anchor_tasks": [
+      1111022816
+    ],
+    "second_reached": true,
+    "second_opportunity": 2,
+    "second_at": {
+      "lower": 21153949,
+      "upper": 21153950,
+      "denominator": 1000000
+    },
+    "second_action": "QUERY",
+    "second_move": "m-4-10",
+    "second_eligible": [
+      "m-4-10",
+      "m-6-10"
+    ],
+    "remaining_at_first": 16,
+    "remaining_at_second": 15,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-41/1000000",
+      "time_gain_upper": "41/1000000",
+      "J_gain_lower": "-41/16385000000",
+      "J_gain_upper": "41/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-41/1000000",
+      "time_gain_upper": "41/1000000",
+      "J_gain_lower": "-41/16385000000",
+      "J_gain_upper": "41/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 1,
+      "query_delta": 16,
+      "time_gain_lower": "879093/200000",
+      "time_gain_upper": "2197773/500000",
+      "J_gain_lower": "3277879093/3277000000",
+      "J_gain_upper": "8194697773/8192500000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "random-32-32-10_scen2_offset0_train_112101",
+    "policy": "pair_1_WAIT2_SKIP_successor",
+    "trigger": "successor",
+    "first_only_policy": "cf_1_WAIT",
+    "first_opportunity": 1,
+    "first_action": "WAIT",
+    "anchor_identity": [
+      2,
+      "m-2-2"
+    ],
+    "anchor_tasks": [
+      1121012816
+    ],
+    "second_reached": true,
+    "second_opportunity": 8,
+    "second_at": {
+      "lower": 40427240,
+      "upper": 40427241,
+      "denominator": 1000000
+    },
+    "second_action": "SKIP",
+    "second_move": "m-13-21",
+    "second_eligible": [
+      "m-13-21"
+    ],
+    "remaining_at_first": 16,
+    "remaining_at_second": 10,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": {
+      "public_descendant_heads_revealed": [
+        {
+          "task": 1121012817,
+          "at": {
+            "lower": 13261970,
+            "upper": 13261971,
+            "denominator": 1000000
+          }
+        },
+        {
+          "task": 1121012818,
+          "at": {
+            "lower": 35064529,
+            "upper": 35064530,
+            "denominator": 1000000
+          }
+        },
+        {
+          "task": 1121012819,
+          "at": {
+            "lower": 67462175,
+            "upper": 67462176,
+            "denominator": 1000000
+          }
+        }
+      ],
+      "public_descendants_before_budget_exhaustion": [
+        1121012817,
+        1121012818,
+        1121012819
+      ],
+      "budget_exhaustion_at": {
+        "lower": 68860784,
+        "upper": 68860785,
+        "denominator": 1000000
+      }
+    },
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-23/500000",
+      "time_gain_upper": "23/500000",
+      "J_gain_lower": "-23/8192500000",
+      "J_gain_upper": "23/8192500000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-8551/15625",
+      "time_gain_upper": "-136793/250000",
+      "J_gain_lower": "-8551/256015625",
+      "J_gain_upper": "-4717/141250000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 0,
+      "query_delta": 16,
+      "time_gain_lower": "13085023/1000000",
+      "time_gain_upper": "2617023/200000",
+      "J_gain_lower": "13085023/16385000000",
+      "J_gain_upper": "2617023/3277000000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "random-32-32-10_scen2_offset0_train_112101",
+    "policy": "pair_9_WAIT5_SKIP_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_9_WAIT",
+    "first_opportunity": 9,
+    "first_action": "WAIT",
+    "anchor_identity": [
+      5,
+      "m-5-22"
+    ],
+    "anchor_tasks": [
+      1121013841
+    ],
+    "second_reached": true,
+    "second_opportunity": 10,
+    "second_at": {
+      "lower": 44427565,
+      "upper": 44427566,
+      "denominator": 1000000
+    },
+    "second_action": "SKIP",
+    "second_move": "m-13-23",
+    "second_eligible": [
+      "m-13-23"
+    ],
+    "remaining_at_first": 8,
+    "remaining_at_second": 8,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-2333813/1000000",
+      "time_gain_upper": "-2333721/1000000",
+      "J_gain_lower": "-2333813/16385000000",
+      "J_gain_upper": "-2333721/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    },
+    "service_equal_first_only": false,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "1872537/1000000",
+      "time_gain_upper": "1872629/1000000",
+      "J_gain_lower": "1872537/16385000000",
+      "J_gain_upper": "1872629/16385000000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 0,
+      "query_delta": 16,
+      "time_gain_lower": "1938103/125000",
+      "time_gain_upper": "3876229/250000",
+      "J_gain_lower": "1938103/2048125000",
+      "J_gain_upper": "3876229/4096250000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "random-32-32-10_scen2_offset0_train_112101",
+    "policy": "pair_9_QUERY5_SKIP_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_9_QUERY5",
+    "first_opportunity": 9,
+    "first_action": "QUERY",
+    "anchor_identity": [
+      5,
+      "m-5-22"
+    ],
+    "anchor_tasks": [
+      1121013841
+    ],
+    "second_reached": true,
+    "second_opportunity": 10,
+    "second_at": {
+      "lower": 44427565,
+      "upper": 44427566,
+      "denominator": 1000000
+    },
+    "second_action": "SKIP",
+    "second_move": "m-13-23",
+    "second_eligible": [
+      "m-13-23"
+    ],
+    "remaining_at_first": 8,
+    "remaining_at_second": 7,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": -2,
+      "query_delta": 0,
+      "time_gain_lower": "-806761/125000",
+      "time_gain_upper": "-6453997/1000000",
+      "J_gain_lower": "-4097056761/2048125000",
+      "J_gain_upper": "-32776453997/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    },
+    "service_equal_first_only": false,
+    "vs_condition": {
+      "task_gain": -2,
+      "query_delta": 0,
+      "time_gain_lower": "-806761/125000",
+      "time_gain_upper": "-6453997/1000000",
+      "J_gain_lower": "-4097056761/2048125000",
+      "J_gain_upper": "-32776453997/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    },
+    "vs_whole_WAIT": {
+      "task_gain": -2,
+      "query_delta": 16,
+      "time_gain_lower": "7178199/1000000",
+      "time_gain_upper": "717829/100000",
+      "J_gain_lower": "-32762821801/16385000000",
+      "J_gain_upper": "-3276282171/1638500000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "random-32-32-10_scen2_offset0_train_112101",
+    "policy": "pair_1_QUERY2_SKIP_successor",
+    "trigger": "successor",
+    "first_only_policy": "cf_1_QUERY2",
+    "first_opportunity": 1,
+    "first_action": "QUERY",
+    "anchor_identity": [
+      2,
+      "m-2-2"
+    ],
+    "anchor_tasks": [
+      1121012816
+    ],
+    "second_reached": true,
+    "second_opportunity": 7,
+    "second_at": {
+      "lower": 40427240,
+      "upper": 40427241,
+      "denominator": 1000000
+    },
+    "second_action": "SKIP",
+    "second_move": "m-13-21",
+    "second_eligible": [
+      "m-13-21"
+    ],
+    "remaining_at_first": 16,
+    "remaining_at_second": 10,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": {
+      "public_descendant_heads_revealed": [
+        {
+          "task": 1121012817,
+          "at": {
+            "lower": 12714752,
+            "upper": 12714753,
+            "denominator": 1000000
+          }
+        },
+        {
+          "task": 1121012818,
+          "at": {
+            "lower": 35064529,
+            "upper": 35064530,
+            "denominator": 1000000
+          }
+        },
+        {
+          "task": 1121012819,
+          "at": {
+            "lower": 67462175,
+            "upper": 67462176,
+            "denominator": 1000000
+          }
+        }
+      ],
+      "public_descendants_before_budget_exhaustion": [
+        1121012817,
+        1121012818,
+        1121012819
+      ],
+      "budget_exhaustion_at": {
+        "lower": 68860784,
+        "upper": 68860785,
+        "denominator": 1000000
+      }
+    },
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-23/500000",
+      "time_gain_upper": "23/500000",
+      "J_gain_lower": "-23/8192500000",
+      "J_gain_upper": "23/8192500000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-23/500000",
+      "time_gain_upper": "23/500000",
+      "J_gain_lower": "-23/8192500000",
+      "J_gain_upper": "23/8192500000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 0,
+      "query_delta": 16,
+      "time_gain_lower": "13632241/1000000",
+      "time_gain_upper": "13632333/1000000",
+      "J_gain_lower": "13632241/16385000000",
+      "J_gain_upper": "13632333/16385000000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "random-32-32-10_scen2_offset0_train_112101",
+    "policy": "pair_9_QUERY5_QUERY_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_9_QUERY5",
+    "first_opportunity": 9,
+    "first_action": "QUERY",
+    "anchor_identity": [
+      5,
+      "m-5-22"
+    ],
+    "anchor_tasks": [
+      1121013841
+    ],
+    "second_reached": true,
+    "second_opportunity": 10,
+    "second_at": {
+      "lower": 44427565,
+      "upper": 44427566,
+      "denominator": 1000000
+    },
+    "second_action": "QUERY",
+    "second_move": "m-13-23",
+    "second_eligible": [
+      "m-13-23"
+    ],
+    "remaining_at_first": 8,
+    "remaining_at_second": 7,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-23/500000",
+      "time_gain_upper": "23/500000",
+      "J_gain_lower": "-23/8192500000",
+      "J_gain_upper": "23/8192500000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-23/500000",
+      "time_gain_upper": "23/500000",
+      "J_gain_lower": "-23/8192500000",
+      "J_gain_upper": "23/8192500000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 0,
+      "query_delta": 16,
+      "time_gain_lower": "13632241/1000000",
+      "time_gain_upper": "13632333/1000000",
+      "J_gain_lower": "13632241/16385000000",
+      "J_gain_upper": "13632333/16385000000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "random-32-32-10_scen2_offset0_train_112101",
+    "policy": "pair_1_SKIP2_SKIP_successor",
+    "trigger": "successor",
+    "first_only_policy": "cf_1_SKIP2",
+    "first_opportunity": 1,
+    "first_action": "SKIP",
+    "anchor_identity": [
+      2,
+      "m-2-2"
+    ],
+    "anchor_tasks": [
+      1121012816
+    ],
+    "second_reached": true,
+    "second_opportunity": 7,
+    "second_at": {
+      "lower": 40427240,
+      "upper": 40427241,
+      "denominator": 1000000
+    },
+    "second_action": "SKIP",
+    "second_move": "m-13-21",
+    "second_eligible": [
+      "m-13-21"
+    ],
+    "remaining_at_first": 16,
+    "remaining_at_second": 11,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": {
+      "public_descendant_heads_revealed": [
+        {
+          "task": 1121012817,
+          "at": {
+            "lower": 13298194,
+            "upper": 13298195,
+            "denominator": 1000000
+          }
+        },
+        {
+          "task": 1121012818,
+          "at": {
+            "lower": 35064529,
+            "upper": 35064530,
+            "denominator": 1000000
+          }
+        },
+        {
+          "task": 1121012819,
+          "at": {
+            "lower": 67462175,
+            "upper": 67462176,
+            "denominator": 1000000
+          }
+        }
+      ],
+      "public_descendants_before_budget_exhaustion": [
+        1121012817,
+        1121012818,
+        1121012819
+      ],
+      "budget_exhaustion_at": {
+        "lower": 70194226,
+        "upper": 70194227,
+        "denominator": 1000000
+      }
+    },
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-23/500000",
+      "time_gain_upper": "23/500000",
+      "J_gain_lower": "-23/8192500000",
+      "J_gain_upper": "23/8192500000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-9117/15625",
+      "time_gain_upper": "-145849/250000",
+      "J_gain_lower": "-9117/256015625",
+      "J_gain_upper": "-145849/4096250000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 0,
+      "query_delta": 16,
+      "time_gain_lower": "13048799/1000000",
+      "time_gain_upper": "13048891/1000000",
+      "J_gain_lower": "13048799/16385000000",
+      "J_gain_upper": "13048891/16385000000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "random-32-32-10_scen2_offset0_train_112101",
+    "policy": "pair_1_QUERY2_QUERY_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_1_QUERY2",
+    "first_opportunity": 1,
+    "first_action": "QUERY",
+    "anchor_identity": [
+      2,
+      "m-2-2"
+    ],
+    "anchor_tasks": [
+      1121012816
+    ],
+    "second_reached": true,
+    "second_opportunity": 2,
+    "second_at": {
+      "lower": 16606406,
+      "upper": 16606407,
+      "denominator": 1000000
+    },
+    "second_action": "QUERY",
+    "second_move": "m-6-8",
+    "second_eligible": [
+      "m-6-8"
+    ],
+    "remaining_at_first": 16,
+    "remaining_at_second": 15,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-23/500000",
+      "time_gain_upper": "23/500000",
+      "J_gain_lower": "-23/8192500000",
+      "J_gain_upper": "23/8192500000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-23/500000",
+      "time_gain_upper": "23/500000",
+      "J_gain_lower": "-23/8192500000",
+      "J_gain_upper": "23/8192500000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 0,
+      "query_delta": 16,
+      "time_gain_lower": "13632241/1000000",
+      "time_gain_upper": "13632333/1000000",
+      "J_gain_lower": "13632241/16385000000",
+      "J_gain_upper": "13632333/16385000000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "random-32-32-10_scen2_offset0_train_112101",
+    "policy": "pair_9_WAIT5_QUERY_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_9_WAIT",
+    "first_opportunity": 9,
+    "first_action": "WAIT",
+    "anchor_identity": [
+      5,
+      "m-5-22"
+    ],
+    "anchor_tasks": [
+      1121013841
+    ],
+    "second_reached": true,
+    "second_opportunity": 10,
+    "second_at": {
+      "lower": 44427565,
+      "upper": 44427566,
+      "denominator": 1000000
+    },
+    "second_action": "QUERY",
+    "second_move": "m-13-23",
+    "second_eligible": [
+      "m-13-23"
+    ],
+    "remaining_at_first": 8,
+    "remaining_at_second": 8,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-1708453/250000",
+      "time_gain_upper": "-170843/25000",
+      "J_gain_lower": "-1708453/4096250000",
+      "J_gain_upper": "-170843/409625000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    },
+    "service_equal_first_only": false,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-1313731/500000",
+      "time_gain_upper": "-262737/100000",
+      "J_gain_lower": "-1313731/8192500000",
+      "J_gain_upper": "-262737/1638500000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 0,
+      "query_delta": 16,
+      "time_gain_lower": "440193/40000",
+      "time_gain_upper": "11004917/1000000",
+      "J_gain_lower": "440193/655400000",
+      "J_gain_upper": "11004917/16385000000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "random-32-32-10_scen2_offset0_train_112101",
+    "policy": "pair_9_SKIP5_SKIP_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_9_SKIP5",
+    "first_opportunity": 9,
+    "first_action": "SKIP",
+    "anchor_identity": [
+      5,
+      "m-5-22"
+    ],
+    "anchor_tasks": [
+      1121013841
+    ],
+    "second_reached": true,
+    "second_opportunity": 10,
+    "second_at": {
+      "lower": 44427565,
+      "upper": 44427566,
+      "denominator": 1000000
+    },
+    "second_action": "SKIP",
+    "second_move": "m-13-23",
+    "second_eligible": [
+      "m-13-23"
+    ],
+    "remaining_at_first": 8,
+    "remaining_at_second": 8,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "242973/62500",
+      "time_gain_upper": "194383/50000",
+      "J_gain_lower": "242973/1024062500",
+      "J_gain_upper": "194383/819250000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    },
+    "service_equal_first_only": false,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "43681/6250",
+      "time_gain_upper": "1747263/250000",
+      "J_gain_lower": "43681/102406250",
+      "J_gain_upper": "1747263/4096250000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 0,
+      "query_delta": 16,
+      "time_gain_lower": "20621247/1000000",
+      "time_gain_upper": "20621339/1000000",
+      "J_gain_lower": "20621247/16385000000",
+      "J_gain_upper": "20621339/16385000000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "random-32-32-10_scen2_offset0_train_112101",
+    "policy": "pair_1_WAIT2_QUERY_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_1_WAIT",
+    "first_opportunity": 1,
+    "first_action": "WAIT",
+    "anchor_identity": [
+      2,
+      "m-2-2"
+    ],
+    "anchor_tasks": [
+      1121012816
+    ],
+    "second_reached": true,
+    "second_opportunity": 3,
+    "second_at": {
+      "lower": 16606406,
+      "upper": 16606407,
+      "denominator": 1000000
+    },
+    "second_action": "QUERY",
+    "second_move": "m-6-8",
+    "second_eligible": [
+      "m-6-8"
+    ],
+    "remaining_at_first": 16,
+    "remaining_at_second": 15,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-23/500000",
+      "time_gain_upper": "23/500000",
+      "J_gain_lower": "-23/8192500000",
+      "J_gain_upper": "23/8192500000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-8551/15625",
+      "time_gain_upper": "-136793/250000",
+      "J_gain_lower": "-8551/256015625",
+      "J_gain_upper": "-4717/141250000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 0,
+      "query_delta": 16,
+      "time_gain_lower": "13085023/1000000",
+      "time_gain_upper": "2617023/200000",
+      "J_gain_lower": "13085023/16385000000",
+      "J_gain_upper": "2617023/3277000000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "random-32-32-10_scen2_offset0_train_112101",
+    "policy": "pair_1_SKIP2_SKIP_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_1_SKIP2",
+    "first_opportunity": 1,
+    "first_action": "SKIP",
+    "anchor_identity": [
+      2,
+      "m-2-2"
+    ],
+    "anchor_tasks": [
+      1121012816
+    ],
+    "second_reached": true,
+    "second_opportunity": 2,
+    "second_at": {
+      "lower": 16606406,
+      "upper": 16606407,
+      "denominator": 1000000
+    },
+    "second_action": "SKIP",
+    "second_move": "m-6-8",
+    "second_eligible": [
+      "m-6-8"
+    ],
+    "remaining_at_first": 16,
+    "remaining_at_second": 16,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-23/500000",
+      "time_gain_upper": "23/500000",
+      "J_gain_lower": "-23/8192500000",
+      "J_gain_upper": "23/8192500000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-9117/15625",
+      "time_gain_upper": "-145849/250000",
+      "J_gain_lower": "-9117/256015625",
+      "J_gain_upper": "-145849/4096250000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 0,
+      "query_delta": 16,
+      "time_gain_lower": "13048799/1000000",
+      "time_gain_upper": "13048891/1000000",
+      "J_gain_lower": "13048799/16385000000",
+      "J_gain_upper": "13048891/16385000000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "random-32-32-10_scen2_offset0_train_112101",
+    "policy": "pair_9_SKIP5_QUERY_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_9_SKIP5",
+    "first_opportunity": 9,
+    "first_action": "SKIP",
+    "anchor_identity": [
+      5,
+      "m-5-22"
+    ],
+    "anchor_tasks": [
+      1121013841
+    ],
+    "second_reached": true,
+    "second_opportunity": 10,
+    "second_at": {
+      "lower": 44427565,
+      "upper": 44427566,
+      "denominator": 1000000
+    },
+    "second_action": "QUERY",
+    "second_move": "m-13-23",
+    "second_eligible": [
+      "m-13-23"
+    ],
+    "remaining_at_first": 8,
+    "remaining_at_second": 8,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-23/500000",
+      "time_gain_upper": "23/500000",
+      "J_gain_lower": "-23/8192500000",
+      "J_gain_upper": "23/8192500000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "1550673/500000",
+      "time_gain_upper": "1550719/500000",
+      "J_gain_lower": "1550673/8192500000",
+      "J_gain_upper": "1550719/8192500000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 0,
+      "query_delta": 16,
+      "time_gain_lower": "16733633/1000000",
+      "time_gain_upper": "669349/40000",
+      "J_gain_lower": "16733633/16385000000",
+      "J_gain_upper": "23081/22600000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "random-32-32-10_scen2_offset0_train_112101",
+    "policy": "pair_1_WAIT2_SKIP_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_1_WAIT",
+    "first_opportunity": 1,
+    "first_action": "WAIT",
+    "anchor_identity": [
+      2,
+      "m-2-2"
+    ],
+    "anchor_tasks": [
+      1121012816
+    ],
+    "second_reached": true,
+    "second_opportunity": 3,
+    "second_at": {
+      "lower": 16606406,
+      "upper": 16606407,
+      "denominator": 1000000
+    },
+    "second_action": "SKIP",
+    "second_move": "m-6-8",
+    "second_eligible": [
+      "m-6-8"
+    ],
+    "remaining_at_first": 16,
+    "remaining_at_second": 15,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-23/500000",
+      "time_gain_upper": "23/500000",
+      "J_gain_lower": "-23/8192500000",
+      "J_gain_upper": "23/8192500000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-8551/15625",
+      "time_gain_upper": "-136793/250000",
+      "J_gain_lower": "-8551/256015625",
+      "J_gain_upper": "-4717/141250000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 0,
+      "query_delta": 16,
+      "time_gain_lower": "13085023/1000000",
+      "time_gain_upper": "2617023/200000",
+      "J_gain_lower": "13085023/16385000000",
+      "J_gain_upper": "2617023/3277000000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "random-32-32-10_scen2_offset0_train_112101",
+    "policy": "pair_1_QUERY2_SKIP_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_1_QUERY2",
+    "first_opportunity": 1,
+    "first_action": "QUERY",
+    "anchor_identity": [
+      2,
+      "m-2-2"
+    ],
+    "anchor_tasks": [
+      1121012816
+    ],
+    "second_reached": true,
+    "second_opportunity": 2,
+    "second_at": {
+      "lower": 16606406,
+      "upper": 16606407,
+      "denominator": 1000000
+    },
+    "second_action": "SKIP",
+    "second_move": "m-6-8",
+    "second_eligible": [
+      "m-6-8"
+    ],
+    "remaining_at_first": 16,
+    "remaining_at_second": 15,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-23/500000",
+      "time_gain_upper": "23/500000",
+      "J_gain_lower": "-23/8192500000",
+      "J_gain_upper": "23/8192500000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-23/500000",
+      "time_gain_upper": "23/500000",
+      "J_gain_lower": "-23/8192500000",
+      "J_gain_upper": "23/8192500000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 0,
+      "query_delta": 16,
+      "time_gain_lower": "13632241/1000000",
+      "time_gain_upper": "13632333/1000000",
+      "J_gain_lower": "13632241/16385000000",
+      "J_gain_upper": "13632333/16385000000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "random-32-32-10_scen2_offset0_train_112101",
+    "policy": "pair_1_SKIP2_QUERY_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_1_SKIP2",
+    "first_opportunity": 1,
+    "first_action": "SKIP",
+    "anchor_identity": [
+      2,
+      "m-2-2"
+    ],
+    "anchor_tasks": [
+      1121012816
+    ],
+    "second_reached": true,
+    "second_opportunity": 2,
+    "second_at": {
+      "lower": 16606406,
+      "upper": 16606407,
+      "denominator": 1000000
+    },
+    "second_action": "QUERY",
+    "second_move": "m-6-8",
+    "second_eligible": [
+      "m-6-8"
+    ],
+    "remaining_at_first": 16,
+    "remaining_at_second": 16,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-23/500000",
+      "time_gain_upper": "23/500000",
+      "J_gain_lower": "-23/8192500000",
+      "J_gain_upper": "23/8192500000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-9117/15625",
+      "time_gain_upper": "-145849/250000",
+      "J_gain_lower": "-9117/256015625",
+      "J_gain_upper": "-145849/4096250000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 0,
+      "query_delta": 16,
+      "time_gain_lower": "13048799/1000000",
+      "time_gain_upper": "13048891/1000000",
+      "J_gain_lower": "13048799/16385000000",
+      "J_gain_upper": "13048891/16385000000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "random-32-32-10_scen2_offset16_train_112102",
+    "policy": "pair_1_QUERY14_SKIP_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_1_QUERY14",
+    "first_opportunity": 1,
+    "first_action": "QUERY",
+    "anchor_identity": [
+      14,
+      "m-14-17"
+    ],
+    "anchor_tasks": [
+      1121021537
+    ],
+    "second_reached": true,
+    "second_opportunity": 2,
+    "second_at": {
+      "lower": 31165595,
+      "upper": 31165596,
+      "denominator": 1000000
+    },
+    "second_action": "SKIP",
+    "second_move": "m-15-16",
+    "second_eligible": [
+      "m-15-16"
+    ],
+    "remaining_at_first": 16,
+    "remaining_at_second": 15,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-51/1000000",
+      "time_gain_upper": "51/1000000",
+      "J_gain_lower": "-51/16385000000",
+      "J_gain_upper": "51/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-51/1000000",
+      "time_gain_upper": "51/1000000",
+      "J_gain_lower": "-51/16385000000",
+      "J_gain_upper": "51/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 0,
+      "query_delta": 16,
+      "time_gain_lower": "-664907/125000",
+      "time_gain_upper": "-2659577/500000",
+      "J_gain_lower": "-664907/2048125000",
+      "J_gain_upper": "-2659577/8192500000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "random-32-32-10_scen2_offset16_train_112102",
+    "policy": "pair_1_SKIP14_SKIP_successor",
+    "trigger": "successor",
+    "first_only_policy": "cf_1_SKIP14",
+    "first_opportunity": 1,
+    "first_action": "SKIP",
+    "anchor_identity": [
+      14,
+      "m-14-17"
+    ],
+    "anchor_tasks": [
+      1121021537
+    ],
+    "second_reached": false,
+    "second_opportunity": null,
+    "second_at": null,
+    "second_action": null,
+    "second_move": null,
+    "second_eligible": [],
+    "remaining_at_first": 16,
+    "remaining_at_second": null,
+    "final_remaining": 0,
+    "unreached_observation": "no_qualifying_public_trigger_before_budget_exhaustion",
+    "successor_evidence": {
+      "public_descendant_heads_revealed": [
+        {
+          "task": 1121021538,
+          "at": {
+            "lower": 67425951,
+            "upper": 67425952,
+            "denominator": 1000000
+          }
+        },
+        {
+          "task": 1121021539,
+          "at": {
+            "lower": 83282357,
+            "upper": 83282358,
+            "denominator": 1000000
+          }
+        },
+        {
+          "task": 1121021540,
+          "at": {
+            "lower": 89913343,
+            "upper": 89913344,
+            "denominator": 1000000
+          }
+        }
+      ],
+      "public_descendants_before_budget_exhaustion": [],
+      "budget_exhaustion_at": {
+        "lower": 62294966,
+        "upper": 62294967,
+        "denominator": 1000000
+      }
+    },
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-51/1000000",
+      "time_gain_upper": "51/1000000",
+      "J_gain_lower": "-51/16385000000",
+      "J_gain_upper": "51/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-51/1000000",
+      "time_gain_upper": "51/1000000",
+      "J_gain_lower": "-51/16385000000",
+      "J_gain_upper": "51/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 0,
+      "query_delta": 16,
+      "time_gain_lower": "-664907/125000",
+      "time_gain_upper": "-2659577/500000",
+      "J_gain_lower": "-664907/2048125000",
+      "J_gain_upper": "-2659577/8192500000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "random-32-32-10_scen2_offset16_train_112102",
+    "policy": "pair_1_QUERY14_SKIP_successor",
+    "trigger": "successor",
+    "first_only_policy": "cf_1_QUERY14",
+    "first_opportunity": 1,
+    "first_action": "QUERY",
+    "anchor_identity": [
+      14,
+      "m-14-17"
+    ],
+    "anchor_tasks": [
+      1121021537
+    ],
+    "second_reached": false,
+    "second_opportunity": null,
+    "second_at": null,
+    "second_action": null,
+    "second_move": null,
+    "second_eligible": [],
+    "remaining_at_first": 16,
+    "remaining_at_second": null,
+    "final_remaining": 0,
+    "unreached_observation": "no_qualifying_public_trigger_before_budget_exhaustion",
+    "successor_evidence": {
+      "public_descendant_heads_revealed": [
+        {
+          "task": 1121021538,
+          "at": {
+            "lower": 67425951,
+            "upper": 67425952,
+            "denominator": 1000000
+          }
+        },
+        {
+          "task": 1121021539,
+          "at": {
+            "lower": 83282357,
+            "upper": 83282358,
+            "denominator": 1000000
+          }
+        },
+        {
+          "task": 1121021540,
+          "at": {
+            "lower": 89913343,
+            "upper": 89913344,
+            "denominator": 1000000
+          }
+        }
+      ],
+      "public_descendants_before_budget_exhaustion": [],
+      "budget_exhaustion_at": {
+        "lower": 60312915,
+        "upper": 60312916,
+        "denominator": 1000000
+      }
+    },
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-51/1000000",
+      "time_gain_upper": "51/1000000",
+      "J_gain_lower": "-51/16385000000",
+      "J_gain_upper": "51/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-51/1000000",
+      "time_gain_upper": "51/1000000",
+      "J_gain_lower": "-51/16385000000",
+      "J_gain_upper": "51/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 0,
+      "query_delta": 16,
+      "time_gain_lower": "-664907/125000",
+      "time_gain_upper": "-2659577/500000",
+      "J_gain_lower": "-664907/2048125000",
+      "J_gain_upper": "-2659577/8192500000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "random-32-32-10_scen2_offset16_train_112102",
+    "policy": "pair_1_WAIT14_SKIP_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_1_WAIT",
+    "first_opportunity": 1,
+    "first_action": "WAIT",
+    "anchor_identity": [
+      14,
+      "m-14-17"
+    ],
+    "anchor_tasks": [
+      1121021537
+    ],
+    "second_reached": true,
+    "second_opportunity": 2,
+    "second_at": {
+      "lower": 31165595,
+      "upper": 31165596,
+      "denominator": 1000000
+    },
+    "second_action": "SKIP",
+    "second_move": "m-15-16",
+    "second_eligible": [
+      "m-15-16"
+    ],
+    "remaining_at_first": 16,
+    "remaining_at_second": 16,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "583391/1000000",
+      "time_gain_upper": "583493/1000000",
+      "J_gain_lower": "583391/16385000000",
+      "J_gain_upper": "583493/16385000000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    },
+    "service_equal_first_only": false,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "583391/1000000",
+      "time_gain_upper": "583493/1000000",
+      "J_gain_lower": "583391/16385000000",
+      "J_gain_upper": "583493/16385000000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 0,
+      "query_delta": 16,
+      "time_gain_lower": "-2367907/500000",
+      "time_gain_upper": "-147991/31250",
+      "J_gain_lower": "-2367907/8192500000",
+      "J_gain_upper": "-147991/512031250",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "random-32-32-10_scen2_offset16_train_112102",
+    "policy": "pair_9_SKIP3_QUERY_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_9_SKIP3",
+    "first_opportunity": 9,
+    "first_action": "SKIP",
+    "anchor_identity": [
+      3,
+      "m-3-24"
+    ],
+    "anchor_tasks": [
+      1121021794
+    ],
+    "second_reached": true,
+    "second_opportunity": 10,
+    "second_at": {
+      "lower": 50993384,
+      "upper": 50993385,
+      "denominator": 1000000
+    },
+    "second_action": "QUERY",
+    "second_move": "m-4-25",
+    "second_eligible": [
+      "m-4-25"
+    ],
+    "remaining_at_first": 8,
+    "remaining_at_second": 8,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-51/1000000",
+      "time_gain_upper": "51/1000000",
+      "J_gain_lower": "-51/16385000000",
+      "J_gain_upper": "51/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-51/1000000",
+      "time_gain_upper": "51/1000000",
+      "J_gain_lower": "-51/16385000000",
+      "J_gain_upper": "51/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 0,
+      "query_delta": 16,
+      "time_gain_lower": "-664907/125000",
+      "time_gain_upper": "-2659577/500000",
+      "J_gain_lower": "-664907/2048125000",
+      "J_gain_upper": "-2659577/8192500000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "random-32-32-10_scen2_offset16_train_112102",
+    "policy": "pair_1_WAIT14_SKIP_successor",
+    "trigger": "successor",
+    "first_only_policy": "cf_1_WAIT",
+    "first_opportunity": 1,
+    "first_action": "WAIT",
+    "anchor_identity": [
+      14,
+      "m-14-17"
+    ],
+    "anchor_tasks": [
+      1121021537
+    ],
+    "second_reached": false,
+    "second_opportunity": null,
+    "second_at": null,
+    "second_action": null,
+    "second_move": null,
+    "second_eligible": [],
+    "remaining_at_first": 16,
+    "remaining_at_second": null,
+    "final_remaining": 0,
+    "unreached_observation": "no_qualifying_public_trigger_before_budget_exhaustion",
+    "successor_evidence": {
+      "public_descendant_heads_revealed": [
+        {
+          "task": 1121021538,
+          "at": {
+            "lower": 67425951,
+            "upper": 67425952,
+            "denominator": 1000000
+          }
+        },
+        {
+          "task": 1121021539,
+          "at": {
+            "lower": 83282357,
+            "upper": 83282358,
+            "denominator": 1000000
+          }
+        },
+        {
+          "task": 1121021540,
+          "at": {
+            "lower": 89913343,
+            "upper": 89913344,
+            "denominator": 1000000
+          }
+        }
+      ],
+      "public_descendants_before_budget_exhaustion": [],
+      "budget_exhaustion_at": {
+        "lower": 62294966,
+        "upper": 62294967,
+        "denominator": 1000000
+      }
+    },
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-51/1000000",
+      "time_gain_upper": "51/1000000",
+      "J_gain_lower": "-51/16385000000",
+      "J_gain_upper": "51/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-51/1000000",
+      "time_gain_upper": "51/1000000",
+      "J_gain_lower": "-51/16385000000",
+      "J_gain_upper": "51/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 0,
+      "query_delta": 16,
+      "time_gain_lower": "-664907/125000",
+      "time_gain_upper": "-2659577/500000",
+      "J_gain_lower": "-664907/2048125000",
+      "J_gain_upper": "-2659577/8192500000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "random-32-32-10_scen2_offset16_train_112102",
+    "policy": "pair_9_SKIP3_SKIP_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_9_SKIP3",
+    "first_opportunity": 9,
+    "first_action": "SKIP",
+    "anchor_identity": [
+      3,
+      "m-3-24"
+    ],
+    "anchor_tasks": [
+      1121021794
+    ],
+    "second_reached": true,
+    "second_opportunity": 10,
+    "second_at": {
+      "lower": 50993384,
+      "upper": 50993385,
+      "denominator": 1000000
+    },
+    "second_action": "SKIP",
+    "second_move": "m-4-25",
+    "second_eligible": [
+      "m-4-25"
+    ],
+    "remaining_at_first": 8,
+    "remaining_at_second": 8,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "583391/1000000",
+      "time_gain_upper": "583493/1000000",
+      "J_gain_lower": "583391/16385000000",
+      "J_gain_upper": "583493/16385000000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    },
+    "service_equal_first_only": false,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "583391/1000000",
+      "time_gain_upper": "583493/1000000",
+      "J_gain_lower": "583391/16385000000",
+      "J_gain_upper": "583493/16385000000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 0,
+      "query_delta": 16,
+      "time_gain_lower": "-2367907/500000",
+      "time_gain_upper": "-147991/31250",
+      "J_gain_lower": "-2367907/8192500000",
+      "J_gain_upper": "-147991/512031250",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "random-32-32-10_scen2_offset16_train_112102",
+    "policy": "pair_9_WAIT3_QUERY_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_9_WAIT",
+    "first_opportunity": 9,
+    "first_action": "WAIT",
+    "anchor_identity": [
+      3,
+      "m-3-24"
+    ],
+    "anchor_tasks": [
+      1121021794
+    ],
+    "second_reached": true,
+    "second_opportunity": 11,
+    "second_at": {
+      "lower": 50993384,
+      "upper": 50993385,
+      "denominator": 1000000
+    },
+    "second_action": "QUERY",
+    "second_move": "m-4-25",
+    "second_eligible": [
+      "m-4-25"
+    ],
+    "remaining_at_first": 8,
+    "remaining_at_second": 7,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-51/1000000",
+      "time_gain_upper": "51/1000000",
+      "J_gain_lower": "-51/16385000000",
+      "J_gain_upper": "51/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-51/1000000",
+      "time_gain_upper": "51/1000000",
+      "J_gain_lower": "-51/16385000000",
+      "J_gain_upper": "51/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 0,
+      "query_delta": 16,
+      "time_gain_lower": "-664907/125000",
+      "time_gain_upper": "-2659577/500000",
+      "J_gain_lower": "-664907/2048125000",
+      "J_gain_upper": "-2659577/8192500000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "random-32-32-10_scen2_offset16_train_112102",
+    "policy": "pair_1_QUERY14_QUERY_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_1_QUERY14",
+    "first_opportunity": 1,
+    "first_action": "QUERY",
+    "anchor_identity": [
+      14,
+      "m-14-17"
+    ],
+    "anchor_tasks": [
+      1121021537
+    ],
+    "second_reached": true,
+    "second_opportunity": 2,
+    "second_at": {
+      "lower": 31165595,
+      "upper": 31165596,
+      "denominator": 1000000
+    },
+    "second_action": "QUERY",
+    "second_move": "m-15-16",
+    "second_eligible": [
+      "m-15-16"
+    ],
+    "remaining_at_first": 16,
+    "remaining_at_second": 15,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-51/1000000",
+      "time_gain_upper": "51/1000000",
+      "J_gain_lower": "-51/16385000000",
+      "J_gain_upper": "51/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-51/1000000",
+      "time_gain_upper": "51/1000000",
+      "J_gain_lower": "-51/16385000000",
+      "J_gain_upper": "51/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 0,
+      "query_delta": 16,
+      "time_gain_lower": "-664907/125000",
+      "time_gain_upper": "-2659577/500000",
+      "J_gain_lower": "-664907/2048125000",
+      "J_gain_upper": "-2659577/8192500000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "random-32-32-10_scen2_offset16_train_112102",
+    "policy": "pair_9_QUERY3_SKIP_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_9_QUERY3",
+    "first_opportunity": 9,
+    "first_action": "QUERY",
+    "anchor_identity": [
+      3,
+      "m-3-24"
+    ],
+    "anchor_tasks": [
+      1121021794
+    ],
+    "second_reached": true,
+    "second_opportunity": 10,
+    "second_at": {
+      "lower": 50993384,
+      "upper": 50993385,
+      "denominator": 1000000
+    },
+    "second_action": "SKIP",
+    "second_move": "m-4-25",
+    "second_eligible": [
+      "m-4-25"
+    ],
+    "remaining_at_first": 8,
+    "remaining_at_second": 7,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-51/1000000",
+      "time_gain_upper": "51/1000000",
+      "J_gain_lower": "-51/16385000000",
+      "J_gain_upper": "51/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-51/1000000",
+      "time_gain_upper": "51/1000000",
+      "J_gain_lower": "-51/16385000000",
+      "J_gain_upper": "51/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 0,
+      "query_delta": 16,
+      "time_gain_lower": "-664907/125000",
+      "time_gain_upper": "-2659577/500000",
+      "J_gain_lower": "-664907/2048125000",
+      "J_gain_upper": "-2659577/8192500000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "random-32-32-10_scen2_offset16_train_112102",
+    "policy": "pair_1_SKIP14_QUERY_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_1_SKIP14",
+    "first_opportunity": 1,
+    "first_action": "SKIP",
+    "anchor_identity": [
+      14,
+      "m-14-17"
+    ],
+    "anchor_tasks": [
+      1121021537
+    ],
+    "second_reached": true,
+    "second_opportunity": 2,
+    "second_at": {
+      "lower": 31165595,
+      "upper": 31165596,
+      "denominator": 1000000
+    },
+    "second_action": "QUERY",
+    "second_move": "m-15-16",
+    "second_eligible": [
+      "m-15-16"
+    ],
+    "remaining_at_first": 16,
+    "remaining_at_second": 16,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-51/1000000",
+      "time_gain_upper": "51/1000000",
+      "J_gain_lower": "-51/16385000000",
+      "J_gain_upper": "51/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-51/1000000",
+      "time_gain_upper": "51/1000000",
+      "J_gain_lower": "-51/16385000000",
+      "J_gain_upper": "51/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 0,
+      "query_delta": 16,
+      "time_gain_lower": "-664907/125000",
+      "time_gain_upper": "-2659577/500000",
+      "J_gain_lower": "-664907/2048125000",
+      "J_gain_upper": "-2659577/8192500000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "random-32-32-10_scen2_offset16_train_112102",
+    "policy": "pair_9_QUERY3_QUERY_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_9_QUERY3",
+    "first_opportunity": 9,
+    "first_action": "QUERY",
+    "anchor_identity": [
+      3,
+      "m-3-24"
+    ],
+    "anchor_tasks": [
+      1121021794
+    ],
+    "second_reached": true,
+    "second_opportunity": 10,
+    "second_at": {
+      "lower": 50993384,
+      "upper": 50993385,
+      "denominator": 1000000
+    },
+    "second_action": "QUERY",
+    "second_move": "m-4-25",
+    "second_eligible": [
+      "m-4-25"
+    ],
+    "remaining_at_first": 8,
+    "remaining_at_second": 7,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-51/1000000",
+      "time_gain_upper": "51/1000000",
+      "J_gain_lower": "-51/16385000000",
+      "J_gain_upper": "51/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-51/1000000",
+      "time_gain_upper": "51/1000000",
+      "J_gain_lower": "-51/16385000000",
+      "J_gain_upper": "51/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 0,
+      "query_delta": 16,
+      "time_gain_lower": "-664907/125000",
+      "time_gain_upper": "-2659577/500000",
+      "J_gain_lower": "-664907/2048125000",
+      "J_gain_upper": "-2659577/8192500000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "random-32-32-10_scen2_offset16_train_112102",
+    "policy": "pair_1_WAIT14_QUERY_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_1_WAIT",
+    "first_opportunity": 1,
+    "first_action": "WAIT",
+    "anchor_identity": [
+      14,
+      "m-14-17"
+    ],
+    "anchor_tasks": [
+      1121021537
+    ],
+    "second_reached": true,
+    "second_opportunity": 2,
+    "second_at": {
+      "lower": 31165595,
+      "upper": 31165596,
+      "denominator": 1000000
+    },
+    "second_action": "QUERY",
+    "second_move": "m-15-16",
+    "second_eligible": [
+      "m-15-16"
+    ],
+    "remaining_at_first": 16,
+    "remaining_at_second": 16,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-51/1000000",
+      "time_gain_upper": "51/1000000",
+      "J_gain_lower": "-51/16385000000",
+      "J_gain_upper": "51/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-51/1000000",
+      "time_gain_upper": "51/1000000",
+      "J_gain_lower": "-51/16385000000",
+      "J_gain_upper": "51/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 0,
+      "query_delta": 16,
+      "time_gain_lower": "-664907/125000",
+      "time_gain_upper": "-2659577/500000",
+      "J_gain_lower": "-664907/2048125000",
+      "J_gain_upper": "-2659577/8192500000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "random-32-32-10_scen2_offset16_train_112102",
+    "policy": "pair_9_WAIT3_SKIP_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_9_WAIT",
+    "first_opportunity": 9,
+    "first_action": "WAIT",
+    "anchor_identity": [
+      3,
+      "m-3-24"
+    ],
+    "anchor_tasks": [
+      1121021794
+    ],
+    "second_reached": true,
+    "second_opportunity": 11,
+    "second_at": {
+      "lower": 50993384,
+      "upper": 50993385,
+      "denominator": 1000000
+    },
+    "second_action": "SKIP",
+    "second_move": "m-4-25",
+    "second_eligible": [
+      "m-4-25"
+    ],
+    "remaining_at_first": 8,
+    "remaining_at_second": 7,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-51/1000000",
+      "time_gain_upper": "51/1000000",
+      "J_gain_lower": "-51/16385000000",
+      "J_gain_upper": "51/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "service_equal_first_only": true,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "-51/1000000",
+      "time_gain_upper": "51/1000000",
+      "J_gain_lower": "-51/16385000000",
+      "J_gain_upper": "51/16385000000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": true
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 0,
+      "query_delta": 16,
+      "time_gain_lower": "-664907/125000",
+      "time_gain_upper": "-2659577/500000",
+      "J_gain_lower": "-664907/2048125000",
+      "J_gain_upper": "-2659577/8192500000",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    }
+  },
+  {
+    "world": "random-32-32-10_scen2_offset16_train_112102",
+    "policy": "pair_1_SKIP14_SKIP_distinct",
+    "trigger": "distinct",
+    "first_only_policy": "cf_1_SKIP14",
+    "first_opportunity": 1,
+    "first_action": "SKIP",
+    "anchor_identity": [
+      14,
+      "m-14-17"
+    ],
+    "anchor_tasks": [
+      1121021537
+    ],
+    "second_reached": true,
+    "second_opportunity": 2,
+    "second_at": {
+      "lower": 31165595,
+      "upper": 31165596,
+      "denominator": 1000000
+    },
+    "second_action": "SKIP",
+    "second_move": "m-15-16",
+    "second_eligible": [
+      "m-15-16"
+    ],
+    "remaining_at_first": 16,
+    "remaining_at_second": 16,
+    "final_remaining": 0,
+    "unreached_observation": null,
+    "successor_evidence": null,
+    "vs_first_only": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "583391/1000000",
+      "time_gain_upper": "583493/1000000",
+      "J_gain_lower": "583391/16385000000",
+      "J_gain_upper": "583493/16385000000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    },
+    "service_equal_first_only": false,
+    "vs_condition": {
+      "task_gain": 0,
+      "query_delta": 0,
+      "time_gain_lower": "583391/1000000",
+      "time_gain_upper": "583493/1000000",
+      "J_gain_lower": "583391/16385000000",
+      "J_gain_upper": "583493/16385000000",
+      "robust_J_improvement": true,
+      "midpoint_J_improvement": true,
+      "interval_unresolved": false
+    },
+    "vs_whole_WAIT": {
+      "task_gain": 0,
+      "query_delta": 16,
+      "time_gain_lower": "-2367907/500000",
+      "time_gain_upper": "-147991/31250",
+      "J_gain_lower": "-2367907/8192500000",
+      "J_gain_upper": "-147991/512031250",
+      "robust_J_improvement": false,
+      "midpoint_J_improvement": false,
+      "interval_unresolved": false
+    }
+  }
+]

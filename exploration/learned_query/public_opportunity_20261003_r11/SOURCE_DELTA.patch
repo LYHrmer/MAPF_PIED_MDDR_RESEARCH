@@ -1,0 +1,96 @@
+--- R10/joint_history_native.cpp
++++ R11/joint_history_native.cpp
+@@ -51,6 +51,10 @@
+     std::map<std::string,std::vector<R>> parameters;long rr_cursor=-1;
+     mutable bool intervention_done=false;
+     std::set<std::pair<unsigned,std::string>> skipped;
++    std::map<unsigned,unsigned> public_head_parent;
++    mutable unsigned pair_stage=0,anchor_agent=1000;
++    mutable std::string anchor_move;
++    mutable std::set<unsigned> anchor_tasks;
+ public:
+     struct Claim { unsigned task,remaining,owners; };
+     struct Candidate { std::string key,heading;unsigned agent;R launch;std::vector<Claim> claims;std::vector<R> features; };
+@@ -60,6 +64,12 @@
+     bool accept_end(unsigned agent,const std::string& move){return skipped.erase({agent,move})!=0;}
+     void skip_state()const{bool comma=false;for(const auto& x:skipped){if(comma)std::cout<<',';comma=true;std::cout<<"["<<x.first<<",\""<<x.second<<"\"]";}}
+ 
++    void public_successor(unsigned previous,unsigned current){check(public_head_parent.emplace(current,previous).second,"duplicate public head identity");}
++    bool is_public_successor(unsigned task)const{
++        auto it=public_head_parent.find(task);
++        while(it!=public_head_parent.end()){if(anchor_tasks.count(it->second))return true;it=public_head_parent.find(it->second);}
++        return false;
++    }
+     void queried(unsigned agent){rr_cursor=static_cast<long>(agent);}
+     void coefficient(const std::string& model,const R& x){parameters[model].push_back(x);}
+     int decode(const History& h)const{
+@@ -122,8 +132,34 @@
+         check(O::cmp(age,rat(16))<=0,"candidate source age support");c.features.push_back(O::div(floor6(age),rat(2)));c.features.push_back(O::mul(prior,structural.at(2)));
+     }
+     std::string choose(const std::vector<Candidate>& input,const R& at,unsigned capacity,const std::string& policy,unsigned opportunity,const std::string& trigger)const{
+-        std::string scoring_policy=policy;
+-        if(policy.substr(0,3)=="cf_"){
++        std::string scoring_policy=policy;unsigned intervention_index=0;
++        std::vector<std::string> second_eligible;
++        if(policy.substr(0,5)=="pair_"){
++            std::vector<std::string> parts;std::istringstream stream(policy);std::string part;while(std::getline(stream,part,'_'))parts.push_back(part);
++            check(parts.size()==5,"pair policy syntax");const unsigned target=static_cast<unsigned>(std::stoul(parts[1]));
++            check(parts[3]=="QUERY"||parts[3]=="SKIP","second action support");check(parts[4]=="distinct"||parts[4]=="successor","second public trigger support");
++            scoring_policy="condition";
++            if(pair_stage==0&&opportunity==target){
++                const auto digit=parts[2].find_first_of("0123456789");check(digit!=std::string::npos&&capacity>0,"pair first source/capacity");
++                anchor_agent=static_cast<unsigned>(std::stoul(parts[2].substr(digit)));const std::string kind=parts[2].substr(0,digit);
++                check(kind=="QUERY"||kind=="SKIP"||kind=="WAIT","first action support");
++                const auto c=std::find_if(input.begin(),input.end(),[&](const Candidate& x){return x.agent==anchor_agent;});check(c!=input.end(),"first pair public occurrence unavailable");
++                anchor_move=c->key;for(const auto& claim:c->claims)anchor_tasks.insert(claim.task);
++                scoring_policy="force_"+(kind=="WAIT"?"WAIT":parts[2]);pair_stage=1;intervention_index=1;
++            } else if(pair_stage==1&&opportunity>target&&capacity>0){
++                const Candidate* chosen=nullptr;R best_condition=rat(0);
++                for(const auto& c:input){
++                    if(c.agent==anchor_agent&&c.key==anchor_move)continue;
++                    bool eligible=parts[4]=="distinct";if(!eligible)for(const auto& claim:c.claims)if(is_public_successor(claim.task))eligible=true;
++                    if(!eligible)continue;
++                    second_eligible.push_back(c.key);R score=rat(0);const R probability=survival_release_probability(c.agent,O::sub(at,c.launch));
++                    for(const auto& claim:c.claims)score=O::add(score,O::div(probability,rat(claim.remaining*claim.owners)));
++                    if(!chosen||O::cmp(score,best_condition)>0||(same(score,best_condition)&&(c.agent<chosen->agent||(c.agent==chosen->agent&&c.key<chosen->key)))){chosen=&c;best_condition=score;}
++                }
++                if(chosen){scoring_policy="force_"+parts[3]+std::to_string(chosen->agent);pair_stage=2;intervention_index=2;}
++            }
++        }
++        else if(policy.substr(0,3)=="cf_"){
+             const auto pos=policy.find('_',3);check(pos!=std::string::npos,"invalid counterfactual policy");
+             const unsigned target=static_cast<unsigned>(std::stoul(policy.substr(3,pos-3)));
+             scoring_policy=opportunity==target?"force_"+policy.substr(pos+1):"condition";
+@@ -167,7 +203,11 @@
+             bool cc=false;for(const auto& cl:c.claims){if(cc)std::cout<<',';cc=true;std::cout<<"{\"task\":"<<cl.task<<",\"remaining_route_items\":"<<cl.remaining<<",\"owners\":"<<cl.owners<<'}';}
+             std::cout<<"],\"features\":[";bool ff=false;for(const auto& z:c.features){if(ff)std::cout<<',';ff=true;std::cout<<'"'<<exact(z)<<'"';}std::cout<<"]}";
+         }
+-        std::cout<<"],\"selected\":\""<<selected<<"\",\"selected_kind\":\""<<selected_kind<<"\",\"END_only_known\":"<<known<<",\"END_unknown\":"<<unknown<<",\"private_progress_input\":false,\"regime_input\":false,\"future_head_input\":false}\n";
++        std::cout<<"],\"intervention_index\":"<<intervention_index<<",\"pair_stage\":"<<pair_stage<<",\"anchor_agent\":"<<anchor_agent<<",\"anchor_move\":\""<<anchor_move<<"\",\"anchor_tasks\":[";
++        bool ac=false;for(unsigned task:anchor_tasks){if(ac)std::cout<<',';ac=true;std::cout<<task;}
++        std::cout<<"],\"second_eligible\":[";ac=false;for(const auto& key:second_eligible){if(ac)std::cout<<',';ac=true;std::cout<<'"'<<key<<'"';}
++        std::cout<<"],\"head_lineage_count\":"<<public_head_parent.size();
++        std::cout<<",\"selected\":\""<<selected<<"\",\"selected_kind\":\""<<selected_kind<<"\",\"END_only_known\":"<<known<<",\"END_unknown\":"<<unknown<<",\"private_progress_input\":false,\"regime_input\":false,\"future_head_input\":false}\n";
+         return selected_kind=="SKIP"?"SKIP:"+selected:selected;
+     }
+ };
+@@ -319,8 +359,10 @@
+             if(actor.accept_end(robots[m->robot].agent,m->key))event("public_SKIP_cleared_normal_END",m->key);
+             event("native_READY",m->key);
+             auto& r=robots[m->robot];if(r.served && r.head_index+1<r.heads.size()){
++                const unsigned previous_public_task=r.task;
+                 ++r.head_index;const auto& head=r.heads[r.head_index];r.task=head.task;r.gx=head.gx;r.gy=head.gy;r.served=false;r.released=clock;++target_tasks;
+                 std::cout<<"{\"event\":\"public_head_revealed\",\"agent\":"<<r.agent<<",\"head_index\":"<<r.head_index<<",\"task\":"<<r.task<<",\"head_end\":"<<r.head_end<<",\"goal\":["<<r.gx<<','<<r.gy<<"],\"at\":";bound3(clock);std::cout<<",\"previous_service_and_END\":true}\n";
++                actor.public_successor(previous_public_task,r.task);
+             }
+         }
+         for(auto& r:robots)if(r.wait_until && same(*r.wait_until,clock)){r.wait_until.reset();r.ready=true;event("public_WAIT_ended",std::to_string(r.agent));}
+@@ -478,7 +520,7 @@
+ }
+ int main(int argc,char** argv) {
+     try {check(argc==4,"joint input policy capacity arguments required");const unsigned b=static_cast<unsigned>(std::stoul(argv[3]));check(b<=64,"joint capacity outside contract");
+-        const std::string p=argv[2];check(p=="WAIT"||p=="RR"||p=="condition"||p.substr(0,3)=="cf_"||p=="once_history"||p=="once_nohistory"||p=="once_WAIT"||p=="once_SKIP","unknown joint policy");
++        const std::string p=argv[2];check(p=="WAIT"||p=="RR"||p=="condition"||p.substr(0,3)=="cf_"||p.substr(0,5)=="pair_"||p=="once_history"||p=="once_nohistory"||p=="once_WAIT"||p=="once_SKIP","unknown joint policy");
+         World3 world(argv[1],p,b);world.run();return 0;}
+     catch(const std::exception& e){std::cerr<<"joint native failed after "<<checks<<" checks: "<<e.what()<<'\n';return 1;}
+ }
