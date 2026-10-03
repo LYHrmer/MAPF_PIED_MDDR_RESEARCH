@@ -1,5 +1,13 @@
 # 实验前进度入口
 
+2026-10-03 R9：**同一计费guest内的连续任务生命周期已跑通；两条学习线完成冻结留出；作者Improved GSES已编译并通过原始实例预检。** [三线实绩、Astra与科研导师分别判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261003_R9.md)。
+
+主线四个最终臂中，每机器人完成两次原MOVE和两次guest服务，任务头与资源根联合提交，最终actions/demands归零。服务均为16/17/19/20；Natural费用WAIT189,292,737、paid282,683,143；Strict charged603,979,776 / 1,333,788,672。462费用段、396物理帧及6份隔离重编ELF通过核验。它是有限预置FIFO闭环，固定日程无时间或任务收益；下一步接事件驱动的及时服务与查询结账并发。
+
+[查询R9](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/learned-query/exploration/learned_query/matched_tail_20261003_r9/REPORT.md)完成6个收集运行＋45个同续策探针＋40个留出，91次均成功。WAIT完成366任务；condition与三种有/无历史、无预算模型均367任务且均123query，逐world固定FIFO时间也与condition一致，没有新增学习收益。[误差R9](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/primitive_duration_20261003_r9/REPORT.md)修正primitive标签并完成6机械＋24留出，hm/history/learned为184/186/188；学习仅一个条件多2任务，预测MAE反而更差，下一拆分离线几何先验与在线历史贡献。
+
+[作者GSES预检](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/gses_author_preflight_20261003_r9/REPORT.md)保持原源码，四组预定输入中Improved GSES4/4成功，基础GSES2成功2超时。尚未与连续FIFO任务统一比较。公共main仍只更新四份进度文档，原稿未改。下方R8及更早按历史记录阅读。
+
 2026-10-01 第八轮更新（R8，Q2 §78）：**主线普通END、过期查询结账与WAIT真实费用已闭合；查询价值模型与第三线合法局部执行均完成新留出。** 本轮实际由GPT-6-Astra/ultra与research-mentor分别预审后实施，详见[三线结果与下一设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261001_R8.md)。
 
 主线长度3/12/27×WAIT/paid×Natural/Strict共12臂全部exit0、728闭合计费段。新增绑定Center Business的普通END SOURCE，由guest重放原控制器、核真实终点零速，再更新原资源root；短paid过期POSITION仍收四terminal，但没有成功receipt。短/中两例后车均不提前；长例RUN为WAIT9、paid6。Natural完整guest费用分别WAIT49,687,854/67,774,408/111,707,051，paid138,931,620/168,450,776/221,131,986。费用增加与长例提前3并列报告，不作未定义的净收益换算。普通END为direct registered SOURCE，后车END/服务仍fixture。
