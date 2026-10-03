@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "candidate_imports": false,
+  "models": {
+    "ridge_history_QUERY": {
+      "train_rows": 28,
+      "families": 8,
+      "opportunity_weight_sum": 24.0,
+      "max_raw_coefficient_difference": 3.197442310920451e-14
+    },
+    "ridge_history_SKIP": {
+      "train_rows": 28,
+      "families": 8,
+      "opportunity_weight_sum": 24.0,
+      "max_raw_coefficient_difference": 1.4072944198861848e-16
+    },
+    "ridge_nohistory_QUERY": {
+      "train_rows": 28,
+      "families": 8,
+      "opportunity_weight_sum": 24.0,
+      "max_raw_coefficient_difference": 4.440892098500626e-14
+    },
+    "ridge_nohistory_SKIP": {
+      "train_rows": 28,
+      "families": 8,
+      "opportunity_weight_sum": 24.0,
+      "max_raw_coefficient_difference": 1.1102230246251565e-16
+    }
+  },
+  "labels": 98,
+  "model_sha256": "52e1573ffd45eb5920450eb9f67a40d369b353162d94856894f663cf8d16cd14",
+  "scope": "four separate QUERY/SKIP ridge heads, train-only weighted standardization, augmented least-squares, rounded exact deployment coefficients and pre-test freeze"
+}

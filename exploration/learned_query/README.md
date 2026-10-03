@@ -1,5 +1,9 @@
 # 学习辅助进度查询：探索说明
 
+2026-10-03 R10：[持续SKIP实现与156次原生运行](skip_occurrence_20261003_r10/REPORT.md)已完成。SKIP绑定当前agent/action，到accepted正常END才清除；42次安装、118次重现屏蔽与后继资格均核验。48留出WAIT348任务，condition、once WAIT/SKIP及有/无历史模型均344，非WAIT均128query；模型没有新增任务或服务序列收益。
+
+根的[机会改进空间诊断](skip_occurrence_20261003_r10/ROOT_OPPORTUNITY_HEADROOM.json)发现：30个已登记TRAIN/CAL机会的全部98分支，最佳单次动作相对原condition主任务提升空间为0；唯一QUERY+1标签只是胜过当前WAIT。下一应先识别有真实任务后果的合法决策集合，不靠加大模型解释当前零增益。代码、冻结模型、9个互斥raw包与6份root核验工件完整发布；[三线判断及下一合同](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261003_R10.md)。以下R9及更早为历史。
+
 2026-10-03 R9：[同续策预算价值实验](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/learned-query/exploration/learned_query/matched_tail_20261003_r9/REPORT.md)已完成91次成功原生运行，包括40个冻结留出。24个query标签和21个WAIT分支明确比较“当前选择后均继续同一π₀”，三模型实际训练部署。WAIT366任务；condition与history/nohistory/nobudget均367任务、123query，逐world固定FIFO时间也完全一致。没有新增学习收益，+1来自原condition策略。
 
 本轮修正了估计目标，但16个训练query标签的主任务差全部0；下一优先增加真实决策分歧与可用训练信号，再检验历史/预算作用。生产COST尚未接入。[三线判断与后续设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261003_R9.md)。下方R8及更早为保留历史。

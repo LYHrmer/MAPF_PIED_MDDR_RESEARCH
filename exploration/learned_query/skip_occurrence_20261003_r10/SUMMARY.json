@@ -1,0 +1,152 @@
+{
+  "totals": {
+    "WAIT": {
+      "episodes": 8,
+      "served": 348,
+      "queries": 0,
+      "first4_restricted_time": "11644381493/250000",
+      "family_task_delta_vs_condition": {
+        "101301": 0,
+        "101302": 0,
+        "102301": 4,
+        "102302": 0
+      }
+    },
+    "condition": {
+      "episodes": 8,
+      "served": 344,
+      "queries": 128,
+      "first4_restricted_time": "46656116227/1000000",
+      "family_task_delta_vs_condition": {
+        "101301": 0,
+        "101302": 0,
+        "102301": 0,
+        "102302": 0
+      }
+    },
+    "once_WAIT": {
+      "episodes": 8,
+      "served": 344,
+      "queries": 128,
+      "first4_restricted_time": "46656116227/1000000",
+      "family_task_delta_vs_condition": {
+        "101301": 0,
+        "101302": 0,
+        "102301": 0,
+        "102302": 0
+      }
+    },
+    "once_SKIP": {
+      "episodes": 8,
+      "served": 344,
+      "queries": 128,
+      "first4_restricted_time": "46653782459/1000000",
+      "family_task_delta_vs_condition": {
+        "101301": 0,
+        "101302": 0,
+        "102301": 0,
+        "102302": 0
+      }
+    },
+    "once_history": {
+      "episodes": 8,
+      "served": 344,
+      "queries": 128,
+      "first4_restricted_time": "46656116227/1000000",
+      "family_task_delta_vs_condition": {
+        "101301": 0,
+        "101302": 0,
+        "102301": 0,
+        "102302": 0
+      }
+    },
+    "once_nohistory": {
+      "episodes": 8,
+      "served": 344,
+      "queries": 128,
+      "first4_restricted_time": "46656116227/1000000",
+      "family_task_delta_vs_condition": {
+        "101301": 0,
+        "101302": 0,
+        "102301": 0,
+        "102302": 0
+      }
+    }
+  },
+  "label_distribution": {
+    "train_QUERY": {
+      "rows": 28,
+      "target_signs": {
+        "zero": 14,
+        "negative": 7,
+        "positive": 7
+      },
+      "whole_service_gains": {
+        "0": 27,
+        "1": 1
+      }
+    },
+    "train_SKIP": {
+      "rows": 28,
+      "target_signs": {
+        "zero": 13,
+        "negative": 8,
+        "positive": 7
+      },
+      "whole_service_gains": {
+        "0": 28
+      }
+    },
+    "calibration_QUERY": {
+      "rows": 6,
+      "target_signs": {
+        "zero": 5,
+        "negative": 1
+      },
+      "whole_service_gains": {
+        "0": 6
+      }
+    },
+    "calibration_SKIP": {
+      "rows": 6,
+      "target_signs": {
+        "positive": 2,
+        "zero": 4
+      },
+      "whole_service_gains": {
+        "0": 6
+      }
+    }
+  },
+  "failed": 0,
+  "native_episodes": 156,
+  "probe_episodes": 98,
+  "selected_opportunities": 30,
+  "selected_multi_opportunities": 4,
+  "mechanisms": {
+    "once_WAIT": {
+      "replacements": 8,
+      "changed": 8,
+      "SKIPs": 0,
+      "services_changed": 0
+    },
+    "once_SKIP": {
+      "replacements": 8,
+      "changed": 8,
+      "SKIPs": 8,
+      "services_changed": 2
+    },
+    "once_history": {
+      "replacements": 8,
+      "changed": 2,
+      "SKIPs": 0,
+      "services_changed": 0
+    },
+    "once_nohistory": {
+      "replacements": 8,
+      "changed": 0,
+      "SKIPs": 0,
+      "services_changed": 0
+    }
+  }
+}

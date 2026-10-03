@@ -1,0 +1,124 @@
+--- R9/joint_history_native.cpp
++++ R10/joint_history_native.cpp
+@@ -50,10 +50,16 @@
+     std::map<std::string,Count> counts;std::map<unsigned,Agent> agents;
+     std::map<std::string,std::vector<R>> parameters;long rr_cursor=-1;
+     mutable bool intervention_done=false;
++    std::set<std::pair<unsigned,std::string>> skipped;
+ public:
+     struct Claim { unsigned task,remaining,owners; };
+     struct Candidate { std::string key,heading;unsigned agent;R launch;std::vector<Claim> claims;std::vector<R> features; };
+     unsigned known=0,unknown=0;
++    bool is_skipped(unsigned agent,const std::string& move)const{return skipped.count({agent,move})!=0;}
++    void skip(unsigned agent,const std::string& move){check(skipped.insert({agent,move}).second,"duplicate occurrence skip");}
++    bool accept_end(unsigned agent,const std::string& move){return skipped.erase({agent,move})!=0;}
++    void skip_state()const{bool comma=false;for(const auto& x:skipped){if(comma)std::cout<<',';comma=true;std::cout<<"["<<x.first<<",\""<<x.second<<"\"]";}}
++
+     void queried(unsigned agent){rr_cursor=static_cast<long>(agent);}
+     void coefficient(const std::string& model,const R& x){parameters[model].push_back(x);}
+     int decode(const History& h)const{
+@@ -124,9 +130,11 @@
+             if(opportunity==target){check(!intervention_done&&capacity>0,"counterfactual repeated or exhausted");intervention_done=true;}
+         } else if(policy.substr(0,5)=="once_"){
+             scoring_policy="condition";
+-            if(!intervention_done&&capacity>0&&16-capacity>=6){scoring_policy="ridge_"+policy.substr(5);intervention_done=true;}
+-        }
+-        std::string selected;R best=rat(0);unsigned best_agent=1000;
++            if(!intervention_done&&capacity>0&&16-capacity>=6){
++                scoring_policy=policy=="once_WAIT"?"force_WAIT":policy=="once_SKIP"?"skip_condition":"ridge_"+policy.substr(5);intervention_done=true;
++            }
++        }
++        std::string selected,selected_kind="WAIT";R best=rat(0);unsigned best_agent=1000,best_kind=2;
+         std::cout<<"{\"event\":\"actor_decision\",\"at\":";bound3(at);
+         std::cout<<",\"policy\":\""<<policy<<"\",\"remaining_capacity\":"<<capacity<<",\"decision_mode\":\""<<scoring_policy<<"\",\"opportunity\":"<<opportunity<<",\"trigger\":\""<<trigger<<"\",\"RR_cursor\":"<<rr_cursor<<",\"candidates\":[";
+         bool comma=false;
+@@ -136,31 +144,31 @@
+             c.features.push_back(O::mul(budget,c.features.at(19)));c.features.push_back(O::mul(budget,O::sub(rat(1),time)));
+             check(O::cmp(O::sub(at,c.launch),rat(3,4))>=0,"R5b actor source below age gate");
+             check(has_history(c.agent)&&known>=2,"R5 actor before same-world END history");
+-            const R p=survival_release_probability(c.agent,O::sub(at,c.launch));R score=rat(0);
+-            if(scoring_policy=="RR")score=rat(100-((static_cast<long>(c.agent)+100-(rr_cursor+1))%100));
+-            else if(scoring_policy.substr(0,6)=="force_"){
+-                const std::string target=scoring_policy.substr(6);
+-                score=target!="WAIT"&&c.agent==static_cast<unsigned>(std::stoul(target))?rat(1):rat(0);
+-            }
+-            else if(scoring_policy=="ridge_history"||scoring_policy=="ridge_nohistory"||scoring_policy=="ridge_nobudget"){
+-                const auto& coefficients=parameters.at(scoring_policy);check(coefficients.size()==25&&c.features.size()==24,"R9 ridge parameters/features");score=coefficients[0];
+-                for(unsigned j=0;j<24;++j){
+-                    const bool masked=(scoring_policy=="ridge_nohistory"&&j>=10&&j<18)||(scoring_policy=="ridge_nobudget"&&(j==20||j==22||j==23));
+-                    if(!masked)score=O::add(score,O::mul(coefficients[j+1],c.features[j]));
+-                }
+-            }
+-            else if(scoring_policy=="condition")for(const auto& cl:c.claims)score=O::add(score,O::div(p,rat(cl.remaining*cl.owners)));
+-            check(c.features.size()==24,"R9 public feature dimensions");
+-            if(capacity&&O::cmp(score,rat(0))>0&&(selected.empty()||O::cmp(score,best)>0||(same(score,best)&&c.agent<best_agent))){selected=c.key;best=score;best_agent=c.agent;}
++            const R p=survival_release_probability(c.agent,O::sub(at,c.launch));std::vector<R> scores={rat(0),rat(0)};
++            for(unsigned kind=0;kind<2;++kind){
++                R score=rat(0);const std::string name=kind==0?"QUERY":"SKIP";
++                if(scoring_policy=="RR"&&kind==0)score=rat(100-((static_cast<long>(c.agent)+100-(rr_cursor+1))%100));
++                else if(scoring_policy.substr(0,6)=="force_"){
++                    const std::string target=scoring_policy.substr(6);
++                    score=target==name+std::to_string(c.agent)?rat(1):rat(0);
++                } else if(scoring_policy=="ridge_history"||scoring_policy=="ridge_nohistory"){
++                    const auto& coefficients=parameters.at(scoring_policy+"_"+name);check(coefficients.size()==25&&c.features.size()==24,"R10 ridge parameters/features");score=coefficients[0];
++                    for(unsigned j=0;j<24;++j)if(!(scoring_policy=="ridge_nohistory"&&j>=10&&j<18))score=O::add(score,O::mul(coefficients[j+1],c.features[j]));
++                } else if((scoring_policy=="condition"&&kind==0)||(scoring_policy=="skip_condition"&&kind==1))for(const auto& cl:c.claims)score=O::add(score,O::div(p,rat(cl.remaining*cl.owners)));
++                scores[kind]=score;
++                const bool tie=kind<best_kind||(kind==best_kind&&(c.agent<best_agent||(c.agent==best_agent&&c.key<selected)));
++                if(capacity&&O::cmp(score,rat(0))>0&&(selected.empty()||O::cmp(score,best)>0||(same(score,best)&&tie))){selected=c.key;selected_kind=name;best=score;best_agent=c.agent;best_kind=kind;}
++            }
++            check(c.features.size()==24,"R10 public feature dimensions");
+             if(comma)std::cout<<',';
+             comma=true;
+             std::cout<<"{\"move\":\""<<c.key<<"\",\"agent\":"<<c.agent<<",\"heading\":\""<<c.heading<<"\",\"public_launch\":";bound3(c.launch);
+-            std::cout<<",\"probability\":\""<<exact(p)<<"\",\"score\":\""<<exact(score)<<"\",\"claims\":[";
++            std::cout<<",\"probability\":\""<<exact(p)<<"\",\"score\":\""<<exact(scores[0])<<"\",\"skip_score\":\""<<exact(scores[1])<<"\",\"claims\":[";
+             bool cc=false;for(const auto& cl:c.claims){if(cc)std::cout<<',';cc=true;std::cout<<"{\"task\":"<<cl.task<<",\"remaining_route_items\":"<<cl.remaining<<",\"owners\":"<<cl.owners<<'}';}
+             std::cout<<"],\"features\":[";bool ff=false;for(const auto& z:c.features){if(ff)std::cout<<',';ff=true;std::cout<<'"'<<exact(z)<<'"';}std::cout<<"]}";
+         }
+-        std::cout<<"],\"selected\":\""<<selected<<"\",\"END_only_known\":"<<known<<",\"END_unknown\":"<<unknown<<",\"private_progress_input\":false,\"regime_input\":false,\"future_head_input\":false}\n";
+-        return selected;
++        std::cout<<"],\"selected\":\""<<selected<<"\",\"selected_kind\":\""<<selected_kind<<"\",\"END_only_known\":"<<known<<",\"END_unknown\":"<<unknown<<",\"private_progress_input\":false,\"regime_input\":false,\"future_head_input\":false}\n";
++        return selected_kind=="SKIP"?"SKIP:"+selected:selected;
+     }
+ };
+ struct Move3 {
+@@ -308,6 +316,7 @@
+             std::cout<<",\"public_original_END\":";bound3(*m->ended);std::cout<<",\"public_launch\":";bound3(m->launch);
+             std::cout<<",\"duration\":";bound3(duration);std::cout<<",\"decoded_END_class\":"<<recovered
+                      <<",\"full_cap_uninterrupted\":true,\"length\":1,\"progress_field_sent_to_actor\":false}\n";
++            if(actor.accept_end(robots[m->robot].agent,m->key))event("public_SKIP_cleared_normal_END",m->key);
+             event("native_READY",m->key);
+             auto& r=robots[m->robot];if(r.served && r.head_index+1<r.heads.size()){
+                 ++r.head_index;const auto& head=r.heads[r.head_index];r.task=head.task;r.gx=head.gx;r.gy=head.gy;r.served=false;r.released=clock;++target_tasks;
+@@ -354,11 +363,20 @@
+     }
+     void queries(const std::string& trigger) {
+         for(const auto& m:moves)if(!opportunity_consumed.count(m->key)&&same(O::add(m->launch,rat(3,4)),clock))opportunity_consumed.insert(m->key);
+-        const auto input=candidates();std::cout<<"{\"event\":\"opportunity_census\",\"at\":";bound3(clock);std::cout<<",\"candidates\":"<<input.size()<<",\"trigger\":\""<<trigger<<"\"}\n";if(input.empty())return;
++        const auto raw_input=candidates();std::vector<EndOnlyActor::Candidate> input;
++        std::cout<<"{\"event\":\"public_candidate_visibility\",\"at\":";bound3(clock);
++        std::cout<<",\"skip_state\":[";actor.skip_state();std::cout<<"],\"raw_candidates\":[";bool rc=false;
++        for(const auto& c:raw_input){if(rc)std::cout<<',';rc=true;std::cout<<"["<<c.agent<<",\""<<c.key<<"\"]";if(!actor.is_skipped(c.agent,c.key))input.push_back(c);}
++        std::cout<<"],\"visible_candidates\":[";rc=false;for(const auto& c:input){if(rc)std::cout<<',';rc=true;std::cout<<"["<<c.agent<<",\""<<c.key<<"\"]";}std::cout<<"]}\n";
++        std::cout<<"{\"event\":\"opportunity_census\",\"at\":";bound3(clock);std::cout<<",\"candidates\":"<<input.size()<<",\"trigger\":\""<<trigger<<"\"}\n";if(input.empty())return;
+         ++eligible_opportunities;max_candidates=std::max(max_candidates,static_cast<unsigned>(input.size()));
+         check(asked.size()<=capacity,"joint actor capacity exceeded");
+         const std::string selected=actor.choose(input,clock,capacity-static_cast<unsigned>(asked.size()),policy,eligible_opportunities,trigger);
+         if(selected.empty())return;
++        if(selected.substr(0,5)=="SKIP:"){
++            const std::string key=selected.substr(5);const auto c=std::find_if(input.begin(),input.end(),[&](const EndOnlyActor::Candidate& x){return x.key==key;});
++            check(c!=input.end(),"skip selected unknown public occurrence");actor.skip(c->agent,c->key);event("public_SKIP_installed",c->key);return;
++        }
+         Move3* chosen=nullptr;for(auto& m:moves)if(m->key==selected)chosen=m.get();check(chosen!=nullptr,"actor selected unknown source");
+         const auto before=owner->view();query(*owner,chosen->controller,clock,"joint-POSITION-"+selected);asked.insert(selected);if(policy=="RR")actor.queried(robots[chosen->robot].agent);++revision;
+         std::cout<<"{\"event\":\"certified_POSITION_committed\",\"move\":\""<<selected<<"\",\"at\":";bound3(clock);
+@@ -460,7 +478,7 @@
+ }
+ int main(int argc,char** argv) {
+     try {check(argc==4,"joint input policy capacity arguments required");const unsigned b=static_cast<unsigned>(std::stoul(argv[3]));check(b<=64,"joint capacity outside contract");
+-        const std::string p=argv[2];check(p=="WAIT"||p=="RR"||p=="condition"||p.substr(0,3)=="cf_"||p=="once_history"||p=="once_nohistory"||p=="once_nobudget","unknown joint policy");
++        const std::string p=argv[2];check(p=="WAIT"||p=="RR"||p=="condition"||p.substr(0,3)=="cf_"||p=="once_history"||p=="once_nohistory"||p=="once_WAIT"||p=="once_SKIP","unknown joint policy");
+         World3 world(argv[1],p,b);world.run();return 0;}
+     catch(const std::exception& e){std::cerr<<"joint native failed after "<<checks<<" checks: "<<e.what()<<'\n';return 1;}
+ }

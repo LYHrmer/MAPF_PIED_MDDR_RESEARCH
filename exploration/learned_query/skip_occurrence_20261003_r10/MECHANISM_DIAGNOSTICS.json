@@ -1,0 +1,2836 @@
+[
+  {
+    "world": "empty-32-32_test_101301_IID",
+    "policy": "once_SKIP",
+    "at": {
+      "lower": 38408965,
+      "upper": 38408966,
+      "denominator": 1000000
+    },
+    "opportunity": 7,
+    "remaining": 10,
+    "candidate_count": 1,
+    "selected_kind": "SKIP",
+    "selected_move": "m-12-19",
+    "baseline_move": "m-12-19",
+    "actual_action_changed": true,
+    "skip_install": {
+      "event": "public_SKIP_installed",
+      "id": "m-12-19",
+      "at": {
+        "lower": 38408965,
+        "upper": 38408966,
+        "denominator": 1000000
+      }
+    },
+    "skip_clear": {
+      "event": "public_SKIP_cleared_normal_END",
+      "id": "m-12-19",
+      "at": {
+        "lower": 39641016,
+        "upper": 39641017,
+        "denominator": 1000000
+      }
+    },
+    "accepted_END": {
+      "event": "public_END_delivered",
+      "move": "m-12-19",
+      "agent": 12,
+      "heading": "WE",
+      "at": {
+        "lower": 39641016,
+        "upper": 39641017,
+        "denominator": 1000000
+      },
+      "public_original_END": {
+        "lower": 39391016,
+        "upper": 39391017,
+        "denominator": 1000000
+      },
+      "public_launch": {
+        "lower": 37658965,
+        "upper": 37658966,
+        "denominator": 1000000
+      },
+      "duration": {
+        "lower": 1732050,
+        "upper": 1732051,
+        "denominator": 1000000
+      },
+      "decoded_END_class": 0,
+      "full_cap_uninterrupted": true,
+      "length": 1,
+      "progress_field_sent_to_actor": false
+    },
+    "skip_clear_at_accepted_END": true,
+    "budget_immediately_after": 10,
+    "budget_at_skip_clear": 10,
+    "first_QUERY_after_replacement": {
+      "event": "certified_POSITION_committed",
+      "move": "m-11-21",
+      "at": {
+        "lower": 41724458,
+        "upper": 41724459,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 744197,
+        "upper": 744198,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [
+        "cell-12-19"
+      ],
+      "endpoint_retained": true
+    },
+    "total_queries_after_replacement": 10,
+    "masked_reappearances": 6,
+    "successor_visible_occurrences": [
+      "m-12-22",
+      "m-12-24"
+    ],
+    "same_original_MOVE_later_QUERY": null,
+    "query_delta": 0,
+    "new_query_occurrences": [
+      "m-6-30"
+    ],
+    "omitted_query_occurrences": [
+      "m-12-19"
+    ],
+    "service_delta": 0,
+    "all_task_service_records_equal": true,
+    "ordinal64_started_before": 0
+  },
+  {
+    "world": "empty-32-32_test_101301_IID",
+    "policy": "once_history",
+    "at": {
+      "lower": 38408965,
+      "upper": 38408966,
+      "denominator": 1000000
+    },
+    "opportunity": 7,
+    "remaining": 10,
+    "candidate_count": 1,
+    "selected_kind": "QUERY",
+    "selected_move": "m-12-19",
+    "baseline_move": "m-12-19",
+    "actual_action_changed": false,
+    "skip_install": null,
+    "skip_clear": null,
+    "accepted_END": {
+      "event": "public_END_delivered",
+      "move": "m-12-19",
+      "agent": 12,
+      "heading": "WE",
+      "at": {
+        "lower": 39641016,
+        "upper": 39641017,
+        "denominator": 1000000
+      },
+      "public_original_END": {
+        "lower": 39391016,
+        "upper": 39391017,
+        "denominator": 1000000
+      },
+      "public_launch": {
+        "lower": 37658965,
+        "upper": 37658966,
+        "denominator": 1000000
+      },
+      "duration": {
+        "lower": 1732050,
+        "upper": 1732051,
+        "denominator": 1000000
+      },
+      "decoded_END_class": 0,
+      "full_cap_uninterrupted": true,
+      "length": 1,
+      "progress_field_sent_to_actor": false
+    },
+    "skip_clear_at_accepted_END": false,
+    "budget_immediately_after": 9,
+    "budget_at_skip_clear": null,
+    "first_QUERY_after_replacement": {
+      "event": "certified_POSITION_committed",
+      "move": "m-12-19",
+      "at": {
+        "lower": 38408965,
+        "upper": 38408966,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 281250,
+        "upper": 281250,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [],
+      "endpoint_retained": true
+    },
+    "total_queries_after_replacement": 10,
+    "masked_reappearances": 0,
+    "successor_visible_occurrences": [
+      "m-12-22",
+      "m-12-24"
+    ],
+    "same_original_MOVE_later_QUERY": {
+      "event": "certified_POSITION_committed",
+      "move": "m-12-19",
+      "at": {
+        "lower": 38408965,
+        "upper": 38408966,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 281250,
+        "upper": 281250,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [],
+      "endpoint_retained": true
+    },
+    "query_delta": 0,
+    "new_query_occurrences": [],
+    "omitted_query_occurrences": [],
+    "service_delta": 0,
+    "all_task_service_records_equal": true,
+    "ordinal64_started_before": 0
+  },
+  {
+    "world": "empty-32-32_test_101301_IID",
+    "policy": "once_WAIT",
+    "at": {
+      "lower": 38408965,
+      "upper": 38408966,
+      "denominator": 1000000
+    },
+    "opportunity": 7,
+    "remaining": 10,
+    "candidate_count": 1,
+    "selected_kind": "WAIT",
+    "selected_move": "",
+    "baseline_move": "m-12-19",
+    "actual_action_changed": true,
+    "skip_install": null,
+    "skip_clear": null,
+    "accepted_END": null,
+    "skip_clear_at_accepted_END": false,
+    "budget_immediately_after": 10,
+    "budget_at_skip_clear": null,
+    "first_QUERY_after_replacement": {
+      "event": "certified_POSITION_committed",
+      "move": "m-12-19",
+      "at": {
+        "lower": 38445189,
+        "upper": 38445190,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 309074,
+        "upper": 309075,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [],
+      "endpoint_retained": true
+    },
+    "total_queries_after_replacement": 10,
+    "masked_reappearances": 0,
+    "successor_visible_occurrences": [],
+    "same_original_MOVE_later_QUERY": {
+      "event": "certified_POSITION_committed",
+      "move": "m-12-19",
+      "at": {
+        "lower": 38445189,
+        "upper": 38445190,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 309074,
+        "upper": 309075,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [],
+      "endpoint_retained": true
+    },
+    "query_delta": 0,
+    "new_query_occurrences": [],
+    "omitted_query_occurrences": [],
+    "service_delta": 0,
+    "all_task_service_records_equal": true,
+    "ordinal64_started_before": 0
+  },
+  {
+    "world": "empty-32-32_test_101301_IID",
+    "policy": "once_nohistory",
+    "at": {
+      "lower": 38408965,
+      "upper": 38408966,
+      "denominator": 1000000
+    },
+    "opportunity": 7,
+    "remaining": 10,
+    "candidate_count": 1,
+    "selected_kind": "QUERY",
+    "selected_move": "m-12-19",
+    "baseline_move": "m-12-19",
+    "actual_action_changed": false,
+    "skip_install": null,
+    "skip_clear": null,
+    "accepted_END": {
+      "event": "public_END_delivered",
+      "move": "m-12-19",
+      "agent": 12,
+      "heading": "WE",
+      "at": {
+        "lower": 39641016,
+        "upper": 39641017,
+        "denominator": 1000000
+      },
+      "public_original_END": {
+        "lower": 39391016,
+        "upper": 39391017,
+        "denominator": 1000000
+      },
+      "public_launch": {
+        "lower": 37658965,
+        "upper": 37658966,
+        "denominator": 1000000
+      },
+      "duration": {
+        "lower": 1732050,
+        "upper": 1732051,
+        "denominator": 1000000
+      },
+      "decoded_END_class": 0,
+      "full_cap_uninterrupted": true,
+      "length": 1,
+      "progress_field_sent_to_actor": false
+    },
+    "skip_clear_at_accepted_END": false,
+    "budget_immediately_after": 9,
+    "budget_at_skip_clear": null,
+    "first_QUERY_after_replacement": {
+      "event": "certified_POSITION_committed",
+      "move": "m-12-19",
+      "at": {
+        "lower": 38408965,
+        "upper": 38408966,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 281250,
+        "upper": 281250,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [],
+      "endpoint_retained": true
+    },
+    "total_queries_after_replacement": 10,
+    "masked_reappearances": 0,
+    "successor_visible_occurrences": [
+      "m-12-22",
+      "m-12-24"
+    ],
+    "same_original_MOVE_later_QUERY": {
+      "event": "certified_POSITION_committed",
+      "move": "m-12-19",
+      "at": {
+        "lower": 38408965,
+        "upper": 38408966,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 281250,
+        "upper": 281250,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [],
+      "endpoint_retained": true
+    },
+    "query_delta": 0,
+    "new_query_occurrences": [],
+    "omitted_query_occurrences": [],
+    "service_delta": 0,
+    "all_task_service_records_equal": true,
+    "ordinal64_started_before": 0
+  },
+  {
+    "world": "empty-32-32_test_101301_SHIFT",
+    "policy": "once_WAIT",
+    "at": {
+      "lower": 38408965,
+      "upper": 38408966,
+      "denominator": 1000000
+    },
+    "opportunity": 7,
+    "remaining": 10,
+    "candidate_count": 1,
+    "selected_kind": "WAIT",
+    "selected_move": "",
+    "baseline_move": "m-12-19",
+    "actual_action_changed": true,
+    "skip_install": null,
+    "skip_clear": null,
+    "accepted_END": null,
+    "skip_clear_at_accepted_END": false,
+    "budget_immediately_after": 10,
+    "budget_at_skip_clear": null,
+    "first_QUERY_after_replacement": {
+      "event": "certified_POSITION_committed",
+      "move": "m-12-19",
+      "at": {
+        "lower": 38445189,
+        "upper": 38445190,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 309074,
+        "upper": 309075,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [],
+      "endpoint_retained": true
+    },
+    "total_queries_after_replacement": 10,
+    "masked_reappearances": 0,
+    "successor_visible_occurrences": [],
+    "same_original_MOVE_later_QUERY": {
+      "event": "certified_POSITION_committed",
+      "move": "m-12-19",
+      "at": {
+        "lower": 38445189,
+        "upper": 38445190,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 309074,
+        "upper": 309075,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [],
+      "endpoint_retained": true
+    },
+    "query_delta": 0,
+    "new_query_occurrences": [],
+    "omitted_query_occurrences": [],
+    "service_delta": 0,
+    "all_task_service_records_equal": true,
+    "ordinal64_started_before": 0
+  },
+  {
+    "world": "empty-32-32_test_101301_SHIFT",
+    "policy": "once_SKIP",
+    "at": {
+      "lower": 38408965,
+      "upper": 38408966,
+      "denominator": 1000000
+    },
+    "opportunity": 7,
+    "remaining": 10,
+    "candidate_count": 1,
+    "selected_kind": "SKIP",
+    "selected_move": "m-12-19",
+    "baseline_move": "m-12-19",
+    "actual_action_changed": true,
+    "skip_install": {
+      "event": "public_SKIP_installed",
+      "id": "m-12-19",
+      "at": {
+        "lower": 38408965,
+        "upper": 38408966,
+        "denominator": 1000000
+      }
+    },
+    "skip_clear": {
+      "event": "public_SKIP_cleared_normal_END",
+      "id": "m-12-19",
+      "at": {
+        "lower": 39641016,
+        "upper": 39641017,
+        "denominator": 1000000
+      }
+    },
+    "accepted_END": {
+      "event": "public_END_delivered",
+      "move": "m-12-19",
+      "agent": 12,
+      "heading": "WE",
+      "at": {
+        "lower": 39641016,
+        "upper": 39641017,
+        "denominator": 1000000
+      },
+      "public_original_END": {
+        "lower": 39391016,
+        "upper": 39391017,
+        "denominator": 1000000
+      },
+      "public_launch": {
+        "lower": 37658965,
+        "upper": 37658966,
+        "denominator": 1000000
+      },
+      "duration": {
+        "lower": 1732050,
+        "upper": 1732051,
+        "denominator": 1000000
+      },
+      "decoded_END_class": 0,
+      "full_cap_uninterrupted": true,
+      "length": 1,
+      "progress_field_sent_to_actor": false
+    },
+    "skip_clear_at_accepted_END": true,
+    "budget_immediately_after": 10,
+    "budget_at_skip_clear": 10,
+    "first_QUERY_after_replacement": {
+      "event": "certified_POSITION_committed",
+      "move": "m-11-21",
+      "at": {
+        "lower": 41724458,
+        "upper": 41724459,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 744197,
+        "upper": 744198,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [
+        "cell-12-19"
+      ],
+      "endpoint_retained": true
+    },
+    "total_queries_after_replacement": 10,
+    "masked_reappearances": 6,
+    "successor_visible_occurrences": [
+      "m-12-22",
+      "m-12-24"
+    ],
+    "same_original_MOVE_later_QUERY": null,
+    "query_delta": 0,
+    "new_query_occurrences": [
+      "m-6-30"
+    ],
+    "omitted_query_occurrences": [
+      "m-12-19"
+    ],
+    "service_delta": 0,
+    "all_task_service_records_equal": true,
+    "ordinal64_started_before": 0
+  },
+  {
+    "world": "empty-32-32_test_101301_SHIFT",
+    "policy": "once_history",
+    "at": {
+      "lower": 38408965,
+      "upper": 38408966,
+      "denominator": 1000000
+    },
+    "opportunity": 7,
+    "remaining": 10,
+    "candidate_count": 1,
+    "selected_kind": "QUERY",
+    "selected_move": "m-12-19",
+    "baseline_move": "m-12-19",
+    "actual_action_changed": false,
+    "skip_install": null,
+    "skip_clear": null,
+    "accepted_END": {
+      "event": "public_END_delivered",
+      "move": "m-12-19",
+      "agent": 12,
+      "heading": "WE",
+      "at": {
+        "lower": 39641016,
+        "upper": 39641017,
+        "denominator": 1000000
+      },
+      "public_original_END": {
+        "lower": 39391016,
+        "upper": 39391017,
+        "denominator": 1000000
+      },
+      "public_launch": {
+        "lower": 37658965,
+        "upper": 37658966,
+        "denominator": 1000000
+      },
+      "duration": {
+        "lower": 1732050,
+        "upper": 1732051,
+        "denominator": 1000000
+      },
+      "decoded_END_class": 0,
+      "full_cap_uninterrupted": true,
+      "length": 1,
+      "progress_field_sent_to_actor": false
+    },
+    "skip_clear_at_accepted_END": false,
+    "budget_immediately_after": 9,
+    "budget_at_skip_clear": null,
+    "first_QUERY_after_replacement": {
+      "event": "certified_POSITION_committed",
+      "move": "m-12-19",
+      "at": {
+        "lower": 38408965,
+        "upper": 38408966,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 281250,
+        "upper": 281250,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [],
+      "endpoint_retained": true
+    },
+    "total_queries_after_replacement": 10,
+    "masked_reappearances": 0,
+    "successor_visible_occurrences": [
+      "m-12-22",
+      "m-12-24"
+    ],
+    "same_original_MOVE_later_QUERY": {
+      "event": "certified_POSITION_committed",
+      "move": "m-12-19",
+      "at": {
+        "lower": 38408965,
+        "upper": 38408966,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 281250,
+        "upper": 281250,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [],
+      "endpoint_retained": true
+    },
+    "query_delta": 0,
+    "new_query_occurrences": [],
+    "omitted_query_occurrences": [],
+    "service_delta": 0,
+    "all_task_service_records_equal": true,
+    "ordinal64_started_before": 0
+  },
+  {
+    "world": "empty-32-32_test_101301_SHIFT",
+    "policy": "once_nohistory",
+    "at": {
+      "lower": 38408965,
+      "upper": 38408966,
+      "denominator": 1000000
+    },
+    "opportunity": 7,
+    "remaining": 10,
+    "candidate_count": 1,
+    "selected_kind": "QUERY",
+    "selected_move": "m-12-19",
+    "baseline_move": "m-12-19",
+    "actual_action_changed": false,
+    "skip_install": null,
+    "skip_clear": null,
+    "accepted_END": {
+      "event": "public_END_delivered",
+      "move": "m-12-19",
+      "agent": 12,
+      "heading": "WE",
+      "at": {
+        "lower": 39641016,
+        "upper": 39641017,
+        "denominator": 1000000
+      },
+      "public_original_END": {
+        "lower": 39391016,
+        "upper": 39391017,
+        "denominator": 1000000
+      },
+      "public_launch": {
+        "lower": 37658965,
+        "upper": 37658966,
+        "denominator": 1000000
+      },
+      "duration": {
+        "lower": 1732050,
+        "upper": 1732051,
+        "denominator": 1000000
+      },
+      "decoded_END_class": 0,
+      "full_cap_uninterrupted": true,
+      "length": 1,
+      "progress_field_sent_to_actor": false
+    },
+    "skip_clear_at_accepted_END": false,
+    "budget_immediately_after": 9,
+    "budget_at_skip_clear": null,
+    "first_QUERY_after_replacement": {
+      "event": "certified_POSITION_committed",
+      "move": "m-12-19",
+      "at": {
+        "lower": 38408965,
+        "upper": 38408966,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 281250,
+        "upper": 281250,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [],
+      "endpoint_retained": true
+    },
+    "total_queries_after_replacement": 10,
+    "masked_reappearances": 0,
+    "successor_visible_occurrences": [
+      "m-12-22",
+      "m-12-24"
+    ],
+    "same_original_MOVE_later_QUERY": {
+      "event": "certified_POSITION_committed",
+      "move": "m-12-19",
+      "at": {
+        "lower": 38408965,
+        "upper": 38408966,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 281250,
+        "upper": 281250,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [],
+      "endpoint_retained": true
+    },
+    "query_delta": 0,
+    "new_query_occurrences": [],
+    "omitted_query_occurrences": [],
+    "service_delta": 0,
+    "all_task_service_records_equal": true,
+    "ordinal64_started_before": 0
+  },
+  {
+    "world": "empty-32-32_test_101302_IID",
+    "policy": "once_WAIT",
+    "at": {
+      "lower": 26618051,
+      "upper": 26618052,
+      "denominator": 1000000
+    },
+    "opportunity": 7,
+    "remaining": 10,
+    "candidate_count": 1,
+    "selected_kind": "WAIT",
+    "selected_move": "",
+    "baseline_move": "m-0-16",
+    "actual_action_changed": true,
+    "skip_install": null,
+    "skip_clear": null,
+    "accepted_END": null,
+    "skip_clear_at_accepted_END": false,
+    "budget_immediately_after": 10,
+    "budget_at_skip_clear": null,
+    "first_QUERY_after_replacement": {
+      "event": "certified_POSITION_committed",
+      "move": "m-9-14",
+      "at": {
+        "lower": 27850102,
+        "upper": 27850103,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 281250,
+        "upper": 281250,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [],
+      "endpoint_retained": true
+    },
+    "total_queries_after_replacement": 10,
+    "masked_reappearances": 0,
+    "successor_visible_occurrences": [],
+    "same_original_MOVE_later_QUERY": null,
+    "query_delta": 0,
+    "new_query_occurrences": [
+      "m-14-48"
+    ],
+    "omitted_query_occurrences": [
+      "m-0-16"
+    ],
+    "service_delta": 0,
+    "all_task_service_records_equal": true,
+    "ordinal64_started_before": 0
+  },
+  {
+    "world": "empty-32-32_test_101302_IID",
+    "policy": "once_SKIP",
+    "at": {
+      "lower": 26618051,
+      "upper": 26618052,
+      "denominator": 1000000
+    },
+    "opportunity": 7,
+    "remaining": 10,
+    "candidate_count": 1,
+    "selected_kind": "SKIP",
+    "selected_move": "m-0-16",
+    "baseline_move": "m-0-16",
+    "actual_action_changed": true,
+    "skip_install": {
+      "event": "public_SKIP_installed",
+      "id": "m-0-16",
+      "at": {
+        "lower": 26618051,
+        "upper": 26618052,
+        "denominator": 1000000
+      }
+    },
+    "skip_clear": {
+      "event": "public_SKIP_cleared_normal_END",
+      "id": "m-0-16",
+      "at": {
+        "lower": 27100102,
+        "upper": 27100103,
+        "denominator": 1000000
+      }
+    },
+    "accepted_END": {
+      "event": "public_END_delivered",
+      "move": "m-0-16",
+      "agent": 0,
+      "heading": "EA",
+      "at": {
+        "lower": 27100102,
+        "upper": 27100103,
+        "denominator": 1000000
+      },
+      "public_original_END": {
+        "lower": 26850102,
+        "upper": 26850103,
+        "denominator": 1000000
+      },
+      "public_launch": {
+        "lower": 25766660,
+        "upper": 25766661,
+        "denominator": 1000000
+      },
+      "duration": {
+        "lower": 1083441,
+        "upper": 1083442,
+        "denominator": 1000000
+      },
+      "decoded_END_class": 1,
+      "full_cap_uninterrupted": true,
+      "length": 1,
+      "progress_field_sent_to_actor": false
+    },
+    "skip_clear_at_accepted_END": true,
+    "budget_immediately_after": 10,
+    "budget_at_skip_clear": 10,
+    "first_QUERY_after_replacement": {
+      "event": "certified_POSITION_committed",
+      "move": "m-9-14",
+      "at": {
+        "lower": 27850102,
+        "upper": 27850103,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 281250,
+        "upper": 281250,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [],
+      "endpoint_retained": true
+    },
+    "total_queries_after_replacement": 10,
+    "masked_reappearances": 0,
+    "successor_visible_occurrences": [
+      "m-0-18"
+    ],
+    "same_original_MOVE_later_QUERY": null,
+    "query_delta": 0,
+    "new_query_occurrences": [
+      "m-14-48"
+    ],
+    "omitted_query_occurrences": [
+      "m-0-16"
+    ],
+    "service_delta": 0,
+    "all_task_service_records_equal": true,
+    "ordinal64_started_before": 0
+  },
+  {
+    "world": "empty-32-32_test_101302_IID",
+    "policy": "once_nohistory",
+    "at": {
+      "lower": 26618051,
+      "upper": 26618052,
+      "denominator": 1000000
+    },
+    "opportunity": 7,
+    "remaining": 10,
+    "candidate_count": 1,
+    "selected_kind": "QUERY",
+    "selected_move": "m-0-16",
+    "baseline_move": "m-0-16",
+    "actual_action_changed": false,
+    "skip_install": null,
+    "skip_clear": null,
+    "accepted_END": {
+      "event": "public_END_delivered",
+      "move": "m-0-16",
+      "agent": 0,
+      "heading": "EA",
+      "at": {
+        "lower": 27100102,
+        "upper": 27100103,
+        "denominator": 1000000
+      },
+      "public_original_END": {
+        "lower": 26850102,
+        "upper": 26850103,
+        "denominator": 1000000
+      },
+      "public_launch": {
+        "lower": 25766660,
+        "upper": 25766661,
+        "denominator": 1000000
+      },
+      "duration": {
+        "lower": 1083441,
+        "upper": 1083442,
+        "denominator": 1000000
+      },
+      "decoded_END_class": 1,
+      "full_cap_uninterrupted": true,
+      "length": 1,
+      "progress_field_sent_to_actor": false
+    },
+    "skip_clear_at_accepted_END": false,
+    "budget_immediately_after": 9,
+    "budget_at_skip_clear": null,
+    "first_QUERY_after_replacement": {
+      "event": "certified_POSITION_committed",
+      "move": "m-0-16",
+      "at": {
+        "lower": 26618051,
+        "upper": 26618052,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 865189,
+        "upper": 865190,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [
+        "cell-13-17"
+      ],
+      "endpoint_retained": true
+    },
+    "total_queries_after_replacement": 10,
+    "masked_reappearances": 0,
+    "successor_visible_occurrences": [
+      "m-0-18"
+    ],
+    "same_original_MOVE_later_QUERY": {
+      "event": "certified_POSITION_committed",
+      "move": "m-0-16",
+      "at": {
+        "lower": 26618051,
+        "upper": 26618052,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 865189,
+        "upper": 865190,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [
+        "cell-13-17"
+      ],
+      "endpoint_retained": true
+    },
+    "query_delta": 0,
+    "new_query_occurrences": [],
+    "omitted_query_occurrences": [],
+    "service_delta": 0,
+    "all_task_service_records_equal": true,
+    "ordinal64_started_before": 0
+  },
+  {
+    "world": "empty-32-32_test_101302_IID",
+    "policy": "once_history",
+    "at": {
+      "lower": 26618051,
+      "upper": 26618052,
+      "denominator": 1000000
+    },
+    "opportunity": 7,
+    "remaining": 10,
+    "candidate_count": 1,
+    "selected_kind": "WAIT",
+    "selected_move": "",
+    "baseline_move": "m-0-16",
+    "actual_action_changed": true,
+    "skip_install": null,
+    "skip_clear": null,
+    "accepted_END": null,
+    "skip_clear_at_accepted_END": false,
+    "budget_immediately_after": 10,
+    "budget_at_skip_clear": null,
+    "first_QUERY_after_replacement": {
+      "event": "certified_POSITION_committed",
+      "move": "m-9-14",
+      "at": {
+        "lower": 27850102,
+        "upper": 27850103,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 281250,
+        "upper": 281250,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [],
+      "endpoint_retained": true
+    },
+    "total_queries_after_replacement": 10,
+    "masked_reappearances": 0,
+    "successor_visible_occurrences": [],
+    "same_original_MOVE_later_QUERY": null,
+    "query_delta": 0,
+    "new_query_occurrences": [
+      "m-14-48"
+    ],
+    "omitted_query_occurrences": [
+      "m-0-16"
+    ],
+    "service_delta": 0,
+    "all_task_service_records_equal": true,
+    "ordinal64_started_before": 0
+  },
+  {
+    "world": "empty-32-32_test_101302_SHIFT",
+    "policy": "once_SKIP",
+    "at": {
+      "lower": 26618051,
+      "upper": 26618052,
+      "denominator": 1000000
+    },
+    "opportunity": 7,
+    "remaining": 10,
+    "candidate_count": 1,
+    "selected_kind": "SKIP",
+    "selected_move": "m-0-16",
+    "baseline_move": "m-0-16",
+    "actual_action_changed": true,
+    "skip_install": {
+      "event": "public_SKIP_installed",
+      "id": "m-0-16",
+      "at": {
+        "lower": 26618051,
+        "upper": 26618052,
+        "denominator": 1000000
+      }
+    },
+    "skip_clear": {
+      "event": "public_SKIP_cleared_normal_END",
+      "id": "m-0-16",
+      "at": {
+        "lower": 27100102,
+        "upper": 27100103,
+        "denominator": 1000000
+      }
+    },
+    "accepted_END": {
+      "event": "public_END_delivered",
+      "move": "m-0-16",
+      "agent": 0,
+      "heading": "EA",
+      "at": {
+        "lower": 27100102,
+        "upper": 27100103,
+        "denominator": 1000000
+      },
+      "public_original_END": {
+        "lower": 26850102,
+        "upper": 26850103,
+        "denominator": 1000000
+      },
+      "public_launch": {
+        "lower": 25766660,
+        "upper": 25766661,
+        "denominator": 1000000
+      },
+      "duration": {
+        "lower": 1083441,
+        "upper": 1083442,
+        "denominator": 1000000
+      },
+      "decoded_END_class": 1,
+      "full_cap_uninterrupted": true,
+      "length": 1,
+      "progress_field_sent_to_actor": false
+    },
+    "skip_clear_at_accepted_END": true,
+    "budget_immediately_after": 10,
+    "budget_at_skip_clear": 10,
+    "first_QUERY_after_replacement": {
+      "event": "certified_POSITION_committed",
+      "move": "m-9-14",
+      "at": {
+        "lower": 27850102,
+        "upper": 27850103,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 281250,
+        "upper": 281250,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [],
+      "endpoint_retained": true
+    },
+    "total_queries_after_replacement": 10,
+    "masked_reappearances": 0,
+    "successor_visible_occurrences": [
+      "m-0-18"
+    ],
+    "same_original_MOVE_later_QUERY": null,
+    "query_delta": 0,
+    "new_query_occurrences": [
+      "m-14-48"
+    ],
+    "omitted_query_occurrences": [
+      "m-0-16"
+    ],
+    "service_delta": 0,
+    "all_task_service_records_equal": true,
+    "ordinal64_started_before": 0
+  },
+  {
+    "world": "empty-32-32_test_101302_SHIFT",
+    "policy": "once_nohistory",
+    "at": {
+      "lower": 26618051,
+      "upper": 26618052,
+      "denominator": 1000000
+    },
+    "opportunity": 7,
+    "remaining": 10,
+    "candidate_count": 1,
+    "selected_kind": "QUERY",
+    "selected_move": "m-0-16",
+    "baseline_move": "m-0-16",
+    "actual_action_changed": false,
+    "skip_install": null,
+    "skip_clear": null,
+    "accepted_END": {
+      "event": "public_END_delivered",
+      "move": "m-0-16",
+      "agent": 0,
+      "heading": "EA",
+      "at": {
+        "lower": 27100102,
+        "upper": 27100103,
+        "denominator": 1000000
+      },
+      "public_original_END": {
+        "lower": 26850102,
+        "upper": 26850103,
+        "denominator": 1000000
+      },
+      "public_launch": {
+        "lower": 25766660,
+        "upper": 25766661,
+        "denominator": 1000000
+      },
+      "duration": {
+        "lower": 1083441,
+        "upper": 1083442,
+        "denominator": 1000000
+      },
+      "decoded_END_class": 1,
+      "full_cap_uninterrupted": true,
+      "length": 1,
+      "progress_field_sent_to_actor": false
+    },
+    "skip_clear_at_accepted_END": false,
+    "budget_immediately_after": 9,
+    "budget_at_skip_clear": null,
+    "first_QUERY_after_replacement": {
+      "event": "certified_POSITION_committed",
+      "move": "m-0-16",
+      "at": {
+        "lower": 26618051,
+        "upper": 26618052,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 865189,
+        "upper": 865190,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [
+        "cell-13-17"
+      ],
+      "endpoint_retained": true
+    },
+    "total_queries_after_replacement": 10,
+    "masked_reappearances": 0,
+    "successor_visible_occurrences": [
+      "m-0-18"
+    ],
+    "same_original_MOVE_later_QUERY": {
+      "event": "certified_POSITION_committed",
+      "move": "m-0-16",
+      "at": {
+        "lower": 26618051,
+        "upper": 26618052,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 865189,
+        "upper": 865190,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [
+        "cell-13-17"
+      ],
+      "endpoint_retained": true
+    },
+    "query_delta": 0,
+    "new_query_occurrences": [],
+    "omitted_query_occurrences": [],
+    "service_delta": 0,
+    "all_task_service_records_equal": true,
+    "ordinal64_started_before": 0
+  },
+  {
+    "world": "empty-32-32_test_101302_SHIFT",
+    "policy": "once_WAIT",
+    "at": {
+      "lower": 26618051,
+      "upper": 26618052,
+      "denominator": 1000000
+    },
+    "opportunity": 7,
+    "remaining": 10,
+    "candidate_count": 1,
+    "selected_kind": "WAIT",
+    "selected_move": "",
+    "baseline_move": "m-0-16",
+    "actual_action_changed": true,
+    "skip_install": null,
+    "skip_clear": null,
+    "accepted_END": null,
+    "skip_clear_at_accepted_END": false,
+    "budget_immediately_after": 10,
+    "budget_at_skip_clear": null,
+    "first_QUERY_after_replacement": {
+      "event": "certified_POSITION_committed",
+      "move": "m-9-14",
+      "at": {
+        "lower": 27850102,
+        "upper": 27850103,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 281250,
+        "upper": 281250,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [],
+      "endpoint_retained": true
+    },
+    "total_queries_after_replacement": 10,
+    "masked_reappearances": 0,
+    "successor_visible_occurrences": [],
+    "same_original_MOVE_later_QUERY": null,
+    "query_delta": 0,
+    "new_query_occurrences": [
+      "m-14-48"
+    ],
+    "omitted_query_occurrences": [
+      "m-0-16"
+    ],
+    "service_delta": 0,
+    "all_task_service_records_equal": true,
+    "ordinal64_started_before": 0
+  },
+  {
+    "world": "empty-32-32_test_101302_SHIFT",
+    "policy": "once_history",
+    "at": {
+      "lower": 26618051,
+      "upper": 26618052,
+      "denominator": 1000000
+    },
+    "opportunity": 7,
+    "remaining": 10,
+    "candidate_count": 1,
+    "selected_kind": "WAIT",
+    "selected_move": "",
+    "baseline_move": "m-0-16",
+    "actual_action_changed": true,
+    "skip_install": null,
+    "skip_clear": null,
+    "accepted_END": null,
+    "skip_clear_at_accepted_END": false,
+    "budget_immediately_after": 10,
+    "budget_at_skip_clear": null,
+    "first_QUERY_after_replacement": {
+      "event": "certified_POSITION_committed",
+      "move": "m-9-14",
+      "at": {
+        "lower": 27850102,
+        "upper": 27850103,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 281250,
+        "upper": 281250,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [],
+      "endpoint_retained": true
+    },
+    "total_queries_after_replacement": 10,
+    "masked_reappearances": 0,
+    "successor_visible_occurrences": [],
+    "same_original_MOVE_later_QUERY": null,
+    "query_delta": 0,
+    "new_query_occurrences": [
+      "m-14-48"
+    ],
+    "omitted_query_occurrences": [
+      "m-0-16"
+    ],
+    "service_delta": 0,
+    "all_task_service_records_equal": true,
+    "ordinal64_started_before": 0
+  },
+  {
+    "world": "random-32-32-10_test_102301_IID",
+    "policy": "once_SKIP",
+    "at": {
+      "lower": 30415595,
+      "upper": 30415596,
+      "denominator": 1000000
+    },
+    "opportunity": 7,
+    "remaining": 10,
+    "candidate_count": 1,
+    "selected_kind": "SKIP",
+    "selected_move": "m-14-15",
+    "baseline_move": "m-14-15",
+    "actual_action_changed": true,
+    "skip_install": {
+      "event": "public_SKIP_installed",
+      "id": "m-14-15",
+      "at": {
+        "lower": 30415595,
+        "upper": 30415596,
+        "denominator": 1000000
+      }
+    },
+    "skip_clear": {
+      "event": "public_SKIP_cleared_normal_END",
+      "id": "m-14-15",
+      "at": {
+        "lower": 31064204,
+        "upper": 31064205,
+        "denominator": 1000000
+      }
+    },
+    "accepted_END": {
+      "event": "public_END_delivered",
+      "move": "m-14-15",
+      "agent": 14,
+      "heading": "NO",
+      "at": {
+        "lower": 31064204,
+        "upper": 31064205,
+        "denominator": 1000000
+      },
+      "public_original_END": {
+        "lower": 30814204,
+        "upper": 30814205,
+        "denominator": 1000000
+      },
+      "public_launch": {
+        "lower": 29082153,
+        "upper": 29082154,
+        "denominator": 1000000
+      },
+      "duration": {
+        "lower": 1732050,
+        "upper": 1732051,
+        "denominator": 1000000
+      },
+      "decoded_END_class": 0,
+      "full_cap_uninterrupted": true,
+      "length": 1,
+      "progress_field_sent_to_actor": false
+    },
+    "skip_clear_at_accepted_END": true,
+    "budget_immediately_after": 10,
+    "budget_at_skip_clear": 10,
+    "first_QUERY_after_replacement": {
+      "event": "certified_POSITION_committed",
+      "move": "m-7-15",
+      "at": {
+        "lower": 31165595,
+        "upper": 31165596,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 744197,
+        "upper": 744198,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [
+        "cell-19-25"
+      ],
+      "endpoint_retained": true
+    },
+    "total_queries_after_replacement": 10,
+    "masked_reappearances": 2,
+    "successor_visible_occurrences": [
+      "m-14-16",
+      "m-14-17",
+      "m-14-18",
+      "m-14-19",
+      "m-14-21",
+      "m-14-23"
+    ],
+    "same_original_MOVE_later_QUERY": null,
+    "query_delta": 0,
+    "new_query_occurrences": [
+      "m-14-17",
+      "m-14-18"
+    ],
+    "omitted_query_occurrences": [
+      "m-14-15",
+      "m-8-19"
+    ],
+    "service_delta": 0,
+    "all_task_service_records_equal": true,
+    "ordinal64_started_before": 0
+  },
+  {
+    "world": "random-32-32-10_test_102301_IID",
+    "policy": "once_history",
+    "at": {
+      "lower": 30415595,
+      "upper": 30415596,
+      "denominator": 1000000
+    },
+    "opportunity": 7,
+    "remaining": 10,
+    "candidate_count": 1,
+    "selected_kind": "QUERY",
+    "selected_move": "m-14-15",
+    "baseline_move": "m-14-15",
+    "actual_action_changed": false,
+    "skip_install": null,
+    "skip_clear": null,
+    "accepted_END": {
+      "event": "public_END_delivered",
+      "move": "m-14-15",
+      "agent": 14,
+      "heading": "NO",
+      "at": {
+        "lower": 31064204,
+        "upper": 31064205,
+        "denominator": 1000000
+      },
+      "public_original_END": {
+        "lower": 30814204,
+        "upper": 30814205,
+        "denominator": 1000000
+      },
+      "public_launch": {
+        "lower": 29082153,
+        "upper": 29082154,
+        "denominator": 1000000
+      },
+      "duration": {
+        "lower": 1732050,
+        "upper": 1732051,
+        "denominator": 1000000
+      },
+      "decoded_END_class": 0,
+      "full_cap_uninterrupted": true,
+      "length": 1,
+      "progress_field_sent_to_actor": false
+    },
+    "skip_clear_at_accepted_END": false,
+    "budget_immediately_after": 9,
+    "budget_at_skip_clear": null,
+    "first_QUERY_after_replacement": {
+      "event": "certified_POSITION_committed",
+      "move": "m-14-15",
+      "at": {
+        "lower": 30415595,
+        "upper": 30415596,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 841110,
+        "upper": 841111,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [
+        "cell-16-11"
+      ],
+      "endpoint_retained": true
+    },
+    "total_queries_after_replacement": 10,
+    "masked_reappearances": 0,
+    "successor_visible_occurrences": [
+      "m-14-16",
+      "m-14-19",
+      "m-14-21",
+      "m-14-23"
+    ],
+    "same_original_MOVE_later_QUERY": {
+      "event": "certified_POSITION_committed",
+      "move": "m-14-15",
+      "at": {
+        "lower": 30415595,
+        "upper": 30415596,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 841110,
+        "upper": 841111,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [
+        "cell-16-11"
+      ],
+      "endpoint_retained": true
+    },
+    "query_delta": 0,
+    "new_query_occurrences": [],
+    "omitted_query_occurrences": [],
+    "service_delta": 0,
+    "all_task_service_records_equal": true,
+    "ordinal64_started_before": 0
+  },
+  {
+    "world": "random-32-32-10_test_102301_IID",
+    "policy": "once_WAIT",
+    "at": {
+      "lower": 30415595,
+      "upper": 30415596,
+      "denominator": 1000000
+    },
+    "opportunity": 7,
+    "remaining": 10,
+    "candidate_count": 1,
+    "selected_kind": "WAIT",
+    "selected_move": "",
+    "baseline_move": "m-14-15",
+    "actual_action_changed": true,
+    "skip_install": null,
+    "skip_clear": null,
+    "accepted_END": null,
+    "skip_clear_at_accepted_END": false,
+    "budget_immediately_after": 10,
+    "budget_at_skip_clear": null,
+    "first_QUERY_after_replacement": {
+      "event": "certified_POSITION_committed",
+      "move": "m-14-15",
+      "at": {
+        "lower": 30480762,
+        "upper": 30480763,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 888816,
+        "upper": 888817,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [
+        "cell-16-11"
+      ],
+      "endpoint_retained": true
+    },
+    "total_queries_after_replacement": 10,
+    "masked_reappearances": 0,
+    "successor_visible_occurrences": [],
+    "same_original_MOVE_later_QUERY": {
+      "event": "certified_POSITION_committed",
+      "move": "m-14-15",
+      "at": {
+        "lower": 30480762,
+        "upper": 30480763,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 888816,
+        "upper": 888817,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [
+        "cell-16-11"
+      ],
+      "endpoint_retained": true
+    },
+    "query_delta": 0,
+    "new_query_occurrences": [],
+    "omitted_query_occurrences": [],
+    "service_delta": 0,
+    "all_task_service_records_equal": true,
+    "ordinal64_started_before": 0
+  },
+  {
+    "world": "random-32-32-10_test_102301_IID",
+    "policy": "once_nohistory",
+    "at": {
+      "lower": 30415595,
+      "upper": 30415596,
+      "denominator": 1000000
+    },
+    "opportunity": 7,
+    "remaining": 10,
+    "candidate_count": 1,
+    "selected_kind": "QUERY",
+    "selected_move": "m-14-15",
+    "baseline_move": "m-14-15",
+    "actual_action_changed": false,
+    "skip_install": null,
+    "skip_clear": null,
+    "accepted_END": {
+      "event": "public_END_delivered",
+      "move": "m-14-15",
+      "agent": 14,
+      "heading": "NO",
+      "at": {
+        "lower": 31064204,
+        "upper": 31064205,
+        "denominator": 1000000
+      },
+      "public_original_END": {
+        "lower": 30814204,
+        "upper": 30814205,
+        "denominator": 1000000
+      },
+      "public_launch": {
+        "lower": 29082153,
+        "upper": 29082154,
+        "denominator": 1000000
+      },
+      "duration": {
+        "lower": 1732050,
+        "upper": 1732051,
+        "denominator": 1000000
+      },
+      "decoded_END_class": 0,
+      "full_cap_uninterrupted": true,
+      "length": 1,
+      "progress_field_sent_to_actor": false
+    },
+    "skip_clear_at_accepted_END": false,
+    "budget_immediately_after": 9,
+    "budget_at_skip_clear": null,
+    "first_QUERY_after_replacement": {
+      "event": "certified_POSITION_committed",
+      "move": "m-14-15",
+      "at": {
+        "lower": 30415595,
+        "upper": 30415596,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 841110,
+        "upper": 841111,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [
+        "cell-16-11"
+      ],
+      "endpoint_retained": true
+    },
+    "total_queries_after_replacement": 10,
+    "masked_reappearances": 0,
+    "successor_visible_occurrences": [
+      "m-14-16",
+      "m-14-19",
+      "m-14-21",
+      "m-14-23"
+    ],
+    "same_original_MOVE_later_QUERY": {
+      "event": "certified_POSITION_committed",
+      "move": "m-14-15",
+      "at": {
+        "lower": 30415595,
+        "upper": 30415596,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 841110,
+        "upper": 841111,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [
+        "cell-16-11"
+      ],
+      "endpoint_retained": true
+    },
+    "query_delta": 0,
+    "new_query_occurrences": [],
+    "omitted_query_occurrences": [],
+    "service_delta": 0,
+    "all_task_service_records_equal": true,
+    "ordinal64_started_before": 0
+  },
+  {
+    "world": "random-32-32-10_test_102301_SHIFT",
+    "policy": "once_nohistory",
+    "at": {
+      "lower": 30415595,
+      "upper": 30415596,
+      "denominator": 1000000
+    },
+    "opportunity": 7,
+    "remaining": 10,
+    "candidate_count": 1,
+    "selected_kind": "QUERY",
+    "selected_move": "m-14-15",
+    "baseline_move": "m-14-15",
+    "actual_action_changed": false,
+    "skip_install": null,
+    "skip_clear": null,
+    "accepted_END": {
+      "event": "public_END_delivered",
+      "move": "m-14-15",
+      "agent": 14,
+      "heading": "NO",
+      "at": {
+        "lower": 31064204,
+        "upper": 31064205,
+        "denominator": 1000000
+      },
+      "public_original_END": {
+        "lower": 30814204,
+        "upper": 30814205,
+        "denominator": 1000000
+      },
+      "public_launch": {
+        "lower": 29082153,
+        "upper": 29082154,
+        "denominator": 1000000
+      },
+      "duration": {
+        "lower": 1732050,
+        "upper": 1732051,
+        "denominator": 1000000
+      },
+      "decoded_END_class": 0,
+      "full_cap_uninterrupted": true,
+      "length": 1,
+      "progress_field_sent_to_actor": false
+    },
+    "skip_clear_at_accepted_END": false,
+    "budget_immediately_after": 9,
+    "budget_at_skip_clear": null,
+    "first_QUERY_after_replacement": {
+      "event": "certified_POSITION_committed",
+      "move": "m-14-15",
+      "at": {
+        "lower": 30415595,
+        "upper": 30415596,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 841110,
+        "upper": 841111,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [
+        "cell-16-11"
+      ],
+      "endpoint_retained": true
+    },
+    "total_queries_after_replacement": 10,
+    "masked_reappearances": 0,
+    "successor_visible_occurrences": [
+      "m-14-16",
+      "m-14-19",
+      "m-14-21",
+      "m-14-23"
+    ],
+    "same_original_MOVE_later_QUERY": {
+      "event": "certified_POSITION_committed",
+      "move": "m-14-15",
+      "at": {
+        "lower": 30415595,
+        "upper": 30415596,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 841110,
+        "upper": 841111,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [
+        "cell-16-11"
+      ],
+      "endpoint_retained": true
+    },
+    "query_delta": 0,
+    "new_query_occurrences": [],
+    "omitted_query_occurrences": [],
+    "service_delta": 0,
+    "all_task_service_records_equal": true,
+    "ordinal64_started_before": 0
+  },
+  {
+    "world": "random-32-32-10_test_102301_SHIFT",
+    "policy": "once_SKIP",
+    "at": {
+      "lower": 30415595,
+      "upper": 30415596,
+      "denominator": 1000000
+    },
+    "opportunity": 7,
+    "remaining": 10,
+    "candidate_count": 1,
+    "selected_kind": "SKIP",
+    "selected_move": "m-14-15",
+    "baseline_move": "m-14-15",
+    "actual_action_changed": true,
+    "skip_install": {
+      "event": "public_SKIP_installed",
+      "id": "m-14-15",
+      "at": {
+        "lower": 30415595,
+        "upper": 30415596,
+        "denominator": 1000000
+      }
+    },
+    "skip_clear": {
+      "event": "public_SKIP_cleared_normal_END",
+      "id": "m-14-15",
+      "at": {
+        "lower": 31064204,
+        "upper": 31064205,
+        "denominator": 1000000
+      }
+    },
+    "accepted_END": {
+      "event": "public_END_delivered",
+      "move": "m-14-15",
+      "agent": 14,
+      "heading": "NO",
+      "at": {
+        "lower": 31064204,
+        "upper": 31064205,
+        "denominator": 1000000
+      },
+      "public_original_END": {
+        "lower": 30814204,
+        "upper": 30814205,
+        "denominator": 1000000
+      },
+      "public_launch": {
+        "lower": 29082153,
+        "upper": 29082154,
+        "denominator": 1000000
+      },
+      "duration": {
+        "lower": 1732050,
+        "upper": 1732051,
+        "denominator": 1000000
+      },
+      "decoded_END_class": 0,
+      "full_cap_uninterrupted": true,
+      "length": 1,
+      "progress_field_sent_to_actor": false
+    },
+    "skip_clear_at_accepted_END": true,
+    "budget_immediately_after": 10,
+    "budget_at_skip_clear": 10,
+    "first_QUERY_after_replacement": {
+      "event": "certified_POSITION_committed",
+      "move": "m-7-15",
+      "at": {
+        "lower": 31165595,
+        "upper": 31165596,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 744197,
+        "upper": 744198,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [
+        "cell-19-25"
+      ],
+      "endpoint_retained": true
+    },
+    "total_queries_after_replacement": 10,
+    "masked_reappearances": 2,
+    "successor_visible_occurrences": [
+      "m-14-16",
+      "m-14-17",
+      "m-14-18",
+      "m-14-19",
+      "m-14-21",
+      "m-14-23"
+    ],
+    "same_original_MOVE_later_QUERY": null,
+    "query_delta": 0,
+    "new_query_occurrences": [
+      "m-14-17",
+      "m-14-18"
+    ],
+    "omitted_query_occurrences": [
+      "m-14-15",
+      "m-8-19"
+    ],
+    "service_delta": 0,
+    "all_task_service_records_equal": true,
+    "ordinal64_started_before": 0
+  },
+  {
+    "world": "random-32-32-10_test_102301_SHIFT",
+    "policy": "once_history",
+    "at": {
+      "lower": 30415595,
+      "upper": 30415596,
+      "denominator": 1000000
+    },
+    "opportunity": 7,
+    "remaining": 10,
+    "candidate_count": 1,
+    "selected_kind": "QUERY",
+    "selected_move": "m-14-15",
+    "baseline_move": "m-14-15",
+    "actual_action_changed": false,
+    "skip_install": null,
+    "skip_clear": null,
+    "accepted_END": {
+      "event": "public_END_delivered",
+      "move": "m-14-15",
+      "agent": 14,
+      "heading": "NO",
+      "at": {
+        "lower": 31064204,
+        "upper": 31064205,
+        "denominator": 1000000
+      },
+      "public_original_END": {
+        "lower": 30814204,
+        "upper": 30814205,
+        "denominator": 1000000
+      },
+      "public_launch": {
+        "lower": 29082153,
+        "upper": 29082154,
+        "denominator": 1000000
+      },
+      "duration": {
+        "lower": 1732050,
+        "upper": 1732051,
+        "denominator": 1000000
+      },
+      "decoded_END_class": 0,
+      "full_cap_uninterrupted": true,
+      "length": 1,
+      "progress_field_sent_to_actor": false
+    },
+    "skip_clear_at_accepted_END": false,
+    "budget_immediately_after": 9,
+    "budget_at_skip_clear": null,
+    "first_QUERY_after_replacement": {
+      "event": "certified_POSITION_committed",
+      "move": "m-14-15",
+      "at": {
+        "lower": 30415595,
+        "upper": 30415596,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 841110,
+        "upper": 841111,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [
+        "cell-16-11"
+      ],
+      "endpoint_retained": true
+    },
+    "total_queries_after_replacement": 10,
+    "masked_reappearances": 0,
+    "successor_visible_occurrences": [
+      "m-14-16",
+      "m-14-19",
+      "m-14-21",
+      "m-14-23"
+    ],
+    "same_original_MOVE_later_QUERY": {
+      "event": "certified_POSITION_committed",
+      "move": "m-14-15",
+      "at": {
+        "lower": 30415595,
+        "upper": 30415596,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 841110,
+        "upper": 841111,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [
+        "cell-16-11"
+      ],
+      "endpoint_retained": true
+    },
+    "query_delta": 0,
+    "new_query_occurrences": [],
+    "omitted_query_occurrences": [],
+    "service_delta": 0,
+    "all_task_service_records_equal": true,
+    "ordinal64_started_before": 0
+  },
+  {
+    "world": "random-32-32-10_test_102301_SHIFT",
+    "policy": "once_WAIT",
+    "at": {
+      "lower": 30415595,
+      "upper": 30415596,
+      "denominator": 1000000
+    },
+    "opportunity": 7,
+    "remaining": 10,
+    "candidate_count": 1,
+    "selected_kind": "WAIT",
+    "selected_move": "",
+    "baseline_move": "m-14-15",
+    "actual_action_changed": true,
+    "skip_install": null,
+    "skip_clear": null,
+    "accepted_END": null,
+    "skip_clear_at_accepted_END": false,
+    "budget_immediately_after": 10,
+    "budget_at_skip_clear": null,
+    "first_QUERY_after_replacement": {
+      "event": "certified_POSITION_committed",
+      "move": "m-14-15",
+      "at": {
+        "lower": 30480762,
+        "upper": 30480763,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 888816,
+        "upper": 888817,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [
+        "cell-16-11"
+      ],
+      "endpoint_retained": true
+    },
+    "total_queries_after_replacement": 10,
+    "masked_reappearances": 0,
+    "successor_visible_occurrences": [],
+    "same_original_MOVE_later_QUERY": {
+      "event": "certified_POSITION_committed",
+      "move": "m-14-15",
+      "at": {
+        "lower": 30480762,
+        "upper": 30480763,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 888816,
+        "upper": 888817,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [
+        "cell-16-11"
+      ],
+      "endpoint_retained": true
+    },
+    "query_delta": 0,
+    "new_query_occurrences": [],
+    "omitted_query_occurrences": [],
+    "service_delta": 0,
+    "all_task_service_records_equal": true,
+    "ordinal64_started_before": 0
+  },
+  {
+    "world": "random-32-32-10_test_102302_IID",
+    "policy": "once_history",
+    "at": {
+      "lower": 19171899,
+      "upper": 19171900,
+      "denominator": 1000000
+    },
+    "opportunity": 7,
+    "remaining": 10,
+    "candidate_count": 1,
+    "selected_kind": "QUERY",
+    "selected_move": "m-4-9",
+    "baseline_move": "m-4-9",
+    "actual_action_changed": false,
+    "skip_install": null,
+    "skip_clear": null,
+    "accepted_END": {
+      "event": "public_END_delivered",
+      "move": "m-4-9",
+      "agent": 4,
+      "heading": "SO",
+      "at": {
+        "lower": 19820508,
+        "upper": 19820509,
+        "denominator": 1000000
+      },
+      "public_original_END": {
+        "lower": 19570508,
+        "upper": 19570509,
+        "denominator": 1000000
+      },
+      "public_launch": {
+        "lower": 17838457,
+        "upper": 17838458,
+        "denominator": 1000000
+      },
+      "duration": {
+        "lower": 1732050,
+        "upper": 1732051,
+        "denominator": 1000000
+      },
+      "decoded_END_class": 0,
+      "full_cap_uninterrupted": true,
+      "length": 1,
+      "progress_field_sent_to_actor": false
+    },
+    "skip_clear_at_accepted_END": false,
+    "budget_immediately_after": 9,
+    "budget_at_skip_clear": null,
+    "first_QUERY_after_replacement": {
+      "event": "certified_POSITION_committed",
+      "move": "m-4-9",
+      "at": {
+        "lower": 19171899,
+        "upper": 19171900,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 841110,
+        "upper": 841111,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [
+        "cell-16-9"
+      ],
+      "endpoint_retained": true
+    },
+    "total_queries_after_replacement": 10,
+    "masked_reappearances": 0,
+    "successor_visible_occurrences": [],
+    "same_original_MOVE_later_QUERY": {
+      "event": "certified_POSITION_committed",
+      "move": "m-4-9",
+      "at": {
+        "lower": 19171899,
+        "upper": 19171900,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 841110,
+        "upper": 841111,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [
+        "cell-16-9"
+      ],
+      "endpoint_retained": true
+    },
+    "query_delta": 0,
+    "new_query_occurrences": [],
+    "omitted_query_occurrences": [],
+    "service_delta": 0,
+    "all_task_service_records_equal": true,
+    "ordinal64_started_before": 0
+  },
+  {
+    "world": "random-32-32-10_test_102302_IID",
+    "policy": "once_WAIT",
+    "at": {
+      "lower": 19171899,
+      "upper": 19171900,
+      "denominator": 1000000
+    },
+    "opportunity": 7,
+    "remaining": 10,
+    "candidate_count": 1,
+    "selected_kind": "WAIT",
+    "selected_move": "",
+    "baseline_move": "m-4-9",
+    "actual_action_changed": true,
+    "skip_install": null,
+    "skip_clear": null,
+    "accepted_END": null,
+    "skip_clear_at_accepted_END": false,
+    "budget_immediately_after": 10,
+    "budget_at_skip_clear": null,
+    "first_QUERY_after_replacement": {
+      "event": "certified_POSITION_committed",
+      "move": "m-4-9",
+      "at": {
+        "lower": 19273290,
+        "upper": 19273291,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 911661,
+        "upper": 911662,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [
+        "cell-16-9"
+      ],
+      "endpoint_retained": true
+    },
+    "total_queries_after_replacement": 10,
+    "masked_reappearances": 0,
+    "successor_visible_occurrences": [],
+    "same_original_MOVE_later_QUERY": {
+      "event": "certified_POSITION_committed",
+      "move": "m-4-9",
+      "at": {
+        "lower": 19273290,
+        "upper": 19273291,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 911661,
+        "upper": 911662,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [
+        "cell-16-9"
+      ],
+      "endpoint_retained": true
+    },
+    "query_delta": 0,
+    "new_query_occurrences": [],
+    "omitted_query_occurrences": [],
+    "service_delta": 0,
+    "all_task_service_records_equal": true,
+    "ordinal64_started_before": 0
+  },
+  {
+    "world": "random-32-32-10_test_102302_IID",
+    "policy": "once_nohistory",
+    "at": {
+      "lower": 19171899,
+      "upper": 19171900,
+      "denominator": 1000000
+    },
+    "opportunity": 7,
+    "remaining": 10,
+    "candidate_count": 1,
+    "selected_kind": "QUERY",
+    "selected_move": "m-4-9",
+    "baseline_move": "m-4-9",
+    "actual_action_changed": false,
+    "skip_install": null,
+    "skip_clear": null,
+    "accepted_END": {
+      "event": "public_END_delivered",
+      "move": "m-4-9",
+      "agent": 4,
+      "heading": "SO",
+      "at": {
+        "lower": 19820508,
+        "upper": 19820509,
+        "denominator": 1000000
+      },
+      "public_original_END": {
+        "lower": 19570508,
+        "upper": 19570509,
+        "denominator": 1000000
+      },
+      "public_launch": {
+        "lower": 17838457,
+        "upper": 17838458,
+        "denominator": 1000000
+      },
+      "duration": {
+        "lower": 1732050,
+        "upper": 1732051,
+        "denominator": 1000000
+      },
+      "decoded_END_class": 0,
+      "full_cap_uninterrupted": true,
+      "length": 1,
+      "progress_field_sent_to_actor": false
+    },
+    "skip_clear_at_accepted_END": false,
+    "budget_immediately_after": 9,
+    "budget_at_skip_clear": null,
+    "first_QUERY_after_replacement": {
+      "event": "certified_POSITION_committed",
+      "move": "m-4-9",
+      "at": {
+        "lower": 19171899,
+        "upper": 19171900,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 841110,
+        "upper": 841111,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [
+        "cell-16-9"
+      ],
+      "endpoint_retained": true
+    },
+    "total_queries_after_replacement": 10,
+    "masked_reappearances": 0,
+    "successor_visible_occurrences": [],
+    "same_original_MOVE_later_QUERY": {
+      "event": "certified_POSITION_committed",
+      "move": "m-4-9",
+      "at": {
+        "lower": 19171899,
+        "upper": 19171900,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 841110,
+        "upper": 841111,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [
+        "cell-16-9"
+      ],
+      "endpoint_retained": true
+    },
+    "query_delta": 0,
+    "new_query_occurrences": [],
+    "omitted_query_occurrences": [],
+    "service_delta": 0,
+    "all_task_service_records_equal": true,
+    "ordinal64_started_before": 0
+  },
+  {
+    "world": "random-32-32-10_test_102302_IID",
+    "policy": "once_SKIP",
+    "at": {
+      "lower": 19171899,
+      "upper": 19171900,
+      "denominator": 1000000
+    },
+    "opportunity": 7,
+    "remaining": 10,
+    "candidate_count": 1,
+    "selected_kind": "SKIP",
+    "selected_move": "m-4-9",
+    "baseline_move": "m-4-9",
+    "actual_action_changed": true,
+    "skip_install": {
+      "event": "public_SKIP_installed",
+      "id": "m-4-9",
+      "at": {
+        "lower": 19171899,
+        "upper": 19171900,
+        "denominator": 1000000
+      }
+    },
+    "skip_clear": {
+      "event": "public_SKIP_cleared_normal_END",
+      "id": "m-4-9",
+      "at": {
+        "lower": 19820508,
+        "upper": 19820509,
+        "denominator": 1000000
+      }
+    },
+    "accepted_END": {
+      "event": "public_END_delivered",
+      "move": "m-4-9",
+      "agent": 4,
+      "heading": "SO",
+      "at": {
+        "lower": 19820508,
+        "upper": 19820509,
+        "denominator": 1000000
+      },
+      "public_original_END": {
+        "lower": 19570508,
+        "upper": 19570509,
+        "denominator": 1000000
+      },
+      "public_launch": {
+        "lower": 17838457,
+        "upper": 17838458,
+        "denominator": 1000000
+      },
+      "duration": {
+        "lower": 1732050,
+        "upper": 1732051,
+        "denominator": 1000000
+      },
+      "decoded_END_class": 0,
+      "full_cap_uninterrupted": true,
+      "length": 1,
+      "progress_field_sent_to_actor": false
+    },
+    "skip_clear_at_accepted_END": true,
+    "budget_immediately_after": 10,
+    "budget_at_skip_clear": 10,
+    "first_QUERY_after_replacement": {
+      "event": "certified_POSITION_committed",
+      "move": "m-1-9",
+      "at": {
+        "lower": 19921899,
+        "upper": 19921900,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 744197,
+        "upper": 744198,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [
+        "cell-26-15"
+      ],
+      "endpoint_retained": true
+    },
+    "total_queries_after_replacement": 10,
+    "masked_reappearances": 1,
+    "successor_visible_occurrences": [],
+    "same_original_MOVE_later_QUERY": null,
+    "query_delta": 0,
+    "new_query_occurrences": [
+      "m-6-52"
+    ],
+    "omitted_query_occurrences": [
+      "m-4-9"
+    ],
+    "service_delta": 0,
+    "all_task_service_records_equal": false,
+    "ordinal64_started_before": 0
+  },
+  {
+    "world": "random-32-32-10_test_102302_SHIFT",
+    "policy": "once_history",
+    "at": {
+      "lower": 19171899,
+      "upper": 19171900,
+      "denominator": 1000000
+    },
+    "opportunity": 7,
+    "remaining": 10,
+    "candidate_count": 1,
+    "selected_kind": "QUERY",
+    "selected_move": "m-4-9",
+    "baseline_move": "m-4-9",
+    "actual_action_changed": false,
+    "skip_install": null,
+    "skip_clear": null,
+    "accepted_END": {
+      "event": "public_END_delivered",
+      "move": "m-4-9",
+      "agent": 4,
+      "heading": "SO",
+      "at": {
+        "lower": 19820508,
+        "upper": 19820509,
+        "denominator": 1000000
+      },
+      "public_original_END": {
+        "lower": 19570508,
+        "upper": 19570509,
+        "denominator": 1000000
+      },
+      "public_launch": {
+        "lower": 17838457,
+        "upper": 17838458,
+        "denominator": 1000000
+      },
+      "duration": {
+        "lower": 1732050,
+        "upper": 1732051,
+        "denominator": 1000000
+      },
+      "decoded_END_class": 0,
+      "full_cap_uninterrupted": true,
+      "length": 1,
+      "progress_field_sent_to_actor": false
+    },
+    "skip_clear_at_accepted_END": false,
+    "budget_immediately_after": 9,
+    "budget_at_skip_clear": null,
+    "first_QUERY_after_replacement": {
+      "event": "certified_POSITION_committed",
+      "move": "m-4-9",
+      "at": {
+        "lower": 19171899,
+        "upper": 19171900,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 841110,
+        "upper": 841111,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [
+        "cell-16-9"
+      ],
+      "endpoint_retained": true
+    },
+    "total_queries_after_replacement": 10,
+    "masked_reappearances": 0,
+    "successor_visible_occurrences": [],
+    "same_original_MOVE_later_QUERY": {
+      "event": "certified_POSITION_committed",
+      "move": "m-4-9",
+      "at": {
+        "lower": 19171899,
+        "upper": 19171900,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 841110,
+        "upper": 841111,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [
+        "cell-16-9"
+      ],
+      "endpoint_retained": true
+    },
+    "query_delta": 0,
+    "new_query_occurrences": [],
+    "omitted_query_occurrences": [],
+    "service_delta": 0,
+    "all_task_service_records_equal": true,
+    "ordinal64_started_before": 0
+  },
+  {
+    "world": "random-32-32-10_test_102302_SHIFT",
+    "policy": "once_SKIP",
+    "at": {
+      "lower": 19171899,
+      "upper": 19171900,
+      "denominator": 1000000
+    },
+    "opportunity": 7,
+    "remaining": 10,
+    "candidate_count": 1,
+    "selected_kind": "SKIP",
+    "selected_move": "m-4-9",
+    "baseline_move": "m-4-9",
+    "actual_action_changed": true,
+    "skip_install": {
+      "event": "public_SKIP_installed",
+      "id": "m-4-9",
+      "at": {
+        "lower": 19171899,
+        "upper": 19171900,
+        "denominator": 1000000
+      }
+    },
+    "skip_clear": {
+      "event": "public_SKIP_cleared_normal_END",
+      "id": "m-4-9",
+      "at": {
+        "lower": 19820508,
+        "upper": 19820509,
+        "denominator": 1000000
+      }
+    },
+    "accepted_END": {
+      "event": "public_END_delivered",
+      "move": "m-4-9",
+      "agent": 4,
+      "heading": "SO",
+      "at": {
+        "lower": 19820508,
+        "upper": 19820509,
+        "denominator": 1000000
+      },
+      "public_original_END": {
+        "lower": 19570508,
+        "upper": 19570509,
+        "denominator": 1000000
+      },
+      "public_launch": {
+        "lower": 17838457,
+        "upper": 17838458,
+        "denominator": 1000000
+      },
+      "duration": {
+        "lower": 1732050,
+        "upper": 1732051,
+        "denominator": 1000000
+      },
+      "decoded_END_class": 0,
+      "full_cap_uninterrupted": true,
+      "length": 1,
+      "progress_field_sent_to_actor": false
+    },
+    "skip_clear_at_accepted_END": true,
+    "budget_immediately_after": 10,
+    "budget_at_skip_clear": 10,
+    "first_QUERY_after_replacement": {
+      "event": "certified_POSITION_committed",
+      "move": "m-1-9",
+      "at": {
+        "lower": 19921899,
+        "upper": 19921900,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 744197,
+        "upper": 744198,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [
+        "cell-26-15"
+      ],
+      "endpoint_retained": true
+    },
+    "total_queries_after_replacement": 10,
+    "masked_reappearances": 1,
+    "successor_visible_occurrences": [],
+    "same_original_MOVE_later_QUERY": null,
+    "query_delta": 0,
+    "new_query_occurrences": [
+      "m-6-52"
+    ],
+    "omitted_query_occurrences": [
+      "m-4-9"
+    ],
+    "service_delta": 0,
+    "all_task_service_records_equal": false,
+    "ordinal64_started_before": 0
+  },
+  {
+    "world": "random-32-32-10_test_102302_SHIFT",
+    "policy": "once_nohistory",
+    "at": {
+      "lower": 19171899,
+      "upper": 19171900,
+      "denominator": 1000000
+    },
+    "opportunity": 7,
+    "remaining": 10,
+    "candidate_count": 1,
+    "selected_kind": "QUERY",
+    "selected_move": "m-4-9",
+    "baseline_move": "m-4-9",
+    "actual_action_changed": false,
+    "skip_install": null,
+    "skip_clear": null,
+    "accepted_END": {
+      "event": "public_END_delivered",
+      "move": "m-4-9",
+      "agent": 4,
+      "heading": "SO",
+      "at": {
+        "lower": 19820508,
+        "upper": 19820509,
+        "denominator": 1000000
+      },
+      "public_original_END": {
+        "lower": 19570508,
+        "upper": 19570509,
+        "denominator": 1000000
+      },
+      "public_launch": {
+        "lower": 17838457,
+        "upper": 17838458,
+        "denominator": 1000000
+      },
+      "duration": {
+        "lower": 1732050,
+        "upper": 1732051,
+        "denominator": 1000000
+      },
+      "decoded_END_class": 0,
+      "full_cap_uninterrupted": true,
+      "length": 1,
+      "progress_field_sent_to_actor": false
+    },
+    "skip_clear_at_accepted_END": false,
+    "budget_immediately_after": 9,
+    "budget_at_skip_clear": null,
+    "first_QUERY_after_replacement": {
+      "event": "certified_POSITION_committed",
+      "move": "m-4-9",
+      "at": {
+        "lower": 19171899,
+        "upper": 19171900,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 841110,
+        "upper": 841111,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [
+        "cell-16-9"
+      ],
+      "endpoint_retained": true
+    },
+    "total_queries_after_replacement": 10,
+    "masked_reappearances": 0,
+    "successor_visible_occurrences": [],
+    "same_original_MOVE_later_QUERY": {
+      "event": "certified_POSITION_committed",
+      "move": "m-4-9",
+      "at": {
+        "lower": 19171899,
+        "upper": 19171900,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 841110,
+        "upper": 841111,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [
+        "cell-16-9"
+      ],
+      "endpoint_retained": true
+    },
+    "query_delta": 0,
+    "new_query_occurrences": [],
+    "omitted_query_occurrences": [],
+    "service_delta": 0,
+    "all_task_service_records_equal": true,
+    "ordinal64_started_before": 0
+  },
+  {
+    "world": "random-32-32-10_test_102302_SHIFT",
+    "policy": "once_WAIT",
+    "at": {
+      "lower": 19171899,
+      "upper": 19171900,
+      "denominator": 1000000
+    },
+    "opportunity": 7,
+    "remaining": 10,
+    "candidate_count": 1,
+    "selected_kind": "WAIT",
+    "selected_move": "",
+    "baseline_move": "m-4-9",
+    "actual_action_changed": true,
+    "skip_install": null,
+    "skip_clear": null,
+    "accepted_END": null,
+    "skip_clear_at_accepted_END": false,
+    "budget_immediately_after": 10,
+    "budget_at_skip_clear": null,
+    "first_QUERY_after_replacement": {
+      "event": "certified_POSITION_committed",
+      "move": "m-4-9",
+      "at": {
+        "lower": 19273290,
+        "upper": 19273291,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 911661,
+        "upper": 911662,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [
+        "cell-16-9"
+      ],
+      "endpoint_retained": true
+    },
+    "total_queries_after_replacement": 10,
+    "masked_reappearances": 0,
+    "successor_visible_occurrences": [],
+    "same_original_MOVE_later_QUERY": {
+      "event": "certified_POSITION_committed",
+      "move": "m-4-9",
+      "at": {
+        "lower": 19273290,
+        "upper": 19273291,
+        "denominator": 1000000
+      },
+      "certified_lower": {
+        "lower": 911661,
+        "upper": 911662,
+        "denominator": 1000000
+      },
+      "epsilon": "1/10",
+      "removed": [
+        "cell-16-9"
+      ],
+      "endpoint_retained": true
+    },
+    "query_delta": 0,
+    "new_query_occurrences": [],
+    "omitted_query_occurrences": [],
+    "service_delta": 0,
+    "all_task_service_records_equal": true,
+    "ordinal64_started_before": 0
+  }
+]

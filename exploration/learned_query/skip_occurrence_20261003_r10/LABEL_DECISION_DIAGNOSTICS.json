@@ -1,0 +1,1414 @@
+{
+  "calibration_used_for_tuning": false,
+  "summary": {
+    "train_history": {
+      "opportunities": 24,
+      "observed_optimal": 14,
+      "total_regret": "24513131/16385000000",
+      "actions": {
+        "QUERY": 17,
+        "SKIP": 2,
+        "WAIT": 5
+      }
+    },
+    "train_nohistory": {
+      "opportunities": 24,
+      "observed_optimal": 16,
+      "total_regret": "11859813/8192500000",
+      "actions": {
+        "SKIP": 4,
+        "QUERY": 19,
+        "WAIT": 1
+      }
+    },
+    "calibration_history": {
+      "opportunities": 6,
+      "observed_optimal": 4,
+      "total_regret": "3698263/8192500000",
+      "actions": {
+        "WAIT": 2,
+        "QUERY": 3,
+        "SKIP": 1
+      }
+    },
+    "calibration_nohistory": {
+      "opportunities": 6,
+      "observed_optimal": 4,
+      "total_regret": "3698263/8192500000",
+      "actions": {
+        "SKIP": 2,
+        "QUERY": 4
+      }
+    }
+  },
+  "opportunities": [
+    {
+      "world": "empty-32-32_train_101101",
+      "opportunity": 1,
+      "split": "train",
+      "candidate_count": 1,
+      "variants": {
+        "history": {
+          "action": "QUERY",
+          "source": 11,
+          "target": "0",
+          "best_observed_target": "0",
+          "regret": "0",
+          "whole_task_gain": 0
+        },
+        "nohistory": {
+          "action": "SKIP",
+          "source": 11,
+          "target": "0",
+          "best_observed_target": "0",
+          "regret": "0",
+          "whole_task_gain": 0
+        }
+      },
+      "targets": [
+        {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "QUERY",
+          "source": 11,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "SKIP",
+          "source": 11,
+          "target": "0",
+          "whole_service_gain": 0
+        }
+      ]
+    },
+    {
+      "world": "empty-32-32_train_101101",
+      "opportunity": 7,
+      "split": "train",
+      "candidate_count": 2,
+      "variants": {
+        "history": {
+          "action": "QUERY",
+          "source": 10,
+          "target": "0",
+          "best_observed_target": "0",
+          "regret": "0",
+          "whole_task_gain": 0
+        },
+        "nohistory": {
+          "action": "QUERY",
+          "source": 10,
+          "target": "0",
+          "best_observed_target": "0",
+          "regret": "0",
+          "whole_task_gain": 0
+        }
+      },
+      "targets": [
+        {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "QUERY",
+          "source": 10,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "SKIP",
+          "source": 10,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "QUERY",
+          "source": 11,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "SKIP",
+          "source": 11,
+          "target": "0",
+          "whole_service_gain": 0
+        }
+      ]
+    },
+    {
+      "world": "empty-32-32_train_101101",
+      "opportunity": 8,
+      "split": "train",
+      "candidate_count": 1,
+      "variants": {
+        "history": {
+          "action": "QUERY",
+          "source": 11,
+          "target": "0",
+          "best_observed_target": "0",
+          "regret": "0",
+          "whole_task_gain": 0
+        },
+        "nohistory": {
+          "action": "QUERY",
+          "source": 11,
+          "target": "0",
+          "best_observed_target": "0",
+          "regret": "0",
+          "whole_task_gain": 0
+        }
+      },
+      "targets": [
+        {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "QUERY",
+          "source": 11,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "SKIP",
+          "source": 11,
+          "target": "0",
+          "whole_service_gain": 0
+        }
+      ]
+    },
+    {
+      "world": "empty-32-32_train_101102",
+      "opportunity": 1,
+      "split": "train",
+      "candidate_count": 1,
+      "variants": {
+        "history": {
+          "action": "SKIP",
+          "source": 15,
+          "target": "0",
+          "best_observed_target": "0",
+          "regret": "0",
+          "whole_task_gain": 0
+        },
+        "nohistory": {
+          "action": "QUERY",
+          "source": 15,
+          "target": "0",
+          "best_observed_target": "0",
+          "regret": "0",
+          "whole_task_gain": 0
+        }
+      },
+      "targets": [
+        {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "QUERY",
+          "source": 15,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "SKIP",
+          "source": 15,
+          "target": "0",
+          "whole_service_gain": 0
+        }
+      ]
+    },
+    {
+      "world": "empty-32-32_train_101102",
+      "opportunity": 7,
+      "split": "train",
+      "candidate_count": 1,
+      "variants": {
+        "history": {
+          "action": "QUERY",
+          "source": 11,
+          "target": "-80731/655400000",
+          "best_observed_target": "0",
+          "regret": "80731/655400000",
+          "whole_task_gain": 0
+        },
+        "nohistory": {
+          "action": "QUERY",
+          "source": 11,
+          "target": "-80731/655400000",
+          "best_observed_target": "0",
+          "regret": "80731/655400000",
+          "whole_task_gain": 0
+        }
+      },
+      "targets": [
+        {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "QUERY",
+          "source": 11,
+          "target": "-80731/655400000",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "SKIP",
+          "source": 11,
+          "target": "-80731/655400000",
+          "whole_service_gain": 0
+        }
+      ]
+    },
+    {
+      "world": "empty-32-32_train_101102",
+      "opportunity": 13,
+      "split": "train",
+      "candidate_count": 1,
+      "variants": {
+        "history": {
+          "action": "QUERY",
+          "source": 10,
+          "target": "0",
+          "best_observed_target": "0",
+          "regret": "0",
+          "whole_task_gain": 0
+        },
+        "nohistory": {
+          "action": "QUERY",
+          "source": 10,
+          "target": "0",
+          "best_observed_target": "0",
+          "regret": "0",
+          "whole_task_gain": 0
+        }
+      },
+      "targets": [
+        {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "QUERY",
+          "source": 10,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "SKIP",
+          "source": 10,
+          "target": "0",
+          "whole_service_gain": 0
+        }
+      ]
+    },
+    {
+      "world": "empty-32-32_train_101103",
+      "opportunity": 1,
+      "split": "train",
+      "candidate_count": 1,
+      "variants": {
+        "history": {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "best_observed_target": "0",
+          "regret": "0",
+          "whole_task_gain": 0
+        },
+        "nohistory": {
+          "action": "QUERY",
+          "source": 3,
+          "target": "0",
+          "best_observed_target": "0",
+          "regret": "0",
+          "whole_task_gain": 0
+        }
+      },
+      "targets": [
+        {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "QUERY",
+          "source": 3,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "SKIP",
+          "source": 3,
+          "target": "0",
+          "whole_service_gain": 0
+        }
+      ]
+    },
+    {
+      "world": "empty-32-32_train_101103",
+      "opportunity": 5,
+      "split": "train",
+      "candidate_count": 2,
+      "variants": {
+        "history": {
+          "action": "QUERY",
+          "source": 7,
+          "target": "-2288243/2048125000",
+          "best_observed_target": "0",
+          "regret": "2288243/2048125000",
+          "whole_task_gain": 0
+        },
+        "nohistory": {
+          "action": "QUERY",
+          "source": 7,
+          "target": "-2288243/2048125000",
+          "best_observed_target": "0",
+          "regret": "2288243/2048125000",
+          "whole_task_gain": 0
+        }
+      },
+      "targets": [
+        {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "QUERY",
+          "source": 0,
+          "target": "-2288243/2048125000",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "SKIP",
+          "source": 0,
+          "target": "-2288243/2048125000",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "QUERY",
+          "source": 7,
+          "target": "-2288243/2048125000",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "SKIP",
+          "source": 7,
+          "target": "-2288243/2048125000",
+          "whole_service_gain": 0
+        }
+      ]
+    },
+    {
+      "world": "empty-32-32_train_101103",
+      "opportunity": 7,
+      "split": "train",
+      "candidate_count": 1,
+      "variants": {
+        "history": {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "best_observed_target": "0",
+          "regret": "0",
+          "whole_task_gain": 0
+        },
+        "nohistory": {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "best_observed_target": "0",
+          "regret": "0",
+          "whole_task_gain": 0
+        }
+      },
+      "targets": [
+        {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "QUERY",
+          "source": 7,
+          "target": "-684833/16385000000",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "SKIP",
+          "source": 7,
+          "target": "-684833/16385000000",
+          "whole_service_gain": 0
+        }
+      ]
+    },
+    {
+      "world": "empty-32-32_train_101104",
+      "opportunity": 1,
+      "split": "train",
+      "candidate_count": 1,
+      "variants": {
+        "history": {
+          "action": "QUERY",
+          "source": 13,
+          "target": "0",
+          "best_observed_target": "291721/8192500000",
+          "regret": "291721/8192500000",
+          "whole_task_gain": 0
+        },
+        "nohistory": {
+          "action": "QUERY",
+          "source": 13,
+          "target": "0",
+          "best_observed_target": "291721/8192500000",
+          "regret": "291721/8192500000",
+          "whole_task_gain": 0
+        }
+      },
+      "targets": [
+        {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "QUERY",
+          "source": 13,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "SKIP",
+          "source": 13,
+          "target": "291721/8192500000",
+          "whole_service_gain": 0
+        }
+      ]
+    },
+    {
+      "world": "empty-32-32_train_101104",
+      "opportunity": 7,
+      "split": "train",
+      "candidate_count": 1,
+      "variants": {
+        "history": {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "best_observed_target": "291721/8192500000",
+          "regret": "291721/8192500000",
+          "whole_task_gain": 0
+        },
+        "nohistory": {
+          "action": "SKIP",
+          "source": 1,
+          "target": "291721/8192500000",
+          "best_observed_target": "291721/8192500000",
+          "regret": "0",
+          "whole_task_gain": 0
+        }
+      },
+      "targets": [
+        {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "QUERY",
+          "source": 1,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "SKIP",
+          "source": 1,
+          "target": "291721/8192500000",
+          "whole_service_gain": 0
+        }
+      ]
+    },
+    {
+      "world": "empty-32-32_train_101104",
+      "opportunity": 10,
+      "split": "train",
+      "candidate_count": 2,
+      "variants": {
+        "history": {
+          "action": "QUERY",
+          "source": 2,
+          "target": "-291721/8192500000",
+          "best_observed_target": "0",
+          "regret": "291721/8192500000",
+          "whole_task_gain": 0
+        },
+        "nohistory": {
+          "action": "QUERY",
+          "source": 2,
+          "target": "-291721/8192500000",
+          "best_observed_target": "0",
+          "regret": "291721/8192500000",
+          "whole_task_gain": 0
+        }
+      },
+      "targets": [
+        {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "QUERY",
+          "source": 2,
+          "target": "-291721/8192500000",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "SKIP",
+          "source": 2,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "QUERY",
+          "source": 14,
+          "target": "-291721/8192500000",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "SKIP",
+          "source": 14,
+          "target": "0",
+          "whole_service_gain": 0
+        }
+      ]
+    },
+    {
+      "world": "empty-32-32_cal_101201",
+      "opportunity": 1,
+      "split": "calibration",
+      "candidate_count": 1,
+      "variants": {
+        "history": {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "best_observed_target": "124687/512031250",
+          "regret": "124687/512031250",
+          "whole_task_gain": 0
+        },
+        "nohistory": {
+          "action": "SKIP",
+          "source": 7,
+          "target": "124687/512031250",
+          "best_observed_target": "124687/512031250",
+          "regret": "0",
+          "whole_task_gain": 0
+        }
+      },
+      "targets": [
+        {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "QUERY",
+          "source": 7,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "SKIP",
+          "source": 7,
+          "target": "124687/512031250",
+          "whole_service_gain": 0
+        }
+      ]
+    },
+    {
+      "world": "empty-32-32_cal_101201",
+      "opportunity": 7,
+      "split": "calibration",
+      "candidate_count": 1,
+      "variants": {
+        "history": {
+          "action": "QUERY",
+          "source": 12,
+          "target": "-1703271/8192500000",
+          "best_observed_target": "0",
+          "regret": "1703271/8192500000",
+          "whole_task_gain": 0
+        },
+        "nohistory": {
+          "action": "QUERY",
+          "source": 12,
+          "target": "-1703271/8192500000",
+          "best_observed_target": "0",
+          "regret": "1703271/8192500000",
+          "whole_task_gain": 0
+        }
+      },
+      "targets": [
+        {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "QUERY",
+          "source": 12,
+          "target": "-1703271/8192500000",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "SKIP",
+          "source": 12,
+          "target": "0",
+          "whole_service_gain": 0
+        }
+      ]
+    },
+    {
+      "world": "empty-32-32_cal_101201",
+      "opportunity": 13,
+      "split": "calibration",
+      "candidate_count": 1,
+      "variants": {
+        "history": {
+          "action": "SKIP",
+          "source": 5,
+          "target": "124687/512031250",
+          "best_observed_target": "124687/512031250",
+          "regret": "0",
+          "whole_task_gain": 0
+        },
+        "nohistory": {
+          "action": "QUERY",
+          "source": 5,
+          "target": "0",
+          "best_observed_target": "124687/512031250",
+          "regret": "124687/512031250",
+          "whole_task_gain": 0
+        }
+      },
+      "targets": [
+        {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "QUERY",
+          "source": 5,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "SKIP",
+          "source": 5,
+          "target": "124687/512031250",
+          "whole_service_gain": 0
+        }
+      ]
+    },
+    {
+      "world": "random-32-32-10_train_102101",
+      "opportunity": 1,
+      "split": "train",
+      "candidate_count": 1,
+      "variants": {
+        "history": {
+          "action": "SKIP",
+          "source": 2,
+          "target": "0",
+          "best_observed_target": "0",
+          "regret": "0",
+          "whole_task_gain": 0
+        },
+        "nohistory": {
+          "action": "SKIP",
+          "source": 2,
+          "target": "0",
+          "best_observed_target": "0",
+          "regret": "0",
+          "whole_task_gain": 0
+        }
+      },
+      "targets": [
+        {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "QUERY",
+          "source": 2,
+          "target": "-4050139/16385000000",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "SKIP",
+          "source": 2,
+          "target": "0",
+          "whole_service_gain": 0
+        }
+      ]
+    },
+    {
+      "world": "random-32-32-10_train_102101",
+      "opportunity": 7,
+      "split": "train",
+      "candidate_count": 1,
+      "variants": {
+        "history": {
+          "action": "QUERY",
+          "source": 5,
+          "target": "0",
+          "best_observed_target": "291721/4096250000",
+          "regret": "291721/4096250000",
+          "whole_task_gain": 0
+        },
+        "nohistory": {
+          "action": "QUERY",
+          "source": 5,
+          "target": "0",
+          "best_observed_target": "291721/4096250000",
+          "regret": "291721/4096250000",
+          "whole_task_gain": 0
+        }
+      },
+      "targets": [
+        {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "QUERY",
+          "source": 5,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "SKIP",
+          "source": 5,
+          "target": "291721/4096250000",
+          "whole_service_gain": 0
+        }
+      ]
+    },
+    {
+      "world": "random-32-32-10_train_102101",
+      "opportunity": 13,
+      "split": "train",
+      "candidate_count": 1,
+      "variants": {
+        "history": {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "best_observed_target": "0",
+          "regret": "0",
+          "whole_task_gain": 0
+        },
+        "nohistory": {
+          "action": "QUERY",
+          "source": 5,
+          "target": "0",
+          "best_observed_target": "0",
+          "regret": "0",
+          "whole_task_gain": 0
+        }
+      },
+      "targets": [
+        {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "QUERY",
+          "source": 5,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "SKIP",
+          "source": 5,
+          "target": "0",
+          "whole_service_gain": 0
+        }
+      ]
+    },
+    {
+      "world": "random-32-32-10_train_102102",
+      "opportunity": 1,
+      "split": "train",
+      "candidate_count": 1,
+      "variants": {
+        "history": {
+          "action": "QUERY",
+          "source": 12,
+          "target": "0",
+          "best_observed_target": "0",
+          "regret": "0",
+          "whole_task_gain": 0
+        },
+        "nohistory": {
+          "action": "QUERY",
+          "source": 12,
+          "target": "0",
+          "best_observed_target": "0",
+          "regret": "0",
+          "whole_task_gain": 0
+        }
+      },
+      "targets": [
+        {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "QUERY",
+          "source": 12,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "SKIP",
+          "source": 12,
+          "target": "0",
+          "whole_service_gain": 0
+        }
+      ]
+    },
+    {
+      "world": "random-32-32-10_train_102102",
+      "opportunity": 7,
+      "split": "train",
+      "candidate_count": 1,
+      "variants": {
+        "history": {
+          "action": "QUERY",
+          "source": 13,
+          "target": "16387054499/16385000000",
+          "best_observed_target": "16387054499/16385000000",
+          "regret": "0",
+          "whole_task_gain": 1
+        },
+        "nohistory": {
+          "action": "QUERY",
+          "source": 13,
+          "target": "16387054499/16385000000",
+          "best_observed_target": "16387054499/16385000000",
+          "regret": "0",
+          "whole_task_gain": 1
+        }
+      },
+      "targets": [
+        {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "QUERY",
+          "source": 13,
+          "target": "16387054499/16385000000",
+          "whole_service_gain": 1
+        },
+        {
+          "action": "SKIP",
+          "source": 13,
+          "target": "-1132/256015625",
+          "whole_service_gain": 0
+        }
+      ]
+    },
+    {
+      "world": "random-32-32-10_train_102102",
+      "opportunity": 13,
+      "split": "train",
+      "candidate_count": 1,
+      "variants": {
+        "history": {
+          "action": "QUERY",
+          "source": 12,
+          "target": "97751/8192500000",
+          "best_observed_target": "97751/8192500000",
+          "regret": "0",
+          "whole_task_gain": 0
+        },
+        "nohistory": {
+          "action": "QUERY",
+          "source": 12,
+          "target": "97751/8192500000",
+          "best_observed_target": "97751/8192500000",
+          "regret": "0",
+          "whole_task_gain": 0
+        }
+      },
+      "targets": [
+        {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "QUERY",
+          "source": 12,
+          "target": "97751/8192500000",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "SKIP",
+          "source": 12,
+          "target": "-1199467/8192500000",
+          "whole_service_gain": 0
+        }
+      ]
+    },
+    {
+      "world": "random-32-32-10_train_102103",
+      "opportunity": 1,
+      "split": "train",
+      "candidate_count": 1,
+      "variants": {
+        "history": {
+          "action": "QUERY",
+          "source": 3,
+          "target": "566/256015625",
+          "best_observed_target": "566/256015625",
+          "regret": "0",
+          "whole_task_gain": 0
+        },
+        "nohistory": {
+          "action": "QUERY",
+          "source": 3,
+          "target": "566/256015625",
+          "best_observed_target": "566/256015625",
+          "regret": "0",
+          "whole_task_gain": 0
+        }
+      },
+      "targets": [
+        {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "QUERY",
+          "source": 3,
+          "target": "566/256015625",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "SKIP",
+          "source": 3,
+          "target": "-6125437/16385000000",
+          "whole_service_gain": 0
+        }
+      ]
+    },
+    {
+      "world": "random-32-32-10_train_102103",
+      "opportunity": 7,
+      "split": "train",
+      "candidate_count": 1,
+      "variants": {
+        "history": {
+          "action": "QUERY",
+          "source": 3,
+          "target": "44744649/16385000000",
+          "best_observed_target": "5614811/2048125000",
+          "regret": "173839/16385000000",
+          "whole_task_gain": 0
+        },
+        "nohistory": {
+          "action": "SKIP",
+          "source": 3,
+          "target": "5614811/2048125000",
+          "best_observed_target": "5614811/2048125000",
+          "regret": "0",
+          "whole_task_gain": 0
+        }
+      },
+      "targets": [
+        {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "QUERY",
+          "source": 3,
+          "target": "44744649/16385000000",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "SKIP",
+          "source": 3,
+          "target": "5614811/2048125000",
+          "whole_service_gain": 0
+        }
+      ]
+    },
+    {
+      "world": "random-32-32-10_train_102103",
+      "opportunity": 13,
+      "split": "train",
+      "candidate_count": 2,
+      "variants": {
+        "history": {
+          "action": "QUERY",
+          "source": 3,
+          "target": "1145431/3277000000",
+          "best_observed_target": "6205351/16385000000",
+          "regret": "119549/4096250000",
+          "whole_task_gain": 0
+        },
+        "nohistory": {
+          "action": "QUERY",
+          "source": 3,
+          "target": "1145431/3277000000",
+          "best_observed_target": "6205351/16385000000",
+          "regret": "119549/4096250000",
+          "whole_task_gain": 0
+        }
+      },
+      "targets": [
+        {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "QUERY",
+          "source": 0,
+          "target": "6205351/16385000000",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "SKIP",
+          "source": 0,
+          "target": "-407057/3277000000",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "QUERY",
+          "source": 3,
+          "target": "1145431/3277000000",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "SKIP",
+          "source": 3,
+          "target": "5361057/16385000000",
+          "whole_service_gain": 0
+        }
+      ]
+    },
+    {
+      "world": "random-32-32-10_train_102104",
+      "opportunity": 1,
+      "split": "train",
+      "candidate_count": 1,
+      "variants": {
+        "history": {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "best_observed_target": "1449/655400000",
+          "regret": "1449/655400000",
+          "whole_task_gain": 0
+        },
+        "nohistory": {
+          "action": "QUERY",
+          "source": 3,
+          "target": "566/256015625",
+          "best_observed_target": "1449/655400000",
+          "regret": "1/16385000000",
+          "whole_task_gain": 0
+        }
+      },
+      "targets": [
+        {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "QUERY",
+          "source": 3,
+          "target": "566/256015625",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "SKIP",
+          "source": 3,
+          "target": "1449/655400000",
+          "whole_service_gain": 0
+        }
+      ]
+    },
+    {
+      "world": "random-32-32-10_train_102104",
+      "opportunity": 7,
+      "split": "train",
+      "candidate_count": 1,
+      "variants": {
+        "history": {
+          "action": "QUERY",
+          "source": 3,
+          "target": "0",
+          "best_observed_target": "291721/8192500000",
+          "regret": "291721/8192500000",
+          "whole_task_gain": 0
+        },
+        "nohistory": {
+          "action": "QUERY",
+          "source": 3,
+          "target": "0",
+          "best_observed_target": "291721/8192500000",
+          "regret": "291721/8192500000",
+          "whole_task_gain": 0
+        }
+      },
+      "targets": [
+        {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "QUERY",
+          "source": 3,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "SKIP",
+          "source": 3,
+          "target": "291721/8192500000",
+          "whole_service_gain": 0
+        }
+      ]
+    },
+    {
+      "world": "random-32-32-10_train_102104",
+      "opportunity": 13,
+      "split": "train",
+      "candidate_count": 1,
+      "variants": {
+        "history": {
+          "action": "QUERY",
+          "source": 13,
+          "target": "0",
+          "best_observed_target": "0",
+          "regret": "0",
+          "whole_task_gain": 0
+        },
+        "nohistory": {
+          "action": "QUERY",
+          "source": 13,
+          "target": "0",
+          "best_observed_target": "0",
+          "regret": "0",
+          "whole_task_gain": 0
+        }
+      },
+      "targets": [
+        {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "QUERY",
+          "source": 13,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "SKIP",
+          "source": 13,
+          "target": "0",
+          "whole_service_gain": 0
+        }
+      ]
+    },
+    {
+      "world": "random-32-32-10_cal_102201",
+      "opportunity": 1,
+      "split": "calibration",
+      "candidate_count": 1,
+      "variants": {
+        "history": {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "best_observed_target": "0",
+          "regret": "0",
+          "whole_task_gain": 0
+        },
+        "nohistory": {
+          "action": "QUERY",
+          "source": 14,
+          "target": "0",
+          "best_observed_target": "0",
+          "regret": "0",
+          "whole_task_gain": 0
+        }
+      },
+      "targets": [
+        {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "QUERY",
+          "source": 14,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "SKIP",
+          "source": 14,
+          "target": "0",
+          "whole_service_gain": 0
+        }
+      ]
+    },
+    {
+      "world": "random-32-32-10_cal_102201",
+      "opportunity": 7,
+      "split": "calibration",
+      "candidate_count": 1,
+      "variants": {
+        "history": {
+          "action": "QUERY",
+          "source": 14,
+          "target": "0",
+          "best_observed_target": "0",
+          "regret": "0",
+          "whole_task_gain": 0
+        },
+        "nohistory": {
+          "action": "SKIP",
+          "source": 14,
+          "target": "0",
+          "best_observed_target": "0",
+          "regret": "0",
+          "whole_task_gain": 0
+        }
+      },
+      "targets": [
+        {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "QUERY",
+          "source": 14,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "SKIP",
+          "source": 14,
+          "target": "0",
+          "whole_service_gain": 0
+        }
+      ]
+    },
+    {
+      "world": "random-32-32-10_cal_102201",
+      "opportunity": 13,
+      "split": "calibration",
+      "candidate_count": 1,
+      "variants": {
+        "history": {
+          "action": "QUERY",
+          "source": 1,
+          "target": "0",
+          "best_observed_target": "0",
+          "regret": "0",
+          "whole_task_gain": 0
+        },
+        "nohistory": {
+          "action": "QUERY",
+          "source": 1,
+          "target": "0",
+          "best_observed_target": "0",
+          "regret": "0",
+          "whole_task_gain": 0
+        }
+      },
+      "targets": [
+        {
+          "action": "WAIT",
+          "source": null,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "QUERY",
+          "source": 1,
+          "target": "0",
+          "whole_service_gain": 0
+        },
+        {
+          "action": "SKIP",
+          "source": 1,
+          "target": "0",
+          "whole_service_gain": 0
+        }
+      ]
+    }
+  ]
+}

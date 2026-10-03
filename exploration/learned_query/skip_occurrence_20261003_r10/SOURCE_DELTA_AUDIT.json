@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "identical_blocks": {
+    "struct Move3 {": {
+      "byte_identical": true,
+      "sha256": "c62a5c41911684d7afc46f36a6ad075ff753bcdfb9717cd4a731478484df7863"
+    },
+    "    S::Delta delta(": {
+      "byte_identical": true,
+      "sha256": "2e03af40822376db9391f835b5e00eb3dde71d6f3c8e15531dd0ae6f82747f6f"
+    },
+    "    std::vector<EndOnlyActor::Candidate> candidates()": {
+      "byte_identical": true,
+      "sha256": "be2c030ffe9d07c6b6901b69c4c96c30504dc430ea932431aa938098165ca953"
+    },
+    "    void frame()": {
+      "byte_identical": true,
+      "sha256": "8db77cb8ea0577cc9cfe27c3b4c677f41fbe54a79623fc40914f1b850b50bf40"
+    },
+    "    int decode(": {
+      "byte_identical": true,
+      "sha256": "a02f59e14a346cb883d5c6cd149396f28f68d35cf68a743bf7e564d03cf5a64a"
+    }
+  },
+  "deliver_only_change": "one skip erase and trace after public_END_delivered",
+  "remaining_changes": "actor skip state, choose QUERY/SKIP scores, query visibility/action installation, policy names",
+  "native_sha256": "8a3122b0a50374d7193c460d5deb3f869a121b432d3d1cd31d7651e49dd2535d"
+}
