@@ -1,0 +1,65 @@
+{
+  "passed": true,
+  "source_context": "random-32-32-10__t1_2__primitive_nominal",
+  "negative_controls": [
+    {
+      "name": "stale_public_checkpoint",
+      "rejected": true,
+      "reason": "stale or private solver view"
+    },
+    {
+      "name": "candidate_changed_path",
+      "rejected": true,
+      "reason": "candidate path/current/offset changed"
+    },
+    {
+      "name": "candidate_changed_type1",
+      "rejected": true,
+      "reason": "candidate type1 changed"
+    },
+    {
+      "name": "candidate_changed_current",
+      "rejected": true,
+      "reason": ""
+    },
+    {
+      "name": "candidate_changed_non_author_edge",
+      "rejected": true,
+      "reason": "candidate reversed outside input family"
+    },
+    {
+      "name": "explicit_cycle_DAG_guard",
+      "rejected": true,
+      "reason": "candidate cycle"
+    },
+    {
+      "name": "genuine_author_reversal_if_target_transition_committed",
+      "rejected": true,
+      "reason": "committed transition dependencies changed"
+    }
+  ],
+  "negative_count": 7,
+  "same_graph_resume_exact": true,
+  "rejected_candidate_fallback_exact": true,
+  "injected_fallbacks": [
+    {
+      "status": "Timeout",
+      "exact_original_continuation": true,
+      "injection": true
+    },
+    {
+      "status": "HostTimeout",
+      "exact_original_continuation": true,
+      "injection": true
+    },
+    {
+      "status": "AuthorError",
+      "exact_original_continuation": true,
+      "injection": true
+    }
+  ],
+  "private_heap_segments_profile_not_in_solver_input": true,
+  "new_solver_calls": 0,
+  "commitment_control_scope": "real author reversal tested against an explicitly protected target; not a new physical scenario",
+  "timeout_scope": "fault-injected transport statuses; natural timeout counts reported separately"
+}

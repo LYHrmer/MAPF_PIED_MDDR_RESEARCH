@@ -1,0 +1,1055 @@
+{
+  "passed": true,
+  "partial": false,
+  "runs": 36,
+  "candidate_imports": false,
+  "auditor_sha256": "2afcd2a8b25cbed34d72c7e58c3288bd8031a65e89f6425ee1b84a1a36139c72",
+  "event_core_sha256": "d9cbebcc0e28d3ad08c96a2f85beb2cb7dbd34209b8f416a6680ccec3db0f645",
+  "geometry_sha256": "2dca05f5a3cd013f9b0c0986b8f74550cb28561c0578d6d7f6fd0ea867591c8f",
+  "negative_controls": [
+    {
+      "name": "wrong_graph_at_switch",
+      "rejected": true,
+      "reason": ""
+    },
+    {
+      "name": "future_input_field",
+      "rejected": true,
+      "reason": ""
+    },
+    {
+      "name": "half_as_arrival",
+      "rejected": true,
+      "reason": ""
+    },
+    {
+      "name": "wrong_public_state",
+      "rejected": true,
+      "reason": ""
+    },
+    {
+      "name": "active_commitment_removed",
+      "rejected": true,
+      "reason": ""
+    }
+  ],
+  "geometry_negative_controls": {
+    "passed": true,
+    "negative_controls": [
+      "interior_crossing_endpoint_checks_miss",
+      "head_on_swap",
+      "tiny_exact_overlap",
+      "missing_goal_dwell"
+    ]
+  },
+  "checks": [
+    {
+      "id": "random-32-32-10__t1_2__primitive_nominal__original",
+      "raw_sha256": "b93a7f4216ca9f9473bb9f864249537b2f0f5dbfb25485b717eb44ad85472186",
+      "events": {
+        "passed": true,
+        "moves": 1248,
+        "events": 14681,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "8343/4"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 60,
+        "segments": 4243,
+        "radius": "1/10",
+        "exact_pairs_checked": 2290,
+        "spatial_buckets": 862,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "9",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 345,
+      "sum_completion_time": "8343/4",
+      "makespan": "309/4"
+    },
+    {
+      "id": "random-32-32-10__t1_2__primitive_nominal__GSES",
+      "raw_sha256": "772dd183a2d5c0ce42b3b6f9fe845574f5f6af42d93a004065e92bf43d0ac4cb",
+      "events": {
+        "passed": true,
+        "moves": 1248,
+        "events": 14681,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "8171/4"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 60,
+        "segments": 4233,
+        "radius": "1/10",
+        "exact_pairs_checked": 2103,
+        "spatial_buckets": 862,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "47/2",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 345,
+      "sum_completion_time": "8171/4",
+      "makespan": "159/2"
+    },
+    {
+      "id": "random-32-32-10__t1_2__primitive_nominal__Improved_GSES",
+      "raw_sha256": "3fd8a6f8b8c8d420d6f7e2749837c89172e239038956d9fe2e33a5bf6fda0841",
+      "events": {
+        "passed": true,
+        "moves": 1248,
+        "events": 14681,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "8175/4"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 60,
+        "segments": 4234,
+        "radius": "1/10",
+        "exact_pairs_checked": 2110,
+        "spatial_buckets": 862,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "47/2",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 345,
+      "sum_completion_time": "8175/4",
+      "makespan": "159/2"
+    },
+    {
+      "id": "random-32-32-10__t1_2__axis_slow__original",
+      "raw_sha256": "ba5918e6922e1a4a17d219f3482dcb6831188c1e4d392a8759249f6f0ac64578",
+      "events": {
+        "passed": true,
+        "moves": 1248,
+        "events": 14681,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "2362"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 60,
+        "segments": 4248,
+        "radius": "1/10",
+        "exact_pairs_checked": 2262,
+        "spatial_buckets": 862,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "10",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 327,
+      "sum_completion_time": "2362",
+      "makespan": "175/2"
+    },
+    {
+      "id": "random-32-32-10__t1_2__axis_slow__GSES",
+      "raw_sha256": "4103be1bfbe9436b2b01a8b216fa3214bde2ad7ecd16a48acc39b62da65cfd83",
+      "events": {
+        "passed": true,
+        "moves": 1248,
+        "events": 14681,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "2341"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 60,
+        "segments": 4246,
+        "radius": "1/10",
+        "exact_pairs_checked": 2138,
+        "spatial_buckets": 862,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "29",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 327,
+      "sum_completion_time": "2341",
+      "makespan": "181/2"
+    },
+    {
+      "id": "random-32-32-10__t1_2__axis_slow__Improved_GSES",
+      "raw_sha256": "5cca11489848089bf31ac0e0f7410c84010d5d98a301cc0b2b093f2ca930dcf1",
+      "events": {
+        "passed": true,
+        "moves": 1248,
+        "events": 14681,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "2345"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 60,
+        "segments": 4246,
+        "radius": "1/10",
+        "exact_pairs_checked": 2135,
+        "spatial_buckets": 862,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "29",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 327,
+      "sum_completion_time": "2345",
+      "makespan": "181/2"
+    },
+    {
+      "id": "random-32-32-10__t1_2__midpoint_pause__original",
+      "raw_sha256": "2537829b24cdfb68b2558a1aaf58144dfe8222c5dfa00a387d86628813b81f5e",
+      "events": {
+        "passed": true,
+        "moves": 1248,
+        "events": 14790,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "2172"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 60,
+        "segments": 4354,
+        "radius": "1/10",
+        "exact_pairs_checked": 2267,
+        "spatial_buckets": 862,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "9",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 345,
+      "sum_completion_time": "2172",
+      "makespan": "159/2"
+    },
+    {
+      "id": "random-32-32-10__t1_2__midpoint_pause__GSES",
+      "raw_sha256": "52ee44a3656f9e7368cfffbe463a90049f386d81688dd943ee93e0d6f37e3f24",
+      "events": {
+        "passed": true,
+        "moves": 1248,
+        "events": 14790,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "4267/2"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 60,
+        "segments": 4346,
+        "radius": "1/10",
+        "exact_pairs_checked": 2114,
+        "spatial_buckets": 862,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "25",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 345,
+      "sum_completion_time": "4267/2",
+      "makespan": "333/4"
+    },
+    {
+      "id": "random-32-32-10__t1_2__midpoint_pause__Improved_GSES",
+      "raw_sha256": "83ebcf6ac722453dc1ab014c664d1569a28212d795c4ef673c4fd19e1e51d540",
+      "events": {
+        "passed": true,
+        "moves": 1248,
+        "events": 14790,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "2133"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 60,
+        "segments": 4347,
+        "radius": "1/10",
+        "exact_pairs_checked": 2108,
+        "spatial_buckets": 862,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "25",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 345,
+      "sum_completion_time": "2133",
+      "makespan": "333/4"
+    },
+    {
+      "id": "random-32-32-10__t5_2__primitive_nominal__original",
+      "raw_sha256": "b93a7f4216ca9f9473bb9f864249537b2f0f5dbfb25485b717eb44ad85472186",
+      "events": {
+        "passed": true,
+        "moves": 1248,
+        "events": 14681,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "8343/4"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 60,
+        "segments": 4243,
+        "radius": "1/10",
+        "exact_pairs_checked": 2290,
+        "spatial_buckets": 862,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "9",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 1204,
+      "sum_completion_time": "8343/4",
+      "makespan": "309/4"
+    },
+    {
+      "id": "random-32-32-10__t5_2__primitive_nominal__GSES",
+      "raw_sha256": "0344bfadbed4cb0536e22928e25d9df2f53d6d2cecbc2017977a4974f4a42deb",
+      "events": {
+        "passed": true,
+        "moves": 1248,
+        "events": 14681,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "8131/4"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 60,
+        "segments": 4233,
+        "radius": "1/10",
+        "exact_pairs_checked": 2132,
+        "spatial_buckets": 862,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "9",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 1204,
+      "sum_completion_time": "8131/4",
+      "makespan": "159/2"
+    },
+    {
+      "id": "random-32-32-10__t5_2__primitive_nominal__Improved_GSES",
+      "raw_sha256": "6301c939e0acc08f7013acf8fc81d87de7d31adc5cdeda148a30e25e523741c4",
+      "events": {
+        "passed": true,
+        "moves": 1248,
+        "events": 14681,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "8131/4"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 60,
+        "segments": 4233,
+        "radius": "1/10",
+        "exact_pairs_checked": 2145,
+        "spatial_buckets": 862,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "9",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 1204,
+      "sum_completion_time": "8131/4",
+      "makespan": "159/2"
+    },
+    {
+      "id": "random-32-32-10__t5_2__axis_slow__original",
+      "raw_sha256": "ba5918e6922e1a4a17d219f3482dcb6831188c1e4d392a8759249f6f0ac64578",
+      "events": {
+        "passed": true,
+        "moves": 1248,
+        "events": 14681,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "2362"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 60,
+        "segments": 4248,
+        "radius": "1/10",
+        "exact_pairs_checked": 2262,
+        "spatial_buckets": 862,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "10",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 1091,
+      "sum_completion_time": "2362",
+      "makespan": "175/2"
+    },
+    {
+      "id": "random-32-32-10__t5_2__axis_slow__GSES",
+      "raw_sha256": "77b4c14904196bf0cf3b370456af569f83eef1e5b0ad3daa32dd84a9ab535931",
+      "events": {
+        "passed": true,
+        "moves": 1248,
+        "events": 14681,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "2327"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 60,
+        "segments": 4245,
+        "radius": "1/10",
+        "exact_pairs_checked": 2177,
+        "spatial_buckets": 862,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "10",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 1091,
+      "sum_completion_time": "2327",
+      "makespan": "181/2"
+    },
+    {
+      "id": "random-32-32-10__t5_2__axis_slow__Improved_GSES",
+      "raw_sha256": "42c965f50c9a3c3884b7bff885be642f7dbe2d3546227dd02044773a233b6d17",
+      "events": {
+        "passed": true,
+        "moves": 1248,
+        "events": 14681,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "2326"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 60,
+        "segments": 4246,
+        "radius": "1/10",
+        "exact_pairs_checked": 2168,
+        "spatial_buckets": 862,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "10",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 1091,
+      "sum_completion_time": "2326",
+      "makespan": "181/2"
+    },
+    {
+      "id": "random-32-32-10__t5_2__midpoint_pause__original",
+      "raw_sha256": "2537829b24cdfb68b2558a1aaf58144dfe8222c5dfa00a387d86628813b81f5e",
+      "events": {
+        "passed": true,
+        "moves": 1248,
+        "events": 14790,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "2172"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 60,
+        "segments": 4354,
+        "radius": "1/10",
+        "exact_pairs_checked": 2267,
+        "spatial_buckets": 862,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "9",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 1170,
+      "sum_completion_time": "2172",
+      "makespan": "159/2"
+    },
+    {
+      "id": "random-32-32-10__t5_2__midpoint_pause__GSES",
+      "raw_sha256": "9fd832be89652ea5fe441dc5f7db76d3f84f61e97b5c8725d5ecebd45d7f2a51",
+      "events": {
+        "passed": true,
+        "moves": 1248,
+        "events": 14790,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "8491/4"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 60,
+        "segments": 4346,
+        "radius": "1/10",
+        "exact_pairs_checked": 2144,
+        "spatial_buckets": 862,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "9",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 1170,
+      "sum_completion_time": "8491/4",
+      "makespan": "333/4"
+    },
+    {
+      "id": "random-32-32-10__t5_2__midpoint_pause__Improved_GSES",
+      "raw_sha256": "fcb0d96db24b6abbb41376869acc74fcab94f5cc90cf82276060b3f66c81c013",
+      "events": {
+        "passed": true,
+        "moves": 1248,
+        "events": 14790,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "8485/4"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 60,
+        "segments": 4346,
+        "radius": "1/10",
+        "exact_pairs_checked": 2147,
+        "spatial_buckets": 862,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "9",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 1170,
+      "sum_completion_time": "8485/4",
+      "makespan": "333/4"
+    },
+    {
+      "id": "warehouse-10-20-10-2-1__t1_2__primitive_nominal__original",
+      "raw_sha256": "e1b21756f22754b7204cf1fe8eae66ca79bc4f080b7c06ef67bd45655fd5f491",
+      "events": {
+        "passed": true,
+        "moves": 10743,
+        "events": 120774,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "65957/4"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 110,
+        "segments": 33572,
+        "radius": "1/10",
+        "exact_pairs_checked": 2085,
+        "spatial_buckets": 7016,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "543/4",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 652,
+      "sum_completion_time": "65957/4",
+      "makespan": "1241/4"
+    },
+    {
+      "id": "warehouse-10-20-10-2-1__t1_2__primitive_nominal__GSES",
+      "raw_sha256": "8d6a1abe15670366268e3214704f53d9422191a777d5e077be8d6f5965406726",
+      "events": {
+        "passed": true,
+        "moves": 10743,
+        "events": 120774,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "65975/4"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 110,
+        "segments": 33573,
+        "radius": "1/10",
+        "exact_pairs_checked": 2102,
+        "spatial_buckets": 7016,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "543/4",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 652,
+      "sum_completion_time": "65975/4",
+      "makespan": "1241/4"
+    },
+    {
+      "id": "warehouse-10-20-10-2-1__t1_2__primitive_nominal__Improved_GSES",
+      "raw_sha256": "e8ff03c042412a999cae710109cb2fed37be837d320e0cb1627b8f1466c4a011",
+      "events": {
+        "passed": true,
+        "moves": 10743,
+        "events": 120774,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "16504"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 110,
+        "segments": 33573,
+        "radius": "1/10",
+        "exact_pairs_checked": 2192,
+        "spatial_buckets": 7016,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "51/4",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 652,
+      "sum_completion_time": "16504",
+      "makespan": "1241/4"
+    },
+    {
+      "id": "warehouse-10-20-10-2-1__t1_2__axis_slow__original",
+      "raw_sha256": "627949ad7ceb586c76db3eaf01f05ebb498f25d69383011b786f0de1b4d97f38",
+      "events": {
+        "passed": true,
+        "moves": 10743,
+        "events": 120774,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "20832"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 110,
+        "segments": 33615,
+        "radius": "1/10",
+        "exact_pairs_checked": 2585,
+        "spatial_buckets": 7016,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "425/2",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 652,
+      "sum_completion_time": "20832",
+      "makespan": "775/2"
+    },
+    {
+      "id": "warehouse-10-20-10-2-1__t1_2__axis_slow__GSES",
+      "raw_sha256": "35ce99f6f3f73d7e6625b05d3b32afa63042a7621683a9c60ca22400dbc20849",
+      "events": {
+        "passed": true,
+        "moves": 10743,
+        "events": 120774,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "83311/4"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 110,
+        "segments": 33615,
+        "radius": "1/10",
+        "exact_pairs_checked": 2574,
+        "spatial_buckets": 7016,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "425/2",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 652,
+      "sum_completion_time": "83311/4",
+      "makespan": "775/2"
+    },
+    {
+      "id": "warehouse-10-20-10-2-1__t1_2__axis_slow__Improved_GSES",
+      "raw_sha256": "6d4268f1dff1f49661d121af0d37d84a2425e1f085a238d52eaa0fe883cd2bca",
+      "events": {
+        "passed": true,
+        "moves": 10743,
+        "events": 120774,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "83325/4"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 110,
+        "segments": 33612,
+        "radius": "1/10",
+        "exact_pairs_checked": 2596,
+        "spatial_buckets": 7016,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "212",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 652,
+      "sum_completion_time": "83325/4",
+      "makespan": "775/2"
+    },
+    {
+      "id": "warehouse-10-20-10-2-1__t1_2__midpoint_pause__original",
+      "raw_sha256": "209ef8a820a55425e3dc1f4394856c1896fe020a2849718ee70c44906843f2f9",
+      "events": {
+        "passed": true,
+        "moves": 10743,
+        "events": 121745,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "68875/4"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 110,
+        "segments": 34546,
+        "radius": "1/10",
+        "exact_pairs_checked": 1986,
+        "spatial_buckets": 7016,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "567/4",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 652,
+      "sum_completion_time": "68875/4",
+      "makespan": "1295/4"
+    },
+    {
+      "id": "warehouse-10-20-10-2-1__t1_2__midpoint_pause__GSES",
+      "raw_sha256": "e76fb96db17506814939e5241a5d3b1b5d505ad27f455dc93cb00add7f5a5597",
+      "events": {
+        "passed": true,
+        "moves": 10743,
+        "events": 121745,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "34451/2"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 110,
+        "segments": 34547,
+        "radius": "1/10",
+        "exact_pairs_checked": 2003,
+        "spatial_buckets": 7016,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "567/4",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 652,
+      "sum_completion_time": "34451/2",
+      "makespan": "1295/4"
+    },
+    {
+      "id": "warehouse-10-20-10-2-1__t1_2__midpoint_pause__Improved_GSES",
+      "raw_sha256": "fd69074b0e0e3fd23fec32509736c92bb2d755db3e3732acb4d872be7530e084",
+      "events": {
+        "passed": true,
+        "moves": 10743,
+        "events": 121745,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "68943/4"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 110,
+        "segments": 34547,
+        "radius": "1/10",
+        "exact_pairs_checked": 2053,
+        "spatial_buckets": 7016,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "27/2",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 652,
+      "sum_completion_time": "68943/4",
+      "makespan": "1295/4"
+    },
+    {
+      "id": "warehouse-10-20-10-2-1__t5_2__primitive_nominal__original",
+      "raw_sha256": "e1b21756f22754b7204cf1fe8eae66ca79bc4f080b7c06ef67bd45655fd5f491",
+      "events": {
+        "passed": true,
+        "moves": 10743,
+        "events": 120774,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "65957/4"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 110,
+        "segments": 33572,
+        "radius": "1/10",
+        "exact_pairs_checked": 2085,
+        "spatial_buckets": 7016,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "543/4",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 2250,
+      "sum_completion_time": "65957/4",
+      "makespan": "1241/4"
+    },
+    {
+      "id": "warehouse-10-20-10-2-1__t5_2__primitive_nominal__GSES",
+      "raw_sha256": "7709a676bd19b660541c40335868f952fd8d2ea109053d88a6235f10cd39313d",
+      "events": {
+        "passed": true,
+        "moves": 10743,
+        "events": 120774,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "65941/4"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 110,
+        "segments": 33570,
+        "radius": "1/10",
+        "exact_pairs_checked": 2002,
+        "spatial_buckets": 7016,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "543/4",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 2250,
+      "sum_completion_time": "65941/4",
+      "makespan": "1241/4"
+    },
+    {
+      "id": "warehouse-10-20-10-2-1__t5_2__primitive_nominal__Improved_GSES",
+      "raw_sha256": "7709a676bd19b660541c40335868f952fd8d2ea109053d88a6235f10cd39313d",
+      "events": {
+        "passed": true,
+        "moves": 10743,
+        "events": 120774,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "65941/4"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 110,
+        "segments": 33570,
+        "radius": "1/10",
+        "exact_pairs_checked": 2002,
+        "spatial_buckets": 7016,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "543/4",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 2250,
+      "sum_completion_time": "65941/4",
+      "makespan": "1241/4"
+    },
+    {
+      "id": "warehouse-10-20-10-2-1__t5_2__axis_slow__original",
+      "raw_sha256": "627949ad7ceb586c76db3eaf01f05ebb498f25d69383011b786f0de1b4d97f38",
+      "events": {
+        "passed": true,
+        "moves": 10743,
+        "events": 120774,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "20832"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 110,
+        "segments": 33615,
+        "radius": "1/10",
+        "exact_pairs_checked": 2585,
+        "spatial_buckets": 7016,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "425/2",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 1975,
+      "sum_completion_time": "20832",
+      "makespan": "775/2"
+    },
+    {
+      "id": "warehouse-10-20-10-2-1__t5_2__axis_slow__GSES",
+      "raw_sha256": "a29f5640cd191215296aa221d961a2120fed8849319dbd06a94d18bac73d420a",
+      "events": {
+        "passed": true,
+        "moves": 10743,
+        "events": 120774,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "41639/2"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 110,
+        "segments": 33613,
+        "radius": "1/10",
+        "exact_pairs_checked": 2543,
+        "spatial_buckets": 7016,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "425/2",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 1975,
+      "sum_completion_time": "41639/2",
+      "makespan": "775/2"
+    },
+    {
+      "id": "warehouse-10-20-10-2-1__t5_2__axis_slow__Improved_GSES",
+      "raw_sha256": "a29f5640cd191215296aa221d961a2120fed8849319dbd06a94d18bac73d420a",
+      "events": {
+        "passed": true,
+        "moves": 10743,
+        "events": 120774,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "41639/2"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 110,
+        "segments": 33613,
+        "radius": "1/10",
+        "exact_pairs_checked": 2543,
+        "spatial_buckets": 7016,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "425/2",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 1975,
+      "sum_completion_time": "41639/2",
+      "makespan": "775/2"
+    },
+    {
+      "id": "warehouse-10-20-10-2-1__t5_2__midpoint_pause__original",
+      "raw_sha256": "209ef8a820a55425e3dc1f4394856c1896fe020a2849718ee70c44906843f2f9",
+      "events": {
+        "passed": true,
+        "moves": 10743,
+        "events": 121745,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "68875/4"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 110,
+        "segments": 34546,
+        "radius": "1/10",
+        "exact_pairs_checked": 1986,
+        "spatial_buckets": 7016,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "567/4",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 2200,
+      "sum_completion_time": "68875/4",
+      "makespan": "1295/4"
+    },
+    {
+      "id": "warehouse-10-20-10-2-1__t5_2__midpoint_pause__GSES",
+      "raw_sha256": "29037cc8637a726e9452d12230a1c22f67e3e150ff5e6285b77464e2cbd857c1",
+      "events": {
+        "passed": true,
+        "moves": 10743,
+        "events": 121745,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "68943/4"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 110,
+        "segments": 34545,
+        "radius": "1/10",
+        "exact_pairs_checked": 1975,
+        "spatial_buckets": 7016,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "27/2",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 2200,
+      "sum_completion_time": "68943/4",
+      "makespan": "1295/4"
+    },
+    {
+      "id": "warehouse-10-20-10-2-1__t5_2__midpoint_pause__Improved_GSES",
+      "raw_sha256": "09a8a2f84977644214afe0687e1e4ef1e4a00b65cd88cf04bc7a3b6e5ae8a558",
+      "events": {
+        "passed": true,
+        "moves": 10743,
+        "events": 121745,
+        "initial_graph_matches_author": true,
+        "dynamic_dependency_boundary_checked": true,
+        "author_unit_full_state_match": false,
+        "exact_completion_sum": "34453/2"
+      },
+      "geometry": {
+        "passed": true,
+        "agents": 110,
+        "segments": 34546,
+        "radius": "1/10",
+        "exact_pairs_checked": 2036,
+        "spatial_buckets": 7016,
+        "minimum_checked_distance_squared": "1",
+        "minimum_checked_at": "27/2",
+        "minimum_scope": "Candidate pairs only; all excluded spatial boxes are separated beyond disc overlap.",
+        "coverage": "All agents continuously through makespan, including completed robots."
+      },
+      "boundary": 2200,
+      "sum_completion_time": "34453/2",
+      "makespan": "1295/4"
+    }
+  ]
+}

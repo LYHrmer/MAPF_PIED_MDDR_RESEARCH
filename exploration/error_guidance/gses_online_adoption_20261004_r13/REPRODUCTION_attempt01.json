@@ -1,0 +1,12 @@
+{
+  "passed": false,
+  "scope": "post-experiment artifact reproducibility check, not a scientific run",
+  "command": "rtk proxy python3 reproduce.py --build --replay random-32-32-10__t1_2__primitive_nominal__GSES",
+  "author_source_pins": 43,
+  "rebuild_ELF_byte_identical": true,
+  "binary_sha256": "b5e918f8913baca71a7b189e21e76bf3d7bfb41ec8042ee5ab306a52f109700c",
+  "failure": "Python tuple versus decoded JSON array in adoption.protected_transitions",
+  "diagnosis": "The only unequal top-level field was adoption; the only unequal nested field was protected_transitions. Full JSON-normalized records were equal.",
+  "correction": "Compare entire serialized JSON structures, retaining every physical/control/guard field. No frozen core, solver result, checkpoint or raw trace changed.",
+  "recording": "Failure recorded after inspecting the actual command output; no fabricated process timing."
+}
