@@ -1,5 +1,9 @@
 # MAPF 项目当前入口
 
+2026-10-04 R14：**真实POSITION正文及费用绑定已补齐，新增信息到原作者搜索的接口已实现，并按内容键复用旧实验。** [本轮三线结果与下一步](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261004_R14.md)。
+
+主线仅新增一次host观测执行，原收费guest不变；358字节正文可独立解码，429条原事件与291费用段同R13，非新性能样本。查询复用160臂导出48配对，TEST两尾策略的事后任务上界713等于固定LD，剩余受限时间空间仅约0.00351%。第三线仅1个新GSES输入，23次调用请求及36条执行结果复用旧证据；权重1→2仍未改变最终依赖或物理后果，0新增续跑。主线真实证书与第三线模拟测量仍是不同执行域，生产费用未冒接。详Q2 §83；以下R13及更早为历史。
+
 2026-10-04 R13：**正常 END 的完整历史已收进私有核验器，调度侧只取得绑定当前 occurrence 的结束通知；原十二臂服务与物理事件保持。** [本轮全部线路与 Astra/科研导师分别判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261004_R13.md)。
 
 查询线已完成160原生与96留出：full/固定LD各713任务、C712，主动策略均192QUERY；full未超固定LD，概率屏蔽模型有单条件贡献的约0.714时间改善。第三线24次真实作者调用均异图采用，36完整执行及迁移重放通过；ΣT18改善6退化，但makespan无改善。正式后继优先付费证据到合法候选的接口与原始场景文件级验证，详上述三线入口。

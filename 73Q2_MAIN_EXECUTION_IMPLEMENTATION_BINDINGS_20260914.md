@@ -1954,3 +1954,15 @@ Natural的净差同时包含验证位置、复制/分配和代码布局变化，
 执行归档存在已披露缺口：run_step沿旧R11路径识别variant，因此本轮没有另存事前source_snapshot/bound_artifacts。原started/receipt/stdout/stderr仍完整，实际host固定guestSHA在运行时校验，18guest隔离重编逐字一致。保留原runner、修复未来入口，六host嵌入18guestSHA与当前源码均作明确post-run补档；host本身无独立事前副本，不把补档写成事前冻结，也没有为此追加native。
 
 root独立ROOT_COMPARE核原始逐段/作业费用、全部非费用事件、父pin及原稿。实际源与原始证据没有随四文档上传；[三线结果与下一合同](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261004_R13.md)分别记录查询学习与真实作者图采用结果。下一主线工作是共同决策点的信息/收费适配，不继续把单点微优化当作算法增益。
+
+## 83. R14：实际 POSITION 正文导出与估计消费接口（2026-10-04）
+
+新本机工件位于 `implementation_binding_evidence/position_search_bridge_20261004_r14/`。R13日志只有成功安装与结账，未保留完整POSITION正文；本轮新增host观察器，只在真实付费SOURCE成功返回后记录已返回的index/value，不另读保护信封，也不导出private serial。仅对length12 paid / Natural新增1次观测执行，原3个收费guest ELF、输入与16tick不变；它补新证据字段，不构成新性能样本，未重跑十二臂。
+
+从64个合法可读word重组358字节正文，完整15字段身份、请求precision/witness、sample/row/subevent、捕获时间2、送达时间4、精确进度区间[2,2]及capture cap12均可核对。wire与JSON规范编码、原始请求、来源receipt、费用归属与消费时效分别绑定。JSON只提供归档溯源和估计用途，不重新创建受保护guest authority；POSITION不含速度/ETA/ARRIVE，不能修改current或替代正常END。旧R13正文缺失继续显式保留，不从旧physical_state伪造证书。
+
+独立根审未导入新codec，从原始SOURCE返回字自行解码并核85项producer事前pin。剔除新增观察器元数据和host_elapsed后，429条原事件与R13逐项一致；291费用段完全相同，Natural实际/收费均344,352,218。账户0选择1,269,740、账户1查询9,841,654、账户3结账22,928,639，合34,040,033；共享业务账户2为310,312,185。该分账不是因果边际POSITION成本，host记录本身不计入guest模型费用。
+
+第三线另实现共同公共快照、独立模拟测量核验、搜索估计与原作者guard/lift。12context只产生1个新GSES输入，其搜索权重1→2但最终type2与真实执行图未变；36结果记录全部复用旧轨迹，没有为同图重新执行。模拟测量的production_cost=null，不与本主线body跨world安装。查询线复用160臂导出48完整尾配对；TEST两尾策略oracle任务713等于LD，剩余受限时间空间约0.00351%，因此下一优先有效决策空间而非更大回归器。
+
+主线实现继续本机隔离，公共main仅四进度文档，原稿保持；三线详细工件和后续方向见 [R14综述](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261004_R14.md)。本轮未宣称统一生产控制器已经接入、学习性能提升或新增一般化实验结论。
