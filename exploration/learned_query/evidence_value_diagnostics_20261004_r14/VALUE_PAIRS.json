@@ -1,0 +1,5668 @@
+{
+  "pairs": [
+    {
+      "C": {
+        "N": 41,
+        "T": {
+          "lower": "2900189011/500000",
+          "upper": "5800378063/1000000"
+        },
+        "actual_interventions": 0,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "94196c27ade1f6594dc9bf55040af904b8cbe8986bc49a13b8856eb1bc120b0c",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 41,
+        "T": {
+          "lower": "1451094587/250000",
+          "upper": "5804378389/1000000"
+        },
+        "actual_interventions": 2,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "4d479584b20e298dc15159cac02eee36b70334e00526922ef92bce118b80ef8d",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TRAIN_CAL_01.tar.gz",
+          "archive_sha256": "9678a2711b2fccc030cbe5491655b20413cb53960cb96bff5356f39d2ee941a8",
+          "member": "runs/empty-32-32_scen2_offset112_train_131102_B16__macro_C.jsonl",
+          "sha256": "e7d15c43c9d3ebc9e2a4599dd6952026a522608c3fb1eeb11bf4598253f2531e"
+        },
+        "LD": {
+          "archive": "RAW_R13_TRAIN_CAL_01.tar.gz",
+          "archive_sha256": "9678a2711b2fccc030cbe5491655b20413cb53960cb96bff5356f39d2ee941a8",
+          "member": "runs/empty-32-32_scen2_offset112_train_131102_B16__macro_LD.jsonl",
+          "sha256": "8e022cd7cfe624337f3d5d57c479619f014e93e5984af239be929b8ab1c1677d"
+        }
+      },
+      "budget": 16,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "-4000367/1000000",
+        "upper": "-800057/200000"
+      },
+      "delta_queries": 0,
+      "family_key": "empty-32-32_scen2_offset112_train_131102",
+      "gate_identity_provenance": {
+        "agent": 10,
+        "occurrence": "m-10-38"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "empty-32-32",
+        "offset": 112,
+        "scenario": "empty-32-32-random-2.scen",
+        "seed": 131102
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "369/3650",
+        "inverse_route_owner_claim_sum": "1/4",
+        "min_blocked_remaining_route_over64": "1/16",
+        "prior_p": "1/2",
+        "remaining_at_gate": 8,
+        "remaining_horizon": "6568057/16000000",
+        "spent_at_gate": 8
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 75455545,
+          "upper": 75455546
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "369/3650",
+          "1/2",
+          "3/8",
+          "1/4",
+          "1/16",
+          "1/15",
+          "0",
+          "1/2",
+          "6568057/16000000",
+          "369/14600"
+        ],
+        "initial_capacity": 16,
+        "opportunity": 9,
+        "remaining_capacity": 8,
+        "spent": 8
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-1-56",
+          "m-1-63",
+          "m-10-38",
+          "m-12-42",
+          "m-12-57",
+          "m-14-54"
+        ],
+        "LD_only": [
+          "m-10-56",
+          "m-10-61",
+          "m-10-62",
+          "m-5-69",
+          "m-6-60",
+          "m-8-61"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-4000367/1000000",
+        "upper": "-800057/200000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": false,
+      "split": "train",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "C_faster",
+      "world": "empty-32-32_scen2_offset112_train_131102_B16"
+    },
+    {
+      "C": {
+        "N": 41,
+        "T": {
+          "lower": "2902499007/500000",
+          "upper": "1160999611/200000"
+        },
+        "actual_interventions": 0,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "72c7edda3e0e372519b3d3d59229396b340451f8e13bee36ac64df91e87b0fb6",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 41,
+        "T": {
+          "lower": "725120183/125000",
+          "upper": "1160192301/200000"
+        },
+        "actual_interventions": 2,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "8e434407537d5ec2f1431764b1d4fa04fa490335cc215215c17b86c113975fa8",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TRAIN_CAL_01.tar.gz",
+          "archive_sha256": "9678a2711b2fccc030cbe5491655b20413cb53960cb96bff5356f39d2ee941a8",
+          "member": "runs/empty-32-32_scen2_offset112_train_131102_B8__macro_C.jsonl",
+          "sha256": "40a5ad33593c24c9e46666c1f32fb60c6aa03cb263972aeca94c24e2b054374a"
+        },
+        "LD": {
+          "archive": "RAW_R13_TRAIN_CAL_01.tar.gz",
+          "archive_sha256": "9678a2711b2fccc030cbe5491655b20413cb53960cb96bff5356f39d2ee941a8",
+          "member": "runs/empty-32-32_scen2_offset112_train_131102_B8__macro_LD.jsonl",
+          "sha256": "debd84b9be070d689aafc82927ac2f0e60c459a68d99ce13d6f96af34eb56580"
+        }
+      },
+      "budget": 8,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "4036509/1000000",
+        "upper": "4036591/1000000"
+      },
+      "delta_queries": 0,
+      "family_key": "empty-32-32_scen2_offset112_train_131102",
+      "gate_identity_provenance": {
+        "agent": 0,
+        "occurrence": "m-0-30"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "empty-32-32",
+        "offset": 112,
+        "scenario": "empty-32-32-random-2.scen",
+        "seed": 131102
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "369/3650",
+        "inverse_route_owner_claim_sum": "1/2",
+        "min_blocked_remaining_route_over64": "1/32",
+        "prior_p": "1/2",
+        "remaining_at_gate": 4,
+        "remaining_horizon": "8878941/16000000",
+        "spent_at_gate": 4
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 56968479,
+          "upper": 56968480
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "369/3650",
+          "1/2",
+          "3/8",
+          "1/2",
+          "1/32",
+          "1/15",
+          "0",
+          "1/4",
+          "8878941/16000000",
+          "369/7300"
+        ],
+        "initial_capacity": 8,
+        "opportunity": 5,
+        "remaining_capacity": 4,
+        "spent": 4
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-0-30",
+          "m-12-30"
+        ],
+        "LD_only": [
+          "m-10-38",
+          "m-12-42"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "4036509/1000000",
+        "upper": "4036591/1000000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": false,
+      "split": "train",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "LD_faster",
+      "world": "empty-32-32_scen2_offset112_train_131102_B8"
+    },
+    {
+      "C": {
+        "N": 44,
+        "T": {
+          "lower": "5600857503/1000000",
+          "upper": "5600857547/1000000"
+        },
+        "actual_interventions": 0,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "31552d0371384958f37ae22946c6b5b13156f962431e76f57b2cbdcbbcc337c1",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 44,
+        "T": {
+          "lower": "5600857503/1000000",
+          "upper": "5600857547/1000000"
+        },
+        "actual_interventions": 2,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "31552d0371384958f37ae22946c6b5b13156f962431e76f57b2cbdcbbcc337c1",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TRAIN_CAL_01.tar.gz",
+          "archive_sha256": "9678a2711b2fccc030cbe5491655b20413cb53960cb96bff5356f39d2ee941a8",
+          "member": "runs/empty-32-32_scen2_offset128_train_131103_B16__macro_C.jsonl",
+          "sha256": "2ff80b215a3635c0a4e172c5d3887d37fdca09f87e5dd88ed233729f3027476c"
+        },
+        "LD": {
+          "archive": "RAW_R13_TRAIN_CAL_01.tar.gz",
+          "archive_sha256": "9678a2711b2fccc030cbe5491655b20413cb53960cb96bff5356f39d2ee941a8",
+          "member": "runs/empty-32-32_scen2_offset128_train_131103_B16__macro_LD.jsonl",
+          "sha256": "e64e729391af24759a5ad28965abb36b741d3b919ebc017f57eed5137d09eab3"
+        }
+      },
+      "budget": 16,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "0",
+        "upper": "0"
+      },
+      "delta_queries": 0,
+      "family_key": "empty-32-32_scen2_offset128_train_131103",
+      "gate_identity_provenance": {
+        "agent": 0,
+        "occurrence": "m-0-28"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "empty-32-32",
+        "offset": 128,
+        "scenario": "empty-32-32-random-2.scen",
+        "seed": 131103
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "1",
+        "inverse_route_owner_claim_sum": "1/2",
+        "min_blocked_remaining_route_over64": "1/32",
+        "prior_p": "1",
+        "remaining_at_gate": 8,
+        "remaining_horizon": "9220447/16000000",
+        "spent_at_gate": 8
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 54236428,
+          "upper": 54236429
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "1",
+          "1",
+          "1333441/2000000",
+          "1/2",
+          "1/32",
+          "1/15",
+          "0",
+          "1/2",
+          "9220447/16000000",
+          "1/2"
+        ],
+        "initial_capacity": 16,
+        "opportunity": 9,
+        "remaining_capacity": 8,
+        "spent": 8
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-0-28",
+          "m-0-29"
+        ],
+        "LD_only": [
+          "m-2-33",
+          "m-6-37"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-11/250000",
+        "upper": "11/250000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": true,
+      "split": "train",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "identical_service",
+      "world": "empty-32-32_scen2_offset128_train_131103_B16"
+    },
+    {
+      "C": {
+        "N": 44,
+        "T": {
+          "lower": "5600857503/1000000",
+          "upper": "5600857547/1000000"
+        },
+        "actual_interventions": 0,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "31552d0371384958f37ae22946c6b5b13156f962431e76f57b2cbdcbbcc337c1",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 44,
+        "T": {
+          "lower": "5600857503/1000000",
+          "upper": "5600857547/1000000"
+        },
+        "actual_interventions": 2,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "31552d0371384958f37ae22946c6b5b13156f962431e76f57b2cbdcbbcc337c1",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TRAIN_CAL_01.tar.gz",
+          "archive_sha256": "9678a2711b2fccc030cbe5491655b20413cb53960cb96bff5356f39d2ee941a8",
+          "member": "runs/empty-32-32_scen2_offset128_train_131103_B8__macro_C.jsonl",
+          "sha256": "924f92e8d6cd515cb05eac982848b77a93fa8dcf00be1e5ee1c52fe369eed97c"
+        },
+        "LD": {
+          "archive": "RAW_R13_TRAIN_CAL_01.tar.gz",
+          "archive_sha256": "9678a2711b2fccc030cbe5491655b20413cb53960cb96bff5356f39d2ee941a8",
+          "member": "runs/empty-32-32_scen2_offset128_train_131103_B8__macro_LD.jsonl",
+          "sha256": "c9c54d9811cbda6e9d613913996d525774b0c606eacb86b71051120f53c5e497"
+        }
+      },
+      "budget": 8,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "0",
+        "upper": "0"
+      },
+      "delta_queries": 0,
+      "family_key": "empty-32-32_scen2_offset128_train_131103",
+      "gate_identity_provenance": {
+        "agent": 0,
+        "occurrence": "m-0-17"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "empty-32-32",
+        "offset": 128,
+        "scenario": "empty-32-32-random-2.scen",
+        "seed": 131103
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "369/3650",
+        "inverse_route_owner_claim_sum": "1/3",
+        "min_blocked_remaining_route_over64": "3/64",
+        "prior_p": "1/2",
+        "remaining_at_gate": 4,
+        "remaining_horizon": "2371309/3200000",
+        "spent_at_gate": 4
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 33147645,
+          "upper": 33147646
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "369/3650",
+          "1/2",
+          "3/8",
+          "1/3",
+          "3/64",
+          "1/15",
+          "0",
+          "1/4",
+          "2371309/3200000",
+          "123/3650"
+        ],
+        "initial_capacity": 8,
+        "opportunity": 5,
+        "remaining_capacity": 4,
+        "spent": 4
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-0-17",
+          "m-0-23"
+        ],
+        "LD_only": [
+          "m-0-28",
+          "m-0-29"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-11/250000",
+        "upper": "11/250000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": true,
+      "split": "train",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "identical_service",
+      "world": "empty-32-32_scen2_offset128_train_131103_B8"
+    },
+    {
+      "C": {
+        "N": 44,
+        "T": {
+          "lower": "5756432089/1000000",
+          "upper": "5756432133/1000000"
+        },
+        "actual_interventions": 0,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "1865ea54ff7f798364fa71c45447e53c6f8beb80697814bdb457e55cce5b3fbc",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 44,
+        "T": {
+          "lower": "5757015531/1000000",
+          "upper": "230280623/40000"
+        },
+        "actual_interventions": 2,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "9421dc621cd683655ea1e3bdd8bb04691f7e13031ec6db66e7f8eceeed25f104",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TRAIN_CAL_01.tar.gz",
+          "archive_sha256": "9678a2711b2fccc030cbe5491655b20413cb53960cb96bff5356f39d2ee941a8",
+          "member": "runs/empty-32-32_scen2_offset144_train_131104_B16__macro_C.jsonl",
+          "sha256": "fa764c294318d9c8f6eb911b9c836348dd2d4dcbfb200733fbcac33601b35aba"
+        },
+        "LD": {
+          "archive": "RAW_R13_TRAIN_CAL_01.tar.gz",
+          "archive_sha256": "9678a2711b2fccc030cbe5491655b20413cb53960cb96bff5356f39d2ee941a8",
+          "member": "runs/empty-32-32_scen2_offset144_train_131104_B16__macro_LD.jsonl",
+          "sha256": "eea51ad5c2d557b391cf9f51bb08047c24a3784f6bab9653537ab7a60078bacd"
+        }
+      },
+      "budget": 16,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "-291743/500000",
+        "upper": "-291699/500000"
+      },
+      "delta_queries": 0,
+      "family_key": "empty-32-32_scen2_offset144_train_131104",
+      "gate_identity_provenance": {
+        "agent": 0,
+        "occurrence": "m-0-23"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "empty-32-32",
+        "offset": 144,
+        "scenario": "empty-32-32-random-2.scen",
+        "seed": 131104
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "369/3650",
+        "inverse_route_owner_claim_sum": "1/4",
+        "min_blocked_remaining_route_over64": "1/16",
+        "prior_p": "1/2",
+        "remaining_at_gate": 8,
+        "remaining_horizon": "5101663/8000000",
+        "spent_at_gate": 8
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 46373392,
+          "upper": 46373393
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "369/3650",
+          "1/2",
+          "3/8",
+          "1/4",
+          "1/16",
+          "1/15",
+          "0",
+          "1/2",
+          "5101663/8000000",
+          "369/14600"
+        ],
+        "initial_capacity": 16,
+        "opportunity": 9,
+        "remaining_capacity": 8,
+        "spent": 8
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-0-23",
+          "m-14-27",
+          "m-14-28",
+          "m-14-29"
+        ],
+        "LD_only": [
+          "m-0-56",
+          "m-13-62",
+          "m-15-70",
+          "m-2-55"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-291743/500000",
+        "upper": "-291699/500000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": false,
+      "split": "train",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "C_faster",
+      "world": "empty-32-32_scen2_offset144_train_131104_B16"
+    },
+    {
+      "C": {
+        "N": 44,
+        "T": {
+          "lower": "1151410351/200000",
+          "upper": "5757051799/1000000"
+        },
+        "actual_interventions": 0,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "8b4b935342feb25c338993940c6dc5f617b4e2875f500d75bf5f648773b37bb5",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 44,
+        "T": {
+          "lower": "1151410351/200000",
+          "upper": "5757051799/1000000"
+        },
+        "actual_interventions": 2,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "8b4b935342feb25c338993940c6dc5f617b4e2875f500d75bf5f648773b37bb5",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TRAIN_CAL_01.tar.gz",
+          "archive_sha256": "9678a2711b2fccc030cbe5491655b20413cb53960cb96bff5356f39d2ee941a8",
+          "member": "runs/empty-32-32_scen2_offset144_train_131104_B8__macro_C.jsonl",
+          "sha256": "d37a4670ae261a11cc8415c52ad85c292ecc942a0a4bd1989c368ff19ef3aa10"
+        },
+        "LD": {
+          "archive": "RAW_R13_TRAIN_CAL_01.tar.gz",
+          "archive_sha256": "9678a2711b2fccc030cbe5491655b20413cb53960cb96bff5356f39d2ee941a8",
+          "member": "runs/empty-32-32_scen2_offset144_train_131104_B8__macro_LD.jsonl",
+          "sha256": "5d51d81d075e7a71bd4d63e9953b8616575fcce9cee8337a8735206c2cdcf4f7"
+        }
+      },
+      "budget": 8,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "0",
+        "upper": "0"
+      },
+      "delta_queries": 0,
+      "family_key": "empty-32-32_scen2_offset144_train_131104",
+      "gate_identity_provenance": {
+        "agent": 2,
+        "occurrence": "m-2-13"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "empty-32-32",
+        "offset": 144,
+        "scenario": "empty-32-32-random-2.scen",
+        "seed": 131104
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "369/3650",
+        "inverse_route_owner_claim_sum": "1/3",
+        "min_blocked_remaining_route_over64": "3/64",
+        "prior_p": "1/2",
+        "remaining_at_gate": 4,
+        "remaining_horizon": "6342709/8000000",
+        "spent_at_gate": 4
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 26516660,
+          "upper": 26516661
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "369/3650",
+          "1/2",
+          "3/8",
+          "1/3",
+          "3/64",
+          "1/15",
+          "0",
+          "1/4",
+          "6342709/8000000",
+          "123/3650"
+        ],
+        "initial_capacity": 8,
+        "opportunity": 5,
+        "remaining_capacity": 4,
+        "spent": 4
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-2-13",
+          "m-6-20"
+        ],
+        "LD_only": [
+          "m-0-23",
+          "m-14-27"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-11/250000",
+        "upper": "11/250000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": true,
+      "split": "train",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "identical_service",
+      "world": "empty-32-32_scen2_offset144_train_131104_B8"
+    },
+    {
+      "C": {
+        "N": 47,
+        "T": {
+          "lower": "5724783047/1000000",
+          "upper": "2862391547/500000"
+        },
+        "actual_interventions": 0,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "93527310fc42f34d297ada4107876339ff0f522d0a1cfd5da88d96466af3eae1",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 46,
+        "T": {
+          "lower": "2859223017/500000",
+          "upper": "17870144/3125"
+        },
+        "actual_interventions": 2,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "78f0a751f01482b30e7920fc6075af963fc49b9d7dd8a0ac1a5b8f2e2d1caff4",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TRAIN_CAL_01.tar.gz",
+          "archive_sha256": "9678a2711b2fccc030cbe5491655b20413cb53960cb96bff5356f39d2ee941a8",
+          "member": "runs/empty-32-32_scen2_offset160_train_131105_B16__macro_C.jsonl",
+          "sha256": "746b781de0e4940d398d6e52fadb85cac8e2e4285ca53bce1738f99d1468c791"
+        },
+        "LD": {
+          "archive": "RAW_R13_TRAIN_CAL_01.tar.gz",
+          "archive_sha256": "9678a2711b2fccc030cbe5491655b20413cb53960cb96bff5356f39d2ee941a8",
+          "member": "runs/empty-32-32_scen2_offset160_train_131105_B16__macro_LD.jsonl",
+          "sha256": "0c0d52bcbc8575cc4b023faafcd2e06f2e8a2ebb74565b4fdc71facf464cea20"
+        }
+      },
+      "budget": 16,
+      "delta_N": -1,
+      "delta_T": {
+        "lower": "6336967/1000000",
+        "upper": "316853/50000"
+      },
+      "delta_queries": 0,
+      "family_key": "empty-32-32_scen2_offset160_train_131105",
+      "gate_identity_provenance": {
+        "agent": 5,
+        "occurrence": "m-5-13"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "empty-32-32",
+        "offset": 160,
+        "scenario": "empty-32-32-random-2.scen",
+        "seed": 131105
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "1",
+        "inverse_route_owner_claim_sum": "1/3",
+        "min_blocked_remaining_route_over64": "3/64",
+        "prior_p": "1",
+        "remaining_at_gate": 8,
+        "remaining_horizon": "12279127/16000000",
+        "spent_at_gate": 8
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 29766986,
+          "upper": 29766987
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "1",
+          "1",
+          "1333441/2000000",
+          "1/3",
+          "3/64",
+          "1/15",
+          "0",
+          "1/2",
+          "12279127/16000000",
+          "1/3"
+        ],
+        "initial_capacity": 16,
+        "opportunity": 9,
+        "remaining_capacity": 8,
+        "spent": 8
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-5-13",
+          "m-5-14"
+        ],
+        "LD_only": [
+          "m-14-31",
+          "m-2-28"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "6336967/1000000",
+        "upper": "316853/50000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": false,
+      "split": "train",
+      "task_relation": "C_more_tasks",
+      "task_time_conflict": true,
+      "time_relation": "LD_faster",
+      "world": "empty-32-32_scen2_offset160_train_131105_B16"
+    },
+    {
+      "C": {
+        "N": 47,
+        "T": {
+          "lower": "5725366489/1000000",
+          "upper": "715670817/125000"
+        },
+        "actual_interventions": 0,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "f9673bed03dec083cda3e90086a15f67e4346f077524fec66cfe699e08d11fc4",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 47,
+        "T": {
+          "lower": "5725366489/1000000",
+          "upper": "715670817/125000"
+        },
+        "actual_interventions": 2,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "f9673bed03dec083cda3e90086a15f67e4346f077524fec66cfe699e08d11fc4",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TRAIN_CAL_01.tar.gz",
+          "archive_sha256": "9678a2711b2fccc030cbe5491655b20413cb53960cb96bff5356f39d2ee941a8",
+          "member": "runs/empty-32-32_scen2_offset160_train_131105_B8__macro_C.jsonl",
+          "sha256": "f7661c67718f5230c2e1bec0e1f29198486027ed3a40cfd0cc220b8f7ecdf2e8"
+        },
+        "LD": {
+          "archive": "RAW_R13_TRAIN_CAL_01.tar.gz",
+          "archive_sha256": "9678a2711b2fccc030cbe5491655b20413cb53960cb96bff5356f39d2ee941a8",
+          "member": "runs/empty-32-32_scen2_offset160_train_131105_B8__macro_LD.jsonl",
+          "sha256": "9851a842cf9dedf62d9392343f6a3680fcff0a2aedae7a55748ebd8efc49d050"
+        }
+      },
+      "budget": 8,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "0",
+        "upper": "0"
+      },
+      "delta_queries": 0,
+      "family_key": "empty-32-32_scen2_offset160_train_131105",
+      "gate_identity_provenance": {
+        "agent": 10,
+        "occurrence": "m-10-6"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "empty-32-32",
+        "offset": 160,
+        "scenario": "empty-32-32-random-2.scen",
+        "seed": 131105
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "369/3650",
+        "inverse_route_owner_claim_sum": "1/3",
+        "min_blocked_remaining_route_over64": "3/64",
+        "prior_p": "1/2",
+        "remaining_at_gate": 4,
+        "remaining_horizon": "14500789/16000000",
+        "spent_at_gate": 4
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 11993695,
+          "upper": 11993696
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "369/3650",
+          "1/2",
+          "3/8",
+          "1/3",
+          "3/64",
+          "1/15",
+          "0",
+          "1/4",
+          "14500789/16000000",
+          "123/3650"
+        ],
+        "initial_capacity": 8,
+        "opportunity": 5,
+        "remaining_capacity": 4,
+        "spent": 4
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-10-6",
+          "m-4-12"
+        ],
+        "LD_only": [
+          "m-5-13",
+          "m-5-14"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-47/1000000",
+        "upper": "47/1000000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": true,
+      "split": "train",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "identical_service",
+      "world": "empty-32-32_scen2_offset160_train_131105_B8"
+    },
+    {
+      "C": {
+        "N": 50,
+        "T": {
+          "lower": "5195571401/1000000",
+          "upper": "5195571447/1000000"
+        },
+        "actual_interventions": 0,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "f9f727db03113a8e5316de90acdcedc88e2d777e6eb9fbf1fe059e0098380c15",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 50,
+        "T": {
+          "lower": "5195571401/1000000",
+          "upper": "5195571447/1000000"
+        },
+        "actual_interventions": 2,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "f9f727db03113a8e5316de90acdcedc88e2d777e6eb9fbf1fe059e0098380c15",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TRAIN_CAL_01.tar.gz",
+          "archive_sha256": "9678a2711b2fccc030cbe5491655b20413cb53960cb96bff5356f39d2ee941a8",
+          "member": "runs/empty-32-32_scen2_offset176_train_131106_B16__macro_C.jsonl",
+          "sha256": "982e9764df5b652625eb584a1a825495741849de2b141229bccb24a189bea45a"
+        },
+        "LD": {
+          "archive": "RAW_R13_TRAIN_CAL_01.tar.gz",
+          "archive_sha256": "9678a2711b2fccc030cbe5491655b20413cb53960cb96bff5356f39d2ee941a8",
+          "member": "runs/empty-32-32_scen2_offset176_train_131106_B16__macro_LD.jsonl",
+          "sha256": "e9fdff1ca54d9c7b0f9cec2665bdcc0de8f3c6b310f833e258f076df8227b5ab"
+        }
+      },
+      "budget": 16,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "0",
+        "upper": "0"
+      },
+      "delta_queries": 0,
+      "family_key": "empty-32-32_scen2_offset176_train_131106",
+      "gate_identity_provenance": {
+        "agent": 4,
+        "occurrence": "m-4-24"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "empty-32-32",
+        "offset": 176,
+        "scenario": "empty-32-32-random-2.scen",
+        "seed": 131106
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "369/3650",
+        "inverse_route_owner_claim_sum": "1",
+        "min_blocked_remaining_route_over64": "1/64",
+        "prior_p": "1/2",
+        "remaining_at_gate": 8,
+        "remaining_horizon": "4980049/8000000",
+        "spent_at_gate": 8
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 48319219,
+          "upper": 48319220
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "369/3650",
+          "1/2",
+          "3/8",
+          "1",
+          "1/64",
+          "1/15",
+          "0",
+          "1/2",
+          "4980049/8000000",
+          "369/3650"
+        ],
+        "initial_capacity": 16,
+        "opportunity": 9,
+        "remaining_capacity": 8,
+        "spent": 8
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-4-24",
+          "m-4-26"
+        ],
+        "LD_only": [
+          "m-13-44",
+          "m-6-50"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-23/500000",
+        "upper": "23/500000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": true,
+      "split": "train",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "identical_service",
+      "world": "empty-32-32_scen2_offset176_train_131106_B16"
+    },
+    {
+      "C": {
+        "N": 50,
+        "T": {
+          "lower": "5196154843/1000000",
+          "upper": "5196154889/1000000"
+        },
+        "actual_interventions": 0,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "378950a015c2cf883e97e33758631828b3f3e6113c1c3d23a3c11448868844e8",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 51,
+        "T": {
+          "lower": "5221656979/1000000",
+          "upper": "208866281/40000"
+        },
+        "actual_interventions": 2,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "61b0cc6316c74d032a7a8e52cb008d0385670d354be66f8a5bcf8dcfae481e30",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TRAIN_CAL_01.tar.gz",
+          "archive_sha256": "9678a2711b2fccc030cbe5491655b20413cb53960cb96bff5356f39d2ee941a8",
+          "member": "runs/empty-32-32_scen2_offset176_train_131106_B8__macro_C.jsonl",
+          "sha256": "91414ec0191fefefff8a45d4a43566dd83d37ff50653175b5d44d3451ef035a8"
+        },
+        "LD": {
+          "archive": "RAW_R13_TRAIN_CAL_01.tar.gz",
+          "archive_sha256": "9678a2711b2fccc030cbe5491655b20413cb53960cb96bff5356f39d2ee941a8",
+          "member": "runs/empty-32-32_scen2_offset176_train_131106_B8__macro_LD.jsonl",
+          "sha256": "7c611a848c988422ed55b924ee52efb05963135e0ba6ac7677e34e6881beed07"
+        }
+      },
+      "budget": 8,
+      "delta_N": 1,
+      "delta_T": {
+        "lower": "-12751091/500000",
+        "upper": "-2550209/100000"
+      },
+      "delta_queries": 0,
+      "family_key": "empty-32-32_scen2_offset176_train_131106",
+      "gate_identity_provenance": {
+        "agent": 5,
+        "occurrence": "m-5-16"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "empty-32-32",
+        "offset": 176,
+        "scenario": "empty-32-32-random-2.scen",
+        "seed": 131106
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "369/3650",
+        "inverse_route_owner_claim_sum": "1/4",
+        "min_blocked_remaining_route_over64": "1/16",
+        "prior_p": "1/2",
+        "remaining_at_gate": 4,
+        "remaining_horizon": "11942149/16000000",
+        "spent_at_gate": 4
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 32462812,
+          "upper": 32462813
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "369/3650",
+          "1/2",
+          "3/8",
+          "1/4",
+          "1/16",
+          "1/15",
+          "0",
+          "1/4",
+          "11942149/16000000",
+          "369/14600"
+        ],
+        "initial_capacity": 8,
+        "opportunity": 5,
+        "remaining_capacity": 4,
+        "spent": 4
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-0-18",
+          "m-5-16"
+        ],
+        "LD_only": [
+          "m-4-24",
+          "m-4-26"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-12751091/500000",
+        "upper": "-2550209/100000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": false,
+      "split": "train",
+      "task_relation": "LD_more_tasks",
+      "task_time_conflict": true,
+      "time_relation": "C_faster",
+      "world": "empty-32-32_scen2_offset176_train_131106_B8"
+    },
+    {
+      "C": {
+        "N": 41,
+        "T": {
+          "lower": "1413332201/250000",
+          "upper": "1413332211/250000"
+        },
+        "actual_interventions": 0,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "ec0c0158fdd16fa016028d6918f5e90775d1692958c0e752b904e433b78cf03c",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 41,
+        "T": {
+          "lower": "707409469/125000",
+          "upper": "353704737/62500"
+        },
+        "actual_interventions": 2,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "9a920a9971e6ee35f2053766314e168b5e7a72102c80e2edc8df6248b6ba5242",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TRAIN_CAL_02.tar.gz",
+          "archive_sha256": "adde066ec42133e3e04743993043a88fed72b0058b45d9c293cda65230d6303f",
+          "member": "runs/empty-32-32_scen2_offset192_calibration_131201_B16__macro_C.jsonl",
+          "sha256": "01eec864c2c60bab149f1901c467418a6264a8787c801dfe560b1789ec104477"
+        },
+        "LD": {
+          "archive": "RAW_R13_TRAIN_CAL_02.tar.gz",
+          "archive_sha256": "adde066ec42133e3e04743993043a88fed72b0058b45d9c293cda65230d6303f",
+          "member": "runs/empty-32-32_scen2_offset192_calibration_131201_B16__macro_LD.jsonl",
+          "sha256": "438a7e196c1af3d31c0ab9383b297ba037cd76214b39c5e2c0288844b5cb95aa"
+        }
+      },
+      "budget": 16,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "-1486747/250000",
+        "upper": "-1486727/250000"
+      },
+      "delta_queries": 0,
+      "family_key": "empty-32-32_scen2_offset192_calibration_131201",
+      "gate_identity_provenance": {
+        "agent": 7,
+        "occurrence": "m-7-15"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "empty-32-32",
+        "offset": 192,
+        "scenario": "empty-32-32-random-2.scen",
+        "seed": 131201
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "3281/3650",
+        "inverse_route_owner_claim_sum": "1",
+        "min_blocked_remaining_route_over64": "1/64",
+        "prior_p": "1/2",
+        "remaining_at_gate": 8,
+        "remaining_horizon": "6216567/8000000",
+        "spent_at_gate": 8
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 28534935,
+          "upper": 28534936
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "3281/3650",
+          "1/2",
+          "3/8",
+          "1",
+          "1/64",
+          "1/15",
+          "0",
+          "1/2",
+          "6216567/8000000",
+          "3281/3650"
+        ],
+        "initial_capacity": 16,
+        "opportunity": 9,
+        "remaining_capacity": 8,
+        "spent": 8
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-6-16",
+          "m-6-17",
+          "m-6-18",
+          "m-7-15"
+        ],
+        "LD_only": [
+          "m-2-43",
+          "m-5-48",
+          "m-6-33",
+          "m-7-37"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-1486747/250000",
+        "upper": "-1486727/250000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": false,
+      "split": "calibration",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "C_faster",
+      "world": "empty-32-32_scen2_offset192_calibration_131201_B16"
+    },
+    {
+      "C": {
+        "N": 41,
+        "T": {
+          "lower": "1415101603/250000",
+          "upper": "1415101613/250000"
+        },
+        "actual_interventions": 0,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "3911489d2f85a9268b669f2a1439566c9ab0872d0621a2419353ca44623d0ca9",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 41,
+        "T": {
+          "lower": "1415101603/250000",
+          "upper": "1415101613/250000"
+        },
+        "actual_interventions": 2,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "3911489d2f85a9268b669f2a1439566c9ab0872d0621a2419353ca44623d0ca9",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TRAIN_CAL_02.tar.gz",
+          "archive_sha256": "adde066ec42133e3e04743993043a88fed72b0058b45d9c293cda65230d6303f",
+          "member": "runs/empty-32-32_scen2_offset192_calibration_131201_B8__macro_C.jsonl",
+          "sha256": "64f9820e6bf40b4b6bbec4bce3579547ab9e07bee6aa9d64da0159b8c5df4e2e"
+        },
+        "LD": {
+          "archive": "RAW_R13_TRAIN_CAL_02.tar.gz",
+          "archive_sha256": "adde066ec42133e3e04743993043a88fed72b0058b45d9c293cda65230d6303f",
+          "member": "runs/empty-32-32_scen2_offset192_calibration_131201_B8__macro_LD.jsonl",
+          "sha256": "2787dc4cfeae349ebf0430c64d3039e33deb3029406f962b47025cf206715fe4"
+        }
+      },
+      "budget": 8,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "0",
+        "upper": "0"
+      },
+      "delta_queries": 0,
+      "family_key": "empty-32-32_scen2_offset192_calibration_131201",
+      "gate_identity_provenance": {
+        "agent": 2,
+        "occurrence": "m-2-11"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "empty-32-32",
+        "offset": 192,
+        "scenario": "empty-32-32-random-2.scen",
+        "seed": 131201
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "1",
+        "inverse_route_owner_claim_sum": "1/3",
+        "min_blocked_remaining_route_over64": "3/64",
+        "prior_p": "1",
+        "remaining_at_gate": 4,
+        "remaining_horizon": "13189077/16000000",
+        "spent_at_gate": 4
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 22487391,
+          "upper": 22487392
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "1",
+          "1",
+          "1333441/2000000",
+          "1/3",
+          "3/64",
+          "1/15",
+          "0",
+          "1/4",
+          "13189077/16000000",
+          "1/3"
+        ],
+        "initial_capacity": 8,
+        "opportunity": 5,
+        "remaining_capacity": 4,
+        "spent": 4
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-2-11",
+          "m-2-12"
+        ],
+        "LD_only": [
+          "m-6-16",
+          "m-7-15"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-1/25000",
+        "upper": "1/25000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": true,
+      "split": "calibration",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "identical_service",
+      "world": "empty-32-32_scen2_offset192_calibration_131201_B8"
+    },
+    {
+      "C": {
+        "N": 37,
+        "T": {
+          "lower": "120946967/20000",
+          "upper": "6047348387/1000000"
+        },
+        "actual_interventions": 0,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "884c044cef150e116ef82fa6baddd8fdf3de8df7dfd8f2d7fd48e35f7d65c2c8",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 37,
+        "T": {
+          "lower": "3023692287/500000",
+          "upper": "6047384611/1000000"
+        },
+        "actual_interventions": 2,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "15bd7d6c1bf5cfe87fe07b5cc57b4e21f32fef34d33c7fea4f9edae5f3b285fd",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TRAIN_CAL_02.tar.gz",
+          "archive_sha256": "adde066ec42133e3e04743993043a88fed72b0058b45d9c293cda65230d6303f",
+          "member": "runs/empty-32-32_scen2_offset208_calibration_131202_B16__macro_C.jsonl",
+          "sha256": "213b69a1633ff4a04936fad66268e2164b7ad6d88c80cb071a20eb83139aa64b"
+        },
+        "LD": {
+          "archive": "RAW_R13_TRAIN_CAL_02.tar.gz",
+          "archive_sha256": "adde066ec42133e3e04743993043a88fed72b0058b45d9c293cda65230d6303f",
+          "member": "runs/empty-32-32_scen2_offset208_calibration_131202_B16__macro_LD.jsonl",
+          "sha256": "d06f951ca5746b2107b4ce1cf6916b189fc315221dc30ff0eca8f29ca8f50ebc"
+        }
+      },
+      "budget": 16,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "-36261/1000000",
+        "upper": "-36187/1000000"
+      },
+      "delta_queries": 0,
+      "family_key": "empty-32-32_scen2_offset208_calibration_131202",
+      "gate_identity_provenance": {
+        "agent": 12,
+        "occurrence": "m-12-8"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "empty-32-32",
+        "offset": 208,
+        "scenario": "empty-32-32-random-2.scen",
+        "seed": 131202
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "1",
+        "inverse_route_owner_claim_sum": "1/2",
+        "min_blocked_remaining_route_over64": "1/32",
+        "prior_p": "1",
+        "remaining_at_gate": 8,
+        "remaining_horizon": "13770193/16000000",
+        "spent_at_gate": 8
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 17838457,
+          "upper": 17838458
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "1",
+          "1",
+          "972913/1000000",
+          "1/2",
+          "1/32",
+          "1/15",
+          "0",
+          "1/2",
+          "13770193/16000000",
+          "1/2"
+        ],
+        "initial_capacity": 16,
+        "opportunity": 9,
+        "remaining_capacity": 8,
+        "spent": 8
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-12-8",
+          "m-7-9"
+        ],
+        "LD_only": [
+          "m-10-30",
+          "m-11-24"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-36261/1000000",
+        "upper": "-36187/1000000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": false,
+      "split": "calibration",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "C_faster",
+      "world": "empty-32-32_scen2_offset208_calibration_131202_B16"
+    },
+    {
+      "C": {
+        "N": 37,
+        "T": {
+          "lower": "3024311953/500000",
+          "upper": "6048623943/1000000"
+        },
+        "actual_interventions": 0,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "aa3aae1c60e39aa0f5e55d71eb571a6dc254103fbb2c845af1dbc9efec0a7aa7",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 39,
+        "T": {
+          "lower": "5961740019/1000000",
+          "upper": "2980870029/500000"
+        },
+        "actual_interventions": 2,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "61db66d99ad52bd08b5de1aa043e30afbe189edca2f5d5d9dbcede4dc24afd5c",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TRAIN_CAL_02.tar.gz",
+          "archive_sha256": "adde066ec42133e3e04743993043a88fed72b0058b45d9c293cda65230d6303f",
+          "member": "runs/empty-32-32_scen2_offset208_calibration_131202_B8__macro_C.jsonl",
+          "sha256": "88e89377e04dacab331c6252fb3ff8c1438cd467390141185df9c28214957d22"
+        },
+        "LD": {
+          "archive": "RAW_R13_TRAIN_CAL_02.tar.gz",
+          "archive_sha256": "adde066ec42133e3e04743993043a88fed72b0058b45d9c293cda65230d6303f",
+          "member": "runs/empty-32-32_scen2_offset208_calibration_131202_B8__macro_LD.jsonl",
+          "sha256": "b682ece1a0ff47b96335eeca0dac86081df9759a8e91bbadea6900265ccef643"
+        }
+      },
+      "budget": 8,
+      "delta_N": 2,
+      "delta_T": {
+        "lower": "10860481/125000",
+        "upper": "21720981/250000"
+      },
+      "delta_queries": 0,
+      "family_key": "empty-32-32_scen2_offset208_calibration_131202",
+      "gate_identity_provenance": {
+        "agent": 4,
+        "occurrence": "m-4-6"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "empty-32-32",
+        "offset": 208,
+        "scenario": "empty-32-32-random-2.scen",
+        "seed": 131202
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "9/50",
+        "inverse_route_owner_claim_sum": "1",
+        "min_blocked_remaining_route_over64": "1/64",
+        "prior_p": "1/2",
+        "remaining_at_gate": 4,
+        "remaining_horizon": "14500789/16000000",
+        "spent_at_gate": 4
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 11993695,
+          "upper": 11993696
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "9/50",
+          "1/2",
+          "3/8",
+          "1",
+          "1/64",
+          "1/15",
+          "0",
+          "1/4",
+          "14500789/16000000",
+          "9/50"
+        ],
+        "initial_capacity": 8,
+        "opportunity": 5,
+        "remaining_capacity": 4,
+        "spent": 4
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-4-6",
+          "m-7-5"
+        ],
+        "LD_only": [
+          "m-12-8",
+          "m-7-9"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "10860481/125000",
+        "upper": "21720981/250000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": false,
+      "split": "calibration",
+      "task_relation": "LD_more_tasks",
+      "task_time_conflict": false,
+      "time_relation": "LD_faster",
+      "world": "empty-32-32_scen2_offset208_calibration_131202_B8"
+    },
+    {
+      "C": {
+        "N": 46,
+        "T": {
+          "lower": "16826864/3125",
+          "upper": "215383861/40000"
+        },
+        "actual_interventions": 0,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "9695b5714ee8f3dc7c8d51fe886187310011e1764c26670d760b7a75140f58f9",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 46,
+        "T": {
+          "lower": "16826864/3125",
+          "upper": "215383861/40000"
+        },
+        "actual_interventions": 2,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "9695b5714ee8f3dc7c8d51fe886187310011e1764c26670d760b7a75140f58f9",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TEST_01.tar.gz",
+          "archive_sha256": "30ff060c356ee993d830925507b43d8ab01149186ecbb58696a0a43049d9857a",
+          "member": "runs/empty-32-32_scen2_offset224_test_131301_B16__condition.jsonl",
+          "sha256": "be461e2095edb01e41e0032a8f2e52ed73d35db2eaac98a0d9e01cdad54effe5"
+        },
+        "LD": {
+          "archive": "RAW_R13_TEST_01.tar.gz",
+          "archive_sha256": "30ff060c356ee993d830925507b43d8ab01149186ecbb58696a0a43049d9857a",
+          "member": "runs/empty-32-32_scen2_offset224_test_131301_B16__alwaysLD.jsonl",
+          "sha256": "d6a3c75a008f09090c56a1d5a36d54f8c685e421bbc7898f50358e18f2c1c186"
+        }
+      },
+      "budget": 16,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "0",
+        "upper": "0"
+      },
+      "delta_queries": 0,
+      "family_key": "empty-32-32_scen2_offset224_test_131301",
+      "gate_identity_provenance": {
+        "agent": 10,
+        "occurrence": "m-10-46"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "empty-32-32",
+        "offset": 224,
+        "scenario": "empty-32-32-random-2.scen",
+        "seed": 131301
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "3281/3650",
+        "inverse_route_owner_claim_sum": "1",
+        "min_blocked_remaining_route_over64": "1/64",
+        "prior_p": "1/2",
+        "remaining_at_gate": 8,
+        "remaining_horizon": "738233/2000000",
+        "spent_at_gate": 8
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 80753089,
+          "upper": 80753090
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "3281/3650",
+          "1/2",
+          "3/8",
+          "1",
+          "1/64",
+          "1/15",
+          "0",
+          "1/2",
+          "738233/2000000",
+          "3281/3650"
+        ],
+        "initial_capacity": 16,
+        "opportunity": 9,
+        "remaining_capacity": 8,
+        "spent": 8
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-10-46",
+          "m-10-47"
+        ],
+        "LD_only": [
+          "m-0-50",
+          "m-1-50"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-9/200000",
+        "upper": "9/200000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": true,
+      "split": "test",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "identical_service",
+      "world": "empty-32-32_scen2_offset224_test_131301_B16"
+    },
+    {
+      "C": {
+        "N": 46,
+        "T": {
+          "lower": "16826864/3125",
+          "upper": "215383861/40000"
+        },
+        "actual_interventions": 0,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "9695b5714ee8f3dc7c8d51fe886187310011e1764c26670d760b7a75140f58f9",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 46,
+        "T": {
+          "lower": "5385281313/1000000",
+          "upper": "2692640679/500000"
+        },
+        "actual_interventions": 2,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "3edc453c9055e54936a75b9bec4137c462e67efe573b5d87d7aa1361943c2413",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TEST_01.tar.gz",
+          "archive_sha256": "30ff060c356ee993d830925507b43d8ab01149186ecbb58696a0a43049d9857a",
+          "member": "runs/empty-32-32_scen2_offset224_test_131301_B8__condition.jsonl",
+          "sha256": "f4cd5c8979051b6be5c04bbe0d82da99c3092214def3a4c35c760caa73bb785f"
+        },
+        "LD": {
+          "archive": "RAW_R13_TEST_01.tar.gz",
+          "archive_sha256": "30ff060c356ee993d830925507b43d8ab01149186ecbb58696a0a43049d9857a",
+          "member": "runs/empty-32-32_scen2_offset224_test_131301_B8__alwaysLD.jsonl",
+          "sha256": "0686e55530126ed29f4b44f51cf7943eb9dee6ec7b90c994aeb98f35b8a1735d"
+        }
+      },
+      "budget": 8,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "-342439/500000",
+        "upper": "-171197/250000"
+      },
+      "delta_queries": 0,
+      "family_key": "empty-32-32_scen2_offset224_test_131301",
+      "gate_identity_provenance": {
+        "agent": 15,
+        "occurrence": "m-15-34"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "empty-32-32",
+        "offset": 224,
+        "scenario": "empty-32-32-random-2.scen",
+        "seed": 131301
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "1",
+        "inverse_route_owner_claim_sum": "1",
+        "min_blocked_remaining_route_over64": "1/64",
+        "prior_p": "1",
+        "remaining_at_gate": 4,
+        "remaining_horizon": "7738437/16000000",
+        "spent_at_gate": 4
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 66092509,
+          "upper": 66092510
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "1",
+          "1",
+          "1297217/2000000",
+          "1",
+          "1/64",
+          "1/15",
+          "0",
+          "1/4",
+          "7738437/16000000",
+          "1"
+        ],
+        "initial_capacity": 8,
+        "opportunity": 5,
+        "remaining_capacity": 4,
+        "spent": 4
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-10-44",
+          "m-15-34"
+        ],
+        "LD_only": [
+          "m-10-46",
+          "m-10-47"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-342439/500000",
+        "upper": "-171197/250000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": false,
+      "split": "test",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "C_faster",
+      "world": "empty-32-32_scen2_offset224_test_131301_B8"
+    },
+    {
+      "C": {
+        "N": 42,
+        "T": {
+          "lower": "1396996749/250000",
+          "upper": "2793993519/500000"
+        },
+        "actual_interventions": 0,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "d03202e63df56b66fc66ef84888b9d85dfe420388cdf3ef8de7f271f47d96f13",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 42,
+        "T": {
+          "lower": "1396996749/250000",
+          "upper": "2793993519/500000"
+        },
+        "actual_interventions": 2,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "d03202e63df56b66fc66ef84888b9d85dfe420388cdf3ef8de7f271f47d96f13",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TEST_01.tar.gz",
+          "archive_sha256": "30ff060c356ee993d830925507b43d8ab01149186ecbb58696a0a43049d9857a",
+          "member": "runs/empty-32-32_scen2_offset240_test_131302_B16__condition.jsonl",
+          "sha256": "eed86f727338576a7de1e32ad34e5c72324b151ccdc395701886da7a0877412a"
+        },
+        "LD": {
+          "archive": "RAW_R13_TEST_01.tar.gz",
+          "archive_sha256": "30ff060c356ee993d830925507b43d8ab01149186ecbb58696a0a43049d9857a",
+          "member": "runs/empty-32-32_scen2_offset240_test_131302_B16__alwaysLD.jsonl",
+          "sha256": "397b3c3c1f2e2de1218e97ea18b2fcf2a825bc21fbb230059c5aca420e4c389f"
+        }
+      },
+      "budget": 16,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "0",
+        "upper": "0"
+      },
+      "delta_queries": 0,
+      "family_key": "empty-32-32_scen2_offset240_test_131302",
+      "gate_identity_provenance": {
+        "agent": 12,
+        "occurrence": "m-12-24"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "empty-32-32",
+        "offset": 240,
+        "scenario": "empty-32-32-random-2.scen",
+        "seed": 131302
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "369/3650",
+        "inverse_route_owner_claim_sum": "1",
+        "min_blocked_remaining_route_over64": "1/64",
+        "prior_p": "1/2",
+        "remaining_at_gate": 8,
+        "remaining_horizon": "5020587/8000000",
+        "spent_at_gate": 8
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 47670610,
+          "upper": 47670611
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "369/3650",
+          "1/2",
+          "3/8",
+          "1",
+          "1/64",
+          "1/15",
+          "0",
+          "1/2",
+          "5020587/8000000",
+          "369/3650"
+        ],
+        "initial_capacity": 16,
+        "opportunity": 9,
+        "remaining_capacity": 8,
+        "spent": 8
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-12-24",
+          "m-8-23"
+        ],
+        "LD_only": [
+          "m-1-67",
+          "m-15-53"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-21/500000",
+        "upper": "21/500000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": true,
+      "split": "test",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "identical_service",
+      "world": "empty-32-32_scen2_offset240_test_131302_B16"
+    },
+    {
+      "C": {
+        "N": 42,
+        "T": {
+          "lower": "1396996749/250000",
+          "upper": "2793993519/500000"
+        },
+        "actual_interventions": 0,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "d03202e63df56b66fc66ef84888b9d85dfe420388cdf3ef8de7f271f47d96f13",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 42,
+        "T": {
+          "lower": "1396996749/250000",
+          "upper": "2793993519/500000"
+        },
+        "actual_interventions": 2,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "d03202e63df56b66fc66ef84888b9d85dfe420388cdf3ef8de7f271f47d96f13",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TEST_02.tar.gz",
+          "archive_sha256": "4845c3df0846d9a12e38777e9c25d7a40f87211aff26aaf76bcc41dd196326bb",
+          "member": "runs/empty-32-32_scen2_offset240_test_131302_B8__condition.jsonl",
+          "sha256": "6475f7699955c853de5608af7927424f2abb8df23df204a0757e0245dde0c3f0"
+        },
+        "LD": {
+          "archive": "RAW_R13_TEST_01.tar.gz",
+          "archive_sha256": "30ff060c356ee993d830925507b43d8ab01149186ecbb58696a0a43049d9857a",
+          "member": "runs/empty-32-32_scen2_offset240_test_131302_B8__alwaysLD.jsonl",
+          "sha256": "98c067f8293f04e8cd9c3fa550936da6ae4e364a966a066cb5823029ede6d165"
+        }
+      },
+      "budget": 8,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "0",
+        "upper": "0"
+      },
+      "delta_queries": 0,
+      "family_key": "empty-32-32_scen2_offset240_test_131302",
+      "gate_identity_provenance": {
+        "agent": 8,
+        "occurrence": "m-8-19"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "empty-32-32",
+        "offset": 240,
+        "scenario": "empty-32-32-random-2.scen",
+        "seed": 131302
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "369/3650",
+        "inverse_route_owner_claim_sum": "1",
+        "min_blocked_remaining_route_over64": "1/64",
+        "prior_p": "1/2",
+        "remaining_at_gate": 4,
+        "remaining_horizon": "55161/80000",
+        "spent_at_gate": 4
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 39742407,
+          "upper": 39742408
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "369/3650",
+          "1/2",
+          "3/8",
+          "1",
+          "1/64",
+          "1/15",
+          "0",
+          "1/4",
+          "55161/80000",
+          "369/3650"
+        ],
+        "initial_capacity": 8,
+        "opportunity": 5,
+        "remaining_capacity": 4,
+        "spent": 4
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-8-19",
+          "m-8-22"
+        ],
+        "LD_only": [
+          "m-12-24",
+          "m-5-28"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-21/500000",
+        "upper": "21/500000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": true,
+      "split": "test",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "identical_service",
+      "world": "empty-32-32_scen2_offset240_test_131302_B8"
+    },
+    {
+      "C": {
+        "N": 42,
+        "T": {
+          "lower": "6019863823/1000000",
+          "upper": "1203972773/200000"
+        },
+        "actual_interventions": 0,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "d97cdde3d56ae4c284e57a7551d76242c4bea9929056ca822f0408c5c009d962",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 42,
+        "T": {
+          "lower": "188138977/31250",
+          "upper": "3010223653/500000"
+        },
+        "actual_interventions": 2,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "0ddf12430ecfbaacaa2d13230d9166781e89fb535dc221aabca5aa3eb2ed1b5b",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TEST_02.tar.gz",
+          "archive_sha256": "4845c3df0846d9a12e38777e9c25d7a40f87211aff26aaf76bcc41dd196326bb",
+          "member": "runs/empty-32-32_scen2_offset256_test_131303_B16__condition.jsonl",
+          "sha256": "91735ace53a3debe5c72b8acec1d4ad152bf1d870d177a1e9a9d3fe98e375d42"
+        },
+        "LD": {
+          "archive": "RAW_R13_TEST_02.tar.gz",
+          "archive_sha256": "4845c3df0846d9a12e38777e9c25d7a40f87211aff26aaf76bcc41dd196326bb",
+          "member": "runs/empty-32-32_scen2_offset256_test_131303_B16__alwaysLD.jsonl",
+          "sha256": "fd54c78d42d2fc9fa265540af6940a9912f06dc4ed2b7b8cfc358fe596610592"
+        }
+      },
+      "budget": 16,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "-583483/1000000",
+        "upper": "-583399/1000000"
+      },
+      "delta_queries": 0,
+      "family_key": "empty-32-32_scen2_offset256_test_131303",
+      "gate_identity_provenance": {
+        "agent": 4,
+        "occurrence": "m-4-18"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "empty-32-32",
+        "offset": 256,
+        "scenario": "empty-32-32-random-2.scen",
+        "seed": 131303
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "41/50",
+        "inverse_route_owner_claim_sum": "1",
+        "min_blocked_remaining_route_over64": "1/64",
+        "prior_p": "1/2",
+        "remaining_at_gate": 8,
+        "remaining_horizon": "12172703/16000000",
+        "spent_at_gate": 8
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 30618377,
+          "upper": 30618378
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "41/50",
+          "1/2",
+          "3/8",
+          "1",
+          "1/64",
+          "1/15",
+          "0",
+          "1/2",
+          "12172703/16000000",
+          "41/50"
+        ],
+        "initial_capacity": 16,
+        "opportunity": 9,
+        "remaining_capacity": 8,
+        "spent": 8
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-2-16",
+          "m-4-18"
+        ],
+        "LD_only": [
+          "m-12-38",
+          "m-4-54"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-583483/1000000",
+        "upper": "-583399/1000000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": false,
+      "split": "test",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "C_faster",
+      "world": "empty-32-32_scen2_offset256_test_131303_B16"
+    },
+    {
+      "C": {
+        "N": 42,
+        "T": {
+          "lower": "6021095873/1000000",
+          "upper": "1204219183/200000"
+        },
+        "actual_interventions": 0,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "a4caf50c9d11ca5aa11b0b2e17e923843ac82dadb12aa576d0c6c926737f5405",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 42,
+        "T": {
+          "lower": "6021809649/1000000",
+          "upper": "6021809691/1000000"
+        },
+        "actual_interventions": 2,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "9b07624821ff5bd3d105caf8c7ade574dddee376c942249e0d6a1eda81bc8aa8",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TEST_02.tar.gz",
+          "archive_sha256": "4845c3df0846d9a12e38777e9c25d7a40f87211aff26aaf76bcc41dd196326bb",
+          "member": "runs/empty-32-32_scen2_offset256_test_131303_B8__condition.jsonl",
+          "sha256": "3151567a6436e56d9aac39e9faf9f331581a6c78581a8eaef2adf72d8143e9db"
+        },
+        "LD": {
+          "archive": "RAW_R13_TEST_02.tar.gz",
+          "archive_sha256": "4845c3df0846d9a12e38777e9c25d7a40f87211aff26aaf76bcc41dd196326bb",
+          "member": "runs/empty-32-32_scen2_offset256_test_131303_B8__alwaysLD.jsonl",
+          "sha256": "1a03a8d3b02053a799b9ff57d4675657de204083eee25ef6ca4a96ac66f7aa8b"
+        }
+      },
+      "budget": 8,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "-356909/500000",
+        "upper": "-356867/500000"
+      },
+      "delta_queries": 0,
+      "family_key": "empty-32-32_scen2_offset256_test_131303",
+      "gate_identity_provenance": {
+        "agent": 2,
+        "occurrence": "m-2-9"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "empty-32-32",
+        "offset": 256,
+        "scenario": "empty-32-32-random-2.scen",
+        "seed": 131303
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "9/50",
+        "inverse_route_owner_claim_sum": "1/4",
+        "min_blocked_remaining_route_over64": "1/16",
+        "prior_p": "1/2",
+        "remaining_at_gate": 4,
+        "remaining_horizon": "13757519/16000000",
+        "spent_at_gate": 4
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 17939848,
+          "upper": 17939849
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "9/50",
+          "1/2",
+          "3/8",
+          "1/4",
+          "1/16",
+          "1/15",
+          "0",
+          "1/4",
+          "13757519/16000000",
+          "9/200"
+        ],
+        "initial_capacity": 8,
+        "opportunity": 5,
+        "remaining_capacity": 4,
+        "spent": 4
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-2-10",
+          "m-2-9"
+        ],
+        "LD_only": [
+          "m-2-16",
+          "m-4-18"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-356909/500000",
+        "upper": "-356867/500000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": false,
+      "split": "test",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "C_faster",
+      "world": "empty-32-32_scen2_offset256_test_131303_B8"
+    },
+    {
+      "C": {
+        "N": 53,
+        "T": {
+          "lower": "5081019737/1000000",
+          "upper": "2540509893/500000"
+        },
+        "actual_interventions": 0,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "aebe343e1725fd67ef0b3012a6fe9afc23141e5a6c3568a9a6c6b973b75ccff0",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 53,
+        "T": {
+          "lower": "5081603179/1000000",
+          "upper": "1270400807/250000"
+        },
+        "actual_interventions": 2,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "8a9bd63edf7f2fc50d0e726bd8394d9f0de2c97fe0773e7d18197eddcb29e312",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TEST_02.tar.gz",
+          "archive_sha256": "4845c3df0846d9a12e38777e9c25d7a40f87211aff26aaf76bcc41dd196326bb",
+          "member": "runs/empty-32-32_scen2_offset272_test_131304_B16__condition.jsonl",
+          "sha256": "a4308fbbfa8ec2c74982c616f3e28a981246154aee5caf13973d3dd5dc997b10"
+        },
+        "LD": {
+          "archive": "RAW_R13_TEST_02.tar.gz",
+          "archive_sha256": "4845c3df0846d9a12e38777e9c25d7a40f87211aff26aaf76bcc41dd196326bb",
+          "member": "runs/empty-32-32_scen2_offset272_test_131304_B16__alwaysLD.jsonl",
+          "sha256": "0bcfe75e42f99181bd4220917d2c247824fbaa9c3431ae3dfff791abe1ec9f2e"
+        }
+      },
+      "budget": 16,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "-583491/1000000",
+        "upper": "-583393/1000000"
+      },
+      "delta_queries": 0,
+      "family_key": "empty-32-32_scen2_offset272_test_131304",
+      "gate_identity_provenance": {
+        "agent": 14,
+        "occurrence": "m-14-23"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "empty-32-32",
+        "offset": 272,
+        "scenario": "empty-32-32-random-2.scen",
+        "seed": 131304
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "3281/3650",
+        "inverse_route_owner_claim_sum": "1",
+        "min_blocked_remaining_route_over64": "1/64",
+        "prior_p": "1/2",
+        "remaining_at_gate": 8,
+        "remaining_horizon": "55161/80000",
+        "spent_at_gate": 8
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 39742407,
+          "upper": 39742408
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "3281/3650",
+          "1/2",
+          "3/8",
+          "1",
+          "1/64",
+          "1/15",
+          "0",
+          "1/2",
+          "55161/80000",
+          "3281/3650"
+        ],
+        "initial_capacity": 16,
+        "opportunity": 9,
+        "remaining_capacity": 8,
+        "spent": 8
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-14-23",
+          "m-5-19"
+        ],
+        "LD_only": [
+          "m-15-43",
+          "m-15-48"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-583491/1000000",
+        "upper": "-583393/1000000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": false,
+      "split": "test",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "C_faster",
+      "world": "empty-32-32_scen2_offset272_test_131304_B16"
+    },
+    {
+      "C": {
+        "N": 53,
+        "T": {
+          "lower": "5081603179/1000000",
+          "upper": "1270400807/250000"
+        },
+        "actual_interventions": 0,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "8a9bd63edf7f2fc50d0e726bd8394d9f0de2c97fe0773e7d18197eddcb29e312",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 53,
+        "T": {
+          "lower": "5081019737/1000000",
+          "upper": "2540509893/500000"
+        },
+        "actual_interventions": 2,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "aebe343e1725fd67ef0b3012a6fe9afc23141e5a6c3568a9a6c6b973b75ccff0",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TEST_03.tar.gz",
+          "archive_sha256": "6f67183302f60548181543910cd4c4bcf8736d2173a51fa9a0222cd863f800b5",
+          "member": "runs/empty-32-32_scen2_offset272_test_131304_B8__condition.jsonl",
+          "sha256": "d6e121061c73e07bac2580c56245009a3e359993693fbb10243941831e2ff2e0"
+        },
+        "LD": {
+          "archive": "RAW_R13_TEST_03.tar.gz",
+          "archive_sha256": "6f67183302f60548181543910cd4c4bcf8736d2173a51fa9a0222cd863f800b5",
+          "member": "runs/empty-32-32_scen2_offset272_test_131304_B8__alwaysLD.jsonl",
+          "sha256": "d7cf53f3ea021a86cdd047ed86abe8bcfeaa719a7f6bab5c6dad77e2dfaf2e26"
+        }
+      },
+      "budget": 8,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "583393/1000000",
+        "upper": "583491/1000000"
+      },
+      "delta_queries": 0,
+      "family_key": "empty-32-32_scen2_offset272_test_131304",
+      "gate_identity_provenance": {
+        "agent": 11,
+        "occurrence": "m-11-16"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "empty-32-32",
+        "offset": 272,
+        "scenario": "empty-32-32-random-2.scen",
+        "seed": 131304
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "1",
+        "inverse_route_owner_claim_sum": "1",
+        "min_blocked_remaining_route_over64": "1/64",
+        "prior_p": "1",
+        "remaining_at_gate": 4,
+        "remaining_horizon": "2390059/3200000",
+        "spent_at_gate": 4
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 32397645,
+          "upper": 32397646
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "1",
+          "1",
+          "1333441/2000000",
+          "1",
+          "1/64",
+          "1/15",
+          "0",
+          "1/4",
+          "2390059/3200000",
+          "1"
+        ],
+        "initial_capacity": 8,
+        "opportunity": 5,
+        "remaining_capacity": 4,
+        "spent": 4
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-11-16",
+          "m-11-17"
+        ],
+        "LD_only": [
+          "m-14-23",
+          "m-5-19"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "583393/1000000",
+        "upper": "583491/1000000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": false,
+      "split": "test",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "LD_faster",
+      "world": "empty-32-32_scen2_offset272_test_131304_B8"
+    },
+    {
+      "C": {
+        "N": 47,
+        "T": {
+          "lower": "2774059713/500000",
+          "upper": "5548119473/1000000"
+        },
+        "actual_interventions": 0,
+        "queries": 13,
+        "remaining": 3,
+        "requested_interventions": 0,
+        "service_sha256": "8656924c1d5de0c0f48db8f63c21a9750cfc420776ba9664e9629035867039d2",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 47,
+        "T": {
+          "lower": "2774059713/500000",
+          "upper": "5548119473/1000000"
+        },
+        "actual_interventions": 2,
+        "queries": 11,
+        "remaining": 5,
+        "requested_interventions": 2,
+        "service_sha256": "8656924c1d5de0c0f48db8f63c21a9750cfc420776ba9664e9629035867039d2",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TRAIN_CAL_02.tar.gz",
+          "archive_sha256": "adde066ec42133e3e04743993043a88fed72b0058b45d9c293cda65230d6303f",
+          "member": "runs/empty-32-32_scen2_offset96_train_131101_B16__macro_C.jsonl",
+          "sha256": "3d5120fbcb4c030fb8e9e8ddc2b44e8b049cd2b2b3309bebe4393db6e0e2086d"
+        },
+        "LD": {
+          "archive": "RAW_R13_TRAIN_CAL_02.tar.gz",
+          "archive_sha256": "adde066ec42133e3e04743993043a88fed72b0058b45d9c293cda65230d6303f",
+          "member": "runs/empty-32-32_scen2_offset96_train_131101_B16__macro_LD.jsonl",
+          "sha256": "1a7511aff234972baa35c8ec2d9986a653524cfea6096451ae3e8cef2d3ffc11"
+        }
+      },
+      "budget": 16,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "0",
+        "upper": "0"
+      },
+      "delta_queries": -2,
+      "family_key": "empty-32-32_scen2_offset96_train_131101",
+      "gate_identity_provenance": {
+        "agent": 15,
+        "occurrence": "m-15-37"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "empty-32-32",
+        "offset": 96,
+        "scenario": "empty-32-32-random-2.scen",
+        "seed": 131101
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "3281/3650",
+        "inverse_route_owner_claim_sum": "1",
+        "min_blocked_remaining_route_over64": "1/64",
+        "prior_p": "1/2",
+        "remaining_at_gate": 8,
+        "remaining_horizon": "8131143/16000000",
+        "spent_at_gate": 8
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 62950856,
+          "upper": 62950857
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "3281/3650",
+          "1/2",
+          "3/8",
+          "1",
+          "1/64",
+          "1/15",
+          "0",
+          "1/2",
+          "8131143/16000000",
+          "3281/3650"
+        ],
+        "initial_capacity": 16,
+        "opportunity": 9,
+        "remaining_capacity": 8,
+        "spent": 8
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-1-34",
+          "m-15-37"
+        ],
+        "LD_only": []
+      },
+      "raw_interval_subtraction": {
+        "lower": "-47/1000000",
+        "upper": "47/1000000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": true,
+      "split": "train",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "identical_service",
+      "world": "empty-32-32_scen2_offset96_train_131101_B16"
+    },
+    {
+      "C": {
+        "N": 47,
+        "T": {
+          "lower": "2774949347/500000",
+          "upper": "5549898741/1000000"
+        },
+        "actual_interventions": 0,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "e217551eddffbb5b72aa7b1deff78b202a5e0aba33df5696b7a57da32c7c405b",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 47,
+        "T": {
+          "lower": "2774949347/500000",
+          "upper": "5549898741/1000000"
+        },
+        "actual_interventions": 2,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "e217551eddffbb5b72aa7b1deff78b202a5e0aba33df5696b7a57da32c7c405b",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TRAIN_CAL_02.tar.gz",
+          "archive_sha256": "adde066ec42133e3e04743993043a88fed72b0058b45d9c293cda65230d6303f",
+          "member": "runs/empty-32-32_scen2_offset96_train_131101_B8__macro_C.jsonl",
+          "sha256": "2b36b9630cc46345cb3bac1397176b2072e6507eeed0da4b0ea73cb3265a3ada"
+        },
+        "LD": {
+          "archive": "RAW_R13_TRAIN_CAL_02.tar.gz",
+          "archive_sha256": "adde066ec42133e3e04743993043a88fed72b0058b45d9c293cda65230d6303f",
+          "member": "runs/empty-32-32_scen2_offset96_train_131101_B8__macro_LD.jsonl",
+          "sha256": "519a33da77bb83af5fbe29b2368be493d2da4b2531d3d0212fd6be3320073202"
+        }
+      },
+      "budget": 8,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "0",
+        "upper": "0"
+      },
+      "delta_queries": 0,
+      "family_key": "empty-32-32_scen2_offset96_train_131101",
+      "gate_identity_provenance": {
+        "agent": 10,
+        "occurrence": "m-10-14"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "empty-32-32",
+        "offset": 96,
+        "scenario": "empty-32-32-random-2.scen",
+        "seed": 131101
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "369/3650",
+        "inverse_route_owner_claim_sum": "1/2",
+        "min_blocked_remaining_route_over64": "1/32",
+        "prior_p": "1/2",
+        "remaining_at_gate": 4,
+        "remaining_horizon": "6218831/8000000",
+        "spent_at_gate": 4
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 28498711,
+          "upper": 28498712
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "369/3650",
+          "1/2",
+          "3/8",
+          "1/2",
+          "1/32",
+          "1/15",
+          "0",
+          "1/4",
+          "6218831/8000000",
+          "369/7300"
+        ],
+        "initial_capacity": 8,
+        "opportunity": 5,
+        "remaining_capacity": 4,
+        "spent": 4
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-10-14",
+          "m-2-15"
+        ],
+        "LD_only": [
+          "m-1-34",
+          "m-15-37"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-47/1000000",
+        "upper": "47/1000000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": true,
+      "split": "train",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "identical_service",
+      "world": "empty-32-32_scen2_offset96_train_131101_B8"
+    },
+    {
+      "C": {
+        "N": 46,
+        "T": {
+          "lower": "2764979961/500000",
+          "upper": "172811249/31250"
+        },
+        "actual_interventions": 0,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "b82c973b5cfe61b16575e6f08b0c150c81e3846d6d3b4d1682f5ed452ffce0ba",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 46,
+        "T": {
+          "lower": "2764979961/500000",
+          "upper": "172811249/31250"
+        },
+        "actual_interventions": 2,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "b82c973b5cfe61b16575e6f08b0c150c81e3846d6d3b4d1682f5ed452ffce0ba",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TRAIN_CAL_02.tar.gz",
+          "archive_sha256": "adde066ec42133e3e04743993043a88fed72b0058b45d9c293cda65230d6303f",
+          "member": "runs/random-32-32-10_scen2_offset128_train_132101_B16__macro_C.jsonl",
+          "sha256": "997a7f746740a614062804ec9278b46eadb46e119fef2a6e67da4018b80c11c5"
+        },
+        "LD": {
+          "archive": "RAW_R13_TRAIN_CAL_02.tar.gz",
+          "archive_sha256": "adde066ec42133e3e04743993043a88fed72b0058b45d9c293cda65230d6303f",
+          "member": "runs/random-32-32-10_scen2_offset128_train_132101_B16__macro_LD.jsonl",
+          "sha256": "3a80461329cad2cff4c7b8ae3af390ac6aba8567ac97732394ddca4079ae7ab6"
+        }
+      },
+      "budget": 16,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "0",
+        "upper": "0"
+      },
+      "delta_queries": 0,
+      "family_key": "random-32-32-10_scen2_offset128_train_132101",
+      "gate_identity_provenance": {
+        "agent": 9,
+        "occurrence": "m-9-8"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "random-32-32-10",
+        "offset": 128,
+        "scenario": "random-32-32-10-random-2.scen",
+        "seed": 132101
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "369/3650",
+        "inverse_route_owner_claim_sum": "1/3",
+        "min_blocked_remaining_route_over64": "3/64",
+        "prior_p": "1/2",
+        "remaining_at_gate": 8,
+        "remaining_horizon": "3501319/4000000",
+        "spent_at_gate": 8
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 15957797,
+          "upper": 15957798
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "369/3650",
+          "1/2",
+          "3/8",
+          "1/3",
+          "3/64",
+          "1/15",
+          "0",
+          "1/2",
+          "3501319/4000000",
+          "123/3650"
+        ],
+        "initial_capacity": 16,
+        "opportunity": 9,
+        "remaining_capacity": 8,
+        "spent": 8
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-9-10",
+          "m-9-8"
+        ],
+        "LD_only": [
+          "m-10-37",
+          "m-3-36"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-23/500000",
+        "upper": "23/500000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": true,
+      "split": "train",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "identical_service",
+      "world": "random-32-32-10_scen2_offset128_train_132101_B16"
+    },
+    {
+      "C": {
+        "N": 46,
+        "T": {
+          "lower": "2764998073/500000",
+          "upper": "172812381/31250"
+        },
+        "actual_interventions": 0,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "b2e4c7cf0ae7db4e6fb0e7c837cb771a0e1b195149e8d1beea28061799560aab",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 46,
+        "T": {
+          "lower": "1106128951/200000",
+          "upper": "5530644801/1000000"
+        },
+        "actual_interventions": 2,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "6cbadfaa00f142063032f0585b676df3b4ab8143d19c0203130b76286fa4c7e5",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TRAIN_CAL_02.tar.gz",
+          "archive_sha256": "adde066ec42133e3e04743993043a88fed72b0058b45d9c293cda65230d6303f",
+          "member": "runs/random-32-32-10_scen2_offset128_train_132101_B8__macro_C.jsonl",
+          "sha256": "76014c23ceb96d59e7326bb0ba37d06c9800783fd418ca5dfc4b7c2dc616add6"
+        },
+        "LD": {
+          "archive": "RAW_R13_TRAIN_CAL_02.tar.gz",
+          "archive_sha256": "adde066ec42133e3e04743993043a88fed72b0058b45d9c293cda65230d6303f",
+          "member": "runs/random-32-32-10_scen2_offset128_train_132101_B8__macro_LD.jsonl",
+          "sha256": "fee1ff3d837814b6d29399043b31bbb283afada0dc14dea8bc7c945780cd0008"
+        }
+      },
+      "budget": 8,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "-129731/200000",
+        "upper": "-648563/1000000"
+      },
+      "delta_queries": 0,
+      "family_key": "random-32-32-10_scen2_offset128_train_132101",
+      "gate_identity_provenance": {
+        "agent": 3,
+        "occurrence": "m-3-4"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "random-32-32-10",
+        "offset": 128,
+        "scenario": "random-32-32-10-random-2.scen",
+        "seed": 132101
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "1",
+        "inverse_route_owner_claim_sum": "1/4",
+        "min_blocked_remaining_route_over64": "1/16",
+        "prior_p": "1",
+        "remaining_at_gate": 4,
+        "remaining_horizon": "2968459/3200000",
+        "spent_at_gate": 4
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 9261645,
+          "upper": 9261646
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "1",
+          "1",
+          "1333441/2000000",
+          "1/4",
+          "1/16",
+          "1/15",
+          "0",
+          "1/4",
+          "2968459/3200000",
+          "1/4"
+        ],
+        "initial_capacity": 8,
+        "opportunity": 5,
+        "remaining_capacity": 4,
+        "spent": 4
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-3-4",
+          "m-9-5"
+        ],
+        "LD_only": [
+          "m-9-10",
+          "m-9-8"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-129731/200000",
+        "upper": "-648563/1000000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": false,
+      "split": "train",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "C_faster",
+      "world": "random-32-32-10_scen2_offset128_train_132101_B8"
+    },
+    {
+      "C": {
+        "N": 51,
+        "T": {
+          "lower": "2652102319/500000",
+          "upper": "5304204687/1000000"
+        },
+        "actual_interventions": 0,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "84c3b9c9695a8a8a4a60764968c39875ca36671a5a40e5b53c93b5c48b3e4f5c",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 51,
+        "T": {
+          "lower": "5311654829/1000000",
+          "upper": "2655827439/500000"
+        },
+        "actual_interventions": 2,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "2b0e448c2cdc68325ea35618151616b0c9557c99e2c4c6035ac2df20b97b15ee",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TRAIN_CAL_02.tar.gz",
+          "archive_sha256": "adde066ec42133e3e04743993043a88fed72b0058b45d9c293cda65230d6303f",
+          "member": "runs/random-32-32-10_scen2_offset144_train_132102_B16__macro_C.jsonl",
+          "sha256": "71643f325316c5ba566c1b2ddfc1c2f8702210ae840cb9ab9fa0d4ee0259d18e"
+        },
+        "LD": {
+          "archive": "RAW_R13_TRAIN_CAL_02.tar.gz",
+          "archive_sha256": "adde066ec42133e3e04743993043a88fed72b0058b45d9c293cda65230d6303f",
+          "member": "runs/random-32-32-10_scen2_offset144_train_132102_B16__macro_LD.jsonl",
+          "sha256": "2f756d3a8441696db0171afde91895dd01eb975ed95fd87512a1accc9b36612a"
+        }
+      },
+      "budget": 16,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "-23282/3125",
+        "upper": "-3725071/500000"
+      },
+      "delta_queries": 0,
+      "family_key": "random-32-32-10_scen2_offset144_train_132102",
+      "gate_identity_provenance": {
+        "agent": 13,
+        "occurrence": "m-13-28"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "random-32-32-10",
+        "offset": 144,
+        "scenario": "random-32-32-10-random-2.scen",
+        "seed": 132102
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "41/50",
+        "inverse_route_owner_claim_sum": "1",
+        "min_blocked_remaining_route_over64": "1/64",
+        "prior_p": "1/2",
+        "remaining_at_gate": 8,
+        "remaining_horizon": "9045621/16000000",
+        "spent_at_gate": 8
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 55635037,
+          "upper": 55635038
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "41/50",
+          "1/2",
+          "3/8",
+          "1",
+          "1/64",
+          "1/15",
+          "0",
+          "1/2",
+          "9045621/16000000",
+          "41/50"
+        ],
+        "initial_capacity": 16,
+        "opportunity": 9,
+        "remaining_capacity": 8,
+        "spent": 8
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-13-28",
+          "m-5-31",
+          "m-5-47",
+          "m-7-56",
+          "m-9-44"
+        ],
+        "LD_only": [
+          "m-3-42",
+          "m-3-61",
+          "m-3-62",
+          "m-4-44",
+          "m-7-57"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-23282/3125",
+        "upper": "-3725071/500000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": false,
+      "split": "train",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "C_faster",
+      "world": "random-32-32-10_scen2_offset144_train_132102_B16"
+    },
+    {
+      "C": {
+        "N": 51,
+        "T": {
+          "lower": "33205543/6250",
+          "upper": "5312886929/1000000"
+        },
+        "actual_interventions": 0,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "1748d83516fcdc06422e9b67238ae574dbcd51e9b34e932df2267d2f0a5505bb",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 51,
+        "T": {
+          "lower": "5322681181/1000000",
+          "upper": "532268123/100000"
+        },
+        "actual_interventions": 2,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "a1190585a4965c635be9a1d443779e07fe09f5db0e21e88ebe7fd0f68fddeda3",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TRAIN_CAL_02.tar.gz",
+          "archive_sha256": "adde066ec42133e3e04743993043a88fed72b0058b45d9c293cda65230d6303f",
+          "member": "runs/random-32-32-10_scen2_offset144_train_132102_B8__macro_C.jsonl",
+          "sha256": "101987384b7f94efc1b25d3677f1d5f3405344debbf49f27ac2f256557eb39fc"
+        },
+        "LD": {
+          "archive": "RAW_R13_TRAIN_CAL_02.tar.gz",
+          "archive_sha256": "adde066ec42133e3e04743993043a88fed72b0058b45d9c293cda65230d6303f",
+          "member": "runs/random-32-32-10_scen2_offset144_train_132102_B8__macro_LD.jsonl",
+          "sha256": "044996a7a71425ff277b9962e88a6c771e51ce1f5f3c495fa70b70161eae7d16"
+        }
+      },
+      "budget": 8,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "-195887/20000",
+        "upper": "-2448563/250000"
+      },
+      "delta_queries": 0,
+      "family_key": "random-32-32-10_scen2_offset144_train_132102",
+      "gate_identity_provenance": {
+        "agent": 9,
+        "occurrence": "m-9-14"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "random-32-32-10",
+        "offset": 144,
+        "scenario": "random-32-32-10-random-2.scen",
+        "seed": 132102
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "1",
+        "inverse_route_owner_claim_sum": "1/4",
+        "min_blocked_remaining_route_over64": "1/16",
+        "prior_p": "1",
+        "remaining_at_gate": 4,
+        "remaining_horizon": "12445807/16000000",
+        "spent_at_gate": 4
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 28433544,
+          "upper": 28433545
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "1",
+          "1",
+          "1333441/2000000",
+          "1/4",
+          "1/16",
+          "1/15",
+          "0",
+          "1/4",
+          "12445807/16000000",
+          "1/4"
+        ],
+        "initial_capacity": 8,
+        "opportunity": 5,
+        "remaining_capacity": 4,
+        "spent": 4
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-7-17",
+          "m-9-14"
+        ],
+        "LD_only": [
+          "m-13-28",
+          "m-5-31"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-195887/20000",
+        "upper": "-2448563/250000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": false,
+      "split": "train",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "C_faster",
+      "world": "random-32-32-10_scen2_offset144_train_132102_B8"
+    },
+    {
+      "C": {
+        "N": 45,
+        "T": {
+          "lower": "2912070207/500000",
+          "upper": "5824140459/1000000"
+        },
+        "actual_interventions": 0,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "73de639fbb8be7fd16f421a06fcff46a098997f261d4f3ae77ad27715b48ce38",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 46,
+        "T": {
+          "lower": "2915086719/500000",
+          "upper": "1457543371/250000"
+        },
+        "actual_interventions": 2,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "969cb9d62524207615f54a31cb7aa4a1d233c1902c848383bbd8852423c67b5a",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TRAIN_CAL_03.tar.gz",
+          "archive_sha256": "a355cc4682f0efb309a9a344004d80d56d59029a572caf06a43fff125ab463f4",
+          "member": "runs/random-32-32-10_scen2_offset160_train_132103_B16__macro_C.jsonl",
+          "sha256": "3dfa7a8db5289ab1a5e0e67152dc1e64f00aee8d542d88b41c27b9ac34c16bed"
+        },
+        "LD": {
+          "archive": "RAW_R13_TRAIN_CAL_03.tar.gz",
+          "archive_sha256": "a355cc4682f0efb309a9a344004d80d56d59029a572caf06a43fff125ab463f4",
+          "member": "runs/random-32-32-10_scen2_offset160_train_132103_B16__macro_LD.jsonl",
+          "sha256": "0759cf64bd7d3d4bf09c9ffead37ef6abcbe130e705e59ef8a519aadb7d59b99"
+        }
+      },
+      "budget": 16,
+      "delta_N": 1,
+      "delta_T": {
+        "lower": "-603307/100000",
+        "upper": "-6032979/1000000"
+      },
+      "delta_queries": 0,
+      "family_key": "random-32-32-10_scen2_offset160_train_132103",
+      "gate_identity_provenance": {
+        "agent": 0,
+        "occurrence": "m-0-42"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "random-32-32-10",
+        "offset": 160,
+        "scenario": "random-32-32-10-random-2.scen",
+        "seed": 132103
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "1",
+        "inverse_route_owner_claim_sum": "1",
+        "min_blocked_remaining_route_over64": "1/64",
+        "prior_p": "1",
+        "remaining_at_gate": 8,
+        "remaining_horizon": "1727391/4000000",
+        "spent_at_gate": 8
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 72723495,
+          "upper": 72723496
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "1",
+          "1",
+          "1260993/2000000",
+          "1",
+          "1/64",
+          "1/15",
+          "0",
+          "1/2",
+          "1727391/4000000",
+          "1"
+        ],
+        "initial_capacity": 16,
+        "opportunity": 9,
+        "remaining_capacity": 8,
+        "spent": 8
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-0-42",
+          "m-0-68",
+          "m-1-56",
+          "m-13-41",
+          "m-2-55",
+          "m-8-48"
+        ],
+        "LD_only": [
+          "m-13-64",
+          "m-13-70",
+          "m-14-51",
+          "m-9-66",
+          "m-9-67",
+          "m-9-68"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-603307/100000",
+        "upper": "-6032979/1000000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": false,
+      "split": "train",
+      "task_relation": "LD_more_tasks",
+      "task_time_conflict": true,
+      "time_relation": "C_faster",
+      "world": "random-32-32-10_scen2_offset160_train_132103_B16"
+    },
+    {
+      "C": {
+        "N": 46,
+        "T": {
+          "lower": "2915086719/500000",
+          "upper": "1457543371/250000"
+        },
+        "actual_interventions": 0,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "969cb9d62524207615f54a31cb7aa4a1d233c1902c848383bbd8852423c67b5a",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 45,
+        "T": {
+          "lower": "2916791589/500000",
+          "upper": "5833583223/1000000"
+        },
+        "actual_interventions": 2,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "3faed5ca58d29ea6fad2cd273adb7158c0677b93f73aede380386014d2cf1aab",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TRAIN_CAL_03.tar.gz",
+          "archive_sha256": "a355cc4682f0efb309a9a344004d80d56d59029a572caf06a43fff125ab463f4",
+          "member": "runs/random-32-32-10_scen2_offset160_train_132103_B8__macro_C.jsonl",
+          "sha256": "1acb923d2c50ffebf684d62a0f46bed199be0a622d59e7097485959d1ffc43a6"
+        },
+        "LD": {
+          "archive": "RAW_R13_TRAIN_CAL_03.tar.gz",
+          "archive_sha256": "a355cc4682f0efb309a9a344004d80d56d59029a572caf06a43fff125ab463f4",
+          "member": "runs/random-32-32-10_scen2_offset160_train_132103_B8__macro_LD.jsonl",
+          "sha256": "8c3bc672d05c36d078a57b0a1bcef9a9edebd5e6d4db99ee35b8299961643e20"
+        }
+      },
+      "budget": 8,
+      "delta_N": -1,
+      "delta_T": {
+        "lower": "-681957/200000",
+        "upper": "-1704847/500000"
+      },
+      "delta_queries": 0,
+      "family_key": "random-32-32-10_scen2_offset160_train_132103",
+      "gate_identity_provenance": {
+        "agent": 7,
+        "occurrence": "m-7-14"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "random-32-32-10",
+        "offset": 160,
+        "scenario": "random-32-32-10-random-2.scen",
+        "seed": 132103
+      },
+      "public_conditions": {
+        "candidate_count": 2,
+        "claim_count": 1,
+        "history_p": "9/50",
+        "inverse_route_owner_claim_sum": "1/3",
+        "min_blocked_remaining_route_over64": "3/64",
+        "prior_p": "1/2",
+        "remaining_at_gate": 4,
+        "remaining_horizon": "6259369/8000000",
+        "spent_at_gate": 4
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 27850102,
+          "upper": 27850103
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "9/50",
+          "1/2",
+          "3/8",
+          "1/3",
+          "3/64",
+          "1/15",
+          "1/15",
+          "1/4",
+          "6259369/8000000",
+          "3/50"
+        ],
+        "initial_capacity": 8,
+        "opportunity": 5,
+        "remaining_capacity": 4,
+        "spent": 4
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-3-14",
+          "m-7-14"
+        ],
+        "LD_only": [
+          "m-1-40",
+          "m-5-37"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-681957/200000",
+        "upper": "-1704847/500000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": false,
+      "split": "train",
+      "task_relation": "C_more_tasks",
+      "task_time_conflict": false,
+      "time_relation": "C_faster",
+      "world": "random-32-32-10_scen2_offset160_train_132103_B8"
+    },
+    {
+      "C": {
+        "N": 43,
+        "T": {
+          "lower": "141617949/25000",
+          "upper": "5664718003/1000000"
+        },
+        "actual_interventions": 0,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "04eca33c664249990faf8cfb527decf2234dc033eeccfcc5ee7e09cdb33e4593",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 43,
+        "T": {
+          "lower": "141617949/25000",
+          "upper": "5664718003/1000000"
+        },
+        "actual_interventions": 2,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "04eca33c664249990faf8cfb527decf2234dc033eeccfcc5ee7e09cdb33e4593",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TRAIN_CAL_03.tar.gz",
+          "archive_sha256": "a355cc4682f0efb309a9a344004d80d56d59029a572caf06a43fff125ab463f4",
+          "member": "runs/random-32-32-10_scen2_offset176_train_132104_B16__macro_C.jsonl",
+          "sha256": "bcf71deb2c6b0d618b569a6a6dde63941c074afd64f1d6e1c66ddda0231f7376"
+        },
+        "LD": {
+          "archive": "RAW_R13_TRAIN_CAL_03.tar.gz",
+          "archive_sha256": "a355cc4682f0efb309a9a344004d80d56d59029a572caf06a43fff125ab463f4",
+          "member": "runs/random-32-32-10_scen2_offset176_train_132104_B16__macro_LD.jsonl",
+          "sha256": "3a4b343a58dc88edba3bbb541ddef1bd3b7faa3869c6d79916dc622231c2e972"
+        }
+      },
+      "budget": 16,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "0",
+        "upper": "0"
+      },
+      "delta_queries": 0,
+      "family_key": "random-32-32-10_scen2_offset176_train_132104",
+      "gate_identity_provenance": {
+        "agent": 10,
+        "occurrence": "m-10-17"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "random-32-32-10",
+        "offset": 176,
+        "scenario": "random-32-32-10-random-2.scen",
+        "seed": 132104
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "369/3650",
+        "inverse_route_owner_claim_sum": "1/2",
+        "min_blocked_remaining_route_over64": "1/32",
+        "prior_p": "1/2",
+        "remaining_at_gate": 8,
+        "remaining_horizon": "2371309/3200000",
+        "spent_at_gate": 8
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 33147645,
+          "upper": 33147646
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "369/3650",
+          "1/2",
+          "3/8",
+          "1/2",
+          "1/32",
+          "1/15",
+          "0",
+          "1/2",
+          "2371309/3200000",
+          "369/7300"
+        ],
+        "initial_capacity": 16,
+        "opportunity": 9,
+        "remaining_capacity": 8,
+        "spent": 8
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-10-17",
+          "m-7-18"
+        ],
+        "LD_only": [
+          "m-6-41",
+          "m-8-47"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-43/1000000",
+        "upper": "43/1000000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": true,
+      "split": "train",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "identical_service",
+      "world": "random-32-32-10_scen2_offset176_train_132104_B16"
+    },
+    {
+      "C": {
+        "N": 43,
+        "T": {
+          "lower": "141617949/25000",
+          "upper": "5664718003/1000000"
+        },
+        "actual_interventions": 0,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "04eca33c664249990faf8cfb527decf2234dc033eeccfcc5ee7e09cdb33e4593",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 43,
+        "T": {
+          "lower": "2831817329/500000",
+          "upper": "5663634701/1000000"
+        },
+        "actual_interventions": 2,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "3bf33eba5c1909c4e062b49798dff5a153bc44fc555a5ba21e44aa95780e07e8",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TRAIN_CAL_03.tar.gz",
+          "archive_sha256": "a355cc4682f0efb309a9a344004d80d56d59029a572caf06a43fff125ab463f4",
+          "member": "runs/random-32-32-10_scen2_offset176_train_132104_B8__macro_C.jsonl",
+          "sha256": "695edbc79b212ba9e425cbe004871a5c0cde77e3f10120c93aa085271363b95a"
+        },
+        "LD": {
+          "archive": "RAW_R13_TRAIN_CAL_03.tar.gz",
+          "archive_sha256": "a355cc4682f0efb309a9a344004d80d56d59029a572caf06a43fff125ab463f4",
+          "member": "runs/random-32-32-10_scen2_offset176_train_132104_B8__macro_LD.jsonl",
+          "sha256": "af6b2631adb6b8855b698c31adcff125cd3a5cecd0534cde9e8bb925214ae9bd"
+        }
+      },
+      "budget": 8,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "1083259/1000000",
+        "upper": "216669/200000"
+      },
+      "delta_queries": 0,
+      "family_key": "random-32-32-10_scen2_offset176_train_132104",
+      "gate_identity_provenance": {
+        "agent": 8,
+        "occurrence": "m-8-11"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "random-32-32-10",
+        "offset": 176,
+        "scenario": "random-32-32-10-random-2.scen",
+        "seed": 132104
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "1",
+        "inverse_route_owner_claim_sum": "1/4",
+        "min_blocked_remaining_route_over64": "1/16",
+        "prior_p": "1",
+        "remaining_at_gate": 4,
+        "remaining_horizon": "13189077/16000000",
+        "spent_at_gate": 4
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 22487391,
+          "upper": 22487392
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "1",
+          "1",
+          "1333441/2000000",
+          "1/4",
+          "1/16",
+          "1/15",
+          "0",
+          "1/4",
+          "13189077/16000000",
+          "1/4"
+        ],
+        "initial_capacity": 8,
+        "opportunity": 5,
+        "remaining_capacity": 4,
+        "spent": 4
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-8-11",
+          "m-8-12",
+          "m-8-15",
+          "m-8-16"
+        ],
+        "LD_only": [
+          "m-10-17",
+          "m-10-29",
+          "m-5-14",
+          "m-7-17"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "1083259/1000000",
+        "upper": "216669/200000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": false,
+      "split": "train",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "LD_faster",
+      "world": "random-32-32-10_scen2_offset176_train_132104_B8"
+    },
+    {
+      "C": {
+        "N": 42,
+        "T": {
+          "lower": "5919558357/1000000",
+          "upper": "5919558399/1000000"
+        },
+        "actual_interventions": 0,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "21385fa3efda22a6d818d5401b0c26473784784062b540fdf8729b8a09c4a617",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 42,
+        "T": {
+          "lower": "2968089663/500000",
+          "upper": "742022421/125000"
+        },
+        "actual_interventions": 2,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "3f2181578de08298338f07c6c010f8a69ddee0044bab72d1bad97f4ac59f8780",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TRAIN_CAL_03.tar.gz",
+          "archive_sha256": "a355cc4682f0efb309a9a344004d80d56d59029a572caf06a43fff125ab463f4",
+          "member": "runs/random-32-32-10_scen2_offset192_train_132105_B16__macro_C.jsonl",
+          "sha256": "d16571ced9cc5d7d9af85312b235759ba125b0da16d19c3ac800077ddd874c0d"
+        },
+        "LD": {
+          "archive": "RAW_R13_TRAIN_CAL_03.tar.gz",
+          "archive_sha256": "a355cc4682f0efb309a9a344004d80d56d59029a572caf06a43fff125ab463f4",
+          "member": "runs/random-32-32-10_scen2_offset192_train_132105_B16__macro_LD.jsonl",
+          "sha256": "9985e89eb03348acfdc69f4d1943b0207f11269b0348cb7a1967e123bac55217"
+        }
+      },
+      "budget": 16,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "-16621011/1000000",
+        "upper": "-16620927/1000000"
+      },
+      "delta_queries": 0,
+      "family_key": "random-32-32-10_scen2_offset192_train_132105",
+      "gate_identity_provenance": {
+        "agent": 8,
+        "occurrence": "m-8-7"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "random-32-32-10",
+        "offset": 192,
+        "scenario": "random-32-32-10-random-2.scen",
+        "seed": 132105
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "3281/3650",
+        "inverse_route_owner_claim_sum": "1/4",
+        "min_blocked_remaining_route_over64": "1/16",
+        "prior_p": "1/2",
+        "remaining_at_gate": 8,
+        "remaining_horizon": "13262007/16000000",
+        "spent_at_gate": 8
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 21903949,
+          "upper": 21903950
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "3281/3650",
+          "1/2",
+          "3/8",
+          "1/4",
+          "1/16",
+          "1/15",
+          "0",
+          "1/2",
+          "13262007/16000000",
+          "3281/14600"
+        ],
+        "initial_capacity": 16,
+        "opportunity": 9,
+        "remaining_capacity": 8,
+        "spent": 8
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-0-12",
+          "m-2-12",
+          "m-7-23",
+          "m-8-7"
+        ],
+        "LD_only": [
+          "m-0-24",
+          "m-0-25",
+          "m-3-19",
+          "m-7-27"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-16621011/1000000",
+        "upper": "-16620927/1000000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": false,
+      "split": "train",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "C_faster",
+      "world": "random-32-32-10_scen2_offset192_train_132105_B16"
+    },
+    {
+      "C": {
+        "N": 42,
+        "T": {
+          "lower": "2968089663/500000",
+          "upper": "742022421/125000"
+        },
+        "actual_interventions": 0,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "3f2181578de08298338f07c6c010f8a69ddee0044bab72d1bad97f4ac59f8780",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 43,
+        "T": {
+          "lower": "1184057311/200000",
+          "upper": "2960143299/500000"
+        },
+        "actual_interventions": 2,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "8da9e0c92bf8f1b78541337ef429085eb5785dbd82982ea44da834f7bc11cc77",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TRAIN_CAL_03.tar.gz",
+          "archive_sha256": "a355cc4682f0efb309a9a344004d80d56d59029a572caf06a43fff125ab463f4",
+          "member": "runs/random-32-32-10_scen2_offset192_train_132105_B8__macro_C.jsonl",
+          "sha256": "f027c9c7d84660ef24854d9561da18e21dfc3f72bbf1aef5dde63f5bb50cfde9"
+        },
+        "LD": {
+          "archive": "RAW_R13_TRAIN_CAL_03.tar.gz",
+          "archive_sha256": "a355cc4682f0efb309a9a344004d80d56d59029a572caf06a43fff125ab463f4",
+          "member": "runs/random-32-32-10_scen2_offset192_train_132105_B8__macro_LD.jsonl",
+          "sha256": "70ff62a2eb1546b5255596ac92bc43823862f4dec746527d27b9b4d7b01233e7"
+        }
+      },
+      "budget": 8,
+      "delta_N": 1,
+      "delta_T": {
+        "lower": "1986591/125000",
+        "upper": "15892813/1000000"
+      },
+      "delta_queries": 0,
+      "family_key": "random-32-32-10_scen2_offset192_train_132105",
+      "gate_identity_provenance": {
+        "agent": 4,
+        "occurrence": "m-4-12"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "random-32-32-10",
+        "offset": 192,
+        "scenario": "random-32-32-10-random-2.scen",
+        "seed": 132105
+      },
+      "public_conditions": {
+        "candidate_count": 2,
+        "claim_count": 1,
+        "history_p": "3281/3650",
+        "inverse_route_owner_claim_sum": "1",
+        "min_blocked_remaining_route_over64": "1/64",
+        "prior_p": "1/2",
+        "remaining_at_gate": 4,
+        "remaining_horizon": "13676443/16000000",
+        "spent_at_gate": 4
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 18588457,
+          "upper": 18588458
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "3281/3650",
+          "1/2",
+          "3/8",
+          "1",
+          "1/64",
+          "1/15",
+          "1/15",
+          "1/4",
+          "13676443/16000000",
+          "3281/3650"
+        ],
+        "initial_capacity": 8,
+        "opportunity": 5,
+        "remaining_capacity": 4,
+        "spent": 4
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-3-9",
+          "m-4-12"
+        ],
+        "LD_only": [
+          "m-0-12",
+          "m-8-7"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "1986591/125000",
+        "upper": "15892813/1000000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": false,
+      "split": "train",
+      "task_relation": "LD_more_tasks",
+      "task_time_conflict": false,
+      "time_relation": "LD_faster",
+      "world": "random-32-32-10_scen2_offset192_train_132105_B8"
+    },
+    {
+      "C": {
+        "N": 38,
+        "T": {
+          "lower": "6054820243/1000000",
+          "upper": "6054820281/1000000"
+        },
+        "actual_interventions": 0,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "e14f7cb694f565ea3d955a6287cae729413023e4b03b91cf6676219774f4a42a",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 38,
+        "T": {
+          "lower": "6054820243/1000000",
+          "upper": "6054820281/1000000"
+        },
+        "actual_interventions": 2,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "e14f7cb694f565ea3d955a6287cae729413023e4b03b91cf6676219774f4a42a",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TRAIN_CAL_03.tar.gz",
+          "archive_sha256": "a355cc4682f0efb309a9a344004d80d56d59029a572caf06a43fff125ab463f4",
+          "member": "runs/random-32-32-10_scen2_offset208_train_132106_B16__macro_C.jsonl",
+          "sha256": "66e6c0a4ab82ba6cc1af256d1756747ac87a2f5f7b018c1f62c57470e0405421"
+        },
+        "LD": {
+          "archive": "RAW_R13_TRAIN_CAL_03.tar.gz",
+          "archive_sha256": "a355cc4682f0efb309a9a344004d80d56d59029a572caf06a43fff125ab463f4",
+          "member": "runs/random-32-32-10_scen2_offset208_train_132106_B16__macro_LD.jsonl",
+          "sha256": "a7353831f7ebb17368b168ea412ab8f50ac8572cb6758566e9310b798f24399c"
+        }
+      },
+      "budget": 16,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "0",
+        "upper": "0"
+      },
+      "delta_queries": 0,
+      "family_key": "random-32-32-10_scen2_offset208_train_132106",
+      "gate_identity_provenance": {
+        "agent": 8,
+        "occurrence": "m-8-35"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "random-32-32-10",
+        "offset": 208,
+        "scenario": "random-32-32-10-random-2.scen",
+        "seed": 132106
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "9/50",
+        "inverse_route_owner_claim_sum": "1/4",
+        "min_blocked_remaining_route_over64": "1/16",
+        "prior_p": "1/2",
+        "remaining_at_gate": 8,
+        "remaining_horizon": "7478007/16000000",
+        "spent_at_gate": 8
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 68175951,
+          "upper": 68175952
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "9/50",
+          "1/2",
+          "3/8",
+          "1/4",
+          "1/16",
+          "1/15",
+          "0",
+          "1/2",
+          "7478007/16000000",
+          "9/200"
+        ],
+        "initial_capacity": 16,
+        "opportunity": 9,
+        "remaining_capacity": 8,
+        "spent": 8
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-6-34",
+          "m-8-35"
+        ],
+        "LD_only": [
+          "m-8-45",
+          "m-8-46"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-19/500000",
+        "upper": "19/500000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": true,
+      "split": "train",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "identical_service",
+      "world": "random-32-32-10_scen2_offset208_train_132106_B16"
+    },
+    {
+      "C": {
+        "N": 38,
+        "T": {
+          "lower": "1513867213/250000",
+          "upper": "605546889/100000"
+        },
+        "actual_interventions": 0,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "da59eca59652d3952a3e162a6e8006c514500d4358b0f7d2b31585c4d1485c52",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 38,
+        "T": {
+          "lower": "1513867213/250000",
+          "upper": "605546889/100000"
+        },
+        "actual_interventions": 2,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "da59eca59652d3952a3e162a6e8006c514500d4358b0f7d2b31585c4d1485c52",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TRAIN_CAL_03.tar.gz",
+          "archive_sha256": "a355cc4682f0efb309a9a344004d80d56d59029a572caf06a43fff125ab463f4",
+          "member": "runs/random-32-32-10_scen2_offset208_train_132106_B8__macro_C.jsonl",
+          "sha256": "5b7b4a52c96bd4d7d3272a3a8db50d15475fef8d953cead7669ffbaa8a7d6e76"
+        },
+        "LD": {
+          "archive": "RAW_R13_TRAIN_CAL_03.tar.gz",
+          "archive_sha256": "a355cc4682f0efb309a9a344004d80d56d59029a572caf06a43fff125ab463f4",
+          "member": "runs/random-32-32-10_scen2_offset208_train_132106_B8__macro_LD.jsonl",
+          "sha256": "ab0f04c0a117696ad31f005599f7b3cc967aefb2077e129bf90c256b72a5d846"
+        }
+      },
+      "budget": 8,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "0",
+        "upper": "0"
+      },
+      "delta_queries": 0,
+      "family_key": "random-32-32-10_scen2_offset208_train_132106",
+      "gate_identity_provenance": {
+        "agent": 8,
+        "occurrence": "m-8-18"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "random-32-32-10",
+        "offset": 208,
+        "scenario": "random-32-32-10-random-2.scen",
+        "seed": 132106
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "369/3650",
+        "inverse_route_owner_claim_sum": "1/4",
+        "min_blocked_remaining_route_over64": "1/16",
+        "prior_p": "1/2",
+        "remaining_at_gate": 4,
+        "remaining_horizon": "360241/500000",
+        "spent_at_gate": 4
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 35778305,
+          "upper": 35778306
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "369/3650",
+          "1/2",
+          "3/8",
+          "1/4",
+          "1/16",
+          "1/15",
+          "0",
+          "1/4",
+          "360241/500000",
+          "369/14600"
+        ],
+        "initial_capacity": 8,
+        "opportunity": 5,
+        "remaining_capacity": 4,
+        "spent": 4
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-4-27",
+          "m-8-18"
+        ],
+        "LD_only": [
+          "m-6-34",
+          "m-8-35"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-19/500000",
+        "upper": "19/500000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": true,
+      "split": "train",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "identical_service",
+      "world": "random-32-32-10_scen2_offset208_train_132106_B8"
+    },
+    {
+      "C": {
+        "N": 40,
+        "T": {
+          "lower": "2964152443/500000",
+          "upper": "2964152463/500000"
+        },
+        "actual_interventions": 0,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "5088783ea93f097fbfad33b0a313b6d8f3810a3a38a464c64c9d7d64b4e77eed",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 40,
+        "T": {
+          "lower": "236716251/40000",
+          "upper": "1183581263/200000"
+        },
+        "actual_interventions": 2,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "d21adbc30247f14845d1721cf2169c85cf1b8fb0f09d3c3c6de06dc6af285f25",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TRAIN_CAL_03.tar.gz",
+          "archive_sha256": "a355cc4682f0efb309a9a344004d80d56d59029a572caf06a43fff125ab463f4",
+          "member": "runs/random-32-32-10_scen2_offset224_calibration_132201_B16__macro_C.jsonl",
+          "sha256": "73dd8e46c46e21ca29a67ac9e289ca1f0f4a13fca36bd48e7bba8aafe46c5cd0"
+        },
+        "LD": {
+          "archive": "RAW_R13_TRAIN_CAL_03.tar.gz",
+          "archive_sha256": "a355cc4682f0efb309a9a344004d80d56d59029a572caf06a43fff125ab463f4",
+          "member": "runs/random-32-32-10_scen2_offset224_calibration_132201_B16__macro_LD.jsonl",
+          "sha256": "3e10ac18356f037bca13354b125d0f1d065b5b727fe8f6e50e5ef7c6bdfcd72f"
+        }
+      },
+      "budget": 16,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "10398571/1000000",
+        "upper": "10398651/1000000"
+      },
+      "delta_queries": 0,
+      "family_key": "random-32-32-10_scen2_offset224_calibration_132201",
+      "gate_identity_provenance": {
+        "agent": 12,
+        "occurrence": "m-12-26"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "random-32-32-10",
+        "offset": 224,
+        "scenario": "random-32-32-10-random-2.scen",
+        "seed": 132201
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "41/50",
+        "inverse_route_owner_claim_sum": "1/4",
+        "min_blocked_remaining_route_over64": "1/16",
+        "prior_p": "1/2",
+        "remaining_at_gate": 8,
+        "remaining_horizon": "4896709/8000000",
+        "spent_at_gate": 8
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 49652661,
+          "upper": 49652662
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "41/50",
+          "1/2",
+          "3/8",
+          "1/4",
+          "1/16",
+          "1/15",
+          "0",
+          "1/2",
+          "4896709/8000000",
+          "41/200"
+        ],
+        "initial_capacity": 16,
+        "opportunity": 9,
+        "remaining_capacity": 8,
+        "spent": 8
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-0-38",
+          "m-1-41",
+          "m-12-26",
+          "m-3-31",
+          "m-3-33",
+          "m-6-43",
+          "m-6-44",
+          "m-8-30"
+        ],
+        "LD_only": [
+          "m-1-30",
+          "m-11-45",
+          "m-14-48",
+          "m-3-30",
+          "m-6-38",
+          "m-7-56",
+          "m-8-44",
+          "m-9-47"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "10398571/1000000",
+        "upper": "10398651/1000000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": false,
+      "split": "calibration",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "LD_faster",
+      "world": "random-32-32-10_scen2_offset224_calibration_132201_B16"
+    },
+    {
+      "C": {
+        "N": 41,
+        "T": {
+          "lower": "1183543583/200000",
+          "upper": "1479429489/250000"
+        },
+        "actual_interventions": 0,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "a307329a815c61a19c4c025f14c418e754c7fdca8d8ff74403f4a8448cd5ba3a",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 40,
+        "T": {
+          "lower": "2964152443/500000",
+          "upper": "2964152463/500000"
+        },
+        "actual_interventions": 2,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "5088783ea93f097fbfad33b0a313b6d8f3810a3a38a464c64c9d7d64b4e77eed",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TRAIN_CAL_03.tar.gz",
+          "archive_sha256": "a355cc4682f0efb309a9a344004d80d56d59029a572caf06a43fff125ab463f4",
+          "member": "runs/random-32-32-10_scen2_offset224_calibration_132201_B8__macro_C.jsonl",
+          "sha256": "417ec7e5cdc1656826507a348d98928d2005d14d37b26a3e5e04f7cc30934ec0"
+        },
+        "LD": {
+          "archive": "RAW_R13_TRAIN_CAL_03.tar.gz",
+          "archive_sha256": "a355cc4682f0efb309a9a344004d80d56d59029a572caf06a43fff125ab463f4",
+          "member": "runs/random-32-32-10_scen2_offset224_calibration_132201_B8__macro_LD.jsonl",
+          "sha256": "3812f51f8445d65456be373caae9c8b399b65707b125fc0fcd957bbefb60e8e4"
+        }
+      },
+      "budget": 8,
+      "delta_N": -1,
+      "delta_T": {
+        "lower": "-10587011/1000000",
+        "upper": "-1058693/100000"
+      },
+      "delta_queries": 0,
+      "family_key": "random-32-32-10_scen2_offset224_calibration_132201",
+      "gate_identity_provenance": {
+        "agent": 6,
+        "occurrence": "m-6-15"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "random-32-32-10",
+        "offset": 224,
+        "scenario": "random-32-32-10-random-2.scen",
+        "seed": 132201
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "369/3650",
+        "inverse_route_owner_claim_sum": "1/2",
+        "min_blocked_remaining_route_over64": "1/32",
+        "prior_p": "1/2",
+        "remaining_at_gate": 4,
+        "remaining_horizon": "2437981/3200000",
+        "spent_at_gate": 4
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 30480762,
+          "upper": 30480763
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "369/3650",
+          "1/2",
+          "3/8",
+          "1/2",
+          "1/32",
+          "1/15",
+          "0",
+          "1/4",
+          "2437981/3200000",
+          "369/7300"
+        ],
+        "initial_capacity": 8,
+        "opportunity": 5,
+        "remaining_capacity": 4,
+        "spent": 4
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-12-19",
+          "m-6-15"
+        ],
+        "LD_only": [
+          "m-12-26",
+          "m-8-30"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-10587011/1000000",
+        "upper": "-1058693/100000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": false,
+      "split": "calibration",
+      "task_relation": "C_more_tasks",
+      "task_time_conflict": false,
+      "time_relation": "C_faster",
+      "world": "random-32-32-10_scen2_offset224_calibration_132201_B8"
+    },
+    {
+      "C": {
+        "N": 42,
+        "T": {
+          "lower": "709268237/125000",
+          "upper": "5674145937/1000000"
+        },
+        "actual_interventions": 0,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "2574a2b258c23a0329e0ea493e3d76930e06ee423ccb0a053b861732a69f94f5",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 42,
+        "T": {
+          "lower": "2836406227/500000",
+          "upper": "1134562499/200000"
+        },
+        "actual_interventions": 2,
+        "queries": 14,
+        "remaining": 2,
+        "requested_interventions": 2,
+        "service_sha256": "0c8361dcdb8822b8203beb3d709309d23852180e258217677f3e3ad1b06f1fa2",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TRAIN_CAL_04.tar.gz",
+          "archive_sha256": "66c97c4723343a211eb3c886132f78e958809fd74cf233ce86b0cd7a5b6ef5fe",
+          "member": "runs/random-32-32-10_scen2_offset240_calibration_132202_B16__macro_C.jsonl",
+          "sha256": "2a734c34f1c7580825ce97e9bcb12f8003b4c3c5f52bf97dbfd95e05219ab707"
+        },
+        "LD": {
+          "archive": "RAW_R13_TRAIN_CAL_04.tar.gz",
+          "archive_sha256": "66c97c4723343a211eb3c886132f78e958809fd74cf233ce86b0cd7a5b6ef5fe",
+          "member": "runs/random-32-32-10_scen2_offset240_calibration_132202_B16__macro_LD.jsonl",
+          "sha256": "7f6fc56cee5eb8bcbd32f9b0e64306cadbc82f73615125079d2f067c41e5a7b4"
+        }
+      },
+      "budget": 16,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "1333401/1000000",
+        "upper": "1333483/1000000"
+      },
+      "delta_queries": -2,
+      "family_key": "random-32-32-10_scen2_offset240_calibration_132202",
+      "gate_identity_provenance": {
+        "agent": 8,
+        "occurrence": "m-8-26"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "random-32-32-10",
+        "offset": 240,
+        "scenario": "random-32-32-10-random-2.scen",
+        "seed": 132202
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "1",
+        "inverse_route_owner_claim_sum": "1/3",
+        "min_blocked_remaining_route_over64": "3/64",
+        "prior_p": "1",
+        "remaining_at_gate": 8,
+        "remaining_horizon": "4448071/8000000",
+        "spent_at_gate": 8
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 56830864,
+          "upper": 56830865
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "1",
+          "1",
+          "24641/40000",
+          "1/3",
+          "3/64",
+          "1/15",
+          "0",
+          "1/2",
+          "4448071/8000000",
+          "1/3"
+        ],
+        "initial_capacity": 16,
+        "opportunity": 9,
+        "remaining_capacity": 8,
+        "spent": 8
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-13-30",
+          "m-14-58",
+          "m-8-26"
+        ],
+        "LD_only": [
+          "m-9-47"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "1333401/1000000",
+        "upper": "1333483/1000000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": false,
+      "split": "calibration",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "LD_faster",
+      "world": "random-32-32-10_scen2_offset240_calibration_132202_B16"
+    },
+    {
+      "C": {
+        "N": 42,
+        "T": {
+          "lower": "5673424839/1000000",
+          "upper": "70917811/12500"
+        },
+        "actual_interventions": 0,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "67d32c39f70494277d024ac4555528bc10e59fe47b61b8f3c8ec33db2d08785f",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 42,
+        "T": {
+          "lower": "5675341723/1000000",
+          "upper": "1418835441/250000"
+        },
+        "actual_interventions": 2,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "73fb9316f96c14c51621a438e07a40342b1b9f87acd060a02c6ab7cfdbfa6940",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TRAIN_CAL_04.tar.gz",
+          "archive_sha256": "66c97c4723343a211eb3c886132f78e958809fd74cf233ce86b0cd7a5b6ef5fe",
+          "member": "runs/random-32-32-10_scen2_offset240_calibration_132202_B8__macro_C.jsonl",
+          "sha256": "39acde7240213c97d5f5a4e697e0145649013f9ed2b5fe0cc9cedea5b2662a93"
+        },
+        "LD": {
+          "archive": "RAW_R13_TRAIN_CAL_04.tar.gz",
+          "archive_sha256": "66c97c4723343a211eb3c886132f78e958809fd74cf233ce86b0cd7a5b6ef5fe",
+          "member": "runs/random-32-32-10_scen2_offset240_calibration_132202_B8__macro_LD.jsonl",
+          "sha256": "087446a029bbae3e639905c7ad58a2a40b4f031b40f648a46a5d177441e40e00"
+        }
+      },
+      "budget": 8,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "-76677/40000",
+        "upper": "-1916843/1000000"
+      },
+      "delta_queries": 0,
+      "family_key": "random-32-32-10_scen2_offset240_calibration_132202",
+      "gate_identity_provenance": {
+        "agent": 9,
+        "occurrence": "m-9-15"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "random-32-32-10",
+        "offset": 240,
+        "scenario": "random-32-32-10-random-2.scen",
+        "seed": 132202
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "369/3650",
+        "inverse_route_owner_claim_sum": "1",
+        "min_blocked_remaining_route_over64": "1/64",
+        "prior_p": "1/2",
+        "remaining_at_gate": 4,
+        "remaining_horizon": "69993/100000",
+        "spent_at_gate": 4
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 38408965,
+          "upper": 38408966
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "369/3650",
+          "1/2",
+          "3/8",
+          "1",
+          "1/64",
+          "1/15",
+          "0",
+          "1/4",
+          "69993/100000",
+          "369/3650"
+        ],
+        "initial_capacity": 8,
+        "opportunity": 5,
+        "remaining_capacity": 4,
+        "spent": 4
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-8-21",
+          "m-9-15"
+        ],
+        "LD_only": [
+          "m-13-30",
+          "m-8-26"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-76677/40000",
+        "upper": "-1916843/1000000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": false,
+      "split": "calibration",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "C_faster",
+      "world": "random-32-32-10_scen2_offset240_calibration_132202_B8"
+    },
+    {
+      "C": {
+        "N": 45,
+        "T": {
+          "lower": "5429868339/1000000",
+          "upper": "169683387/31250"
+        },
+        "actual_interventions": 0,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "4c0f89d84f87994713e1c89376558895d0d890757e3cf12d9f5d3282f679eafe",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 46,
+        "T": {
+          "lower": "5422921901/1000000",
+          "upper": "5422921947/1000000"
+        },
+        "actual_interventions": 2,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "6d80d3abd1c7da9cd47c2480cc5fb5eca84a30096fc644a8bfcecda9e230134f",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TEST_03.tar.gz",
+          "archive_sha256": "6f67183302f60548181543910cd4c4bcf8736d2173a51fa9a0222cd863f800b5",
+          "member": "runs/random-32-32-10_scen2_offset256_test_132301_B16__condition.jsonl",
+          "sha256": "26431b3e655da000dedcad18a31b0fa17dc6f985f7524fac8657f8398d73c158"
+        },
+        "LD": {
+          "archive": "RAW_R13_TEST_03.tar.gz",
+          "archive_sha256": "6f67183302f60548181543910cd4c4bcf8736d2173a51fa9a0222cd863f800b5",
+          "member": "runs/random-32-32-10_scen2_offset256_test_132301_B16__alwaysLD.jsonl",
+          "sha256": "cb46566e43d0ada47b430fd5178223aafe10d466fa7521daeaa0bde489d568f2"
+        }
+      },
+      "budget": 16,
+      "delta_N": 1,
+      "delta_T": {
+        "lower": "868299/125000",
+        "upper": "6946483/1000000"
+      },
+      "delta_queries": 0,
+      "family_key": "random-32-32-10_scen2_offset256_test_132301",
+      "gate_identity_provenance": {
+        "agent": 1,
+        "occurrence": "m-1-14"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "random-32-32-10",
+        "offset": 256,
+        "scenario": "random-32-32-10-random-2.scen",
+        "seed": 132301
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "3281/3650",
+        "inverse_route_owner_claim_sum": "1",
+        "min_blocked_remaining_route_over64": "1/64",
+        "prior_p": "1/2",
+        "remaining_at_gate": 8,
+        "remaining_horizon": "13180931/16000000",
+        "spent_at_gate": 8
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 22552558,
+          "upper": 22552559
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "3281/3650",
+          "1/2",
+          "3/8",
+          "1",
+          "1/64",
+          "1/15",
+          "0",
+          "1/2",
+          "13180931/16000000",
+          "3281/3650"
+        ],
+        "initial_capacity": 16,
+        "opportunity": 9,
+        "remaining_capacity": 8,
+        "spent": 8
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-1-14",
+          "m-12-28"
+        ],
+        "LD_only": [
+          "m-0-37",
+          "m-15-33"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "868299/125000",
+        "upper": "6946483/1000000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": false,
+      "split": "test",
+      "task_relation": "LD_more_tasks",
+      "task_time_conflict": false,
+      "time_relation": "LD_faster",
+      "world": "random-32-32-10_scen2_offset256_test_132301_B16"
+    },
+    {
+      "C": {
+        "N": 45,
+        "T": {
+          "lower": "271522589/50000",
+          "upper": "217218073/40000"
+        },
+        "actual_interventions": 0,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "6cf31272f2f97f4d68d62f2644852e864a8c83901c66e3045106e153fb0b4e41",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 45,
+        "T": {
+          "lower": "271522589/50000",
+          "upper": "217218073/40000"
+        },
+        "actual_interventions": 2,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "6cf31272f2f97f4d68d62f2644852e864a8c83901c66e3045106e153fb0b4e41",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TEST_03.tar.gz",
+          "archive_sha256": "6f67183302f60548181543910cd4c4bcf8736d2173a51fa9a0222cd863f800b5",
+          "member": "runs/random-32-32-10_scen2_offset256_test_132301_B8__condition.jsonl",
+          "sha256": "b91053056b762e89c42d1698e5b1d6563ffb8ca50c3af1d2b26abde53049f424"
+        },
+        "LD": {
+          "archive": "RAW_R13_TEST_03.tar.gz",
+          "archive_sha256": "6f67183302f60548181543910cd4c4bcf8736d2173a51fa9a0222cd863f800b5",
+          "member": "runs/random-32-32-10_scen2_offset256_test_132301_B8__alwaysLD.jsonl",
+          "sha256": "b3df660d26adced354fa1f567f25a66e64f9790eb28b6be3ca63b58ed0d2731c"
+        }
+      },
+      "budget": 8,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "0",
+        "upper": "0"
+      },
+      "delta_queries": 0,
+      "family_key": "random-32-32-10_scen2_offset256_test_132301",
+      "gate_identity_provenance": {
+        "agent": 8,
+        "occurrence": "m-8-7"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "random-32-32-10",
+        "offset": 256,
+        "scenario": "random-32-32-10-random-2.scen",
+        "seed": 132301
+      },
+      "public_conditions": {
+        "candidate_count": 2,
+        "claim_count": 1,
+        "history_p": "369/3650",
+        "inverse_route_owner_claim_sum": "1/2",
+        "min_blocked_remaining_route_over64": "1/32",
+        "prior_p": "1/2",
+        "remaining_at_gate": 4,
+        "remaining_horizon": "3583527/4000000",
+        "spent_at_gate": 4
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 13327137,
+          "upper": 13327138
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "369/3650",
+          "1/2",
+          "3/8",
+          "1/2",
+          "1/32",
+          "1/15",
+          "1/15",
+          "1/4",
+          "3583527/4000000",
+          "369/7300"
+        ],
+        "initial_capacity": 8,
+        "opportunity": 5,
+        "remaining_capacity": 4,
+        "spent": 4
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-13-7",
+          "m-8-7"
+        ],
+        "LD_only": [
+          "m-1-14",
+          "m-12-28"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-9/200000",
+        "upper": "9/200000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": true,
+      "split": "test",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "identical_service",
+      "world": "random-32-32-10_scen2_offset256_test_132301_B8"
+    },
+    {
+      "C": {
+        "N": 38,
+        "T": {
+          "lower": "2976896837/500000",
+          "upper": "5953793711/1000000"
+        },
+        "actual_interventions": 0,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "df02db6557844b37918a36c417817ec7d1467adde280f37c14a6a4c1912ad32f",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 38,
+        "T": {
+          "lower": "2976896837/500000",
+          "upper": "5953793711/1000000"
+        },
+        "actual_interventions": 2,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "df02db6557844b37918a36c417817ec7d1467adde280f37c14a6a4c1912ad32f",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TEST_04.tar.gz",
+          "archive_sha256": "e547f8c7cf8c698bffbb89c5255d1f86e047bba3623dcb5175f1d85e078da22a",
+          "member": "runs/random-32-32-10_scen2_offset272_test_132302_B16__condition.jsonl",
+          "sha256": "ac8773d7c158ab3e54e94b16dfee5211e4afd2490917d57a5b94502c604dbbc1"
+        },
+        "LD": {
+          "archive": "RAW_R13_TEST_04.tar.gz",
+          "archive_sha256": "e547f8c7cf8c698bffbb89c5255d1f86e047bba3623dcb5175f1d85e078da22a",
+          "member": "runs/random-32-32-10_scen2_offset272_test_132302_B16__alwaysLD.jsonl",
+          "sha256": "1f64e6c626baf927339c55f2f00566d7b7424de8ee05fdc6e71ca853227e3881"
+        }
+      },
+      "budget": 16,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "0",
+        "upper": "0"
+      },
+      "delta_queries": 0,
+      "family_key": "random-32-32-10_scen2_offset272_test_132302",
+      "gate_identity_provenance": {
+        "agent": 5,
+        "occurrence": "m-5-21"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "random-32-32-10",
+        "offset": 272,
+        "scenario": "random-32-32-10-random-2.scen",
+        "seed": 132302
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "1",
+        "inverse_route_owner_claim_sum": "1/2",
+        "min_blocked_remaining_route_over64": "1/32",
+        "prior_p": "1",
+        "remaining_at_gate": 8,
+        "remaining_horizon": "10459229/16000000",
+        "spent_at_gate": 8
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 44326174,
+          "upper": 44326175
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "1",
+          "1",
+          "1333441/2000000",
+          "1/2",
+          "1/32",
+          "1/15",
+          "0",
+          "1/2",
+          "10459229/16000000",
+          "1/2"
+        ],
+        "initial_capacity": 16,
+        "opportunity": 9,
+        "remaining_capacity": 8,
+        "spent": 8
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-5-21",
+          "m-5-22"
+        ],
+        "LD_only": [
+          "m-11-28",
+          "m-7-26"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-37/1000000",
+        "upper": "37/1000000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": true,
+      "split": "test",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "identical_service",
+      "world": "random-32-32-10_scen2_offset272_test_132302_B16"
+    },
+    {
+      "C": {
+        "N": 38,
+        "T": {
+          "lower": "2976896837/500000",
+          "upper": "5953793711/1000000"
+        },
+        "actual_interventions": 0,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "df02db6557844b37918a36c417817ec7d1467adde280f37c14a6a4c1912ad32f",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 38,
+        "T": {
+          "lower": "1488594279/250000",
+          "upper": "5954377153/1000000"
+        },
+        "actual_interventions": 2,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "796e16726493dfc90b6c5083d39f608e919f8201716ad957ffcf46250d2ef30f",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TEST_04.tar.gz",
+          "archive_sha256": "e547f8c7cf8c698bffbb89c5255d1f86e047bba3623dcb5175f1d85e078da22a",
+          "member": "runs/random-32-32-10_scen2_offset272_test_132302_B8__condition.jsonl",
+          "sha256": "e0d15271ee51722b24b3efe21ff22d0da8b0a4d0bec63c6e29bbdfe34587f471"
+        },
+        "LD": {
+          "archive": "RAW_R13_TEST_04.tar.gz",
+          "archive_sha256": "e547f8c7cf8c698bffbb89c5255d1f86e047bba3623dcb5175f1d85e078da22a",
+          "member": "runs/random-32-32-10_scen2_offset272_test_132302_B8__alwaysLD.jsonl",
+          "sha256": "6e75075e14aa72cbe20efb515f619d77fd1a232eb0b5f19a1abf6f3983797a74"
+        }
+      },
+      "budget": 8,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "-583479/1000000",
+        "upper": "-116681/200000"
+      },
+      "delta_queries": 0,
+      "family_key": "random-32-32-10_scen2_offset272_test_132302",
+      "gate_identity_provenance": {
+        "agent": 9,
+        "occurrence": "m-9-14"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "random-32-32-10",
+        "offset": 272,
+        "scenario": "random-32-32-10-random-2.scen",
+        "seed": 132302
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "1",
+        "inverse_route_owner_claim_sum": "1/2",
+        "min_blocked_remaining_route_over64": "1/32",
+        "prior_p": "1",
+        "remaining_at_gate": 4,
+        "remaining_horizon": "11942149/16000000",
+        "spent_at_gate": 4
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 32462812,
+          "upper": 32462813
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "1",
+          "1",
+          "87413/125000",
+          "1/2",
+          "1/32",
+          "1/15",
+          "0",
+          "1/4",
+          "11942149/16000000",
+          "1/2"
+        ],
+        "initial_capacity": 8,
+        "opportunity": 5,
+        "remaining_capacity": 4,
+        "spent": 4
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-9-14",
+          "m-9-16"
+        ],
+        "LD_only": [
+          "m-5-21",
+          "m-5-22"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-583479/1000000",
+        "upper": "-116681/200000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": false,
+      "split": "test",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "C_faster",
+      "world": "random-32-32-10_scen2_offset272_test_132302_B8"
+    },
+    {
+      "C": {
+        "N": 45,
+        "T": {
+          "lower": "5769679107/1000000",
+          "upper": "360604947/62500"
+        },
+        "actual_interventions": 0,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "ffa651f812eb45dc7aeea705ab16bf8536ad3992127df9e353ed636150fcc106",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 45,
+        "T": {
+          "lower": "5769679107/1000000",
+          "upper": "360604947/62500"
+        },
+        "actual_interventions": 2,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "ffa651f812eb45dc7aeea705ab16bf8536ad3992127df9e353ed636150fcc106",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TEST_04.tar.gz",
+          "archive_sha256": "e547f8c7cf8c698bffbb89c5255d1f86e047bba3623dcb5175f1d85e078da22a",
+          "member": "runs/random-32-32-10_scen2_offset288_test_132303_B16__condition.jsonl",
+          "sha256": "2c11d25d6aadaa1e80109d39feb38f15b244a0ab5b6adbfb56c2b79d656b5b3e"
+        },
+        "LD": {
+          "archive": "RAW_R13_TEST_04.tar.gz",
+          "archive_sha256": "e547f8c7cf8c698bffbb89c5255d1f86e047bba3623dcb5175f1d85e078da22a",
+          "member": "runs/random-32-32-10_scen2_offset288_test_132303_B16__alwaysLD.jsonl",
+          "sha256": "89483b24dc5a6b0953a30efe5bf9f0a3ecaecf4e8999892e6db71c076f0113a6"
+        }
+      },
+      "budget": 16,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "0",
+        "upper": "0"
+      },
+      "delta_queries": 0,
+      "family_key": "random-32-32-10_scen2_offset288_test_132303",
+      "gate_identity_provenance": {
+        "agent": 5,
+        "occurrence": "m-5-16"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "random-32-32-10",
+        "offset": 288,
+        "scenario": "random-32-32-10-random-2.scen",
+        "seed": 132303
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "369/3650",
+        "inverse_route_owner_claim_sum": "1/4",
+        "min_blocked_remaining_route_over64": "1/16",
+        "prior_p": "1/2",
+        "remaining_at_gate": 8,
+        "remaining_horizon": "2371309/3200000",
+        "spent_at_gate": 8
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 33147645,
+          "upper": 33147646
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "369/3650",
+          "1/2",
+          "3/8",
+          "1/4",
+          "1/16",
+          "1/15",
+          "0",
+          "1/2",
+          "2371309/3200000",
+          "369/14600"
+        ],
+        "initial_capacity": 16,
+        "opportunity": 9,
+        "remaining_capacity": 8,
+        "spent": 8
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-13-21",
+          "m-5-16"
+        ],
+        "LD_only": [
+          "m-11-33",
+          "m-8-30"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-9/200000",
+        "upper": "9/200000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": true,
+      "split": "test",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "identical_service",
+      "world": "random-32-32-10_scen2_offset288_test_132303_B16"
+    },
+    {
+      "C": {
+        "N": 45,
+        "T": {
+          "lower": "5769679107/1000000",
+          "upper": "360604947/62500"
+        },
+        "actual_interventions": 0,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "ffa651f812eb45dc7aeea705ab16bf8536ad3992127df9e353ed636150fcc106",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 45,
+        "T": {
+          "lower": "5769679107/1000000",
+          "upper": "360604947/62500"
+        },
+        "actual_interventions": 2,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "ffa651f812eb45dc7aeea705ab16bf8536ad3992127df9e353ed636150fcc106",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TEST_05.tar.gz",
+          "archive_sha256": "7517d5aff0b89d49d275361eee3ea9127e7df268045160bb9135947695ba8ac9",
+          "member": "runs/random-32-32-10_scen2_offset288_test_132303_B8__condition.jsonl",
+          "sha256": "74de83d982b4e9f3fc656fa24948a7a78277fc558945edd4b1a716cda2e68cff"
+        },
+        "LD": {
+          "archive": "RAW_R13_TEST_04.tar.gz",
+          "archive_sha256": "e547f8c7cf8c698bffbb89c5255d1f86e047bba3623dcb5175f1d85e078da22a",
+          "member": "runs/random-32-32-10_scen2_offset288_test_132303_B8__alwaysLD.jsonl",
+          "sha256": "4b960728622499ae5d856574d5ed05604447b97d95bed3ea7d9bc1647bbc7772"
+        }
+      },
+      "budget": 8,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "0",
+        "upper": "0"
+      },
+      "delta_queries": 0,
+      "family_key": "random-32-32-10_scen2_offset288_test_132303",
+      "gate_identity_provenance": {
+        "agent": 4,
+        "occurrence": "m-4-6"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "random-32-32-10",
+        "offset": 288,
+        "scenario": "random-32-32-10-random-2.scen",
+        "seed": 132303
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "41/50",
+        "inverse_route_owner_claim_sum": "1/2",
+        "min_blocked_remaining_route_over64": "1/32",
+        "prior_p": "1/2",
+        "remaining_at_gate": 4,
+        "remaining_horizon": "14825093/16000000",
+        "spent_at_gate": 4
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 9399260,
+          "upper": 9399261
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "41/50",
+          "1/2",
+          "3/8",
+          "1/2",
+          "1/32",
+          "1/15",
+          "0",
+          "1/4",
+          "14825093/16000000",
+          "41/100"
+        ],
+        "initial_capacity": 8,
+        "opportunity": 5,
+        "remaining_capacity": 4,
+        "spent": 4
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-12-10",
+          "m-4-6"
+        ],
+        "LD_only": [
+          "m-13-21",
+          "m-5-16"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-9/200000",
+        "upper": "9/200000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": true,
+      "split": "test",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "identical_service",
+      "world": "random-32-32-10_scen2_offset288_test_132303_B8"
+    },
+    {
+      "C": {
+        "N": 45,
+        "T": {
+          "lower": "1132313639/200000",
+          "upper": "70769603/12500"
+        },
+        "actual_interventions": 0,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "ef8036dca3c2a200f22d336cea0d43d1b9d230ec72c68fdc37e10a8034da1c50",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 45,
+        "T": {
+          "lower": "2830492377/500000",
+          "upper": "5660984799/1000000"
+        },
+        "actual_interventions": 2,
+        "queries": 16,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "c2450e0bb2bd28b7560c84fdc2f7189c55dab03bfaef8d522281d48bf3461da3",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TEST_05.tar.gz",
+          "archive_sha256": "7517d5aff0b89d49d275361eee3ea9127e7df268045160bb9135947695ba8ac9",
+          "member": "runs/random-32-32-10_scen2_offset304_test_132304_B16__condition.jsonl",
+          "sha256": "464a754bdf95e0834ea258e3fceb826f54ea8118e9c9308881ac7af13a3e5f6b"
+        },
+        "LD": {
+          "archive": "RAW_R13_TEST_05.tar.gz",
+          "archive_sha256": "7517d5aff0b89d49d275361eee3ea9127e7df268045160bb9135947695ba8ac9",
+          "member": "runs/random-32-32-10_scen2_offset304_test_132304_B16__alwaysLD.jsonl",
+          "sha256": "22d5613660c276140eaed0dc394e45c851050cb4d4965766f84baf3658361bbe"
+        }
+      },
+      "budget": 16,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "145849/250000",
+        "upper": "291743/500000"
+      },
+      "delta_queries": 0,
+      "family_key": "random-32-32-10_scen2_offset304_test_132304",
+      "gate_identity_provenance": {
+        "agent": 11,
+        "occurrence": "m-11-35"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "random-32-32-10",
+        "offset": 304,
+        "scenario": "random-32-32-10-random-2.scen",
+        "seed": 132304
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "369/3650",
+        "inverse_route_owner_claim_sum": "1/3",
+        "min_blocked_remaining_route_over64": "3/64",
+        "prior_p": "1/2",
+        "remaining_at_gate": 8,
+        "remaining_horizon": "3617389/8000000",
+        "spent_at_gate": 8
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 70121778,
+          "upper": 70121779
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "369/3650",
+          "1/2",
+          "3/8",
+          "1/3",
+          "3/64",
+          "1/15",
+          "0",
+          "1/2",
+          "3617389/8000000",
+          "123/3650"
+        ],
+        "initial_capacity": 16,
+        "opportunity": 9,
+        "remaining_capacity": 8,
+        "spent": 8
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-10-41",
+          "m-11-35"
+        ],
+        "LD_only": [
+          "m-13-58",
+          "m-4-49"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "145849/250000",
+        "upper": "291743/500000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": false,
+      "split": "test",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "LD_faster",
+      "world": "random-32-32-10_scen2_offset304_test_132304_B16"
+    },
+    {
+      "C": {
+        "N": 45,
+        "T": {
+          "lower": "566753717/100000",
+          "upper": "1133507443/200000"
+        },
+        "actual_interventions": 0,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 0,
+        "service_sha256": "141e8e947a6a8fa0adde4e90e3fc8dc32a8f535670531bec5853fbb375f159e7",
+        "unreached_reason": null
+      },
+      "LD": {
+        "N": 45,
+        "T": {
+          "lower": "566753717/100000",
+          "upper": "1133507443/200000"
+        },
+        "actual_interventions": 2,
+        "queries": 8,
+        "remaining": 0,
+        "requested_interventions": 2,
+        "service_sha256": "141e8e947a6a8fa0adde4e90e3fc8dc32a8f535670531bec5853fbb375f159e7",
+        "unreached_reason": null
+      },
+      "branch_sources": {
+        "C": {
+          "archive": "RAW_R13_TEST_05.tar.gz",
+          "archive_sha256": "7517d5aff0b89d49d275361eee3ea9127e7df268045160bb9135947695ba8ac9",
+          "member": "runs/random-32-32-10_scen2_offset304_test_132304_B8__condition.jsonl",
+          "sha256": "0dba99384f809a27336f74ee5cadb612d513672bdb10c210cdd9dfec84f6878a"
+        },
+        "LD": {
+          "archive": "RAW_R13_TEST_05.tar.gz",
+          "archive_sha256": "7517d5aff0b89d49d275361eee3ea9127e7df268045160bb9135947695ba8ac9",
+          "member": "runs/random-32-32-10_scen2_offset304_test_132304_B8__alwaysLD.jsonl",
+          "sha256": "b1a0a08e65e26643d534c0b06451d4da0320c2f89a7220abc4d1414549186326"
+        }
+      },
+      "budget": 8,
+      "delta_N": 0,
+      "delta_T": {
+        "lower": "0",
+        "upper": "0"
+      },
+      "delta_queries": 0,
+      "family_key": "random-32-32-10_scen2_offset304_test_132304",
+      "gate_identity_provenance": {
+        "agent": 9,
+        "occurrence": "m-9-18"
+      },
+      "prefix_evidence_sha256": "6670324e40fed62743d4648cd7e591998cd9b5f0d7b6335fb7ec24593bd73818",
+      "provenance": {
+        "map": "random-32-32-10",
+        "offset": 304,
+        "scenario": "random-32-32-10-random-2.scen",
+        "seed": 132304
+      },
+      "public_conditions": {
+        "candidate_count": 1,
+        "claim_count": 1,
+        "history_p": "3281/3650",
+        "inverse_route_owner_claim_sum": "1",
+        "min_blocked_remaining_route_over64": "1/64",
+        "prior_p": "1/2",
+        "remaining_at_gate": 4,
+        "remaining_horizon": "12177231/16000000",
+        "spent_at_gate": 4
+      },
+      "public_gate": {
+        "at": {
+          "denominator": 1000000,
+          "lower": 30582153,
+          "upper": 30582154
+        },
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "3281/3650",
+          "1/2",
+          "3/8",
+          "1",
+          "1/64",
+          "1/15",
+          "0",
+          "1/4",
+          "12177231/16000000",
+          "3281/3650"
+        ],
+        "initial_capacity": 8,
+        "opportunity": 5,
+        "remaining_capacity": 4,
+        "spent": 4
+      },
+      "query_identity_difference": {
+        "C_only": [
+          "m-11-21",
+          "m-9-18"
+        ],
+        "LD_only": [
+          "m-10-41",
+          "m-11-35"
+        ]
+      },
+      "raw_interval_subtraction": {
+        "lower": "-9/200000",
+        "upper": "9/200000"
+      },
+      "root_audit_sha256": "0c852bd6c601024766097873c8441d3ac5be984b5e34fde525861650fbd9c0ac",
+      "service_records_equal": true,
+      "split": "test",
+      "task_relation": "equal_tasks",
+      "task_time_conflict": false,
+      "time_relation": "identical_service",
+      "world": "random-32-32-10_scen2_offset304_test_132304_B8"
+    }
+  ],
+  "schema": "complete_public_continuation_value_v1"
+}

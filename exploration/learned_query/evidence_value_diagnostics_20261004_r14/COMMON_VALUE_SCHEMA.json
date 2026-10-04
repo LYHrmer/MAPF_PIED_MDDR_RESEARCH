@@ -1,0 +1,33 @@
+{
+  "schema": "complete_public_continuation_value_v1",
+  "context": {
+    "family_key": "provenance only; cluster both supplied budgets together",
+    "world_key": "provenance only; one complete-prefix comparison",
+    "split": "train/calibration/test; TEST cannot fit or calibrate",
+    "decision_public_state": "public feature schema and exact rational feature values",
+    "budget": "initial, spent at decision, remaining at decision and final remaining",
+    "prefix_binding": "source-audit content hash and public gate identity; no future truth"
+  },
+  "option": {
+    "name": "complete continuation policy identifier",
+    "reference": "complete reference policy from the same prefix",
+    "trigger_contract": "fixed public trigger and full agent+occurrence identity",
+    "tail_after_interventions": "fixed continuation; no repeated learned relabeling"
+  },
+  "outcome": {
+    "N": "whole FIFO task count through the registered horizon",
+    "T": "fixed task-set restricted completion-time sum, rational lower/upper bounds",
+    "queries": "actual count, not nominal budget or monetary COST",
+    "remaining": "actual unspent count budget",
+    "service_sha256": "full service-record identity",
+    "reachability": "requested/actual interventions and missing public trigger reason"
+  },
+  "paired_target": {
+    "delta_N": "N_option - N_reference",
+    "delta_T": "T_reference - T_option; positive is faster",
+    "delta_queries": "Q_option - Q_reference",
+    "priority": "task count first; time-space analysis separately restricted to equal-task branches",
+    "bounds": "deterministic numerical enclosures, not statistical confidence intervals"
+  },
+  "scope": "Shared semantic interface only. R13 query C/LD options are not equivalent to third-line graph/search actions, and their numerical labels cannot be transferred without a separately registered common world and continuation contract. IDs, map and error seed are provenance, not model features. Oracle values are diagnostic only."
+}

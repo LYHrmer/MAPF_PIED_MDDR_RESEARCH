@@ -1,5 +1,11 @@
 # 学习辅助进度查询：探索说明
 
+2026-10-04 R14：**复用全部160臂，导出48个完整尾策略配对；无新增原生或训练。** [价值空间判断](evidence_value_diagnostics_20261004_r14/VALUE_INTERPRETATION.md)与[完整报告](evidence_value_diagnostics_20261004_r14/REPORT.md)。
+
+TEST在C/LD两尾策略内的任务优先oracle为713，等于固定LD；同任务子集剩余受限完成时间和空间仅[3.148719,3.149149]，约为固定LD全TEST时间和的0.003507%。48个实际gate全部1claim/1owner，多候选覆盖稀少；TRAIN有同family两预算任务标签反转，但非预算单独因果效应。有限oracle只作诊断，8个family的两个预算成对处理，不用旧TEST选新阈值。
+
+已实现输入/输出内容缓存，v2第二次读取提取0行；v1精度修订前工件与收据原字节保留，7项校验通过。[跨线目标映射](evidence_value_diagnostics_20261004_r14/CROSS_LINE_TARGET_MAPPING.json)区分FIFO任务/受限时间和固定批次ΣT/makespan。下一优先扩可解释的合法决策空间及新TRAIN条件覆盖，停止在这组极小两尾空间上堆网络。以下R13及更早为历史。
+
 2026-10-04 R13：**真实半预算晚点模型已训练、冻结并部署，160次原生全部完成。** [完整根结论](late_budget_choice_20261004_r13/ROOT_CONCLUSION.md)与[逐条件结果图](late_budget_choice_20261004_r13/figures/CAPTION.md)。
 
 64次TRAIN/CAL运行中，TRAIN的24个LD−C标签为3正/2负/19零，四头模型CAL门槛0.1；96TEST中full真实选择10LD/6C。C/固定LD/查表/full/概率屏蔽模型任务分别712/713/712/713/713，主动策略均192QUERY；整程WAIT708/0。full相对固定LD无可分辨总时间改善；概率屏蔽模型保留同713任务/192QUERY，总时间少约0.714，额外收益集中于一项条件。不能把该局部信号升格为普遍学习优势。

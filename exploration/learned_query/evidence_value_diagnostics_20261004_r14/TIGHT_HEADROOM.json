@@ -1,0 +1,173 @@
+{
+  "TEST_families": {
+    "empty-32-32_scen2_offset224_test_131301": {
+      "N_C": 92,
+      "N_LD": 92,
+      "N_task_first_oracle": 92,
+      "contexts": 2,
+      "equal_task_contexts": 2,
+      "equal_task_oracle_T_gain_vs_C": {
+        "lower": "0",
+        "upper": "0"
+      },
+      "equal_task_oracle_T_gain_vs_LD": {
+        "lower": "171197/250000",
+        "upper": "342439/500000"
+      }
+    },
+    "empty-32-32_scen2_offset240_test_131302": {
+      "N_C": 84,
+      "N_LD": 84,
+      "N_task_first_oracle": 84,
+      "contexts": 2,
+      "equal_task_contexts": 2,
+      "equal_task_oracle_T_gain_vs_C": {
+        "lower": "0",
+        "upper": "0"
+      },
+      "equal_task_oracle_T_gain_vs_LD": {
+        "lower": "0",
+        "upper": "0"
+      }
+    },
+    "empty-32-32_scen2_offset256_test_131303": {
+      "N_C": 84,
+      "N_LD": 84,
+      "N_task_first_oracle": 84,
+      "contexts": 2,
+      "equal_task_contexts": 2,
+      "equal_task_oracle_T_gain_vs_C": {
+        "lower": "0",
+        "upper": "0"
+      },
+      "equal_task_oracle_T_gain_vs_LD": {
+        "lower": "1297133/1000000",
+        "upper": "1297301/1000000"
+      }
+    },
+    "empty-32-32_scen2_offset272_test_131304": {
+      "N_C": 106,
+      "N_LD": 106,
+      "N_task_first_oracle": 106,
+      "contexts": 2,
+      "equal_task_contexts": 2,
+      "equal_task_oracle_T_gain_vs_C": {
+        "lower": "583393/1000000",
+        "upper": "583491/1000000"
+      },
+      "equal_task_oracle_T_gain_vs_LD": {
+        "lower": "583393/1000000",
+        "upper": "583491/1000000"
+      }
+    },
+    "random-32-32-10_scen2_offset256_test_132301": {
+      "N_C": 90,
+      "N_LD": 91,
+      "N_task_first_oracle": 91,
+      "contexts": 2,
+      "equal_task_contexts": 1,
+      "equal_task_oracle_T_gain_vs_C": {
+        "lower": "0",
+        "upper": "0"
+      },
+      "equal_task_oracle_T_gain_vs_LD": {
+        "lower": "0",
+        "upper": "0"
+      }
+    },
+    "random-32-32-10_scen2_offset272_test_132302": {
+      "N_C": 76,
+      "N_LD": 76,
+      "N_task_first_oracle": 76,
+      "contexts": 2,
+      "equal_task_contexts": 2,
+      "equal_task_oracle_T_gain_vs_C": {
+        "lower": "0",
+        "upper": "0"
+      },
+      "equal_task_oracle_T_gain_vs_LD": {
+        "lower": "116681/200000",
+        "upper": "583479/1000000"
+      }
+    },
+    "random-32-32-10_scen2_offset288_test_132303": {
+      "N_C": 90,
+      "N_LD": 90,
+      "N_task_first_oracle": 90,
+      "contexts": 2,
+      "equal_task_contexts": 2,
+      "equal_task_oracle_T_gain_vs_C": {
+        "lower": "0",
+        "upper": "0"
+      },
+      "equal_task_oracle_T_gain_vs_LD": {
+        "lower": "0",
+        "upper": "0"
+      }
+    },
+    "random-32-32-10_scen2_offset304_test_132304": {
+      "N_C": 90,
+      "N_LD": 90,
+      "N_task_first_oracle": 90,
+      "contexts": 2,
+      "equal_task_contexts": 2,
+      "equal_task_oracle_T_gain_vs_C": {
+        "lower": "145849/250000",
+        "upper": "291743/500000"
+      },
+      "equal_task_oracle_T_gain_vs_LD": {
+        "lower": "0",
+        "upper": "0"
+      }
+    }
+  },
+  "method": "Sum branch improvements; unchanged or identical-service branches contribute exactly zero. This tightens subtraction of two independent total intervals.",
+  "numerical_not_statistical": true,
+  "splits": {
+    "calibration": {
+      "N_C": 321,
+      "N_LD": 322,
+      "N_task_first_oracle": 323,
+      "contexts": 8,
+      "equal_task_contexts": 6,
+      "equal_task_oracle_T_gain_vs_C": {
+        "lower": "2932993/250000",
+        "upper": "5866067/500000"
+      },
+      "equal_task_oracle_T_gain_vs_LD": {
+        "lower": "3949969/500000",
+        "upper": "3950087/500000"
+      }
+    },
+    "test": {
+      "N_C": 712,
+      "N_LD": 713,
+      "N_task_first_oracle": 713,
+      "contexts": 16,
+      "equal_task_contexts": 15,
+      "equal_task_oracle_T_gain_vs_C": {
+        "lower": "1166789/1000000",
+        "upper": "1166977/1000000"
+      },
+      "equal_task_oracle_T_gain_vs_LD": {
+        "lower": "3148719/1000000",
+        "upper": "3149149/1000000"
+      }
+    },
+    "train": {
+      "N_C": 1077,
+      "N_LD": 1078,
+      "N_task_first_oracle": 1080,
+      "contexts": 24,
+      "equal_task_contexts": 19,
+      "equal_task_oracle_T_gain_vs_C": {
+        "lower": "639971/125000",
+        "upper": "79999/15625"
+      },
+      "equal_task_oracle_T_gain_vs_LD": {
+        "lower": "39097567/1000000",
+        "upper": "39098109/1000000"
+      }
+    }
+  }
+}

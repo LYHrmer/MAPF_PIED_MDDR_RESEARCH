@@ -1,0 +1,182 @@
+{
+  "calibration": {
+    "contexts": 8,
+    "diagnostic_family_shared_option_oracle_N": 323,
+    "diagnostic_per_budget_fixed_option_oracle_N": 322,
+    "finite_task_first_oracle": {
+      "N": 323,
+      "T": {
+        "lower": "11626171267/250000",
+        "upper": "46504685387/1000000"
+      }
+    },
+    "finite_task_first_oracle_N_gain_vs_fixed": {
+      "C": 2,
+      "LD": 1
+    },
+    "fixed_complete_tails": {
+      "C": {
+        "N": 321,
+        "T": {
+          "lower": "2912706313/62500",
+          "upper": "1864132053/40000"
+        },
+        "queries": 96
+      },
+      "LD": {
+        "N": 322,
+        "T": {
+          "lower": "9304634419/200000",
+          "upper": "46523172413/1000000"
+        },
+        "queries": 94
+      }
+    },
+    "oracle_not_deployable": true,
+    "registered_families": 4,
+    "same_task_contexts": 6,
+    "same_task_finite_oracle_time_gain_vs_fixed": {
+      "C": {
+        "lower": "2932993/250000",
+        "upper": "5866067/500000"
+      },
+      "LD": {
+        "lower": "3949969/500000",
+        "upper": "3950087/500000"
+      }
+    },
+    "same_task_service_equal": 1,
+    "same_task_time_signs": {
+      "C_faster": 3,
+      "LD_faster": 2,
+      "identical_service": 1
+    },
+    "task_signs": {
+      "C_more_tasks": 1,
+      "LD_more_tasks": 1,
+      "equal_tasks": 6
+    },
+    "task_time_conflicts": []
+  },
+  "test": {
+    "contexts": 16,
+    "diagnostic_family_shared_option_oracle_N": 713,
+    "diagnostic_per_budget_fixed_option_oracle_N": 713,
+    "finite_task_first_oracle": {
+      "N": 713,
+      "T": {
+        "lower": "89777007289/1000000",
+        "upper": "8977700799/100000"
+      }
+    },
+    "finite_task_first_oracle_N_gain_vs_fixed": {
+      "C": 1,
+      "LD": 0
+    },
+    "fixed_complete_tails": {
+      "C": {
+        "N": 712,
+        "T": {
+          "lower": "8978512061/100000",
+          "upper": "8978512131/100000"
+        },
+        "queries": 192
+      },
+      "LD": {
+        "N": 713,
+        "T": {
+          "lower": "89780156223/1000000",
+          "upper": "22445039231/250000"
+        },
+        "queries": 192
+      }
+    },
+    "oracle_not_deployable": true,
+    "registered_families": 8,
+    "same_task_contexts": 15,
+    "same_task_finite_oracle_time_gain_vs_fixed": {
+      "C": {
+        "lower": "1166789/1000000",
+        "upper": "1166977/1000000"
+      },
+      "LD": {
+        "lower": "3148719/1000000",
+        "upper": "3149149/1000000"
+      }
+    },
+    "same_task_service_equal": 8,
+    "same_task_time_signs": {
+      "C_faster": 5,
+      "LD_faster": 2,
+      "identical_service": 8
+    },
+    "task_signs": {
+      "LD_more_tasks": 1,
+      "equal_tasks": 15
+    },
+    "task_time_conflicts": []
+  },
+  "train": {
+    "contexts": 24,
+    "diagnostic_family_shared_option_oracle_N": 1079,
+    "diagnostic_per_budget_fixed_option_oracle_N": 1078,
+    "finite_task_first_oracle": {
+      "N": 1080,
+      "T": {
+        "lower": "135897815459/1000000",
+        "upper": "67948908263/500000"
+      }
+    },
+    "finite_task_first_oracle_N_gain_vs_fixed": {
+      "C": 3,
+      "LD": 2
+    },
+    "fixed_complete_tails": {
+      "C": {
+        "N": 1077,
+        "T": {
+          "lower": "67943646461/500000",
+          "upper": "135887293987/1000000"
+        },
+        "queries": 285
+      },
+      "LD": {
+        "N": 1078,
+        "T": {
+          "lower": "16991748253/125000",
+          "upper": "135933987089/1000000"
+        },
+        "queries": 283
+      }
+    },
+    "oracle_not_deployable": true,
+    "registered_families": 12,
+    "same_task_contexts": 19,
+    "same_task_finite_oracle_time_gain_vs_fixed": {
+      "C": {
+        "lower": "639971/125000",
+        "upper": "79999/15625"
+      },
+      "LD": {
+        "lower": "39097567/1000000",
+        "upper": "39098109/1000000"
+      }
+    },
+    "same_task_service_equal": 11,
+    "same_task_time_signs": {
+      "C_faster": 6,
+      "LD_faster": 2,
+      "identical_service": 11
+    },
+    "task_signs": {
+      "C_more_tasks": 2,
+      "LD_more_tasks": 3,
+      "equal_tasks": 19
+    },
+    "task_time_conflicts": [
+      "empty-32-32_scen2_offset160_train_131105_B16",
+      "empty-32-32_scen2_offset176_train_131106_B8",
+      "random-32-32-10_scen2_offset160_train_132103_B16"
+    ]
+  }
+}
