@@ -1966,3 +1966,19 @@ root独立ROOT_COMPARE核原始逐段/作业费用、全部非费用事件、父
 第三线另实现共同公共快照、独立模拟测量核验、搜索估计与原作者guard/lift。12context只产生1个新GSES输入，其搜索权重1→2但最终type2与真实执行图未变；36结果记录全部复用旧轨迹，没有为同图重新执行。模拟测量的production_cost=null，不与本主线body跨world安装。查询线复用160臂导出48完整尾配对；TEST两尾策略oracle任务713等于LD，剩余受限时间空间约0.00351%，因此下一优先有效决策空间而非更大回归器。
 
 主线实现继续本机隔离，公共main仅四进度文档，原稿保持；三线详细工件和后续方向见 [R14综述](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261004_R14.md)。本轮未宣称统一生产控制器已经接入、学习性能提升或新增一般化实验结论。
+
+## 84. R16：绑定生产几何的证据时效传播与原生资源消费（2026-10-04）
+
+新实现位于本机 `implementation_binding_evidence/evidence_execution_contract_20261004_r16/`。复用R14实际付费正文358字节，不重跑收费guest；将producer源码/ELF、MOVE endpoints、footprint/error、resource geometry、cap和occurrence显式绑定，避免旧几何版本字符串没有编码实际长度的歧义。A为(1,0)→(13,0)、长12，B为(0,0)→(1,0)；footprint/error各半宽1/20，膨胀半宽1/10。
+
+捕获t2的[2,2]送达t4后，原公开单调性和速度锥允许当前外包[2,12]，剩余距离[0,10]。没有正速度下界/未来命令，不提供有限ETA上界。producer中的initial_eta不交给consumer；实际t4进度只用于独立后验审计，不反向输入估计。完整身份、正文、SOURCE收据和几何hash均核验。
+
+原生C++消费器调用原Geometry::n_mask；A包络cell1…13→cell3…13，与B需求{cell-0,cell-1}交集由{cell-1}→空，extend-B几何候选由阻塞变可行。闭边界s=3/5仍保留cell1，600001/1000000才移除。共10正例、32负例通过，root不导入候选实现，从原正文、生产几何与有理数区间独立复算一致。
+
+本轮仅1次新native机制fixture，2次构建中首次-Werror格式警告失败保留。current/cap不变，无新AUTH、RUN、ARRIVE或服务；不能把只读preview等同实际安装。原付费事件链另核后车tick6 RUN、cause=paid_POSITION，但前车已closed，故本length12例不证明新增提前执行。原291费用段与Natural总344,352,218保持；账户0/1/3合34,040,033只作归属，不称查询因果边际成本。
+
+下一将consumer接同world真实候选提交入口，以完整证据→guard→实际执行→服务→费用为交付；不跨world借用第三线模拟位置，不继续把局部开销优化当科研增量。主线实现继续本机ignored，原稿不动。
+
+并行查询新增29native且全部物理/FIFO审计通过：TRAIN C/STOP均1077任务、查询285→144，但时间增加约102.388；CAL冻结树238任务/52query，被固定STOP同238任务/36query及更短时间支配。3个CAL STOP16经预登记语义证明复用C8，不另跑重复物理轨迹。
+
+第三线完成12次作者SADG MILP且全OPTIMAL；真实连续输入影响小例顺序，但完整公共历史速率与测量后果相同，测量增量0。warehouse两输入均通过原adoption_guard且图同，未重复续跑。原作者源码不改，k0/承诺适配单独命名；root核全部约束、20个累计独立小LP及两条连续后缀。完整证据、科研导师分别判断和后继设计见 [R16三线结果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261004_R16.md)。

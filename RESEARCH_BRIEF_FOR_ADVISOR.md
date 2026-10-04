@@ -1,5 +1,12 @@
 # 导师汇报：研究问题、数学表达与当前阶段
 
+2026-10-04 R16：**三线均完成新增实现与验证；真实证据已进入原生几何消费，查询 STOP 与 SADG 作者核心已实测。** [科研导师分别判断与全部结果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261004_R16.md)。
+
+主线复用真实付费正文，绑定实际长度12几何，捕获区间[2,2]在送达时传播为[2,12]；原 C++ 资源交集由{cell-1}变为空，42项正负验证及根独立复核通过。它是只读候选预览，未新增live AUTH/RUN或费用样本，下一接真实提交入口，详Q2 §84。
+
+查询新增29次native；TRAIN C/STOP各1077任务，查询285→144，时间略增。冻结树CAL238任务/52查询，被固定STOP同238任务/36查询、时间更短支配。第三线12次SADG作者MILP均最优；连续进度能改变小例顺序，但完整公共历史已取得相同后果，测量增益0；warehouse采用图相同，不重复续跑。主线实现留本机，公共main仍只更新四份进度文件，原稿保持。以下旧轮次按历史阅读。
+
+
 2026-10-04 R14：**真实POSITION正文及费用绑定已补齐，新增信息到原作者搜索的接口已实现，并按内容键复用旧实验。** [本轮三线结果与下一步](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261004_R14.md)。
 
 主线仅新增一次host观测执行，原收费guest不变；358字节正文可独立解码，429条原事件与291费用段同R13，非新性能样本。查询复用160臂导出48配对，TEST两尾策略的事后任务上界713等于固定LD，剩余受限时间空间仅约0.00351%。第三线仅1个新GSES输入，23次调用请求及36条执行结果复用旧证据；权重1→2仍未改变最终依赖或物理后果，0新增续跑。主线真实证书与第三线模拟测量仍是不同执行域，生产费用未冒接。详Q2 §83；以下R13及更早为历史。

@@ -1,5 +1,12 @@
 # MAPF 项目当前入口
 
+2026-10-04 R16：**三线均完成新增实现与验证；真实证据已进入原生几何消费，查询 STOP 与 SADG 作者核心已实测。** [科研导师分别判断与全部结果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261004_R16.md)。
+
+主线复用真实付费正文，绑定实际长度12几何，捕获区间[2,2]在送达时传播为[2,12]；原 C++ 资源交集由{cell-1}变为空，42项正负验证及根独立复核通过。它是只读候选预览，未新增live AUTH/RUN或费用样本，下一接真实提交入口，详Q2 §84。
+
+查询新增29次native；TRAIN C/STOP各1077任务，查询285→144，时间略增。冻结树CAL238任务/52查询，被固定STOP同238任务/36查询、时间更短支配。第三线12次SADG作者MILP均最优；连续进度能改变小例顺序，但完整公共历史已取得相同后果，测量增益0；warehouse采用图相同，不重复续跑。主线实现留本机，公共main仍只更新四份进度文件，原稿保持。以下旧轮次按历史阅读。
+
+
 2026-10-04 文献简明版：桌面五篇误差文献综述已按“只依据这五篇、语言易懂”重写，重点为研究背景、问题定义、结论与作者未来工作。约2700字LaTeX与五篇全文备份同目录，附文件校验值；定点复核与静态检查通过，未编译综述PDF。本轮只改文献材料与进度记录，详见[文献进度](../GITHUB_PROGRESS.md)。
 
 2026-10-04 R14：**真实POSITION正文及费用绑定已补齐，新增信息到原作者搜索的接口已实现，并按内容键复用旧实验。** [本轮三线结果与下一步](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261004_R14.md)。
