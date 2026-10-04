@@ -1,0 +1,89 @@
+    std::string choose(const std::vector<Candidate>& input,const R& at,unsigned capacity,const std::string& policy,unsigned opportunity,const std::string& trigger)const{
+        const std::vector<std::string> options={"C","LD"};
+        if(initial_capacity==0){check(capacity==8||capacity==16,"R13 initial public budget");initial_capacity=capacity;}
+        std::vector<Candidate> visible=input;
+        for(auto& c:visible){
+            const R budget=rat(capacity,16),time=O::div(floor6(O::div(at,rat(8))),rat(16));
+            c.features.push_back(budget);c.features.push_back(time);
+            c.features.push_back(O::mul(budget,c.features.at(19)));c.features.push_back(O::mul(budget,O::sub(rat(1),time)));
+            check(c.features.size()==24,"R13 original candidate feature dimensions");
+        }
+        auto top_candidate=[&](bool distinct)->const Candidate*{
+            const Candidate* target=nullptr;R best=rat(0);
+            for(const auto& c:visible){
+                if(distinct&&c.agent==anchor_agent&&c.key==anchor_move)continue;
+                R score=rat(0);const R probability=survival_release_probability(c.agent,O::sub(at,c.launch));
+                for(const auto& claim:c.claims)score=O::add(score,O::div(probability,rat(claim.remaining*claim.owners)));
+                if(!target||O::cmp(score,best)>0||(same(score,best)&&(c.agent<target->agent||(c.agent==target->agent&&c.key<target->key)))){target=&c;best=score;}
+            }
+            return target;
+        };
+        if(policy=="WAIT")macro_name="W";
+        if(macro_name.empty()&&capacity>0&&initial_capacity-capacity>=initial_capacity/2){
+            const auto inference_start=std::chrono::steady_clock::now();
+            const Candidate* target=top_candidate(false);check(target!=nullptr,"R13 late gate lacks target");
+            R inverse=rat(0);unsigned minimum=target->claims.front().remaining;
+            for(const auto& claim:target->claims){inverse=O::add(inverse,rat(1,claim.remaining*claim.owners));minimum=std::min(minimum,claim.remaining);}
+            const R probability=target->features.at(10);
+            const std::vector<R> gate={probability,target->features.at(0),target->features.at(18),inverse,rat(minimum,64),rat(target->claims.size(),15),rat(visible.size()-1,15),rat(capacity,16),O::sub(rat(1),target->features.at(21)),O::mul(probability,inverse)};
+            std::vector<R> task_scores(2,rat(0)),time_scores(2,rat(0)),scores(2,rat(0));
+            R margin=rat(0);bool infinite=false,learned=false;unsigned selected_option=0;
+            if(policy=="alwaysLD"||policy=="macro_LD")selected_option=1;
+            else if(policy=="budget_lookup"){
+                const auto& value=parameters.at("budget_lookup_"+std::to_string(initial_capacity));check(value.size()==1,"budget lookup binding");
+                check(same(value[0],rat(0))||same(value[0],rat(1)),"budget lookup option range");selected_option=same(value[0],rat(1))?1:0;
+            } else if(policy=="full"||policy=="no_history_prob"){
+                learned=true;const auto& threshold=parameters.at("shared_margin");check(threshold.size()==2,"shared CAL threshold binding");infinite=same(threshold[0],rat(1));margin=threshold[1];
+                for(unsigned head=0;head<2;++head){
+                    const auto& coefficient=parameters.at(policy+"_LD"+(head==0?"_tasks":"_time"));check(coefficient.size()==11,"R13 ridge coefficient dimensions");R value=coefficient[0];
+                    for(unsigned j=0;j<10;++j)if(!(policy=="no_history_prob"&&(j==0||j==9)))value=O::add(value,O::mul(coefficient[j+1],gate[j]));
+                    if(head==0)task_scores[1]=value;else time_scores[1]=value;
+                }
+                scores[1]=O::add(task_scores[1],time_scores[1]);if(!infinite&&O::cmp(scores[1],margin)>0)selected_option=1;
+            } else check(policy=="condition"||policy=="macro_C","R13 gate policy support");
+            macro_name=options[selected_option];
+            const auto inference_ns=learned?std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now()-inference_start).count():0;
+            std::cout<<"{\"event\":\"macro_choice\",\"at\":";bound3(at);
+            std::cout<<",\"policy\":\""<<policy<<"\",\"opportunity\":"<<opportunity<<",\"initial_capacity\":"<<initial_capacity<<",\"remaining_capacity\":"<<capacity<<",\"spent\":"<<(initial_capacity-capacity)<<",\"target_agent\":"<<target->agent<<",\"target_move\":\""<<target->key<<"\",\"feature_schema\":\"late_target10_v1\",\"features\":[";
+            bool comma=false;for(const auto& x:gate){if(comma)std::cout<<',';comma=true;std::cout<<'"'<<exact(x)<<'"';}
+            std::cout<<"],\"learned\":"<<(learned?"true":"false")<<",\"margin_infinite\":"<<(infinite?"true":"false")<<",\"margin\":\""<<exact(margin)<<"\",\"scores\":[";
+            for(unsigned k=0;k<2;++k){if(k)std::cout<<',';std::cout<<"{\"option\":\""<<options[k]<<"\",\"tasks\":\""<<exact(task_scores[k])<<"\",\"time\":\""<<exact(time_scores[k])<<"\",\"total\":\""<<exact(scores[k])<<"\"}";}
+            std::cout<<"],\"selected_option\":\""<<macro_name<<"\",\"inference_calls\":"<<(learned?1:0)<<",\"inference_ns\":"<<inference_ns<<"}\n";
+        }
+        std::string scoring_policy=macro_name=="W"?"WAIT":"condition";unsigned intervention_index=0;std::vector<std::string> second_eligible;
+        const bool first=macro_name=="LD"&&pair_stage==0&&capacity>0,second=macro_name=="LD"&&pair_stage==1&&capacity>0;
+        if(first||second){
+            if(second)for(const auto& c:visible)if(!(c.agent==anchor_agent&&c.key==anchor_move))second_eligible.push_back(c.key);
+            const Candidate* target=top_candidate(second);
+            if(target){
+                scoring_policy="force_SKIP"+std::to_string(target->agent);intervention_index=first?1:2;pair_stage=intervention_index;
+                if(first){anchor_agent=target->agent;anchor_move=target->key;for(const auto& c:target->claims)anchor_tasks.insert(c.task);}
+            }
+        }
+        std::string selected,selected_kind="WAIT";R best=rat(0);unsigned best_agent=1000,best_kind=2;
+        std::cout<<"{\"event\":\"actor_decision\",\"at\":";bound3(at);
+        std::cout<<",\"policy\":\""<<policy<<"\",\"remaining_capacity\":"<<capacity<<",\"decision_mode\":\""<<scoring_policy<<"\",\"opportunity\":"<<opportunity<<",\"trigger\":\""<<trigger<<"\",\"RR_cursor\":"<<rr_cursor<<",\"candidates\":[";
+        bool comma=false;
+        for(const auto& c:visible){
+            check(O::cmp(O::sub(at,c.launch),rat(3,4))>=0,"R13 original age gate");check(has_history(c.agent)&&known>=2,"R13 original public history gate");
+            const R p=survival_release_probability(c.agent,O::sub(at,c.launch));std::vector<R> scores={rat(0),rat(0)};
+            for(unsigned kind=0;kind<2;++kind){
+                R score=rat(0);const std::string name=kind==0?"QUERY":"SKIP";
+                if(scoring_policy.substr(0,6)=="force_")score=scoring_policy.substr(6)==name+std::to_string(c.agent)?rat(1):rat(0);
+                else if(scoring_policy=="condition"&&kind==0)for(const auto& cl:c.claims)score=O::add(score,O::div(p,rat(cl.remaining*cl.owners)));
+                scores[kind]=score;const bool tie=kind<best_kind||(kind==best_kind&&(c.agent<best_agent||(c.agent==best_agent&&c.key<selected)));
+                if(capacity&&O::cmp(score,rat(0))>0&&(selected.empty()||O::cmp(score,best)>0||(same(score,best)&&tie))){selected=c.key;selected_kind=name;best=score;best_agent=c.agent;best_kind=kind;}
+            }
+            if(comma)std::cout<<',';
+            comma=true;
+            std::cout<<"{\"move\":\""<<c.key<<"\",\"agent\":"<<c.agent<<",\"heading\":\""<<c.heading<<"\",\"public_launch\":";bound3(c.launch);
+            std::cout<<",\"probability\":\""<<exact(p)<<"\",\"score\":\""<<exact(scores[0])<<"\",\"skip_score\":\""<<exact(scores[1])<<"\",\"claims\":[";
+            bool cc=false;for(const auto& cl:c.claims){if(cc)std::cout<<',';cc=true;std::cout<<"{\"task\":"<<cl.task<<",\"remaining_route_items\":"<<cl.remaining<<",\"owners\":"<<cl.owners<<'}';}
+            std::cout<<"],\"features\":[";bool ff=false;for(const auto& z:c.features){if(ff)std::cout<<',';ff=true;std::cout<<'"'<<exact(z)<<'"';}std::cout<<"]}";
+        }
+        std::cout<<"],\"macro\":\""<<macro_name<<"\",\"initial_capacity\":"<<initial_capacity<<",\"intervention_index\":"<<intervention_index<<",\"pair_stage\":"<<pair_stage<<",\"anchor_agent\":"<<anchor_agent<<",\"anchor_move\":\""<<anchor_move<<"\",\"anchor_tasks\":[";
+        bool ac=false;for(unsigned task:anchor_tasks){if(ac)std::cout<<',';ac=true;std::cout<<task;}
+        std::cout<<"],\"second_eligible\":[";ac=false;for(const auto& key:second_eligible){if(ac)std::cout<<',';ac=true;std::cout<<'"'<<key<<'"';}
+        std::cout<<"],\"head_lineage_count\":"<<public_head_parent.size()<<",\"selected\":\""<<selected<<"\",\"selected_kind\":\""<<selected_kind<<"\",\"END_only_known\":"<<known<<",\"END_unknown\":"<<unknown<<",\"private_progress_input\":false,\"regime_input\":false,\"future_head_input\":false}\n";
+        return selected_kind=="SKIP"?"SKIP:"+selected:selected;
+    }

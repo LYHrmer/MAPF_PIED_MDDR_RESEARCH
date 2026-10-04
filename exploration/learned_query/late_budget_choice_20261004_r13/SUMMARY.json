@@ -1,0 +1,441 @@
+{
+  "native_episodes": 160,
+  "failed": 0,
+  "TRAIN_CAL_episodes": 64,
+  "TEST_episodes": 96,
+  "independent_TEST_families": 8,
+  "budgets": [
+    8,
+    16
+  ],
+  "totals": {
+    "condition": {
+      "tasks": 712,
+      "queries": 192,
+      "T_lower": "8978512061/100000",
+      "T_upper": "8978512131/100000",
+      "J_lower": "1157633487869/1638500000",
+      "J_upper": "1157633487939/1638500000",
+      "macro_choices": {
+        "C": 16
+      },
+      "late_gates": 16,
+      "no_late_gates": 0,
+      "inference_calls": 0,
+      "interventions": 0,
+      "unreached_interventions": 0,
+      "vs_condition": {
+        "tasks": 0,
+        "queries": 0,
+        "T_gain_lower": "-7/10000",
+        "T_gain_upper": "7/10000",
+        "J_gain_lower": "-7/163850000",
+        "J_gain_upper": "7/163850000",
+        "robust_J_improvement": false,
+        "robust_J_worse": false,
+        "service_records_equal": null
+      },
+      "vs_alwaysLD": {
+        "tasks": -1,
+        "queries": 0,
+        "T_gain_lower": "-4965087/1000000",
+        "T_gain_upper": "-2481843/500000",
+        "J_gain_lower": "-16389965087/16385000000",
+        "J_gain_upper": "-8194981843/8192500000",
+        "robust_J_improvement": false,
+        "robust_J_worse": true,
+        "service_records_equal": null
+      },
+      "vs_WAIT": {
+        "tasks": 4,
+        "queries": 192,
+        "T_gain_lower": "40716231/500000",
+        "T_gain_upper": "40716929/500000",
+        "J_gain_lower": "32810716231/8192500000",
+        "J_gain_upper": "32810716929/8192500000",
+        "robust_J_improvement": true,
+        "robust_J_worse": false,
+        "service_records_equal": null
+      },
+      "vs_budget_lookup": {
+        "tasks": 0,
+        "queries": 0,
+        "T_gain_lower": "1397909/1000000",
+        "T_gain_upper": "1399309/1000000",
+        "J_gain_lower": "1397909/16385000000",
+        "J_gain_upper": "1399309/16385000000",
+        "robust_J_improvement": true,
+        "robust_J_worse": false,
+        "service_records_equal": null
+      }
+    },
+    "alwaysLD": {
+      "tasks": 713,
+      "queries": 192,
+      "T_lower": "89780156223/1000000",
+      "T_upper": "22445039231/250000",
+      "J_lower": "2898181210769/4096250000",
+      "J_upper": "11592724843777/16385000000",
+      "macro_choices": {
+        "LD": 16
+      },
+      "late_gates": 16,
+      "no_late_gates": 0,
+      "inference_calls": 0,
+      "interventions": 32,
+      "unreached_interventions": 0,
+      "vs_condition": {
+        "tasks": 1,
+        "queries": 0,
+        "T_gain_lower": "2481843/500000",
+        "T_gain_upper": "4965087/1000000",
+        "J_gain_lower": "8194981843/8192500000",
+        "J_gain_upper": "16389965087/16385000000",
+        "robust_J_improvement": true,
+        "robust_J_worse": false,
+        "service_records_equal": null
+      },
+      "vs_alwaysLD": {
+        "tasks": 0,
+        "queries": 0,
+        "T_gain_lower": "-701/1000000",
+        "T_gain_upper": "701/1000000",
+        "J_gain_lower": "-701/16385000000",
+        "J_gain_upper": "701/16385000000",
+        "robust_J_improvement": false,
+        "robust_J_worse": false,
+        "service_records_equal": null
+      },
+      "vs_WAIT": {
+        "tasks": 5,
+        "queries": 192,
+        "T_gain_lower": "5399803/62500",
+        "T_gain_upper": "17279649/200000",
+        "J_gain_lower": "5125712303/1024062500",
+        "J_gain_upper": "16402279649/3277000000",
+        "robust_J_improvement": true,
+        "robust_J_worse": false,
+        "service_records_equal": null
+      },
+      "vs_budget_lookup": {
+        "tasks": 1,
+        "queries": 0,
+        "T_gain_lower": "1272459/200000",
+        "T_gain_upper": "397731/62500",
+        "J_gain_lower": "3278272459/3277000000",
+        "J_gain_upper": "1024460231/1024062500",
+        "robust_J_improvement": true,
+        "robust_J_worse": false,
+        "service_records_equal": null
+      }
+    },
+    "budget_lookup": {
+      "tasks": 712,
+      "queries": 192,
+      "T_lower": "89786519219/1000000",
+      "T_upper": "89786519919/1000000",
+      "J_lower": "11576333480081/16385000000",
+      "J_upper": "11576333480781/16385000000",
+      "macro_choices": {
+        "C": 8,
+        "LD": 8
+      },
+      "late_gates": 16,
+      "no_late_gates": 0,
+      "inference_calls": 0,
+      "interventions": 16,
+      "unreached_interventions": 0,
+      "vs_condition": {
+        "tasks": 0,
+        "queries": 0,
+        "T_gain_lower": "-1399309/1000000",
+        "T_gain_upper": "-1397909/1000000",
+        "J_gain_lower": "-1399309/16385000000",
+        "J_gain_upper": "-1397909/16385000000",
+        "robust_J_improvement": false,
+        "robust_J_worse": true,
+        "service_records_equal": null
+      },
+      "vs_alwaysLD": {
+        "tasks": -1,
+        "queries": 0,
+        "T_gain_lower": "-397731/62500",
+        "T_gain_upper": "-1272459/200000",
+        "J_gain_lower": "-1024460231/1024062500",
+        "J_gain_upper": "-3278272459/3277000000",
+        "robust_J_improvement": false,
+        "robust_J_worse": true,
+        "service_records_equal": null
+      },
+      "vs_WAIT": {
+        "tasks": 4,
+        "queries": 192,
+        "T_gain_lower": "80033853/1000000",
+        "T_gain_upper": "80035249/1000000",
+        "J_gain_lower": "65620033853/16385000000",
+        "J_gain_upper": "65620035249/16385000000",
+        "robust_J_improvement": true,
+        "robust_J_worse": false,
+        "service_records_equal": null
+      },
+      "vs_budget_lookup": {
+        "tasks": 0,
+        "queries": 0,
+        "T_gain_lower": "-7/10000",
+        "T_gain_upper": "7/10000",
+        "J_gain_lower": "-7/163850000",
+        "J_gain_upper": "7/163850000",
+        "robust_J_improvement": false,
+        "robust_J_worse": false,
+        "service_records_equal": null
+      }
+    },
+    "full": {
+      "tasks": 713,
+      "queries": 192,
+      "T_lower": "44890078111/500000",
+      "T_upper": "89780156923/1000000",
+      "J_lower": "11592724843077/16385000000",
+      "J_upper": "5796362421889/8192500000",
+      "macro_choices": {
+        "C": 6,
+        "LD": 10
+      },
+      "late_gates": 16,
+      "no_late_gates": 0,
+      "inference_calls": 16,
+      "interventions": 20,
+      "unreached_interventions": 0,
+      "vs_condition": {
+        "tasks": 1,
+        "queries": 0,
+        "T_gain_lower": "4963687/1000000",
+        "T_gain_upper": "155159/31250",
+        "J_gain_lower": "16389963687/16385000000",
+        "J_gain_upper": "512186409/512031250",
+        "robust_J_improvement": true,
+        "robust_J_worse": false,
+        "service_records_equal": null
+      },
+      "vs_alwaysLD": {
+        "tasks": 0,
+        "queries": 0,
+        "T_gain_lower": "-7/10000",
+        "T_gain_upper": "351/500000",
+        "J_gain_lower": "-7/163850000",
+        "J_gain_upper": "351/8192500000",
+        "robust_J_improvement": false,
+        "robust_J_worse": false,
+        "service_records_equal": null
+      },
+      "vs_WAIT": {
+        "tasks": 5,
+        "queries": 192,
+        "T_gain_lower": "86396849/1000000",
+        "T_gain_upper": "43199123/500000",
+        "J_gain_lower": "82011396849/16385000000",
+        "J_gain_upper": "41005699123/8192500000",
+        "robust_J_improvement": true,
+        "robust_J_worse": false,
+        "service_records_equal": null
+      },
+      "vs_budget_lookup": {
+        "tasks": 1,
+        "queries": 0,
+        "T_gain_lower": "795287/125000",
+        "T_gain_upper": "6363697/1000000",
+        "J_gain_lower": "2048920287/2048125000",
+        "J_gain_upper": "16391363697/16385000000",
+        "robust_J_improvement": true,
+        "robust_J_worse": false,
+        "service_records_equal": null
+      }
+    },
+    "no_history_prob": {
+      "tasks": 713,
+      "queries": 192,
+      "T_lower": "44889721223/500000",
+      "T_upper": "89779443147/1000000",
+      "J_lower": "11592725556853/16385000000",
+      "J_upper": "5796362778777/8192500000",
+      "macro_choices": {
+        "LD": 9,
+        "C": 7
+      },
+      "late_gates": 16,
+      "no_late_gates": 0,
+      "inference_calls": 16,
+      "interventions": 18,
+      "unreached_interventions": 0,
+      "vs_condition": {
+        "tasks": 1,
+        "queries": 0,
+        "T_gain_lower": "5677463/1000000",
+        "T_gain_upper": "354929/62500",
+        "J_gain_lower": "16390677463/16385000000",
+        "J_gain_upper": "1024417429/1024062500",
+        "robust_J_improvement": true,
+        "robust_J_worse": false,
+        "service_records_equal": null
+      },
+      "vs_alwaysLD": {
+        "tasks": 0,
+        "queries": 0,
+        "T_gain_lower": "178269/250000",
+        "T_gain_upper": "357239/500000",
+        "J_gain_lower": "178269/4096250000",
+        "J_gain_upper": "357239/8192500000",
+        "robust_J_improvement": true,
+        "robust_J_worse": false,
+        "service_records_equal": null
+      },
+      "vs_WAIT": {
+        "tasks": 5,
+        "queries": 192,
+        "T_gain_lower": "139377/1600",
+        "T_gain_upper": "43556011/500000",
+        "J_gain_lower": "131219377/26216000",
+        "J_gain_upper": "41006056011/8192500000",
+        "robust_J_improvement": true,
+        "robust_J_worse": false,
+        "service_records_equal": null
+      },
+      "vs_budget_lookup": {
+        "tasks": 1,
+        "queries": 0,
+        "T_gain_lower": "884509/125000",
+        "T_gain_upper": "7077473/1000000",
+        "J_gain_lower": "2049009509/2048125000",
+        "J_gain_upper": "16392077473/16385000000",
+        "robust_J_improvement": true,
+        "robust_J_worse": false,
+        "service_records_equal": null
+      }
+    },
+    "WAIT": {
+      "tasks": 708,
+      "queries": 0,
+      "T_lower": "22466638443/250000",
+      "T_upper": "22466638617/250000",
+      "J_lower": "2877678361383/4096250000",
+      "J_upper": "2877678361557/4096250000",
+      "macro_choices": {
+        "W": 16
+      },
+      "late_gates": 0,
+      "no_late_gates": 16,
+      "inference_calls": 0,
+      "interventions": 0,
+      "unreached_interventions": 0,
+      "vs_condition": {
+        "tasks": -4,
+        "queries": -192,
+        "T_gain_lower": "-40716929/500000",
+        "T_gain_upper": "-40716231/500000",
+        "J_gain_lower": "-32810716929/8192500000",
+        "J_gain_upper": "-32810716231/8192500000",
+        "robust_J_improvement": false,
+        "robust_J_worse": true,
+        "service_records_equal": null
+      },
+      "vs_alwaysLD": {
+        "tasks": -5,
+        "queries": -192,
+        "T_gain_lower": "-17279649/200000",
+        "T_gain_upper": "-5399803/62500",
+        "J_gain_lower": "-16402279649/3277000000",
+        "J_gain_upper": "-5125712303/1024062500",
+        "robust_J_improvement": false,
+        "robust_J_worse": true,
+        "service_records_equal": null
+      },
+      "vs_WAIT": {
+        "tasks": 0,
+        "queries": 0,
+        "T_gain_lower": "-87/125000",
+        "T_gain_upper": "87/125000",
+        "J_gain_lower": "-3/70625000",
+        "J_gain_upper": "3/70625000",
+        "robust_J_improvement": false,
+        "robust_J_worse": false,
+        "service_records_equal": null
+      },
+      "vs_budget_lookup": {
+        "tasks": -4,
+        "queries": -192,
+        "T_gain_lower": "-80035249/1000000",
+        "T_gain_upper": "-80033853/1000000",
+        "J_gain_lower": "-65620035249/16385000000",
+        "J_gain_upper": "-65620033853/16385000000",
+        "robust_J_improvement": false,
+        "robust_J_worse": true,
+        "service_records_equal": null
+      }
+    }
+  },
+  "ablations": {
+    "no_history_prob": {
+      "macro_disagreements_vs_full": 3,
+      "service_changes_vs_full": 1,
+      "task_difference_vs_full": 0
+    }
+  },
+  "shared_margin": "1/10",
+  "TRAIN_budget_lookup": {
+    "8": "LD",
+    "16": "C"
+  },
+  "label_distribution": {
+    "train_C": {
+      "rows": 24,
+      "gate_rows": 24,
+      "task_targets": {
+        "0": 24
+      },
+      "time_target_signs": {
+        "zero": 24
+      }
+    },
+    "train_LD": {
+      "rows": 24,
+      "gate_rows": 24,
+      "task_targets": {
+        "0": 19,
+        "-1": 2,
+        "1": 3
+      },
+      "time_target_signs": {
+        "zero": 11,
+        "positive": 4,
+        "negative": 9
+      }
+    },
+    "calibration_C": {
+      "rows": 8,
+      "gate_rows": 8,
+      "task_targets": {
+        "0": 8
+      },
+      "time_target_signs": {
+        "zero": 8
+      }
+    },
+    "calibration_LD": {
+      "rows": 8,
+      "gate_rows": 8,
+      "task_targets": {
+        "0": 6,
+        "2": 1,
+        "-1": 1
+      },
+      "time_target_signs": {
+        "zero": 1,
+        "negative": 4,
+        "positive": 3
+      }
+    }
+  },
+  "TEST_gate_count": 80,
+  "no_model_selected_total_budget": true,
+  "production_COST": false
+}

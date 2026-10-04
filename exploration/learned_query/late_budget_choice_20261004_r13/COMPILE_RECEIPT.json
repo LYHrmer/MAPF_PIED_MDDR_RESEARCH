@@ -1,0 +1,41 @@
+{
+  "attempts": [
+    {
+      "command": [
+        "rtk",
+        "proxy",
+        "g++-11",
+        "-std=c++14",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-fno-elide-constructors",
+        "-I",
+        "/tmp/query-r13-_f17es6o",
+        "-isystem",
+        "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/host_sdk/usr/include",
+        "-isystem",
+        "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/flint_host_config/src",
+        "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/joint_history_native.cpp",
+        "-L",
+        "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/flint_host_config",
+        "-L",
+        "/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/host_sdk/usr/lib/x86_64-linux-gnu",
+        "-Wl,-rpath,/home/lyh/MAPF_PIED_MDDR_RESEARCH/third_party/flint_host_config",
+        "-lflint",
+        "-lmpfr",
+        "-lgmp",
+        "-o",
+        "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/build/joint_history_native"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "",
+      "seconds": 8.709787776002486,
+      "source_sha256": "10fd5b3453b5c7fb7e338bcb92fdb92274143ead06f9a8389f16f5a5f01da730"
+    }
+  ],
+  "binary_sha256": "17080ef3d77968c0488714e9f33c5b012f5b09c4e6d0642bc2ebde0e9c2bf0ef"
+}

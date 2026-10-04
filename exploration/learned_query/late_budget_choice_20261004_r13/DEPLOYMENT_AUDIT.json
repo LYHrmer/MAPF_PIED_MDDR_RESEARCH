@@ -1,0 +1,1299 @@
+{
+  "passed": true,
+  "episodes": 160,
+  "same_macro_full_trajectory_controls": 48,
+  "same_world_complete_condition_prefix_controls": 64,
+  "TEST_worlds_with_prefix_checks": 16,
+  "fixed_gate_history_probability_mask_controls": 16,
+  "cross_budget_gate_equality_not_assumed": true,
+  "source_and_model_temporal_hash_bindings": true,
+  "only_one_macro_choice": true,
+  "canonical_exclusions": [
+    "policy name",
+    "macro_choice learned predictions, selection, margin and host timing (selected macro grouped separately)",
+    "joint_summary native_checks count"
+  ],
+  "actor_control_and_candidate_scores_retained": true,
+  "checks": [
+    {
+      "world": "random-32-32-10_scen2_offset208_train_132106_B16",
+      "policy": "macro_C",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "50797d4941e890bea22e246e8e678391677f00df696ad87bf9e2329ba1556b9b",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset192_train_132105_B16",
+      "policy": "macro_LD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "4751cd3f2d566611a4d0158fe382c9029d60257911e6630b9eab1e36bde951a2",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset256_test_132301_B8",
+      "policy": "full",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "9e484a75b14e78111d565a3066d9172afd288a826cbe7a0f76e52ab6e6bbc172",
+      "inference_calls": 1,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset272_test_132302_B16",
+      "policy": "WAIT",
+      "selected_option": "W",
+      "canonical_trajectory_sha256": "9f31f8b1a90564abd7f372062e7570c1cd49d033c17629f13a367b9a85b15e6a",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset272_test_132302_B16",
+      "policy": "condition",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "d8184f3bf90a1d704633d1f4a7d233da33d524a2ccd061f4744aa06e38a82537",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset208_calibration_131202_B8",
+      "policy": "macro_LD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "917a4a165bd8316d7d36f6949f500c2b9f887f00a6a52946f849fdeff570a6c7",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset304_test_132304_B16",
+      "policy": "budget_lookup",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "aad4acf204101438879ac08250ac098b372b4312f24617454c86422c882ba45c",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset256_test_132301_B8",
+      "policy": "alwaysLD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "a9096add1a658072d69b22e66972145ffc2881be1299e3bde9952dc71c11831c",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset160_train_132103_B16",
+      "policy": "macro_C",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "7ca5adc9d79e488af224e615dd631b7462559011ae8bc501b59b0046c6935c05",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset112_train_131102_B8",
+      "policy": "macro_C",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "b13964e944a91b12321ae008b129a054d5e3a8a2ebe94b5cf5ae6645781e4f6c",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset272_test_132302_B16",
+      "policy": "full",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "d8184f3bf90a1d704633d1f4a7d233da33d524a2ccd061f4744aa06e38a82537",
+      "inference_calls": 1,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset272_test_131304_B16",
+      "policy": "no_history_prob",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "aa8c910849b0e9f805947054f23b5bc919976e6da6cefe95374dbd7468388501",
+      "inference_calls": 1,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset272_test_131304_B16",
+      "policy": "alwaysLD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "aa8c910849b0e9f805947054f23b5bc919976e6da6cefe95374dbd7468388501",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset224_test_131301_B16",
+      "policy": "alwaysLD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "81c13f8716a2e69712eaae9c8beb83d9ead138017a683fa31cbadb8aab982199",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset256_test_131303_B8",
+      "policy": "alwaysLD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "dd89075f75d99a304e52f3a55b20ef37682116e8b6231448bdcab5568c810d81",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset160_train_132103_B16",
+      "policy": "macro_LD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "22a4ebae7cf5de8d0cdd371d83bb2e47e5de660a20370dc69168709799a92a13",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset304_test_132304_B8",
+      "policy": "WAIT",
+      "selected_option": "W",
+      "canonical_trajectory_sha256": "8e3c2ff78d4df28b9422dec971cf971c5855b935015f037242f279dc19770751",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset192_calibration_131201_B8",
+      "policy": "macro_C",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "7358f1023957d475badd01c440ee7617fc141024d3d8daec015258433e2938b7",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset160_train_132103_B8",
+      "policy": "macro_LD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "4d08e1e3167a3853d5901a8ec4e932d6a25c6f387271fb64b5e1373b197b5fa1",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset240_test_131302_B8",
+      "policy": "condition",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "232b0536ecaedda3e6860ecf640622236c02c2e236fbd047a7e6d368e9b50586",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset224_test_131301_B8",
+      "policy": "no_history_prob",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "2244b1fbbd5ebc0d937a7ad6d5d575436367044e3780f14ce918853087387c37",
+      "inference_calls": 1,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset272_test_131304_B16",
+      "policy": "WAIT",
+      "selected_option": "W",
+      "canonical_trajectory_sha256": "ac2696c3a87f2465e7f551737ef5ddb1d1799f91084841ee2593f1931499096e",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset256_test_132301_B16",
+      "policy": "full",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "ed7ac9fc0b578b1035a28b6871c9777f823d1601a721eb8c3023fb424984160b",
+      "inference_calls": 1,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset128_train_131103_B8",
+      "policy": "macro_C",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "d2c9bceb5b5e427783fe1d5129d762c96eff37e391076dabc1f5123532b68469",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset208_train_132106_B8",
+      "policy": "macro_C",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "c606274d3e66a3b3950c5a758750c7c8a69f51132b6a57bd8676b0c9a068d071",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset128_train_131103_B16",
+      "policy": "macro_LD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "8b32ff67236c22b2a69fd951ebac7bcc4dc01a60a9b16ec274b4fa38cc1a2600",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset224_test_131301_B16",
+      "policy": "budget_lookup",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "8745d2c7cd4402526fec56ac6d548c9c6373b06978cfc404e1285998562e7f01",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset272_test_131304_B8",
+      "policy": "condition",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "edd5911fe67954b052a2127033df7d26f5ccbf2436f4d2d2eb363cea7af6398a",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset224_calibration_132201_B8",
+      "policy": "macro_LD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "a18542b237b209822a95a1ef11fb33fb835c6001b52bebb2153981b111e4b527",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset112_train_131102_B16",
+      "policy": "macro_LD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "de715a1903b1c6081f336e46d96be5516ce7927e78802863df6ecfd8a4782e91",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset176_train_132104_B8",
+      "policy": "macro_C",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "99696684e63e57cf64533db7e441aea6b3ce5865d8ad7c0bcd6588a8cc89beeb",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset288_test_132303_B8",
+      "policy": "alwaysLD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "9957fb32878f229895b6ff89397ca436ab2d6d06e433a021abfef9f9998f9d2e",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset272_test_132302_B8",
+      "policy": "WAIT",
+      "selected_option": "W",
+      "canonical_trajectory_sha256": "81c677c0c10422c757743a43c8fe23a606b403663aa063174ae3b863d6134e29",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset272_test_132302_B16",
+      "policy": "alwaysLD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "fa5b2d1f4594f5f6a76ccaae0422db5ed33fff145959263253daa8e83ded7fde",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset272_test_132302_B8",
+      "policy": "condition",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "0a1813527870887fcb5a7e298b9c746763a145b53214cba976ec6b34d000a174",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset224_test_131301_B8",
+      "policy": "condition",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "16e99325085947bcbb8c97c4b23d3b912c471811c32f203456de26e00c1a7293",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset304_test_132304_B16",
+      "policy": "alwaysLD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "6359353c0457142896feed0582a900f7a0e1884370be48e684a8ea660a27409b",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset256_test_131303_B8",
+      "policy": "condition",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "678e5a69b7d64e3ae2d096384e361604b5577e8e4bed0543a46e0b461dbceb26",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset240_test_131302_B16",
+      "policy": "no_history_prob",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "ab8a7b0ba1eec0a092c303753805c34b14b95b67c43f90ff0215904382be2c29",
+      "inference_calls": 1,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset256_test_132301_B16",
+      "policy": "condition",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "f8ff7122bed735f48882bbb2f50e43d3dabf0e83416a9eef6ea637c36a2c4554",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset272_test_132302_B16",
+      "policy": "no_history_prob",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "d8184f3bf90a1d704633d1f4a7d233da33d524a2ccd061f4744aa06e38a82537",
+      "inference_calls": 1,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset256_test_132301_B8",
+      "policy": "no_history_prob",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "9e484a75b14e78111d565a3066d9172afd288a826cbe7a0f76e52ab6e6bbc172",
+      "inference_calls": 1,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset176_train_131106_B8",
+      "policy": "macro_LD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "5a071be50ba068ba42433419cf29ca8cb9267267a5ed378ed9720eddd66b223f",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset128_train_131103_B8",
+      "policy": "macro_LD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "3359cc670e0d98c93a4faf59a30fb378030a597bac757a792501165038070025",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset256_test_131303_B16",
+      "policy": "no_history_prob",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "2b1543c9fd8dcc9318f9d95e618bec6e67d37bc3ae2dc0bbca6940c8576d47ce",
+      "inference_calls": 1,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset304_test_132304_B8",
+      "policy": "alwaysLD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "ba5338ff9674f75b6c7552cedb6ef0804a1466c7d51e532c01c00599868ea6c4",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset256_test_131303_B16",
+      "policy": "alwaysLD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "2b1543c9fd8dcc9318f9d95e618bec6e67d37bc3ae2dc0bbca6940c8576d47ce",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset224_test_131301_B8",
+      "policy": "full",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "2244b1fbbd5ebc0d937a7ad6d5d575436367044e3780f14ce918853087387c37",
+      "inference_calls": 1,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset288_test_132303_B16",
+      "policy": "WAIT",
+      "selected_option": "W",
+      "canonical_trajectory_sha256": "e0d34131fdf55bb1a8f30c3b80116b380d82608b753954ac6452a855733054f4",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset112_train_131102_B8",
+      "policy": "macro_LD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "25e7f83d56a1a72494f20506b1f48ae2f9ea36274c5ac000bc1698f271e0f9b4",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset176_train_131106_B16",
+      "policy": "macro_C",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "8ce7c39f3e1e930daa89b832f4a3d47bc03b84f8ccb1e07f9d673873d5c16e29",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset128_train_131103_B16",
+      "policy": "macro_C",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "f592e4e4b5d9dfb652fbc20298370a10f6d917c84dd1a3f083ccc404d6f98683",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset240_test_131302_B8",
+      "policy": "WAIT",
+      "selected_option": "W",
+      "canonical_trajectory_sha256": "80388fa3ff89fa1d23bbe8c8a5ab2dfab6c58e5cb03c79bfb570cb69dbc5b951",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset272_test_132302_B8",
+      "policy": "no_history_prob",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "0a1813527870887fcb5a7e298b9c746763a145b53214cba976ec6b34d000a174",
+      "inference_calls": 1,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset256_test_131303_B8",
+      "policy": "no_history_prob",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "678e5a69b7d64e3ae2d096384e361604b5577e8e4bed0543a46e0b461dbceb26",
+      "inference_calls": 1,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset240_test_131302_B16",
+      "policy": "WAIT",
+      "selected_option": "W",
+      "canonical_trajectory_sha256": "5c1f4d3ba90d0abdb72d180fca27b94d7ce536b2926e208332aa48628a293100",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset272_test_131304_B16",
+      "policy": "condition",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "26278edd1d3501e8794c471e50fd04f5a870c6239cbd86d4ee826cca933fe99a",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset240_test_131302_B16",
+      "policy": "alwaysLD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "ab8a7b0ba1eec0a092c303753805c34b14b95b67c43f90ff0215904382be2c29",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset272_test_131304_B8",
+      "policy": "no_history_prob",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "066eeff96306502b825f06fad91413e56f5e6b352b402ebc754a55ef91b0a853",
+      "inference_calls": 1,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset144_train_131104_B8",
+      "policy": "macro_LD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "cce0468633fb63588202a945cab2e29b8188185eea2c1fef4a0c9bb2b927d899",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset288_test_132303_B16",
+      "policy": "alwaysLD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "c34022c83bd1bc2633eadd1abee56df93d4a78ff86f260416de077acc859c18d",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset176_train_132104_B16",
+      "policy": "macro_LD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "2008180b7e9abf50701df1204abb807950d2e5e99a8823c9ce7d3d565564e117",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset288_test_132303_B8",
+      "policy": "WAIT",
+      "selected_option": "W",
+      "canonical_trajectory_sha256": "41f4d389f0d60eb3b76ac75d43e97a9846de2ca0084228778e0148d4abe177ff",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset144_train_131104_B8",
+      "policy": "macro_C",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "8d0bc8b2376a66605778f49a7daaf05e030d267cb383bef9bf2560309c4f7354",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset176_train_131106_B8",
+      "policy": "macro_C",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "dbda0a5dcec22c2fd368807468d0552ce255c78cef5ad0174aa9e69575f68e8f",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset256_test_132301_B8",
+      "policy": "budget_lookup",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "a9096add1a658072d69b22e66972145ffc2881be1299e3bde9952dc71c11831c",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset144_train_131104_B16",
+      "policy": "macro_C",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "9f8cc9d1ea58c6442e1752b0d2d5a8bc2c9c4a3956c9e026cf4bdb2dafab149e",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset144_train_132102_B8",
+      "policy": "macro_LD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "482d8680a4bb7342b76188db001763b11d37b3a8ebd26719ca03d966f1123541",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset272_test_132302_B16",
+      "policy": "budget_lookup",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "d8184f3bf90a1d704633d1f4a7d233da33d524a2ccd061f4744aa06e38a82537",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset288_test_132303_B16",
+      "policy": "condition",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "d601f34055de2122c2597b50bea2b53ba539cb1ea4b03fbea0a00bf0772ed3d6",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset304_test_132304_B16",
+      "policy": "WAIT",
+      "selected_option": "W",
+      "canonical_trajectory_sha256": "54f8e84c4024fd879630ec7325e74e547b6e3884037a281f69b740da4ad5db7f",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset144_train_131104_B16",
+      "policy": "macro_LD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "72d01aebf8501ed589a7d3f8ee5625cca88038cdaf5fdb380fc235f59960d8af",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset304_test_132304_B8",
+      "policy": "condition",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "6fb39d34879167741c89aa1bff3249c680d000709bb9152e7e308d031573786b",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset240_test_131302_B16",
+      "policy": "full",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "8483f0c1a2a25fdce4e3a8fd4b5d9c5e72db7373f4375fb60f5c7593714a171b",
+      "inference_calls": 1,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset224_test_131301_B16",
+      "policy": "condition",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "8745d2c7cd4402526fec56ac6d548c9c6373b06978cfc404e1285998562e7f01",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset304_test_132304_B8",
+      "policy": "full",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "ba5338ff9674f75b6c7552cedb6ef0804a1466c7d51e532c01c00599868ea6c4",
+      "inference_calls": 1,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset240_calibration_132202_B8",
+      "policy": "macro_C",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "9c5c3288b4883e590f3b6baa5bf926b5b25b7b2181582a36ca117f52834609e2",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset128_train_132101_B8",
+      "policy": "macro_C",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "714b9464cd50febb21fca7f7436aa45e7b4c57c4f8aec0149060d2f0cf57e0cd",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset128_train_132101_B16",
+      "policy": "macro_C",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "451293a3ea913eb4c48a693bb546ed3689702c8d03043fb337fd264d2a821e05",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset256_test_131303_B16",
+      "policy": "full",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "2b1543c9fd8dcc9318f9d95e618bec6e67d37bc3ae2dc0bbca6940c8576d47ce",
+      "inference_calls": 1,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset128_train_132101_B8",
+      "policy": "macro_LD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "171ce9c042e74e00d74b32677595a6281c0d750820f182dfeb9c1507cb96a487",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset304_test_132304_B8",
+      "policy": "no_history_prob",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "ba5338ff9674f75b6c7552cedb6ef0804a1466c7d51e532c01c00599868ea6c4",
+      "inference_calls": 1,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset224_test_131301_B16",
+      "policy": "no_history_prob",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "81c13f8716a2e69712eaae9c8beb83d9ead138017a683fa31cbadb8aab982199",
+      "inference_calls": 1,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset240_calibration_132202_B16",
+      "policy": "macro_C",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "a21f1ac77b9251351630332fb0bcdb2d25b11f6e3b9e0bf3f881bc5cc71046bb",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset160_train_131105_B8",
+      "policy": "macro_C",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "2f8db80694c1e93f723c98c283c2b5c9a18fe4907364c8fbdd234ed2c9c40e55",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset224_calibration_132201_B16",
+      "policy": "macro_LD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "6411581a03248427d918929807f2539930aa523097d477e3f707f0a327bb47c4",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset96_train_131101_B16",
+      "policy": "macro_LD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "c2117b8f1fafa721db6e5cba6e478161b1d4f7299edade1ef1b54b0b526a874d",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset272_test_132302_B8",
+      "policy": "alwaysLD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "47ff89769d669ef6530602ea8021d33c8e6c0216740f48f6cc26e0289bd55efc",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset144_train_132102_B16",
+      "policy": "macro_C",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "aff9c1b080d473d0d25ba7e37b063666522f4ce51594050839668726e4e73ca9",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset160_train_132103_B8",
+      "policy": "macro_C",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "4df85cfe27f7a8df7dba3b214c45b36f35f714f6f20d46e1d96adb74b64f3894",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset96_train_131101_B8",
+      "policy": "macro_LD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "765e5e9fe1bc39f58eb37650377cddf7b1baf215fb316bcb10007bcb48f8baed",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset256_test_132301_B16",
+      "policy": "no_history_prob",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "ed7ac9fc0b578b1035a28b6871c9777f823d1601a721eb8c3023fb424984160b",
+      "inference_calls": 1,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset272_test_131304_B16",
+      "policy": "budget_lookup",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "26278edd1d3501e8794c471e50fd04f5a870c6239cbd86d4ee826cca933fe99a",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset256_test_131303_B16",
+      "policy": "condition",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "77bef659320e8fadc4ff99bc2b8d54e019bf8175ba867ee7f5444c25c2363be1",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset176_train_131106_B16",
+      "policy": "macro_LD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "cfc11ede219b2e73fbe3bb298bc73ad3ba53e3b458f78c39c31ff5560a5b95c1",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset288_test_132303_B16",
+      "policy": "no_history_prob",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "d601f34055de2122c2597b50bea2b53ba539cb1ea4b03fbea0a00bf0772ed3d6",
+      "inference_calls": 1,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset288_test_132303_B8",
+      "policy": "full",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "9957fb32878f229895b6ff89397ca436ab2d6d06e433a021abfef9f9998f9d2e",
+      "inference_calls": 1,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset208_calibration_131202_B16",
+      "policy": "macro_LD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "91510b2d015084fb728bac1bd38272f0df7bb02d2e7396296d8a6355fdaa8e7f",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset304_test_132304_B16",
+      "policy": "full",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "aad4acf204101438879ac08250ac098b372b4312f24617454c86422c882ba45c",
+      "inference_calls": 1,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset240_calibration_132202_B8",
+      "policy": "macro_LD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "9ef34b242e1e2b45dfe79b93f62bc7f097d8f300c3dc608f2664f30016ad4ba1",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset176_train_132104_B16",
+      "policy": "macro_C",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "0db75c43991cdf06c3a8ab3ed0eeb2f54f6abe9a759c8c14d1bc1b93773e030c",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset208_train_132106_B16",
+      "policy": "macro_LD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "e2026fcdef1c2df6992789f48ee4f370d9c79407ff44fdc4a236a48aaf3c200d",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset272_test_131304_B16",
+      "policy": "full",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "aa8c910849b0e9f805947054f23b5bc919976e6da6cefe95374dbd7468388501",
+      "inference_calls": 1,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset144_train_132102_B8",
+      "policy": "macro_C",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "fffc5c072d844b12edd0f8e4cfd1ac5a52da7014830a48727cd92e51d80e405a",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset192_train_132105_B8",
+      "policy": "macro_LD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "6be8a72902ee3fdcdb3d454dca57bd81893fab84c09080d6f427f20e5710b68f",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset176_train_132104_B8",
+      "policy": "macro_LD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "1a8c36e12621bdfd85c78bc2ca71d3a34d1fc143491ec3a6a1580c2223956f7c",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset224_test_131301_B8",
+      "policy": "alwaysLD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "2244b1fbbd5ebc0d937a7ad6d5d575436367044e3780f14ce918853087387c37",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset304_test_132304_B16",
+      "policy": "no_history_prob",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "aad4acf204101438879ac08250ac098b372b4312f24617454c86422c882ba45c",
+      "inference_calls": 1,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset240_test_131302_B16",
+      "policy": "budget_lookup",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "8483f0c1a2a25fdce4e3a8fd4b5d9c5e72db7373f4375fb60f5c7593714a171b",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset96_train_131101_B8",
+      "policy": "macro_C",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "a42b7e11e51e53c4c36817d82061bbaa4212feed5138db797da6c7fb8b6728bd",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset224_test_131301_B8",
+      "policy": "budget_lookup",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "2244b1fbbd5ebc0d937a7ad6d5d575436367044e3780f14ce918853087387c37",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset112_train_131102_B16",
+      "policy": "macro_C",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "f2b37af53dd8b4b8a835035bb44862d44dc63aa82010f825b0ae973a56ce6c73",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset288_test_132303_B16",
+      "policy": "full",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "d601f34055de2122c2597b50bea2b53ba539cb1ea4b03fbea0a00bf0772ed3d6",
+      "inference_calls": 1,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset272_test_132302_B8",
+      "policy": "full",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "0a1813527870887fcb5a7e298b9c746763a145b53214cba976ec6b34d000a174",
+      "inference_calls": 1,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset256_test_132301_B8",
+      "policy": "condition",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "9e484a75b14e78111d565a3066d9172afd288a826cbe7a0f76e52ab6e6bbc172",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset240_test_131302_B16",
+      "policy": "condition",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "8483f0c1a2a25fdce4e3a8fd4b5d9c5e72db7373f4375fb60f5c7593714a171b",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset288_test_132303_B8",
+      "policy": "no_history_prob",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "1f5428ab711388a177e6fb5de6ce7fa169ee6344f64e2178ac5c7fdf1f9ee222",
+      "inference_calls": 1,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset256_test_131303_B8",
+      "policy": "WAIT",
+      "selected_option": "W",
+      "canonical_trajectory_sha256": "5e4872d2a59e596bb4415f6e1f331e49cb9df6fa8cbb6cad3323d6d036a8e529",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset208_train_132106_B8",
+      "policy": "macro_LD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "7a565fc8d5a6cfe86458cef821345ff5d77a54a5597823d3209053eb98cac6ba",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset128_train_132101_B16",
+      "policy": "macro_LD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "5c30ddbef10d82b4befa53acdb6e75b38fe2adf7319aa83cd84bbea75b4ee3b3",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset272_test_131304_B8",
+      "policy": "WAIT",
+      "selected_option": "W",
+      "canonical_trajectory_sha256": "7eb6fbb06a2e6bb9b5c343520c33564d23a4ca6d0225d3bca50a7d3c2f07280c",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset240_calibration_132202_B16",
+      "policy": "macro_LD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "7af4d19868777e8cc714f248cb17963c45cc67e176315d2a94f146cffa67059f",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset240_test_131302_B8",
+      "policy": "no_history_prob",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "be746623cf6c44a904aff6c7aa69be49757b1eb3a88ad562ff9c5db060ba4f3b",
+      "inference_calls": 1,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset272_test_131304_B8",
+      "policy": "budget_lookup",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "066eeff96306502b825f06fad91413e56f5e6b352b402ebc754a55ef91b0a853",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset256_test_132301_B16",
+      "policy": "WAIT",
+      "selected_option": "W",
+      "canonical_trajectory_sha256": "7cbd4002b7ff822f6281b79c5cd221aad5311883e94cafb6056a6b1a20c9869d",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset192_train_132105_B16",
+      "policy": "macro_C",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "38ff4223f053941caa7f58e0acb4ee1fed9408dab55865986036b00a394698f8",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset208_calibration_131202_B16",
+      "policy": "macro_C",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "a5b4817f8db09ff4e1300b7a4a32c554d1e505061d2bfa0369d5b7a4b4bd7ca9",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset192_calibration_131201_B8",
+      "policy": "macro_LD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "4f734d23ca37f27e73c02db6cdc7d5465ab18a0cdababde250325b23d2a8643e",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset272_test_131304_B8",
+      "policy": "full",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "066eeff96306502b825f06fad91413e56f5e6b352b402ebc754a55ef91b0a853",
+      "inference_calls": 1,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset256_test_131303_B8",
+      "policy": "budget_lookup",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "dd89075f75d99a304e52f3a55b20ef37682116e8b6231448bdcab5568c810d81",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset256_test_132301_B16",
+      "policy": "budget_lookup",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "f8ff7122bed735f48882bbb2f50e43d3dabf0e83416a9eef6ea637c36a2c4554",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset304_test_132304_B8",
+      "policy": "budget_lookup",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "ba5338ff9674f75b6c7552cedb6ef0804a1466c7d51e532c01c00599868ea6c4",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset304_test_132304_B16",
+      "policy": "condition",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "aad4acf204101438879ac08250ac098b372b4312f24617454c86422c882ba45c",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset96_train_131101_B16",
+      "policy": "macro_C",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "63a7551f59d27dc68116ea3a2c72150c064478520370acb148d09f8c8ebba5fa",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset256_test_132301_B16",
+      "policy": "alwaysLD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "ed7ac9fc0b578b1035a28b6871c9777f823d1601a721eb8c3023fb424984160b",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset192_calibration_131201_B16",
+      "policy": "macro_LD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "b97c47d5e2b2b4cf349c04bf7ce67eb9b263f45d977a4202dd654965e67910b3",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset208_calibration_131202_B8",
+      "policy": "macro_C",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "c761bcc4e185b5205e623bab47a518e9ebb547fdaac4ed3ccc6c618254949301",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset224_test_131301_B8",
+      "policy": "WAIT",
+      "selected_option": "W",
+      "canonical_trajectory_sha256": "739ccf04718d926632d570200a9112de0e1d85735609c2fd86a8bbe830e1a7cb",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset224_test_131301_B16",
+      "policy": "full",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "81c13f8716a2e69712eaae9c8beb83d9ead138017a683fa31cbadb8aab982199",
+      "inference_calls": 1,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset240_test_131302_B8",
+      "policy": "alwaysLD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "be746623cf6c44a904aff6c7aa69be49757b1eb3a88ad562ff9c5db060ba4f3b",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset224_calibration_132201_B8",
+      "policy": "macro_C",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "76dfe90df0e56112564ad619d4c46432f7a2b6113ae3e56618123cea0961a64e",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset160_train_131105_B16",
+      "policy": "macro_LD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "e82f7035c012ff06e9da54e865eb3678ac8b730245ebdc5eaaec9460d3350e70",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset272_test_131304_B8",
+      "policy": "alwaysLD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "066eeff96306502b825f06fad91413e56f5e6b352b402ebc754a55ef91b0a853",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset256_test_131303_B16",
+      "policy": "budget_lookup",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "77bef659320e8fadc4ff99bc2b8d54e019bf8175ba867ee7f5444c25c2363be1",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset192_calibration_131201_B16",
+      "policy": "macro_C",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "ca796af938fcc14b047afa2bf39e51f1d90b7debc1ba2bdf4938f32bb22ed8fe",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset160_train_131105_B16",
+      "policy": "macro_C",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "b5becfec752cb1e3826925bc8a1a39d59efee96c140e17d3bfa2f924d6bb8394",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset288_test_132303_B8",
+      "policy": "condition",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "1f5428ab711388a177e6fb5de6ce7fa169ee6344f64e2178ac5c7fdf1f9ee222",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset144_train_132102_B16",
+      "policy": "macro_LD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "6ebce2a4fff94ba94adc65f05cb85cf0b41f0867ca69a60d2b133d123ad93118",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset256_test_131303_B8",
+      "policy": "full",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "dd89075f75d99a304e52f3a55b20ef37682116e8b6231448bdcab5568c810d81",
+      "inference_calls": 1,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset192_train_132105_B8",
+      "policy": "macro_C",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "442f19a0f475737695436576dcfcfea420c1d98317f9a2e4f5aa9f05727beec5",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset256_test_131303_B16",
+      "policy": "WAIT",
+      "selected_option": "W",
+      "canonical_trajectory_sha256": "6c0d6005710a73246da58eb186b7e362854f7f982102620ac86e7e3fd78b8306",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset288_test_132303_B16",
+      "policy": "budget_lookup",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "d601f34055de2122c2597b50bea2b53ba539cb1ea4b03fbea0a00bf0772ed3d6",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset240_test_131302_B8",
+      "policy": "full",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "be746623cf6c44a904aff6c7aa69be49757b1eb3a88ad562ff9c5db060ba4f3b",
+      "inference_calls": 1,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset288_test_132303_B8",
+      "policy": "budget_lookup",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "9957fb32878f229895b6ff89397ca436ab2d6d06e433a021abfef9f9998f9d2e",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "empty-32-32_scen2_offset224_test_131301_B16",
+      "policy": "WAIT",
+      "selected_option": "W",
+      "canonical_trajectory_sha256": "9e0c6edf835957fc9e844a858b3e9e98c9558a0d4f344da3e5eaec81bc5f1139",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset160_train_131105_B8",
+      "policy": "macro_LD",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "86fca00600992b6d32f368b3cc20f9334ba1c6cbd5dd688c6b98790f4caa7872",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset256_test_132301_B8",
+      "policy": "WAIT",
+      "selected_option": "W",
+      "canonical_trajectory_sha256": "f3fb543f99490a1edead172895b12caa7e4566e61a93e85ca8f23f921e5e621e",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "random-32-32-10_scen2_offset272_test_132302_B8",
+      "policy": "budget_lookup",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "47ff89769d669ef6530602ea8021d33c8e6c0216740f48f6cc26e0289bd55efc",
+      "inference_calls": 0,
+      "interventions": 2
+    },
+    {
+      "world": "random-32-32-10_scen2_offset224_calibration_132201_B16",
+      "policy": "macro_C",
+      "selected_option": "C",
+      "canonical_trajectory_sha256": "733cd413b399e78711870e79e88837ad6c6b263029c293cbf3e0b2e38e42d01d",
+      "inference_calls": 0,
+      "interventions": 0
+    },
+    {
+      "world": "empty-32-32_scen2_offset240_test_131302_B8",
+      "policy": "budget_lookup",
+      "selected_option": "LD",
+      "canonical_trajectory_sha256": "be746623cf6c44a904aff6c7aa69be49757b1eb3a88ad562ff9c5db060ba4f3b",
+      "inference_calls": 0,
+      "interventions": 2
+    }
+  ]
+}

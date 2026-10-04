@@ -1,0 +1,223 @@
+{
+  "passed": true,
+  "rejected": 27,
+  "not_applicable": 0,
+  "cases": [
+    {
+      "case": "macro_total_score",
+      "rejected": true,
+      "reason": "exact frozen late scores",
+      "world": "empty-32-32_scen2_offset224_test_131301_B16",
+      "policy": "full",
+      "source_raw_sha256": "e63d655daa3526b316468680adaf2f922a45932a56d00480bf55aa94d69b4d48"
+    },
+    {
+      "case": "macro_task_head",
+      "rejected": true,
+      "reason": "exact frozen late scores",
+      "world": "empty-32-32_scen2_offset224_test_131301_B16",
+      "policy": "full",
+      "source_raw_sha256": "e63d655daa3526b316468680adaf2f922a45932a56d00480bf55aa94d69b4d48"
+    },
+    {
+      "case": "gate_budget_feature",
+      "rejected": true,
+      "reason": "independent ten public late target features",
+      "world": "empty-32-32_scen2_offset224_test_131301_B16",
+      "policy": "full",
+      "source_raw_sha256": "e63d655daa3526b316468680adaf2f922a45932a56d00480bf55aa94d69b4d48"
+    },
+    {
+      "case": "gate_history_feature",
+      "rejected": true,
+      "reason": "independent ten public late target features",
+      "world": "empty-32-32_scen2_offset224_test_131301_B16",
+      "policy": "full",
+      "source_raw_sha256": "e63d655daa3526b316468680adaf2f922a45932a56d00480bf55aa94d69b4d48"
+    },
+    {
+      "case": "gate_candidate_count",
+      "rejected": true,
+      "reason": "independent ten public late target features",
+      "world": "empty-32-32_scen2_offset224_test_131301_B16",
+      "policy": "full",
+      "source_raw_sha256": "e63d655daa3526b316468680adaf2f922a45932a56d00480bf55aa94d69b4d48"
+    },
+    {
+      "case": "shared_margin",
+      "rejected": true,
+      "reason": "late score/margin C tie",
+      "world": "empty-32-32_scen2_offset224_test_131301_B16",
+      "policy": "full",
+      "source_raw_sha256": "e63d655daa3526b316468680adaf2f922a45932a56d00480bf55aa94d69b4d48"
+    },
+    {
+      "case": "selected_complete_macro",
+      "rejected": true,
+      "reason": "late score/margin C tie",
+      "world": "empty-32-32_scen2_offset224_test_131301_B16",
+      "policy": "full",
+      "source_raw_sha256": "e63d655daa3526b316468680adaf2f922a45932a56d00480bf55aa94d69b4d48"
+    },
+    {
+      "case": "repeated_inference_count",
+      "rejected": true,
+      "reason": "",
+      "world": "empty-32-32_scen2_offset224_test_131301_B16",
+      "policy": "full",
+      "source_raw_sha256": "e63d655daa3526b316468680adaf2f922a45932a56d00480bf55aa94d69b4d48"
+    },
+    {
+      "case": "duplicate_macro_choice",
+      "rejected": true,
+      "reason": "late macro selected more than once or WAIT gate",
+      "world": "empty-32-32_scen2_offset224_test_131301_B16",
+      "policy": "full",
+      "source_raw_sha256": "e63d655daa3526b316468680adaf2f922a45932a56d00480bf55aa94d69b4d48"
+    },
+    {
+      "case": "missing_macro_choice",
+      "rejected": true,
+      "reason": "missing earliest qualifying late gate",
+      "world": "empty-32-32_scen2_offset224_test_131301_B16",
+      "policy": "full",
+      "source_raw_sha256": "e63d655daa3526b316468680adaf2f922a45932a56d00480bf55aa94d69b4d48"
+    },
+    {
+      "case": "gate_before_half_budget",
+      "rejected": true,
+      "reason": "",
+      "world": "empty-32-32_scen2_offset224_test_131301_B16",
+      "policy": "full",
+      "source_raw_sha256": "e63d655daa3526b316468680adaf2f922a45932a56d00480bf55aa94d69b4d48"
+    },
+    {
+      "case": "gate_target_alias",
+      "rejected": true,
+      "reason": "late gate exact condition-rank target",
+      "world": "empty-32-32_scen2_offset224_test_131301_B16",
+      "policy": "full",
+      "source_raw_sha256": "e63d655daa3526b316468680adaf2f922a45932a56d00480bf55aa94d69b4d48"
+    },
+    {
+      "case": "premature_model_call",
+      "rejected": true,
+      "reason": "gate before half budget or without remaining budget",
+      "world": "empty-32-32_scen2_offset224_test_131301_B16",
+      "policy": "full",
+      "source_raw_sha256": "e63d655daa3526b316468680adaf2f922a45932a56d00480bf55aa94d69b4d48"
+    },
+    {
+      "case": "second_stage",
+      "rejected": true,
+      "reason": "late macro first/second stage",
+      "world": "empty-32-32_scen2_offset112_train_131102_B16",
+      "policy": "macro_LD",
+      "source_raw_sha256": "8e022cd7cfe624337f3d5d57c479619f014e93e5984af239be929b8ab1c1677d"
+    },
+    {
+      "case": "old_occurrence_anchor",
+      "rejected": true,
+      "reason": "complete occurrence anchor binding",
+      "world": "empty-32-32_scen2_offset112_train_131102_B16",
+      "policy": "macro_LD",
+      "source_raw_sha256": "8e022cd7cfe624337f3d5d57c479619f014e93e5984af239be929b8ab1c1677d"
+    },
+    {
+      "case": "wrong_agent_anchor",
+      "rejected": true,
+      "reason": "complete occurrence anchor binding",
+      "world": "empty-32-32_scen2_offset112_train_131102_B16",
+      "policy": "macro_LD",
+      "source_raw_sha256": "8e022cd7cfe624337f3d5d57c479619f014e93e5984af239be929b8ab1c1677d"
+    },
+    {
+      "case": "wrong_second_set",
+      "rejected": true,
+      "reason": "earliest distinct public second trigger",
+      "world": "empty-32-32_scen2_offset112_train_131102_B16",
+      "policy": "macro_LD",
+      "source_raw_sha256": "8e022cd7cfe624337f3d5d57c479619f014e93e5984af239be929b8ab1c1677d"
+    },
+    {
+      "case": "second_on_first_event",
+      "rejected": true,
+      "reason": "late macro first/second stage",
+      "world": "empty-32-32_scen2_offset112_train_131102_B16",
+      "policy": "macro_LD",
+      "source_raw_sha256": "8e022cd7cfe624337f3d5d57c479619f014e93e5984af239be929b8ab1c1677d"
+    },
+    {
+      "case": "wrong_fixed_tail",
+      "rejected": true,
+      "reason": "condition prefix and fixed full-tail macro",
+      "world": "empty-32-32_scen2_offset112_train_131102_B16",
+      "policy": "macro_LD",
+      "source_raw_sha256": "8e022cd7cfe624337f3d5d57c479619f014e93e5984af239be929b8ab1c1677d"
+    },
+    {
+      "case": "budget_not_consumed",
+      "rejected": true,
+      "reason": "causal history/capacity count",
+      "world": "empty-32-32_scen2_offset112_train_131102_B16",
+      "policy": "macro_LD",
+      "source_raw_sha256": "8e022cd7cfe624337f3d5d57c479619f014e93e5984af239be929b8ab1c1677d"
+    },
+    {
+      "case": "candidate_omission",
+      "rejected": true,
+      "reason": "candidate completeness/current-world END gate",
+      "world": "empty-32-32_scen2_offset112_train_131102_B16",
+      "policy": "macro_LD",
+      "source_raw_sha256": "8e022cd7cfe624337f3d5d57c479619f014e93e5984af239be929b8ab1c1677d"
+    },
+    {
+      "case": "future_head",
+      "rejected": true,
+      "reason": "future goal leakage",
+      "world": "empty-32-32_scen2_offset112_train_131102_B16",
+      "policy": "macro_LD",
+      "source_raw_sha256": "8e022cd7cfe624337f3d5d57c479619f014e93e5984af239be929b8ab1c1677d"
+    },
+    {
+      "case": "false_certificate",
+      "rejected": true,
+      "reason": "interval resolution",
+      "world": "empty-32-32_scen2_offset112_train_131102_B16",
+      "policy": "macro_LD",
+      "source_raw_sha256": "8e022cd7cfe624337f3d5d57c479619f014e93e5984af239be929b8ab1c1677d"
+    },
+    {
+      "case": "wrong_task_service",
+      "rejected": true,
+      "reason": "",
+      "world": "empty-32-32_scen2_offset112_train_131102_B16",
+      "policy": "macro_LD",
+      "source_raw_sha256": "8e022cd7cfe624337f3d5d57c479619f014e93e5984af239be929b8ab1c1677d"
+    },
+    {
+      "case": "SKIP_alias",
+      "rejected": true,
+      "reason": "public persistent skip state mismatch",
+      "world": "empty-32-32_scen2_offset112_train_131102_B16",
+      "policy": "macro_LD",
+      "source_raw_sha256": "8e022cd7cfe624337f3d5d57c479619f014e93e5984af239be929b8ab1c1677d"
+    },
+    {
+      "case": "SKIP_missing_clear",
+      "rejected": true,
+      "reason": "public persistent skip state mismatch",
+      "world": "empty-32-32_scen2_offset112_train_131102_B16",
+      "policy": "macro_LD",
+      "source_raw_sha256": "8e022cd7cfe624337f3d5d57c479619f014e93e5984af239be929b8ab1c1677d"
+    },
+    {
+      "case": "SKIP_private_END_clear",
+      "rejected": true,
+      "reason": "",
+      "world": "empty-32-32_scen2_offset112_train_131102_B16",
+      "policy": "macro_LD",
+      "source_raw_sha256": "8e022cd7cfe624337f3d5d57c479619f014e93e5984af239be929b8ab1c1677d"
+    }
+  ]
+}

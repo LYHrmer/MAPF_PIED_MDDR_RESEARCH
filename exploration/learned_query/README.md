@@ -1,5 +1,11 @@
 # 学习辅助进度查询：探索说明
 
+2026-10-04 R13：**真实半预算晚点模型已训练、冻结并部署，160次原生全部完成。** [完整根结论](late_budget_choice_20261004_r13/ROOT_CONCLUSION.md)与[逐条件结果图](late_budget_choice_20261004_r13/figures/CAPTION.md)。
+
+64次TRAIN/CAL运行中，TRAIN的24个LD−C标签为3正/2负/19零，四头模型CAL门槛0.1；96TEST中full真实选择10LD/6C。C/固定LD/查表/full/概率屏蔽模型任务分别712/713/712/713/713，主动策略均192QUERY；整程WAIT708/0。full相对固定LD无可分辨总时间改善；概率屏蔽模型保留同713任务/192QUERY，总时间少约0.714，额外收益集中于一项条件。不能把该局部信号升格为普遍学习优势。
+
+8TESTfamily是两图scenario-2不同行块与误差seed，非8份独立官方文件、非跨地图留出。160原物理审计、根完整raw策略复算、导师64标签/44系数/96部署核验与9包960原始成员离线重放通过。该模型是一次完整C/LD尾策略选择，未学习总预算或门时刻。两份后评及下一作者基线合同见[三线R13](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261004_R13.md)。以下R12及更早为历史。
+
 2026-10-04 R12：[条件选择、预算使用与完成时间价值学习](learned_budget_value_20261004_r12/ROOT_CONCLUSION.md)已完成152次原生运行（96 TRAIN/CAL、56 TEST）、30个ridge价值头的真实拟合和冻结部署。四个独立TEST family配对B8/B16，七策略均完成340任务。TRAIN任务差全部0；CAL选出共同∞门槛，四种学习器均执行condition，实际32次推理没有新增查询分配、任务或服务收益。模型与condition同88次查询，不能把condition相对WAIT的时间改善归给学习。
 
 存在局部正向预算结果：TRAIN预选的B16后期双SKIP宏，在四个留出family保持170任务，查询由56降至52，固定FIFO受限完成时间和减少约4.073（时间改善来自一个family，另三个服务记录相同）。B8预选WAIT则合计慢约17.009，两个预算汇总的查表时间仍落后condition约12.936。这个小幅留出信号支持继续研究条件性时间/查询权衡，尚未证明条件模型有效，也不能由被∞门槛关闭的消融判断特征无用。
