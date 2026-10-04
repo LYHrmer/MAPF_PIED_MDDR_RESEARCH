@@ -1,5 +1,10 @@
 # 学习辅助进度查询：探索说明
 
+2026-10-04 R16：**完整 STOP 后缀、冻结条件模型与去重 CAL 评估已完成。** [本轮报告](stop_value_20261004_r16/REPORT.md)。新增29次native，复用30个旧C后果；3个CAL B16 STOP由严格语义别名复用C8，保留真实来源，不伪造STOP日志。TRAIN C/STOP均1077任务，查询285→144，受限时间多约102.388；固定STOP并非逐条件无损。
+
+CAL冻结树为238任务/52查询，固定STOP同238任务、仅36查询且受限时间少约90.775。模型确实训练并在冻结门决策上评估，当前未超强固定策略；不是新盲测或新增模型native部署。下一聚焦已有C/LD/STOP空间内的信息预算价值，保留完整历史与固定STOP对照。[三线科研导师复判与后继合同](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261004_R16.md)。以下旧轮次为历史。
+
+
 2026-10-04 R14：**复用全部160臂，导出48个完整尾策略配对；无新增原生或训练。** [价值空间判断](evidence_value_diagnostics_20261004_r14/VALUE_INTERPRETATION.md)与[完整报告](evidence_value_diagnostics_20261004_r14/REPORT.md)。
 
 TEST在C/LD两尾策略内的任务优先oracle为713，等于固定LD；同任务子集剩余受限完成时间和空间仅[3.148719,3.149149]，约为固定LD全TEST时间和的0.003507%。48个实际gate全部1claim/1owner，多候选覆盖稀少；TRAIN有同family两预算任务标签反转，但非预算单独因果效应。有限oracle只作诊断，8个family的两个预算成对处理，不用旧TEST选新阈值。

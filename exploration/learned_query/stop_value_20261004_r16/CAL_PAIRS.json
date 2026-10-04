@@ -1,0 +1,2327 @@
+[
+  {
+    "world": "empty-32-32_scen2_offset192_calibration_131201_B8",
+    "family_key": "empty-32-32_scen2_offset192_calibration_131201",
+    "map": "empty-32-32",
+    "split": "calibration",
+    "budget": 8,
+    "delta_tasks": 0,
+    "T_gain_lower": "-1/25000",
+    "T_gain_upper": "1/25000",
+    "queries_saved": 4,
+    "gate": {
+      "event": "macro_choice",
+      "at": {
+        "lower": 22487391,
+        "upper": 22487392,
+        "denominator": 1000000
+      },
+      "policy": "macro_C",
+      "opportunity": 5,
+      "initial_capacity": 8,
+      "remaining_capacity": 4,
+      "spent": 4,
+      "target_agent": 2,
+      "target_move": "m-2-11",
+      "feature_schema": "late_target10_v1",
+      "features": [
+        "1",
+        "1",
+        "1333441/2000000",
+        "1/3",
+        "3/64",
+        "1/15",
+        "0",
+        "1/4",
+        "13189077/16000000",
+        "1/3"
+      ],
+      "learned": false,
+      "margin_infinite": false,
+      "margin": "0",
+      "scores": [
+        {
+          "option": "C",
+          "tasks": "0",
+          "time": "0",
+          "total": "0"
+        },
+        {
+          "option": "LD",
+          "tasks": "0",
+          "time": "0",
+          "total": "0"
+        }
+      ],
+      "selected_option": "C",
+      "inference_calls": 0,
+      "inference_ns": 0
+    },
+    "C": {
+      "world": "empty-32-32_scen2_offset192_calibration_131201_B8",
+      "family_key": "empty-32-32_scen2_offset192_calibration_131201",
+      "split": "calibration",
+      "map": "empty-32-32",
+      "budget": 8,
+      "policy": "macro_C",
+      "tasks": 41,
+      "queries": 8,
+      "query_unit_cost": 8,
+      "monetary_cost": null,
+      "remaining_budget": 0,
+      "T_lower": "1415101603/250000",
+      "T_upper": "1415101613/250000",
+      "service_time_sum": {
+        "lower": 2687331422,
+        "upper": 2687331423,
+        "denominator": 1000000
+      },
+      "released_restricted_flow_sum": {
+        "lower": 2037750000,
+        "upper": 2037750000,
+        "denominator": 1000000
+      },
+      "host_seconds": 90.44895923999866,
+      "motion_time_interval": [
+        "382860101/250000",
+        "1531442579/1000000"
+      ],
+      "feedback_hold_interval": [
+        "271748913/1000000",
+        "271751087/1000000"
+      ],
+      "residual_not_moving_interval": [
+        "122403167/500000",
+        "244810683/1000000"
+      ],
+      "gate": {
+        "event": "macro_choice",
+        "at": {
+          "lower": 22487391,
+          "upper": 22487392,
+          "denominator": 1000000
+        },
+        "policy": "macro_C",
+        "opportunity": 5,
+        "initial_capacity": 8,
+        "remaining_capacity": 4,
+        "spent": 4,
+        "target_agent": 2,
+        "target_move": "m-2-11",
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "1",
+          "1",
+          "1333441/2000000",
+          "1/3",
+          "3/64",
+          "1/15",
+          "0",
+          "1/4",
+          "13189077/16000000",
+          "1/3"
+        ],
+        "learned": false,
+        "margin_infinite": false,
+        "margin": "0",
+        "scores": [
+          {
+            "option": "C",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          },
+          {
+            "option": "LD",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          }
+        ],
+        "selected_option": "C",
+        "inference_calls": 0,
+        "inference_ns": 0
+      },
+      "prefix_sha256": "28ec0bfdd8322b3537c23e92318368d9e14a1ea31a75ac3429efd26469d9ade2",
+      "canonical_complete_sha256": "cdd039822f85016df978215e93a862fc3a2efa4fa89a06808a2b81dd4d3918bf",
+      "events": {
+        "planner_request": 75,
+        "official_move_committed": 1116,
+        "original_RUN": 1103,
+        "world_frame_offline_only": 1293,
+        "public_candidate_visibility": 589,
+        "opportunity_census": 589,
+        "physical_original_END": 1087,
+        "public_END_delivered": 1087,
+        "native_READY": 1087,
+        "task_service": 41,
+        "public_head_revealed": 41,
+        "actor_decision": 50,
+        "certified_POSITION_committed": 8,
+        "macro_choice": 1,
+        "joint_summary": 1
+      },
+      "after_gate_events": {
+        "macro_choice": 1,
+        "actor_decision": 46,
+        "certified_POSITION_committed": 4,
+        "original_RUN": 893,
+        "world_frame_offline_only": 1056,
+        "public_END_delivered": 892,
+        "native_READY": 892,
+        "public_candidate_visibility": 481,
+        "opportunity_census": 481,
+        "physical_original_END": 891,
+        "planner_request": 60,
+        "official_move_committed": 884,
+        "task_service": 36,
+        "public_head_revealed": 36,
+        "joint_summary": 1
+      },
+      "stop_decisions": 0,
+      "raw": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset192_calibration_131201_B8__macro_C.jsonl",
+      "raw_sha256": "64f9820e6bf40b4b6bbec4bce3579547ab9e07bee6aa9d64da0159b8c5df4e2e",
+      "planner": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset192_calibration_131201_B8__macro_C.planner.jsonl",
+      "planner_sha256": "eca8bdbf3a60606d4d35e2f540adb5e8109065c2d4774873316c03f8a5918875",
+      "input_sha256": "8aab7a2a5bbbe2a4b2d33c9f79d2d9cfef74b3b95886054ec41fa30fc2ea37d7"
+    },
+    "STOP": {
+      "world": "empty-32-32_scen2_offset192_calibration_131201_B8",
+      "family_key": "empty-32-32_scen2_offset192_calibration_131201",
+      "split": "calibration",
+      "map": "empty-32-32",
+      "budget": 8,
+      "policy": "macro_STOP",
+      "tasks": 41,
+      "queries": 4,
+      "query_unit_cost": 4,
+      "monetary_cost": null,
+      "remaining_budget": 4,
+      "T_lower": "1415101603/250000",
+      "T_upper": "1415101613/250000",
+      "service_time_sum": {
+        "lower": 2687331422,
+        "upper": 2687331423,
+        "denominator": 1000000
+      },
+      "released_restricted_flow_sum": {
+        "lower": 2037750000,
+        "upper": 2037750000,
+        "denominator": 1000000
+      },
+      "host_seconds": 64.62061823999102,
+      "motion_time_interval": [
+        "382860101/250000",
+        "1531442579/1000000"
+      ],
+      "feedback_hold_interval": [
+        "271748913/1000000",
+        "271751087/1000000"
+      ],
+      "residual_not_moving_interval": [
+        "122403167/500000",
+        "244810683/1000000"
+      ],
+      "gate": {
+        "event": "macro_choice",
+        "at": {
+          "lower": 22487391,
+          "upper": 22487392,
+          "denominator": 1000000
+        },
+        "policy": "macro_STOP",
+        "opportunity": 5,
+        "initial_capacity": 8,
+        "remaining_capacity": 4,
+        "spent": 4,
+        "target_agent": 2,
+        "target_move": "m-2-11",
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "1",
+          "1",
+          "1333441/2000000",
+          "1/3",
+          "3/64",
+          "1/15",
+          "0",
+          "1/4",
+          "13189077/16000000",
+          "1/3"
+        ],
+        "learned": false,
+        "margin_infinite": false,
+        "margin": "0",
+        "scores": [
+          {
+            "option": "C",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          },
+          {
+            "option": "STOP",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          }
+        ],
+        "selected_option": "STOP",
+        "inference_calls": 0,
+        "inference_ns": 0
+      },
+      "prefix_sha256": "28ec0bfdd8322b3537c23e92318368d9e14a1ea31a75ac3429efd26469d9ade2",
+      "canonical_complete_sha256": "491c42a93b57442c5ff82c41d3f46dd79be95df05e0ddbf7e40b87e90dc8367a",
+      "events": {
+        "planner_request": 75,
+        "official_move_committed": 1116,
+        "original_RUN": 1103,
+        "world_frame_offline_only": 1294,
+        "public_candidate_visibility": 589,
+        "opportunity_census": 589,
+        "physical_original_END": 1087,
+        "public_END_delivered": 1087,
+        "native_READY": 1087,
+        "task_service": 41,
+        "public_head_revealed": 41,
+        "actor_decision": 56,
+        "certified_POSITION_committed": 4,
+        "macro_choice": 1,
+        "joint_summary": 1
+      },
+      "after_gate_events": {
+        "macro_choice": 1,
+        "actor_decision": 52,
+        "world_frame_offline_only": 1057,
+        "public_END_delivered": 892,
+        "native_READY": 892,
+        "original_RUN": 893,
+        "public_candidate_visibility": 481,
+        "opportunity_census": 481,
+        "physical_original_END": 891,
+        "planner_request": 60,
+        "official_move_committed": 884,
+        "task_service": 36,
+        "public_head_revealed": 36,
+        "joint_summary": 1
+      },
+      "stop_decisions": 52,
+      "raw": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/stop_value_20261004_r16/runs/empty-32-32_scen2_offset192_calibration_131201_B8__macro_STOP.jsonl",
+      "raw_sha256": "028a7053226082e0d84b311a09df10c5c56f4866487c58962c0ce44bf9eb3ce1",
+      "planner": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/stop_value_20261004_r16/runs/empty-32-32_scen2_offset192_calibration_131201_B8__macro_STOP.planner.jsonl",
+      "planner_sha256": "48cea6585eb9c5bc4129d088554140ce626758d12cfc4d80b3aa2424f1503baf",
+      "input_sha256": "8aab7a2a5bbbe2a4b2d33c9f79d2d9cfef74b3b95886054ec41fa30fc2ea37d7"
+    },
+    "prefix_equal": true,
+    "input_equal": true
+  },
+  {
+    "world": "empty-32-32_scen2_offset192_calibration_131201_B16",
+    "family_key": "empty-32-32_scen2_offset192_calibration_131201",
+    "map": "empty-32-32",
+    "split": "calibration",
+    "budget": 16,
+    "delta_tasks": 0,
+    "T_gain_lower": "-442353/62500",
+    "T_gain_upper": "-110587/15625",
+    "queries_saved": 8,
+    "gate": {
+      "event": "macro_choice",
+      "at": {
+        "lower": 28534935,
+        "upper": 28534936,
+        "denominator": 1000000
+      },
+      "policy": "macro_C",
+      "opportunity": 9,
+      "initial_capacity": 16,
+      "remaining_capacity": 8,
+      "spent": 8,
+      "target_agent": 7,
+      "target_move": "m-7-15",
+      "feature_schema": "late_target10_v1",
+      "features": [
+        "3281/3650",
+        "1/2",
+        "3/8",
+        "1",
+        "1/64",
+        "1/15",
+        "0",
+        "1/2",
+        "6216567/8000000",
+        "3281/3650"
+      ],
+      "learned": false,
+      "margin_infinite": false,
+      "margin": "0",
+      "scores": [
+        {
+          "option": "C",
+          "tasks": "0",
+          "time": "0",
+          "total": "0"
+        },
+        {
+          "option": "LD",
+          "tasks": "0",
+          "time": "0",
+          "total": "0"
+        }
+      ],
+      "selected_option": "C",
+      "inference_calls": 0,
+      "inference_ns": 0
+    },
+    "C": {
+      "world": "empty-32-32_scen2_offset192_calibration_131201_B16",
+      "family_key": "empty-32-32_scen2_offset192_calibration_131201",
+      "split": "calibration",
+      "map": "empty-32-32",
+      "budget": 16,
+      "policy": "macro_C",
+      "tasks": 41,
+      "queries": 16,
+      "query_unit_cost": 16,
+      "monetary_cost": null,
+      "remaining_budget": 0,
+      "T_lower": "1413332201/250000",
+      "T_upper": "1413332211/250000",
+      "service_time_sum": {
+        "lower": 2680253814,
+        "upper": 2680253815,
+        "denominator": 1000000
+      },
+      "released_restricted_flow_sum": {
+        "lower": 2037750000,
+        "upper": 2037750000,
+        "denominator": 1000000
+      },
+      "host_seconds": 109.84269864000089,
+      "motion_time_interval": [
+        "1530255581/1000000",
+        "765128877/500000"
+      ],
+      "feedback_hold_interval": [
+        "135749457/500000",
+        "135750543/500000"
+      ],
+      "residual_not_moving_interval": [
+        "6156029/25000",
+        "49249101/200000"
+      ],
+      "gate": {
+        "event": "macro_choice",
+        "at": {
+          "lower": 28534935,
+          "upper": 28534936,
+          "denominator": 1000000
+        },
+        "policy": "macro_C",
+        "opportunity": 9,
+        "initial_capacity": 16,
+        "remaining_capacity": 8,
+        "spent": 8,
+        "target_agent": 7,
+        "target_move": "m-7-15",
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "3281/3650",
+          "1/2",
+          "3/8",
+          "1",
+          "1/64",
+          "1/15",
+          "0",
+          "1/2",
+          "6216567/8000000",
+          "3281/3650"
+        ],
+        "learned": false,
+        "margin_infinite": false,
+        "margin": "0",
+        "scores": [
+          {
+            "option": "C",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          },
+          {
+            "option": "LD",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          }
+        ],
+        "selected_option": "C",
+        "inference_calls": 0,
+        "inference_ns": 0
+      },
+      "prefix_sha256": "4292e0125e74276b74275fe7895f5a09061f738859d9b54b2e8661732b37e4d6",
+      "canonical_complete_sha256": "bab6a7135513952bc94564acb13e9d4d576b3eed7e7e5698b5a6c1b0f2ae1b17",
+      "events": {
+        "planner_request": 75,
+        "official_move_committed": 1115,
+        "original_RUN": 1102,
+        "world_frame_offline_only": 1549,
+        "public_candidate_visibility": 697,
+        "opportunity_census": 697,
+        "physical_original_END": 1086,
+        "public_END_delivered": 1086,
+        "native_READY": 1086,
+        "task_service": 41,
+        "public_head_revealed": 41,
+        "actor_decision": 43,
+        "certified_POSITION_committed": 16,
+        "macro_choice": 1,
+        "joint_summary": 1
+      },
+      "after_gate_events": {
+        "macro_choice": 1,
+        "actor_decision": 35,
+        "certified_POSITION_committed": 8,
+        "world_frame_offline_only": 1254,
+        "physical_original_END": 851,
+        "public_END_delivered": 851,
+        "native_READY": 851,
+        "original_RUN": 853,
+        "public_candidate_visibility": 561,
+        "opportunity_census": 561,
+        "planner_request": 58,
+        "official_move_committed": 852,
+        "task_service": 35,
+        "public_head_revealed": 35,
+        "joint_summary": 1
+      },
+      "stop_decisions": 0,
+      "raw": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset192_calibration_131201_B16__macro_C.jsonl",
+      "raw_sha256": "01eec864c2c60bab149f1901c467418a6264a8787c801dfe560b1789ec104477",
+      "planner": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset192_calibration_131201_B16__macro_C.planner.jsonl",
+      "planner_sha256": "3493dd70165b7acfd8f7332938aa07cea3e865ffffa0160fa3c9142ef51d517d",
+      "input_sha256": "8aab7a2a5bbbe2a4b2d33c9f79d2d9cfef74b3b95886054ec41fa30fc2ea37d7"
+    },
+    "STOP": {
+      "world": "empty-32-32_scen2_offset192_calibration_131201_B16",
+      "family_key": "empty-32-32_scen2_offset192_calibration_131201",
+      "split": "calibration",
+      "map": "empty-32-32",
+      "budget": 16,
+      "policy": "macro_STOP_semantic_alias",
+      "tasks": 41,
+      "queries": 8,
+      "query_unit_cost": 8,
+      "monetary_cost": null,
+      "remaining_budget": 8,
+      "T_lower": "1415101603/250000",
+      "T_upper": "1415101613/250000",
+      "service_time_sum": {
+        "lower": 2687331422,
+        "upper": 2687331423,
+        "denominator": 1000000
+      },
+      "released_restricted_flow_sum": {
+        "lower": 2037750000,
+        "upper": 2037750000,
+        "denominator": 1000000
+      },
+      "host_seconds": 90.44895923999866,
+      "motion_time_interval": [
+        "382860101/250000",
+        "1531442579/1000000"
+      ],
+      "feedback_hold_interval": [
+        "271748913/1000000",
+        "271751087/1000000"
+      ],
+      "residual_not_moving_interval": [
+        "122403167/500000",
+        "244810683/1000000"
+      ],
+      "gate": {
+        "event": "macro_choice",
+        "at": {
+          "lower": 28534935,
+          "upper": 28534936,
+          "denominator": 1000000
+        },
+        "policy": "macro_C",
+        "opportunity": 9,
+        "initial_capacity": 16,
+        "remaining_capacity": 8,
+        "spent": 8,
+        "target_agent": 7,
+        "target_move": "m-7-15",
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "3281/3650",
+          "1/2",
+          "3/8",
+          "1",
+          "1/64",
+          "1/15",
+          "0",
+          "1/2",
+          "6216567/8000000",
+          "3281/3650"
+        ],
+        "learned": false,
+        "margin_infinite": false,
+        "margin": "0",
+        "scores": [
+          {
+            "option": "C",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          },
+          {
+            "option": "LD",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          }
+        ],
+        "selected_option": "C",
+        "inference_calls": 0,
+        "inference_ns": 0
+      },
+      "prefix_sha256": null,
+      "canonical_complete_sha256": "cdd039822f85016df978215e93a862fc3a2efa4fa89a06808a2b81dd4d3918bf",
+      "events": {
+        "planner_request": 75,
+        "official_move_committed": 1116,
+        "original_RUN": 1103,
+        "world_frame_offline_only": 1293,
+        "public_candidate_visibility": 589,
+        "opportunity_census": 589,
+        "physical_original_END": 1087,
+        "public_END_delivered": 1087,
+        "native_READY": 1087,
+        "task_service": 41,
+        "public_head_revealed": 41,
+        "actor_decision": 50,
+        "certified_POSITION_committed": 8,
+        "macro_choice": 1,
+        "joint_summary": 1
+      },
+      "after_gate_events": {
+        "actor_decision": 42,
+        "world_frame_offline_only": 998,
+        "physical_original_END": 852,
+        "public_END_delivered": 852,
+        "native_READY": 852,
+        "original_RUN": 854,
+        "public_candidate_visibility": 453,
+        "opportunity_census": 453,
+        "planner_request": 58,
+        "official_move_committed": 853,
+        "task_service": 35,
+        "public_head_revealed": 35,
+        "joint_summary": 1
+      },
+      "stop_decisions": null,
+      "raw": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset192_calibration_131201_B8__macro_C.jsonl",
+      "raw_sha256": "64f9820e6bf40b4b6bbec4bce3579547ab9e07bee6aa9d64da0159b8c5df4e2e",
+      "planner": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset192_calibration_131201_B8__macro_C.planner.jsonl",
+      "planner_sha256": "eca8bdbf3a60606d4d35e2f540adb5e8109065c2d4774873316c03f8a5918875",
+      "input_sha256": "8aab7a2a5bbbe2a4b2d33c9f79d2d9cfef74b3b95886054ec41fa30fc2ea37d7",
+      "gate_source_policy": "macro_C_B16",
+      "source_gate": {
+        "event": "macro_choice",
+        "at": {
+          "lower": 22487391,
+          "upper": 22487392,
+          "denominator": 1000000
+        },
+        "policy": "macro_C",
+        "opportunity": 5,
+        "initial_capacity": 8,
+        "remaining_capacity": 4,
+        "spent": 4,
+        "target_agent": 2,
+        "target_move": "m-2-11",
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "1",
+          "1",
+          "1333441/2000000",
+          "1/3",
+          "3/64",
+          "1/15",
+          "0",
+          "1/4",
+          "13189077/16000000",
+          "1/3"
+        ],
+        "learned": false,
+        "margin_infinite": false,
+        "margin": "0",
+        "scores": [
+          {
+            "option": "C",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          },
+          {
+            "option": "LD",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          }
+        ],
+        "selected_option": "C",
+        "inference_calls": 0,
+        "inference_ns": 0
+      },
+      "semantic_choice": "STOP",
+      "semantic_alias": {
+        "source_world": "empty-32-32_scen2_offset192_calibration_131201_B8",
+        "source_policy": "macro_C",
+        "source_budget": 8,
+        "source_raw": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset192_calibration_131201_B8__macro_C.jsonl",
+        "source_raw_sha256": "64f9820e6bf40b4b6bbec4bce3579547ab9e07bee6aa9d64da0159b8c5df4e2e",
+        "source_receipt_sha256": "7f432eb67cabc6952f22452ff210a9ad7aac93c86fbf321ec7bdeeb9a0bea2d2",
+        "target_gate_raw_sha256": "01eec864c2c60bab149f1901c467418a6264a8787c801dfe560b1789ec104477",
+        "alias_registration_sha256": "734f7749e36b6f08c5e79c7f73422c38f2b5bb76162309d5e38d38b5cd3a7659",
+        "physical_public_prefix_sha256": "2a53a8aaf1d6a57100dfe1e1b6a55d2f4346971444e29bbf582011fc37d771c7"
+      }
+    },
+    "prefix_equal": true,
+    "prefix_equality_scope": "source-proved physical/public budget-metadata projection; not identical actor logs",
+    "input_equal": true,
+    "semantic_alias": {
+      "source_world": "empty-32-32_scen2_offset192_calibration_131201_B8",
+      "target_world": "empty-32-32_scen2_offset192_calibration_131201_B16",
+      "source_policy": "macro_C",
+      "target_policy": "macro_STOP_semantic_alias",
+      "source_raw_sha256": "64f9820e6bf40b4b6bbec4bce3579547ab9e07bee6aa9d64da0159b8c5df4e2e",
+      "source_receipt_sha256": "7f432eb67cabc6952f22452ff210a9ad7aac93c86fbf321ec7bdeeb9a0bea2d2",
+      "source_audit_sha256": "04b334b761cce621d3013ef74a007a2c96cd030b25cc1f55621edf12cf44a945",
+      "target_gate_raw_sha256": "01eec864c2c60bab149f1901c467418a6264a8787c801dfe560b1789ec104477",
+      "target_gate_receipt_sha256": "d9bad0483e0a4367680d02a54ca5c7798fc94c907fd6623e7f22368a2a05b82a",
+      "physical_public_prefix_sha256": "2a53a8aaf1d6a57100dfe1e1b6a55d2f4346971444e29bbf582011fc37d771c7",
+      "prefix_records": 1821,
+      "first8_position_sha256": "8fb14e24ed70f192321295624e0d2e07b7927e627068e87e89c0b2fc738ca35e",
+      "gate": {
+        "event": "macro_choice",
+        "at": {
+          "lower": 28534935,
+          "upper": 28534936,
+          "denominator": 1000000
+        },
+        "policy": "macro_C",
+        "opportunity": 9,
+        "initial_capacity": 16,
+        "remaining_capacity": 8,
+        "spent": 8,
+        "target_agent": 7,
+        "target_move": "m-7-15",
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "3281/3650",
+          "1/2",
+          "3/8",
+          "1",
+          "1/64",
+          "1/15",
+          "0",
+          "1/2",
+          "6216567/8000000",
+          "3281/3650"
+        ],
+        "learned": false,
+        "margin_infinite": false,
+        "margin": "0",
+        "scores": [
+          {
+            "option": "C",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          },
+          {
+            "option": "LD",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          }
+        ],
+        "selected_option": "C",
+        "inference_calls": 0,
+        "inference_ns": 0
+      },
+      "after_gate_source_events": {
+        "actor_decision": 42,
+        "world_frame_offline_only": 998,
+        "physical_original_END": 852,
+        "public_END_delivered": 852,
+        "native_READY": 852,
+        "original_RUN": 854,
+        "public_candidate_visibility": 453,
+        "opportunity_census": 453,
+        "planner_request": 58,
+        "official_move_committed": 853,
+        "task_service": 35,
+        "public_head_revealed": 35,
+        "joint_summary": 1
+      },
+      "nonbudget_candidate_features_equal": true,
+      "full_input_equal": true,
+      "source_query_count": 8,
+      "source_gate_actor_sha256": "d9a71815072e530a76d18d3dd10a9f5079e4e4a45699fa1ef6950393d0dca107",
+      "target_gate_actor_sha256": "1a806628f9935b19ad7d7f71378dd5c1ccc8baa948a72b0a5fec9a3fe539c076"
+    }
+  },
+  {
+    "world": "empty-32-32_scen2_offset208_calibration_131202_B8",
+    "family_key": "empty-32-32_scen2_offset208_calibration_131202",
+    "map": "empty-32-32",
+    "split": "calibration",
+    "budget": 8,
+    "delta_tasks": 0,
+    "T_gain_lower": "92050779/1000000",
+    "T_gain_upper": "92050853/1000000",
+    "queries_saved": 4,
+    "gate": {
+      "event": "macro_choice",
+      "at": {
+        "lower": 11993695,
+        "upper": 11993696,
+        "denominator": 1000000
+      },
+      "policy": "macro_C",
+      "opportunity": 5,
+      "initial_capacity": 8,
+      "remaining_capacity": 4,
+      "spent": 4,
+      "target_agent": 4,
+      "target_move": "m-4-6",
+      "feature_schema": "late_target10_v1",
+      "features": [
+        "9/50",
+        "1/2",
+        "3/8",
+        "1",
+        "1/64",
+        "1/15",
+        "0",
+        "1/4",
+        "14500789/16000000",
+        "9/50"
+      ],
+      "learned": false,
+      "margin_infinite": false,
+      "margin": "0",
+      "scores": [
+        {
+          "option": "C",
+          "tasks": "0",
+          "time": "0",
+          "total": "0"
+        },
+        {
+          "option": "LD",
+          "tasks": "0",
+          "time": "0",
+          "total": "0"
+        }
+      ],
+      "selected_option": "C",
+      "inference_calls": 0,
+      "inference_ns": 0
+    },
+    "C": {
+      "world": "empty-32-32_scen2_offset208_calibration_131202_B8",
+      "family_key": "empty-32-32_scen2_offset208_calibration_131202",
+      "split": "calibration",
+      "map": "empty-32-32",
+      "budget": 8,
+      "policy": "macro_C",
+      "tasks": 37,
+      "queries": 8,
+      "query_unit_cost": 8,
+      "monetary_cost": null,
+      "remaining_budget": 0,
+      "T_lower": "3024311953/500000",
+      "T_upper": "6048623943/1000000",
+      "service_time_sum": {
+        "lower": 2592623922,
+        "upper": 2592623923,
+        "denominator": 1000000
+      },
+      "released_restricted_flow_sum": {
+        "lower": 2038970917,
+        "upper": 2038970918,
+        "denominator": 1000000
+      },
+      "host_seconds": 115.47327398000198,
+      "motion_time_interval": [
+        "185167121/125000",
+        "1481338971/1000000"
+      ],
+      "feedback_hold_interval": [
+        "62514291/250000",
+        "125029583/500000"
+      ],
+      "residual_not_moving_interval": [
+        "316601863/1000000",
+        "79151467/250000"
+      ],
+      "gate": {
+        "event": "macro_choice",
+        "at": {
+          "lower": 11993695,
+          "upper": 11993696,
+          "denominator": 1000000
+        },
+        "policy": "macro_C",
+        "opportunity": 5,
+        "initial_capacity": 8,
+        "remaining_capacity": 4,
+        "spent": 4,
+        "target_agent": 4,
+        "target_move": "m-4-6",
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "9/50",
+          "1/2",
+          "3/8",
+          "1",
+          "1/64",
+          "1/15",
+          "0",
+          "1/4",
+          "14500789/16000000",
+          "9/50"
+        ],
+        "learned": false,
+        "margin_infinite": false,
+        "margin": "0",
+        "scores": [
+          {
+            "option": "C",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          },
+          {
+            "option": "LD",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          }
+        ],
+        "selected_option": "C",
+        "inference_calls": 0,
+        "inference_ns": 0
+      },
+      "prefix_sha256": "37f2dae03f8530fa500404803f56a690f2684c46a11358c226fe2539873036fb",
+      "canonical_complete_sha256": "1e68036f8b8f7135b4e7fba5beb226194c7fa0babbe76f45486749777664abc0",
+      "events": {
+        "planner_request": 68,
+        "official_move_committed": 1029,
+        "original_RUN": 1016,
+        "world_frame_offline_only": 1514,
+        "public_candidate_visibility": 697,
+        "opportunity_census": 697,
+        "physical_original_END": 1002,
+        "public_END_delivered": 1000,
+        "native_READY": 1000,
+        "task_service": 37,
+        "public_head_revealed": 36,
+        "actor_decision": 80,
+        "certified_POSITION_committed": 8,
+        "macro_choice": 1,
+        "joint_summary": 1
+      },
+      "after_gate_events": {
+        "macro_choice": 1,
+        "actor_decision": 76,
+        "certified_POSITION_committed": 4,
+        "world_frame_offline_only": 1415,
+        "public_END_delivered": 900,
+        "native_READY": 900,
+        "original_RUN": 904,
+        "public_candidate_visibility": 651,
+        "opportunity_census": 651,
+        "physical_original_END": 899,
+        "planner_request": 59,
+        "official_move_committed": 894,
+        "task_service": 35,
+        "public_head_revealed": 34,
+        "joint_summary": 1
+      },
+      "stop_decisions": 0,
+      "raw": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset208_calibration_131202_B8__macro_C.jsonl",
+      "raw_sha256": "88e89377e04dacab331c6252fb3ff8c1438cd467390141185df9c28214957d22",
+      "planner": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset208_calibration_131202_B8__macro_C.planner.jsonl",
+      "planner_sha256": "b8fef3a0049ace59b71341481f8c066f58980023902f275009bae3eb09dcad6a",
+      "input_sha256": "1222dc6169e3faebe94cfcfa2f7c65ad647df832bbdfe908aefc3f4a59bdb169"
+    },
+    "STOP": {
+      "world": "empty-32-32_scen2_offset208_calibration_131202_B8",
+      "family_key": "empty-32-32_scen2_offset208_calibration_131202",
+      "split": "calibration",
+      "map": "empty-32-32",
+      "budget": 8,
+      "policy": "macro_STOP",
+      "tasks": 37,
+      "queries": 4,
+      "query_unit_cost": 4,
+      "monetary_cost": null,
+      "remaining_budget": 4,
+      "T_lower": "595657309/100000",
+      "T_upper": "5956573127/1000000",
+      "service_time_sum": {
+        "lower": 2500573107,
+        "upper": 2500573108,
+        "denominator": 1000000
+      },
+      "released_restricted_flow_sum": {
+        "lower": 2038750000,
+        "upper": 2038750000,
+        "denominator": 1000000
+      },
+      "host_seconds": 71.39634228999785,
+      "motion_time_interval": [
+        "1524832703/1000000",
+        "1524834773/1000000"
+      ],
+      "feedback_hold_interval": [
+        "12935127/50000",
+        "51740923/200000"
+      ],
+      "residual_not_moving_interval": [
+        "66115153/250000",
+        "264464757/1000000"
+      ],
+      "gate": {
+        "event": "macro_choice",
+        "at": {
+          "lower": 11993695,
+          "upper": 11993696,
+          "denominator": 1000000
+        },
+        "policy": "macro_STOP",
+        "opportunity": 5,
+        "initial_capacity": 8,
+        "remaining_capacity": 4,
+        "spent": 4,
+        "target_agent": 4,
+        "target_move": "m-4-6",
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "9/50",
+          "1/2",
+          "3/8",
+          "1",
+          "1/64",
+          "1/15",
+          "0",
+          "1/4",
+          "14500789/16000000",
+          "9/50"
+        ],
+        "learned": false,
+        "margin_infinite": false,
+        "margin": "0",
+        "scores": [
+          {
+            "option": "C",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          },
+          {
+            "option": "STOP",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          }
+        ],
+        "selected_option": "STOP",
+        "inference_calls": 0,
+        "inference_ns": 0
+      },
+      "prefix_sha256": "37f2dae03f8530fa500404803f56a690f2684c46a11358c226fe2539873036fb",
+      "canonical_complete_sha256": "c80b7db5bae61f06dbf4b11ae8f8f74225d65e640652a7068767f487bade5f2a",
+      "events": {
+        "planner_request": 70,
+        "official_move_committed": 1047,
+        "original_RUN": 1044,
+        "world_frame_offline_only": 1449,
+        "public_candidate_visibility": 667,
+        "opportunity_census": 667,
+        "physical_original_END": 1041,
+        "public_END_delivered": 1034,
+        "native_READY": 1034,
+        "task_service": 37,
+        "public_head_revealed": 37,
+        "actor_decision": 97,
+        "certified_POSITION_committed": 4,
+        "macro_choice": 1,
+        "joint_summary": 1
+      },
+      "after_gate_events": {
+        "macro_choice": 1,
+        "actor_decision": 93,
+        "world_frame_offline_only": 1350,
+        "public_END_delivered": 934,
+        "native_READY": 934,
+        "original_RUN": 932,
+        "public_candidate_visibility": 621,
+        "opportunity_census": 621,
+        "physical_original_END": 938,
+        "planner_request": 61,
+        "official_move_committed": 912,
+        "task_service": 35,
+        "public_head_revealed": 35,
+        "joint_summary": 1
+      },
+      "stop_decisions": 93,
+      "raw": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/stop_value_20261004_r16/runs/empty-32-32_scen2_offset208_calibration_131202_B8__macro_STOP.jsonl",
+      "raw_sha256": "ba330d8cafa7ecead55e7a42db78f8cc1724d60e3a26fab17c510bbee7a81e43",
+      "planner": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/stop_value_20261004_r16/runs/empty-32-32_scen2_offset208_calibration_131202_B8__macro_STOP.planner.jsonl",
+      "planner_sha256": "45d403ad4524dfcdfd5c31ff7f5c2f64611c1e57e6b1a61a6eacfcde31349343",
+      "input_sha256": "1222dc6169e3faebe94cfcfa2f7c65ad647df832bbdfe908aefc3f4a59bdb169"
+    },
+    "prefix_equal": true,
+    "input_equal": true
+  },
+  {
+    "world": "empty-32-32_scen2_offset208_calibration_131202_B16",
+    "family_key": "empty-32-32_scen2_offset208_calibration_131202",
+    "map": "empty-32-32",
+    "split": "calibration",
+    "budget": 16,
+    "delta_tasks": 0,
+    "T_gain_lower": "-1275593/1000000",
+    "T_gain_upper": "-1275519/1000000",
+    "queries_saved": 8,
+    "gate": {
+      "event": "macro_choice",
+      "at": {
+        "lower": 17838457,
+        "upper": 17838458,
+        "denominator": 1000000
+      },
+      "policy": "macro_C",
+      "opportunity": 9,
+      "initial_capacity": 16,
+      "remaining_capacity": 8,
+      "spent": 8,
+      "target_agent": 12,
+      "target_move": "m-12-8",
+      "feature_schema": "late_target10_v1",
+      "features": [
+        "1",
+        "1",
+        "972913/1000000",
+        "1/2",
+        "1/32",
+        "1/15",
+        "0",
+        "1/2",
+        "13770193/16000000",
+        "1/2"
+      ],
+      "learned": false,
+      "margin_infinite": false,
+      "margin": "0",
+      "scores": [
+        {
+          "option": "C",
+          "tasks": "0",
+          "time": "0",
+          "total": "0"
+        },
+        {
+          "option": "LD",
+          "tasks": "0",
+          "time": "0",
+          "total": "0"
+        }
+      ],
+      "selected_option": "C",
+      "inference_calls": 0,
+      "inference_ns": 0
+    },
+    "C": {
+      "world": "empty-32-32_scen2_offset208_calibration_131202_B16",
+      "family_key": "empty-32-32_scen2_offset208_calibration_131202",
+      "split": "calibration",
+      "map": "empty-32-32",
+      "budget": 16,
+      "policy": "macro_C",
+      "tasks": 37,
+      "queries": 16,
+      "query_unit_cost": 16,
+      "monetary_cost": null,
+      "remaining_budget": 0,
+      "T_lower": "120946967/20000",
+      "T_upper": "6047348387/1000000",
+      "service_time_sum": {
+        "lower": 2591348366,
+        "upper": 2591348367,
+        "denominator": 1000000
+      },
+      "released_restricted_flow_sum": {
+        "lower": 2038970917,
+        "upper": 2038970918,
+        "denominator": 1000000
+      },
+      "host_seconds": 100.11017815500236,
+      "motion_time_interval": [
+        "1481336969/1000000",
+        "370334743/250000"
+      ],
+      "feedback_hold_interval": [
+        "62514291/250000",
+        "125029583/500000"
+      ],
+      "residual_not_moving_interval": [
+        "158300931/500000",
+        "316605867/1000000"
+      ],
+      "gate": {
+        "event": "macro_choice",
+        "at": {
+          "lower": 17838457,
+          "upper": 17838458,
+          "denominator": 1000000
+        },
+        "policy": "macro_C",
+        "opportunity": 9,
+        "initial_capacity": 16,
+        "remaining_capacity": 8,
+        "spent": 8,
+        "target_agent": 12,
+        "target_move": "m-12-8",
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "1",
+          "1",
+          "972913/1000000",
+          "1/2",
+          "1/32",
+          "1/15",
+          "0",
+          "1/2",
+          "13770193/16000000",
+          "1/2"
+        ],
+        "learned": false,
+        "margin_infinite": false,
+        "margin": "0",
+        "scores": [
+          {
+            "option": "C",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          },
+          {
+            "option": "LD",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          }
+        ],
+        "selected_option": "C",
+        "inference_calls": 0,
+        "inference_ns": 0
+      },
+      "prefix_sha256": "9c398f7ab598c7ff16d8ba0edaf56b4342ef4285bc43e236185d3295be63c8ce",
+      "canonical_complete_sha256": "3eb1b51e2bae22ae7f6f320c27629a6b17d180d9b00841adc62fc3b2e6a91954",
+      "events": {
+        "planner_request": 68,
+        "official_move_committed": 1029,
+        "original_RUN": 1016,
+        "world_frame_offline_only": 1480,
+        "public_candidate_visibility": 673,
+        "opportunity_census": 673,
+        "physical_original_END": 1002,
+        "public_END_delivered": 1000,
+        "native_READY": 1000,
+        "task_service": 37,
+        "public_head_revealed": 36,
+        "actor_decision": 53,
+        "certified_POSITION_committed": 16,
+        "macro_choice": 1,
+        "joint_summary": 1
+      },
+      "after_gate_events": {
+        "macro_choice": 1,
+        "actor_decision": 45,
+        "certified_POSITION_committed": 8,
+        "original_RUN": 861,
+        "world_frame_offline_only": 1317,
+        "public_END_delivered": 856,
+        "native_READY": 856,
+        "public_candidate_visibility": 600,
+        "opportunity_census": 600,
+        "planner_request": 57,
+        "official_move_committed": 862,
+        "physical_original_END": 854,
+        "task_service": 34,
+        "public_head_revealed": 33,
+        "joint_summary": 1
+      },
+      "stop_decisions": 0,
+      "raw": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset208_calibration_131202_B16__macro_C.jsonl",
+      "raw_sha256": "213b69a1633ff4a04936fad66268e2164b7ad6d88c80cb071a20eb83139aa64b",
+      "planner": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset208_calibration_131202_B16__macro_C.planner.jsonl",
+      "planner_sha256": "32b196d6c0e3ce41cd608d54a6c5d314f243339ff22f831d1fc75e0764da75c0",
+      "input_sha256": "1222dc6169e3faebe94cfcfa2f7c65ad647df832bbdfe908aefc3f4a59bdb169"
+    },
+    "STOP": {
+      "world": "empty-32-32_scen2_offset208_calibration_131202_B16",
+      "family_key": "empty-32-32_scen2_offset208_calibration_131202",
+      "split": "calibration",
+      "map": "empty-32-32",
+      "budget": 16,
+      "policy": "macro_STOP_semantic_alias",
+      "tasks": 37,
+      "queries": 8,
+      "query_unit_cost": 8,
+      "monetary_cost": null,
+      "remaining_budget": 8,
+      "T_lower": "3024311953/500000",
+      "T_upper": "6048623943/1000000",
+      "service_time_sum": {
+        "lower": 2592623922,
+        "upper": 2592623923,
+        "denominator": 1000000
+      },
+      "released_restricted_flow_sum": {
+        "lower": 2038970917,
+        "upper": 2038970918,
+        "denominator": 1000000
+      },
+      "host_seconds": 115.47327398000198,
+      "motion_time_interval": [
+        "185167121/125000",
+        "1481338971/1000000"
+      ],
+      "feedback_hold_interval": [
+        "62514291/250000",
+        "125029583/500000"
+      ],
+      "residual_not_moving_interval": [
+        "316601863/1000000",
+        "79151467/250000"
+      ],
+      "gate": {
+        "event": "macro_choice",
+        "at": {
+          "lower": 17838457,
+          "upper": 17838458,
+          "denominator": 1000000
+        },
+        "policy": "macro_C",
+        "opportunity": 9,
+        "initial_capacity": 16,
+        "remaining_capacity": 8,
+        "spent": 8,
+        "target_agent": 12,
+        "target_move": "m-12-8",
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "1",
+          "1",
+          "972913/1000000",
+          "1/2",
+          "1/32",
+          "1/15",
+          "0",
+          "1/2",
+          "13770193/16000000",
+          "1/2"
+        ],
+        "learned": false,
+        "margin_infinite": false,
+        "margin": "0",
+        "scores": [
+          {
+            "option": "C",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          },
+          {
+            "option": "LD",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          }
+        ],
+        "selected_option": "C",
+        "inference_calls": 0,
+        "inference_ns": 0
+      },
+      "prefix_sha256": null,
+      "canonical_complete_sha256": "1e68036f8b8f7135b4e7fba5beb226194c7fa0babbe76f45486749777664abc0",
+      "events": {
+        "planner_request": 68,
+        "official_move_committed": 1029,
+        "original_RUN": 1016,
+        "world_frame_offline_only": 1514,
+        "public_candidate_visibility": 697,
+        "opportunity_census": 697,
+        "physical_original_END": 1002,
+        "public_END_delivered": 1000,
+        "native_READY": 1000,
+        "task_service": 37,
+        "public_head_revealed": 36,
+        "actor_decision": 80,
+        "certified_POSITION_committed": 8,
+        "macro_choice": 1,
+        "joint_summary": 1
+      },
+      "after_gate_events": {
+        "actor_decision": 72,
+        "world_frame_offline_only": 1351,
+        "public_END_delivered": 856,
+        "native_READY": 856,
+        "original_RUN": 861,
+        "public_candidate_visibility": 624,
+        "opportunity_census": 624,
+        "planner_request": 57,
+        "official_move_committed": 862,
+        "physical_original_END": 854,
+        "task_service": 34,
+        "public_head_revealed": 33,
+        "joint_summary": 1
+      },
+      "stop_decisions": null,
+      "raw": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset208_calibration_131202_B8__macro_C.jsonl",
+      "raw_sha256": "88e89377e04dacab331c6252fb3ff8c1438cd467390141185df9c28214957d22",
+      "planner": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset208_calibration_131202_B8__macro_C.planner.jsonl",
+      "planner_sha256": "b8fef3a0049ace59b71341481f8c066f58980023902f275009bae3eb09dcad6a",
+      "input_sha256": "1222dc6169e3faebe94cfcfa2f7c65ad647df832bbdfe908aefc3f4a59bdb169",
+      "gate_source_policy": "macro_C_B16",
+      "source_gate": {
+        "event": "macro_choice",
+        "at": {
+          "lower": 11993695,
+          "upper": 11993696,
+          "denominator": 1000000
+        },
+        "policy": "macro_C",
+        "opportunity": 5,
+        "initial_capacity": 8,
+        "remaining_capacity": 4,
+        "spent": 4,
+        "target_agent": 4,
+        "target_move": "m-4-6",
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "9/50",
+          "1/2",
+          "3/8",
+          "1",
+          "1/64",
+          "1/15",
+          "0",
+          "1/4",
+          "14500789/16000000",
+          "9/50"
+        ],
+        "learned": false,
+        "margin_infinite": false,
+        "margin": "0",
+        "scores": [
+          {
+            "option": "C",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          },
+          {
+            "option": "LD",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          }
+        ],
+        "selected_option": "C",
+        "inference_calls": 0,
+        "inference_ns": 0
+      },
+      "semantic_choice": "STOP",
+      "semantic_alias": {
+        "source_world": "empty-32-32_scen2_offset208_calibration_131202_B8",
+        "source_policy": "macro_C",
+        "source_budget": 8,
+        "source_raw": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset208_calibration_131202_B8__macro_C.jsonl",
+        "source_raw_sha256": "88e89377e04dacab331c6252fb3ff8c1438cd467390141185df9c28214957d22",
+        "source_receipt_sha256": "fd77ea81369b43ec6888b51e91612ed2e6fc244f7ca7d3a13ee9f603cb910669",
+        "target_gate_raw_sha256": "213b69a1633ff4a04936fad66268e2164b7ad6d88c80cb071a20eb83139aa64b",
+        "alias_registration_sha256": "734f7749e36b6f08c5e79c7f73422c38f2b5bb76162309d5e38d38b5cd3a7659",
+        "physical_public_prefix_sha256": "6f75309995f88f39452af3605a79dce4659b0208622f5b557013c953a627c460"
+      }
+    },
+    "prefix_equal": true,
+    "prefix_equality_scope": "source-proved physical/public budget-metadata projection; not identical actor logs",
+    "input_equal": true,
+    "semantic_alias": {
+      "source_world": "empty-32-32_scen2_offset208_calibration_131202_B8",
+      "target_world": "empty-32-32_scen2_offset208_calibration_131202_B16",
+      "source_policy": "macro_C",
+      "target_policy": "macro_STOP_semantic_alias",
+      "source_raw_sha256": "88e89377e04dacab331c6252fb3ff8c1438cd467390141185df9c28214957d22",
+      "source_receipt_sha256": "fd77ea81369b43ec6888b51e91612ed2e6fc244f7ca7d3a13ee9f603cb910669",
+      "source_audit_sha256": "c4f74813f19b5f7ce6f2cc0e628cacf6b094076f1220fcafbe6fc1029e79a1b0",
+      "target_gate_raw_sha256": "213b69a1633ff4a04936fad66268e2164b7ad6d88c80cb071a20eb83139aa64b",
+      "target_gate_receipt_sha256": "11465248d1c42ad6d7ef3bf017cd365c77c9a31f0b1adc9d79fd66538a6defd3",
+      "physical_public_prefix_sha256": "6f75309995f88f39452af3605a79dce4659b0208622f5b557013c953a627c460",
+      "prefix_records": 1092,
+      "first8_position_sha256": "0269c80e7ed79679fd96cb01de61f92e3f801857e3729c343687858c90f5c0b0",
+      "gate": {
+        "event": "macro_choice",
+        "at": {
+          "lower": 17838457,
+          "upper": 17838458,
+          "denominator": 1000000
+        },
+        "policy": "macro_C",
+        "opportunity": 9,
+        "initial_capacity": 16,
+        "remaining_capacity": 8,
+        "spent": 8,
+        "target_agent": 12,
+        "target_move": "m-12-8",
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "1",
+          "1",
+          "972913/1000000",
+          "1/2",
+          "1/32",
+          "1/15",
+          "0",
+          "1/2",
+          "13770193/16000000",
+          "1/2"
+        ],
+        "learned": false,
+        "margin_infinite": false,
+        "margin": "0",
+        "scores": [
+          {
+            "option": "C",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          },
+          {
+            "option": "LD",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          }
+        ],
+        "selected_option": "C",
+        "inference_calls": 0,
+        "inference_ns": 0
+      },
+      "after_gate_source_events": {
+        "actor_decision": 72,
+        "world_frame_offline_only": 1351,
+        "public_END_delivered": 856,
+        "native_READY": 856,
+        "original_RUN": 861,
+        "public_candidate_visibility": 624,
+        "opportunity_census": 624,
+        "planner_request": 57,
+        "official_move_committed": 862,
+        "physical_original_END": 854,
+        "task_service": 34,
+        "public_head_revealed": 33,
+        "joint_summary": 1
+      },
+      "nonbudget_candidate_features_equal": true,
+      "full_input_equal": true,
+      "source_query_count": 8,
+      "source_gate_actor_sha256": "f35ab333048055e7b62382347eb4a03caf4cacb9714971091f7f63582f31d4f3",
+      "target_gate_actor_sha256": "079fa4c50d4070be9ddda862cc97f033ce0bc236b77ee045c212cf00700cb660"
+    }
+  },
+  {
+    "world": "random-32-32-10_scen2_offset224_calibration_132201_B8",
+    "family_key": "random-32-32-10_scen2_offset224_calibration_132201",
+    "map": "random-32-32-10",
+    "split": "calibration",
+    "budget": 8,
+    "delta_tasks": 0,
+    "T_gain_lower": "-41/1000000",
+    "T_gain_upper": "41/1000000",
+    "queries_saved": 4,
+    "gate": {
+      "event": "macro_choice",
+      "at": {
+        "lower": 30480762,
+        "upper": 30480763,
+        "denominator": 1000000
+      },
+      "policy": "macro_C",
+      "opportunity": 5,
+      "initial_capacity": 8,
+      "remaining_capacity": 4,
+      "spent": 4,
+      "target_agent": 6,
+      "target_move": "m-6-15",
+      "feature_schema": "late_target10_v1",
+      "features": [
+        "369/3650",
+        "1/2",
+        "3/8",
+        "1/2",
+        "1/32",
+        "1/15",
+        "0",
+        "1/4",
+        "2437981/3200000",
+        "369/7300"
+      ],
+      "learned": false,
+      "margin_infinite": false,
+      "margin": "0",
+      "scores": [
+        {
+          "option": "C",
+          "tasks": "0",
+          "time": "0",
+          "total": "0"
+        },
+        {
+          "option": "LD",
+          "tasks": "0",
+          "time": "0",
+          "total": "0"
+        }
+      ],
+      "selected_option": "C",
+      "inference_calls": 0,
+      "inference_ns": 0
+    },
+    "C": {
+      "world": "random-32-32-10_scen2_offset224_calibration_132201_B8",
+      "family_key": "random-32-32-10_scen2_offset224_calibration_132201",
+      "split": "calibration",
+      "map": "random-32-32-10",
+      "budget": 8,
+      "policy": "macro_C",
+      "tasks": 41,
+      "queries": 8,
+      "query_unit_cost": 8,
+      "monetary_cost": null,
+      "remaining_budget": 0,
+      "T_lower": "1183543583/200000",
+      "T_upper": "1479429489/250000",
+      "service_time_sum": {
+        "lower": 2973717939,
+        "upper": 2973717940,
+        "denominator": 1000000
+      },
+      "released_restricted_flow_sum": {
+        "lower": 2037750000,
+        "upper": 2037750000,
+        "denominator": 1000000
+      },
+      "host_seconds": 84.72490214400023,
+      "motion_time_interval": [
+        "1590836433/1000000",
+        "1590838547/1000000"
+      ],
+      "feedback_hold_interval": [
+        "66014277/250000",
+        "132029611/500000"
+      ],
+      "residual_not_moving_interval": [
+        "193102231/1000000",
+        "193106459/1000000"
+      ],
+      "gate": {
+        "event": "macro_choice",
+        "at": {
+          "lower": 30480762,
+          "upper": 30480763,
+          "denominator": 1000000
+        },
+        "policy": "macro_C",
+        "opportunity": 5,
+        "initial_capacity": 8,
+        "remaining_capacity": 4,
+        "spent": 4,
+        "target_agent": 6,
+        "target_move": "m-6-15",
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "369/3650",
+          "1/2",
+          "3/8",
+          "1/2",
+          "1/32",
+          "1/15",
+          "0",
+          "1/4",
+          "2437981/3200000",
+          "369/7300"
+        ],
+        "learned": false,
+        "margin_infinite": false,
+        "margin": "0",
+        "scores": [
+          {
+            "option": "C",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          },
+          {
+            "option": "LD",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          }
+        ],
+        "selected_option": "C",
+        "inference_calls": 0,
+        "inference_ns": 0
+      },
+      "prefix_sha256": "05e91cc23a720040130d673556a98e4fd130fb0e8312e59e5f2ef0504ebcc698",
+      "canonical_complete_sha256": "feca65eeaf9d7e9b2262bb8d4c397952198a6cbb336b7f2ebcad0fe090748172",
+      "events": {
+        "planner_request": 73,
+        "official_move_committed": 1087,
+        "original_RUN": 1072,
+        "world_frame_offline_only": 1414,
+        "public_candidate_visibility": 648,
+        "opportunity_census": 648,
+        "physical_original_END": 1058,
+        "public_END_delivered": 1056,
+        "native_READY": 1056,
+        "actor_decision": 57,
+        "certified_POSITION_committed": 8,
+        "task_service": 41,
+        "public_head_revealed": 41,
+        "macro_choice": 1,
+        "joint_summary": 1
+      },
+      "after_gate_events": {
+        "macro_choice": 1,
+        "actor_decision": 53,
+        "certified_POSITION_committed": 4,
+        "original_RUN": 797,
+        "world_frame_offline_only": 1019,
+        "public_candidate_visibility": 467,
+        "opportunity_census": 467,
+        "physical_original_END": 798,
+        "public_END_delivered": 796,
+        "native_READY": 796,
+        "planner_request": 54,
+        "official_move_committed": 793,
+        "task_service": 36,
+        "public_head_revealed": 36,
+        "joint_summary": 1
+      },
+      "stop_decisions": 0,
+      "raw": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/random-32-32-10_scen2_offset224_calibration_132201_B8__macro_C.jsonl",
+      "raw_sha256": "417ec7e5cdc1656826507a348d98928d2005d14d37b26a3e5e04f7cc30934ec0",
+      "planner": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/random-32-32-10_scen2_offset224_calibration_132201_B8__macro_C.planner.jsonl",
+      "planner_sha256": "3a64e00e100a3bdbc897a5556aced5e61c9ac8ba5d747276430cd9eac2ef20bf",
+      "input_sha256": "cfcaf27bdb6788c7be69801fdefed441a0fa7acc8a241d9debea50d8fed4e444"
+    },
+    "STOP": {
+      "world": "random-32-32-10_scen2_offset224_calibration_132201_B8",
+      "family_key": "random-32-32-10_scen2_offset224_calibration_132201",
+      "split": "calibration",
+      "map": "random-32-32-10",
+      "budget": 8,
+      "policy": "macro_STOP",
+      "tasks": 41,
+      "queries": 4,
+      "query_unit_cost": 4,
+      "monetary_cost": null,
+      "remaining_budget": 4,
+      "T_lower": "1183543583/200000",
+      "T_upper": "1479429489/250000",
+      "service_time_sum": {
+        "lower": 2973717939,
+        "upper": 2973717940,
+        "denominator": 1000000
+      },
+      "released_restricted_flow_sum": {
+        "lower": 2037750000,
+        "upper": 2037750000,
+        "denominator": 1000000
+      },
+      "host_seconds": 69.95561733000795,
+      "motion_time_interval": [
+        "1590836433/1000000",
+        "1590838547/1000000"
+      ],
+      "feedback_hold_interval": [
+        "66014277/250000",
+        "132029611/500000"
+      ],
+      "residual_not_moving_interval": [
+        "193102231/1000000",
+        "193106459/1000000"
+      ],
+      "gate": {
+        "event": "macro_choice",
+        "at": {
+          "lower": 30480762,
+          "upper": 30480763,
+          "denominator": 1000000
+        },
+        "policy": "macro_STOP",
+        "opportunity": 5,
+        "initial_capacity": 8,
+        "remaining_capacity": 4,
+        "spent": 4,
+        "target_agent": 6,
+        "target_move": "m-6-15",
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "369/3650",
+          "1/2",
+          "3/8",
+          "1/2",
+          "1/32",
+          "1/15",
+          "0",
+          "1/4",
+          "2437981/3200000",
+          "369/7300"
+        ],
+        "learned": false,
+        "margin_infinite": false,
+        "margin": "0",
+        "scores": [
+          {
+            "option": "C",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          },
+          {
+            "option": "STOP",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          }
+        ],
+        "selected_option": "STOP",
+        "inference_calls": 0,
+        "inference_ns": 0
+      },
+      "prefix_sha256": "05e91cc23a720040130d673556a98e4fd130fb0e8312e59e5f2ef0504ebcc698",
+      "canonical_complete_sha256": "6d501a1b56beef696296b394a53d070a72b1276f33f592352881b454d506bce1",
+      "events": {
+        "planner_request": 73,
+        "official_move_committed": 1087,
+        "original_RUN": 1072,
+        "world_frame_offline_only": 1414,
+        "public_candidate_visibility": 648,
+        "opportunity_census": 648,
+        "physical_original_END": 1058,
+        "public_END_delivered": 1056,
+        "native_READY": 1056,
+        "actor_decision": 64,
+        "certified_POSITION_committed": 4,
+        "task_service": 41,
+        "public_head_revealed": 41,
+        "macro_choice": 1,
+        "joint_summary": 1
+      },
+      "after_gate_events": {
+        "macro_choice": 1,
+        "actor_decision": 60,
+        "world_frame_offline_only": 1019,
+        "public_candidate_visibility": 467,
+        "opportunity_census": 467,
+        "physical_original_END": 798,
+        "public_END_delivered": 796,
+        "native_READY": 796,
+        "original_RUN": 797,
+        "planner_request": 54,
+        "official_move_committed": 793,
+        "task_service": 36,
+        "public_head_revealed": 36,
+        "joint_summary": 1
+      },
+      "stop_decisions": 60,
+      "raw": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/stop_value_20261004_r16/runs/random-32-32-10_scen2_offset224_calibration_132201_B8__macro_STOP.jsonl",
+      "raw_sha256": "a94b312b7ef98a1b827f6dfed826150a236d9597376485a440fa3483e86ba81a",
+      "planner": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/stop_value_20261004_r16/runs/random-32-32-10_scen2_offset224_calibration_132201_B8__macro_STOP.planner.jsonl",
+      "planner_sha256": "126245fe9329e6b9a195444eabe84d54330ae253bf2993dc47dc3778cc79f6ea",
+      "input_sha256": "cfcaf27bdb6788c7be69801fdefed441a0fa7acc8a241d9debea50d8fed4e444"
+    },
+    "prefix_equal": true,
+    "input_equal": true
+  },
+  {
+    "world": "random-32-32-10_scen2_offset224_calibration_132201_B16",
+    "family_key": "random-32-32-10_scen2_offset224_calibration_132201",
+    "map": "random-32-32-10",
+    "split": "calibration",
+    "budget": 16,
+    "delta_tasks": 1,
+    "T_gain_lower": "1058693/100000",
+    "T_gain_upper": "10587011/1000000",
+    "queries_saved": 8,
+    "gate": {
+      "event": "macro_choice",
+      "at": {
+        "lower": 49652661,
+        "upper": 49652662,
+        "denominator": 1000000
+      },
+      "policy": "macro_C",
+      "opportunity": 9,
+      "initial_capacity": 16,
+      "remaining_capacity": 8,
+      "spent": 8,
+      "target_agent": 12,
+      "target_move": "m-12-26",
+      "feature_schema": "late_target10_v1",
+      "features": [
+        "41/50",
+        "1/2",
+        "3/8",
+        "1/4",
+        "1/16",
+        "1/15",
+        "0",
+        "1/2",
+        "4896709/8000000",
+        "41/200"
+      ],
+      "learned": false,
+      "margin_infinite": false,
+      "margin": "0",
+      "scores": [
+        {
+          "option": "C",
+          "tasks": "0",
+          "time": "0",
+          "total": "0"
+        },
+        {
+          "option": "LD",
+          "tasks": "0",
+          "time": "0",
+          "total": "0"
+        }
+      ],
+      "selected_option": "C",
+      "inference_calls": 0,
+      "inference_ns": 0
+    },
+    "C": {
+      "world": "random-32-32-10_scen2_offset224_calibration_132201_B16",
+      "family_key": "random-32-32-10_scen2_offset224_calibration_132201",
+      "split": "calibration",
+      "map": "random-32-32-10",
+      "budget": 16,
+      "policy": "macro_C",
+      "tasks": 40,
+      "queries": 16,
+      "query_unit_cost": 16,
+      "monetary_cost": null,
+      "remaining_budget": 0,
+      "T_lower": "2964152443/500000",
+      "T_upper": "2964152463/500000",
+      "service_time_sum": {
+        "lower": 2856304908,
+        "upper": 2856304909,
+        "denominator": 1000000
+      },
+      "released_restricted_flow_sum": {
+        "lower": 2038000000,
+        "upper": 2038000000,
+        "denominator": 1000000
+      },
+      "host_seconds": 101.09096688199497,
+      "motion_time_interval": [
+        "159345751/100000",
+        "796729813/500000"
+      ],
+      "feedback_hold_interval": [
+        "132249471/500000",
+        "132250529/500000"
+      ],
+      "residual_not_moving_interval": [
+        "47509829/250000",
+        "47510887/250000"
+      ],
+      "gate": {
+        "event": "macro_choice",
+        "at": {
+          "lower": 49652661,
+          "upper": 49652662,
+          "denominator": 1000000
+        },
+        "policy": "macro_C",
+        "opportunity": 9,
+        "initial_capacity": 16,
+        "remaining_capacity": 8,
+        "spent": 8,
+        "target_agent": 12,
+        "target_move": "m-12-26",
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "41/50",
+          "1/2",
+          "3/8",
+          "1/4",
+          "1/16",
+          "1/15",
+          "0",
+          "1/2",
+          "4896709/8000000",
+          "41/200"
+        ],
+        "learned": false,
+        "margin_infinite": false,
+        "margin": "0",
+        "scores": [
+          {
+            "option": "C",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          },
+          {
+            "option": "LD",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          }
+        ],
+        "selected_option": "C",
+        "inference_calls": 0,
+        "inference_ns": 0
+      },
+      "prefix_sha256": "765ba7823c5c1ea53440f3d8147efb136b3f8d02ac99a45643416b9fb4e8e5aa",
+      "canonical_complete_sha256": "12b3162b3446a24df7e6bba665471cbd76242bb45d0bb000b55f71ea884e4e68",
+      "events": {
+        "planner_request": 74,
+        "official_move_committed": 1093,
+        "original_RUN": 1074,
+        "world_frame_offline_only": 1667,
+        "public_candidate_visibility": 750,
+        "opportunity_census": 750,
+        "physical_original_END": 1058,
+        "public_END_delivered": 1058,
+        "native_READY": 1058,
+        "actor_decision": 46,
+        "certified_POSITION_committed": 16,
+        "task_service": 40,
+        "public_head_revealed": 40,
+        "macro_choice": 1,
+        "joint_summary": 1
+      },
+      "after_gate_events": {
+        "macro_choice": 1,
+        "actor_decision": 38,
+        "certified_POSITION_committed": 8,
+        "original_RUN": 640,
+        "world_frame_offline_only": 1062,
+        "public_candidate_visibility": 473,
+        "opportunity_census": 473,
+        "physical_original_END": 638,
+        "task_service": 28,
+        "public_END_delivered": 638,
+        "native_READY": 638,
+        "public_head_revealed": 28,
+        "planner_request": 42,
+        "official_move_committed": 626,
+        "joint_summary": 1
+      },
+      "stop_decisions": 0,
+      "raw": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/random-32-32-10_scen2_offset224_calibration_132201_B16__macro_C.jsonl",
+      "raw_sha256": "73dd8e46c46e21ca29a67ac9e289ca1f0f4a13fca36bd48e7bba8aafe46c5cd0",
+      "planner": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/random-32-32-10_scen2_offset224_calibration_132201_B16__macro_C.planner.jsonl",
+      "planner_sha256": "1a4ce9bc50d12f3c6a225d032ac7725509c5570c33e9af9767bd88ca6c6a0644",
+      "input_sha256": "cfcaf27bdb6788c7be69801fdefed441a0fa7acc8a241d9debea50d8fed4e444"
+    },
+    "STOP": {
+      "world": "random-32-32-10_scen2_offset224_calibration_132201_B16",
+      "family_key": "random-32-32-10_scen2_offset224_calibration_132201",
+      "split": "calibration",
+      "map": "random-32-32-10",
+      "budget": 16,
+      "policy": "macro_STOP_semantic_alias",
+      "tasks": 41,
+      "queries": 8,
+      "query_unit_cost": 8,
+      "monetary_cost": null,
+      "remaining_budget": 8,
+      "T_lower": "1183543583/200000",
+      "T_upper": "1479429489/250000",
+      "service_time_sum": {
+        "lower": 2973717939,
+        "upper": 2973717940,
+        "denominator": 1000000
+      },
+      "released_restricted_flow_sum": {
+        "lower": 2037750000,
+        "upper": 2037750000,
+        "denominator": 1000000
+      },
+      "host_seconds": 84.72490214400023,
+      "motion_time_interval": [
+        "1590836433/1000000",
+        "1590838547/1000000"
+      ],
+      "feedback_hold_interval": [
+        "66014277/250000",
+        "132029611/500000"
+      ],
+      "residual_not_moving_interval": [
+        "193102231/1000000",
+        "193106459/1000000"
+      ],
+      "gate": {
+        "event": "macro_choice",
+        "at": {
+          "lower": 49652661,
+          "upper": 49652662,
+          "denominator": 1000000
+        },
+        "policy": "macro_C",
+        "opportunity": 9,
+        "initial_capacity": 16,
+        "remaining_capacity": 8,
+        "spent": 8,
+        "target_agent": 12,
+        "target_move": "m-12-26",
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "41/50",
+          "1/2",
+          "3/8",
+          "1/4",
+          "1/16",
+          "1/15",
+          "0",
+          "1/2",
+          "4896709/8000000",
+          "41/200"
+        ],
+        "learned": false,
+        "margin_infinite": false,
+        "margin": "0",
+        "scores": [
+          {
+            "option": "C",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          },
+          {
+            "option": "LD",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          }
+        ],
+        "selected_option": "C",
+        "inference_calls": 0,
+        "inference_ns": 0
+      },
+      "prefix_sha256": null,
+      "canonical_complete_sha256": "feca65eeaf9d7e9b2262bb8d4c397952198a6cbb336b7f2ebcad0fe090748172",
+      "events": {
+        "planner_request": 73,
+        "official_move_committed": 1087,
+        "original_RUN": 1072,
+        "world_frame_offline_only": 1414,
+        "public_candidate_visibility": 648,
+        "opportunity_census": 648,
+        "physical_original_END": 1058,
+        "public_END_delivered": 1056,
+        "native_READY": 1056,
+        "actor_decision": 57,
+        "certified_POSITION_committed": 8,
+        "task_service": 41,
+        "public_head_revealed": 41,
+        "macro_choice": 1,
+        "joint_summary": 1
+      },
+      "after_gate_events": {
+        "actor_decision": 49,
+        "world_frame_offline_only": 809,
+        "public_candidate_visibility": 371,
+        "opportunity_census": 371,
+        "physical_original_END": 638,
+        "task_service": 29,
+        "public_END_delivered": 636,
+        "native_READY": 636,
+        "original_RUN": 638,
+        "public_head_revealed": 29,
+        "planner_request": 41,
+        "official_move_committed": 620,
+        "joint_summary": 1
+      },
+      "stop_decisions": null,
+      "raw": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/random-32-32-10_scen2_offset224_calibration_132201_B8__macro_C.jsonl",
+      "raw_sha256": "417ec7e5cdc1656826507a348d98928d2005d14d37b26a3e5e04f7cc30934ec0",
+      "planner": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/random-32-32-10_scen2_offset224_calibration_132201_B8__macro_C.planner.jsonl",
+      "planner_sha256": "3a64e00e100a3bdbc897a5556aced5e61c9ac8ba5d747276430cd9eac2ef20bf",
+      "input_sha256": "cfcaf27bdb6788c7be69801fdefed441a0fa7acc8a241d9debea50d8fed4e444",
+      "gate_source_policy": "macro_C_B16",
+      "source_gate": {
+        "event": "macro_choice",
+        "at": {
+          "lower": 30480762,
+          "upper": 30480763,
+          "denominator": 1000000
+        },
+        "policy": "macro_C",
+        "opportunity": 5,
+        "initial_capacity": 8,
+        "remaining_capacity": 4,
+        "spent": 4,
+        "target_agent": 6,
+        "target_move": "m-6-15",
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "369/3650",
+          "1/2",
+          "3/8",
+          "1/2",
+          "1/32",
+          "1/15",
+          "0",
+          "1/4",
+          "2437981/3200000",
+          "369/7300"
+        ],
+        "learned": false,
+        "margin_infinite": false,
+        "margin": "0",
+        "scores": [
+          {
+            "option": "C",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          },
+          {
+            "option": "LD",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          }
+        ],
+        "selected_option": "C",
+        "inference_calls": 0,
+        "inference_ns": 0
+      },
+      "semantic_choice": "STOP",
+      "semantic_alias": {
+        "source_world": "random-32-32-10_scen2_offset224_calibration_132201_B8",
+        "source_policy": "macro_C",
+        "source_budget": 8,
+        "source_raw": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/random-32-32-10_scen2_offset224_calibration_132201_B8__macro_C.jsonl",
+        "source_raw_sha256": "417ec7e5cdc1656826507a348d98928d2005d14d37b26a3e5e04f7cc30934ec0",
+        "source_receipt_sha256": "a77e4d567e73dcf682f8628d18e317883413ad72e1f0d515fee0d20eba4c57f4",
+        "target_gate_raw_sha256": "73dd8e46c46e21ca29a67ac9e289ca1f0f4a13fca36bd48e7bba8aafe46c5cd0",
+        "alias_registration_sha256": "734f7749e36b6f08c5e79c7f73422c38f2b5bb76162309d5e38d38b5cd3a7659",
+        "physical_public_prefix_sha256": "2539fd6b2953e6cc90a967c878a7fca2be76cd592c127abc2f6cb7a6aed394f5"
+      }
+    },
+    "prefix_equal": true,
+    "prefix_equality_scope": "source-proved physical/public budget-metadata projection; not identical actor logs",
+    "input_equal": true,
+    "semantic_alias": {
+      "source_world": "random-32-32-10_scen2_offset224_calibration_132201_B8",
+      "target_world": "random-32-32-10_scen2_offset224_calibration_132201_B16",
+      "source_policy": "macro_C",
+      "target_policy": "macro_STOP_semantic_alias",
+      "source_raw_sha256": "417ec7e5cdc1656826507a348d98928d2005d14d37b26a3e5e04f7cc30934ec0",
+      "source_receipt_sha256": "a77e4d567e73dcf682f8628d18e317883413ad72e1f0d515fee0d20eba4c57f4",
+      "source_audit_sha256": "9da05ad295a0887b5a942a8b051150cee4c7f226acfd1c5ee279406cb6b01108",
+      "target_gate_raw_sha256": "73dd8e46c46e21ca29a67ac9e289ca1f0f4a13fca36bd48e7bba8aafe46c5cd0",
+      "target_gate_receipt_sha256": "eb92c5fef690c07a3f7e9f6c1152c014fe73157906b1ae94ec8afed6635670b5",
+      "physical_public_prefix_sha256": "2539fd6b2953e6cc90a967c878a7fca2be76cd592c127abc2f6cb7a6aed394f5",
+      "prefix_records": 3384,
+      "first8_position_sha256": "6fc2460f2b69586024681813336a98a110e02cb06a86f4671397cee5e70e41f5",
+      "gate": {
+        "event": "macro_choice",
+        "at": {
+          "lower": 49652661,
+          "upper": 49652662,
+          "denominator": 1000000
+        },
+        "policy": "macro_C",
+        "opportunity": 9,
+        "initial_capacity": 16,
+        "remaining_capacity": 8,
+        "spent": 8,
+        "target_agent": 12,
+        "target_move": "m-12-26",
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "41/50",
+          "1/2",
+          "3/8",
+          "1/4",
+          "1/16",
+          "1/15",
+          "0",
+          "1/2",
+          "4896709/8000000",
+          "41/200"
+        ],
+        "learned": false,
+        "margin_infinite": false,
+        "margin": "0",
+        "scores": [
+          {
+            "option": "C",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          },
+          {
+            "option": "LD",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          }
+        ],
+        "selected_option": "C",
+        "inference_calls": 0,
+        "inference_ns": 0
+      },
+      "after_gate_source_events": {
+        "actor_decision": 49,
+        "world_frame_offline_only": 809,
+        "public_candidate_visibility": 371,
+        "opportunity_census": 371,
+        "physical_original_END": 638,
+        "task_service": 29,
+        "public_END_delivered": 636,
+        "native_READY": 636,
+        "original_RUN": 638,
+        "public_head_revealed": 29,
+        "planner_request": 41,
+        "official_move_committed": 620,
+        "joint_summary": 1
+      },
+      "nonbudget_candidate_features_equal": true,
+      "full_input_equal": true,
+      "source_query_count": 8,
+      "source_gate_actor_sha256": "7865357c5d68178df19cc7360ccadb4f678baa1bbda672e73bc4047cb7016671",
+      "target_gate_actor_sha256": "626896913bfad581fa0a456d1115e55dba2675be17d235e6e603db3448f8d6c3"
+    }
+  }
+]

@@ -1,5 +1,10 @@
 # 学习型进度查询探索工作区
 
+2026-10-04 R16：**完整 STOP 后缀、冻结条件模型与去重 CAL 评估已完成。** [本轮报告](exploration/learned_query/stop_value_20261004_r16/REPORT.md)。新增29次native，复用30个旧C后果；3个CAL B16 STOP由严格语义别名复用C8，保留真实来源，不伪造STOP日志。TRAIN C/STOP均1077任务，查询285→144，受限时间多约102.388；固定STOP并非逐条件无损。
+
+CAL冻结树为238任务/52查询，固定STOP同238任务、仅36查询且受限时间少约90.775。模型确实训练并在冻结门决策上评估，当前未超强固定策略；不是新盲测或新增模型native部署。下一聚焦已有C/LD/STOP空间内的信息预算价值，保留完整历史与固定STOP对照。[三线科研导师复判与后继合同](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261004_R16.md)。以下旧轮次为历史。
+
+
 2026-10-03 R9：[同续策预算价值实验](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/learned-query/exploration/learned_query/matched_tail_20261003_r9/REPORT.md)已完成91次成功原生运行，包括40个冻结留出。24个query标签和21个WAIT分支明确比较“当前选择后均继续同一π₀”，三模型实际训练部署。WAIT366任务；condition与history/nohistory/nobudget均367任务、123query，逐world固定FIFO时间也完全一致。没有新增学习收益，+1来自原condition策略。
 
 本轮修正了估计目标，但16个训练query标签的主任务差全部0；下一优先增加真实决策分歧与可用训练信号，再检验历史/预算作用。生产COST尚未接入。[三线判断与后续设计](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261003_R9.md)。下方R8及更早为保留历史。

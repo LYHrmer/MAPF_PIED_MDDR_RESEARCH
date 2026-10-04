@@ -1,0 +1,576 @@
+{
+  "passed": true,
+  "source_sha256": "36f8637bd8a49d9b78c3683d956ab3425d742718a2024585c29b4e2899bcf1f4",
+  "source_raw_sha256": "d4862df9bd9a7c0ba78ceb6dced158693b06bd2b350465df8b4d6cc8099076fb",
+  "native_runs_added": 0,
+  "cases": [
+    {
+      "case": "gate_feature",
+      "rejected": true,
+      "reason": "independent ten public late target features",
+      "original_record": {
+        "event": "macro_choice",
+        "at": {
+          "lower": 28498711,
+          "upper": 28498712,
+          "denominator": 1000000
+        },
+        "policy": "macro_STOP",
+        "opportunity": 5,
+        "initial_capacity": 8,
+        "remaining_capacity": 4,
+        "spent": 4,
+        "target_agent": 10,
+        "target_move": "m-10-14",
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "369/3650",
+          "1/2",
+          "3/8",
+          "1/2",
+          "1/32",
+          "1/15",
+          "0",
+          "1/4",
+          "6218831/8000000",
+          "369/7300"
+        ],
+        "learned": false,
+        "margin_infinite": false,
+        "margin": "0",
+        "scores": [
+          {
+            "option": "C",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          },
+          {
+            "option": "STOP",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          }
+        ],
+        "selected_option": "STOP",
+        "inference_calls": 0,
+        "inference_ns": 0
+      },
+      "mutated_record": {
+        "event": "macro_choice",
+        "at": {
+          "lower": 28498711,
+          "upper": 28498712,
+          "denominator": 1000000
+        },
+        "policy": "macro_STOP",
+        "opportunity": 5,
+        "initial_capacity": 8,
+        "remaining_capacity": 4,
+        "spent": 4,
+        "target_agent": 10,
+        "target_move": "m-10-14",
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "999",
+          "1/2",
+          "3/8",
+          "1/2",
+          "1/32",
+          "1/15",
+          "0",
+          "1/4",
+          "6218831/8000000",
+          "369/7300"
+        ],
+        "learned": false,
+        "margin_infinite": false,
+        "margin": "0",
+        "scores": [
+          {
+            "option": "C",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          },
+          {
+            "option": "STOP",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          }
+        ],
+        "selected_option": "STOP",
+        "inference_calls": 0,
+        "inference_ns": 0
+      }
+    },
+    {
+      "case": "gate_choice",
+      "rejected": true,
+      "reason": "late score/margin C tie",
+      "original_record": {
+        "event": "macro_choice",
+        "at": {
+          "lower": 28498711,
+          "upper": 28498712,
+          "denominator": 1000000
+        },
+        "policy": "macro_STOP",
+        "opportunity": 5,
+        "initial_capacity": 8,
+        "remaining_capacity": 4,
+        "spent": 4,
+        "target_agent": 10,
+        "target_move": "m-10-14",
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "369/3650",
+          "1/2",
+          "3/8",
+          "1/2",
+          "1/32",
+          "1/15",
+          "0",
+          "1/4",
+          "6218831/8000000",
+          "369/7300"
+        ],
+        "learned": false,
+        "margin_infinite": false,
+        "margin": "0",
+        "scores": [
+          {
+            "option": "C",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          },
+          {
+            "option": "STOP",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          }
+        ],
+        "selected_option": "STOP",
+        "inference_calls": 0,
+        "inference_ns": 0
+      },
+      "mutated_record": {
+        "event": "macro_choice",
+        "at": {
+          "lower": 28498711,
+          "upper": 28498712,
+          "denominator": 1000000
+        },
+        "policy": "macro_STOP",
+        "opportunity": 5,
+        "initial_capacity": 8,
+        "remaining_capacity": 4,
+        "spent": 4,
+        "target_agent": 10,
+        "target_move": "m-10-14",
+        "feature_schema": "late_target10_v1",
+        "features": [
+          "369/3650",
+          "1/2",
+          "3/8",
+          "1/2",
+          "1/32",
+          "1/15",
+          "0",
+          "1/4",
+          "6218831/8000000",
+          "369/7300"
+        ],
+        "learned": false,
+        "margin_infinite": false,
+        "margin": "0",
+        "scores": [
+          {
+            "option": "C",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          },
+          {
+            "option": "STOP",
+            "tasks": "0",
+            "time": "0",
+            "total": "0"
+          }
+        ],
+        "selected_option": "C",
+        "inference_calls": 0,
+        "inference_ns": 0
+      }
+    },
+    {
+      "case": "stop_action",
+      "rejected": true,
+      "reason": "independent END actor selection",
+      "original_record": {
+        "event": "actor_decision",
+        "at": {
+          "lower": 28498711,
+          "upper": 28498712,
+          "denominator": 1000000
+        },
+        "policy": "macro_STOP",
+        "remaining_capacity": 4,
+        "decision_mode": "WAIT",
+        "opportunity": 5,
+        "trigger": "public_age_gate",
+        "RR_cursor": -1,
+        "candidates": [
+          {
+            "move": "m-10-14",
+            "agent": 10,
+            "heading": "WE",
+            "public_launch": {
+              "lower": 27748711,
+              "upper": 27748712,
+              "denominator": 1000000
+            },
+            "probability": "369/3650",
+            "score": "0",
+            "skip_score": "0",
+            "claims": [
+              {
+                "task": 1311010000,
+                "remaining_route_items": 2,
+                "owners": 1
+              }
+            ],
+            "features": [
+              "1/2",
+              "1/15",
+              "1/32",
+              "1/2",
+              "1/15",
+              "1/256",
+              "0",
+              "0",
+              "0",
+              "0",
+              "369/3650",
+              "1/5",
+              "0",
+              "23/36",
+              "1",
+              "3/64",
+              "369/7300",
+              "369/116800",
+              "3/8",
+              "1/4",
+              "1/4",
+              "1781169/8000000",
+              "1/16",
+              "6218831/32000000"
+            ]
+          }
+        ],
+        "macro": "STOP",
+        "initial_capacity": 8,
+        "intervention_index": 0,
+        "pair_stage": 0,
+        "anchor_agent": 1000,
+        "anchor_move": "",
+        "anchor_tasks": [],
+        "second_eligible": [],
+        "head_lineage_count": 4,
+        "selected": "",
+        "selected_kind": "WAIT",
+        "END_only_known": 249,
+        "END_unknown": 0,
+        "private_progress_input": false,
+        "regime_input": false,
+        "future_head_input": false
+      },
+      "mutated_record": {
+        "event": "actor_decision",
+        "at": {
+          "lower": 28498711,
+          "upper": 28498712,
+          "denominator": 1000000
+        },
+        "policy": "macro_STOP",
+        "remaining_capacity": 4,
+        "decision_mode": "WAIT",
+        "opportunity": 5,
+        "trigger": "public_age_gate",
+        "RR_cursor": -1,
+        "candidates": [
+          {
+            "move": "m-10-14",
+            "agent": 10,
+            "heading": "WE",
+            "public_launch": {
+              "lower": 27748711,
+              "upper": 27748712,
+              "denominator": 1000000
+            },
+            "probability": "369/3650",
+            "score": "0",
+            "skip_score": "0",
+            "claims": [
+              {
+                "task": 1311010000,
+                "remaining_route_items": 2,
+                "owners": 1
+              }
+            ],
+            "features": [
+              "1/2",
+              "1/15",
+              "1/32",
+              "1/2",
+              "1/15",
+              "1/256",
+              "0",
+              "0",
+              "0",
+              "0",
+              "369/3650",
+              "1/5",
+              "0",
+              "23/36",
+              "1",
+              "3/64",
+              "369/7300",
+              "369/116800",
+              "3/8",
+              "1/4",
+              "1/4",
+              "1781169/8000000",
+              "1/16",
+              "6218831/32000000"
+            ]
+          }
+        ],
+        "macro": "STOP",
+        "initial_capacity": 8,
+        "intervention_index": 0,
+        "pair_stage": 0,
+        "anchor_agent": 1000,
+        "anchor_move": "",
+        "anchor_tasks": [],
+        "second_eligible": [],
+        "head_lineage_count": 4,
+        "selected": "m-10-14",
+        "selected_kind": "QUERY",
+        "END_only_known": 249,
+        "END_unknown": 0,
+        "private_progress_input": false,
+        "regime_input": false,
+        "future_head_input": false
+      }
+    },
+    {
+      "case": "budget",
+      "rejected": true,
+      "reason": "causal history/capacity count",
+      "original_record": {
+        "event": "actor_decision",
+        "at": {
+          "lower": 28498711,
+          "upper": 28498712,
+          "denominator": 1000000
+        },
+        "policy": "macro_STOP",
+        "remaining_capacity": 4,
+        "decision_mode": "WAIT",
+        "opportunity": 5,
+        "trigger": "public_age_gate",
+        "RR_cursor": -1,
+        "candidates": [
+          {
+            "move": "m-10-14",
+            "agent": 10,
+            "heading": "WE",
+            "public_launch": {
+              "lower": 27748711,
+              "upper": 27748712,
+              "denominator": 1000000
+            },
+            "probability": "369/3650",
+            "score": "0",
+            "skip_score": "0",
+            "claims": [
+              {
+                "task": 1311010000,
+                "remaining_route_items": 2,
+                "owners": 1
+              }
+            ],
+            "features": [
+              "1/2",
+              "1/15",
+              "1/32",
+              "1/2",
+              "1/15",
+              "1/256",
+              "0",
+              "0",
+              "0",
+              "0",
+              "369/3650",
+              "1/5",
+              "0",
+              "23/36",
+              "1",
+              "3/64",
+              "369/7300",
+              "369/116800",
+              "3/8",
+              "1/4",
+              "1/4",
+              "1781169/8000000",
+              "1/16",
+              "6218831/32000000"
+            ]
+          }
+        ],
+        "macro": "STOP",
+        "initial_capacity": 8,
+        "intervention_index": 0,
+        "pair_stage": 0,
+        "anchor_agent": 1000,
+        "anchor_move": "",
+        "anchor_tasks": [],
+        "second_eligible": [],
+        "head_lineage_count": 4,
+        "selected": "",
+        "selected_kind": "WAIT",
+        "END_only_known": 249,
+        "END_unknown": 0,
+        "private_progress_input": false,
+        "regime_input": false,
+        "future_head_input": false
+      },
+      "mutated_record": {
+        "event": "actor_decision",
+        "at": {
+          "lower": 28498711,
+          "upper": 28498712,
+          "denominator": 1000000
+        },
+        "policy": "macro_STOP",
+        "remaining_capacity": 3,
+        "decision_mode": "WAIT",
+        "opportunity": 5,
+        "trigger": "public_age_gate",
+        "RR_cursor": -1,
+        "candidates": [
+          {
+            "move": "m-10-14",
+            "agent": 10,
+            "heading": "WE",
+            "public_launch": {
+              "lower": 27748711,
+              "upper": 27748712,
+              "denominator": 1000000
+            },
+            "probability": "369/3650",
+            "score": "0",
+            "skip_score": "0",
+            "claims": [
+              {
+                "task": 1311010000,
+                "remaining_route_items": 2,
+                "owners": 1
+              }
+            ],
+            "features": [
+              "1/2",
+              "1/15",
+              "1/32",
+              "1/2",
+              "1/15",
+              "1/256",
+              "0",
+              "0",
+              "0",
+              "0",
+              "369/3650",
+              "1/5",
+              "0",
+              "23/36",
+              "1",
+              "3/64",
+              "369/7300",
+              "369/116800",
+              "3/8",
+              "1/4",
+              "1/4",
+              "1781169/8000000",
+              "1/16",
+              "6218831/32000000"
+            ]
+          }
+        ],
+        "macro": "STOP",
+        "initial_capacity": 8,
+        "intervention_index": 0,
+        "pair_stage": 0,
+        "anchor_agent": 1000,
+        "anchor_move": "",
+        "anchor_tasks": [],
+        "second_eligible": [],
+        "head_lineage_count": 4,
+        "selected": "",
+        "selected_kind": "WAIT",
+        "END_only_known": 249,
+        "END_unknown": 0,
+        "private_progress_input": false,
+        "regime_input": false,
+        "future_head_input": false
+      }
+    },
+    {
+      "case": "certificate",
+      "rejected": true,
+      "reason": "independent source release: certified lower > 13/20, no epsilon subtraction",
+      "original_record": {
+        "event": "certified_POSITION_committed",
+        "move": "m-3-2",
+        "at": {
+          "lower": 3416883,
+          "upper": 3416884,
+          "denominator": 1000000
+        },
+        "certified_lower": {
+          "lower": 744197,
+          "upper": 744198,
+          "denominator": 1000000
+        },
+        "epsilon": "1/10",
+        "removed": [
+          "cell-23-2"
+        ],
+        "endpoint_retained": true
+      },
+      "mutated_record": {
+        "event": "certified_POSITION_committed",
+        "move": "m-3-2",
+        "at": {
+          "lower": 3416883,
+          "upper": 3416884,
+          "denominator": 1000000
+        },
+        "certified_lower": {
+          "lower": 744197,
+          "upper": 744198,
+          "denominator": 1000000
+        },
+        "epsilon": "1/10",
+        "removed": [
+          "not-a-real-cell"
+        ],
+        "endpoint_retained": true
+      }
+    }
+  ],
+  "finished_unix_ns": 1791123957528117032
+}

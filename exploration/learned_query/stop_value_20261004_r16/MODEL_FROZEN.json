@@ -1,0 +1,60 @@
+{
+  "frozen_unix_ns": 1791124271639157168,
+  "activated": true,
+  "preferences": {
+    "STOP": 2,
+    "C": 9,
+    "neutral": 13
+  },
+  "training_worlds": [
+    "empty-32-32_scen2_offset96_train_131101_B8",
+    "empty-32-32_scen2_offset96_train_131101_B16",
+    "empty-32-32_scen2_offset112_train_131102_B8",
+    "empty-32-32_scen2_offset112_train_131102_B16",
+    "empty-32-32_scen2_offset128_train_131103_B8",
+    "empty-32-32_scen2_offset128_train_131103_B16",
+    "empty-32-32_scen2_offset144_train_131104_B8",
+    "empty-32-32_scen2_offset144_train_131104_B16",
+    "empty-32-32_scen2_offset160_train_131105_B8",
+    "empty-32-32_scen2_offset160_train_131105_B16",
+    "empty-32-32_scen2_offset176_train_131106_B8",
+    "empty-32-32_scen2_offset176_train_131106_B16",
+    "random-32-32-10_scen2_offset128_train_132101_B8",
+    "random-32-32-10_scen2_offset128_train_132101_B16",
+    "random-32-32-10_scen2_offset144_train_132102_B8",
+    "random-32-32-10_scen2_offset144_train_132102_B16",
+    "random-32-32-10_scen2_offset160_train_132103_B8",
+    "random-32-32-10_scen2_offset160_train_132103_B16",
+    "random-32-32-10_scen2_offset176_train_132104_B8",
+    "random-32-32-10_scen2_offset176_train_132104_B16",
+    "random-32-32-10_scen2_offset192_train_132105_B8",
+    "random-32-32-10_scen2_offset192_train_132105_B16",
+    "random-32-32-10_scen2_offset208_train_132106_B8",
+    "random-32-32-10_scen2_offset208_train_132106_B16"
+  ],
+  "schema": "late_target10_v1",
+  "rule": "task prediction >0, or =0 and time gain >=1; otherwise C",
+  "max_depth": 1,
+  "min_leaf_rows": 4,
+  "tree": {
+    "feature": 8,
+    "threshold": "4992909/6400000",
+    "left": {
+      "tasks": "1/8",
+      "time_gain": "-150785119/32000000",
+      "n": 16,
+      "weight": "8"
+    },
+    "right": {
+      "tasks": "-1/4",
+      "time_gain": "-674889/200000",
+      "n": 8,
+      "weight": "4"
+    }
+  },
+  "root_loss": "102950805265170052206599/51545899200000000000000",
+  "loss": "55753005367463871241519/34363932800000000000000",
+  "training_gated_rows": 24,
+  "training_pairs_sha256": "623a91188abbd7423971107d82d593d9c698b1d6e7aa9f22a992ed570502e98b",
+  "learn_source_sha256": "d4a7b5735a2bdde356d6808a37f145ca491f8eaebbac85e868ff585a1afc8ea0"
+}
