@@ -1,0 +1,622 @@
+{
+  "scope": "New offline artifacts only; all raw episodes remain referenced in DATASET_AUDIT",
+  "native_episodes": 0,
+  "files": [
+    {
+      "path": "ANALYSIS_START.json",
+      "bytes": 524,
+      "sha256": "e2e8279760fc97245022ced4e4984ba9d1d2398b14ab1c9e7620be24f143077f"
+    },
+    {
+      "path": "CAL_DEVELOPMENT_REPLAY.json",
+      "bytes": 22996,
+      "sha256": "4785f9590cea611e6e8831ca2d91dee0dadf52bfcfa025a7d3f5b9443e620d5f"
+    },
+    {
+      "path": "COMPLETION.json",
+      "bytes": 313,
+      "sha256": "b683073ae80ef6005fabe18ef5c1db75235a0a7a244272400787303be83bf8b8"
+    },
+    {
+      "path": "DATASET.json",
+      "bytes": 72872,
+      "sha256": "a684a6239354df6517875dbe57b08a5e813f5d31c1416736b15a2f55bbf9d2b1"
+    },
+    {
+      "path": "DATASET_AUDIT.json",
+      "bytes": 49357,
+      "sha256": "14c29f31e585106a5e7c66b509a3c53fae1c013e5fbab55f0ee02554346be907"
+    },
+    {
+      "path": "FAMILY_CHOICES.csv",
+      "bytes": 3077,
+      "sha256": "446e446a1c74e3d93e75bf0987c2d053a784c7ba54b5bf511a9b6c641292a23a"
+    },
+    {
+      "path": "FINAL_TRAIN_RESUBSTITUTION.json",
+      "bytes": 10300,
+      "sha256": "d69d1bc88add22c3e9782e4b8e09a3a553faef037773cad9acab805f15eacd2a"
+    },
+    {
+      "path": "GROUPED_FOLDS.json",
+      "bytes": 1144641,
+      "sha256": "6112a3ff929e3edde5f0ef6e4ceedf1749daac35c167d37f859ed021395c16e5"
+    },
+    {
+      "path": "MODEL_DIAGNOSTICS.json",
+      "bytes": 1128,
+      "sha256": "0e8c3119aec3dac408f3c86f1054b22df6346e19fb43955d89b103eabd8177a0"
+    },
+    {
+      "path": "MODEL_FROZEN.json",
+      "bytes": 101937,
+      "sha256": "a85c090d6fddcc76c124180cb518dcfd3ff7a54d2e310273d63208515cc562cb"
+    },
+    {
+      "path": "OOF_PREDICTIONS.json",
+      "bytes": 13320,
+      "sha256": "37b29647586c74b415af8d335dbd76b7f31c8ba682bbdc9cce7a996c0a8f9ed7"
+    },
+    {
+      "path": "OOF_RESULTS.json",
+      "bytes": 76905,
+      "sha256": "270129afae299a181063d275c34de5e843fe39121421618ca1273b655f557479"
+    },
+    {
+      "path": "ORACLE_FRONTIERS.json",
+      "bytes": 1337652,
+      "sha256": "5ac0fba2afb586277a0f1f296d410d762185c8c04c3606f82184334681c3a267"
+    },
+    {
+      "path": "PROTOCOL.md",
+      "bytes": 6992,
+      "sha256": "3686b7b8f6d3f56555102a8e89bf97eb0c2700d129df8f32e94bfe0444e3355c"
+    },
+    {
+      "path": "REGISTRATION.json",
+      "bytes": 1514,
+      "sha256": "af4579f0ca1b5f97d40c0c0da8ad30be93d309e6770ff4ecb3797d33b8c03a06"
+    },
+    {
+      "path": "REPLAY_RECEIPT.json",
+      "bytes": 477,
+      "sha256": "975020579ebca578f0dedbcf94e40885d20d5092575f5776d1e6c1284b31f4ee"
+    },
+    {
+      "path": "REPORT.md",
+      "bytes": 7697,
+      "sha256": "ddce70b85ddde001bf699feaad18dc7e61f0bff5fcce8d19f703a6256ce0a908"
+    },
+    {
+      "path": "VERIFICATION.json",
+      "bytes": 363,
+      "sha256": "3cc5786a3bae20003dd38782b48ca7675b3bdfa62f1d3f9e7f889e5c4bbf3d0c"
+    },
+    {
+      "path": "replay.py",
+      "bytes": 846,
+      "sha256": "d8852f86abdc52c0125ef84599427ea9ed6a0570f27db749982ba15e864037b6"
+    },
+    {
+      "path": "report.py",
+      "bytes": 9624,
+      "sha256": "3ffdd07a51f2da5d0c9fcbff5e5f73972ff97e198d19c2ba7babfe467700aa0d"
+    },
+    {
+      "path": "study.py",
+      "bytes": 16515,
+      "sha256": "ceccbd33d6671168495fdc226ad444701155c9fed90c2d507bd4fab863931402"
+    },
+    {
+      "path": "verify_results.py",
+      "bytes": 5642,
+      "sha256": "206ac791e71ba4fa0fcc1620441724e38103fb586189bfed803f9d9f9ccc0bfb"
+    }
+  ],
+  "referenced_raws": [
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset96_train_131101_B8__macro_C.jsonl",
+      "sha256": "2b36b9630cc46345cb3bac1397176b2072e6507eeed0da4b0ea73cb3265a3ada",
+      "receipt_sha256": "d58e281d801a68e8aad3d942b2a3b18382fa46e6906352dab327540ee8cbec6f",
+      "planner_sha256": "9f8b6e1995658fe1d3866538df9e85ece1624e7d4d4f2912a600420a4df4f301",
+      "input_sha256": "3789087f5c2ea3f417a3d100c3051c28446e1e1c5c0b47f4e913659fff0e1780"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset96_train_131101_B8__macro_LD.jsonl",
+      "sha256": "519a33da77bb83af5fbe29b2368be493d2da4b2531d3d0212fd6be3320073202",
+      "receipt_sha256": "0de1dce5e8ff6c5aeb328d60572f7ca8c75f9128b4616c223859f12983822466",
+      "planner_sha256": "a6ceaf292013f76cf5ef418658141bb7623499163b880c997e9db4b951dac3bc",
+      "input_sha256": "3789087f5c2ea3f417a3d100c3051c28446e1e1c5c0b47f4e913659fff0e1780"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/stop_value_20261004_r16/runs/empty-32-32_scen2_offset96_train_131101_B8__macro_STOP.jsonl",
+      "sha256": "d4862df9bd9a7c0ba78ceb6dced158693b06bd2b350465df8b4d6cc8099076fb",
+      "receipt_sha256": "9d996255500caacc17dd9342e6926ebc07b33e852ab233b2925bb051c3f15227",
+      "planner_sha256": "083a00604d05f8cd986cafedcfa7fbce69a2ee5d851dd3f7baba86a08d6ea338",
+      "input_sha256": "3789087f5c2ea3f417a3d100c3051c28446e1e1c5c0b47f4e913659fff0e1780"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset96_train_131101_B16__macro_C.jsonl",
+      "sha256": "3d5120fbcb4c030fb8e9e8ddc2b44e8b049cd2b2b3309bebe4393db6e0e2086d",
+      "receipt_sha256": "c7fb1ed9f6987b1335e7b5e19e4b5e2fea30552464926ef2f549497a27aad7ae",
+      "planner_sha256": "7ac29b26b2c8417cd7f648f2d96d93c9c674ece2278a5a893d6a0efdc495a8f3",
+      "input_sha256": "3789087f5c2ea3f417a3d100c3051c28446e1e1c5c0b47f4e913659fff0e1780"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset96_train_131101_B16__macro_LD.jsonl",
+      "sha256": "1a7511aff234972baa35c8ec2d9986a653524cfea6096451ae3e8cef2d3ffc11",
+      "receipt_sha256": "0531ca599c4addd565e3925f7caf760e0586a429978d3e5e7c30e1701ea44860",
+      "planner_sha256": "4af22c2191d81bf1c7795644efc45156ed594236a25c868639fb4b1ef0d50d1b",
+      "input_sha256": "3789087f5c2ea3f417a3d100c3051c28446e1e1c5c0b47f4e913659fff0e1780"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/stop_value_20261004_r16/runs/empty-32-32_scen2_offset96_train_131101_B16__macro_STOP.jsonl",
+      "sha256": "b89b4234479a727ea5cad618f85e34ae7319a012387ca8ac92cb0e87ae3bfdd1",
+      "receipt_sha256": "3fb9c62f15d4617951bd189601cdb74c7b43f433b9296324a59a62de97893736",
+      "planner_sha256": "d29846fee38bdc3fcb93ab4d6fc6fec581ed72e4dd31954dd6c006b6f7b752ab",
+      "input_sha256": "3789087f5c2ea3f417a3d100c3051c28446e1e1c5c0b47f4e913659fff0e1780"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset112_train_131102_B8__macro_C.jsonl",
+      "sha256": "40a5ad33593c24c9e46666c1f32fb60c6aa03cb263972aeca94c24e2b054374a",
+      "receipt_sha256": "8eb561895b049661f39f6173c25489fab7bef93a44dd7aa546aff7e9ad86d34b",
+      "planner_sha256": "9c264ed654a256c23e34ea1d034364c35e21953eac00a7179cb39ad7302227e7",
+      "input_sha256": "79fdc73f59c3ab6eb400ac977f3a2121ede286c5ac68c6b4d936ae3c3e830950"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset112_train_131102_B8__macro_LD.jsonl",
+      "sha256": "debd84b9be070d689aafc82927ac2f0e60c459a68d99ce13d6f96af34eb56580",
+      "receipt_sha256": "d3bae5ed66a10ff80e4e808ff52a7825ecc1c896929ba73d437ea095df49b550",
+      "planner_sha256": "0949e9bcd5d94eb9449fb412853edfb8aed2fc95496c86e435d2deff89d8dc5d",
+      "input_sha256": "79fdc73f59c3ab6eb400ac977f3a2121ede286c5ac68c6b4d936ae3c3e830950"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/stop_value_20261004_r16/runs/empty-32-32_scen2_offset112_train_131102_B8__macro_STOP.jsonl",
+      "sha256": "c3e8582cbbd081851bc26f1a14a0e688432881cc5135c3736d66149e4ee55259",
+      "receipt_sha256": "ff849ce85fc1a584583ce770d1a25bfb49d1fdffdcb1b9007762dd4c09c43f9f",
+      "planner_sha256": "a463666539102b85aae3947e285d5a83bc049267b8d9d62d16eb0e36b6beec82",
+      "input_sha256": "79fdc73f59c3ab6eb400ac977f3a2121ede286c5ac68c6b4d936ae3c3e830950"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset112_train_131102_B16__macro_C.jsonl",
+      "sha256": "e7d15c43c9d3ebc9e2a4599dd6952026a522608c3fb1eeb11bf4598253f2531e",
+      "receipt_sha256": "afc94f437707471bb7a3c83f524e152e9a471c975dcf09afe6e07639ea1665c4",
+      "planner_sha256": "14bcbbbf07ed6505635d9c9dd99ebc938d1d012f131dff637ef71c476b2535fa",
+      "input_sha256": "79fdc73f59c3ab6eb400ac977f3a2121ede286c5ac68c6b4d936ae3c3e830950"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset112_train_131102_B16__macro_LD.jsonl",
+      "sha256": "8e022cd7cfe624337f3d5d57c479619f014e93e5984af239be929b8ab1c1677d",
+      "receipt_sha256": "42db76ec4d7896e042558566984ffaaf90fe58b29aedb59f9d9b2d38be35f08a",
+      "planner_sha256": "09872725ec3b3233f453678250cfd5ee2e6fe3f92760ae1dafcbfdc54e768265",
+      "input_sha256": "79fdc73f59c3ab6eb400ac977f3a2121ede286c5ac68c6b4d936ae3c3e830950"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/stop_value_20261004_r16/runs/empty-32-32_scen2_offset112_train_131102_B16__macro_STOP.jsonl",
+      "sha256": "25b3f077d1e0212b979cd55f9101e055a75d01f8d90d06a9a31951df8ce83679",
+      "receipt_sha256": "89adba536ca884c4603c220bb91246094234a1fbb5b644c595ae2c7947595aeb",
+      "planner_sha256": "b7e0678af215ed45b21b7153c2ef003e3da50bc9e19cea584de2a42a44c152fa",
+      "input_sha256": "79fdc73f59c3ab6eb400ac977f3a2121ede286c5ac68c6b4d936ae3c3e830950"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset128_train_131103_B8__macro_C.jsonl",
+      "sha256": "924f92e8d6cd515cb05eac982848b77a93fa8dcf00be1e5ee1c52fe369eed97c",
+      "receipt_sha256": "9bcfd54cec80ff4fa9e6afa826ce61b2b78e7cd25fff3dd16f8d4273264d23b8",
+      "planner_sha256": "0a13b5d83ea737280845fe34a0bfbe795ac0499a3b14e0a76a8616aac0582689",
+      "input_sha256": "1c961b4c5ddc1e521b747caee6f71faa1478d5f2fe3a3a7d9c06f072c2f6be52"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset128_train_131103_B8__macro_LD.jsonl",
+      "sha256": "c9c54d9811cbda6e9d613913996d525774b0c606eacb86b71051120f53c5e497",
+      "receipt_sha256": "fb999128fb75db325d8714e6834d22415d1bd5bb0fecb048bf20b4117dc5ace6",
+      "planner_sha256": "dbfdb19a4729ab56905f89a75f123adafa6384d13199fd8a7c30fb100b89b105",
+      "input_sha256": "1c961b4c5ddc1e521b747caee6f71faa1478d5f2fe3a3a7d9c06f072c2f6be52"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/stop_value_20261004_r16/runs/empty-32-32_scen2_offset128_train_131103_B8__macro_STOP.jsonl",
+      "sha256": "f673038a78f28fb0c2fb4b1788dd50f6e7925a3c642ce76c3e4a90d5bb305f62",
+      "receipt_sha256": "ce75dc78778a27cc2436c6b4f08fd4b20cd7fd291e0672dc13802c7e967d5504",
+      "planner_sha256": "0e191bf206dc316a991ecb97f7a3be59e202423222de91c0d59a6224506d5468",
+      "input_sha256": "1c961b4c5ddc1e521b747caee6f71faa1478d5f2fe3a3a7d9c06f072c2f6be52"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset128_train_131103_B16__macro_C.jsonl",
+      "sha256": "2ff80b215a3635c0a4e172c5d3887d37fdca09f87e5dd88ed233729f3027476c",
+      "receipt_sha256": "dc8d4489fc58523406c538a8d9453b5d62688c9e94deef6f890a90ffaa2ac781",
+      "planner_sha256": "fc02bf333b2aa37388efda88889dbfaca90f01df710e0f0e2721616d07ce62dc",
+      "input_sha256": "1c961b4c5ddc1e521b747caee6f71faa1478d5f2fe3a3a7d9c06f072c2f6be52"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset128_train_131103_B16__macro_LD.jsonl",
+      "sha256": "e64e729391af24759a5ad28965abb36b741d3b919ebc017f57eed5137d09eab3",
+      "receipt_sha256": "e54a0b3b62ee25e803c6307d116caed96f7dda809b4aa99adbe5055673551455",
+      "planner_sha256": "7bd7c8fe00aeda637f29520661fdc60d8059c8616dbdf7a62b34c05850bcc77f",
+      "input_sha256": "1c961b4c5ddc1e521b747caee6f71faa1478d5f2fe3a3a7d9c06f072c2f6be52"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/stop_value_20261004_r16/runs/empty-32-32_scen2_offset128_train_131103_B16__macro_STOP.jsonl",
+      "sha256": "a7b7c017e811a7e16a6957b5a1e255e42817fc314c4f28a7f207af03448fcd80",
+      "receipt_sha256": "8b955cbab77b5084efefa3a695c00c2fbd991048dd1ad893751afef78b47cfcc",
+      "planner_sha256": "50257e2fe6421c30da02303c02da721534179508b8f5995139f24c06052e2265",
+      "input_sha256": "1c961b4c5ddc1e521b747caee6f71faa1478d5f2fe3a3a7d9c06f072c2f6be52"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset144_train_131104_B8__macro_C.jsonl",
+      "sha256": "d37a4670ae261a11cc8415c52ad85c292ecc942a0a4bd1989c368ff19ef3aa10",
+      "receipt_sha256": "8472431f6b34ff414819ab8e3bce36423c64f69ef21704fefe311eea0f1ff4ca",
+      "planner_sha256": "1e6bfff31740e3f9e17b7d51198d0220e3f6ddf0305379ba8781ee1b222ceb5c",
+      "input_sha256": "0b348b718b9f4f3d06da893450bb90d29d8bed724468d3ba85ada76562b81076"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset144_train_131104_B8__macro_LD.jsonl",
+      "sha256": "5d51d81d075e7a71bd4d63e9953b8616575fcce9cee8337a8735206c2cdcf4f7",
+      "receipt_sha256": "fd8128f028c4fadf2f8c3a0b49ac6575e31091a8de823af1bcb6a6347fe8930e",
+      "planner_sha256": "48395abecf490e009f088aab9dc005b65aab0e4c1a62e9da6573f72050adacfc",
+      "input_sha256": "0b348b718b9f4f3d06da893450bb90d29d8bed724468d3ba85ada76562b81076"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/stop_value_20261004_r16/runs/empty-32-32_scen2_offset144_train_131104_B8__macro_STOP.jsonl",
+      "sha256": "9dd7bd3c80d2a0beb9600f6a79709b2376015bf8b6fc51fbb2ebe43d89cc5a60",
+      "receipt_sha256": "4acc22e13fbde27ed91e73c38f334f6132a2d69d18203079291826ce14cc2aee",
+      "planner_sha256": "9d25e055fdc0ba8d52ba0ed783718a7d9cc9583f59c20a2c0b8d996cb255d36e",
+      "input_sha256": "0b348b718b9f4f3d06da893450bb90d29d8bed724468d3ba85ada76562b81076"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset144_train_131104_B16__macro_C.jsonl",
+      "sha256": "fa764c294318d9c8f6eb911b9c836348dd2d4dcbfb200733fbcac33601b35aba",
+      "receipt_sha256": "fd01631ef30e7cbd9038132b46756a5bce50b92915fae23afc97c6b01953ea4e",
+      "planner_sha256": "d1a2fc310acf4a46d03fe236d8a659e4301663521387bb8678798d775f330375",
+      "input_sha256": "0b348b718b9f4f3d06da893450bb90d29d8bed724468d3ba85ada76562b81076"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset144_train_131104_B16__macro_LD.jsonl",
+      "sha256": "eea51ad5c2d557b391cf9f51bb08047c24a3784f6bab9653537ab7a60078bacd",
+      "receipt_sha256": "aadd861b193e1833df6239d72ab11ae4a0428923babee1939f5907cfc6faf70d",
+      "planner_sha256": "74dbb55f3d1691190742bc36259f731bdf96548e091ebd870d0adb5a86ec7e48",
+      "input_sha256": "0b348b718b9f4f3d06da893450bb90d29d8bed724468d3ba85ada76562b81076"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/stop_value_20261004_r16/runs/empty-32-32_scen2_offset144_train_131104_B16__macro_STOP.jsonl",
+      "sha256": "17567074d7862c4f05e5ea5c068bc2c7346decf9015161158e286b85220a2918",
+      "receipt_sha256": "4c3338bfa18ad425585633f70e0a90386b29a69da1a45bf279199f4db0fc331e",
+      "planner_sha256": "7d64149edd532c26aa3d08af72fc1f0d9efd58e128e273bd2d3e9af94f1d9b6a",
+      "input_sha256": "0b348b718b9f4f3d06da893450bb90d29d8bed724468d3ba85ada76562b81076"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset160_train_131105_B8__macro_C.jsonl",
+      "sha256": "f7661c67718f5230c2e1bec0e1f29198486027ed3a40cfd0cc220b8f7ecdf2e8",
+      "receipt_sha256": "d8a0f41f99d46dcd03d2d982a702ba66829207b933143c1ac30b5352348760c2",
+      "planner_sha256": "6b512f218909cb370b6fc54d30d7086570457f32b754cb3fab0239c16ca5108c",
+      "input_sha256": "c3345338e20efe9281c2ad5a738decbe1bc0978718a37ab394f19e84f379645c"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset160_train_131105_B8__macro_LD.jsonl",
+      "sha256": "9851a842cf9dedf62d9392343f6a3680fcff0a2aedae7a55748ebd8efc49d050",
+      "receipt_sha256": "e8ed85171833deccadb0572f9af3f79f2903c82cbeaa407c1c1e005852d4d21e",
+      "planner_sha256": "327e3b11fce52a14239f57441f5535b311f0d30dd1bf4cf980a7bf0069bb0182",
+      "input_sha256": "c3345338e20efe9281c2ad5a738decbe1bc0978718a37ab394f19e84f379645c"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/stop_value_20261004_r16/runs/empty-32-32_scen2_offset160_train_131105_B8__macro_STOP.jsonl",
+      "sha256": "ccbff82b4b32c25e492df19512cbab61d0c4c50237b80fd4dcf9e0f689acbd7d",
+      "receipt_sha256": "75fd1c463df865e0faf6602beb23c53f823eed65c09c802e9ffea06eebdc1922",
+      "planner_sha256": "da0f650a34224905cf55de14d1746f7e5d099562b3f7feaa606aefddb51bf82d",
+      "input_sha256": "c3345338e20efe9281c2ad5a738decbe1bc0978718a37ab394f19e84f379645c"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset160_train_131105_B16__macro_C.jsonl",
+      "sha256": "746b781de0e4940d398d6e52fadb85cac8e2e4285ca53bce1738f99d1468c791",
+      "receipt_sha256": "0f49a7771865a5d42e556a72756e99e25fc97e4efe3a42c266428819bed26fdb",
+      "planner_sha256": "b0c2b996996ca26a51ccb684b07f870170bdc8891264cc0e3cb5845378af410a",
+      "input_sha256": "c3345338e20efe9281c2ad5a738decbe1bc0978718a37ab394f19e84f379645c"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset160_train_131105_B16__macro_LD.jsonl",
+      "sha256": "0c0d52bcbc8575cc4b023faafcd2e06f2e8a2ebb74565b4fdc71facf464cea20",
+      "receipt_sha256": "0287e744957af380e5d55b7dd998828cf9639fca99a2dca9e20158f027f4d84b",
+      "planner_sha256": "ce4e7f00dc61d80d27fbb0ac6253ee7a41c84d9d6ac68b80681828b4e8e5e3dc",
+      "input_sha256": "c3345338e20efe9281c2ad5a738decbe1bc0978718a37ab394f19e84f379645c"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/stop_value_20261004_r16/runs/empty-32-32_scen2_offset160_train_131105_B16__macro_STOP.jsonl",
+      "sha256": "09a2349604c655e6c47544726dedd9ef989dd12532dfb98529f5a6b1182452ed",
+      "receipt_sha256": "3165920dc93d65013695bfd4a301bd50605dacf2e880ca6e756495636e06d755",
+      "planner_sha256": "ca83664791f173caf41695281046c4e33ff622e2f4eb4b4e6587e8243fc58ed1",
+      "input_sha256": "c3345338e20efe9281c2ad5a738decbe1bc0978718a37ab394f19e84f379645c"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset176_train_131106_B8__macro_C.jsonl",
+      "sha256": "91414ec0191fefefff8a45d4a43566dd83d37ff50653175b5d44d3451ef035a8",
+      "receipt_sha256": "daaf7884071b9fb4f02f35e1149d43cc3389cd1ed9010e22aa87af11fb8ccc90",
+      "planner_sha256": "a0715d82acc3ce5306989d28e9005163e9f07a63575917c2db1cac04abc91635",
+      "input_sha256": "1b91061c50cbe52049c6f717a50cb4284ee23ed0f21cb956b5580eeb752cd1c2"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset176_train_131106_B8__macro_LD.jsonl",
+      "sha256": "7c611a848c988422ed55b924ee52efb05963135e0ba6ac7677e34e6881beed07",
+      "receipt_sha256": "92d8e4f11f865ae8525e7dd1203b9290e5babbef5f1266e7df01c874224bc468",
+      "planner_sha256": "9bcf93238fcf8bbff732c2efe20b610fe6729cc8676288ee1afd50fce7627f82",
+      "input_sha256": "1b91061c50cbe52049c6f717a50cb4284ee23ed0f21cb956b5580eeb752cd1c2"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/stop_value_20261004_r16/runs/empty-32-32_scen2_offset176_train_131106_B8__macro_STOP.jsonl",
+      "sha256": "2ea20f7846b53e1765d0c94d4c591b1feaf812ab6952756cd37fc6abbb9164bf",
+      "receipt_sha256": "6da188696da8c6869ab99a6d05a9139ebf9a4fa2dba58cd7d41fff6e230ae9d8",
+      "planner_sha256": "939b7cab07fe88080e3a9a926077da7551b6080438ac45318cb681d63f1c2e1a",
+      "input_sha256": "1b91061c50cbe52049c6f717a50cb4284ee23ed0f21cb956b5580eeb752cd1c2"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset176_train_131106_B16__macro_C.jsonl",
+      "sha256": "982e9764df5b652625eb584a1a825495741849de2b141229bccb24a189bea45a",
+      "receipt_sha256": "a5165c11a796f5ee8c8bd9802e991acc256fe607be109d16453fcc8312eaaca2",
+      "planner_sha256": "b543f0ef04d9f9efa1db9ca93708eac45e9f4645cf0b48e06deaa07ba324e5ff",
+      "input_sha256": "1b91061c50cbe52049c6f717a50cb4284ee23ed0f21cb956b5580eeb752cd1c2"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/empty-32-32_scen2_offset176_train_131106_B16__macro_LD.jsonl",
+      "sha256": "e9fdff1ca54d9c7b0f9cec2665bdcc0de8f3c6b310f833e258f076df8227b5ab",
+      "receipt_sha256": "df1d5c93a8651c2cba26f63615284fb7681add1144b38807ffaf9f78c28ef704",
+      "planner_sha256": "17b706458b998a463c6d3eee5f6f331f5979174a082ac5e629ce221e7306715d",
+      "input_sha256": "1b91061c50cbe52049c6f717a50cb4284ee23ed0f21cb956b5580eeb752cd1c2"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/stop_value_20261004_r16/runs/empty-32-32_scen2_offset176_train_131106_B16__macro_STOP.jsonl",
+      "sha256": "915c2bc2328b067f8636282b8dccda0c51bac6dbaf435e83e017ce11384ba6cc",
+      "receipt_sha256": "3b85c745e1da901c4971783f82167f7695c221155654ac1696b4051e6ff37b62",
+      "planner_sha256": "d40ac37e03881c7d14c66ac2497f4eb63c66f271b85f317820061b27b9c20834",
+      "input_sha256": "1b91061c50cbe52049c6f717a50cb4284ee23ed0f21cb956b5580eeb752cd1c2"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/random-32-32-10_scen2_offset128_train_132101_B8__macro_C.jsonl",
+      "sha256": "76014c23ceb96d59e7326bb0ba37d06c9800783fd418ca5dfc4b7c2dc616add6",
+      "receipt_sha256": "f977e00bd309a4901229d341333b90d647cefc8ed4250a6dafe3baa6637c44e9",
+      "planner_sha256": "d3a825c6def8c1d89e03ee2a08a6f870724c5feea2a884f0870cbeb700c4e8ea",
+      "input_sha256": "2edb485c4543dfa1b500d8085477f55e6c6f70800e67086bb4e512ea1ff59ad8"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/random-32-32-10_scen2_offset128_train_132101_B8__macro_LD.jsonl",
+      "sha256": "fee1ff3d837814b6d29399043b31bbb283afada0dc14dea8bc7c945780cd0008",
+      "receipt_sha256": "b997400f4ec04de82e7a81d2431de62af69db43430e03c60214b187dafb587e3",
+      "planner_sha256": "49d55b03b839b24c53bec166d50833e4145af33eff31ab5228fb461a6ffb4fb7",
+      "input_sha256": "2edb485c4543dfa1b500d8085477f55e6c6f70800e67086bb4e512ea1ff59ad8"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/stop_value_20261004_r16/runs/random-32-32-10_scen2_offset128_train_132101_B8__macro_STOP.jsonl",
+      "sha256": "d0980fcefedbb7cabec47b9ece98fa0fb4c7e9c35661cfee65597c242a6ecb00",
+      "receipt_sha256": "bc86b12a21c27511887b267496b37defe480130784e8af3c1837c3d7dceeea5c",
+      "planner_sha256": "a11fe697bd21d7e59adc92c6c420a29bdb0fabccb134e4f0f17bc78a6721de77",
+      "input_sha256": "2edb485c4543dfa1b500d8085477f55e6c6f70800e67086bb4e512ea1ff59ad8"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/random-32-32-10_scen2_offset128_train_132101_B16__macro_C.jsonl",
+      "sha256": "997a7f746740a614062804ec9278b46eadb46e119fef2a6e67da4018b80c11c5",
+      "receipt_sha256": "3196d44543df89b74d50d4e7897a5346437716b30db998cf6876f784e65de66f",
+      "planner_sha256": "275defcdb8c0babf1a6c46f9738b6f90b18131ad44d9e9e3d43d7ee2461df1ba",
+      "input_sha256": "2edb485c4543dfa1b500d8085477f55e6c6f70800e67086bb4e512ea1ff59ad8"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/random-32-32-10_scen2_offset128_train_132101_B16__macro_LD.jsonl",
+      "sha256": "3a80461329cad2cff4c7b8ae3af390ac6aba8567ac97732394ddca4079ae7ab6",
+      "receipt_sha256": "d7c367b729c0f742b6249f98ddc66e24b42969dc264dae8b98cd4869ccb79e1f",
+      "planner_sha256": "eb656fdcf21c0970275f1131f1f8fcc7e691f5804efbf471154afbc954377913",
+      "input_sha256": "2edb485c4543dfa1b500d8085477f55e6c6f70800e67086bb4e512ea1ff59ad8"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/stop_value_20261004_r16/runs/random-32-32-10_scen2_offset128_train_132101_B16__macro_STOP.jsonl",
+      "sha256": "b92d43d45397a0f2349db85481aff1756a97daa556f97be0bb75204569102267",
+      "receipt_sha256": "01ed342be3b84e11befa0e5d25ed598abd9edbefde356833a0254248b7d3441c",
+      "planner_sha256": "2d024d3c541937c8ba35e7407962eb9874c995189fefa7e046b469809c0dd07d",
+      "input_sha256": "2edb485c4543dfa1b500d8085477f55e6c6f70800e67086bb4e512ea1ff59ad8"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/random-32-32-10_scen2_offset144_train_132102_B8__macro_C.jsonl",
+      "sha256": "101987384b7f94efc1b25d3677f1d5f3405344debbf49f27ac2f256557eb39fc",
+      "receipt_sha256": "e37a47f0d6d55b1eb57edeb6bc0a04e397c6a4b5838c6a90d6c42a9a83f23347",
+      "planner_sha256": "ce1fa482cc8ff1cbefc89f9e7beba1f53ac6cb991a49884f6eaef11bfd405232",
+      "input_sha256": "df3a6ab5e90779264b2ef456d6897f94c55c30604c640195d286daf8643f603b"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/random-32-32-10_scen2_offset144_train_132102_B8__macro_LD.jsonl",
+      "sha256": "044996a7a71425ff277b9962e88a6c771e51ce1f5f3c495fa70b70161eae7d16",
+      "receipt_sha256": "7907c7ccf127b495734c4b936be82c80fbbb98ffa8f160897ec27d95be33ca04",
+      "planner_sha256": "ef6d6d740ac61b8d0733ec45c74159ead45c067930cc9049244251fe2b77168e",
+      "input_sha256": "df3a6ab5e90779264b2ef456d6897f94c55c30604c640195d286daf8643f603b"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/stop_value_20261004_r16/runs/random-32-32-10_scen2_offset144_train_132102_B8__macro_STOP.jsonl",
+      "sha256": "5ed22bcd1e8854027f602a21f5dadf3e9a092a1a96d4df85e165af1ad9f1cf63",
+      "receipt_sha256": "38b75659a9f9c376e35a86749ee1f2348cd0834db86d97824f4339e61810a3c6",
+      "planner_sha256": "65b213a009b5786cff17181c58cff923cd6344b505a61d32ea355dde2637880f",
+      "input_sha256": "df3a6ab5e90779264b2ef456d6897f94c55c30604c640195d286daf8643f603b"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/random-32-32-10_scen2_offset144_train_132102_B16__macro_C.jsonl",
+      "sha256": "71643f325316c5ba566c1b2ddfc1c2f8702210ae840cb9ab9fa0d4ee0259d18e",
+      "receipt_sha256": "50d3e0aa9dfbfe4b367d77ca2b1db643b0a2d4b143ea43a37c6d0958c85e54a2",
+      "planner_sha256": "5fe20dc78d5e132c9c74dec67fbae74a062cdf021dbe583b02bd0c5368b2ccbf",
+      "input_sha256": "df3a6ab5e90779264b2ef456d6897f94c55c30604c640195d286daf8643f603b"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/random-32-32-10_scen2_offset144_train_132102_B16__macro_LD.jsonl",
+      "sha256": "2f756d3a8441696db0171afde91895dd01eb975ed95fd87512a1accc9b36612a",
+      "receipt_sha256": "6c5175f0ae9aff40b0e4066b2c4487b399feb0a23145e2b0e62c516325199682",
+      "planner_sha256": "6a56baaff84c38a4e65e85a673c92388c56a69e9ab432a26118cbecf4502693b",
+      "input_sha256": "df3a6ab5e90779264b2ef456d6897f94c55c30604c640195d286daf8643f603b"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/stop_value_20261004_r16/runs/random-32-32-10_scen2_offset144_train_132102_B16__macro_STOP.jsonl",
+      "sha256": "d0d0e13d7cbdc55522bf870b2f1ae4e0ea2447ee758c6a512eac49afc24ae963",
+      "receipt_sha256": "aabfcafe518b1d9ce55f03c46e6b518be8163f132efe87283a53a8633397a10b",
+      "planner_sha256": "22e039ef5c68500c2e7aa0e84c1575a3c1795ea03e34c44d5649f1ace551f677",
+      "input_sha256": "df3a6ab5e90779264b2ef456d6897f94c55c30604c640195d286daf8643f603b"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/random-32-32-10_scen2_offset160_train_132103_B8__macro_C.jsonl",
+      "sha256": "1acb923d2c50ffebf684d62a0f46bed199be0a622d59e7097485959d1ffc43a6",
+      "receipt_sha256": "b2e4b517d54e71ffaae6a552bb4c38714c035de47195a2db3bba5bbed481da59",
+      "planner_sha256": "df83c0093c1b229c57a8158cf3f408ceb620922886ecbce346be05db901fd3ea",
+      "input_sha256": "ea47d4925f18bcc510f920a8581a0ea39707e2f786b56c9987167435782d40e8"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/random-32-32-10_scen2_offset160_train_132103_B8__macro_LD.jsonl",
+      "sha256": "8c3bc672d05c36d078a57b0a1bcef9a9edebd5e6d4db99ee35b8299961643e20",
+      "receipt_sha256": "73d312b8641da7bea662b73cf9aaa4c354eb3a40faa448786a4212fa61267ad9",
+      "planner_sha256": "0b63e360bd0b4f0a07eb7e4fa64e30b57fc4c0ad7b9aa83039e1965435854423",
+      "input_sha256": "ea47d4925f18bcc510f920a8581a0ea39707e2f786b56c9987167435782d40e8"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/stop_value_20261004_r16/runs/random-32-32-10_scen2_offset160_train_132103_B8__macro_STOP.jsonl",
+      "sha256": "01ec1f02e8f1f9d822025e8d5300e3974fe05f0deb400548551496beeca90f4b",
+      "receipt_sha256": "1cdffc994d3f8e88a6caa6c190e49aacecf4163ef499185c734a8fc9e53a70ce",
+      "planner_sha256": "5cac09b4900d00eb1dedea309e8ff96937a45d7f907c57b92f2a150dae8c33a4",
+      "input_sha256": "ea47d4925f18bcc510f920a8581a0ea39707e2f786b56c9987167435782d40e8"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/random-32-32-10_scen2_offset160_train_132103_B16__macro_C.jsonl",
+      "sha256": "3dfa7a8db5289ab1a5e0e67152dc1e64f00aee8d542d88b41c27b9ac34c16bed",
+      "receipt_sha256": "8100131ee8553031ab4332a5610c3d0e82a26af7d55ea91de40de2d1ea2f2b6d",
+      "planner_sha256": "b994bea89201bc883fa3f9569f9a1ad98ca693aeeaafe4c3f8fee8649a6865d4",
+      "input_sha256": "ea47d4925f18bcc510f920a8581a0ea39707e2f786b56c9987167435782d40e8"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/random-32-32-10_scen2_offset160_train_132103_B16__macro_LD.jsonl",
+      "sha256": "0759cf64bd7d3d4bf09c9ffead37ef6abcbe130e705e59ef8a519aadb7d59b99",
+      "receipt_sha256": "77775909197cf979a129ecc7aa87473f540de0c23aaff0919b7787230650082f",
+      "planner_sha256": "ada61ec4eadad1e78ce6d5fe02bba3620f39d21290bf5f5ff332750dea11b6f4",
+      "input_sha256": "ea47d4925f18bcc510f920a8581a0ea39707e2f786b56c9987167435782d40e8"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/stop_value_20261004_r16/runs/random-32-32-10_scen2_offset160_train_132103_B16__macro_STOP.jsonl",
+      "sha256": "53c48ce6283d4ede59052c26756cf03ef11779c3914422c6e890d811fadb43fa",
+      "receipt_sha256": "841bbaa6d2740f3baf936bf85dd6d4dfec44073d395eb31622590df1d93b70eb",
+      "planner_sha256": "50deb37b3ae20f4f513ad47d955a1260b6c57add4e903835064bbec823456bdd",
+      "input_sha256": "ea47d4925f18bcc510f920a8581a0ea39707e2f786b56c9987167435782d40e8"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/random-32-32-10_scen2_offset176_train_132104_B8__macro_C.jsonl",
+      "sha256": "695edbc79b212ba9e425cbe004871a5c0cde77e3f10120c93aa085271363b95a",
+      "receipt_sha256": "8bfb7566b9659c99aed5af3bf3be9e539ec9f987c3cbbb7d9391c57a482e3081",
+      "planner_sha256": "460cc91cfe3ae2cdb27f433a7674433edd43e7218acf969462957eb4748baba6",
+      "input_sha256": "3720f07e3de2eacf8ae1b47928e8ab3692e648e5de72e088aca5e1b22b1513ad"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/random-32-32-10_scen2_offset176_train_132104_B8__macro_LD.jsonl",
+      "sha256": "af6b2631adb6b8855b698c31adcff125cd3a5cecd0534cde9e8bb925214ae9bd",
+      "receipt_sha256": "c52be1de1a916d87151a984ef27123a07936bba54833a8023d74c0ce6ef92036",
+      "planner_sha256": "5c737213d54f88ce23248f0904d425d39f6c892b30a01554b6f8994c4e6c4f6d",
+      "input_sha256": "3720f07e3de2eacf8ae1b47928e8ab3692e648e5de72e088aca5e1b22b1513ad"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/stop_value_20261004_r16/runs/random-32-32-10_scen2_offset176_train_132104_B8__macro_STOP.jsonl",
+      "sha256": "7adb2a5f327bad178964dffcf95cf9c338a7a4ba3c0b30bd3751200edd1c1119",
+      "receipt_sha256": "9395fafb99701c45e18622a7ab6320497880dfb7d3bad4910efe629f5789450c",
+      "planner_sha256": "8a964ad77182886d16d94d811cb5c5fe254c02e92680fd1fe33534fe80b77b5a",
+      "input_sha256": "3720f07e3de2eacf8ae1b47928e8ab3692e648e5de72e088aca5e1b22b1513ad"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/random-32-32-10_scen2_offset176_train_132104_B16__macro_C.jsonl",
+      "sha256": "bcf71deb2c6b0d618b569a6a6dde63941c074afd64f1d6e1c66ddda0231f7376",
+      "receipt_sha256": "b88260ab3ab40db89e0f99e3d8f3e6d4dad40fb95fe66d3c378ecef9bc2c324b",
+      "planner_sha256": "b3e5b0fee3954be1caa6bb8dc519971697a29a631ff77ec3800995ba7b822a7f",
+      "input_sha256": "3720f07e3de2eacf8ae1b47928e8ab3692e648e5de72e088aca5e1b22b1513ad"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/random-32-32-10_scen2_offset176_train_132104_B16__macro_LD.jsonl",
+      "sha256": "3a4b343a58dc88edba3bbb541ddef1bd3b7faa3869c6d79916dc622231c2e972",
+      "receipt_sha256": "8f5e48a4ab0d4e2fb24d0c43cfff3eede481f6dc332d4e074376f205f8dc999c",
+      "planner_sha256": "8627e1e54a8eb746bb55415184ab161dad2ed60e14f5ebb9610c9bcc859b29f9",
+      "input_sha256": "3720f07e3de2eacf8ae1b47928e8ab3692e648e5de72e088aca5e1b22b1513ad"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/stop_value_20261004_r16/runs/random-32-32-10_scen2_offset176_train_132104_B16__macro_STOP.jsonl",
+      "sha256": "e3a9bde2b1cade5e8806e4cd2b0c68dc916473d6e0419ac3b6f725d801f1f31c",
+      "receipt_sha256": "d4d5e9361289309bbecfb831fd2d0f054cc91285b80ae52f355280676d6d4c59",
+      "planner_sha256": "9bdb257c0d1c2dd2cc078cd26f50b84bd90ee9b038961c2a70c61e641b3747b1",
+      "input_sha256": "3720f07e3de2eacf8ae1b47928e8ab3692e648e5de72e088aca5e1b22b1513ad"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/random-32-32-10_scen2_offset192_train_132105_B8__macro_C.jsonl",
+      "sha256": "f027c9c7d84660ef24854d9561da18e21dfc3f72bbf1aef5dde63f5bb50cfde9",
+      "receipt_sha256": "5355deca5ee01043765c28a5103f6679fa279fffe32c6ebd22de93c142585a8a",
+      "planner_sha256": "f82e71c1b501aed8a60a39c77763363afaba6b4b54acadbbdadcbdcbf8c95a59",
+      "input_sha256": "18af57b7d8e960a797eae9395938ffd26e4b6f5a0bafb0957dd9c1667d5cd349"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/random-32-32-10_scen2_offset192_train_132105_B8__macro_LD.jsonl",
+      "sha256": "70ff62a2eb1546b5255596ac92bc43823862f4dec746527d27b9b4d7b01233e7",
+      "receipt_sha256": "23ffa88cb7205df114909ee49c8ec114eb2b123804ccd2609fde004fc0e32df6",
+      "planner_sha256": "c52df00a6e4bd38abc266d2fc4984757162f128f55f2af439792cf0db29ebd02",
+      "input_sha256": "18af57b7d8e960a797eae9395938ffd26e4b6f5a0bafb0957dd9c1667d5cd349"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/stop_value_20261004_r16/runs/random-32-32-10_scen2_offset192_train_132105_B8__macro_STOP.jsonl",
+      "sha256": "c292578d91cb5c2aa5105eee73239a7545310a4a7ffc2434a063865e3f87c481",
+      "receipt_sha256": "5adcb23d705c6eaff0aafaad04c553c60c18cd68fa40e0736eda7c2702643d92",
+      "planner_sha256": "0f08e99fe59b2fa3d15a5e3a0d43ee98caebcb06bdb2da4897133ba00fbfcff4",
+      "input_sha256": "18af57b7d8e960a797eae9395938ffd26e4b6f5a0bafb0957dd9c1667d5cd349"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/random-32-32-10_scen2_offset192_train_132105_B16__macro_C.jsonl",
+      "sha256": "d16571ced9cc5d7d9af85312b235759ba125b0da16d19c3ac800077ddd874c0d",
+      "receipt_sha256": "fe9939e8163eccfa818d7e818f53792176be21960e3414fb01250cd095f0442c",
+      "planner_sha256": "24c220909d17a944367e73802f7a925e6ab16bc014f351ee5b92638820d4c6ee",
+      "input_sha256": "18af57b7d8e960a797eae9395938ffd26e4b6f5a0bafb0957dd9c1667d5cd349"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/random-32-32-10_scen2_offset192_train_132105_B16__macro_LD.jsonl",
+      "sha256": "9985e89eb03348acfdc69f4d1943b0207f11269b0348cb7a1967e123bac55217",
+      "receipt_sha256": "760776202a7d3665c015de5b4cce268d9066ed2a708fdaf9df2383036dd2d1f8",
+      "planner_sha256": "4cbc39a9b11ba59ac5c7e5c110416ce6a77ac1aa59afb2f9816caba09a2ba4c8",
+      "input_sha256": "18af57b7d8e960a797eae9395938ffd26e4b6f5a0bafb0957dd9c1667d5cd349"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/stop_value_20261004_r16/runs/random-32-32-10_scen2_offset192_train_132105_B16__macro_STOP.jsonl",
+      "sha256": "20c2cb1d25cdf8a8a7af5b52b60039628e6b8b17bd15921f7e81cda080d56415",
+      "receipt_sha256": "8d4f38b4c2f354d05a3b2ec3d0bc868258fb3e0e302726d16e87a51986db65d7",
+      "planner_sha256": "d363ecda2593d0e6c699011102e9bb9061bd56dcd171e9dec4549776c257a6a0",
+      "input_sha256": "18af57b7d8e960a797eae9395938ffd26e4b6f5a0bafb0957dd9c1667d5cd349"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/random-32-32-10_scen2_offset208_train_132106_B8__macro_C.jsonl",
+      "sha256": "5b7b4a52c96bd4d7d3272a3a8db50d15475fef8d953cead7669ffbaa8a7d6e76",
+      "receipt_sha256": "f0f4c8528c673519bf7131e82d8350a6c9044f02fc5728c043c63ee3299c6a6b",
+      "planner_sha256": "5d02cc64015910522bf7fa1c3a99eb2e0a938f9eb02ba2a448933009dd862ff1",
+      "input_sha256": "bf5d5bf970b1097ac654c481dfee6c5512dafde4649b669603111eccb81e526f"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/random-32-32-10_scen2_offset208_train_132106_B8__macro_LD.jsonl",
+      "sha256": "ab0f04c0a117696ad31f005599f7b3cc967aefb2077e129bf90c256b72a5d846",
+      "receipt_sha256": "e49ba8e0375b6f4d70906517533dab66b44e9ac86850e3721f68713919c6d982",
+      "planner_sha256": "eb59538c84dc2add25cb6235967c728b69427538aedf27a53b0a1c834e25ccd9",
+      "input_sha256": "bf5d5bf970b1097ac654c481dfee6c5512dafde4649b669603111eccb81e526f"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/stop_value_20261004_r16/runs/random-32-32-10_scen2_offset208_train_132106_B8__macro_STOP.jsonl",
+      "sha256": "a5aa222b67695256bc6d8ec71f5d12e6122dd2046628bb9a73e17d253a290c64",
+      "receipt_sha256": "b64e4eefabeed776108f4a06e2b8c12a8855babc74dcd3d64c6ab7e9cf28f2df",
+      "planner_sha256": "4344fe5d6466a62f798cf4e4904d48896a27ef4a6894674623a758feb2c37acf",
+      "input_sha256": "bf5d5bf970b1097ac654c481dfee6c5512dafde4649b669603111eccb81e526f"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/random-32-32-10_scen2_offset208_train_132106_B16__macro_C.jsonl",
+      "sha256": "66e6c0a4ab82ba6cc1af256d1756747ac87a2f5f7b018c1f62c57470e0405421",
+      "receipt_sha256": "19814a6d2e06a108ceefa5cd18b978e9cb0c53b07b8753620b14912ca06aa8b6",
+      "planner_sha256": "6cd9024d80ffc508a9cc1e0632d52237c94bde64b878b9faf76d760aceaf982a",
+      "input_sha256": "bf5d5bf970b1097ac654c481dfee6c5512dafde4649b669603111eccb81e526f"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/runs/random-32-32-10_scen2_offset208_train_132106_B16__macro_LD.jsonl",
+      "sha256": "a7353831f7ebb17368b168ea412ab8f50ac8572cb6758566e9310b798f24399c",
+      "receipt_sha256": "8316e1615d3665ac8ce3e5597a71629d078c4d7d32ac449aec6877499d7cca92",
+      "planner_sha256": "fa5a3414e730ab7558741e585cca278f551fecb877ab9454cc6e156f3ea1dc72",
+      "input_sha256": "bf5d5bf970b1097ac654c481dfee6c5512dafde4649b669603111eccb81e526f"
+    },
+    {
+      "path": "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/stop_value_20261004_r16/runs/random-32-32-10_scen2_offset208_train_132106_B16__macro_STOP.jsonl",
+      "sha256": "72faff3cc1df5cc77cdd658c7422df11cfbf6559489f85471fe08c3a577e91d9",
+      "receipt_sha256": "473d3fd9f08286b30f99586c105ce36a7df9a2c4582c68fbf0d04d63f2094bf2",
+      "planner_sha256": "f7eabd97d5ccfa95248c4f8f84e9ddb322e1c93da8f744772749861a7e9e09f5",
+      "input_sha256": "bf5d5bf970b1097ac654c481dfee6c5512dafde4649b669603111eccb81e526f"
+    }
+  ]
+}

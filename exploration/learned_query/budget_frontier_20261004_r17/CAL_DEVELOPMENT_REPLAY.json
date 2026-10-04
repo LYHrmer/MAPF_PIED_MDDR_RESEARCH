@@ -1,0 +1,734 @@
+{
+  "scope": "Previously used development CAL, no independent generalization claim and no tuning",
+  "policies": {
+    "C": {
+      "overall": {
+        "tasks": 237,
+        "queries": 72,
+        "T_lower": "35255730273/1000000",
+        "T_upper": "8813932627/250000"
+      },
+      "by_budget": {
+        "8": {
+          "tasks": 119,
+          "queries": 24,
+          "T_lower": "17626748233/1000000",
+          "T_upper": "17626748351/1000000"
+        },
+        "16": {
+          "tasks": 118,
+          "queries": 48,
+          "T_lower": "440724551/25000",
+          "T_upper": "17628982157/1000000"
+        }
+      },
+      "by_family": {
+        "empty-32-32_scen2_offset192_calibration_131201": {
+          "tasks": 82,
+          "queries": 24,
+          "T_lower": "707108451/62500",
+          "T_upper": "176777114/15625"
+        },
+        "empty-32-32_scen2_offset208_calibration_131202": {
+          "tasks": 74,
+          "queries": 24,
+          "T_lower": "377999133/31250",
+          "T_upper": "1209597233/100000"
+        },
+        "random-32-32-10_scen2_offset224_calibration_132201": {
+          "tasks": 81,
+          "queries": 24,
+          "T_lower": "11846022801/1000000",
+          "T_upper": "5923011441/500000"
+        }
+      },
+      "choices": [
+        {
+          "world": "empty-32-32_scen2_offset192_calibration_131201_B8",
+          "family": "empty-32-32_scen2_offset192_calibration_131201",
+          "budget": 8,
+          "arm": "C",
+          "tasks": 41,
+          "queries": 8,
+          "T_lower": "1415101603/250000",
+          "T_upper": "1415101613/250000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset192_calibration_131201_B16",
+          "family": "empty-32-32_scen2_offset192_calibration_131201",
+          "budget": 16,
+          "arm": "C",
+          "tasks": 41,
+          "queries": 16,
+          "T_lower": "1413332201/250000",
+          "T_upper": "1413332211/250000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset208_calibration_131202_B8",
+          "family": "empty-32-32_scen2_offset208_calibration_131202",
+          "budget": 8,
+          "arm": "C",
+          "tasks": 37,
+          "queries": 8,
+          "T_lower": "3024311953/500000",
+          "T_upper": "6048623943/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset208_calibration_131202_B16",
+          "family": "empty-32-32_scen2_offset208_calibration_131202",
+          "budget": 16,
+          "arm": "C",
+          "tasks": 37,
+          "queries": 16,
+          "T_lower": "120946967/20000",
+          "T_upper": "6047348387/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset224_calibration_132201_B8",
+          "family": "random-32-32-10_scen2_offset224_calibration_132201",
+          "budget": 8,
+          "arm": "C",
+          "tasks": 41,
+          "queries": 8,
+          "T_lower": "1183543583/200000",
+          "T_upper": "1479429489/250000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset224_calibration_132201_B16",
+          "family": "random-32-32-10_scen2_offset224_calibration_132201",
+          "budget": 16,
+          "arm": "C",
+          "tasks": 40,
+          "queries": 16,
+          "T_lower": "2964152443/500000",
+          "T_upper": "2964152463/500000"
+        }
+      ]
+    },
+    "LD": {
+      "overall": {
+        "tasks": 238,
+        "queries": 72,
+        "T_lower": "17587508959/500000",
+        "T_upper": "17587509077/500000"
+      },
+      "by_budget": {
+        "8": {
+          "tasks": 120,
+          "queries": 24,
+          "T_lower": "17550451317/1000000",
+          "T_upper": "4387612859/250000"
+        },
+        "16": {
+          "tasks": 118,
+          "queries": 48,
+          "T_lower": "17624566601/1000000",
+          "T_upper": "8812283359/500000"
+        }
+      },
+      "by_family": {
+        "empty-32-32_scen2_offset192_calibration_131201": {
+          "tasks": 82,
+          "queries": 24,
+          "T_lower": "2829920541/250000",
+          "T_upper": "2829920561/250000"
+        },
+        "empty-32-32_scen2_offset208_calibration_131202": {
+          "tasks": 76,
+          "queries": 24,
+          "T_lower": "12009124593/1000000",
+          "T_upper": "12009124669/1000000"
+        },
+        "random-32-32-10_scen2_offset224_calibration_132201": {
+          "tasks": 80,
+          "queries": 24,
+          "T_lower": "11846211161/1000000",
+          "T_upper": "11846211241/1000000"
+        }
+      },
+      "choices": [
+        {
+          "world": "empty-32-32_scen2_offset192_calibration_131201_B8",
+          "family": "empty-32-32_scen2_offset192_calibration_131201",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 41,
+          "queries": 8,
+          "T_lower": "1415101603/250000",
+          "T_upper": "1415101613/250000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset192_calibration_131201_B16",
+          "family": "empty-32-32_scen2_offset192_calibration_131201",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 41,
+          "queries": 16,
+          "T_lower": "707409469/125000",
+          "T_upper": "353704737/62500"
+        },
+        {
+          "world": "empty-32-32_scen2_offset208_calibration_131202_B8",
+          "family": "empty-32-32_scen2_offset208_calibration_131202",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 39,
+          "queries": 8,
+          "T_lower": "5961740019/1000000",
+          "T_upper": "2980870029/500000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset208_calibration_131202_B16",
+          "family": "empty-32-32_scen2_offset208_calibration_131202",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 37,
+          "queries": 16,
+          "T_lower": "3023692287/500000",
+          "T_upper": "6047384611/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset224_calibration_132201_B8",
+          "family": "random-32-32-10_scen2_offset224_calibration_132201",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 40,
+          "queries": 8,
+          "T_lower": "2964152443/500000",
+          "T_upper": "2964152463/500000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset224_calibration_132201_B16",
+          "family": "random-32-32-10_scen2_offset224_calibration_132201",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 40,
+          "queries": 16,
+          "T_lower": "236716251/40000",
+          "T_upper": "1183581263/200000"
+        }
+      ]
+    },
+    "STOP": {
+      "overall": {
+        "tasks": 238,
+        "queries": 36,
+        "T_lower": "703228913/20000",
+        "T_upper": "17580722943/500000"
+      },
+      "by_budget": {
+        "8": {
+          "tasks": 119,
+          "queries": 12,
+          "T_lower": "17534697417/1000000",
+          "T_upper": "3506939507/200000"
+        },
+        "16": {
+          "tasks": 119,
+          "queries": 24,
+          "T_lower": "17626748233/1000000",
+          "T_upper": "17626748351/1000000"
+        }
+      },
+      "by_family": {
+        "empty-32-32_scen2_offset192_calibration_131201": {
+          "tasks": 82,
+          "queries": 12,
+          "T_lower": "1415101603/125000",
+          "T_upper": "1415101613/125000"
+        },
+        "empty-32-32_scen2_offset208_calibration_131202": {
+          "tasks": 74,
+          "queries": 12,
+          "T_lower": "3001299249/250000",
+          "T_upper": "1200519707/100000"
+        },
+        "random-32-32-10_scen2_offset224_calibration_132201": {
+          "tasks": 82,
+          "queries": 12,
+          "T_lower": "1183543583/100000",
+          "T_upper": "1479429489/125000"
+        }
+      },
+      "choices": [
+        {
+          "world": "empty-32-32_scen2_offset192_calibration_131201_B8",
+          "family": "empty-32-32_scen2_offset192_calibration_131201",
+          "budget": 8,
+          "arm": "STOP",
+          "tasks": 41,
+          "queries": 4,
+          "T_lower": "1415101603/250000",
+          "T_upper": "1415101613/250000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset192_calibration_131201_B16",
+          "family": "empty-32-32_scen2_offset192_calibration_131201",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 41,
+          "queries": 8,
+          "T_lower": "1415101603/250000",
+          "T_upper": "1415101613/250000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset208_calibration_131202_B8",
+          "family": "empty-32-32_scen2_offset208_calibration_131202",
+          "budget": 8,
+          "arm": "STOP",
+          "tasks": 37,
+          "queries": 4,
+          "T_lower": "595657309/100000",
+          "T_upper": "5956573127/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset208_calibration_131202_B16",
+          "family": "empty-32-32_scen2_offset208_calibration_131202",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 37,
+          "queries": 8,
+          "T_lower": "3024311953/500000",
+          "T_upper": "6048623943/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset224_calibration_132201_B8",
+          "family": "random-32-32-10_scen2_offset224_calibration_132201",
+          "budget": 8,
+          "arm": "STOP",
+          "tasks": 41,
+          "queries": 4,
+          "T_lower": "1183543583/200000",
+          "T_upper": "1479429489/250000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset224_calibration_132201_B16",
+          "family": "random-32-32-10_scen2_offset224_calibration_132201",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 41,
+          "queries": 8,
+          "T_lower": "1183543583/200000",
+          "T_upper": "1479429489/250000"
+        }
+      ]
+    },
+    "frozen_ridge": {
+      "overall": {
+        "tasks": 238,
+        "queries": 60,
+        "T_lower": "35186655861/1000000",
+        "T_upper": "35186656097/1000000"
+      },
+      "by_budget": {
+        "8": {
+          "tasks": 120,
+          "queries": 20,
+          "T_lower": "17550451317/1000000",
+          "T_upper": "4387612859/250000"
+        },
+        "16": {
+          "tasks": 118,
+          "queries": 40,
+          "T_lower": "275565696/15625",
+          "T_upper": "17636204661/1000000"
+        }
+      },
+      "by_family": {
+        "empty-32-32_scen2_offset192_calibration_131201": {
+          "tasks": 82,
+          "queries": 20,
+          "T_lower": "2829920541/250000",
+          "T_upper": "2829920561/250000"
+        },
+        "empty-32-32_scen2_offset208_calibration_131202": {
+          "tasks": 76,
+          "queries": 16,
+          "T_lower": "480414557/40000",
+          "T_upper": "12010364001/1000000"
+        },
+        "random-32-32-10_scen2_offset224_calibration_132201": {
+          "tasks": 80,
+          "queries": 24,
+          "T_lower": "2964152443/250000",
+          "T_upper": "2964152463/250000"
+        }
+      },
+      "choices": [
+        {
+          "world": "empty-32-32_scen2_offset192_calibration_131201_B8",
+          "family": "empty-32-32_scen2_offset192_calibration_131201",
+          "budget": 8,
+          "arm": "STOP",
+          "tasks": 41,
+          "queries": 4,
+          "T_lower": "1415101603/250000",
+          "T_upper": "1415101613/250000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset192_calibration_131201_B16",
+          "family": "empty-32-32_scen2_offset192_calibration_131201",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 41,
+          "queries": 16,
+          "T_lower": "707409469/125000",
+          "T_upper": "353704737/62500"
+        },
+        {
+          "world": "empty-32-32_scen2_offset208_calibration_131202_B8",
+          "family": "empty-32-32_scen2_offset208_calibration_131202",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 39,
+          "queries": 8,
+          "T_lower": "5961740019/1000000",
+          "T_upper": "2980870029/500000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset208_calibration_131202_B16",
+          "family": "empty-32-32_scen2_offset208_calibration_131202",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 37,
+          "queries": 8,
+          "T_lower": "3024311953/500000",
+          "T_upper": "6048623943/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset224_calibration_132201_B8",
+          "family": "random-32-32-10_scen2_offset224_calibration_132201",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 40,
+          "queries": 8,
+          "T_lower": "2964152443/500000",
+          "T_upper": "2964152463/500000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset224_calibration_132201_B16",
+          "family": "random-32-32-10_scen2_offset224_calibration_132201",
+          "budget": 16,
+          "arm": "C",
+          "tasks": 40,
+          "queries": 16,
+          "T_lower": "2964152443/500000",
+          "T_upper": "2964152463/500000"
+        }
+      ]
+    },
+    "train_constant": {
+      "overall": {
+        "tasks": 238,
+        "queries": 72,
+        "T_lower": "17587508959/500000",
+        "T_upper": "17587509077/500000"
+      },
+      "by_budget": {
+        "8": {
+          "tasks": 120,
+          "queries": 24,
+          "T_lower": "17550451317/1000000",
+          "T_upper": "4387612859/250000"
+        },
+        "16": {
+          "tasks": 118,
+          "queries": 48,
+          "T_lower": "17624566601/1000000",
+          "T_upper": "8812283359/500000"
+        }
+      },
+      "by_family": {
+        "empty-32-32_scen2_offset192_calibration_131201": {
+          "tasks": 82,
+          "queries": 24,
+          "T_lower": "2829920541/250000",
+          "T_upper": "2829920561/250000"
+        },
+        "empty-32-32_scen2_offset208_calibration_131202": {
+          "tasks": 76,
+          "queries": 24,
+          "T_lower": "12009124593/1000000",
+          "T_upper": "12009124669/1000000"
+        },
+        "random-32-32-10_scen2_offset224_calibration_132201": {
+          "tasks": 80,
+          "queries": 24,
+          "T_lower": "11846211161/1000000",
+          "T_upper": "11846211241/1000000"
+        }
+      },
+      "choices": [
+        {
+          "world": "empty-32-32_scen2_offset192_calibration_131201_B8",
+          "family": "empty-32-32_scen2_offset192_calibration_131201",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 41,
+          "queries": 8,
+          "T_lower": "1415101603/250000",
+          "T_upper": "1415101613/250000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset192_calibration_131201_B16",
+          "family": "empty-32-32_scen2_offset192_calibration_131201",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 41,
+          "queries": 16,
+          "T_lower": "707409469/125000",
+          "T_upper": "353704737/62500"
+        },
+        {
+          "world": "empty-32-32_scen2_offset208_calibration_131202_B8",
+          "family": "empty-32-32_scen2_offset208_calibration_131202",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 39,
+          "queries": 8,
+          "T_lower": "5961740019/1000000",
+          "T_upper": "2980870029/500000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset208_calibration_131202_B16",
+          "family": "empty-32-32_scen2_offset208_calibration_131202",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 37,
+          "queries": 16,
+          "T_lower": "3023692287/500000",
+          "T_upper": "6047384611/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset224_calibration_132201_B8",
+          "family": "random-32-32-10_scen2_offset224_calibration_132201",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 40,
+          "queries": 8,
+          "T_lower": "2964152443/500000",
+          "T_upper": "2964152463/500000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset224_calibration_132201_B16",
+          "family": "random-32-32-10_scen2_offset224_calibration_132201",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 40,
+          "queries": 16,
+          "T_lower": "236716251/40000",
+          "T_upper": "1183581263/200000"
+        }
+      ]
+    },
+    "budget_lookup": {
+      "overall": {
+        "tasks": 239,
+        "queries": 48,
+        "T_lower": "703543991/20000",
+        "T_upper": "35177199787/1000000"
+      },
+      "by_budget": {
+        "8": {
+          "tasks": 120,
+          "queries": 24,
+          "T_lower": "17550451317/1000000",
+          "T_upper": "4387612859/250000"
+        },
+        "16": {
+          "tasks": 119,
+          "queries": 24,
+          "T_lower": "17626748233/1000000",
+          "T_upper": "17626748351/1000000"
+        }
+      },
+      "by_family": {
+        "empty-32-32_scen2_offset192_calibration_131201": {
+          "tasks": 82,
+          "queries": 16,
+          "T_lower": "1415101603/125000",
+          "T_upper": "1415101613/125000"
+        },
+        "empty-32-32_scen2_offset208_calibration_131202": {
+          "tasks": 76,
+          "queries": 16,
+          "T_lower": "480414557/40000",
+          "T_upper": "12010364001/1000000"
+        },
+        "random-32-32-10_scen2_offset224_calibration_132201": {
+          "tasks": 81,
+          "queries": 16,
+          "T_lower": "11846022801/1000000",
+          "T_upper": "5923011441/500000"
+        }
+      },
+      "choices": [
+        {
+          "world": "empty-32-32_scen2_offset192_calibration_131201_B8",
+          "family": "empty-32-32_scen2_offset192_calibration_131201",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 41,
+          "queries": 8,
+          "T_lower": "1415101603/250000",
+          "T_upper": "1415101613/250000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset192_calibration_131201_B16",
+          "family": "empty-32-32_scen2_offset192_calibration_131201",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 41,
+          "queries": 8,
+          "T_lower": "1415101603/250000",
+          "T_upper": "1415101613/250000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset208_calibration_131202_B8",
+          "family": "empty-32-32_scen2_offset208_calibration_131202",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 39,
+          "queries": 8,
+          "T_lower": "5961740019/1000000",
+          "T_upper": "2980870029/500000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset208_calibration_131202_B16",
+          "family": "empty-32-32_scen2_offset208_calibration_131202",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 37,
+          "queries": 8,
+          "T_lower": "3024311953/500000",
+          "T_upper": "6048623943/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset224_calibration_132201_B8",
+          "family": "random-32-32-10_scen2_offset224_calibration_132201",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 40,
+          "queries": 8,
+          "T_lower": "2964152443/500000",
+          "T_upper": "2964152463/500000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset224_calibration_132201_B16",
+          "family": "random-32-32-10_scen2_offset224_calibration_132201",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 41,
+          "queries": 8,
+          "T_lower": "1183543583/200000",
+          "T_upper": "1479429489/250000"
+        }
+      ]
+    },
+    "public_threshold": {
+      "overall": {
+        "tasks": 237,
+        "queries": 72,
+        "T_lower": "17622665831/500000",
+        "T_upper": "35245331897/1000000"
+      },
+      "by_budget": {
+        "8": {
+          "tasks": 119,
+          "queries": 24,
+          "T_lower": "17626748233/1000000",
+          "T_upper": "17626748351/1000000"
+        },
+        "16": {
+          "tasks": 118,
+          "queries": 48,
+          "T_lower": "17618583429/1000000",
+          "T_upper": "8809291773/500000"
+        }
+      },
+      "by_family": {
+        "empty-32-32_scen2_offset192_calibration_131201": {
+          "tasks": 82,
+          "queries": 24,
+          "T_lower": "707108451/62500",
+          "T_upper": "176777114/15625"
+        },
+        "empty-32-32_scen2_offset208_calibration_131202": {
+          "tasks": 74,
+          "queries": 24,
+          "T_lower": "377999133/31250",
+          "T_upper": "1209597233/100000"
+        },
+        "random-32-32-10_scen2_offset224_calibration_132201": {
+          "tasks": 81,
+          "queries": 24,
+          "T_lower": "1183562419/100000",
+          "T_upper": "11835624271/1000000"
+        }
+      },
+      "choices": [
+        {
+          "world": "empty-32-32_scen2_offset192_calibration_131201_B8",
+          "family": "empty-32-32_scen2_offset192_calibration_131201",
+          "budget": 8,
+          "arm": "C",
+          "tasks": 41,
+          "queries": 8,
+          "T_lower": "1415101603/250000",
+          "T_upper": "1415101613/250000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset192_calibration_131201_B16",
+          "family": "empty-32-32_scen2_offset192_calibration_131201",
+          "budget": 16,
+          "arm": "C",
+          "tasks": 41,
+          "queries": 16,
+          "T_lower": "1413332201/250000",
+          "T_upper": "1413332211/250000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset208_calibration_131202_B8",
+          "family": "empty-32-32_scen2_offset208_calibration_131202",
+          "budget": 8,
+          "arm": "C",
+          "tasks": 37,
+          "queries": 8,
+          "T_lower": "3024311953/500000",
+          "T_upper": "6048623943/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset208_calibration_131202_B16",
+          "family": "empty-32-32_scen2_offset208_calibration_131202",
+          "budget": 16,
+          "arm": "C",
+          "tasks": 37,
+          "queries": 16,
+          "T_lower": "120946967/20000",
+          "T_upper": "6047348387/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset224_calibration_132201_B8",
+          "family": "random-32-32-10_scen2_offset224_calibration_132201",
+          "budget": 8,
+          "arm": "C",
+          "tasks": 41,
+          "queries": 8,
+          "T_lower": "1183543583/200000",
+          "T_upper": "1479429489/250000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset224_calibration_132201_B16",
+          "family": "random-32-32-10_scen2_offset224_calibration_132201",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 40,
+          "queries": 16,
+          "T_lower": "236716251/40000",
+          "T_upper": "1183581263/200000"
+        }
+      ]
+    }
+  },
+  "cal_pairs_sha256": "134e22b1eccca75ce1e5beeb953e57d967a09f1a8fcd61c2a1aea90ec4441a7a"
+}

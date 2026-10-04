@@ -1,0 +1,39 @@
+{
+  "frozen_unix_ns": 1791128874382319920,
+  "scope": "Retrospective offline development; freeze before R17 fitting, original outcomes already existed",
+  "sources": {
+    "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/late_budget_choice_20261004_r13/TRAIN_CAL_LABELS.json": "b8b035d0ce67489048ab40e7e5bce436904c38be52af697633e8c536e5762dd3",
+    "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/stop_value_20261004_r16/TRAIN_PAIRS.json": "623a91188abbd7423971107d82d593d9c698b1d6e7aa9f22a992ed570502e98b",
+    "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/stop_value_20261004_r16/CAL_PAIRS.json": "134e22b1eccca75ce1e5beeb953e57d967a09f1a8fcd61c2a1aea90ec4441a7a",
+    "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/stop_value_20261004_r16/REGISTRATION.json": "2e0d5d9b369ca47238399a2fbabd9951b9de22aeafb5d4d4a83b599f4548bc86",
+    "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/budget_frontier_20261004_r17/PROTOCOL.md": "3686b7b8f6d3f56555102a8e89bf97eb0c2700d129df8f32e94bfe0444e3355c"
+  },
+  "expected_train_contexts": 24,
+  "expected_train_families": 12,
+  "budgets": [
+    8,
+    16
+  ],
+  "arms": [
+    "C",
+    "LD",
+    "STOP"
+  ],
+  "lambda_grid": [
+    1,
+    10,
+    100
+  ],
+  "prediction_tolerances": {
+    "tasks": 1e-06,
+    "T": 0.001,
+    "queries": 1e-06
+  },
+  "tie_order": [
+    "STOP",
+    "C",
+    "LD"
+  ],
+  "old_TEST_access_allowed": false,
+  "new_native_episodes_allowed": 0
+}

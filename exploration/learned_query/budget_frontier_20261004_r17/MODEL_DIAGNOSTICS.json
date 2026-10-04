@@ -1,0 +1,55 @@
+{
+  "OOF_errors": {
+    "C": {
+      "MAE": [
+        0.3199300981231242,
+        6.432536835846652,
+        0.5544378889093432
+      ],
+      "RMSE": [
+        0.492143186335394,
+        9.911599605578585,
+        0.8349224271225648
+      ],
+      "order": [
+        "tasks",
+        "restricted_T",
+        "queries"
+      ]
+    },
+    "LD": {
+      "MAE": [
+        0.28402561028491685,
+        3.7028021715609785,
+        0.7818122593239032
+      ],
+      "RMSE": [
+        0.38931061685191315,
+        5.5263496779034,
+        1.3276320747687422
+      ],
+      "order": [
+        "tasks",
+        "restricted_T",
+        "queries"
+      ]
+    }
+  },
+  "outer_lambda_counts": {
+    "1": 11,
+    "10": 1
+  },
+  "final_lambda": 1,
+  "feature_names": [
+    "history_survival_release_probability",
+    "prior_survival_release_probability",
+    "public_target_age_over_2",
+    "sum_inverse_remaining_route_items_times_owners",
+    "minimum_remaining_route_items_over_64",
+    "claim_fraction",
+    "other_visible_fraction",
+    "remaining_budget_over_16",
+    "remaining_horizon_fraction",
+    "probability_times_feature3"
+  ]
+}

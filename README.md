@@ -1,5 +1,7 @@
 # 学习型进度查询探索工作区
 
+2026-10-05 R17：**C/LD/STOP 三臂价值模型、family 分组验证与查询预算前沿已完成。** [本轮报告](exploration/learned_query/budget_frontier_20261004_r17/REPORT.md)。分组 OOF 模型为 **1077 任务 / 受限 ΣT 135942.023389 / 223 查询**；节省查询伴随时间取舍，尚未超过固定 LD 的任务数。本轮只复用既有 TRAIN，CAL 为已使用的开发重放，**不是新 TEST，也没有新增 native episode**。[独立根复核](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/r17_root_review/QUERY_INDEPENDENT.json)通过；以下历史全部保留。
+
 2026-10-04 R16：**完整 STOP 后缀、冻结条件模型与去重 CAL 评估已完成。** [本轮报告](exploration/learned_query/stop_value_20261004_r16/REPORT.md)。新增29次native，复用30个旧C后果；3个CAL B16 STOP由严格语义别名复用C8，保留真实来源，不伪造STOP日志。TRAIN C/STOP均1077任务，查询285→144，受限时间多约102.388；固定STOP并非逐条件无损。
 
 CAL冻结树为238任务/52查询，固定STOP同238任务、仅36查询且受限时间少约90.775。模型确实训练并在冻结门决策上评估，当前未超强固定策略；不是新盲测或新增模型native部署。下一聚焦已有C/LD/STOP空间内的信息预算价值，保留完整历史与固定STOP对照。[三线科研导师复判与后继合同](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261004_R16.md)。以下旧轮次为历史。

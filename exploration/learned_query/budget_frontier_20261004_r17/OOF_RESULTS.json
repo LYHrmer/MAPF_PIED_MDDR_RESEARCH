@@ -1,0 +1,2383 @@
+{
+  "policies": {
+    "C": {
+      "overall": {
+        "tasks": 1077,
+        "queries": 285,
+        "T_lower": "67943646461/500000",
+        "T_upper": "135887293987/1000000"
+      },
+      "by_budget": {
+        "8": {
+          "tasks": 539,
+          "queries": 96,
+          "T_lower": "679637499/10000",
+          "T_upper": "67963750433/1000000"
+        },
+        "16": {
+          "tasks": 538,
+          "queries": 189,
+          "T_lower": "33961771511/500000",
+          "T_upper": "33961771777/500000"
+        }
+      },
+      "by_family": {
+        "empty-32-32_scen2_offset112_train_131102": {
+          "tasks": 82,
+          "queries": 24,
+          "T_lower": "2901344009/250000",
+          "T_upper": "5802688059/500000"
+        },
+        "empty-32-32_scen2_offset128_train_131103": {
+          "tasks": 88,
+          "queries": 24,
+          "T_lower": "5600857503/500000",
+          "T_upper": "5600857547/500000"
+        },
+        "empty-32-32_scen2_offset144_train_131104": {
+          "tasks": 88,
+          "queries": 24,
+          "T_lower": "2878370961/250000",
+          "T_upper": "2878370983/250000"
+        },
+        "empty-32-32_scen2_offset160_train_131105": {
+          "tasks": 94,
+          "queries": 24,
+          "T_lower": "357817173/31250",
+          "T_upper": "1145014963/100000"
+        },
+        "empty-32-32_scen2_offset176_train_131106": {
+          "tasks": 100,
+          "queries": 24,
+          "T_lower": "2597931561/250000",
+          "T_upper": "162370724/15625"
+        },
+        "empty-32-32_scen2_offset96_train_131101": {
+          "tasks": 94,
+          "queries": 21,
+          "T_lower": "277450453/25000",
+          "T_upper": "5549009107/500000"
+        },
+        "random-32-32-10_scen2_offset128_train_132101": {
+          "tasks": 92,
+          "queries": 24,
+          "T_lower": "2764989017/250000",
+          "T_upper": "34562363/3125"
+        },
+        "random-32-32-10_scen2_offset144_train_132102": {
+          "tasks": 102,
+          "queries": 24,
+          "T_lower": "5308545759/500000",
+          "T_upper": "331784113/31250"
+        },
+        "random-32-32-10_scen2_offset160_train_132103": {
+          "tasks": 91,
+          "queries": 24,
+          "T_lower": "2913578463/250000",
+          "T_upper": "11654313943/1000000"
+        },
+        "random-32-32-10_scen2_offset176_train_132104": {
+          "tasks": 86,
+          "queries": 24,
+          "T_lower": "141617949/12500",
+          "T_upper": "5664718003/500000"
+        },
+        "random-32-32-10_scen2_offset192_train_132105": {
+          "tasks": 84,
+          "queries": 24,
+          "T_lower": "11855737683/1000000",
+          "T_upper": "11855737767/1000000"
+        },
+        "random-32-32-10_scen2_offset208_train_132106": {
+          "tasks": 76,
+          "queries": 24,
+          "T_lower": "2422057819/200000",
+          "T_upper": "12110289171/1000000"
+        }
+      },
+      "choices": [
+        {
+          "world": "empty-32-32_scen2_offset96_train_131101_B8",
+          "family": "empty-32-32_scen2_offset96_train_131101",
+          "budget": 8,
+          "arm": "C",
+          "tasks": 47,
+          "queries": 8,
+          "T_lower": "2774949347/500000",
+          "T_upper": "5549898741/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset96_train_131101_B16",
+          "family": "empty-32-32_scen2_offset96_train_131101",
+          "budget": 16,
+          "arm": "C",
+          "tasks": 47,
+          "queries": 13,
+          "T_lower": "2774059713/500000",
+          "T_upper": "5548119473/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset112_train_131102_B8",
+          "family": "empty-32-32_scen2_offset112_train_131102",
+          "budget": 8,
+          "arm": "C",
+          "tasks": 41,
+          "queries": 8,
+          "T_lower": "2902499007/500000",
+          "T_upper": "1160999611/200000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset112_train_131102_B16",
+          "family": "empty-32-32_scen2_offset112_train_131102",
+          "budget": 16,
+          "arm": "C",
+          "tasks": 41,
+          "queries": 16,
+          "T_lower": "2900189011/500000",
+          "T_upper": "5800378063/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset128_train_131103_B8",
+          "family": "empty-32-32_scen2_offset128_train_131103",
+          "budget": 8,
+          "arm": "C",
+          "tasks": 44,
+          "queries": 8,
+          "T_lower": "5600857503/1000000",
+          "T_upper": "5600857547/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset128_train_131103_B16",
+          "family": "empty-32-32_scen2_offset128_train_131103",
+          "budget": 16,
+          "arm": "C",
+          "tasks": 44,
+          "queries": 16,
+          "T_lower": "5600857503/1000000",
+          "T_upper": "5600857547/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset144_train_131104_B8",
+          "family": "empty-32-32_scen2_offset144_train_131104",
+          "budget": 8,
+          "arm": "C",
+          "tasks": 44,
+          "queries": 8,
+          "T_lower": "1151410351/200000",
+          "T_upper": "5757051799/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset144_train_131104_B16",
+          "family": "empty-32-32_scen2_offset144_train_131104",
+          "budget": 16,
+          "arm": "C",
+          "tasks": 44,
+          "queries": 16,
+          "T_lower": "5756432089/1000000",
+          "T_upper": "5756432133/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset160_train_131105_B8",
+          "family": "empty-32-32_scen2_offset160_train_131105",
+          "budget": 8,
+          "arm": "C",
+          "tasks": 47,
+          "queries": 8,
+          "T_lower": "5725366489/1000000",
+          "T_upper": "715670817/125000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset160_train_131105_B16",
+          "family": "empty-32-32_scen2_offset160_train_131105",
+          "budget": 16,
+          "arm": "C",
+          "tasks": 47,
+          "queries": 16,
+          "T_lower": "5724783047/1000000",
+          "T_upper": "2862391547/500000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset176_train_131106_B8",
+          "family": "empty-32-32_scen2_offset176_train_131106",
+          "budget": 8,
+          "arm": "C",
+          "tasks": 50,
+          "queries": 8,
+          "T_lower": "5196154843/1000000",
+          "T_upper": "5196154889/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset176_train_131106_B16",
+          "family": "empty-32-32_scen2_offset176_train_131106",
+          "budget": 16,
+          "arm": "C",
+          "tasks": 50,
+          "queries": 16,
+          "T_lower": "5195571401/1000000",
+          "T_upper": "5195571447/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset128_train_132101_B8",
+          "family": "random-32-32-10_scen2_offset128_train_132101",
+          "budget": 8,
+          "arm": "C",
+          "tasks": 46,
+          "queries": 8,
+          "T_lower": "2764998073/500000",
+          "T_upper": "172812381/31250"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset128_train_132101_B16",
+          "family": "random-32-32-10_scen2_offset128_train_132101",
+          "budget": 16,
+          "arm": "C",
+          "tasks": 46,
+          "queries": 16,
+          "T_lower": "2764979961/500000",
+          "T_upper": "172811249/31250"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset144_train_132102_B8",
+          "family": "random-32-32-10_scen2_offset144_train_132102",
+          "budget": 8,
+          "arm": "C",
+          "tasks": 51,
+          "queries": 8,
+          "T_lower": "33205543/6250",
+          "T_upper": "5312886929/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset144_train_132102_B16",
+          "family": "random-32-32-10_scen2_offset144_train_132102",
+          "budget": 16,
+          "arm": "C",
+          "tasks": 51,
+          "queries": 16,
+          "T_lower": "2652102319/500000",
+          "T_upper": "5304204687/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset160_train_132103_B8",
+          "family": "random-32-32-10_scen2_offset160_train_132103",
+          "budget": 8,
+          "arm": "C",
+          "tasks": 46,
+          "queries": 8,
+          "T_lower": "2915086719/500000",
+          "T_upper": "1457543371/250000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset160_train_132103_B16",
+          "family": "random-32-32-10_scen2_offset160_train_132103",
+          "budget": 16,
+          "arm": "C",
+          "tasks": 45,
+          "queries": 16,
+          "T_lower": "2912070207/500000",
+          "T_upper": "5824140459/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset176_train_132104_B8",
+          "family": "random-32-32-10_scen2_offset176_train_132104",
+          "budget": 8,
+          "arm": "C",
+          "tasks": 43,
+          "queries": 8,
+          "T_lower": "141617949/25000",
+          "T_upper": "5664718003/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset176_train_132104_B16",
+          "family": "random-32-32-10_scen2_offset176_train_132104",
+          "budget": 16,
+          "arm": "C",
+          "tasks": 43,
+          "queries": 16,
+          "T_lower": "141617949/25000",
+          "T_upper": "5664718003/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset192_train_132105_B8",
+          "family": "random-32-32-10_scen2_offset192_train_132105",
+          "budget": 8,
+          "arm": "C",
+          "tasks": 42,
+          "queries": 8,
+          "T_lower": "2968089663/500000",
+          "T_upper": "742022421/125000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset192_train_132105_B16",
+          "family": "random-32-32-10_scen2_offset192_train_132105",
+          "budget": 16,
+          "arm": "C",
+          "tasks": 42,
+          "queries": 16,
+          "T_lower": "5919558357/1000000",
+          "T_upper": "5919558399/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset208_train_132106_B8",
+          "family": "random-32-32-10_scen2_offset208_train_132106",
+          "budget": 8,
+          "arm": "C",
+          "tasks": 38,
+          "queries": 8,
+          "T_lower": "1513867213/250000",
+          "T_upper": "605546889/100000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset208_train_132106_B16",
+          "family": "random-32-32-10_scen2_offset208_train_132106",
+          "budget": 16,
+          "arm": "C",
+          "tasks": 38,
+          "queries": 16,
+          "T_lower": "6054820243/1000000",
+          "T_upper": "6054820281/1000000"
+        }
+      ]
+    },
+    "LD": {
+      "overall": {
+        "tasks": 1078,
+        "queries": 283,
+        "T_lower": "16991748253/125000",
+        "T_upper": "135933987089/1000000"
+      },
+      "by_budget": {
+        "8": {
+          "tasks": 540,
+          "queries": 96,
+          "T_lower": "67982092063/1000000",
+          "T_upper": "16995523149/250000"
+        },
+        "16": {
+          "tasks": 538,
+          "queries": 187,
+          "T_lower": "67951893961/1000000",
+          "T_upper": "67951894493/1000000"
+        }
+      },
+      "by_family": {
+        "empty-32-32_scen2_offset112_train_131102": {
+          "tasks": 82,
+          "queries": 24,
+          "T_lower": "2901334953/250000",
+          "T_upper": "5802669947/500000"
+        },
+        "empty-32-32_scen2_offset128_train_131103": {
+          "tasks": 88,
+          "queries": 24,
+          "T_lower": "5600857503/500000",
+          "T_upper": "5600857547/500000"
+        },
+        "empty-32-32_scen2_offset144_train_131104": {
+          "tasks": 88,
+          "queries": 24,
+          "T_lower": "5757033643/500000",
+          "T_upper": "5757033687/500000"
+        },
+        "empty-32-32_scen2_offset160_train_131105": {
+          "tasks": 93,
+          "queries": 24,
+          "T_lower": "11443812523/1000000",
+          "T_upper": "1430476577/125000"
+        },
+        "empty-32-32_scen2_offset176_train_131106": {
+          "tasks": 101,
+          "queries": 24,
+          "T_lower": "520861419/50000",
+          "T_upper": "1302153559/125000"
+        },
+        "empty-32-32_scen2_offset96_train_131101": {
+          "tasks": 94,
+          "queries": 19,
+          "T_lower": "277450453/25000",
+          "T_upper": "5549009107/500000"
+        },
+        "random-32-32-10_scen2_offset128_train_132101": {
+          "tasks": 92,
+          "queries": 24,
+          "T_lower": "11060604677/1000000",
+          "T_upper": "11060604769/1000000"
+        },
+        "random-32-32-10_scen2_offset144_train_132102": {
+          "tasks": 102,
+          "queries": 24,
+          "T_lower": "1063433601/100000",
+          "T_upper": "2658584027/250000"
+        },
+        "random-32-32-10_scen2_offset160_train_132103": {
+          "tasks": 91,
+          "queries": 24,
+          "T_lower": "1457969577/125000",
+          "T_upper": "11663756707/1000000"
+        },
+        "random-32-32-10_scen2_offset176_train_132104": {
+          "tasks": 86,
+          "queries": 24,
+          "T_lower": "5664176309/500000",
+          "T_upper": "177005511/15625"
+        },
+        "random-32-32-10_scen2_offset192_train_132105": {
+          "tasks": 85,
+          "queries": 24,
+          "T_lower": "11856465881/1000000",
+          "T_upper": "5928232983/500000"
+        },
+        "random-32-32-10_scen2_offset208_train_132106": {
+          "tasks": 76,
+          "queries": 24,
+          "T_lower": "2422057819/200000",
+          "T_upper": "12110289171/1000000"
+        }
+      },
+      "choices": [
+        {
+          "world": "empty-32-32_scen2_offset96_train_131101_B8",
+          "family": "empty-32-32_scen2_offset96_train_131101",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 47,
+          "queries": 8,
+          "T_lower": "2774949347/500000",
+          "T_upper": "5549898741/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset96_train_131101_B16",
+          "family": "empty-32-32_scen2_offset96_train_131101",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 47,
+          "queries": 11,
+          "T_lower": "2774059713/500000",
+          "T_upper": "5548119473/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset112_train_131102_B8",
+          "family": "empty-32-32_scen2_offset112_train_131102",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 41,
+          "queries": 8,
+          "T_lower": "725120183/125000",
+          "T_upper": "1160192301/200000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset112_train_131102_B16",
+          "family": "empty-32-32_scen2_offset112_train_131102",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 41,
+          "queries": 16,
+          "T_lower": "1451094587/250000",
+          "T_upper": "5804378389/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset128_train_131103_B8",
+          "family": "empty-32-32_scen2_offset128_train_131103",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 44,
+          "queries": 8,
+          "T_lower": "5600857503/1000000",
+          "T_upper": "5600857547/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset128_train_131103_B16",
+          "family": "empty-32-32_scen2_offset128_train_131103",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 44,
+          "queries": 16,
+          "T_lower": "5600857503/1000000",
+          "T_upper": "5600857547/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset144_train_131104_B8",
+          "family": "empty-32-32_scen2_offset144_train_131104",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 44,
+          "queries": 8,
+          "T_lower": "1151410351/200000",
+          "T_upper": "5757051799/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset144_train_131104_B16",
+          "family": "empty-32-32_scen2_offset144_train_131104",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 44,
+          "queries": 16,
+          "T_lower": "5757015531/1000000",
+          "T_upper": "230280623/40000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset160_train_131105_B8",
+          "family": "empty-32-32_scen2_offset160_train_131105",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 47,
+          "queries": 8,
+          "T_lower": "5725366489/1000000",
+          "T_upper": "715670817/125000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset160_train_131105_B16",
+          "family": "empty-32-32_scen2_offset160_train_131105",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 46,
+          "queries": 16,
+          "T_lower": "2859223017/500000",
+          "T_upper": "17870144/3125"
+        },
+        {
+          "world": "empty-32-32_scen2_offset176_train_131106_B8",
+          "family": "empty-32-32_scen2_offset176_train_131106",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 51,
+          "queries": 8,
+          "T_lower": "5221656979/1000000",
+          "T_upper": "208866281/40000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset176_train_131106_B16",
+          "family": "empty-32-32_scen2_offset176_train_131106",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 50,
+          "queries": 16,
+          "T_lower": "5195571401/1000000",
+          "T_upper": "5195571447/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset128_train_132101_B8",
+          "family": "random-32-32-10_scen2_offset128_train_132101",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 46,
+          "queries": 8,
+          "T_lower": "1106128951/200000",
+          "T_upper": "5530644801/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset128_train_132101_B16",
+          "family": "random-32-32-10_scen2_offset128_train_132101",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 46,
+          "queries": 16,
+          "T_lower": "2764979961/500000",
+          "T_upper": "172811249/31250"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset144_train_132102_B8",
+          "family": "random-32-32-10_scen2_offset144_train_132102",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 51,
+          "queries": 8,
+          "T_lower": "5322681181/1000000",
+          "T_upper": "532268123/100000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset144_train_132102_B16",
+          "family": "random-32-32-10_scen2_offset144_train_132102",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 51,
+          "queries": 16,
+          "T_lower": "5311654829/1000000",
+          "T_upper": "2655827439/500000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset160_train_132103_B8",
+          "family": "random-32-32-10_scen2_offset160_train_132103",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 45,
+          "queries": 8,
+          "T_lower": "2916791589/500000",
+          "T_upper": "5833583223/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset160_train_132103_B16",
+          "family": "random-32-32-10_scen2_offset160_train_132103",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 46,
+          "queries": 16,
+          "T_lower": "2915086719/500000",
+          "T_upper": "1457543371/250000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset176_train_132104_B8",
+          "family": "random-32-32-10_scen2_offset176_train_132104",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 43,
+          "queries": 8,
+          "T_lower": "2831817329/500000",
+          "T_upper": "5663634701/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset176_train_132104_B16",
+          "family": "random-32-32-10_scen2_offset176_train_132104",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 43,
+          "queries": 16,
+          "T_lower": "141617949/25000",
+          "T_upper": "5664718003/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset192_train_132105_B8",
+          "family": "random-32-32-10_scen2_offset192_train_132105",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 43,
+          "queries": 8,
+          "T_lower": "1184057311/200000",
+          "T_upper": "2960143299/500000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset192_train_132105_B16",
+          "family": "random-32-32-10_scen2_offset192_train_132105",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 42,
+          "queries": 16,
+          "T_lower": "2968089663/500000",
+          "T_upper": "742022421/125000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset208_train_132106_B8",
+          "family": "random-32-32-10_scen2_offset208_train_132106",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 38,
+          "queries": 8,
+          "T_lower": "1513867213/250000",
+          "T_upper": "605546889/100000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset208_train_132106_B16",
+          "family": "random-32-32-10_scen2_offset208_train_132106",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 38,
+          "queries": 16,
+          "T_lower": "6054820243/1000000",
+          "T_upper": "6054820281/1000000"
+        }
+      ]
+    },
+    "STOP": {
+      "overall": {
+        "tasks": 1077,
+        "queries": 144,
+        "T_lower": "67994840521/500000",
+        "T_upper": "67994841053/500000"
+      },
+      "by_budget": {
+        "8": {
+          "tasks": 538,
+          "queries": 48,
+          "T_lower": "34012965571/500000",
+          "T_upper": "68025931673/1000000"
+        },
+        "16": {
+          "tasks": 539,
+          "queries": 96,
+          "T_lower": "679637499/10000",
+          "T_upper": "67963750433/1000000"
+        }
+      },
+      "by_family": {
+        "empty-32-32_scen2_offset112_train_131102": {
+          "tasks": 82,
+          "queries": 12,
+          "T_lower": "2902499007/250000",
+          "T_upper": "1160999611/100000"
+        },
+        "empty-32-32_scen2_offset128_train_131103": {
+          "tasks": 88,
+          "queries": 12,
+          "T_lower": "2240472723/200000",
+          "T_upper": "11202363703/1000000"
+        },
+        "empty-32-32_scen2_offset144_train_131104": {
+          "tasks": 87,
+          "queries": 12,
+          "T_lower": "11508835047/1000000",
+          "T_upper": "5754417567/500000"
+        },
+        "empty-32-32_scen2_offset160_train_131105": {
+          "tasks": 94,
+          "queries": 12,
+          "T_lower": "572565821/50000",
+          "T_upper": "5725658257/500000"
+        },
+        "empty-32-32_scen2_offset176_train_131106": {
+          "tasks": 101,
+          "queries": 12,
+          "T_lower": "10432981311/1000000",
+          "T_upper": "10432981403/1000000"
+        },
+        "empty-32-32_scen2_offset96_train_131101": {
+          "tasks": 94,
+          "queries": 12,
+          "T_lower": "2774949347/250000",
+          "T_upper": "5549898741/500000"
+        },
+        "random-32-32-10_scen2_offset128_train_132101": {
+          "tasks": 92,
+          "queries": 12,
+          "T_lower": "2766322459/250000",
+          "T_upper": "1383161241/125000"
+        },
+        "random-32-32-10_scen2_offset144_train_132102": {
+          "tasks": 102,
+          "queries": 12,
+          "T_lower": "26590741/2500",
+          "T_upper": "5318148249/500000"
+        },
+        "random-32-32-10_scen2_offset160_train_132103": {
+          "tasks": 91,
+          "queries": 12,
+          "T_lower": "729215343/62500",
+          "T_upper": "11667445579/1000000"
+        },
+        "random-32-32-10_scen2_offset176_train_132104": {
+          "tasks": 86,
+          "queries": 12,
+          "T_lower": "11328965003/1000000",
+          "T_upper": "11328965089/1000000"
+        },
+        "random-32-32-10_scen2_offset192_train_132105": {
+          "tasks": 84,
+          "queries": 12,
+          "T_lower": "5937728401/500000",
+          "T_upper": "5937728443/500000"
+        },
+        "random-32-32-10_scen2_offset208_train_132106": {
+          "tasks": 76,
+          "queries": 12,
+          "T_lower": "1513867213/125000",
+          "T_upper": "605546889/50000"
+        }
+      },
+      "choices": [
+        {
+          "world": "empty-32-32_scen2_offset96_train_131101_B8",
+          "family": "empty-32-32_scen2_offset96_train_131101",
+          "budget": 8,
+          "arm": "STOP",
+          "tasks": 47,
+          "queries": 4,
+          "T_lower": "2774949347/500000",
+          "T_upper": "5549898741/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset96_train_131101_B16",
+          "family": "empty-32-32_scen2_offset96_train_131101",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 47,
+          "queries": 8,
+          "T_lower": "2774949347/500000",
+          "T_upper": "5549898741/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset112_train_131102_B8",
+          "family": "empty-32-32_scen2_offset112_train_131102",
+          "budget": 8,
+          "arm": "STOP",
+          "tasks": 41,
+          "queries": 4,
+          "T_lower": "2902499007/500000",
+          "T_upper": "1160999611/200000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset112_train_131102_B16",
+          "family": "empty-32-32_scen2_offset112_train_131102",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 41,
+          "queries": 8,
+          "T_lower": "2902499007/500000",
+          "T_upper": "1160999611/200000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset128_train_131103_B8",
+          "family": "empty-32-32_scen2_offset128_train_131103",
+          "budget": 8,
+          "arm": "STOP",
+          "tasks": 44,
+          "queries": 4,
+          "T_lower": "87523533/15625",
+          "T_upper": "1400376539/250000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset128_train_131103_B16",
+          "family": "empty-32-32_scen2_offset128_train_131103",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 44,
+          "queries": 8,
+          "T_lower": "5600857503/1000000",
+          "T_upper": "5600857547/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset144_train_131104_B8",
+          "family": "empty-32-32_scen2_offset144_train_131104",
+          "budget": 8,
+          "arm": "STOP",
+          "tasks": 43,
+          "queries": 4,
+          "T_lower": "1437945823/250000",
+          "T_upper": "1150356667/200000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset144_train_131104_B16",
+          "family": "empty-32-32_scen2_offset144_train_131104",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 44,
+          "queries": 8,
+          "T_lower": "1151410351/200000",
+          "T_upper": "5757051799/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset160_train_131105_B8",
+          "family": "empty-32-32_scen2_offset160_train_131105",
+          "budget": 8,
+          "arm": "STOP",
+          "tasks": 47,
+          "queries": 4,
+          "T_lower": "5725949931/1000000",
+          "T_upper": "2862974989/500000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset160_train_131105_B16",
+          "family": "empty-32-32_scen2_offset160_train_131105",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 47,
+          "queries": 8,
+          "T_lower": "5725366489/1000000",
+          "T_upper": "715670817/125000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset176_train_131106_B8",
+          "family": "empty-32-32_scen2_offset176_train_131106",
+          "budget": 8,
+          "arm": "STOP",
+          "tasks": 51,
+          "queries": 4,
+          "T_lower": "1309206617/250000",
+          "T_upper": "2618413257/500000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset176_train_131106_B16",
+          "family": "empty-32-32_scen2_offset176_train_131106",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 50,
+          "queries": 8,
+          "T_lower": "5196154843/1000000",
+          "T_upper": "5196154889/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset128_train_132101_B8",
+          "family": "random-32-32-10_scen2_offset128_train_132101",
+          "budget": 8,
+          "arm": "STOP",
+          "tasks": 46,
+          "queries": 4,
+          "T_lower": "553529369/100000",
+          "T_upper": "691911717/125000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset128_train_132101_B16",
+          "family": "random-32-32-10_scen2_offset128_train_132101",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 46,
+          "queries": 8,
+          "T_lower": "2764998073/500000",
+          "T_upper": "172812381/31250"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset144_train_132102_B8",
+          "family": "random-32-32-10_scen2_offset144_train_132102",
+          "budget": 8,
+          "arm": "STOP",
+          "tasks": 51,
+          "queries": 4,
+          "T_lower": "66542619/12500",
+          "T_upper": "5323409569/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset144_train_132102_B16",
+          "family": "random-32-32-10_scen2_offset144_train_132102",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 51,
+          "queries": 8,
+          "T_lower": "33205543/6250",
+          "T_upper": "5312886929/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset160_train_132103_B8",
+          "family": "random-32-32-10_scen2_offset160_train_132103",
+          "budget": 8,
+          "arm": "STOP",
+          "tasks": 45,
+          "queries": 4,
+          "T_lower": "116745441/20000",
+          "T_upper": "1167454419/200000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset160_train_132103_B16",
+          "family": "random-32-32-10_scen2_offset160_train_132103",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 46,
+          "queries": 8,
+          "T_lower": "2915086719/500000",
+          "T_upper": "1457543371/250000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset176_train_132104_B8",
+          "family": "random-32-32-10_scen2_offset176_train_132104",
+          "budget": 8,
+          "arm": "STOP",
+          "tasks": 43,
+          "queries": 4,
+          "T_lower": "5664247043/1000000",
+          "T_upper": "2832123543/500000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset176_train_132104_B16",
+          "family": "random-32-32-10_scen2_offset176_train_132104",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 43,
+          "queries": 8,
+          "T_lower": "141617949/25000",
+          "T_upper": "5664718003/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset192_train_132105_B8",
+          "family": "random-32-32-10_scen2_offset192_train_132105",
+          "budget": 8,
+          "arm": "STOP",
+          "tasks": 42,
+          "queries": 4,
+          "T_lower": "1484819369/250000",
+          "T_upper": "2969638759/500000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset192_train_132105_B16",
+          "family": "random-32-32-10_scen2_offset192_train_132105",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 42,
+          "queries": 8,
+          "T_lower": "2968089663/500000",
+          "T_upper": "742022421/125000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset208_train_132106_B8",
+          "family": "random-32-32-10_scen2_offset208_train_132106",
+          "budget": 8,
+          "arm": "STOP",
+          "tasks": 38,
+          "queries": 4,
+          "T_lower": "1513867213/250000",
+          "T_upper": "605546889/100000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset208_train_132106_B16",
+          "family": "random-32-32-10_scen2_offset208_train_132106",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 38,
+          "queries": 8,
+          "T_lower": "1513867213/250000",
+          "T_upper": "605546889/100000"
+        }
+      ]
+    },
+    "OOF_ridge": {
+      "overall": {
+        "tasks": 1077,
+        "queries": 223,
+        "T_lower": "135942022857/1000000",
+        "T_upper": "135942023921/1000000"
+      },
+      "by_budget": {
+        "8": {
+          "tasks": 539,
+          "queries": 84,
+          "T_lower": "68003974493/1000000",
+          "T_upper": "2720159001/40000"
+        },
+        "16": {
+          "tasks": 538,
+          "queries": 139,
+          "T_lower": "16984512091/250000",
+          "T_upper": "1061532014/15625"
+        }
+      },
+      "by_family": {
+        "empty-32-32_scen2_offset112_train_131102": {
+          "tasks": 82,
+          "queries": 16,
+          "T_lower": "5802979739/500000",
+          "T_upper": "290148989/25000"
+        },
+        "empty-32-32_scen2_offset128_train_131103": {
+          "tasks": 88,
+          "queries": 16,
+          "T_lower": "5600857503/500000",
+          "T_upper": "5600857547/500000"
+        },
+        "empty-32-32_scen2_offset144_train_131104": {
+          "tasks": 88,
+          "queries": 16,
+          "T_lower": "1151410351/100000",
+          "T_upper": "5757051799/500000"
+        },
+        "empty-32-32_scen2_offset160_train_131105": {
+          "tasks": 94,
+          "queries": 16,
+          "T_lower": "5725366489/500000",
+          "T_upper": "715670817/62500"
+        },
+        "empty-32-32_scen2_offset176_train_131106": {
+          "tasks": 101,
+          "queries": 16,
+          "T_lower": "5208905911/500000",
+          "T_upper": "5208905957/500000"
+        },
+        "empty-32-32_scen2_offset96_train_131101": {
+          "tasks": 94,
+          "queries": 19,
+          "T_lower": "277450453/25000",
+          "T_upper": "5549009107/500000"
+        },
+        "random-32-32-10_scen2_offset128_train_132101": {
+          "tasks": 92,
+          "queries": 20,
+          "T_lower": "2766313403/250000",
+          "T_upper": "1383156713/125000"
+        },
+        "random-32-32-10_scen2_offset144_train_132102": {
+          "tasks": 102,
+          "queries": 20,
+          "T_lower": "10635064349/1000000",
+          "T_upper": "10635064447/1000000"
+        },
+        "random-32-32-10_scen2_offset160_train_132103": {
+          "tasks": 90,
+          "queries": 24,
+          "T_lower": "1457215449/125000",
+          "T_upper": "5828861841/500000"
+        },
+        "random-32-32-10_scen2_offset176_train_132104": {
+          "tasks": 86,
+          "queries": 20,
+          "T_lower": "11328965003/1000000",
+          "T_upper": "11328965089/1000000"
+        },
+        "random-32-32-10_scen2_offset192_train_132105": {
+          "tasks": 84,
+          "queries": 24,
+          "T_lower": "11855737683/1000000",
+          "T_upper": "11855737767/1000000"
+        },
+        "random-32-32-10_scen2_offset208_train_132106": {
+          "tasks": 76,
+          "queries": 16,
+          "T_lower": "1513867213/125000",
+          "T_upper": "605546889/50000"
+        }
+      },
+      "choices": [
+        {
+          "world": "empty-32-32_scen2_offset96_train_131101_B8",
+          "family": "empty-32-32_scen2_offset96_train_131101",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 47,
+          "queries": 8,
+          "T_lower": "2774949347/500000",
+          "T_upper": "5549898741/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset96_train_131101_B16",
+          "family": "empty-32-32_scen2_offset96_train_131101",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 47,
+          "queries": 11,
+          "T_lower": "2774059713/500000",
+          "T_upper": "5548119473/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset112_train_131102_B8",
+          "family": "empty-32-32_scen2_offset112_train_131102",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 41,
+          "queries": 8,
+          "T_lower": "725120183/125000",
+          "T_upper": "1160192301/200000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset112_train_131102_B16",
+          "family": "empty-32-32_scen2_offset112_train_131102",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 41,
+          "queries": 8,
+          "T_lower": "2902499007/500000",
+          "T_upper": "1160999611/200000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset128_train_131103_B8",
+          "family": "empty-32-32_scen2_offset128_train_131103",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 44,
+          "queries": 8,
+          "T_lower": "5600857503/1000000",
+          "T_upper": "5600857547/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset128_train_131103_B16",
+          "family": "empty-32-32_scen2_offset128_train_131103",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 44,
+          "queries": 8,
+          "T_lower": "5600857503/1000000",
+          "T_upper": "5600857547/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset144_train_131104_B8",
+          "family": "empty-32-32_scen2_offset144_train_131104",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 44,
+          "queries": 8,
+          "T_lower": "1151410351/200000",
+          "T_upper": "5757051799/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset144_train_131104_B16",
+          "family": "empty-32-32_scen2_offset144_train_131104",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 44,
+          "queries": 8,
+          "T_lower": "1151410351/200000",
+          "T_upper": "5757051799/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset160_train_131105_B8",
+          "family": "empty-32-32_scen2_offset160_train_131105",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 47,
+          "queries": 8,
+          "T_lower": "5725366489/1000000",
+          "T_upper": "715670817/125000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset160_train_131105_B16",
+          "family": "empty-32-32_scen2_offset160_train_131105",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 47,
+          "queries": 8,
+          "T_lower": "5725366489/1000000",
+          "T_upper": "715670817/125000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset176_train_131106_B8",
+          "family": "empty-32-32_scen2_offset176_train_131106",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 51,
+          "queries": 8,
+          "T_lower": "5221656979/1000000",
+          "T_upper": "208866281/40000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset176_train_131106_B16",
+          "family": "empty-32-32_scen2_offset176_train_131106",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 50,
+          "queries": 8,
+          "T_lower": "5196154843/1000000",
+          "T_upper": "5196154889/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset128_train_132101_B8",
+          "family": "random-32-32-10_scen2_offset128_train_132101",
+          "budget": 8,
+          "arm": "STOP",
+          "tasks": 46,
+          "queries": 4,
+          "T_lower": "553529369/100000",
+          "T_upper": "691911717/125000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset128_train_132101_B16",
+          "family": "random-32-32-10_scen2_offset128_train_132101",
+          "budget": 16,
+          "arm": "C",
+          "tasks": 46,
+          "queries": 16,
+          "T_lower": "2764979961/500000",
+          "T_upper": "172811249/31250"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset144_train_132102_B8",
+          "family": "random-32-32-10_scen2_offset144_train_132102",
+          "budget": 8,
+          "arm": "STOP",
+          "tasks": 51,
+          "queries": 4,
+          "T_lower": "66542619/12500",
+          "T_upper": "5323409569/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset144_train_132102_B16",
+          "family": "random-32-32-10_scen2_offset144_train_132102",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 51,
+          "queries": 16,
+          "T_lower": "5311654829/1000000",
+          "T_upper": "2655827439/500000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset160_train_132103_B8",
+          "family": "random-32-32-10_scen2_offset160_train_132103",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 45,
+          "queries": 8,
+          "T_lower": "2916791589/500000",
+          "T_upper": "5833583223/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset160_train_132103_B16",
+          "family": "random-32-32-10_scen2_offset160_train_132103",
+          "budget": 16,
+          "arm": "C",
+          "tasks": 45,
+          "queries": 16,
+          "T_lower": "2912070207/500000",
+          "T_upper": "5824140459/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset176_train_132104_B8",
+          "family": "random-32-32-10_scen2_offset176_train_132104",
+          "budget": 8,
+          "arm": "STOP",
+          "tasks": 43,
+          "queries": 4,
+          "T_lower": "5664247043/1000000",
+          "T_upper": "2832123543/500000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset176_train_132104_B16",
+          "family": "random-32-32-10_scen2_offset176_train_132104",
+          "budget": 16,
+          "arm": "C",
+          "tasks": 43,
+          "queries": 16,
+          "T_lower": "141617949/25000",
+          "T_upper": "5664718003/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset192_train_132105_B8",
+          "family": "random-32-32-10_scen2_offset192_train_132105",
+          "budget": 8,
+          "arm": "C",
+          "tasks": 42,
+          "queries": 8,
+          "T_lower": "2968089663/500000",
+          "T_upper": "742022421/125000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset192_train_132105_B16",
+          "family": "random-32-32-10_scen2_offset192_train_132105",
+          "budget": 16,
+          "arm": "C",
+          "tasks": 42,
+          "queries": 16,
+          "T_lower": "5919558357/1000000",
+          "T_upper": "5919558399/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset208_train_132106_B8",
+          "family": "random-32-32-10_scen2_offset208_train_132106",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 38,
+          "queries": 8,
+          "T_lower": "1513867213/250000",
+          "T_upper": "605546889/100000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset208_train_132106_B16",
+          "family": "random-32-32-10_scen2_offset208_train_132106",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 38,
+          "queries": 8,
+          "T_lower": "1513867213/250000",
+          "T_upper": "605546889/100000"
+        }
+      ]
+    },
+    "OOF_train_constant": {
+      "overall": {
+        "tasks": 1076,
+        "queries": 283,
+        "T_lower": "13590775569/100000",
+        "T_upper": "67953878377/500000"
+      },
+      "by_budget": {
+        "8": {
+          "tasks": 538,
+          "queries": 96,
+          "T_lower": "33986241349/500000",
+          "T_upper": "6797248323/100000"
+        },
+        "16": {
+          "tasks": 538,
+          "queries": 187,
+          "T_lower": "2122977281/31250",
+          "T_upper": "16983818381/250000"
+        }
+      },
+      "by_family": {
+        "empty-32-32_scen2_offset112_train_131102": {
+          "tasks": 82,
+          "queries": 24,
+          "T_lower": "2901334953/250000",
+          "T_upper": "5802669947/500000"
+        },
+        "empty-32-32_scen2_offset128_train_131103": {
+          "tasks": 88,
+          "queries": 24,
+          "T_lower": "5600857503/500000",
+          "T_upper": "5600857547/500000"
+        },
+        "empty-32-32_scen2_offset144_train_131104": {
+          "tasks": 88,
+          "queries": 24,
+          "T_lower": "5757033643/500000",
+          "T_upper": "5757033687/500000"
+        },
+        "empty-32-32_scen2_offset160_train_131105": {
+          "tasks": 93,
+          "queries": 24,
+          "T_lower": "11443812523/1000000",
+          "T_upper": "1430476577/125000"
+        },
+        "empty-32-32_scen2_offset176_train_131106": {
+          "tasks": 100,
+          "queries": 24,
+          "T_lower": "2597931561/250000",
+          "T_upper": "162370724/15625"
+        },
+        "empty-32-32_scen2_offset96_train_131101": {
+          "tasks": 94,
+          "queries": 19,
+          "T_lower": "277450453/25000",
+          "T_upper": "5549009107/500000"
+        },
+        "random-32-32-10_scen2_offset128_train_132101": {
+          "tasks": 92,
+          "queries": 24,
+          "T_lower": "11060604677/1000000",
+          "T_upper": "11060604769/1000000"
+        },
+        "random-32-32-10_scen2_offset144_train_132102": {
+          "tasks": 102,
+          "queries": 24,
+          "T_lower": "1063433601/100000",
+          "T_upper": "2658584027/250000"
+        },
+        "random-32-32-10_scen2_offset160_train_132103": {
+          "tasks": 91,
+          "queries": 24,
+          "T_lower": "1457969577/125000",
+          "T_upper": "11663756707/1000000"
+        },
+        "random-32-32-10_scen2_offset176_train_132104": {
+          "tasks": 86,
+          "queries": 24,
+          "T_lower": "5664176309/500000",
+          "T_upper": "177005511/15625"
+        },
+        "random-32-32-10_scen2_offset192_train_132105": {
+          "tasks": 84,
+          "queries": 24,
+          "T_lower": "11855737683/1000000",
+          "T_upper": "11855737767/1000000"
+        },
+        "random-32-32-10_scen2_offset208_train_132106": {
+          "tasks": 76,
+          "queries": 24,
+          "T_lower": "2422057819/200000",
+          "T_upper": "12110289171/1000000"
+        }
+      },
+      "choices": [
+        {
+          "world": "empty-32-32_scen2_offset96_train_131101_B8",
+          "family": "empty-32-32_scen2_offset96_train_131101",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 47,
+          "queries": 8,
+          "T_lower": "2774949347/500000",
+          "T_upper": "5549898741/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset96_train_131101_B16",
+          "family": "empty-32-32_scen2_offset96_train_131101",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 47,
+          "queries": 11,
+          "T_lower": "2774059713/500000",
+          "T_upper": "5548119473/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset112_train_131102_B8",
+          "family": "empty-32-32_scen2_offset112_train_131102",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 41,
+          "queries": 8,
+          "T_lower": "725120183/125000",
+          "T_upper": "1160192301/200000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset112_train_131102_B16",
+          "family": "empty-32-32_scen2_offset112_train_131102",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 41,
+          "queries": 16,
+          "T_lower": "1451094587/250000",
+          "T_upper": "5804378389/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset128_train_131103_B8",
+          "family": "empty-32-32_scen2_offset128_train_131103",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 44,
+          "queries": 8,
+          "T_lower": "5600857503/1000000",
+          "T_upper": "5600857547/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset128_train_131103_B16",
+          "family": "empty-32-32_scen2_offset128_train_131103",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 44,
+          "queries": 16,
+          "T_lower": "5600857503/1000000",
+          "T_upper": "5600857547/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset144_train_131104_B8",
+          "family": "empty-32-32_scen2_offset144_train_131104",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 44,
+          "queries": 8,
+          "T_lower": "1151410351/200000",
+          "T_upper": "5757051799/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset144_train_131104_B16",
+          "family": "empty-32-32_scen2_offset144_train_131104",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 44,
+          "queries": 16,
+          "T_lower": "5757015531/1000000",
+          "T_upper": "230280623/40000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset160_train_131105_B8",
+          "family": "empty-32-32_scen2_offset160_train_131105",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 47,
+          "queries": 8,
+          "T_lower": "5725366489/1000000",
+          "T_upper": "715670817/125000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset160_train_131105_B16",
+          "family": "empty-32-32_scen2_offset160_train_131105",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 46,
+          "queries": 16,
+          "T_lower": "2859223017/500000",
+          "T_upper": "17870144/3125"
+        },
+        {
+          "world": "empty-32-32_scen2_offset176_train_131106_B8",
+          "family": "empty-32-32_scen2_offset176_train_131106",
+          "budget": 8,
+          "arm": "C",
+          "tasks": 50,
+          "queries": 8,
+          "T_lower": "5196154843/1000000",
+          "T_upper": "5196154889/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset176_train_131106_B16",
+          "family": "empty-32-32_scen2_offset176_train_131106",
+          "budget": 16,
+          "arm": "C",
+          "tasks": 50,
+          "queries": 16,
+          "T_lower": "5195571401/1000000",
+          "T_upper": "5195571447/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset128_train_132101_B8",
+          "family": "random-32-32-10_scen2_offset128_train_132101",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 46,
+          "queries": 8,
+          "T_lower": "1106128951/200000",
+          "T_upper": "5530644801/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset128_train_132101_B16",
+          "family": "random-32-32-10_scen2_offset128_train_132101",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 46,
+          "queries": 16,
+          "T_lower": "2764979961/500000",
+          "T_upper": "172811249/31250"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset144_train_132102_B8",
+          "family": "random-32-32-10_scen2_offset144_train_132102",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 51,
+          "queries": 8,
+          "T_lower": "5322681181/1000000",
+          "T_upper": "532268123/100000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset144_train_132102_B16",
+          "family": "random-32-32-10_scen2_offset144_train_132102",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 51,
+          "queries": 16,
+          "T_lower": "5311654829/1000000",
+          "T_upper": "2655827439/500000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset160_train_132103_B8",
+          "family": "random-32-32-10_scen2_offset160_train_132103",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 45,
+          "queries": 8,
+          "T_lower": "2916791589/500000",
+          "T_upper": "5833583223/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset160_train_132103_B16",
+          "family": "random-32-32-10_scen2_offset160_train_132103",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 46,
+          "queries": 16,
+          "T_lower": "2915086719/500000",
+          "T_upper": "1457543371/250000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset176_train_132104_B8",
+          "family": "random-32-32-10_scen2_offset176_train_132104",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 43,
+          "queries": 8,
+          "T_lower": "2831817329/500000",
+          "T_upper": "5663634701/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset176_train_132104_B16",
+          "family": "random-32-32-10_scen2_offset176_train_132104",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 43,
+          "queries": 16,
+          "T_lower": "141617949/25000",
+          "T_upper": "5664718003/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset192_train_132105_B8",
+          "family": "random-32-32-10_scen2_offset192_train_132105",
+          "budget": 8,
+          "arm": "C",
+          "tasks": 42,
+          "queries": 8,
+          "T_lower": "2968089663/500000",
+          "T_upper": "742022421/125000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset192_train_132105_B16",
+          "family": "random-32-32-10_scen2_offset192_train_132105",
+          "budget": 16,
+          "arm": "C",
+          "tasks": 42,
+          "queries": 16,
+          "T_lower": "5919558357/1000000",
+          "T_upper": "5919558399/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset208_train_132106_B8",
+          "family": "random-32-32-10_scen2_offset208_train_132106",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 38,
+          "queries": 8,
+          "T_lower": "1513867213/250000",
+          "T_upper": "605546889/100000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset208_train_132106_B16",
+          "family": "random-32-32-10_scen2_offset208_train_132106",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 38,
+          "queries": 16,
+          "T_lower": "6054820243/1000000",
+          "T_upper": "6054820281/1000000"
+        }
+      ]
+    },
+    "OOF_budget_lookup": {
+      "overall": {
+        "tasks": 1076,
+        "queries": 208,
+        "T_lower": "27189756251/200000",
+        "T_upper": "67974391159/500000"
+      },
+      "by_budget": {
+        "8": {
+          "tasks": 539,
+          "queries": 96,
+          "T_lower": "33998992417/500000",
+          "T_upper": "33998992683/500000"
+        },
+        "16": {
+          "tasks": 537,
+          "queries": 112,
+          "T_lower": "67950796421/1000000",
+          "T_upper": "8493849619/125000"
+        }
+      },
+      "by_family": {
+        "empty-32-32_scen2_offset112_train_131102": {
+          "tasks": 82,
+          "queries": 16,
+          "T_lower": "5802979739/500000",
+          "T_upper": "290148989/25000"
+        },
+        "empty-32-32_scen2_offset128_train_131103": {
+          "tasks": 88,
+          "queries": 16,
+          "T_lower": "5600857503/500000",
+          "T_upper": "5600857547/500000"
+        },
+        "empty-32-32_scen2_offset144_train_131104": {
+          "tasks": 88,
+          "queries": 16,
+          "T_lower": "1151410351/100000",
+          "T_upper": "5757051799/500000"
+        },
+        "empty-32-32_scen2_offset160_train_131105": {
+          "tasks": 93,
+          "queries": 24,
+          "T_lower": "11443812523/1000000",
+          "T_upper": "1430476577/125000"
+        },
+        "empty-32-32_scen2_offset176_train_131106": {
+          "tasks": 101,
+          "queries": 16,
+          "T_lower": "5208905911/500000",
+          "T_upper": "5208905957/500000"
+        },
+        "empty-32-32_scen2_offset96_train_131101": {
+          "tasks": 94,
+          "queries": 16,
+          "T_lower": "2774949347/250000",
+          "T_upper": "5549898741/500000"
+        },
+        "random-32-32-10_scen2_offset128_train_132101": {
+          "tasks": 92,
+          "queries": 16,
+          "T_lower": "11060640901/1000000",
+          "T_upper": "11060640993/1000000"
+        },
+        "random-32-32-10_scen2_offset144_train_132102": {
+          "tasks": 102,
+          "queries": 16,
+          "T_lower": "10635568061/1000000",
+          "T_upper": "10635568159/1000000"
+        },
+        "random-32-32-10_scen2_offset160_train_132103": {
+          "tasks": 90,
+          "queries": 24,
+          "T_lower": "1457215449/125000",
+          "T_upper": "5828861841/500000"
+        },
+        "random-32-32-10_scen2_offset176_train_132104": {
+          "tasks": 86,
+          "queries": 16,
+          "T_lower": "5664176309/500000",
+          "T_upper": "177005511/15625"
+        },
+        "random-32-32-10_scen2_offset192_train_132105": {
+          "tasks": 84,
+          "queries": 16,
+          "T_lower": "2968089663/250000",
+          "T_upper": "742022421/62500"
+        },
+        "random-32-32-10_scen2_offset208_train_132106": {
+          "tasks": 76,
+          "queries": 16,
+          "T_lower": "1513867213/125000",
+          "T_upper": "605546889/50000"
+        }
+      },
+      "choices": [
+        {
+          "world": "empty-32-32_scen2_offset96_train_131101_B8",
+          "family": "empty-32-32_scen2_offset96_train_131101",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 47,
+          "queries": 8,
+          "T_lower": "2774949347/500000",
+          "T_upper": "5549898741/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset96_train_131101_B16",
+          "family": "empty-32-32_scen2_offset96_train_131101",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 47,
+          "queries": 8,
+          "T_lower": "2774949347/500000",
+          "T_upper": "5549898741/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset112_train_131102_B8",
+          "family": "empty-32-32_scen2_offset112_train_131102",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 41,
+          "queries": 8,
+          "T_lower": "725120183/125000",
+          "T_upper": "1160192301/200000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset112_train_131102_B16",
+          "family": "empty-32-32_scen2_offset112_train_131102",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 41,
+          "queries": 8,
+          "T_lower": "2902499007/500000",
+          "T_upper": "1160999611/200000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset128_train_131103_B8",
+          "family": "empty-32-32_scen2_offset128_train_131103",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 44,
+          "queries": 8,
+          "T_lower": "5600857503/1000000",
+          "T_upper": "5600857547/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset128_train_131103_B16",
+          "family": "empty-32-32_scen2_offset128_train_131103",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 44,
+          "queries": 8,
+          "T_lower": "5600857503/1000000",
+          "T_upper": "5600857547/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset144_train_131104_B8",
+          "family": "empty-32-32_scen2_offset144_train_131104",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 44,
+          "queries": 8,
+          "T_lower": "1151410351/200000",
+          "T_upper": "5757051799/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset144_train_131104_B16",
+          "family": "empty-32-32_scen2_offset144_train_131104",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 44,
+          "queries": 8,
+          "T_lower": "1151410351/200000",
+          "T_upper": "5757051799/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset160_train_131105_B8",
+          "family": "empty-32-32_scen2_offset160_train_131105",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 47,
+          "queries": 8,
+          "T_lower": "5725366489/1000000",
+          "T_upper": "715670817/125000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset160_train_131105_B16",
+          "family": "empty-32-32_scen2_offset160_train_131105",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 46,
+          "queries": 16,
+          "T_lower": "2859223017/500000",
+          "T_upper": "17870144/3125"
+        },
+        {
+          "world": "empty-32-32_scen2_offset176_train_131106_B8",
+          "family": "empty-32-32_scen2_offset176_train_131106",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 51,
+          "queries": 8,
+          "T_lower": "5221656979/1000000",
+          "T_upper": "208866281/40000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset176_train_131106_B16",
+          "family": "empty-32-32_scen2_offset176_train_131106",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 50,
+          "queries": 8,
+          "T_lower": "5196154843/1000000",
+          "T_upper": "5196154889/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset128_train_132101_B8",
+          "family": "random-32-32-10_scen2_offset128_train_132101",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 46,
+          "queries": 8,
+          "T_lower": "1106128951/200000",
+          "T_upper": "5530644801/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset128_train_132101_B16",
+          "family": "random-32-32-10_scen2_offset128_train_132101",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 46,
+          "queries": 8,
+          "T_lower": "2764998073/500000",
+          "T_upper": "172812381/31250"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset144_train_132102_B8",
+          "family": "random-32-32-10_scen2_offset144_train_132102",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 51,
+          "queries": 8,
+          "T_lower": "5322681181/1000000",
+          "T_upper": "532268123/100000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset144_train_132102_B16",
+          "family": "random-32-32-10_scen2_offset144_train_132102",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 51,
+          "queries": 8,
+          "T_lower": "33205543/6250",
+          "T_upper": "5312886929/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset160_train_132103_B8",
+          "family": "random-32-32-10_scen2_offset160_train_132103",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 45,
+          "queries": 8,
+          "T_lower": "2916791589/500000",
+          "T_upper": "5833583223/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset160_train_132103_B16",
+          "family": "random-32-32-10_scen2_offset160_train_132103",
+          "budget": 16,
+          "arm": "C",
+          "tasks": 45,
+          "queries": 16,
+          "T_lower": "2912070207/500000",
+          "T_upper": "5824140459/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset176_train_132104_B8",
+          "family": "random-32-32-10_scen2_offset176_train_132104",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 43,
+          "queries": 8,
+          "T_lower": "2831817329/500000",
+          "T_upper": "5663634701/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset176_train_132104_B16",
+          "family": "random-32-32-10_scen2_offset176_train_132104",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 43,
+          "queries": 8,
+          "T_lower": "141617949/25000",
+          "T_upper": "5664718003/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset192_train_132105_B8",
+          "family": "random-32-32-10_scen2_offset192_train_132105",
+          "budget": 8,
+          "arm": "C",
+          "tasks": 42,
+          "queries": 8,
+          "T_lower": "2968089663/500000",
+          "T_upper": "742022421/125000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset192_train_132105_B16",
+          "family": "random-32-32-10_scen2_offset192_train_132105",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 42,
+          "queries": 8,
+          "T_lower": "2968089663/500000",
+          "T_upper": "742022421/125000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset208_train_132106_B8",
+          "family": "random-32-32-10_scen2_offset208_train_132106",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 38,
+          "queries": 8,
+          "T_lower": "1513867213/250000",
+          "T_upper": "605546889/100000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset208_train_132106_B16",
+          "family": "random-32-32-10_scen2_offset208_train_132106",
+          "budget": 16,
+          "arm": "STOP",
+          "tasks": 38,
+          "queries": 8,
+          "T_lower": "1513867213/250000",
+          "T_upper": "605546889/100000"
+        }
+      ]
+    },
+    "OOF_public_threshold": {
+      "overall": {
+        "tasks": 1075,
+        "queries": 283,
+        "T_lower": "67946181529/500000",
+        "T_upper": "135892364121/1000000"
+      },
+      "by_budget": {
+        "8": {
+          "tasks": 538,
+          "queries": 96,
+          "T_lower": "6796312309/100000",
+          "T_upper": "33981561811/500000"
+        },
+        "16": {
+          "tasks": 537,
+          "queries": 187,
+          "T_lower": "2122788749/31250",
+          "T_upper": "67929240499/1000000"
+        }
+      },
+      "by_family": {
+        "empty-32-32_scen2_offset112_train_131102": {
+          "tasks": 82,
+          "queries": 24,
+          "T_lower": "2901334953/250000",
+          "T_upper": "5802669947/500000"
+        },
+        "empty-32-32_scen2_offset128_train_131103": {
+          "tasks": 88,
+          "queries": 24,
+          "T_lower": "5600857503/500000",
+          "T_upper": "5600857547/500000"
+        },
+        "empty-32-32_scen2_offset144_train_131104": {
+          "tasks": 88,
+          "queries": 24,
+          "T_lower": "5757033643/500000",
+          "T_upper": "5757033687/500000"
+        },
+        "empty-32-32_scen2_offset160_train_131105": {
+          "tasks": 93,
+          "queries": 24,
+          "T_lower": "11443812523/1000000",
+          "T_upper": "1430476577/125000"
+        },
+        "empty-32-32_scen2_offset176_train_131106": {
+          "tasks": 100,
+          "queries": 24,
+          "T_lower": "2597931561/250000",
+          "T_upper": "162370724/15625"
+        },
+        "empty-32-32_scen2_offset96_train_131101": {
+          "tasks": 94,
+          "queries": 19,
+          "T_lower": "277450453/25000",
+          "T_upper": "5549009107/500000"
+        },
+        "random-32-32-10_scen2_offset128_train_132101": {
+          "tasks": 92,
+          "queries": 24,
+          "T_lower": "2764989017/250000",
+          "T_upper": "34562363/3125"
+        },
+        "random-32-32-10_scen2_offset144_train_132102": {
+          "tasks": 102,
+          "queries": 24,
+          "T_lower": "10624541709/1000000",
+          "T_upper": "10624541807/1000000"
+        },
+        "random-32-32-10_scen2_offset160_train_132103": {
+          "tasks": 90,
+          "queries": 24,
+          "T_lower": "1457215449/125000",
+          "T_upper": "5828861841/500000"
+        },
+        "random-32-32-10_scen2_offset176_train_132104": {
+          "tasks": 86,
+          "queries": 24,
+          "T_lower": "141617949/12500",
+          "T_upper": "5664718003/500000"
+        },
+        "random-32-32-10_scen2_offset192_train_132105": {
+          "tasks": 84,
+          "queries": 24,
+          "T_lower": "11855737683/1000000",
+          "T_upper": "11855737767/1000000"
+        },
+        "random-32-32-10_scen2_offset208_train_132106": {
+          "tasks": 76,
+          "queries": 24,
+          "T_lower": "2422057819/200000",
+          "T_upper": "12110289171/1000000"
+        }
+      },
+      "choices": [
+        {
+          "world": "empty-32-32_scen2_offset96_train_131101_B8",
+          "family": "empty-32-32_scen2_offset96_train_131101",
+          "budget": 8,
+          "arm": "C",
+          "tasks": 47,
+          "queries": 8,
+          "T_lower": "2774949347/500000",
+          "T_upper": "5549898741/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset96_train_131101_B16",
+          "family": "empty-32-32_scen2_offset96_train_131101",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 47,
+          "queries": 11,
+          "T_lower": "2774059713/500000",
+          "T_upper": "5548119473/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset112_train_131102_B8",
+          "family": "empty-32-32_scen2_offset112_train_131102",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 41,
+          "queries": 8,
+          "T_lower": "725120183/125000",
+          "T_upper": "1160192301/200000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset112_train_131102_B16",
+          "family": "empty-32-32_scen2_offset112_train_131102",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 41,
+          "queries": 16,
+          "T_lower": "1451094587/250000",
+          "T_upper": "5804378389/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset128_train_131103_B8",
+          "family": "empty-32-32_scen2_offset128_train_131103",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 44,
+          "queries": 8,
+          "T_lower": "5600857503/1000000",
+          "T_upper": "5600857547/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset128_train_131103_B16",
+          "family": "empty-32-32_scen2_offset128_train_131103",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 44,
+          "queries": 16,
+          "T_lower": "5600857503/1000000",
+          "T_upper": "5600857547/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset144_train_131104_B8",
+          "family": "empty-32-32_scen2_offset144_train_131104",
+          "budget": 8,
+          "arm": "C",
+          "tasks": 44,
+          "queries": 8,
+          "T_lower": "1151410351/200000",
+          "T_upper": "5757051799/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset144_train_131104_B16",
+          "family": "empty-32-32_scen2_offset144_train_131104",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 44,
+          "queries": 16,
+          "T_lower": "5757015531/1000000",
+          "T_upper": "230280623/40000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset160_train_131105_B8",
+          "family": "empty-32-32_scen2_offset160_train_131105",
+          "budget": 8,
+          "arm": "C",
+          "tasks": 47,
+          "queries": 8,
+          "T_lower": "5725366489/1000000",
+          "T_upper": "715670817/125000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset160_train_131105_B16",
+          "family": "empty-32-32_scen2_offset160_train_131105",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 46,
+          "queries": 16,
+          "T_lower": "2859223017/500000",
+          "T_upper": "17870144/3125"
+        },
+        {
+          "world": "empty-32-32_scen2_offset176_train_131106_B8",
+          "family": "empty-32-32_scen2_offset176_train_131106",
+          "budget": 8,
+          "arm": "C",
+          "tasks": 50,
+          "queries": 8,
+          "T_lower": "5196154843/1000000",
+          "T_upper": "5196154889/1000000"
+        },
+        {
+          "world": "empty-32-32_scen2_offset176_train_131106_B16",
+          "family": "empty-32-32_scen2_offset176_train_131106",
+          "budget": 16,
+          "arm": "C",
+          "tasks": 50,
+          "queries": 16,
+          "T_lower": "5195571401/1000000",
+          "T_upper": "5195571447/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset128_train_132101_B8",
+          "family": "random-32-32-10_scen2_offset128_train_132101",
+          "budget": 8,
+          "arm": "C",
+          "tasks": 46,
+          "queries": 8,
+          "T_lower": "2764998073/500000",
+          "T_upper": "172812381/31250"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset128_train_132101_B16",
+          "family": "random-32-32-10_scen2_offset128_train_132101",
+          "budget": 16,
+          "arm": "C",
+          "tasks": 46,
+          "queries": 16,
+          "T_lower": "2764979961/500000",
+          "T_upper": "172811249/31250"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset144_train_132102_B8",
+          "family": "random-32-32-10_scen2_offset144_train_132102",
+          "budget": 8,
+          "arm": "C",
+          "tasks": 51,
+          "queries": 8,
+          "T_lower": "33205543/6250",
+          "T_upper": "5312886929/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset144_train_132102_B16",
+          "family": "random-32-32-10_scen2_offset144_train_132102",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 51,
+          "queries": 16,
+          "T_lower": "5311654829/1000000",
+          "T_upper": "2655827439/500000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset160_train_132103_B8",
+          "family": "random-32-32-10_scen2_offset160_train_132103",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 45,
+          "queries": 8,
+          "T_lower": "2916791589/500000",
+          "T_upper": "5833583223/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset160_train_132103_B16",
+          "family": "random-32-32-10_scen2_offset160_train_132103",
+          "budget": 16,
+          "arm": "C",
+          "tasks": 45,
+          "queries": 16,
+          "T_lower": "2912070207/500000",
+          "T_upper": "5824140459/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset176_train_132104_B8",
+          "family": "random-32-32-10_scen2_offset176_train_132104",
+          "budget": 8,
+          "arm": "C",
+          "tasks": 43,
+          "queries": 8,
+          "T_lower": "141617949/25000",
+          "T_upper": "5664718003/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset176_train_132104_B16",
+          "family": "random-32-32-10_scen2_offset176_train_132104",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 43,
+          "queries": 16,
+          "T_lower": "141617949/25000",
+          "T_upper": "5664718003/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset192_train_132105_B8",
+          "family": "random-32-32-10_scen2_offset192_train_132105",
+          "budget": 8,
+          "arm": "C",
+          "tasks": 42,
+          "queries": 8,
+          "T_lower": "2968089663/500000",
+          "T_upper": "742022421/125000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset192_train_132105_B16",
+          "family": "random-32-32-10_scen2_offset192_train_132105",
+          "budget": 16,
+          "arm": "C",
+          "tasks": 42,
+          "queries": 16,
+          "T_lower": "5919558357/1000000",
+          "T_upper": "5919558399/1000000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset208_train_132106_B8",
+          "family": "random-32-32-10_scen2_offset208_train_132106",
+          "budget": 8,
+          "arm": "LD",
+          "tasks": 38,
+          "queries": 8,
+          "T_lower": "1513867213/250000",
+          "T_upper": "605546889/100000"
+        },
+        {
+          "world": "random-32-32-10_scen2_offset208_train_132106_B16",
+          "family": "random-32-32-10_scen2_offset208_train_132106",
+          "budget": 16,
+          "arm": "LD",
+          "tasks": 38,
+          "queries": 16,
+          "T_lower": "6054820243/1000000",
+          "T_upper": "6054820281/1000000"
+        }
+      ]
+    }
+  },
+  "empirical_interval_Pareto": {
+    "overall": [
+      "C",
+      "LD",
+      "STOP",
+      "OOF_ridge",
+      "OOF_train_constant",
+      "OOF_budget_lookup",
+      "OOF_public_threshold"
+    ]
+  },
+  "families": 12,
+  "contexts": 24
+}
