@@ -1,0 +1,11 @@
+--- author/compiler.py
++++ isolated_patch/compiler.py
+@@ -104,6 +104,8 @@
+ 
+                         try:
+ 
++                            if k == 0:
++                                raise IndexError("Initial vertex has no predecessor")
+                             v_i_k_minus_1 = vertices_i[k - 1]
+                             v_j_l_plus_1 = vertices_j[l + 1]
+                             rev = Dependency(v_j_l_plus_1, v_i_k_minus_1, active=False)

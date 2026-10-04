@@ -1,0 +1,398 @@
+{
+  "author_can_execute_file": "/home/lyh/.cache/mapf_research/sadg-controller-c2626d9/sadg_controller/sadg_controller/sadg/vertex.py",
+  "case": "mini_measured",
+  "collision_audit": {
+    "all_cross_agent_overlap_pairs": 16,
+    "collisions": [],
+    "min_point_distance": 2.0
+  },
+  "completed_agents": 2,
+  "completion_times": {
+    "agent0": 7.5,
+    "agent1": 5.5
+  },
+  "data_class": "synthetic_event_adapter_on_author_graph",
+  "events": [
+    {
+      "agent": "agent0",
+      "kind": "RESUME_COMMITTED",
+      "remaining": 0.75,
+      "t": 0.0,
+      "true_progress": 0.25,
+      "vertex": "v_0_1"
+    },
+    {
+      "agent": "agent1",
+      "kind": "RESUME_COMMITTED",
+      "remaining": 0.5,
+      "t": 0.0,
+      "true_progress": 0.5,
+      "vertex": "v_1_1"
+    },
+    {
+      "agent": "agent1",
+      "kind": "COMPLETE",
+      "t": 0.5,
+      "vertex": "v_1_1"
+    },
+    {
+      "active_dependency_tails": [],
+      "agent": "agent1",
+      "kind": "START",
+      "t": 0.5,
+      "vertex": "v_1_2"
+    },
+    {
+      "agent": "agent0",
+      "kind": "COMPLETE",
+      "t": 0.75,
+      "vertex": "v_0_1"
+    },
+    {
+      "active_dependency_tails": [],
+      "agent": "agent0",
+      "kind": "START",
+      "t": 0.75,
+      "vertex": "v_0_2"
+    },
+    {
+      "agent": "agent1",
+      "kind": "COMPLETE",
+      "t": 1.5,
+      "vertex": "v_1_2"
+    },
+    {
+      "active_dependency_tails": [],
+      "agent": "agent1",
+      "kind": "START",
+      "t": 1.5,
+      "vertex": "v_1_3"
+    },
+    {
+      "agent": "agent0",
+      "kind": "COMPLETE",
+      "t": 1.75,
+      "vertex": "v_0_2"
+    },
+    {
+      "agent": "agent1",
+      "kind": "COMPLETE",
+      "t": 2.5,
+      "vertex": "v_1_3"
+    },
+    {
+      "active_dependency_tails": [],
+      "agent": "agent1",
+      "kind": "START",
+      "t": 2.5,
+      "vertex": "v_1_4"
+    },
+    {
+      "agent": "agent1",
+      "kind": "COMPLETE",
+      "t": 3.5,
+      "vertex": "v_1_4"
+    },
+    {
+      "active_dependency_tails": [
+        "v_1_4"
+      ],
+      "agent": "agent0",
+      "kind": "START",
+      "t": 3.5,
+      "vertex": "v_0_3"
+    },
+    {
+      "active_dependency_tails": [],
+      "agent": "agent1",
+      "kind": "START",
+      "t": 3.5,
+      "vertex": "v_1_5"
+    },
+    {
+      "agent": "agent0",
+      "kind": "COMPLETE",
+      "t": 4.5,
+      "vertex": "v_0_3"
+    },
+    {
+      "agent": "agent1",
+      "kind": "COMPLETE",
+      "t": 4.5,
+      "vertex": "v_1_5"
+    },
+    {
+      "active_dependency_tails": [],
+      "agent": "agent0",
+      "kind": "START",
+      "t": 4.5,
+      "vertex": "v_0_4"
+    },
+    {
+      "active_dependency_tails": [],
+      "agent": "agent1",
+      "kind": "START",
+      "t": 4.5,
+      "vertex": "v_1_6"
+    },
+    {
+      "agent": "agent0",
+      "kind": "COMPLETE",
+      "t": 5.5,
+      "vertex": "v_0_4"
+    },
+    {
+      "agent": "agent1",
+      "kind": "COMPLETE",
+      "t": 5.5,
+      "vertex": "v_1_6"
+    },
+    {
+      "active_dependency_tails": [],
+      "agent": "agent0",
+      "kind": "START",
+      "t": 5.5,
+      "vertex": "v_0_5"
+    },
+    {
+      "agent": "agent0",
+      "kind": "COMPLETE",
+      "t": 6.5,
+      "vertex": "v_0_5"
+    },
+    {
+      "active_dependency_tails": [],
+      "agent": "agent0",
+      "kind": "START",
+      "t": 6.5,
+      "vertex": "v_0_6"
+    },
+    {
+      "agent": "agent0",
+      "kind": "COMPLETE",
+      "t": 7.5,
+      "vertex": "v_0_6"
+    }
+  ],
+  "makespan": 7.5,
+  "production_cost": null,
+  "segments": [
+    {
+      "agent": "agent0",
+      "kind": "COMMITTED_REMAINDER",
+      "p0": [
+        0.0,
+        5.5
+      ],
+      "p1": [
+        0.0,
+        4.0
+      ],
+      "t0": 0.0,
+      "t1": 0.75,
+      "vertex": "v_0_1"
+    },
+    {
+      "agent": "agent1",
+      "kind": "COMMITTED_REMAINDER",
+      "p0": [
+        -5.0,
+        0.0
+      ],
+      "p1": [
+        -4.0,
+        0.0
+      ],
+      "t0": 0.0,
+      "t1": 0.5,
+      "vertex": "v_1_1"
+    },
+    {
+      "agent": "agent1",
+      "kind": "MOVE",
+      "p0": [
+        -4.0,
+        0.0
+      ],
+      "p1": [
+        -2.0,
+        0.0
+      ],
+      "t0": 0.5,
+      "t1": 1.5,
+      "vertex": "v_1_2"
+    },
+    {
+      "agent": "agent0",
+      "kind": "MOVE",
+      "p0": [
+        0.0,
+        4.0
+      ],
+      "p1": [
+        0.0,
+        2.0
+      ],
+      "t0": 0.75,
+      "t1": 1.75,
+      "vertex": "v_0_2"
+    },
+    {
+      "agent": "agent1",
+      "kind": "MOVE",
+      "p0": [
+        -2.0,
+        0.0
+      ],
+      "p1": [
+        0.0,
+        0.0
+      ],
+      "t0": 1.5,
+      "t1": 2.5,
+      "vertex": "v_1_3"
+    },
+    {
+      "agent": "agent1",
+      "kind": "MOVE",
+      "p0": [
+        0.0,
+        0.0
+      ],
+      "p1": [
+        2.0,
+        0.0
+      ],
+      "t0": 2.5,
+      "t1": 3.5,
+      "vertex": "v_1_4"
+    },
+    {
+      "agent": "agent0",
+      "kind": "WAIT",
+      "p0": [
+        0.0,
+        2.0
+      ],
+      "p1": [
+        0.0,
+        2.0
+      ],
+      "t0": 1.75,
+      "t1": 3.5,
+      "vertex": "v_0_3"
+    },
+    {
+      "agent": "agent0",
+      "kind": "MOVE",
+      "p0": [
+        0.0,
+        2.0
+      ],
+      "p1": [
+        0.0,
+        0.0
+      ],
+      "t0": 3.5,
+      "t1": 4.5,
+      "vertex": "v_0_3"
+    },
+    {
+      "agent": "agent1",
+      "kind": "MOVE",
+      "p0": [
+        2.0,
+        0.0
+      ],
+      "p1": [
+        4.0,
+        0.0
+      ],
+      "t0": 3.5,
+      "t1": 4.5,
+      "vertex": "v_1_5"
+    },
+    {
+      "agent": "agent0",
+      "kind": "MOVE",
+      "p0": [
+        0.0,
+        0.0
+      ],
+      "p1": [
+        0.0,
+        -2.0
+      ],
+      "t0": 4.5,
+      "t1": 5.5,
+      "vertex": "v_0_4"
+    },
+    {
+      "agent": "agent1",
+      "kind": "MOVE",
+      "p0": [
+        4.0,
+        0.0
+      ],
+      "p1": [
+        6.0,
+        0.0
+      ],
+      "t0": 4.5,
+      "t1": 5.5,
+      "vertex": "v_1_6"
+    },
+    {
+      "agent": "agent0",
+      "kind": "MOVE",
+      "p0": [
+        0.0,
+        -2.0
+      ],
+      "p1": [
+        0.0,
+        -4.0
+      ],
+      "t0": 5.5,
+      "t1": 6.5,
+      "vertex": "v_0_5"
+    },
+    {
+      "agent": "agent0",
+      "kind": "MOVE",
+      "p0": [
+        0.0,
+        -4.0
+      ],
+      "p1": [
+        0.0,
+        -6.0
+      ],
+      "t0": 6.5,
+      "t1": 7.5,
+      "vertex": "v_0_6"
+    },
+    {
+      "agent": "agent1",
+      "kind": "GOAL_HOLD",
+      "p0": [
+        6.0,
+        0.0
+      ],
+      "p1": [
+        6.0,
+        0.0
+      ],
+      "t0": 5.5,
+      "t1": 7.5,
+      "vertex": "v_1_6"
+    }
+  ],
+  "semantics": "All author statuses and active type2 dependencies; event dispatch, not 2-second ROS timer; point geometry only.",
+  "source_graph_sha256": "5fb8065b374b87a9a40161413b493d389e32fc69164068cbc11ae65317c7a3fe",
+  "sum_completion_time": 13.0,
+  "true_progress": {
+    "agent0": 0.25,
+    "agent1": 0.5
+  }
+}

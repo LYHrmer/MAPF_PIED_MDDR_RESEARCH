@@ -1,0 +1,412 @@
+{
+  "actual_optimizer_calls": 0,
+  "dimensions": {
+    "dimensions": {
+      "resolution": 2,
+      "x_offset": 0,
+      "y_offset": 0
+    }
+  },
+  "expected": "A starts at shared vertex; its first move has no predecessor; reverse must be unavailable.",
+  "original": {
+    "groups": [
+      {
+        "agent": "agent0",
+        "contains_unswitchable": false,
+        "dependencies": [
+          {
+            "active": [
+              "v_0_0",
+              "v_1_1"
+            ],
+            "b": false,
+            "forward": [
+              "v_0_0",
+              "v_1_1"
+            ],
+            "reverse": [
+              "v_1_2",
+              "v_0_1"
+            ],
+            "switchable": true
+          }
+        ],
+        "first_head_active": "v_1_1",
+        "first_head_inactive": "v_0_1",
+        "group_type": "SINGLE",
+        "switchable": true,
+        "uid": "dg_agent0_0",
+        "within_horizon": true
+      }
+    ],
+    "type1": [
+      [
+        "v_0_0",
+        "v_0_1"
+      ],
+      [
+        "v_1_0",
+        "v_1_1"
+      ],
+      [
+        "v_1_1",
+        "v_1_2"
+      ]
+    ],
+    "vertices": [
+      {
+        "agent": "agent0",
+        "index": 0,
+        "nominal_duration": 1.0,
+        "path_tuples": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            -2,
+            1
+          ]
+        ],
+        "predecessor": null,
+        "progress": 0.5,
+        "registered_incoming": [],
+        "remaining": 0.5,
+        "status": "STAGED",
+        "successor": "v_0_1",
+        "uid": "v_0_0"
+      },
+      {
+        "agent": "agent0",
+        "index": 1,
+        "nominal_duration": 1.0,
+        "path_tuples": [
+          [
+            0,
+            -2,
+            1
+          ],
+          [
+            0,
+            -4,
+            2
+          ]
+        ],
+        "predecessor": "v_0_0",
+        "progress": 0.5,
+        "registered_incoming": [
+          {
+            "active": false,
+            "edge": [
+              "v_1_2",
+              "v_0_1"
+            ]
+          }
+        ],
+        "remaining": 0.5,
+        "status": "STAGED",
+        "successor": null,
+        "uid": "v_0_1"
+      },
+      {
+        "agent": "agent1",
+        "index": 0,
+        "nominal_duration": 1.0,
+        "path_tuples": [
+          [
+            -4,
+            0,
+            0
+          ],
+          [
+            -2,
+            0,
+            1
+          ]
+        ],
+        "predecessor": null,
+        "progress": 0.5,
+        "registered_incoming": [],
+        "remaining": 0.5,
+        "status": "STAGED",
+        "successor": "v_1_1",
+        "uid": "v_1_0"
+      },
+      {
+        "agent": "agent1",
+        "index": 1,
+        "nominal_duration": 1.0,
+        "path_tuples": [
+          [
+            -2,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            2
+          ]
+        ],
+        "predecessor": "v_1_0",
+        "progress": 0.5,
+        "registered_incoming": [
+          {
+            "active": true,
+            "edge": [
+              "v_0_0",
+              "v_1_1"
+            ]
+          }
+        ],
+        "remaining": 0.5,
+        "status": "STAGED",
+        "successor": "v_1_2",
+        "uid": "v_1_1"
+      },
+      {
+        "agent": "agent1",
+        "index": 2,
+        "nominal_duration": 1.0,
+        "path_tuples": [
+          [
+            0,
+            0,
+            2
+          ],
+          [
+            2,
+            0,
+            3
+          ]
+        ],
+        "predecessor": "v_1_1",
+        "progress": 0.5,
+        "registered_incoming": [],
+        "remaining": 0.5,
+        "status": "STAGED",
+        "successor": null,
+        "uid": "v_1_2"
+      }
+    ]
+  },
+  "pass_regression": true,
+  "patched": {
+    "groups": [
+      {
+        "agent": "agent0",
+        "contains_unswitchable": true,
+        "dependencies": [
+          {
+            "active": [
+              "v_0_0",
+              "v_1_1"
+            ],
+            "b": false,
+            "forward": [
+              "v_0_0",
+              "v_1_1"
+            ],
+            "reverse": null,
+            "switchable": false
+          }
+        ],
+        "first_head_active": "v_1_1",
+        "first_head_inactive": null,
+        "group_type": "SINGLE",
+        "switchable": false,
+        "uid": "dg_agent0_0",
+        "within_horizon": true
+      }
+    ],
+    "type1": [
+      [
+        "v_0_0",
+        "v_0_1"
+      ],
+      [
+        "v_1_0",
+        "v_1_1"
+      ],
+      [
+        "v_1_1",
+        "v_1_2"
+      ]
+    ],
+    "vertices": [
+      {
+        "agent": "agent0",
+        "index": 0,
+        "nominal_duration": 1.0,
+        "path_tuples": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            -2,
+            1
+          ]
+        ],
+        "predecessor": null,
+        "progress": 0.5,
+        "registered_incoming": [],
+        "remaining": 0.5,
+        "status": "STAGED",
+        "successor": "v_0_1",
+        "uid": "v_0_0"
+      },
+      {
+        "agent": "agent0",
+        "index": 1,
+        "nominal_duration": 1.0,
+        "path_tuples": [
+          [
+            0,
+            -2,
+            1
+          ],
+          [
+            0,
+            -4,
+            2
+          ]
+        ],
+        "predecessor": "v_0_0",
+        "progress": 0.5,
+        "registered_incoming": [],
+        "remaining": 0.5,
+        "status": "STAGED",
+        "successor": null,
+        "uid": "v_0_1"
+      },
+      {
+        "agent": "agent1",
+        "index": 0,
+        "nominal_duration": 1.0,
+        "path_tuples": [
+          [
+            -4,
+            0,
+            0
+          ],
+          [
+            -2,
+            0,
+            1
+          ]
+        ],
+        "predecessor": null,
+        "progress": 0.5,
+        "registered_incoming": [],
+        "remaining": 0.5,
+        "status": "STAGED",
+        "successor": "v_1_1",
+        "uid": "v_1_0"
+      },
+      {
+        "agent": "agent1",
+        "index": 1,
+        "nominal_duration": 1.0,
+        "path_tuples": [
+          [
+            -2,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            2
+          ]
+        ],
+        "predecessor": "v_1_0",
+        "progress": 0.5,
+        "registered_incoming": [
+          {
+            "active": true,
+            "edge": [
+              "v_0_0",
+              "v_1_1"
+            ]
+          }
+        ],
+        "remaining": 0.5,
+        "status": "STAGED",
+        "successor": "v_1_2",
+        "uid": "v_1_1"
+      },
+      {
+        "agent": "agent1",
+        "index": 2,
+        "nominal_duration": 1.0,
+        "path_tuples": [
+          [
+            0,
+            0,
+            2
+          ],
+          [
+            2,
+            0,
+            3
+          ]
+        ],
+        "predecessor": "v_1_1",
+        "progress": 0.5,
+        "registered_incoming": [],
+        "remaining": 0.5,
+        "status": "STAGED",
+        "successor": null,
+        "uid": "v_1_2"
+      }
+    ]
+  },
+  "solution": {
+    "schedule": {
+      "agent0": [
+        {
+          "t": 0,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "t": 1,
+          "x": 1,
+          "y": 0
+        },
+        {
+          "t": 2,
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "agent1": [
+        {
+          "t": 0,
+          "x": 0,
+          "y": -2
+        },
+        {
+          "t": 1,
+          "x": 0,
+          "y": -1
+        },
+        {
+          "t": 2,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "t": 3,
+          "x": 0,
+          "y": 1
+        }
+      ]
+    }
+  }
+}

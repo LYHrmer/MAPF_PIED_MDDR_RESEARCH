@@ -1,0 +1,404 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "case": "mini_high_progress",
+      "vertices": 14,
+      "constraints": 30,
+      "binary_variables": 1,
+      "semantic_rows_exact": true,
+      "solver_solution_feasible": true,
+      "max_row_violation": 2.220446049250313e-16,
+      "objective": 12.339999999999996,
+      "changed_groups": [],
+      "independent_optimum_checked": true,
+      "assignments": [
+        {
+          "bits": {
+            "dg_agent0_0": 0
+          },
+          "feasible": true,
+          "objective": 12.339999999999996
+        },
+        {
+          "bits": {
+            "dg_agent0_0": 1
+          },
+          "feasible": true,
+          "objective": 13.24000000000931
+        }
+      ],
+      "source_hashes": {
+        "graph_before.json": "ac86cda2cbaba85ec15a24fea9403815362f583d99979bfab5ebe2915a2740f1",
+        "graph_after.json": "ac86cda2cbaba85ec15a24fea9403815362f583d99979bfab5ebe2915a2740f1",
+        "models.json": "3a4f712cc32f357f4d71d427b83be341e81ed887fa0c1462e0f0dc869e50eabe",
+        "result.json": "8afd543457f828239a412f24d83cb6a05c0581fa2278422a857b8e7b7dbe7e32"
+      }
+    },
+    {
+      "case": "mini_low_progress",
+      "vertices": 14,
+      "constraints": 30,
+      "binary_variables": 1,
+      "semantic_rows_exact": true,
+      "solver_solution_feasible": true,
+      "max_row_violation": 2.220446049250313e-16,
+      "objective": 13.24000000006519,
+      "changed_groups": [
+        "dg_agent0_0"
+      ],
+      "independent_optimum_checked": true,
+      "assignments": [
+        {
+          "bits": {
+            "dg_agent0_0": 0
+          },
+          "feasible": true,
+          "objective": 14.139999999999997
+        },
+        {
+          "bits": {
+            "dg_agent0_0": 1
+          },
+          "feasible": true,
+          "objective": 13.24000000000931
+        }
+      ],
+      "source_hashes": {
+        "graph_before.json": "79876412440227f2266d734b9d1438ca741b9df1f972f59af95375723ddd56e8",
+        "graph_after.json": "05f9a9fcece9e047fdf7cb1ef20da94fae494172e1ce00eab457a27356017ce0",
+        "models.json": "fe5ebc2e7ec42b6ececb2a34ad56e48982abe6deccefcf73d8908c2b49a5696d",
+        "result.json": "03ae515a459e1a0cbeb6520e2a75cecbedb02035c911466a362e316bbbbbecc6"
+      }
+    },
+    {
+      "case": "mini_measured",
+      "vertices": 14,
+      "constraints": 30,
+      "binary_variables": 1,
+      "semantic_rows_exact": true,
+      "solver_solution_feasible": true,
+      "max_row_violation": 2.220446049250313e-16,
+      "objective": 13.24000000006519,
+      "changed_groups": [
+        "dg_agent0_0"
+      ],
+      "independent_optimum_checked": true,
+      "assignments": [
+        {
+          "bits": {
+            "dg_agent0_0": 0
+          },
+          "feasible": true,
+          "objective": 13.739999999999997
+        },
+        {
+          "bits": {
+            "dg_agent0_0": 1
+          },
+          "feasible": true,
+          "objective": 13.24000000000931
+        }
+      ],
+      "source_hashes": {
+        "graph_before.json": "bf7db970b20d1b2c95eed5844c7ce5db197a7adb8bf37019a8b7beb1c5fd8148",
+        "graph_after.json": "5fb8065b374b87a9a40161413b493d389e32fc69164068cbc11ae65317c7a3fe",
+        "models.json": "bd0c276764b083f74a301393857041ce64052e006049111fdea71bd5be08284b",
+        "result.json": "fd46d28e4df6e765756712989658f4d56e9b5ef7332accfcec2bad3e33baafed"
+      }
+    },
+    {
+      "case": "mini_measured_history_rate",
+      "vertices": 14,
+      "constraints": 30,
+      "binary_variables": 1,
+      "semantic_rows_exact": true,
+      "solver_solution_feasible": true,
+      "max_row_violation": 2.220446049250313e-16,
+      "objective": 14.24000000006519,
+      "changed_groups": [
+        "dg_agent0_0"
+      ],
+      "independent_optimum_checked": true,
+      "assignments": [
+        {
+          "bits": {
+            "dg_agent0_0": 0
+          },
+          "feasible": true,
+          "objective": 16.115
+        },
+        {
+          "bits": {
+            "dg_agent0_0": 1
+          },
+          "feasible": true,
+          "objective": 14.24000000000931
+        }
+      ],
+      "source_hashes": {
+        "graph_before.json": "90963a33ae2c4699dcec03bc1b1fab47d6244f45a8d11d6445da77c91fe1ebf8",
+        "graph_after.json": "620b8a314acbf8a8b3ecbe0f9afef0586146be7422f1dfcc013259d407becd16",
+        "models.json": "be76e89facfe9ff2969ac0d9044b4db5b5a2b0baaa6da70313ca28593cde6f41",
+        "result.json": "830288ab0d52acb61862c67eb1ded116f1a40333bf3438df54095a3608f6990e"
+      }
+    },
+    {
+      "case": "mini_public_elapsed",
+      "vertices": 14,
+      "constraints": 30,
+      "binary_variables": 1,
+      "semantic_rows_exact": true,
+      "solver_solution_feasible": true,
+      "max_row_violation": 2.220446049250313e-16,
+      "objective": 12.739999999999997,
+      "changed_groups": [],
+      "independent_optimum_checked": true,
+      "assignments": [
+        {
+          "bits": {
+            "dg_agent0_0": 0
+          },
+          "feasible": true,
+          "objective": 12.739999999999997
+        },
+        {
+          "bits": {
+            "dg_agent0_0": 1
+          },
+          "feasible": true,
+          "objective": 13.24000000000931
+        }
+      ],
+      "source_hashes": {
+        "graph_before.json": "6cb78d2899851eaeecb418e143bd73b0be5e640de1ca020f49d09da0bc777eca",
+        "graph_after.json": "6cb78d2899851eaeecb418e143bd73b0be5e640de1ca020f49d09da0bc777eca",
+        "models.json": "8ce851465a63f29a1e816ec9840395780b06e5217b5140e66cba5d00bec4474f",
+        "result.json": "6bc00473c38b133d7944a5672bc2c68e4e12e2384d3dc2cd1cf8bd88b6b64e9e"
+      }
+    },
+    {
+      "case": "mini_public_history",
+      "vertices": 14,
+      "constraints": 30,
+      "binary_variables": 1,
+      "semantic_rows_exact": true,
+      "solver_solution_feasible": true,
+      "max_row_violation": 2.220446049250313e-16,
+      "objective": 13.039999999999997,
+      "changed_groups": [],
+      "independent_optimum_checked": true,
+      "assignments": [
+        {
+          "bits": {
+            "dg_agent0_0": 0
+          },
+          "feasible": true,
+          "objective": 13.039999999999997
+        },
+        {
+          "bits": {
+            "dg_agent0_0": 1
+          },
+          "feasible": true,
+          "objective": 13.24000000000931
+        }
+      ],
+      "source_hashes": {
+        "graph_before.json": "8cb48f3a0b68e9c79f9a970c4b655e5d58782f9fb4bf3f97d29e83992918412c",
+        "graph_after.json": "8cb48f3a0b68e9c79f9a970c4b655e5d58782f9fb4bf3f97d29e83992918412c",
+        "models.json": "db691947b896d53ce44af99c574feacf3b2e77d5ce4ae77ea73348a2a63d3b51",
+        "result.json": "63bf14bc29ac56e285b7720131b41868e0dc353fd64652d0ec67b9ef8e9e152f"
+      }
+    },
+    {
+      "case": "mini_public_history_rate",
+      "vertices": 14,
+      "constraints": 30,
+      "binary_variables": 1,
+      "semantic_rows_exact": true,
+      "solver_solution_feasible": true,
+      "max_row_violation": 2.220446049250313e-16,
+      "objective": 14.24000000006519,
+      "changed_groups": [
+        "dg_agent0_0"
+      ],
+      "independent_optimum_checked": true,
+      "assignments": [
+        {
+          "bits": {
+            "dg_agent0_0": 0
+          },
+          "feasible": true,
+          "objective": 15.239999999999998
+        },
+        {
+          "bits": {
+            "dg_agent0_0": 1
+          },
+          "feasible": true,
+          "objective": 14.24000000000931
+        }
+      ],
+      "source_hashes": {
+        "graph_before.json": "903242eac8e6ff54b70bcefc77de46a5a12397fd14b0b1248825c14d94e280e2",
+        "graph_after.json": "0f0a5099dd18bcd6d895de6da112e50f4045620e99d6b77c654f0b39ef432d9b",
+        "models.json": "607f559cd7e530e6e0e9e7269e135e03576dbc897b76920a14776cbd834bbbb0",
+        "result.json": "9bd783155b0046a939e21e3dce14ef3db542741d05d03e5fa08532dc8d0e40e2"
+      }
+    },
+    {
+      "case": "mini_stub",
+      "vertices": 14,
+      "constraints": 30,
+      "binary_variables": 1,
+      "semantic_rows_exact": true,
+      "solver_solution_feasible": true,
+      "max_row_violation": 2.220446049250313e-16,
+      "objective": 13.239999999999997,
+      "changed_groups": [],
+      "independent_optimum_checked": true,
+      "assignments": [
+        {
+          "bits": {
+            "dg_agent0_0": 0
+          },
+          "feasible": true,
+          "objective": 13.239999999999997
+        },
+        {
+          "bits": {
+            "dg_agent0_0": 1
+          },
+          "feasible": true,
+          "objective": 13.24000000000931
+        }
+      ],
+      "source_hashes": {
+        "graph_before.json": "6481d4e5d44fc0976fad93b26563d15262a0eaa4610fce16bb12c3e458dd02ec",
+        "graph_after.json": "6481d4e5d44fc0976fad93b26563d15262a0eaa4610fce16bb12c3e458dd02ec",
+        "models.json": "7134fd6aad0f0dbed11931a857968e78efe4c24f00e84855972e6d6a285ff170",
+        "result.json": "ab988a5cc40a5b803290386067eadf850a3f1142457306ef4a31207005938b12"
+      }
+    },
+    {
+      "case": "official_test_patched",
+      "vertices": 24,
+      "constraints": 58,
+      "binary_variables": 1,
+      "semantic_rows_exact": true,
+      "solver_solution_feasible": true,
+      "max_row_violation": 2.220446049250313e-16,
+      "objective": 30.399999999999995,
+      "changed_groups": [],
+      "independent_optimum_checked": true,
+      "assignments": [
+        {
+          "bits": {
+            "dg_agent3_0": 0
+          },
+          "feasible": true,
+          "objective": 30.399999999999995
+        },
+        {
+          "bits": {
+            "dg_agent3_0": 1
+          },
+          "feasible": true,
+          "objective": 35.48000000000931
+        }
+      ],
+      "source_hashes": {
+        "graph_before.json": "39e383d7d5562ce7a10d4f6062a228d4cb4b3939d4a7a55bd404060372523b3d",
+        "graph_after.json": "39e383d7d5562ce7a10d4f6062a228d4cb4b3939d4a7a55bd404060372523b3d",
+        "models.json": "2bbc4f0d2f441d596777ab36b0159a9b42cff79dfbd60fbc2dda9045772b7e10",
+        "result.json": "b7242450e4495d7bc42d6edde84dd4f92ac74b6e02245ca08790d59fba8df4af"
+      }
+    },
+    {
+      "case": "official_test_staged",
+      "vertices": 24,
+      "constraints": 58,
+      "binary_variables": 1,
+      "semantic_rows_exact": true,
+      "solver_solution_feasible": true,
+      "max_row_violation": 2.220446049250313e-16,
+      "objective": 30.399999999999995,
+      "changed_groups": [],
+      "independent_optimum_checked": true,
+      "assignments": [
+        {
+          "bits": {
+            "dg_agent3_0": 0
+          },
+          "feasible": true,
+          "objective": 30.399999999999995
+        },
+        {
+          "bits": {
+            "dg_agent3_0": 1
+          },
+          "feasible": true,
+          "objective": 35.48000000000931
+        }
+      ],
+      "source_hashes": {
+        "graph_before.json": "39e383d7d5562ce7a10d4f6062a228d4cb4b3939d4a7a55bd404060372523b3d",
+        "graph_after.json": "39e383d7d5562ce7a10d4f6062a228d4cb4b3939d4a7a55bd404060372523b3d",
+        "models.json": "b261c48283d41e3bad1add42fcc34820d39a9f532b546cf56be280a474c785e9",
+        "result.json": "b6a18b8d937e02062080ce7ab80c6d4deeda91215c6492c742f7915acad46b90"
+      }
+    },
+    {
+      "case": "warehouse_measured_patched",
+      "vertices": 10743,
+      "constraints": 37277,
+      "binary_variables": 2,
+      "semantic_rows_exact": true,
+      "solver_solution_feasible": true,
+      "max_row_violation": 9.103828801926284e-15,
+      "objective": 10962.88333333334,
+      "changed_groups": [],
+      "independent_optimum_checked": false,
+      "assignments": [],
+      "source_hashes": {
+        "graph_before.json": "64c672093ec832be90bca304f565b450ace18c37854bb1fe89f80abbe646cf02",
+        "graph_after.json": "64c672093ec832be90bca304f565b450ace18c37854bb1fe89f80abbe646cf02",
+        "models.json": "6e89f4429f2b26eb80286c570c18047af3bc8bc23063e598954843b59bcc2abe",
+        "result.json": "00d5bc810c942a306df2a4bca6e9f829b10eeff837cf75fa55ef0e42d608d48a"
+      }
+    },
+    {
+      "case": "warehouse_public_patched",
+      "vertices": 10743,
+      "constraints": 37277,
+      "binary_variables": 2,
+      "semantic_rows_exact": true,
+      "solver_solution_feasible": true,
+      "max_row_violation": 9.103828801926284e-15,
+      "objective": 10962.800000000008,
+      "changed_groups": [],
+      "independent_optimum_checked": false,
+      "assignments": [],
+      "source_hashes": {
+        "graph_before.json": "bfdee2e02e53d27e6ec8a762b3705233d32410eb5b1675318a9502738a814be8",
+        "graph_after.json": "bfdee2e02e53d27e6ec8a762b3705233d32410eb5b1675318a9502738a814be8",
+        "models.json": "68590523b211554e6a53b95c536f06a5b7a5dea6f58aead7805eb0217474ce61",
+        "result.json": "59c2527ea021c64026dec42a41bc79db2b311da99f20762e7341335205b5b19f"
+      }
+    }
+  ],
+  "author_calls_rerun": 0,
+  "simulations_run": 0,
+  "reused_independent_checks": [
+    "mini_high_progress",
+    "mini_low_progress",
+    "mini_measured",
+    "mini_public_elapsed",
+    "mini_public_history",
+    "mini_stub",
+    "official_test_staged"
+  ],
+  "independent_LPs": 20,
+  "scope": "author MILP rows, adopted graph and small-problem optimality; not full ROS or physical robot certification"
+}

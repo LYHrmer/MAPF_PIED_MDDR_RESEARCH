@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "case": "mini_public_elapsed",
+      "passed": true,
+      "graph_sha256": "6cb78d2899851eaeecb418e143bd73b0be5e640de1ca020f49d09da0bc777eca",
+      "suffix_sha256": "a6f60f031b623a2020892c8487f645ddd4ec3f4349559149d8377399692b1806",
+      "completion": {
+        "agent0": "23/4",
+        "agent1": "31/4"
+      },
+      "sum_completion": "27/2",
+      "makespan": "31/4",
+      "minimum_point_distance_squared": "4",
+      "overlaps_including_closed_endpoints": 16,
+      "complete_events": 12,
+      "all_wait_and_goal_occupancy_covered": true
+    },
+    {
+      "case": "mini_measured",
+      "passed": true,
+      "graph_sha256": "5fb8065b374b87a9a40161413b493d389e32fc69164068cbc11ae65317c7a3fe",
+      "suffix_sha256": "5af1aaed31ab1b84096cd582bf9b834d63be7fa9d6982f993180f4d403da16c1",
+      "completion": {
+        "agent0": "15/2",
+        "agent1": "11/2"
+      },
+      "sum_completion": "13",
+      "makespan": "15/2",
+      "minimum_point_distance_squared": "4",
+      "overlaps_including_closed_endpoints": 16,
+      "complete_events": 12,
+      "all_wait_and_goal_occupancy_covered": true
+    }
+  ],
+  "new_author_solver_calls": 0,
+  "new_physical_episodes": 0,
+  "scope": "Paired synthetic event adapter, fixed true plant, point geometry; not paid sensing, ROS control, or finite-footprint safety. Strong history adopts the same graph as measured, so this does not establish extra measurement value."
+}

@@ -1,0 +1,19 @@
+--- author/dependency_group.py
++++ isolated_patch/r16_guard_group.py
+@@ -184,9 +184,13 @@
+             return False
+         else:
+ 
+-            return (
+-                self.first_head_active.get_status() == Status.STAGED
+-                and self.first_head_inactive.get_status() == Status.STAGED
++            # R16 conservative commitment adapter: inspect every candidate head.
++            return all(
++                dep.switchable
++                and dep.get_inactive() is not None
++                and dep.get_active().get_head().get_status() == Status.STAGED
++                and dep.get_inactive().get_head().get_status() == Status.STAGED
++                for dep in self.dependencies
+             )
+ 
+     def switch(self) -> None:

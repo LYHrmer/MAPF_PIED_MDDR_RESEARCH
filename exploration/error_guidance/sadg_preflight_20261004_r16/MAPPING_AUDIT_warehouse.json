@@ -1,0 +1,3257 @@
+{
+  "action_count_errors": [],
+  "active_commitments": 108,
+  "actual_optimizer_calls": 0,
+  "agents": 110,
+  "author_actions": 10743,
+  "author_compile_seconds": 16.713572346998262,
+  "binding": {
+    "agent": 2,
+    "captured_at": "1/2",
+    "delivered_at": "1/2",
+    "from_state": 0,
+    "measured_progress": "1/6",
+    "progress_identifies_same_action": true,
+    "public_base_sha256": "d6011ccf279527ec3d99d8d9e95d6dec7c4c02e802ae42fa004bc3df0e0ff273",
+    "public_file_sha256": "9b56898c06865b5d6314c725f7435d9e2a65399c00a72a8fd2133c07429847c8",
+    "public_progress": "1/4",
+    "request_public_sha256": "d6011ccf279527ec3d99d8d9e95d6dec7c4c02e802ae42fa004bc3df0e0ff273",
+    "to_state": 1
+  },
+  "committed_incoming_changes": [],
+  "common_adoption_eligible": false,
+  "compiled_remaining_type2_count": 15789,
+  "compiled_type2_count": 15789,
+  "compiler_sha256": "57fb2d8cb36393128739b81a79bd4c37130e5d1344fe5eaca04f489c312b438c",
+  "compiler_version": "unmodified_author",
+  "completed_tail_groups_still_switchable": [],
+  "context": "warehouse-10-20-10-2-1__t1_2__axis_slow",
+  "extra_relation_families": [],
+  "invalid_reverse_pairs": [
+    {
+      "expected": [
+        2540,
+        0
+      ],
+      "forward": [
+        1,
+        2539
+      ],
+      "group": "dg_agent0_8",
+      "group_switchable": true,
+      "reverse": [
+        2540,
+        100
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        6747,
+        0
+      ],
+      "forward": [
+        1,
+        6746
+      ],
+      "group": "dg_agent0_20",
+      "group_switchable": true,
+      "reverse": [
+        6747,
+        100
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        8614,
+        0
+      ],
+      "forward": [
+        1,
+        8613
+      ],
+      "group": "dg_agent0_31",
+      "group_switchable": true,
+      "reverse": [
+        8614,
+        100
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        8845,
+        0
+      ],
+      "forward": [
+        1,
+        8844
+      ],
+      "group": "dg_agent0_33",
+      "group_switchable": true,
+      "reverse": [
+        8845,
+        100
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        3824,
+        101
+      ],
+      "forward": [
+        102,
+        3823
+      ],
+      "group": "dg_agent1_13",
+      "group_switchable": true,
+      "reverse": [
+        3824,
+        221
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        7172,
+        101
+      ],
+      "forward": [
+        102,
+        7171
+      ],
+      "group": "dg_agent1_18",
+      "group_switchable": true,
+      "reverse": [
+        7172,
+        221
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        3101,
+        222
+      ],
+      "forward": [
+        223,
+        3100
+      ],
+      "group": "dg_agent2_3",
+      "group_switchable": true,
+      "reverse": [
+        3101,
+        291
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        3267,
+        222
+      ],
+      "forward": [
+        223,
+        3266
+      ],
+      "group": "dg_agent2_4",
+      "group_switchable": true,
+      "reverse": [
+        3267,
+        291
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        4125,
+        222
+      ],
+      "forward": [
+        223,
+        4124
+      ],
+      "group": "dg_agent2_5",
+      "group_switchable": true,
+      "reverse": [
+        4125,
+        291
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        8929,
+        222
+      ],
+      "forward": [
+        223,
+        8928
+      ],
+      "group": "dg_agent2_15",
+      "group_switchable": true,
+      "reverse": [
+        8929,
+        291
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        9265,
+        222
+      ],
+      "forward": [
+        223,
+        9264
+      ],
+      "group": "dg_agent2_16",
+      "group_switchable": true,
+      "reverse": [
+        9265,
+        291
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        10397,
+        222
+      ],
+      "forward": [
+        223,
+        10396
+      ],
+      "group": "dg_agent2_18",
+      "group_switchable": true,
+      "reverse": [
+        10397,
+        291
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        10472,
+        222
+      ],
+      "forward": [
+        223,
+        10471
+      ],
+      "group": "dg_agent2_19",
+      "group_switchable": true,
+      "reverse": [
+        10472,
+        291
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        8905,
+        452
+      ],
+      "forward": [
+        453,
+        8904
+      ],
+      "group": "dg_agent4_7",
+      "group_switchable": true,
+      "reverse": [
+        8905,
+        462
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        2674,
+        463
+      ],
+      "forward": [
+        464,
+        2673
+      ],
+      "group": "dg_agent5_1",
+      "group_switchable": true,
+      "reverse": [
+        2674,
+        490
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        2738,
+        463
+      ],
+      "forward": [
+        464,
+        2737
+      ],
+      "group": "dg_agent5_2",
+      "group_switchable": true,
+      "reverse": [
+        2738,
+        490
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        5094,
+        463
+      ],
+      "forward": [
+        464,
+        5093
+      ],
+      "group": "dg_agent5_8",
+      "group_switchable": true,
+      "reverse": [
+        5094,
+        490
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        6415,
+        463
+      ],
+      "forward": [
+        464,
+        6414
+      ],
+      "group": "dg_agent5_10",
+      "group_switchable": true,
+      "reverse": [
+        6415,
+        490
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        1533,
+        491
+      ],
+      "forward": [
+        492,
+        1532
+      ],
+      "group": "dg_agent6_2",
+      "group_switchable": true,
+      "reverse": [
+        1533,
+        578
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        1070,
+        579
+      ],
+      "forward": [
+        580,
+        1069
+      ],
+      "group": "dg_agent7_0",
+      "group_switchable": true,
+      "reverse": [
+        1070,
+        753
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        1838,
+        784
+      ],
+      "forward": [
+        785,
+        1837
+      ],
+      "group": "dg_agent9_4",
+      "group_switchable": true,
+      "reverse": [
+        1838,
+        882
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        3797,
+        784
+      ],
+      "forward": [
+        785,
+        3796
+      ],
+      "group": "dg_agent9_16",
+      "group_switchable": true,
+      "reverse": [
+        3797,
+        882
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        3929,
+        784
+      ],
+      "forward": [
+        785,
+        3928
+      ],
+      "group": "dg_agent9_17",
+      "group_switchable": true,
+      "reverse": [
+        3929,
+        882
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        8553,
+        784
+      ],
+      "forward": [
+        785,
+        8552
+      ],
+      "group": "dg_agent9_32",
+      "group_switchable": true,
+      "reverse": [
+        8553,
+        882
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        6224,
+        883
+      ],
+      "forward": [
+        884,
+        6223
+      ],
+      "group": "dg_agent10_16",
+      "group_switchable": true,
+      "reverse": [
+        6224,
+        1049
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        9713,
+        883
+      ],
+      "forward": [
+        884,
+        9712
+      ],
+      "group": "dg_agent10_25",
+      "group_switchable": true,
+      "reverse": [
+        9713,
+        1049
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        2256,
+        1294
+      ],
+      "forward": [
+        1295,
+        2255
+      ],
+      "group": "dg_agent13_7",
+      "group_switchable": true,
+      "reverse": [
+        2256,
+        1354
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        6437,
+        1355
+      ],
+      "forward": [
+        1356,
+        6436
+      ],
+      "group": "dg_agent14_19",
+      "group_switchable": true,
+      "reverse": [
+        6437,
+        1523
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        635,
+        1524
+      ],
+      "forward": [
+        1525,
+        634
+      ],
+      "group": "dg_agent15_2",
+      "group_switchable": true,
+      "reverse": [
+        635,
+        1591
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        1125,
+        1524
+      ],
+      "forward": [
+        1525,
+        1124
+      ],
+      "group": "dg_agent15_5",
+      "group_switchable": true,
+      "reverse": [
+        1125,
+        1591
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        4959,
+        1524
+      ],
+      "forward": [
+        1525,
+        4958
+      ],
+      "group": "dg_agent15_25",
+      "group_switchable": true,
+      "reverse": [
+        4959,
+        1591
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        3539,
+        1592
+      ],
+      "forward": [
+        1593,
+        3538
+      ],
+      "group": "dg_agent16_7",
+      "group_switchable": true,
+      "reverse": [
+        3539,
+        1620
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        3725,
+        1592
+      ],
+      "forward": [
+        1593,
+        3724
+      ],
+      "group": "dg_agent16_8",
+      "group_switchable": true,
+      "reverse": [
+        3725,
+        1620
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        891,
+        1621
+      ],
+      "forward": [
+        1622,
+        890
+      ],
+      "group": "dg_agent17_0",
+      "group_switchable": true,
+      "reverse": [
+        891,
+        1643
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        4405,
+        1644
+      ],
+      "forward": [
+        1645,
+        4404
+      ],
+      "group": "dg_agent18_6",
+      "group_switchable": true,
+      "reverse": [
+        4405,
+        1663
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        6457,
+        1644
+      ],
+      "forward": [
+        1645,
+        6456
+      ],
+      "group": "dg_agent18_9",
+      "group_switchable": true,
+      "reverse": [
+        6457,
+        1663
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        1784,
+        1664
+      ],
+      "forward": [
+        1665,
+        1783
+      ],
+      "group": "dg_agent19_5",
+      "group_switchable": true,
+      "reverse": [
+        1784,
+        1724
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        4801,
+        1664
+      ],
+      "forward": [
+        1665,
+        4800
+      ],
+      "group": "dg_agent19_17",
+      "group_switchable": true,
+      "reverse": [
+        4801,
+        1724
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        9025,
+        1664
+      ],
+      "forward": [
+        1665,
+        9024
+      ],
+      "group": "dg_agent19_28",
+      "group_switchable": true,
+      "reverse": [
+        9025,
+        1724
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        49,
+        1907
+      ],
+      "forward": [
+        1908,
+        48
+      ],
+      "group": "dg_agent21_0",
+      "group_switchable": true,
+      "reverse": [
+        49,
+        1978
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        5711,
+        1907
+      ],
+      "forward": [
+        1908,
+        5710
+      ],
+      "group": "dg_agent21_14",
+      "group_switchable": true,
+      "reverse": [
+        5711,
+        1978
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        7584,
+        1907
+      ],
+      "forward": [
+        1908,
+        7583
+      ],
+      "group": "dg_agent21_20",
+      "group_switchable": true,
+      "reverse": [
+        7584,
+        1978
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        8408,
+        1907
+      ],
+      "forward": [
+        1908,
+        8407
+      ],
+      "group": "dg_agent21_25",
+      "group_switchable": true,
+      "reverse": [
+        8408,
+        1978
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        8799,
+        1907
+      ],
+      "forward": [
+        1908,
+        8798
+      ],
+      "group": "dg_agent21_26",
+      "group_switchable": true,
+      "reverse": [
+        8799,
+        1978
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        9984,
+        1907
+      ],
+      "forward": [
+        1908,
+        9983
+      ],
+      "group": "dg_agent21_29",
+      "group_switchable": true,
+      "reverse": [
+        9984,
+        1978
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        10143,
+        1907
+      ],
+      "forward": [
+        1908,
+        10142
+      ],
+      "group": "dg_agent21_30",
+      "group_switchable": true,
+      "reverse": [
+        10143,
+        1978
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        1388,
+        1979
+      ],
+      "forward": [
+        1980,
+        1387
+      ],
+      "group": "dg_agent22_4",
+      "group_switchable": true,
+      "reverse": [
+        1388,
+        2119
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        5426,
+        1979
+      ],
+      "forward": [
+        1980,
+        5425
+      ],
+      "group": "dg_agent22_8",
+      "group_switchable": true,
+      "reverse": [
+        5426,
+        2119
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        9166,
+        1979
+      ],
+      "forward": [
+        1980,
+        9165
+      ],
+      "group": "dg_agent22_22",
+      "group_switchable": true,
+      "reverse": [
+        9166,
+        2119
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        2044,
+        2120
+      ],
+      "forward": [
+        2121,
+        2043
+      ],
+      "group": "dg_agent23_5",
+      "group_switchable": true,
+      "reverse": [
+        2044,
+        2216
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        5685,
+        2120
+      ],
+      "forward": [
+        2121,
+        5684
+      ],
+      "group": "dg_agent23_16",
+      "group_switchable": true,
+      "reverse": [
+        5685,
+        2216
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        7770,
+        2120
+      ],
+      "forward": [
+        2121,
+        7769
+      ],
+      "group": "dg_agent23_25",
+      "group_switchable": true,
+      "reverse": [
+        7770,
+        2216
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        7859,
+        2120
+      ],
+      "forward": [
+        2121,
+        7858
+      ],
+      "group": "dg_agent23_26",
+      "group_switchable": true,
+      "reverse": [
+        7859,
+        2216
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        9380,
+        2120
+      ],
+      "forward": [
+        2121,
+        9379
+      ],
+      "group": "dg_agent23_30",
+      "group_switchable": true,
+      "reverse": [
+        9380,
+        2216
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        1962,
+        2217
+      ],
+      "forward": [
+        2218,
+        1961
+      ],
+      "group": "dg_agent24_5",
+      "group_switchable": true,
+      "reverse": [
+        1962,
+        2278
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        6379,
+        2217
+      ],
+      "forward": [
+        2218,
+        6378
+      ],
+      "group": "dg_agent24_13",
+      "group_switchable": true,
+      "reverse": [
+        6379,
+        2278
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        6525,
+        2217
+      ],
+      "forward": [
+        2218,
+        6524
+      ],
+      "group": "dg_agent24_14",
+      "group_switchable": true,
+      "reverse": [
+        6525,
+        2278
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        8638,
+        2217
+      ],
+      "forward": [
+        2218,
+        8637
+      ],
+      "group": "dg_agent24_21",
+      "group_switchable": true,
+      "reverse": [
+        8638,
+        2278
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        3859,
+        2279
+      ],
+      "forward": [
+        2280,
+        3858
+      ],
+      "group": "dg_agent25_1",
+      "group_switchable": true,
+      "reverse": [
+        3859,
+        2360
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        1268,
+        2361
+      ],
+      "forward": [
+        2362,
+        1267
+      ],
+      "group": "dg_agent26_1",
+      "group_switchable": true,
+      "reverse": [
+        1268,
+        2423
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        2906,
+        2361
+      ],
+      "forward": [
+        2362,
+        2905
+      ],
+      "group": "dg_agent26_7",
+      "group_switchable": true,
+      "reverse": [
+        2906,
+        2423
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        3763,
+        2361
+      ],
+      "forward": [
+        2362,
+        3762
+      ],
+      "group": "dg_agent26_9",
+      "group_switchable": true,
+      "reverse": [
+        3763,
+        2423
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        7035,
+        2361
+      ],
+      "forward": [
+        2362,
+        7034
+      ],
+      "group": "dg_agent26_15",
+      "group_switchable": true,
+      "reverse": [
+        7035,
+        2423
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        10594,
+        2361
+      ],
+      "forward": [
+        2362,
+        10593
+      ],
+      "group": "dg_agent26_22",
+      "group_switchable": true,
+      "reverse": [
+        10594,
+        2423
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        1039,
+        2450
+      ],
+      "forward": [
+        2451,
+        1038
+      ],
+      "group": "dg_agent28_1",
+      "group_switchable": true,
+      "reverse": [
+        1039,
+        2556
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        8144,
+        2450
+      ],
+      "forward": [
+        2451,
+        8143
+      ],
+      "group": "dg_agent28_15",
+      "group_switchable": true,
+      "reverse": [
+        8144,
+        2556
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        6443,
+        2557
+      ],
+      "forward": [
+        2558,
+        6442
+      ],
+      "group": "dg_agent29_12",
+      "group_switchable": true,
+      "reverse": [
+        6443,
+        2697
+      ],
+      "within_horizon": true
+    },
+    {
+      "expected": [
+        9739,
+        2557
+      ],
+      "forward": [
+        2558,
+        9738
+      ],
+      "group": "dg_agent29_18",
+      "group_switchable": true,
+      "reverse": [
+        9739,
+        2697
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        799,
+        2698
+      ],
+      "forward": [
+        2699,
+        798
+      ],
+      "group": "dg_agent30_1",
+      "group_switchable": true,
+      "reverse": [
+        799,
+        2764
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        2651,
+        2765
+      ],
+      "forward": [
+        2766,
+        2650
+      ],
+      "group": "dg_agent31_10",
+      "group_switchable": true,
+      "reverse": [
+        2651,
+        2877
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        6392,
+        2765
+      ],
+      "forward": [
+        2766,
+        6391
+      ],
+      "group": "dg_agent31_15",
+      "group_switchable": true,
+      "reverse": [
+        6392,
+        2877
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        2578,
+        2878
+      ],
+      "forward": [
+        2879,
+        2577
+      ],
+      "group": "dg_agent32_5",
+      "group_switchable": true,
+      "reverse": [
+        2578,
+        3046
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        3984,
+        2878
+      ],
+      "forward": [
+        2879,
+        3983
+      ],
+      "group": "dg_agent32_16",
+      "group_switchable": true,
+      "reverse": [
+        3984,
+        3046
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        6463,
+        2878
+      ],
+      "forward": [
+        2879,
+        6462
+      ],
+      "group": "dg_agent32_20",
+      "group_switchable": true,
+      "reverse": [
+        6463,
+        3046
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        10644,
+        2878
+      ],
+      "forward": [
+        2879,
+        10643
+      ],
+      "group": "dg_agent32_33",
+      "group_switchable": true,
+      "reverse": [
+        10644,
+        3046
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        3641,
+        3396
+      ],
+      "forward": [
+        3397,
+        3640
+      ],
+      "group": "dg_agent35_7",
+      "group_switchable": true,
+      "reverse": [
+        3641,
+        3469
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        5522,
+        3396
+      ],
+      "forward": [
+        3397,
+        5521
+      ],
+      "group": "dg_agent35_11",
+      "group_switchable": true,
+      "reverse": [
+        5522,
+        3469
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        5652,
+        3396
+      ],
+      "forward": [
+        3397,
+        5651
+      ],
+      "group": "dg_agent35_12",
+      "group_switchable": true,
+      "reverse": [
+        5652,
+        3469
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        9347,
+        3396
+      ],
+      "forward": [
+        3397,
+        9346
+      ],
+      "group": "dg_agent35_22",
+      "group_switchable": true,
+      "reverse": [
+        9347,
+        3469
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        3055,
+        3470
+      ],
+      "forward": [
+        3471,
+        3054
+      ],
+      "group": "dg_agent36_2",
+      "group_switchable": true,
+      "reverse": [
+        3055,
+        3523
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        9478,
+        3671
+      ],
+      "forward": [
+        3672,
+        9477
+      ],
+      "group": "dg_agent38_11",
+      "group_switchable": true,
+      "reverse": [
+        9478,
+        3687
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        10808,
+        3883
+      ],
+      "forward": [
+        3884,
+        10807
+      ],
+      "group": "dg_agent40_17",
+      "group_switchable": true,
+      "reverse": [
+        10808,
+        3997
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        8902,
+        4097
+      ],
+      "forward": [
+        4098,
+        8901
+      ],
+      "group": "dg_agent42_16",
+      "group_switchable": true,
+      "reverse": [
+        8902,
+        4256
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        546,
+        4435
+      ],
+      "forward": [
+        4436,
+        545
+      ],
+      "group": "dg_agent44_0",
+      "group_switchable": true,
+      "reverse": [
+        546,
+        4558
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        6809,
+        4435
+      ],
+      "forward": [
+        4436,
+        6808
+      ],
+      "group": "dg_agent44_14",
+      "group_switchable": true,
+      "reverse": [
+        6809,
+        4558
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        9075,
+        4435
+      ],
+      "forward": [
+        4436,
+        9074
+      ],
+      "group": "dg_agent44_19",
+      "group_switchable": true,
+      "reverse": [
+        9075,
+        4558
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        9432,
+        4435
+      ],
+      "forward": [
+        4436,
+        9431
+      ],
+      "group": "dg_agent44_20",
+      "group_switchable": true,
+      "reverse": [
+        9432,
+        4558
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        80,
+        4559
+      ],
+      "forward": [
+        4560,
+        79
+      ],
+      "group": "dg_agent45_0",
+      "group_switchable": true,
+      "reverse": [
+        80,
+        4690
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        2850,
+        4559
+      ],
+      "forward": [
+        4560,
+        2849
+      ],
+      "group": "dg_agent45_4",
+      "group_switchable": true,
+      "reverse": [
+        2850,
+        4690
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        5742,
+        4559
+      ],
+      "forward": [
+        4560,
+        5741
+      ],
+      "group": "dg_agent45_12",
+      "group_switchable": true,
+      "reverse": [
+        5742,
+        4690
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        5770,
+        4559
+      ],
+      "forward": [
+        4560,
+        5769
+      ],
+      "group": "dg_agent45_13",
+      "group_switchable": true,
+      "reverse": [
+        5770,
+        4690
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        2823,
+        4691
+      ],
+      "forward": [
+        4692,
+        2822
+      ],
+      "group": "dg_agent46_6",
+      "group_switchable": true,
+      "reverse": [
+        2823,
+        4755
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        5797,
+        4691
+      ],
+      "forward": [
+        4692,
+        5796
+      ],
+      "group": "dg_agent46_18",
+      "group_switchable": true,
+      "reverse": [
+        5797,
+        4755
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        7889,
+        4691
+      ],
+      "forward": [
+        4692,
+        7888
+      ],
+      "group": "dg_agent46_24",
+      "group_switchable": true,
+      "reverse": [
+        7889,
+        4755
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        5994,
+        4871
+      ],
+      "forward": [
+        4872,
+        5993
+      ],
+      "group": "dg_agent49_2",
+      "group_switchable": true,
+      "reverse": [
+        5994,
+        4881
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        8998,
+        5049
+      ],
+      "forward": [
+        5050,
+        8997
+      ],
+      "group": "dg_agent51_16",
+      "group_switchable": true,
+      "reverse": [
+        8998,
+        5118
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        8465,
+        5119
+      ],
+      "forward": [
+        5120,
+        8464
+      ],
+      "group": "dg_agent52_15",
+      "group_switchable": true,
+      "reverse": [
+        8465,
+        5285
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        4889,
+        5286
+      ],
+      "forward": [
+        5287,
+        4888
+      ],
+      "group": "dg_agent53_0",
+      "group_switchable": true,
+      "reverse": [
+        4889,
+        5296
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        5818,
+        5286
+      ],
+      "forward": [
+        5287,
+        5817
+      ],
+      "group": "dg_agent53_1",
+      "group_switchable": true,
+      "reverse": [
+        5818,
+        5296
+      ],
+      "within_horizon": true
+    },
+    {
+      "expected": [
+        7229,
+        5297
+      ],
+      "forward": [
+        5298,
+        7228
+      ],
+      "group": "dg_agent54_14",
+      "group_switchable": true,
+      "reverse": [
+        7229,
+        5436
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        313,
+        5437
+      ],
+      "forward": [
+        5438,
+        312
+      ],
+      "group": "dg_agent55_1",
+      "group_switchable": true,
+      "reverse": [
+        313,
+        5564
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        1619,
+        5437
+      ],
+      "forward": [
+        5438,
+        1618
+      ],
+      "group": "dg_agent55_2",
+      "group_switchable": true,
+      "reverse": [
+        1619,
+        5564
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        2829,
+        5576
+      ],
+      "forward": [
+        5577,
+        2828
+      ],
+      "group": "dg_agent57_5",
+      "group_switchable": true,
+      "reverse": [
+        2829,
+        5616
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        5791,
+        5576
+      ],
+      "forward": [
+        5577,
+        5790
+      ],
+      "group": "dg_agent57_16",
+      "group_switchable": true,
+      "reverse": [
+        5791,
+        5616
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        7644,
+        5576
+      ],
+      "forward": [
+        5577,
+        7643
+      ],
+      "group": "dg_agent57_24",
+      "group_switchable": true,
+      "reverse": [
+        7644,
+        5616
+      ],
+      "within_horizon": true
+    },
+    {
+      "expected": [
+        7895,
+        5576
+      ],
+      "forward": [
+        5577,
+        7894
+      ],
+      "group": "dg_agent57_26",
+      "group_switchable": true,
+      "reverse": [
+        7895,
+        5616
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        6866,
+        5617
+      ],
+      "forward": [
+        5618,
+        6865
+      ],
+      "group": "dg_agent58_16",
+      "group_switchable": true,
+      "reverse": [
+        6866,
+        5757
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        8675,
+        5617
+      ],
+      "forward": [
+        5618,
+        8674
+      ],
+      "group": "dg_agent58_23",
+      "group_switchable": true,
+      "reverse": [
+        8675,
+        5757
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        9482,
+        5617
+      ],
+      "forward": [
+        5618,
+        9481
+      ],
+      "group": "dg_agent58_28",
+      "group_switchable": true,
+      "reverse": [
+        9482,
+        5757
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        1054,
+        5814
+      ],
+      "forward": [
+        5815,
+        1053
+      ],
+      "group": "dg_agent60_2",
+      "group_switchable": true,
+      "reverse": [
+        1054,
+        6006
+      ],
+      "within_horizon": true
+    },
+    {
+      "expected": [
+        1198,
+        6007
+      ],
+      "forward": [
+        6008,
+        1197
+      ],
+      "group": "dg_agent61_1",
+      "group_switchable": true,
+      "reverse": [
+        1198,
+        6019
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        668,
+        6020
+      ],
+      "forward": [
+        6021,
+        667
+      ],
+      "group": "dg_agent62_1",
+      "group_switchable": true,
+      "reverse": [
+        668,
+        6165
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        4992,
+        6020
+      ],
+      "forward": [
+        6021,
+        4991
+      ],
+      "group": "dg_agent62_10",
+      "group_switchable": true,
+      "reverse": [
+        4992,
+        6165
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        6553,
+        6020
+      ],
+      "forward": [
+        6021,
+        6552
+      ],
+      "group": "dg_agent62_15",
+      "group_switchable": true,
+      "reverse": [
+        6553,
+        6165
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        1715,
+        6166
+      ],
+      "forward": [
+        6167,
+        1714
+      ],
+      "group": "dg_agent63_2",
+      "group_switchable": true,
+      "reverse": [
+        1715,
+        6230
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        2549,
+        6166
+      ],
+      "forward": [
+        6167,
+        2548
+      ],
+      "group": "dg_agent63_3",
+      "group_switchable": true,
+      "reverse": [
+        2549,
+        6230
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        8605,
+        6166
+      ],
+      "forward": [
+        6167,
+        8604
+      ],
+      "group": "dg_agent63_8",
+      "group_switchable": true,
+      "reverse": [
+        8605,
+        6230
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        10528,
+        6166
+      ],
+      "forward": [
+        6167,
+        10527
+      ],
+      "group": "dg_agent63_11",
+      "group_switchable": true,
+      "reverse": [
+        10528,
+        6230
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        5842,
+        6231
+      ],
+      "forward": [
+        6232,
+        5841
+      ],
+      "group": "dg_agent64_8",
+      "group_switchable": true,
+      "reverse": [
+        5842,
+        6364
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        3801,
+        6365
+      ],
+      "forward": [
+        6366,
+        3800
+      ],
+      "group": "dg_agent65_7",
+      "group_switchable": true,
+      "reverse": [
+        3801,
+        6439
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        3925,
+        6365
+      ],
+      "forward": [
+        6366,
+        3924
+      ],
+      "group": "dg_agent65_8",
+      "group_switchable": true,
+      "reverse": [
+        3925,
+        6439
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        8236,
+        6365
+      ],
+      "forward": [
+        6366,
+        8235
+      ],
+      "group": "dg_agent65_14",
+      "group_switchable": true,
+      "reverse": [
+        8236,
+        6439
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        8549,
+        6365
+      ],
+      "forward": [
+        6366,
+        8548
+      ],
+      "group": "dg_agent65_15",
+      "group_switchable": true,
+      "reverse": [
+        8549,
+        6439
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        644,
+        6528
+      ],
+      "forward": [
+        6529,
+        643
+      ],
+      "group": "dg_agent67_0",
+      "group_switchable": true,
+      "reverse": [
+        644,
+        6584
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        4968,
+        6528
+      ],
+      "forward": [
+        6529,
+        4967
+      ],
+      "group": "dg_agent67_1",
+      "group_switchable": true,
+      "reverse": [
+        4968,
+        6584
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        1028,
+        6585
+      ],
+      "forward": [
+        6586,
+        1027
+      ],
+      "group": "dg_agent68_3",
+      "group_switchable": true,
+      "reverse": [
+        1028,
+        6618
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        8133,
+        6585
+      ],
+      "forward": [
+        6586,
+        8132
+      ],
+      "group": "dg_agent68_22",
+      "group_switchable": true,
+      "reverse": [
+        8133,
+        6618
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        2582,
+        6619
+      ],
+      "forward": [
+        6620,
+        2581
+      ],
+      "group": "dg_agent69_6",
+      "group_switchable": true,
+      "reverse": [
+        2582,
+        6666
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        2883,
+        6619
+      ],
+      "forward": [
+        6620,
+        2882
+      ],
+      "group": "dg_agent69_8",
+      "group_switchable": true,
+      "reverse": [
+        2883,
+        6666
+      ],
+      "within_horizon": true
+    },
+    {
+      "expected": [
+        3980,
+        6619
+      ],
+      "forward": [
+        6620,
+        3979
+      ],
+      "group": "dg_agent69_12",
+      "group_switchable": true,
+      "reverse": [
+        3980,
+        6666
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        6467,
+        6619
+      ],
+      "forward": [
+        6620,
+        6466
+      ],
+      "group": "dg_agent69_16",
+      "group_switchable": true,
+      "reverse": [
+        6467,
+        6666
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        10648,
+        6619
+      ],
+      "forward": [
+        6620,
+        10647
+      ],
+      "group": "dg_agent69_29",
+      "group_switchable": true,
+      "reverse": [
+        10648,
+        6666
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        8491,
+        6667
+      ],
+      "forward": [
+        6668,
+        8490
+      ],
+      "group": "dg_agent70_23",
+      "group_switchable": true,
+      "reverse": [
+        8491,
+        6842
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        182,
+        7015
+      ],
+      "forward": [
+        7016,
+        181
+      ],
+      "group": "dg_agent72_0",
+      "group_switchable": true,
+      "reverse": [
+        182,
+        7074
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        3558,
+        7015
+      ],
+      "forward": [
+        7016,
+        3557
+      ],
+      "group": "dg_agent72_8",
+      "group_switchable": true,
+      "reverse": [
+        3558,
+        7074
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        3744,
+        7015
+      ],
+      "forward": [
+        7016,
+        3743
+      ],
+      "group": "dg_agent72_9",
+      "group_switchable": true,
+      "reverse": [
+        3744,
+        7074
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        7909,
+        7015
+      ],
+      "forward": [
+        7016,
+        7908
+      ],
+      "group": "dg_agent72_16",
+      "group_switchable": true,
+      "reverse": [
+        7909,
+        7074
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        7979,
+        7075
+      ],
+      "forward": [
+        7076,
+        7978
+      ],
+      "group": "dg_agent73_13",
+      "group_switchable": true,
+      "reverse": [
+        7979,
+        7215
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        2203,
+        7216
+      ],
+      "forward": [
+        7217,
+        2202
+      ],
+      "group": "dg_agent74_4",
+      "group_switchable": true,
+      "reverse": [
+        2203,
+        7292
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        9679,
+        7293
+      ],
+      "forward": [
+        7294,
+        9678
+      ],
+      "group": "dg_agent75_17",
+      "group_switchable": true,
+      "reverse": [
+        9679,
+        7423
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        6840,
+        7424
+      ],
+      "forward": [
+        7425,
+        6839
+      ],
+      "group": "dg_agent76_9",
+      "group_switchable": true,
+      "reverse": [
+        6840,
+        7528
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        278,
+        7529
+      ],
+      "forward": [
+        7530,
+        277
+      ],
+      "group": "dg_agent77_1",
+      "group_switchable": true,
+      "reverse": [
+        278,
+        7641
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        4750,
+        7529
+      ],
+      "forward": [
+        7530,
+        4749
+      ],
+      "group": "dg_agent77_16",
+      "group_switchable": true,
+      "reverse": [
+        4750,
+        7641
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        2828,
+        7642
+      ],
+      "forward": [
+        7643,
+        2827
+      ],
+      "group": "dg_agent78_3",
+      "group_switchable": true,
+      "reverse": [
+        2828,
+        7694
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        5792,
+        7642
+      ],
+      "forward": [
+        7643,
+        5791
+      ],
+      "group": "dg_agent78_5",
+      "group_switchable": true,
+      "reverse": [
+        5792,
+        7694
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        7894,
+        7642
+      ],
+      "forward": [
+        7643,
+        7893
+      ],
+      "group": "dg_agent78_10",
+      "group_switchable": true,
+      "reverse": [
+        7894,
+        7694
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        1743,
+        7695
+      ],
+      "forward": [
+        7696,
+        1742
+      ],
+      "group": "dg_agent79_5",
+      "group_switchable": true,
+      "reverse": [
+        1743,
+        7815
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        6859,
+        7695
+      ],
+      "forward": [
+        7696,
+        6858
+      ],
+      "group": "dg_agent79_17",
+      "group_switchable": true,
+      "reverse": [
+        6859,
+        7815
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        6178,
+        7816
+      ],
+      "forward": [
+        7817,
+        6177
+      ],
+      "group": "dg_agent80_23",
+      "group_switchable": true,
+      "reverse": [
+        6178,
+        7937
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        4242,
+        7961
+      ],
+      "forward": [
+        7962,
+        4241
+      ],
+      "group": "dg_agent82_2",
+      "group_switchable": true,
+      "reverse": [
+        4242,
+        7965
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        9046,
+        7961
+      ],
+      "forward": [
+        7962,
+        9045
+      ],
+      "group": "dg_agent82_4",
+      "group_switchable": true,
+      "reverse": [
+        9046,
+        7965
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        391,
+        8360
+      ],
+      "forward": [
+        8361,
+        390
+      ],
+      "group": "dg_agent85_1",
+      "group_switchable": true,
+      "reverse": [
+        391,
+        8467
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        2964,
+        8360
+      ],
+      "forward": [
+        8361,
+        2963
+      ],
+      "group": "dg_agent85_8",
+      "group_switchable": true,
+      "reverse": [
+        2964,
+        8467
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        3339,
+        8360
+      ],
+      "forward": [
+        8361,
+        3338
+      ],
+      "group": "dg_agent85_9",
+      "group_switchable": true,
+      "reverse": [
+        3339,
+        8467
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        3409,
+        8360
+      ],
+      "forward": [
+        8361,
+        3408
+      ],
+      "group": "dg_agent85_10",
+      "group_switchable": true,
+      "reverse": [
+        3409,
+        8467
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        3629,
+        8360
+      ],
+      "forward": [
+        8361,
+        3628
+      ],
+      "group": "dg_agent85_11",
+      "group_switchable": true,
+      "reverse": [
+        3629,
+        8467
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        4197,
+        8360
+      ],
+      "forward": [
+        8361,
+        4196
+      ],
+      "group": "dg_agent85_13",
+      "group_switchable": true,
+      "reverse": [
+        4197,
+        8467
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        625,
+        8591
+      ],
+      "forward": [
+        8592,
+        624
+      ],
+      "group": "dg_agent87_2",
+      "group_switchable": true,
+      "reverse": [
+        625,
+        8658
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        1115,
+        8591
+      ],
+      "forward": [
+        8592,
+        1114
+      ],
+      "group": "dg_agent87_4",
+      "group_switchable": true,
+      "reverse": [
+        1115,
+        8658
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        4949,
+        8591
+      ],
+      "forward": [
+        8592,
+        4948
+      ],
+      "group": "dg_agent87_21",
+      "group_switchable": true,
+      "reverse": [
+        4949,
+        8658
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        9699,
+        8659
+      ],
+      "forward": [
+        8660,
+        9698
+      ],
+      "group": "dg_agent88_21",
+      "group_switchable": true,
+      "reverse": [
+        9699,
+        8723
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        186,
+        9048
+      ],
+      "forward": [
+        9049,
+        185
+      ],
+      "group": "dg_agent91_1",
+      "group_switchable": true,
+      "reverse": [
+        186,
+        9088
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        3554,
+        9048
+      ],
+      "forward": [
+        9049,
+        3553
+      ],
+      "group": "dg_agent91_9",
+      "group_switchable": true,
+      "reverse": [
+        3554,
+        9088
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        3740,
+        9048
+      ],
+      "forward": [
+        9049,
+        3739
+      ],
+      "group": "dg_agent91_10",
+      "group_switchable": true,
+      "reverse": [
+        3740,
+        9088
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        7913,
+        9048
+      ],
+      "forward": [
+        9049,
+        7912
+      ],
+      "group": "dg_agent91_23",
+      "group_switchable": true,
+      "reverse": [
+        7913,
+        9088
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        10571,
+        9048
+      ],
+      "forward": [
+        9049,
+        10570
+      ],
+      "group": "dg_agent91_33",
+      "group_switchable": true,
+      "reverse": [
+        10571,
+        9088
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        3533,
+        9089
+      ],
+      "forward": [
+        9090,
+        3532
+      ],
+      "group": "dg_agent92_0",
+      "group_switchable": true,
+      "reverse": [
+        3533,
+        9102
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        3719,
+        9089
+      ],
+      "forward": [
+        9090,
+        3718
+      ],
+      "group": "dg_agent92_1",
+      "group_switchable": true,
+      "reverse": [
+        3719,
+        9102
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        6003,
+        9541
+      ],
+      "forward": [
+        9542,
+        6002
+      ],
+      "group": "dg_agent96_7",
+      "group_switchable": true,
+      "reverse": [
+        6003,
+        9722
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        142,
+        9784
+      ],
+      "forward": [
+        9785,
+        141
+      ],
+      "group": "dg_agent98_0",
+      "group_switchable": true,
+      "reverse": [
+        142,
+        9816
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        2797,
+        9784
+      ],
+      "forward": [
+        9785,
+        2796
+      ],
+      "group": "dg_agent98_3",
+      "group_switchable": true,
+      "reverse": [
+        2797,
+        9816
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        7360,
+        9784
+      ],
+      "forward": [
+        9785,
+        7359
+      ],
+      "group": "dg_agent98_9",
+      "group_switchable": true,
+      "reverse": [
+        7360,
+        9816
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        4902,
+        9817
+      ],
+      "forward": [
+        9818,
+        4901
+      ],
+      "group": "dg_agent99_2",
+      "group_switchable": true,
+      "reverse": [
+        4902,
+        9903
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        12,
+        10105
+      ],
+      "forward": [
+        10106,
+        11
+      ],
+      "group": "dg_agent101_0",
+      "group_switchable": true,
+      "reverse": [
+        12,
+        10190
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        4733,
+        10105
+      ],
+      "forward": [
+        10106,
+        4732
+      ],
+      "group": "dg_agent101_18",
+      "group_switchable": true,
+      "reverse": [
+        4733,
+        10190
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        1857,
+        10191
+      ],
+      "forward": [
+        10192,
+        1856
+      ],
+      "group": "dg_agent102_2",
+      "group_switchable": true,
+      "reverse": [
+        1857,
+        10244
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        5958,
+        10191
+      ],
+      "forward": [
+        10192,
+        5957
+      ],
+      "group": "dg_agent102_4",
+      "group_switchable": true,
+      "reverse": [
+        5958,
+        10244
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        8572,
+        10191
+      ],
+      "forward": [
+        10192,
+        8571
+      ],
+      "group": "dg_agent102_5",
+      "group_switchable": true,
+      "reverse": [
+        8572,
+        10244
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        4267,
+        10245
+      ],
+      "forward": [
+        10246,
+        4266
+      ],
+      "group": "dg_agent103_6",
+      "group_switchable": true,
+      "reverse": [
+        4267,
+        10426
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        4845,
+        10427
+      ],
+      "forward": [
+        10428,
+        4844
+      ],
+      "group": "dg_agent104_8",
+      "group_switchable": true,
+      "reverse": [
+        4845,
+        10531
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        5150,
+        10532
+      ],
+      "forward": [
+        10533,
+        5149
+      ],
+      "group": "dg_agent105_1",
+      "group_switchable": true,
+      "reverse": [
+        5150,
+        10558
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        5307,
+        10532
+      ],
+      "forward": [
+        10533,
+        5306
+      ],
+      "group": "dg_agent105_2",
+      "group_switchable": true,
+      "reverse": [
+        5307,
+        10558
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        7238,
+        10532
+      ],
+      "forward": [
+        10533,
+        7237
+      ],
+      "group": "dg_agent105_6",
+      "group_switchable": true,
+      "reverse": [
+        7238,
+        10558
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        1234,
+        10559
+      ],
+      "forward": [
+        10560,
+        1233
+      ],
+      "group": "dg_agent106_2",
+      "group_switchable": true,
+      "reverse": [
+        1234,
+        10617
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        8764,
+        10559
+      ],
+      "forward": [
+        10560,
+        8763
+      ],
+      "group": "dg_agent106_18",
+      "group_switchable": true,
+      "reverse": [
+        8764,
+        10617
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        98,
+        10632
+      ],
+      "forward": [
+        10633,
+        97
+      ],
+      "group": "dg_agent108_0",
+      "group_switchable": true,
+      "reverse": [
+        98,
+        10790
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        6452,
+        10632
+      ],
+      "forward": [
+        10633,
+        6451
+      ],
+      "group": "dg_agent108_14",
+      "group_switchable": true,
+      "reverse": [
+        6452,
+        10790
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        3826,
+        10791
+      ],
+      "forward": [
+        10792,
+        3825
+      ],
+      "group": "dg_agent109_2",
+      "group_switchable": true,
+      "reverse": [
+        3826,
+        10852
+      ],
+      "within_horizon": false
+    },
+    {
+      "expected": [
+        7170,
+        10791
+      ],
+      "forward": [
+        10792,
+        7169
+      ],
+      "group": "dg_agent109_8",
+      "group_switchable": true,
+      "reverse": [
+        7170,
+        10852
+      ],
+      "within_horizon": false
+    }
+  ],
+  "missing_relation_families": [],
+  "original_guard_bypassed": false,
+  "original_type2_count": 15789,
+  "outcome": "BLOCK_COMMON_ADOPTION_KEEP_NATIVE_CORE_VALIDATION",
+  "physical_suffix_runs": 0,
+  "remaining_time_caveat": "Native nominal1 residual differs from R14 historical-rate residual; STATION/TURN excluded.",
+  "source_files": {
+    "evidence/warehouse-10-20-10-2-1__t1_2__axis_slow.json": "e9118d95460d6b6b413cfacae111f8d5aeed28f430c05b2dce5af147f0d9f57d",
+    "public/warehouse-10-20-10-2-1__t1_2__axis_slow.json": "9b56898c06865b5d6314c725f7435d9e2a65399c00a72a8fd2133c07429847c8",
+    "views/warehouse-10-20-10-2-1__t1_2__axis_slow__public.json": "bc046898e3971bd4343bb1d9e79b72d9bda5c9b9fa2336cd5a54a82234e26aaf"
+  },
+  "visits": 10853
+}
