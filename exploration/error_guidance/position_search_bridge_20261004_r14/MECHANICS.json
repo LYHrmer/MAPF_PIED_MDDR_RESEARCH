@@ -1,0 +1,71 @@
+{
+  "checks": [
+    {
+      "name": "exact_residual_and_ceil_boundary",
+      "passed": true
+    },
+    {
+      "name": "search_only_weights_restore_full_execution_type1_current_and_commitments",
+      "passed": true
+    },
+    {
+      "name": "body_tamper_receipt_binding",
+      "reason": "unbound measurement body",
+      "rejected": true
+    },
+    {
+      "name": "malformed_issued_agent",
+      "reason": "measurement domain/agent/occurrence/time mismatch",
+      "rejected": true
+    },
+    {
+      "name": "malformed_issued_from_state",
+      "reason": "measurement domain/agent/occurrence/time mismatch",
+      "rejected": true
+    },
+    {
+      "name": "malformed_issued_captured_at",
+      "reason": "stale measurement",
+      "rejected": true
+    },
+    {
+      "name": "malformed_issued_domain",
+      "reason": "measurement domain/agent/occurrence/time mismatch",
+      "rejected": true
+    },
+    {
+      "name": "malformed_issued_current_arrived",
+      "reason": "unexpected body capability",
+      "rejected": true
+    },
+    {
+      "name": "unbacked_search_weight",
+      "reason": "unbacked search-view mutation",
+      "rejected": true
+    },
+    {
+      "name": "POSITION_cannot_promote_actual_ARRIVE",
+      "reason": "public base changed",
+      "rejected": true
+    },
+    {
+      "name": "actual_active_incoming_orientation",
+      "reason": "committed transition dependencies changed",
+      "rejected": true
+    },
+    {
+      "name": "private_profile_heap_and_strict_future_segments_do_not_change_public_or_current_measurement",
+      "passed": true
+    },
+    {
+      "name": "integral_json_graph_key_normalization",
+      "passed": true
+    }
+  ],
+  "negative_count": 9,
+  "passed": true,
+  "positive_count": 4,
+  "registration_sha256": "030c6dbcc3bfd52b87f95fc89f86fdadd559af026ddc4945042634b1ffdb3dd7",
+  "scope": "mechanical controls using existing checkpoint; no solver or complete execution calls",
+  "source_sha256": "9098575cd7e1c117ba0fd8730edd11023bd12f2c736de223f9723b06b725f8d5"
+}

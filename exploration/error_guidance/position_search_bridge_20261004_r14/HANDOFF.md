@@ -1,0 +1,11 @@
+# Handoff
+
+Scientific source and protocol are frozen by REGISTRATION.json SHA `030c6dbcc3bfd52b87f95fc89f86fdadd559af026ddc4945042634b1ffdb3dd7`. Do not edit them or R13 to change this outcome. Twelve public-criticality single targets, two alpha differences, one integer weight difference, one new GSES call, zero adopted graph/outcome differences and zero new physical continuations are the fixed result.
+
+Read REPORT, SUMMARY, SENSITIVITY and SCHEMA first. RESULTS holds all36 option references and hashes; REUSED_MEMBERS holds104 frozen external files. Native input/reply/receipt is under the one calls/content-key folder; its FIRST_ATTEMPT precedes execution. All old same-key GSES replies have equal selected graphs. Reused trace identity includes full private checkpoint, actual full graph and executor/guard source hashes.
+
+Root-owned independent auditing has passed all twelve views and thirty-six results without importing candidate implementation; ROOT_AUDIT_BINDING pins the reports and independent review source. It recomputed target/estimates/verification, compared search-input to actual reply, independently checked lift/guard and bound 24 unique reused physical trace hashes to the R13 safety audits. No new unique continuous trace requires another geometric simulation. Do not repeat old solver or control episodes to inflate the matrix.
+
+`rtk proxy python3 exploration/error_guidance/position_search_bridge_20261004_r14/pipeline.py run` is resumable in the same pinned workspace: completed rows/calls are reused, as already verified in RESUME_CHECK. An interrupted FIRST_ATTEMPT without completed receipt stops rather than restarting. `mechanics.py` runs only finite code-level controls using saved checkpoints, no optimizer/whole continuation. The core accepts separate local simulated-position receipts; it does not accept main real guest certificates from another world, nor promote POSITION to ARRIVE.
+
+The next decision is not to train on these constant paired outcomes. A new protocol would first need a legitimate information/estimation/candidate change with actual heterogeneous complete consequences. Do not change rounding, query target or buy all agents after seeing these zeros. Spatial tracking error, main controller integration, true fee transfer and asynchronous planner latency remain separate work.

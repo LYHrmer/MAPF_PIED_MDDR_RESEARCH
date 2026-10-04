@@ -1,0 +1,11 @@
+# Source and work reuse
+
+Original author STPG commit: `25fb931eff03f1cce23a22a68ab42b7533f85ab3`; the R13 43-source archive, MIT license and research author_online adapter are unchanged. R14 executes the exact R13 binary SHA `b5e918f8913baca71a7b189e21e76bf3d7bfb41ec8042ee5ab306a52f109700c`, not a modified solver. Author source archive and adapter are pinned in REGISTRATION and REUSED_MEMBERS. The copied AUTHOR_LICENSE is unchanged.
+
+Executor and complete adoption guard are imported read-only from frozen R13 with Python bytecode generation disabled. Only the current search weight estimate is new. The candidate is checked against that search graph; original search type1 is restored before unmodified guard/lift, preserving actual full execution type1. No source patch to old directories or main manuscript is part of R14.
+
+New files are the three-view bridge, separate local measurement issuer, content-addressed orchestration, registered mechanics and documentation/evidence. The issuer measures an existing saved simulation at the current point; it does not issue a real main guest POSITION or copy its fee. Main's genuine source/body capture is separate evidence and a different world/domain.
+
+Twelve old checkpoint/public inputs and their author calls form the reference pool. Twenty-three R14 solver requests reuse old successes; one genuinely new weighted graph invokes GSES once. Twelve keep and all twenty-four candidate continuation records reuse existing complete R13 trajectories because their full checkpoint plus adopted graph match. Resume adds no scientific execution. Reuse records preserve original receipt times, file paths and hashes; old data are not relabeled as new tests.
+
+The original algorithm publication and fixed artifact references are inherited and were checked in R13, not newly searched in this narrow R14 interface task: [AAAI 2025](https://ojs.aaai.org/index.php/AAAI/article/view/34487), [fixed official README](https://raw.githubusercontent.com/DiligentPanda/STPG/25fb931eff03f1cce23a22a68ab42b7533f85ab3/README.md). Reproduction requires the already published frozen R13 package/source dependencies recorded by REUSED_MEMBERS; this new package alone is not a standalone solver release.
