@@ -1,0 +1,4683 @@
+{
+  "passed": true,
+  "independent_audit_sha256": "f25715cff30c89eacbfc21de9f2de0ab57874c18f35603b3b6cc617056f7730b",
+  "local_report": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/REPORT.md",
+  "local_report_sha256": "b5f57e5c639b15757666ef749d06d5c80c5ffdc18a60d2ae4eb2835b4e5746ca",
+  "final_runs": [
+    {
+      "name": "length27_paid_native_scheme0_fullsnapshot",
+      "run_dir": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/commands/length27_paid_native_scheme0_fullsnapshot",
+      "length": 27,
+      "scheme": 0,
+      "policy": "paid",
+      "passed": true,
+      "provenance": {
+        "receipt_sha256": "fe4315c6858b525ba7e7aa62e9e5bfdff454939db83f2ad0ef05fb7e44a9aeba",
+        "stdout_sha256": "850b38f3edfa3a89919de9828a8d567fa8cf02304ded3ef67bb573c131bc27d1",
+        "execution_key": "2ce77f042699b2257a974cfc7ddee5ab031ad5e72a3185a2ac7df5ed9dfe06bb",
+        "executed_host_sha256": "329dcfd7a924b531680e1192def894cddd77ed72f83c683f3e48254182bae259",
+        "preexecution_pins": 137,
+        "bound_ELFs": [
+          {
+            "role": "network",
+            "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/image/pie_full_query_network_20260921.elf",
+            "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/image/pie_full_query_network_20260921.elf",
+            "sha256": "3484d04f94b28c7c9bd1f2d6af37d56affd254e2e6979d583c9c5cb13710e3aa"
+          },
+          {
+            "role": "executor",
+            "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/image/pie_full_query_executor_20260921.elf",
+            "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/image/pie_full_query_executor_20260921.elf",
+            "sha256": "674910a2e6a31b73af56729616565b8f298f82a65c66f2c3c247b69ff76b5207"
+          },
+          {
+            "role": "center",
+            "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/image/pie_full_query_center_20260921.elf",
+            "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/image/pie_full_query_center_20260921.elf",
+            "sha256": "a778f3c5b121e8db3ee2dbe9810f495d0d5da20b7079fe2f305366af552b8667"
+          }
+        ]
+      },
+      "world_binding": {
+        "geometry_version": "r17g-a6c3aafe17698fe3d12ed327925a8eeea5d1e3893d083787eb6069861f8e76dc",
+        "canonical_sha256": "a6c3aafe17698fe3d12ed327925a8eeea5d1e3893d083787eb6069861f8e76dc",
+        "contract_sha256": "2bfdc9f8ad9481ace8cc80b6a0892fa6f5c7b56fdd7f710d95cb90365a128f5d",
+        "source_constructors": [
+          {
+            "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_profile.cpp",
+            "sha256": "16d3f4038cb0adb2259ebdcc9ef003d9aa62110364854cf20e21211d6ea8ea50",
+            "constructor_checks": 7
+          },
+          {
+            "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_lifecycle.inc",
+            "sha256": "63fb2608e15b02650aef1ebe9b0dca2f429c037c883ec4f4f22a1d06d1fdcea4",
+            "constructor_checks": 4
+          },
+          {
+            "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/driver.cpp",
+            "sha256": "fcbc26fd72f962c2a6d12e0c24ae81d9ede3af9b9c8d81bc445da6034dc632c2",
+            "constructor_checks": 4
+          }
+        ],
+        "controller_eta_upper_known": false
+      },
+      "lifecycle": {
+        "tasks": 4,
+        "run_ticks": {
+          "move-A": 0,
+          "move-B": 6,
+          "move-B2": 9,
+          "move-A2": 10
+        },
+        "end_ticks": {
+          "move-B": 8,
+          "move-A": 9,
+          "move-B2": 11,
+          "move-A2": 12
+        },
+        "service_ticks": {
+          "move-B": 9,
+          "move-A": 10,
+          "move-B2": 12,
+          "move-A2": 13
+        },
+        "service_sum": 44,
+        "physical_frames": 66,
+        "minimum_continuous_center_gap": "1",
+        "post_end_dwell": 1,
+        "publications": 32
+      },
+      "cost": {
+        "segments": 308,
+        "actual": 515997079,
+        "charged": 515997079,
+        "accounts": {
+          "0": {
+            "segments": 10,
+            "actual": 1447201,
+            "charged": 1447201
+          },
+          "1": {
+            "segments": 23,
+            "actual": 14925758,
+            "charged": 14925758
+          },
+          "2": {
+            "segments": 217,
+            "actual": 474441502,
+            "charged": 474441502
+          },
+          "3": {
+            "segments": 58,
+            "actual": 25182618,
+            "charged": 25182618
+          }
+        },
+        "jobs": [
+          {
+            "station": "C",
+            "job": "C-END",
+            "segments": 190,
+            "actual": 330121438,
+            "charged": 330121438
+          },
+          {
+            "station": "C",
+            "job": "C-accounting",
+            "segments": 9,
+            "actual": 3668419,
+            "charged": 3668419
+          },
+          {
+            "station": "C",
+            "job": "C-business",
+            "segments": 13,
+            "actual": 73342217,
+            "charged": 73342217
+          },
+          {
+            "station": "C",
+            "job": "C-collect-C",
+            "segments": 5,
+            "actual": 4428485,
+            "charged": 4428485
+          },
+          {
+            "station": "C",
+            "job": "C-collect-E",
+            "segments": 6,
+            "actual": 2765845,
+            "charged": 2765845
+          },
+          {
+            "station": "C",
+            "job": "C-collect-N-in",
+            "segments": 6,
+            "actual": 3370416,
+            "charged": 3370416
+          },
+          {
+            "station": "C",
+            "job": "C-collect-N-out",
+            "segments": 6,
+            "actual": 1849148,
+            "charged": 1849148
+          },
+          {
+            "station": "C",
+            "job": "C-next",
+            "segments": 2,
+            "actual": 161785,
+            "charged": 161785
+          },
+          {
+            "station": "C",
+            "job": "C-receipt",
+            "segments": 3,
+            "actual": 5521493,
+            "charged": 5521493
+          },
+          {
+            "station": "C",
+            "job": "C-receive",
+            "segments": 9,
+            "actual": 12713898,
+            "charged": 12713898
+          },
+          {
+            "station": "C",
+            "job": "C-select",
+            "segments": 8,
+            "actual": 1285416,
+            "charged": 1285416
+          },
+          {
+            "station": "E",
+            "job": "E-accounting",
+            "segments": 5,
+            "actual": 1445126,
+            "charged": 1445126
+          },
+          {
+            "station": "E",
+            "job": "E-business",
+            "segments": 7,
+            "actual": 35499727,
+            "charged": 35499727
+          },
+          {
+            "station": "E",
+            "job": "E-position",
+            "segments": 6,
+            "actual": 1779234,
+            "charged": 1779234
+          },
+          {
+            "station": "E",
+            "job": "E-relay-N-in",
+            "segments": 4,
+            "actual": 170207,
+            "charged": 170207
+          },
+          {
+            "station": "E",
+            "job": "E-relay-N-out",
+            "segments": 5,
+            "actual": 156619,
+            "charged": 156619
+          },
+          {
+            "station": "N",
+            "job": "N-business",
+            "segments": 7,
+            "actual": 35478120,
+            "charged": 35478120
+          },
+          {
+            "station": "N",
+            "job": "N-in",
+            "segments": 4,
+            "actual": 217052,
+            "charged": 217052
+          },
+          {
+            "station": "N",
+            "job": "N-in-accounting",
+            "segments": 4,
+            "actual": 910616,
+            "charged": 910616
+          },
+          {
+            "station": "N",
+            "job": "N-out",
+            "segments": 4,
+            "actual": 215574,
+            "charged": 215574
+          },
+          {
+            "station": "N",
+            "job": "N-out-accounting",
+            "segments": 5,
+            "actual": 896244,
+            "charged": 896244
+          }
+        ],
+        "publication_rows": [
+          [
+            "C",
+            "C-select",
+            11020,
+            0
+          ],
+          [
+            "N",
+            "N-out",
+            11520,
+            1
+          ],
+          [
+            "N",
+            "N-out-accounting",
+            11560,
+            3
+          ],
+          [
+            "C",
+            "C-END",
+            18100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            18200,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            28100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            28200,
+            2
+          ],
+          [
+            "E",
+            "E-position",
+            33010,
+            1
+          ],
+          [
+            "E",
+            "E-accounting",
+            33070,
+            3
+          ],
+          [
+            "E",
+            "E-relay-N-out",
+            33120,
+            3
+          ],
+          [
+            "C",
+            "C-END",
+            38100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            38200,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            41100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            41200,
+            2
+          ],
+          [
+            "N",
+            "N-in",
+            44020,
+            1
+          ],
+          [
+            "N",
+            "N-in-accounting",
+            44060,
+            3
+          ],
+          [
+            "E",
+            "E-relay-N-in",
+            44110,
+            3
+          ],
+          [
+            "C",
+            "C-receive",
+            55010,
+            1
+          ],
+          [
+            "C",
+            "C-END",
+            58100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            58200,
+            2
+          ],
+          [
+            "C",
+            "C-receive",
+            66010,
+            1
+          ],
+          [
+            "C",
+            "C-END",
+            68100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            68200,
+            2
+          ],
+          [
+            "C",
+            "C-accounting",
+            77010,
+            3
+          ],
+          [
+            "C",
+            "C-END",
+            78100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            78200,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            88100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            88200,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            98100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            98200,
+            2
+          ],
+          [
+            "C",
+            "C-collect-N-out",
+            100020,
+            3
+          ],
+          [
+            "C",
+            "C-END",
+            108100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            108200,
+            2
+          ],
+          [
+            "C",
+            "C-collect-E",
+            110020,
+            3
+          ],
+          [
+            "C",
+            "C-END",
+            118100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            118200,
+            2
+          ],
+          [
+            "C",
+            "C-collect-N-in",
+            120020,
+            3
+          ],
+          [
+            "C",
+            "C-END",
+            128100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            128200,
+            2
+          ],
+          [
+            "C",
+            "C-collect-C",
+            130020,
+            3
+          ],
+          [
+            "C",
+            "C-END",
+            138100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            138200,
+            2
+          ],
+          [
+            "C",
+            "C-receipt",
+            144020,
+            3
+          ],
+          [
+            "C",
+            "C-END",
+            148100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            148200,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            158100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            158200,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            168100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            168200,
+            2
+          ]
+        ],
+        "terminal_bodies_independently_decoded": false,
+        "terminal_receipt_scope": "actual charged publication rows plus pinned guest SOURCE/collector/settlement calls; no guessed terminal payload"
+      },
+      "authoritative_source_locations": [
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/driver.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/driver.cpp",
+          "line": 390,
+          "symbol": "install_cap",
+          "sha256": "fcbc26fd72f962c2a6d12e0c24ae81d9ede3af9b9c8d81bc445da6034dc632c2"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/driver.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/driver.cpp",
+          "line": 392,
+          "symbol": "acknowledge_published_movement",
+          "sha256": "fcbc26fd72f962c2a6d12e0c24ae81d9ede3af9b9c8d81bc445da6034dc632c2"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/driver.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/driver.cpp",
+          "line": 375,
+          "symbol": "take_published_terminal",
+          "sha256": "fcbc26fd72f962c2a6d12e0c24ae81d9ede3af9b9c8d81bc445da6034dc632c2"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/driver.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/driver.cpp",
+          "line": 380,
+          "symbol": "receive_terminal",
+          "sha256": "fcbc26fd72f962c2a6d12e0c24ae81d9ede3af9b9c8d81bc445da6034dc632c2"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/driver.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/driver.cpp",
+          "line": 135,
+          "symbol": "closed_segment",
+          "sha256": "fcbc26fd72f962c2a6d12e0c24ae81d9ede3af9b9c8d81bc445da6034dc632c2"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/driver.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/driver.cpp",
+          "line": 408,
+          "symbol": "published_event_bits",
+          "sha256": "fcbc26fd72f962c2a6d12e0c24ae81d9ede3af9b9c8d81bc445da6034dc632c2"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/driver.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/driver.cpp",
+          "line": 253,
+          "symbol": "inspect_ordinary_register",
+          "sha256": "fcbc26fd72f962c2a6d12e0c24ae81d9ede3af9b9c8d81bc445da6034dc632c2"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/driver.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/driver.cpp",
+          "line": 251,
+          "symbol": "R17_live_contract",
+          "sha256": "fcbc26fd72f962c2a6d12e0c24ae81d9ede3af9b9c8d81bc445da6034dc632c2"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "line": 134,
+          "symbol": "flow.receive_position",
+          "sha256": "aa1f060a37e4512535cb4e12a9ac123812db414592c5a293f1cff0f8635ab3dd"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "line": 138,
+          "symbol": "flow.publish_position",
+          "sha256": "aa1f060a37e4512535cb4e12a9ac123812db414592c5a293f1cff0f8635ab3dd"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "line": 35,
+          "symbol": "grant_released_movement",
+          "sha256": "aa1f060a37e4512535cb4e12a9ac123812db414592c5a293f1cff0f8635ab3dd"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "line": 173,
+          "symbol": "flow.receive_terminal",
+          "sha256": "aa1f060a37e4512535cb4e12a9ac123812db414592c5a293f1cff0f8635ab3dd"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "line": 186,
+          "symbol": "flow.prepare_receipt",
+          "sha256": "aa1f060a37e4512535cb4e12a9ac123812db414592c5a293f1cff0f8635ab3dd"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "line": 187,
+          "symbol": "flow.publish_receipt",
+          "sha256": "aa1f060a37e4512535cb4e12a9ac123812db414592c5a293f1cff0f8635ab3dd"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "line": 184,
+          "symbol": "flow.settle_unsuccessful",
+          "sha256": "aa1f060a37e4512535cb4e12a9ac123812db414592c5a293f1cff0f8635ab3dd"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "line": 130,
+          "symbol": "flow.receive_stale_position",
+          "sha256": "aa1f060a37e4512535cb4e12a9ac123812db414592c5a293f1cff0f8635ab3dd"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "line": 131,
+          "symbol": "same_identity",
+          "sha256": "aa1f060a37e4512535cb4e12a9ac123812db414592c5a293f1cff0f8635ab3dd"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_lifecycle.inc",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_lifecycle.inc",
+          "line": 100,
+          "symbol": "life_verifier.observe",
+          "sha256": "63fb2608e15b02650aef1ebe9b0dca2f429c037c883ec4f4f22a1d06d1fdcea4"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_lifecycle.inc",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_lifecycle.inc",
+          "line": 40,
+          "symbol": "notice.matches",
+          "sha256": "63fb2608e15b02650aef1ebe9b0dca2f429c037c883ec4f4f22a1d06d1fdcea4"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_lifecycle.inc",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_lifecycle.inc",
+          "line": 51,
+          "symbol": "stage_service",
+          "sha256": "63fb2608e15b02650aef1ebe9b0dca2f429c037c883ec4f4f22a1d06d1fdcea4"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_lifecycle.inc",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_lifecycle.inc",
+          "line": 7,
+          "symbol": "await_publication_source",
+          "sha256": "63fb2608e15b02650aef1ebe9b0dca2f429c037c883ec4f4f22a1d06d1fdcea4"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_lifecycle.inc",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_lifecycle.inc",
+          "line": 107,
+          "symbol": "life_verifier.retire",
+          "sha256": "63fb2608e15b02650aef1ebe9b0dca2f429c037c883ec4f4f22a1d06d1fdcea4"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_lifecycle.inc",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_lifecycle.inc",
+          "line": 156,
+          "symbol": "finish_lifecycle",
+          "sha256": "63fb2608e15b02650aef1ebe9b0dca2f429c037c883ec4f4f22a1d06d1fdcea4"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_capture_imports.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_capture_imports.cpp",
+          "line": 6,
+          "symbol": "capture_source_call",
+          "sha256": "b163b56a12a73e017f55b1c357f48eb7ca3bc4331a6984a3af158b3445e858b2"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_capture_imports.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_capture_imports.cpp",
+          "line": 8,
+          "symbol": "capture_text_length",
+          "sha256": "b163b56a12a73e017f55b1c357f48eb7ca3bc4331a6984a3af158b3445e858b2"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_capture_imports.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_capture_imports.cpp",
+          "line": 13,
+          "symbol": "ecall",
+          "sha256": "b163b56a12a73e017f55b1c357f48eb7ca3bc4331a6984a3af158b3445e858b2"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_center_query_flow.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_center_query_flow.hpp",
+          "line": 147,
+          "symbol": "prepare_position(*certificate_",
+          "sha256": "e1b2281b36947fad77b08aae2aff30680cb4afd53c724a6552137a53ee10cb14"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_center_query_flow.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_center_query_flow.hpp",
+          "line": 94,
+          "symbol": "commit_at_opportunity",
+          "sha256": "e1b2281b36947fad77b08aae2aff30680cb4afd53c724a6552137a53ee10cb14"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_center_query_flow.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_center_query_flow.hpp",
+          "line": 214,
+          "symbol": "prepare_terminal(registered_terminal_import)",
+          "sha256": "e1b2281b36947fad77b08aae2aff30680cb4afd53c724a6552137a53ee10cb14"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_center_query_flow.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_center_query_flow.hpp",
+          "line": 171,
+          "symbol": "prepare_unsuccessful_settlement",
+          "sha256": "e1b2281b36947fad77b08aae2aff30680cb4afd53c724a6552137a53ee10cb14"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_center_query_flow.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_center_query_flow.hpp",
+          "line": 175,
+          "symbol": "valid_receipt",
+          "sha256": "e1b2281b36947fad77b08aae2aff30680cb4afd53c724a6552137a53ee10cb14"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_center_query_flow.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_center_query_flow.hpp",
+          "line": 139,
+          "symbol": "new R17LiveEvidence",
+          "sha256": "e1b2281b36947fad77b08aae2aff30680cb4afd53c724a6552137a53ee10cb14"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_center_query_flow.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_center_query_flow.hpp",
+          "line": 135,
+          "symbol": "pie_query_evidence::receive_position",
+          "sha256": "e1b2281b36947fad77b08aae2aff30680cb4afd53c724a6552137a53ee10cb14"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_query_evidence_channel.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_query_evidence_channel.hpp",
+          "line": 212,
+          "symbol": "R14_source_return",
+          "sha256": "e97498325d07b1db6e023f8c81a0176b628327b83cc78c7061412721411588af"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_query_evidence_channel.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_query_evidence_channel.hpp",
+          "line": 96,
+          "symbol": "fields_[Value]",
+          "sha256": "e97498325d07b1db6e023f8c81a0176b628327b83cc78c7061412721411588af"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_query_evidence_channel.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_query_evidence_channel.hpp",
+          "line": 91,
+          "symbol": "fields_[Index]",
+          "sha256": "e97498325d07b1db6e023f8c81a0176b628327b83cc78c7061412721411588af"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "line": 81,
+          "symbol": "friend class CenterQueryFlow",
+          "sha256": "c2d16f7a51b9f9fae626accdcb9212f12b49e31d4983a1c4dbf8255d8c58035e"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "line": 89,
+          "symbol": "R17LiveEvidence(const R17LiveEvidence&) = delete",
+          "sha256": "c2d16f7a51b9f9fae626accdcb9212f12b49e31d4983a1c4dbf8255d8c58035e"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "line": 103,
+          "symbol": "require(!committed_ && !used_",
+          "sha256": "c2d16f7a51b9f9fae626accdcb9212f12b49e31d4983a1c4dbf8255d8c58035e"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "line": 119,
+          "symbol": "require(committed_ && !used_",
+          "sha256": "c2d16f7a51b9f9fae626accdcb9212f12b49e31d4983a1c4dbf8255d8c58035e"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "line": 124,
+          "symbol": "check_live_front(live)",
+          "sha256": "c2d16f7a51b9f9fae626accdcb9212f12b49e31d4983a1c4dbf8255d8c58035e"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "line": 292,
+          "symbol": "&action.geometry.intervals() == &b.geometry.intervals()",
+          "sha256": "c2d16f7a51b9f9fae626accdcb9212f12b49e31d4983a1c4dbf8255d8c58035e"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "line": 295,
+          "symbol": "Ops::cmp(action.q, b.expected_q) == 0",
+          "sha256": "c2d16f7a51b9f9fae626accdcb9212f12b49e31d4983a1c4dbf8255d8c58035e"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "line": 255,
+          "symbol": "remaining_mask(committed_snapshot.mask())",
+          "sha256": "c2d16f7a51b9f9fae626accdcb9212f12b49e31d4983a1c4dbf8255d8c58035e"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "line": 169,
+          "symbol": "live.structure().owners",
+          "sha256": "c2d16f7a51b9f9fae626accdcb9212f12b49e31d4983a1c4dbf8255d8c58035e"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "line": 170,
+          "symbol": "demand_it->second->relations.empty()",
+          "sha256": "c2d16f7a51b9f9fae626accdcb9212f12b49e31d4983a1c4dbf8255d8c58035e"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "line": 174,
+          "symbol": "b.before_snapshot.mask(), demand.resources",
+          "sha256": "c2d16f7a51b9f9fae626accdcb9212f12b49e31d4983a1c4dbf8255d8c58035e"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "line": 176,
+          "symbol": "used_ = true",
+          "sha256": "c2d16f7a51b9f9fae626accdcb9212f12b49e31d4983a1c4dbf8255d8c58035e"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "line": 24,
+          "symbol": "finite_completion_upper = false",
+          "sha256": "c2d16f7a51b9f9fae626accdcb9212f12b49e31d4983a1c4dbf8255d8c58035e"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "line": 251,
+          "symbol": "integer(12), geometry.length()",
+          "sha256": "c2d16f7a51b9f9fae626accdcb9212f12b49e31d4983a1c4dbf8255d8c58035e"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_start.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_start.cpp",
+          "line": 124,
+          "symbol": "pie_cost_results[25]",
+          "sha256": "be6d8ecdd9da0164284cac97c5b921bf20d4e2549059e0e808714df54793efb0"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_start.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_start.cpp",
+          "line": 130,
+          "symbol": "pie_cost_results[31]",
+          "sha256": "be6d8ecdd9da0164284cac97c5b921bf20d4e2549059e0e808714df54793efb0"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_start.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_start.cpp",
+          "line": 70,
+          "symbol": "asm volatile(\"ecall\"",
+          "sha256": "be6d8ecdd9da0164284cac97c5b921bf20d4e2549059e0e808714df54793efb0"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_start.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_start.cpp",
+          "line": 124,
+          "symbol": "asm(\"s2\")",
+          "sha256": "be6d8ecdd9da0164284cac97c5b921bf20d4e2549059e0e808714df54793efb0"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_start.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_start.cpp",
+          "line": 130,
+          "symbol": "asm(\"s8\")",
+          "sha256": "be6d8ecdd9da0164284cac97c5b921bf20d4e2549059e0e808714df54793efb0"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_geometry.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_geometry.hpp",
+          "line": 96,
+          "symbol": "friend class Geometry",
+          "sha256": "0a5a538a3ee252ce2099a78fa03f3e7b5993c9ca7beb04cbfd224b6008f75d6c"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_geometry.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_geometry.hpp",
+          "line": 113,
+          "symbol": "explicit Snapshot(std::shared_ptr<const SnapshotData>",
+          "sha256": "0a5a538a3ee252ce2099a78fa03f3e7b5993c9ca7beb04cbfd224b6008f75d6c"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_geometry.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_geometry.hpp",
+          "line": 223,
+          "symbol": "source_, q, b, identity",
+          "sha256": "0a5a538a3ee252ce2099a78fa03f3e7b5993c9ca7beb04cbfd224b6008f75d6c"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_geometry.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_geometry.hpp",
+          "line": 232,
+          "symbol": "const Storage& s = *previous.source",
+          "sha256": "0a5a538a3ee252ce2099a78fa03f3e7b5993c9ca7beb04cbfd224b6008f75d6c"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_geometry.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_geometry.hpp",
+          "line": 267,
+          "symbol": "previous.source, q, b, identity, previous.identity",
+          "sha256": "0a5a538a3ee252ce2099a78fa03f3e7b5993c9ca7beb04cbfd224b6008f75d6c"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation/pie_position_commit/include/pie_position_commit.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation/pie_position_commit/include/pie_position_commit.hpp",
+          "line": 284,
+          "symbol": "Snapshot initial = action.geometry.g_init(cap, seed)",
+          "sha256": "2f7be5ec11293df2fdbda3919393f8a30b43b2a432f56879e59f26d0a3b9d7c6"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation/pie_position_commit/include/pie_position_commit.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation/pie_position_commit/include/pie_position_commit.hpp",
+          "line": 176,
+          "symbol": "Retirement::prepare(progress.current, certificate",
+          "sha256": "2f7be5ec11293df2fdbda3919393f8a30b43b2a432f56879e59f26d0a3b9d7c6"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation/pie_position_commit/include/pie_position_commit.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation/pie_position_commit/include/pie_position_commit.hpp",
+          "line": 177,
+          "symbol": "proposal.base().identity() == progress.current.identity()",
+          "sha256": "2f7be5ec11293df2fdbda3919393f8a30b43b2a432f56879e59f26d0a3b9d7c6"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation/pie_position_commit/include/pie_position_commit.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation/pie_position_commit/include/pie_position_commit.hpp",
+          "line": 182,
+          "symbol": "Ops::cmp(proposal.next().b(), action.b) == 0",
+          "sha256": "2f7be5ec11293df2fdbda3919393f8a30b43b2a432f56879e59f26d0a3b9d7c6"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation/pie_position_commit/include/pie_position_commit.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation/pie_position_commit/include/pie_position_commit.hpp",
+          "line": 225,
+          "symbol": "validate_progress(*next, action_key)",
+          "sha256": "2f7be5ec11293df2fdbda3919393f8a30b43b2a432f56879e59f26d0a3b9d7c6"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation/pie_progress_retirement/include/pie_progress_retirement.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation/pie_progress_retirement/include/pie_progress_retirement.hpp",
+          "line": 60,
+          "symbol": "same_binding(current.binding(), certificate.binding())",
+          "sha256": "ddd94e49c3dd689b84d585ae374a65b99f49577bf9752342f46d688fbd0f7cb1"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation/pie_progress_retirement/include/pie_progress_retirement.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation/pie_progress_retirement/include/pie_progress_retirement.hpp",
+          "line": 77,
+          "symbol": "Geometry::g_advance(current, lower, current.b(), next_identity)",
+          "sha256": "ddd94e49c3dd689b84d585ae374a65b99f49577bf9752342f46d688fbd0f7cb1"
+        }
+      ],
+      "new_native_runs_by_auditor": 0,
+      "source_chain": {
+        "request": {
+          "stream": 2,
+          "body_sha256": "6978f593bf675b2ac14f637a96a42c93757870572b57a98eb7f429c19e52d3bb",
+          "body_bytes": 313,
+          "return_event_indexes": [
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119
+          ],
+          "delivery": {
+            "event": "R14_delivery",
+            "from": "N",
+            "to": "E",
+            "at": 1,
+            "row": 11530,
+            "event_index": 37
+          },
+          "private_serial_exported": false
+        },
+        "position": {
+          "stream": 4,
+          "body_sha256": "5b16e1469df22db5e177d1943e68b1986c5f494660b7f6eddb87c784a6e815d0",
+          "body_bytes": 419,
+          "return_event_indexes": [
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            217,
+            218,
+            219,
+            220,
+            221,
+            222,
+            223,
+            224,
+            225,
+            226,
+            227,
+            228,
+            229,
+            230,
+            231,
+            232,
+            233,
+            234,
+            235,
+            236,
+            237,
+            238,
+            239,
+            240,
+            241,
+            242,
+            243,
+            244,
+            245,
+            246,
+            247,
+            248,
+            249,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255,
+            256,
+            257,
+            258,
+            259,
+            260,
+            261,
+            262,
+            263,
+            264,
+            265,
+            266,
+            267,
+            268,
+            269,
+            270,
+            271,
+            272,
+            273
+          ],
+          "delivery": {
+            "event": "R14_delivery",
+            "from": "N",
+            "to": "C",
+            "at": 4,
+            "row": 44030,
+            "event_index": 189
+          },
+          "private_serial_exported": false
+        },
+        "identity": {
+          "block": "b",
+          "session": "D",
+          "center": "C",
+          "executor": "E",
+          "query": "q0",
+          "request": "r0",
+          "profile": "p",
+          "source": "position",
+          "agent": "agent-A",
+          "action": "move-A",
+          "geometry_version": "r17g-a6c3aafe17698fe3d12ed327925a8eeea5d1e3893d083787eb6069861f8e76dc",
+          "number_encoding": "exact-flint",
+          "coordinate_frame": "plane",
+          "distance_unit": "unit",
+          "move_occurrence": "move-A"
+        },
+        "capture": "2",
+        "delivery": 4,
+        "lower": "2",
+        "upper": "2",
+        "cap": "27",
+        "actual_source_words": 131
+      },
+      "live_contract": {
+        "slots_25_31": [
+          7,
+          2,
+          4,
+          5,
+          6,
+          4,
+          4095
+        ],
+        "source_pin": "be6d8ecdd9da0164284cac97c5b921bf20d4e2549059e0e808714df54793efb0",
+        "evidence_capture_and_delivery_bound": true,
+        "source_enforced": true,
+        "diagnostics_alone_not_authority": true
+      },
+      "event_order": {
+        "publication_event_indexes": {
+          "C:11020": 29,
+          "C:18100": 47,
+          "C:18200": 53,
+          "C:28100": 124,
+          "C:28200": 130,
+          "C:38100": 157,
+          "C:38200": 163,
+          "C:41100": 174,
+          "C:41200": 180,
+          "C:55010": 279,
+          "C:58100": 283,
+          "C:58200": 289,
+          "C:66010": 298,
+          "C:68100": 307,
+          "C:68200": 313,
+          "C:77010": 322,
+          "C:78100": 328,
+          "C:78200": 334,
+          "C:88100": 349,
+          "C:88200": 356,
+          "C:98100": 378,
+          "C:98200": 386,
+          "C:100020": 397,
+          "C:108100": 408,
+          "C:108200": 415,
+          "C:110020": 426,
+          "C:118100": 435,
+          "C:118200": 442,
+          "C:120020": 452,
+          "C:128100": 464,
+          "C:128200": 472,
+          "C:130020": 482,
+          "C:138100": 491,
+          "C:138200": 498,
+          "C:144020": 507,
+          "C:148100": 512,
+          "C:148200": 518,
+          "C:158100": 530,
+          "C:158200": 536,
+          "C:168100": 547,
+          "C:168200": 553,
+          "E:33010": 138,
+          "E:33070": 145,
+          "E:33120": 150,
+          "E:44110": 198,
+          "N:11520": 35,
+          "N:11560": 41,
+          "N:44020": 187,
+          "N:44060": 193
+        },
+        "four_terminal_collectors": [
+          397,
+          426,
+          452,
+          482
+        ],
+        "receipt_or_settlement": 507,
+        "observer_event_index": 558
+      },
+      "next_selection": {
+        "public_selection_time": 15,
+        "all_four_service_times_before_selection": true,
+        "raw_next_choice_fields_observed": false,
+        "source_enforced_inference": "NoEligible with empty active action set after finite FIFO closure; no scored candidate and therefore no quote-dependent cost_delay evaluation",
+        "quote_changed_decision_demonstrated": false,
+        "receipt_installed_is_distinct_from_quote_used_in_score": true,
+        "selector_source": {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation/pie_query/include/pie_query_scheduler.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation/pie_query/include/pie_query_scheduler.hpp",
+          "sha256": "a1572501e39b711b9c8253e05083aa5799884145263d81352c9d71fd1965fefb",
+          "choose_scored_line": 457
+        }
+      },
+      "reused_wait": {
+        "run_dir": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/information_separation_20261004_r13/commands/length27_wait_final_scheme0",
+        "receipt_sha256": "06587b0bb017b1ab91867afa92d65b95c33a599e990608871c3609eae494423f",
+        "stdout_sha256": "136e580a826a8b9372d540660b36a9f62f193b044326fa2d8fed6bc270cd537d",
+        "legacy_bindings_sha256": "26627cbf06e289c1f1e5dd3e325acc9099fe2d987cc730bd647d8e2eb0e9ff17",
+        "source_constructors": [
+          {
+            "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/information_separation_20261004_r13/length27_wait/full_profile.cpp",
+            "sha256": "41052428cba0ddca354eb81351795c2d451e4ae4e5ea0608cbc9374a57d100d3",
+            "constructor_checks": 7
+          },
+          {
+            "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/information_separation_20261004_r13/length27_wait/r13_lifecycle.inc",
+            "sha256": "63fb2608e15b02650aef1ebe9b0dca2f429c037c883ec4f4f22a1d06d1fdcea4",
+            "constructor_checks": 4
+          },
+          {
+            "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/information_separation_20261004_r13/length27_wait/driver.cpp",
+            "sha256": "838cc4901ccc33429057ab66a349c54fba47a251a76807dc52b35eae2eaa12b8",
+            "constructor_checks": 4
+          }
+        ],
+        "lifecycle": {
+          "tasks": 4,
+          "run_ticks": {
+            "move-A": 0,
+            "move-B": 9,
+            "move-A2": 10,
+            "move-B2": 12
+          },
+          "end_ticks": {
+            "move-A": 9,
+            "move-B": 11,
+            "move-A2": 12,
+            "move-B2": 14
+          },
+          "service_ticks": {
+            "move-A": 10,
+            "move-B": 12,
+            "move-A2": 13,
+            "move-B2": 15
+          },
+          "service_sum": 50,
+          "physical_frames": 66,
+          "minimum_continuous_center_gap": "1",
+          "post_end_dwell": 1,
+          "publications": 32
+        },
+        "cost": {
+          "segments": 216,
+          "actual": 385221979,
+          "charged": 385221979,
+          "accounts": {
+            "2": {
+              "segments": 216,
+              "actual": 385221979,
+              "charged": 385221979
+            }
+          },
+          "jobs": [
+            {
+              "station": "C",
+              "job": "C-END",
+              "segments": 189,
+              "actual": 310890603,
+              "charged": 310890603
+            },
+            {
+              "station": "C",
+              "job": "C-business",
+              "segments": 27,
+              "actual": 74331376,
+              "charged": 74331376
+            }
+          ],
+          "publication_rows": [
+            [
+              "C",
+              "C-END",
+              18100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              18200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              28100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              28200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              38100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              38200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              41100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              41200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              58100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              58200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              68100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              68200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              78100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              78200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              88100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              88200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              98100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              98200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              108100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              108200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              118100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              118200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              128100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              128200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              138100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              138200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              148100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              148200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              158100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              158200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              168100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              168200,
+              2
+            ]
+          ],
+          "terminal_bodies_independently_decoded": false,
+          "terminal_receipt_scope": "actual charged publication rows plus pinned guest SOURCE/collector/settlement calls; no guessed terminal payload"
+        },
+        "reuse_scope": "R13 frozen raw receipt/logs and inherited source bindings; no R17 namespace or consumer-cost equivalence asserted; legacy receipt has no per-run preexecution pins",
+        "paid_minus_wait": {
+          "tasks": 0,
+          "service_sum": -6,
+          "actual": 130775100,
+          "charged": 130775100
+        }
+      }
+    },
+    {
+      "name": "length27_paid_native_scheme1_fullsnapshot",
+      "run_dir": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/commands/length27_paid_native_scheme1_fullsnapshot",
+      "length": 27,
+      "scheme": 1,
+      "policy": "paid",
+      "passed": true,
+      "provenance": {
+        "receipt_sha256": "d901e8a597ac33aed83276197fbe7bd9a836f448fde1ed533ab01d4c63bc1aa1",
+        "stdout_sha256": "c67fd28e7d0457aa8e677ae29677e9a3386c1bc241935de1e5362c2a1f8cdf34",
+        "execution_key": "618ab4edc53550b843f99f2977d26aa28000014b241d0ed716f045baa413b8be",
+        "executed_host_sha256": "329dcfd7a924b531680e1192def894cddd77ed72f83c683f3e48254182bae259",
+        "preexecution_pins": 137,
+        "bound_ELFs": [
+          {
+            "role": "network",
+            "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/image/pie_full_query_network_20260921.elf",
+            "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/image/pie_full_query_network_20260921.elf",
+            "sha256": "3484d04f94b28c7c9bd1f2d6af37d56affd254e2e6979d583c9c5cb13710e3aa"
+          },
+          {
+            "role": "executor",
+            "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/image/pie_full_query_executor_20260921.elf",
+            "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/image/pie_full_query_executor_20260921.elf",
+            "sha256": "674910a2e6a31b73af56729616565b8f298f82a65c66f2c3c247b69ff76b5207"
+          },
+          {
+            "role": "center",
+            "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/image/pie_full_query_center_20260921.elf",
+            "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/image/pie_full_query_center_20260921.elf",
+            "sha256": "a778f3c5b121e8db3ee2dbe9810f495d0d5da20b7079fe2f305366af552b8667"
+          }
+        ]
+      },
+      "world_binding": {
+        "geometry_version": "r17g-a6c3aafe17698fe3d12ed327925a8eeea5d1e3893d083787eb6069861f8e76dc",
+        "canonical_sha256": "a6c3aafe17698fe3d12ed327925a8eeea5d1e3893d083787eb6069861f8e76dc",
+        "contract_sha256": "2bfdc9f8ad9481ace8cc80b6a0892fa6f5c7b56fdd7f710d95cb90365a128f5d",
+        "source_constructors": [
+          {
+            "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_profile.cpp",
+            "sha256": "16d3f4038cb0adb2259ebdcc9ef003d9aa62110364854cf20e21211d6ea8ea50",
+            "constructor_checks": 7
+          },
+          {
+            "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_lifecycle.inc",
+            "sha256": "63fb2608e15b02650aef1ebe9b0dca2f429c037c883ec4f4f22a1d06d1fdcea4",
+            "constructor_checks": 4
+          },
+          {
+            "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/driver.cpp",
+            "sha256": "fcbc26fd72f962c2a6d12e0c24ae81d9ede3af9b9c8d81bc445da6034dc632c2",
+            "constructor_checks": 4
+          }
+        ],
+        "controller_eta_upper_known": false
+      },
+      "lifecycle": {
+        "tasks": 4,
+        "run_ticks": {
+          "move-A": 0,
+          "move-B": 6,
+          "move-B2": 9,
+          "move-A2": 10
+        },
+        "end_ticks": {
+          "move-B": 8,
+          "move-A": 9,
+          "move-B2": 11,
+          "move-A2": 12
+        },
+        "service_ticks": {
+          "move-B": 9,
+          "move-A": 10,
+          "move-B2": 12,
+          "move-A2": 13
+        },
+        "service_sum": 44,
+        "physical_frames": 66,
+        "minimum_continuous_center_gap": "1",
+        "post_end_dwell": 1,
+        "publications": 32
+      },
+      "cost": {
+        "segments": 308,
+        "actual": 515998391,
+        "charged": 2583691264,
+        "accounts": {
+          "0": {
+            "segments": 10,
+            "actual": 1447201,
+            "charged": 83886080
+          },
+          "1": {
+            "segments": 23,
+            "actual": 14925870,
+            "charged": 192937984
+          },
+          "2": {
+            "segments": 217,
+            "actual": 474441502,
+            "charged": 1820327936
+          },
+          "3": {
+            "segments": 58,
+            "actual": 25183818,
+            "charged": 486539264
+          }
+        },
+        "jobs": [
+          {
+            "station": "C",
+            "job": "C-END",
+            "segments": 190,
+            "actual": 330121438,
+            "charged": 1593835520
+          },
+          {
+            "station": "C",
+            "job": "C-accounting",
+            "segments": 9,
+            "actual": 3668788,
+            "charged": 75497472
+          },
+          {
+            "station": "C",
+            "job": "C-business",
+            "segments": 13,
+            "actual": 73342217,
+            "charged": 109051904
+          },
+          {
+            "station": "C",
+            "job": "C-collect-C",
+            "segments": 5,
+            "actual": 4428330,
+            "charged": 41943040
+          },
+          {
+            "station": "C",
+            "job": "C-collect-E",
+            "segments": 6,
+            "actual": 2765750,
+            "charged": 50331648
+          },
+          {
+            "station": "C",
+            "job": "C-collect-N-in",
+            "segments": 6,
+            "actual": 3370361,
+            "charged": 50331648
+          },
+          {
+            "station": "C",
+            "job": "C-collect-N-out",
+            "segments": 6,
+            "actual": 1849093,
+            "charged": 50331648
+          },
+          {
+            "station": "C",
+            "job": "C-next",
+            "segments": 2,
+            "actual": 161785,
+            "charged": 16777216
+          },
+          {
+            "station": "C",
+            "job": "C-receipt",
+            "segments": 3,
+            "actual": 5521854,
+            "charged": 25165824
+          },
+          {
+            "station": "C",
+            "job": "C-receive",
+            "segments": 9,
+            "actual": 12713926,
+            "charged": 75497472
+          },
+          {
+            "station": "C",
+            "job": "C-select",
+            "segments": 8,
+            "actual": 1285416,
+            "charged": 67108864
+          },
+          {
+            "station": "E",
+            "job": "E-accounting",
+            "segments": 5,
+            "actual": 1445468,
+            "charged": 41943040
+          },
+          {
+            "station": "E",
+            "job": "E-business",
+            "segments": 7,
+            "actual": 35499727,
+            "charged": 58720256
+          },
+          {
+            "station": "E",
+            "job": "E-position",
+            "segments": 6,
+            "actual": 1779262,
+            "charged": 50331648
+          },
+          {
+            "station": "E",
+            "job": "E-relay-N-in",
+            "segments": 4,
+            "actual": 170223,
+            "charged": 33554432
+          },
+          {
+            "station": "E",
+            "job": "E-relay-N-out",
+            "segments": 5,
+            "actual": 156635,
+            "charged": 41943040
+          },
+          {
+            "station": "N",
+            "job": "N-business",
+            "segments": 7,
+            "actual": 35478120,
+            "charged": 58720256
+          },
+          {
+            "station": "N",
+            "job": "N-in",
+            "segments": 4,
+            "actual": 217080,
+            "charged": 33554432
+          },
+          {
+            "station": "N",
+            "job": "N-in-accounting",
+            "segments": 4,
+            "actual": 910844,
+            "charged": 33554432
+          },
+          {
+            "station": "N",
+            "job": "N-out",
+            "segments": 4,
+            "actual": 215602,
+            "charged": 33554432
+          },
+          {
+            "station": "N",
+            "job": "N-out-accounting",
+            "segments": 5,
+            "actual": 896472,
+            "charged": 41943040
+          }
+        ],
+        "publication_rows": [
+          [
+            "C",
+            "C-select",
+            11020,
+            0
+          ],
+          [
+            "N",
+            "N-out",
+            11520,
+            1
+          ],
+          [
+            "N",
+            "N-out-accounting",
+            11560,
+            3
+          ],
+          [
+            "C",
+            "C-END",
+            18100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            18200,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            28100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            28200,
+            2
+          ],
+          [
+            "E",
+            "E-position",
+            33010,
+            1
+          ],
+          [
+            "E",
+            "E-accounting",
+            33070,
+            3
+          ],
+          [
+            "E",
+            "E-relay-N-out",
+            33120,
+            3
+          ],
+          [
+            "C",
+            "C-END",
+            38100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            38200,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            41100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            41200,
+            2
+          ],
+          [
+            "N",
+            "N-in",
+            44020,
+            1
+          ],
+          [
+            "N",
+            "N-in-accounting",
+            44060,
+            3
+          ],
+          [
+            "E",
+            "E-relay-N-in",
+            44110,
+            3
+          ],
+          [
+            "C",
+            "C-receive",
+            55010,
+            1
+          ],
+          [
+            "C",
+            "C-END",
+            58100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            58200,
+            2
+          ],
+          [
+            "C",
+            "C-receive",
+            66010,
+            1
+          ],
+          [
+            "C",
+            "C-END",
+            68100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            68200,
+            2
+          ],
+          [
+            "C",
+            "C-accounting",
+            77010,
+            3
+          ],
+          [
+            "C",
+            "C-END",
+            78100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            78200,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            88100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            88200,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            98100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            98200,
+            2
+          ],
+          [
+            "C",
+            "C-collect-N-out",
+            100020,
+            3
+          ],
+          [
+            "C",
+            "C-END",
+            108100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            108200,
+            2
+          ],
+          [
+            "C",
+            "C-collect-E",
+            110020,
+            3
+          ],
+          [
+            "C",
+            "C-END",
+            118100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            118200,
+            2
+          ],
+          [
+            "C",
+            "C-collect-N-in",
+            120020,
+            3
+          ],
+          [
+            "C",
+            "C-END",
+            128100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            128200,
+            2
+          ],
+          [
+            "C",
+            "C-collect-C",
+            130020,
+            3
+          ],
+          [
+            "C",
+            "C-END",
+            138100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            138200,
+            2
+          ],
+          [
+            "C",
+            "C-receipt",
+            144020,
+            3
+          ],
+          [
+            "C",
+            "C-END",
+            148100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            148200,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            158100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            158200,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            168100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            168200,
+            2
+          ]
+        ],
+        "terminal_bodies_independently_decoded": false,
+        "terminal_receipt_scope": "actual charged publication rows plus pinned guest SOURCE/collector/settlement calls; no guessed terminal payload"
+      },
+      "authoritative_source_locations": [
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/driver.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/driver.cpp",
+          "line": 390,
+          "symbol": "install_cap",
+          "sha256": "fcbc26fd72f962c2a6d12e0c24ae81d9ede3af9b9c8d81bc445da6034dc632c2"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/driver.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/driver.cpp",
+          "line": 392,
+          "symbol": "acknowledge_published_movement",
+          "sha256": "fcbc26fd72f962c2a6d12e0c24ae81d9ede3af9b9c8d81bc445da6034dc632c2"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/driver.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/driver.cpp",
+          "line": 375,
+          "symbol": "take_published_terminal",
+          "sha256": "fcbc26fd72f962c2a6d12e0c24ae81d9ede3af9b9c8d81bc445da6034dc632c2"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/driver.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/driver.cpp",
+          "line": 380,
+          "symbol": "receive_terminal",
+          "sha256": "fcbc26fd72f962c2a6d12e0c24ae81d9ede3af9b9c8d81bc445da6034dc632c2"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/driver.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/driver.cpp",
+          "line": 135,
+          "symbol": "closed_segment",
+          "sha256": "fcbc26fd72f962c2a6d12e0c24ae81d9ede3af9b9c8d81bc445da6034dc632c2"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/driver.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/driver.cpp",
+          "line": 408,
+          "symbol": "published_event_bits",
+          "sha256": "fcbc26fd72f962c2a6d12e0c24ae81d9ede3af9b9c8d81bc445da6034dc632c2"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/driver.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/driver.cpp",
+          "line": 253,
+          "symbol": "inspect_ordinary_register",
+          "sha256": "fcbc26fd72f962c2a6d12e0c24ae81d9ede3af9b9c8d81bc445da6034dc632c2"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/driver.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/driver.cpp",
+          "line": 251,
+          "symbol": "R17_live_contract",
+          "sha256": "fcbc26fd72f962c2a6d12e0c24ae81d9ede3af9b9c8d81bc445da6034dc632c2"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "line": 134,
+          "symbol": "flow.receive_position",
+          "sha256": "aa1f060a37e4512535cb4e12a9ac123812db414592c5a293f1cff0f8635ab3dd"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "line": 138,
+          "symbol": "flow.publish_position",
+          "sha256": "aa1f060a37e4512535cb4e12a9ac123812db414592c5a293f1cff0f8635ab3dd"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "line": 35,
+          "symbol": "grant_released_movement",
+          "sha256": "aa1f060a37e4512535cb4e12a9ac123812db414592c5a293f1cff0f8635ab3dd"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "line": 173,
+          "symbol": "flow.receive_terminal",
+          "sha256": "aa1f060a37e4512535cb4e12a9ac123812db414592c5a293f1cff0f8635ab3dd"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "line": 186,
+          "symbol": "flow.prepare_receipt",
+          "sha256": "aa1f060a37e4512535cb4e12a9ac123812db414592c5a293f1cff0f8635ab3dd"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "line": 187,
+          "symbol": "flow.publish_receipt",
+          "sha256": "aa1f060a37e4512535cb4e12a9ac123812db414592c5a293f1cff0f8635ab3dd"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "line": 184,
+          "symbol": "flow.settle_unsuccessful",
+          "sha256": "aa1f060a37e4512535cb4e12a9ac123812db414592c5a293f1cff0f8635ab3dd"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "line": 130,
+          "symbol": "flow.receive_stale_position",
+          "sha256": "aa1f060a37e4512535cb4e12a9ac123812db414592c5a293f1cff0f8635ab3dd"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_center.cpp",
+          "line": 131,
+          "symbol": "same_identity",
+          "sha256": "aa1f060a37e4512535cb4e12a9ac123812db414592c5a293f1cff0f8635ab3dd"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_lifecycle.inc",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_lifecycle.inc",
+          "line": 100,
+          "symbol": "life_verifier.observe",
+          "sha256": "63fb2608e15b02650aef1ebe9b0dca2f429c037c883ec4f4f22a1d06d1fdcea4"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_lifecycle.inc",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_lifecycle.inc",
+          "line": 40,
+          "symbol": "notice.matches",
+          "sha256": "63fb2608e15b02650aef1ebe9b0dca2f429c037c883ec4f4f22a1d06d1fdcea4"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_lifecycle.inc",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_lifecycle.inc",
+          "line": 51,
+          "symbol": "stage_service",
+          "sha256": "63fb2608e15b02650aef1ebe9b0dca2f429c037c883ec4f4f22a1d06d1fdcea4"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_lifecycle.inc",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_lifecycle.inc",
+          "line": 7,
+          "symbol": "await_publication_source",
+          "sha256": "63fb2608e15b02650aef1ebe9b0dca2f429c037c883ec4f4f22a1d06d1fdcea4"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_lifecycle.inc",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_lifecycle.inc",
+          "line": 107,
+          "symbol": "life_verifier.retire",
+          "sha256": "63fb2608e15b02650aef1ebe9b0dca2f429c037c883ec4f4f22a1d06d1fdcea4"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_lifecycle.inc",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_lifecycle.inc",
+          "line": 156,
+          "symbol": "finish_lifecycle",
+          "sha256": "63fb2608e15b02650aef1ebe9b0dca2f429c037c883ec4f4f22a1d06d1fdcea4"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_capture_imports.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_capture_imports.cpp",
+          "line": 6,
+          "symbol": "capture_source_call",
+          "sha256": "b163b56a12a73e017f55b1c357f48eb7ca3bc4331a6984a3af158b3445e858b2"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_capture_imports.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_capture_imports.cpp",
+          "line": 8,
+          "symbol": "capture_text_length",
+          "sha256": "b163b56a12a73e017f55b1c357f48eb7ca3bc4331a6984a3af158b3445e858b2"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_capture_imports.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/r13_capture_imports.cpp",
+          "line": 13,
+          "symbol": "ecall",
+          "sha256": "b163b56a12a73e017f55b1c357f48eb7ca3bc4331a6984a3af158b3445e858b2"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_center_query_flow.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_center_query_flow.hpp",
+          "line": 147,
+          "symbol": "prepare_position(*certificate_",
+          "sha256": "e1b2281b36947fad77b08aae2aff30680cb4afd53c724a6552137a53ee10cb14"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_center_query_flow.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_center_query_flow.hpp",
+          "line": 94,
+          "symbol": "commit_at_opportunity",
+          "sha256": "e1b2281b36947fad77b08aae2aff30680cb4afd53c724a6552137a53ee10cb14"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_center_query_flow.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_center_query_flow.hpp",
+          "line": 214,
+          "symbol": "prepare_terminal(registered_terminal_import)",
+          "sha256": "e1b2281b36947fad77b08aae2aff30680cb4afd53c724a6552137a53ee10cb14"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_center_query_flow.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_center_query_flow.hpp",
+          "line": 171,
+          "symbol": "prepare_unsuccessful_settlement",
+          "sha256": "e1b2281b36947fad77b08aae2aff30680cb4afd53c724a6552137a53ee10cb14"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_center_query_flow.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_center_query_flow.hpp",
+          "line": 175,
+          "symbol": "valid_receipt",
+          "sha256": "e1b2281b36947fad77b08aae2aff30680cb4afd53c724a6552137a53ee10cb14"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_center_query_flow.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_center_query_flow.hpp",
+          "line": 139,
+          "symbol": "new R17LiveEvidence",
+          "sha256": "e1b2281b36947fad77b08aae2aff30680cb4afd53c724a6552137a53ee10cb14"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_center_query_flow.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_center_query_flow.hpp",
+          "line": 135,
+          "symbol": "pie_query_evidence::receive_position",
+          "sha256": "e1b2281b36947fad77b08aae2aff30680cb4afd53c724a6552137a53ee10cb14"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_query_evidence_channel.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_query_evidence_channel.hpp",
+          "line": 212,
+          "symbol": "R14_source_return",
+          "sha256": "e97498325d07b1db6e023f8c81a0176b628327b83cc78c7061412721411588af"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_query_evidence_channel.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_query_evidence_channel.hpp",
+          "line": 96,
+          "symbol": "fields_[Value]",
+          "sha256": "e97498325d07b1db6e023f8c81a0176b628327b83cc78c7061412721411588af"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_query_evidence_channel.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_query_evidence_channel.hpp",
+          "line": 91,
+          "symbol": "fields_[Index]",
+          "sha256": "e97498325d07b1db6e023f8c81a0176b628327b83cc78c7061412721411588af"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "line": 81,
+          "symbol": "friend class CenterQueryFlow",
+          "sha256": "c2d16f7a51b9f9fae626accdcb9212f12b49e31d4983a1c4dbf8255d8c58035e"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "line": 89,
+          "symbol": "R17LiveEvidence(const R17LiveEvidence&) = delete",
+          "sha256": "c2d16f7a51b9f9fae626accdcb9212f12b49e31d4983a1c4dbf8255d8c58035e"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "line": 103,
+          "symbol": "require(!committed_ && !used_",
+          "sha256": "c2d16f7a51b9f9fae626accdcb9212f12b49e31d4983a1c4dbf8255d8c58035e"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "line": 119,
+          "symbol": "require(committed_ && !used_",
+          "sha256": "c2d16f7a51b9f9fae626accdcb9212f12b49e31d4983a1c4dbf8255d8c58035e"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "line": 124,
+          "symbol": "check_live_front(live)",
+          "sha256": "c2d16f7a51b9f9fae626accdcb9212f12b49e31d4983a1c4dbf8255d8c58035e"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "line": 292,
+          "symbol": "&action.geometry.intervals() == &b.geometry.intervals()",
+          "sha256": "c2d16f7a51b9f9fae626accdcb9212f12b49e31d4983a1c4dbf8255d8c58035e"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "line": 295,
+          "symbol": "Ops::cmp(action.q, b.expected_q) == 0",
+          "sha256": "c2d16f7a51b9f9fae626accdcb9212f12b49e31d4983a1c4dbf8255d8c58035e"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "line": 255,
+          "symbol": "remaining_mask(committed_snapshot.mask())",
+          "sha256": "c2d16f7a51b9f9fae626accdcb9212f12b49e31d4983a1c4dbf8255d8c58035e"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "line": 169,
+          "symbol": "live.structure().owners",
+          "sha256": "c2d16f7a51b9f9fae626accdcb9212f12b49e31d4983a1c4dbf8255d8c58035e"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "line": 170,
+          "symbol": "demand_it->second->relations.empty()",
+          "sha256": "c2d16f7a51b9f9fae626accdcb9212f12b49e31d4983a1c4dbf8255d8c58035e"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "line": 174,
+          "symbol": "b.before_snapshot.mask(), demand.resources",
+          "sha256": "c2d16f7a51b9f9fae626accdcb9212f12b49e31d4983a1c4dbf8255d8c58035e"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "line": 176,
+          "symbol": "used_ = true",
+          "sha256": "c2d16f7a51b9f9fae626accdcb9212f12b49e31d4983a1c4dbf8255d8c58035e"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "line": 24,
+          "symbol": "finite_completion_upper = false",
+          "sha256": "c2d16f7a51b9f9fae626accdcb9212f12b49e31d4983a1c4dbf8255d8c58035e"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/r17_live_evidence.hpp",
+          "line": 251,
+          "symbol": "integer(12), geometry.length()",
+          "sha256": "c2d16f7a51b9f9fae626accdcb9212f12b49e31d4983a1c4dbf8255d8c58035e"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_start.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_start.cpp",
+          "line": 124,
+          "symbol": "pie_cost_results[25]",
+          "sha256": "be6d8ecdd9da0164284cac97c5b921bf20d4e2549059e0e808714df54793efb0"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_start.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_start.cpp",
+          "line": 130,
+          "symbol": "pie_cost_results[31]",
+          "sha256": "be6d8ecdd9da0164284cac97c5b921bf20d4e2549059e0e808714df54793efb0"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_start.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_start.cpp",
+          "line": 70,
+          "symbol": "asm volatile(\"ecall\"",
+          "sha256": "be6d8ecdd9da0164284cac97c5b921bf20d4e2549059e0e808714df54793efb0"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_start.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_start.cpp",
+          "line": 124,
+          "symbol": "asm(\"s2\")",
+          "sha256": "be6d8ecdd9da0164284cac97c5b921bf20d4e2549059e0e808714df54793efb0"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_start.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/full_start.cpp",
+          "line": 130,
+          "symbol": "asm(\"s8\")",
+          "sha256": "be6d8ecdd9da0164284cac97c5b921bf20d4e2549059e0e808714df54793efb0"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_geometry.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_geometry.hpp",
+          "line": 96,
+          "symbol": "friend class Geometry",
+          "sha256": "0a5a538a3ee252ce2099a78fa03f3e7b5993c9ca7beb04cbfd224b6008f75d6c"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_geometry.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_geometry.hpp",
+          "line": 113,
+          "symbol": "explicit Snapshot(std::shared_ptr<const SnapshotData>",
+          "sha256": "0a5a538a3ee252ce2099a78fa03f3e7b5993c9ca7beb04cbfd224b6008f75d6c"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_geometry.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_geometry.hpp",
+          "line": 223,
+          "symbol": "source_, q, b, identity",
+          "sha256": "0a5a538a3ee252ce2099a78fa03f3e7b5993c9ca7beb04cbfd224b6008f75d6c"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_geometry.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_geometry.hpp",
+          "line": 232,
+          "symbol": "const Storage& s = *previous.source",
+          "sha256": "0a5a538a3ee252ce2099a78fa03f3e7b5993c9ca7beb04cbfd224b6008f75d6c"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_geometry.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length27_paid/include/pie_geometry.hpp",
+          "line": 267,
+          "symbol": "previous.source, q, b, identity, previous.identity",
+          "sha256": "0a5a538a3ee252ce2099a78fa03f3e7b5993c9ca7beb04cbfd224b6008f75d6c"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation/pie_position_commit/include/pie_position_commit.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation/pie_position_commit/include/pie_position_commit.hpp",
+          "line": 284,
+          "symbol": "Snapshot initial = action.geometry.g_init(cap, seed)",
+          "sha256": "2f7be5ec11293df2fdbda3919393f8a30b43b2a432f56879e59f26d0a3b9d7c6"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation/pie_position_commit/include/pie_position_commit.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation/pie_position_commit/include/pie_position_commit.hpp",
+          "line": 176,
+          "symbol": "Retirement::prepare(progress.current, certificate",
+          "sha256": "2f7be5ec11293df2fdbda3919393f8a30b43b2a432f56879e59f26d0a3b9d7c6"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation/pie_position_commit/include/pie_position_commit.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation/pie_position_commit/include/pie_position_commit.hpp",
+          "line": 177,
+          "symbol": "proposal.base().identity() == progress.current.identity()",
+          "sha256": "2f7be5ec11293df2fdbda3919393f8a30b43b2a432f56879e59f26d0a3b9d7c6"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation/pie_position_commit/include/pie_position_commit.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation/pie_position_commit/include/pie_position_commit.hpp",
+          "line": 182,
+          "symbol": "Ops::cmp(proposal.next().b(), action.b) == 0",
+          "sha256": "2f7be5ec11293df2fdbda3919393f8a30b43b2a432f56879e59f26d0a3b9d7c6"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation/pie_position_commit/include/pie_position_commit.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation/pie_position_commit/include/pie_position_commit.hpp",
+          "line": 225,
+          "symbol": "validate_progress(*next, action_key)",
+          "sha256": "2f7be5ec11293df2fdbda3919393f8a30b43b2a432f56879e59f26d0a3b9d7c6"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation/pie_progress_retirement/include/pie_progress_retirement.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation/pie_progress_retirement/include/pie_progress_retirement.hpp",
+          "line": 60,
+          "symbol": "same_binding(current.binding(), certificate.binding())",
+          "sha256": "ddd94e49c3dd689b84d585ae374a65b99f49577bf9752342f46d688fbd0f7cb1"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation/pie_progress_retirement/include/pie_progress_retirement.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation/pie_progress_retirement/include/pie_progress_retirement.hpp",
+          "line": 77,
+          "symbol": "Geometry::g_advance(current, lower, current.b(), next_identity)",
+          "sha256": "ddd94e49c3dd689b84d585ae374a65b99f49577bf9752342f46d688fbd0f7cb1"
+        }
+      ],
+      "new_native_runs_by_auditor": 0,
+      "source_chain": {
+        "request": {
+          "stream": 2,
+          "body_sha256": "6978f593bf675b2ac14f637a96a42c93757870572b57a98eb7f429c19e52d3bb",
+          "body_bytes": 313,
+          "return_event_indexes": [
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119
+          ],
+          "delivery": {
+            "event": "R14_delivery",
+            "from": "N",
+            "to": "E",
+            "at": 1,
+            "row": 11530,
+            "event_index": 37
+          },
+          "private_serial_exported": false
+        },
+        "position": {
+          "stream": 4,
+          "body_sha256": "5b16e1469df22db5e177d1943e68b1986c5f494660b7f6eddb87c784a6e815d0",
+          "body_bytes": 419,
+          "return_event_indexes": [
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            217,
+            218,
+            219,
+            220,
+            221,
+            222,
+            223,
+            224,
+            225,
+            226,
+            227,
+            228,
+            229,
+            230,
+            231,
+            232,
+            233,
+            234,
+            235,
+            236,
+            237,
+            238,
+            239,
+            240,
+            241,
+            242,
+            243,
+            244,
+            245,
+            246,
+            247,
+            248,
+            249,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255,
+            256,
+            257,
+            258,
+            259,
+            260,
+            261,
+            262,
+            263,
+            264,
+            265,
+            266,
+            267,
+            268,
+            269,
+            270,
+            271,
+            272,
+            273
+          ],
+          "delivery": {
+            "event": "R14_delivery",
+            "from": "N",
+            "to": "C",
+            "at": 4,
+            "row": 44030,
+            "event_index": 189
+          },
+          "private_serial_exported": false
+        },
+        "identity": {
+          "block": "b",
+          "session": "D",
+          "center": "C",
+          "executor": "E",
+          "query": "q0",
+          "request": "r0",
+          "profile": "p",
+          "source": "position",
+          "agent": "agent-A",
+          "action": "move-A",
+          "geometry_version": "r17g-a6c3aafe17698fe3d12ed327925a8eeea5d1e3893d083787eb6069861f8e76dc",
+          "number_encoding": "exact-flint",
+          "coordinate_frame": "plane",
+          "distance_unit": "unit",
+          "move_occurrence": "move-A"
+        },
+        "capture": "2",
+        "delivery": 4,
+        "lower": "2",
+        "upper": "2",
+        "cap": "27",
+        "actual_source_words": 131
+      },
+      "live_contract": {
+        "slots_25_31": [
+          7,
+          2,
+          4,
+          5,
+          6,
+          4,
+          4095
+        ],
+        "source_pin": "be6d8ecdd9da0164284cac97c5b921bf20d4e2549059e0e808714df54793efb0",
+        "evidence_capture_and_delivery_bound": true,
+        "source_enforced": true,
+        "diagnostics_alone_not_authority": true
+      },
+      "event_order": {
+        "publication_event_indexes": {
+          "C:11020": 29,
+          "C:18100": 47,
+          "C:18200": 53,
+          "C:28100": 124,
+          "C:28200": 130,
+          "C:38100": 157,
+          "C:38200": 163,
+          "C:41100": 174,
+          "C:41200": 180,
+          "C:55010": 279,
+          "C:58100": 283,
+          "C:58200": 289,
+          "C:66010": 298,
+          "C:68100": 307,
+          "C:68200": 313,
+          "C:77010": 322,
+          "C:78100": 328,
+          "C:78200": 334,
+          "C:88100": 349,
+          "C:88200": 356,
+          "C:98100": 378,
+          "C:98200": 386,
+          "C:100020": 397,
+          "C:108100": 408,
+          "C:108200": 415,
+          "C:110020": 426,
+          "C:118100": 435,
+          "C:118200": 442,
+          "C:120020": 452,
+          "C:128100": 464,
+          "C:128200": 472,
+          "C:130020": 482,
+          "C:138100": 491,
+          "C:138200": 498,
+          "C:144020": 507,
+          "C:148100": 512,
+          "C:148200": 518,
+          "C:158100": 530,
+          "C:158200": 536,
+          "C:168100": 547,
+          "C:168200": 553,
+          "E:33010": 138,
+          "E:33070": 145,
+          "E:33120": 150,
+          "E:44110": 198,
+          "N:11520": 35,
+          "N:11560": 41,
+          "N:44020": 187,
+          "N:44060": 193
+        },
+        "four_terminal_collectors": [
+          397,
+          426,
+          452,
+          482
+        ],
+        "receipt_or_settlement": 507,
+        "observer_event_index": 558
+      },
+      "next_selection": {
+        "public_selection_time": 15,
+        "all_four_service_times_before_selection": true,
+        "raw_next_choice_fields_observed": false,
+        "source_enforced_inference": "NoEligible with empty active action set after finite FIFO closure; no scored candidate and therefore no quote-dependent cost_delay evaluation",
+        "quote_changed_decision_demonstrated": false,
+        "receipt_installed_is_distinct_from_quote_used_in_score": true,
+        "selector_source": {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation/pie_query/include/pie_query_scheduler.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation/pie_query/include/pie_query_scheduler.hpp",
+          "sha256": "a1572501e39b711b9c8253e05083aa5799884145263d81352c9d71fd1965fefb",
+          "choose_scored_line": 457
+        }
+      },
+      "reused_wait": {
+        "run_dir": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/information_separation_20261004_r13/commands/length27_wait_final_scheme1",
+        "receipt_sha256": "2cb03fd71b9ba69dff7d4ca422ea8c084fd35252c396292215038227aa00d91d",
+        "stdout_sha256": "c4f34bf76954b05a0146ba35e8e283897f86a1fca5a4ec4fe559bcdcd20eb396",
+        "legacy_bindings_sha256": "26627cbf06e289c1f1e5dd3e325acc9099fe2d987cc730bd647d8e2eb0e9ff17",
+        "source_constructors": [
+          {
+            "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/information_separation_20261004_r13/length27_wait/full_profile.cpp",
+            "sha256": "41052428cba0ddca354eb81351795c2d451e4ae4e5ea0608cbc9374a57d100d3",
+            "constructor_checks": 7
+          },
+          {
+            "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/information_separation_20261004_r13/length27_wait/r13_lifecycle.inc",
+            "sha256": "63fb2608e15b02650aef1ebe9b0dca2f429c037c883ec4f4f22a1d06d1fdcea4",
+            "constructor_checks": 4
+          },
+          {
+            "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/information_separation_20261004_r13/length27_wait/driver.cpp",
+            "sha256": "838cc4901ccc33429057ab66a349c54fba47a251a76807dc52b35eae2eaa12b8",
+            "constructor_checks": 4
+          }
+        ],
+        "lifecycle": {
+          "tasks": 4,
+          "run_ticks": {
+            "move-A": 0,
+            "move-B": 9,
+            "move-A2": 10,
+            "move-B2": 12
+          },
+          "end_ticks": {
+            "move-A": 9,
+            "move-B": 11,
+            "move-A2": 12,
+            "move-B2": 14
+          },
+          "service_ticks": {
+            "move-A": 10,
+            "move-B": 12,
+            "move-A2": 13,
+            "move-B2": 15
+          },
+          "service_sum": 50,
+          "physical_frames": 66,
+          "minimum_continuous_center_gap": "1",
+          "post_end_dwell": 1,
+          "publications": 32
+        },
+        "cost": {
+          "segments": 216,
+          "actual": 385221979,
+          "charged": 1811939328,
+          "accounts": {
+            "2": {
+              "segments": 216,
+              "actual": 385221979,
+              "charged": 1811939328
+            }
+          },
+          "jobs": [
+            {
+              "station": "C",
+              "job": "C-END",
+              "segments": 189,
+              "actual": 310890603,
+              "charged": 1585446912
+            },
+            {
+              "station": "C",
+              "job": "C-business",
+              "segments": 27,
+              "actual": 74331376,
+              "charged": 226492416
+            }
+          ],
+          "publication_rows": [
+            [
+              "C",
+              "C-END",
+              18100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              18200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              28100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              28200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              38100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              38200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              41100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              41200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              58100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              58200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              68100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              68200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              78100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              78200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              88100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              88200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              98100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              98200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              108100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              108200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              118100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              118200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              128100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              128200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              138100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              138200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              148100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              148200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              158100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              158200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              168100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              168200,
+              2
+            ]
+          ],
+          "terminal_bodies_independently_decoded": false,
+          "terminal_receipt_scope": "actual charged publication rows plus pinned guest SOURCE/collector/settlement calls; no guessed terminal payload"
+        },
+        "reuse_scope": "R13 frozen raw receipt/logs and inherited source bindings; no R17 namespace or consumer-cost equivalence asserted; legacy receipt has no per-run preexecution pins",
+        "paid_minus_wait": {
+          "tasks": 0,
+          "service_sum": -6,
+          "actual": 130776412,
+          "charged": 771751936
+        }
+      }
+    },
+    {
+      "name": "length3_paid_native_scheme0_final",
+      "run_dir": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/commands/length3_paid_native_scheme0_final",
+      "length": 3,
+      "scheme": 0,
+      "policy": "paid",
+      "passed": true,
+      "provenance": {
+        "receipt_sha256": "88a44fbea600afc758b79cdbaeef6f651b4c6971ef385de446281c8122e06aa9",
+        "stdout_sha256": "e03ae7f752852f1962e6362da4a1bd1ba91558af16afb04c22c0b2ef11c1d0db",
+        "execution_key": "6b32dc1a891c52de094ed12ebf9d3d4f9ca047fabcba380fda3e034dacd78c9d",
+        "executed_host_sha256": "94201d9e83e79d158c5a27fd3e9af0d7a5305272fc8d4706d6cbd6a648cbb4c4",
+        "preexecution_pins": 127,
+        "bound_ELFs": [
+          {
+            "role": "network",
+            "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/image/pie_full_query_network_20260921.elf",
+            "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/image/pie_full_query_network_20260921.elf",
+            "sha256": "3484d04f94b28c7c9bd1f2d6af37d56affd254e2e6979d583c9c5cb13710e3aa"
+          },
+          {
+            "role": "executor",
+            "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/image/pie_full_query_executor_20260921.elf",
+            "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/image/pie_full_query_executor_20260921.elf",
+            "sha256": "6bf306d9aa6785a5e70a53939df4635705a0696acfe964406cb9614dfc479d1e"
+          },
+          {
+            "role": "center",
+            "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/image/pie_full_query_center_20260921.elf",
+            "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/image/pie_full_query_center_20260921.elf",
+            "sha256": "8d35877931bbf41425ac28f78ca6240d359caf39dd986383bbad050cb281cbd3"
+          }
+        ]
+      },
+      "world_binding": {
+        "geometry_version": "r17g-8d1da1633e183223d04d9f0839f0bc01c6ca471dee020d0201fb46e437aced9a",
+        "canonical_sha256": "8d1da1633e183223d04d9f0839f0bc01c6ca471dee020d0201fb46e437aced9a",
+        "contract_sha256": "124a4f86a4327ef99626f50646cf475d700700630946dea34efb56dbeb8057ca",
+        "source_constructors": [
+          {
+            "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/full_profile.cpp",
+            "sha256": "16d3f4038cb0adb2259ebdcc9ef003d9aa62110364854cf20e21211d6ea8ea50",
+            "constructor_checks": 7
+          },
+          {
+            "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/r13_lifecycle.inc",
+            "sha256": "63fb2608e15b02650aef1ebe9b0dca2f429c037c883ec4f4f22a1d06d1fdcea4",
+            "constructor_checks": 4
+          },
+          {
+            "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/driver.cpp",
+            "sha256": "0d14279e33ec33acca829eb2bd0d70197067f8d7ab5a9d9b80bef9d94f349ef4",
+            "constructor_checks": 4
+          }
+        ],
+        "controller_eta_upper_known": false
+      },
+      "lifecycle": {
+        "tasks": 4,
+        "run_ticks": {
+          "move-A": 0,
+          "move-B": 3,
+          "move-A2": 4,
+          "move-B2": 6
+        },
+        "end_ticks": {
+          "move-A": 3,
+          "move-B": 5,
+          "move-A2": 6,
+          "move-B2": 8
+        },
+        "service_ticks": {
+          "move-A": 4,
+          "move-B": 6,
+          "move-A2": 7,
+          "move-B2": 9
+        },
+        "service_sum": 26,
+        "physical_frames": 66,
+        "minimum_continuous_center_gap": "1",
+        "post_end_dwell": 1,
+        "publications": 32
+      },
+      "cost": {
+        "segments": 278,
+        "actual": 255750294,
+        "charged": 255750294,
+        "accounts": {
+          "0": {
+            "segments": 10,
+            "actual": 1211209,
+            "charged": 1211209
+          },
+          "1": {
+            "segments": 19,
+            "actual": 3547053,
+            "charged": 3547053
+          },
+          "2": {
+            "segments": 191,
+            "actual": 237113406,
+            "charged": 237113406
+          },
+          "3": {
+            "segments": 58,
+            "actual": 13878626,
+            "charged": 13878626
+          }
+        },
+        "jobs": [
+          {
+            "station": "C",
+            "job": "C-END",
+            "segments": 168,
+            "actual": 122508978,
+            "charged": 122508978
+          },
+          {
+            "station": "C",
+            "job": "C-accounting",
+            "segments": 9,
+            "actual": 1645229,
+            "charged": 1645229
+          },
+          {
+            "station": "C",
+            "job": "C-business",
+            "segments": 9,
+            "actual": 43626581,
+            "charged": 43626581
+          },
+          {
+            "station": "C",
+            "job": "C-collect-C",
+            "segments": 5,
+            "actual": 2491318,
+            "charged": 2491318
+          },
+          {
+            "station": "C",
+            "job": "C-collect-E",
+            "segments": 6,
+            "actual": 1998504,
+            "charged": 1998504
+          },
+          {
+            "station": "C",
+            "job": "C-collect-N-in",
+            "segments": 6,
+            "actual": 2336249,
+            "charged": 2336249
+          },
+          {
+            "station": "C",
+            "job": "C-collect-N-out",
+            "segments": 6,
+            "actual": 1468282,
+            "charged": 1468282
+          },
+          {
+            "station": "C",
+            "job": "C-next",
+            "segments": 2,
+            "actual": 117362,
+            "charged": 117362
+          },
+          {
+            "station": "C",
+            "job": "C-receipt",
+            "segments": 3,
+            "actual": 403740,
+            "charged": 403740
+          },
+          {
+            "station": "C",
+            "job": "C-receive",
+            "segments": 5,
+            "actual": 1288781,
+            "charged": 1288781
+          },
+          {
+            "station": "C",
+            "job": "C-select",
+            "segments": 8,
+            "actual": 1093847,
+            "charged": 1093847
+          },
+          {
+            "station": "E",
+            "job": "E-accounting",
+            "segments": 5,
+            "actual": 1401618,
+            "charged": 1401618
+          },
+          {
+            "station": "E",
+            "job": "E-business",
+            "segments": 7,
+            "actual": 35499727,
+            "charged": 35499727
+          },
+          {
+            "station": "E",
+            "job": "E-position",
+            "segments": 6,
+            "actual": 1825646,
+            "charged": 1825646
+          },
+          {
+            "station": "E",
+            "job": "E-relay-N-in",
+            "segments": 4,
+            "actual": 170207,
+            "charged": 170207
+          },
+          {
+            "station": "E",
+            "job": "E-relay-N-out",
+            "segments": 5,
+            "actual": 156619,
+            "charged": 156619
+          },
+          {
+            "station": "N",
+            "job": "N-business",
+            "segments": 7,
+            "actual": 35478120,
+            "charged": 35478120
+          },
+          {
+            "station": "N",
+            "job": "N-in",
+            "segments": 4,
+            "actual": 217052,
+            "charged": 217052
+          },
+          {
+            "station": "N",
+            "job": "N-in-accounting",
+            "segments": 4,
+            "actual": 910616,
+            "charged": 910616
+          },
+          {
+            "station": "N",
+            "job": "N-out",
+            "segments": 4,
+            "actual": 215574,
+            "charged": 215574
+          },
+          {
+            "station": "N",
+            "job": "N-out-accounting",
+            "segments": 5,
+            "actual": 896244,
+            "charged": 896244
+          }
+        ],
+        "publication_rows": [
+          [
+            "C",
+            "C-select",
+            11020,
+            0
+          ],
+          [
+            "N",
+            "N-out",
+            11520,
+            1
+          ],
+          [
+            "N",
+            "N-out-accounting",
+            11560,
+            3
+          ],
+          [
+            "C",
+            "C-END",
+            18100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            18200,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            28100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            28200,
+            2
+          ],
+          [
+            "E",
+            "E-position",
+            33010,
+            1
+          ],
+          [
+            "E",
+            "E-accounting",
+            33070,
+            3
+          ],
+          [
+            "E",
+            "E-relay-N-out",
+            33120,
+            3
+          ],
+          [
+            "C",
+            "C-END",
+            38100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            38200,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            41100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            41200,
+            2
+          ],
+          [
+            "N",
+            "N-in",
+            44020,
+            1
+          ],
+          [
+            "N",
+            "N-in-accounting",
+            44060,
+            3
+          ],
+          [
+            "E",
+            "E-relay-N-in",
+            44110,
+            3
+          ],
+          [
+            "C",
+            "C-END",
+            58100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            58200,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            68100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            68200,
+            2
+          ],
+          [
+            "C",
+            "C-accounting",
+            77010,
+            3
+          ],
+          [
+            "C",
+            "C-END",
+            78100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            78200,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            88100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            88200,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            98100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            98200,
+            2
+          ],
+          [
+            "C",
+            "C-collect-N-out",
+            100020,
+            3
+          ],
+          [
+            "C",
+            "C-END",
+            108100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            108200,
+            2
+          ],
+          [
+            "C",
+            "C-collect-E",
+            110020,
+            3
+          ],
+          [
+            "C",
+            "C-END",
+            118100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            118200,
+            2
+          ],
+          [
+            "C",
+            "C-collect-N-in",
+            120020,
+            3
+          ],
+          [
+            "C",
+            "C-END",
+            128100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            128200,
+            2
+          ],
+          [
+            "C",
+            "C-collect-C",
+            130020,
+            3
+          ],
+          [
+            "C",
+            "C-END",
+            138100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            138200,
+            2
+          ],
+          [
+            "C",
+            "C-receipt",
+            144020,
+            3
+          ],
+          [
+            "C",
+            "C-END",
+            148100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            148200,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            158100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            158200,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            168100,
+            2
+          ],
+          [
+            "C",
+            "C-END",
+            168200,
+            2
+          ]
+        ],
+        "terminal_bodies_independently_decoded": false,
+        "terminal_receipt_scope": "actual charged publication rows plus pinned guest SOURCE/collector/settlement calls; no guessed terminal payload"
+      },
+      "authoritative_source_locations": [
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/driver.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/driver.cpp",
+          "line": 391,
+          "symbol": "install_cap",
+          "sha256": "0d14279e33ec33acca829eb2bd0d70197067f8d7ab5a9d9b80bef9d94f349ef4"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/driver.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/driver.cpp",
+          "line": 393,
+          "symbol": "acknowledge_published_movement",
+          "sha256": "0d14279e33ec33acca829eb2bd0d70197067f8d7ab5a9d9b80bef9d94f349ef4"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/driver.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/driver.cpp",
+          "line": 376,
+          "symbol": "take_published_terminal",
+          "sha256": "0d14279e33ec33acca829eb2bd0d70197067f8d7ab5a9d9b80bef9d94f349ef4"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/driver.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/driver.cpp",
+          "line": 381,
+          "symbol": "receive_terminal",
+          "sha256": "0d14279e33ec33acca829eb2bd0d70197067f8d7ab5a9d9b80bef9d94f349ef4"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/driver.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/driver.cpp",
+          "line": 135,
+          "symbol": "closed_segment",
+          "sha256": "0d14279e33ec33acca829eb2bd0d70197067f8d7ab5a9d9b80bef9d94f349ef4"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/driver.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/driver.cpp",
+          "line": 409,
+          "symbol": "published_event_bits",
+          "sha256": "0d14279e33ec33acca829eb2bd0d70197067f8d7ab5a9d9b80bef9d94f349ef4"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/driver.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/driver.cpp",
+          "line": 253,
+          "symbol": "inspect_ordinary_register",
+          "sha256": "0d14279e33ec33acca829eb2bd0d70197067f8d7ab5a9d9b80bef9d94f349ef4"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/driver.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/driver.cpp",
+          "line": 251,
+          "symbol": "R17_live_contract",
+          "sha256": "0d14279e33ec33acca829eb2bd0d70197067f8d7ab5a9d9b80bef9d94f349ef4"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/full_center.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/full_center.cpp",
+          "line": 134,
+          "symbol": "flow.receive_position",
+          "sha256": "c5b8bbb58163282d1bb204b84ae81984b8b7793ec0ac3b1b3ae29ede9b4972bc"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/full_center.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/full_center.cpp",
+          "line": 138,
+          "symbol": "flow.publish_position",
+          "sha256": "c5b8bbb58163282d1bb204b84ae81984b8b7793ec0ac3b1b3ae29ede9b4972bc"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/full_center.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/full_center.cpp",
+          "line": 35,
+          "symbol": "grant_released_movement",
+          "sha256": "c5b8bbb58163282d1bb204b84ae81984b8b7793ec0ac3b1b3ae29ede9b4972bc"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/full_center.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/full_center.cpp",
+          "line": 173,
+          "symbol": "flow.receive_terminal",
+          "sha256": "c5b8bbb58163282d1bb204b84ae81984b8b7793ec0ac3b1b3ae29ede9b4972bc"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/full_center.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/full_center.cpp",
+          "line": 186,
+          "symbol": "flow.prepare_receipt",
+          "sha256": "c5b8bbb58163282d1bb204b84ae81984b8b7793ec0ac3b1b3ae29ede9b4972bc"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/full_center.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/full_center.cpp",
+          "line": 187,
+          "symbol": "flow.publish_receipt",
+          "sha256": "c5b8bbb58163282d1bb204b84ae81984b8b7793ec0ac3b1b3ae29ede9b4972bc"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/full_center.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/full_center.cpp",
+          "line": 184,
+          "symbol": "flow.settle_unsuccessful",
+          "sha256": "c5b8bbb58163282d1bb204b84ae81984b8b7793ec0ac3b1b3ae29ede9b4972bc"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/full_center.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/full_center.cpp",
+          "line": 130,
+          "symbol": "flow.receive_stale_position",
+          "sha256": "c5b8bbb58163282d1bb204b84ae81984b8b7793ec0ac3b1b3ae29ede9b4972bc"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/full_center.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/full_center.cpp",
+          "line": 131,
+          "symbol": "same_identity",
+          "sha256": "c5b8bbb58163282d1bb204b84ae81984b8b7793ec0ac3b1b3ae29ede9b4972bc"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/r13_lifecycle.inc",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/r13_lifecycle.inc",
+          "line": 100,
+          "symbol": "life_verifier.observe",
+          "sha256": "63fb2608e15b02650aef1ebe9b0dca2f429c037c883ec4f4f22a1d06d1fdcea4"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/r13_lifecycle.inc",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/r13_lifecycle.inc",
+          "line": 40,
+          "symbol": "notice.matches",
+          "sha256": "63fb2608e15b02650aef1ebe9b0dca2f429c037c883ec4f4f22a1d06d1fdcea4"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/r13_lifecycle.inc",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/r13_lifecycle.inc",
+          "line": 51,
+          "symbol": "stage_service",
+          "sha256": "63fb2608e15b02650aef1ebe9b0dca2f429c037c883ec4f4f22a1d06d1fdcea4"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/r13_lifecycle.inc",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/r13_lifecycle.inc",
+          "line": 7,
+          "symbol": "await_publication_source",
+          "sha256": "63fb2608e15b02650aef1ebe9b0dca2f429c037c883ec4f4f22a1d06d1fdcea4"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/r13_lifecycle.inc",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/r13_lifecycle.inc",
+          "line": 107,
+          "symbol": "life_verifier.retire",
+          "sha256": "63fb2608e15b02650aef1ebe9b0dca2f429c037c883ec4f4f22a1d06d1fdcea4"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/r13_lifecycle.inc",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/r13_lifecycle.inc",
+          "line": 156,
+          "symbol": "finish_lifecycle",
+          "sha256": "63fb2608e15b02650aef1ebe9b0dca2f429c037c883ec4f4f22a1d06d1fdcea4"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/r13_capture_imports.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/r13_capture_imports.cpp",
+          "line": 6,
+          "symbol": "capture_source_call",
+          "sha256": "b163b56a12a73e017f55b1c357f48eb7ca3bc4331a6984a3af158b3445e858b2"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/r13_capture_imports.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/r13_capture_imports.cpp",
+          "line": 8,
+          "symbol": "capture_text_length",
+          "sha256": "b163b56a12a73e017f55b1c357f48eb7ca3bc4331a6984a3af158b3445e858b2"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/r13_capture_imports.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/r13_capture_imports.cpp",
+          "line": 13,
+          "symbol": "ecall",
+          "sha256": "b163b56a12a73e017f55b1c357f48eb7ca3bc4331a6984a3af158b3445e858b2"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/pie_center_query_flow.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/pie_center_query_flow.hpp",
+          "line": 145,
+          "symbol": "prepare_position(*certificate_",
+          "sha256": "909d6b60913a45fd3ad7eceaf3c6496c9ae3ede76bd34180a2f425c3ca46c3fb"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/pie_center_query_flow.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/pie_center_query_flow.hpp",
+          "line": 94,
+          "symbol": "commit_at_opportunity",
+          "sha256": "909d6b60913a45fd3ad7eceaf3c6496c9ae3ede76bd34180a2f425c3ca46c3fb"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/pie_center_query_flow.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/pie_center_query_flow.hpp",
+          "line": 212,
+          "symbol": "prepare_terminal(registered_terminal_import)",
+          "sha256": "909d6b60913a45fd3ad7eceaf3c6496c9ae3ede76bd34180a2f425c3ca46c3fb"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/pie_center_query_flow.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/pie_center_query_flow.hpp",
+          "line": 169,
+          "symbol": "prepare_unsuccessful_settlement",
+          "sha256": "909d6b60913a45fd3ad7eceaf3c6496c9ae3ede76bd34180a2f425c3ca46c3fb"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/pie_center_query_flow.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/pie_center_query_flow.hpp",
+          "line": 173,
+          "symbol": "valid_receipt",
+          "sha256": "909d6b60913a45fd3ad7eceaf3c6496c9ae3ede76bd34180a2f425c3ca46c3fb"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/pie_center_query_flow.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/pie_center_query_flow.hpp",
+          "line": 137,
+          "symbol": "new R17LiveEvidence",
+          "sha256": "909d6b60913a45fd3ad7eceaf3c6496c9ae3ede76bd34180a2f425c3ca46c3fb"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/pie_center_query_flow.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/pie_center_query_flow.hpp",
+          "line": 135,
+          "symbol": "pie_query_evidence::receive_position",
+          "sha256": "909d6b60913a45fd3ad7eceaf3c6496c9ae3ede76bd34180a2f425c3ca46c3fb"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/pie_query_evidence_channel.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/pie_query_evidence_channel.hpp",
+          "line": 212,
+          "symbol": "R14_source_return",
+          "sha256": "e97498325d07b1db6e023f8c81a0176b628327b83cc78c7061412721411588af"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/pie_query_evidence_channel.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/pie_query_evidence_channel.hpp",
+          "line": 96,
+          "symbol": "fields_[Value]",
+          "sha256": "e97498325d07b1db6e023f8c81a0176b628327b83cc78c7061412721411588af"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/pie_query_evidence_channel.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/pie_query_evidence_channel.hpp",
+          "line": 91,
+          "symbol": "fields_[Index]",
+          "sha256": "e97498325d07b1db6e023f8c81a0176b628327b83cc78c7061412721411588af"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/r17_live_evidence.hpp",
+          "line": 81,
+          "symbol": "friend class CenterQueryFlow",
+          "sha256": "f8b64170a50f5f2e1eac5e43abd27556ab127dd6715df85a8b0ca5a94a24a610"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/r17_live_evidence.hpp",
+          "line": 89,
+          "symbol": "R17LiveEvidence(const R17LiveEvidence&) = delete",
+          "sha256": "f8b64170a50f5f2e1eac5e43abd27556ab127dd6715df85a8b0ca5a94a24a610"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/r17_live_evidence.hpp",
+          "line": 103,
+          "symbol": "require(!committed_ && !used_",
+          "sha256": "f8b64170a50f5f2e1eac5e43abd27556ab127dd6715df85a8b0ca5a94a24a610"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/r17_live_evidence.hpp",
+          "line": 115,
+          "symbol": "require(committed_ && !used_",
+          "sha256": "f8b64170a50f5f2e1eac5e43abd27556ab127dd6715df85a8b0ca5a94a24a610"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/r17_live_evidence.hpp",
+          "line": 119,
+          "symbol": "check_live_front(live)",
+          "sha256": "f8b64170a50f5f2e1eac5e43abd27556ab127dd6715df85a8b0ca5a94a24a610"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/r17_live_evidence.hpp",
+          "line": 239,
+          "symbol": "&action.geometry.intervals() == &geometry_.intervals()",
+          "sha256": "f8b64170a50f5f2e1eac5e43abd27556ab127dd6715df85a8b0ca5a94a24a610"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/r17_live_evidence.hpp",
+          "line": 242,
+          "symbol": "Ops::cmp(action.q, expected_q_) == 0",
+          "sha256": "f8b64170a50f5f2e1eac5e43abd27556ab127dd6715df85a8b0ca5a94a24a610"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/r17_live_evidence.hpp",
+          "line": 145,
+          "symbol": "geometry_.n_mask(expected_q_, cap_)",
+          "sha256": "f8b64170a50f5f2e1eac5e43abd27556ab127dd6715df85a8b0ca5a94a24a610"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/r17_live_evidence.hpp",
+          "line": 147,
+          "symbol": "live.structure().owners",
+          "sha256": "f8b64170a50f5f2e1eac5e43abd27556ab127dd6715df85a8b0ca5a94a24a610"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/r17_live_evidence.hpp",
+          "line": 148,
+          "symbol": "demand_it->second->relations.empty()",
+          "sha256": "f8b64170a50f5f2e1eac5e43abd27556ab127dd6715df85a8b0ca5a94a24a610"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/r17_live_evidence.hpp",
+          "line": 152,
+          "symbol": "before_mask_, demand.resources",
+          "sha256": "f8b64170a50f5f2e1eac5e43abd27556ab127dd6715df85a8b0ca5a94a24a610"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/r17_live_evidence.hpp",
+          "line": 154,
+          "symbol": "used_ = true",
+          "sha256": "f8b64170a50f5f2e1eac5e43abd27556ab127dd6715df85a8b0ca5a94a24a610"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/r17_live_evidence.hpp",
+          "line": 24,
+          "symbol": "finite_completion_upper = false",
+          "sha256": "f8b64170a50f5f2e1eac5e43abd27556ab127dd6715df85a8b0ca5a94a24a610"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/r17_live_evidence.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/include/r17_live_evidence.hpp",
+          "line": 217,
+          "symbol": "integer(12), geometry_.length()",
+          "sha256": "f8b64170a50f5f2e1eac5e43abd27556ab127dd6715df85a8b0ca5a94a24a610"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/full_start.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/full_start.cpp",
+          "line": 124,
+          "symbol": "pie_cost_results[25]",
+          "sha256": "be6d8ecdd9da0164284cac97c5b921bf20d4e2549059e0e808714df54793efb0"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/full_start.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/full_start.cpp",
+          "line": 130,
+          "symbol": "pie_cost_results[31]",
+          "sha256": "be6d8ecdd9da0164284cac97c5b921bf20d4e2549059e0e808714df54793efb0"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/full_start.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/full_start.cpp",
+          "line": 70,
+          "symbol": "asm volatile(\"ecall\"",
+          "sha256": "be6d8ecdd9da0164284cac97c5b921bf20d4e2549059e0e808714df54793efb0"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/full_start.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/full_start.cpp",
+          "line": 124,
+          "symbol": "asm(\"s2\")",
+          "sha256": "be6d8ecdd9da0164284cac97c5b921bf20d4e2549059e0e808714df54793efb0"
+        },
+        {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/full_start.cpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/live_evidence_chain_20261004_r17/length3_paid/full_start.cpp",
+          "line": 130,
+          "symbol": "asm(\"s8\")",
+          "sha256": "be6d8ecdd9da0164284cac97c5b921bf20d4e2549059e0e808714df54793efb0"
+        }
+      ],
+      "new_native_runs_by_auditor": 0,
+      "source_chain": {
+        "request": {
+          "stream": 2,
+          "body_sha256": "a3e637ec40adaaec56dbf87530f45fe4481bba89261d5dd72679d767d6c62982",
+          "body_bytes": 313,
+          "return_event_indexes": [
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115
+          ],
+          "delivery": {
+            "event": "R14_delivery",
+            "from": "N",
+            "to": "E",
+            "at": 1,
+            "row": 11530,
+            "event_index": 33
+          },
+          "private_serial_exported": false
+        },
+        "position": {
+          "stream": 4,
+          "body_sha256": "8969c6ad96aa3d501cca30d720784e9c5353fb25b7cf01906599cbd4e536d70e",
+          "body_bytes": 418,
+          "return_event_indexes": [
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            217,
+            218,
+            219,
+            220,
+            221,
+            222,
+            223,
+            224,
+            225,
+            226,
+            227,
+            228,
+            229,
+            230,
+            231,
+            232,
+            233,
+            234,
+            235,
+            236,
+            237,
+            238,
+            239,
+            240,
+            241,
+            242,
+            243,
+            244,
+            245,
+            246,
+            247,
+            248,
+            249,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255,
+            256,
+            257,
+            258,
+            259,
+            260,
+            261,
+            262,
+            263,
+            264,
+            265,
+            266,
+            267,
+            268,
+            269,
+            270,
+            271,
+            272,
+            273,
+            274,
+            275
+          ],
+          "delivery": {
+            "event": "R14_delivery",
+            "from": "N",
+            "to": "C",
+            "at": 4,
+            "row": 44030,
+            "event_index": 191
+          },
+          "private_serial_exported": false
+        },
+        "identity": {
+          "block": "b",
+          "session": "D",
+          "center": "C",
+          "executor": "E",
+          "query": "q0",
+          "request": "r0",
+          "profile": "p",
+          "source": "position",
+          "agent": "agent-A",
+          "action": "move-A",
+          "geometry_version": "r17g-8d1da1633e183223d04d9f0839f0bc01c6ca471dee020d0201fb46e437aced9a",
+          "number_encoding": "exact-flint",
+          "coordinate_frame": "plane",
+          "distance_unit": "unit",
+          "move_occurrence": "move-A"
+        },
+        "capture": "2",
+        "delivery": 4,
+        "lower": "2",
+        "upper": "2",
+        "cap": "3",
+        "actual_source_words": 131
+      },
+      "live_contract": {
+        "slots_25_31": [
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "source_pin": "be6d8ecdd9da0164284cac97c5b921bf20d4e2549059e0e808714df54793efb0",
+        "evidence_capture_and_delivery_bound": true,
+        "source_enforced": true,
+        "diagnostics_alone_not_authority": true
+      },
+      "event_order": {
+        "publication_event_indexes": {
+          "C:11020": 25,
+          "C:18100": 43,
+          "C:18200": 49,
+          "C:28100": 120,
+          "C:28200": 126,
+          "C:38100": 154,
+          "C:38200": 161,
+          "C:41100": 174,
+          "C:41200": 181,
+          "C:58100": 287,
+          "C:58200": 294,
+          "C:68100": 312,
+          "C:68200": 320,
+          "C:77010": 330,
+          "C:78100": 337,
+          "C:78200": 344,
+          "C:88100": 356,
+          "C:88200": 363,
+          "C:98100": 374,
+          "C:98200": 381,
+          "C:100020": 391,
+          "C:108100": 397,
+          "C:108200": 403,
+          "C:110020": 413,
+          "C:118100": 419,
+          "C:118200": 425,
+          "C:120020": 435,
+          "C:128100": 441,
+          "C:128200": 447,
+          "C:130020": 457,
+          "C:138100": 463,
+          "C:138200": 469,
+          "C:144020": 478,
+          "C:148100": 483,
+          "C:148200": 489,
+          "C:158100": 501,
+          "C:158200": 507,
+          "C:168100": 518,
+          "C:168200": 524,
+          "E:33010": 135,
+          "E:33070": 142,
+          "E:33120": 147,
+          "E:44110": 200,
+          "N:11520": 31,
+          "N:11560": 37,
+          "N:44020": 189,
+          "N:44060": 195
+        },
+        "four_terminal_collectors": [
+          391,
+          413,
+          435,
+          457
+        ],
+        "receipt_or_settlement": 478,
+        "observer_event_index": 529
+      },
+      "next_selection": {
+        "public_selection_time": 15,
+        "all_four_service_times_before_selection": true,
+        "raw_next_choice_fields_observed": false,
+        "source_enforced_inference": "NoEligible with empty active action set after finite FIFO closure; no scored candidate and therefore no quote-dependent cost_delay evaluation",
+        "quote_changed_decision_demonstrated": false,
+        "receipt_installed_is_distinct_from_quote_used_in_score": true,
+        "selector_source": {
+          "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation/pie_query/include/pie_query_scheduler.hpp",
+          "verified_archive": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation/pie_query/include/pie_query_scheduler.hpp",
+          "sha256": "a1572501e39b711b9c8253e05083aa5799884145263d81352c9d71fd1965fefb",
+          "choose_scored_line": 457
+        }
+      },
+      "reused_wait": {
+        "run_dir": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/information_separation_20261004_r13/commands/length3_wait_final_scheme0",
+        "receipt_sha256": "a9b99cc437600109758197de13c182ea78a849f4af00bf3a433cfc55c7d637a4",
+        "stdout_sha256": "5b76b24c9331a22df0aa55bde2d64b18848cd9daaa022ffeb9a426c9095e7613",
+        "legacy_bindings_sha256": "26627cbf06e289c1f1e5dd3e325acc9099fe2d987cc730bd647d8e2eb0e9ff17",
+        "source_constructors": [
+          {
+            "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/information_separation_20261004_r13/length3_wait/full_profile.cpp",
+            "sha256": "41052428cba0ddca354eb81351795c2d451e4ae4e5ea0608cbc9374a57d100d3",
+            "constructor_checks": 7
+          },
+          {
+            "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/information_separation_20261004_r13/length3_wait/r13_lifecycle.inc",
+            "sha256": "63fb2608e15b02650aef1ebe9b0dca2f429c037c883ec4f4f22a1d06d1fdcea4",
+            "constructor_checks": 4
+          },
+          {
+            "path": "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/information_separation_20261004_r13/length3_wait/driver.cpp",
+            "sha256": "3be07926b2250b99407d6085250b77697822904dd94d0dbfe1df352674bc8944",
+            "constructor_checks": 4
+          }
+        ],
+        "lifecycle": {
+          "tasks": 4,
+          "run_ticks": {
+            "move-A": 0,
+            "move-B": 3,
+            "move-A2": 4,
+            "move-B2": 6
+          },
+          "end_ticks": {
+            "move-A": 3,
+            "move-B": 5,
+            "move-A2": 6,
+            "move-B2": 8
+          },
+          "service_ticks": {
+            "move-A": 4,
+            "move-B": 6,
+            "move-A2": 7,
+            "move-B2": 9
+          },
+          "service_sum": 26,
+          "physical_frames": 66,
+          "minimum_continuous_center_gap": "1",
+          "post_end_dwell": 1,
+          "publications": 32
+        },
+        "cost": {
+          "segments": 191,
+          "actual": 157661191,
+          "charged": 157661191,
+          "accounts": {
+            "2": {
+              "segments": 191,
+              "actual": 157661191,
+              "charged": 157661191
+            }
+          },
+          "jobs": [
+            {
+              "station": "C",
+              "job": "C-END",
+              "segments": 168,
+              "actual": 114035188,
+              "charged": 114035188
+            },
+            {
+              "station": "C",
+              "job": "C-business",
+              "segments": 23,
+              "actual": 43626003,
+              "charged": 43626003
+            }
+          ],
+          "publication_rows": [
+            [
+              "C",
+              "C-END",
+              18100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              18200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              28100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              28200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              38100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              38200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              41100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              41200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              58100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              58200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              68100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              68200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              78100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              78200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              88100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              88200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              98100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              98200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              108100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              108200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              118100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              118200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              128100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              128200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              138100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              138200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              148100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              148200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              158100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              158200,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              168100,
+              2
+            ],
+            [
+              "C",
+              "C-END",
+              168200,
+              2
+            ]
+          ],
+          "terminal_bodies_independently_decoded": false,
+          "terminal_receipt_scope": "actual charged publication rows plus pinned guest SOURCE/collector/settlement calls; no guessed terminal payload"
+        },
+        "reuse_scope": "R13 frozen raw receipt/logs and inherited source bindings; no R17 namespace or consumer-cost equivalence asserted; legacy receipt has no per-run preexecution pins",
+        "paid_minus_wait": {
+          "tasks": 0,
+          "service_sum": 0,
+          "actual": 98089103,
+          "charged": 98089103
+        }
+      }
+    }
+  ],
+  "cross_scheme": [
+    {
+      "left": "length27_paid_native_scheme0_fullsnapshot",
+      "right": "length27_paid_native_scheme1_fullsnapshot",
+      "passed": true,
+      "scope": "identical SOURCE body, physical/FIFO consequences and guest guard values across cost schemes"
+    }
+  ],
+  "scope": "Independent wire decode, analytic physical replay, event/FIFO order and segment/account conservation; capability checks additionally bound to pinned guest/ELF source paths, never host-preview authority"
+}

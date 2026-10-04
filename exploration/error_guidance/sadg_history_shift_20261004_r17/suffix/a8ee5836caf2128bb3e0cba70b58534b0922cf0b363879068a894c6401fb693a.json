@@ -1,0 +1,401 @@
+{
+  "author_vertex_sha256": "5eea1a3eb9106a27579fc0bf74cb895bcd0376fe63378a718fefd81e52ae15ba",
+  "collision_audit": {
+    "certified_footprint_or_controller_safety": false,
+    "full_wait_goal_coverage": true,
+    "minimum_squared_point_distance": "121/20",
+    "overlap_pairs": 15,
+    "point_collisions": []
+  },
+  "completed_agents": 2,
+  "completion_times": {
+    "agent0": "23/2",
+    "agent1": "11/2"
+  },
+  "data_class": "synthetic_event_execution_author_can_execute_no_ROS",
+  "events": [
+    {
+      "agent": "agent0",
+      "kind": "RESUME_COMMITTED",
+      "remaining": "5/4",
+      "t": "0",
+      "vertex": "v_0_1"
+    },
+    {
+      "agent": "agent1",
+      "kind": "RESUME_COMMITTED",
+      "remaining": "1/2",
+      "t": "0",
+      "vertex": "v_1_1"
+    },
+    {
+      "agent": "agent1",
+      "kind": "COMPLETE",
+      "t": "1/2",
+      "vertex": "v_1_1"
+    },
+    {
+      "active_dependency_tails": [],
+      "agent": "agent1",
+      "kind": "START",
+      "t": "1/2",
+      "vertex": "v_1_2"
+    },
+    {
+      "agent": "agent0",
+      "kind": "COMPLETE",
+      "t": "5/4",
+      "vertex": "v_0_1"
+    },
+    {
+      "active_dependency_tails": [],
+      "agent": "agent0",
+      "kind": "START",
+      "t": "5/4",
+      "vertex": "v_0_2"
+    },
+    {
+      "agent": "agent1",
+      "kind": "COMPLETE",
+      "t": "3/2",
+      "vertex": "v_1_2"
+    },
+    {
+      "active_dependency_tails": [],
+      "agent": "agent1",
+      "kind": "START",
+      "t": "3/2",
+      "vertex": "v_1_3"
+    },
+    {
+      "agent": "agent1",
+      "kind": "COMPLETE",
+      "t": "5/2",
+      "vertex": "v_1_3"
+    },
+    {
+      "active_dependency_tails": [],
+      "agent": "agent1",
+      "kind": "START",
+      "t": "5/2",
+      "vertex": "v_1_4"
+    },
+    {
+      "agent": "agent0",
+      "kind": "COMPLETE",
+      "t": "13/4",
+      "vertex": "v_0_2"
+    },
+    {
+      "agent": "agent1",
+      "kind": "COMPLETE",
+      "t": "7/2",
+      "vertex": "v_1_4"
+    },
+    {
+      "active_dependency_tails": [
+        "v_1_4"
+      ],
+      "agent": "agent0",
+      "kind": "START",
+      "t": "7/2",
+      "vertex": "v_0_3"
+    },
+    {
+      "active_dependency_tails": [],
+      "agent": "agent1",
+      "kind": "START",
+      "t": "7/2",
+      "vertex": "v_1_5"
+    },
+    {
+      "agent": "agent1",
+      "kind": "COMPLETE",
+      "t": "9/2",
+      "vertex": "v_1_5"
+    },
+    {
+      "active_dependency_tails": [],
+      "agent": "agent1",
+      "kind": "START",
+      "t": "9/2",
+      "vertex": "v_1_6"
+    },
+    {
+      "agent": "agent0",
+      "kind": "COMPLETE",
+      "t": "11/2",
+      "vertex": "v_0_3"
+    },
+    {
+      "agent": "agent1",
+      "kind": "COMPLETE",
+      "t": "11/2",
+      "vertex": "v_1_6"
+    },
+    {
+      "active_dependency_tails": [],
+      "agent": "agent0",
+      "kind": "START",
+      "t": "11/2",
+      "vertex": "v_0_4"
+    },
+    {
+      "agent": "agent0",
+      "kind": "COMPLETE",
+      "t": "15/2",
+      "vertex": "v_0_4"
+    },
+    {
+      "active_dependency_tails": [],
+      "agent": "agent0",
+      "kind": "START",
+      "t": "15/2",
+      "vertex": "v_0_5"
+    },
+    {
+      "agent": "agent0",
+      "kind": "COMPLETE",
+      "t": "19/2",
+      "vertex": "v_0_5"
+    },
+    {
+      "active_dependency_tails": [],
+      "agent": "agent0",
+      "kind": "START",
+      "t": "19/2",
+      "vertex": "v_0_6"
+    },
+    {
+      "agent": "agent0",
+      "kind": "COMPLETE",
+      "t": "23/2",
+      "vertex": "v_0_6"
+    }
+  ],
+  "makespan": 11.5,
+  "production_cost": null,
+  "segments": [
+    {
+      "agent": "agent0",
+      "kind": "COMMITTED_REMAINDER",
+      "p0": [
+        "0",
+        "21/4"
+      ],
+      "p1": [
+        "0",
+        "4"
+      ],
+      "t0": "0",
+      "t1": "5/4",
+      "vertex": "v_0_1"
+    },
+    {
+      "agent": "agent1",
+      "kind": "COMMITTED_REMAINDER",
+      "p0": [
+        "-5",
+        "0"
+      ],
+      "p1": [
+        "-4",
+        "0"
+      ],
+      "t0": "0",
+      "t1": "1/2",
+      "vertex": "v_1_1"
+    },
+    {
+      "agent": "agent1",
+      "kind": "MOVE",
+      "p0": [
+        "-4",
+        "0"
+      ],
+      "p1": [
+        "-2",
+        "0"
+      ],
+      "t0": "1/2",
+      "t1": "3/2",
+      "vertex": "v_1_2"
+    },
+    {
+      "agent": "agent0",
+      "kind": "MOVE",
+      "p0": [
+        "0",
+        "4"
+      ],
+      "p1": [
+        "0",
+        "2"
+      ],
+      "t0": "5/4",
+      "t1": "13/4",
+      "vertex": "v_0_2"
+    },
+    {
+      "agent": "agent1",
+      "kind": "MOVE",
+      "p0": [
+        "-2",
+        "0"
+      ],
+      "p1": [
+        "0",
+        "0"
+      ],
+      "t0": "3/2",
+      "t1": "5/2",
+      "vertex": "v_1_3"
+    },
+    {
+      "agent": "agent1",
+      "kind": "MOVE",
+      "p0": [
+        "0",
+        "0"
+      ],
+      "p1": [
+        "2",
+        "0"
+      ],
+      "t0": "5/2",
+      "t1": "7/2",
+      "vertex": "v_1_4"
+    },
+    {
+      "agent": "agent0",
+      "kind": "WAIT",
+      "p0": [
+        "0",
+        "2"
+      ],
+      "p1": [
+        "0",
+        "2"
+      ],
+      "t0": "13/4",
+      "t1": "7/2",
+      "vertex": "v_0_3"
+    },
+    {
+      "agent": "agent0",
+      "kind": "MOVE",
+      "p0": [
+        "0",
+        "2"
+      ],
+      "p1": [
+        "0",
+        "0"
+      ],
+      "t0": "7/2",
+      "t1": "11/2",
+      "vertex": "v_0_3"
+    },
+    {
+      "agent": "agent1",
+      "kind": "MOVE",
+      "p0": [
+        "2",
+        "0"
+      ],
+      "p1": [
+        "4",
+        "0"
+      ],
+      "t0": "7/2",
+      "t1": "9/2",
+      "vertex": "v_1_5"
+    },
+    {
+      "agent": "agent1",
+      "kind": "MOVE",
+      "p0": [
+        "4",
+        "0"
+      ],
+      "p1": [
+        "6",
+        "0"
+      ],
+      "t0": "9/2",
+      "t1": "11/2",
+      "vertex": "v_1_6"
+    },
+    {
+      "agent": "agent0",
+      "kind": "MOVE",
+      "p0": [
+        "0",
+        "0"
+      ],
+      "p1": [
+        "0",
+        "-2"
+      ],
+      "t0": "11/2",
+      "t1": "15/2",
+      "vertex": "v_0_4"
+    },
+    {
+      "agent": "agent0",
+      "kind": "MOVE",
+      "p0": [
+        "0",
+        "-2"
+      ],
+      "p1": [
+        "0",
+        "-4"
+      ],
+      "t0": "15/2",
+      "t1": "19/2",
+      "vertex": "v_0_5"
+    },
+    {
+      "agent": "agent0",
+      "kind": "MOVE",
+      "p0": [
+        "0",
+        "-4"
+      ],
+      "p1": [
+        "0",
+        "-6"
+      ],
+      "t0": "19/2",
+      "t1": "23/2",
+      "vertex": "v_0_6"
+    },
+    {
+      "agent": "agent1",
+      "kind": "GOAL_HOLD",
+      "p0": [
+        "6",
+        "0"
+      ],
+      "p1": [
+        "6",
+        "0"
+      ],
+      "t0": "11/2",
+      "t1": "23/2",
+      "vertex": "v_1_6"
+    }
+  ],
+  "sum_completion_time": 17.0,
+  "truth_state": {
+    "progress": {
+      "agent0": "3/8",
+      "agent1": "1/2"
+    },
+    "rate": {
+      "agent0": "1/2",
+      "agent1": "1"
+    }
+  }
+}

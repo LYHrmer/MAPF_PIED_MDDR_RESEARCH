@@ -1,0 +1,386 @@
+{
+  "author_vertex_sha256": "5eea1a3eb9106a27579fc0bf74cb895bcd0376fe63378a718fefd81e52ae15ba",
+  "collision_audit": {
+    "certified_footprint_or_controller_safety": false,
+    "full_wait_goal_coverage": true,
+    "minimum_squared_point_distance": "4",
+    "overlap_pairs": 14,
+    "point_collisions": []
+  },
+  "completed_agents": 2,
+  "completion_times": {
+    "agent0": "45/4",
+    "agent1": "45/4"
+  },
+  "data_class": "synthetic_event_execution_author_can_execute_no_ROS",
+  "events": [
+    {
+      "agent": "agent0",
+      "kind": "RESUME_COMMITTED",
+      "remaining": "5/4",
+      "t": "0",
+      "vertex": "v_0_1"
+    },
+    {
+      "agent": "agent1",
+      "kind": "RESUME_COMMITTED",
+      "remaining": "1/2",
+      "t": "0",
+      "vertex": "v_1_1"
+    },
+    {
+      "agent": "agent1",
+      "kind": "COMPLETE",
+      "t": "1/2",
+      "vertex": "v_1_1"
+    },
+    {
+      "active_dependency_tails": [],
+      "agent": "agent1",
+      "kind": "START",
+      "t": "1/2",
+      "vertex": "v_1_2"
+    },
+    {
+      "agent": "agent0",
+      "kind": "COMPLETE",
+      "t": "5/4",
+      "vertex": "v_0_1"
+    },
+    {
+      "active_dependency_tails": [],
+      "agent": "agent0",
+      "kind": "START",
+      "t": "5/4",
+      "vertex": "v_0_2"
+    },
+    {
+      "agent": "agent1",
+      "kind": "COMPLETE",
+      "t": "3/2",
+      "vertex": "v_1_2"
+    },
+    {
+      "agent": "agent0",
+      "kind": "COMPLETE",
+      "t": "13/4",
+      "vertex": "v_0_2"
+    },
+    {
+      "active_dependency_tails": [],
+      "agent": "agent0",
+      "kind": "START",
+      "t": "13/4",
+      "vertex": "v_0_3"
+    },
+    {
+      "agent": "agent0",
+      "kind": "COMPLETE",
+      "t": "21/4",
+      "vertex": "v_0_3"
+    },
+    {
+      "active_dependency_tails": [],
+      "agent": "agent0",
+      "kind": "START",
+      "t": "21/4",
+      "vertex": "v_0_4"
+    },
+    {
+      "agent": "agent0",
+      "kind": "COMPLETE",
+      "t": "29/4",
+      "vertex": "v_0_4"
+    },
+    {
+      "active_dependency_tails": [],
+      "agent": "agent0",
+      "kind": "START",
+      "t": "29/4",
+      "vertex": "v_0_5"
+    },
+    {
+      "active_dependency_tails": [
+        "v_0_4"
+      ],
+      "agent": "agent1",
+      "kind": "START",
+      "t": "29/4",
+      "vertex": "v_1_3"
+    },
+    {
+      "agent": "agent1",
+      "kind": "COMPLETE",
+      "t": "33/4",
+      "vertex": "v_1_3"
+    },
+    {
+      "active_dependency_tails": [],
+      "agent": "agent1",
+      "kind": "START",
+      "t": "33/4",
+      "vertex": "v_1_4"
+    },
+    {
+      "agent": "agent0",
+      "kind": "COMPLETE",
+      "t": "37/4",
+      "vertex": "v_0_5"
+    },
+    {
+      "agent": "agent1",
+      "kind": "COMPLETE",
+      "t": "37/4",
+      "vertex": "v_1_4"
+    },
+    {
+      "active_dependency_tails": [],
+      "agent": "agent0",
+      "kind": "START",
+      "t": "37/4",
+      "vertex": "v_0_6"
+    },
+    {
+      "active_dependency_tails": [],
+      "agent": "agent1",
+      "kind": "START",
+      "t": "37/4",
+      "vertex": "v_1_5"
+    },
+    {
+      "agent": "agent1",
+      "kind": "COMPLETE",
+      "t": "41/4",
+      "vertex": "v_1_5"
+    },
+    {
+      "active_dependency_tails": [],
+      "agent": "agent1",
+      "kind": "START",
+      "t": "41/4",
+      "vertex": "v_1_6"
+    },
+    {
+      "agent": "agent0",
+      "kind": "COMPLETE",
+      "t": "45/4",
+      "vertex": "v_0_6"
+    },
+    {
+      "agent": "agent1",
+      "kind": "COMPLETE",
+      "t": "45/4",
+      "vertex": "v_1_6"
+    }
+  ],
+  "makespan": 11.25,
+  "production_cost": null,
+  "segments": [
+    {
+      "agent": "agent0",
+      "kind": "COMMITTED_REMAINDER",
+      "p0": [
+        "0",
+        "21/4"
+      ],
+      "p1": [
+        "0",
+        "4"
+      ],
+      "t0": "0",
+      "t1": "5/4",
+      "vertex": "v_0_1"
+    },
+    {
+      "agent": "agent1",
+      "kind": "COMMITTED_REMAINDER",
+      "p0": [
+        "-5",
+        "0"
+      ],
+      "p1": [
+        "-4",
+        "0"
+      ],
+      "t0": "0",
+      "t1": "1/2",
+      "vertex": "v_1_1"
+    },
+    {
+      "agent": "agent1",
+      "kind": "MOVE",
+      "p0": [
+        "-4",
+        "0"
+      ],
+      "p1": [
+        "-2",
+        "0"
+      ],
+      "t0": "1/2",
+      "t1": "3/2",
+      "vertex": "v_1_2"
+    },
+    {
+      "agent": "agent0",
+      "kind": "MOVE",
+      "p0": [
+        "0",
+        "4"
+      ],
+      "p1": [
+        "0",
+        "2"
+      ],
+      "t0": "5/4",
+      "t1": "13/4",
+      "vertex": "v_0_2"
+    },
+    {
+      "agent": "agent0",
+      "kind": "MOVE",
+      "p0": [
+        "0",
+        "2"
+      ],
+      "p1": [
+        "0",
+        "0"
+      ],
+      "t0": "13/4",
+      "t1": "21/4",
+      "vertex": "v_0_3"
+    },
+    {
+      "agent": "agent0",
+      "kind": "MOVE",
+      "p0": [
+        "0",
+        "0"
+      ],
+      "p1": [
+        "0",
+        "-2"
+      ],
+      "t0": "21/4",
+      "t1": "29/4",
+      "vertex": "v_0_4"
+    },
+    {
+      "agent": "agent0",
+      "kind": "MOVE",
+      "p0": [
+        "0",
+        "-2"
+      ],
+      "p1": [
+        "0",
+        "-4"
+      ],
+      "t0": "29/4",
+      "t1": "37/4",
+      "vertex": "v_0_5"
+    },
+    {
+      "agent": "agent1",
+      "kind": "WAIT",
+      "p0": [
+        "-2",
+        "0"
+      ],
+      "p1": [
+        "-2",
+        "0"
+      ],
+      "t0": "3/2",
+      "t1": "29/4",
+      "vertex": "v_1_3"
+    },
+    {
+      "agent": "agent1",
+      "kind": "MOVE",
+      "p0": [
+        "-2",
+        "0"
+      ],
+      "p1": [
+        "0",
+        "0"
+      ],
+      "t0": "29/4",
+      "t1": "33/4",
+      "vertex": "v_1_3"
+    },
+    {
+      "agent": "agent1",
+      "kind": "MOVE",
+      "p0": [
+        "0",
+        "0"
+      ],
+      "p1": [
+        "2",
+        "0"
+      ],
+      "t0": "33/4",
+      "t1": "37/4",
+      "vertex": "v_1_4"
+    },
+    {
+      "agent": "agent0",
+      "kind": "MOVE",
+      "p0": [
+        "0",
+        "-4"
+      ],
+      "p1": [
+        "0",
+        "-6"
+      ],
+      "t0": "37/4",
+      "t1": "45/4",
+      "vertex": "v_0_6"
+    },
+    {
+      "agent": "agent1",
+      "kind": "MOVE",
+      "p0": [
+        "2",
+        "0"
+      ],
+      "p1": [
+        "4",
+        "0"
+      ],
+      "t0": "37/4",
+      "t1": "41/4",
+      "vertex": "v_1_5"
+    },
+    {
+      "agent": "agent1",
+      "kind": "MOVE",
+      "p0": [
+        "4",
+        "0"
+      ],
+      "p1": [
+        "6",
+        "0"
+      ],
+      "t0": "41/4",
+      "t1": "45/4",
+      "vertex": "v_1_6"
+    }
+  ],
+  "sum_completion_time": 22.5,
+  "truth_state": {
+    "progress": {
+      "agent0": "3/8",
+      "agent1": "1/2"
+    },
+    "rate": {
+      "agent0": "1/2",
+      "agent1": "1"
+    }
+  }
+}

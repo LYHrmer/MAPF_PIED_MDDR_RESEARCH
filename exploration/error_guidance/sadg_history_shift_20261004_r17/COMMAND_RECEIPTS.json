@@ -1,0 +1,21 @@
+{
+  "commands": [
+    {
+      "command": "rtk proxy /home/lyh/.cache/mapf_research/sadg-r16-venv/bin/python -I /home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/sadg_history_shift_20261004_r17/run_chain.py register",
+      "exit_code": 0,
+      "result": "9 records frozen before new optimization"
+    },
+    {
+      "command": "rtk proxy /home/lyh/.cache/mapf_research/sadg-r16-venv/bin/python -I /home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/sadg_history_shift_20261004_r17/run_chain.py run",
+      "exit_code": 0,
+      "result": "1 new author call; 3 new event suffixes; 9 complete records"
+    },
+    {
+      "command": "rtk proxy python3 /home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/sadg_history_shift_20261004_r17/validate_outputs.py",
+      "exit_code": 0,
+      "result": "9 records, 4 unique models, 5 unique suffixes verified; zero new solves/replays"
+    }
+  ],
+  "wall_time_source": "Per-case original Model.optimize observer receipts; no invented production charge",
+  "attempted_failed_scientific_calls": 0
+}

@@ -1,0 +1,436 @@
+{
+  "groups": [
+    {
+      "agent": "agent0",
+      "contains_unswitchable": false,
+      "dependencies": [
+        {
+          "active": [
+            "v_0_4",
+            "v_1_3"
+          ],
+          "b": false,
+          "forward": [
+            "v_0_4",
+            "v_1_3"
+          ],
+          "reverse": [
+            "v_1_4",
+            "v_0_3"
+          ],
+          "switchable": true
+        }
+      ],
+      "first_head_active": "v_1_3",
+      "first_head_inactive": "v_0_3",
+      "group_type": "SINGLE",
+      "switchable": true,
+      "uid": "dg_agent0_0",
+      "within_horizon": true
+    }
+  ],
+  "type1": [
+    [
+      "v_0_0",
+      "v_0_1"
+    ],
+    [
+      "v_0_1",
+      "v_0_2"
+    ],
+    [
+      "v_0_2",
+      "v_0_3"
+    ],
+    [
+      "v_0_3",
+      "v_0_4"
+    ],
+    [
+      "v_0_4",
+      "v_0_5"
+    ],
+    [
+      "v_0_5",
+      "v_0_6"
+    ],
+    [
+      "v_1_0",
+      "v_1_1"
+    ],
+    [
+      "v_1_1",
+      "v_1_2"
+    ],
+    [
+      "v_1_2",
+      "v_1_3"
+    ],
+    [
+      "v_1_3",
+      "v_1_4"
+    ],
+    [
+      "v_1_4",
+      "v_1_5"
+    ],
+    [
+      "v_1_5",
+      "v_1_6"
+    ]
+  ],
+  "vertices": [
+    {
+      "agent": "agent0",
+      "index": 0,
+      "nominal_duration": 1.0,
+      "path_tuples": [
+        [
+          0.0,
+          8.0,
+          0
+        ],
+        [
+          0.0,
+          6.0,
+          1
+        ]
+      ],
+      "predecessor": null,
+      "progress": 0.5,
+      "registered_incoming": [],
+      "remaining": 0.5,
+      "status": "COMPLETED",
+      "successor": "v_0_1",
+      "uid": "v_0_0"
+    },
+    {
+      "agent": "agent0",
+      "index": 1,
+      "nominal_duration": 1.0,
+      "path_tuples": [
+        [
+          0.0,
+          6.0,
+          1
+        ],
+        [
+          0.0,
+          4.0,
+          2
+        ]
+      ],
+      "predecessor": "v_0_0",
+      "progress": 0.5,
+      "registered_incoming": [],
+      "remaining": 0.5,
+      "status": "IN_PROGRESS",
+      "successor": "v_0_2",
+      "uid": "v_0_1"
+    },
+    {
+      "agent": "agent0",
+      "index": 2,
+      "nominal_duration": 1.0,
+      "path_tuples": [
+        [
+          0.0,
+          4.0,
+          2
+        ],
+        [
+          0.0,
+          2.0,
+          3
+        ]
+      ],
+      "predecessor": "v_0_1",
+      "progress": 0.5,
+      "registered_incoming": [],
+      "remaining": 0.5,
+      "status": "STAGED",
+      "successor": "v_0_3",
+      "uid": "v_0_2"
+    },
+    {
+      "agent": "agent0",
+      "index": 3,
+      "nominal_duration": 1.0,
+      "path_tuples": [
+        [
+          0.0,
+          2.0,
+          3
+        ],
+        [
+          0.0,
+          0.0,
+          4
+        ]
+      ],
+      "predecessor": "v_0_2",
+      "progress": 0.5,
+      "registered_incoming": [
+        {
+          "active": false,
+          "edge": [
+            "v_1_4",
+            "v_0_3"
+          ]
+        }
+      ],
+      "remaining": 0.5,
+      "status": "STAGED",
+      "successor": "v_0_4",
+      "uid": "v_0_3"
+    },
+    {
+      "agent": "agent0",
+      "index": 4,
+      "nominal_duration": 1.0,
+      "path_tuples": [
+        [
+          0.0,
+          0.0,
+          4
+        ],
+        [
+          0.0,
+          -2.0,
+          5
+        ]
+      ],
+      "predecessor": "v_0_3",
+      "progress": 0.5,
+      "registered_incoming": [],
+      "remaining": 0.5,
+      "status": "STAGED",
+      "successor": "v_0_5",
+      "uid": "v_0_4"
+    },
+    {
+      "agent": "agent0",
+      "index": 5,
+      "nominal_duration": 1.0,
+      "path_tuples": [
+        [
+          0.0,
+          -2.0,
+          5
+        ],
+        [
+          0.0,
+          -4.0,
+          6
+        ]
+      ],
+      "predecessor": "v_0_4",
+      "progress": 0.5,
+      "registered_incoming": [],
+      "remaining": 0.5,
+      "status": "STAGED",
+      "successor": "v_0_6",
+      "uid": "v_0_5"
+    },
+    {
+      "agent": "agent0",
+      "index": 6,
+      "nominal_duration": 1.0,
+      "path_tuples": [
+        [
+          0.0,
+          -4.0,
+          6
+        ],
+        [
+          0.0,
+          -6.0,
+          7
+        ]
+      ],
+      "predecessor": "v_0_5",
+      "progress": 0.5,
+      "registered_incoming": [],
+      "remaining": 0.5,
+      "status": "STAGED",
+      "successor": null,
+      "uid": "v_0_6"
+    },
+    {
+      "agent": "agent1",
+      "index": 0,
+      "nominal_duration": 1.0,
+      "path_tuples": [
+        [
+          -8.0,
+          0.0,
+          2
+        ],
+        [
+          -6.0,
+          0.0,
+          3
+        ]
+      ],
+      "predecessor": null,
+      "progress": 0.5,
+      "registered_incoming": [],
+      "remaining": 0.5,
+      "status": "COMPLETED",
+      "successor": "v_1_1",
+      "uid": "v_1_0"
+    },
+    {
+      "agent": "agent1",
+      "index": 1,
+      "nominal_duration": 1.0,
+      "path_tuples": [
+        [
+          -6.0,
+          0.0,
+          3
+        ],
+        [
+          -4.0,
+          0.0,
+          4
+        ]
+      ],
+      "predecessor": "v_1_0",
+      "progress": 0.5,
+      "registered_incoming": [],
+      "remaining": 0.5,
+      "status": "IN_PROGRESS",
+      "successor": "v_1_2",
+      "uid": "v_1_1"
+    },
+    {
+      "agent": "agent1",
+      "index": 2,
+      "nominal_duration": 1.0,
+      "path_tuples": [
+        [
+          -4.0,
+          0.0,
+          4
+        ],
+        [
+          -2.0,
+          0.0,
+          5
+        ]
+      ],
+      "predecessor": "v_1_1",
+      "progress": 0.5,
+      "registered_incoming": [],
+      "remaining": 0.5,
+      "status": "STAGED",
+      "successor": "v_1_3",
+      "uid": "v_1_2"
+    },
+    {
+      "agent": "agent1",
+      "index": 3,
+      "nominal_duration": 1.0,
+      "path_tuples": [
+        [
+          -2.0,
+          0.0,
+          5
+        ],
+        [
+          0.0,
+          0.0,
+          6
+        ]
+      ],
+      "predecessor": "v_1_2",
+      "progress": 0.5,
+      "registered_incoming": [
+        {
+          "active": true,
+          "edge": [
+            "v_0_4",
+            "v_1_3"
+          ]
+        }
+      ],
+      "remaining": 0.5,
+      "status": "STAGED",
+      "successor": "v_1_4",
+      "uid": "v_1_3"
+    },
+    {
+      "agent": "agent1",
+      "index": 4,
+      "nominal_duration": 1.0,
+      "path_tuples": [
+        [
+          0.0,
+          0.0,
+          6
+        ],
+        [
+          2.0,
+          0.0,
+          7
+        ]
+      ],
+      "predecessor": "v_1_3",
+      "progress": 0.5,
+      "registered_incoming": [],
+      "remaining": 0.5,
+      "status": "STAGED",
+      "successor": "v_1_5",
+      "uid": "v_1_4"
+    },
+    {
+      "agent": "agent1",
+      "index": 5,
+      "nominal_duration": 1.0,
+      "path_tuples": [
+        [
+          2.0,
+          0.0,
+          7
+        ],
+        [
+          4.0,
+          0.0,
+          8
+        ]
+      ],
+      "predecessor": "v_1_4",
+      "progress": 0.5,
+      "registered_incoming": [],
+      "remaining": 0.5,
+      "status": "STAGED",
+      "successor": "v_1_6",
+      "uid": "v_1_5"
+    },
+    {
+      "agent": "agent1",
+      "index": 6,
+      "nominal_duration": 1.0,
+      "path_tuples": [
+        [
+          4.0,
+          0.0,
+          8
+        ],
+        [
+          6.0,
+          0.0,
+          9
+        ]
+      ],
+      "predecessor": "v_1_5",
+      "progress": 0.5,
+      "registered_incoming": [],
+      "remaining": 0.5,
+      "status": "STAGED",
+      "successor": null,
+      "uid": "v_1_6"
+    }
+  ]
+}

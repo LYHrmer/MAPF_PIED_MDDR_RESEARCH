@@ -1,0 +1,90 @@
+{
+  "passed": true,
+  "contexts": 24,
+  "independent_families": 12,
+  "frozen_model_normal_equations_checked": 13,
+  "maximum_ridge_normal_residual": 1.0658141036401503e-14,
+  "DP": {
+    "same_gate_all": {
+      "states": 687,
+      "frontier_points": 144,
+      "max_tasks": 1080
+    },
+    "same_gate_B8": {
+      "states": 57,
+      "frontier_points": 30,
+      "max_tasks": 541
+    },
+    "same_gate_B16": {
+      "states": 99,
+      "frontier_points": 29,
+      "max_tasks": 539
+    },
+    "episode_start_six_arm_oracle": {
+      "states": 550,
+      "frontier_points": 113,
+      "max_tasks": 541
+    }
+  },
+  "totals": {
+    "C": {
+      "tasks": 1077,
+      "queries": 285,
+      "T_lower": "67943646461/500000",
+      "T_upper": "135887293987/1000000"
+    },
+    "LD": {
+      "tasks": 1078,
+      "queries": 283,
+      "T_lower": "16991748253/125000",
+      "T_upper": "135933987089/1000000"
+    },
+    "STOP": {
+      "tasks": 1077,
+      "queries": 144,
+      "T_lower": "67994840521/500000",
+      "T_upper": "67994841053/500000"
+    },
+    "OOF_ridge": {
+      "tasks": 1077,
+      "queries": 223,
+      "T_lower": "135942022857/1000000",
+      "T_upper": "135942023921/1000000"
+    },
+    "OOF_train_constant": {
+      "tasks": 1076,
+      "queries": 283,
+      "T_lower": "13590775569/100000",
+      "T_upper": "67953878377/500000"
+    },
+    "OOF_budget_lookup": {
+      "tasks": 1076,
+      "queries": 208,
+      "T_lower": "27189756251/200000",
+      "T_upper": "67974391159/500000"
+    },
+    "OOF_public_threshold": {
+      "tasks": 1075,
+      "queries": 283,
+      "T_lower": "67946181529/500000",
+      "T_upper": "135892364121/1000000"
+    }
+  },
+  "source_hashes": {
+    "OOF_PREDICTIONS.json": "37b29647586c74b415af8d335dbd76b7f31c8ba682bbdc9cce7a996c0a8f9ed7",
+    "MODEL_DIAGNOSTICS.json": "0e8c3119aec3dac408f3c86f1054b22df6346e19fb43955d89b103eabd8177a0",
+    "ORACLE_FRONTIERS.json": "5ac0fba2afb586277a0f1f296d410d762185c8c04c3606f82184334681c3a267",
+    "COMPLETION.json": "b683073ae80ef6005fabe18ef5c1db75235a0a7a244272400787303be83bf8b8",
+    "MODEL_FROZEN.json": "a85c090d6fddcc76c124180cb518dcfd3ff7a54d2e310273d63208515cc562cb",
+    "OOF_RESULTS.json": "270129afae299a181063d275c34de5e843fe39121421618ca1273b655f557479",
+    "FINAL_TRAIN_RESUBSTITUTION.json": "d69d1bc88add22c3e9782e4b8e09a3a553faef037773cad9acab805f15eacd2a",
+    "CAL_DEVELOPMENT_REPLAY.json": "4785f9590cea611e6e8831ca2d91dee0dadf52bfcfa025a7d3f5b9443e620d5f",
+    "REGISTRATION.json": "af4579f0ca1b5f97d40c0c0da8ad30be93d309e6770ff4ecb3797d33b8c03a06",
+    "VERIFICATION.json": "3cc5786a3bae20003dd38782b48ca7675b3bdfa62f1d3f9e7f889e5c4bbf3d0c",
+    "ANALYSIS_START.json": "e2e8279760fc97245022ced4e4984ba9d1d2398b14ab1c9e7620be24f143077f",
+    "DATASET.json": "a684a6239354df6517875dbe57b08a5e813f5d31c1416736b15a2f55bbf9d2b1",
+    "DATASET_AUDIT.json": "14c29f31e585106a5e7c66b509a3c53fae1c013e5fbab55f0ee02554346be907",
+    "GROUPED_FOLDS.json": "6112a3ff929e3edde5f0ef6e4ceedf1749daac35c167d37f859ed021395c16e5"
+  },
+  "scope": "No new training or execution; independently verify frozen math/labels/selections and exact finite-action upper bounds. Original physical audits are reused."
+}
