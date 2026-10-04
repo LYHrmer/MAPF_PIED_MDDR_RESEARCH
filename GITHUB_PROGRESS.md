@@ -1,5 +1,13 @@
 # 实验前进度入口
 
+2026-10-04 R13：**正常 END 的完整历史已收进私有核验器，调度侧只取得绑定当前 occurrence 的结束通知；原十二臂服务与物理事件保持。** [本轮全部线路与 Astra/科研导师分别判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261004_R13.md)。
+
+查询线已完成160原生与96留出：full/固定LD各713任务、C712，主动策略均192QUERY；full未超固定LD，概率屏蔽模型有单条件贡献的约0.714时间改善。第三线24次真实作者调用均异图采用，36完整执行及迁移重放通过；ΣT18改善6退化，但makespan无改善。正式后继优先付费证据到合法候选的接口与原始场景文件级验证，详上述三线入口。
+
+实际完成长度3/12/27×WAIT/paid×Natural/Strict十二臂。1,388条非费用/非host事件与R11逐项一致，2,960费用段、792物理帧、18份隔离重编guest ELF和14,948父文件通过核验。8个预期拒绝编译与1个公共API正编译符合预期。该隔离是受信guest的类型/调用接口，完整SOURCE读取、验证和缓存仍计费；不是新的硬件隔离。Natural净费用有升有降，不称统一加速。
+
+长27仍全部完成4任务，paid将服务时间和50降至44，额外Natural实际工作122,869,778。主线实现与完整原始证据仍留本机ignored目录，公共main只更新四份进度文档，原稿保持。归档runner沿用旧路径导致没有新增执行前source/host副本；实际guest绑定、原始收据及18份隔离重编一致均保留，事后补档明确标时，不追称事前快照。详Q2 §82。以下R11及更早为历史。
+
 2026-10-03 R11：**原十二输入的实际重建费用下降，合法执行和服务时刻不变；查询即时组合结构已核清，作者固定路径方法已接共同 primitive 执行层。** [三线结果与 Astra/科研导师分别判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261003_R11.md)。
 
 主线仍完整付费读取 SOURCE，核验旧 history 前缀后仅重放新增命令。Natural actual 减少11.63%–21.14%，Strict charged 减少1.36%–2.54%；1388条非费用/非host事件及792物理帧保持，2964费用段和18份隔离重编ELF通过。缓存保留完整历史，未测峰值guest字节，不称常量空间。长例服务时间和仍50→44，paid比WAIT多118,894,306个Natural实际步，均完成4任务；详Q2 §81。

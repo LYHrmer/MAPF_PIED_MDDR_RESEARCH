@@ -1931,3 +1931,26 @@ R10的信息边界没有改变：WAIT/paid的生命周期内部同样读取完�
 第三线27项共同执行验证已完成，其中16项原作者单位模式的完整时序一致。新层为明确声明的分段线性MOVE/原地TURN/STATION，非原ARGoS控制器。独立根审覆盖239,222 MOVE、523,274段及72,636潜在相撞对的精确连续最小距离，保留完工驻留；型2依赖仍在真实ARRIVE解锁。原图/GSES/Improved在random60三种primitive条件下均出现总完工时间和与makespan取舍；checkpoint只证明实际半MOVE时同图恢复以及非法承诺修改拒绝，未证明执行中采用不同求解图或学习收益。
 
 三线完整数字、两份独立判断和下一方法分别见[本轮综述](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261003_R11.md)与[方法合同](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/NEXT_METHOD_CONTRACT_20261003_R11.md)。公共main只更新既有四份进度文档，原稿保持。
+
+## 82. R13：正常 END 与私有历史的可执行接口隔离（2026-10-04）
+
+新证据在本机 `implementation_binding_evidence/information_separation_20261004_r13/`。普通SOURCE完整读取、旧前缀核验、原控制器重建与缓存集中在私有verifier编译单元，scheduler不再持有Retained/history/Snapshot(s/v/eta)。公开NormalEndNotice仅提供is_end/matches，绑定完整身份、公开tick、已知几何及当前occurrence；构造器和字段私有。公共capture wrapper禁止正常history导入，verifier内局部SOURCE调用保留原真实读取。付费POSITION仍走原证据与费用通道，旧查询不影响已启动successor。
+
+这是受信guest的类型/能力接口，未声称MMU、恶意同地址空间机器码或费用/计时侧信道隔离。R11策略没有实际消费开放进度，本轮修复过宽接口，不能反推之前的性能来自行为泄漏。两个真实已登记开放SOURCE具有不同s/v、均返回非END，是接口投影机械例；不是同身份反事实世界的完整无干扰证明。
+
+|长度/策略|R13 Natural actual|相对R11|R13 Strict charged|相对R11|
+|---|---:|---:|---:|---:|
+|3 wait|157,661,191|+2,638,300|1,602,224,128|+0|
+|3 paid|248,428,512|-26,692|2,323,644,416|-8,388,608|
+|12 wait|232,038,061|-3,430,675|1,652,555,776|-16,777,216|
+|12 paid|344,352,218|-649,588|2,441,084,928|+0|
+|27 wait|385,221,979|-607,428|1,811,939,328|+0|
+|27 paid|508,091,757|+3,368,044|2,583,691,264|+8,388,608|
+
+Natural的净差同时包含验证位置、复制/分配和代码布局变化，未单项消融；新增guest机械检查全部付费，没有扣除。Strict按真实开段收费，六项差额分别0/−1/−2/0/0/+1段，每段8,388,608。缓存仍保留完整history，未测峰值guest字节，不称常量空间。
+
+十二臂全部exit0；原16tick、供给与容量不变。逐项1388条非费用/host事件与R11相同；独立重算2960费用段、792物理帧及连续间距，8负编译/1正编译、18guest隔离重编一致。49登记命令全部完成（负编译各自的预期拒绝不冒充成功编译）；14948父pin与原稿保持。长例paid服务和仍50→44、均4任务，额外Natural122,869,778；费用步与物理时间没有人为兑率。
+
+执行归档存在已披露缺口：run_step沿旧R11路径识别variant，因此本轮没有另存事前source_snapshot/bound_artifacts。原started/receipt/stdout/stderr仍完整，实际host固定guestSHA在运行时校验，18guest隔离重编逐字一致。保留原runner、修复未来入口，六host嵌入18guestSHA与当前源码均作明确post-run补档；host本身无独立事前副本，不把补档写成事前冻结，也没有为此追加native。
+
+root独立ROOT_COMPARE核原始逐段/作业费用、全部非费用事件、父pin及原稿。实际源与原始证据没有随四文档上传；[三线结果与下一合同](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261004_R13.md)分别记录查询学习与真实作者图采用结果。下一主线工作是共同决策点的信息/收费适配，不继续把单点微优化当作算法增益。
