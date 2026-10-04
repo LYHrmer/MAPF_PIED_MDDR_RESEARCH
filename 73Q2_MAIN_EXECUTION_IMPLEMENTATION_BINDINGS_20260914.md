@@ -1982,3 +1982,28 @@ root独立ROOT_COMPARE核原始逐段/作业费用、全部非费用事件、父
 并行查询新增29native且全部物理/FIFO审计通过：TRAIN C/STOP均1077任务、查询285→144，但时间增加约102.388；CAL冻结树238任务/52query，被固定STOP同238任务/36query及更短时间支配。3个CAL STOP16经预登记语义证明复用C8，不另跑重复物理轨迹。
 
 第三线完成12次作者SADG MILP且全OPTIMAL；真实连续输入影响小例顺序，但完整公共历史速率与测量后果相同，测量增量0。warehouse两输入均通过原adoption_guard且图同，未重复续跑。原作者源码不改，k0/承诺适配单独命名；root核全部约束、20个累计独立小LP及两条连续后缀。完整证据、科研导师分别判断和后继设计见 [R16三线结果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261004_R16.md)。
+
+
+## 85. R17：真实证据消费与原执行、费用结算全链闭合（2026-10-04—05）
+
+本机证据根为 `implementation_binding_evidence/live_evidence_chain_20261004_r17/`；`REPORT.md`、`FINAL_RUNS.json`、`ROOT_CHAIN_FINAL_AUDIT.json`为本轮最终入口。三条线路的科研导师分别判断及后续设计见 [R17完整报告](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261004_R17.md)。主线实现保持本机ignored，公共main仅更新原四份进度文档，原稿hash保持。
+
+认证SOURCE通过原PositionCertificate生成不可复制token；原PositionCommit实际更新q/资源后，consumer核同世界、几何、occurrence、不可变前态/当前态、完整候选需求、owners与Index，再进入原movement publication及控制器RUN。长例捕获2、送达4、POSITION提交5、movement发布6，实际诊断 `[7,2,4,5,6,4,4095]`；后车RUN6/END8、前车END9。短例旧occurrence已经结束且后继已启动，实际诊断 `[8,0,0,0,0,0,0]`，过期返回不改后继根、不安装成功receipt，实际费用仍完整结账。
+
+|最终实测|四项服务A1/B1/A2/B2|Natural实际步或Strict实际步|收费步|费用段|
+|---|---|---:|---:|---:|
+|long27 Natural|10/9/13/12|515,997,079|515,997,079|308|
+|long27 Strict|10/9/13/12|515,998,391|2,583,691,264|308|
+|short3 Natural|4/6/7/9|255,750,294|255,750,294|278|
+
+长WAIT为10/12/13/15，paid时间和50→44、同4任务、后车RUN9→6；该服务收益在旧轮次已有，本轮新增的是从只读preview到原执行必经消费的闭合。长paid比已冻结WAIT多130,775,100 Natural实际步，包含报价标识长度变化与新增检查，不把账户分项当查询的纯因果边际开销。
+
+三次预算失败保留：44510、55020、59000先后因重复精确几何重建耗尽原8,388,608单段容量；最终通过延后必要核验、复用原受信不可变current/full快照完成，三段实际分别8,279,943 / 430,012 / 3,062,800。不增容量，不以失败的截断前缀推算完整加速比。短例另保留两次功能执行成功但观测不足的运行及一次CLI启动错误；最终在原末checkpoint之前付费加载七个诊断寄存器，host只读观测。最终三臂由source/ELF/host快照独立绑定，不把开发尝试计作独立实验样本。
+
+独立核验覆盖894费用段、POSITION原始正文、几何/控制器身份、实际发布与连续物理轨迹、普通END/FIFO、四COST终端及成功或过期结算、费用守恒和原运输引用清理；Natural/Strict语义一致，113个父文件pin不变。COST终端由原ELF调用、真实收费与收据链核验，未单独导出全部raw正文，不与POSITION正文证据混同。
+
+本轮完成范围是现有固定执行世界的有限四任务FIFO；`cross_channel_AUTH_END=false`保持，不宣称开放LMAPF、ROS全栈或作者STATION已完成。源码与实际链表明下一choose在15调用，但四任务已闭合、候选为空，返回NoEligible；**没有证明新报价参与评分或改变下一决策**。后续接共同任务流的非空后继候选，以真实成本反馈与作者基线比较替代继续扩大局部工程实验。
+
+查询线本轮只分析已测72条C/LD/STOP完整尾：12个TRAIN族×两预算分组留出，真实训练六输出ridge与精确预算前沿；模型1077任务/223查询，对固定C同任务少62查询但完成时间增加54.729935，对固定LD少1任务。事后三臂上界1080任务/251查询仅是有限已测空间的不可在线上界。无新native、不读旧TEST；根独立核13个模型、分组隔离和4组完整DP前沿。
+
+第三线在T-RO SADG原作者优化器与一致承诺适配上比较完整公共历史和新鲜/0.25龄位置，9记录仅新增1次MILP和3条唯一后缀。短停滞ΣT13.5→13.0；半速22.5→17.0但makespan11.25→11.5；稳定组零收益，半速有龄结果还受作者平局选择影响。独立输入/全部新模型约束/2个HiGHS LP/5个唯一连续后缀核验通过；仍是两车点几何机制，不是正式规模或生产收费证据。
