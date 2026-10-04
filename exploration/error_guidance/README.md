@@ -1,5 +1,7 @@
 # 空间误差约束下的路径引导探索
 
+2026-10-04 R15：[期刊算法侦察](JOURNAL_ALGORITHM_SCOUT_20261004_R15.md)和[根审 SADG 源码及三线接入合同](SADG_SOURCE_FIT_20261004_R15.md)完成。优先预检 SADG（T-RO 2024）的连续时长执行重排，WinkTPG（T-ASE 2026）作为状态更新/速度调整候选，OTIMAPP（T-RO 2023）作异步执行安全参照。SADG 公开固定版本进度接口为常数，但补完接口本身不算研究贡献，也不能只对比该弱实现。LDG AIJ 2026 已在9月30日登记，本轮仅再核。0新增实验、0训练；下方R14及更早结果保持。
+
 2026-10-04 R14：**单目标位置测量已真实进入原作者搜索；内容去重只产生1次新GSES，未重跑物理轨迹。** [三线结果与下一步](THREE_ROUTE_POSTUPDATE_20261004_R14.md)及[本线报告](position_search_bridge_20261004_r14/REPORT.md)。
 
 12个固定上下文中2个目标的测量进度有新增信息，1个差异被ceil抹平，另1个使当前搜索权重1→2；唯一新调用最终依赖方向仍与旧GSES一致，position相对public的12组ΣT/makespan差全部0。23次调用请求、36条结果记录复用旧证据，0新增续跑。public_base、独立测量核验、search_view与原ARRIVE/active guard均保留；源、配置、完整checkpoint与采用图进入去重键，resume没有新增执行。
