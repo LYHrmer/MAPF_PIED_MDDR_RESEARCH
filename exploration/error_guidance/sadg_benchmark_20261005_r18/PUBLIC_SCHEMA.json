@@ -1,0 +1,37 @@
+{
+  "schema": "r18-public-query-policy-v1",
+  "callback": "policy(snapshot: dict) -> list[str agent_id]",
+  "top_level": {
+    "gate_index": "int, zero-based query gate; first gate at solve_period",
+    "time": "float, capture/request time, solve at time+query_latency for every policy",
+    "budget_remaining": "int or null for explicitly unbudgeted dense reference",
+    "max_queries": "int, permitted selected active agents at this gate",
+    "agents": "list of agent records sorted by agent_id",
+    "switchable_groups": "int, currently staged switchable groups within public predicted horizon"
+  },
+  "agent_fields": {
+    "agent_id": "str, public execution agent identifier",
+    "status": "IN_PROGRESS | STAGED | COMPLETED",
+    "current_vertex": "str or null, public action occurrence",
+    "query_eligible": "bool, only IN_PROGRESS is queryable",
+    "elapsed": "float, elapsed since public current MOVE start; 0 if not active",
+    "nominal_duration": "float, original author polyline length / 2 metres per second",
+    "history_ratio": "float, sum delivered END durations / sum corresponding original nominal durations; prior1 if absent",
+    "history_count": "int, delivered completed MOVE count, 0 if absent",
+    "history_variance": "float, variance of delivered per-MOVE duration ratios, 0 if absent",
+    "history_cv": "float, ratio standard deviation / mean, 0 if absent",
+    "progress_estimate": "float in [0,1], public history/available prior POSITION age model; never truth",
+    "remaining_estimate": "float, (1-progress_estimate)*nominal_duration*history_ratio",
+    "last_measurement_age": "float or null, now-capture of latest delivered POSITION for current occurrence",
+    "last_observed_residual": "float or null, original nominal duration*(1-captured progress), not private time-to-complete",
+    "measurement_count": "int, delivered POSITION count for this agent",
+    "downstream_nominal": "float, original nominal duration sum for current and future uncompleted actions",
+    "outgoing_blocked_agents": "int, distinct other agents with unfinished active dependency heads blocked by this current vertex",
+    "upcoming_switchable_influence": "int, public switchable groups touching this agent within horizon",
+    "blocked": "bool, staged current vertex whose active author dependencies are unfinished",
+    "wait_elapsed": "float, elapsed since previous completion/initial0 if current vertex is staged; 0 otherwise"
+  },
+  "privacy": "No case_id, map name/path, family, split, seed, private rates, pauses, future events or true current progress supplied to callback.",
+  "override": "Simulator.run(policy, probe_override={gate_index: [agent_ids]}); unspecified gates use policy; [] explicitly queries nobody.",
+  "reference": "DensePositionPolicy explicitly bypasses budget and per-gate cap, querying every active agent; all budgeted policies share both caps."
+}
