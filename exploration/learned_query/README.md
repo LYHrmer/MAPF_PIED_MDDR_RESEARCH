@@ -1,5 +1,9 @@
 # 学习辅助进度查询：探索说明
 
+2026-10-05 R19：**条件剩余动作时长模型已训练、冻结并接入新 SADG 执行；独立核验 324 次完整 episode 全部通过。** 仅用 R18 的 54 个 TRAIN world，各取一条 history_rule 轨迹，按地图/scenario 族交叉拟合；模型只读取当前 START 已耗时和已交付 END 历史，物理依赖等待不计入动作时长。[模型与训练报告](conditional_duration_20261005_r19/REPORT.md)、[冻结收据](conditional_duration_20261005_r19/MODEL_FREEZE.json)和[冻结模型](conditional_duration_20261005_r19/MODEL.json)保留实际拟合与边界。
+
+[新 TEST 二级预测评分](conditional_duration_20261005_r19/heldout_r19/REPORT.md)在 42 个共同 history_no_query 轨迹上比较全部 9 个冻结模式：学习模型的动作开始 MSE 最低，但执行中剩余时长的 MSE/MAE 未超过 EWMA 生存条件参考；核心 active MSE 分别为 0.457975 / 0.445077，N64 为 0.388652 / 0.381322。该评分在主注册后单列，没有重训、调参或重复科学实验，不代替完整调度效果。[独立执行审核](conditional_duration_20261005_r19/review_r19/INTEGRATION_REVIEW.md)与[324 次最终审核收据](conditional_duration_20261005_r19/review_r19/COMPLETED_AUDIT.json)完成公共输入、条件数学、POSITION 覆盖、结构选择、CAS 和完整物理轨迹重建，合计 221,381,042 项逻辑检查；检查数不是实验样本数。另有 18 个初始规划失败矩阵行由执行分支保留，求解失败与父图回退不被物理完成掩盖。以下旧轮次全部保留。
+
 2026-10-04 R16：**完整 STOP 后缀、冻结条件模型与去重 CAL 评估已完成。** [本轮报告](stop_value_20261004_r16/REPORT.md)。新增29次native，复用30个旧C后果；3个CAL B16 STOP由严格语义别名复用C8，保留真实来源，不伪造STOP日志。TRAIN C/STOP均1077任务，查询285→144，受限时间多约102.388；固定STOP并非逐条件无损。
 
 CAL冻结树为238任务/52查询，固定STOP同238任务、仅36查询且受限时间少约90.775。模型确实训练并在冻结门决策上评估，当前未超强固定策略；不是新盲测或新增模型native部署。下一聚焦已有C/LD/STOP空间内的信息预算价值，保留完整历史与固定STOP对照。[三线科研导师复判与后继合同](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261004_R16.md)。以下旧轮次为历史。

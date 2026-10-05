@@ -1,0 +1,37 @@
+{
+  "action_ratio_max": 4.000000000000007,
+  "action_ratio_min": 0.9999999999999858,
+  "actions": 51942,
+  "active_gate_landmarks": 6477,
+  "arm": "history_rule",
+  "duplicated_counterfactual_trajectories": 0,
+  "families": 6,
+  "family_world_counts": {
+    "maze-32-32-2__s01": 9,
+    "maze-32-32-2__s02": 9,
+    "random-32-32-10__s01": 9,
+    "random-32-32-10__s02": 9,
+    "warehouse-10-20-10-2-1__s01": 9,
+    "warehouse-10-20-10-2-1__s02": 9
+  },
+  "feature_names": [
+    "log_nominal",
+    "log1p_count",
+    "log_history_ratio",
+    "log_recent4_ratio",
+    "log_ewma03_ratio",
+    "log_last_ratio",
+    "history_cv",
+    "recent_minus_history"
+  ],
+  "labels_are_future_outcomes_only": true,
+  "nonpublic_predictor_fields": [],
+  "passed": true,
+  "scientific_episode_reruns": 0,
+  "source_worlds": 54,
+  "split": "TRAIN",
+  "terminal_right_censored": 0,
+  "total_dependency_wait": 4773.25,
+  "total_execution_duration": 66497.0,
+  "unique_action_keys": 51942
+}

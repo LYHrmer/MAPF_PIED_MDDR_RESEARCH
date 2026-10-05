@@ -1,0 +1,69 @@
+{
+  "cases": [
+    {
+      "case": "elapsed_includes_dependency_wait",
+      "failed_checks": [
+        "actual_fused_remaining",
+        "author_encoded_progress",
+        "conditional_remaining_independent",
+        "predictor_age_since_START"
+      ],
+      "rejected": true
+    },
+    {
+      "case": "future_END_in_features",
+      "failed_checks": [
+        "actual_fused_remaining",
+        "author_encoded_duration",
+        "author_encoded_progress",
+        "conditional_remaining_independent",
+        "predictor_delivered_END_history",
+        "preserved_future_ratio",
+        "unconditional_future_ratio"
+      ],
+      "rejected": true
+    },
+    {
+      "case": "conditional_mean_replaced_by_zero",
+      "failed_checks": [
+        "conditional_remaining_independent"
+      ],
+      "rejected": true
+    },
+    {
+      "case": "future_ratio_corrupted",
+      "failed_checks": [
+        "unconditional_future_ratio"
+      ],
+      "rejected": true
+    },
+    {
+      "case": "predictor_private_field",
+      "failed_checks": [
+        "predictor_whitelist"
+      ],
+      "rejected": true
+    },
+    {
+      "case": "delivered_POSITION_silently_ignored",
+      "failed_checks": [
+        "latest_delivered_current_POSITION",
+        "position_provider"
+      ],
+      "rejected": true
+    },
+    {
+      "case": "cached_CAS_byte_count",
+      "rejected": true
+    },
+    {
+      "case": "CAS_path_traversal",
+      "rejected": true
+    }
+  ],
+  "new_scientific_episodes": 0,
+  "new_solver_calls": 0,
+  "passed": true,
+  "raw_modified": false,
+  "source_episode": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/sadg_structural_20261005_r19/episodes/maze-32-32-2__s06__n16__bounded_pause/learned_structural/episode.json"
+}

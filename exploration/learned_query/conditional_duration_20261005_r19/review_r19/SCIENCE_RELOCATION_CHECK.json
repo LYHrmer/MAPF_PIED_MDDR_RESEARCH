@@ -1,0 +1,46 @@
+{
+  "checks": 67294,
+  "cli_executed": true,
+  "command_with_ephemeral_paths": [
+    "rtk",
+    "proxy",
+    "python3",
+    "/tmp/r19-science-relocation-v6d65ipr/repo/exploration/error_guidance/sadg_structural_20261005_r19/review/audit_episode.py",
+    "--episode",
+    "/tmp/r19-science-relocation-v6d65ipr/repo/exploration/error_guidance/sadg_structural_20261005_r19/episodes/random-32-32-10__s06__n16__stable/learned_no_query/episode.json",
+    "--root",
+    "/tmp/r19-science-relocation-v6d65ipr/repo/exploration/error_guidance/sadg_structural_20261005_r19",
+    "--store",
+    "/tmp/r19-science-relocation-v6d65ipr/cas",
+    "--bundle",
+    "/tmp/r19-science-relocation-v6d65ipr/repo/exploration/error_guidance/sadg_structural_20261005_r19/model",
+    "--path-map",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE=/tmp/r19-science-relocation-v6d65ipr/repo",
+    "--path-map",
+    "/home/lyh/.cache/mapf_research/sadg-controller-c2626d9=/tmp/r19-science-relocation-v6d65ipr/author",
+    "--path-map",
+    "/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE/exploration/learned_query/conditional_duration_20261005_r19=/tmp/r19-science-relocation-v6d65ipr/repo/exploration/error_guidance/sadg_structural_20261005_r19/model",
+    "--output",
+    "/tmp/r19-science-relocation-v6d65ipr/audit.json"
+  ],
+  "copied_dependency_files": 155,
+  "episode_sha256": "db7dbd67adf15a676b16421bdd56788462452ea04df4ac733e2066765307244e",
+  "minimum_bundle_files": [
+    "MODEL.json",
+    "predictor.py",
+    "MODEL_FREEZE.json"
+  ],
+  "new_scientific_episodes": 0,
+  "new_solver_calls": 0,
+  "optional_bundle_schema": "PUBLIC_SCHEMA.json is documentation; the root R19 query PUBLIC_SCHEMA.json remains a source-pinned dependency.",
+  "passed": true,
+  "receipt_content_unchanged": true,
+  "relocated": [
+    "review code",
+    "scientific root",
+    "CAS store",
+    "model bundle",
+    "R18/R16 source references",
+    "author source checkout"
+  ]
+}
