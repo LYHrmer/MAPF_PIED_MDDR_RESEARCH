@@ -1,0 +1,37 @@
+{
+  "author_pin": "c2626d996121a9d6c128844a167b917db24418ac",
+  "files": {
+    "ENGINE.md": "27c2ce29b092315b70b9e191915332d6339dac70a5891d2d0df3bea94e70856d",
+    "PUBLIC_SCHEMA.json": "fcac1d639f65d511c92be04b8d8fc6462e9a84a2b88b3aa2cd894921834593dd",
+    "QUALIFICATION.md": "0628a766caa9bf5724e640d97efc36e9bd746bab223e950b030603caf459db15",
+    "audit_solver_payloads.py": "b1dd4bde9cd30cd647a56e7355e2de4761c3960a71364c5b3ad6dec862693804",
+    "engine.py": "55c5e99ce1e17c82e73f41545ca536cf6b449eefbda648d1f5e1b027ad1de7c2",
+    "evidence.py": "ff083aca9c28c664b7602fa6e94b32ae11d337f263861af166a6883ee723a048",
+    "r0_capture_check.py": "020a4eb3bad4fea94c2e2d1d75b5d8618cb0951fb2c9aea08fb11f263969544a",
+    "r0_checks.py": "b0eefd3d7d0aeae33c5e43995b95cf9a508d6365360d40d3051438a47f264a36",
+    "solver_adapter.py": "01a4af7e236a874c876e539bd87f5e4518bafac57b8de1e63cfad83945a1c6fc",
+    "structural.py": "96f6179e41f26241764d93229a915716cfe5cbb97ea821122707942b7da22a4c"
+  },
+  "final_change": "capture_graph_ref/prediction_keys logging only; zero-native exact-cache replay tested after original two calls; original results retained",
+  "frozen_utc": "2026-10-05T05:45:43.477310+00:00",
+  "inherited_r18_engine_sha256": "7a83912d7fbefa8122ed551cab2ce93a536e6efafc3ebaf0b1e0dbb99eff12f6",
+  "limitations": [
+    "fixed-path point event execution; not ROS/footprint/LMAPF throughput/production charging",
+    "conditional residual is a cost estimate not a bound",
+    "POSITION overrides residual by common R18 linear all-history projection, not a joint posterior",
+    "exact negative cache preserves one failed outcome rather than retrying",
+    "concurrent cache misses may duplicate native calls; atomic writes guarantee complete records only"
+  ],
+  "mechanical_checks": 24,
+  "model_sha256": "476bea2f6dc8c72312606b37ff83cbd64679602b8c82559e49528e6893ace335",
+  "new_scientific_episodes": 0,
+  "predictor_sha256": "e20cb7f0304b0ab31164443f7021010712ad9441b872eae8a1e46bfdd60b5611",
+  "real_author_calls": 2,
+  "receipts": {
+    "r0/CAPTURE_VALIDATION.json": "4ae8eef0b4d0cb34dace462c59664b02304eafae8147c6d5676ffef763a21c6b",
+    "r0/REGISTRATION.json": "3cd292be21860da56094b6c5de9e3b204d69c5dcaf8feb68e32e241463bbe767",
+    "r0/VALIDATION.json": "0f880e276c3b0db61713bc6ad10bfaba724d9cbdaa765d1bdc10518702dfe59a"
+  },
+  "runner_review": "run_study.py constructor/config and predictor modes match; read-only review, no science run by this worker",
+  "status": "FROZEN_MECHANICAL_QUALIFICATION_PASS"
+}

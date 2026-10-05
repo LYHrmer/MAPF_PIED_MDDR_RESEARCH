@@ -1,0 +1,42 @@
+{
+  "context": {
+    "completed_history": "chronological delivered END list of {nominal_duration>0,duration>0}; optional start/end/delivered provenance ignored in features",
+    "elapsed": "public current START age; exactly zero for STAGED; excludes dependency WAIT",
+    "nominal_duration": "positive public original geometry duration; not previously predicted duration",
+    "status": "STAGED|IN_PROGRESS|COMPLETED"
+  },
+  "entrypoint": "from predictor import DurationPredictor; predict = DurationPredictor(model_path, mode); result = predict(context)",
+  "inference_dependencies": "Python standard library only",
+  "model_freeze": "MODEL_FREEZE.json",
+  "modes": [
+    "learned",
+    "nominal",
+    "all_history",
+    "recent4",
+    "ewma03",
+    "constant_survival",
+    "all_history_survival",
+    "recent4_survival",
+    "ewma03_survival"
+  ],
+  "output": {
+    "future_duration_ratio": "unconditional duration expectation divided by original nominal duration",
+    "metadata": "method, mu_log_duration, sigma, survival_probability, unconditional_mean; conditional modes only",
+    "remaining_time": "conditional execution remaining mean; not safety bound or full path ETA"
+  },
+  "position_fusion": "Root R19 adapter uses registered R18 linear_history overwrite for delivered current-occurrence POSITION. No remaining-segment scaling or claimed joint posterior. END-only arm isolates the model.",
+  "schema": "r19-public-end-lognormal-v1",
+  "training_dependencies": "numpy",
+  "unused_fields": [
+    "agent_id",
+    "current_vertex",
+    "case_id",
+    "map",
+    "seed",
+    "private_truth",
+    "POSITION",
+    "budget",
+    "graph_structure"
+  ],
+  "validation_dependencies": "numpy, scipy"
+}

@@ -1,0 +1,33 @@
+{
+  "schema": "r19-history-structure-v1",
+  "inherits_public_fields": "../sadg_benchmark_20261005_r18/PUBLIC_SCHEMA.json",
+  "predictor_input": {
+    "status": "STAGED or IN_PROGRESS; completed handled by execution adapter",
+    "nominal_duration": "original author polyline length / 2 metres per second",
+    "elapsed": "time since actual public START; STAGED is zero, dependency WAIT excluded",
+    "completed_history": "complete delivered END list: nominal_duration,duration,start,end,delivered"
+  },
+  "predictor_output": {
+    "remaining_time": "finite nonnegative cost prediction, not a safety bound",
+    "future_duration_ratio": "finite positive multiplier for original nominal future actions",
+    "metadata": "model provenance and diagnostics only"
+  },
+  "position_fusion": "Current occurrence delivered POSITION overrides residual with R18 linear all-history projection; future ratio remains predictor output; no joint posterior claim",
+  "new_snapshot_fields": {
+    "public_schema": "r19-history-structure-v1",
+    "solve_period": "public common cadence"
+  },
+  "new_candidate_fields": {
+    "legal_boundary_group_count": "reachable author switchable AND within-horizon groups, with every forward/reverse head STAGED",
+    "legal_boundary_group_ids": "public group IDs supporting the count",
+    "boundary_path_time_min": "minimum predicted path completion time from current vertex to a reachable candidate tail; ignores AND waits, not true ETA",
+    "blocked_frontier_count": "distinct other agents whose currently blocked cursor is reachable in current active DAG",
+    "blocked_frontier_agents": "public agent IDs supporting the count",
+    "direct_blocked_frontier_count": "same frontier restricted to one outgoing edge",
+    "structural_eligible": "query_eligible AND (legal_boundary_group_count>0 OR blocked_frontier_count>0)",
+    "prediction_provider": "completed, end_history_predictor, or position_linear_all_history"
+  },
+  "policy_contract": "plain dict -> list[agent_id]; [] is explicit STOP; inherited budget and active-only validation",
+  "forbidden_policy_inputs": ["private disturbance", "seed", "future true duration", "decision true progress", "map filename", "split", "world label"],
+  "evidence_bridge": "EvidenceStore.get_graph(ref) losslessly reconstructs graph_snapshot; expand_episode restores initial_graph and gate.public_snapshot for independent audits"
+}

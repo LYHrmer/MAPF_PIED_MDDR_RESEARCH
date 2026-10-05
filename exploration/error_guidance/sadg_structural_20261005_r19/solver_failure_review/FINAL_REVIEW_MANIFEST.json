@@ -1,0 +1,119 @@
+{
+  "archive_note": "Keep original JSON locally. Publication may include .json.gz instead of duplicate large plain JSON; decompression restores byte-identical raw SHA. CAS models/topologies are root-managed original evidence, not duplicated here.",
+  "compressed_mirrors": [
+    {
+      "compressed": "solver_failure_review/FAILURE_PAYLOAD_AUDIT.json.gz",
+      "compressed_bytes": 3693895,
+      "compressed_sha256": "a64f528ccb59d87719dee856b049cbca952cce70a0dad7d7d234f4d359a54f61",
+      "raw": "solver_failure_review/FAILURE_PAYLOAD_AUDIT.json",
+      "raw_bytes": 63044443,
+      "raw_sha256": "6fba9b71b9868d9315b968eb517fafe26b5972851babbb0e413757d3336b1ba5"
+    },
+    {
+      "compressed": "mechanism_review/DIAGNOSTICS.json.gz",
+      "compressed_bytes": 363076,
+      "compressed_sha256": "7dae633b6abccdd254af72cd62250a1d9f4aa211cdf416cb0981ca824fc278e8",
+      "raw": "mechanism_review/DIAGNOSTICS.json",
+      "raw_bytes": 3756192,
+      "raw_sha256": "0495759ebdc5bbce548dc67bdb77f3dca67a9a9719b2200944bfa80667ac772a"
+    }
+  ],
+  "decompress_command": "rtk proxy python3 -m gzip -d FILE.json.gz (in a separate unpack directory to avoid overwriting originals)",
+  "files": [
+    {
+      "bytes": 8575,
+      "path": "audit_solver_payloads.py",
+      "sha256": "e3749a81df0c30bb724a77b584d00754e17fdbcb99ecf4ad78592bb20ed45262"
+    },
+    {
+      "bytes": 5297,
+      "path": "summarize_failures.py",
+      "sha256": "f91a8cb4213bcc15071b34fda00e4d133178738197f1bfaec8ab66ace04d265a"
+    },
+    {
+      "bytes": 8077,
+      "path": "mechanism_diagnose.py",
+      "sha256": "3a9cfe9d50f4a6fcfd45e369e2893a8b91a5c78d59fb3858b84466df2c6e2dab"
+    },
+    {
+      "bytes": 4128,
+      "path": "verify_final_bindings.py",
+      "sha256": "9903c25adf83d450c8da9ba8ceeed69a5d29443cb6688367ceebdec5bdffa8ab"
+    },
+    {
+      "bytes": 63044443,
+      "path": "solver_failure_review/FAILURE_PAYLOAD_AUDIT.json",
+      "sha256": "6fba9b71b9868d9315b968eb517fafe26b5972851babbb0e413757d3336b1ba5"
+    },
+    {
+      "bytes": 3693895,
+      "path": "solver_failure_review/FAILURE_PAYLOAD_AUDIT.json.gz",
+      "sha256": "a64f528ccb59d87719dee856b049cbca952cce70a0dad7d7d234f4d359a54f61"
+    },
+    {
+      "bytes": 301421,
+      "path": "solver_failure_review/FAILURE_STRATA.json",
+      "sha256": "c2bb31bb9b5403b8a327927de8d6d6f97db2e802a69112d8752eec1c9268bd6c"
+    },
+    {
+      "bytes": 143499,
+      "path": "solver_failure_review/FINAL_SOURCE_BINDINGS.json",
+      "sha256": "f777da5b5657495198fa78439932b9b3b9973cd904e78f2bbdf09abad043fbac"
+    },
+    {
+      "bytes": 3090,
+      "path": "solver_failure_review/FINAL_FAILURE_REVIEW.md",
+      "sha256": "dfcf0c34ccb8507c2c347afa26efbacd5844e02c6064a34261c083b51c0be3ad"
+    },
+    {
+      "bytes": 3756192,
+      "path": "mechanism_review/DIAGNOSTICS.json",
+      "sha256": "0495759ebdc5bbce548dc67bdb77f3dca67a9a9719b2200944bfa80667ac772a"
+    },
+    {
+      "bytes": 363076,
+      "path": "mechanism_review/DIAGNOSTICS.json.gz",
+      "sha256": "7dae633b6abccdd254af72cd62250a1d9f4aa211cdf416cb0981ca824fc278e8"
+    },
+    {
+      "bytes": 3257,
+      "path": "mechanism_review/FINAL_MECHANISM_REVIEW.md",
+      "sha256": "ff552df7e6f1f2cf7893d7489ec7147ee1ce51cc4afa94d27c5860fa01cf1c28"
+    },
+    {
+      "bytes": 456078,
+      "path": "mechanism_review/TWO_CASE_DIAGNOSTICS.json",
+      "sha256": "7c8f0c46c59cf9a69aab3f59f9c572870f356192a5d2469c4a30da05cb92f406"
+    },
+    {
+      "bytes": 3446,
+      "path": "mechanism_review/TWO_CASE_REVIEW.md",
+      "sha256": "14dcd9a2dba0379ed38610f3ffbae9c215c4779d8abede0179c2c3742aa77cde"
+    },
+    {
+      "bytes": 8196,
+      "path": "EXTERNAL_BASELINE_NEXT.md",
+      "sha256": "6d9f01f6981464af4ed472fb7b5ba6a4548da61a194f5dc1f63a6c03317e9b50"
+    },
+    {
+      "bytes": 5463,
+      "path": "NOVELTY_CHECK.md",
+      "sha256": "2199319140f67c2cd8c3887116323275a1b0a6fa9a07e927a1c31df9c96c3b28"
+    }
+  ],
+  "frozen_utc": "2026-10-05T06:26:49.112413+00:00",
+  "metrics": {
+    "executed_episodes": 324,
+    "failed_attempts": 135,
+    "mechanism_pairs": 294,
+    "negative_cache_reuses": 58,
+    "nonzero_completion_delta_pairs": 55,
+    "physical_time_difference_pairs": 65,
+    "registered_rows": 342,
+    "retained_initial_failure_rows": 18,
+    "unique_failed_inputs": 77
+  },
+  "new_native_solver_calls": 0,
+  "new_physical_runs": 0,
+  "scope": "Final own R19 review artifacts; inputs and frozen experiment source unchanged"
+}
