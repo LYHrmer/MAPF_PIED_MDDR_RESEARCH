@@ -1,0 +1,13 @@
+{
+  "schema": "r20-position-capture-survival-v1",
+  "base": "R19 END-only predictor and structural query schema unchanged",
+  "position_input": ["status", "occurrence_id", "nominal_duration", "elapsed", "completed_history", "position"],
+  "position_fields": ["occurrence_id", "progress", "captured_elapsed", "age", "delivered_age"],
+  "history_fields": ["nominal_duration", "duration", "start", "end", "delivered"],
+  "constraints": ["current IN_PROGRESS occurrence only", "END history delivered no later than capture", "capture after actual START", "capture and delivery no later than current time", "elapsed equals captured_elapsed plus age", "0 <= delivered_age <= age", "0 <= progress <= 1"],
+  "output": ["remaining_time", "metadata"],
+  "unchanged": ["future_duration_ratio from original END predictor", "author optimizer", "physical execution", "adoption guard", "query policy and budget", "normal END/FIFO semantics"],
+  "not_features": ["agent or occurrence identity", "private disturbance", "seed", "map identity", "future END", "current true progress", "solver output"],
+  "stale_other_occurrence": "ignore POSITION, retain original END-only estimate",
+  "missing_position": "retain original END-only estimate"
+}

@@ -1,0 +1,127 @@
+[
+  {
+    "active_commitment_negative": {
+      "passed": false,
+      "reason": "changed_active_commitment"
+    },
+    "actual": {
+      "feasible": true,
+      "last_times": [
+        "6",
+        "8"
+      ],
+      "makespan": "8",
+      "sum_completion": "14",
+      "values": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "0",
+        "1",
+        "2",
+        "5",
+        "6",
+        "7",
+        "8"
+      ]
+    },
+    "cache_reused": true,
+    "guard": {
+      "changed_groups": [],
+      "edges": 11,
+      "passed": true,
+      "reason": null,
+      "vertices": 12
+    },
+    "immutable_type1_negative": true,
+    "native_optimal": true,
+    "oracle": {
+      "candidates": [
+        {
+          "bits": [
+            0
+          ],
+          "feasible": true,
+          "last_times": [
+            "6",
+            "8"
+          ],
+          "makespan": "8",
+          "sum_completion": "14",
+          "type2": [
+            [
+              4,
+              10,
+              1
+            ]
+          ],
+          "values": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "0",
+            "1",
+            "2",
+            "5",
+            "6",
+            "7",
+            "8"
+          ]
+        },
+        {
+          "bits": [
+            1
+          ],
+          "feasible": true,
+          "last_times": [
+            "8",
+            "6"
+          ],
+          "makespan": "8",
+          "sum_completion": "14",
+          "type2": [
+            [
+              11,
+              3,
+              1
+            ]
+          ],
+          "values": [
+            "0",
+            "1",
+            "2",
+            "5",
+            "6",
+            "7",
+            "8",
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+          ]
+        }
+      ],
+      "optimal_bits": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "optimum": "14"
+    },
+    "passed": true
+  }
+]

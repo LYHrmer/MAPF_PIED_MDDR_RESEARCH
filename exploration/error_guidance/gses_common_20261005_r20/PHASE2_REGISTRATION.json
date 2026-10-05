@@ -1,0 +1,69 @@
+{
+  "acceptance": [
+    "native full graph oracle is feasible",
+    "all adopted graph changes pass original R19 guard",
+    "complete continuous point event suffix with WAIT and GOAL_HOLD audit",
+    "capture progress only enters predictor after matching delivery",
+    "report null effects and all rejections"
+  ],
+  "arms": [
+    {
+      "latency": 0.0,
+      "name": "none_age0.0",
+      "query": "none"
+    },
+    {
+      "latency": 0.0,
+      "name": "position_age0.0",
+      "query": "position"
+    },
+    {
+      "latency": 0.25,
+      "name": "none_age0.25",
+      "query": "none"
+    },
+    {
+      "latency": 0.25,
+      "name": "position_age0.25",
+      "query": "position"
+    }
+  ],
+  "case_path": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/phase2_case.json",
+  "case_sha256": "1240a1830f5412226b074ce7feeb1a99a48732b2f2bb90154ff7c391a9e0baae",
+  "config": {
+    "cache_dir": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/common_cache",
+    "evidence_dir": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/common_evidence",
+    "gses_max_new_calls": 4,
+    "gses_quantum": 1.0,
+    "horizon": 5.0,
+    "max_queries_per_gate": 2,
+    "max_time": 100.0,
+    "query_budget": 2,
+    "save_gate_graphs": true,
+    "solve_period": 100.0
+  },
+  "disturbance": {
+    "kind": "stable",
+    "stable_factor_range": [
+      0.5,
+      1.0
+    ]
+  },
+  "exact_input_reuse": true,
+  "first_capture_time": 0.5,
+  "limitations": [
+    "unit native type2 surrogate, not weighted continuous equivalence",
+    "one common capture gate, not a performance study",
+    "original 16-second Improved GSES search and 20-second outer watchdog"
+  ],
+  "native_invocation_cap": 4,
+  "purpose": "common event-executor mechanism only; no new scientific comparison",
+  "registered_utc": "2026-10-05T06:57:09.829321+00:00",
+  "seed": 20,
+  "sources": {
+    "common_engine.py": "ff8fb11d2f9754d5588d7fc8b3fde6b7f7dadac611ec6811aed0898b237bb39f",
+    "fraction_oracle.py": "861829c2db5e81d8c4825a24ef2a63978aed54670d30954dc8a28697894cfea8",
+    "phase2.py": "d3bbc2ee50ec86d3ecfb9cfeec27844f10bec0fa068517ab450e9d511a841085"
+  },
+  "subsequent_capture_period": 100.0
+}

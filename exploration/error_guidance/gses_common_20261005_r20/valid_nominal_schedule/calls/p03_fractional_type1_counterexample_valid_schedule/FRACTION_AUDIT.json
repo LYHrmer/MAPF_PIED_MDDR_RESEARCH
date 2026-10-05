@@ -1,0 +1,157 @@
+{
+  "actual_graph_objective": {
+    "feasible": true,
+    "last_times": [
+      "17/16",
+      "17/8",
+      "25/8"
+    ],
+    "makespan": "25/8",
+    "sum_completion": "101/16",
+    "values": [
+      "0",
+      "7/8",
+      "15/16",
+      "1",
+      "17/16",
+      "0",
+      "19/16",
+      "2",
+      "33/16",
+      "17/8",
+      "0",
+      "1/8",
+      "1/4",
+      "3/8",
+      "25/8"
+    ]
+  },
+  "author_output_sha256": "d0e481e193c6107c83bc6b603f9c8068ffb1a94da30bebd0f09731f14cd8d432",
+  "author_status": "Succ",
+  "id": "p03_fractional_type1_counterexample_valid_schedule",
+  "legal_choice": true,
+  "matches_optimum": false,
+  "oracle": {
+    "candidates": [
+      {
+        "bits": [
+          0
+        ],
+        "feasible": true,
+        "last_times": [
+          "17/16",
+          "17/8",
+          "25/8"
+        ],
+        "makespan": "25/8",
+        "sum_completion": "101/16",
+        "type2": [
+          [
+            3,
+            7,
+            1
+          ],
+          [
+            9,
+            14,
+            1
+          ]
+        ],
+        "values": [
+          "0",
+          "7/8",
+          "15/16",
+          "1",
+          "17/16",
+          "0",
+          "19/16",
+          "2",
+          "33/16",
+          "17/8",
+          "0",
+          "1/8",
+          "1/4",
+          "3/8",
+          "25/8"
+        ]
+      },
+      {
+        "bits": [
+          1
+        ],
+        "feasible": true,
+        "last_times": [
+          "39/16",
+          "11/8",
+          "19/8"
+        ],
+        "makespan": "39/16",
+        "sum_completion": "99/16",
+        "type2": [
+          [
+            9,
+            14,
+            1
+          ],
+          [
+            8,
+            2,
+            1
+          ]
+        ],
+        "values": [
+          "0",
+          "7/8",
+          "37/16",
+          "19/8",
+          "39/16",
+          "0",
+          "19/16",
+          "5/4",
+          "21/16",
+          "11/8",
+          "0",
+          "1/8",
+          "1/4",
+          "3/8",
+          "19/8"
+        ]
+      }
+    ],
+    "optimal_bits": [
+      [
+        1
+      ]
+    ],
+    "optimum": "99/16"
+  },
+  "receipt": {
+    "binary_sha256": "b5e918f8913baca71a7b189e21e76bf3d7bfb41ec8042ee5ab306a52f109700c",
+    "command": [
+      "rtk",
+      "proxy",
+      "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_online_adoption_20261004_r13/author_online",
+      "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/valid_nominal_schedule/inputs/p03_fractional_type1_counterexample_valid_schedule.json",
+      "Improved_GSES",
+      "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/valid_nominal_schedule/calls/p03_fractional_type1_counterexample_valid_schedule/author_reply.json"
+    ],
+    "elapsed_seconds": 0.020502769999438897,
+    "error": null,
+    "finished_utc": "2026-10-05T06:48:04.801336+00:00",
+    "input_sha256": "9fb9cd0423be1f824658ac491e69c141e6bc34a91deb04d0c52231521de14551",
+    "returncode": 0
+  },
+  "selected_type2": [
+    [
+      3,
+      7,
+      1.0
+    ],
+    [
+      9,
+      14,
+      1.0
+    ]
+  ],
+  "unchanged_type1": true
+}

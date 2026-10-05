@@ -1,0 +1,654 @@
+{
+  "new_author_calls": 1,
+  "records": [
+    {
+      "arm": {
+        "latency": 0.0,
+        "name": "none_age0.0",
+        "query": "none"
+      },
+      "audits": [
+        {
+          "active_commitment_negative": {
+            "passed": false,
+            "reason": "changed_active_commitment"
+          },
+          "actual": {
+            "feasible": true,
+            "last_times": [
+              "6",
+              "8"
+            ],
+            "makespan": "8",
+            "sum_completion": "14",
+            "values": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "0",
+              "1",
+              "2",
+              "5",
+              "6",
+              "7",
+              "8"
+            ]
+          },
+          "cache_reused": false,
+          "guard": {
+            "changed_groups": [],
+            "edges": 11,
+            "passed": true,
+            "reason": null,
+            "vertices": 12
+          },
+          "immutable_type1_negative": true,
+          "native_optimal": true,
+          "oracle": {
+            "candidates": [
+              {
+                "bits": [
+                  0
+                ],
+                "feasible": true,
+                "last_times": [
+                  "6",
+                  "8"
+                ],
+                "makespan": "8",
+                "sum_completion": "14",
+                "type2": [
+                  [
+                    4,
+                    10,
+                    1
+                  ]
+                ],
+                "values": [
+                  "0",
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "0",
+                  "1",
+                  "2",
+                  "5",
+                  "6",
+                  "7",
+                  "8"
+                ]
+              },
+              {
+                "bits": [
+                  1
+                ],
+                "feasible": true,
+                "last_times": [
+                  "8",
+                  "6"
+                ],
+                "makespan": "8",
+                "sum_completion": "14",
+                "type2": [
+                  [
+                    11,
+                    3,
+                    1
+                  ]
+                ],
+                "values": [
+                  "0",
+                  "1",
+                  "2",
+                  "5",
+                  "6",
+                  "7",
+                  "8",
+                  "0",
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6"
+                ]
+              }
+            ],
+            "optimal_bits": [
+              [
+                0
+              ],
+              [
+                1
+              ]
+            ],
+            "optimum": "14"
+          },
+          "passed": true
+        }
+      ],
+      "captured_times": [],
+      "collision_audit": {
+        "collisions": [],
+        "coverage_errors": [],
+        "end_time": 12.22521999980896,
+        "includes_initial_wait_and_goal_hold": true,
+        "minimum_point_distance": 2.0,
+        "overlap_pairs": 12,
+        "passed": true,
+        "scope": "continuous affine point trajectories; not footprint/acceleration safety"
+      },
+      "delivery_times": [],
+      "episode_path": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/common_runs/none_age0.0/episode.json",
+      "episode_sha256": "b7646a97c0b8613b90f7a5f735fa78a19de43174180b3b9f8da7203d1d24bb11",
+      "failures": [],
+      "makespan": 12.22521999980896,
+      "new_author_calls": 1,
+      "query_count": 0,
+      "solve_times": [
+        0.5
+      ],
+      "solver_calls": 1,
+      "status": "completed",
+      "success": true,
+      "sum_completion": 21.254785268177695
+    },
+    {
+      "arm": {
+        "latency": 0.0,
+        "name": "position_age0.0",
+        "query": "position"
+      },
+      "audits": [
+        {
+          "active_commitment_negative": {
+            "passed": false,
+            "reason": "changed_active_commitment"
+          },
+          "actual": {
+            "feasible": true,
+            "last_times": [
+              "6",
+              "8"
+            ],
+            "makespan": "8",
+            "sum_completion": "14",
+            "values": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "0",
+              "1",
+              "2",
+              "5",
+              "6",
+              "7",
+              "8"
+            ]
+          },
+          "cache_reused": true,
+          "guard": {
+            "changed_groups": [],
+            "edges": 11,
+            "passed": true,
+            "reason": null,
+            "vertices": 12
+          },
+          "immutable_type1_negative": true,
+          "native_optimal": true,
+          "oracle": {
+            "candidates": [
+              {
+                "bits": [
+                  0
+                ],
+                "feasible": true,
+                "last_times": [
+                  "6",
+                  "8"
+                ],
+                "makespan": "8",
+                "sum_completion": "14",
+                "type2": [
+                  [
+                    4,
+                    10,
+                    1
+                  ]
+                ],
+                "values": [
+                  "0",
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "0",
+                  "1",
+                  "2",
+                  "5",
+                  "6",
+                  "7",
+                  "8"
+                ]
+              },
+              {
+                "bits": [
+                  1
+                ],
+                "feasible": true,
+                "last_times": [
+                  "8",
+                  "6"
+                ],
+                "makespan": "8",
+                "sum_completion": "14",
+                "type2": [
+                  [
+                    11,
+                    3,
+                    1
+                  ]
+                ],
+                "values": [
+                  "0",
+                  "1",
+                  "2",
+                  "5",
+                  "6",
+                  "7",
+                  "8",
+                  "0",
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6"
+                ]
+              }
+            ],
+            "optimal_bits": [
+              [
+                0
+              ],
+              [
+                1
+              ]
+            ],
+            "optimum": "14"
+          },
+          "passed": true
+        }
+      ],
+      "captured_times": [
+        0.5,
+        0.5
+      ],
+      "collision_audit": {
+        "collisions": [],
+        "coverage_errors": [],
+        "end_time": 12.22521999980896,
+        "includes_initial_wait_and_goal_hold": true,
+        "minimum_point_distance": 2.0,
+        "overlap_pairs": 12,
+        "passed": true,
+        "scope": "continuous affine point trajectories; not footprint/acceleration safety"
+      },
+      "delivery_times": [
+        0.5,
+        0.5
+      ],
+      "episode_path": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/common_runs/position_age0.0/episode.json",
+      "episode_sha256": "bbb2cedace6bbfb53dcf727475adb963460043f99eed3494046a3bc27326d90d",
+      "failures": [],
+      "makespan": 12.22521999980896,
+      "new_author_calls": 0,
+      "query_count": 2,
+      "solve_times": [
+        0.5
+      ],
+      "solver_calls": 1,
+      "status": "completed",
+      "success": true,
+      "sum_completion": 21.254785268177695
+    },
+    {
+      "arm": {
+        "latency": 0.25,
+        "name": "none_age0.25",
+        "query": "none"
+      },
+      "audits": [
+        {
+          "active_commitment_negative": {
+            "passed": false,
+            "reason": "changed_active_commitment"
+          },
+          "actual": {
+            "feasible": true,
+            "last_times": [
+              "6",
+              "8"
+            ],
+            "makespan": "8",
+            "sum_completion": "14",
+            "values": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "0",
+              "1",
+              "2",
+              "5",
+              "6",
+              "7",
+              "8"
+            ]
+          },
+          "cache_reused": true,
+          "guard": {
+            "changed_groups": [],
+            "edges": 11,
+            "passed": true,
+            "reason": null,
+            "vertices": 12
+          },
+          "immutable_type1_negative": true,
+          "native_optimal": true,
+          "oracle": {
+            "candidates": [
+              {
+                "bits": [
+                  0
+                ],
+                "feasible": true,
+                "last_times": [
+                  "6",
+                  "8"
+                ],
+                "makespan": "8",
+                "sum_completion": "14",
+                "type2": [
+                  [
+                    4,
+                    10,
+                    1
+                  ]
+                ],
+                "values": [
+                  "0",
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "0",
+                  "1",
+                  "2",
+                  "5",
+                  "6",
+                  "7",
+                  "8"
+                ]
+              },
+              {
+                "bits": [
+                  1
+                ],
+                "feasible": true,
+                "last_times": [
+                  "8",
+                  "6"
+                ],
+                "makespan": "8",
+                "sum_completion": "14",
+                "type2": [
+                  [
+                    11,
+                    3,
+                    1
+                  ]
+                ],
+                "values": [
+                  "0",
+                  "1",
+                  "2",
+                  "5",
+                  "6",
+                  "7",
+                  "8",
+                  "0",
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6"
+                ]
+              }
+            ],
+            "optimal_bits": [
+              [
+                0
+              ],
+              [
+                1
+              ]
+            ],
+            "optimum": "14"
+          },
+          "passed": true
+        }
+      ],
+      "captured_times": [],
+      "collision_audit": {
+        "collisions": [],
+        "coverage_errors": [],
+        "end_time": 12.22521999980896,
+        "includes_initial_wait_and_goal_hold": true,
+        "minimum_point_distance": 2.0,
+        "overlap_pairs": 12,
+        "passed": true,
+        "scope": "continuous affine point trajectories; not footprint/acceleration safety"
+      },
+      "delivery_times": [],
+      "episode_path": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/common_runs/none_age0.25/episode.json",
+      "episode_sha256": "dabc5e70f05252db93c11f4d745f86c0891e316a5b64952e524ab1df00ee2c4a",
+      "failures": [],
+      "makespan": 12.22521999980896,
+      "new_author_calls": 0,
+      "query_count": 0,
+      "solve_times": [
+        0.75
+      ],
+      "solver_calls": 1,
+      "status": "completed",
+      "success": true,
+      "sum_completion": 21.254785268177695
+    },
+    {
+      "arm": {
+        "latency": 0.25,
+        "name": "position_age0.25",
+        "query": "position"
+      },
+      "audits": [
+        {
+          "active_commitment_negative": {
+            "passed": false,
+            "reason": "changed_active_commitment"
+          },
+          "actual": {
+            "feasible": true,
+            "last_times": [
+              "6",
+              "8"
+            ],
+            "makespan": "8",
+            "sum_completion": "14",
+            "values": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "0",
+              "1",
+              "2",
+              "5",
+              "6",
+              "7",
+              "8"
+            ]
+          },
+          "cache_reused": true,
+          "guard": {
+            "changed_groups": [],
+            "edges": 11,
+            "passed": true,
+            "reason": null,
+            "vertices": 12
+          },
+          "immutable_type1_negative": true,
+          "native_optimal": true,
+          "oracle": {
+            "candidates": [
+              {
+                "bits": [
+                  0
+                ],
+                "feasible": true,
+                "last_times": [
+                  "6",
+                  "8"
+                ],
+                "makespan": "8",
+                "sum_completion": "14",
+                "type2": [
+                  [
+                    4,
+                    10,
+                    1
+                  ]
+                ],
+                "values": [
+                  "0",
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "0",
+                  "1",
+                  "2",
+                  "5",
+                  "6",
+                  "7",
+                  "8"
+                ]
+              },
+              {
+                "bits": [
+                  1
+                ],
+                "feasible": true,
+                "last_times": [
+                  "8",
+                  "6"
+                ],
+                "makespan": "8",
+                "sum_completion": "14",
+                "type2": [
+                  [
+                    11,
+                    3,
+                    1
+                  ]
+                ],
+                "values": [
+                  "0",
+                  "1",
+                  "2",
+                  "5",
+                  "6",
+                  "7",
+                  "8",
+                  "0",
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6"
+                ]
+              }
+            ],
+            "optimal_bits": [
+              [
+                0
+              ],
+              [
+                1
+              ]
+            ],
+            "optimum": "14"
+          },
+          "passed": true
+        }
+      ],
+      "captured_times": [
+        0.5,
+        0.5
+      ],
+      "collision_audit": {
+        "collisions": [],
+        "coverage_errors": [],
+        "end_time": 12.22521999980896,
+        "includes_initial_wait_and_goal_hold": true,
+        "minimum_point_distance": 2.0,
+        "overlap_pairs": 12,
+        "passed": true,
+        "scope": "continuous affine point trajectories; not footprint/acceleration safety"
+      },
+      "delivery_times": [
+        0.75,
+        0.75
+      ],
+      "episode_path": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/common_runs/position_age0.25/episode.json",
+      "episode_sha256": "f512fcd75b633e92309f6c6bd57fe4d18d151a92383491f3800afeb2f4e27a93",
+      "failures": [],
+      "makespan": 12.22521999980896,
+      "new_author_calls": 0,
+      "query_count": 2,
+      "solve_times": [
+        0.75
+      ],
+      "solver_calls": 1,
+      "status": "completed",
+      "success": true,
+      "sum_completion": 21.254785268177695
+    }
+  ],
+  "registration_sha256": "64aad2f57ec80f4cfce9f95cc103f72452a659d58828e209a077e078efa03098"
+}

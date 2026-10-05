@@ -1,0 +1,178 @@
+{
+  "claim": "constructed legal-switch execution witness only; no learned predictor or benchmark generalization claim",
+  "records": [
+    {
+      "arm": "gses_surrogate",
+      "audits": [
+        {
+          "actual": {
+            "feasible": true,
+            "last_times": [
+              "20",
+              "4"
+            ],
+            "makespan": "20",
+            "sum_completion": "24",
+            "values": [
+              null,
+              "0",
+              "4",
+              "8",
+              "12",
+              "16",
+              "20",
+              null,
+              null,
+              "0",
+              "1",
+              "2",
+              "3",
+              "4"
+            ]
+          },
+          "guard": {
+            "changed_groups": [
+              "dg_agent0_0"
+            ],
+            "edges": 11,
+            "passed": true,
+            "reason": null,
+            "vertices": 12
+          },
+          "native_optimal": true,
+          "oracle": {
+            "candidates": [
+              {
+                "bits": [
+                  0
+                ],
+                "feasible": true,
+                "last_times": [
+                  "20",
+                  "16"
+                ],
+                "makespan": "20",
+                "sum_completion": "36",
+                "type2": [
+                  [
+                    4,
+                    10,
+                    1
+                  ]
+                ],
+                "values": [
+                  null,
+                  "0",
+                  "4",
+                  "8",
+                  "12",
+                  "16",
+                  "20",
+                  null,
+                  null,
+                  "0",
+                  "13",
+                  "14",
+                  "15",
+                  "16"
+                ]
+              },
+              {
+                "bits": [
+                  1
+                ],
+                "feasible": true,
+                "last_times": [
+                  "20",
+                  "4"
+                ],
+                "makespan": "20",
+                "sum_completion": "24",
+                "type2": [
+                  [
+                    11,
+                    3,
+                    1
+                  ]
+                ],
+                "values": [
+                  null,
+                  "0",
+                  "4",
+                  "8",
+                  "12",
+                  "16",
+                  "20",
+                  null,
+                  null,
+                  "0",
+                  "1",
+                  "2",
+                  "3",
+                  "4"
+                ]
+              }
+            ],
+            "optimal_bits": [
+              [
+                1
+              ]
+            ],
+            "optimum": "24"
+          }
+        }
+      ],
+      "collision_audit": {
+        "collisions": [],
+        "coverage_errors": [],
+        "end_time": 24.0,
+        "includes_initial_wait_and_goal_hold": true,
+        "minimum_point_distance": 3.0316953129541626,
+        "overlap_pairs": 13,
+        "passed": true,
+        "scope": "continuous affine point trajectories; not footprint/acceleration safety"
+      },
+      "completion_times": {
+        "agent0": 24.0,
+        "agent1": 8.75
+      },
+      "episode_path": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/positive_switch/gses_surrogate/episode.json",
+      "episode_sha256": "a7fe4b1d3e7da722d1b84ed558b30238de26334c105187a60f74a6e1f307860a",
+      "failures": [],
+      "makespan": 24.0,
+      "new_author_calls": 1,
+      "query_count": 1,
+      "status": "completed",
+      "success": true,
+      "sum_completion": 32.75
+    },
+    {
+      "arm": "keep_parent_control",
+      "audits": [],
+      "collision_audit": {
+        "collisions": [],
+        "coverage_errors": [],
+        "end_time": 24.0,
+        "includes_initial_wait_and_goal_hold": true,
+        "minimum_point_distance": 2.0,
+        "overlap_pairs": 11,
+        "passed": true,
+        "scope": "continuous affine point trajectories; not footprint/acceleration safety"
+      },
+      "completion_times": {
+        "agent0": 24.0,
+        "agent1": 20.0
+      },
+      "episode_path": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/positive_switch/keep_parent_control/episode.json",
+      "episode_sha256": "55c846d87bab0745c695e1a2c5e6cc1008e627ba5eed7844678586ee8769a8b3",
+      "failures": [],
+      "makespan": 24.0,
+      "new_author_calls": 0,
+      "query_count": 1,
+      "status": "completed",
+      "success": true,
+      "sum_completion": 44.0
+    }
+  ],
+  "registration_sha256": "202cf5215cb0425302a051b67dc36fd3ba0b5c9ae47a7cc823c8e18551e2734a"
+}

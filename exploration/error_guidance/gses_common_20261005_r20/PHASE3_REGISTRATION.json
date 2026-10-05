@@ -1,0 +1,30 @@
+{
+  "acceptance": "Enumerate both legal native orientations with Fraction; guard must protect active A2; full continuous suffix audit; report either no flip or actual flip and all failures.",
+  "arms": [
+    "gses_surrogate",
+    "keep_parent_control"
+  ],
+  "call_accounting": "Previous9 program invocations include4 constructor failures,4 phase1 Astar inputs,1 unique phase2 Astar input; this phase adds at most1.",
+  "case_path": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/phase2_case.json",
+  "case_sha256": "1240a1830f5412226b074ce7feeb1a99a48732b2f2bb90154ff7c391a9e0baae",
+  "design": "Seed1 affected hashes A=.779185 and B=.921794 set A speed=.25 and B=1. This private setup is fixed before the call. After A END at4, full public history identifies its ratio4. No truth is supplied to the optimizer.",
+  "disturbance": {
+    "affected_fraction": 0.85,
+    "kind": "stable",
+    "stable_factor": 0.25
+  },
+  "first_capture_time": 4.5,
+  "max_time": 100.0,
+  "native_invocation_cap": 1,
+  "policy": "dense current active POSITION at the one gate",
+  "purpose": "positive legal-switch mechanism test, not heldout performance",
+  "query_latency": 0.25,
+  "registered_utc": "2026-10-05T06:59:45.253023+00:00",
+  "seed": 1,
+  "solve_period": 100.0,
+  "source_pins": {
+    "common_engine.py": "ff8fb11d2f9754d5588d7fc8b3fde6b7f7dadac611ec6811aed0898b237bb39f",
+    "fraction_oracle.py": "861829c2db5e81d8c4825a24ef2a63978aed54670d30954dc8a28697894cfea8",
+    "phase3_switch.py": "bfecca79173eed47130f277f0bd08ff5c212b0909710d7c713725e46797dfa61"
+  }
+}

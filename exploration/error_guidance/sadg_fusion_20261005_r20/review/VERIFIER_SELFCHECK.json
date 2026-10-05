@@ -1,0 +1,104 @@
+{
+  "auditor_sha256": "59ec82735b463959da17123034faddaf27acd50d166517f03a2938ed72f6ae9e",
+  "cases": [
+    {
+      "case": "elapsed_includes_wait",
+      "failed_checks": [
+        "conditional_remaining_independent",
+        "predictor_age_since_START"
+      ],
+      "rejected": true
+    },
+    {
+      "case": "future_END_feature",
+      "failed_checks": [
+        "author_encoded_duration",
+        "author_encoded_progress",
+        "conditional_remaining_independent",
+        "predictor_delivered_END_history",
+        "preserved_future_ratio",
+        "unconditional_future_ratio"
+      ],
+      "rejected": true
+    },
+    {
+      "case": "joint_capture_age_changed",
+      "failed_checks": [
+        "position_context_exact_public_reconstruction"
+      ],
+      "rejected": true
+    },
+    {
+      "case": "joint_wrong_occurrence",
+      "failed_checks": [
+        "position_context_exact_public_reconstruction"
+      ],
+      "rejected": true
+    },
+    {
+      "case": "joint_undelivered_position",
+      "failed_checks": [
+        "position_context_exact_public_reconstruction"
+      ],
+      "rejected": true
+    },
+    {
+      "case": "joint_private_feature",
+      "failed_checks": [
+        "position_context_exact_public_reconstruction"
+      ],
+      "rejected": true
+    },
+    {
+      "case": "joint_zero_remaining",
+      "failed_checks": [
+        "position_survival_independent_scipy"
+      ],
+      "rejected": true
+    },
+    {
+      "case": "fused_remaining_wrong",
+      "failed_checks": [
+        "actual_fused_remaining"
+      ],
+      "rejected": true
+    },
+    {
+      "case": "future_ratio_corrupted",
+      "failed_checks": [
+        "preserved_future_ratio"
+      ],
+      "rejected": true
+    },
+    {
+      "case": "encoded_progress_corrupted",
+      "failed_checks": [
+        "author_encoded_progress"
+      ],
+      "rejected": true
+    },
+    {
+      "case": "position_silently_ignored",
+      "failed_checks": [
+        "latest_delivered_current_POSITION"
+      ],
+      "rejected": true
+    },
+    {
+      "case": "cached_CAS_size",
+      "rejected": true
+    },
+    {
+      "case": "CAS_path_traversal",
+      "rejected": true
+    }
+  ],
+  "new_scientific_episodes": 0,
+  "new_solver_calls": 0,
+  "passed": true,
+  "raw_modified": false,
+  "scope": "Prediction and CAS verifier negative controls; graph/physics verified separately.",
+  "script_sha256": "50dee6bfd74094c8b322275f9c187b91c18109e7e297b3c88df5242bafb00a29",
+  "source_episode": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/sadg_fusion_20261005_r20/episodes/random-32-32-10__s08__n32__pause_range_2to5/learned_position_structural/episode.json",
+  "source_episode_sha256": "3089169b29fcc60396cdbdb28fd2cdb1ca53d2be4c5487ee29265dc9b851250f"
+}

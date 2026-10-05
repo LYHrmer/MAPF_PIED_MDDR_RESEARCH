@@ -1,0 +1,1 @@
+审计脚本首次误假设adapter源与ELF同目录；phase1.py明确source在第三worktree旧R13、ELF在main旧R13。第二次将source_hashes中cbcbox/python-mip版本元数据误当文件路径，现仅按元数据分类；真实路径全部核SHA。修正仅审计读取路径/字段类型，不改变实验或登记，无新求解/物理。

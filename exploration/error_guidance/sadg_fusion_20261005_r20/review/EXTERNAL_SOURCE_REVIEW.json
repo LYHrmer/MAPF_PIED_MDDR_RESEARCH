@@ -1,0 +1,388 @@
+{
+  "binding_example": {
+    "agent": "agent21",
+    "before_ref": {
+      "path": "objects/44/44ac787e3404b884abbbbf40dea5d8d83240cd78c45efe2444e366b74f9af105.json.gz",
+      "raw_bytes": 798,
+      "schema": "r19-cas-ref-v1",
+      "sha256": "44ac787e3404b884abbbbf40dea5d8d83240cd78c45efe2444e366b74f9af105"
+    },
+    "duration": 2.3368949324631063,
+    "future_ratio": 2.3368949324631063,
+    "gate": 1,
+    "model_constraint": {
+      "constant": -0.7731945818735115,
+      "lhs": 0.0,
+      "name": "boundary_v_21_5_g",
+      "sense": ">",
+      "terms": {
+        "v_21_5_g": 1.0
+      },
+      "violation": 0.0
+    },
+    "model_ref": {
+      "path": "objects/b8/b810d19a7fcb91dc25e23983227694fb4230993ef3657daa796d348ceded5a72.json.gz",
+      "raw_bytes": 1695670,
+      "schema": "r19-cas-ref-v1",
+      "sha256": "b810d19a7fcb91dc25e23983227694fb4230993ef3657daa796d348ceded5a72"
+    },
+    "progress": 0.6691359242845556,
+    "provider": "position_capture_conditional",
+    "remaining": 0.7731945818735116,
+    "time": 19.416666666666668,
+    "vertex": "v_21_5"
+  },
+  "findings": [
+    "Position predictor only overrides current active delivered occurrence residual; future ratio remains END predictor output.",
+    "Actual optimizer graph fields and boundary row consume the changed residual; original author optimizer and adoption guard are unchanged.",
+    "Runner verifies frozen source/model/data before every episode and refuses repeated or unfinished attempts.",
+    "18 primary contrasts share identical private profiles and final per-agent completion/makespan/query counts; query payload equality is 17/18, not18/18.",
+    "The single event-changing primary pair has real legal graph changes; later dependency waits absorb both local advances."
+  ],
+  "input_hashes": {
+    "EXPERIMENT_REGISTRATION.json": "e82cfa4aca5eb412729ace72b18eacb9158d5c1dcd67be190668951aed58e035",
+    "engine.py": "a1a3e9664d2b14e509931a73478c602879d97f3580bea1fabd2d271a0c9885c2",
+    "episodes/maze-32-32-2__s08__n32__pause_range_2to5/learned_linear_structural/episode.json": "741fe9348e62b183545d1d378a39f788e2908bcefd7b305862d679e5e2783eea",
+    "episodes/maze-32-32-2__s08__n32__pause_range_2to5/learned_position_structural/episode.json": "ec82e6f6e224aa55e7553da9d49bbff084d67751a55227fdb97696c886493df9",
+    "mechanism_review/DIAGNOSTICS.json": "c308b2001a85670b4844e1fb7bb45f0aaea04091b028b34814cd60613b9fdd65",
+    "position_model/predictor.py": "bc7d78615ed992fd9b72a74dbff07936a9efadbdee07dc1cc78ce793befbc726",
+    "review/VERIFIER_SELFCHECK.json": "c309a92a27b06bb1f6db65e13c3ce46993eed3e0453ec9d3cfbf992797968ab9",
+    "run_study.py": "c0405135c6ba1a1e111e266167af61e3cdea72e1a82854ee0d5e748e8bea107b",
+    "solver_adapter.py": "01a4af7e236a874c876e539bd87f5e4518bafac57b8de1e63cfad83945a1c6fc"
+  },
+  "maze_query_payload_differences": [
+    {
+      "changed_fields": [
+        "agent",
+        "body_sha256",
+        "payload_bytes",
+        "vertex"
+      ],
+      "index": 10,
+      "linear": {
+        "agent": "agent7",
+        "captured": 28.75,
+        "progress": 0.3500000000000014,
+        "vertex": "v_7_15"
+      },
+      "position": {
+        "agent": "agent25",
+        "captured": 28.75,
+        "progress": 0.3500000000000014,
+        "vertex": "v_25_8"
+      }
+    },
+    {
+      "changed_fields": [
+        "agent",
+        "body_sha256",
+        "payload_bytes",
+        "progress",
+        "vertex"
+      ],
+      "index": 11,
+      "linear": {
+        "agent": "agent16",
+        "captured": 28.75,
+        "progress": 0.3500000000000014,
+        "vertex": "v_16_13"
+      },
+      "position": {
+        "agent": "agent26",
+        "captured": 28.75,
+        "progress": 0.36198284390237845,
+        "vertex": "v_26_11"
+      }
+    },
+    {
+      "changed_fields": [
+        "agent",
+        "body_sha256",
+        "payload_bytes",
+        "progress",
+        "vertex"
+      ],
+      "index": 15,
+      "linear": {
+        "agent": "agent1",
+        "captured": 38.333333333333336,
+        "progress": 0.43076526053049946,
+        "vertex": "v_1_13"
+      },
+      "position": {
+        "agent": "agent24",
+        "captured": 38.333333333333336,
+        "progress": 0.3500000000000014,
+        "vertex": "v_24_13"
+      }
+    }
+  ],
+  "maze_wait_absorption": [
+    {
+      "advance_absorbed": 38.33333333333334,
+      "agent": "agent23",
+      "latest_blocking_tail": "v_11_62",
+      "linear": {
+        "completion": 139.74497036903557,
+        "dependency_tails": {
+          "v_11_62": 138.74497036903557,
+          "v_24_44": 123.68693969814721
+        },
+        "next_start": 138.74497036903557,
+        "previous_end": 59.75000000000001,
+        "wait": 78.99497036903557
+      },
+      "next_vertex": "v_23_9",
+      "position": {
+        "completion": 139.74497036903557,
+        "dependency_tails": {
+          "v_11_62": 138.74497036903557,
+          "v_24_44": 123.68693969814721
+        },
+        "next_start": 138.74497036903557,
+        "previous_end": 21.416666666666668,
+        "wait": 117.3283037023689
+      },
+      "previous_vertex": "v_23_8"
+    },
+    {
+      "advance_absorbed": 13.316512094656083,
+      "agent": "agent6",
+      "latest_blocking_tail": "v_26_18",
+      "linear": {
+        "completion": 86.78565996897254,
+        "dependency_tails": {
+          "v_10_2": 6.227877977789625,
+          "v_24_5": 8.227877977789625,
+          "v_26_18": 44.81642847410452,
+          "v_30_14": 34.38801715609762
+        },
+        "next_start": 44.81642847410452,
+        "previous_end": 36.38801715609762,
+        "wait": 8.428411318006901
+      },
+      "next_vertex": "v_6_13",
+      "position": {
+        "completion": 86.78565996897254,
+        "dependency_tails": {
+          "v_10_2": 6.227877977789625,
+          "v_24_5": 8.227877977789625,
+          "v_26_18": 44.81642847410452,
+          "v_30_14": 34.38801715609762
+        },
+        "next_start": 44.81642847410452,
+        "previous_end": 23.071505061441535,
+        "wait": 21.744923412662985
+      },
+      "previous_vertex": "v_6_12"
+    }
+  ],
+  "negative_controls": {
+    "all_rejected": true,
+    "coverage": "wait elapsed/future END/age/occurrence/delivery/private feature/residual/future ratio/encoded progress/ignored position/CAS corruption",
+    "existing_count": 13,
+    "reexecuted": false
+  },
+  "new_physical_runs": 0,
+  "new_solver_calls": 0,
+  "not_repeated": [
+    "native solver",
+    "physical simulation",
+    "full collision audit",
+    "whole matrix MILP residual audit"
+  ],
+  "primary_counts": {
+    "completion_times_equal": 18,
+    "makespan_equal": 18,
+    "physical_profiles_equal": 18,
+    "query_count_equal": 18,
+    "query_payloads_equal": 17
+  },
+  "primary_pairs": [
+    {
+      "completion_times_equal": true,
+      "makespan_equal": true,
+      "physical_profiles_equal": true,
+      "query_count_equal": true,
+      "query_payloads_equal": false,
+      "world": "maze-32-32-2__s08__n32__pause_range_2to5"
+    },
+    {
+      "completion_times_equal": true,
+      "makespan_equal": true,
+      "physical_profiles_equal": true,
+      "query_count_equal": true,
+      "query_payloads_equal": true,
+      "world": "maze-32-32-2__s08__n32__speed_shift_065"
+    },
+    {
+      "completion_times_equal": true,
+      "makespan_equal": true,
+      "physical_profiles_equal": true,
+      "query_count_equal": true,
+      "query_payloads_equal": true,
+      "world": "maze-32-32-2__s08__n32__stable"
+    },
+    {
+      "completion_times_equal": true,
+      "makespan_equal": true,
+      "physical_profiles_equal": true,
+      "query_count_equal": true,
+      "query_payloads_equal": true,
+      "world": "maze-32-32-2__s09__n32__pause_range_2to5"
+    },
+    {
+      "completion_times_equal": true,
+      "makespan_equal": true,
+      "physical_profiles_equal": true,
+      "query_count_equal": true,
+      "query_payloads_equal": true,
+      "world": "maze-32-32-2__s09__n32__speed_shift_065"
+    },
+    {
+      "completion_times_equal": true,
+      "makespan_equal": true,
+      "physical_profiles_equal": true,
+      "query_count_equal": true,
+      "query_payloads_equal": true,
+      "world": "maze-32-32-2__s09__n32__stable"
+    },
+    {
+      "completion_times_equal": true,
+      "makespan_equal": true,
+      "physical_profiles_equal": true,
+      "query_count_equal": true,
+      "query_payloads_equal": true,
+      "world": "random-32-32-10__s08__n32__pause_range_2to5"
+    },
+    {
+      "completion_times_equal": true,
+      "makespan_equal": true,
+      "physical_profiles_equal": true,
+      "query_count_equal": true,
+      "query_payloads_equal": true,
+      "world": "random-32-32-10__s08__n32__speed_shift_065"
+    },
+    {
+      "completion_times_equal": true,
+      "makespan_equal": true,
+      "physical_profiles_equal": true,
+      "query_count_equal": true,
+      "query_payloads_equal": true,
+      "world": "random-32-32-10__s08__n32__stable"
+    },
+    {
+      "completion_times_equal": true,
+      "makespan_equal": true,
+      "physical_profiles_equal": true,
+      "query_count_equal": true,
+      "query_payloads_equal": true,
+      "world": "random-32-32-10__s09__n32__pause_range_2to5"
+    },
+    {
+      "completion_times_equal": true,
+      "makespan_equal": true,
+      "physical_profiles_equal": true,
+      "query_count_equal": true,
+      "query_payloads_equal": true,
+      "world": "random-32-32-10__s09__n32__speed_shift_065"
+    },
+    {
+      "completion_times_equal": true,
+      "makespan_equal": true,
+      "physical_profiles_equal": true,
+      "query_count_equal": true,
+      "query_payloads_equal": true,
+      "world": "random-32-32-10__s09__n32__stable"
+    },
+    {
+      "completion_times_equal": true,
+      "makespan_equal": true,
+      "physical_profiles_equal": true,
+      "query_count_equal": true,
+      "query_payloads_equal": true,
+      "world": "warehouse-10-20-10-2-1__s08__n32__pause_range_2to5"
+    },
+    {
+      "completion_times_equal": true,
+      "makespan_equal": true,
+      "physical_profiles_equal": true,
+      "query_count_equal": true,
+      "query_payloads_equal": true,
+      "world": "warehouse-10-20-10-2-1__s08__n32__speed_shift_065"
+    },
+    {
+      "completion_times_equal": true,
+      "makespan_equal": true,
+      "physical_profiles_equal": true,
+      "query_count_equal": true,
+      "query_payloads_equal": true,
+      "world": "warehouse-10-20-10-2-1__s08__n32__stable"
+    },
+    {
+      "completion_times_equal": true,
+      "makespan_equal": true,
+      "physical_profiles_equal": true,
+      "query_count_equal": true,
+      "query_payloads_equal": true,
+      "world": "warehouse-10-20-10-2-1__s09__n32__pause_range_2to5"
+    },
+    {
+      "completion_times_equal": true,
+      "makespan_equal": true,
+      "physical_profiles_equal": true,
+      "query_count_equal": true,
+      "query_payloads_equal": true,
+      "world": "warehouse-10-20-10-2-1__s09__n32__speed_shift_065"
+    },
+    {
+      "completion_times_equal": true,
+      "makespan_equal": true,
+      "physical_profiles_equal": true,
+      "query_count_equal": true,
+      "query_payloads_equal": true,
+      "world": "warehouse-10-20-10-2-1__s09__n32__stable"
+    }
+  ],
+  "reviewed_utc": "2026-10-05T07:27:19.848065+00:00",
+  "risks": [
+    "New author-call totals by arm depend on cross-arm exact cache reuse and execution order; not a speed comparison.",
+    "Same query policy/cap/count does not imply identical later query recipients/payloads after execution diverges.",
+    "This review spot-checks saved model binding and does not replace the existing complete independent physical/mathematical audits.",
+    "Point/event simulation is not ROS, robot footprint or production query charging.",
+    "Zero final benefit in these18 pairs is evidence for this registration, not proof that position information can never help."
+  ],
+  "scope": [
+    "read-only source and registered source pins",
+    "18 primary pair physical/profile/query/receipt equality",
+    "one saved predictor-to-author-model row binding",
+    "specified maze raw event wait absorption",
+    "existing 13 negative-control coverage inspection"
+  ],
+  "source_pin_results": {
+    "PUBLIC_SCHEMA.json": true,
+    "THREE_ROUTE_DECISION.md": true,
+    "data/CASES.json": true,
+    "data/REGISTERED_MATRIX.json": true,
+    "engine.py": true,
+    "evidence.py": true,
+    "inherited:R18/engine.py": true,
+    "inherited:R18/policies.py": true,
+    "model/MODEL.json": true,
+    "model/PROVENANCE.json": true,
+    "model/predictor.py": true,
+    "position_model/MODEL.json": true,
+    "position_model/MODEL_FREEZE.json": true,
+    "position_model/PROVENANCE.json": true,
+    "position_model/VALIDATION.json": true,
+    "position_model/end_predictor.py": true,
+    "position_model/predictor.py": true,
+    "r0/INDEPENDENT_DENSE_JOINT_AUDIT.json": true,
+    "r0/VALIDATION.json": true,
+    "run_study.py": true,
+    "solver_adapter.py": true,
+    "structural.py": true
+  },
+  "source_pins_count": 22,
+  "status": "PASS_WITH_SCOPE"
+}

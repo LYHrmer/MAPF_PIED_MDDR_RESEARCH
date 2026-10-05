@@ -1,0 +1,925 @@
+{
+  "actual_author_calls": 7,
+  "audit_path": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/sadg_fusion_20261005_r20/solver_failure_review/FAILURE_PAYLOAD_AUDIT.json",
+  "audit_sha256": "0a54be5e31d3573bd4f1400d781a79c985cdc795650100d40bf9351c3242656d",
+  "audited_episodes": 90,
+  "cached_failure_records": 1,
+  "failed_attempt_records": 8,
+  "independently_verified": true,
+  "inputs": [
+    {
+      "candidate_changed_groups": [],
+      "level": "material_ge_0.001",
+      "max_bound_violation": 0.0,
+      "max_integrality_violation": 0.0,
+      "max_row_violation": 14.393846153846185,
+      "model_ref": {
+        "path": "objects/07/07e2b3d54de79849b729c28395de21c909be38b9d54d52fae893f3cc45771d3a.json.gz",
+        "raw_bytes": 1680682,
+        "schema": "r19-cas-ref-v1",
+        "sha256": "07e2b3d54de79849b729c28395de21c909be38b9d54d52fae893f3cc45771d3a"
+      },
+      "occurrences": [
+        {
+          "cache_reused": false,
+          "episode": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/sadg_fusion_20261005_r20/episodes/maze-32-32-2__s08__n32__speed_shift_065/history_structural/episode.json",
+          "gate": 6,
+          "new_author_calls": 1
+        }
+      ],
+      "parent_retained": true,
+      "semantic_key": "2451f09dc96532632f45e6bf44172e192251a2f58619636a6314870df2ff4208",
+      "status": "OPTIMAL",
+      "violated_row_status_domains": {
+        "completed_only": 529,
+        "includes_uncompleted": 40
+      },
+      "violated_row_types": {
+        "fixed_type2": 243,
+        "type1_sequence": 189,
+        "vertex_duration": 137
+      },
+      "worst_rows": [
+        {
+          "constant": -0.01,
+          "kind": "type1_sequence",
+          "lhs": "-14.3938461538461860",
+          "name": "v_28_54_g_to_v_28_55_s",
+          "row_index": 2770,
+          "sense": ">",
+          "status_domain": "includes_uncompleted",
+          "terms": {
+            "v_28_54_g": -1.0,
+            "v_28_55_s": 1.0
+          },
+          "vertex_statuses": {
+            "v_28_54": "STAGED",
+            "v_28_55": "STAGED"
+          },
+          "violation": "14.3938461538461860"
+        },
+        {
+          "constant": -0.01,
+          "kind": "type1_sequence",
+          "lhs": "-14.3938461538461860",
+          "name": "v_3_53_g_to_v_3_54_s",
+          "row_index": 2887,
+          "sense": ">",
+          "status_domain": "includes_uncompleted",
+          "terms": {
+            "v_3_53_g": -1.0,
+            "v_3_54_s": 1.0
+          },
+          "vertex_statuses": {
+            "v_3_53": "STAGED",
+            "v_3_54": "STAGED"
+          },
+          "violation": "14.3938461538461860"
+        },
+        {
+          "constant": -0.01,
+          "kind": "fixed_type2",
+          "lhs": "-14.3938461538461860",
+          "name": "sw_nan_v_28_54_g_to_v_3_54_s",
+          "row_index": 7078,
+          "sense": ">",
+          "status_domain": "includes_uncompleted",
+          "terms": {
+            "v_28_54_g": -1.0,
+            "v_3_54_s": 1.0
+          },
+          "vertex_statuses": {
+            "v_28_54": "STAGED",
+            "v_3_54": "STAGED"
+          },
+          "violation": "14.3938461538461860"
+        },
+        {
+          "constant": -0.01,
+          "kind": "fixed_type2",
+          "lhs": "-9.350769230769260",
+          "name": "sw_nan_v_5_44_g_to_v_16_43_s",
+          "row_index": 7790,
+          "sense": ">",
+          "status_domain": "includes_uncompleted",
+          "terms": {
+            "v_16_43_s": 1.0,
+            "v_5_44_g": -1.0
+          },
+          "vertex_statuses": {
+            "v_16_43": "STAGED",
+            "v_5_44": "IN_PROGRESS"
+          },
+          "violation": "9.350769230769260"
+        },
+        {
+          "constant": -1.266410256410257,
+          "kind": "vertex_duration",
+          "lhs": "-9.350769230769257",
+          "name": "v_26_54_s_to_v_26_54_g",
+          "row_index": 1067,
+          "sense": ">",
+          "status_domain": "includes_uncompleted",
+          "terms": {
+            "v_26_54_g": 1.0,
+            "v_26_54_s": -1.0
+          },
+          "vertex_statuses": {
+            "v_26_54": "STAGED"
+          },
+          "violation": "9.350769230769257"
+        }
+      ]
+    },
+    {
+      "candidate_changed_groups": [
+        "dg_agent16_13"
+      ],
+      "level": "material_ge_0.001",
+      "max_bound_violation": 0.0,
+      "max_integrality_violation": 0.0,
+      "max_row_violation": 37.72830988118133,
+      "model_ref": {
+        "path": "objects/f2/f20706f15957ab038a1b3029ed9598e9c57f7978879a97adabe01591762be4c3.json.gz",
+        "raw_bytes": 1615267,
+        "schema": "r19-cas-ref-v1",
+        "sha256": "f20706f15957ab038a1b3029ed9598e9c57f7978879a97adabe01591762be4c3"
+      },
+      "occurrences": [
+        {
+          "cache_reused": false,
+          "episode": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/sadg_fusion_20261005_r20/episodes/maze-32-32-2__s08__n32__pause_range_2to5/ewma_structural/episode.json",
+          "gate": 16,
+          "new_author_calls": 1
+        }
+      ],
+      "parent_retained": true,
+      "semantic_key": "2691713cae6cfcb4326c55a61ec107808991d3b64056214d96b7f08108c9e51c",
+      "status": "OPTIMAL",
+      "violated_row_status_domains": {
+        "completed_only": 2676,
+        "includes_uncompleted": 8
+      },
+      "violated_row_types": {
+        "fixed_type2": 1457,
+        "type1_sequence": 642,
+        "vertex_duration": 585
+      },
+      "worst_rows": [
+        {
+          "constant": -1.042966160229639,
+          "kind": "vertex_duration",
+          "lhs": "-37.7283098811813350",
+          "name": "v_21_62_s_to_v_21_62_g",
+          "row_index": 862,
+          "sense": ">",
+          "status_domain": "includes_uncompleted",
+          "terms": {
+            "v_21_62_g": 1.0,
+            "v_21_62_s": -1.0
+          },
+          "vertex_statuses": {
+            "v_21_62": "STAGED"
+          },
+          "violation": "37.7283098811813350"
+        },
+        {
+          "constant": -0.01,
+          "kind": "type1_sequence",
+          "lhs": "-30.969025350238490",
+          "name": "v_26_59_g_to_v_26_60_s",
+          "row_index": 2701,
+          "sense": ">",
+          "status_domain": "completed_only",
+          "terms": {
+            "v_26_59_g": -1.0,
+            "v_26_60_s": 1.0
+          },
+          "vertex_statuses": {
+            "v_26_59": "COMPLETED",
+            "v_26_60": "COMPLETED"
+          },
+          "violation": "30.969025350238490"
+        },
+        {
+          "constant": -0.01,
+          "kind": "fixed_type2",
+          "lhs": "-29.280745599030310",
+          "name": "sw_nan_v_17_44_g_to_v_26_61_s",
+          "row_index": 5223,
+          "sense": ">",
+          "status_domain": "completed_only",
+          "terms": {
+            "v_17_44_g": -1.0,
+            "v_26_61_s": 1.0
+          },
+          "vertex_statuses": {
+            "v_17_44": "COMPLETED",
+            "v_26_61": "COMPLETED"
+          },
+          "violation": "29.280745599030310"
+        },
+        {
+          "constant": -0.01,
+          "kind": "fixed_type2",
+          "lhs": "-29.280745599030290",
+          "name": "sw_nan_v_17_43_g_to_v_26_60_s",
+          "row_index": 5222,
+          "sense": ">",
+          "status_domain": "completed_only",
+          "terms": {
+            "v_17_43_g": -1.0,
+            "v_26_60_s": 1.0
+          },
+          "vertex_statuses": {
+            "v_17_43": "COMPLETED",
+            "v_26_60": "COMPLETED"
+          },
+          "violation": "29.280745599030290"
+        },
+        {
+          "constant": -0.01,
+          "kind": "fixed_type2",
+          "lhs": "-27.011085338005320",
+          "name": "sw_nan_v_17_45_g_to_v_26_62_s",
+          "row_index": 5224,
+          "sense": ">",
+          "status_domain": "completed_only",
+          "terms": {
+            "v_17_45_g": -1.0,
+            "v_26_62_s": 1.0
+          },
+          "vertex_statuses": {
+            "v_17_45": "COMPLETED",
+            "v_26_62": "COMPLETED"
+          },
+          "violation": "27.011085338005320"
+        }
+      ]
+    },
+    {
+      "candidate_changed_groups": [
+        "dg_agent16_13"
+      ],
+      "level": "material_ge_0.001",
+      "max_bound_violation": 0.0,
+      "max_integrality_violation": 0.0,
+      "max_row_violation": 37.72830988118133,
+      "model_ref": {
+        "path": "objects/4b/4b2241d019efd4c981605f12f9aad28c9bfb67502c9903bb8ef61b60854430d7.json.gz",
+        "raw_bytes": 1626639,
+        "schema": "r19-cas-ref-v1",
+        "sha256": "4b2241d019efd4c981605f12f9aad28c9bfb67502c9903bb8ef61b60854430d7"
+      },
+      "occurrences": [
+        {
+          "cache_reused": false,
+          "episode": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/sadg_fusion_20261005_r20/episodes/maze-32-32-2__s08__n32__pause_range_2to5/history_structural/episode.json",
+          "gate": 15,
+          "new_author_calls": 1
+        }
+      ],
+      "parent_retained": true,
+      "semantic_key": "6d7aa2b3558e75a58e8746922043cf158b2158ee21060b973dfc3bb90ef31583",
+      "status": "OPTIMAL",
+      "violated_row_status_domains": {
+        "completed_only": 2512,
+        "includes_uncompleted": 14
+      },
+      "violated_row_types": {
+        "fixed_type2": 1364,
+        "type1_sequence": 604,
+        "vertex_duration": 558
+      },
+      "worst_rows": [
+        {
+          "constant": -2.2726242389826328,
+          "kind": "vertex_duration",
+          "lhs": "-37.7283098811813348",
+          "name": "v_21_62_s_to_v_21_62_g",
+          "row_index": 862,
+          "sense": ">",
+          "status_domain": "includes_uncompleted",
+          "terms": {
+            "v_21_62_g": 1.0,
+            "v_21_62_s": -1.0
+          },
+          "vertex_statuses": {
+            "v_21_62": "STAGED"
+          },
+          "violation": "37.7283098811813348"
+        },
+        {
+          "constant": -0.01,
+          "kind": "type1_sequence",
+          "lhs": "-33.177862116632810",
+          "name": "v_29_28_g_to_v_29_29_s",
+          "row_index": 2814,
+          "sense": ">",
+          "status_domain": "completed_only",
+          "terms": {
+            "v_29_28_g": -1.0,
+            "v_29_29_s": 1.0
+          },
+          "vertex_statuses": {
+            "v_29_28": "COMPLETED",
+            "v_29_29": "COMPLETED"
+          },
+          "violation": "33.177862116632810"
+        },
+        {
+          "constant": -0.01,
+          "kind": "fixed_type2",
+          "lhs": "-33.0539183414146550",
+          "name": "sw_nan_v_22_39_g_to_v_4_40_s",
+          "row_index": 6131,
+          "sense": ">",
+          "status_domain": "completed_only",
+          "terms": {
+            "v_22_39_g": -1.0,
+            "v_4_40_s": 1.0
+          },
+          "vertex_statuses": {
+            "v_22_39": "COMPLETED",
+            "v_4_40": "COMPLETED"
+          },
+          "violation": "33.0539183414146550"
+        },
+        {
+          "constant": -0.01,
+          "kind": "fixed_type2",
+          "lhs": "-33.053918341414640",
+          "name": "sw_nan_v_22_38_g_to_v_4_39_s",
+          "row_index": 6130,
+          "sense": ">",
+          "status_domain": "completed_only",
+          "terms": {
+            "v_22_38_g": -1.0,
+            "v_4_39_s": 1.0
+          },
+          "vertex_statuses": {
+            "v_22_38": "COMPLETED",
+            "v_4_39": "COMPLETED"
+          },
+          "violation": "33.053918341414640"
+        },
+        {
+          "constant": -0.01,
+          "kind": "fixed_type2",
+          "lhs": "-33.053918341414630",
+          "name": "sw_nan_v_22_37_g_to_v_4_38_s",
+          "row_index": 6129,
+          "sense": ">",
+          "status_domain": "completed_only",
+          "terms": {
+            "v_22_37_g": -1.0,
+            "v_4_38_s": 1.0
+          },
+          "vertex_statuses": {
+            "v_22_37": "COMPLETED",
+            "v_4_38": "COMPLETED"
+          },
+          "violation": "33.053918341414630"
+        }
+      ]
+    },
+    {
+      "candidate_changed_groups": [
+        "dg_agent16_13"
+      ],
+      "level": "material_ge_0.001",
+      "max_bound_violation": 0.0,
+      "max_integrality_violation": 0.0,
+      "max_row_violation": 37.72830988118133,
+      "model_ref": {
+        "path": "objects/95/959505d18941ac7a6d2214657930d72a0fbe9847e8a1016476b1b33bc76d720e.json.gz",
+        "raw_bytes": 1622071,
+        "schema": "r19-cas-ref-v1",
+        "sha256": "959505d18941ac7a6d2214657930d72a0fbe9847e8a1016476b1b33bc76d720e"
+      },
+      "occurrences": [
+        {
+          "cache_reused": false,
+          "episode": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/sadg_fusion_20261005_r20/episodes/maze-32-32-2__s08__n32__pause_range_2to5/ewma_structural/episode.json",
+          "gate": 15,
+          "new_author_calls": 1
+        }
+      ],
+      "parent_retained": true,
+      "semantic_key": "88813ad049d3e1fc9506243d5f0cea53e22b03245fc792cd6a78103ef340fd88",
+      "status": "OPTIMAL",
+      "violated_row_status_domains": {
+        "completed_only": 2724,
+        "includes_uncompleted": 17
+      },
+      "violated_row_types": {
+        "fixed_type2": 1521,
+        "type1_sequence": 635,
+        "vertex_duration": 585
+      },
+      "worst_rows": [
+        {
+          "constant": -1.042966160229639,
+          "kind": "vertex_duration",
+          "lhs": "-37.7283098811813350",
+          "name": "v_21_62_s_to_v_21_62_g",
+          "row_index": 862,
+          "sense": ">",
+          "status_domain": "includes_uncompleted",
+          "terms": {
+            "v_21_62_g": 1.0,
+            "v_21_62_s": -1.0
+          },
+          "vertex_statuses": {
+            "v_21_62": "STAGED"
+          },
+          "violation": "37.7283098811813350"
+        },
+        {
+          "constant": -0.01,
+          "kind": "type1_sequence",
+          "lhs": "-37.542091594983530",
+          "name": "v_9_54_g_to_v_9_55_s",
+          "row_index": 3261,
+          "sense": ">",
+          "status_domain": "completed_only",
+          "terms": {
+            "v_9_54_g": -1.0,
+            "v_9_55_s": 1.0
+          },
+          "vertex_statuses": {
+            "v_9_54": "COMPLETED",
+            "v_9_55": "COMPLETED"
+          },
+          "violation": "37.542091594983530"
+        },
+        {
+          "constant": -5.7801373699715075,
+          "kind": "vertex_duration",
+          "lhs": "-28.0390881383784175",
+          "name": "v_26_57_s_to_v_26_57_g",
+          "row_index": 1070,
+          "sense": ">",
+          "status_domain": "completed_only",
+          "terms": {
+            "v_26_57_g": 1.0,
+            "v_26_57_s": -1.0
+          },
+          "vertex_statuses": {
+            "v_26_57": "COMPLETED"
+          },
+          "violation": "28.0390881383784175"
+        },
+        {
+          "constant": -1.01,
+          "kind": "vertex_duration",
+          "lhs": "-24.58000134720013740",
+          "name": "v_2_41_s_to_v_2_41_g",
+          "row_index": 739,
+          "sense": ">",
+          "status_domain": "completed_only",
+          "terms": {
+            "v_2_41_g": 1.0,
+            "v_2_41_s": -1.0
+          },
+          "vertex_statuses": {
+            "v_2_41": "COMPLETED"
+          },
+          "violation": "24.58000134720013740"
+        },
+        {
+          "constant": -0.01,
+          "kind": "fixed_type2",
+          "lhs": "-24.097285245338790",
+          "name": "sw_nan_v_17_44_g_to_v_26_61_s",
+          "row_index": 5223,
+          "sense": ">",
+          "status_domain": "completed_only",
+          "terms": {
+            "v_17_44_g": -1.0,
+            "v_26_61_s": 1.0
+          },
+          "vertex_statuses": {
+            "v_17_44": "COMPLETED",
+            "v_26_61": "COMPLETED"
+          },
+          "violation": "24.097285245338790"
+        }
+      ]
+    },
+    {
+      "candidate_changed_groups": [
+        "dg_agent16_13"
+      ],
+      "level": "material_ge_0.001",
+      "max_bound_violation": 0.0,
+      "max_integrality_violation": 0.0,
+      "max_row_violation": 35.15102646707927,
+      "model_ref": {
+        "path": "objects/5f/5f6f0936e41acd5a2ddc97a3d44915418b6c1e84fe75852a9386c77a0ca95ff7.json.gz",
+        "raw_bytes": 1616659,
+        "schema": "r19-cas-ref-v1",
+        "sha256": "5f6f0936e41acd5a2ddc97a3d44915418b6c1e84fe75852a9386c77a0ca95ff7"
+      },
+      "occurrences": [
+        {
+          "cache_reused": false,
+          "episode": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/sadg_fusion_20261005_r20/episodes/maze-32-32-2__s08__n32__pause_range_2to5/learned_position_structural/episode.json",
+          "gate": 15,
+          "new_author_calls": 1
+        }
+      ],
+      "parent_retained": true,
+      "semantic_key": "a04ae907fdd1978b1f8b2228bf7a63af98bd7583176a7a1e70d6d97ab44c9ad6",
+      "status": "OPTIMAL",
+      "violated_row_status_domains": {
+        "completed_only": 2771,
+        "includes_uncompleted": 6
+      },
+      "violated_row_types": {
+        "fixed_type2": 1529,
+        "type1_sequence": 651,
+        "vertex_duration": 597
+      },
+      "worst_rows": [
+        {
+          "constant": -0.01,
+          "kind": "fixed_type2",
+          "lhs": "-35.151026467079270",
+          "name": "sw_nan_v_22_42_g_to_v_4_43_s",
+          "row_index": 6134,
+          "sense": ">",
+          "status_domain": "completed_only",
+          "terms": {
+            "v_22_42_g": -1.0,
+            "v_4_43_s": 1.0
+          },
+          "vertex_statuses": {
+            "v_22_42": "COMPLETED",
+            "v_4_43": "COMPLETED"
+          },
+          "violation": "35.151026467079270"
+        },
+        {
+          "constant": -0.01,
+          "kind": "fixed_type2",
+          "lhs": "-35.151026467079260",
+          "name": "sw_nan_v_22_41_g_to_v_4_42_s",
+          "row_index": 6133,
+          "sense": ">",
+          "status_domain": "completed_only",
+          "terms": {
+            "v_22_41_g": -1.0,
+            "v_4_42_s": 1.0
+          },
+          "vertex_statuses": {
+            "v_22_41": "COMPLETED",
+            "v_4_42": "COMPLETED"
+          },
+          "violation": "35.151026467079260"
+        },
+        {
+          "constant": -0.01,
+          "kind": "type1_sequence",
+          "lhs": "-33.177862116632810",
+          "name": "v_29_28_g_to_v_29_29_s",
+          "row_index": 2814,
+          "sense": ">",
+          "status_domain": "completed_only",
+          "terms": {
+            "v_29_28_g": -1.0,
+            "v_29_29_s": 1.0
+          },
+          "vertex_statuses": {
+            "v_29_28": "COMPLETED",
+            "v_29_29": "COMPLETED"
+          },
+          "violation": "33.177862116632810"
+        },
+        {
+          "constant": -0.01,
+          "kind": "fixed_type2",
+          "lhs": "-33.0539183414146550",
+          "name": "sw_nan_v_22_39_g_to_v_4_40_s",
+          "row_index": 6131,
+          "sense": ">",
+          "status_domain": "completed_only",
+          "terms": {
+            "v_22_39_g": -1.0,
+            "v_4_40_s": 1.0
+          },
+          "vertex_statuses": {
+            "v_22_39": "COMPLETED",
+            "v_4_40": "COMPLETED"
+          },
+          "violation": "33.0539183414146550"
+        },
+        {
+          "constant": -0.01,
+          "kind": "fixed_type2",
+          "lhs": "-33.053918341414640",
+          "name": "sw_nan_v_22_38_g_to_v_4_39_s",
+          "row_index": 6130,
+          "sense": ">",
+          "status_domain": "completed_only",
+          "terms": {
+            "v_22_38_g": -1.0,
+            "v_4_39_s": 1.0
+          },
+          "vertex_statuses": {
+            "v_22_38": "COMPLETED",
+            "v_4_39": "COMPLETED"
+          },
+          "violation": "33.053918341414640"
+        }
+      ]
+    },
+    {
+      "candidate_changed_groups": [
+        "dg_agent16_13"
+      ],
+      "level": "material_ge_0.001",
+      "max_bound_violation": 0.0,
+      "max_integrality_violation": 0.0,
+      "max_row_violation": 36.21278166065347,
+      "model_ref": {
+        "path": "objects/a4/a4d319f9fbe8240c1e40c917c3142223b27286b30229ff8f20a44b0c92171385.json.gz",
+        "raw_bytes": 1616931,
+        "schema": "r19-cas-ref-v1",
+        "sha256": "a4d319f9fbe8240c1e40c917c3142223b27286b30229ff8f20a44b0c92171385"
+      },
+      "occurrences": [
+        {
+          "cache_reused": false,
+          "episode": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/sadg_fusion_20261005_r20/episodes/maze-32-32-2__s08__n32__pause_range_2to5/learned_linear_structural/episode.json",
+          "gate": 15,
+          "new_author_calls": 1
+        },
+        {
+          "cache_reused": true,
+          "episode": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/sadg_fusion_20261005_r20/episodes/maze-32-32-2__s08__n32__pause_range_2to5/learned_no_query/episode.json",
+          "gate": 15,
+          "new_author_calls": 0
+        }
+      ],
+      "parent_retained": true,
+      "semantic_key": "a8adad5ed7dd8f35514cc2dec8c2f3cded600e2d1636bbc993106b1e8754bac9",
+      "status": "OPTIMAL",
+      "violated_row_status_domains": {
+        "completed_only": 2781,
+        "includes_uncompleted": 6
+      },
+      "violated_row_types": {
+        "fixed_type2": 1538,
+        "type1_sequence": 651,
+        "vertex_duration": 598
+      },
+      "worst_rows": [
+        {
+          "constant": -0.01,
+          "kind": "fixed_type2",
+          "lhs": "-36.212781660653470",
+          "name": "sw_nan_v_22_42_g_to_v_4_43_s",
+          "row_index": 6134,
+          "sense": ">",
+          "status_domain": "completed_only",
+          "terms": {
+            "v_22_42_g": -1.0,
+            "v_4_43_s": 1.0
+          },
+          "vertex_statuses": {
+            "v_22_42": "COMPLETED",
+            "v_4_43": "COMPLETED"
+          },
+          "violation": "36.212781660653470"
+        },
+        {
+          "constant": -0.01,
+          "kind": "fixed_type2",
+          "lhs": "-36.212781660653460",
+          "name": "sw_nan_v_22_41_g_to_v_4_42_s",
+          "row_index": 6133,
+          "sense": ">",
+          "status_domain": "completed_only",
+          "terms": {
+            "v_22_41_g": -1.0,
+            "v_4_42_s": 1.0
+          },
+          "vertex_statuses": {
+            "v_22_41": "COMPLETED",
+            "v_4_42": "COMPLETED"
+          },
+          "violation": "36.212781660653460"
+        },
+        {
+          "constant": -0.01,
+          "kind": "type1_sequence",
+          "lhs": "-34.239617310207010",
+          "name": "v_29_28_g_to_v_29_29_s",
+          "row_index": 2814,
+          "sense": ">",
+          "status_domain": "completed_only",
+          "terms": {
+            "v_29_28_g": -1.0,
+            "v_29_29_s": 1.0
+          },
+          "vertex_statuses": {
+            "v_29_28": "COMPLETED",
+            "v_29_29": "COMPLETED"
+          },
+          "violation": "34.239617310207010"
+        },
+        {
+          "constant": -0.01,
+          "kind": "fixed_type2",
+          "lhs": "-34.1628922723942260",
+          "name": "sw_nan_v_22_44_g_to_v_4_45_s",
+          "row_index": 6136,
+          "sense": ">",
+          "status_domain": "completed_only",
+          "terms": {
+            "v_22_44_g": -1.0,
+            "v_4_45_s": 1.0
+          },
+          "vertex_statuses": {
+            "v_22_44": "COMPLETED",
+            "v_4_45": "COMPLETED"
+          },
+          "violation": "34.1628922723942260"
+        },
+        {
+          "constant": -0.01,
+          "kind": "fixed_type2",
+          "lhs": "-34.162892272394210",
+          "name": "sw_nan_v_22_43_g_to_v_4_44_s",
+          "row_index": 6135,
+          "sense": ">",
+          "status_domain": "completed_only",
+          "terms": {
+            "v_22_43_g": -1.0,
+            "v_4_44_s": 1.0
+          },
+          "vertex_statuses": {
+            "v_22_43": "COMPLETED",
+            "v_4_44": "COMPLETED"
+          },
+          "violation": "34.162892272394210"
+        }
+      ]
+    },
+    {
+      "candidate_changed_groups": [
+        "dg_agent16_13"
+      ],
+      "level": "material_ge_0.001",
+      "max_bound_violation": 0.0,
+      "max_integrality_violation": 0.0,
+      "max_row_violation": 37.72830988118133,
+      "model_ref": {
+        "path": "objects/f5/f5d66c019a63458bcfa616f607a4671493b51752f1e3075dc439f7bb11ecf4a5.json.gz",
+        "raw_bytes": 1616717,
+        "schema": "r19-cas-ref-v1",
+        "sha256": "f5d66c019a63458bcfa616f607a4671493b51752f1e3075dc439f7bb11ecf4a5"
+      },
+      "occurrences": [
+        {
+          "cache_reused": false,
+          "episode": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/sadg_fusion_20261005_r20/episodes/maze-32-32-2__s08__n32__pause_range_2to5/history_structural/episode.json",
+          "gate": 16,
+          "new_author_calls": 1
+        }
+      ],
+      "parent_retained": true,
+      "semantic_key": "cc0c6497ae713e198c202ce0894b027550504c96dbc6b08a098ecb320c1685b4",
+      "status": "OPTIMAL",
+      "violated_row_status_domains": {
+        "completed_only": 2839,
+        "includes_uncompleted": 8
+      },
+      "violated_row_types": {
+        "fixed_type2": 1564,
+        "type1_sequence": 659,
+        "vertex_duration": 624
+      },
+      "worst_rows": [
+        {
+          "constant": -2.2726242389826328,
+          "kind": "vertex_duration",
+          "lhs": "-37.7283098811813348",
+          "name": "v_21_62_s_to_v_21_62_g",
+          "row_index": 862,
+          "sense": ">",
+          "status_domain": "includes_uncompleted",
+          "terms": {
+            "v_21_62_g": 1.0,
+            "v_21_62_s": -1.0
+          },
+          "vertex_statuses": {
+            "v_21_62": "STAGED"
+          },
+          "violation": "37.7283098811813348"
+        },
+        {
+          "constant": -0.01,
+          "kind": "type1_sequence",
+          "lhs": "-33.177862116632810",
+          "name": "v_29_28_g_to_v_29_29_s",
+          "row_index": 2814,
+          "sense": ">",
+          "status_domain": "completed_only",
+          "terms": {
+            "v_29_28_g": -1.0,
+            "v_29_29_s": 1.0
+          },
+          "vertex_statuses": {
+            "v_29_28": "COMPLETED",
+            "v_29_29": "COMPLETED"
+          },
+          "violation": "33.177862116632810"
+        },
+        {
+          "constant": -0.01,
+          "kind": "fixed_type2",
+          "lhs": "-33.0539183414146550",
+          "name": "sw_nan_v_22_39_g_to_v_4_40_s",
+          "row_index": 6132,
+          "sense": ">",
+          "status_domain": "completed_only",
+          "terms": {
+            "v_22_39_g": -1.0,
+            "v_4_40_s": 1.0
+          },
+          "vertex_statuses": {
+            "v_22_39": "COMPLETED",
+            "v_4_40": "COMPLETED"
+          },
+          "violation": "33.0539183414146550"
+        },
+        {
+          "constant": -0.01,
+          "kind": "fixed_type2",
+          "lhs": "-33.053918341414640",
+          "name": "sw_nan_v_22_38_g_to_v_4_39_s",
+          "row_index": 6131,
+          "sense": ">",
+          "status_domain": "completed_only",
+          "terms": {
+            "v_22_38_g": -1.0,
+            "v_4_39_s": 1.0
+          },
+          "vertex_statuses": {
+            "v_22_38": "COMPLETED",
+            "v_4_39": "COMPLETED"
+          },
+          "violation": "33.053918341414640"
+        },
+        {
+          "constant": -0.01,
+          "kind": "fixed_type2",
+          "lhs": "-33.053918341414630",
+          "name": "sw_nan_v_22_37_g_to_v_4_38_s",
+          "row_index": 6130,
+          "sense": ">",
+          "status_domain": "completed_only",
+          "terms": {
+            "v_22_37_g": -1.0,
+            "v_4_38_s": 1.0
+          },
+          "vertex_statuses": {
+            "v_22_37": "COMPLETED",
+            "v_4_38": "COMPLETED"
+          },
+          "violation": "33.053918341414630"
+        }
+      ]
+    }
+  ],
+  "new_native_calls": 0,
+  "record_severity": {
+    "material_ge_0.001": 8
+  },
+  "records_by_arm": {
+    "ewma_structural": 2,
+    "history_structural": 3,
+    "learned_linear_structural": 1,
+    "learned_no_query": 1,
+    "learned_position_structural": 1
+  },
+  "records_by_world": {
+    "maze-32-32-2__s08__n32__pause_range_2to5": 7,
+    "maze-32-32-2__s08__n32__speed_shift_065": 1
+  },
+  "scope": "post-hoc failure evidence classification, not solver root-cause proof or tolerance retuning",
+  "script_sha256": "f91a8cb4213bcc15071b34fda00e4d133178738197f1bfaec8ab66ace04d265a",
+  "unique_failed_inputs": 7,
+  "unique_model_violated_row_counts": {
+    "fixed_type2": 9216,
+    "type1_sequence": 4031,
+    "vertex_duration": 3684
+  },
+  "unique_severity": {
+    "material_ge_0.001": 7
+  },
+  "unique_with_candidate_orientation_change": 6,
+  "unique_with_uncompleted_violated_rows": 7
+}

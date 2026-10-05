@@ -1,0 +1,376 @@
+{
+  "passed": true,
+  "reviewer": "main-route implementer independently reviews third route, not blind",
+  "new_native": 0,
+  "new_physical_execution": 0,
+  "author_source_pins": 43,
+  "phase1": [
+    {
+      "id": "p01_unit_edges_current_delay_valid_schedule",
+      "returned": "17",
+      "enumerated_best": "17",
+      "all_directions": [
+        {
+          "bits": [
+            0
+          ],
+          "edges": [
+            [
+              9,
+              14,
+              1
+            ],
+            [
+              3,
+              7,
+              1
+            ]
+          ],
+          "objective": "29"
+        },
+        {
+          "bits": [
+            1
+          ],
+          "edges": [
+            [
+              9,
+              14,
+              1
+            ],
+            [
+              8,
+              2,
+              1
+            ]
+          ],
+          "objective": "17"
+        }
+      ],
+      "matches_optimum": true,
+      "constructor_failure_preserved": true
+    },
+    {
+      "id": "p02_future_integer_duration_valid_schedule",
+      "returned": "16",
+      "enumerated_best": "16",
+      "all_directions": [
+        {
+          "bits": [
+            0
+          ],
+          "edges": [
+            [
+              9,
+              14,
+              1
+            ],
+            [
+              3,
+              7,
+              1
+            ]
+          ],
+          "objective": "26"
+        },
+        {
+          "bits": [
+            1
+          ],
+          "edges": [
+            [
+              9,
+              14,
+              1
+            ],
+            [
+              8,
+              2,
+              1
+            ]
+          ],
+          "objective": "16"
+        }
+      ],
+      "matches_optimum": true,
+      "constructor_failure_preserved": true
+    },
+    {
+      "id": "p03_fractional_type1_counterexample_valid_schedule",
+      "returned": "101/16",
+      "enumerated_best": "99/16",
+      "all_directions": [
+        {
+          "bits": [
+            0
+          ],
+          "edges": [
+            [
+              9,
+              14,
+              1
+            ],
+            [
+              3,
+              7,
+              1
+            ]
+          ],
+          "objective": "101/16"
+        },
+        {
+          "bits": [
+            1
+          ],
+          "edges": [
+            [
+              9,
+              14,
+              1
+            ],
+            [
+              8,
+              2,
+              1
+            ]
+          ],
+          "objective": "99/16"
+        }
+      ],
+      "matches_optimum": false,
+      "constructor_failure_preserved": true
+    },
+    {
+      "id": "p04_nonunit_type2_counterexample_valid_schedule",
+      "returned": "31",
+      "enumerated_best": "28",
+      "all_directions": [
+        {
+          "bits": [
+            0
+          ],
+          "edges": [
+            [
+              9,
+              14,
+              1
+            ],
+            [
+              3,
+              7,
+              8
+            ]
+          ],
+          "objective": "31"
+        },
+        {
+          "bits": [
+            1
+          ],
+          "edges": [
+            [
+              9,
+              14,
+              1
+            ],
+            [
+              8,
+              2,
+              8
+            ]
+          ],
+          "objective": "28"
+        }
+      ],
+      "matches_optimum": false,
+      "constructor_failure_preserved": true
+    }
+  ],
+  "phase3": [
+    {
+      "arm": "gses_surrogate",
+      "guard_independently_passed": true,
+      "changed_groups": [
+        "dg_agent0_0"
+      ],
+      "start_end_pairs": 12,
+      "completion_times": {
+        "agent0": "24",
+        "agent1": "35/4"
+      },
+      "sum_completion": "131/4",
+      "makespan": "24",
+      "continuous": {
+        "exact_minimum_squared_distance": "625/68",
+        "minimum_time": "104/17",
+        "closed_overlap_pairs_including_endpoints": 13,
+        "scope": "all affine point segments including waits and goal holds; no finite footprint claim"
+      },
+      "native_orientations": [
+        {
+          "bits": [
+            0
+          ],
+          "edges": [
+            [
+              4,
+              10,
+              1
+            ]
+          ],
+          "objective": "36"
+        },
+        {
+          "bits": [
+            1
+          ],
+          "edges": [
+            [
+              11,
+              3,
+              1
+            ]
+          ],
+          "objective": "24"
+        }
+      ],
+      "surrogate_objective": "24",
+      "new_position_innovation_against_available_history": "0 for this stable fixture; no no-query physical arm was run"
+    },
+    {
+      "arm": "keep_parent_control",
+      "guard_independently_passed": true,
+      "changed_groups": [],
+      "start_end_pairs": 12,
+      "completion_times": {
+        "agent0": "24",
+        "agent1": "20"
+      },
+      "sum_completion": "44",
+      "makespan": "24",
+      "continuous": {
+        "exact_minimum_squared_distance": "4",
+        "minimum_time": "12",
+        "closed_overlap_pairs_including_endpoints": 15,
+        "scope": "all affine point segments including waits and goal holds; no finite footprint claim"
+      }
+    }
+  ],
+  "same_state_and_query_before_adoption": true,
+  "cas_refs_checked": 27,
+  "scope_limit": "Integer unit-gap author ordering surrogate is not same objective as continuous action END-to-START scheduling. Positive result demonstrates graph adoption, not new POSITION information value.",
+  "source_pins": {
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/valid_nominal_schedule/PHASE1_REGISTRATION.json": "cfc64c2bdba19a018fd1f9cabfd449a6854dd6c33e318b1683743c83e6542d82",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_online_adoption_20261004_r13/author_online": "b5e918f8913baca71a7b189e21e76bf3d7bfb41ec8042ee5ab306a52f109700c",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/Algorithm/Astar.h": "82b8b82f6d1330e98680510740f857d3169df447b3f0d094018c7d998560e5c2",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/Algorithm/OpenList.h": "0ab525487794c0ef669bab82de7098493a7f00eeb6926e60ea4ec458c53a641e",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/Algorithm/SearchNode.h": "28f5ae3664f899e91c4c94f65719786a464017f3e034cd38c125764edd0aef06",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/Algorithm/graph_algo.h": "4df170184783b3b0fede00817c64fcd6b0aecc1ba81ca5e1c97e9af37a504e8e",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/Algorithm/heuristic.h": "14b59d461f34447b84ea8843c3bc7a121e105098020ec1e7a8a87223ebb60094",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/ConstrainedGraph/CBS/CBS.h": "88b9716e2cf64839bf8810643857df28d187e2c75c6dda45f3288c0769432dd8",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/ConstrainedGraph/CBS/CBSHeuristic.h": "d374601282c0354d54543232665e2e34514f5bd66a39018b1df468eb536b4e81",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/ConstrainedGraph/CBS/CBSNode.h": "2b0ea3d77098813643090dfcf6106547dfa714b896886ea00efac92864df998d",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/ConstrainedGraph/CBS/Conflict.h": "3d567c3ece91b4dc6eeccdc1b7f1fc134ff7edc075d759c86c822e351dcd73ee",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/ConstrainedGraph/CBS/ConstraintPropagation.h": "af2a8538eb195f8453041d727ca67ee9058dc9ab7fc95191ffe5ee5fc569aa4c",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/ConstrainedGraph/CBS/CorridorReasoning.h": "ba247cff9beed24c488aac02ae6a6ffb752b7670117255907e100ed64e68e393",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/ConstrainedGraph/CBS/IncrementalPairwiseMutexPropagation.h": "76c54689adc8b916a25d7a5b36be54e0eb50ef2494a616c150e29fd9a52969c9",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/ConstrainedGraph/CBS/MDD.h": "609ed02786041574e25b09ac9cb5cdec1fb65be56ba7a9d14f347bc0a5c112f0",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/ConstrainedGraph/CBS/MutexReasoning.h": "7a34eec71c2784540dc46ad4af9a74d61b4d2cab6873beb6bdd30d633da6c341",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/ConstrainedGraph/CBS/RectangleReasoning.h": "2aa7171b9e1b44be09e2ab4712a94d3a2ebb7288e53d32764441e48ec69ab7d6",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/ConstrainedGraph/ConstraintTable.h": "16300e6f8de4babb9d2ecc90b5d51e8dee1eaa521e5dd2e41ee493023b811a58",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/ConstrainedGraph/DelayInstance.h": "bed03240f3cef0b1d0f6db8338ea9cac400476bbe8fed627452ee99bfabbfc29",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/ConstrainedGraph/Instance.h": "f0ae9b13caae88c9d15d9b54e39b40f1e1aedc0fbbf5599c298c982575d74c41",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/ConstrainedGraph/PathTable.h": "a4e8f751a46c5738e889c3a19fd2a1a1e5f332e0a8070840d653998f3a634539",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/ConstrainedGraph/ReservationTable.h": "d036e213b2e558bd14379aef2e987852df447fcc3d6a6d4f2d35c7202afa1115",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/ConstrainedGraph/SIPP.h": "a2b2889a09fa1355d46e4ff10a79d737e4919425109bc118b6f8850a892b26ba",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/ConstrainedGraph/SingleAgentSolver.h": "a420bfde6e241a5071d427d9167d90f98d8306240656bb8605950dcaf27fb427",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/ConstrainedGraph/SpaceTimeAStar.h": "5e74e44e08cbff554fe0858a56181487af80555787fe0a2c0d0dfa55513b8f44",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/ConstrainedGraph/common.h": "ee73c480f19a408bab13c333bb4b48f24379c5b8b7c07cbd8dde0497b5cbae33",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/ConstrainedGraph/constrained_graph_solver.h": "b1f923ec4aa4b760916b5fa701f29de11ecfa6b6507c0acb7931d9203ba554ab",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/MILP/milp_solver.h": "3577b60076082c226dcbd4ed9b23ac4a97b777e0306ea1639165654bdbd50543",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/define.h": "cc3ac358a429c3436cada559db0196df29db6947846d336463df972f7d6acabf",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/graph/edge_manager.h": "33a0f29b3c8030fecacff6a7e88b4ffde88c186a0e307dd709ec18d883e14d1d",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/graph/generate_graph.h": "b1acb0e5e44b19568c95d0625ca5c8d4bb8a4a5329552d74d6c3bc230c9bf50d",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/graph/graph.h": "e0a8ce02146ce054d5bade7358f5dac45e20f8c1d0deb2eb232c0224ba0c1407",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/group/group.h": "0f451c28b58596ed116aa0d48e9dcf3180d01299e8195cf9429897ef01664575",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/nlohmann/json.hpp": "299d810cca7f545b4d89637d8d918e6d886904567850297484e457fac310e3a1",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/simulation/new_simulator.h": "78983830f6e9557faa9ce80b724ef1973b87a6caf5e7113e6894d4d206c371d0",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/simulation/simulator.h": "3187bb362d4a62d1e2d9951926f45098fc6367bb4f0af05019efcb7835fec909",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/solver.h": "596346fbf7eae65a1cb4993660cc93588d785554737e07c798b9ab190486a80b",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/util/Timer.h": "932eab457fe143dfed5cb19d679eb96a19c73ca7cbf89715a9a45282b387f4af",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/inc/util/util.h": "86d77d162cf41751492c5b9d04f6ee233f579d2108b5406016349e68577a6a47",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/src/Algorithm/Astar.cpp": "8159173af078a1ddee87c556d2ada6b12c12f5669d04ec94d0c24e72f279b81a",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/src/Algorithm/graph_algo.cpp": "f699431f98be927b04fb8752a745a5202662a6b806827276f0a839f7778c86ff",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/src/Algorithm/heuristic.cpp": "049f6530dd273924c3149007360d1ff5abae1b0d2e2fcf1dc829b6dff687f42c",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/src/graph/generate_graph.cpp": "9828470e575abb48509f13b70869a98440053d0cb8905af318f46d585a379332",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/src/graph/graph.cpp": "1fcacee4d3146c20ff44cad6cdb1da605f392e01f84d17fb21294beb02258dde",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/gses_author_preflight_20261003_r9/vendor/STPG/src/util/Timer.cpp": "1ad8020c23e7401ad274f21288f600774e7b9e630800d7b6e0b4bb88db75ae44",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_online_adoption_20261004_r13/author_online.cpp": "6d2bae29cb869b8c275213b59795379330a7fafa73db8644380567a2459929e5",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/valid_nominal_schedule/inputs/p01_unit_edges_current_delay_valid_schedule.json": "83fd31c632ddb5171d2f204db307a000a6104fa40711a6051b3648a8b6328a38",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/valid_nominal_schedule/calls/p01_unit_edges_current_delay_valid_schedule/receipt.json": "374c1332a0b846fd0e23437fe8d530bd94371892974a1b7c70dc377e28b7ea7c",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/valid_nominal_schedule/calls/p01_unit_edges_current_delay_valid_schedule/author_reply.json": "f25da44ce04596c997c1ec665472a18f29b0e24c3729e0cd98e44d1598f734e5",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/inputs/p01_unit_edges_current_delay.json": "62af9b0867aea4249a26c9f14e2ed47f1e012757de45adad6b96fd830409b986",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/calls/p01_unit_edges_current_delay/receipt.json": "725f2dd90576f5def833e752c588905c3ce0c3a5b643fe000f9e713e2d048f54",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/valid_nominal_schedule/inputs/p02_future_integer_duration_valid_schedule.json": "181181a832b6aff9c126ad71c4fb707b04636cc20d25e81f4bfe7adc9e3d3699",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/valid_nominal_schedule/calls/p02_future_integer_duration_valid_schedule/receipt.json": "263876fe90e0e045d12b0a8d2f85f699ed63d9a6ed00be261111658ba6466f23",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/valid_nominal_schedule/calls/p02_future_integer_duration_valid_schedule/author_reply.json": "b5c25f32353551acfccb92b5077b2ad7faf18866578239fec18ac327d13420c5",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/inputs/p02_future_integer_duration.json": "9a43c8fa15fd308e8773bb8c6fe72159bc8752ac6e5d60536017b6ece9ddc79e",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/calls/p02_future_integer_duration/receipt.json": "99094df5f42e18d2d761ca9d4472feddfca967fd6956a6c0dd9d2c377941ddfa",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/valid_nominal_schedule/inputs/p03_fractional_type1_counterexample_valid_schedule.json": "9fb9cd0423be1f824658ac491e69c141e6bc34a91deb04d0c52231521de14551",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/valid_nominal_schedule/calls/p03_fractional_type1_counterexample_valid_schedule/receipt.json": "7f6e6aee8bda20dac4e369c43405b15854e59d0d58483dfb10040f8907d00ec4",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/valid_nominal_schedule/calls/p03_fractional_type1_counterexample_valid_schedule/author_reply.json": "d0e481e193c6107c83bc6b603f9c8068ffb1a94da30bebd0f09731f14cd8d432",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/inputs/p03_fractional_type1_counterexample.json": "5cc00fc5a41adcb1ea60ac5fd284a1b7be704c933663cb8775b3f6742889e268",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/calls/p03_fractional_type1_counterexample/receipt.json": "a4dbbc88c4cf9c534989e71d008620c9d97d7e70c6823cc9491978675d936cf6",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/valid_nominal_schedule/inputs/p04_nonunit_type2_counterexample_valid_schedule.json": "dc8ab50ca3d9bca1f7339fc867a6c1c6682204eef9225ec09e4f81f93cc5900d",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/valid_nominal_schedule/calls/p04_nonunit_type2_counterexample_valid_schedule/receipt.json": "487b8b01d887b1b605a1dbd61aa7bef22e8a7118f8d59668d700b9de6e73a6d8",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/valid_nominal_schedule/calls/p04_nonunit_type2_counterexample_valid_schedule/author_reply.json": "71c351d2bf866de3fefe2b6bbb2fd5515a6215f13bb96147dfa39fcacd92c36f",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/inputs/p04_nonunit_type2_counterexample.json": "87d542553d6aebc129d350bd69e710ec30fd16ffe2fb0424af71c2626e9346cc",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/calls/p04_nonunit_type2_counterexample/receipt.json": "8648ea1c207ed3304e2071d99aab76d64cbff1b96960421af0bef55d375543a3",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/PHASE3_REGISTRATION.json": "202cf5215cb0425302a051b67dc36fd3ba0b5c9ae47a7cc823c8e18551e2734a",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/common_engine.py": "ff8fb11d2f9754d5588d7fc8b3fde6b7f7dadac611ec6811aed0898b237bb39f",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/fraction_oracle.py": "861829c2db5e81d8c4825a24ef2a63978aed54670d30954dc8a28697894cfea8",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/phase3_switch.py": "bfecca79173eed47130f277f0bd08ff5c212b0909710d7c713725e46797dfa61",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/positive_switch/gses_surrogate/episode.json": "a7fe4b1d3e7da722d1b84ed558b30238de26334c105187a60f74a6e1f307860a",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/positive_switch/keep_parent_control/episode.json": "55c846d87bab0745c695e1a2c5e6cc1008e627ba5eed7844678586ee8769a8b3",
+    "/home/lyh/.cache/mapf_research/sadg-controller-c2626d9/sadg_controller/sadg_controller/core/geometry.py": "ad41b76d52f6ec6f80767c8ee942ee0e1f466404604ba28c23b0adb2b02cb812",
+    "/home/lyh/.cache/mapf_research/sadg-controller-c2626d9/sadg_controller/sadg_controller/mapf/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/lyh/.cache/mapf_research/sadg-controller-c2626d9/sadg_controller/sadg_controller/mapf/plan.py": "0feed885d9272fe665f2e3c58cbaa082c14509235071c5f31dbda38f9b6f6990",
+    "/home/lyh/.cache/mapf_research/sadg-controller-c2626d9/sadg_controller/sadg_controller/mapf/plan_tuple.py": "c644be9be1a736d43bfc0d17acc2b86375f174279d0b5cdd185cf8785fc1251d",
+    "/home/lyh/.cache/mapf_research/sadg-controller-c2626d9/sadg_controller/sadg_controller/mapf/problem.py": "461e2024ba1c57799cb55c85713d35f764cb3109459989a98e64dd4fce4279e1",
+    "/home/lyh/.cache/mapf_research/sadg-controller-c2626d9/sadg_controller/sadg_controller/mapf/roadmap.py": "3317899016b323145fc2f66efae3f59585fed45c17b613cdbc352b0f1058e6e4",
+    "/home/lyh/.cache/mapf_research/sadg-controller-c2626d9/sadg_controller/sadg_controller/mapf/roadmap_location.py": "167202f11d022889fae34cc5505c0c2ec53d6605890982ec46a48280f58d0e7e",
+    "/home/lyh/.cache/mapf_research/sadg-controller-c2626d9/sadg_controller/sadg_controller/sadg/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/lyh/.cache/mapf_research/sadg-controller-c2626d9/sadg_controller/sadg_controller/sadg/compiler.py": "57fb2d8cb36393128739b81a79bd4c37130e5d1344fe5eaca04f489c312b438c",
+    "/home/lyh/.cache/mapf_research/sadg-controller-c2626d9/sadg_controller/sadg_controller/sadg/dependency.py": "9ed3dd59d9e1acd5d85c0f2826ef8b4c7d02867f30a0cb0e5c2d3b8724dbd12d",
+    "/home/lyh/.cache/mapf_research/sadg-controller-c2626d9/sadg_controller/sadg_controller/sadg/dependency_group.py": "f7f48ea9d197aab0ae26a6a9bf8fa3e9c5b615fb4155561fa8b5de3d215ce7ba",
+    "/home/lyh/.cache/mapf_research/sadg-controller-c2626d9/sadg_controller/sadg_controller/sadg/dependency_switch.py": "3360e3ac4ce139888e8d1400af80d5cc5a3ddd38cdd864f479046201f4e36f10",
+    "/home/lyh/.cache/mapf_research/sadg-controller-c2626d9/sadg_controller/sadg_controller/sadg/location.py": "03f1fc79333f288d76feb26bb8e9d41022efba2a51a7268c3579cd8770cc0911",
+    "/home/lyh/.cache/mapf_research/sadg-controller-c2626d9/sadg_controller/sadg_controller/sadg/sadg.py": "35b32854bb197f0d23308d773a9065b424536b4591127b1afb9a7e2b5bd8407d",
+    "/home/lyh/.cache/mapf_research/sadg-controller-c2626d9/sadg_controller/sadg_controller/sadg/status.py": "471369df9d69dfe2ccbf127a0518dbf481ef6e101b171226a5e8dcd2d91c0597",
+    "/home/lyh/.cache/mapf_research/sadg-controller-c2626d9/sadg_controller/sadg_controller/sadg/vertex.py": "5eea1a3eb9106a27579fc0bf74cb895bcd0376fe63378a718fefd81e52ae15ba",
+    "/home/lyh/.cache/mapf_research/sadg-controller-c2626d9/sadg_controller/sadg_controller/sadg/visualizer.py": "62424163220ac762e5759c7d6eca14175a608d197bc38b8248c324efcde6f4c2",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/sadg_preflight_20261004_r16/isolated_patch/compiler.py": "1bebcd960fdc51678ba404da5136192b4407164fbeecb302e45dd38a6cb0c43a",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/sadg_preflight_20261004_r16/isolated_patch/r16_guard_group.py": "3f6cb328c32ff947f04e3aab304cb1996881652cd4c7b1733248ed5fb6d234f1",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/sadg_structural_20261005_r19/PUBLIC_SCHEMA.json": "fcac1d639f65d511c92be04b8d8fc6462e9a84a2b88b3aa2cd894921834593dd",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/sadg_structural_20261005_r19/engine.py": "55c5e99ce1e17c82e73f41545ca536cf6b449eefbda648d1f5e1b027ad1de7c2",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/sadg_structural_20261005_r19/evidence.py": "ff083aca9c28c664b7602fa6e94b32ae11d337f263861af166a6883ee723a048",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/sadg_structural_20261005_r19/solver_adapter.py": "01a4af7e236a874c876e539bd87f5e4518bafac57b8de1e63cfad83945a1c6fc",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/sadg_structural_20261005_r19/structural.py": "96f6179e41f26241764d93229a915716cfe5cbb97ea821122707942b7da22a4c",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/common_evidence/objects/1d/1d285426dcc4830417757f1684a1717271a7bdc7ec4442ade3e220c6dad690f1.json.gz": "f2efdacd432d3fd8e634f1ac1f7e81385da02fdd9b87713e6ae3d68daeb8fe35",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/common_evidence/objects/5e/5e5abab6a9dd077a4393e3ae7e46b1dc1e7916ae27939f46cfd13108fc9e217d.json.gz": "99661abf24d2af1a6a69be6bc2d0f0dfb1c69a25e569852badff72cf9c8709f4",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/common_evidence/objects/00/00a5df958fb9efcd98580e8106a59df71e91aa4e41e8dc7d418edff84331310d.json.gz": "1595760848469565e4985681e27aa319f3e4cff9d4cb79eabb74806e22bf692f",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/common_evidence/objects/4f/4f37e3b51271db40f9f45773f66964d23bc2b5db427824bfb40231952f54ce04.json.gz": "881375b8864f84e05181a88dd5a60a388f447da8a9e62b61a37ba9a5f0fdc4b6",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/common_evidence/objects/7a/7abe8eea1cc4ffb8d0ddf38c50ca3e7955c8f81c94a92e27dd5d97866f5733b9.json.gz": "2d2d58c26fe5e05ae7f45e3b25a5e1045126bd7e1df06406ba54607ec9c79ebb",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/common_evidence/objects/ed/ed4c6fc212ee987e45586f62dcb6f5312f2315efa7c48056eae4a981cf41f8e2.json.gz": "60630fbc94731e2a520ec2e99d7f3dde5e5ae66eb5ff34f13b30df2a8685212b",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/common_evidence/objects/f2/f2a0b2fca9aed4def1b10452d2423dfe93d08b3c9b5b9a97cdbaec04d3f7a82f.json.gz": "36c6bb2de5aeb3de5bf4797fff4a03d1b0cc3078a9ebe38988b52b362dedcf65",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/common_evidence/objects/da/da3ba3558eac55a733ab824165fc13146251c1f1cc031cad656a931aeb7a8f11.json.gz": "fb81702a4c0882ec17ce9d57c24b2cc259532dfe807c5bcd860e0daa22ec77ae",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/positive_switch/gses_surrogate/native/gate_0/input.json": "9934c10c76ee04747e598775185ba84c53eb430e89f1deefe390beb1404d6039",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/positive_switch/gses_surrogate/native/gate_0/reply.json": "0d5959de0aaf536fcec6966567585efde4a5711b2075847c0f1d1191b08e1fea",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/positive_switch/gses_surrogate/native/gate_0/receipt.json": "11d9183732a9c3cf97832349440acde2f65b5bc7c7ef9041c431d99f33030195",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/common_evidence/objects/19/1976a4ed0ab8d6ccf9b62959cbf99cd86c8ca63c9b6862862213e42d13ebf849.json.gz": "70d3c446003a16fba3fbab80ef6a0a3ea0ed0a03e03e43767e6dab1fb087b295",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/common_evidence/objects/a5/a579065a8f890c5f0c6bdfa5c55c74a2e1ce19c9490a8d99de11bbfebe6f7ed5.json.gz": "3e6e27c6dbfbf25ca60693186f09a38b013e4d7ebc140b4b39e3eed074539c5d",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/common_evidence/objects/aa/aad277a749abb177122e0c63e36c6386fbc8514eba699f4d5901d0ff4d024134.json.gz": "99d3ae19eba32848b4ef194db57bf5ee2ed5bdb1b110cbf54d394bb7135291cb",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/valid_nominal_schedule/PHASE1_RESULTS.json": "03023686e9d481bf36ac9cfb9d882868520f6a81063fa0e9c485cb922a7f7256",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/gses_common_20261005_r20/PHASE3_RESULTS.json": "820e14c3bd5492f685eaa3dafbe2f1b25ac33e361f6471e1121993f949bc3c0f"
+  }
+}
