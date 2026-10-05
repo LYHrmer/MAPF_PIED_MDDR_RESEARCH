@@ -1,5 +1,9 @@
 # 学习辅助进度查询：探索说明
 
+2026-10-05 R20：**位置条件剩余时长模型已实际训练、冻结并在新90臂执行矩阵部署。** [模型报告](position_conditioned_20261005_r20/REPORT.md)、[共同状态二级评分](position_conditioned_20261005_r20/secondary_r20/REPORT.md)。仅用R18的54个TRAIN世界，821捕获、711合法送达训练；新头条件化当前仍未END，未来动作保留R19 END预测。
+
+新18世界共同参考中15有查询，281合法送达点上MSE .866442→.737566、MAE .488850→.431722；独立复算通过。二级分析在主启动后单独登记，没有重训或选模。模型确实更准，但[完整执行](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/sadg_fusion_20261005_r20/REPORT.md)主要18配对最终完成时刻及查询全相同，1世界仅中间动作提前；学习融合也未超EWMA或相同学习模型不查询。继续保留模型作为预测器，下一学习合法决策的完整完成时间价值，不能以MSE代替规划收益。所有R19旧工件保持，R20完整发布清单固定52文件。
+
 2026-10-05 R19：**条件剩余动作时长模型已训练、冻结并接入新 SADG 执行；独立核验 324 次完整 episode 全部通过。** 仅用 R18 的 54 个 TRAIN world，各取一条 history_rule 轨迹，按地图/scenario 族交叉拟合；模型只读取当前 START 已耗时和已交付 END 历史，物理依赖等待不计入动作时长。[模型与训练报告](conditional_duration_20261005_r19/REPORT.md)、[冻结收据](conditional_duration_20261005_r19/MODEL_FREEZE.json)和[冻结模型](conditional_duration_20261005_r19/MODEL.json)保留实际拟合与边界。
 
 [新 TEST 二级预测评分](conditional_duration_20261005_r19/heldout_r19/REPORT.md)在 42 个共同 history_no_query 轨迹上比较全部 9 个冻结模式：学习模型的动作开始 MSE 最低，但执行中剩余时长的 MSE/MAE 未超过 EWMA 生存条件参考；核心 active MSE 分别为 0.457975 / 0.445077，N64 为 0.388652 / 0.381322。该评分在主注册后单列，没有重训、调参或重复科学实验，不代替完整调度效果。[独立执行审核](conditional_duration_20261005_r19/review_r19/INTEGRATION_REVIEW.md)与[324 次最终审核收据](conditional_duration_20261005_r19/review_r19/COMPLETED_AUDIT.json)完成公共输入、条件数学、POSITION 覆盖、结构选择、CAS 和完整物理轨迹重建，合计 221,381,042 项逻辑检查；检查数不是实验样本数。另有 18 个初始规划失败矩阵行由执行分支保留，求解失败与父图回退不被物理完成掩盖。以下旧轮次全部保留。

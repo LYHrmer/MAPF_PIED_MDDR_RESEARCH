@@ -1,0 +1,22 @@
+{
+  "cohorts": "36 core worlds (6 map/scenario families) and 6 N64 executable worlds (2 families) separately",
+  "expected_worlds": 42,
+  "metrics": "family/world/row macro MAE/MSE/bias at capture, accepted delivery and actual position-consuming solve",
+  "missing_initial_plans": "3 N64 maze worlds remain unavailable; no substitutes",
+  "model_sha256": "9e420e36ae576ccde8cb662f5c636542f223518cde78985a5e2065d59de42855",
+  "modes": [
+    "position_learned",
+    "position_constant",
+    "history_linear",
+    "ewma_linear",
+    "end_learned",
+    "end_ewma_survival",
+    "observed_average"
+  ],
+  "new_physical_or_solver_episodes": 0,
+  "new_training_runs": 0,
+  "registered_utc": "2026-10-05T06:53:10.706039+00:00",
+  "schema": "r20-post-freeze-consumed-r19-diagnostic-v1",
+  "selection": "None; fully frozen model and comparisons. R19 is consumed development data, never a new TEST.",
+  "source": "All R19 completed learned_structural canonical trajectories; one per world"
+}

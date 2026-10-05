@@ -1,0 +1,36 @@
+{
+  "censoring": "Preserve all final reference receipts including failures; missing END recorded as right-censored, not zero/completed; exclude only unavailable labels from prediction error denominators and report them",
+  "cohorts": [
+    "all captured query points",
+    "actually delivered same-occurrence active points",
+    "actual optimizer consumption of latest same-occurrence delivered POSITION"
+  ],
+  "end_model_sha256": "476bea2f6dc8c72312606b37ff83cbd64679602b8c82559e49528e6893ace335",
+  "families": "map \u00d7 scenario, 6 families; three disturbances per family",
+  "frozen_model_bundle_sha256": "b199c804603e0a183c406a75b938a4deacdebd22cfbdde372780f5370f2fb35a",
+  "independent_math_sha256": "1193014334625cf029616b98c1760509fc90c7bb8887345ff1ba07fded4aaeb2",
+  "input": "Same actual paid capture, delivered END history before capture, original nominal, START-relative capture/current age, position and delivery time for every mode",
+  "labels": "Actual future END minus capture/current time only; END never a feature of its current occurrence",
+  "model_sha256": "9e420e36ae576ccde8cb662f5c636542f223518cde78985a5e2065d59de42855",
+  "modes": [
+    "position_learned",
+    "position_constant",
+    "history_linear",
+    "ewma_linear",
+    "end_learned",
+    "end_ewma_survival",
+    "observed_average"
+  ],
+  "new_physical_or_solver_episodes": 0,
+  "new_training_runs": 0,
+  "no_hyperparameter_or_model_change": true,
+  "position_predictor_sha256": "bc7d78615ed992fd9b72a74dbff07936a9efadbdee07dc1cc78ce793befbc726",
+  "primary_metric": "descriptive family/world/row MSE at accepted active delivery; also MAE, bias, per-family/per-world and capture/consumer scores",
+  "reference_arm": "learned_linear_structural",
+  "reference_selection": "Exactly one final registered reference trajectory per each of the 18 worlds; no other policy trajectories",
+  "registered_utc": "2026-10-05T06:57:18.589233+00:00",
+  "schema": "r20-post-main-start-secondary-registration-v1",
+  "scope": "Secondary prediction evaluation; primary complete scheduling outcomes retain priority",
+  "timing": "Registered after main scientific matrix started and after all model freezes, before reading new scientific episode values",
+  "weights": "family then eligible world then row equally; publish world/row coverage and zero-query worlds"
+}

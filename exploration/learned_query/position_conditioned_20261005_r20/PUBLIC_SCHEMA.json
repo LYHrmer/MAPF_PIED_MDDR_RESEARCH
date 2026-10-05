@@ -1,0 +1,68 @@
+{
+  "caller_proofs": [
+    "occurrence and public geometry binding",
+    "START event time and no dependency WAIT inflation",
+    "genuine paid capture/delivery and query payload",
+    "END history capture-time cut",
+    "same occurrence still IN_PROGRESS; no END manufacturing from progress",
+    "future_duration_ratio stays original END-only output"
+  ],
+  "checks": [
+    "finite nonnegative times",
+    "elapsed=captured_elapsed+age",
+    "same occurrence",
+    "actual delivery already occurred",
+    "exact public field allowlist"
+  ],
+  "comparison_modes": [
+    "position_learned",
+    "position_constant",
+    "history_linear",
+    "ewma_linear",
+    "end_learned",
+    "end_ewma_survival",
+    "observed_average"
+  ],
+  "context": {
+    "completed_history": "only same agent ENDs delivered before POSITION capture; each has positive nominal_duration/duration",
+    "elapsed": "current time minus actual START, excluding dependency WAIT",
+    "nominal_duration": "original full action geometric nominal duration >0; never residual-segment nominal",
+    "occurrence_id": "nonempty public occurrence identity; equality only, never feature",
+    "position": {
+      "age": "current minus capture",
+      "captured_elapsed": "capture minus actual START, full action age",
+      "delivered_age": "delivery minus capture, <=age",
+      "occurrence_id": "must match active context occurrence",
+      "progress": "actual delivered capture progress in [0,1]"
+    },
+    "status": "IN_PROGRESS; COMPLETED returns zero without reading other fields; STAGED rejected"
+  },
+  "entrypoint": "position_predictor.PositionPredictor(MODEL.json)(context)",
+  "features": [
+    "log_nominal",
+    "progress",
+    "log_remaining_fraction",
+    "log1p_capture_age_ratio",
+    "log1p_history_count",
+    "log_history_ratio",
+    "log_ewma03_ratio",
+    "log_last_ratio",
+    "history_cv",
+    "log1p_age_excess",
+    "progress_log1p_capture_age_ratio"
+  ],
+  "independent_math_dependencies": [
+    "Python standard library",
+    "SciPy scipy.special.log_ndtr"
+  ],
+  "output": [
+    "remaining_time",
+    "metadata"
+  ],
+  "probability_calibration_claim": false,
+  "runtime_dependencies": [
+    "Python standard library",
+    "end_predictor.py (byte-identical frozen R19 predictor)"
+  ],
+  "schema": "r20-public-position-contract-v1"
+}
