@@ -1,0 +1,94 @@
+{
+  "labels_sha256": "1e7247718fb6decf169cd91ad0bf058454b943cea4e4ea787ac0f359ef5675cd",
+  "model_sha256": "7a4484c8e7bfbc9f0ab49790a031cd0bfeec1703d8a5d0d756eb580c05bc21c0",
+  "no_refit_or_new_episodes": true,
+  "nonzero_complete_outcomes": [
+    {
+      "noquery": {
+        "completed_agents": 16,
+        "makespan": 88.0,
+        "query_count": 12,
+        "restricted_sum_completion": 597.0,
+        "solver_calls": 19,
+        "status": "completed"
+      },
+      "pair_id": "random-32-32-10__s01__n16__speed_shift__g1",
+      "query": {
+        "completed_agents": 16,
+        "makespan": 88.0,
+        "query_count": 13,
+        "restricted_sum_completion": 590.0,
+        "solver_calls": 19,
+        "status": "completed"
+      },
+      "value": 7.0
+    },
+    {
+      "noquery": {
+        "completed_agents": 32,
+        "makespan": 195.0,
+        "query_count": 32,
+        "restricted_sum_completion": 3435.5,
+        "solver_calls": 18,
+        "status": "completed"
+      },
+      "pair_id": "maze-32-32-2__s02__n32__bounded_pause__g1",
+      "query": {
+        "completed_agents": 32,
+        "makespan": 197.0,
+        "query_count": 32,
+        "restricted_sum_completion": 3498.0,
+        "solver_calls": 19,
+        "status": "completed"
+      },
+      "value": -62.5
+    }
+  ],
+  "post_fit_diagnostic_only": true,
+  "training_pairs": 108,
+  "zero_labels": 106,
+  "zero_prediction_reference": {
+    "all_families_same_size": true,
+    "families": {
+      "maze-32-32-2__s01": {
+        "aggregation_weight": 0.16666666666666666,
+        "rows": 18,
+        "zero_prediction_mse": 0.0
+      },
+      "maze-32-32-2__s02": {
+        "aggregation_weight": 0.16666666666666666,
+        "rows": 18,
+        "zero_prediction_mse": 217.01388888888889
+      },
+      "random-32-32-10__s01": {
+        "aggregation_weight": 0.16666666666666666,
+        "rows": 18,
+        "zero_prediction_mse": 2.7222222222222223
+      },
+      "random-32-32-10__s02": {
+        "aggregation_weight": 0.16666666666666666,
+        "rows": 18,
+        "zero_prediction_mse": 0.0
+      },
+      "warehouse-10-20-10-2-1__s01": {
+        "aggregation_weight": 0.16666666666666666,
+        "rows": 18,
+        "zero_prediction_mse": 0.0
+      },
+      "warehouse-10-20-10-2-1__s02": {
+        "aggregation_weight": 0.16666666666666666,
+        "rows": 18,
+        "zero_prediction_mse": 0.0
+      }
+    },
+    "family_mean_mse": 36.62268518518518,
+    "frozen_alpha": 100.0,
+    "frozen_minus_zero_mse": 7.627932153429015,
+    "frozen_selected_LOFO_family_mean_mse": 44.2506173386142,
+    "is_executed_policy": false,
+    "is_external_algorithm": false,
+    "row_mean_mse": 36.62268518518518,
+    "scope": "Pure TRAIN post-fit diagnostic against always predicting value zero. It neither retunes the frozen model nor establishes policy performance.",
+    "used_for_model_selection": false
+  }
+}

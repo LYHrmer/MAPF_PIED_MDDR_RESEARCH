@@ -1,0 +1,59 @@
+{
+  "passed": true,
+  "in_memory_only": true,
+  "native_or_solver_calls": 0,
+  "raw_files_modified": false,
+  "negative_cases": [
+    {
+      "mutation": "budget",
+      "detected_by_required_check": true,
+      "checks": [
+        "total_queries"
+      ]
+    },
+    {
+      "mutation": "private_feature",
+      "detected_by_required_check": true,
+      "checks": [
+        "public_top_level_allowlist"
+      ]
+    },
+    {
+      "mutation": "history",
+      "detected_by_required_check": true,
+      "checks": [
+        "public_history_ratio:agent0"
+      ]
+    },
+    {
+      "mutation": "capture",
+      "detected_by_required_check": true,
+      "checks": [
+        "query_body_hash",
+        "captured_physical_progress"
+      ]
+    },
+    {
+      "mutation": "trajectory_gap",
+      "detected_by_required_check": true,
+      "checks": [
+        "full_time_coverage:agent0",
+        "full_move_time_account:v_0_0"
+      ]
+    },
+    {
+      "mutation": "declared_success",
+      "detected_by_required_check": true,
+      "checks": [
+        "position_continuity:agent0",
+        "on_committed_edge:v_0_0",
+        "on_committed_edge:v_0_0",
+        "position_continuity:agent0",
+        "END_at_goal:v_0_0",
+        "independent_minimum_distance",
+        "independent_collision_presence",
+        "success_requires_collision_free"
+      ]
+    }
+  ]
+}

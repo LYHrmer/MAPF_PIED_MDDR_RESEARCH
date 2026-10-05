@@ -1,0 +1,26 @@
+{
+  "checks": 292,
+  "engine_or_policy_imported": false,
+  "episode": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/sadg_benchmark_20261005_r18/engine_smoke/resident/episode.json",
+  "episode_sha256": "6f9dc0e4a118273838302d022c26723d548a401eae494310a2b016e2cb7c9c25",
+  "errors": [],
+  "limitations": [
+    "No case supplied: geometry binding and complete ECBS path input not independently reconstructed.",
+    "Source pins are checked against available source files; this cannot prove inaccessible build or runtime state.",
+    "Author within_horizon cached-head qualification is source-enforced; all changed candidate heads and DAG are independently checked.",
+    "Private truth is used only to audit final logs; the verifier is never called as an online policy.",
+    "Geometry is continuous point motion, not nonzero body or acceleration certification."
+  ],
+  "passed": true,
+  "recorded_status": "completed",
+  "recorded_success": true,
+  "schema": "r18-independent-episode-audit-v1",
+  "scientific_episode_reruns": 0,
+  "stats": {
+    "collision_examples": [],
+    "collision_free": true,
+    "completed_from_END": 2,
+    "minimum_point_distance": 21.633307652783937,
+    "queries_from_captures": 1
+  }
+}

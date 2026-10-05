@@ -1,0 +1,502 @@
+{
+  "failed_input_groups": [
+    {
+      "all_uncached": true,
+      "arms": {
+        "fixed_update": 1,
+        "history_rule": 1
+      },
+      "calls": 2,
+      "gates": [
+        9
+      ],
+      "max_violation_range": [
+        53.873333333333285,
+        53.873333333333285
+      ],
+      "semantic_key": "104a7287aa695ddec39ab8bf5975c1da4cebc831aabd2ebe048dae0be2e17094",
+      "splits": {
+        "CAL": 2
+      },
+      "status_counts": {
+        "OPTIMAL": 2
+      },
+      "worlds": [
+        "maze-32-32-2__s03__n32__bounded_pause"
+      ]
+    },
+    {
+      "all_uncached": true,
+      "arms": {
+        "history_rule": 1
+      },
+      "calls": 1,
+      "gates": [
+        10
+      ],
+      "max_violation_range": [
+        37.33999999999999,
+        37.33999999999999
+      ],
+      "semantic_key": "7294745cdb1f6bdf7f56a1190ddb43871a870f0d706d80349ed0f4f822972d72",
+      "splits": {
+        "CAL": 1
+      },
+      "status_counts": {
+        "OPTIMAL": 1
+      },
+      "worlds": [
+        "maze-32-32-2__s03__n32__speed_shift"
+      ]
+    },
+    {
+      "all_uncached": true,
+      "arms": {
+        "learned_query": 1
+      },
+      "calls": 1,
+      "gates": [
+        10
+      ],
+      "max_violation_range": [
+        22.480000000000025,
+        22.480000000000025
+      ],
+      "semantic_key": "a486f058f19ea83b63f721dd39d3a649bb990bcfbd931743c9364d45851618a5",
+      "splits": {
+        "CAL": 1
+      },
+      "status_counts": {
+        "OPTIMAL": 1
+      },
+      "worlds": [
+        "maze-32-32-2__s03__n32__speed_shift"
+      ]
+    },
+    {
+      "all_uncached": true,
+      "arms": {
+        "fixed_update": 1,
+        "history_only": 1
+      },
+      "calls": 2,
+      "gates": [
+        10
+      ],
+      "max_violation_range": [
+        22.480000000000025,
+        22.480000000000025
+      ],
+      "semantic_key": "e0519d5f4f4aaf472a776ac1e62213250741557d8308ae71f71668bbee3e9c6f",
+      "splits": {
+        "CAL": 2
+      },
+      "status_counts": {
+        "OPTIMAL": 2
+      },
+      "worlds": [
+        "maze-32-32-2__s03__n32__speed_shift"
+      ]
+    },
+    {
+      "all_uncached": true,
+      "arms": {
+        "dense_position": 1,
+        "fixed_update": 1,
+        "history_only": 1,
+        "history_rule": 1,
+        "learned_query": 1
+      },
+      "calls": 5,
+      "gates": [
+        5
+      ],
+      "max_violation_range": [
+        6.119999999999978,
+        6.119999999999978
+      ],
+      "semantic_key": "e0d3fea3fe04e21d2c0b7bdde00b9caace8d25c861f94f9074430e7f77225294",
+      "splits": {
+        "TEST": 5
+      },
+      "status_counts": {
+        "OPTIMAL": 5
+      },
+      "worlds": [
+        "maze-32-32-2__s04__n32__stable"
+      ]
+    }
+  ],
+  "failed_models_rerun": false,
+  "interpretation": "Solver OPTIMAL status does not imply an accepted feasible model. Failed inputs are not stored as reusable feasible cache hits; identical failed keys can incur repeated real author calls across distinct registered episodes. Physical completion and fallback success are separate from solver acceptance.",
+  "new_scientific_or_solver_episodes": 0,
+  "passed": true,
+  "records": [
+    {
+      "arm": "fixed_update",
+      "cache_reused": false,
+      "episode": "episodes/CAL/maze-32-32-2__s03__n32__bounded_pause/fixed_update/episode.json",
+      "episode_status": "completed",
+      "episode_success": true,
+      "error": null,
+      "exact_parent_graph_retained": true,
+      "failure_categories": [
+        "logged_constraint_residual_rejection"
+      ],
+      "feasible": false,
+      "full_failed_model_payloads": [],
+      "gate_index": 9,
+      "max_bound_violation": 0.0,
+      "max_integrality_violation": 0.0,
+      "max_violation": 53.873333333333285,
+      "new_author_calls": 1,
+      "probe": {},
+      "residual_independently_reconstructed_from_full_model": false,
+      "scope": "Residual/status/error are original logged diagnostics checked against the source-enforced rejection branch. Exact parent retention and resulting complete physical trace are independently audited; absent failed-model payloads are not reconstructed.",
+      "semantic_key": "104a7287aa695ddec39ab8bf5975c1da4cebc831aabd2ebe048dae0be2e17094",
+      "split": "CAL",
+      "status": "OPTIMAL",
+      "time": 116.08333333333331,
+      "world": "maze-32-32-2__s03__n32__bounded_pause"
+    },
+    {
+      "arm": "history_rule",
+      "cache_reused": false,
+      "episode": "episodes/CAL/maze-32-32-2__s03__n32__bounded_pause/history_rule/episode.json",
+      "episode_status": "completed",
+      "episode_success": true,
+      "error": null,
+      "exact_parent_graph_retained": true,
+      "failure_categories": [
+        "logged_constraint_residual_rejection"
+      ],
+      "feasible": false,
+      "full_failed_model_payloads": [],
+      "gate_index": 9,
+      "max_bound_violation": 0.0,
+      "max_integrality_violation": 0.0,
+      "max_violation": 53.873333333333285,
+      "new_author_calls": 1,
+      "probe": {},
+      "residual_independently_reconstructed_from_full_model": false,
+      "scope": "Residual/status/error are original logged diagnostics checked against the source-enforced rejection branch. Exact parent retention and resulting complete physical trace are independently audited; absent failed-model payloads are not reconstructed.",
+      "semantic_key": "104a7287aa695ddec39ab8bf5975c1da4cebc831aabd2ebe048dae0be2e17094",
+      "split": "CAL",
+      "status": "OPTIMAL",
+      "time": 116.08333333333331,
+      "world": "maze-32-32-2__s03__n32__bounded_pause"
+    },
+    {
+      "arm": "fixed_update",
+      "cache_reused": false,
+      "episode": "episodes/CAL/maze-32-32-2__s03__n32__speed_shift/fixed_update/episode.json",
+      "episode_status": "completed",
+      "episode_success": true,
+      "error": null,
+      "exact_parent_graph_retained": true,
+      "failure_categories": [
+        "logged_constraint_residual_rejection"
+      ],
+      "feasible": false,
+      "full_failed_model_payloads": [],
+      "gate_index": 10,
+      "max_bound_violation": 0.0,
+      "max_integrality_violation": 0.0,
+      "max_violation": 22.480000000000025,
+      "new_author_calls": 1,
+      "probe": {},
+      "residual_independently_reconstructed_from_full_model": false,
+      "scope": "Residual/status/error are original logged diagnostics checked against the source-enforced rejection branch. Exact parent retention and resulting complete physical trace are independently audited; absent failed-model payloads are not reconstructed.",
+      "semantic_key": "e0519d5f4f4aaf472a776ac1e62213250741557d8308ae71f71668bbee3e9c6f",
+      "split": "CAL",
+      "status": "OPTIMAL",
+      "time": 127.66666666666664,
+      "world": "maze-32-32-2__s03__n32__speed_shift"
+    },
+    {
+      "arm": "history_only",
+      "cache_reused": false,
+      "episode": "episodes/CAL/maze-32-32-2__s03__n32__speed_shift/history_only/episode.json",
+      "episode_status": "completed",
+      "episode_success": true,
+      "error": null,
+      "exact_parent_graph_retained": true,
+      "failure_categories": [
+        "logged_constraint_residual_rejection"
+      ],
+      "feasible": false,
+      "full_failed_model_payloads": [],
+      "gate_index": 10,
+      "max_bound_violation": 0.0,
+      "max_integrality_violation": 0.0,
+      "max_violation": 22.480000000000025,
+      "new_author_calls": 1,
+      "probe": {},
+      "residual_independently_reconstructed_from_full_model": false,
+      "scope": "Residual/status/error are original logged diagnostics checked against the source-enforced rejection branch. Exact parent retention and resulting complete physical trace are independently audited; absent failed-model payloads are not reconstructed.",
+      "semantic_key": "e0519d5f4f4aaf472a776ac1e62213250741557d8308ae71f71668bbee3e9c6f",
+      "split": "CAL",
+      "status": "OPTIMAL",
+      "time": 127.66666666666664,
+      "world": "maze-32-32-2__s03__n32__speed_shift"
+    },
+    {
+      "arm": "history_rule",
+      "cache_reused": false,
+      "episode": "episodes/CAL/maze-32-32-2__s03__n32__speed_shift/history_rule/episode.json",
+      "episode_status": "completed",
+      "episode_success": true,
+      "error": null,
+      "exact_parent_graph_retained": true,
+      "failure_categories": [
+        "logged_constraint_residual_rejection"
+      ],
+      "feasible": false,
+      "full_failed_model_payloads": [],
+      "gate_index": 10,
+      "max_bound_violation": 0.0,
+      "max_integrality_violation": 0.0,
+      "max_violation": 37.33999999999999,
+      "new_author_calls": 1,
+      "probe": {},
+      "residual_independently_reconstructed_from_full_model": false,
+      "scope": "Residual/status/error are original logged diagnostics checked against the source-enforced rejection branch. Exact parent retention and resulting complete physical trace are independently audited; absent failed-model payloads are not reconstructed.",
+      "semantic_key": "7294745cdb1f6bdf7f56a1190ddb43871a870f0d706d80349ed0f4f822972d72",
+      "split": "CAL",
+      "status": "OPTIMAL",
+      "time": 127.66666666666664,
+      "world": "maze-32-32-2__s03__n32__speed_shift"
+    },
+    {
+      "arm": "learned_query",
+      "cache_reused": false,
+      "episode": "episodes/CAL/maze-32-32-2__s03__n32__speed_shift/learned_query/episode.json",
+      "episode_status": "completed",
+      "episode_success": true,
+      "error": null,
+      "exact_parent_graph_retained": true,
+      "failure_categories": [
+        "logged_constraint_residual_rejection"
+      ],
+      "feasible": false,
+      "full_failed_model_payloads": [],
+      "gate_index": 10,
+      "max_bound_violation": 0.0,
+      "max_integrality_violation": 0.0,
+      "max_violation": 22.480000000000025,
+      "new_author_calls": 1,
+      "probe": {},
+      "residual_independently_reconstructed_from_full_model": false,
+      "scope": "Residual/status/error are original logged diagnostics checked against the source-enforced rejection branch. Exact parent retention and resulting complete physical trace are independently audited; absent failed-model payloads are not reconstructed.",
+      "semantic_key": "a486f058f19ea83b63f721dd39d3a649bb990bcfbd931743c9364d45851618a5",
+      "split": "CAL",
+      "status": "OPTIMAL",
+      "time": 127.66666666666664,
+      "world": "maze-32-32-2__s03__n32__speed_shift"
+    },
+    {
+      "arm": "dense_position",
+      "cache_reused": false,
+      "episode": "episodes/TEST/maze-32-32-2__s04__n32__stable/dense_position/episode.json",
+      "episode_status": "completed",
+      "episode_success": true,
+      "error": null,
+      "exact_parent_graph_retained": true,
+      "failure_categories": [
+        "logged_constraint_residual_rejection"
+      ],
+      "feasible": false,
+      "full_failed_model_payloads": [],
+      "gate_index": 5,
+      "max_bound_violation": 0.0,
+      "max_integrality_violation": 0.0,
+      "max_violation": 6.119999999999978,
+      "new_author_calls": 1,
+      "probe": {},
+      "residual_independently_reconstructed_from_full_model": false,
+      "scope": "Residual/status/error are original logged diagnostics checked against the source-enforced rejection branch. Exact parent retention and resulting complete physical trace are independently audited; absent failed-model payloads are not reconstructed.",
+      "semantic_key": "e0d3fea3fe04e21d2c0b7bdde00b9caace8d25c861f94f9074430e7f77225294",
+      "split": "TEST",
+      "status": "OPTIMAL",
+      "time": 72.75,
+      "world": "maze-32-32-2__s04__n32__stable"
+    },
+    {
+      "arm": "fixed_update",
+      "cache_reused": false,
+      "episode": "episodes/TEST/maze-32-32-2__s04__n32__stable/fixed_update/episode.json",
+      "episode_status": "completed",
+      "episode_success": true,
+      "error": null,
+      "exact_parent_graph_retained": true,
+      "failure_categories": [
+        "logged_constraint_residual_rejection"
+      ],
+      "feasible": false,
+      "full_failed_model_payloads": [],
+      "gate_index": 5,
+      "max_bound_violation": 0.0,
+      "max_integrality_violation": 0.0,
+      "max_violation": 6.119999999999978,
+      "new_author_calls": 1,
+      "probe": {},
+      "residual_independently_reconstructed_from_full_model": false,
+      "scope": "Residual/status/error are original logged diagnostics checked against the source-enforced rejection branch. Exact parent retention and resulting complete physical trace are independently audited; absent failed-model payloads are not reconstructed.",
+      "semantic_key": "e0d3fea3fe04e21d2c0b7bdde00b9caace8d25c861f94f9074430e7f77225294",
+      "split": "TEST",
+      "status": "OPTIMAL",
+      "time": 72.75,
+      "world": "maze-32-32-2__s04__n32__stable"
+    },
+    {
+      "arm": "history_only",
+      "cache_reused": false,
+      "episode": "episodes/TEST/maze-32-32-2__s04__n32__stable/history_only/episode.json",
+      "episode_status": "completed",
+      "episode_success": true,
+      "error": null,
+      "exact_parent_graph_retained": true,
+      "failure_categories": [
+        "logged_constraint_residual_rejection"
+      ],
+      "feasible": false,
+      "full_failed_model_payloads": [],
+      "gate_index": 5,
+      "max_bound_violation": 0.0,
+      "max_integrality_violation": 0.0,
+      "max_violation": 6.119999999999978,
+      "new_author_calls": 1,
+      "probe": {},
+      "residual_independently_reconstructed_from_full_model": false,
+      "scope": "Residual/status/error are original logged diagnostics checked against the source-enforced rejection branch. Exact parent retention and resulting complete physical trace are independently audited; absent failed-model payloads are not reconstructed.",
+      "semantic_key": "e0d3fea3fe04e21d2c0b7bdde00b9caace8d25c861f94f9074430e7f77225294",
+      "split": "TEST",
+      "status": "OPTIMAL",
+      "time": 72.75,
+      "world": "maze-32-32-2__s04__n32__stable"
+    },
+    {
+      "arm": "history_rule",
+      "cache_reused": false,
+      "episode": "episodes/TEST/maze-32-32-2__s04__n32__stable/history_rule/episode.json",
+      "episode_status": "completed",
+      "episode_success": true,
+      "error": null,
+      "exact_parent_graph_retained": true,
+      "failure_categories": [
+        "logged_constraint_residual_rejection"
+      ],
+      "feasible": false,
+      "full_failed_model_payloads": [],
+      "gate_index": 5,
+      "max_bound_violation": 0.0,
+      "max_integrality_violation": 0.0,
+      "max_violation": 6.119999999999978,
+      "new_author_calls": 1,
+      "probe": {},
+      "residual_independently_reconstructed_from_full_model": false,
+      "scope": "Residual/status/error are original logged diagnostics checked against the source-enforced rejection branch. Exact parent retention and resulting complete physical trace are independently audited; absent failed-model payloads are not reconstructed.",
+      "semantic_key": "e0d3fea3fe04e21d2c0b7bdde00b9caace8d25c861f94f9074430e7f77225294",
+      "split": "TEST",
+      "status": "OPTIMAL",
+      "time": 72.75,
+      "world": "maze-32-32-2__s04__n32__stable"
+    },
+    {
+      "arm": "learned_query",
+      "cache_reused": false,
+      "episode": "episodes/TEST/maze-32-32-2__s04__n32__stable/learned_query/episode.json",
+      "episode_status": "completed",
+      "episode_success": true,
+      "error": null,
+      "exact_parent_graph_retained": true,
+      "failure_categories": [
+        "logged_constraint_residual_rejection"
+      ],
+      "feasible": false,
+      "full_failed_model_payloads": [],
+      "gate_index": 5,
+      "max_bound_violation": 0.0,
+      "max_integrality_violation": 0.0,
+      "max_violation": 6.119999999999978,
+      "new_author_calls": 1,
+      "probe": {},
+      "residual_independently_reconstructed_from_full_model": false,
+      "scope": "Residual/status/error are original logged diagnostics checked against the source-enforced rejection branch. Exact parent retention and resulting complete physical trace are independently audited; absent failed-model payloads are not reconstructed.",
+      "semantic_key": "e0d3fea3fe04e21d2c0b7bdde00b9caace8d25c861f94f9074430e7f77225294",
+      "split": "TEST",
+      "status": "OPTIMAL",
+      "time": 72.75,
+      "world": "maze-32-32-2__s04__n32__stable"
+    }
+  ],
+  "science_episode_count": 641,
+  "scopes": {
+    "ALL": {
+      "all_episodes_physically_completed": true,
+      "all_exact_parent_retained": true,
+      "calls": 11,
+      "categories": {
+        "logged_constraint_residual_rejection": 11
+      },
+      "maximum_logged_constraint_violation": 53.873333333333285,
+      "new_author_calls": 11,
+      "status_counts": {
+        "OPTIMAL": 11
+      },
+      "unique_failed_inputs": 5
+    },
+    "CAL": {
+      "all_episodes_physically_completed": true,
+      "all_exact_parent_retained": true,
+      "calls": 6,
+      "categories": {
+        "logged_constraint_residual_rejection": 6
+      },
+      "maximum_logged_constraint_violation": 53.873333333333285,
+      "new_author_calls": 6,
+      "status_counts": {
+        "OPTIMAL": 6
+      },
+      "unique_failed_inputs": 4
+    },
+    "EVALUATION": {
+      "all_episodes_physically_completed": true,
+      "all_exact_parent_retained": true,
+      "calls": 11,
+      "categories": {
+        "logged_constraint_residual_rejection": 11
+      },
+      "maximum_logged_constraint_violation": 53.873333333333285,
+      "new_author_calls": 11,
+      "status_counts": {
+        "OPTIMAL": 11
+      },
+      "unique_failed_inputs": 5
+    },
+    "TEST": {
+      "all_episodes_physically_completed": true,
+      "all_exact_parent_retained": true,
+      "calls": 5,
+      "categories": {
+        "logged_constraint_residual_rejection": 5
+      },
+      "maximum_logged_constraint_violation": 6.119999999999978,
+      "new_author_calls": 5,
+      "status_counts": {
+        "OPTIMAL": 5
+      },
+      "unique_failed_inputs": 1
+    },
+    "TRAIN": {
+      "all_episodes_physically_completed": true,
+      "all_exact_parent_retained": true,
+      "calls": 0,
+      "categories": {},
+      "maximum_logged_constraint_violation": 0.0,
+      "new_author_calls": 0,
+      "status_counts": {},
+      "unique_failed_inputs": 0
+    }
+  }
+}

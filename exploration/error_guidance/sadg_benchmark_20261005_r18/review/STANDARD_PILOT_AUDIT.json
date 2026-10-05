@@ -1,0 +1,26 @@
+{
+  "checks": 16345,
+  "engine_or_policy_imported": false,
+  "episode": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/sadg_benchmark_20261005_r18/engine_smoke/standard_train8/episode.json",
+  "episode_sha256": "d0c06578d7f0e8205260010605910f3db89c9458e94b9b6368e24210e69e8bd5",
+  "errors": [],
+  "limitations": [
+    "Structural pilot has no benchmark RUN_RECEIPT; scientific freeze chronology is not inferred.",
+    "Source pins are checked against available source files; this cannot prove inaccessible build or runtime state.",
+    "Author within_horizon cached-head qualification is source-enforced; all changed candidate heads and DAG are independently checked.",
+    "Private truth is used only to audit final logs; the verifier is never called as an online policy.",
+    "Geometry is continuous point motion, not nonzero body or acceleration certification."
+  ],
+  "passed": true,
+  "recorded_status": "completed",
+  "recorded_success": true,
+  "schema": "r18-independent-episode-audit-v1",
+  "scientific_episode_reruns": 0,
+  "stats": {
+    "collision_examples": [],
+    "collision_free": true,
+    "completed_from_END": 8,
+    "minimum_point_distance": 2.0,
+    "queries_from_captures": 13
+  }
+}
