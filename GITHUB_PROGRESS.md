@@ -2,6 +2,22 @@
 
 [当前状态与下一步](.github/README.md) · [仓库导航](README.md)
 
+<a id="r35-qv2"></a>
+
+## R35/QV2：真实付费回执返回与语义适配（静态交付）
+
+2026-10-08。发现并修复R31完整事件掩码与实际R23 Role≤255边界的不兼容：phase0 radix13、phase1 radix7分别最大168/48，全部218种合法组合通过编译期核对；原上限、四word continuation、输入、供给和空间安全guard保持。不是一次运行失败的事后修补，本轮无科学执行。
+
+真实bridge完成物理事件与ACK后，私有typed producer仅从当前owner/Station的不可变账本形成返回源，核完整确认和CAP/RUN配对；Station核精确C-END暂停/import/请求后接纳。现有Result槽付费读取与消费，原ABI返回到实际guest lifecycle，按注册顺序检查后记录RUN接受/停止观察。保留普通END、WAIT、原查询token和失败前缀；回执不提供安全释放权限，guest到达时间、精确物理END与duration均UNKNOWN。
+
+最终17个guest单元、2个host单元重编链接通过，ELF `54d520694713019cbdcadd8bf1627c47a74ac9f81b503d717dc298119c6a4771`、host `5ec23ab9d591fe4aa6e84ce9007fc53e6b675058296ef00c789cd0401f1e8986`。实际依赖确认使用R35接线与新ELF。按新机器码重生INIT和37节点发布计划，最长34指令、343/356/365界保持；私有kernel字节一致。新普通局部帧2128/80只是局部数，旧259义务/19136小计绑定旧ELF，不冒充新完整栈资格。
+
+既有委派子智能体完成QV2只读解码、QV1接纳桥及四头定点语义核对，18文件/17来源/12实际槽/4Python AST静态核验通过。STOP_OBSERVED不能填成精确ended_at，word格式不能自证真实交付。无日志NOT_RUN、解码词0、模型和训练资格false、因果值null；真实word日志提取端、公共图/账户/完整报价、隔离和成对尾仍UNKNOWN，未实现新候选模型或声称研究有效。
+
+R35/QV2联合3,918项pin、四稿和历史尾文保护通过；保留R34/S3与QV1冻结。只读入口主仓 `implementation_binding_evidence/paid_delivery_return_20261008_r35/verify_delivery.py`；独立树 `receipt_semantics_20261007_qv2/verify_static.py`。主报告与明确输入/二进制/失败保留清单同目录；未来1次接线验收提案为工作270秒+收尾30秒/总300秒尽力wall截止、串行不重试，监督器/资格/授权仍未闭合，不借六槽、Berlin或S3预算，不创建运行目录。
+
+科学host/guest、策略/模型、solver、训练、仿真和机器人运行均0；完整费用及研究有效性UNKNOWN。下一先对新ELF定点补栈/窗口、实际送达日志和公共图/账户生产端，再补完整报价及二维查询资格。主线仍有4验收阶段，本轮仅完成共同接口内的一项必要接入。只提交两份Git进度文档，实现、数据和稿件留本机。
+
 <a id="qv1"></a>
 
 ## QV1：独立查询价值可行性支线（静态交付）

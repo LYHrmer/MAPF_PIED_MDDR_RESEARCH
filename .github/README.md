@@ -1,6 +1,6 @@
 # MAPF 项目当前状态
 
-更新：2026-10-07，R34/S3静态交付与QV1独立支线预检完成。**真实回执有界编码已接入完整host并编译链接，固定ELF又关闭memcpy/memmove两项栈义务；原版BALANCE计量与回执核验入口已实现。** R34/S3联合3,647项pin通过，QV1另冻结20文件/21来源，科学运行0。完整普通栈、付费公共导出、二维主动查询及完整费用仍待闭合。总体CONDITIONAL，尚无“相近完成表现下节省完整真实更新资源”的独立证据。
+更新：2026-10-08，R35/QV2静态交付完成。**修复完整事件掩码与原Role≤255边界的不兼容；真实物理ACK已接入原付费checkpoint返回及guest事实历史，完整guest与host重编链接通过。** R35/QV2联合3,918项pin通过，科学运行0。guest实际日志/到达时间、完整普通栈、当前图/账户、二维主动查询和完整费用仍待闭合。总体CONDITIONAL，尚无“相近完成表现下节省完整真实更新资源”的独立证据。
 
 研究问题保持MAPF、有界空间跟踪误差和有限更新资源；方法主线为代价感知进度查询与安全协调。普通END、WAIT、结构规则和EWMA保留，学习作为辅助。
 
@@ -10,13 +10,29 @@
 
 学校不限制SCI分区或期刊名单，希望期刊有合理质量，争取2026年底前完成稿件并开始投稿；年底不是录用截止。原二区/三区偏好不再作为毕业硬门槛。后续优先验证一项具体任务或完整更新资源收益，10月底检查比较资格与初步作用，主线成立后11月补必要实验并成稿、12月修改首投。此为时间目标，不保证完成或录用；原课题与S1均保持证据资格判断，不自动换题或放宽运行。最新安排存桌面综述`LaTeX综述重构_20260924/毕业导向投稿安排_20261007.md`，本轮无科学运行或保护项变化。
 
+## R35：付费回执返回与原边界兼容修复
+
+源码核对发现：R31完整SERVICE/CAP掩码可超过255，实际R23 Boundary仍拒绝Role>255。例如SERVICE slot0为4096。R35沿原两agent/各六occurrence登记，用phase0 radix13、phase1 radix7编码，最大168/48；全部218种合法组合经编译期核对，原255上限、四word continuation、供给和安全guard不变。
+
+真实bridge ACK且全部事件确认后，typed producer核owner/Station/tick/phase/import，Station在准确C-END暂停接纳；原Result槽付费读取、消费并经原ABI返回。guest仅从真实checkpoint回值接纳、验证顺序和请求，记录实际RUN接受及停止观察。回执不提供安全释放权限；观察END不是精确ended_at，guest实际到达时间与duration保持UNKNOWN。物理成功但guest未确认的失败前缀保留。
+
+最终17个guest单元、2个host单元编译链接通过，ELF `54d52069…`、host `5ec23ab9…`；真实依赖确认选中新Station/Boundary及新ELF绑定。按新ELF重取37节点发布计划，343/356/365界保持，私有kernel原1408字节界保持。完整普通栈未通过；旧R34的259项/19136小计绑定旧ELF，不能转贴，新局部帧2128/80也不是完整界。
+
+联合3,918项pin、四稿与历史尾文保护通过。当前无真实回执/日志，原R32 gate仍WAIT；无训练、策略、host/guest、求解或仿真运行。后续单次接线验收提案已列当前输入/二进制SHA、1次不重试、工作270秒+收尾30秒/总300秒尽力wall上限；监督器与资格未闭合，NOT_AUTHORIZED，不借原六槽或S3预算，不代表效果比较。具体本机 `implementation_binding_evidence/paid_delivery_return_20261008_r35/{REPORT.md,RUN_PLAN.json,RUN_CHECKLIST.md,verify_delivery.py}`。
+
+## QV2：回执语义到查询价值资格
+
+原委派子智能体在独立查询价值工作树完成只读解码审计和QV1接纳桥：18文件、17来源pin、12实际注册槽及4个Python AST核验通过，原QV1冻结保持。严格区分RUN接受、停止观察和guest消费，拒绝把STOP_OBSERVED填为R31精确END历史；即使word格式正确也只是WIRE_DECODED_NOT_AUTH。
+
+无真实日志默认NOT_RUN，解码词0、模型/训练资格false、因果值null。guest内部历史尚无真实word日志提取端；公共图/账户/完整报价、信息隔离及成对完整尾仍UNKNOWN，未以静态连接声称研究有效。入口：新树 `exploration/learned_query/receipt_semantics_20261007_qv2/{REPORT.md,SOURCE_SEMANTIC_REVIEW.md,audit_receipts.py,verify_static.py}`。目录日期沿本轮启动时标识，交付日期2026-10-08。
+
 ## QV1：独立查询价值可行性支线
 
 按用户明确要求，由一个子智能体从 `explore/learned-query` 已提交基点 `3c809f903e42ce33d287ca7f21e38924bd6dcffc` 创建 `/home/lyh/MAPF_QUERY_VALUE_FEASIBILITY` 与 `explore/query-value-feasibility`。新树未改原三树稿件/冻结材料，也未复制原树未提交R34；外部组件以本机只读SHA pin复用，不冒称公开Git即可独立复现。
 
 已实作本臂公共字段/时间接纳、成对完整尾只读采集与引用绑定；复用R31白名单和R24合同，保留失败/删失、未知成本及普通END，合同禁止WAIT读取QUERY结果，实际信息隔离审计尚缺。只读复核R21旧账本10,543条、24组，保留625条迟到查询，均为开发诊断，新增因果标签0。找到已有R18 ridge和无查询/周期/历史规则、R19结构/纯EWMA；组件存在，主线合法适配待资格，没有重写、调用或拟合模型。
 
-静态实现部分完成，研究有效性UNKNOWN：当前没有合格checkpoint/恢复、真实公共producer、信息隔离/空间安全/完整费用审计，也没有独立TEST；数据接纳器强制`model_input_eligible=false`，尾入口不能靠自报PASS产标签。空模板接纳UNKNOWN仅验证该默认路径。故保留为辅助候选，不融合主线。
+静态实现部分完成，研究有效性UNKNOWN：当前没有合格checkpoint/恢复、完整公共producer、信息隔离/空间安全/完整费用审计，也没有独立TEST；数据接纳器强制`model_input_eligible=false`，尾入口不能靠自报PASS产标签。空模板接纳UNKNOWN仅验证该默认路径。故保留为辅助候选，不融合主线。
 
 20个文件、21项来源pin、4稿保护、5个Python AST及实际旧账本复核通过；阶段补充另追加冻结，按V1机会/标签、V2接口/对照/清单、V3授权验证、V4融合/辅助/停止四验收阶段报告，V1/V2未全过。运行清单列出精确checkpoint、次数/预算/截止等缺项，保持UNASSIGNED，不借六槽。入口在新树 `exploration/learned_query/query_value_feasibility_20261007_qv1/{REPORT.md,PHASE_MAPPING.md,RUN_CHECKLIST.md,verify_delivery.py}`。0训练/策略/solver/host/guest/仿真；下一先补公共生产端和可靠完整尾，强规则足够则停止学习投入。
 
@@ -68,13 +84,13 @@
 
 | 线路 | 已有实质交付 | 当前缺口与下一步 |
 |---|---|---|
-| 主线：共同安全、执行与费用 | 首次原付费SOURCE/35字段/完整回放生成私有初态事实；两head同批、真实q0/cap0/几何/owner检查后一起消费，任何发布与cap前必需接纳；完整Center和host已重建 | 动态初态事实发生数0；完整普通栈和原有限行容纳性尚无资格，二维主动查询与完整费用未闭合 |
-| 执行支线：原计划与完整资源组 | R33关闭15库叶函数；R34从6函数真实机器字、全分支SP深度与固定跳转表，新增关闭memcpy/memmove各48字节传递峰值 | 剩余94库目标+165间接位置共259项传递义务，另有异常引擎；条件小计不是完整界，不展开全库审查或扩大栈 |
-| 查询支线：独立比较资格 | 私有真实回执及失败前缀保留；R34新增最多68批、4类事件×4类结果的有界位掩码编码，接入原成功/失败host计量出口并链接 | 编码仍HOST_ONLY、authority NONE，未付费送达guest；完整公共机会/图/账户/报价缺口仍WAIT。Berlin原12缺项、单图统计与外部基线资格保持 |
+| 主线：共同安全、执行与费用 | R33初态SOURCE同批接纳保留；R35修复原255边界编码并把真实ACK接入付费返回，完整Center/host重建 | 动态事实发生数0；新ELF完整普通栈和原有限行容纳性未知，二维主动查询与完整费用未闭合 |
+| 执行支线：原计划与完整资源组 | R35实际Station/Boundary/物理bridge接线编译，重新核新ELF发布后缀；R33/R34旧栈证书保留 | 新ELF传递栈待核；旧94库+165间接义务及异常引擎仅作原证书入口，不能复用旧地址/小计或扩大栈 |
+| 查询支线：独立比较资格 | R35真实ACK付费返回实现，QV2核时间语义与R31历史拒绝接口；原失败账本保留 | 实际送达日志和到达时刻未有；完整公共机会/图/账户/报价缺口仍WAIT。Berlin原12缺项、独立单位与外部基线资格保持 |
 
-R34/S3联合3,647项来源/产物pin、三稿及历史尾文保护通过；R33原3,354项与S2原31项冻结另行复核通过。R34新增1个真实driver对象，复用1个冻结qualification对象，链接新host，SHA以`f54d63c7…`起；最终Center仍为R33 `d9754504…`，未重编或执行。旧构建与新构建记录分开，新增编译前后依赖集合/散列一致。
+历史R34/S3联合3,647项来源/产物pin、三稿及历史尾文保护通过；R33原3,354项与S2原31项冻结另行复核通过。R34新增1个真实driver对象，复用1个冻结qualification对象，链接新host，SHA以`f54d63c7…`起；最终Center仍为R33 `d9754504…`，未重编或执行。旧构建与新构建记录分开，新增编译前后依赖集合/散列一致。
 
-最终发布计划保留R33实际地址的37CFG节点、最长34指令、B1指令界343、reservation356、原行阈值365。原私有kernel完整跨度一致，1408字节界只限私有域。普通栈条件为`max(19136, max_j(P_j+U_j), E_start) <= 65536`；剩余U_j及异常引擎峰值E_start未知。19136为已知调用树条件小计，46400为最坏前缀对应余量，均不是完整栈资格或实测峰值。
+历史R33/R34发布计划绑定R33实际地址的37CFG节点、最长34指令、B1指令界343、reservation356、原行阈值365。原私有kernel完整跨度一致，1408字节界只限私有域。普通栈条件为`max(19136, max_j(P_j+U_j), E_start) <= 65536`；剩余U_j及异常引擎峰值E_start未知。19136为已知调用树条件小计，46400为最坏前缀对应余量，均不是完整栈资格或实测峰值。
 
 ## 已有证据如何解释
 
@@ -87,8 +103,8 @@ R34/S3联合3,647项来源/产物pin、三稿及历史尾文保护通过；R33�
 
 ## 下一步与验收条件
 
-1. 补真实回执的付费公共导出、当前图/账户和同运行完整结算报价，再接二维合法主动查询consumer；原R17固定1D权限不放宽，EMPTY_HISTORY_WAIT保留。
-2. 按真实PC、目标和前缀对同类栈义务定点补证；已关闭15库叶函数及2个copy函数不重做，普通栈/arena/供给不扩大。
+1. 在R35已实现的付费回执返回上补真实guest日志/到达时间、当前图/账户和同运行完整结算报价，再接二维合法主动查询consumer；原R17固定1D权限不放宽，EMPTY_HISTORY_WAIT保留。
+2. 按新ELF真实PC、目标和前缀重绑定可复用机器码证书，定点核新增调用的栈与窗口；旧15库叶及2个copy证明仅在机器码与调用条件吻合时迁移，普通栈/arena/供给不扩大。
 3. 共同接口和完整费用资格闭合后，补Berlin分组、预算/时限/容差等设计字段，冻结独立小比较，另按具体授权启动。
 
 主线仍有共同接口资格、轻量方法与独立比较冻结、获授权的小比较、证据与论文四阶段，支线与之重叠。扩大规模、随机延迟和两台LIMO后置。
@@ -99,6 +115,8 @@ R34/S3联合3,647项来源/产物pin、三稿及历史尾文保护通过；R33�
 
 | 内容 | 本机相对路径 |
 |---|---|
+| R35实际付费回执返回、完整guest/host及联合冻结 | 主仓 `implementation_binding_evidence/paid_delivery_return_20261008_r35/`：`REPORT.md`、`INTERFACE_STATUS.json`、`RUN_CHECKLIST.md`、`verify_delivery.py` |
+| QV2回执语义审计与来源核对 | 新查询价值树 `exploration/learned_query/receipt_semantics_20261007_qv2/`：`REPORT.md`、`SOURCE_SEMANTIC_REVIEW.md`、`verify_static.py` |
 | QV1查询价值可行性、成对尾入口与组件登记 | 新树 `/home/lyh/MAPF_QUERY_VALUE_FEASIBILITY/exploration/learned_query/query_value_feasibility_20261007_qv1/`：`REPORT.md`、`PHASE_MAPPING.md`、`collect_pair.py`、`BASELINES_AND_MODEL.md`、`RUN_CHECKLIST.md` |
 | R34定点接口、阶段判断与联合冻结 | 主仓 `implementation_binding_evidence/targeted_interfaces_20261007_r34/`：`REPORT.md`、`RESEARCH_DECISION.md`、`stack/`、`host/`、`verify_delivery.py` |
 | S3原版计量与未授权清单 | 主仓 `implementation_binding_evidence/original_measurement_20261007_s3/`：`REPORT.md`、`run_original.py`、`audit_measurement.py`、`RUN_CHECKLIST.md` |
@@ -116,4 +134,4 @@ R34/S3联合3,647项来源/产物pin、三稿及历史尾文保护通过；R33�
 
 有限登记保持两agent/12MOVE、34tick、408SOURCE机会、68发布、241边界，Compute窗口上限4754≤8192，每行8388608，每phase准备64行，Natural0、额外延迟0。R23/R27另为未来择一六槽，每槽300秒、总1800秒、串行一次、不重试，仍NOT_RUN / NOT_AUTHORIZED；不合并十二次，不转借本轮或Berlin。原空间误差/控制参数、agent1名义t2保留，不补旧t0历史。
 
-三份主稿、旧冻结证据、输入和现行边界保护。本轮只提交当前入口与进度历史两份文档；实现、原始数据和主稿不随之发布。历史快照中的“当前”“下一步”和授权仅描述当时范围。
+原三份主稿及QV独立树稿件、旧冻结证据、输入和现行边界保护。本轮只提交当前入口与进度历史两份文档；实现、原始数据和主稿不随之发布。历史快照中的“当前”“下一步”和授权仅描述当时范围。
