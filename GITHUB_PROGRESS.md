@@ -2,6 +2,42 @@
 
 [当前状态与下一步](.github/README.md) · [仓库导航](README.md)
 
+<a id="qv1"></a>
+
+## QV1：独立查询价值可行性支线（静态交付）
+
+2026-10-07。按用户明确要求派一个子智能体，从 `explore/learned-query` 已提交基点 `3c809f903e42ce33d287ca7f21e38924bd6dcffc` 建立 `/home/lyh/MAPF_QUERY_VALUE_FEASIBILITY` 与分支 `explore/query-value-feasibility`；按最新入口处理旧9月21日交接，并定点读R20报告/下一方法。新树不复制原学习树未提交R34，外部既有组件显式SHA pin；源码未提交/推送，不宣称公共Git单独具备这些本机依赖。
+
+实作公共数据intake、成对完整尾只读采集入口及费用/失败合同。R31白名单与时间检查只接纳本臂已送达信息，模型输入资格固定false；R24合同和文件引用绑定保留QUERY/WAIT同合法初态、同续策规则/配对外生扰动要求，不能强制同动作或让WAIT读QUERY结果。未有合格checkpoint/恢复、独立信息/空间执行/费用生产者，本版不能输出训练标签，自报PASS也无旁路。空模板实际接纳UNKNOWN，不是实验样本或真实输入路径验收。
+
+复核冻结R21 10,543条为24组，含5,120 QUERY、5,254 WAIT、143候选拒绝、18初始失败、8失败尝试，625迟到查询保留。12个已见family排除表仅是开发资料清单，不给新family字符串自动TEST资格。R20新旧位置头18对最终完成时刻相同、1对中间变化；R19整程差异也不能转为单查询标签。新标签0，不伪造反事实、不用MSE证明任务收益。
+
+定点找到已有R18 family分组ridge回归与NoQuery/FixedUpdate/HistoryRule、R19结构/纯EWMA和R31适配，登记复用而不再造模型；原特征/受限目标/标签不能直接迁移。本轮未调用、拟合或训练。年龄/阻塞强规则保持待接共同producer的规格。SADG正式T-RO2024与GSES作者核心继续按已核信息/空间/整数代理范围使用；JSAC/TIT作为更新价值近邻，未冒充已接通MAPF基线。
+
+实现可行性仅部分静态完成；研究有效性UNKNOWN，暂保留辅助候选，不融入主线。仍按“同资源更好完成或事前非劣完成下更低完整资源，且安全/信息成立”验收。模型后置依据research-mentor资格门，不是新加许可要求。精确输入checkpoint、次数、预算和截止未齐，运行清单如实UNASSIGNED；失败/未完成/迟到/零负作用全部保留，未知费用null，推理为执行成本子项、训练单列，不混加单位。
+
+冻结20文件/21来源pin、4稿保护及5个Python AST，根智能体再核只读总验PASS；追加阶段映射独立manifest，旧冻结不改。V1机会/标签、V2接口/强规则/清单尚未全过，V3授权验证与V4融合决定未开始。报告原三大工作包与四验收阶段对应关系在 `PHASE_MAPPING.md` 明示。交付入口为新树 `exploration/learned_query/query_value_feasibility_20261007_qv1/`，含REPORT、QUALIFICATION_CARD、PAIR_CONTRACT、BASELINES_AND_MODEL、RUN_CHECKLIST、两个manifest及只读核验器。
+
+新增科学运行、训练、策略/预测器调用、solver、host/guest、仿真及机器人均0。原主稿、R34/S3及所有冻结材料/输入/保护参数保持，不借旧六槽或Berlin。根智能体统一同步两份指定Git文档，继续优先完成支持年底成稿首投所需的公共生产端、完整费用与独立证据。
+
+<a id="r34-s3"></a>
+
+## R34/S3：定点接口补证、原版计量与期刊导向判断
+
+2026-10-07。按科研导师skill继续实质推进，并响应“不能只修改IROS”。将T-RO正式SADG论文（卷年2024、线上2023）、JIRS跟踪/TADG、RAS仓库学习MAPF评估、AI的X*作为不同层级的设计参照；全文/摘要核验范围在新研究决定中分列。IROS2021保留近邻与潜在算法基线身份，独立规划/停止候选不锁为只改该文。会议出处不构成研究上限，期刊出处也不自动提供新颖性；所有候选仍CONDITIONAL。主线4阶段，原查询/执行各3阶段且重叠，新查询价值可行性4阶段、独立规划候选4阶段；以验收条件计，不以交付编号计。
+
+主线/执行支线从R33固定ELF的memcpy/memmove及四个wordcopy helper实际机器字补SP数据流证明，核全分支、合流深度、返回SP及两处只读8项跳转表，得到两个copy函数各48字节传递峰值。保留原PC前缀与机器字证书，_start由96库+165间接共261项变为94库+165间接共259项，异常引擎仍未知。条件小计19136与原65536栈容量不变，不称完整界、不借私有栈界、不重编guest。
+
+查询支线实现实际私有DeliveryLedger的有界host编码：原68批/12slot，4类事件×4类结果掩码，核owner/Station/序号；ACK后的END送达与实际RUN已接受事件分别保存，失败前缀不抹去，精确停止时刻null。接入原完整driver成功/失败计量出口，新增1对象严格编译、复用冻结qualification对象并真实链接，host SHA `f54d63c7d8bd6b714c0b202e9f630fa634cfd23c69bcf387a7045290a737c1dc`，0执行。仍HOST_ONLY/authority NONE/paid_guest_export false，不视为公共信息、完整费用或安全凭证。
+
+S3已实现原版BALANCE计量runner及v2回执reader：固定S1原binary/输入/科学参数，只改输出位置；计划绑定runner/reader字节。监督进程通过闭合wait链计算包含solver的子树CPU一次，再加不重叠的监督CPU，不重复累加嵌套wait4。wall覆盖预检、原构造/优化/输出、独立路径核验、散列与worker持久化；外层回执写出另报harness开销，未覆盖的未来模型/查询成本不冒称完整。失败/超时留前缀，CPU闭合缺失则null。
+
+实际输入预览、语法、缺失输出NOT_RUN和未授权执行拒绝PASS；在mkdir/fork/exec前拒绝，输出目录不存在。提案1次、无重试、原内部30秒、worker55秒加5秒收尾/总60秒尽力截止，保留超出量，不作硬实时保证。真实原版运行、看护动态验收、真实输出解析与研究收益仍UNKNOWN；没有候选模型、训练标签或新科学执行。科学有效性不能由静态链路替代。
+
+R34/S3联合3,647项pin、三稿与旧历史尾文保护PASS；R33原3,354项和S2原31项亦复核通过。本机入口 `implementation_binding_evidence/targeted_interfaces_20261007_r34/{REPORT.md,RESEARCH_DECISION.md,verify_delivery.py}`、`original_measurement_20261007_s3/{REPORT.md,RUN_CHECKLIST.md}`。查询/执行树分别新增 `compact_delivery_20261007_r34/`、`copy_stack_20261007_r34/`。只同步两份指定Git文档，原稿、冻结证据、输入、参数与现行容量保持。
+
+下一补付费公共送达、当前图/账户/同运行完整报价和同类剩余栈义务；新查询价值支线先机会/标签，再可比方法。普通END、WAIT、结构规则、EWMA保留，学习不形成任务/资源增量则停止投入。原六槽与Berlin均未运行/未授权；S3也没有借用这些容量或授权。毕业目标继续为年底成稿首投，不承诺录用。
+
 <a id="graduation-goal-20261007"></a>
 
 ## 毕业与首投目标确认
