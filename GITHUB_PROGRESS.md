@@ -1,5 +1,19 @@
 # 实验前进度入口
 
+2026-10-07 R28 科研导师三线实质推进：**真实作者计划已生成完整空间资源关联，旧数据使用史接入新比较校验，主线补齐分类型费用包与实际普通栈路径。** 总体CONDITIONAL；0新科学运行/solver/训练/因果标签，用户“仅完成可运行实现、冻结与清单”保持。冻结R27机制镜像，不扩大旧矩阵、不加模型，普通END、WAIT、结构规则、EWMA及主稿/输入/供给保持。
+
+主线费用producer实际派生3个完整原生包、8失败前缀、2作者费用覆盖包、44求解/缓存明细及6未运行行；四类账户/job严格对齐，真实q0 SOURCE身份/内容与task SERVICE端点核验后仅作旧开发描述对比。BUY相对WAIT完成和少2、完整费用多272,797,762，仍未通过“相近完成且省真实资源”；LOW的−49步因初始预算不同不作公平优势。8失败的闭合前缀合计3,422,596,250，未闭合费用UNKNOWN。两作者旧轨迹44逻辑事件中18实际调用/26缓存复用，内外层秒数不相加、缓存参考时间不作新执行费用、查询数/字节不冒充原生收费。
+
+普通栈producer从六个冻结Center ELF定点导出62函数配置/127368指令字节/4142直接边，实际.su唯一关联；每启用配置6间接转移、1递归和761出范围边定位。3200字节仅条件路径帧小计，普通域全栈仍UNKNOWN；65536/4096存储及私有1408界不改，不重编译或重开全库审查。具体路径/边界在`implementation_binding_evidence/ordinary_stack_scope_20261007_r28/`。
+
+执行支线以真实旧ECBS计划、输入/地图/scenario和SADG初始图生成848MOVE/16驻留、832FIFO、1712闭资源区间、8038有向潜在关系；161组1296forward/1269reverse侧精确关联。一个旧世界的移动段不是独立样本。候选规格明确为作者resolution=2坐标及各1/20足迹/error半宽，非既有native世界或作者原误差模型；2095无直接作者边的共享资源pair不宣判碰撞。作者初始progress=0.5定位为stub，不送入live q；普通END、当前owner/cap、SOURCE consumer和完整费用仍UNKNOWN，旧8种2D→1D直接映射NO-GO保持。见执行树`common_source_20261007_r28/`。
+
+查询支线从35历史元数据/92引用输入导出421使用或预留记录；历史排除标签25→71，粒度混杂不当独立family数。实际发现51同任务内容组、4同轨迹组、3同scenario组；8处cohort同名联源歧义保留UNKNOWN。真实R13 B8/B16被新TEST登记校验拒绝（6项），新整策略登记仍UNKNOWN、0新独立族；未用旧TEST结果选方法。见学习树`independent_registration_20261007_r28/`。
+
+整轮1,588产物/来源pin与3份主稿保护通过；作者12产品重派生、费用7JSON源重放一致，6Python AST通过。多代理分工及定点交叉检查不称独立盲审。总报告/资格卡/阶段判断与默认只读总验在`implementation_binding_evidence/common_cost_20261007_r28/THREE_ROUTE_REPORT.md`和`verify_r28.py`。主线仍4阶段、查询/执行各3重叠阶段，本轮关闭具体静态子项；单QUERY尾/学习2可选阶段不挡整策略比较。
+
+下一先用已冻结R20两agent/12MOVE自建crossing做通用consumer最小接线，保留原agent1名义t=2及初始驻留，不冒充官方benchmark/新TEST；随后定点闭合实际空间授权/完整费用与栈边界，并登记真实新来源的独立比较，不再增加世界投影/模型。R23/R27仍未来择一六槽包、每槽300秒/总1800秒/串行一次/不重试，NOT_RUN/NOT_AUTHORIZED及原有限供给不变。公共main仅同步两份指定进度文件。以下为此前当轮快照。
+
 2026-10-07 R27 全镜像/付费发布静态交付：**R26完整资源组接口已组成18个RV64 ELF和6个host，30个构建/静态阶段exit0，60个原publication计划通过；0科学运行/solver/训练/因果标签。** 当前“仅完成可运行实现、冻结与清单”授权保持，两个登记世界、原三机制配置/供给不改；R23/R26冻结与主稿保护。
 
 定点补齐固定分支接线：原N/E脚本按BUY/WAIT登记，新增guest核真实建议匹配R19_EXPECT_BUY，不一致在原付费Selection失败并保留前缀，不将WAIT强制QUERY或改host预期求成功。此包仍是固定机制版本，不能称任意动态策略。禁用WAIT跳过未使用的新组工作，两个Center ELF无r26_query符号；启用低额的计算/拒绝费仍入账。原Choice/已装Receipt、普通END/FIFO、single-use SOURCE/空间consumer、host驱动及movement publication保持。
