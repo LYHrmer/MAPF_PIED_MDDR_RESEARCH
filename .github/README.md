@@ -1,5 +1,15 @@
 # MAPF 项目当前入口
 
+2026-10-07 R25 实际源分段与驻留语义：**已生成2世界/8动作的384个精确源分段、196闭资源区间、12有向跨agent资源关系和4个FIFO驻留交接；新公共根读取接口两个长度下严格C++14静态编译通过。** 所有派生以R23真实Geometry/FIFO源码为输入，不造作者图、名义时间或新native动作，0科学运行/solver/训练/因果标签，现行“仅完成可运行实现、冻结与清单”授权保持。
+
+12条关系中8条普通END后仍有终点驻留冲突，故完整动作END边不能替代空间释放；A1结束的cell-28驻留须经原FIFO接续A2处理。4条可在同动作退出的关系均要求认证q严格大于3/5，相等接触仍占用，实际head/demand/foreign owner/Index/时刻和原guard仍必须齐。分段覆盖校验器已实现，旧4作者图×2世界仍全部拒绝，0可用作者native association；真实同世界作者图、时间/承诺和完整group语义仍缺。
+
+新C++读取器保留实际不可变Position根，只导出认证q/cap、源区间、current/full mask、owner/resident、待放行与原Index关系，不产出LiveEvidence、writer或RUN。未部署或调用；未来复制/转换/分配/析构须进入付费Compute，新增费用、栈及发布资格UNKNOWN。它不是完整checkpoint，缺history/receipt、生命周期、N/E/C与授权/未闭合账等状态，完整尾支线仍不造标签。学习树实际登记4个源机会类型及公开字段合同，不作4次查询或独立样本，普通END/WAIT/结构规则/EWMA和旧模型保持。
+
+已取得并归档AI2026近邻同作者的SoCS2024正式9页前作，定点核问题、LDG、协调和验证段；[出版社全文](https://ojs.aaai.org/index.php/SOCS/article/download/31543/33703/35600)。终点驻留与剩余可行性设计帮助定位上述适配缺口。会议前作不替代期刊全文；AI2026官方工件与信息/收费条件仍UNKNOWN，不以自写LDG关闭R0或声称首次。
+
+R25静态交付PASS：33个产物pin、102个来源/依赖pin、R24/R23冻结根与三份主稿保护核验。总报告/资格卡/源生产者/readout/边界核验/具体清单在本机`implementation_binding_evidence/source_association_20261007_r25/`，两支线分别`source_association_20261007_r25/`和`source_features_20261007_r25/`。总体CONDITIONAL；下一先补真实同世界作者图与完整资源组/费用接线。**策略级相近完成/资源比较与单QUERY奖励资格分开推进，完整checkpoint分叉不是所有轻量规则比较的前置；缺合法单QUERY尾时保持奖励UNKNOWN。** 仍须关闭共同执行/费用和数据资格再冻结比较，不通过更多模型代替。R23六臂仍NOT_RUN/未授权，原命令、参数与供给不改，延迟/扩规模/LIMO后置。公共main仅同步两份指定进度文件。以下为各轮历史快照。
+
 2026-10-07 R24 期刊设计对照与三线资格实现：**8篇相关期刊定点阅读（5篇可读全文设计段、3篇摘要/预览），已落实完整尾校验、源几何登记、身份修正和独立族排除；0新科学运行、0训练/求解。** 依科研导师skill保持MAPF、有界空间跟踪误差与有限真实更新资源，方法主线为代价感知进度查询与安全协调。用户“仅完成可运行实现、冻结与清单”继续有效。
 
 TAC的信息价值/软硬约束设计促使完整任务后果与真实费用分项验收，经验报价仍不作硬预算保证；TRO/IJRR促使安全、合法执行与推进分别论证；Autonomous Robots同底座强对照用于收紧公平比较，但我们保留所有失败与付费前缀。普通END、WAIT、结构规则、EWMA保持，学习后置。[TAC作者稿](https://people.kth.se/~kallej/papers/ncs_tac23sol.pdf)、[TRO作者稿](https://liwanggt.github.io/files/A2_Safe_Swarm.pdf)、[Autonomous Robots原文](https://link.springer.com/article/10.1007/s10514-023-10127-3)。AI 2026固定路径执行论文列为直接近邻，已核出版社预览/作者记录，全文、工件及观测收费假设仍UNKNOWN，不声称首次或已合格复现。
