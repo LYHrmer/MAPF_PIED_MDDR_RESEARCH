@@ -2,6 +2,22 @@
 
 [当前状态与下一步](.github/README.md) · [仓库导航](README.md)
 
+<a id="r31"></a>
+
+## R31：有限分派、联合发布与公共查询适配（静态交付完成）
+
+2026-10-07。已实现十二段guest生命周期：真实私有Notice→END驻留→下一tick再次认证END/dwell/FIFO→后继，最终驻留保留；cap采用R29完整空间guard并检查同批新占用冲突。活动外方q>0退休资源不能被普通phase借用绕过原R17token，保守WAIT；二维主动查询路径仍待接。Position和不可变TaskLedger在原双真实publication SOURCE之间guard+swap，旧根延迟清理，retire在phase0发布/实际事件交付返回后。
+
+host实现408槽有限按需SOURCE元数据、原付费扫描暂停/attach/继续bootstrap，实际current head、Compute row/lane/job指针与全部import冲突核验；SOURCE不预造后继时间。唯一Station已接12位END/12位SERVICE及12位CAP单word编码，核每agent每phase最多一个事件，保留原付费读取和4word continuation。真实Station publication证人经tick/phase/row/time核验才交付END/service/CAP/RUN并一次ack；两个agent后继先全部核验再一次代次提交，修复逐个提交使第二准备失效。异常封停并保留真实费用前缀，旧world/SOURCE事实路径不改。
+
+五个最终实现对象严格编译通过。另将真实commit_lifecycle+原publication wrapper链接为分析ELF，沿原全路径算法提取37CFG节点、最长34指令、真实EBREAK失败叶；原B1方法体仅加constexpr求值，得到343指令界、356reservation、365原行阈值。未执行任何ELF或常量对象，结论仅覆盖分析后缀；最终镜像/INIT/不可变发布计划和普通全栈仍UNKNOWN，不复用旧地址或界。
+
+查询支线实产310行PolicyAdapter及严格公共schema，实际复用history、纯EWMA03和原结构规则，输出仅QUERY/WAIT建议；未发生或未送达/混合来源字段被拒绝，缺合法报价WAIT。空历史Berlin尚无合格初始报价，结构臂会持续WAIT；真实公共机会producer和完整适配费用尚未接线，不能用假报价或未来信息造差异。Python AST/仅声明导入/schema和冻结核验通过，0策略决策/episode/solver/训练。
+
+联合2,895项来源/产物pin、三稿保护和五个最终对象核验PASS；0新科学运行/仿真/solver/训练/因果标签。新增host对象/后继准备、精确数和分派/交付工作明确在原B1付费覆盖外，外部费用待计，UNKNOWN不记0。科研导师整体CONDITIONAL；官方共同域R0、公平外部基线、独立单位和完整科学证据仍未闭合。下一将这些接口组成同一完整driver/Center镜像，完成初始化和最终发布绑定、完整栈/费用，再接主动查询/公共投影及共同报价冷启动。
+
+本机入口 `implementation_binding_evidence/finite_dispatch_20261007_r31/REPORT.md`、`RUN_CHECKLIST.md`、`verify_delivery.py`；host与事件静态证据分别在子目录，查询支线在 `readonly_policy_adapter_20261007_r31/`。仅同步两份进度文档；旧历史原文/冻结材料/主稿与输入/参数保持。R23/R27择一六槽继续NOT_RUN/NOT_AUTHORIZED、300秒每槽/总1800秒/原容量不变，不扩矩阵或转借Berlin运行许可。
+
 <a id="r30"></a>
 
 ## R30：二维物理事实来源与有限条件比较设计（静态交付完成）
@@ -38,6 +54,7 @@ R19–R28 链接固定到整理前提交，便于定位当轮记录；R29 起按
 
 | 轮次 | 内容 | 状态 |
 |---|---|---|
+| [R31](#r31) | 按需SOURCE、有限事件/联合发布、实际物理交付与公共策略适配 | 静态交付完成；统一镜像/初始化/全费用未闭合 |
 | [R30](#r30) | 二维物理/私有END来源、统一登记与有限条件比较设计 | 静态交付完成；付费dispatcher与科学资格未闭合 |
 | [R29](#r29) | 共同安全接口、最小真实源与独立来源登记 | 静态交付完成；科学资格未闭合 |
 | [R28](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/a1989d6a0aa4740e665ae21ce369a0a0170e8671/GITHUB_PROGRESS.md#L3) | 共同来源、费用与使用史 | 历史当轮结论 |
