@@ -1,3 +1,38 @@
+# MAPF 进度历史
+
+[当前状态与下一步](.github/README.md) · [仓库导航](README.md)
+
+<a id="r29"></a>
+
+## R29：共同安全接口与独立比较资格（进行中）
+
+2026-10-07。已完成并冻结旧 crossing 的真实源配置和普通栈定点交付。crossing 保留 12 MOVE、13 个资源、28 条闭区间、10 FIFO、4 个首末驻留规格及完整作者组两方向；真实 Geometry 配置静态编译通过。普通栈已解析 24 处间接转移的有限目标、入口调用者项及递归条件界，完整库/异常栈仍 UNKNOWN。
+
+主线安全 consumer 的真实 Position/Geometry 接线正在编译；查询支线正在核验真实候选来源，独立比较资格尚未最终闭合。本轮未启动新科学运行。研究结论仍 CONDITIONAL，沿用“仅完成可运行实现、冻结与清单”的授权范围。
+
+根据本轮新增整理要求，README 改为导航，`.github/README.md` 只维护最新状态，本文件保留历史。以下历史全文不改字；历史“当前”“下一步”和授权条款只描述记录时点，不能覆盖现行入口。旧入口另由[整理前不可变快照](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/a1989d6a0aa4740e665ae21ce369a0a0170e8671/.github/README.md)完整保留。主稿、冻结路径、证据和参数不移动或修改；实现及原始数据不随此次文档整理发布。
+
+## 轮次索引
+
+R19–R28 链接固定到整理前提交，便于定位当轮记录；R29 以上方进行中记录和当前入口为准。
+
+| 轮次 | 内容 | 状态 |
+|---|---|---|
+| [R29](#r29) | 共同安全接口、最小真实源与独立来源登记 | 进行中 |
+| [R28](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/a1989d6a0aa4740e665ae21ce369a0a0170e8671/GITHUB_PROGRESS.md#L3) | 共同来源、费用与使用史 | 历史当轮结论 |
+| [R27](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/a1989d6a0aa4740e665ae21ce369a0a0170e8671/GITHUB_PROGRESS.md#L17) | 完整镜像与静态发布 | 历史当轮结论 |
+| [R26](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/a1989d6a0aa4740e665ae21ce369a0a0170e8671/GITHUB_PROGRESS.md#L29) | 完整资源组查询接线 | 历史当轮结论 |
+| [R25](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/a1989d6a0aa4740e665ae21ce369a0a0170e8671/GITHUB_PROGRESS.md#L41) | 源分段与驻留 | 历史当轮结论 |
+| [R24](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/a1989d6a0aa4740e665ae21ce369a0a0170e8671/GITHUB_PROGRESS.md#L51) | 资格合同与期刊设计 | 历史当轮结论 |
+| [R23](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/a1989d6a0aa4740e665ae21ce369a0a0170e8671/GITHUB_PROGRESS.md#L61) | 三线资格及机制包 | 历史当轮结论 |
+| [R22](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/a1989d6a0aa4740e665ae21ce369a0a0170e8671/GITHUB_PROGRESS.md#L77) | 后继上下文静态交付 | 历史当轮结论 |
+| [R21](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/a1989d6a0aa4740e665ae21ce369a0a0170e8671/GITHUB_PROGRESS.md#L85) | 查询后果账本 | 历史当轮结论 |
+| [R20](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/a1989d6a0aa4740e665ae21ce369a0a0170e8671/GITHUB_PROGRESS.md#L112) | 位置融合与共同执行 | 历史当轮结论 |
+| [R19](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/a1989d6a0aa4740e665ae21ce369a0a0170e8671/GITHUB_PROGRESS.md#L120) | 后继购买与结构查询 | 历史当轮结论 |
+
+<details>
+<summary>展开 R28 及更早的原始进度全文</summary>
+
 # 实验前进度入口
 
 2026-10-07 R28 科研导师三线实质推进：**真实作者计划已生成完整空间资源关联，旧数据使用史接入新比较校验，主线补齐分类型费用包与实际普通栈路径。** 总体CONDITIONAL；0新科学运行/solver/训练/因果标签，用户“仅完成可运行实现、冻结与清单”保持。冻结R27机制镜像，不扩大旧矩阵、不加模型，普通END、WAIT、结构规则、EWMA及主稿/输入/供给保持。
@@ -374,3 +409,5 @@ POSITION证据成功提交即可按原规则释放资源、继续执行；成本
 - 实现进展：[Q2实现记录](73Q2_MAIN_EXECUTION_IMPLEMENTATION_BINDINGS_20260914.md)。
 - 当前参数化设计裁决：[73R4](73R4_ROOT_DESIGN_ACCEPTANCE_20260914.md)；操作边界见[项目当前入口](.github/README.md)。
 - 本页旧运输表和三份已删除交接可在[清理前提交](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/0153a15e4f059a567de169716985444cca86ec9d)追溯，历史运行中/暂停/待许可状态不作当前指令。
+
+</details>
