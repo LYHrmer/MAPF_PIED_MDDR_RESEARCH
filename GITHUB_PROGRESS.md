@@ -4,21 +4,25 @@
 
 <a id="r29"></a>
 
-## R29：共同安全接口与独立比较资格（进行中）
+## R29：共同安全接口与独立来源（静态交付完成）
 
-2026-10-07。已完成并冻结旧 crossing 的真实源配置和普通栈定点交付。crossing 保留 12 MOVE、13 个资源、28 条闭区间、10 FIFO、4 个首末驻留规格及完整作者组两方向；真实 Geometry 配置静态编译通过。普通栈已解析 24 处间接转移的有限目标、入口调用者项及递归条件界，完整库/异常栈仍 UNKNOWN。
+2026-10-07。主线已将真实 Position/Geometry 完整 cap 检查、原 R17 token 消费、普通 END→resident/FIFO 接入隔离的完整 Center/profile，保留原 head/dwell、确切端点和 coupled publication。两个长度共4个真实翻译单元及1个 crossing catalogue 的全部方法严格C++14对象编译通过；源目录拒绝FIFO环/多头/跨坐标域，绑定真实Geometry共享存储。尚未链接/运行或替换R27镜像，二维初始化/CAPTURE/END物理源和完整费用仍UNKNOWN。
 
-主线安全 consumer 的真实 Position/Geometry 接线正在编译；查询支线正在核验真实候选来源，独立比较资格尚未最终闭合。本轮未启动新科学运行。研究结论仍 CONDITIONAL，沿用“仅完成可运行实现、冻结与清单”的授权范围。
+执行支线已冻结原 crossing 的12 MOVE、13资源、28闭区间、10 FIFO、4个首末驻留规格与完整作者组两个方向；agent1名义t=2不造t0启动。普通栈从R27旧镜像解析24间接调用点，A=10016，D≤37/43，条件式L36 14832+B、L42 15120+B、WAIT12448+B≤65536；库/异常B仍UNKNOWN，且不自动覆盖新helper。
+
+查询支线核验742个唯一历史元数据、33张固定作者地图/场景，找回room的R5旧使用并拒绝其341行作为新来源。按无结果历史排除规则实际登记Berlin_1_256/random-1的1000原始起终点；官方scenario字节一致、map仅CRLF/LF差异。27工件/808外部来源冻结；新源在声明范围内无旧命中，但未分配TEST/N/规划/运行，一图不证明iid或独立总体效应。
+
+联合2,499项产品/来源pin、三稿保护、五项严格编译及原四段发布源码一致性核验通过。报告/默认只读总验在本机`implementation_binding_evidence/common_safety_20261007_r29/REPORT.md`、`verify_delivery.py`；执行/学习两树各有`crossing_source_20261007_r29/`和`independent_source_20261007_r29/`。0新科学host/guest/solver/训练/因果标签，整体CONDITIONAL。下一补真实二维物理源/付费生命周期、范围外栈与费用，并冻结真实来源的无结果分配设计；原R23/R27择一六槽未授权包及供给不变。
 
 根据本轮新增整理要求，README 改为导航，`.github/README.md` 只维护最新状态，本文件保留历史。以下历史全文不改字；历史“当前”“下一步”和授权条款只描述记录时点，不能覆盖现行入口。旧入口另由[整理前不可变快照](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/a1989d6a0aa4740e665ae21ce369a0a0170e8671/.github/README.md)完整保留。主稿、冻结路径、证据和参数不移动或修改；实现及原始数据不随此次文档整理发布。
 
 ## 轮次索引
 
-R19–R28 链接固定到整理前提交，便于定位当轮记录；R29 以上方进行中记录和当前入口为准。
+R19–R28 链接固定到整理前提交，便于定位当轮记录；R29 以上方静态交付记录和当前入口为准。
 
 | 轮次 | 内容 | 状态 |
 |---|---|---|
-| [R29](#r29) | 共同安全接口、最小真实源与独立来源登记 | 进行中 |
+| [R29](#r29) | 共同安全接口、最小真实源与独立来源登记 | 静态交付完成；科学资格未闭合 |
 | [R28](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/a1989d6a0aa4740e665ae21ce369a0a0170e8671/GITHUB_PROGRESS.md#L3) | 共同来源、费用与使用史 | 历史当轮结论 |
 | [R27](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/a1989d6a0aa4740e665ae21ce369a0a0170e8671/GITHUB_PROGRESS.md#L17) | 完整镜像与静态发布 | 历史当轮结论 |
 | [R26](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/a1989d6a0aa4740e665ae21ce369a0a0170e8671/GITHUB_PROGRESS.md#L29) | 完整资源组查询接线 | 历史当轮结论 |
