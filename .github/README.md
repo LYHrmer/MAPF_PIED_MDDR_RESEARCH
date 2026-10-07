@@ -10,6 +10,16 @@
 
 学校不限制SCI分区或期刊名单，希望期刊有合理质量，争取2026年底前完成稿件并开始投稿；年底不是录用截止。原二区/三区偏好不再作为毕业硬门槛。后续优先验证一项具体任务或完整更新资源收益，10月底检查比较资格与初步作用，主线成立后11月补必要实验并成稿、12月修改首投。此为时间目标，不保证完成或录用；原课题与S1均保持证据资格判断，不自动换题或放宽运行。最新安排存桌面综述`LaTeX综述重构_20260924/毕业导向投稿安排_20261007.md`，本轮无科学运行或保护项变化。
 
+## 选题支线 S2：贡献边界与原版输出核验（2026-10-07）
+
+继续预检停止方向，尚未锁题。IROS2021已覆盖首个可行解后按历史曲线停止、事后监督标签、斜率／平台特征；ICAPS2022和AAAI2024已覆盖联合停止／调参与上下文及规划费用。仅换MAPF场景、加小模型或容差指标不能直接作为新贡献。当前要检验的是：在声明的质量容差下，能否比发表停止机制和强简单规则节省完整计算费用；跨图风险仍是待验证问题。
+
+已固定ICAPS2022官方`Metareasoning.jl`提交`facb41ad…`的23个原文件并定点读源码；它控制RRT*/AWA*，计时使用采样数／节点预算，不能直接折算本项目真实wall/CPU。未找到仓库许可证文件，未安装、导入、训练或上传，外部基线资格仍UNKNOWN。
+
+新增只读`audit_original.py`，实际通过作者32×32地图、409行scenario前40任务及原版binary的哈希／输入核验；缺失运行包返回NOT_RUN，不生成收益或停止标签。程序已实现最终全路径、MOVE/WAIT、顶点／交换／驻留冲突、SOC与CSV对应检查，并消费完整计量回执合同。发现原进程exit0及CSV success均不能单独证明路径成功；没有真实输出，解析分支运行资格仍UNKNOWN。完整计量wrapper尚待实现，不把合同当作生产端完成。
+
+本机报告与核验：`implementation_binding_evidence/stopping_qualification_20261007_s2/REPORT.md`、`MEASUREMENT_CONTRACT.md`、`verify_delivery.py`。S1和R33冻结及三稿保护保持，科学运行0。下一先补一次原版R0的完整计量与明确总截止清单；仍须具体授权才运行。没有开发机会证据或简单规则已足够时停止学习投入。S1分区是原偏好，毕业约束以本页最新确认记录为准；原三线R33缺口及授权未改变。
+
 ## 新增选题支线 S1（2026-10-07）
 
 按用户新增要求，以**中科院二区／三区、优先纯仿真、可结合学习**建立独立选题预检。科研导师判断：优先核验“已有可行解后，在路径质量容差内学习决定何时停止MAPF优化”；可拒绝算法选择和终生任务流引导分别暂缓／后备。学习停止、邻域选择和预算分配均已有强近邻，本轮没有候选GO或新颖性通过，不改变原三线问题及边界。
@@ -63,6 +73,7 @@
 
 | 内容 | 本机相对路径 |
 |---|---|
+| S2停止方向贡献审计、原版输出consumer与基线源码 | 主仓 `implementation_binding_evidence/stopping_qualification_20261007_s2/`：`REPORT.md`、`audit_original.py`、`MEASUREMENT_CONTRACT.md`、`BASELINE_SOURCE.json`、`verify_delivery.py` |
 | R33总报告、资格/费用与具体清单、联合核验 | 主仓 `implementation_binding_evidence/initial_admission_20261007_r33/`：`REPORT.md`、`QUALIFICATION_GATES.json`、`COST_SCOPE.json`、`RUN_CHECKLIST.md`、`verify_delivery.py` |
 | R33初态接口与完整Center/host | 上述目录 `admission/`、`image/`、`host/`，各有报告及冻结回执 |
 | R33普通栈权威条件与261项义务 | 主仓 `implementation_binding_evidence/ordinary_stack_20261007_r33/`：`REPORT.md`、`obligations/r33_with_leaves/`、`verify_delivery.py` |
