@@ -1,6 +1,6 @@
 # MAPF 项目当前状态
 
-更新：2026-10-08，R35/QV2静态交付完成。**修复完整事件掩码与原Role≤255边界的不兼容；真实物理ACK已接入原付费checkpoint返回及guest事实历史，完整guest与host重编链接通过。** R35/QV2联合3,918项pin通过，科学运行0。guest实际日志/到达时间、完整普通栈、当前图/账户、二维主动查询和完整费用仍待闭合。总体CONDITIONAL，尚无“相近完成表现下节省完整真实更新资源”的独立证据。
+更新：2026-10-08，R36/QV3静态交付完成。**实际guest接收前缀出口、当前公开阻塞/索引/FIFO原生生产端与QV3只读适配已接入，完整guest与host重建通过。** 联合4,155项pin核验通过，科学运行0。实际运行manifest、接收时钟、账户余额/完整报价、全调用栈、有限行容纳性和独立收益仍UNKNOWN；总体CONDITIONAL，保留普通END、WAIT、结构规则与EWMA。
 
 研究问题保持MAPF、有界空间跟踪误差和有限更新资源；方法主线为代价感知进度查询与安全协调。普通END、WAIT、结构规则和EWMA保留，学习作为辅助。
 
@@ -10,6 +10,18 @@
 
 学校不限制SCI分区或期刊名单，希望期刊有合理质量，争取2026年底前完成稿件并开始投稿；年底不是录用截止。原二区/三区偏好不再作为毕业硬门槛。后续优先验证一项具体任务或完整更新资源收益，10月底检查比较资格与初步作用，主线成立后11月补必要实验并成稿、12月修改首投。此为时间目标，不保证完成或录用；原课题与S1均保持证据资格判断，不自动换题或放宽运行。最新安排存桌面综述`LaTeX综述重构_20260924/毕业导向投稿安排_20261007.md`，本轮无科学运行或保护项变化。
 
+## R36/QV3：实际guest接收前缀与当前公开状态
+
+R35真实回值通过guest验证和登记后，私有friend才写word/count镜像；下一次原checkpoint在a3/a4/a5携带只读诊断，原a0/a1/a2/a7、Role≤255和边界数不变。host仅在实际BoundaryReady/MovementReady暂停观察，保留最多68项连续前缀；跳跃/回退/词变化保留故障，缺尾不补。物理ACK不能替代guest消费，观察结果不回流安全或策略；成功/失败捕获出口分别计量，失败时独立于物理账本尝试输出，I/O故障仍可能缺日志。
+
+实际Center循环已接入同一已提交Position的资源阻塞（含驻留责任）、原索引关系/阈值、注册FIFO与有限horizon，并带入合法RUN/停止观察。账户身份读取实际Registration并核12槽一致，余额/支出/预留和完整报价仍UNKNOWN。原生对象存在不等于完整QV1公共输入通过，策略门仍WAIT。
+
+最终17个guest单元、2个host单元编译链接，ELF `4a8278a1…`、host `15868df0…`；新发布后缀37节点/343/356/365保持。实际checkpoint14条机器指令、原7条，原请求寄存器保持，局部SP0；7条增量不折算B1/时间。按新地址重证memcpy/memmove各48字节；旧调用前缀未沿用，完整普通栈和窗口仍UNKNOWN。
+
+QV3在原独立树完成原生JSON/JSONL唯一捕获提取，直接复用QV2解码；保留capture_fault/前缀，不造run_scope或guest到达时间。15文件中14项入manifest、17外部pin、3Python AST和2份schema核验通过。实际默认NOT_RUN、日志0/解码0/标签0，非空解析和运行来源尚待真实验收。R36/QV3联合4,155项pin、四稿、旧冻结与历史尾文保护通过。
+
+本机主仓 `implementation_binding_evidence/public_state_capture_20261008_r36/`：`REPORT.md`、`INTERFACE_STATUS.json`、`RUN_CHECKLIST.md`、`verify_delivery.py`；独立查询价值树 `exploration/learned_query/native_capture_20261008_qv3/`。一次未来接线提案替代R35同目的提案、不叠加次数：1次无重试、270秒工作+30秒收尾/总300秒尽力wall上限，仍NOT_AUTHORIZED/NOT_QUALIFIED；不借六槽、Berlin或S3预算。下一优先账户/完整费用真实生产端与新ELF剩余栈/窗口，完整比较资格未闭合前不开放QUERY或训练。
+
 ## R35：付费回执返回与原边界兼容修复
 
 源码核对发现：R31完整SERVICE/CAP掩码可超过255，实际R23 Boundary仍拒绝Role>255。例如SERVICE slot0为4096。R35沿原两agent/各六occurrence登记，用phase0 radix13、phase1 radix7编码，最大168/48；全部218种合法组合经编译期核对，原255上限、四word continuation、供给和安全guard不变。
@@ -18,13 +30,13 @@
 
 最终17个guest单元、2个host单元编译链接通过，ELF `54d52069…`、host `5ec23ab9…`；真实依赖确认选中新Station/Boundary及新ELF绑定。按新ELF重取37节点发布计划，343/356/365界保持，私有kernel原1408字节界保持。完整普通栈未通过；旧R34的259项/19136小计绑定旧ELF，不能转贴，新局部帧2128/80也不是完整界。
 
-联合3,918项pin、四稿与历史尾文保护通过。当前无真实回执/日志，原R32 gate仍WAIT；无训练、策略、host/guest、求解或仿真运行。后续单次接线验收提案已列当前输入/二进制SHA、1次不重试、工作270秒+收尾30秒/总300秒尽力wall上限；监督器与资格未闭合，NOT_AUTHORIZED，不借原六槽或S3预算，不代表效果比较。具体本机 `implementation_binding_evidence/paid_delivery_return_20261008_r35/{REPORT.md,RUN_PLAN.json,RUN_CHECKLIST.md,verify_delivery.py}`。
+联合3,918项pin、四稿与历史尾文保护通过。当前无真实回执/日志，原R32 gate仍WAIT；无训练、策略、host/guest、求解或仿真运行。当时单次接线验收提案已由R36后继提案替代、不得叠加；原提案列输入/二进制SHA、1次不重试、工作270秒+收尾30秒/总300秒尽力wall上限；监督器与资格未闭合，NOT_AUTHORIZED，不借原六槽或S3预算，不代表效果比较。具体本机 `implementation_binding_evidence/paid_delivery_return_20261008_r35/{REPORT.md,RUN_PLAN.json,RUN_CHECKLIST.md,verify_delivery.py}`。
 
 ## QV2：回执语义到查询价值资格
 
 原委派子智能体在独立查询价值工作树完成只读解码审计和QV1接纳桥：18文件、17来源pin、12实际注册槽及4个Python AST核验通过，原QV1冻结保持。严格区分RUN接受、停止观察和guest消费，拒绝把STOP_OBSERVED填为R31精确END历史；即使word格式正确也只是WIRE_DECODED_NOT_AUTH。
 
-无真实日志默认NOT_RUN，解码词0、模型/训练资格false、因果值null。guest内部历史尚无真实word日志提取端；公共图/账户/完整报价、信息隔离及成对完整尾仍UNKNOWN，未以静态连接声称研究有效。入口：新树 `exploration/learned_query/receipt_semantics_20261007_qv2/{REPORT.md,SOURCE_SEMANTIC_REVIEW.md,audit_receipts.py,verify_static.py}`。目录日期沿本轮启动时标识，交付日期2026-10-08。
+无真实日志默认NOT_RUN，解码词0、模型/训练资格false、因果值null。QV2交付时缺少的word日志提取端已由R36/QV3补实现，尚无实际日志；完整公共图/账户/报价、信息隔离及成对完整尾仍UNKNOWN，未以静态连接声称研究有效。入口：新树 `exploration/learned_query/receipt_semantics_20261007_qv2/{REPORT.md,SOURCE_SEMANTIC_REVIEW.md,audit_receipts.py,verify_static.py}`。目录日期沿本轮启动时标识，交付日期2026-10-08。
 
 ## QV1：独立查询价值可行性支线
 
@@ -84,9 +96,9 @@
 
 | 线路 | 已有实质交付 | 当前缺口与下一步 |
 |---|---|---|
-| 主线：共同安全、执行与费用 | R33初态SOURCE同批接纳保留；R35修复原255边界编码并把真实ACK接入付费返回，完整Center/host重建 | 动态事实发生数0；新ELF完整普通栈和原有限行容纳性未知，二维主动查询与完整费用未闭合 |
-| 执行支线：原计划与完整资源组 | R35实际Station/Boundary/物理bridge接线编译，重新核新ELF发布后缀；R33/R34旧栈证书保留 | 新ELF传递栈待核；旧94库+165间接义务及异常引擎仅作原证书入口，不能复用旧地址/小计或扩大栈 |
-| 查询支线：独立比较资格 | R35真实ACK付费返回实现，QV2核时间语义与R31历史拒绝接口；原失败账本保留 | 实际送达日志和到达时刻未有；完整公共机会/图/账户/报价缺口仍WAIT。Berlin原12缺项、独立单位与外部基线资格保持 |
+| 主线：共同安全、执行与费用 | R33初态与R35付费返回保留；R36补实际guest接收日志、当前公开阻塞/索引/FIFO与注册账户身份，完整Center/host重建 | 余额/支出/预留、完整报价与费用、二维主动查询、动态资格仍UNKNOWN |
+| 执行支线：原计划与完整资源组 | R36实际机器字核checkpoint ABI/SP0，并按新地址重证两个copy函数48字节；发布后缀重新生成 | 新ELF完整传递栈/有限窗口待核，不沿用旧caller前缀或扩大原资源 |
+| 查询支线：独立比较资格 | R36当前公开事实原生对象与QV3实际JSONL提取接口；QV2精确END拒绝保持，故障前缀不丢弃 | 真实日志/manifest/接收时钟、完整公共输入/报价/隔离/成对尾未知；Berlin独立设计与外部基线资格未升级 |
 
 历史R34/S3联合3,647项来源/产物pin、三稿及历史尾文保护通过；R33原3,354项与S2原31项冻结另行复核通过。R34新增1个真实driver对象，复用1个冻结qualification对象，链接新host，SHA以`f54d63c7…`起；最终Center仍为R33 `d9754504…`，未重编或执行。旧构建与新构建记录分开，新增编译前后依赖集合/散列一致。
 
@@ -103,8 +115,8 @@
 
 ## 下一步与验收条件
 
-1. 在R35已实现的付费回执返回上补真实guest日志/到达时间、当前图/账户和同运行完整结算报价，再接二维合法主动查询consumer；原R17固定1D权限不放宽，EMPTY_HISTORY_WAIT保留。
-2. 按新ELF真实PC、目标和前缀重绑定可复用机器码证书，定点核新增调用的栈与窗口；旧15库叶及2个copy证明仅在机器码与调用条件吻合时迁移，普通栈/arena/供给不扩大。
+1. 在R36已实现的guest日志/当前图接口上补实际run manifest、接收时钟、账户余额/预留和同运行完整结算报价，再接二维合法主动查询consumer；原R17固定1D权限不放宽，EMPTY_HISTORY_WAIT保留。
+2. checkpoint与两个copy函数已按R36新机器码定点核证；继续核剩余真实调用前缀、间接路径与原有限窗口，不把局部证明相加当全栈，不扩大普通栈/arena/供给。
 3. 共同接口和完整费用资格闭合后，补Berlin分组、预算/时限/容差等设计字段，冻结独立小比较，另按具体授权启动。
 
 主线仍有共同接口资格、轻量方法与独立比较冻结、获授权的小比较、证据与论文四阶段，支线与之重叠。扩大规模、随机延迟和两台LIMO后置。
@@ -115,6 +127,8 @@
 
 | 内容 | 本机相对路径 |
 |---|---|
+| R36实际接收捕获、当前公开状态与新机器码定点资格 | 主仓 `implementation_binding_evidence/public_state_capture_20261008_r36/`：`REPORT.md`、`stack/`、`RUN_CHECKLIST.md`、`verify_delivery.py` |
+| QV3原生捕获提取与只读语义审计 | 独立查询价值树 `exploration/learned_query/native_capture_20261008_qv3/`：`REPORT.md`、`audit_native_capture.py`、`verify_static.py` |
 | R35实际付费回执返回、完整guest/host及联合冻结 | 主仓 `implementation_binding_evidence/paid_delivery_return_20261008_r35/`：`REPORT.md`、`INTERFACE_STATUS.json`、`RUN_CHECKLIST.md`、`verify_delivery.py` |
 | QV2回执语义审计与来源核对 | 新查询价值树 `exploration/learned_query/receipt_semantics_20261007_qv2/`：`REPORT.md`、`SOURCE_SEMANTIC_REVIEW.md`、`verify_static.py` |
 | QV1查询价值可行性、成对尾入口与组件登记 | 新树 `/home/lyh/MAPF_QUERY_VALUE_FEASIBILITY/exploration/learned_query/query_value_feasibility_20261007_qv1/`：`REPORT.md`、`PHASE_MAPPING.md`、`collect_pair.py`、`BASELINES_AND_MODEL.md`、`RUN_CHECKLIST.md` |

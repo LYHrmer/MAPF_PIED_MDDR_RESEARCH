@@ -2,6 +2,22 @@
 
 [当前状态与下一步](.github/README.md) · [仓库导航](README.md)
 
+<a id="r36-qv3"></a>
+
+## R36/QV3：实际guest接收捕获与当前公开状态（静态交付）
+
+2026-10-08。guest在真实checkpoint回值验证/本批登记后，私有friend更新word/count；下一次既有checkpoint以a3/a4/a5携带诊断，原a0/a1/a2/a7、Role≤255、脚本边界与供给保持。host仅在实际BoundaryReady/MovementReady观察普通寄存器，保留连续接收前缀，count0不是零值回执，重复须同词，跳跃/回退保留fault不补缺词。观察不回流策略或安全权限。成功/失败原生捕获有独立外部计量；失败导出与物理账本分别尝试，I/O损坏仍不保证可达。
+
+已将当前公开资源阻塞（含驻留）、原索引关系/阈值、注册FIFO/horizon及合法RUN/停止观察接入实际Center原生producer，核同一提交root与demand覆盖。账户身份来自实际Registration且12槽一致；余额、支出、预留和完整报价仍UNKNOWN，原R32 gate保持WAIT，不把原生对象当完整QV1输入资格。
+
+最终guest17TU、host2TU重编链接成功；ELF SHA `4a8278a17623b3930f5705cdcf9997eeb50b0732a2a70d566d52c5b2f2930de0`，host SHA `15868df067a7d51c29441daad26eea983c2fc36c8493fdd37decc4e79134aef5`。新37节点发布后缀/343/356/365保持；私有kernel字节一致。逐机器字核checkpoint从7条增至14条，原请求ABI保持，局部SP0、一次原ecall；新增7条不折算完整B1或时延。新地址六函数证明得到memcpy/memmove各48字节，旧caller前缀未移用；全调用栈/有限行容纳性仍UNKNOWN。
+
+原委派子智能体完成QV3原生JSON/JSONL唯一捕获提取，复用QV2词级解码，保留故障与前缀，不伪造run_scope、接收时间或精确END。15文件中14项入manifest，17外部pin、3Python AST、2schema通过；真实日志0、解码0、科学运行0、标签0，非空解析/manifest/隔离/成对尾仍待资格。R36/QV3联合4,155项pin与四稿、旧冻结、历史尾文保护通过。
+
+主仓本机 `implementation_binding_evidence/public_state_capture_20261008_r36/` 含报告、具体输入/预算/失败保留清单与只读核验；查询价值树 `exploration/learned_query/native_capture_20261008_qv3/` 含适配报告。未来1次接线验收提案替代R35同目的提案，不叠加次数：270秒工作+30秒收尾/总300秒尽力wall截止、无重试，仍未授权/未资格化，不借原六槽、Berlin或S3。输出目录未创建。
+
+没有策略、训练、solver、科学host/guest、仿真或机器人运行。实现可行性部分PASS，研究有效性和完整费用UNKNOWN。下一优先当前账户与完整结算费用生产端、实际run manifest和新ELF剩余栈/原有限窗口；不重复做已接通的日志壳，不开放QUERY、不加模型。只提交两份Git进度文档，稿件和本机实现不上传。
+
 <a id="r35-qv2"></a>
 
 ## R35/QV2：真实付费回执返回与语义适配（静态交付）
