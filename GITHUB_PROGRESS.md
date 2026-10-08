@@ -2,6 +2,30 @@
 
 [当前状态与下一步](.github/README.md) · [仓库导航](README.md)
 
+<a id="r41"></a>
+
+## R41：付费 WAIT 收尾、费用融合、实际 host 修复与学习接续
+
+2026-10-09。根与3个子智能体并行完成实现、静态构建和交叉复核，接续磁盘整理时保留的未完成产物。科研导师判断仍为2 PASS/4 UNKNOWN、CONDITIONAL；监督查询价值/排序保持首优先，有限时域线性FQI为并列重点候选。目标程序、训练、推理、solver、仿真和机器人均未运行，可靠标签0，研究有效性UNKNOWN。
+
+同一成对镜像实现N/E付费取消：仅q1首个空ReceiveReady、同Session实际Center已付费返回WAIT、q0来源已drain及传输为空才允许；取消仍属当前Business，不制造未发生的q1 Query。N跳过第二方向，E在ledger/REQUEST/CAPTURE前返回，实际析构后走原Finish。driver沿原N151510@15、C poll15、E162010@16、C poll16…34；原单行8388608、准备窗口、H34、输入和空间安全界不变。两臂都要求三站guest Finish，但它不证明全进程或费用已闭合。
+
+真实C/N/E journal、SOURCE90/91/92和两个next_selection已与新脚本融合；严格注册表为正常C292/N22/E26、替代C267/N13/E15。保留原16 Job/28 interval的历史Selection/Query/RA B1子family；读取、聚合与释放收费归当前Selection，未发生q1不产零费用family。完整费用、未来报价和合法可用预算仍UNKNOWN，逐行unused不是余额；历史family尚未导出为学习特征。
+
+静态检查发现首版R41新增指针错误：真实AttributionLane会深拷贝JobBinding，journal却要求Segment副本指针等于原对象，导致所有真实非空闭段被拒绝。原QV7没有此错误。隔离修订只改为核注册Plan/current指针及实际副本全部字段，保留私有真实close来源。已实际预处理确认新方法生效，完整重编/链接修订host；526项当前host依赖与23项linker输入有回执。当前host SHA `dcf871cb10e5b51d1cfefa488b26955b47af3047c0a59a619dc72860027b3c1a`；首版`0ab3b00e…`及531旧来源/依赖保留为CLOSE_BLOCKED证据。
+
+R41累计8个RV64 TU加2个host TU，共10个实际构建单元、776项去重依赖；当前候选采用9个单元。三guest完整ELF、实际发布图及原私有kernel字节核验通过，旧基准重链接逐字节相同，临时基准副本核后删除。私有1408字节界不能代替普通全栈/堆/窗口。
+
+取消路径以实际机器码、R19 allocator和B1解码给出条件界：N13,300/E35,654 B1，原单行容量不扩；WAIT记录N126/E129在原149/155槽内，不依赖提前消费。正常局部栈N2992/E4768字节。范围限合法正常取消行，绑定修订host及原三guest；共同前缀、QUERY全尾、异常、整个栈堆/有限窗口、进程销毁及完整资源仍UNKNOWN，旧host失败见证保留。
+
+学习接续真实复用R40四维parser和R18数值适配，绑定修订镜像/计划；分别审计guest Finish、进程回收、完整费用和因果标签。坏/超大费用转UNKNOWN并保留原始审计，不丢失败分母；无输入时values/y为null，真实输出目录未创建。19来源pin、AST编译和实际缺失输入审计通过，数值模型未装载/调用。另一十九维FQI场景不补零迁移，单个q1对不充作序列RL episode；独立TRAIN及完整公共合同尚缺。
+
+六组件只读检查及定点交叉复核通过，联合冻结6,369项文件/来源pin；其中继承旧R40/QV7冻结和磁盘维护回执。四稿、旧冻结、96,234字节历史尾文保护。三个探索树同步`research_update_20261009_r41/REPORT.md`，20工作线在TRACKS区分直接推进、共享、保持和后置。A沿用R39观察接缝，B仍NO-GO，C/随机延迟/LIMO后置，不宣称每条线都新增算法。
+
+本机入口`implementation_binding_evidence/query_value_fused_20261009_r41/REPORT.md`，连同MENTOR_DECISION、TRACKS、RUN_CHECKLIST/RUN_PLAN和只读verify_delivery。下一优先实际历史费用学习输入、当前合法资源与完整费用/报价生产端，以及同一新镜像剩余资格；不再重复实现已有取消协议。主线仍4个重叠验收阶段，支线阶段不可相加；只凭独立比较的任务/完整资源收益决定融合成稿。
+
+运行清单仅替代R40未执行提案：1个DEV共同prefix、QUERY/WAIT各1尾、无重试，每臂270秒，拟外层870+30秒尽力截止，原界不变。NOT_AUTHORIZED/NOT_QUALIFIED，不借旧R37/S3/六槽/Berlin；训练和独立TEST未授权。公开Git仅同步两份指定进度文件。此前净释放约7.92GiB的归档清理保留，本轮未重新展开旧日志或复制guest镜像；维护RESEARCH_RESUME继续保留当时快照，不改旧记录。
+
 <a id="storage-20261009"></a>
 
 ## 磁盘维护：已有归档的冗余展开日志（已执行）
