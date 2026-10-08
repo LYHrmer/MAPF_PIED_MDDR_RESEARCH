@@ -6,6 +6,12 @@
 
 [仓库导航](../README.md) · [完整进度历史](../GITHUB_PROGRESS.md) · [本轮 R39/QV6](../GITHUB_PROGRESS.md#r39-qv6) · [整理前入口全文](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/4e7a9dc71fdbcdaf8b78d3cf9987f0aee2f2a8ee/.github/README.md)
 
+## 磁盘整理（已执行）
+
+清理25,640个未冻结的第三方构建中间文件、99个可重建Python缓存，并打包共享Git历史；释放文件占用约3.56 GiB，扣除审计记录净约3.55 GiB。四树当前约109.90 GiB，磁盘可用约97 GiB。安装工具链、库、源码、旧FLINT保留目录、原数据、结果和四稿均保留；没有删除工作树或Git历史。逐文件清单/日志在本机 `implementation_binding_evidence/storage_maintenance_20261008/REPORT.md`。
+
+清理后5,779项冻结pin中5,778一致、缺失0；唯一差异是清理范围外的科研导师skill源文件哈希变化，本轮未写删该文件，已单独记录，旧冻结不改写。因此当前不能声称全量冻结复核PASS。Git refs/reflogs及四工作树状态保持，连通性检查通过。
+
 ## 原查询价值委派：部分完成
 
 独立工作树 `/home/lyh/MAPF_QUERY_VALUE_FEASIBILITY` 和 `explore/query-value-feasibility` 已建立，基于 `explore/learned-query` 已提交版本 `3c809f903e42ce33d287ca7f21e38924bd6dcffc`。旧轨迹10,543记录/24组已诊断并保留失败、迟到；已实现公共输入/标签入口及费用生产接缝。
