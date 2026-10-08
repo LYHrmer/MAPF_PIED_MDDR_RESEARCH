@@ -2,6 +2,28 @@
 
 [当前状态与下一步](.github/README.md) · [仓库导航](README.md)
 
+<a id="r39-qv6"></a>
+
+## R39/QV6：学习优先级、真实观察与历史费用family
+
+2026-10-08。依科研导师skill重新判断并由3个子智能体与根智能体并行交付。用户提高学习方法优先级：监督查询价值/排序为首优先候选，RL并列重点；未来可在同次获授权开发比较中并行，不要求先证明规则失败。合法数据、完整费用、安全与独立效果仍是必要条件；算法/网络未预先锁定，当前只实现、静态检查、冻结和清单，科学运行0。
+
+对原查询价值委派明确验收为**部分完成**：独立树/分支和基点已建立，10,543旧记录/24组诊断保留5120Query、5254WAIT、143拒绝、18初始失败、8失败尝试和625迟到。它们不是因果标签。合格公共输入0、完整成对尾0、可靠标签0；新价值回归/排序未适配或拟合，旧R18时长ridge不能顶替。共同域强规则、可合法复现的发表方法及独立TEST尚缺，研究有效性UNKNOWN，未融入主线。逐项见独立树QV6 TASK_STATUS.md/json。
+
+学习线将真实Center调用接到同一r36_public producer的共同观察：committed q/b、公开阻塞/关系、已付费收到的RUN/STOP逻辑tick，16组源映射；Known/Absent/Unknown/NotApplicable分开。原逐行供给无跨行账户余额，NOT_APPLICABLE；当前行余量、精确END/age、完整报价、运行来源仍UNKNOWN。2个真实RV64 TU编译+REL部分链接，79依赖固定，真实调用重定位存在；局部帧4944/6352 B不等于全栈。没有新完整ELF，模型/训练/QUERY/执行gate全部false；不改变QV1/R31 wire以伪造必需字段。RL保留ONE_RL_CANDIDATE_PENDING_PREREGISTRATION，策略/训练器/环境与transition均0。
+
+QV6从原C/N/E注册/真实脚本展开每q的16个job、28个成员interval（C20/N4/E4），保留普通END插入；真实Station用actual next_job指针和关闭rule核表。native仅生成真实关闭/逐interval段数，经原paid SOURCE送达，actual/charged分kind聚合、重复/全覆盖及原Query Collector一致性核验在下一Selection的付费RV64 guest完成，避免移作host应用计算。4TU实际重编/部分链接通过，707依赖。仅原Selection/Query/RA历史B1子family，不是全host/通信/wall费用或未来硬报价；下一Selection读/聚合费用仍属下一次，不能漏计。q1原有Rule239后继，但当前SOURCE只绑定单一Selection pointer，q1登记仍UNKNOWN；默认新import/journal容量未登记，同臂运行身份不自证。模型/标签资格保持false。
+
+执行线只补同一R36首行至第二active SOURCE PIN：35根字段≤585字节、历史≤36事件、首SOURCE≤990次ECALL，实际路由/读取/ABI组件上界623701 B1。剩余7764907仅待证额度，完整首行仍UNKNOWN、完整阶段新增PASS0。剩余点定位普通arena first-fit、Retained3592字节/449words分配、new_handler实际0x22894回环与容器/控制工作；不是私有AUTH allocator，不扩大8388608原行或借64准备行。原R38全栈224项/条件20240 B和完整窗口未知保持。
+
+A停止支线在原BALANCE隔离副本接初始结果、邻域拒绝、PP修复/恢复三处真实观察，失败、满缓冲和重复run保留。2新TU+38原对象实际链接；交叉复核发现第二TU缺编译前后依赖回执，已重编补17项，第一TU1121项，旧构建保留。原driver不绑定，没有曲线、采集持久前缀或停止模型；原runtime在邻域失败处滞后，实际system_clock不保证单调，不能当完整时间/费用。S3仍用原binary，未执行新binary或--help。
+
+20条工作线见R39 ALL_TRACKS.md/TRACKS.json；两原探索树新增research_update_20261008_r39/REPORT.md。原时长/位置和SADG/GSES复用共同交付，无新预测/重排实验；B仍NO-GO，C/延迟/LIMO后备后置，旧矩阵不扩大。主线仍4阶段，查询/执行等各3，查询价值/RL/A各4，重叠不能相加；没有凭静态文件数宣称科学阶段完成。
+
+联合静态冻结5,779项文件/来源pin通过，四项只读子验收通过。
+
+本机主仓入口 `implementation_binding_evidence/learning_priority_20261008_r39/`，含导师判断、报告、运行清单、交叉复核和联合只读冻结；独立树 `exploration/learned_query/family_qualification_20261008_qv6/`。下一并行补实际heap/handler与窗口、新SOURCE同臂来源/各单位完整费用、学习合法采集与成对尾。现行授权仍仅实现/静态/冻结/清单；旧一次300秒、S3原版60秒、六槽/Berlin不借用，学习训练预算未登记。四稿、旧冻结、原R36 guest/host、96,234字节旧历史尾文保护；仅同步指定两份Git文件，当前入口收短并保留整理前Git快照。
+
 <a id="r38-qv5"></a>
 
 ## R38/QV5：同镜像资格、真实费用生产与全部线路推进
