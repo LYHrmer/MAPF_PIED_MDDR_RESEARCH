@@ -2,6 +2,26 @@
 
 [当前状态与下一步](.github/README.md) · [仓库导航](README.md)
 
+<a id="r38-qv5"></a>
+
+## R38/QV5：同镜像资格、真实费用生产与全部线路推进
+
+2026-10-08。按用户新增要求并行委派定点工作，覆盖20条工作线；包括原主线/查询/执行、查询价值、强化学习、A停止/B可拒绝选择/C终生引导、共同接口/比较/文献/稿件/延迟/LIMO/Git。工作线不是20个独立课题。用户确认RL为**重点研究候选：补设计和接口，论文纳入由比较结果决定**；旧“暂不加入RL”定位作历史。当前仍只实现、静态检查、冻结和清单，科学运行0。
+
+同一R36 ELF/host不改。修复分析器以名字为键覆盖263组局部同名符号的问题，按真实map绑定对象：444普通函数、9395直接/尾边、163间接位置、44递归SCC、230 LSDA/2241区域；没有未命名直接前沿。新增memcmp完整CFG16 B，以及string dispose64/move80/find16/compare64 B四个传递调用树，11函数经独立CFG/SP复核。最终未闭224＝61库＋163间接，条件小计20240 B与异常E_start；旧19136不沿用，完整普通栈仍UNKNOWN。实际refcount慢路径含pthread/异常、启动数组可写、unwind动态恢复SP均保留。
+
+编译实际头文件的数据对象取得原参数，无可执行段；初次缺include失败保留，修正后通过。有限窗口生成377阶段、4754 Compute行槽＋68 Publication清单：68发布准备329…463 B1步、68原Publication阈值365，共136局部容量证明，其余241阶段UNKNOWN。INIT连续前缀16715245容原两行，完整49行启动未闭。最紧约束为phase0首行第二PIN前全部acquire及下一poll单行的public_state::produce/析构；64准备行和未用槽不能替代。
+
+独立树QV5新增实际Owner/Station close写入的有界all-kind journal，保留Selection/Query/Business/RA类别、interval/final marker；原Query FIFO/Collector不动。复用付费SOURCE，接实际下一Selection RV64读取。4TU编译/可重定位链接，704依赖一致；29源pin、66旧冻结、4稿通过，51文件/50 manifest，SHA `4887ed3c5335b03e50bdb9dc4dcd7995777e063f91e48f5355de9be9d9e5026f`。默认未登记新import/journal/容量，没有新可启动镜像，完整跨站family/报价及新镜像资格仍UNKNOWN。原逐行供给无跨行账户总额，余额NOT_APPLICABLE；unused不能转成预算。保持R36 END/WAIT二进制时，宿主统计不能补出Query权限或报价。
+
+RL新增事件决策、合法历史、WAIT/QUERY建议、完整批次目标和分单位费用设计；接口复用QV1，区分B1 actual/charged、任务完成/失败/删失，来源资格及模型/训练权限保持关闭。没有策略、训练器或环境运行。普通END观察tick不能补物理精确END；RL实际交互回报与逐查询QUERY/WAIT成对因果标签分开。原Berlin三臂不增RL臂，R20仅DEV，普通END/WAIT/结构/EWMA保持。[DCC原始RA-L作者稿](https://arxiv.org/html/2109.05413v2)已按决策变化选择通信，本轮定点核对其执行合同，未宣称新增学习通信本身新颖。
+
+A/B/C另补14组源码字段映射、23pins和4原Python AST。A最终CSV lowerbound非一般在线特征；B已有跨地图split，强工件/许可与真实fallback费用仍缺，保留2PASS/1FAIL/3UNKNOWN、NO-GO；C核到同固定OnlineGGO的真实WPPL assigned/finished代码，但默认不启完整日志，缺arrival/start/censor，示例change_interval=-1不能作非平稳实验。没有原版R0、学习或新模拟运行。
+
+原条件时长/位置、SADG/GSES补同信息/安全/费用接入合同；稿件新增证据—主张映射，延迟/LIMO新增时钟/消息/任务日志合同。四稿及旧冻结证据未改，DARI/旧矩阵不重启。主线仍4阶段、原查询/执行各3、查询价值/RL/A各4，重叠不相加；后备和结构FAIL分别保留，不以静态文件数宣称科学阶段完成。
+
+联合静态冻结4,795项文件/来源pin通过，四稿、旧冻结和96,234字节历史尾文保持；这不升级科学效果或运行资格。本机R38 `REPORT.md`、`research/ALL_TRACKS.md`、`research/RL_DESIGN.md`、`RUN_CHECKLIST.md`、`verify_delivery.py`为入口；原两探索树有新增 `research_update_20261008_r38/REPORT.md`，QV5报告与准确接线缺项位于独立树。当前单次300秒、S3原版60秒、旧择一六槽/Berlin均未新增授权或转借；RL训练预算未登记。下一优先首行/单行和真实间接/异常栈、固定C/N/E结算family与合法付费送达，再具备独立比较资格。只提交指定两份Git进度文件。
+
 <a id="r37-qv4"></a>
 
 ## R37/QV4：费用观测、运行来源与阶段收敛（静态交付）
