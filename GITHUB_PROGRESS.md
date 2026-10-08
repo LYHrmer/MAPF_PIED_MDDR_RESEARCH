@@ -2,6 +2,24 @@
 
 [当前状态与下一步](.github/README.md) · [仓库导航](README.md)
 
+<a id="r37-qv4"></a>
+
+## R37/QV4：费用观测、运行来源与阶段收敛（静态交付）
+
+2026-10-08。按科研导师skill重新以完整验收计阶段：主线剩4，原查询/执行各3，查询价值与独立规划候选各4；阶段共享，不能累加或用交付编号递减。各线仍2 PASS/4 UNKNOWN、CONDITIONAL。共同接口资格及首个最终任务/完整资源增量尚未成立；学习不作为主线成立前提，独立规划保持低成本后备，年底目标仍为成稿首投。
+
+定点查明R36 q0是实际Registration/C-business/C-END归属，AttributionLane只有producer侧行计量，无本臂累计剩余硬预算接口。原8388608行容量、unused及闭行Business费用均不能填查询预算或完整报价。R37新增cost_ledger真实stdout读取，按station/account/job/supply保留合法闭行子集、原行号/SHA、坏行和未分类行；open meter不并入闭行。host inclusive线程阶段保留树关系，不与host进程CPU、监督CPU或B1重复求和。
+
+已实现同一R36 host的直接wait4监督入口、固定授权/资格检查、stdout/stderr、真实退出/超时/中断保留、不可覆盖写入与运行来源审核。已回收失败/超时也记录实际CPU；未回收或未等待后代不填0，完整进程树/资源费用仍UNKNOWN。绑定仅证明捕获来源，不把fork、exit0或脚本Finish当任务完成/guest权限。最外层回执落盘为单列harness范围；Linux截止为尽力监督并记录超出量。
+
+原委派智能体在独立树冻结QV4，直接重算R37账本并结合原QV3回执，固定run来源成立后仍仅HOST_AUDIT。拒绝账号/容量/支出/unused替代余额，拒绝把历史结算时间当合法送达时刻或硬费用上界。14文件、13个manifest条目、18来源pin、3 Python AST、1 schema通过；默认NOT_RUN，费用/模型/标签接纳false。Manifest SHA `7efc74e40dc4140d3773c8812c51bdb916cf291adafe1a88834d7f97606febf7`。
+
+独立规划支线新增S3失败/删失观测费用读取；严格原版R0由原冻结S3审核，非零退出仍留分母。未改作者输入/二进制、原40任务、55+5/总60秒提案或授权，没有新候选机制/停止模型。
+
+主仓5个Python AST，实际只读preview PASS，--execute在mkdir/fork/exec前REFUSED/NOT_AUTHORIZED，账本/运行绑定/S3默认读取均NOT_RUN，输出目录仍不存在。联合4,186项pin、四稿和旧历史尾文保护通过；R36 guest `4a8278a1…`、host `15868df0…`不变。非空解析和监督动态验收仍UNKNOWN；0科学运行、0策略、0训练、0因果标签。
+
+本机 `implementation_binding_evidence/settlement_scope_20261008_r37/`：阶段判断、报告、实现、静态回执与清单；独立查询价值树 `exploration/learned_query/cost_qualification_20261008_qv4/`。一次270秒工作+30秒收尾/总300秒尽力wall提案替代R36同目的提案、不增加次数，NOT_AUTHORIZED/NOT_QUALIFIED；CPU预算未指定，不借六槽/Berlin/S3。下步收敛到同一R36 ELF普通全栈/有限窗口及实际付费预算/完整报价生产端，不继续扩并列回执包装或旧矩阵。输入、安全/控制/误差界与普通END、WAIT、结构规则、EWMA保持，仅同步两份指定Git文件。
+
 <a id="r36-qv3"></a>
 
 ## R36/QV3：实际guest接收捕获与当前公开状态（静态交付）
