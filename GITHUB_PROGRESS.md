@@ -2,6 +2,32 @@
 
 [当前状态与下一步](.github/README.md) · [仓库导航](README.md)
 
+<a id="r40-qv7"></a>
+
+## R40/QV7：同初态采集、实际学习适配与轻量RL
+
+2026-10-09。依科研导师skill判断并由根与3个子智能体并行实现、交叉核验。监督查询价值/排序保持首优先方法候选，RL并列重点。本轮完成具体探索实现，仍只实现、静态检查、冻结与清单，科学host/guest、solver、仿真、机器人、训练及推理均0。
+
+原R19四任务在实际q0后停驻一个Session，Center在付费next_selection后的唯一干预边界，N/E在真实空AwaitEvidence；父状态不恢复，顺序fork QUERY/WAIT两尾。两臂同镜像与固定续策规则、臂内信息、普通END，后续合法动作可不同。继续原150900..150963剩余准备行、H34、8388608行容量和原保护参数。真实4项Position公开计数经同paid checkpoint a3–a6输出，host只读实际寄存器；日志采集后才fork，父进程尾部耗时另写observer，不泄入前决策prefix。原物理日志不能整体作为特征。
+
+2个RV64 TU+1个host TU完整构建，756编译依赖；新Center SHA `d241825ad795fe351232418ed9d95cd29ed195c89f721c09355fa67afe83614f`，host SHA `dede8371790eafd30a3a8c7c6d789b84c32f5c875fd387e3cad9dddafc86fbd9`。新地址发布图复核、私有kernel字节一致，1408私有栈不代替普通全栈/堆/窗口。复用原对象和QV7已有原ELF基准，没有复制大build。实际采集监督保留逐臂wait4/CPU/RSS/超时/失败/普通END，缺失不记0。
+
+WAIT N/E仍没有付费取消协议，即使四任务完成也返回78并标记N_E_AWAIT_REQUEST；QUERY guest Finished也不等于全进程费用闭合。读者按原stage_service的普通END+dwell/FIFO/resident语义核四任务service完成和makespan，只给日志诊断差，标签固定null。独立复核通过。下一已定位：仅q1首个空ReceiveReady允许付费Cancel=1，N传播取消跳过第二方向、E在ledger/REQUEST/CAPTURE前返回，正常局部析构后走原Finish；原N151510@15→C poll15→E162010@16→C poll16...，不能回退时间或加容量。当前未实现新取消协议，原单行是否够UNKNOWN。
+
+真实四维公开出口、严格前缀解析及四维价值回归/排序入口已复用R18五项数值函数/方法；保留来源改变、失败和拒绝分母，不把四维填成另一R36场景的19维。另一19维合法生产/2TU+REL、成对audit、ridge适配同时交付；共同8来源比较和TRAIN分组元数据经交叉复核修正。没有合格记录、标签、拟合、模型或推理；原“尚未适配”进展为“静态适配、数据未资格化”。
+
+强化学习形成有限时域线性FQI探索实现：倒序阶段回归、gamma1、同臂合法转移、真实终态J、费用逐轴、同价WAIT优先；数值核复用R18，alpha事前固定，不把另一阶段留出family泄入目标。失败/删失保留，缺完整episode拒绝，不填虚构终态。基于JMLR FQI机制，非作者原实验复现，非LSPI/CQL；Markov充分性/联合支持/原版R0仍未成立。当前19维WAIT/多机会/预算/报价未齐，R19只有一个被比较的额外q1，不能证明序列RL优势。仅AST/内存编译，无训练/评分。
+
+QV7独立树完成真实C/N/E journal、SOURCE90/91/92和两个实际next_selection指针登记、guest付费接收/聚合与及时释放，4TU完整ELF/host、709依赖；C6266/N149/E155槽从原有限脚本推导。lineage来自真实Session，但fork继承编号，仍需实际arm/run来源核验。范围只是历史Selection/Query/RA的B1子family，新读取/释放记在当前next Selection，非全费用或未来报价。与新成对镜像尚未融合，新增干预规则需重导原C291/N22/E26表，不能贴旧下标或放宽验证。
+
+执行线纠正R39实际allocator来源：原R36实际采用R27前缀跳跃/位图版本，不能沿用65088×449旧二重扫描说明；旧记录保留，623701 SOURCE组件界不变。本轮334原PC给参数化B_alloc(r,L)，真正总live-block L未闭；实编无代码对象确认Retained3592B/CaptureCommand152B，每份动态payload≤1203words，第二PIN前最多3份即3609words/27块。不是总堆界，后续第二acquire后可4份。new_handler静态引用有条件闭合，异常、总L、G0/G1、普通全栈/有限窗口仍UNKNOWN，新镜像不继承。
+
+全部20工作线在R40 TRACKS明确直接推进/共享接口/保持/后置。条件时长/位置、SADG/GSES继续受原信息/安全/整数域约束；A沿用R39实际观察未新增算法，B仍NO-GO，C与延迟/LIMO后置。主线仍4重叠验收阶段，各支线阶段不相加；2PASS/4UNKNOWN、CONDITIONAL。先补同镜像WAIT付费收尾和完整资格，再冻结独立新数据/方法、申请小比较、按任务与完整资源证据决定融合成稿。
+
+联合静态冻结6,104项文件/来源pin通过，四主稿及96,234字节历史尾文未变；8项组件/缺失输出只读检查通过。磁盘维护净释放约3.55GiB保持，四树快照约110.084GiB，本轮R40/QV7约189.81MiB；额外4.79GiB展开副本仍缺完整内容/引用证明，未删。旧R39的5,779pins当前全一致，外部skill已恢复旧SHA，先前漂移记录不改写。
+
+本机入口 `implementation_binding_evidence/query_value_completion_20261008_r40/REPORT.md`、RUN_CHECKLIST/RUN_PLAN、TRACKS、verify_delivery；独立树 `source_registration_20261008_qv7/REPORT.md`，另两探索树有research_update_20261009_r40。清单为1个DEV共同prefix+两尾、无重试、每臂270秒，拟外层870秒+30秒收尾，原输入/容量不扩；NOT_AUTHORIZED/NOT_QUALIFIED，运行目录未创建。不借旧R37/S3/六槽/Berlin，不启动训练/新TEST。只同步指定两份Git进度文件，实现与工件留本机。
+
 <a id="storage-20261008"></a>
 
 ## 磁盘维护：按保护白名单清理（已执行）
