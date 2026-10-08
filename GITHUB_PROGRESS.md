@@ -2,6 +2,38 @@
 
 [当前状态与下一步](.github/README.md) · [仓库导航](README.md)
 
+<a id="r43"></a>
+
+## R43：付费模型通路、不可变产物与真实生命周期
+
+2026-10-09。根与3个子智能体并行完成实现、实际构建、互审和静态冻结。按科研导师定点判断继续探索，资格仍2PASS/4UNKNOWN、CONDITIONAL；监督价值/排序优先、RL重点候选。模型ABSENT；科学目标、训练、推理、solver、仿真、机器人均0，可靠标签0，研究有效性UNKNOWN。
+
+固定注册经host只读加载，仅C持有不可变bundle，沿原SOURCE90实际Selection权限及付费相位接收47word/376B参数。guest固定十维已合法收到输入执行标准化ridge scalar soft-double核，原检查点另用s2..s11输出advice，保留a/t原协议。真实ELF核到五类软浮点调用与独立寄存器；无零权重/零预测伪造。advice不驱动原forced QUERY/WAIT，不新增政策臂、安全权限或数据泄露通道。原R18公式复用但不声称NumPy/BLAS逐位等价。
+
+修正前决策入口要求未来实际推理CPU/wall的时序冲突：调用前合法准入与事后实测结算分开。前后两个paid行快照仅在same scope/scheme/row且单调时给B1差；跨行UNKNOWN，Strict同行charged差零不代表免费。区间排除第二快照导出/checkpoint、host加载与生命周期，非完整费用/报价或预算。
+
+实际child tail后先持久保存原结果，再session.reset触发真实析构，随即_exit不回到已毁成员帧。parent正常/异常真实销毁，构造失败单记未构造；真实pin guard导致terminate时保留begin而无complete和原signal，未清pin绕过。270秒后改为非阻塞回收，首尾未回收时保留WAIT未启动分母。外层870+30秒、原资源限制、subreaper与wait4生产实现，CPU按不重叠回收子树计，已回收后代与共享prefix不重复叠加。wall/CPU/B1/RSS/输出/通信分别记录，完整费用仍UNKNOWN，外层动态未运行。
+
+learning实现fit-time不可变模型与TRAIN来源，导出前再次校验；拒绝旧可变R42artifact。原R18数值AST保持，native observation不读未来尾或以Python重算建议，post-cost单独读取真实START/LIFECYCLE。旧R42训练gate固定DEV且有无条件未资格blocker，因此真正独立TRAIN生产端仍缺，不只是少一个模型文件。十九维FQI不借十维资格，单q1对不充多机会episode。
+
+实际3 guest+2 host构建单元、782去重编译依赖；host两TU共532依赖、24实际链接输入，Center `7250574d4ccd9aeeb94d7ce2523aa7672541db1994df95c230400c127afc95a7`、host `07320ec2e511512d0001e718a3d3d9e1a85367cddd794d88d540311236e3e16c`。N/E复用R41，固定publication图和私有kernel通过；私有1408B和局部帧144/480B不代替普通全栈/heap/窗口。lifecycle首冻结引用通用guard错误已按真实R19输入更正，原失败保留，不为此重建或改guard。
+
+三个组件默认只读冻结检查和定点交叉互审通过，联合983项新交付/实际来源pin，manifest SHA `6f8280a612a07e55393038f7edcfad1a00340c0bc3c48ce0aeff7ba0b8a95059`。旧R42/维护manifest只核registry hash，不重审旧6520pins。四稿与96,234字节历史尾文保持。真实prefix/生命周期缺失检查均NOT_RUN，未造数据或创建运行目录。
+
+本机入口`implementation_binding_evidence/query_value_paid_inference_20261009_r43/REPORT.md`及导师判断、20线TRACKS、RUN_CHECKLIST/RUN_PLAN、只读verify_delivery；三探索树新增research_update_20261009_r43/REPORT.md。主线仍4个重叠阶段，下一补同镜像剩余执行资格/完整费用与独立数据，再依授权独立比较决定融合。A保持、B NO-GO、持续任务/延迟/LIMO后置。构建/组件占用快照约69.85MiB，不展开旧日志、不重复复制N/E。
+
+运行清单只替代旧未执行提案：1 DEV共享prefix+QUERY/WAIT各一尾，默认无模型、无重试；原H34/8388608行容量/64准备行/8192最大行及保护参数不变，单尾270秒、外层拟870+30秒尽力截止。NOT_AUTHORIZED/NOT_QUALIFIED，起止时刻NOT_SCHEDULED，训练/独立TEST不在提案内。公共Git只同步指定两份进度。
+
+<a id="storage-parallel-20261009"></a>
+
+## 三路磁盘复核：清理成果核对与下一候选
+
+2026-10-09。按用户并行要求，三个子智能体分别检查R18归档、Git/工作树/缓存及冻结/恢复关系，本次新增删除0。已有两轮归档清理净回收8,572,899,328B约7.984GiB，10月8日约3.55GiB另计；四稿、followup的21pins/41保留文件和原包一致，旧28归档与恢复入口存在。四树占用约102.435GiB、磁盘可用约110.41GiB为快照，不是新增回收。
+
+新单包00014的80归档成员和39现有输出副本已由子智能体核对，候选allocated69.656MiB；对应R18 TEST maze s04 n32 speed_shift。该批仍缺最新引用扫描、持久恢复索引和恢复核验，未删除；其余3.375GiB只是stat候选池，未资格。旧after审计需先恢复，不称透明可用。四树共用一Git对象库约3.73GiB，垃圾0；tracked副本与214个含冻结pyc保留，不删工作树/重复repack。
+
+本机记录`implementation_binding_evidence/storage_maintenance_20261009_parallel_review/REPORT.md`。所有扫描与核对只读，无模型/科学目标调用；下一清理只在精确引用和可恢复条件成立后执行。
+
 <a id="storage-followup-20261009"></a>
 
 ## 磁盘维护补充：单包输出去重与恢复验证

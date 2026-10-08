@@ -1,44 +1,41 @@
 # MAPF 项目当前状态
 
-更新：2026-10-09，当前科研入口 R42。根与 3 个子智能体将合法历史费用、付费当前行资源和学习入口接入实际 Center/host，并完成交叉核验。**真实十维输入与原回归核已接线；可靠标签、训练/推理和科学运行仍为 0，研究有效性 UNKNOWN。**
+更新：2026-10-09，当前科研入口 **R43**。根与3个子智能体完成同一镜像的付费模型接收/计算通路、真实 Session 析构、生命周期费用生产及不可变训练产物接口。**实现已构建并冻结；模型缺失，训练、推理、科学运行和可靠配对标签均为0，研究有效性 UNKNOWN。**
 
-研究问题保持MAPF、有界空间跟踪误差和有限更新资源，方法主线为代价感知进度查询与安全协调。监督查询价值/排序是首优先方法候选，RL并列重点；模型只建议WAIT/QUERY，安全释放仍由原有效证据决定。普通END、WAIT、结构规则、EWMA保留，是否纳入论文由独立任务/完整资源比较决定。
+研究问题保持MAPF、有界空间跟踪误差和有限更新资源，方法主线为代价感知进度查询与安全协调。监督查询价值/排序首优先，RL为并列重点候选；安全释放仍由原有效证据决定。普通END、WAIT、结构规则与EWMA保留，论文纳入由独立任务/完整资源比较决定。
 
-[仓库导航](../README.md) · [完整进度历史](../GITHUB_PROGRESS.md) · [R42](../GITHUB_PROGRESS.md#r42) · [R41](../GITHUB_PROGRESS.md#r41) · [R40/QV7](../GITHUB_PROGRESS.md#r40-qv7) · [上一版入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/38361a84b2feb04f3daa65609d12345ee08060a7/.github/README.md)
+[仓库导航](../README.md) · [完整进度](../GITHUB_PROGRESS.md) · [R43](../GITHUB_PROGRESS.md#r43) · [R42](../GITHUB_PROGRESS.md#r42) · [R41](../GITHUB_PROGRESS.md#r41) · [上一版入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/959088c35f588c8870a0e53d5ef7e223586eac05/.github/README.md)
 
-## R42 实际交付
+## R43 实际交付
 
 | 交付 | 实际完成 | 仍缺 |
 |---|---|---|
-| 合法历史费用输入 | q0 实际已付费收到的 Selection/Query/RA 各 actual/charged 六项 B1，加原四公开计数；同一检查点十维输出，完整 ELF 三调用和寄存器 ABI 已核 | 历史子 family 不含完整费用/未来报价，合法进度/年龄/候选目标合同仍未齐 |
-| 当前资源生产 | 复用实际 SOURCE90 的 Selection 权限，13 次付费调用接收同 lane 的行资源快照；捕获/读取/释放都有付费路径 | 捕获余量不是决策时余额；跨行账户不存在，完整未来报价 UNKNOWN；旧 BUY 宏仅为原资格阈值 |
-| 学习与预测接入 | 新十维 parser 复用原 R18 回归/排序核；前决策入口只读登记 prefix，不依赖未来尾或标签，拒绝越界路径与符号链接 | 原生来源、模型加载/推理付费、独立 TRAIN 和完整配对标签未齐；没有部署策略或已训练模型 |
-| 同一候选执行 | 三新 guest TU + 一个 host TU 完整编译链接，复用 R41 N/E；新地址 publication 全图、私有 kernel 和实际预处理来源通过 | 新 Center 全栈/堆/全部窗口及完整进程费用仍 UNKNOWN；旧取消局部证书不升级整体资格 |
-| 强化学习 | R40 有限时域线性 FQI 保持并列重点候选，共享合法前缀与费用分层 | 原十九维域不借十维资格；多机会 episode、实际训练和独立效果仍缺 |
+| 付费模型通路 | 固定注册→原SOURCE90权限/付费→十维合法输入→376B ridge参数/soft-double核→原检查点独立advice；真实Center/host已链接 | 默认ABSENT，没有权重或模型调用；advice尚不控制原forced QUERY/WAIT，数值兼容与完整窗口未知 |
+| 学习数据接口 | fit-time不可变产物，拒绝旧可变artifact；native reader只读prefix；调用前准入与事后实际费用分开 | 旧R42 gate固定DEV且无条件阻断，真正独立TRAIN生产端仍缺；可靠标签0，不能只加模型文件 |
+| 真实收尾与生命周期 | 尾结果先持久保存，再实际销毁Session；保留析构abort/未回收/未启动WAIT；外层subreaper/wait4生产已实现 | 动态行为未验证；不将host析构当guest付费清理；全进程完整费用仍UNKNOWN |
+| 费用范围 | 同行付费前后快照差、生命周期CPU/wall分别采集；共享前缀与已回收后代CPU不重复加总 | 区间B1、RSS、输出字节都不能代替完整费用；跨行预算与完整未来报价仍缺 |
+| 同一执行镜像 | 3 guest+2 host TU实际构建，782去重编译依赖；publication全图、私有kernel及寄存器实码通过 | 普通全栈/heap/全部有限窗口尚缺；局部栈界不升级整镜像资格 |
+| 强化学习 | 十九维有限时域线性FQI继续重点，共享费用阶段和生命周期合同 | 不借十维输入资格；多机会episode、训练和独立效果均未形成 |
 
-R42 四个成功构建单元共 774 项去重依赖；host 528 项依赖、23 项实际链接输入。Center SHA `d8b773b9…`，host `139a8fd1…`。两次编译失败日志保留，修正了 C++14 兼容与同名枚举加载冲突，未放宽编译参数。三组件实际检查和交叉复核通过，联合冻结 6,520 项文件/来源 pin；四稿与旧历史尾文保持。静态接线不代表研究效果或运行许可。
+host两TU共532依赖、24个实际链接输入，Center SHA `7250574d…`、host `07320ec2…`；N/E复用R41。三组件只读冻结核验及交叉复核通过，联合冻结983项新交付/实际来源pin，manifest `6f8280a6…`。旧R42与磁盘冻结仅核registry hash，未把整套旧6520项重审或复制。四稿及历史尾文保持。
 
-R41 的 WAIT 付费取消、闭段指针修复及失败见证保持。新资源读取桥的 110 B1 只覆盖桥内显式标量支付，不是完整费用；每 journal 新增 80B 记录也不等于总存储费用。
+本机入口：`implementation_binding_evidence/query_value_paid_inference_20261009_r43/`，含`REPORT.md`、`MENTOR_DECISION.md`、`TRACKS.json`、`RUN_CHECKLIST.md`、`RUN_PLAN.json`、只读`verify_delivery.py`。三个探索树同步`research_update_20261009_r43/REPORT.md`。实现与证据留本机，公共Git只同步两份指定进度。
 
-本机主入口：`implementation_binding_evidence/query_value_cost_features_20261009_r42/` 的 `REPORT.md`、`TRACKS.json`、`MENTOR_DECISION.md`、`RUN_CHECKLIST.md`、`RUN_PLAN.json`、`verify_delivery.py`。三个探索树均同步 `research_update_20261009_r42/REPORT.md`。旧冻结和四稿保护；公共 Git 只同步两份指定进度，实现与证据留本机。
+## 原查询价值委派：部分完成
 
-## 原查询价值委派：仍为部分完成
+独立工作树`/home/lyh/MAPF_QUERY_VALUE_FEASIBILITY`、分支`explore/query-value-feasibility`已建立，基于`explore/learned-query`提交`3c809f903e42ce33d287ca7f21e38924bd6dcffc`。旧10,543记录/24组仍只诊断，R20仍DEV；不能从单轨迹造反事实收益。
 
-独立工作树 `/home/lyh/MAPF_QUERY_VALUE_FEASIBILITY`、分支 `explore/query-value-feasibility` 已建立，基于 `explore/learned-query` 提交 `3c809f903e42ce33d287ca7f21e38924bd6dcffc`。旧10,543记录/24组仅诊断，保留失败和迟到；R20仍DEV。
-
-现在已实现真实采集器、公开输入出口、价值回归/排序适配及一个RL候选，原“新价值模型尚未适配”的状态已推进。**合格实际公共输入0、完整成对尾0、可靠因果标签0、拟合/策略调用0。** 同域强规则、外部发表方法和独立新TEST未完成，未融入主线。静态接线或MSE不能证明研究有效，任务效益与各单位费用分别记录。
+真实采集器、公开输入、价值回归/排序、付费原生模型通路与RL候选已有探索实现。**合格实际公共输入0、完整成对尾0、可靠因果标签0、拟合/策略调用0。** 同域强规则、外部发表方法和独立新TEST未完成，未融入主线。静态接线或MSE不能证明研究有效，任务效益与完整费用逐单位记录。
 
 ## 下一必要工作与全部线路
 
-下一优先：定点关闭同一新镜像新增付费路径及剩余执行资格，补模型加载/推理的实际付费接入和完整费用，落实独立实例采集条件。历史费用出口和当前行资源生产已有实际实现，不再列为待建。监督价值与 RL 保持优先，但原生配对语义、训练及独立比较仍未完成。
+先定点关闭同一新镜像剩余普通全栈/heap/有限窗口及完整费用生产，再补独立TRAIN/CAL/TEST来源与完整配对语义；现有注册、付费模型接收、真实Session析构和生命周期实现不重复建设。获授权后才采集合法两尾、训练及独立比较。原预算/报价缺口不能用行余量、历史子family或旧BUY阈值顶替。
 
-十维历史摘要、行余量、旧配置阈值都不能替代完整预算/报价。只有同预算改善任务完成，或事前固定相近完成下降低完整资源，才能支持融合论文；前决策输入不能依赖未来是否成功。
-
-20条是共享工作线，不是20个课题；TRACKS区分本轮直接推进、共享接口受益和后置。主线仍4个重叠阶段：共同资格→方法/数据冻结→获授权独立小比较→融合成稿。查询/执行等各3，价值/RL/A各4，不能相加或按文件数递减。导师判定主线/学习仍2PASS/4UNKNOWN、CONDITIONAL。
-
-条件时长/位置与SADG/GSES复用共同交付，保留原信息、安全/整数域和拒绝回退；A停止保留R39真实LNS观察，尚缺采集绑定/完整时钟/独立路径资格；B强工件/许可/fallback费用缺，仍NO-GO；C终生arrival/start/censor仍缺。随机延迟、两台LIMO后置。没有声称这些线本轮都新增了算法，DARI和旧C/LD/STOP矩阵不重开。
+20条是共享工作线，不是20个算法课题。主线仍4个重叠阶段：共同资格→方法/数据冻结→获授权独立小比较→融合成稿；各支线3或4阶段，不能相加或按文件数递减。导师仍2PASS/4UNKNOWN、CONDITIONAL。条件时长/位置、SADG/GSES共享接口；A保持R39停止观察，B仍NO-GO，持续任务/随机延迟/两台LIMO后置。仅在同预算改善完成，或事前固定相近完成下降低完整资源，才支持论文融合。
 
 ## 磁盘整理与运行边界
+
+最新三路只读复核：既有两轮归档清理净回收合计约7.984GiB，10月8日约3.55GiB另计；本次没有新增删除。四树约102.435GiB，磁盘可用约110.41GiB（占用快照）。Git为四树共用一份对象库，不重复repack。新发现R18单包39个输出候选69.656MiB，已核归档成员和副本，但本批引用/恢复索引未齐，暂不删除；其余3.375GiB仅未资格候选池。详见[并行复核](../GITHUB_PROGRESS.md#storage-parallel-20261009)及本机`storage_maintenance_20261009_parallel_review/REPORT.md`。
 
 2026-10-09补充清理：根与3个子智能体核验R18的一个归档，新增删除39个冗余输出副本（20个after、19个stdout），回收69.816MiB；80个归档成员核对、2次实际原路径恢复通过。同包41个输入/回执等文件与四稿保留。旧R18审计须先恢复相关输出。恢复工具及记录位于`implementation_binding_evidence/storage_maintenance_20261009_followup/`；[补充维护详情](../GITHUB_PROGRESS.md#storage-followup-20261009)。这部分新增回收不计入此前7.92GiB。
 
@@ -48,8 +45,8 @@ R41 的 WAIT 付费取消、闭段指针修复及失败见证保持。新资源�
 
 磁盘维护目录的 `RESEARCH_RESUME.md` 保留清理时快照；其未完成构建已由 R41/R42 接续，旧记录不改写。R42 新增文件占用快照约 71.5MiB，主要是必要的新 Center 与构建证据，N/E 直接复用；未恢复被清理日志，不重复计算净清理收益。
 
-旧R39的5,779项pin现全部一致：外部科研导师skill已恢复旧pin字节，本轮未改写skill，之前维护的漂移记录保留。磁盘/主稿复核见R40 `STORAGE_PROTECTION.json`，原逐文件清理回执仍在 `storage_maintenance_20261008/`。
+R40当时复核旧R39的5,779项pin全部一致：外部科研导师skill已恢复旧pin字节，之前维护的漂移记录保留；本轮没有重复该全量检查。历史磁盘/主稿复核见R40 `STORAGE_PROTECTION.json`，原逐文件清理回执仍在 `storage_maintenance_20261008/`。
 
-现行授权仍仅实现、静态检查、冻结和清单。新提案只含1个DEV共享prefix+QUERY/WAIT两尾，无重试；输入/镜像/输出、每臂270秒、拟外层870+30秒截止和失败保留已列明，**NOT_AUTHORIZED且NOT_QUALIFIED**，未建运行目录。旧R37一次300秒、S3原版60秒、旧六槽/Berlin不互借；训练、独立TEST、随机延迟/机器人未授权。
+现行授权仍仅实现、静态检查、冻结和清单。R43新提案只含1个DEV共享prefix+QUERY/WAIT两尾，模型ABSENT，无重试；输入/镜像/输出、每臂270秒、拟外层870+30秒截止和失败保留已列明，**NOT_AUTHORIZED且NOT_QUALIFIED**，未建运行目录。旧R37一次300秒、S3原版60秒、旧六槽/Berlin不互借；训练、独立TEST、随机延迟/机器人未授权。
 
 毕业目标沿用2026-10-07确认：学校无严格SCI分区/名单限制，希望期刊有合理质量，争取2026年底成稿首投，非录用保证。先验证同预算改善固定批次完成，或相近完成下省完整资源；持续任务接口未通不称吞吐。旧9月21日交接仅作历史，已有完整查询闭环不重复建设。
