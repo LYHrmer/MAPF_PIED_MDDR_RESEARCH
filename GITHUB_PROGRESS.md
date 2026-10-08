@@ -2,6 +2,30 @@
 
 [当前状态与下一步](.github/README.md) · [仓库导航](README.md)
 
+<a id="r42"></a>
+
+## R42：真实历史费用输入、付费行资源与前决策学习接入
+
+2026-10-09。根与3个子智能体并行实现、实际构建和定点交叉复核。上一轮host修复/冻结是实质进展，本轮直接补学习需要的合法费用输入，不新增网络或扩大旧矩阵。科研导师仍2 PASS/4 UNKNOWN、CONDITIONAL/探索原型；监督价值/排序首优先，RL为并列重点。科学目标、模型、训练、solver、仿真与机器人调用均0，可靠标签0，研究有效性UNKNOWN。
+
+实际Center在first.checked_update_b1尚存活时提取q0已合法付费收到的Selection/Query/RA各actual/charged六项B1，原位置释放typed对象和历史。原四项公开计数保留，同一checkpoint的a3…a6输出计数，t0…t5输出六费用、t6为schema/状态/scheme；原2/1/254/import协议不变。host仅从真实暂停的ordinary寄存器读值，紧邻原共同checkpoint记录，随后才fork。完整ELF确认capture→资源receive→同checkpoint三条实际调用，历史对象同址且未被资源对象覆盖，23条直线payload设置和唯一ECALL通过。字段只描述历史子family，缺失/失败不当零，不读未来END/物理真值，不泄露QUERY尾。
+
+资源生产复用实际SOURCE90和Owner两个真实Selection指针，从同Session实际C开放lane/当前注册job与interval捕获。13次paid调用包含2来源身份、捕获、9字段和释放；五Receipt槽先atomic5付费再取同lane快照，其他绑定/有效位逐步付费，释放也付费。桥内正常显式标量支付110 B1，只是桥内子项，未计guest/Owner/native成本，不是完整费用/窗口界。每journal80B native记录经实际编译断言，原6词桥续态不扩，完整内存/host费用仍UNKNOWN。
+
+捕获行余量与后续读取后的决策余量分开；逐行meter没有跨行账户，状态NotApplicable，未来完整报价Unknown，完整报价准入关闭。R19_AVAILABLE_NEXT_BUDGET确实参与旧BUY资格，只有配置阈值而无真实余额/扣减生产端；本轮保留原值和eligible行为，不伪装账户。固定script的更新机会与跨行经济预算也是不同资源轴，本轮未新增机会字段。
+
+新十维parser和回归/排序入口真实复用原R18数值体，核wire/scheme/整数范围/共同前缀来源，保留失败与缺失分母。复核修正了前决策预测依赖未来label资格的问题：PrefixInput只读取登记公共prefix，训练才核完整成对尾；实际predict调用链接好但缺原生前缀与推理付费仍拒绝。非登记路径先metadata-only拒绝，逐层nofollow、普通文件与inode核验，hash/parser同只读句柄，不读取臂尾来验证资格。原十九维FQI不借十维资格，单q1对不充作多机会episode。
+
+三新RV64 TU与一个host TU完整编译链接，774项去重依赖（guest并集294，host528），host23项实际link输入。Center SHA `d8b773b958f8f192ea7acbeebcd3580505f94d8e279441e2ad6d5af9114f7803`，host `139a8fd17e454066289b6cdcbf3a79bf9f909f777ab990279e48ef059877164c`；N/E直接复用R41原ELF。原固定publication全图按新地址核验，私有kernel字节一致；资源七块实际预处理源码逐token核验。上述均不升级新Center普通全栈/堆/全部有限窗口或动态运行资格。
+
+两次真实编译失败保留：C++17 inline变量与原C++14冲突；旧强制头同guard遮蔽追加enum。修复保留原编译参数，改独立CurrentRowField 30…40，原SettledCostField/RecordKind整文件不变，避免旧对象ODR冲突。最终每单元构建前/后来源回执独立落盘；早期未持久化的依赖SHA不追造，未将失败当成功。
+
+三个组件静态检查和交叉复核通过，联合冻结6,520项文件/来源pin；四稿、旧R41/R40冻结和96,234字节历史尾文保持。真实missing-input审计仍NOT_RUN、values/y为空；全费用/报价、推理付费、原生配对来源、独立TRAIN及外部同域比较尚缺，没有部署策略或已训练模型。
+
+本机入口`implementation_binding_evidence/query_value_cost_features_20261009_r42/REPORT.md`，含导师判断、20线TRACKS、RUN_CHECKLIST/RUN_PLAN和只读verify_delivery；三个探索树同步research_update_20261009_r42/REPORT.md。其余线路共享或保持原定位：A旧观察接缝、B NO-GO、持续任务/随机延迟/LIMO后置，未声称全部新增算法。主线仍4个重叠验收阶段；下一定点补新增付费路径/剩余执行资格、模型实际付费加载与推理、完整费用和独立采集条件，再以真实对照决定融合或停止。
+
+新清单只替代R41未执行提案：1个DEV共同prefix+QUERY/WAIT各1尾，无重试，原H34/8388608行容量/64准备行/8192最大行/误差安全参数不变，每臂270秒，拟外层870+30秒尽力截止。NOT_AUTHORIZED/NOT_QUALIFIED，输出目录未创建，不借旧授权，不执行训练/TEST。R42新增文件占用快照约71.5MiB，N/E不复制，旧清理日志不重新展开，不重复计算7.92GiB净清理收益。公共Git仅同步指定两份进度。
+
 <a id="r41"></a>
 
 ## R41：付费 WAIT 收尾、费用融合、实际 host 修复与学习接续
