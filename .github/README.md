@@ -1,54 +1,50 @@
 # MAPF 项目当前状态
 
-更新：2026-10-09，当前入口 **R50**。已补实际生命周期 Session、原任务结果读取/清理、真实查询身份钩子及同一协调器的查询主体。**查询价值学习仍部分完成：完整通用 C/N/E 执行尚未闭合，可靠标签、训练和独立比较均为0，研究有效性UNKNOWN。**
+更新：2026-10-09，当前入口 **R51**。同一注册任务的C/N/E查询生产调用、有限执行脚本、实际请求驱动的捕获来源和闭行费用已接入，并完成静态组合。**查询价值学习仍未完成：完整新镜像与INIT存在明确阻断，可靠标签、训练、预测和独立比较均为0，研究有效性UNKNOWN。**
 
-研究问题保持MAPF、有界空间跟踪误差和有限更新资源；方法主线为代价感知进度查询与安全协调。学习价值回归/排序优先、RL重点候选；普通END、WAIT、结构规则和EWMA保留。以同预算改善完成，或相近完成下降低完整资源的独立证据决定是否融入论文。
+研究问题保持MAPF、有界空间跟踪误差和有限更新资源；方法主线为代价感知进度查询与安全协调。轻量价值回归/排序优先，RL为重点候选；普通END、WAIT、结构规则与EWMA保留。以同预算改善完成，或相近完成下降低完整资源的独立证据决定是否融入论文。
 
-[仓库导航](../README.md) · [完整进度](../GITHUB_PROGRESS.md) · [R50](../GITHUB_PROGRESS.md#r50) · [R49](../GITHUB_PROGRESS.md#r49) · [R48固定镜像](../GITHUB_PROGRESS.md#r48) · [R47物理边界](../GITHUB_PROGRESS.md#r47)
+[仓库导航](../README.md) · [完整进度](../GITHUB_PROGRESS.md) · [R51](../GITHUB_PROGRESS.md#r51) · [R50](../GITHUB_PROGRESS.md#r50) · [R47物理边界](../GITHUB_PROGRESS.md#r47)
 
 ## 本轮实际成果
 
-| 组件 | 已完成 | 仍缺 |
+| 组件 | 已完成 | 尚缺 |
 |---|---|---|
-| guest | 原启动入口进入同一Coordinator；原任务末段service结果；ResultReady、付费返回清理、Finish；显式完整seed生产接口 | 真实nominal/Batch/seed、实际factory和完整ELF |
-| host | 同Registration的实际Owner/Station/运动及END来源；68计划入口；共享8192行准入；真实startup、结果读取和释放检查 | 同一新ELF的INIT/结果符号/全部原子计划；当前仅生命周期基线 |
-| 查询身份 | 实际PreparedRequest绑定同root/time/唯一候选，三阶段回执；WAIT无selected；实际driver观察与严格准入 | 新完整镜像/BSS重绑定、可靠成对来源；仍fixed DEV、fit=false |
-| 查询主体 | 一个Coordinator/Position/Bridge贯穿原Flow、普通END、公共GrantBook与WAIT；移除固定后车与旧预算常量 | 通用host查询交错脚本、实际E→host查询来源桥，尚未进入完整生产调用 |
+| C/N生产入口 | 实际startup接入同一Coordinator、SOURCE90合法候选、两门QUERY/WAIT、原Flow、普通END及原任务结果；首门WAIT继续第二门 | 真实factory/完整ELF；当前仍由结构规则选查询对象，学习排序未接 |
+| 同源执行Session | 三Owner/Station、100实际镜像计划的校验入口、四种两门分支、共享有限行、实际结果读取/释放 | 实际三镜像及plans未生成；stale后缀和完整窗口未合格 |
+| 请求与捕获来源 | E已收本臂请求驱动同一World当前head的Source；原AdmittedRequest、AUTH和实际E job/lane检查保留 | 真实身份的INIT布局不适配旧模板；完整host处理费用未知 |
+| 费用生产 | 三条实际Lane/Journal进入Session，真实闭行/付费SOURCE90及分支后缀接通 | 只能证明closed prefix；完整family、跨行预算、未来完整报价及完整host费用未知 |
 
-根与3子智能体完成定点互审：**10个最终静态对象、3项relocatable组合、0个完整通用镜像**。四组件和联合只读核验通过，1260项去重pin；manifest `d3058ffbe2ef6336ed0f7a5d6a7e40c646c5fbb11481d2c834946af6377871a4`。四稿、旧registry及96234字节历史尾文保持。
+根与3子智能体完成定点互审；**17个不同源文件对应21个实际对象、5项部分链接、0个完整通用镜像**。其中4个host源为统一类定义额外重编，不算新算法。四组件与联合只读核验通过，1677项去重pin；联合manifest为5bb228c34b26cf832de9be0ced64e39c6e5b990f37cee7dde24cfcd3dd4d635c。统一Session部分链接SHA为d7928c9bc01bf6e494e9000632c333f2dcf7af82eb873135878b9d17e078443e。
 
-结果从实际Coordinator导出，未完成保持-1，异常缺失不补零；host读取后须经实际付费返回释放，再核Finish。末段仍共用原64行。查询元数据使用原4096word中的32word，候选上限4064，超限拒绝。永久物理动作身份与单次query/request分别核验，原E仍检查全部SOURCE/AUTH字段；第二查询的实际host来源尚未完成。
+实际任务session长140字节，C/N/E已从同Registration派生上下文，不能沿用固定D/p。旧固定producer的终端行11000步距与实际host/source的10000冲突，本轮新工厂按后者纠正；原generic guard的10000本来正确。取消旧movement发布62/162后，C查询费用改读41/81与41/82，避免错段。门A3/A4复用原4续存槽，不新增未登记存储。
 
-全栈、heap、完整窗口、跨行合法预算、未来完整报价和host观察/I/O费用仍UNKNOWN。结果public_binding按一字节一Word存储会放大容量，须在真实输入/镜像上计入，不扩arena掩盖。静态对象与部分链接不证明运行、费用或研究有效性。
+## 阻断与下一步
 
-本机入口：`implementation_binding_evidence/query_value_session_integration_20261009_r50/`，含REPORT、MENTOR_DECISION、TRACKS、NEXT_METHOD、RUN_CHECKLIST和verify_delivery。20线按事实为**6直接/7共享/4沿用/3后置**；三探索树已同步`research_update_20261009_r50/REPORT.md`。共享接口推进不等于20项独立算法均有新实验。科研导师仍2PASS/4UNKNOWN、CONDITIONAL。
+**确定阻断：真实AUTH上下文需C/E各29word、N30word，startup仍12/13word。** 新镜像/INIT不能通过；下一步按原序列化定义生成精确布局，并在原总存储、保护和有限窗口内核验。不能缩短身份或静默扩参数。另有迟到查询跳过POSITION/receipt发布而脚本仍等待的缺口，目前FAIL_RETAINED，尚不能提供完整迟到标签。
 
-## 下一步与学习定位
+下一步四项并行收口：精确上下文与同镜像工件生产；实际stale后缀；双门臂内观察和成对数据入口；完整费用与合法预算/报价。原nominal五输出、Batch/完整seed/factory尚缺；只先完成实现和静态检查，不造路径或执行未授权solver。全栈/heap/完整窗口、未来报价、host观察/I/O费用仍UNKNOWN。
 
-主线仍四个重叠验收阶段：共同执行/费用资格；真实查询机会及合法标签/方法冻结；获授权独立小规模比较；证据融合成稿。当前第一阶段未整体完成。
+学习优先落实到“是否查、优先查谁”，复用已有轻量核。旧单门固定DEV intake不能升级为双门TRAIN；真实同初态成对完整执行、查询身份、任务结果和费用链缺失时fit不可达。RL需要多门实际转移、预算变化、完整episode及推理计量；双门源码不是RL实验，固定续策ΔJ不是Q*，MSE不是最终任务收益。
 
-下一步优先补**同一Registration的完整C/N/E调用链与有限查询脚本，以及实际请求驱动的E→host SOURCE生产端**；随后绑定真实输入、镜像、全部publication plans与完整费用。复用已有组件，不继续堆网络或孤立接口。R49 HostMotion仍匹配初始完整身份，单独放宽q0比较不能补齐q1；旧固定MovementPublished也不能承接新公共GrantBook。
+主线仍四个重叠阶段：共同执行/费用资格；查询机会、合法标签与方法冻结；授权独立小规模比较；证据融合成稿。当前第一阶段未整体完成。20线按事实为6直接/7共享/4沿用/3后置；共享接口推进不等于20项算法均有新实验。条件时长/位置、SADG/GSES共享共同资格；A规划停止沿用、B可拒绝选择NO-GO不重开，终生任务、随机延迟和LIMO后置。
 
-价值回归/排序沿用轻量实现；真实来源gate先于NumPy，当前没有权重/预测。RL保持重点研究候选，需要实际多gate转移、预算变化、完整episode和推理费用；两14tick周期源码不是RL实验，固定续策ΔJ不是Q*，MSE改善不是任务收益。条件时长/位置、SADG/GSES共享共同资格；A规划停止保持，B可拒绝选择NO-GO不重开，终生引导、随机延迟和LIMO后置。
+科研导师仍2PASS/4UNKNOWN、CONDITIONAL，探索实现不代表选题通过。工作树`/home/lyh/MAPF_QUERY_VALUE_FEASIBILITY`及`explore/query-value-feasibility`来自已提交`explore/learned-query`底座3c809f903e42ce33d287ca7f21e38924bd6dcffc。旧10543记录/24组和R20只作开发诊断，未产生合法反事实或确认结论。
 
-原委派工作树`/home/lyh/MAPF_QUERY_VALUE_FEASIBILITY`与`explore/query-value-feasibility`分支已建，底座`explore/learned-query`提交`3c809f903e42ce33d287ca7f21e38924bd6dcffc`。旧10543记录/24组及R20仅开发诊断；尚无独立成对标签或确认比较，未作为研究有效的方法融入主线。
+QUERY/WAIT必须同合法初态、同续策规则、配对外生扰动，各臂仅读自身合法信息；动作可以不同。普通END、等待、失败、迟到、零/负收益及未完成保留；未查候选不能套用已查候选的标签。任务与资源分单位记录，未知不记零，推理计入执行、训练另列。以原任务末段service衡量固定批次完成，中间handoff不算完成，未接持续任务前不称吞吐。
 
-QUERY/WAIT须同合法初态、同续策规则、配对外生扰动，各臂仅读自身合法信息；不要求两臂动作相同，不泄露查询给WAIT，不给未查候选套用标签。失败、迟到、零/负收益及未完成保留；任务与完整费用分列，未知不记零，训练另计。只用原任务末段service衡量固定批次完成，中间handoff不算完成；持续任务接口未通不称吞吐。
+Boston/brc仍被原H34物理必要界排除，Berlin/den只是未被排除。真实Batch含尚不支持的WAIT时阻断，不删WAIT、不换成功实例、不改输入/split救学习。
 
-Boston/brc仍被原H34物理必要界排除；Berlin/den只是未被排除。真实Batch若有尚不支持的WAIT应阻断，不删WAIT、不换成功实例、不改输入/split救学习。
+## 冻结、Git与存储
 
-## 磁盘整理与保护
+本机入口：`implementation_binding_evidence/query_value_query_production_20261009_r51/`，含REPORT、MENTOR_DECISION、NEXT_METHOD、RUN_CHECKLIST、TRACKS和verify_delivery；三探索树同步`research_update_20261009_r51/REPORT.md`。四稿、旧registry和96234字节历史尾文保护；公共Git只更新本文件及GITHUB_PROGRESS。
 
-R50冻结后目录占用52,281,344B≈49.86MiB，主要是必要静态对象、依赖和修订前像；旧完整镜像与工具链引用复用。本轮联合核验发现并精确清理本轮构建生成的过时pyc，8192分配字节，不计既有清理收益；失败检查、更正及删除回执保留，冻结文件未改。
-
-R49已删除214个无引用可再生pyc，毛回收2,887,680B≈2.754MiB；两项冻结缓存和1980项依赖环境缓存保留。此前10月9日三批清理1296个副本，历史净释放8,645,427,200B≈8.052GiB；10月8日约3.55GiB另计，不重复合计。原始输入、归档、恢复工具、四稿和工具链保留：[大批清理](../GITHUB_PROGRESS.md#storage-20261009)、[补充清理](../GITHUB_PROGRESS.md#storage-followup-20261009)、[单包清理](../GITHUB_PROGRESS.md#storage-final-20261009)、[复核](../GITHUB_PROGRESS.md#storage-status-20261009-r45)。
-
-约3.375GiB旧候选仍缺当前引用/恢复核验，未删；共享Git约3.73GiB不重复repack。R49清理前四树约102.59GiB是历史快照，不是当前精确总量；研发新增占用与回收分别记录。
+R51冻结后占用100,524,032B≈95.87MiB，复用旧镜像/工具链，保留必要静态对象、依赖和修订前像；没有删除旧冻结或计入新的大批清理收益。此前10月9日净释放8,645,427,200B≈8.052GiB；R49缓存毛回收2,887,680B和R50本轮生成缓存8192B分列，10月8日约3.55GiB另计。约3.375GiB旧候选仍缺当前引用/恢复核验，未删；共享Git约3.73GiB不重复repack。[清理记录](../GITHUB_PROGRESS.md#storage-20261009) · [复核](../GITHUB_PROGRESS.md#storage-status-20261009-r45)。
 
 ## 运行边界
 
-现行授权仅实现、静态检查、冻结和清单；训练、solver、仿真、World/科学目标（含--help）、模型/codec/feature执行与机器人均无新增授权。R50通用目标无完整可批准argv，**NOT_AUTHORIZED / NOT_QUALIFIED / NOT_SCHEDULED**。先完成缺失实现和静态绑定，再交具体输入/二进制/argv、预算、截止及失败保留清单。
+授权仅实现、静态检查、冻结和清单。训练、solver、仿真、World/科学目标（含--help）、模型/codec/feature执行和机器人均无新增授权。R51通用目标 **NOT_AUTHORIZED / NOT_QUALIFIED / NOT_SCHEDULED**；缺实际输入与完整镜像，无可批准argv。先补实现/静态绑定，再交精确输入和二进制SHA、命令、次数、预算、截止及失败保留清单。
 
-R48旧固定DEV提案仍未执行：1共享prefix+QUERY/WAIT、ABSENT、无重试、各尾270秒、外层870+30秒；不覆盖R50通用目标、名义求解或TRAIN。原H34/136、每tick2机会、单行8388608 B1、64准备行、总8192行保持；旧R46/R37/S3/六槽/Berlin授权不互借。
+H34/136、每tick2机会、单行8388608 B1、原64准备行、总8192行保持。q0门共享startup50..100；q1门共享前轮清理150900..150963；第二次QUERY尾290900..290963；结果/清理/Finish共享349001..349064，不加64+1行。旧R48固定DEV提案仍未执行，1共享prefix+QUERY/WAIT、ABSENT、无重试、每尾270秒/外层870+30秒，不覆盖本轮通用、名义求解或TRAIN；旧授权不互借。
 
-毕业目标沿用2026-10-07确认：学校无严格SCI分区/名单限制，期刊须有合理质量，争取2026年底成稿首投。旧9月21日交接仅作历史，不重复已有查询闭环。公共Git只同步本文件与GITHUB_PROGRESS；主稿未提交修改受保护。
+毕业目标沿用2026-10-07确认：学校无严格SCI分区/名单限制，期刊须有合理质量，争取2026年底成稿首投。旧9月21日交接仅作历史，不重复已有完整查询闭环。

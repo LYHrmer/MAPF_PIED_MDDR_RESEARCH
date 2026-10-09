@@ -2,6 +2,32 @@
 
 [当前状态与下一步](.github/README.md) · [仓库导航](README.md)
 
+<a id="r51"></a>
+
+## R51：同一注册任务的C/N/E查询、真实捕获与费用生产
+
+2026-10-09。根与3子智能体完成实际生产链、定点互审和四组件冻结。科研导师仍2PASS/4UNKNOWN、CONDITIONAL；监督value/ranking优先、RL重点候选。17个不同源文件对应21个实际对象、5项部分链接；4个host源为统一类定义重编，不算新算法。完整通用ELF、科学目标/World/solver/仿真/模型/codec/训练、真实候选与可靠标签均0，研究有效性UNKNOWN。
+
+guest_query把实际C/N startup接入新生产入口。C同一Registration、Coordinator、Position、公共GrantBook贯穿两门QUERY/WAIT、原Flow与普通END，原任务末段service生成结果；首门WAIT仍继续第二门。实际SOURCE90两次付费候选捕获、同root/time/唯一选择及完整物理身份匹配后才造请求，普通A3/A4仅cycle/eligible，不授AUTH。N保留原实际证据与费用票据。目标选择仍由原强规则，学习排序未接；factory与真实nominal/Batch/完整seed缺失。7RV64对象与C/N两个-r，C 24f61508…、N e0e1bd0e…。
+
+query_script实现实际Session→三Owner/Station→CneDriver，同Registration/HostMotion/END、100镜像计划入口逐个verify_image，余项拒绝；C84/N8/E8，不接受旧movement62/162。四条两门分支保持相同真实Jobs及closed prefix，只有实际已封闭scope内C门付费返回才可取消N/E空接收，取消后继续下一周期。原136END与每tick2机会保留，运动由原GrantBook真实publication放行，旧movement位置只保留无效果付费边界。真实结果从实际Owner普通分配块读取，清理/Finish核真实释放。统一7host TU后实际-r d7928c9bc01bf6e494e9000632c333f2dcf7af82eb873135878b9d17e078443e；RegisteredCosts/Bridge/HostMotion实际符号解析，非完整可执行。
+
+capture_bridge跟踪原E SOURCE按序合法收完请求，跳过不可读私有serial，原4续存槽和65536copy上限保持；真实E job/lane/当前capture行22010或162010及原World当前head匹配，实际请求驱动同一World的q0/q1来源，无第二World或caller选私有状态。收到请求的事实不替代guest AdmittedRequest；原E仍核完整query/request/profile/精度/Registration及Capture/AUTH。Construct时再核实际row，不能在付费耗尽后追溯造capture。3RV64+3host及两项-r，host最终统一新Journal定义；完整host解码/分配费用仍UNKNOWN。
+
+cost_binding将三个实际Lane的GenericPrefixOnly Journal接入同Session，各Owner登记真实C-gate/q0与q1指针的SOURCE90/91/92，原供给槽保持。真实Station只替换未执行后缀，closed prefix与当前interval不改；不凭bool或脚本注册产生FamilySettled。SOURCE90 cross_row_account的NotApplicable与Candidate跨行预算的Unknown分层保留，row unused不等于决策余额，旧固定预算常量不是合法purse。完整未来报价、通信与host装载/观察/I/O及推理费用未知，单位不混加，训练另计。producer对象667fdc81…与统一重编同字节。
+
+定点互审纠正三处来源问题：实际session是输入/名义解SHA组成的140字节身份，C/N/E现按同Registration派生，不能沿用D/p；旧固定producer终端行步距11000与实际host/source的10000冲突，本轮factory按10000对齐（原generic guard本来正确，根误改的前像保留）；取消movement62/162后C费用SOURCE改为41/81与41/82，不借旧完整family资格。门A3/A4复用原4槽，无额外续存；跨组件实际链接前统一新Station/Owner/Journal/Channel，避免旧类定义混编。旧冻结均未修改。
+
+当前硬阻断BLOCKED_NEW_ELF_INIT_CONTEXT_EXTENT：原序列化要求C/E各29word、N30word，startup仍12/13；两个私有域每角色差34word=272B。须从真实身份生成精确extent并在原总容量/保护/窗口内核验，不缩短身份或默扩参数。另有stale Flow跳过POSITION/receipt发布而当前严格QUERY脚本仍等待的完整尾缺口，本轮FAIL_RETAINED，不能称迟到标签可用。缺真实nominal五输出、Batch/完整seed/factory、三ELF/INIT/100plans、完整栈/heap/窗口及费用。两门源码不等于RL episode；旧单门固定DEV intake不能升级为双门TRAIN，无学习目标选择、合法双尾标签或独立测试。
+
+根与四组件只读冻结核验PASS，1677项去重pin，manifest 5bb228c34b26cf832de9be0ced64e39c6e5b990f37cee7dde24cfcd3dd4d635c；四稿、旧registry和96234字节历史尾文保持。20线路6直接/7共享/4沿用/3后置，三探索树research_update_20261009_r51/REPORT.md同步。主线仍四个重叠验收阶段，第一阶段未整体结束；下一并行补精确AUTH布局/同镜像工件生产、实际stale后缀、双门臂内数据和完整计量，不堆网络或扩大旧矩阵。Boston/brc H34必要界排除保留，Berlin/den仅未排除；不删真实WAIT、不改输入/split救学习。
+
+授权保持IMPLEMENTATION_STATIC_ONLY / NOT_AUTHORIZED / NOT_QUALIFIED / NOT_SCHEDULED。通用目标无完整argv，先完成实现和静态绑定再交精确输入/二进制SHA、命令、次数、逐阶段预算/截止及失败保留。H34/136、每tick2机会、单行8388608 B1、原64准备行、总8192行不变；q0门共用50..100，q1共用前轮清理150900..150963，二次QUERY尾290900..290963，结果/回收/Finish共用349001..349064，不增64+1行。旧R48固定DEV未执行提案及旧授权不覆盖此目标。
+
+QUERY/WAIT只以同合法初态、同续策规则、配对外生扰动、臂内合法信息和完整原任务结果形成标签；动作可不同，全部迟到/失败/负/零收益/未完成保留，不给未查候选套标签。只有独立比较显示同预算改善完成，或相近完成下降低完整资源且安全/信息条件成立，才融入主线。无实际标签时静态接线或MSE不能证明方法有效。
+
+本机入口implementation_binding_evidence/query_value_query_production_20261009_r51/。REPORT/NEXT_METHOD/RUN_CHECKLIST/TRACKS和联合verify_delivery齐；冻结后占用100,524,032B≈95.87MiB，主要为必要静态对象、依赖与失败/修订前像。复用旧镜像/工具链，本轮无旧证据删除；既往8.052GiB净回收等历史数据不重复计入，约3.375GiB未合格旧候选仍保留。公共Git只同步.github/README.md和GITHUB_PROGRESS，主稿未提交修改保护。
+
 <a id="r50"></a>
 
 ## R50：实际生命周期Session、查询身份与原任务结果生产
