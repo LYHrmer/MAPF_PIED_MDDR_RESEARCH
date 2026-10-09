@@ -2,6 +2,30 @@
 
 [当前状态与下一步](.github/README.md) · [仓库导航](README.md)
 
+<a id="r52"></a>
+
+## R52：学习选择、迟到执行与成对数据生产接口
+
+2026-10-09。根与3子智能体完成四组件实现、交叉复核及冻结。32个不同源文件的最终静态对象、7项部分链接通过；没有完整通用ELF、科学执行、训练、预测或可靠标签，研究有效性UNKNOWN。科研导师仍2PASS/4UNKNOWN、CONDITIONAL；查询价值学习未完成，探索实现不等于选题通过。
+
+学习选择已进入实际生产：120维ridge/ranking根据本臂合法候选提名是否查询、优先查询谁。原Service重选强规则导致模型提名被覆盖的问题已修正；新提名须同Position根、同决策时刻、仍满足原资格，实际请求和安全释放继续由原证据链检查。当前工厂为ABSENT强规则回退，没有虚构权重。模型推荐与QUERY/WAIT实验干预分离，负预测仍保留合法候选供成对采集；以后门按各臂合法信息执行同一策略规则。SOURCE90只记录付费推理子区间，后续导出/记录/析构仍付费，不称完整成本。
+
+真实Registration派生C/E29word、N30word上下文及角色/来源摘要，接新startup、link fragment、实际ELF验证和完整Owner INIT配置生产。原已预留257页足以容纳新增34word逻辑extent，原arena和总映射上限保持。新加载器核entry/role/真实LOAD/TLS/上下文及同镜像输入；传入kernel栈界不代表已证明全栈。实际三完整ELF、factory和付费INIT仍未产生。C13对象组合SHA1c76a3520c7d854be3c6966a3bd317465595344ac172111c732b06ad03214449。
+
+实际付费stale位在闭行后切换未执行后缀，两门16种动作/迟到分支保留普通END与真实费用。更正R51文字：原stale已有SOURCE68失败结算，缺少的是prepare的正确付费边界；本轮补齐，不修改旧冻结。迟到跳过POSITION发布时不伪造该段费用或成功receipt。A5策略建议复用原续存槽，原参数和权限保持。
+
+实际Session/Owner普通BSS观察、同内存fork QUERY/WAIT及两臂完整后续入口已接线；实际PreparedRequest身份与模型事前提名分开。互审修复子进程_exit跳过真实析构的问题：setup或日志失败也执行owner.reset，成功才写TEARDOWN_END，真实pin异常/信号保留。接纳器读取prefix、pair_process、QUERY、WAIT及两份teardown共六源，核同初态/实际请求/臂内后续/原任务末段service/wait4/真实析构。原业务异常不被Observer异常覆盖；观察失败保留已有结果但不能生成合格标签。跨组件13host实际联合-r SHA544fa1e7ddb194525961895b4db1526c8997fdbc4573f96e80060eb1729b8ff7。
+
+学习仍受真实来源门约束：完整C/N/E/launch、同镜像全栈/窗口/安全信息、实际输入与独立split工厂三项资格缺失，fit在NumPy前拒绝。原20字段×6通道、原R18轻量核复用，来源通过才可封存和导出参数。ABSENT目前只提名结构规则候选，排序训练前还需核候选覆盖及行为策略支持；未查候选不能补标签。RL为重点候选，共享多门接口，但没有可靠episode、合法预算演化或训练；固定续策DeltaJ不是Q*，MSE不是任务收益。
+
+后续先补真实nominal五输出、Batch/八字段seed/factory、新完整三镜像与100plans，同镜像栈/heap/有限窗口及完整费用；再交精确输入/二进制SHA、argv、次数、预算、截止与失败保留清单。跨行purse、未来完整报价、prefix/装载/观察/I/O/通信/清理费用仍UNKNOWN；时间、B1和字节不任意相加。先验证QUERY能否改变合法执行并改善完整任务，再形成可靠TRAIN与独立比较；已看R20只作开发，确认TEST用独立新实例。
+
+主线仍四个重叠验收阶段，第一阶段共同资格未整体结束，第二阶段的数据/学习实现并行。20线逐项6直接/7共享/4沿用/3后置，三探索树research_update_20261009_r52/REPORT.md同步；规划停止/写作沿用，NO-GO候选不重开，持续任务/随机延迟/LIMO后置。普通END、WAIT、结构规则、EWMA、强规则对照及全部失败/迟到/零负收益/未完成保留。
+
+授权仍IMPLEMENTATION_STATIC_ONLY / NOT_AUTHORIZED / NOT_QUALIFIED / NOT_SCHEDULED。H34/136、每tick2机会、原64准备行、8388608 B1/行、8192总行及原保护容量不变；q0共享50..100，q1共享150900..150963，第二QUERY尾290900..290963，结果/清理/Finish共享349001..349064。Boston/brc原H34必要界排除保留，Berlin/den仅未排除；不删WAIT、不换输入/split、不借旧DEV授权。目前无完整通用运行argv。
+
+四组件及联合只读核验PASS，1671项去重pin；manifest 26a44664725d641d5131fedd859d42e16b12bac35d89064c4373e3307f00bac0。四稿、旧registry、96234字节历史尾文及本轮前224903字节进度正文全部保护。当前本机入口implementation_binding_evidence/query_value_policy_closure_20261009_r52/，含REPORT/NEXT_METHOD/RUN_CHECKLIST/TRACKS.csv及verify_delivery。冻结后占用60,411,904B≈57.61MiB；复用旧工具链/大镜像，本轮无旧证据删除，既往8.052GiB净清理不重复计。公共Git仅同步.github/README.md与GITHUB_PROGRESS.md，主稿原未提交修改保护。
+
 <a id="r51"></a>
 
 ## R51：同一注册任务的C/N/E查询、真实捕获与费用生产
