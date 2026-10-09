@@ -2,6 +2,30 @@
 
 [当前状态与下一步](.github/README.md) · [仓库导航](README.md)
 
+<a id="r48"></a>
+
+## R48：候选生产进入实际执行镜像，通用有限来源接缝实装
+
+2026-10-09。根与3子智能体同步推进四组件，科研导师2PASS/4UNKNOWN、CONDITIONAL保持。候选提取/编码/记录进入固定DEV实际Selection；通用typed END协调与host真实Station接缝另编译。科学目标、World、solver、仿真、编码/模型执行、训练、实际候选记录和可靠标签均0；实现可行性部分推进，研究有效性UNKNOWN。
+
+execution按实际.d重编13个既有guest TU+3新TU共16个，最终host两个实际TU统一定义重编；Center SHA71c2d85487f1ec94530996de3af7b293ade5f2bcc6fcb2b6527485204289ca5f、host e398b2d64c12a6e48126a19c9f9d07c8d9b03a37145d343aba3148f04ad569e2，原N/E仅引用。真实C-next/q0 Selection用原公开时钟取同Position根候选→48维编码→专用BSS；之后原counts、ABSENT advice、forced QUERY/WAIT与END保留。真实ELF调用次序、BSS 0xa412a0/32768B普通NOBITS/RW与全部保护区互斥、publication/kernel静态核查。host只在实际pair checkpoint有界读取固定符号，数据单向、不授安全或策略权限。null Registration使固定DEV原任务映射UNKNOWN，不猜ID或升级TRAIN。
+
+candidate_encoding从真实CandidateSet私有工厂输出48个有单位Q16字段、每候选60word及known/rounded/NA/range/invalid掩码；有理floor、有限代数比较，范围和舍入错误界明确。有损数值不消费于精确安全判断；可选同Registration精确匹配原任务，UNKNOWN无数值访问。原10D/47word模型未绑定、没有权重/fit/predict；此输入对应固定续策ΔJ^π0而非Q*。RL仍重点候选，但没有多gate episode或预算演化证据。
+
+新候选提取实际2次SOURCE90 receiver，每次13个scalar ECALL，共新增26；本局部ABSENT正常路径27→53，原历史账本另计。全部特征/编码/导出/析构占原B1窗口，第二capture后成本不能漏掉。原advice前快照位置保留，现区间包含上述新增工作，不是纯推理费用。新BSS/代码增加启动工作。64准备行、单行8388608 B1、H34/END136/总8192行不扩；新SOURCE次数不证明整窗/heap/全栈适配。完整预算/未来报价、host读取/I-O及动态查找/分配/元数据检查/生命周期费用继续UNKNOWN，单位分列，训练另计。
+
+segment_execution实际Coordinator复用同Registration初态和Ledger，poll读取不可伪造付费END；原checkpoint5→双SOURCE commit→checkpoint2显式新word，成功后才retire/cache/head推进。中间END-resident与handoff分开，后继cap0不直接RUN；末段service保留晚tick新Notice。每tick最多2真实commit，固定agent顺序可能延迟其他agent。END verifier按slot私有head选择1000+4*(tick−1)+slot，无未来END表/调用者action。两最终RV64对象278/255依赖通过，初版对象和前像保留。
+
+root host_slots使用共享canonical chains/publication_word，把真实FixedQueryStation连接有限实际SOURCE工厂；实际World/Lane/C-END Job指针和原paid bootstrap/step/pin/release保留。host head仅由自己实际MovementReady一次性witness与出版word推进，无public action/END flag/setter；同import首次绑定后不重定向，旧源保留给cache付费释放。新模式显式可选，null保留原fixed语义。互审发现旧<=255 wildcard检查必拒新word，已定点修正。根发现最初两个对象被旧forceinclude同guard遮蔽、未编新Station方法，明确降为superseded且保存源码前像；最终强制model_bundle/Owner/Station次序+新宏编译断言，实际host对象449deps，SHA14c52ce0aa69f291936ce76a9525afd4d39d0975963144ab26fac338896b98d0。
+
+通用完整Session仍未链接：0/1commit tick如何跨剩余有限脚本机会、真实安全grant→cap/RUN和初始HOLD启动、真实名义路径/生成Batch与WAIT消费者仍缺。host_slots未装进固定DEV镜像，不能跨对象借资格。Boston/brc原H34物理NO-GO保持，Berlin/den只未被排除；不改输入/split、不扩旧矩阵。完整QUERY/WAIT须同合法初态、同续策规则、配对外生扰动、臂内信息且保留所有失败/负/零/迟到/不完成；静态接线不产生标签。
+
+四组件默认只读核验及联合冻结通过：1294项去重pin，manifest d4702cc341117ddcd508f585e8b113a7e9daf5e56bdb9b12b6a8d9e908e09118。当前固定16guest/2host与另4个独立最终对象、实际镜像/调用绑定/输出缺失、四稿/旧registry和96234字节历史尾文核查。20线路6直接/7共享/4沿用/3后置，三树research_update_20261009_r48/REPORT.md同步。主线仍4个重叠阶段，第一阶段未整体结束；下一只补有限script、合法启动/运动grant和同域完整生产链，复用已有候选接口。
+
+具体未授权DEV清单绑定execution/host_build_final最终镜像，1共享prefix+QUERY/WAIT、ABSENT、无重试，各尾270秒，外层870+30秒，原容量与保护上限不变；新监督器准入未完成，NOT_AUTHORIZED/NOT_QUALIFIED/NOT_SCHEDULED。没有generic可批准argv，不借R46/R37/S3/六槽/Berlin授权。静态源码和链接不授权科学运行、训练或机器人。
+
+本机入口implementation_binding_evidence/query_value_execution_integration_20261009_r48/。冻结后目录占用快照101,228,544B≈96.54MiB，原N/E复用；本轮未删除旧证据，失败/源码前像保留。公共Git仅同步.github/README.md与GITHUB_PROGRESS.md，主稿未提交修改原样保护。
+
 <a id="r47"></a>
 
 ## R47：运动段语义、真实候选输入与更强物理必要界

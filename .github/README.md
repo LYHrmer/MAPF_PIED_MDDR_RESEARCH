@@ -1,47 +1,37 @@
 # MAPF 项目当前状态
 
-更新：2026-10-09，当前科研入口 **R47**。根与3个子智能体完成运动段语义、候选级合法特征及统一动力登记，七个实际静态对象通过编译。**原动力下界进一步确认Boston/brc在现H34内不可完成；Berlin/den尚未被下界排除，仍未证明可行。** 标签、训练、模型及科学运行均0，研究有效性UNKNOWN。
+更新：2026-10-09，当前科研入口 **R48**。根与3个子智能体把候选提取、48维编码和记录出口接入真实固定DEV执行程序，重编16个guest TU和2个host TU并实际链接；通用段guest协调器与host来源接缝另完成静态对象。**实现有新增，查询价值学习尚未完成：实际候选记录、可靠标签、训练和科学运行仍为0。**
 
-研究问题保持MAPF、有界空间跟踪误差和有限更新资源，方法主线为代价感知进度查询与安全协调。价值回归/排序首优先，RL重点候选；安全释放仍依原有效证据，普通END、WAIT、结构规则与EWMA保留。是否入论文由独立任务与完整资源比较决定。
+研究问题保持MAPF、有界空间跟踪误差和有限更新资源，方法主线为代价感知进度查询与安全协调。价值回归/排序首优先，RL重点候选；安全释放仍依原有效证据，普通END、WAIT、结构规则与EWMA保留。研究有效性UNKNOWN，是否入论文由独立任务与完整资源比较决定。
 
-[仓库导航](../README.md) · [完整进度](../GITHUB_PROGRESS.md) · [R47](../GITHUB_PROGRESS.md#r47) · [R46](../GITHUB_PROGRESS.md#r46) · [上一版入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/c790f09/.github/README.md)
+[仓库导航](../README.md) · [完整进度](../GITHUB_PROGRESS.md) · [R48](../GITHUB_PROGRESS.md#r48) · [R47物理边界](../GITHUB_PROGRESS.md#r47) · [上一版入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/4969469/.github/README.md)
 
-## R47实际推进
+## R48实际成果与边界
 
-| 组件 | 已完成 | 仍缺 |
+| 组件 | 实际完成 | 仍缺 |
 |---|---|---|
-| 任务与运动段 | 真实路径同向连续边合并，保留内部cell；WAIT/转弯/反向/任务边界不跨越；host/RV64来源对象 | 无真实名义输出/段数，名义WAIT时间消费者未通；长段full cap可能过约束 |
-| 段间交接 | 真实END发布resident后合法handoff；末段才原任务service，原等待/新Notice保留；guest初态对象 | 实际C/N/E paid publication、END retire/activate和cap/RUN仍待Session接入 |
-| 统一动力登记 | 同一不可变Registration完整核原8字段seed及身份，guest验实际初态、host构造原私有World；两域对象 | 实际跨域来源传输未接，公开登记不是AUTH |
-| 学习候选输入 | 从真实同根Position/历史提取q/cap/严格阈值/阻塞/年龄/历史费用；工厂内两次真实paid SOURCE90；两RV64对象 | 精确值/变长schema未接旧10D模型，原任务映射/决策余额/跨行预算/完整未来报价UNKNOWN |
+| 固定执行镜像 | 候选提取→编码→专用BSS→host单向记录进入真实C-next Selection；16 guest/2 host TU组合链接，N/E复用 | 没有运行记录；固定DEV不能当通用TRAIN；全栈/heap/整窗未资格 |
+| 学习数据接口 | 同根CandidateSet产生48个有单位Q16字段、60word记录和独立缺失/越界掩码，实际RV64编译 | 旧10D/47word权重未绑定；决策预算/完整报价/训练标签UNKNOWN |
+| 通用guest协调 | typed付费END→真实双SOURCE发布→resident/handoff/晚tick末段service，commit后推进cache/head；两个RV64对象 | 每tick只有2commit；0/1commit时跨有限脚本剩余机会未通；cap/RUN仍缺 |
+| host有限来源 | 实际Station按自身已出版的新协议word推进私有head，固定136import按当前链生成真实付费SOURCE；实际host对象 | 未链接generic Session；查找/分配/检查/生命周期完整成本未定价 |
 
-中间段交接不再重复计为原任务完成，下一段仍q=cap=0、需原安全授权；取消中间服务停顿属于新执行表示，所有比较臂必须共享，不能冒称旧模型等价优化。长段保留全部内部cell，原短段“最多1外国blocker”不再直接适用；真实机会仍需验证。
+真实新Center SHA `71c2d854…`，host `e398b2d6…`。实际ELF核调用点、32768B BSS与保护区互斥、原publication与kernel；局部证据不升级整栈/整窗。新候选工厂新增26次SOURCE90 scalar调用，本局部ABSENT路径由27变53，次数不是费用。旧advice区间包住新增特征/编码/导出/回收，不能称纯模型推理成本。
 
-七对象统一使用新Scheduler/Position定义，原强规则正文、编译flags、END头和保护参数保留。没有新完整执行镜像；R46局部2433 B1/10448B界不能移植为新特征/整栈费用。特征提取与原choose都占真实资源，两capture区间不含后续返回/保存/析构，不称完整费用。
+互审修复旧8位role限制必然拒绝新64位word的问题；根进一步发现旧同guard头遮蔽新Station，强制定义次序并加编译断言后重编。早期对象/失败/源码前像保留，不能冒充新接缝证据。新通用模式未装入固定DEV镜像，不把两类对象当成同一完整运行。
 
-## 物理下界与学习机会
+四组件默认静态核验和联合冻结通过：1294项去重pin，manifest `d4702cc341117ddcd508f585e8b113a7e9daf5e56bdb9b12b6a8d9e908e09118`；四稿、旧registry及96234字节历史尾文保持。20线6直接/7共享/4沿用/3后置，三探索树同步`research_update_20261009_r48/REPORT.md`。
 
-从原四模式和锥约束推出每段时间T≥√L。方向改变须真实END零速，即使忽略停顿/障碍并理想合并，原任务仍有T≥√(2|dx|)+√(2|dy|)。Boston agent3为√258+√390>35，brc agent1为√368+√692>45，均超过34。两个子智能体独立复核；取消逐边service或最优查询都不能绕过此界，不扩H、不换输入、不将删失当完成。
+本机当前入口：`implementation_binding_evidence/query_value_execution_integration_20261009_r48/`，含REPORT、MENTOR_DECISION、TRACKS、NEXT_METHOD、RUN_CHECKLIST、verify_delivery。科研导师仍2PASS/4UNKNOWN、CONDITIONAL；没有模型/codec/World/solver/仿真/机器人执行。
 
-另在固定η=-1、满cap、原起点s=v=0且不中断分支，潜在起点释放窗口为√(3L)−√(11/5)，随段长扩大。若再沿用特定capture+2/grant+6和正常逐tick END的时钟假设，偶数L≥14可能留下纯时钟窗口。这只是可证伪的尺度条件：实际路径/候选、通用协议、最终收益均未证明，不能挑长段或拖延END造效果。
+## 下一步与原委派状态
 
-联合冻结930项去重文件/来源pin，SHA `fc4f74f6…`；七对象同定义、四输入精确算术、四稿、旧registry及96234字节历史尾文核验通过。当前来源/科学输出未产生。
+原查询价值委派**部分完成**：独立工作树`/home/lyh/MAPF_QUERY_VALUE_FEASIBILITY`、分支`explore/query-value-feasibility`已建立，基于`explore/learned-query`提交`3c809f903e42ce33d287ca7f21e38924bd6dcffc`；旧10543记录/24组与R20只开发诊断。现有实现覆盖候选、采集接口、价值/排序通路及RL候选，未得到独立成对标签或正式比较，也未以研究有效的方法融主线。
 
-本机入口：`implementation_binding_evidence/query_value_task_semantics_20261009_r47/`，含`REPORT.md`、`MENTOR_DECISION.md`、`TRACKS.json`、`NEXT_METHOD.md`、`RUN_CHECKLIST.md`和只读`verify_delivery.py`。物理推导见`motion_binding/PHYSICAL_BOUND_PROOF.md`；三探索树同步`research_update_20261009_r47/REPORT.md`。本轮只有必要对象，未复制大型完整ELF。
+主线仍有四个重叠验收阶段：共同来源/安全/执行/费用资格；查询机会及合法标签/方法冻结；获授权独立比较；证据融合成稿。当前第一阶段尚未完成，不能按接口数量减少阶段。
 
-## 原查询价值委派：部分完成
+下一只闭合具体缺口：有限脚本无提交/单提交时的调度、原安全grant→cap/RUN与初始HOLD启动、同一Registration和真实路径进入实际generic Session，随后核完整窗口与费用。复用本轮已完成的候选调用/编码，不重搭接口、不堆网络。
 
-独立工作树`/home/lyh/MAPF_QUERY_VALUE_FEASIBILITY`、分支`explore/query-value-feasibility`已建立，基于`explore/learned-query`提交`3c809f903e42ce33d287ca7f21e38924bd6dcffc`。旧10543记录/24组及R20仅开发诊断，不能造反事实或升级独立TEST。
-
-采集、合法特征、价值回归/排序、付费模型通路与RL候选已有实现。**实际合格公共输入0、完整成对尾0、可靠因果标签0、拟合/策略调用0。** 同域强规则、发表方法合法复现与独立TEST未完成，未融入主线。任务标签与完整费用资格分开；费用缺项不必否定已具备其他前提的纯任务标签，但阻止完整资源/预算部署结论，当前任务标签前提也未齐。
-
-## 下一必要工作与全部线路
-
-下一步把已有来源、统一Registration、SegmentLedger、typed END与候选提取接入同一个真实执行程序，并统一重编全部受影响TU；不继续重复建独立接口。补原任务关系、真实公共时钟/Selection绑定、明确的有单位数值特征编码与缺失mask，旧47-word模型协议保持未绑定，不装假权重。
-
-当前四图不是合格TRAIN/CAL/TEST：两图被物理下界排除，两图仍未知。保持原split与输入；若需要不同时间域或实例规格，先完成具体实现、预算/截止/失败保留清单，再取得运行授权。完整栈/heap/有限窗口、合法预算/完整报价与独立对照仍需补齐。
-
-固定续策完整后果学习ΔJ^π0，既有强结构/阈值/费用规则与EWMA完整保留；RL还需真实多gate信息与预算演化。只在同预算改善原任务完成，或相近完成下省完整资源时最小融合。主线仍4个重叠验收阶段；20共享线路本轮7直接/6共享/4沿用/3后置，监督输入直接推进、RL共享输入而无episode/模型。导师整体2PASS/4UNKNOWN、CONDITIONAL；持续任务、随机延迟、LIMO后置。
+R47物理必要界仍成立：Boston/brc即使理想合并也超H34，Berlin/den仅未被排除；没有真实名义路径/WAIT消费者/可行性证明。输入、split和边界保持，不换图救学习。固定ΔJ^π0不等于Q*，RL还需真实多gate转移与预算演化；只有独立任务/完整资源改善才最小融合。A保持、B NO-GO，持续任务、随机延迟和LIMO继续后置。
 
 ## 磁盘整理与运行边界
 
@@ -63,6 +53,8 @@ R46目录冻结后占用快照93,069,312B，约88.76MiB，主要为必要的新C
 
 R47冻结目录占用快照7,962,624B，约7.594MiB，新增为静态对象和记录；本轮没有继续删除旧证据。
 
-现行授权仍仅实现、静态检查、冻结和清单。R46固定DEV提案替代未执行候选：1共享prefix＋QUERY/WAIT、模型ABSENT、无重试，每尾270秒，外层870＋30秒尽力截止，原H34/行容量/64行边界不变。静态监督检查通过；**NOT_AUTHORIZED、NOT_QUALIFIED、NOT_SCHEDULED**，输出未创建，通用对象未接入该目标。R46计划不覆盖R47新段语义或候选提取；Boston/brc不列为H34下完整TRAIN提案，Berlin/den仍未合格；旧R37/S3/六槽/Berlin授权不互借，训练/独立TEST/随机延迟/机器人未授权。
+R48冻结后目录占用快照101,228,544B，约96.54MiB，包含必要的新Center/host、对象、失败与源码前像；原N/E复用，本轮未再删除旧证据。研发新增占用不重复计为清理收益或损失。
+
+现行授权仍仅实现、静态检查、冻结和清单。R48具体固定DEV提案是1共享prefix＋QUERY/WAIT，ABSENT、无重试，各尾270秒，外层870＋30秒尽力截止，原H34/136/行容量/64行/8192行不变。新目标为R48 execution/host_build_final的实际镜像，旧监督计划尚未接纳该新目标；**NOT_AUTHORIZED、NOT_QUALIFIED、NOT_SCHEDULED**，输出未创建。它不含通用段对象、不作TRAIN。旧R46/R37/S3/六槽/Berlin授权不互借，训练/独立TEST/随机延迟/机器人未授权。
 
 毕业目标沿用2026-10-07确认：学校无严格SCI分区/名单限制，希望期刊有合理质量，争取2026年底成稿首投，非录用保证。先验证同预算改善固定批次完成，或相近完成下省完整资源；持续任务接口未通不称吞吐。旧9月21日交接仅作历史，已有完整查询闭环不重复建设。
