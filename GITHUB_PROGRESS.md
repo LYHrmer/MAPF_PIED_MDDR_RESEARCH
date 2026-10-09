@@ -2,6 +2,30 @@
 
 [当前状态与下一步](.github/README.md) · [仓库导航](README.md)
 
+<a id="r44"></a>
+
+## R44：真实输入源、host来源、加载费用与执行组件界
+
+2026-10-09。根与3个子智能体并行完成实现、实际静态编译与交叉互审。科研导师仍2PASS/4UNKNOWN、CONDITIONAL；监督查询价值/排序优先、RL重点候选。训练、模型/codec调用、solver、科学host/guest、仿真、机器人均0，可靠标签0，研究有效性UNKNOWN。
+
+输入生产复用R29固定作者源，按事前名称规则生成Berlin_1_256、Boston_0_256两个TRAIN提案、brc202d CAL与den312d TEST提案，各取原random1前四行；核实际地图、自由端点、组间重复和作者Git字节。16起终点任务不是16个独立实验，没有生成路径。历史检查只覆盖R29声明范围，Berlin属于既有来源储备，不能当未见TEST。原生采集器仍为固定R19四任务，新地图到实际Session尚缺，不借旧Berlin授权、不扩旧矩阵。
+
+真实driver在Session前读取/proc/self/exe并独占落盘SHA/PID，后继intake核实际START、wait4 HOST及fork parent；它只证明host字节/PID，不证明guest、共同合法初态或臂内信息。实际运行目录不存在，origin/pair均NOT_RUN，label=null、fit=false；首次最终plan schema不匹配静态失败保留并修正。检查不加载NumPy、不调用fit/predict/codec。
+
+学习接纳拆开纯任务标签、独立TRAIN、完整费用和预算部署；后继fit入口复用原R18 ridge数值核与R43 47-word/376B格式，拟合时固定不可变来源/参数并单列训练成本，不写注册。唯一实际source factory仍是固定R19 DEV，因此当前无法训练，不能改family或放文件升级。未知费用不逻辑否定其他前提成立的纯任务标签，但仍阻止完整资源改善与预算部署；当前任务前提亦未齐。十维历史计数也不能顶替全部进度/年龄/候选特征或十九维FQI。
+
+模型加载费用沿实际load_registered/read_regular采注册/模型实际read返回字节与次数、monotonic/RUSAGE_SELF区间及异常。ABSENT的模型未尝试保留null；注册预期pin不在异常时冒充已验证内容。局部observer排除receipt落盘/关闭与后期bundle析构，CPU已计入outer lifecycle，不重复加；这是host文件读取分项，不是通信、guest推理或完整I/O/未来报价。
+
+同一R43 Center实际正常CFG与原B1定价数据常量推导：两次paid receiver加ABSENT合计3,392 B1；该调用点含活动祖先栈11,040B。四key current_counts树遍历界闭合，单次已知部分2,709 B1，原子helper未界定，完整值null。原窗口150900..150963最后一行到gate会无后继行；组件小于单行容量不证明剩余窗口。整程序栈/heap/全部窗口、Present分支和完整费用仍UNKNOWN，不借旧私有1408B或R40不同allocator结论。
+
+本轮两次host实际链接共新编译3TU、558去重编译输入；最终候选2活动TU/557依赖/24链接输入，host SHA `165ca0b3d7a1108805bcdb0e5ecde0def902cc3a5edd68263657cef02e74c60f`。中间无origin host `e102f3b4…`与回执保留，模型对象复用；三guest未重编或复制，原flags/输入/保护参数不变。最终driver相对R43仅四新增行，组件兼容不升级全host资格。
+
+三个组件默认只读冻结核验与定点互审通过；联合冻结746项实际文件/来源pin，manifest SHA `0431c39d4b14af8c00158043be1c6fd9c99c2a7b426d096f22c5b5cc9dd445cc`，默认只读复核通过。四主稿及96,234字节历史尾文一致；旧manifest仅核registry hash，不重审旧6520项。三个探索树同步research_update_20261009_r44/REPORT.md，20共享线路记录实际推进与沿用/后置。主线仍4重叠验收阶段，原委派部分完成；A保持、B NO-GO、持续任务/随机延迟/LIMO后置。
+
+下一复用现有R18通用地图成对续跑入口，补共同空间安全、精确同初态/臂内来源与真实费用，不能把旧点运动/次数预算/截尾sum标签当主线合格证据。同步补同镜像剩余资格，再谈获授权独立小比较；不重写规划器、不堆网络、不扩大旧矩阵。详见本机`implementation_binding_evidence/query_value_training_sources_20261009_r44/REPORT.md`、NEXT_METHOD与最终RUN_PLAN_ORIGIN。
+
+最终提案只替代未运行DEV清单：1共享prefix+QUERY/WAIT两尾，无模型/重试，原H34/8388608/64/8192、270秒单尾与870+30秒外层尽力截止。NOT_AUTHORIZED/NOT_QUALIFIED、NOT_SCHEDULED，输出未创建；四地图仅静态输入提案，不在该运行清单内。新文件约10MiB，直接复用旧guest；本轮研究交付不展开旧归档日志。公共Git仍仅两份指定进度。
+
 <a id="r43"></a>
 
 ## R43：付费模型通路、不可变产物与真实生命周期
@@ -23,6 +47,18 @@ learning实现fit-time不可变模型与TRAIN来源，导出前再次校验；�
 本机入口`implementation_binding_evidence/query_value_paid_inference_20261009_r43/REPORT.md`及导师判断、20线TRACKS、RUN_CHECKLIST/RUN_PLAN、只读verify_delivery；三探索树新增research_update_20261009_r43/REPORT.md。主线仍4个重叠阶段，下一补同镜像剩余执行资格/完整费用与独立数据，再依授权独立比较决定融合。A保持、B NO-GO、持续任务/延迟/LIMO后置。构建/组件占用快照约69.85MiB，不展开旧日志、不重复复制N/E。
 
 运行清单只替代旧未执行提案：1 DEV共享prefix+QUERY/WAIT各一尾，默认无模型、无重试；原H34/8388608行容量/64准备行/8192最大行及保护参数不变，单尾270秒、外层拟870+30秒尽力截止。NOT_AUTHORIZED/NOT_QUALIFIED，起止时刻NOT_SCHEDULED，训练/独立TEST不在提案内。公共Git只同步指定两份进度。
+
+<a id="storage-final-20261009"></a>
+
+## 并行整理收尾：单包39输出去重与原路径恢复
+
+2026-10-09。按用户继续并行整理的要求，三个子智能体分别完成归档/引用、Git与缓存、恢复/删除实现互审，根执行清理。仅删除R18 TEST maze s04 n32 speed_shift的package00014覆盖39个输出副本（20个after.json、19个stdout），释放allocated 73,039,872B=69.65625MiB；新增维护文件与目录512,000B，净回收72,527,872B=69.16797MiB。10月9日三轮归档整理净合计8,645,427,200B≈8.05168GiB，10月8日约3.55GiB另计；未重复计算恢复测试副本。
+
+原包80成员、39当前副本与41保留文件逐项核验；当前R42/R43/R44直接候选引用交集无命中，限定源码/元数据扫描无命中，不宣称外部全部消费者覆盖。最终计划`7becb952…`固定白名单、归档SHA、74项保护pin；先持久保存完整恢复索引，再逐项核身份/内容并删除。两个文件实际恢复到原路径、SHA通过后清理测试副本；最终39路径缺失、原归档保留。74pins、同包41个输入/回执、四稿和R44联合manifest保持。
+
+四树共用Git对象库约3.73GiB，garbage/prune-packable为0；94 loose不构成再次repack的必要理由。约2.73MiB缓存含冻结引用，保留；不删除工作树、源码、构建或扩大其余3.375GiB未资格候选池。未执行模型、训练、求解器、科学host/guest、仿真或机器人。
+
+本机`implementation_binding_evidence/storage_maintenance_20261009_final_review/`中，REPORT/ARCHIVE_REVIEW保留执行前快照，执行后以CLEANUP_RESULT、DELETION_RESULT、POST_CLEANUP_CHECKS和ORIGINAL_PATH_RESTORATION为准。28份内容文件及74外部保护引用已冻结，manifest SHA `5c3c01413b675d66514ab82c9387b32ead0d2e56f6e500b2f2af0e9f400a58fd`。`restore_logs.py`默认只查看，`--restore`恢复本批，支持`--file`精确恢复；旧after路径审计须先恢复。先前00029与更早四批仍使用各自恢复入口，不修改旧冻结。
 
 <a id="storage-parallel-20261009"></a>
 
