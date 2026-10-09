@@ -2,6 +2,32 @@
 
 [当前状态与下一步](.github/README.md) · [仓库导航](README.md)
 
+<a id="r49"></a>
+
+## R49：有限执行、合法cap/RUN与轻量学习来源入口
+
+2026-10-09。根与3子智能体完成四组件实现、静态对象/组合链接、互审和冻结；另做存储只读调查与精确缓存清理。科研导师仍2PASS/4UNKNOWN、CONDITIONAL；学习价值/排序优先、RL重点候选。科学目标/World/solver/仿真/模型/codec/训练/实际新候选记录和可靠标签均0，研究有效性UNKNOWN。
+
+motion_grant从同GuestInitialPosition取得Registration/Position/Ledger，核同几何storage与完整资源，foreign owner或非所有者条件不满足即WAIT。私有Pending绑定实际根、book和tick，沿原两次publication SOURCE提交；host只在真实Station witness后消费有限来源owner唯一当前头，执行原World.install_cap/RUN。后继cap0、初始HOLD保留，初始fullcap也必须真实RUN。首次启动可能tick1或更晚，不冒称旧固定t0等价。分配先于物理事件、失败保留实际部分事件并封闭，不伪造回滚。
+
+finite_script将0/1/2提交放入实际240条有限规则，两个机会均有pre/op/post边界，真正提交为END/handoff/service/Grant；余下规范Skip无SOURCE、无Position提交、无AUTH/推进head，也不清旧凭证。host真实Compute/pub/ack driver对Skip不打开pub和pub+1行，不造零费segment；其余真实计算/边界/清理仍需完整费用。私有source clock只advance当前head，source创建受实际tick约束。每tick两机会、H34、136END、8388608 B1/行、64准备行、8192总行未扩。
+
+两项实质修复：R48上层Station新word仍会被实际R41 FixedJobBoundary的<=255拒绝，R49显式FiniteLifecycle模式补底层解码，默认Fixed和pair/cancel保留；首次host错取R19基底缺R41方法的失败与前像保留。独立互审另发现StartupReady可能错作首tick，现要求真实paid BoundaryReturn已完成、cursor1/无开放行/无失败/source零ordinal，并逐entry/pre/op/post核实际脚本索引。没有caller启动PASS或额外bootstrap预算。
+
+最终静态对象：root guest275依赖SHA20b1f87a…、host423依赖SHAa2b4f507…；finite Coordinator279依赖c75705c7…、guest body278依赖462e1dca…、实际Station/driver host451依赖3ede55c0…。两实际host对象用g++-11 -r组合，私有bind/published解析，SHA9eb3e6fefe6475cdecea8d9f6f0029ab8f0ac0f05dbc8b673aae1db6a40ba165。此为relocatable对象，不是完整Session/可执行镜像；R48固定镜像只复用，通用查询调用点/初始化/原子地址/原任务输出仍缺。
+
+learning_intake读取真实R48 60word/48字段合同，核scope/root/身份和五类掩码；事前20字段×6通道保留UNKNOWN语义。实际prefix/两尾/process/host-origin读入口复用原审计；真实QUERY身份不可由OriginalRuleSelected或事后结果代替，未查询候选无标签。原R18三个ridge数值函数AST复用、fold内标准化，来源gate先于NumPy。当前唯一工厂固定DEV，fit_ready=false，缺真实QUERY回执/新launch及安全窗口/独立TRAIN，拟合不可达。只做五文件/三函数定义AST检查，无parser/NumPy/fit/预测；固定R19四service指标未升级通用original-task。单步DeltaJ^pi0不等于Q*，RL仍需多gate/预算/episode，不用MSE替代任务收益。
+
+execution_bounds从同R48 Center实际符号/指令/.su与数值库来源分析，21次Real量化×每次至多56比较=每候选1176外层比较；成功BSS出口至多4097word写入。已知祖先帧capture12480B/encoding12720B/export10544B不是全栈。精确数值位长/次数/分离度、动态分配和实际完整生命周期无充分界；64×8388608是名义容量不是剩余窗口/报价，未把旧advice含新增特征区间称纯推理费用。默认检查首次导入静态analyzer写入新pyc导致成员保护拒绝，冻结十文件SHA不变；保存失败/清理回执，用python3 -B复核PASS，未改冻结组件。
+
+四组件与联合冻结980项去重pin，manifest 532ea43fe2d97f96f68d7d08f3dc9fe68e5036f097280f8339b9d74230e87533；5最终对象+host组合、四稿/旧registry/96234字节历史尾文核查通过。20线重新计算7直接/6共享/4沿用/3后置，三探索树research_update_20261009_r49/REPORT.md同步；纠正旧TRACKS计数与数组不一致仅在新记录说明，旧冻结不改。主线仍4重叠阶段，阶段一未整体结束。
+
+下一只补同Registration完整C/N/E Session、实际QUERY身份及原任务末段service、真实paid startup/Finish与完整预算/报价；复用已有候选接口、学习核和有限生命周期，不堆孤立对象。真实路径/生成Batch仍缺，Boston/brc H34必要界NO-GO保持、Berlin/den仅未排除。当前保守fullcap和固定优先顺序可能阻塞/延迟，无新可行性或查询收益结果。不改原输入/参数/split，不借旧授权；R49 generic argv不存在，NOT_AUTHORIZED/NOT_QUALIFIED/NOT_SCHEDULED，R48未执行DEV提案不覆盖它。
+
+本轮storage_audit扫描874份冻结类元数据及14份补充文本，214普通pyc均源文件存在、untracked+ignored、single-link且无已声明引用。根再次核身份/源SHA/Git后实际删除，毛回收2,887,680B≈2.754MiB，逐项耐久日志/结果保留；另2项冻结引用cache与1980环境cache保留。首轮Git ignore参数预检在删除前失败，修正stdin后全量预检通过。根当轮分析新生成又删除16KiB不算既有清理收益。四树约102.59GiB是删除前并发开发快照；既往8.052GiB净清理不重复计，约3.375GiB旧候选仍未获删除资格。
+
+本机入口implementation_binding_evidence/query_value_generic_execution_20261009_r49/。冻结后目录快照15,695,872B≈14.97MiB，不复制旧完整Center/host或N/E，研发新增与缓存回收分列。公共Git仅更新.github/README.md和GITHUB_PROGRESS.md，主稿未提交修改保护。
+
 <a id="r48"></a>
 
 ## R48：候选生产进入实际执行镜像，通用有限来源接缝实装
