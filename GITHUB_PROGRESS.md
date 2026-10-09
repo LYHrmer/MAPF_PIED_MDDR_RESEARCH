@@ -2,6 +2,30 @@
 
 [当前状态与下一步](.github/README.md) · [仓库导航](README.md)
 
+<a id="r50"></a>
+
+## R50：实际生命周期Session、查询身份与原任务结果生产
+
+2026-10-09。根与3子智能体完成四组件实现、定点互审和冻结。科研导师仍2PASS/4UNKNOWN、CONDITIONAL；价值回归/排序优先、RL重点候选。10个最终静态对象、3项relocatable组合均保留实际编译依赖和日志；没有新完整通用ELF。科学目标/World/solver/仿真/模型/codec/解析/训练、真实候选及可靠标签均0，研究有效性UNKNOWN。
+
+guest把原full_start接到同一Coordinator；原任务末段service结果从真实Registration/Coordinator获取，不收caller完成标志。正常34tick后ResultReady暂停供host读取，实际付费返回清理结果，最后Finish。修正“在永不返回Finish之后销毁结果”的错误顺序。2 RV64 TU与3个旧实际对象部分链接；新factory声明无假实现，真实nominal/Batch/八字段seed缺失。源转换入口要求完整显式seed和实际来源SHA，未知headcap不填值，未执行转换。
+
+host真实GenericLifecycleSession拥有同Registration运动/END来源、原Owner/Station、68计划和全生命周期SessionRows。实际StartupReady返回后立即停在cursor1，随后34tick；末ResultReady/清理/Finish共用349001..349064原64行。Station和底层Boundary仅对显式FiniteLifecycle的倒数第二ResultReady/下一Finish允许iteration2。结果观察只在实际暂停/关闭行/正确job读取，descriptor为普通BSS/RW，payload需实际allocator块且每word通过ProtectedBackend，拒绝AUTH字；Finish检查descriptor清空与真实释放。正常生产要求tick34；异常缺结果不补零。2实际host对象部分链接。当前只是生命周期基线，新ELF/符号/INIT/全publication计划未绑定，不能冒称C/N/E查询闭合。
+
+query_identity将实际Flow PreparedRequest与同root/time/唯一候选绑定，准备/发布/转移各阶段保持同Flow；WAIT无selected。原4096word改为最多4064候选payload+32身份元数据，超限拒绝，失败保留已读前缀。4个RV64及1个实际host driver TU编译。实际调用点沿fixed DEV；新完整镜像/BSS地址尚未绑定。严格prefix/QUERY/WAIT来源入口保留source=false、label=None、fit=false，未解析或拟合。实际请求身份不由Program提案、旧selected标志或事后结果代替。
+
+center_query由同一Coordinator/Position/Bridge执行原Flow、普通END、公共GrantBook、WAIT、费用终结与查询族结算；不再强制固定后车/A2/B2或借旧available-budget常量。1实际RV64 TU（306依赖）与identity/feature_export/Coordinator真实对象部分链接，关键跨组件方法已解析。原两14tick周期保留；旧MovementPublished位置现在只应由新host查询脚本作无效果付费边界，该脚本尚缺，full_start尚未调用本查询类。物理任务身份与q0/r0、q1/r1发生身份分别核验；原E仍按真实AdmittedRequest核全15字段及executor/account。R49 HostMotion仍匹配初始完整身份，E→host查询Source生产桥缺失，不能只放松一个比较即称接通。
+
+四组件及联合只读核验通过：1260项去重pin，manifest d3058ffbe2ef6336ed0f7a5d6a7e40c646c5fbb11481d2c834946af6377871a4。四稿、旧registry和96234字节历史尾文保持。20线6直接/7共享/4沿用/3后置；V本轮共享身份/结果，没有新拟合，不沿用R49的DIRECT。三探索树research_update_20261009_r50/REPORT.md同步。静态对象数量不扣减科研阶段；四重叠阶段保持，第一阶段未整体完成。
+
+下一步只补同Registration的完整C/N/E有限查询调用链、实际E请求驱动的host来源桥，再落实真实Batch/seed、同镜像plans与完整费用。全栈/heap/整窗、跨行合法预算/未来报价和host观察费用UNKNOWN；结果public_binding一个byte一个Word带来约8倍存储，不能扩arena掩盖。H34/136、每tick2机会、64准备行、8388608 B1/行、总8192行保持。Boston/brc必要界NO-GO、Berlin/den仅未排除；有未支持WAIT的真实Batch不能删WAIT通过。固定续策ΔJ不是Q*，没有多gate RL episode，不以MSE或接线证明研究有效。
+
+运行清单仍IMPLEMENTATION_STATIC_ONLY / NOT_AUTHORIZED / NOT_QUALIFIED / NOT_SCHEDULED。通用目标无完整argv；先完成实现/静态绑定再申请精确输入、二进制、次数、预算、截止和失败保留。R48未执行固定DEV提案不覆盖通用/名义求解/TRAIN，旧授权不互借。成对后续保留臂内信息、普通END、WAIT、配对外生扰动和全部失败/负/零/迟到/未完成；不同臂动作可不同。
+
+联合严格成员检查发现本轮首次host构建生成的过时pyc，四组件无引用、普通单链接且untracked/ignored，核源SHA后精确删除8192分配字节；不计历史回收。首次错误猜测是嵌套manifest过滤，实际差异只有缓存，预检失败、更正、源码前像和删除回执保留，冻结文件未改。R50目录冻结后52,281,344B≈49.86MiB，复用旧完整镜像/工具链；此前8.052GiB净清理与R49 2.754MiB毛回收不重复计。原始输入、四稿、旧证据和约3.375GiB未合格旧候选未删。
+
+本机入口implementation_binding_evidence/query_value_session_integration_20261009_r50/。报告、NEXT_METHOD、RUN_CHECKLIST、TRACKS及联合verify_delivery已齐。公共Git仅更新.github/README.md和GITHUB_PROGRESS.md，保护主稿未提交修改。
+
 <a id="r49"></a>
 
 ## R49：有限执行、合法cap/RUN与轻量学习来源入口
