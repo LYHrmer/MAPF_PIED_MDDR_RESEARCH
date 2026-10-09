@@ -2,6 +2,32 @@
 
 [当前状态与下一步](.github/README.md) · [仓库导航](README.md)
 
+<a id="r53"></a>
+
+## R53：真实工件生产、同镜像计划与候选覆盖
+
+2026-10-09。根与3子智能体完成四组件实现、交叉复核和冻结。38个源文件对应39个最终静态对象、6项部分链接，包括14host联合链接；没有完整新ELF、100计划实际产物、科学执行、训练、预测或可靠标签。科研导师仍2PASS/4UNKNOWN、CONDITIONAL；查询价值学习未完成，研究有效性UNKNOWN。
+
+input_factory复用原R45求解/检查与真实源码格式化，不造路径或seed。新监督、Batch及完整显式八字段seed到Registration工厂写独立非冻结输出，旧目录拒绝覆盖。当前实际检查原名义五文件缺失、新runtime五文件和SUPERVISION为0，完整seed和factory均缺。原ECBS w1.5、30秒、4GiB/进程、1worker、goal-hold、零重试保持；peer修复原求解和finally可能各回收5秒的问题，现实际child共享一个单调时钟截止。45秒仅软监督，完整进程树费用/硬截止UNKNOWN。名义提案仍Berlin DIAGNOSTIC_DEV_ONLY_NOT_TRAIN，没有扩大TRAIN/TEST或新运行授权。
+
+native_build把components→真实factory双域编译→单独授权的实际Registration/codec布局生产器→完整三镜像链接分阶段接通；脚本不自动运行生成程序。实际29新对象（24RV64/5host）、6当前覆盖对象及9旧底层对象复用，完成3角色-r。完整工厂/布局片段仍缺，build_registration保留真实未解析，不造替代TU。首次缺E头目录的失败保留，修正后完整受影响闭包重编。构建时脚本前像保留，后续链接trace和失败目录所有权修正仅静态核查；最终三阶段没有伪称已全部重跑。
+
+修正R52具体错接：pie_cost_results是费用诊断区，原Session却作为任务结果描述符。新Bound.original_task_descriptor核实际C的pie_r50_original_task_result为32B普通RW对象，Session/Observer实际消费该字段。原257页context、65536-word arena、普通栈65536B、kernel栈4096B和N/E/C原总映射限制保持；静态ELF检查不能证明动态栈/heap或完整有限窗口。
+
+plan_production从同三实际ELF/Owner不可变RX逐字节提取100原import计划，C84/N8/E8并直接接真实Session；只认实际wait wrapper及具体vtable/guard，保留条件两边和失败叶，循环/未知间接/逃逸/额外ECALL拒绝。E ledger/relay新增两处保语义noinline入口，分别核原进口，不以union扩大准入；C仅原相同import的正常/失败结算合并。原Source同Job/行/import/typed安全约束继续成立；计划上界不是实测费用或新预算。实际3host TU（含原collector按新Bound重编）及14host联合-r SHA2ee99c24dfef81e4e430ca57b80ff8ed79d6dfea7d75a6cefeb614e51cab3fac。真实计划提取和会话运行均0。
+
+candidate_coverage新增事前固定ordinal采集计划、真实合法提名、v3来源身份、六源接纳和全计划覆盖分母。目标不存在保留失败、不换候选；非目标门按原续策，WAIT不读QUERY结果。计划不伪称随机概率，未执行也进分母；未查询候选无标签。当前模型与计划默认ABSENT，0实际覆盖/可靠标签/训练。R53轻量模型导出核本轮真实封存类型，不误要求R52来源。即使未来所选候选标签可靠，也不自动证明跨状态排序支持；同上下文多候选实际覆盖仍缺。RL为重点候选，共享多门接口，但缺真实episode、合法预算演化、完整回报；固定续策DeltaJ不是Q*。
+
+下一按真实输入/完整seed→双域工厂→真实布局→三完整镜像与100计划→同镜像全栈/heap/有限窗口与完整费用顺序推进。合法跨行purse/未来完整报价以及prefix、装载、观察/I/O、通信、清理费用UNKNOWN；SOURCE90行余量和推理子区间不冒充完整预算或完整费用。之后取得精确输入/二进制SHA、argv、次数、资源、绝对截止和失败保留授权，先查真实合法执行机会及完整任务改善，再采可靠TRAIN、冻结模型和独立TEST。静态接线、中间提前、MSE均不证明研究有效。
+
+20线路本轮重算5DIRECT/8SHARED/4CARRIED/3DEFERRED，费用F仅共享原边界，不沿抄前轮DIRECT。三探索树research_update_20261009_r53/REPORT.md已同步。主线仍4个重叠验收阶段，第一阶段共同资格未整体完成；规划停止/文献/写作沿用，NO-GO不重开，持续任务/随机延迟/LIMO后置。已完成的静态入口不再无依据重复包装或堆孤立测试。
+
+授权保持IMPLEMENTATION_STATIC_ONLY / NOT_AUTHORIZED / NOT_QUALIFIED / NOT_SCHEDULED。普通END、WAIT、结构规则/EWMA、无额外/周期/年龄/阻塞对照及全部迟到/失败/零负收益/未完成保留。两臂同合法初态/同续策规则/配对外生来源，动作可不同；任务指标仍原固定批次末段service完成tick之和，不称吞吐。H34/136、每tick2机会、原64准备行、8388608 B1/行、8192总行及原所有窗口/保护保持；Boston/brc原必要界排除不变，不改输入/split或删WAIT救资格。
+
+四组件与联合只读核验PASS，1745项去重pin；manifest f5f5905017768ccbfd2186315b6456a513fdee52cc012014009816aa89dbca71。input e815cf3e…、native f9c28423…、plan 7c01e115…、coverage 184ff642…分别冻结。根首次误用统一verifier文件名造成三次文件不存在，实际未执行；定位各自verify.py/verify_static.py后默认检查全通过，记录保留，不改冻结。
+
+本机入口implementation_binding_evidence/query_value_artifact_production_20261009_r53/，REPORT/NEXT_METHOD/RUN_CHECKLIST/TRACKS/verify_delivery齐。四稿、旧registry、输入、96234字节历史尾文及本轮前230123字节进度正文保护。冻结后64,540,672B≈61.55MiB，旧工具链/大镜像复用，本轮无旧证据删除；既往8.052GiB净回收不重复计。公共Git仅同步.github/README.md与GITHUB_PROGRESS，主稿原未提交修改保护。
+
 <a id="r52"></a>
 
 ## R52：学习选择、迟到执行与成对数据生产接口
