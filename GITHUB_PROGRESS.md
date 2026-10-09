@@ -2,6 +2,30 @@
 
 [当前状态与下一步](.github/README.md) · [仓库导航](README.md)
 
+<a id="r46"></a>
+
+## R46：原生来源构建与被必要条件否定的逐边服务表示
+
+2026-10-09。根与3子智能体并行实际静态构建和互审，随后将重点从接口数量转向可完成性、查询机会与学习增益。科研导师整体仍2PASS/4UNKNOWN、CONDITIONAL；监督价值/排序首优先、RL重点候选。科学host/guest、World、solver、仿真、模型/codec、训练和机器人均0，可靠新标签0，研究有效性UNKNOWN。
+
+**当前通用逐边MOVE＋每MOVE原service表示不能用于四图完整TRAIN。** 原账本要求每MOVE END后至少另一个整数tick才service，后继随后激活；两个时刻需要各自匹配的真实Notice，registered普通END imports全局唯一且共136。冻结四图Manhattan距离给出批次完成下界126/324/530/90tick、至少782/1336/1408/558个END/service来源机会，全部超过H34/136。两名子智能体独立读输入、核SHA及重算通过；这是实现合同下的必要条件，不是求解/运行结果。由此纠正R45“主要补Session即可接通”的推进判断；不否定整体MAPF/学习或原固定R19 counts，不改输入或扩边界。
+
+精确几何推导起点cell退出严格q>11/10，等号仍接触；端点本段不可退还。L=cap=2、原起点s=v=0、原δ/a_lo/a_hi/a_launch、η=-1且不中断时，原Segment公式给出到END时间sqrt(6)，达到阈值时间sqrt(11/5)，间隔<1tick。旧固定程序capture→POSITION/grant为3/4tick，说明短段查询可能来不及；只是限定分支，不能声称全域无机会，也不能人为HOLD或延后普通END制造优势。QUERY_VALUE_MECHANISM明确G1可完成且有窗口、G2提前改善最终原任务、G3学习在完整费用后胜强规则三个可证伪门槛。
+
+原生source_catalogue复用实际作者变换(2y,-2x)、原footprint/误差和精确闭合资源，登记原任务、MOVE、WAIT与零MOVE居民；生产端要求真实原名义规划与校验输出，无假路径。修复逐MOVE复制整图障碍的问题：完整Resource所有piece的整数bbox均分离时才排除；保留资源不裁key/pieces，再由原精确Geometry检查。host目录对象与同源RV64对象实际编译；真实名义输出、generated输入TU和新Batch仍0。当前表示消费层需上述语义修正。
+
+physical_sources新增host私有World工厂/真实Lane付费源及guest注册typed NormalEnd；原Notice不可伪造语义保持，原实际snapshot/零速/端点检查，有限tick/import不扩，不将World.closed当通知。根实现guest Position/Ledger初始化，用同一Geometry storage、全初始队首、居民/永久owner及安全prepare/commit；host只建物理World，不建影子Position。最终两个RV64初态/目录对象和一个host对象实际编译，266/263/438依赖，SHA分别1f739f47…/c6238e42…/57c1de8c…。guest不含libriscv/World/Lane。两域相同输入/动力seed、通用paid C/N/E job与发布/cap/RUN尚需真实Session绑定，编译不能代替该资格；WAIT未实现则拒绝，末MOVE服务才计原任务完成。
+
+counts_value在原固定任务候选中一次同步按值读取四计数，advice/gate共用，避免临时View/shared_ptr原子helpers。7受影响Center TU全部重编，15其他项目对象及原N/E复用；2TU host实际绑定新Center，557编译依赖、24显式链接输入；Center全34实际LOAD输入前后固定复链得到相同字节。Center SHA faf792c44dfe345ce68db8f7056c7fb8ab3137849342152dc10a27662b594365，host d2e4d9d74e862dcc3d854a5b5392e169d110e666de449dfd86803c86891a3ddf。正常组件条件界2433 B1/32B、真实活动祖先合10448B；旧两次12544 B1的差不是实测节省。整栈/heap/完整有限窗口及完整费用仍UNKNOWN，64行不扩；通用来源对象未链接到该固定目标。
+
+失败与中间构建保留。早期混合域host候选一项头依赖精确前像未捕获，已明确不可用于当前复现，不伪造前像；当前只用最终分域对象。源码、输入、四稿及旧冻结保持。联合冻结1291项去重文件/来源pin，manifest SHA 26f0c036c18894de2b3e3604351235459c005ba5fca005e32fcfaacea489af93，核四组件、三树报告、四图算术、实际host/guest绑定、运行输出缺失及96234字节历史尾文。旧registry只核hash，不重开全面审查。
+
+20共享线路和三个探索树同步research_update_20261009_r46/REPORT.md；4直接、9共享、4沿用、3后置。主线仍四个重叠阶段。下一优先原任务/MOVE/primitive合法语义与短段时标，再补候选级q/cap/threshold/年龄/阻塞/预算及真实费用。共线合并仅在真实路径基础上、不跨WAIT/转弯/任务边界；停顿变化是新执行表示，不能冒称等价或承诺适配H34。固定π0完整后果ΔJ并非Q*；单q1不包装多步RL。已有结构/阈值/费用/EWMA为强基线，不能削弱它们给模型制造优势。
+
+新RUN_PLAN仅原固定R19 DEV：一prefix+QUERY/WAIT、ABSENT、无重试、原容量，每尾270秒，外层870+30秒尽力截止。默认监督器静态检查PASS；NOT_AUTHORIZED/NOT_QUALIFIED/NOT_SCHEDULED，输出未创建。当前逐边四图表示不申请TRAIN，旧诊断/Berlin授权不互借。任务标签、完整资源与部署资格分开，未知费用不置零，训练成本单列。
+
+本机入口implementation_binding_evidence/query_value_native_sources_20261009_r46/，含REPORT、MENTOR_FOLLOWUP、QUERY_VALUE_MECHANISM、FEASIBILITY_BOUNDS、NEXT_METHOD、RUN_CHECKLIST及verify_delivery。冻结后根目录占用93,069,312B=88.76MiB快照；本轮未清理旧证据或复制原N/E，旧清理累计约8.052GiB不重复计。公共Git只提交.github/README.md与GITHUB_PROGRESS.md，主稿未提交修改受保护。
+
 <a id="storage-status-20261009-r45"></a>
 
 ## 磁盘只读复核：清单已处理，保留未验证的大项
