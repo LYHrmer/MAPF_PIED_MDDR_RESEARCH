@@ -2,6 +2,32 @@
 
 [当前状态与下一步](.github/README.md) · [仓库导航](README.md)
 
+<a id="r47"></a>
+
+## R47：运动段语义、真实候选输入与更强物理必要界
+
+2026-10-09。根与3个子智能体完成七个实际静态对象、四组件冻结、同定义互审与20线路/三树同步。科研导师整体2PASS/4UNKNOWN、CONDITIONAL，监督value/ranking优先、RL重点。科学host/guest、World、solver、仿真、特征/模型/codec、训练、机器人及可靠新标签均0，研究有效性UNKNOWN。
+
+segment_source分开原始任务/grid primitive/直线运动段，只合并同一真实名义路径的连续同向边，不跨WAIT、转向、反向或原任务边界，精确长度2k且保留全部内部cell；原作者坐标、footprint/error、校验与不可变Batch来源复用。没有真实名义输出或生成TU，不造路径，名义WAIT无原生时间消费者时继续拒绝。长段fullcap会完整索取内部资源，可能过约束，不能宣称名义MAPF计划已可执行或查询必有价值；旧短段单blocker结论不迁移。
+
+根SegmentLedger只接受新Batch，核原任务与段链首尾。真实普通END先耦合发布resident，中间prepare_handoff再经原SourceCatalogue/驻留/精确端点检查，以q=cap=0登记下一段与完整需求；不发RUN、不造AUTH。同tick可复用匹配Notice，但END和handoff各须实际两次publication边界，晚tick须新Notice。只有原任务末段prepare_service仍要求at>ended_at、新Notice和驻留，交接时间与原任务完成时间分开，未完成-1。理想最少END机会为段数M＋非初始完成任务A，实际poll/晚交接只增，136槽不扩。这是改变中间停顿的新表示，不冒称旧逐边模型等价优化，各臂须共享。
+
+motion_binding以shared不可变Registration统一完整原8字段CaptureSeed、源/几何Identity、time0、原生HOLD/s=v=q=0、初始cap及后继cap0。guest实际初态消费同登记并核head q/cap/geometry/source/profile；host只由它构造真实原私有World。公开规范绑定记录不是AUTH，实际两域来源传输、C/N/E运动/paid job/有限行及Session未接，不能把两个对象当成同一运行已认证。
+
+物理支线从原四模式推出a≤3，锥约束v²≤12(cap−s)，零速起步v²≤6s，积分得每段T≥√L。转向必须END零速，任何cardinal段组合仍T_agent≥√(2|dx|)+√(2|dy|)。Boston agent3 √258+√390>35、brc agent1 √368+√692>45，均超H34；取消逐边服务、理想合并、最优查询也不能解决。两个子智能体独立按原源码和冻结输入核整数根式，无World/轨迹。Berlin/den仅未被此界排除，仍UNKNOWN；输入、H、136及原split不变，不将删失当完整标签。
+
+另在原η=-1/满capL/原起点s=v=0且一次RUN不中断条件下，原END解析时间√(3L)，起点阈值达到时刻√(11/5)，潜在窗口随L扩大。再假设整数RUN、capture+2、grant+6、正常逐tick END时，L12时间平局，偶数L≥14有条件纯时钟窗口。它不是已生成的路径/已适配协议/收益结果，只用于后续真实候选的事前机制核验，不能挑长段、HOLD或拖延END救学习。
+
+candidate_features新私有PublicSnapshot直接保留同根真实Scheduler历史/Receipt及原choose，原方法正文/强规则/tie/WAIT不改；Position View只转发同根。私有CandidateSet工厂从实际eligible action提取q/cap/length/precision、严格退出类别、真实owner阻塞/完整外部责任数/下游、合法历史年龄和分单位费用，UNKNOWN访问拒绝而不补0。age_since_delivery对应最新capture代表证据，并非任意最后包；历史同profile Receipt可能来自早前action，不当未来报价。原任务registry未接则明确UNKNOWN。
+
+候选工厂内两次实际paid SOURCE90，核同非零scope、scheme、generation及期间root一致；仅同row记录actual/charged B1子区间。Strict同row charged差0是原inspect整行capacity口径，不表示免费或推断经济预付。捕获unused不是decision余额，跨行purse/完整未来quote未知；特征/原choose work保留计费，第二capture后的返回/持有/保存/析构与下游不在该分项。已编译接缝取原CProgram.next_selection_at，但尚未接实际Session；raw exact/变长schema仍未绑定R43 10D/47word，未调用任何模型。
+
+七对象统一先包含R47 Scheduler/Position覆盖头，原R46 END和strict flags保持：source host/RV64 441/266deps，SHA cb607bee…/d5fff3fd…；motion guest/host269/443；root guest lifecycle271deps/1eb8e941…；candidate/原receiver283/284deps，SHA7fc2f51e…/630556b3…。编译前后依赖一致，guest无World/Lane/libriscv；没有完整新镜像，R46局部2433B1/10448B界不移植为R47资格。候选默认核验曾误将RTK wrapper作compiler路径，脚本修正/失败回执保留，未改源码或对象。
+
+联合冻结930项去重文件/来源pin，manifest SHA fc4f74f6dc2b253520535658bdd69143efab6bb81c0afd06482e9442ee6e97fc；四组件、七对象同定义、四图精确算术、四稿/旧registry/96234字节历史尾文保持，实际名义五输出与generated均缺失。20线7直接/6共享/4沿用/3后置，三探索树research_update_20261009_r47/REPORT.md同步；V为真实候选接口直接推进，RL仅共享输入，未有多gate转移/episode。主线四个重叠阶段不因对象数量递减。
+
+本机入口implementation_binding_evidence/query_value_task_semantics_20261009_r47/，REPORT/NEXT_METHOD/RUN_CHECKLIST/verify_delivery及motion_binding/PHYSICAL_BOUND_PROOF为当前入口。下一将已有模块接入同一真实程序，统一重编受影响TU，补公开时钟/原任务映射/数值编码及完整费用窗口；不重复建独立接口。不新开矩阵，R46未执行DEV原清单保持原字节与NOT_AUTHORIZED/NOT_QUALIFIED，不能覆盖R47。训练/独立TEST/机器人未授权；R47冻结目录占用快照7,962,624B=7.59375MiB；本轮无旧证据删除或大型完整ELF复制，公共Git只同步两指定文件。
+
 <a id="r46"></a>
 
 ## R46：原生来源构建与被必要条件否定的逐边服务表示
