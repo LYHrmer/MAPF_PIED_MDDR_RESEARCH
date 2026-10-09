@@ -2,6 +2,40 @@
 
 [当前状态与下一步](.github/README.md) · [仓库导航](README.md)
 
+<a id="r54"></a>
+
+## R54：独立学习来源登记、复制计量与运行监督
+
+2026-10-09。根与3子智能体完成五组件、定点互审和联合冻结。14个不同HOST源的最终对象统一编译并完成1项部分链接，包含成对清理修复，不另加对象计数。没有科学执行、实际复制记录、任务生成、可靠标签、训练或独立比较。查询价值学习未完成；导师资格仍2PASS/4UNKNOWN，研究整体CONDITIONAL、有效性UNKNOWN。
+
+导师判断发现旧R44完整训练数据合同NO_GO：原TRAIN只预留Berlin/Boston；Boston agent3的乐观运动下界sqrt(258)+sqrt(390)>35>H34，尚未计排队、障碍和最终service。即使Berlin后来合格，最多一个可完成TRAIN家族，仍不足现拟合器所需两个。Berlin当前生产提案仅DIAGNOSTIC_DEV_ONLY_NOT_TRAIN，不等于永久排除；不挪用CAL/TEST、不延长H、不删未完成补足训练资格。
+
+用户明确选择“另建独立学习数据登记，保持原边界”。new_data_registry只核现有公开目录的empty-8-8、empty-16-16、maze-32-32-4，固定作者Git提交25fb931eff03f1cce23a22a68ab42b7533f85ab3，核六个实际map/scenario文件与Git blob、ASCII地图和全部公开端点。分别32/128/395条来源行，未读取参考距离作选择，未生成任务、分配角色、新增运行槽或打开结果文件。3个新地图身份与旧4图不同；两empty归同一结构组，不能从文件不同推断统计独立。既有R29使用记录仅在声明检索范围无匹配，不宣称全局从未查看。
+
+最小设计可沿当前拟合器的TRAIN内分组CV选alpha，采用2TRAIN+独立TEST；R53已移除旧query_threshold，因此独立CAL并非硬需。若另行选择2TRAIN+CAL+TEST，才需第四来源。当前没有实际角色锁定、两个合格TRAIN家族或物理/查询机会资格。原四图、划分、输入及H34等参数不变；新授权仅来源登记与静态检查，不授权任务求解、监督器启动、科学转换或训练。
+
+nominal_supervisor补独立外部监督与实际结果接纳：Linux subreaper、PID/starttime/pidfd、fork登记信号窗口、waitid保留身份及wait4真实回收；/proc仅发现进程，不能以列表为空代替回收。START先持久化，日志完整写入后fsync；实际producer和ECHILD共同证明当前无owned waitable子进程。45秒促停、50秒唯一结束界、零额外宽限，原solver30秒/4GiB/1worker/w1.5/goal-hold/零重试不变。未回收、超时、信号、错误或六个生产源缺失均非零退出，失败保留；完整树RSS、硬实时及完整费用仍UNKNOWN。
+
+新admission消费真实外部START/RECEIPT/EVENTS与原R53六源并核身份、argv、退出和回收记录。produce_admitted_batch实际接原produce_batch、前后核源并写新ADMISSION，失败仅写本次拥有目录。本轮仅AST/hash检查，没有调用该生产器或监督系统调用。后续Registration/具体Session尚未强制消费此新ADMISSION，不能称factory到完整成对来源链已闭合。
+
+network_accounting沿实际Channel::Copy→Station→Event→Driver→Observer记录N q0/q1封装复制字数/字节，包含serial和padding而不读取payload，区分当前行/job/接收边界、累计与增量、完整与失败部分前缀。fork继承计量游标，防止prefix重复。peer修复日志emit后分配失败可能重复记录的问题，现先分配、成功写出后只更新不抛出的标量。14个HOST对象按统一新类型定义重编/复用；最终-r SHA0a31cc1405f1ce27dbcc2a498e63109b50cb9e6cc23567b4749d4b1863f989e1。
+
+新copy_cost_intake核实际prefix/process/QUERY/WAIT四源、prefix切片SHA、fork来源及各臂继承基线，拒绝重复JSON键、非有限数、累计/增量不守恒及事件序号回退；peer补足跨接收边界仍必须高于全部prefix复制事件序号。未知或缺失总量为None，部分失败保留；无完整臂证据时不算QUERY-WAIT资源因果差。它只实现模型内封装复制量；物理链路、host观察/I/O及完整查询费用未合格，旧R53任务cost_audit尚未接新事件。没有执行该解析器或生成实际记录。
+
+paired_cleanup修复原R52采集器超时后catch再次开启完整cleanup宽限的问题：每臂唯一截止，catch复用；wait4成功立即清除可发信号PID，再写可能失败的日志。fork前确定arm截止，保留普通SIGCHLD与单线程等待所有权要求。原wall/cleanup数值、Session析构、处理/续策规则不变。对象ad1d683c1917814d14cbde4930c4179e87642fe03318f72d1282e8d7ef13460b已包含于14对象联合链接；没有实际启动成对程序，日志阻塞/外部强杀/硬截止仍未证明。
+
+完整预算与来源缺口进一步定位：ServerMeter逐行重置，AttributionLane没有跨行入账/预留/扣款/退款账户，SessionRows只有8192尝试行限制。row unused不能造决策purse；100发布计划只覆盖原子发布后缀，不是动态准备/传输/RA/清理/host的完整未来报价。同镜像全栈/heap/有限窗口仍UNKNOWN。R53来源与排序入口有无条件阻断项，须先补实际factory→三ELF/付费INIT→100plans→具体Session的持久化起源生产与消费，不能简单删门声称fit_ready。
+
+下一步先冻结新来源的研究目标、角色/选行规则及完整物理seed，避免按求解成功或事后收益挑样本；并推进实际Session来源链与费用/安全资格。真实输入和条件齐备后才申请精确运行清单，先判断查询能否改变合法执行并改善完整任务，再收可靠TRAIN、拟合冻结和独立比较。学习价值/排序优先，RL重点候选；未查候选无标签，固定续策DeltaJ不是Q*。没有真实候选支持、预算演化与episode就不宣称排序/RL有效；MSE和静态接线不代替研究结果。
+
+20线重新计为5DIRECT/8SHARED/4CARRIED/3DEFERRED：费用F有新复制生产，价值V共享新来源而无新模型。三探索树research_update_20261009_r54/REPORT.md已同步并绑定五组件冻结。主线仍4个重叠阶段，第一阶段共同资格未整体结束；规划停止/文献/写作沿用，既有NO_GO不重开，持续任务/随机延迟/LIMO后置。
+
+授权仍IMPLEMENTATION_STATIC_ONLY / NOT_AUTHORIZED / NOT_QUALIFIED / NOT_SCHEDULED。普通END、WAIT、强规则/EWMA及全部迟到/零负收益/失败/未完成保留。两臂同合法初态、同续策规则、配对外生来源，臂内信息隔离且动作可不同；任务指标为原固定批次末段service完成tick之和，不称吞吐。推理入执行、训练另列，单位不混加，未知不记零。H34/136、每tick2机会、原64准备行、8388608 B1/行、8192总行及原容量/窗口不变。
+
+五组件和根只读联合检查PASS，892项去重pin；联合manifest fa53d0b3a4b4a1626d938266571bf84e167777867decb7e3d34d9cf51e29871a。五组件FINAL分别nominal af2f0d1e…、network 974e8a97…、paired 3e5bfce6…、research 33559849…、registry 4f3a4d27…。四稿、旧冻结、输入、96234字节历史尾文及本轮前236100字节完整进度正文保护。当前本机入口implementation_binding_evidence/query_value_runtime_admission_20261009_r54/，含REPORT、MENTOR_DECISION、NEXT_METHOD、RUN_CHECKLIST、TRACKS及verify_delivery。
+
+冻结后占用16,056,320B≈15.31MiB，无旧证据删除；既往8.052GiB净清理不重复计，约3.375GiB未合格旧候选保留，旧工具链/大镜像复用。公共Git仅同步.github/README.md与GITHUB_PROGRESS.md，主稿原未提交修改保护。当前没有完整通用运行argv或新授权；无新缺陷依据不重复包装静态入口。
+
 <a id="r53"></a>
 
 ## R53：真实工件生产、同镜像计划与候选覆盖
