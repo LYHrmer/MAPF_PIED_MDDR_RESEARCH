@@ -2,6 +2,40 @@
 
 [当前状态与下一步](.github/README.md) · [仓库导航](README.md)
 
+<a id="storage-status-20261009-r45"></a>
+
+## 磁盘只读复核：清单已处理，保留未验证的大项
+
+2026-10-09。按用户并行工作要求，子智能体独立核对既有三批持久恢复索引、删除记录和当前占用；本次未删除、重打包或展开文件。1,218+39+39共1,296项当前均缺失，删除集合无交集；最近批次39条DELETE_LOG与DELETION_RESULT一致，原路径恢复2次通过、测试副本已移除，74项pins、41个保留文件与四稿记录保持。
+
+最近批次毛释放73,039,872B，维护记录512,000B，净72,527,872B=69.16797MiB。10月9日三轮历史净合计8,645,427,200B=8.05168GiB；10月8日约3.55GiB另计。这是持久清理回执的历史累计，不是两次df之差。
+
+一次GNU du -s -B1统计四树，默认硬链接去重、不跟随符号链接，共享.git仅主树计一次：主73,210,458,112B，误差27,813,388,288B，学习7,827,226,624B，QV可行性1,086,328,832B；合计109,937,401,856B=102.387184GiB。稍后R45小目录快照根9,523,200B、三份支线报告24,576B，共9,547,776B=9.10547MiB。df可用118,688,759,808B=110.53752GiB，只作整盘快照，不计算为本轮释放。
+
+目前没有新增证据充分可直接删除的大项；约3.375GiB旧stat候选池尚缺逐包内容、最新引用和恢复验证。原归档、inputs/before/author_cache、冻结构建、工具链、约3.73GiB共享Git、约2.73MiB含冻结引用缓存和四工作树保留；不重复repack，不删R45失败或中间成功对象。首页压缩重复维护叙述，历史回执保留，公共Git仍仅两份指定文件。
+
+<a id="r45"></a>
+
+## R45：诊断配对入口、原生通用FIFO与条件计数界
+
+2026-10-09。根与3个子智能体并行实现、静态编译和交叉复核。科研导师仍2PASS/4UNKNOWN、CONDITIONAL；价值回归/排序优先，十九维有限时域FQI重点候选。本轮科学host/guest、solver、仿真、模型/codec、训练和机器人均0，合格标签0，研究有效性UNKNOWN。
+
+通用采集器接R44四图身份、原ECBS及实际路径校验，不重写规划器。实现首次gate0、真实单线程、首次SADG在线优化前fork，两尾从同一Simulator逻辑状态COW续跑；共享缓存关闭，输出目录分离，各臂按本臂合法信息执行同一后续规则，不强求动作相同。保留原普通END、迟到、无收益、负收益、失败与截尾；父异常、部分fork、未回收和R18内部吞下异常后返回均按耐久记录恢复，不把已启动臂写成NOT_STARTED。名义规划须先完成，不能把在线优化前fork表述为所有求解之前。
+
+定点接口审查确认R18点运动后端缺实际Position/不可变Geometry owner、一次性AUTH、typed NormalEnd、驻留交接和paid row生产链。共同观察钩子接实际dispatch/physical/capture/delivery/solve/selection，fork后重绑PID/FD，共享前缀只记一次；model_inference未调用，费用错误/缺失null。CPU/wall仅本进程分项，嵌套与外层不能重复求和，日志字节不冒充通信或完整资源。训练资格固定关闭：R18后端仅DIAGNOSTIC_ONLY/BLOCKED_COMMON_DOMAIN，即便将来两尾完成，也不能作主线TRAIN。其agent最终END逻辑秒与原生服务完成公共tick不同，不直接横比。
+
+为继续主线，根新增RegisteredTaskLedger，复用真实R29 SourceCatalogue/Geometry、原Position及不可伪造END notice。一次绑定同Position实例与完整初始FIFO队首；END/驻留/原一tick等待后准备登记后继，零cap不直接释放。私有move-only Pending持原Position::Prepared与同账本基态，旧/外来pending拒绝；原两次publication导入之间提交Position并交换账本根，分配发生于prepare。该对象尚未接任何Session；地图几何/障碍边界、初态World、无MOVE驻留者、通用END verifier、C/N/E源/job/有限行和实际发布仍缺，非整数段长和持续任务不冒称支持。
+
+首编译因最小头文件未提供GuestWord别名失败，改用原uint64 ABI，严格flags未放宽。首次成功后互审补同Position绑定和初始动作集闭合；失败与中间成功对象均保留。最终host对象SHA `cc78910f16408c663f72d40346126428bc4ef18a082682d8edf6b714670d354b`、260实际依赖构建前后一致，nm核7个API、原await_publication_source未解析引用及无main。仅对象编译，未链接/执行新目标，也未重建或复制大型guest ELF。
+
+execution复用R43实际Center ELF和B1语义，核两原子helpers正常调用路径：exchange 1,774 B1、atomic_add 1,789 B1；合原已知2,709，单次counts条件界6,272 B1/128B传递栈，两次12,544 B1，含活动祖先10,656B。保留libc/TLS正常两分支，LR/SC回边按实际reservation语义判断；mutex默认/未锁、有效TLS/refcount/树/栈及无竞争等前提未由整个prefix建立。错误/futex/异常边不据此关闭；整栈/heap/完整有限窗口与费用仍UNKNOWN。原150900..150963最后行到gate无后继行，不放大64行或容量。按值同步读取四计数以移除临时View锁依赖只是下一最小实现，尚未安装或宣称省费。
+
+四组件默认静态核验与交叉互审通过。联合冻结442项实际文件/来源pin，manifest SHA `b4bfc28850e2e9ea6872ed737f4586a6b8a6c2dce0f9a31b10bfa7e638163e34`，默认只读复核通过；四稿、旧冻结registry和96,234字节历史尾文不变。20共享线路记录7直接/6共享/4沿用/3后置，三个探索树同步research_update_20261009_r45/REPORT.md；阶段不按文件数量递减。主线仍共同资格、方法/数据冻结、获授权独立比较、融合成稿四个重叠阶段。A保持、B NO-GO，持续任务/随机延迟/LIMO后置。
+
+本机入口`implementation_binding_evidence/query_value_general_map_20261009_r45/`，含REPORT、NEXT_METHOD、RUN_CHECKLIST和verify_delivery。R45只新增一条Berlin四agent诊断提案，名义ECBS 30+5秒、单尾300+5秒、外层720+30秒监督仍未实现且未排期；实际路径与运行目录均不存在，未授权，不是新四图矩阵。其运行不会补上主线安全/费用缺口，故下一优先接真实原生链，再补独立标签与完整费用。R44原生DEV清单保持原hash及NOT_AUTHORIZED/NOT_QUALIFIED，不借旧授权。
+
+本轮研究交付未再删除或展开旧日志；大型镜像复用，保留失败/成功对象及来源。磁盘维护的累计净节省和当下树占用分开记录，不把研发新增工件算作清理失败或重复计算历史释放。公共Git仍仅提交.github/README.md和GITHUB_PROGRESS.md。
+
 <a id="r44"></a>
 
 ## R44：真实输入源、host来源、加载费用与执行组件界
