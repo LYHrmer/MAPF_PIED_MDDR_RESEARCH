@@ -1,3 +1,13 @@
+# P6 当前入口（2026-10-11）
+
+[五线统一进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p6)。
+
+高斯仍保留P3限额备选：原版单次25+5秒提案不变、未运行；不继承主线P4授权。本轮C组支持主线P4独立结果核验与P6小型监督适配，没有扩大高斯模型/实验。
+
+P4冻结G0/G1已实际完成并独立核对，G1 makespan10.1→8.3s、消息数相同；仅登记有限圆盘条件模型的简单里程碑机制，不是高斯结论或学习收益。P6前序历史+双向完整实现已冻结，未执行；下一步先判强规则余量。完整费用、实机安全和学习有效性仍UNKNOWN，旧高斯资料与五稿保持。
+
+---
+
 ## 当前入口：P5（2026-10-11）
 
 高斯工件及P3限额原版提案保持。第三组本轮对主线两车任务公式、END延迟、双向安装和历史接口作定点反方，无新增高斯实现或运行。 优先P4已备基线在具体授权后取得执行证据，再收敛P5完整配对与合法信息来源。本轮仅实现/静态/冻结/清单，科学运行、预测、训练和新标签均0。[统一P5进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p5)。本机主报告`implementation_binding_evidence/portfolio_p5_20261011/REPORT.md`，以下历史保持。
