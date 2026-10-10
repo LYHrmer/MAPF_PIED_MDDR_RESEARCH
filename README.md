@@ -1,3 +1,7 @@
+## 当前入口：P3（2026-10-11）
+
+B已实现组级配对元数据接纳，15项完整状态来源、臂内信息与独立指标明确；仍不计算或接纳合格标签。R19尺度/单位/END历史/外生身份四项迁移缺口已定位。 本轮只实现非决策基础接口并作静态核查，科学运行/预测/训练均0，CONDITIONAL。[统一P3进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p3)；本机各组`portfolio_p3_20261011/`报告为详细入口。以下历史保留。
+
 ## 当前入口：P2 统一学习与更新评价（2026-10-10）
 
 B组已核22源／49符号／10接口，登记KEEP／整组REVERSE合同及R55去留。单组内部归因与作者联合多组MILP外部对照分开；R19时长正信号保留，旧查询标签不作换序标签。等待A共同域及真实任务决策机会，本轮无新策略／RL／训练／科学运行。 状态CONDITIONAL。[统一P2进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p2)。本机交付目录：`exploration/learned_query/portfolio_p2_20261010/`。以下P1及更早记录保留，最新优先级以P1/P2为准。
