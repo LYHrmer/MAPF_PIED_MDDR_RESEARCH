@@ -1,3 +1,15 @@
+# P6 当前入口（2026-10-11）
+
+[五线统一进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p6)。
+
+P4共同基线实际验证通过：G1将makespan10.1→8.3s，消息数相同；不产生学习或QUERY/WAIT标签。
+
+P6 public_history.py已接本臂成功接纳的START/普通END/相位。新增公开profile与同实体前后同尺度假设使合法前序T/5可识别尺度，未来传感误差仍未知；保留结构、历史/EWMA及公开模型区间前瞻。前序实际时间与资源计入总账，不读私有参数/事后结果。旧R19入口仍拒绝。
+
+本机exploration/learned_query/portfolio_p6_20261011/。实现/静态绑定通过，P6方法未调用、无运行/训练/合格标签。下一步是冻结两方向完整对照，先判强规则解释后有无可学习残差；新运行需具体授权。
+
+---
+
 ## 当前入口：P5（2026-10-11）
 
 新增合法父动作历史入口，明确完整时长T不能单独识别释放延时R，延迟END下旧D>elapsed条件不能沿用。nominal与迁移未知时拒绝R19输入；首动作初始无历史，私有异质性不自动形成学习信号。 优先P4已备基线在具体授权后取得执行证据，再收敛P5完整配对与合法信息来源。本轮仅实现/静态/冻结/清单，科学运行、预测、训练和新标签均0。[统一P5进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p5)。本机主报告`implementation_binding_evidence/portfolio_p5_20261011/REPORT.md`，以下历史保持。
