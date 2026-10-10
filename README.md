@@ -1,3 +1,7 @@
+## 当前入口：P4（2026-10-11）
+
+本树继续保留R19来源和正负证据，不独立扩展。新执行适配保留父primitive和普通END，避免逻辑细分制造历史；nominal=1/单位等迁移问题仍需核。学习机会与标签职责继续集中query-value树，没有训练或新模型。 本轮仅实现、静态核查、冻结与具体清单，科学运行/预测/训练均0，研究有效性UNKNOWN。[统一P4进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p4)。主本机入口`/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/portfolio_p4_20261011/REPORT.md`；以下历史保留。
+
 ## 当前入口：P3（2026-10-11）
 
 本树继续保留原R19估计器和历史证据；P3核定动作细分不能原样迁移nominal=1模型，不能伪造子段END或改变扰动身份后称同seed公平。统一接口由query-value-feasibility负责，无独立扩展或训练。 本轮只实现非决策基础接口并作静态核查，科学运行/预测/训练均0，CONDITIONAL。[统一P3进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p3)；本机各组`portfolio_p3_20261011/`报告为详细入口。以下历史保留。
