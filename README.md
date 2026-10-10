@@ -1,3 +1,7 @@
+## 当前入口：P5（2026-10-11）
+
+R19历史正信号和来源继续保留，不独立扩展。新历史入口由query-value树统一负责；旧时长模型不能直接代替释放时间模型，公开nominal/单位/延迟END条件未核定前不接新域输入。 优先P4已备基线在具体授权后取得执行证据，再收敛P5完整配对与合法信息来源。本轮仅实现/静态/冻结/清单，科学运行、预测、训练和新标签均0。[统一P5进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p5)。本机主报告`implementation_binding_evidence/portfolio_p5_20261011/REPORT.md`，以下历史保持。
+
 ## 当前入口：P4（2026-10-11）
 
 本树继续保留R19来源和正负证据，不独立扩展。新执行适配保留父primitive和普通END，避免逻辑细分制造历史；nominal=1/单位等迁移问题仍需核。学习机会与标签职责继续集中query-value树，没有训练或新模型。 本轮仅实现、静态核查、冻结与具体清单，科学运行/预测/训练均0，研究有效性UNKNOWN。[统一P4进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p4)。主本机入口`/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/portfolio_p4_20261011/REPORT.md`；以下历史保留。
