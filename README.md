@@ -1,3 +1,7 @@
+## 当前入口：P2 统一学习与更新评价（2026-10-10）
+
+B组已核22源／49符号／10接口，登记KEEP／整组REVERSE合同及R55去留。单组内部归因与作者联合多组MILP外部对照分开；R19时长正信号保留，旧查询标签不作换序标签。等待A共同域及真实任务决策机会，本轮无新策略／RL／训练／科学运行。 状态CONDITIONAL。[统一P2进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p2)。本机交付目录：`exploration/learned_query/portfolio_p2_20261010/`。以下P1及更早记录保留，最新优先级以P1/P2为准。
+
 # 学习型进度查询探索工作区
 
 > **P1 路线调整（2026-10-10）**
