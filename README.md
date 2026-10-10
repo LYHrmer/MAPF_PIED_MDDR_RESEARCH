@@ -1,3 +1,15 @@
+# P6 当前入口（2026-10-11）
+
+[五线统一进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p6)。
+
+P4唯一冻结配对已实际运行并独立核验通过：G1使B启动5.1→3.3s、makespan10.1→8.3s，两臂同为240相位+2普通END。这是简单里程碑共同基线作用，不是学习/查询收益。
+
+P6已补完整双向gate/runner：真实上游动作END全送达后一次选择A_FIRST/B_FIRST，原实体身份保持、同G1续行，双向几何与独立消息/失败记录齐备。前序计入H=30、每臂604消息上限。新公共/私有登记和运行清单已冻结，但P6尚未运行；60+5秒/4GiB每进程/16MiB监测/零重试，需具体新实例授权。
+
+本机实现exploration/error_guidance/portfolio_p6_20261011/；实际P4证据在portfolio_p4_runtime_20261011/。学习历史与强规则比较由query-value树统一承载；完整费用和学习增量UNKNOWN。
+
+---
+
 ## 当前入口：P5（2026-10-11）
 
 新增承诺前双向依赖安装，保留原物理身份、一次方向锁定，拓扑receipt不作START许可。两指标的异质性条件已推导；双向几何/消息/完整续行仍待补，P5规格仅草案。 优先P4已备基线在具体授权后取得执行证据，再收敛P5完整配对与合法信息来源。本轮仅实现/静态/冻结/清单，科学运行、预测、训练和新标签均0。[统一P5进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p5)。本机主报告`implementation_binding_evidence/portfolio_p5_20261011/REPORT.md`，以下历史保持。
