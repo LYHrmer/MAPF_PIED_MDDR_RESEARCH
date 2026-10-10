@@ -1,3 +1,7 @@
+## 当前入口：P3（2026-10-11）
+
+本树继续保留原R19估计器和历史证据；P3核定动作细分不能原样迁移nominal=1模型，不能伪造子段END或改变扰动身份后称同seed公平。统一接口由query-value-feasibility负责，无独立扩展或训练。 本轮只实现非决策基础接口并作静态核查，科学运行/预测/训练均0，CONDITIONAL。[统一P3进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p3)；本机各组`portfolio_p3_20261011/`报告为详细入口。以下历史保留。
+
 ## 当前入口：P2 历史学习来源与复用（2026-10-10）
 
 本树停止独立扩展，保留R19条件时长估计器及历史正负证据。P2核定原来源与执行树冻结副本一致；统一新学习／更新合同由query-value-feasibility负责。没有机械合并代码或新增模型、训练、科学运行。 状态CONDITIONAL。[统一P2进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p2)。本机交付目录：`/home/lyh/MAPF_QUERY_VALUE_FEASIBILITY/exploration/learned_query/portfolio_p2_20261010/`。以下P1及更早记录保留，最新优先级以P1/P2为准。
