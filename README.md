@@ -1,3 +1,7 @@
+## 当前入口：P3（2026-10-11）
+
+C已接固定MAPF-X原版单次监督与结果接纳实现，复用P2构建；1次/25+5秒/4GiB/16MiB监测/零重试，默认关闭且无运行。训练语义/权重及研究增量仍UNKNOWN。 本轮只实现非决策基础接口并作静态核查，科学运行/预测/训练均0，CONDITIONAL。[统一P3进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p3)；本机各组`portfolio_p3_20261011/`报告为详细入口。以下历史保留。
+
 ## 当前入口：P2 高斯限额可行性（2026-10-10）
 
 C组已保存81份作者小源码／配置、核27处代码；MAPF-X原版main静态构建成功，27.753秒。已知整边几何、时间不确定与风险分配不再作为泛化新意。仅保留同风险相位条件占用待证问题；科学运行、候选实现、推理与训练均0，R0整体仍UNKNOWN。原版运行清单已列，但监督入口／授权及学习语义仍缺。 状态CONDITIONAL。[统一P2进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p2)。本机交付目录：`exploration/gaussian_mapf/portfolio_p2_20261010/`。以下P1及更早记录保留，最新优先级以P1/P2为准。
