@@ -1,0 +1,56 @@
+{
+  "record": "G1",
+  "checked_on": "2026-10-10",
+  "purpose": "Independent Gaussian MAPF feasibility research; no change of mainline model",
+  "branch": "explore/gaussian-mapf-feasibility",
+  "worktree": "/home/lyh/MAPF_GAUSSIAN_FEASIBILITY",
+  "base_commit": "9bdd71f0f10f87e4905f9c9913a691bca54b1d11",
+  "mainline_at_creation": "R54",
+  "qualification": {
+    "decision": "CONDITIONAL",
+    "plain_problem": "PASS",
+    "published_anchor_and_discipline": "PASS",
+    "official_artifact_R0": "UNKNOWN",
+    "comparable_external_baseline": "UNKNOWN",
+    "data_and_scenarios": "UNKNOWN",
+    "simulation_evidence_chain": "UNKNOWN",
+    "novelty_established": false
+  },
+  "artifacts": [
+    {
+      "name": "CC-K-CBS",
+      "repository": "https://github.com/aria-systems-group/Chance-Constrained-K-CBS",
+      "branch_at_check": "main",
+      "commit": "58f152dcbb4c549261c0cd250079ea188c1d8eb8",
+      "commit_date_utc": "2023-12-28T22:24:18Z",
+      "github_license_id": "GPL-3.0",
+      "fixed_readme_checked": true,
+      "dependency_closure_verified": false,
+      "original_build": "NOT_PERFORMED",
+      "original_minimal_run": "NOT_PERFORMED"
+    },
+    {
+      "name": "MAPF-X / agile-mapf",
+      "repository": "https://github.com/proroklab/agile-mapf",
+      "branch_at_check": "mapfx",
+      "commit": "8eda15f0b8384f195ccb65a2eac910bf2aa094c8",
+      "commit_date_utc": "2026-03-13T10:46:18Z",
+      "github_license_id": "MIT",
+      "fixed_readme_checked": true,
+      "dependency_closure_verified": false,
+      "original_build": "NOT_PERFORMED",
+      "original_minimal_run": "NOT_PERFORMED"
+    }
+  ],
+  "this_turn_scientific_execution_count": 0,
+  "candidate_implementation_added": false,
+  "training_performed": false,
+  "mainline_parameters_changed": false,
+  "existing_review_papers_replaced": false,
+  "source_access_notes": [
+    "Primary author text, publisher metadata and author repository documentation used.",
+    "Direct extraction of the npj publisher page failed; author project and official artifact used for cross-check.",
+    "Two fixed-README gh requests initially failed in sandbox; authorized elevated retries succeeded.",
+    "No acceptance-rate evidence by uncertainty model; publication assessment is project-specific judgment."
+  ]
+}
