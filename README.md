@@ -1,3 +1,7 @@
+## 当前入口：P5（2026-10-11）
+
+新增合法父动作历史入口，明确完整时长T不能单独识别释放延时R，延迟END下旧D>elapsed条件不能沿用。nominal与迁移未知时拒绝R19输入；首动作初始无历史，私有异质性不自动形成学习信号。 优先P4已备基线在具体授权后取得执行证据，再收敛P5完整配对与合法信息来源。本轮仅实现/静态/冻结/清单，科学运行、预测、训练和新标签均0。[统一P5进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p5)。本机主报告`implementation_binding_evidence/portfolio_p5_20261011/REPORT.md`，以下历史保持。
+
 ## 当前入口：P4（2026-10-11）
 
 B已实现四层后果审计并核学习机会。当前固定方向/时长、关闭查询的对称例没有已识别的学习任务余量；G1相对G0的提前不作新模型贡献。下一核公开可识别异质性及合法选择，再接真实成对标签；审计器尚未调用。 本轮仅实现、静态核查、冻结与具体清单，科学运行/预测/训练均0，研究有效性UNKNOWN。[统一P4进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p4)。主本机入口`/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/portfolio_p4_20261011/REPORT.md`；以下历史保留。
