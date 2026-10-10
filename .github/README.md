@@ -1,5 +1,7 @@
 # MAPF 项目当前状态
 
+**支线登记（2026-10-10，G1）**：按用户授权，新建独立高斯 MAPF 可行性支线 [`explore/gaussian-mapf-feasibility`](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/gaussian-mapf-feasibility/GAUSSIAN_HANDOFF.md)，提交 `44f7fdce65f3e9b869eb13a1db7853ccd92d44cc`。已登记候选问题、文献/作者工件、风险口径和六项资格卡；状态 CONDITIONAL，未构建原版、实现候选、运行科学实验或训练。主线保持有界模型和下列 R54 状态，主稿未提交修改保留。没有证据证明高斯模型天然更易录用；支线先查同风险要求下 MAPF 占用/冲突处理是否存在可改进空间，RL 后置。详见 [G1 记录](../GITHUB_PROGRESS.md#gaussian-g1)。
+
 更新：2026-10-09，当前入口 **R54**。本轮发现旧完整训练数据合同无法满足至少两个TRAIN家族要求；按用户新授权另建三图来源登记，同时补运行监督、实际N端复制计量和成对超时清理。**查询价值学习仍未完成：0个新任务、0个合格TRAIN家族、0条可靠标签、0次训练与独立比较，研究有效性UNKNOWN。**
 
 研究问题保持MAPF、有界空间跟踪误差与有限更新资源；方法主线为代价感知进度查询与安全协调。轻量价值回归/排序优先，RL为重点候选。只有独立比较显示同预算改善完成表现，或相近完成表现下降低完整资源，且安全与信息条件成立，才决定融入主线。
