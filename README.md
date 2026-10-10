@@ -1,5 +1,9 @@
 # LMAPF 空间误差与执行占用引导探索
 
+> **P1 路线调整（2026-10-10）**
+> P1：承担空间误差主方法与共同执行底座的资格预检。优先审查有界误差下连续占用与依赖生成/释放，相对同裕量几何依赖图和动作细分是否有增量；先固定任务 MAPF，LMAPF 保留为后续同方法扩展。R8 执行结构、R19 省更新及条件时长的正信号保留，R20 位置头无增量不能否定全部学习。
+> [统一研究问题、各线职责与停止条件](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/RESEARCH_PORTFOLIO_20261010.md)。本轮仅调整研究计划，未改冻结证据或授权科学运行。以下旧轮次按历史范围阅读。
+
 2026-10-04 R16：**SADG作者连续时间核心已跑通，三条线路均有新增实作。** [三线科研导师复判](exploration/error_guidance/THREE_ROUTE_POSTUPDATE_20261004_R16.md) · [下一方法合同](exploration/error_guidance/NEXT_METHOD_CONTRACT_20261004_R16.md) · [SADG实现和完整结果](exploration/error_guidance/sadg_preflight_20261004_r16/REPORT.md)。
 
 12次作者MILP均OPTIMAL，官方ECBS→SADG回归通过。两车小例连续进度改变合法顺序，实际后缀ΣT13.5→13.0；但完整公共历史速率也得到13.0，因此POSITION独立增益为0。warehouse映射10743动作及15789关系，隔离k0/承诺修补后两臂均通过原guard、采用图相同，未重复物理续跑。根独立核全部12组约束和两条完整后缀；原源码、适配版、失败和数据分开保存。下一检验同历史模型下、有时效与成本的信息是否仍有决策价值。以下旧轮次为历史。
