@@ -1,3 +1,7 @@
+## 当前入口：P4（2026-10-11）
+
+本轮高斯工件无变更；第三组转为支持主线共同执行的监督实现和几何peer。P3高斯原版25+5秒提案、权重/语义缺口及限额定位保持，未运行。新P4的60+5秒清单仅覆盖主线两臂，不共享授权。 本轮仅实现、静态核查、冻结与具体清单，科学运行/预测/训练均0，研究有效性UNKNOWN。[统一P4进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p4)。主本机入口`/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/portfolio_p4_20261011/REPORT.md`；以下历史保留。
+
 ## 当前入口：P3（2026-10-11）
 
 C已接固定MAPF-X原版单次监督与结果接纳实现，复用P2构建；1次/25+5秒/4GiB/16MiB监测/零重试，默认关闭且无运行。训练语义/权重及研究增量仍UNKNOWN。 本轮只实现非决策基础接口并作静态核查，科学运行/预测/训练均0，CONDITIONAL。[统一P3进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p3)；本机各组`portfolio_p3_20261011/`报告为详细入口。以下历史保留。
