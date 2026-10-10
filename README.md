@@ -1,3 +1,7 @@
+## 当前入口：P4（2026-10-11）
+
+B已实现四层后果审计并核学习机会。当前固定方向/时长、关闭查询的对称例没有已识别的学习任务余量；G1相对G0的提前不作新模型贡献。下一核公开可识别异质性及合法选择，再接真实成对标签；审计器尚未调用。 本轮仅实现、静态核查、冻结与具体清单，科学运行/预测/训练均0，研究有效性UNKNOWN。[统一P4进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p4)。主本机入口`/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/portfolio_p4_20261011/REPORT.md`；以下历史保留。
+
 ## 当前入口：P3（2026-10-11）
 
 B已实现组级配对元数据接纳，15项完整状态来源、臂内信息与独立指标明确；仍不计算或接纳合格标签。R19尺度/单位/END历史/外生身份四项迁移缺口已定位。 本轮只实现非决策基础接口并作静态核查，科学运行/预测/训练均0，CONDITIONAL。[统一P3进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p3)；本机各组`portfolio_p3_20261011/`报告为详细入口。以下历史保留。
