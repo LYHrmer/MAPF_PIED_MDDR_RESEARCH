@@ -1,5 +1,9 @@
 # 学习型进度查询探索工作区
 
+> **P1 路线调整（2026-10-10）**
+> P1：停止作为独立查询学习研究线扩展，合并职责到 QUERY_VALUE_FEASIBILITY。历史训练、模型和正负结果保留；不机械合并代码，不继续旧 overlay 的测试集调参。学习现服务于误差相关 MAPF 决策，具体动作与数据资格另核，尚未开始新训练。
+> [统一研究问题、各线职责与停止条件](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/RESEARCH_PORTFOLIO_20261010.md)。本轮仅调整研究计划，未改冻结证据或授权科学运行。以下旧轮次按历史范围阅读。
+
 2026-10-05 R17：**C/LD/STOP 三臂价值模型、family 分组验证与查询预算前沿已完成。** [本轮报告](exploration/learned_query/budget_frontier_20261004_r17/REPORT.md)。分组 OOF 模型为 **1077 任务 / 受限 ΣT 135942.023389 / 223 查询**；节省查询伴随时间取舍，尚未超过固定 LD 的任务数。本轮只复用既有 TRAIN，CAL 为已使用的开发重放，**不是新 TEST，也没有新增 native episode**。[独立根复核](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/error_guidance/r17_root_review/QUERY_INDEPENDENT.json)通过；以下历史全部保留。
 
 2026-10-04 R16：**完整 STOP 后缀、冻结条件模型与去重 CAL 评估已完成。** [本轮报告](exploration/learned_query/stop_value_20261004_r16/REPORT.md)。新增29次native，复用30个旧C后果；3个CAL B16 STOP由严格语义别名复用C8，保留真实来源，不伪造STOP日志。TRAIN C/STOP均1077任务，查询285→144，受限时间多约102.388；固定STOP并非逐条件无损。
