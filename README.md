@@ -1,3 +1,7 @@
+## 当前入口：P2 历史学习来源与复用（2026-10-10）
+
+本树停止独立扩展，保留R19条件时长估计器及历史正负证据。P2核定原来源与执行树冻结副本一致；统一新学习／更新合同由query-value-feasibility负责。没有机械合并代码或新增模型、训练、科学运行。 状态CONDITIONAL。[统一P2进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p2)。本机交付目录：`/home/lyh/MAPF_QUERY_VALUE_FEASIBILITY/exploration/learned_query/portfolio_p2_20261010/`。以下P1及更早记录保留，最新优先级以P1/P2为准。
+
 # 学习型进度查询探索工作区
 
 > **P1 路线调整（2026-10-10）**
