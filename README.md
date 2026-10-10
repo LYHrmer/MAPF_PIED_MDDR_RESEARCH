@@ -1,3 +1,7 @@
+## 当前入口：P2 空间误差与安全执行（2026-10-10）
+
+A组已完成33源／13 AST核查、作者SADG接口映射、同裕量几何与不停车细分合同。作者论文已有车身占用思想，原型端点判定不是新意。下一先关闭固定路径／观测／方向下的有限车身共同域；已有R16结果复用。本轮无新方法或科学运行。 状态CONDITIONAL。[统一P2进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p2)。本机交付目录：`exploration/error_guidance/portfolio_p2_20261010/`。以下P1及更早记录保留，最新优先级以P1/P2为准。
+
 # LMAPF 空间误差与执行占用引导探索
 
 > **P1 路线调整（2026-10-10）**
