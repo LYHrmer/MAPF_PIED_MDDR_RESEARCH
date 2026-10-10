@@ -1,3 +1,7 @@
+## 当前入口：P5（2026-10-11）
+
+新增承诺前双向依赖安装，保留原物理身份、一次方向锁定，拓扑receipt不作START许可。两指标的异质性条件已推导；双向几何/消息/完整续行仍待补，P5规格仅草案。 优先P4已备基线在具体授权后取得执行证据，再收敛P5完整配对与合法信息来源。本轮仅实现/静态/冻结/清单，科学运行、预测、训练和新标签均0。[统一P5进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p5)。本机主报告`implementation_binding_evidence/portfolio_p5_20261011/REPORT.md`，以下历史保持。
+
 ## 当前入口：P4（2026-10-11）
 
 A已实现共同精确圆盘扫掠几何、作者依赖gate和G0普通END/G1独立里程碑；根接完整两臂事件入口。父物理动作/普通END/延迟和误差裕量保持，START记录当时合法证据。实现尚未运行，真实控制器域仍UNKNOWN。 本轮仅实现、静态核查、冻结与具体清单，科学运行/预测/训练均0，研究有效性UNKNOWN。[统一P4进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p4)。主本机入口`/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/portfolio_p4_20261011/REPORT.md`；以下历史保留。
