@@ -1,5 +1,7 @@
 # 高斯不确定性与 MAPF：独立可行性支线
 
+> **P1 补充（2026-10-10）**：高斯保持限额备选；最新 MAPF/LMAPF 误差主线与近邻检查见[统一路线](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/RESEARCH_PORTFOLIO_20261010.md)。以下 G1 事实与未完成资格保持。
+
 2026-10-10，G1。状态：**CONDITIONAL（待验证），未锁题**。
 
 用户授权建立高斯研究支线。本支线从主线提交 `9bdd71f0f10f87e4905f9c9913a691bca54b1d11` 分出，分支名为 `explore/gaussian-mapf-feasibility`，本机工作树为 `/home/lyh/MAPF_GAUSSIAN_FEASIBILITY`。主线仍采用有界模型；主线工作树中的未提交主稿没有带入或覆盖。

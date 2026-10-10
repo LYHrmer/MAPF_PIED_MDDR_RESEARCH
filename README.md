@@ -1,5 +1,9 @@
 # 高斯 MAPF 可行性研究支线
 
+> **P1 路线调整（2026-10-10）**
+> P1：继续作为限额模型备选，主研究回到 MAPF/LMAPF 空间执行误差。先核 CC-K-CBS/MAPF-X 下的具体缺口；未锁题、未实现、未运行。不能以高斯加学习本身作为创新；最新近邻补充与组织取舍见总方案。
+> [统一研究问题、各线职责与停止条件](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/RESEARCH_PORTFOLIO_20261010.md)。本轮仅调整研究计划，未改冻结证据或授权科学运行。以下旧轮次按历史范围阅读。
+
 本分支为 `explore/gaussian-mapf-feasibility`。请先读[高斯支线入口](GAUSSIAN_HANDOFF.md)：G1 已完成问题与文献/工件登记，尚未锁题、实现候选方法或运行实验。
 
 以下为分支基点继承的有界主线导航，不代表高斯支线已经取得同样实现或安全保证。
