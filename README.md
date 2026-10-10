@@ -1,3 +1,7 @@
+## 当前入口：P2 高斯限额可行性（2026-10-10）
+
+C组已保存81份作者小源码／配置、核27处代码；MAPF-X原版main静态构建成功，27.753秒。已知整边几何、时间不确定与风险分配不再作为泛化新意。仅保留同风险相位条件占用待证问题；科学运行、候选实现、推理与训练均0，R0整体仍UNKNOWN。原版运行清单已列，但监督入口／授权及学习语义仍缺。 状态CONDITIONAL。[统一P2进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p2)。本机交付目录：`exploration/gaussian_mapf/portfolio_p2_20261010/`。以下P1及更早记录保留，最新优先级以P1/P2为准。
+
 # 高斯 MAPF 可行性研究支线
 
 > **P1 路线调整（2026-10-10）**
