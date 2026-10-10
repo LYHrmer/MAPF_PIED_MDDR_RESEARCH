@@ -1,5 +1,7 @@
 # MAPF 项目当前状态
 
+**研究路线更新（2026-10-10，P1）**：按用户最新要求，中心回到 **MAPF/LMAPF 结合空间跟踪误差**。候选主线为有界误差下的连续占用、冲突依赖与安全执行；先固定任务MAPF，LMAPF保留为同方法的持续任务扩展。允许基于已有方法组合改进，首个组合候选为有界误差占用＋ADG/SADG协调＋可选学习；查询与计费降辅助，两学习树合并研究职责；高斯限额探索，规划停止撤下活跃路线，既有NO_GO维持。追加反方检查恢复R8/R19正信号，限定R20负结果范围；仍未证明候选新意。详见[完整路线与各线建议](../RESEARCH_PORTFOLIO_20261010.md)及[P1记录](../GITHUB_PROGRESS.md#portfolio-p1)。当前新方法资格CONDITIONAL，本轮没有科学运行、训练或主稿修改；下列R54技术事实保持，旧研究优先级以P1为准。
+
 **支线登记（2026-10-10，G1）**：按用户授权，新建独立高斯 MAPF 可行性支线 [`explore/gaussian-mapf-feasibility`](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/gaussian-mapf-feasibility/GAUSSIAN_HANDOFF.md)，提交 `44f7fdce65f3e9b869eb13a1db7853ccd92d44cc`。已登记候选问题、文献/作者工件、风险口径和六项资格卡；状态 CONDITIONAL，未构建原版、实现候选、运行科学实验或训练。主线保持有界模型和下列 R54 状态，主稿未提交修改保留。没有证据证明高斯模型天然更易录用；支线先查同风险要求下 MAPF 占用/冲突处理是否存在可改进空间，RL 后置。详见 [G1 记录](../GITHUB_PROGRESS.md#gaussian-g1)。
 
 更新：2026-10-09，当前入口 **R54**。本轮发现旧完整训练数据合同无法满足至少两个TRAIN家族要求；按用户新授权另建三图来源登记，同时补运行监督、实际N端复制计量和成对超时清理。**查询价值学习仍未完成：0个新任务、0个合格TRAIN家族、0条可靠标签、0次训练与独立比较，研究有效性UNKNOWN。**
