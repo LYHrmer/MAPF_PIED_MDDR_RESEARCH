@@ -1,3 +1,7 @@
+## 当前入口：P4（2026-10-11）
+
+A已实现共同精确圆盘扫掠几何、作者依赖gate和G0普通END/G1独立里程碑；根接完整两臂事件入口。父物理动作/普通END/延迟和误差裕量保持，START记录当时合法证据。实现尚未运行，真实控制器域仍UNKNOWN。 本轮仅实现、静态核查、冻结与具体清单，科学运行/预测/训练均0，研究有效性UNKNOWN。[统一P4进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p4)。主本机入口`/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/portfolio_p4_20261011/REPORT.md`；以下历史保留。
+
 ## 当前入口：P3（2026-10-11）
 
 A已登记有限圆盘/空间误差/相位/驻留共同输入与非放行类型；首例的提前被不停车里程碑强基线解释，不作新收益。下一补真实共同几何执行适配。 本轮只实现非决策基础接口并作静态核查，科学运行/预测/训练均0，CONDITIONAL。[统一P3进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p3)；本机各组`portfolio_p3_20261011/`报告为详细入口。以下历史保留。
