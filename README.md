@@ -1,3 +1,15 @@
+# P6 当前入口（2026-10-11）
+
+[五线统一进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p6)。
+
+旧R19正信号与模型工件保留，本树继续停止独立重复扩展。P4现已实际验证简单里程碑基线：makespan10.1→8.3s、两臂同消息数，不是学习新收益。
+
+新学习评价统一在query-value树P6：同臂实际前序END作为合法历史，公开同尺度假设支持历史/EWMA与区间前瞻。该强假设域尚无超出解析规则的学习增量；旧模型单位/信息合同/域迁移缺口未自动关闭，新入口继续拒绝。P6完整双向生产已实现未运行，训练/标签0；RL仍待序贯任务作用证据。
+
+五稿、冻结证据与原输入/划分/H34保持。
+
+---
+
 ## 当前入口：P5（2026-10-11）
 
 R19历史正信号和来源继续保留，不独立扩展。新历史入口由query-value树统一负责；旧时长模型不能直接代替释放时间模型，公开nominal/单位/延迟END条件未核定前不接新域输入。 优先P4已备基线在具体授权后取得执行证据，再收敛P5完整配对与合法信息来源。本轮仅实现/静态/冻结/清单，科学运行、预测、训练和新标签均0。[统一P5进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p5)。本机主报告`implementation_binding_evidence/portfolio_p5_20261011/REPORT.md`，以下历史保持。
