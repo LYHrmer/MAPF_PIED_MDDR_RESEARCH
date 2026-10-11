@@ -1,3 +1,11 @@
+## 当前入口：L3共同状态接口（2026-10-11）
+
+本树完成同臂START/已送达PHASE/普通END/WAIT门控、活动动作保护和同版本图采纳。producer仍未安装；真实前序与排序训练标签没有新增。
+
+全局完成成对进入/离开、反向family、逻辑单位及START到普通END保护的实现/静态检查。代价不换算物理秒；真实producer未安装，新空间闭环未运行，安全/完整费用/学习增量UNKNOWN。L2教师未超原规则，暂不训练；下一先安装同臂来源和执行派发，再冻结适用运行清单。旧运行授权不扩用。
+
+[统一L3进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#spatial-state-l3)。本机总报告 `implementation_binding_evidence/spatial_state_l3_20261011/REPORT.md`（主仓）；执行/query-value实现各在 `exploration/optimizer_guidance/spatial_state_l3_20261011/`。以下原文保留，最新以L3为准。
+
 ## L2 当前进度（2026-10-11）
 
 主线按L1研究学习辅助完整Improved GSES冲突组选择。本树新增 exploration/optimizer_guidance/gses_rank_l2_20261011，直接接收原始三臂结果的汇总接口及轻量排序/教师/分组设计；无模型、训练或新标签。
