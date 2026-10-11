@@ -1,3 +1,7 @@
+# 2026-10-11 L4实证与L5准备
+
+L4独立核验通过，Σ完成与makespan偏好相反；L5独立几何/图/候选记录接纳与标签合同已实现。完整续搜标签仍缺，不训练，新输入科学运行未执行。 实际安全资格仅限登记模型；全部费用和学习有效性未外推。[主仓最新进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#selection-opportunity-l5)。
+
 # 2026-10-11 科研判断同步
 
 先独立核验L4；有选择余量后再补同OPEN／缓存／续策的完整标签来源与轻量排序，不把单节点重启或最终方向当标签。当前L4唯一76秒验证仍待授权；本轮仅文档判断，无新实验。学习优先采用线性排序，但先确认教师选择对剩余搜索有价值及完整费用余量。详见[主仓最新判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#mentor-after-l4)。
