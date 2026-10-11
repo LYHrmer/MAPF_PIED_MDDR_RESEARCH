@@ -1,3 +1,11 @@
+## 当前入口：L3共同状态接口（2026-10-11）
+
+本树完成公开几何→ENTRY/EXIT/END→完整family的模型、双向后缀候选验证及native桥接；分组准备/真实solve双处保护。C++改名修复后编译通过，首次失败保留。
+
+全局完成成对进入/离开、反向family、逻辑单位及START到普通END保护的实现/静态检查。代价不换算物理秒；真实producer未安装，新空间闭环未运行，安全/完整费用/学习增量UNKNOWN。L2教师未超原规则，暂不训练；下一先安装同臂来源和执行派发，再冻结适用运行清单。旧运行授权不扩用。
+
+[统一L3进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#spatial-state-l3)。本机总报告 `implementation_binding_evidence/spatial_state_l3_20261011/REPORT.md`（主仓）；执行/query-value实现各在 `exploration/optimizer_guidance/spatial_state_l3_20261011/`。以下原文保留，最新以L3为准。
+
 ## L2 当前进度（2026-10-11）
 
 主线按L1研究学习辅助完整Improved GSES冲突组选择。本树新增 exploration/optimizer_guidance/gses_branch_l2_20261011，三规则 C++ 已链接；完整作者分支机制保留，新空间映射尚未合格。
