@@ -1,3 +1,25 @@
+# L5 当前进度
+
+<a id="selection-opportunity-l5"></a>
+
+## 四步推进：L4实际验证完成，L5同图选择比较已准备
+
+2026-10-11。用户在具体L4清单与四步建议后回复“按四步推进”，根执行原唯一L4批次及唯一后审，无重试。主监督30.335919885秒、后审wall0.52004864秒/CPU0.514510262秒，71源pin、16原始库存与ECHILD一致。新L5输入、训练或机器人不自动继承该授权。
+
+L4 A_FIRST/B_FIRST均completed，Σ主任务完成31.0/32.5秒，makespan18.4/17.4秒，两个指标偏好相反。每臂600PHASE+4普通END，604全部送达，在途0；301扫掠区间及等待/驻留独立检查一致。每臂唯一native original在7.6秒/版本159发出，同版本采纳至160；保护ENTRY/EXIT反转、后继版本162的旧snapshot重放均拒绝。真实native回包过时拒绝0次（未观测），不能拿重放补成该覆盖。两图均6→6，当前唯一family受保护且与作者current+1固定重叠，不证明搜索/学习或新增保护独立增益。完整费用、实机和一般空间安全UNKNOWN，标签0。
+
+第二步已落到独立可运行L5实现：原R13多候选与三规则已有实测，但有turn，不能强塞现有直线空间模型，故不重复旧矩阵。初始三车星形草案在任何构图/solver之前被三组共同发现B/C逻辑对称，保留原字节为设计负证据，不申请运行。唯一新输入改为事前登记的4车4m直线链A—B—C—D，中间边(2,2)与外侧(1,2)角色不同；r=.20/e=.05、release2.60、名义5秒不改。它只是手工机制DEV，并非benchmark或独立TEST；没有按求解结果选例，也不保证实际作者组、选择差异或教师余量。
+
+A prepare显式构图一次，全READY、无实际消息/active/控制器，来源声明为离线初态；不能伪装live gate证书。根保存prepared和同一canonical request，三规则读取同SHA，复用L3 ELF，不重编译。B独立几何/图核验不导A model，只借P4底层精确距离；记录代理算术不冒完整续搜真值。C复用已实跑L2-v2监督；新scope/输入/代码/路径绑定，默认关闭。
+
+L5拟议唯一批次original/structure/lookahead各一次串行、每臂18秒，原16/18/5000/4。一次准备及3臂共享主60+5秒，逐进程4GiB、16MiB监测、零重试，独立后审10+1秒另计共76。完整准备、native wall/CPU、失败/迟到/NOT_STARTED分列；主process_time不当整树CPU，嵌套项不重复相加，迟到exit0不列预算内完整臂。当前仅实现/AST/hash/冻结，L5 runtime和实际批准尚未创建，几何/构图/native/audit科学调用0。
+
+第三步已交标签与决策合同：同OPEN/focal/上界/父缓存/固定续策/余量的完整续搜分叉仍缺；现native从图重启不冒完整state fork。线性排序优先但尚不实现/训练；RL维持有条件后续。第四步独立划分、同解质量完整时间与实际执行效果仍待有效数据，固定任务不称吞吐。L5若无实际机会或有价值差异则保留并停止该切片，不再自动扩大难例；单小例也不否定整个方向。
+
+本机L4实际报告spatial_execution_l4_20261011/RUNTIME_REPORT.md、validation/SUMMARY.json；本轮总报告implementation_binding_evidence/selection_opportunity_l5_20261011/REPORT.md，唯一新清单runtime_supervision/RUN_CHECKLIST.md。A/B在各树exploration/optimizer_guidance/selection_opportunity_l5_20261011，C在主目录peer_review及runtime_supervision。五稿/主稿未提交修改、L1/原作者/旧输入参数/所有冻结失败证据保持，无新工作树；公共Git仍仅两主进度及四README。旧查询/停止/算法选择不重开，高斯、LMAPF/LIMO后置。
+
+以下保留此前进度全文，历史“未运行L4”以当时范围阅读。
+
 # L4 后续科研判断
 
 <a id="mentor-after-l4"></a>
