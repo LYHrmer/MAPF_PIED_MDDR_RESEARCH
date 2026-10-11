@@ -1,3 +1,23 @@
+# L7 占用取舍与真实首根数据生产
+
+<a id="occupancy-root-l7"></a>
+
+2026-10-11，三组并行完成。**停止instance10在当前边界内的完整空间迁移；真实native首根对象生产和一次完整组替换已实现、编译及独立静态审查通过，未运行。** 学习辅助选组继续优先，但可靠标签/研究有效性仍UNKNOWN。
+
+来源账本实际保留1358原坐标、1298逐项转移（1278移动+20重复驻留），并定位408内部转角、2次回访、26共享终点及静止车agent2。作者parser索引与R13研究执行分段分别记录，physical parent_action_id均null，未生成动作或图。明确假设下3894 MOVE状态再加每内部TURN至少1状态为4302>4096；其他保真分段算式亦超限，均不是实际图大小或所有编码不可能性证明。结合无米制来源、现L3驻留/回访/静止车不兼容，instance10 FULL_SPATIAL_PORT_NO_GO_UNDER_CURRENT_BOUNDARY；不继续建通用条件占用或扩搜目录。
+
+执行树新增RootCapture及L3 Astar/native_bridge窄overlay，直接读取首次非终态根的实际graph/node/fake parent、完整cache及共享别名、全部组与(u,v)API实际顺序/反向、空OPEN/focal、RNG/上界和保护。original模式捕获后原选组；root-alternative按事前固定顺序取第一个不同合法完整组一次，然后原规则。原双向/分组/下界/环检查/OPEN主体保持；消费通知仅证明进入根分支，不证明两孩子全部完成。
+
+独立源码核对关闭未初始化字段读取、复制unordered组顺序、保护数组检查与每后继节点构造全历史JSON的问题。两次编译均成功，累计wall43.431s/CPU43.253s；首版ELF/源码快照/日志保留。正式build_v2 ELF SHA `2384808124c23eab4814b18bbd51e8b25205bb84cb7e895c6d45a16667db32dc`，从未执行。移除L7三处插入后Astar与冻结L3逐字节一致；不据此宣称新域安全。
+
+query-value实现capture_receipt.py及逐字段覆盖/独立审查，始终不授予L6信任或偏好。根复用L2-v2监督和L5 native_once，完成关闭的两臂runner/一次只读接收；81项绑定的默认metadata检查通过，两份真实L5旧native均识别CAPTURE_NOT_RECEIVED。无伪造通过样本，真实capture0、标签0。候选/捕获费计入未来全程，嵌套不重复加，实际费用未知。
+
+唯一未执行清单已具体化：旧L5同一封存request，新v2 ELF，observe/alternative各一次；solve16s/完整进程18s，主60+5s，另仅读收件10+1s，总提案76s；4GiB每进程、16MiB监测、零重试，全部失败/未启动/超时保留。只用于DEV生产接线，不重做L5收益筛选或新增科学实例。新批准模板false、实际UTC待新授权；没有创建APPROVAL/runtime，不能继承已消耗L5许可。
+
+本机总报告`implementation_binding_evidence/occupancy_root_l7_20261011/REPORT.md`，占用账本`occupancy/`，具体清单`runtime_supervision/RUN_CHECKLIST.md`；执行/query实现位于各树`exploration/optimizer_guidance/root_capture_l7_20261011/`。主仓统筹验收；执行/查询优先完成生产接线；旧学习归档、高斯限额备选，QD保持共同估计，QP/RL、LMAPF/延迟/LIMO按现有证据条件后置。
+
+本轮solver/构图/科学后审/世界/训练均0。主稿未提交修改、五稿、作者/旧输入/边界/H34及冻结失败证据保持；公共Git只两主进度与四README，无新工作树或大型复制。以下保留历史进度。
+
 # L6 代表性完整来源与学习记录接口
 
 <a id="representative-source-l6"></a>
