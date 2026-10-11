@@ -1,3 +1,9 @@
+# 2026-10-11 L5实际结果与四步推进
+
+执行树：共同构图一次及原／结构／前瞻各一次实际完成；三者同图代价24→16、展开4、生成7。代表性来源盘点发现转角等待占用与状态容量缺口，下一先明确保持原路径和原动作的适配资格。
+
+共同结论：L5一次三规则及一次独立后审通过，零重试；当前切片没有观察到排序增量，调整代表性任务接口资格后再判断轻量学习。完整费用与物理执行收益UNKNOWN，未运行世界或训练。本批授权已使用，无自动追加。详见[主仓最新结果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#l5-actual-four-step)。以下保留历史状态，旧“待授权/未运行”不覆盖本段。
+
 # 2026-10-11 L4实证与L5准备
 
 L4登记执行两臂已核验通过，同版本native均实际采纳。L5四车离线公共初态构图入口已实现；三车对称草案留作静态否证，新的三规则比较未授权/未执行。 实际安全资格仅限登记模型；全部费用和学习有效性未外推。[主仓最新进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#selection-opportunity-l5)。
