@@ -17,6 +17,8 @@
 
 本机实际报告 `implementation_binding_evidence/spatial_execution_l4_20261011/RUNTIME_REPORT.md`，独立摘要 `validation/SUMMARY.json`。旧静态报告保留历史状态，不再作为最新运行结论。
 
+科研判断补充：L5按登记预期仅三个二选一依赖族，最多八种完整定向组合；本次只作多组接口和选择记录的最小验证，不能独自决定学习路线价值。进入训练前还需代表性任务中的搜索负担及可重复选择余量。[详细判断](../GITHUB_PROGRESS.md#mentor-l5-scope)。
+
 ## 四步当前进展
 
 1. **共同接口实际验证：完成本批登记范围。** 同版本真实采纳已覆盖，仍保留范围外未知。
