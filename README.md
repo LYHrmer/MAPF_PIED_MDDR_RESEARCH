@@ -1,3 +1,7 @@
+# 2026-10-11 L4实证与L5准备
+
+L4登记执行两臂已核验通过，同版本native均实际采纳。L5四车离线公共初态构图入口已实现；三车对称草案留作静态否证，新的三规则比较未授权/未执行。 实际安全资格仅限登记模型；全部费用和学习有效性未外推。[主仓最新进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#selection-opportunity-l5)。
+
 # 2026-10-11 科研判断同步
 
 先完成现有L4空间／来源／派发验证；根据实际结果只补必要缺口，再接最小多组选择与完整计量。当前L4唯一76秒验证仍待授权；本轮仅文档判断，无新实验。学习优先采用线性排序，但先确认教师选择对剩余搜索有价值及完整费用余量。详见[主仓最新判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#mentor-after-l4)。
