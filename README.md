@@ -1,3 +1,9 @@
+# 2026-10-11 L5实际结果与四步推进
+
+独立核验通过：17份原始库存、67项源码、三臂同输入与合法图记录一致。三次多候选的前瞻代理均并列，三规则未实际换组；合格标签0。新增首次根决策完整配对的条件设计，不把局部代理/最终方向当标签，未实现或训练新模型。
+
+共同结论：L5一次三规则及一次独立后审通过，零重试；当前切片没有观察到排序增量，调整代表性任务接口资格后再判断轻量学习。完整费用与物理执行收益UNKNOWN，未运行世界或训练。本批授权已使用，无自动追加。详见[主仓最新结果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#l5-actual-four-step)。以下保留历史状态，旧“待授权/未运行”不覆盖本段。
+
 # 2026-10-11 L4实证与L5准备
 
 L4独立核验通过，Σ完成与makespan偏好相反；L5独立几何/图/候选记录接纳与标签合同已实现。完整续搜标签仍缺，不训练，新输入科学运行未执行。 实际安全资格仅限登记模型；全部费用和学习有效性未外推。[主仓最新进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#selection-opportunity-l5)。
