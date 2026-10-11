@@ -2,6 +2,8 @@
 
 更新：2026-10-11，当前入口 **P6**。[本轮进度](../GITHUB_PROGRESS.md#portfolio-p6) · [统一路线](../RESEARCH_PORTFOLIO_20261010.md) · [仓库导航](../README.md)。
 
+**路线归档（2026-10-11）**：按用户要求，旧查询学习、规划停止 A 退出活跃研究计划，可拒绝算法选择 B 沿用 NO_GO 并归档。旧 learned-query 工作树保留模型来源及正负证据；新学习评价仍由 query-value 树负责。S1–S3 等历史文档中的“下一步”不再自动作为待办。归档和可恢复的重复日志清理见[维护记录](../GITHUB_PROGRESS.md#route-archive-20261011)，本次不改变 P6 的研究结果或运行边界。
+
 主线保持有界空间跟踪误差下的连续占用、依赖与安全执行。固定任务 MAPF 优先，学习寻找超出强规则的任务增量；查询/完整费用辅助，LMAPF/LIMO 后置。研究候选仍 CONDITIONAL。
 
 ## P4 已实际验证
@@ -28,7 +30,7 @@ P6 已冻结新示意输入和完整清单：A_FIRST/B_FIRST 各一次，H=30 s�
 
 ## 五线与保护
 
-主仓汇总，执行树承载 A，query-value 树统一历史/学习评价，旧 learned-query 保留来源且停止重复扩展，高斯维持 P3 限额备选且未运行。旧 NO_GO、R55 暂停、普通 END、WAIT、EWMA 保留。五稿、P1–P5、旧输入/划分/H34和冻结证据保持，未删资料。
+主仓汇总，执行树承载执行工作包，query-value 树统一历史/学习评价，旧 learned-query 归档并保留来源，高斯维持 P3 限额备选且未运行。旧 NO_GO、R55 暂停、普通 END、WAIT、EWMA 保留。五稿、P1–P5、旧输入/划分/H34和冻结记录保持；本次仅移除有完整压缩备份的重复展开日志，历史回放需要时按维护索引恢复。
 
 本机主入口 implementation_binding_evidence/portfolio_p6_20261011/REPORT.md；实际 P4 核验在 validation/，下一清单在 runtime_supervision/RUN_CHECKLIST.md。A/B 实现位于各树同名目录。公共 Git 仍仅同步两主进度和四 README，完整实现与证据留本机。
 
