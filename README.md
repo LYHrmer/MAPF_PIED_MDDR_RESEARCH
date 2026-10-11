@@ -1,3 +1,11 @@
+## L2 当前进度（2026-10-11）
+
+主线按L1研究学习辅助完整Improved GSES冲突组选择。本树仍为后置备选，仅同步导航；未运行高斯、未占用或转移其独立预算。
+
+实际基线已校正为largest_diff。首个启动失败及修正完整保留，另获明确授权后一次三规则DEV对照全部完成。原/结构/前瞻图代价均1292，展开26/47/31，CPU26.656/29.119/34.505ms；当前教师未优于原规则，不进入训练。保留轻量排序候选，先补共同空间状态/成本映射；不是独立测试或物理执行结果。两次单次授权均已消耗，无新运行待办。主仓本机报告：implementation_binding_evidence/learning_optimizer_l2_20261011/REPORT.md；详见[主进度L2](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#learning-assisted-l2)。五稿与原作者/输入/证据保持。
+
+以下保留历史导航与结果，状态冲突以本段及主仓L2为准。
+
 # P6 当前入口（2026-10-11）
 
 [五线统一进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p6)。
