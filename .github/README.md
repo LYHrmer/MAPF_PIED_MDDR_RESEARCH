@@ -1,6 +1,9 @@
 # MAPF 项目当前状态
 
-更新：2026-10-11，**L4：同臂事件源与控制器派发已接入代码，空间执行验证批次已具体化；尚未运行，等待该批次授权。** [L4进度](../GITHUB_PROGRESS.md#spatial-execution-l4) · [L3接口](../GITHUB_PROGRESS.md#spatial-state-l3) · [L2实测](../GITHUB_PROGRESS.md#learning-assisted-l2) · [L1安排](../GITHUB_PROGRESS.md#learning-assisted-l1)。
+更新：2026-10-11，**科研判断：先完成已冻结 L4 的一次实际验证，再检查多冲突选择余量；学习排序保持重点条件候选。** [最新判断](../GITHUB_PROGRESS.md#mentor-after-l4) · [L4交付](../GITHUB_PROGRESS.md#spatial-execution-l4) · [L2实测](../GITHUB_PROGRESS.md#learning-assisted-l2) · [L1安排](../GITHUB_PROGRESS.md#learning-assisted-l1)。
+
+L4运行授权仍待答。这个单冲突组例子只验证来源、派发与空间接口，不证明排序收益。接口通过后，以完整耗时和可靠续搜判据做最小多组比较；昂贵教师需有可由廉价模型兑现的选择余量，不要求教师自身总时间先优于原版。若没有余量，停止扩张该排序改法。详细资格卡和阶段安排见上述最新判断。
+
 
 ## 当前交付
 
