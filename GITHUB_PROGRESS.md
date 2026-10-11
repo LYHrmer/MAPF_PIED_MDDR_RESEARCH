@@ -1,3 +1,21 @@
+# L6 代表性完整来源与学习记录接口
+
+<a id="representative-source-l6"></a>
+
+2026-10-11，3组并行完成来源选择、来源准入和首根配对记录准入，根完成软件接线及统一取舍。**当前判断：调整接口；停止旧R13 random instance1在现边界内的完整空间迁移，学习辅助Improved GSES继续作为优先条件候选。**
+
+按读路径前固定的规则，在作者p01目录筛查97份完整路径/9,572,856字节，97份起终点与对应map/scenario均能连接；当前空间合同合格数0。筛查未按优化收益选样；作者只提供已求得路径的可得性偏差明确保留，不估计原MAPF成功率。212来源文件SHA读后不变。本轮停止扩大目录。
+
+唯一接口参考固定为 `l6-random-i10-an60-reference-only`：random instance10/an60/situation0，完整path/map/scenario/situation已绑定SHA；1278个非零格点转移给出3894个MOVE状态下界，未含TURN/STATION/WAIT，实际完整容量UNKNOWN。408处转向、335处转角与他车路线顶点共点、2次回访，使当前全时安全驻留/未来释放合同不适用；不是已发生碰撞的实测。仅DEV参考，非新科学运行输入或独立TEST。旧instance1下界4158超4096，本轮完整迁移NO_GO，不截任务、并动作或放宽参数。
+
+执行树新增 `source_admission.py`：只读来源/元数据/收据关联，任何出口科学授权与安全资格均false。query-value树新增 `root_pair_admission.py`：检查首根完整上下文、组身份、一次干预、同原规则续策、预算、费用及整臂收据，可信native生产者登记恒空，不能产生标签。AST和内存语法检查通过。根一次纯元数据CLI实际exit2/BLOCKED/26项问题；L2真实旧native、L5真实comparison、L6未执行模板3项记录均BLOCKED、偏好null、训练资格false。不是科学后审或学习有效性验证。
+
+下一执行工作限定为一个完整参考的保真原动作、条件等待/转角占用/回访未来释放表示与成本判断；若需通用窗口、全新资源预留或放宽边界，停止这一版适配。学习线优先补首次根决策真实native全状态生产及独立核验，再判断选择价值，满足净费用余量才做线性成对排序。主仓负责统一验收；旧学习只供历史；高斯继续限额备选；QD固定共同估计器，QP/RL按证据进入，持续任务/延迟/LIMO后置。
+
+本机总报告 `implementation_binding_evidence/representative_source_l6_20261011/REPORT.md`，完整来源 `SOURCE_CATALOG.json`，具体输入及下一接口/科学清单缺项 `RUN_READINESS.md`；两个实现各在执行/query树 `exploration/optimizer_guidance/representative_source_l6_20261011/`。新路径/构图/solver/科学后审/世界/训练均0，合格标签0。新域安全、研究有效性与完整费用UNKNOWN。当前没有可执行的新科学清单，不继承已消耗L5授权，也不申请空白许可。
+
+五稿、主稿未提交修改、旧作者/输入/参数/划分/H34和全部冻结失败证据保持。公共Git只更新两主进度与四README，原始材料留本机；无新工作树或大文件复制。以下保留既有进度。
+
 # L5 后主线与各支线安排
 
 <a id="portfolio-after-l5"></a>
