@@ -1,3 +1,9 @@
+## 当前入口：L4事件源与执行验证准备（2026-10-11）
+
+本树完成独立同臂producer、普通消息生产与START/gate/模拟控制器同锁提交；异常失败关闭、逐事件journal与部分结果保留。 全局已接新鲜事件与异步native接口，两个方向各一次、native最多2次的具体清单待授权；尚未运行，安全/完整费用/学习增量UNKNOWN。保留原P6参数与旧L3冻结，不把静态接线当实证。
+
+[统一L4进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#spatial-execution-l4)。主仓本机入口 `implementation_binding_evidence/spatial_execution_l4_20261011/REPORT.md`。以下历史保留，最新以L4为准。
+
 ## 当前入口：L3共同状态接口（2026-10-11）
 
 本树完成公开几何→ENTRY/EXIT/END→完整family的模型、双向后缀候选验证及native桥接；分组准备/真实solve双处保护。C++改名修复后编译通过，首次失败保留。
