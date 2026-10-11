@@ -1,4 +1,12 @@
-# P6 当前入口（2026-10-11）
+# L1 当前安排：学习辅助优化器（2026-10-11）
+
+按用户选择，本树下一工作对象为 Improved GSES 的冲突组排序：先比较有限前瞻教师和原分支规则，再收合法图状态上的排序数据并接轻量监督模型。完整优化器继续负责两方向搜索、约束与解的接纳。旧查询标签和最终通行方向均不能直接充当分支顺序标签；首次保持相同的时长估计器。
+
+主指标为相同解质量的完整求解耗时及固定预算表现，包含特征和推理成本；执行收益另验。P6两车强规则充分性不替代多冲突搜索的价值判断。本轮仅方案与接口定位，无新源码、运行或训练；P6运行边界和旧证据保持。可用 `exploration/optimizer_guidance/` 承载后续工作，无需另建工作树。
+
+[统一 L1 方案](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#learning-assisted-l1)。详细本机文件位于主仓 `LEARNING_ASSISTED_OPTIMIZER_PLAN_20261011.md`。以下为既有实现及历史，不自动作为新的学习待办。
+
+## P6 最新实现（2026-10-11）
 
 [五线统一进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p6)。
 
