@@ -1,3 +1,9 @@
+# 2026-10-11 L6完整来源与记录接口
+
+本树保留旧模型、来源和正负证据，归档路线不重开。活跃学习接口由query-value树统一实现，L6旧记录拒绝转成完整续搜标签；没有训练或历史结果改写。
+
+共同来源筛查97份完整作者路径，当前空间合同合格数0。random instance10/an60仅作接口参考，3894为MOVE状态下界，实际完整容量UNKNOWN；旧instance1完整迁移本轮NO_GO。新solver/世界/训练均0，L5授权已消耗，新科学清单尚未具备。主稿与冻结证据保持。详见[五线统一L6进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#representative-source-l6)。以下历史按当时状态阅读。
+
 # 2026-10-11 L5实际结果与四步推进
 
 保持旧学习来源和正负证据归档；主线L5实测未发现可用于当前切片训练的选择差异，停止该切片的标签/模型投入。轻量排序仍为条件候选，由query-value树维护；不重启旧查询、规划停止或算法选择。
