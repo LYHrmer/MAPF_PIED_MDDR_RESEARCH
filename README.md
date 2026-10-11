@@ -1,3 +1,9 @@
+## 当前入口：L4事件源与执行验证准备（2026-10-11）
+
+本树保留旧模型来源和正负证据，旧查询/停止路线继续归档；新排序评价仍由query-value树承担，本轮无训练。 全局已接新鲜事件与异步native接口，两个方向各一次、native最多2次的具体清单待授权；尚未运行，安全/完整费用/学习增量UNKNOWN。保留原P6参数与旧L3冻结，不把静态接线当实证。
+
+[统一L4进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#spatial-execution-l4)。主仓本机入口 `implementation_binding_evidence/spatial_execution_l4_20261011/REPORT.md`。以下历史保留，最新以L4为准。
+
 ## 当前入口：L3共同状态接口（2026-10-11）
 
 本树保留历史模型来源及正负证据，归档路线不重启；当前学习评价继续由query-value树负责。没有训练、重新生成旧标签或复制数据。
