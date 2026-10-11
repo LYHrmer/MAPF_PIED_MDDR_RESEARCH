@@ -1,3 +1,23 @@
+# L4 当前进度
+
+<a id="spatial-execution-l4"></a>
+
+## L4：同臂生产与控制器派发已实现，空间接口验证待该批次授权
+
+2026-10-11。按用户要求与科研导师定点判断，三组接入新鲜同臂producer、START/gate与模拟控制器同锁提交、异步native以及独立核验入口。保留原作者/L3/P6全部冻结材料；不读旧轨迹补历史，不把来源SHA当物理真实性。各臂原动作/队列/私有实现独立，决策只看本臂公开状态和合法已收消息，普通END、WAIT和资源边界保持。
+
+拟议唯一开发对：同一原P6 public/private输入，A_FIRST/B_FIRST各一次，以登记方向经gate.adopt决定主动作先行者；两prefix普通END前不得提交。0..300 tick按共同单调wall锚点0.1s节拍交错推进约30s，不暂停世界等待native。leader刚START仍ENTRY时每臂发一次L3 native original，保护族尚未满足，核分组准备/真实solve两处固定；回包同版本才尝试采纳，过时拒绝。ENTRY反转、EXIT后已满足族反向重入、旧snapshot下一tick重放均明确诊断负例，不新增solver调用或训练标签。
+
+输入保持2车4动作、车身0.20m/误差0.05m、观测/延迟0.1s、传感误差0.01m、H30、每臂600相位+4普通END。native每臂最多1次、共2次、并发最多2，原16/18/5000/4。外监督原主60+收尾5秒、4GiB逐进程、16MiB目录监测、唯一尝试/零重试；只读后处理单次10+1秒/4GiB另计。完整任务失败、迟到/未完成、native失败与部分journal都保留。原始库存封存后不回写，B审计先核ECHILD及全部SHA。
+
+当前只完成实现、静态与清单，未启动producer/世界/solver/几何/训练。批准模板false，UTC未排期，runtime未创建；旧P4/L2授权及原P6清单不能覆盖新L4。源码接线不代替安全实证；native有效采纳若未出现必须报告UNKNOWN，不能用重放拒绝补成成功。图单位逻辑步与模拟秒、真实CPU分开，完整费用UNKNOWN。
+
+研究判断：先检共同执行接口，再决定多冲突选择增量；L2教师未超原规则结论保持，暂不训练。两个方向只是开发干预，不能当独立TEST、强规则对照或最佳分支顺序标签。旧查询/停止/算法选择不重启，高斯/LMAPF/LIMO后置。
+
+本机总报告 implementation_binding_evidence/spatial_execution_l4_20261011/REPORT.md；唯一具体清单在runtime_supervision/RUN_CHECKLIST.md，源/输入/命令/预算绑定RUN_PLAN。A在执行树、B在query-value树同名exploration/optimizer_guidance目录。主稿未提交修改、五稿、原作者、旧参数及L2/L3/P4/P6证据保护；公共Git只同步两主进度与四README，代码留本机。
+
+以下保留原进度全文，历史“下一步”不覆盖L4。
+
 # L3 当前进度
 
 <a id="spatial-state-l3"></a>
