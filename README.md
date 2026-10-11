@@ -1,4 +1,14 @@
-# P6 当前入口（2026-10-11）
+# 已归档：旧查询学习路线（2026-10-11）
+
+按用户要求，本分支退出活跃研究计划。保留源码、模型、正负结果、输入、冻结记录及原始压缩归档，不再独立增加查询模型、训练或旧场景调参任务。以下 P6 及更早文字作为历史记录阅读，其中“下一步”不自动恢复为待办。
+
+R19 条件时长模型及 R20 来源继续保留；新的执行决策／学习评价由 `MAPF_QUERY_VALUE_FEASIBILITY` 工作树承担，该树没有归档。主线仍为有界跟踪误差下的 MAPF 执行与协调。
+
+本机归档和空间清理入口：`/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/route_archive_20261011/`。仅清理与保留压缩包逐字节一致、且不在当前保留清单内的展开日志；旧回放若需要这些日志，应先用该目录的 `restore_logs.py` 按批次或文件恢复。此前清理批次仍使用各自恢复索引。工作树和 Git 分支均保留，不能只从 GitHub 克隆就认为获得全部本机原始证据。
+
+---
+
+# P6 历史入口（2026-10-11）
 
 [五线统一进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p6)。
 
