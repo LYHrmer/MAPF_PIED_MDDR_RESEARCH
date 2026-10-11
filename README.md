@@ -1,3 +1,9 @@
+# 2026-10-11 L5实际结果与四步推进
+
+保持旧学习来源和正负证据归档；主线L5实测未发现可用于当前切片训练的选择差异，停止该切片的标签/模型投入。轻量排序仍为条件候选，由query-value树维护；不重启旧查询、规划停止或算法选择。
+
+共同结论：L5一次三规则及一次独立后审通过，零重试；当前切片没有观察到排序增量，调整代表性任务接口资格后再判断轻量学习。完整费用与物理执行收益UNKNOWN，未运行世界或训练。本批授权已使用，无自动追加。详见[主仓最新结果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#l5-actual-four-step)。以下保留历史状态，旧“待授权/未运行”不覆盖本段。
+
 # 2026-10-11 L4实证与L5准备
 
 保留历史来源；主线L4已验证、L5最小四车同图选择比较已实现待授权。教师/完整续搜资格尚未满足，不重启旧查询训练。 实际安全资格仅限登记模型；全部费用和学习有效性未外推。[主仓最新进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#selection-opportunity-l5)。
