@@ -1,4 +1,12 @@
-# P6 当前入口（2026-10-11）
+# L1 当前安排：共同误差图与优化器适配（2026-10-11）
+
+按用户选择，本树承载学习辅助 Improved GSES 所需的共同空间冲突图、作者优化器适配及图接纳。先复用已有 R9/R13 原版接口和 P4/P6 执行材料，说明误差占用如何形成与作者状态、反向边和代价单位兼容的依赖；不覆盖冻结作者副本，也不直接继承新几何域尚未证明的性质。
+
+第一版学习只选择搜索下一处分支的冲突组，由 query-value 树负责教师、数据及模型。共同几何、时长估计、原双向搜索和约束检查保持一致。先验证相同解质量的计算收益，再评价包含求解耗时的实际等待与完成时间。本轮仅方法安排及源码定位，未实现新适配或运行实验，P6原边界保持。
+
+[统一 L1 方案](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#learning-assisted-l1)。详细本机文件位于主仓 `LEARNING_ASSISTED_OPTIMIZER_PLAN_20261011.md`。以下为既有实现及历史，旧下一步不自动作为新路线待办。
+
+## P6 最新实现（2026-10-11）
 
 [五线统一进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#portfolio-p6)。
 
