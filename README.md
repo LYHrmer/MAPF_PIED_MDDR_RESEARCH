@@ -1,3 +1,11 @@
+## L2 当前进度（2026-10-11）
+
+主线按L1研究学习辅助完整Improved GSES冲突组选择。本树新增 exploration/optimizer_guidance/gses_branch_l2_20261011，三规则 C++ 已链接；完整作者分支机制保留，新空间映射尚未合格。
+
+实际基线已校正为largest_diff。首个启动失败及修正完整保留，另获明确授权后一次三规则DEV对照全部完成。原/结构/前瞻图代价均1292，展开26/47/31，CPU26.656/29.119/34.505ms；当前教师未优于原规则，不进入训练。保留轻量排序候选，先补共同空间状态/成本映射；不是独立测试或物理执行结果。两次单次授权均已消耗，无新运行待办。主仓本机报告：implementation_binding_evidence/learning_optimizer_l2_20261011/REPORT.md；详见[主进度L2](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#learning-assisted-l2)。五稿与原作者/输入/证据保持。
+
+以下保留历史导航与结果，状态冲突以本段及主仓L2为准。
+
 # L1 当前安排：共同误差图与优化器适配（2026-10-11）
 
 按用户选择，本树承载学习辅助 Improved GSES 所需的共同空间冲突图、作者优化器适配及图接纳。先复用已有 R9/R13 原版接口和 P4/P6 执行材料，说明误差占用如何形成与作者状态、反向边和代价单位兼容的依赖；不覆盖冻结作者副本，也不直接继承新几何域尚未证明的性质。
