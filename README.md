@@ -1,3 +1,7 @@
+# 2026-10-11 L4实证与L5准备
+
+保留历史来源；主线L4已验证、L5最小四车同图选择比较已实现待授权。教师/完整续搜资格尚未满足，不重启旧查询训练。 实际安全资格仅限登记模型；全部费用和学习有效性未外推。[主仓最新进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#selection-opportunity-l5)。
+
 # 2026-10-11 科研判断同步
 
 保留历史模型和R19正负证据；学习主工作集中到当前optimizer-guidance，不独立扩张旧查询训练。当前L4唯一76秒验证仍待授权；本轮仅文档判断，无新实验。学习优先采用线性排序，但先确认教师选择对剩余搜索有价值及完整费用余量。详见[主仓最新判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#mentor-after-l4)。
