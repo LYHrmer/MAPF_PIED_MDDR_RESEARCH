@@ -1,3 +1,35 @@
+# L5 实际结果与四步推进
+
+<a id="l5-actual-four-step"></a>
+
+2026-10-11。用户在四步建议及具体76秒L5清单后回复“按以下四步推进”，本轮执行该唯一批次及一次后审，零重试；没有其他新实例、世界、机器人或训练。计划/输入/原ELF不变，批准与全部实际证据新目录保存，旧静态报告不改。
+
+**判断：多组离线接口通过；本L5切片没有可学习选择差异，停止追加该切片，下一步调整代表性任务的共同接口资格。整条学习路线仍CONDITIONAL。**
+
+主监督记录wall0.123547426秒（不含末尾收据序列化）、exit0、WAIT4/ECHILD；后审内部wall0.027136171秒/CPU0.027135896秒、外包装0.078215010秒、exit0。一次共同准备、三native、一次独立后审；17份原始库存、67项源pin一致，失败/超时0，全部回收。批准SHA c99b4651d6b151ed5da674a471d7c79a8d5ff4f16221758e7986b41ca8c8c54f，receipt SHA 68b4ec597cf2b255e0190330d73244ce1d3a5a45079e0f2bbf28f6b003140c45。
+
+| L5实际指标 | original | structure | lookahead |
+|---|---:|---:|---:|
+| 图逻辑代价 | 24→16 | 24→16 | 24→16 |
+| 展开/生成 | 4/7 | 4/7 | 4/7 |
+| 完整native CPU，ms | 1.969 | 1.788 | 2.276 |
+| 完整native wall，ms | 2.561 | 2.476 | 2.495 |
+| solve含selector，ms | 0.175 | 0.252 | 0.419 |
+
+实际16状态/3完整family/3作者组。structure/lookahead前三次多候选为3/2/2，第4次终态回退；original不额外枚举，不能把遥测0当没有机会。lookahead7候选/14子代理逐次全并列，三规则选择序列和返回方向全部相同；相同节点数不证明未尝试选择的完整价值相同。没有可用排序标签；不从最终方向造标签。单次约2.5ms进程与固定顺序不支持统计加速。共同准备13.177ms只计一次，nested计时不累加。
+
+第二步已只读盘点R9/R13原始路径/图/日志与源码，未重跑。四份路径有转角且许多转角与他车路线共点，简单逐段分解不满足现有全时安全等待合同；random保留1366个单位MOVE需60+3×1366=4158逻辑状态，超4096界。原作者旧域搜索存在毫秒至数百毫秒负担，但不能直接迁移为空间域瓶颈证据。下一先明确保持原路径/原动作的适配资格与成本，不删转弯、合并原动作、抽有利子图或放宽保护参数。
+
+第三步定位最小标签入口：仅在代表性首根决策有余量时，从共同输入完整初始化并核对OPEN/focal与平局顺序、groups/保护、上界、缓存别名、RNG与剩余预算，只强制一次合法组，后续同一原规则。入口尚未实现/编译/运行；内部节点通用checkpoint不先堆。线性排序保留为优先条件候选，完整续搜标签0，训练0，RL需额外序贯证据。
+
+第四步独立验收设计已补：同等返回质量的完整wall/CPU或预先固定预算质量；费用包括枚举/特征/加载/推理，教师训练单列。执行另报固定任务Σ完成主指标与makespan等，世界不能为solver暂停。L4图代价均6但Σ31/32.5秒、makespan18.4/17.4秒；L5无执行臂，24→16不代表物理秒或学习收益。现有全DEV，独立TEST/实际执行效益/完整报价仍UNKNOWN。
+
+本机新实际报告 `implementation_binding_evidence/selection_opportunity_l5_20261011/RUNTIME_REPORT.md`，独立摘要 `validation/SUMMARY.json`，`four_step_followup/` 内提供 SEARCH_METRICS.csv、DECISION_DIAGNOSTICS.json、REPRESENTATIVE_TASKS.md/REPRESENTATIVE_SOURCES.json、LEARNING_GATE.md/LEARNING_SOURCES.json 与前后窄核。实际runtime位于执行树 `exploration/optimizer_guidance/selection_opportunity_l5_runtime_20261011/original_triple_001/`，原始库存封存。
+
+本次76秒授权已使用，无待重复批准的L5清单；新批次须先具体化再单独授权。旧学习/高斯维持现有职责，旧查询/停止/算法选择不重开。主稿、五稿、作者、L1/旧参数与冻结失败证据保持，公共Git仅两主进度及四README，无新工作树。
+
+以下保留此前进度全文，历史“L5未运行/待授权”以当时状态阅读。
+
 # L5 运行前科研判断补充
 
 <a id="mentor-l5-scope"></a>
