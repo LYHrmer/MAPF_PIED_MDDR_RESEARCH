@@ -1,3 +1,55 @@
+# Git分支与入口整理
+
+<a id="git-navigation-20261012"></a>
+
+2026-10-12。远端从6个分支整理为5个：main唯一总入口，error-aware-guidance与query-value-feasibility为活动线，learned-query标注历史归档，Gaussian保留限额备选。四探索分支各有独有提交和本机工件，全部保留；各自GitHub首页和进度文件已补当前角色、L14实测与main链接，根README冻结快照不改。
+
+旧manuscript-revision-20260917是main祖先，独有提交0且无工作树；先推送并核对[归档标签](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/archive/manuscript-revision-20260917)指向原tip 7e47b1001afef1674b48430efa87423a4a9aa2b1，再安全删除其远端/本地分支。未重写历史或合并异构研究树，主稿未提交修改、冻结证据、忽略工件和失败记录保持。五线导航见[README](README.md#分支与工作区)。本机审计为implementation_binding_evidence/full_search_l14_20261012/GIT_BRANCH_REVIEW.md；本轮未新增研究运行。
+
+# L14 完整六臂续搜实测与学习判断
+
+<a id="full-search-l14"></a>
+
+2026-10-12。L13冻结批次已在用户许可后实际完成，六臂各一次，零重试。**同一实际根上，选择X/Y/Z确实改变了完整搜索工作量；强规则之外的净加速和学习收益尚未建立。先补相关作者规则与计量设计，暂不训练或扩大本人工案例。**
+
+六臂全部正常终态、exit0，无超时或失败，所有进程已回收。完整上下文逐字段一致，包括图、父节点、缓存别名、组顺序、RNG和空OPEN；实际有三个合法候选组。只干预首根，随后完整原largest_diff规则续搜，保留分组、双向、下界、环检查和OPEN。
+
+| 臂 | 首根组 | 展开 / add_node调用 | 完整wall，ms | 完整CPU，ms | 返回逻辑代价 |
+|---|---|---:|---:|---:|---:|
+| original | Y_AC | 3 / 5 | 4.782971 | 3.658 | 20 |
+| structure | Y_AC | 3 / 5 | 4.574770 | 3.498 | 20 |
+| lookahead | Y_AC | 3 / 5 | 4.640011 | 3.525 | 20 |
+| index0 | X_AB | 2 / 3 | 4.721263 | 2.772 | 20 |
+| index1 | Y_AC | 3 / 5 | 6.871632 | 5.202 | 20 |
+| index2 | Z_BC | 4 / 7 | 6.885641 | 5.086 | 20 |
+
+全部返回图相同，逻辑代价25→20。add_node计数包含随后被下界挡住的调用，不是实际入OPEN数；pruned_node=0只对应源码记录的环剪枝。五项事前配对均成功收件且issues为空，完整费用差和同组计时差保留，合格偏好标签仍0。
+
+完整进程费用包含枚举、选择、捕获、侧车及最终输出、退出与回收。structure选择器13.201μs；lookahead84.606μs，其中前瞻72.212μs，已包含于上层耗时，不能重复累加。监督记录进程范围wall0.188767965秒，不含最终回执序列化；与子进程/runner嵌套费用不相加。完整资源报价、付费预算、整树峰值和实际执行效果仍UNKNOWN。
+
+## 科研判断
+
+- **工作量差成立，净wall优势未成立。** X展开2次，但本次完整wall仍高于structure/lookahead。同选Y的四臂wall为4.575–6.872ms；固定单轮不能估计方差或显著性。runner有2ms轮询，远大于X相对original约0.062ms的差，不能事后扣除轮询时间宣布赢家。
+- **一层教师没有对准完整续搜。** 前瞻按剪枝孩子数/下界偏好Y，并将实际展开2次和4次的X/Z评为同分。它是待验证代理，不能直接作最优选组标签。
+- **缺少相关廉价作者规则。** 固定作者源码已有conflict/enhanced_branch；代入本次实际根和扫描顺序会建议X。这是源码加实际状态的解析判断，本轮没有运行第七臂，不能把index0后续largest_diff冒充全程conflict。因此当前差异可能由现成规则解释。
+- **执行与泛化未验证。** 本批只跑搜索，新任务控制器/世界、训练、推理和独立测试均0。逻辑代价20不是20秒，已查看人工DEV不能转为独立TEST。
+
+## 下一步
+
+本例保留作多组完整续搜机制验收，到此停止扩展和训练。下一先隔离补作者conflict对照、计时分辨率及完整续搜教师口径。若存在事前登记的独立完整来源，再冻结同输入/误差/时长/预算的最小比较清单，查强规则外可辨净余量。旧一次性授权已消费，不能重试或启动旧L7。
+
+通过后才考虑正则线性成对排序：只用合法当前图、已收进度与公共几何作特征；同根完整配对续搜作目标；至少两个独立TRAIN来源并另设CAL/TEST，父任务和派生节点不跨区；推理/枚举费用计入，失败、负收益、平局和删失保留。没有净余量则停止这一改法，不靠加网络补证据。
+
+## 文件与保护
+
+本目录RESULTS.csv、SUMMARY.json、ROOT_CANDIDATES.json保留实际结果；PAIR_REVIEW.md与LEARNING_DECISION.md保存独立复核。RUNTIME_MANIFEST.json登记批准及运行53份文件、492420字节，无原始轨迹复制；SOURCE_RECORD.json固定252项既有来源。
+
+实际输出在执行树exploration/optimizer_guidance/multigroup_l13_runtime_20261012/full_search_001/。comparison SHA `db721021cc101bd2d988f3f100fef2d518e602e14a01eb424e29a5a47133612a`；根上下文SHA `2bf03646a4bf54aed91c7724f0999b7a99afc9e2cb21e4ec6cd1c739526334c7`。原计划SHA `4265038ac19d1d5b1e89a93694594abcaad2533ad35efeba3250c55015e3ab47`，每臂solve6秒/完整进程8秒、全批60＋5秒、4GiB/进程、16MiB监测、零重试均未变。
+
+五稿及主稿未提交修改、作者原版、冻结输入/参数/H34、L13运行前合同和全部历史失败保留。Git整理仅同步导航与进度，四探索树冻结根README原字节保持，最新角色由各分支.github/README.md指向main。实现和原始数据仍留本机。
+
+以下历史全文保留。
+
 # L13 多组完整任务与配对续搜入口
 
 <a id="multigroup-l13"></a>
