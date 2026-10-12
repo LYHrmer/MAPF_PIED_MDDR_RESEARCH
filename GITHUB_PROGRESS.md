@@ -1,3 +1,15 @@
+# 分支定位：历史归档
+
+2026-10-12，导航同步至L14。分支 `explore/learned-query`。**全项目最新状态只读 [main当前入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/.github/README.md)，分支职责见 [统一导航](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/README.md#分支与工作区)。**
+
+保留旧查询模型、来源、正负结果及本机工件，不重新启动旧训练路线。当前学习候选的实施由执行/query-value两树承担；本分支的历史R9等学习结果不能替代当前L14的独立收益证据。
+
+[L14实际六臂结果与判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#full-search-l14)：六臂全部正常终态、同根、同图同代价，无超时/失败；新学习标签/训练/独立测试均0，实际执行效果与完整报价仍UNKNOWN。本批一次性运行授权已消费；旧L7和下列历史清单不具有当前运行许可。
+
+本分支根README保留受保护的L7快照，下面的旧“当前/下一步”按对应日期阅读。最新实现及原始运行材料仍按现有范围留本机，本次导航提交没有上传它们。历史正文完整保留。
+
+---
+
 # 实验前进度入口
 
 更新：2026-09-21。**原生机制闭环此前已通过；三完整查询ELF、固定站点脚本、实际发布图与唯一世界驱动现已静态装配并链接，尚未运行。55篇开题综述及SCI二区/三区科研导师独立评估已完成桌面交付。** 用户只实现/静态检查的决定持续有效，尚无完整查询费用或性能提升结论。
