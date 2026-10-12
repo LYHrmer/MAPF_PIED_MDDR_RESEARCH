@@ -1,3 +1,15 @@
+# 分支定位：限额备选
+
+2026-10-12，导航同步至L14。分支 `explore/gaussian-mapf-feasibility`。**全项目最新状态只读 [main当前入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/.github/README.md)，分支职责见 [统一导航](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/README.md#分支与工作区)。**
+
+保留高斯方向的独有来源和可行性合同，未增加模型、运行或转用预算。当前主线完整续搜的接口进展不构成高斯方法有效性证据，后续仅按原条件决定是否启动。
+
+[L14实际六臂结果与判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#full-search-l14)：六臂全部正常终态、同根、同图同代价，无超时/失败；新学习标签/训练/独立测试均0，实际执行效果与完整报价仍UNKNOWN。本批一次性运行授权已消费；旧L7和下列历史清单不具有当前运行许可。
+
+本分支根README保留受保护的L7快照，下面的旧“当前/下一步”按对应日期阅读。最新实现及原始运行材料仍按现有范围留本机，本次导航提交没有上传它们。历史正文完整保留。
+
+---
+
 # MAPF 项目当前状态
 
 更新：2026-10-09，当前入口 **R54**。本轮发现旧完整训练数据合同无法满足至少两个TRAIN家族要求；按用户新授权另建三图来源登记，同时补运行监督、实际N端复制计量和成对超时清理。**查询价值学习仍未完成：0个新任务、0个合格TRAIN家族、0条可靠标签、0次训练与独立比较，研究有效性UNKNOWN。**
