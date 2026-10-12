@@ -1,8 +1,10 @@
 # MAPF 项目当前状态
 
-更新：2026-10-12，L15。**作者conflict对照和事件计时已实现，一次编译与静态核对通过；新对照尚未运行。** [L15交付及清单](../GITHUB_PROGRESS.md#conflict-timing-l15) · [L14实际结果](../GITHUB_PROGRESS.md#full-search-l14) · [五线导航](../README.md#分支与工作区)。
+更新：2026-10-12，L15后导师判断。**继续有限验证，暂不训练：先完成待授权L15验收，随后以独立合法来源检验强规则外的净余量。** [导师判断与四阶段](../GITHUB_PROGRESS.md#mentor-after-l15) · [L15交付及清单](../GITHUB_PROGRESS.md#conflict-timing-l15) · [L14实际结果](../GITHUB_PROGRESS.md#full-search-l14) · [五线导航](../README.md#分支与工作区)。
 
 研究问题保持有界跟踪误差、有限状态更新资源下的MAPF执行协调。学习辅助完整Improved GSES是优先条件候选，是否训练取决于强规则外的可辨净费用余量。
+
+导师定点澄清：largest_diff有论文优先分支及作者完整配置依据，conflict是需补验的相关作者变体。现有首根一次干预标签只能支持同范围的首版学习；全程学习须另验证。L14三个组均单边、只有2–4次展开，不支持直接训练或泛化。下一四阶段是L15验收、来源准入与余量筛查、完整标签与轻量排序、有限执行与成稿；后续运行各按具体授权，不扩大本人工DEV。详细本机判断为implementation_binding_evidence/mentor_after_l15_20261012/DECISION.md。
 
 ## 本轮实际完成
 
