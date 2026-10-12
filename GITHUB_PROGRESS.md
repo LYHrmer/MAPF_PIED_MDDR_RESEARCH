@@ -1,3 +1,11 @@
+# L15当前入口：活动执行线
+
+2026-10-12。本树新小overlay已接作者root-conflict/full-conflict并一次编译通过，ELF未执行；原分组/双向/下界/环检查/OPEN保持。
+
+[main最新状态](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/.github/README.md) · [L15实现与唯一清单](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#conflict-timing-l15)。本批4个非科学生命周期验收＋3科学臂尚未授权执行，全部共享60＋5秒、零重试；已消费L13许可不继承。新计时未校准、完整费用/执行效果仍UNKNOWN，未训练或独立测试。根README及下面旧进度保留历史快照，不按旧清单启动。
+
+---
+
 # 分支定位：活动执行线
 
 2026-10-12，导航同步至L14。分支 `explore/error-aware-guidance`。**全项目最新状态只读 [main当前入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/.github/README.md)，分支职责见 [统一导航](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/README.md#分支与工作区)。**
