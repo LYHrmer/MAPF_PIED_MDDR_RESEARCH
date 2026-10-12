@@ -1,3 +1,21 @@
+# L15 作者 conflict 对照与事件计时
+
+<a id="conflict-timing-l15"></a>
+
+2026-10-12。**作者完整conflict与仅首根conflict两种配置已接通，新pidfd/selector＋wait4计时和三项配对收件已实现；一次编译与静态检查通过，尚未运行新ELF或进程验收。** 本轮只补相关作者规则和计量口径，不扩大人工DEV矩阵，不训练。
+
+full-conflict从构造开始全程调用作者enhanced_branch；root-conflict只首根调用，后续largest_diff。真实min(raw_diff,back_diff)保留到实际消费，未用已知index0代替作者算术。分组、双向、下界、环检查、OPEN、终止/返回校验保持。original/root_conflict核完整同根；涉及full_conflict时只作完整策略比较，分离并逐项关联核实4个声明的算法字段，其他对象状态必须一致，未知差异不得删除。
+
+新计时从IO设置前至唯一wait4回收，包含启动、枚举、选择、捕获及native完整输出。pidfd只记录就绪观测，不是精确退出时刻；父后处理另在runner范围内，嵌套费用不相加，不对旧L14统一减2ms或跨仪器排名。已修Popen析构可能抢waitpid用量、失败后继续下一臂及timeout验收可能吞额外异常的接缝，原失败记录不改。
+
+一次静态编译exit0，wall25.532655173秒、等待子进程CPU25.336940秒，新ELF SHA `667a14f6e3e2373bf4b4d168a5242571d8999937592d54ce72857e8196ffd3bd`，未执行。作者关键源码区间逐字检查、三侧Python静态检查通过；监督默认metadata通过，122项源pin，runtime未创建。317项旧来源、五稿及主稿未提交修改、冻结输入/参数/H34和历史失败保持。
+
+唯一新提案：同一L13输入，先4个非科学stub（exit0、exit7、8秒超时回收、spawn后一次日志异常），全部符合预期才运行original/root_conflict/full_conflict各一次；fixture与solver分计，原非零/超时/异常保留。每科学臂solve6/host8秒，所有调用/收件共享主60＋清理5秒，4GiB/进程、16MiB监测、零重试。任一门槛不符停止，后续NOT_STARTED；不额外验收未改外层或重跑structure/lookahead/index矩阵。RUN_PLAN SHA `65c06f444aae067d73104f7f1f3e756c2c12dd0d6a404eccf790588d4f0f3210`。
+
+当前新fixture/solver/world/train/inference均0，标签0；计时未校准，完整费用/付费预算及执行效果仍UNKNOWN。旧L13一次性许可已消费，L15清单尚待新许可。通过后也只报告本DEV观察；若作者规则已解释工作差或负担仍很小，结束本例；独立来源出现可辨净余量才进入轻量排序和完整强规则比较。
+
+本机implementation_binding_evidence/conflict_timing_l15_20261012/REPORT.md、MEASUREMENT_CONTRACT.md、MEASUREMENT_REVIEW.md及runtime_supervision/RUN_CHECKLIST.md；执行/query-value树同名目录保留源码/收件。公共Git同步三活动线导航与进度；其余归档/备选角色不变，无新工作树、大复制或旧路线重启。以下历史全文保留。
+
 # Git分支与入口整理
 
 <a id="git-navigation-20261012"></a>
