@@ -1,3 +1,15 @@
+# 分支定位：活动证据与学习接口线
+
+2026-10-12，导航同步至L14。分支 `explore/query-value-feasibility`。**全项目最新状态只读 [main当前入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/.github/README.md)，分支职责见 [统一导航](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/README.md#分支与工作区)。**
+
+负责同根配对收件、合法特征、完整费用与条件标签。L14五项真实完整续搜配对已收件，保留实际同质量费用差及同组计时差；合格标签仍0。优先调整完整续搜教师口径，有强规则外可辨净余量才进入轻量排序和独立测试。
+
+[L14实际六臂结果与判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#full-search-l14)：六臂全部正常终态、同根、同图同代价，无超时/失败；新学习标签/训练/独立测试均0，实际执行效果与完整报价仍UNKNOWN。本批一次性运行授权已消费；旧L7和下列历史清单不具有当前运行许可。
+
+本分支根README保留受保护的L7快照，下面的旧“当前/下一步”按对应日期阅读。最新实现及原始运行材料仍按现有范围留本机，本次导航提交没有上传它们。历史正文完整保留。
+
+---
+
 # 当前分支：学习型进度查询探索
 
 2026-10-03 R9：[同续策预算价值实验](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/learned-query/exploration/learned_query/matched_tail_20261003_r9/REPORT.md)已完成91次成功原生运行，包括40个冻结留出。24个query标签和21个WAIT分支明确比较“当前选择后均继续同一π₀”，三模型实际训练部署。WAIT366任务；condition与history/nohistory/nobudget均367任务、123query，逐world固定FIFO时间也完全一致。没有新增学习收益，+1来自原condition策略。
