@@ -1,3 +1,15 @@
+# 分支定位：活动执行线
+
+2026-10-12，导航同步至L14。分支 `explore/error-aware-guidance`。**全项目最新状态只读 [main当前入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/.github/README.md)，分支职责见 [统一导航](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/README.md#分支与工作区)。**
+
+负责有限空间执行适配、作者完整搜索与计量。L13六臂完整续搜已实际完成，真实同根/三个候选/完整返回接线通过；不同首组产生2/3/4次展开，但未建立强规则外净wall收益。下一补作者conflict规则与计量口径，新任务控制器/世界未运行。
+
+[L14实际六臂结果与判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#full-search-l14)：六臂全部正常终态、同根、同图同代价，无超时/失败；新学习标签/训练/独立测试均0，实际执行效果与完整报价仍UNKNOWN。本批一次性运行授权已消费；旧L7和下列历史清单不具有当前运行许可。
+
+本分支根README保留受保护的L7快照，下面的旧“当前/下一步”按对应日期阅读。最新实现及原始运行材料仍按现有范围留本机，本次导航提交没有上传它们。历史正文完整保留。
+
+---
+
 # 实验前进度入口
 
 2026-09-24 最新主线：调用来源与费用归属已完成。独立只读观察宿主沿原ELF/供给运行，92条业务记录与原版逐字一致，86条关闭段逐行核账守恒，仍在C准备阶段自然exit1。setup实际53,477,376步中，52,909,151步（98.937448%）落在分配扫描区间，place整体占99.049535%。77次16字节申请均来自首个move-A几何的qqbar初始化：数值初构10次、两级返回移动19次、三层坐标/容器复制48次。最后一次申请截断，FLINT批量冷入口仍为0。完整查询尚未发布，无吞吐或SRDC收益结论。详见Q2 §62及本机`implementation_binding_evidence/ALLOCATION_ATTRIBUTION_AND_LEGAL_AND_20260924.md`。
