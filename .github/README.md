@@ -1,3 +1,13 @@
+# L17完整任务准备：活动证据与学习接口线
+
+2026-10-13。新增execution_receipt.py，核原始请求、完整进程、原规则非fallback返回图、所有访问族与费用边界，接执行端；标签仍0。 完整random60输入为1724 visits、2256父动作/普通END、1638对跨车访问，其中1510结构可逆不等于有效候选数。米制及首次START前初态另作新模型声明，原sit及旧输入未改。
+
+[main当前入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/.github/README.md) · [L17交付、题目判断与唯一清单](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#finite-task-l17)。导师结合综述定点核验：问题值得继续，学习须在完整强基线上获得可辨净开销余量；s>2R内拓扑独立R，固定END数不自动节省，费用报价仍UNKNOWN。
+
+当前完成实现/字段准备/静态核查，未新增Graph/ALL/solver/world、训练或独立测试。L17唯一新清单尚未授权：original一次成功后名义完整执行一次，进程各8s、全批60＋5s、4GiB/进程、16MiB监测、零重试；旧L15授权已消费。原保护/旧H34不变，归档线不重开。下方与根README均保留历史快照，最新状态以本段及main为准；实现和输入仍留本机。
+
+---
+
 # L15实测／L16准入：活动证据与学习接口线
 
 2026-10-13。L15三项实际配对收件issues=[]；同根同续策与完整策略比较的口径成立，标签仍0。新增只读visit_source_ledger已为外部random实例2生成1724行完整访问账本，保留1664移动转换、26原等待tick及581处派生转向需求；未生成实际END或训练标签。
