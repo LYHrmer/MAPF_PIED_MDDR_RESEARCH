@@ -1,3 +1,35 @@
+# L17 完整任务实际验收与导师判断
+
+<a id="finite-task-l17-results"></a>
+
+2026-10-13。用户明确要求“取得实际候选组、完整搜索费用和同臂执行结果”后，按唯一冻结L17清单实际运行original一次、通过接纳后world一次，全部正常回收、零重试。**完整任务接口及成本读数验收通过；返回图没有改变，学习与优化净收益仍UNKNOWN。** 三组只读交叉核对搜索、执行和导师判断，没有新增科学调用。
+
+| 项目 | 本次实际读数 |
+|---|---|
+| 首根候选 | 9组，大小1×4、2×2、3×3；按冻结正差优先类别枚举 |
+| 全部当前方向组 | 666；存储1332含反向副本，不是独立选择翻倍 |
+| 搜索工作 | 39展开、79次add_node调用、0环剪枝；调用数不等于OPEN入队数 |
+| original完整wall / CPU | 0.137428430 / 0.137134秒；maxrss44732KiB |
+| 终止/返回 | 正常open_exhausted；图五字段与初始请求相同，逻辑代价1681→1681 |
+| world完整wall / CPU | 1.233901881 / 1.233412秒；maxrss56524KiB |
+| 完整任务 | 60车，2256父动作及普通END全部完成，未完成/待交付0 |
+| capture完成 | makespan129.75、完成时间和3763.95模型秒 |
+| received完成 | makespan129.85、完成时间和3769.95模型秒 |
+
+实际原规则首根选group524，forward/back差3/−1；9组含不同双向差与大小，支持强规则比较，不构成最佳搜索顺序标签。后续节点未额外枚举，其candidate_count=null不能解释为没有候选。native的returns_original=false仅是未触发deadline fallback；正常OPEN穷尽仍返回init_graph，本次逐字段核对确实相同。
+
+root capture31.242851ms（内含枚举/分组序列化7.155692ms）及其后侧车写出14.377914ms共占完整wall33.20%，都已计费，不与总wall重复相加，也不相减伪造无采集基线。外层监督范围1.656560756秒、最大观察输出9981770字节；每臂8秒、solve6秒、全批60＋5秒、4GiB/进程、16MiB监测边界保持。单次未校准计时不证明稳定加速。
+
+执行保留11282事件及3921占用检查；全部START/capture/同臂合法END与2256父动作一一对应，60个永久目标保持。WAIT_record_count=2256是事件日志计数，计划WAIT仍11段，不能当等待时间。L18只读成本核查已执行一次并返回MATCH_COMPLETE_RECORDED_NOMINAL_EXECUTION，1664到达分段和60终态一致；独立后处理内部wall约.520365秒，GNU time进程舍入wall.58秒，另列不混入原运行费用。
+
+导师判断：继续到同任务强规则比较，暂不训练。下一先比较original/root_conflict/full_conflict，统一观测与费用口径；root-only同后续策略和全程强规则分别解释，不能拿本次历史original点值替代下一批共同基线。可信余量需有限配对重复/不确定性，强规则已足则停止此任务的选组学习；有余量才采完整续搜标签。当前完整货币报价/付费预算、物理等待改善、学习有效性仍UNKNOWN，训练/独立测试/标签均0。
+
+原计划SHA be9ff7e8c560187981c127a777a4ecda0e7188298392f7d6ffdf6c1d455cb3cc；本次APPROVAL SHA add0b7b58babfc0ae1016afc134992c75783668f577806237b48178defb27ff9；comparison SHA 4a0f6e7a1209acc55d4654826a0f84568dfaf116b46fd62b56edc2bd29982e2e。此次一次性许可已消费；旧NOT_AUTHORIZED模板/清单不回写，它们是批准前冻结。新强规则批次不在本次许可内，尚未执行。
+
+本机main `implementation_binding_evidence/finite_task_l17_results_20261013/` 保存REPORT、SUMMARY、ROOT_CANDIDATES/PROCESS_METRICS两CSV、SEARCH_REVIEW、EXECUTION_REVIEW、MENTOR_DECISION、RUNTIME_MANIFEST和只读汇总脚本。原输出在执行树 `finite_task_l17_runtime_20261013/admission_001/`，只登记不复制。主线/执行线/证据线进度同步；历史归档不重开。主稿原修改、桌面综述、全部L17来源/参数及作者原版保持。以下L18/L17旧未运行状态按历史阅读。
+
+---
+
 # L18 完整成本对应与综述补充
 
 <a id="precomparison-l18"></a>
