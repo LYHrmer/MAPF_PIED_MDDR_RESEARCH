@@ -1,3 +1,31 @@
+# L15 实测与 L16 来源准入
+
+<a id="l15-results-l16-admission"></a>
+
+2026-10-13。用户明确授权一次L15验收及汇总后，实际完成4项进程验收和3科学臂，各一次、零重试。**作者conflict达到本DEV在既定完整搜索流程内的两次展开下限，结束本例的性能扩展与训练投入。并行完成四个外部完整来源的静态登记、首个父任务访问账本及有限格点模型的解析核对。** 学习仍为优先条件候选，没有新增训练/独立测试或净学习收益结论。
+
+| 臂 | 首根 | 展开／add_node调用 | 完整wall，ms | 完整CPU，ms | 返回逻辑代价 |
+|---|---|---:|---:|---:|---:|
+| original | Y_AC | 3／5 | 5.473441 | 5.186 | 20 |
+| root_conflict | X_AB | 2／3 | 5.250525 | 5.014 | 20 |
+| full_conflict | X_AB | 2／3 | 4.716276 | 4.406 | 20 |
+
+三臂均exit0/terminal_node，返回图相同。original/root_conflict完整实际context一致；涉及full_conflict的两对按冻结合同核四项策略元数据和共同对象，只称完整策略比较。三对收件issues=[]，合格标签仍0。独立核源码：本根非终态，原OPEN仅根，explored在pop前增加，正常terminal_node至少再pop一次；因此≥2，conflict实测2已达此流程下限。不等于wall最优，更不证明所有新任务没有学习机会。
+
+进程验收的exit7、超时-9、日志注入异常/-9全部原样保留，预期匹配均通过。journal有两次wait4调用但仅一次成功回收。timeout完整观测8.003085079秒含调度/回收延迟，不宣称硬实时；仍受共享清理界。七项均无内层主动周期轮询。监督进程范围wall8.212969015秒，runner至最终写前8.097068203秒，嵌套费用不相加；监督最终回执序列化另在范围外。单次点值不是计时校准或稳定加速，不跨L14旧仪器排名。
+
+本批fixture4、solver3、科学失败/超时0、重试0，全部回收；world/train/inference0。原计划SHA `65c06f444aae067d73104f7f1f3e756c2c12dd0d6a404eccf790588d4f0f3210`，comparison SHA `50826563fc60febbf00c040c8b4a51fcfd46b54f5f30b9798071cf2d27fb1c8d`；solve6/host8秒、总60＋5秒、4GiB/进程、16MiB监测均未变。44份原始/批准文件共290385字节只登记不复制。新只读汇总脚本首次误取收据status字段退出1，修正后生成SUMMARY/CSV；失败单列保留，未重跑科学臂。
+
+来源候选在看后果前固定为R9四图原规模的instance2/sit0/p01。12个path/sit/map与作者固定blob匹配；三delay包的路径名清单同SHA不代表三套独立来源，也不等于所有sit相同。完整文本原记录1750/10681/29892/10539；连续重复位置合并后的访问数1724/10638/29872/10525。仅random的60车/1724访问满足逐visit表示的128/4096必要条件；后三停止本版迁移，不截短或放宽容量。R54三图仍无完整路径，空图两种尺寸不自动算两类独立结构。历史独立性、数据角色和空间运行准入均未授予。
+
+两只读登记脚本实际生成JSON/CSV，未调用图/几何。四邻/WAIT及地图字符检查保留两坐标解释；随后从固定作者DelayInstance与Instance源码绑定row/column消费者语义，未按结果倒选解释。query-value线新增只读visit_source_ledger，首个完整父任务1724行保留1664移动转换＋26等待tick＝1750−60，源记录完整分割检查通过，581处内部方向变化标为派生TURN需求；未伪造源动作、时长、普通END或重设sit current。
+
+空间线进一步给出有限模型的解析充分条件：圆盘R=.25m、合法格距s>2R、单位四邻、完整同格visit关系、MOVE保留起终访问、初始/永久目标和START保护，arrival细化为准入/START/完整动作/合法END。非共端点线段间距≥s，blocked-cell square下障碍净距≥s/2；可用此有限域证明替代逐对扫掠。独立复核补齐“必要动作均成功且END有限交付”才有有限成功完成；有限失败只报告未完成、不虚假释放。WAIT重复点必须合为一次visit且保留全部原等待，不能用WAIT END虚假清格。模型最终SHA `4060a9803359d6f6375635902618c386da91fa314a695e038c7189d9fc83bf6e`。这是条件模型，不是实例认证或已接执行器；s>2R域内同格拓扑不随R改变，不能宣称误差特征增量。
+
+下一只沿random完整候选补米制/动作时长、合法初态、全访问/目标覆盖和同臂执行适配，再冻结可执行清单。L15一次性授权已消费，不覆盖新实例/训练；现新增空间合格父任务0、合格标签0。主仓统筹，执行线保留实际计量与有限适配，query-value线推进来源账本/标签接口；旧学习归档、高斯限额备选不重启。
+
+本机implementation_binding_evidence/conflict_timing_l15_results_20261013/REPORT.md、RESULT_REVIEW.md、SUMMARY.json、RESULTS.csv、RUNTIME_MANIFEST.json；source_admission_l16_20261013/REPORT.md、SOURCE_LEDGER.json、VISIT_SOURCE_LEDGER.csv、GRID_MODEL_FEASIBILITY.md、GRID_PROOF_REVIEW.md。公共Git同步三活动线两进度文件，旧L15与历史冻结不回写。317旧保护、43项L15交付、五稿和用户主稿未提交修改、作者/参数/H34/输入与全部失败保持。以下历史全文保留。
+
 # L15 后科研导师判断
 
 <a id="mentor-after-l15"></a>
