@@ -1,3 +1,13 @@
+# L17完整任务准备：活动执行线
+
+2026-10-13。变长visit native桥接已编译，Astar与L15逐字相同；通用2256父动作控制器实现完整同臂END门控和初终态保护，等待本完整域运行验收。 完整random60输入为1724 visits、2256父动作/普通END、1638对跨车访问，其中1510结构可逆不等于有效候选数。米制及首次START前初态另作新模型声明，原sit及旧输入未改。
+
+[main当前入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/.github/README.md) · [L17交付、题目判断与唯一清单](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#finite-task-l17)。导师结合综述定点核验：问题值得继续，学习须在完整强基线上获得可辨净开销余量；s>2R内拓扑独立R，固定END数不自动节省，费用报价仍UNKNOWN。
+
+当前完成实现/字段准备/静态核查，未新增Graph/ALL/solver/world、训练或独立测试。L17唯一新清单尚未授权：original一次成功后名义完整执行一次，进程各8s、全批60＋5s、4GiB/进程、16MiB监测、零重试；旧L15授权已消费。原保护/旧H34不变，归档线不重开。下方与根README均保留历史快照，最新状态以本段及main为准；实现和输入仍留本机。
+
+---
+
 # L15实测／L16准入：活动执行线
 
 2026-10-13。本树L15新ELF已按一次明确授权实际运行。original/root_conflict/full_conflict展开3/2/2、返回同图同逻辑代价20；作者conflict达到本非终根正常完成的两次展开下限，结束此人工DEV的性能扩展。4项生命周期验收预期匹配，三科学臂均正常终态/回收，零重试。
