@@ -1,3 +1,13 @@
+# L17实际验收：活动执行线
+
+2026-10-13。实际运行original与同图world各一次，exit0/回收、零重试。首根9候选、39展开、完整搜索wall .137428430秒；正常OPEN耗尽返回初始图，逻辑1681未变。60车2256动作/END全完成，capture makespan129.75模型秒，world完整wall1.233901881秒。
+
+[main当前入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/.github/README.md) · [实际结果与导师判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#finite-task-l17-results)。下一先同任务强规则比较，统一采集/费用，区分root-conflict与full-conflict；当前单臂不证明优化或学习收益，报价及物理效果仍UNKNOWN。root捕获/侧车已占完整wall33.20%，不能扣掉后宣称加速。
+
+本次唯一L17许可已消费，未启动新强规则/训练/独立测试。原清单NOT_AUTHORIZED保留批准前快照；实际APPROVAL和全部原始证据另存，冻结输入/作者/参数和主稿不改。main finite_task_l17_results_20261013保存汇总与独立审阅；旧L18/L17状态如下保留历史，归档线不重开。
+
+---
+
 # L18成本对应与综述判断：活动执行线
 
 2026-10-13。定点核对作者七文件：最长路读权重，但冲突/终止及启发式仍有单位假设，直接秒制填权不能继承完整保证。两个解析反例与完整执行条件递推经交叉复核；未修改冻结作者/适配器，也未新增运行。
