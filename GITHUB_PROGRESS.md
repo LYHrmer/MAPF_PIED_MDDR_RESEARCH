@@ -1,3 +1,15 @@
+# L19三规则实测：活动执行线
+
+2026-10-13。三臂原生求解实际完成且全部回收；首根组524／84／84，正常OPEN耗尽返回相同初始图。完整计时含捕获/侧车，保留作者搜索及所有冻结输入。 original／root_conflict／full_conflict展开39／41／51、完整wall129.780960／114.832462／130.527851ms、CPU126.995／114.411／123.520ms，返回逻辑代价均1681。选组影响搜索负担；单次最快不是稳定净收益，暂不训练。
+
+[main当前入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/.github/README.md) · [L19实测、失败与导师决定](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#strong-rules-l19-results)。九候选仅实际选过两种首根，强规则外余量仍UNKNOWN。下一先少量预登记候选＋同批original、同父状态和后续规则的完整续搜；有费用信号才进入有限重复及独立来源/轻量排序，不重开旧矩阵。
+
+原科学进程均exit0且回收，汇总器旧schema判断使runner exit2；原批失败与费用不改写。单独离线修正仅一个schema常量、输入/单位不变，22项原始输出哈希保持。本批solver3、重试0、world/train/独立测试0；旧L17执行时间不能充当本批三臂执行效果，完整报价仍UNKNOWN。本次许可已消费，后续清单尚无新增运行许可。
+
+本机main strong_rules_l19_results_20261013保存完整报告/CSV/离线收据及三组复核。160项冻结来源、作者/输入/参数和主稿原修改保持，实现及原始数据只留本机不复制。下面是保留历史，旧“未运行/下一步”不作为当前入口；归档学习与高斯备选不重启。
+
+---
+
 # L17实际验收：活动执行线
 
 2026-10-13。实际运行original与同图world各一次，exit0/回收、零重试。首根9候选、39展开、完整搜索wall .137428430秒；正常OPEN耗尽返回初始图，逻辑1681未变。60车2256动作/END全完成，capture makespan129.75模型秒，world完整wall1.233901881秒。
