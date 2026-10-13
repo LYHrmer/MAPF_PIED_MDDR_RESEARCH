@@ -1,3 +1,13 @@
+# L15实测／L16准入：活动执行线
+
+2026-10-13。本树L15新ELF已按一次明确授权实际运行。original/root_conflict/full_conflict展开3/2/2、返回同图同逻辑代价20；作者conflict达到本非终根正常完成的两次展开下限，结束此人工DEV的性能扩展。4项生命周期验收预期匹配，三科学臂均正常终态/回收，零重试。
+
+[main当前入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/.github/README.md) · [实际结果与有限来源准入](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#l15-results-l16-admission)。三臂完整wall点值5.473441/5.250525/4.716276ms不是稳定加速。四外部完整来源已登记，只有random的逐访问计数在4096内；有限格点模型已有条件解析与独立复核，实例空间资格和学习余量仍UNKNOWN。下一补该完整候选的米制/时长、合法初态、全访问覆盖与执行适配。
+
+L15一次性授权已消费，不覆盖新实例/图/几何/世界/训练。主仓保存conflict_timing_l15_results_20261013与source_admission_l16_20261013报告；实现/数据仍留本机。根README和下方全部旧内容是保护的历史，不按旧“未运行/下一步”启动。五线角色不变，归档路线不重开。
+
+---
+
 # L15当前入口：活动执行线
 
 2026-10-12。本树新小overlay已接作者root-conflict/full-conflict并一次编译通过，ELF未执行；原分组/双向/下界/环检查/OPEN保持。
