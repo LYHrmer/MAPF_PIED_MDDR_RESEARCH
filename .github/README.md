@@ -1,3 +1,13 @@
+# L17实际验收：活动证据与学习接口线
+
+2026-10-13。实际收到完整同臂原结果；L18成本核查一次MATCH，1664到达/2256动作及60终态一致。首根9候选身份与完整wall/CPU已登记，正常OPEN耗尽返回初始图，未生成反事实标签；训练/独立测试/标签仍0。
+
+[main当前入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/.github/README.md) · [实际结果与导师判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#finite-task-l17-results)。下一先同任务强规则比较，统一采集/费用，区分root-conflict与full-conflict；当前单臂不证明优化或学习收益，报价及物理效果仍UNKNOWN。root捕获/侧车已占完整wall33.20%，不能扣掉后宣称加速。
+
+本次唯一L17许可已消费，未启动新强规则/训练/独立测试。原清单NOT_AUTHORIZED保留批准前快照；实际APPROVAL和全部原始证据另存，冻结输入/作者/参数和主稿不改。main finite_task_l17_results_20261013保存汇总与独立审阅；旧L18/L17状态如下保留历史，归档线不重开。
+
+---
+
 # L18成本对应与综述判断：活动证据与学习接口线
 
 2026-10-13。已实际生成完整成本分段：1664到达、2256父动作/END各覆盖一次、1638方向对。本车准备链有六种时长，跨车段不重复计算可重叠准备。新增只读已记录结果核查器，绑定同臂事件与全链来源；失败保持UNKNOWN，单列分析费用，仅做源码及AST/内存编译，尚未执行收件。
