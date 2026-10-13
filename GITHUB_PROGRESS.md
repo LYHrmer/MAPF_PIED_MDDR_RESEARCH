@@ -1,3 +1,13 @@
+# L18成本对应与综述判断：活动证据与学习接口线
+
+2026-10-13。已实际生成完整成本分段：1664到达、2256父动作/END各覆盖一次、1638方向对。本车准备链有六种时长，跨车段不重复计算可重叠准备。新增只读已记录结果核查器，绑定同臂事件与全链来源；失败保持UNKNOWN，单列分析费用，仅做源码及AST/内存编译，尚未执行收件。
+
+[main当前入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/.github/README.md) · [L18成本对应与导师判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#precomparison-l18)。相关工作独立补充已核IGSES优先分支与CBS学习排序，有限搜索未识别直接重复不等于首次。继续完整任务验收及强规则外净收益判断，不预支学习、误差感知或消息节省。
+
+L17原计划SHA be9ff7e8…不变且仍待授权，本轮solver/world/train/独立测试均0、标签0；没有新运行清单，不修改原权重、输入、参数或主稿。实现与证据仍留本机，公开只更新进度；归档学习及高斯备选不重启。下方为保留历史。
+
+---
+
 # L17完整任务准备：活动证据与学习接口线
 
 2026-10-13。新增execution_receipt.py，核原始请求、完整进程、原规则非fallback返回图、所有访问族与费用边界，接执行端；标签仍0。 完整random60输入为1724 visits、2256父动作/普通END、1638对跨车访问，其中1510结构可逆不等于有效候选数。米制及首次START前初态另作新模型声明，原sit及旧输入未改。
