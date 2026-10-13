@@ -1,3 +1,13 @@
+# L15实测／L16准入：活动证据与学习接口线
+
+2026-10-13。L15三项实际配对收件issues=[]；同根同续策与完整策略比较的口径成立，标签仍0。新增只读visit_source_ledger已为外部random实例2生成1724行完整访问账本，保留1664移动转换、26原等待tick及581处派生转向需求；未生成实际END或训练标签。
+
+[main当前入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/.github/README.md) · [实际结果与有限来源准入](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#l15-results-l16-admission)。三臂完整wall点值5.473441/5.250525/4.716276ms不是稳定加速。四外部完整来源已登记，只有random的逐访问计数在4096内；有限格点模型已有条件解析与独立复核，实例空间资格和学习余量仍UNKNOWN。下一补该完整候选的米制/时长、合法初态、全访问覆盖与执行适配。
+
+L15一次性授权已消费，不覆盖新实例/图/几何/世界/训练。主仓保存conflict_timing_l15_results_20261013与source_admission_l16_20261013报告；实现/数据仍留本机。根README和下方全部旧内容是保护的历史，不按旧“未运行/下一步”启动。五线角色不变，归档路线不重开。
+
+---
+
 # L15当前入口：活动证据与学习接口线
 
 2026-10-12。本树policy_pair_receipt已区分单根同续策与完整策略比较，逐项核实4项策略元数据，接新pidfd/wait4时间戳；静态通过，标签0，尚无新收件实测。
