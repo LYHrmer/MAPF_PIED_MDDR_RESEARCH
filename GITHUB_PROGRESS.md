@@ -1,3 +1,22 @@
+# L18 完整成本对应与综述补充
+
+<a id="precomparison-l18"></a>
+
+2026-10-13。三组并行完成完整动作成本对应、作者单位假设审查、相关工作补充与终态收件接口。**实际生成成本分段账本；新增科学求解/世界/训练/独立测试均0，L17唯一冻结计划仍待授权，未建第二张运行清单。导师判断：问题值得继续有限验证，学习选组尚不能锁为已成立贡献。**
+
+- 从冻结L17源实际生成1664个到达分段和1638对方向绑定；2256父动作与普通END恰好覆盖一次。本车Type1测量时长为2.1×1075、2.45×578、6.2×5、6.55×3、8.2×2、10.2×1秒；跨车Type2接收段为2.1秒。前置TURN/WAIT可与跨车等待重叠，不重复加到跨车入边。分段总和3750.85秒仅为保全核对，不是makespan；没有图求值、候选后果或学习标签。
+- 条件递推明确MOVE_START=max(前一已收END＋本车准备链，跨车前驱已收END)，capture和收到END分列，完整终态残余保留。两个解析反例经独立复核：作者冲突/终止的单位差判据以及启发式固定+1，不能直接用于任意秒制边权；最长路能读权重不等于完整算法已兼容。原作者与L17求解输入未修改。
+- query-value线新增只读verify_recorded_costs接口，绑定原PLAN、两PROCESS/native、返回图、同臂事件、来源SHA与时间窗口；仅核已记录事件，不重新执行图/世界。完整成功才核2256父动作/1664到达递推，失败/缺失/不一致保留UNKNOWN。独立分析wall/CPU另列，完整分析进程费用仍UNKNOWN。仅源码审查及AST/内存编译，核查器尚未执行。
+- 相关工作以独立Markdown/TeX/Bib补充交付，原综述和主稿不改。定点核对 [Improved GSES](https://ojs.aaai.org/index.php/AAAI/article/view/34487)、[SES/GSES](https://ojs.aaai.org/index.php/ICAPS/article/download/31477/33637/35534) 和 [学习CBS冲突选择](https://ojs.aaai.org/index.php/AAAI/article/view/17341)：优先分支、分组及教师＋线性排序都有先例。3组有限检索未识别直接学习STPG选组重复项，不等于已排除全部近邻或可写首次。
+
+工作题目仍暂用“有界跟踪误差条件下多机器人路径执行的时序依赖优化”。轻量排序优先，但当前误差仅为安全条件、普通END总数固定，不能预支误差感知或通信节费。继续门槛是完整任务可执行、多合法候选、完整强规则之外有扣除选择开销的可辨收益；目标错位则先调整成本接口或聚焦搜索效率，强规则足够则停止该选组改法。会议底座不限定后续论文水平，移植学习框架也不自动构成论文贡献。
+
+大规模前仍为三个判定阶段：L17完整任务验收 → 完整配对续搜与计时余量 → 合法数据/轻量模型/独立划分及正式比较冻结。只实现/静态边界保持，L17计划SHA仍为 `be9ff7e8c560187981c127a777a4ecda0e7188298392f7d6ffdf6c1d455cb3cc`，没有新批准文件或runtime输出。主线统筹题目，执行线核成本兼容，证据线产账本/收件器；旧学习归档、高斯备选不重开。
+
+本机 main `implementation_binding_evidence/precomparison_l18_20261013/` 保存REPORT、COST_SEGMENTS/CSV/SUMMARY、EXECUTION_COST_CORRESPONDENCE、AUTHOR_COST_COMPATIBILITY、RELATED_WORK_ADDENDUM、DIRECT_NEIGHBOR_CHECK、RECEIPT_INTERFACE及静态核查。query-value树同名目录保存两个脚本。公共Git只同步三活动线的两份进度文件；保护L17全部冻结来源、桌面综述、主稿未提交修改及历史失败，没有大型复制。
+
+---
+
 # L17 完整任务准备与题目审查
 
 <a id="finite-task-l17"></a>
