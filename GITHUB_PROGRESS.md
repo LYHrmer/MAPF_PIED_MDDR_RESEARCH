@@ -1,3 +1,25 @@
+# L17 完整任务准备与题目审查
+
+<a id="finite-task-l17"></a>
+
+2026-10-13。按用户“集中补完整任务后再判断学习余量、当前不新增训练或独立测试”的要求，三组并行完成米制/动作与初态、全部访问依赖、同臂执行适配，并交叉审查作者桥接与运行链。**已实际生成完整输入并编译，未运行新Graph/ALL/solver/world。导师判断：问题值得继续，学习选组仅作CONDITIONAL候选；不以静态接线宣称研究有效。**
+
+- 60车完整random实例2：1750位置记录→1724 visits，1664MOVE＋581TURN＋11WAIT跨度（26原tick）＝2256父动作/普通END。新声明1m格距、.20m本体、.05m误差，MOVE2s、90°TURN.25s、WAIT每tick2s、END延迟.1s；不是原数据实测。原非零sit及来源均未改，另建首START前全部停稳的完整任务初态。
+- 全部1638对跨车同格访问已登记：1510结构可逆、128固定（87初态＋48永久目标−7交集）；48无有限反向。源字段冲突/方向身份碰撞0；1664条Type1保留。可逆对不等于有效候选，实际DAG/ALL及组数仍UNKNOWN。
+- 新变长visit decoder已编译；Astar与冻结L15逐字相同，保留作者Graph/ALL、两方向、下界、环检查、OPEN和保护。两次受同一原编译预算约束的构建共50.687s，ELF从未执行；第一次及修订记录保留。最终ELF SHA `1665115f4f135817b5ec82769ede09c53c19722433b8798622369ee843385598`。
+- 通用执行器与来源收件器已实现：固定全部方向后才START，收到同臂充分MOVE END才推进current/清前访问，TURN/WAIT END不清格，目标永久。11个Python源AST/内存编译通过，153文件冻结身份通过默认静态入口；未用静态核查替代运行资格。
+- 完整报价/付费预算UNKNOWN；固定2256END、额外查询0，选组不自动省消息。逻辑单位图与实际动作秒分列；4000新模型秒是本任务提案，串行3750.85秒只为条件充分界，未测makespan且不改旧H34。虚拟时间不证明机器人计算等待减少。
+
+结合综述：10月9日综述仍以查询为主，尚未覆盖现L1直接底座。本次只补核 [Improved GSES AAAI2025](https://ojs.aaai.org/index.php/AAAI/article/view/34487/36642) 与 [CBS学习冲突选择 AAAI2021](https://ojs.aaai.org/index.php/AAAI/article/view/17341/17148)。两者已涉及分支规则/学习排序，不能以“改选组或加学习”自证新颖性；必须证明强规则之外的完整净开销改善。同格拓扑在s>2R域内独立R，误差目前是安全前提，尚非学习增量。建议工作题目暂为“有界跟踪误差条件下多机器人路径执行的时序依赖优化”；有独立学习收益后再突出排序方法，不开大模型或RL新线。
+
+唯一新运行清单已冻结但**NOT_AUTHORIZED**：一次original（solve6/host8s），成功且返回图合格后一次名义有限执行（host8s/model4000s）；全批60＋5s、4GiB/进程、16MiB监测、零重试，全部失败/未开始保留。无训练、独立测试或学习多臂比较。plan SHA `be9ff7e8c560187981c127a777a4ecda0e7188298392f7d6ffdf6c1d455cb3cc`；request SHA `ece86bf31763e228a5ecc4b249085194ca036a44d4dc71256492b106fe7608ac`。旧L15授权已消费；新授权尚待用户回复，不自动运行。
+
+大规模实验前还剩三个判定阶段：本完整任务实际准入 → 强规则外完整配对续搜与计时余量 → 合法数据/轻量模型/独立划分与正式比较冻结。有必要字段UNKNOWN时不进入训练，不把已看父任务称独立测试。主线统筹合同/题目，执行线推进完整native及控制器，query-value线完成新收件器/标签资格；历史学习归档、高斯备选保持原边界，不重开实验矩阵。
+
+本地交付 main `implementation_binding_evidence/finite_task_l17_20261013/` 下 REPORT、TOPIC_REVIEW、MODEL_REVIEW、DEPENDENCY_REVIEW、EXECUTION_REVIEW、RUN_CHAIN_REVIEW、五份完整输入及 runtime_supervision/RUN_CHECKLIST。执行/证据线对应 `exploration/optimizer_guidance/finite_task_l17_20261013/`。源文件、失败证据和主稿未提交修改保护；公开提交仍仅三活动树的.github/README与本进度，无大型数据/工作树复制。
+
+---
+
 # L15 实测与 L16 来源准入
 
 <a id="l15-results-l16-admission"></a>
