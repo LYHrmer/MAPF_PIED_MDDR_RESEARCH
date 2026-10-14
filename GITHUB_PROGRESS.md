@@ -1,12 +1,14 @@
-# L21学习证据准备：活动执行线
+# L21新任务三规则实测：活动执行线
 
-2026-10-14。用户明确以“相对强基线，稳定、可解释、能迁移的改进”为目标。已定点确认现有逐visit表示与180°转向规则可复用；根实际生产ins3完整声明输入，未改作者或原ELF。1713 visits、2238父动作/END要求、1854访问对，源冲突/方向ID碰撞0；实际DAG/ALL、候选数与执行仍待验。 本轮是数据与新任务静态准备，学习净收益仍UNKNOWN；L20旧instance2停止扩候选和训练的决定保持。
+2026-10-14。三臂原生完整返回、有限预算与进程回收已实际核验；复用原L17 ELF，未调用world。 **ins3三规则未见值得有限复核的净收益正信号；停止当前任务候选扩展、复测和训练。** 旧ins2停止决定保持，不自动换ins4/5，不重开归档路线。
 
-[main当前入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/.github/README.md) · [L21实际交付与下一步](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#learning-readiness-l21)。三项作者强基线original/root_conflict/full_conflict均须公开，首根同续策和全程策略比较分开。稳定性需有限顺序平衡，迁移按完整任务/地图族隔离；同图不同字节不是跨地图泛化，单次费用差不生成标签。
+original／root_conflict／full_conflict实际首根414／80／80，各9候选；展开10／10／15，完整wall122.237490／122.471329／124.504525ms，CPU121.246／122.071／123.987ms。均正常open_exhausted，返回同一完整初图、1854访问对和逻辑代价1669。root-only完整同根同续策，full仅四项策略投影。单次点值不证明稳定胜负；三规则仅覆盖2个首根，不等于穷尽全部候选。
 
-固定ins3/4/5三份小路径已静态核来源与必要容量，仅ins3完成完整字段生产，另外两份保持库存；没有自动TRAIN/CAL/TEST分配。新请求SHA 1a6457b2969f0c6e515d73a649c554ffee3220c8bc140dee163a08d11f3318f1。下一补该新请求的原生准入/三强规则共同计量有限封装，不能套旧301/459索引；尚无新科学运行清单或授权。
+[main当前入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/.github/README.md) · [L21实际结果与导师判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#learning-readiness-l21)。相对强基线的稳定学习改善未建立，可解释特征限制已查明，独立迁移未验证。新根9候选7向量，代表d+b仍2，但全扫描有2条和为3；条件推导与代表/整组语义均有可定位材料，不以增加网络替代收益。
 
-本轮两个离线准备入口各一次，solver/Graph/ALL/world/训练/推理均0，模型NOT_IMPLEMENTED、native学习入口NOT_CONNECTED。保留原误差/时长/保护参数、主稿修改及旧证据；新增材料约6.2MB，不复制大目录。实现及数据留本机，公开仅同步两份进度；归档路线不重开。以下是保留的L20实测及历史。
+用户后来明确授权冻结PLAN 6ef5744120df694781ca8eb9aa911fdb3159ee43339edce7f01e445134b994a6的一次三规则批次，已实际执行并消费。193来源前后核验；每臂solve6/host8、全批60＋5秒、4GiB/进程、累计16MiB、零重试。3次solver，失败/超时0、全部回收，24运行文件12,954,175字节。必要捕获/侧车计入进程费用，共同收件和最终汇总在批次费用中单列，不重复累加。
+
+可靠标签0，模型NOT_IMPLEMENTED、native学习入口NOT_CONNECTED；world/训练/独立测试/新增查询0。完整报价和执行收益仍UNKNOWN。保留本地实现、输入、raw及三份独立复核，公开仅更新两份进度；主稿修改、作者、旧输入/保护参数及全部旧失败保持。以下旧“下一步/未授权”按历史读取，以main最新实际结果为准。
 
 ---
 
