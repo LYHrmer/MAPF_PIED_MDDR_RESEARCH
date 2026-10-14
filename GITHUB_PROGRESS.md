@@ -1,3 +1,31 @@
+# L20 最小收益实测：停止当前任务上的候选扩展
+
+<a id="root-margin-l20-results"></a>
+
+2026-10-14。按本次明确授权，复用L17原ELF及完整请求，在同一初态、同一后续largest_diff下实际运行original、root-index-4、root-index-5各一次。先冻结新清单、候选完整身份与来源哈希，再静态核验共享收件入口。**三臂、配对接纳与全过程监督通过；按运行前导师判据，停止当前random60任务上的候选扩展和训练，不提出追加复测。**
+
+| 臂 | 实际首根组 | 展开／add_node调用 | 完整wall，ms | 完整CPU，ms | 返回逻辑代价 |
+|---|---:|---:|---:|---:|---:|
+| original | 524 | 39／79 | 119.963989 | 119.476 | 1681 |
+| root-index-4 | 301 | 39／79 | 110.993265 | 110.670 | 1681 |
+| root-index-5 | 459 | 36／73 | 135.369406 | 134.758 | 1681 |
+
+三臂完整父状态与9个有序候选相同；两个索引身份与预期一致，均只消费首根一次，后续不强制。均complete、正常open_exhausted、非fallback、exit0、无超时且唯一回收；返回图逐字段相同并等于完整初始图，1638对访问依赖及代价1681不变。add_node是处理函数调用数，不称OPEN入队数；9候选×3臂的27行采集不等于27个独立候选。
+
+**停止依据。** group301完整wall少8.970724ms、CPU少8.806ms，但展开/add_node不变，前向传播计数增加、反向仅一项微降，没有一致的工作减少。进程在首根采集入口的累计时间已经相差6.143435ms，发生在指定候选实际介入之前；完整solve只少0.270468ms、作者search少0.320ms，不能把全部完整点值差归因于选组。group459少3次展开、6次add_node且六项传播计数均少，但完整wall多15.405417ms、CPU多15.282ms。根采集/侧车开销已经支付，不能扣除后制造加速。
+
+运行前MENTOR_GATE规定，相同完整质量下搜索工作与完整费用应呈相互支持的改善，才值得有限复核。本批未达到该标准；不追加group445或其他候选、不进入训练/标签采集、不安排顺序平衡复测。保留group301较快的实际点值及其不确定性，不把它改记为零收益事实，也不据此证明所有MAPF任务或所有学习方法无效。index4虽展开相同，后续38个序位中33处选择不同，不能称搜索轨迹相同。
+
+**收件修正及失败留存。** 新收件器识别finite-visits-l17-native-request-v1，原生输出仍为spatial-state-l3-native-result-v1；复用既有完整对象、首根消费和进程核验组件。共享validate_registration用于准备与实际收件，正常open_exhausted须核完整初始图与初始代价；terminal_node也有独立完整性条件。本批科学失败0、收件失败0、超时0、重试0，无事后改门接纳。原L19 schema失败、原UTC拒绝、离线修复历史和全部原始日志不变。
+
+每臂solve6/host8秒、全批60＋5秒、4GiB/进程、整个运行父目录累计16MiB边界不变。含APPROVAL及最终RECEIPT共11,853,818字节，低于16,777,216字节；未删除日志或改为逐臂额度。外层wall1.776306127秒，不含最后receipt序列化；配对收件wall0.951783794秒、CPU0.951595009秒另列，属于嵌套批次管理费用，不与总时间重复相加。各臂完整wall/CPU包括必要枚举、capture、侧车及native写出；完整货币报价和全树峰值RSS仍UNKNOWN。
+
+world/训练/独立测试/新增查询/合格标签均0。该单次固定顺序DEV仅支持“选组会改变完整搜索工作”，不证明稳定净加速、学习收益、最佳顺序标签、跨任务泛化或实际执行改善；旧L17的129.75模型秒不作为本批三臂执行读数。当前任务停止扩展，不重开加权GSES、相位协议、RL、高斯或旧查询学习路线。
+
+本机main `implementation_binding_evidence/root_margin_l20_results_20261014/` 保存REPORT、SUMMARY、PROCESS_METRICS/ROOT_CANDIDATES/WORK_AND_TIMING、PAIR_DELTAS、MENTOR_DECISION、PROCESS_REVIEW、PAIR_REVIEW和原始路径清单；新实现/清单在`root_margin_l20_20261014/`，原始数据在执行树`root_margin_l20_runtime_20261014/comparison_001/`，只引用不复制。计划SHA `e35572e9e7796ccbda536c1fc499de0a337212021a7499aff93acfa99e5831a8`；comparison SHA `da590110c2da1a1d9d725f4b1d2111a7f50bfbdfe15f7b840f267a0d634085f2`；实际配对收据SHA `982199237ef58683cd72f53e2c362e4c259f5e3b6f71b0b3bc632aa4a4488973`。174项冻结来源及主稿未提交修改保持；仅三活动树两份进度同步GitHub。本次唯一授权已消费，下面探索方案及L19旧“下一步”按历史阅读。
+
+---
+
 # 误差模型来源与研究路线：定点探索及推进方案
 
 <a id="research-exploration-plan-20261013"></a>
