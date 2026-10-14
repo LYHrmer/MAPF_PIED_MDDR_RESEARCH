@@ -1,3 +1,15 @@
+# L21学习证据准备：活动执行线
+
+2026-10-14。用户明确以“相对强基线，稳定、可解释、能迁移的改进”为目标。已定点确认现有逐visit表示与180°转向规则可复用；根实际生产ins3完整声明输入，未改作者或原ELF。1713 visits、2238父动作/END要求、1854访问对，源冲突/方向ID碰撞0；实际DAG/ALL、候选数与执行仍待验。 本轮是数据与新任务静态准备，学习净收益仍UNKNOWN；L20旧instance2停止扩候选和训练的决定保持。
+
+[main当前入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/.github/README.md) · [L21实际交付与下一步](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md#learning-readiness-l21)。三项作者强基线original/root_conflict/full_conflict均须公开，首根同续策和全程策略比较分开。稳定性需有限顺序平衡，迁移按完整任务/地图族隔离；同图不同字节不是跨地图泛化，单次费用差不生成标签。
+
+固定ins3/4/5三份小路径已静态核来源与必要容量，仅ins3完成完整字段生产，另外两份保持库存；没有自动TRAIN/CAL/TEST分配。新请求SHA 1a6457b2969f0c6e515d73a649c554ffee3220c8bc140dee163a08d11f3318f1。下一补该新请求的原生准入/三强规则共同计量有限封装，不能套旧301/459索引；尚无新科学运行清单或授权。
+
+本轮两个离线准备入口各一次，solver/Graph/ALL/world/训练/推理均0，模型NOT_IMPLEMENTED、native学习入口NOT_CONNECTED。保留原误差/时长/保护参数、主稿修改及旧证据；新增材料约6.2MB，不复制大目录。实现及数据留本机，公开仅同步两份进度；归档路线不重开。以下是保留的L20实测及历史。
+
+---
+
 # L20最小收益实测：活动执行线
 
 2026-10-14。复用L17 ELF，实际首根group524／301／459，索引与冻结身份一致；两个指定索引均仅消费首根一次，后续largest_diff不变。完整搜索与原生费用全部保留。 **按事前科研导师判据，停止当前random60任务上的候选扩展和训练，本轮不提出追加复测。**
