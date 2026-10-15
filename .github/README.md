@@ -1,3 +1,11 @@
+# S1统一主线：本入口职责（2026-10-16）
+
+主线实现工作区：空间占用到执行约束与完整执行比较。S1解析接口完成37项静态检查；world、SADG新事件适配和在线费用待验证。旧ins2/ins3选组与训练停止。
+
+[main统一方案](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md) · [可复核实例](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_MINIMAL_EXAMPLE_20261016.md)。SADG核心R0已有证据，复用不重跑；WinkTPG许可未明确，不改源码。解析安排不等于完整执行收益，资格CONDITIONAL；本窗口科学运行0，实物/RL/换序/LMAPF后置。以下历史进度完整保留。
+
+---
+
 # L21新任务三规则实测：活动执行线
 
 2026-10-14。三臂原生完整返回、有限预算与进程回收已实际核验；复用原L17 ELF，未调用world。 **ins3三规则未见值得有限复核的净收益正信号；停止当前任务候选扩展、复测和训练。** 旧ins2停止决定保持，不自动换ins4/5，不重开归档路线。
