@@ -2,7 +2,7 @@
 
 研究问题：多机器人沿 MAPF 路径运动时，如何把有依据的空间误差占用转成通行约束，在相同安全要求和合法信息条件下减少执行等待。当前按[文献修订方案](LITERATURE_GUIDED_RESEARCH_PLAN_20261016.md)优先评估 WinkTPG（T-ASE 2026）与 dSLAP（TAC 2025）的方法结合；MAPF-X 与 ExecTimeNet/ESADG 作为直接近邻。先核误差来源与作者工件，再判断学习预测的增量，最终模型尚未锁定。
 
-最新执行为[G2c 误差来源采集](PROBABILISTIC_ERROR_SOURCE_20261016.md)：旧日志去重与端点诊断完成；新采集按一次授权启动，在显示环境初始化失败，新增观测为0。修正实现及替代清单已静态冻结，尚未授权、未运行。最近有效机制结果仍为[G2b](PROBABILISTIC_WINDOW_DIAGNOSTIC_20261016.md)，仅支持合成方向规则，尚无学习或高斯独立优势。L20/21 选组扩展与训练保持停止。
+最新执行为[G2c 误差来源采集](PROBABILISTIC_ERROR_SOURCE_20261016.md)：旧日志去重与端点诊断完成；两次分别授权的采集先后因显示环境、IPC路径过长失败，新增有效观测为0。短IPC路径修正及唯一清单已静态冻结，未授权、未执行第三次world。最近有效机制结果仍为[G2b](PROBABILISTIC_WINDOW_DIAGNOSTIC_20261016.md)，仅支持合成方向规则，尚无学习或高斯独立优势。L20/21 选组扩展与训练保持停止。
 
 - [当前状态、资格与下一步](.github/README.md)：唯一当前入口。
 - [进度历史](GITHUB_PROGRESS.md)：按轮次查成果、失败和当时的限制。

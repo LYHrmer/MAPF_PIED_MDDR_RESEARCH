@@ -1,3 +1,32 @@
+# G2c 最新结果：替代采集仍失败，短 IPC 路径修正已冻结
+
+2026-10-16 后续更新。用户另行授权计划 `55d1759e…` 后，执行了唯一一次替代采集。**显示连接已恢复，但 Webots 本地通信路径过长，控制器未启动，新增有效采集仍为 0。** 两批分别授权、各尝试一次，自动重试均为 0；第二次授权也已消费。以下首批记录中的“替代计划未运行”已由本节更新，其原始计划、批准前静态记录和失败输出保持。
+
+| 替代批次项目 | 实际结果 |
+|---|---|
+| 原生包装进程 wall / CPU | 40.957769223 / 40.215184 s |
+| 返回码 / host 超时 | 137 / false |
+| 外层已测进程区间 wall | 41.359079651 s |
+| 完整目录（含批准与收据） | 110 个普通文件，1,695,727 字节 |
+| 回收 / 有效采样 | 全部可等待进程已回收 / 0 |
+| 强规则比较、拟合、训练 | 均未运行 |
+
+日志中的本地 socket 路径长 152 字节，而本机 `sockaddr_un.sun_path` 容量为 108 字节。定点核对 Webots R2025a：临时路径由 WEBOTS_TMPDIR、用户名与实例编号组成；控制器端在 socket 监听失败后返回，成功后才启动控制器。这与本次 Name error 和没有采集文件相符。[临时路径源码](https://raw.githubusercontent.com/cyberbotics/webots/R2025a/src/webots/core/WbStandardPaths.cpp)、[控制器启动源码](https://raw.githubusercontent.com/cyberbotics/webots/R2025a/src/webots/control/WbController.cpp)。
+
+按 diagnosing-bugs 技能完成最小路径探针：沙箱外同一临时可写目录、相同后缀，仅改变路径长度，152 字节被 `AF_UNIX path too long` 拒绝，61 字节成功监听。临时探针文件已清理，没有 Webots 调用。沙箱内初试失败也保留，未把它混作科学尝试。未安装 Qt 开发库，探针只验证 OS 通信限制，不宣称完整 Qt/world/controller 链已通过。缺失 USER 的 default 回退与日志一致，不足以解释或修复超长路径；本轮未因此改动用户名环境。
+
+返回码 137、CPU 40.215184 s 与原 40 s/进程硬 CPU 界一致，但现有记录未单独捕获内核终止原因，不能直接写成已证明 CPU 杀死或 host 超时。host 45 s、全批 60＋5 s、4 GiB/进程和累计 16 MiB 均未放宽。各层计时与监督 CPU 分记，不重复相加；完整系统费用仍 UNKNOWN。
+
+下一版只把**整个运行父目录**改为 `/home/lyh/g2c3_20261016`；按照已观察到的固定世界 IPC 后缀，总长降到 78 字节。仍累计监测 project/tmp/cache/config/log/receipt，不使用软链接绕开计量。原世界、原控制器、183 动作、增益、轮速、噪声、真值旁路、2 秒驻留、显示环境白名单及全部资源上限保持。
+
+5 份 Python AST、342 项来源与默认静态入口通过。新计划 SHA `aa348bd8217e6cd082892ceebbab9825e1b0cf37ec22f7690708e9952f8996f0`；唯一清单在高斯树 `exploration/gaussian_mapf/g2c_short_ipc_20261016/RUN_CHECKLIST.md`，新 runtime 尚不存在，**未授权、未执行第三次 world**。完整启动和采集余下环节仍 UNKNOWN，静态修正不等于成功。
+
+导师判断保持：先取得来源真值及端点/驻留记录，暂不进入同风险收益比较或学习。两次失败均属于采集基础设施，不评价概率模型是否有效；旧 R4 约 3.31 cm 的观测参考残差也没有因此变成真值误差界。保留有界基线、G2b 机制结论和最新文献方案，不追加参数或候选寻找正结果。
+
+本机 `implementation_binding_evidence/probabilistic_source_g2c_display_results_20261016/` 保存第二批 SUMMARY、RAW_MANIFEST、DIAGNOSIS 与同步记录；高斯树 `g2c_display_repair_runtime_20261016/` 保留全部输出。第一批 13 文件和第二批 110 文件分别核验；主稿、原输入、原两批计划与失败均保持。
+
+---
+
 # G2c：误差来源核对、端点残差与一次采集失败
 
 2026-10-16。接续[最新文献修订方案](LITERATURE_GUIDED_RESEARCH_PLAN_20261016.md)，本轮补误差来源，不重开 L20/L21 选组扩展。**旧日志诊断已完成；新来源采集按授权启动一次，在 Webots 图形初始化阶段失败，新增有效观测为 0。** 显示环境传递已在独立实现中修正并静态冻结，替代运行未授权、未执行。同风险强规则比较和训练均未开始。
