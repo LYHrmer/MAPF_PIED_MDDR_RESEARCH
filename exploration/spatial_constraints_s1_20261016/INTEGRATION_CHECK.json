@@ -1,0 +1,27 @@
+{
+  "status": "INTERFACE_CHECK_PASS",
+  "round": 1,
+  "checks": [
+    "analytic_source_bound_matches_S1",
+    "reference_acceleration_braking_wait_hold_connected",
+    "closed_form_probe_reproduces_public_observation",
+    "tracking_and_localization_separated_after_hold",
+    "changed_speed_not_silently_admitted",
+    "private_truth_extra_field_rejected",
+    "capture_does_not_equal_delivery",
+    "replayed_progress_rejected",
+    "caller_cannot_shrink_bound",
+    "wire_contains_public_observation_only",
+    "author_dependency_initially_blocks_B",
+    "same_certificate_enables_author_dependency",
+    "CLEAR_does_not_complete_physical_A",
+    "feedback_count_and_wire_bytes_recorded"
+  ],
+  "check_count": 14,
+  "scientific_batches": 0,
+  "optimizer_calls": 0,
+  "world_time_steps": 0,
+  "closed_form_source_probes": 6,
+  "author_api": "unmodified Vertex/Dependency/Status, fixed order, virtual certificate event",
+  "interpretation": "same certificate yields same release; no independent scheduling novelty established"
+}
