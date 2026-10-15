@@ -1,17 +1,15 @@
 # 当前进度：explore/gaussian-mapf-feasibility
 
-2026-10-16。职责：动力学、动作条件、范围和覆盖依据；不预设高斯优越。当前公共结论以 [main 进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md) 为准。
+2026-10-16。职责：运动条件、误差来源、连续范围及覆盖资格。
 
-已完成：S1 探索性空间占用/释放接口及 37 项解析检查；复用 SADG R16/R17；冻结 G2c 两次失败。待验证：合法消息生产链、同信息细分 SADG 适配、完整仿真与全部在线费用。学习未启动。
+| 轮次 | 已完成成果 |
+|---|---|
+| 1 | 声明理想单轮车原语、连续解析界，参考/真实/定位/控制分别记录。 |
+| 2 | 传播直行—转向误差；后续横向 .020006 m 超出 .01 m 适用集，拒绝静默重置或拼接。 |
+| 3 | 公开允许集绑定单位/路径/控制器，显式留定位数值预算，本地 END 必须已完成原语。 |
 
-本轮完成 Git 当前文件列表和导航整理；本机冻结文件、失败、独有数据和主稿修改不变。清理前全部进度与文件见 [归档](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/archive/pre-cleanup-source-20261016)。
+[本分支模块](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/gaussian-mapf-feasibility/exploration/spatial_source/README.md) · [完整导师判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md) · [公共进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md)。
 
-后续三轮：①来源—反馈—作者事件接口；②同信息对照与失效/费用核验；③联合验收及有限运行准备。三轮均服务同一问题，不重启旧课题。科学运行需独立有效清单和授权。
+最终 66 项合同检查及原 S1 37 项解析检查通过，三轮分别提交。无 world、优化器、训练或新独立任务数据；同信息 SADG 与自有 guard 等价，不宣称净执行收益或新意。下一步仅保留空间约束增量和原语条件闭合的资格工作。
 
-## 推进第 1 轮：已完成
-
-声明单轮车闭式原语及全窗解析界已接入，公开观测与评估真值分通道；无 world 采集。 本轮科学批次、优化器和 world 时间步均 0。
-
-## 推进第 2 轮：已完成
-
-直行—转向后下一初态集不封闭：横向 .020006 m 超过 .01 m，已拒绝自动拼接；移动转向、永久非零漂移拒绝。 科学批次、优化器及 world 时间步 0。
+本轮清理保留冻结证据和本机独有文件；[清理前完整历史](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/archive/pre-cleanup-source-20261016)。G2c 旧许可均消费，短 IPC 未授权未执行。没有新科学批次许可；主稿与旧失败不变。

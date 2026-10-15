@@ -10,6 +10,36 @@ import math
 CONDITION = 'straight_trapezoid_v05_a1_length_le3_v1'
 CONTROLLER = 'ideal_feedforward_trapezoid_v1'
 COMMITMENT = 'A_east_to_2_permanent_hold_v1'
+LOC_BIAS_MAX = .009999  # Remaining 1e-6 m covers numeric/serialization budget.
+
+
+def public_contract():
+    """Public admissible set, not the actual initial error or private state."""
+    return {'schema': 'declared_unicycle_source_v1', 'condition': CONDITION,
+            'controller': CONTROLLER, 'units': ['m', 's', 'rad'],
+            'speed': '.5', 'acceleration': '1', 'body_half': ['.3', '.1'],
+            'initial_half': ['.02', '.01', '.002'], 'length_range': ['.25', '3'],
+            'tracking_half': ['.03', '.02'], 'heading_bound': '.002',
+            'localization_bound': '.01', 'localization_bias_max': '.009999',
+            'numeric_localization_reserve': '.000001', 'coordinate_limit': '10',
+            'suffix_commitment': COMMITMENT, 'hold': 'zero_input_no_drift_permanent',
+            'risk': 'DECLARED_HARD_SET_NOT_EMPIRICAL_OR_GAUSSIAN'}
+
+
+def admit_fixture(fixture):
+    """Bind S1 geometry and modes to this source before starting any task."""
+    c = public_contract()
+    if (fixture['condition'] != CONDITION or fixture['units'] != {'length': 'm', 'time': 's', 'angle': 'rad'}
+            or fixture['speed'] != c['speed'] or fixture['acceleration'] != c['acceleration']
+            or fixture['body_half'] != c['body_half'] or fixture['heading_error'] != c['heading_bound']
+            or fixture['localization_bound'] != c['localization_bound']
+            or fixture['tracking_parallel'] != c['tracking_half'][0]
+            or fixture['tracking_cross'] != c['tracking_half'][1]
+            or fixture['A_path'] != [['-1', '0'], ['0', '0'], ['2', '0']]
+            or fixture['B_path'] != [['0', '-1'], ['0', '0'], ['0', '1']]
+            or fixture['existing_order'] != 'A_BEFORE_B'):
+        raise ValueError('fixture differs from qualified source/commitment')
+    return c
 
 
 @dataclass(frozen=True)
@@ -20,6 +50,8 @@ class Envelope:
     heading: Q
 
     def __post_init__(self):
+        if any(not isinstance(x, Q) for x in (self.along, self.cross, self.heading)):
+            raise ValueError('exact rational extents required')
         if min(self.along, self.cross, self.heading) < 0:
             raise ValueError('negative uncertainty extent')
 
@@ -38,7 +70,8 @@ def admits_straight(initial):
 
 
 def stopped_quarter_turn(initial, *, speed='0', omega='0'):
-    if Q(speed) != 0 or Q(omega) != 0 or max(initial.along, initial.cross) > Q('.03'):
+    if (Q(speed) != 0 or Q(omega) != 0 or max(initial.along, initial.cross) > Q('.03')
+            or initial.heading > Q('.002')):
         raise ValueError('turn requires stopped state in the declared position set')
     # Position does not move under the declared ideal pivot controller. Express
     # the same error in the new local axes; do not reset it at the waypoint.
@@ -71,7 +104,7 @@ class Initial:
 
     def __post_init__(self):
         for v, limit in zip((self.along, self.cross, self.heading, self.loc_x, self.loc_y),
-                            (.02, .01, .002, .01, .01)):
+                            (.02, .01, .002, LOC_BIAS_MAX, LOC_BIAS_MAX)):
             if not math.isfinite(v) or abs(v) > limit:
                 raise ValueError('initial condition outside source contract')
 
@@ -92,12 +125,18 @@ class Straight:
         if (self.axis not in ('E', 'N') or not .25 <= self.length <= 3
                 or self.speed != .5 or self.acceleration != 1.
                 or not math.isfinite(self.start_time) or self.start_time < 0
-                or len(self.start) != 2 or not all(math.isfinite(x) for x in self.start)):
+                or len(self.start) != 2 or not all(math.isfinite(x) and abs(x)+self.length+.1 <= 10 for x in self.start)):
             raise ValueError('unsupported controller/mode/initial condition')
 
     @property
     def duration(self):
         return self.length/self.speed + self.speed/self.acceleration
+
+    def observation(self, now, *, kind='PROGRESS_BOUND'):
+        record = self.sample(now)
+        if kind not in ('PROGRESS_BOUND', 'END') or (kind == 'END' and record['evaluation']['mode'] != 'GOAL_HOLD'):
+            raise ValueError('local controller has not completed the action')
+        return record['sensor']
 
     def sample(self, now):
         if not math.isfinite(now) or now < 0:
@@ -124,6 +163,10 @@ class Straight:
         sensor = {'task': self.task, 'robot': self.robot, 'action': self.robot+'_move',
                   'condition': CONDITION, 'capture': format(now, '.12g'),
                   'observed_x': format(observed[0], '.12g'), 'observed_y': format(observed[1], '.12g')}
+        # Check the *serialized* observation against represented truth. Numeric
+        # reserve is explicit; the hard tracking proof still comes from bounds().
+        if any(abs(Q(sensor[k])-Q(truth[i])) > Q('.01') for i,k in enumerate(('observed_x', 'observed_y'))):
+            raise ValueError('serialized localization violated declared numeric budget')
         evaluation = {'task': self.task, 'robot': self.robot, 'physical_time': now,
                       'reference_phase': s, 'pose_ref': ref, 'pose_true': truth,
                       'pose_observed': observed, 'control': {'v_cmd': v, 'omega_cmd': 0.},
