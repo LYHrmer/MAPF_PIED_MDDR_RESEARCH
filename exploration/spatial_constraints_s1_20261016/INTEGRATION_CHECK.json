@@ -1,6 +1,6 @@
 {
   "status": "INTERFACE_CHECK_PASS",
-  "round": 2,
+  "round": 3,
   "checks": [
     "analytic_source_bound_matches_S1",
     "reference_acceleration_braking_wait_hold_connected",
@@ -39,13 +39,41 @@
     "same_information_pair_identity_accepted",
     "unequal_controller_pair_rejected",
     "failed_task_remains_in_censored_metric",
-    "nested_costs_not_added_twice"
+    "nested_costs_not_added_twice",
+    "source_contract_bound_to_exact_fixture",
+    "wrong_map_units_rejected",
+    "too_small_body_heading_occupancy_rejected",
+    "numeric_localization_reserve_not_spent_as_physical_bias",
+    "unbounded_numeric_coordinate_scale_rejected",
+    "controller_cannot_END_mid_motion",
+    "serialized_sensor_fits_localization_budget",
+    "directional_guard_source_to_release",
+    "directional_guard_complete_public_receipt",
+    "directional_guard_missing_END_receipt_rejected",
+    "directional_SADG_events_source_to_release",
+    "directional_SADG_events_complete_public_receipt",
+    "directional_SADG_events_missing_END_receipt_rejected",
+    "circle_guard_source_to_release",
+    "circle_guard_complete_public_receipt",
+    "circle_guard_missing_END_receipt_rejected",
+    "circle_SADG_events_source_to_release",
+    "circle_SADG_events_complete_public_receipt",
+    "circle_SADG_events_missing_END_receipt_rejected",
+    "directional_endpoint_source_to_release",
+    "directional_endpoint_complete_public_receipt",
+    "directional_endpoint_missing_END_receipt_rejected",
+    "all_engines_receive_same_A_progress_bytes",
+    "inexact_continuous_certificate_input_rejected",
+    "unqualified_turn_heading_rejected",
+    "receiver_clock_reversal_rejected",
+    "cost_segment_outside_total_rejected",
+    "changed_frozen_contract_fails_closed"
   ],
-  "check_count": 38,
+  "check_count": 66,
   "scientific_batches": 0,
   "optimizer_calls": 0,
   "world_time_steps": 0,
-  "closed_form_source_probes": 10,
+  "source_probe_scope": "fixed closed-form unit inputs, not scientific samples",
   "same_information_pairs": [
     {
       "geometry": "directional",
@@ -60,6 +88,54 @@
       "meaning": "API_contract_fixture_not_world_benchmark"
     }
   ],
+  "complete_public_sessions": [
+    {
+      "geometry": "directional",
+      "engine": "guard",
+      "release": "343/100",
+      "messages": 4,
+      "wire_bytes": 1351,
+      "A_progress_wire_sha256": "bfd0da9eb351528384c5f8324bc6b3fe0bb8c2cb73a52cd6331bbbd5b5189506",
+      "scope": "complete_public_message_fixture_not_world_execution"
+    },
+    {
+      "geometry": "directional",
+      "engine": "SADG_events",
+      "release": "343/100",
+      "messages": 4,
+      "wire_bytes": 1351,
+      "A_progress_wire_sha256": "bfd0da9eb351528384c5f8324bc6b3fe0bb8c2cb73a52cd6331bbbd5b5189506",
+      "scope": "complete_public_message_fixture_not_world_execution"
+    },
+    {
+      "geometry": "circle",
+      "engine": "guard",
+      "release": "393/100",
+      "messages": 4,
+      "wire_bytes": 1351,
+      "A_progress_wire_sha256": "bfd0da9eb351528384c5f8324bc6b3fe0bb8c2cb73a52cd6331bbbd5b5189506",
+      "scope": "complete_public_message_fixture_not_world_execution"
+    },
+    {
+      "geometry": "circle",
+      "engine": "SADG_events",
+      "release": "393/100",
+      "messages": 4,
+      "wire_bytes": 1351,
+      "A_progress_wire_sha256": "bfd0da9eb351528384c5f8324bc6b3fe0bb8c2cb73a52cd6331bbbd5b5189506",
+      "scope": "complete_public_message_fixture_not_world_execution"
+    },
+    {
+      "geometry": "directional",
+      "engine": "endpoint",
+      "release": "33/5",
+      "messages": 4,
+      "wire_bytes": 1347,
+      "A_progress_wire_sha256": "bfd0da9eb351528384c5f8324bc6b3fe0bb8c2cb73a52cd6331bbbd5b5189506",
+      "scope": "complete_public_message_fixture_not_world_execution"
+    }
+  ],
   "author_api": "unmodified Vertex/Dependency/Status, fixed order, virtual certificate event",
-  "interpretation": "same certificate yields same release; no independent scheduling novelty established"
+  "interpretation": "same certificate yields same release; no independent scheduling novelty established",
+  "verified_integration_pins": 21
 }

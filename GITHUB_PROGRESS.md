@@ -1,17 +1,15 @@
 # 当前进度：explore/error-aware-guidance
 
-2026-10-16。职责：空间占用、冲突及释放接口；完整执行与外部基线适配。当前公共结论以 [main 进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md) 为准。
+2026-10-16。职责：连续占用、冲突和释放接口及同信息作者基线适配。
 
-已完成：S1 探索性空间占用/释放接口及 37 项解析检查；复用 SADG R16/R17；冻结 G2c 两次失败。待验证：合法消息生产链、同信息细分 SADG 适配、完整仿真与全部在线费用。学习未启动。
+| 轮次 | 已完成成果 |
+|---|---|
+| 1 | 接入真实固定版 SADG Vertex/Dependency/Status，CLEAR 虚拟事件不冒充物理动作完成。 |
+| 2 | 方向/圆分别与同信息细分作者事件配对，放行一致；重入、承诺变化、普通 END 绕过拒绝。 |
+| 3 | Session 绑定源合同、车身/误差外包、起点等待/终点驻留和合法消息；21 项输入 SHA、66 项联合检查通过。 |
 
-本轮完成 Git 当前文件列表和导航整理；本机冻结文件、失败、独有数据和主稿修改不变。清理前全部进度与文件见 [归档](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/archive/pre-cleanup-execution-20261016)。
+[本分支模块](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/INTEGRATION_NOTICE.md) · [完整导师判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md) · [公共进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md)。
 
-后续三轮：①来源—反馈—作者事件接口；②同信息对照与失效/费用核验；③联合验收及有限运行准备。三轮均服务同一问题，不重启旧课题。科学运行需独立有效清单和授权。
+最终 66 项合同检查及原 S1 37 项解析检查通过，三轮分别提交。无 world、优化器、训练或新独立任务数据；同信息 SADG 与自有 guard 等价，不宣称净执行收益或新意。下一步仅保留空间约束增量和原语条件闭合的资格工作。
 
-## 推进第 1 轮：已完成
-
-接入固定作者 Vertex/Dependency/Status；虚拟 CLEAR 完成时 A 物理动作仍 IN_PROGRESS；14 项联合合同检查通过。 本轮科学批次、优化器和 world 时间步均 0。
-
-## 推进第 2 轮：已完成
-
-累计 38 项联合检查通过：方向两者均 3.43 s，圆形两者均 3.93 s；均为 API 合同例，非 world 实验。 科学批次、优化器及 world 时间步 0。
+本轮清理保留冻结证据和本机独有文件；[清理前完整历史](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/archive/pre-cleanup-execution-20261016)。G2c 旧许可均消费，短 IPC 未授权未执行。没有新科学批次许可；主稿与旧失败不变。

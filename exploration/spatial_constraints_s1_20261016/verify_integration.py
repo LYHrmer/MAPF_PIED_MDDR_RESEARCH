@@ -1,5 +1,6 @@
 """Contract checks with closed-form probes; no world stepping or optimization."""
 from dataclasses import replace
+import hashlib
 import importlib.util
 import json
 from pathlib import Path
@@ -7,6 +8,7 @@ import sys
 
 from author_events import FixedOrderEvents, load_author
 from interface import q, release, sweep
+from session import Session
 
 BASE = Path(__file__).resolve().parent
 HOME = BASE.parents[2]
@@ -26,6 +28,21 @@ def dependencies():
     author = load_author(HOME/'.cache/mapf_research/sadg-controller-c2626d9',
                          BASE.parent/'error_guidance/sadg_preflight_20261004_r16/SOURCE_ENVIRONMENT.json')
     return source, feedback, author
+
+
+def verify_pins():
+    manifest = json.loads((BASE/'INTEGRATION_MANIFEST.json').read_text())
+    roots = {'execution': BASE.parents[1], 'source': HOME/'MAPF_GAUSSIAN_FEASIBILITY',
+             'tools': HOME/'MAPF_QUERY_VALUE_FEASIBILITY',
+             'author': HOME/'.cache/mapf_research/sadg-controller-c2626d9'}
+    count = 0
+    for group, files in manifest['files'].items():
+        for name, expected in files.items():
+            path = (roots[group]/name).resolve()
+            if not path.is_relative_to(roots[group].resolve()) or hashlib.sha256(path.read_bytes()).hexdigest() != expected:
+                raise ValueError('frozen integration input changed: '+group+'/'+name)
+            count += 1
+    return count
 
 
 def certificate(packet, fixture, *, geometry='directional', suffix=None):
@@ -62,10 +79,10 @@ def check():
     need([s['evaluation']['mode'] for s in samples] == ['WAIT', 'ACCEL', 'STRAIGHT', 'BRAKE', 'GOAL_HOLD'],
          'reference_acceleration_braking_wait_hold_connected')
     need(q(samples[2]['sensor']['observed_x']) == q('.54'), 'closed_form_probe_reproduces_public_observation')
-    shifted = source.Straight(fixture['id'], 'A', (-1, 0), 'E', 3., initial=source.Initial(.02, .01, .002, .01, -.01))
+    shifted = source.Straight(fixture['id'], 'A', (-1, 0), 'E', 3., initial=source.Initial(.02, .01, .002, .009999, -.009999))
     rec = shifted.sample(8.)
     need(abs(rec['evaluation']['tracking_error'][1]) > .01 and
-         abs(rec['evaluation']['localization_error'][0]-.01) < 1e-12,
+         abs(rec['evaluation']['localization_error'][0]-.009999) < 1e-12,
          'tracking_and_localization_separated_after_hold')
     rejects(lambda: source.Straight(fixture['id'], 'A', (-1, 0), 'E', 3., speed=.6), 'changed_speed_not_silently_admitted')
     binding = feedback.Binding(fixture['id'], 'A', 'A_move', fixture['condition'], source.COMMITMENT)
@@ -148,13 +165,66 @@ def check():
     measured = costs.finish()
     need(measured['wall_ns'] >= measured['segments'][-1]['wall_ns'] and
          [s['depth'] for s in measured['segments']] == [1, 0], 'nested_costs_not_added_twice')
-    return {'status': 'INTERFACE_CHECK_PASS', 'round': 2, 'checks': passed,
+
+    # Round 3: public-only complete session, source/geometry binding and receipts.
+    need(source.admit_fixture(fixture)['risk'] == 'DECLARED_HARD_SET_NOT_EMPIRICAL_OR_GAUSSIAN',
+         'source_contract_bound_to_exact_fixture')
+    changed = {**fixture, 'units': {'length': 'cm', 'time': 's', 'angle': 'rad'}}
+    rejects(lambda: source.admit_fixture(changed), 'wrong_map_units_rejected')
+    changed = {**fixture, 'directional_half': ['.31', '.11']}
+    rejects(lambda: Session(changed, source, feedback, author, geometry='directional', engine='guard'),
+            'too_small_body_heading_occupancy_rejected')
+    rejects(lambda: source.Initial(loc_x=.01), 'numeric_localization_reserve_not_spent_as_physical_bias')
+    rejects(lambda: source.Straight(fixture['id'], 'A', (1e9, 0), 'E', 3.), 'unbounded_numeric_coordinate_scale_rejected')
+    rejects(lambda: a.observation(3.33, kind='END'), 'controller_cannot_END_mid_motion')
+    observed = shifted.observation(8.)
+    need(abs(q(observed['observed_x'])-q(str(rec['evaluation']['pose_true'][0]))) <= q('.01'),
+         'serialized_sensor_fits_localization_budget')
+    sessions = []
+    for geometry, engine, expected in [('directional', 'guard', '3.43'), ('directional', 'SADG_events', '3.43'),
+                                       ('circle', 'guard', '3.93'), ('circle', 'SADG_events', '3.93'),
+                                       ('directional', 'endpoint', '6.6')]:
+        tracker = feedback.Costs()
+        with tracker.measure('complete_public_session'):
+            sess = Session(fixture, source, feedback, author, geometry=geometry, engine=engine)
+            for p in packets+[end_packet]:
+                sess.receive(p, now=p.delivery)
+            need(sess.started_at == q(expected), geometry+'_'+engine+'_source_to_release')
+            b = source.Straight(fixture['id'], 'B', (0, -1), 'N', 2., start_time=float(sess.started_at))
+            b_end = sess.started_at+q('4.5')
+            bp = feedback.Producer(sess.bindings['B']).capture(b.observation(float(b_end), kind='END'), now=str(b_end), kind='END')
+            sess.receive(bp, now=bp.delivery)
+        receipt = feedback.public_receipt(sess.packets, tracker.finish(), task=fixture['id'])
+        need(receipt['messages'] == 4 and sess.ended == {'A', 'B'}, geometry+'_'+engine+'_complete_public_receipt')
+        rejects(lambda: feedback.public_receipt(sess.packets[:-1], tracker.finish(), task=fixture['id']),
+                geometry+'_'+engine+'_missing_END_receipt_rejected')
+        sessions.append({'geometry': geometry, 'engine': engine, 'release': str(sess.started_at),
+                         'messages': receipt['messages'], 'wire_bytes': receipt['wire_bytes'],
+                         'A_progress_wire_sha256': receipt['A_progress_wire_sha256'],
+                         'scope': 'complete_public_message_fixture_not_world_execution'})
+    need(len({s['A_progress_wire_sha256'] for s in sessions}) == 1, 'all_engines_receive_same_A_progress_bytes')
+    rejects(lambda: source.Envelope(.02, q('.01'), q('.002')), 'inexact_continuous_certificate_input_rejected')
+    rejects(lambda: source.stopped_quarter_turn(source.Envelope(q('.01'), q('.01'), q('.1'))),
+            'unqualified_turn_heading_rejected')
+    late_inbox = feedback.Inbox(binding)
+    late_inbox.admit(packets[0], now='100')
+    rejects(lambda: late_inbox.admit(packets[1], now='3.93'), 'receiver_clock_reversal_rejected')
+    invalid_cost = {'wall_ns': 1, 'cpu_ns': 1, 'aggregation': 'OUTER_ENVELOPE_ONLY_DO_NOT_SUM_NESTED',
+                    'segments': [{'name': 'invalid', 'depth': 0, 'wall_ns': 2, 'cpu_ns': 1}]}
+    rejects(lambda: feedback.public_receipt(sess.packets, invalid_cost, task=fixture['id']),
+            'cost_segment_outside_total_rejected')
+    sess = Session(fixture, source, feedback, author, geometry='directional', engine='guard')
+    sess.fixture['speed'] = '.6'
+    rejects(lambda: sess.receive(packets[0], now=packets[0].delivery), 'changed_frozen_contract_fails_closed')
+    return {'status': 'INTERFACE_CHECK_PASS', 'round': 3, 'checks': passed,
             'check_count': len(passed), 'scientific_batches': 0, 'optimizer_calls': 0,
-            'world_time_steps': 0, 'closed_form_source_probes': 10,
+            'world_time_steps': 0, 'source_probe_scope': 'fixed closed-form unit inputs, not scientific samples',
             'same_information_pairs': equality,
+            'complete_public_sessions': sessions,
             'author_api': 'unmodified Vertex/Dependency/Status, fixed order, virtual certificate event',
             'interpretation': 'same certificate yields same release; no independent scheduling novelty established'}
 
 
 if __name__ == '__main__':
-    print(json.dumps(check(), ensure_ascii=False, indent=2))
+    pins = verify_pins()
+    print(json.dumps({**check(), 'verified_integration_pins': pins}, ensure_ascii=False, indent=2))
