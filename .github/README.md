@@ -1,3 +1,17 @@
+# 概率模型优先适配评估（G2a）
+
+<a id="probabilistic-model-g2a"></a>
+
+2026-10-15。用户确认保留有界基线、优先评估概率对象与合法决策，有净增量再引入学习。本分支从限额备选提升为优先适配评估；唯一总入口仍为 [main](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/.github/README.md)，详见[本轮完整评估](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/PROBABILISTIC_MODEL_ASSESSMENT_20261015.md)。
+
+三组只读核查确认：优先对象为空间跟踪误差，定位误差/动作时长分栏，未来位置分布为派生量；L17只有名义起终点事件，缺连续参考和误差真值。固定置信半径在原 s>2R 网格域不会改变依赖；单时点 Gaussian 区分条件不能替代完整窗口风险、合法END或实际任务收益。
+
+CC-K-CBS 固定58f152dc已定点读源码：部分检查器硬编码0.9，选项名/风险分配及初始化需显式核对；存在非学习距离风险分配强规则。没有克隆、构建或运行原版，R0、同风险基线、数据和仿真有效性仍UNKNOWN，整体CONDITIONAL。下一步补连续参考/误差来源与风险窗口合同，核依赖/场景后准备唯一有限清单，不先训练。
+
+本轮 solver/world/概率采样/训练/测试/新增查询/机器人运行均0，未改有界输入、保护参数、主稿、旧结果或G1合同。旧G1关于预测不确定性的对象由新报告明确区分；以下历史优先级/运行状态不覆盖本入口。L20/21已停止的任务不重开，旧授权不外溢。
+
+---
+
 # 分支定位：限额备选
 
 2026-10-12，导航同步至L14。分支 `explore/gaussian-mapf-feasibility`。**全项目最新状态只读 [main当前入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/.github/README.md)，分支职责见 [统一导航](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/README.md#分支与工作区)。**
