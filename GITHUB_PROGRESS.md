@@ -1,3 +1,11 @@
+# S1统一主线：本入口职责（2026-10-16）
+
+公共工具：合法反馈、日志、配对收件与费用。接入S1进度界包须明确新增消息成本和共同信息；旧协议/授权保持。不重开“查询谁”、旧候选扩展或训练。
+
+[main统一方案](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md) · [可复核实例](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_MINIMAL_EXAMPLE_20261016.md)。SADG核心R0已有证据，复用不重跑；WinkTPG许可未明确，不改源码。解析安排不等于完整执行收益，资格CONDITIONAL；本窗口科学运行0，实物/RL/换序/LMAPF后置。以下历史进度完整保留。
+
+---
+
 # L21新任务三规则实测：活动证据与学习接口线
 
 2026-10-14。正确L17 schema及逐臂前缀收件实际通过；原始候选/context/双孩/完整返回有独立只读复核，标签仍0。 **ins3三规则未见值得有限复核的净收益正信号；停止当前任务候选扩展、复测和训练。** 旧ins2停止决定保持，不自动换ins4/5，不重开归档路线。
