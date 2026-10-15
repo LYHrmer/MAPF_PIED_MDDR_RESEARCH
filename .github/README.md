@@ -1,17 +1,17 @@
 # MAPF 空间占用与执行约束
 
-更新：2026-10-16。当前入口：`explore/query-value-feasibility`。职责：合法反馈、配对日志和费用公共工具；不重开查询选择。
+2026-10-16。`explore/query-value-feasibility`：合法反馈、配对收件和完整费用工具。四个活动分支服务一个论文问题，旧查询学习分支已归档退出。
 
-唯一研究问题：固定 MAPF 路径和已有通行次序，检查动作条件下的完整空间占用如何改变冲突、释放事件和允许时间安排。目标为完整任务完成时间之和；当前仍为 CONDITIONAL，未确认创新或学习收益。
+**已完成三轮实质推进：来源与消息接通 → 同信息强对照与失效核验 → 完整接口及收缩验收。** 最终 66 项联合合同检查、原 37 项解析检查通过；21 个冻结集成输入 SHA 已核。无新科学批次、world 时间步、优化器或训练。
 
-- [统一方案](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)
-- [可复核空间—时间实例](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_MINIMAL_EXAMPLE_20261016.md)
-- [当前公共进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md)
-- [工作区、归档和恢复说明](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/REPOSITORY_NAVIGATION.md)
-- [最新 G2c 来源及失败记录](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/PROBABILISTIC_ERROR_SOURCE_20261016.md)
+主要判断：相同空间证书和进度信息下，SADG 事件适配与自有 guard 的放行一致。停止“仅提前释放即可形成独立调度新意”的解释；保留接口。直行—转向后初态集不闭合，不能直接扩大地图实验。学习保持关闭。
 
-现有 S1 为 37 项解析/接口检查，不是 world 实测。下一轮先接合法反馈及同信息 SADG 强对照。简单方向规则已解释示例差异，学习保持关闭。
+- [本入口成果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/query-value-feasibility/exploration/execution_feedback/README.md)
+- [统一方案与导师分析](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)
+- [当前进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md)
+- [工作区、文件归档和恢复](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/REPOSITORY_NAVIGATION.md)
+- [G2c 来源与失败](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/PROBABILISTIC_ERROR_SOURCE_20261016.md)
 
-G2c 两次许可已消费、有效新数据 0；短 IPC 计划 aa348bd8…未授权未执行。旧拖车来源诊断不阻塞新声明单轮车模型。L20/L21 和旧查询学习停止；换序、RL、LMAPF 与实物后置。
+G2c 两次许可已消费，新数据 0；短 IPC 计划未授权未执行，旧拖车不阻塞主线。本轮没有新 world 批次或默认运行许可。L20/L21 和旧查询学习保持停止，RL/换序/LMAPF/实物后置。
 
-本分支清理前的文档、代码与完整进度：[归档快照](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/archive/pre-cleanup-tools-20261016)。冻结本机原路径保留；归档中的旧“下一步”和运行许可不再有效。支线根 README 是本机冻结旧稿，日常请使用本入口。
+[清理前完整历史](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/archive/pre-cleanup-tools-20261016)。冻结文件保留本机原路径；Git 当前文件列表已精简，不代表磁盘数据被删除。支线旧根 README 属于本机冻结历史，日常以本页和 main 为准。

@@ -1,17 +1,15 @@
 # 当前进度：explore/query-value-feasibility
 
-2026-10-16。职责：合法反馈、配对日志和费用公共工具；不重开查询选择。当前公共结论以 [main 进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md) 为准。
+2026-10-16。职责：合法反馈、配对收件和完整费用工具。
 
-已完成：S1 探索性空间占用/释放接口及 37 项解析检查；复用 SADG R16/R17；冻结 G2c 两次失败。待验证：合法消息生产链、同信息细分 SADG 适配、完整仿真与全部在线费用。学习未启动。
+| 轮次 | 已完成成果 |
+|---|---|
+| 1 | 公开观测生产、capture/delivery、任务/动作/条件/承诺和去重，排除私有真值。 |
+| 2 | END、交付队列、配对身份、嵌套费用和失败删失统计。 |
+| 3 | 完整四包收据及流 SHA/字节，缺包、时钟倒退、超出总费用的子段拒绝。 |
 
-本轮完成 Git 当前文件列表和导航整理；本机冻结文件、失败、独有数据和主稿修改不变。清理前全部进度与文件见 [归档](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/archive/pre-cleanup-tools-20261016)。
+[本分支模块](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/query-value-feasibility/exploration/execution_feedback/README.md) · [完整导师判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md) · [公共进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md)。
 
-后续三轮：①来源—反馈—作者事件接口；②同信息对照与失效/费用核验；③联合验收及有限运行准备。三轮均服务同一问题，不重启旧课题。科学运行需独立有效清单和授权。
+最终 66 项合同检查及原 S1 37 项解析检查通过，三轮分别提交。无 world、优化器、训练或新独立任务数据；同信息 SADG 与自有 guard 等价，不宣称净执行收益或新意。下一步仅保留空间约束增量和原语条件闭合的资格工作。
 
-## 推进第 1 轮：已完成
-
-任务/动作/条件/承诺绑定，合法交付和去重已接入，拒绝私有真值字段并统计消息字节。 本轮科学批次、优化器和 world 时间步均 0。
-
-## 推进第 2 轮：已完成
-
-END 观测、合法交付队列、同信息配对、嵌套费用和失败删失统计已接入；普通 END 不作为释放证书。 科学批次、优化器及 world 时间步 0。
+本轮清理保留冻结证据和本机独有文件；[清理前完整历史](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/archive/pre-cleanup-tools-20261016)。G2c 旧许可均消费，短 IPC 未授权未执行。没有新科学批次许可；主稿与旧失败不变。

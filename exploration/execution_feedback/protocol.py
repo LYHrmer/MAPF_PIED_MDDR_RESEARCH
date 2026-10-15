@@ -72,6 +72,7 @@ class Inbox:
     """One receiver per arm; exactly the same packet bytes go to every arm."""
     def __init__(self, binding):
         self.binding, self.last_seq, self.last_capture = binding, -1, Q(-1)
+        self.last_now = Q(-1)
         self.received_bytes = self.received_count = 0
 
     def admit(self, packet, *, now):
@@ -80,12 +81,13 @@ class Inbox:
         if packet.kind not in ('PROGRESS_BOUND', 'END') or type(packet.seq) is not int or packet.seq <= self.last_seq:
             raise ValueError('wrong kind or replay/out-of-order sequence')
         t, delivery = exact(packet.capture), exact(packet.delivery)
-        if not 0 <= t <= delivery <= exact(now) or t <= self.last_capture:
+        if not 0 <= t <= delivery <= exact(now) or t <= self.last_capture or exact(now) < self.last_now:
             raise ValueError('undelivered or stale observation')
         if packet.localization_bound != '.01' or packet.tracking_bound != '.03':
             raise ValueError('unqualified smaller/different bounds')
         exact(packet.observed_x); exact(packet.observed_y)
         self.last_seq, self.last_capture = packet.seq, t
+        self.last_now = exact(now)
         self.received_count += 1
         self.received_bytes += len(packet.wire())
         return {'task': packet.binding.task, 'condition': packet.binding.condition,
@@ -168,3 +170,38 @@ def completion_summary(rows, *, robots=('A', 'B'), horizon='20'):
         results.append({**row, 'success': complete, 'censored_sum_completion': str(sum(charged)),
                         'censored_makespan': str(max(charged)), 'failure_retained': not complete})
     return results
+
+
+def public_receipt(packets, costs, *, task):
+    """Complete S1 receive ledger; no evaluation truth or task-success inference."""
+    counts = {(r, k): 0 for r in ('A', 'B') for k in ('PROGRESS_BOUND', 'END')}
+    last = {}
+    wire_bytes = 0
+    for p in packets:
+        if p.binding.task != task or (p.binding.robot, p.kind) not in counts:
+            raise ValueError('receipt has foreign task/robot/event')
+        key = p.binding.robot
+        if type(p.seq) is not int or p.seq <= last.get(key, -1) or not 0 <= exact(p.capture) <= exact(p.delivery):
+            raise ValueError('receipt has replay, bad sequence or clock')
+        last[key] = p.seq
+        counts[(key, p.kind)] += 1
+        wire_bytes += len(p.wire())
+    if counts != {('A', 'PROGRESS_BOUND'): 2, ('A', 'END'): 1, ('B', 'PROGRESS_BOUND'): 0, ('B', 'END'): 1}:
+        raise ValueError('incomplete or expanded S1 message contract')
+    if (set(costs) != {'wall_ns', 'cpu_ns', 'segments', 'aggregation'}
+            or costs['aggregation'] != 'OUTER_ENVELOPE_ONLY_DO_NOT_SUM_NESTED'
+            or any(type(costs[k]) is not int or costs[k] < 0 for k in ('wall_ns', 'cpu_ns'))):
+        raise ValueError('incomplete cost envelope')
+    if not isinstance(costs['segments'], list):
+        raise ValueError('missing diagnostic cost segments')
+    for segment in costs['segments']:
+        if (set(segment) != {'name', 'depth', 'wall_ns', 'cpu_ns'}
+                or any(type(segment[k]) is not int or segment[k] < 0 for k in ('depth', 'wall_ns', 'cpu_ns'))
+                or any(segment[k] > costs[k] for k in ('wall_ns', 'cpu_ns'))):
+            raise ValueError('cost segment outside outer envelope')
+    progress = b'\n'.join(p.wire() for p in packets if p.kind == 'PROGRESS_BOUND')
+    return {'task': task, 'messages': len(packets), 'wire_bytes': wire_bytes,
+            'A_progress_wire_sha256': hashlib.sha256(progress).hexdigest(),
+            'all_public_wire_sha256': hashlib.sha256(b'\n'.join(p.wire() for p in packets)).hexdigest(),
+            'END_semantics': 'local_controller_event_not_zero_tracking_error',
+            'costs': costs, 'success_or_safety_inferred_from_messages': False}
