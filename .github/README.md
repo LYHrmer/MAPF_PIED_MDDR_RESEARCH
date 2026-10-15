@@ -1,3 +1,11 @@
+# S1统一主线：本入口职责（2026-10-16）
+
+误差来源、动作条件范围与覆盖依据。G2c两次失败和已消费许可保留，最新短IPC计划aa348bd8…未授权、未执行；旧拖车仅为诊断，不阻塞目标单轮车显式仿真来源。有界/概率共同问题比较，不以高斯获胜为目标。
+
+[main统一方案](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md) · [可复核实例](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_MINIMAL_EXAMPLE_20261016.md)。SADG核心R0已有证据，复用不重跑；WinkTPG许可未明确，不改源码。解析安排不等于完整执行收益，资格CONDITIONAL；本窗口科学运行0，实物/RL/换序/LMAPF后置。以下历史进度完整保留。
+
+---
+
 # G2c 替代批次结果：通信路径过长，仍无新增来源数据
 
 <a id="probabilistic-source-g2c-replacement"></a>
