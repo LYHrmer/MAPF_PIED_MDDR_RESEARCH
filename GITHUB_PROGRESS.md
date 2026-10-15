@@ -1,3 +1,15 @@
+# G2c 替代批次结果：通信路径过长，仍无新增来源数据
+
+<a id="probabilistic-source-g2c-replacement"></a>
+
+2026-10-16。另获一次明确授权后执行55d1759e…计划：显示连接通过，Webots本地socket路径152字节导致监听失败，controller未启动。worker wall40.957769223s、CPU40.215184s、返回137、host超时false；完整目录110文件1,695,727字节，全部回收，自动重试0。CPU点值与40s硬界一致，内核终止原因未单独记录。[完整结果与定点诊断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/PROBABILISTIC_ERROR_SOURCE_20261016.md)。
+
+OS最小探针已复现长152字节失败、短61字节监听成功，不包含Webots。下一版将整个runtime缩为/home/lyh/g2c3_20261016，仍完整计入16MiB；沿用原输入、控制器、45/40s、60＋5s和4GiB。342来源及5份Python AST通过，计划aa348bd8…和g2c_short_ipc_20261016/RUN_CHECKLIST.md已冻结；未授权、未执行第三次world，完整链仍UNKNOWN。
+
+两次明确单次授权均已消费，两份失败完整保留。新增采样/拟合/同风险比较/训练/标签均0，端点真值及等待漂移仍未知。当前先补来源，不把基础设施修正当研究有效性；有界基线、G2b、L20/L21停止决定和最新文献方案保持。主稿未提交修改、290保护文件及历史尾文保持。以下“替代计划未运行”属于第二批授权之前的历史。
+
+---
+
 # G2c：来源核对已完成，一次采集失败，显示环境修正已冻结
 
 <a id="probabilistic-source-g2c"></a>
