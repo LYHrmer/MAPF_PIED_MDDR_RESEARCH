@@ -1,6 +1,6 @@
 {
   "status": "INTERFACE_CHECK_PASS",
-  "round": 1,
+  "round": 2,
   "checks": [
     "analytic_source_bound_matches_S1",
     "reference_acceleration_braking_wait_hold_connected",
@@ -15,13 +15,51 @@
     "author_dependency_initially_blocks_B",
     "same_certificate_enables_author_dependency",
     "CLEAR_does_not_complete_physical_A",
-    "feedback_count_and_wire_bytes_recorded"
+    "feedback_count_and_wire_bytes_recorded",
+    "quarter_turn_does_not_reset_cross_track_error",
+    "unsupported_next_primitive_rejected",
+    "moving_pivot_rejected",
+    "hold_keeps_full_residual",
+    "unbounded_indefinite_drift_rejected",
+    "no_capture_after_action_END",
+    "ordinary_END_alone_cannot_release",
+    "queue_hides_undelivered_packet",
+    "queue_delivers_identical_packet_object",
+    "transport_clock_reversal_rejected",
+    "directional_same_event_release_0",
+    "directional_same_event_release_1",
+    "directional_same_information_first_release",
+    "directional_equal_feedback_cost_units",
+    "circle_same_event_release_0",
+    "circle_same_event_release_1",
+    "circle_same_information_first_release",
+    "circle_equal_feedback_cost_units",
+    "reentry_blocks_author_adapter_too",
+    "commitment_change_rejected_before_graph",
+    "same_information_pair_identity_accepted",
+    "unequal_controller_pair_rejected",
+    "failed_task_remains_in_censored_metric",
+    "nested_costs_not_added_twice"
   ],
-  "check_count": 14,
+  "check_count": 38,
   "scientific_batches": 0,
   "optimizer_calls": 0,
   "world_time_steps": 0,
-  "closed_form_source_probes": 6,
+  "closed_form_source_probes": 10,
+  "same_information_pairs": [
+    {
+      "geometry": "directional",
+      "custom_release": "343/100",
+      "adapted_SADG_release": "343/100",
+      "meaning": "API_contract_fixture_not_world_benchmark"
+    },
+    {
+      "geometry": "circle",
+      "custom_release": "393/100",
+      "adapted_SADG_release": "393/100",
+      "meaning": "API_contract_fixture_not_world_benchmark"
+    }
+  ],
   "author_api": "unmodified Vertex/Dependency/Status, fixed order, virtual certificate event",
   "interpretation": "same certificate yields same release; no independent scheduling novelty established"
 }

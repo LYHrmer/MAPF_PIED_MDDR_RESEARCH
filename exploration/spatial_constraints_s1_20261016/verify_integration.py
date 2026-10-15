@@ -86,9 +86,72 @@ def check():
     need(cert['accepted'] and graph.apply_certificate(cert), 'same_certificate_enables_author_dependency')
     need(graph.a_motion.get_status() == graph.Status.IN_PROGRESS, 'CLEAR_does_not_complete_physical_A')
     need(inbox.received_count == 1 and inbox.received_bytes == len(packet.wire()), 'feedback_count_and_wire_bytes_recorded')
-    return {'status': 'INTERFACE_CHECK_PASS', 'round': 1, 'checks': passed,
+
+    # Round 2: composition conditions and a same-information event baseline.
+    env = source.Envelope(q('.02'), q('.01'), q('.002'))
+    after = source.stopped_quarter_turn(source.propagate_straight(env, '3'))
+    need(not source.admits_straight(after), 'quarter_turn_does_not_reset_cross_track_error')
+    rejects(lambda: source.propagate_straight(after, '2'), 'unsupported_next_primitive_rejected')
+    rejects(lambda: source.stopped_quarter_turn(env, speed='.1'), 'moving_pivot_rejected')
+    need(source.permanent_hold(env) == env, 'hold_keeps_full_residual')
+    rejects(lambda: source.permanent_hold(env, drift='.001'), 'unbounded_indefinite_drift_rejected')
+
+    producer = feedback.Producer(binding)
+    packets = [producer.capture(a.sample(float(t))['sensor'], now=t) for t in ('3.33', '3.83')]
+    end_packet = producer.capture(a.sample(6.5)['sensor'], now='6.5', kind='END')
+    rejects(lambda: producer.capture(a.sample(7.)['sensor'], now='7'), 'no_capture_after_action_END')
+    ordinary = feedback.Inbox(binding).admit(end_packet, now='6.6')
+    need(not certificate(ordinary, fixture)['accepted'], 'ordinary_END_alone_cannot_release')
+    bus = feedback.Broadcast()
+    bus.send(packets[0], now=packets[0].capture)
+    need(not bus.deliver('3.33'), 'queue_hides_undelivered_packet')
+    need(bus.deliver('3.43') == (packets[0],), 'queue_delivers_identical_packet_object')
+    rejects(lambda: bus.deliver('3.42'), 'transport_clock_reversal_rejected')
+    equality = []
+    for geometry, expected in [('directional', '3.43'), ('circle', '3.93')]:
+        own_inbox, author_inbox = feedback.Inbox(binding), feedback.Inbox(binding)
+        graph, custom_started, first = FixedOrderEvents(author), False, None
+        for packet in packets:
+            own = certificate(own_inbox.admit(packet, now=packet.delivery), fixture, geometry=geometry)
+            other = certificate(author_inbox.admit(packet, now=packet.delivery), fixture, geometry=geometry)
+            custom_started = custom_started or own['accepted']
+            eligible = graph.apply_certificate(other)
+            need(custom_started == eligible, geometry+'_same_event_release_'+str(packet.seq))
+            if eligible and first is None:
+                first = q(packet.delivery)
+        need(first == q(expected), geometry+'_same_information_first_release')
+        need((own_inbox.received_count, own_inbox.received_bytes) ==
+             (author_inbox.received_count, author_inbox.received_bytes), geometry+'_equal_feedback_cost_units')
+        equality.append({'geometry': geometry, 'custom_release': str(first), 'adapted_SADG_release': str(first),
+                         'meaning': 'API_contract_fixture_not_world_benchmark'})
+    bad_suffix = [((q('.5'), 0), (2, 0)), ((2, 0), (0, 0)), ((0, 0), (0, 0))]
+    graph = FixedOrderEvents(author)
+    public = feedback.Inbox(binding).admit(packets[0], now='3.43')
+    need(not graph.apply_certificate(certificate(public, fixture, suffix=bad_suffix)), 'reentry_blocks_author_adapter_too')
+    wrong = replace(packets[0], binding=replace(binding, commitment='A_may_return'))
+    rejects(lambda: feedback.Inbox(binding).admit(wrong, now='3.43'), 'commitment_change_rejected_before_graph')
+    common = dict(task=fixture['id'], source_sha256='fixture', paths_sha256='fixed', order_sha256='A_before_B',
+                  controller=source.CONTROLLER, protocol='public_progress_and_observed_END_v1',
+                  initial_state_sha256='zero_error_probe', A_progress_wire_sha256='same_bytes', units='m_s_rad',
+                  safety_set='same_declared_hard_initial_set')
+    need(bool(feedback.paired_identity([common, dict(common)])), 'same_information_pair_identity_accepted')
+    rejects(lambda: feedback.paired_identity([common, {**common, 'controller': 'different'}]), 'unequal_controller_pair_rejected')
+    summary = feedback.completion_summary([
+        {'task': 'synthetic_unit', 'arm': 'success', 'status': 'SUCCESS', 'completion': {'A': '6.5', 'B': '7.93'}},
+        {'task': 'synthetic_unit', 'arm': 'timeout', 'status': 'TIMEOUT', 'completion': {'A': '6.5', 'B': None}}])
+    need(len(summary) == 2 and summary[1]['failure_retained'] and q(summary[1]['censored_sum_completion']) == q('26.5'),
+         'failed_task_remains_in_censored_metric')
+    costs = feedback.Costs()
+    with costs.measure('outer'):
+        with costs.measure('inner'):
+            pass
+    measured = costs.finish()
+    need(measured['wall_ns'] >= measured['segments'][-1]['wall_ns'] and
+         [s['depth'] for s in measured['segments']] == [1, 0], 'nested_costs_not_added_twice')
+    return {'status': 'INTERFACE_CHECK_PASS', 'round': 2, 'checks': passed,
             'check_count': len(passed), 'scientific_batches': 0, 'optimizer_calls': 0,
-            'world_time_steps': 0, 'closed_form_source_probes': 6,
+            'world_time_steps': 0, 'closed_form_source_probes': 10,
+            'same_information_pairs': equality,
             'author_api': 'unmodified Vertex/Dependency/Status, fixed order, virtual certificate event',
             'interpretation': 'same certificate yields same release; no independent scheduling novelty established'}
 
