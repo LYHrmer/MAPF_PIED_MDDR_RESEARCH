@@ -1,6 +1,8 @@
-# MAPF：有界跟踪误差下的执行协调
+# MAPF：空间跟踪误差下的执行协调
 
-研究问题：MAPF执行中，如何依据合法进度信息，在空间误差与有限真实更新资源下安全协调。现有有界模型及结果作为基线；当前已完成[一次无学习有限机制诊断](PROBABILISTIC_WINDOW_DIAGNOSTIC_20261016.md)：方向强规则改变了合成参考排程，本例不进入学习；先核可信误差来源和同风险比较，再判断学习增量。L20/21当前任务上的选组扩展与训练保持停止。
+研究问题：多机器人沿 MAPF 路径运动时，如何把有依据的空间误差占用转成通行约束，在相同安全要求和合法信息条件下减少执行等待。当前按[文献修订方案](LITERATURE_GUIDED_RESEARCH_PLAN_20261016.md)优先评估 WinkTPG（T-ASE 2026）与 dSLAP（TAC 2025）的方法结合；MAPF-X 与 ExecTimeNet/ESADG 作为直接近邻。先核误差来源与作者工件，再判断学习预测的增量，最终模型尚未锁定。
+
+最近实际结果仍为[G2b 无学习机制诊断](PROBABILISTIC_WINDOW_DIAGNOSTIC_20261016.md)：方向强规则解释了合成排程的全部改善，没有学习或高斯模型独立优势的证据。L20/21 当前任务上的选组扩展与训练保持停止。方案修订未产生新的运行授权或实验结果。
 
 - [当前状态、资格与下一步](.github/README.md)：唯一当前入口。
 - [进度历史](GITHUB_PROGRESS.md)：按轮次查成果、失败和当时的限制。
@@ -14,10 +16,10 @@
 | 分支 | 状态与职责 | 本机工作树 |
 |---|---|---|
 | [main](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/main) | 活动：方案、验收、总进度与论文 | `MAPF_PIED_MDDR_RESEARCH` |
-| [explore/error-aware-guidance](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/explore/error-aware-guidance) | 活动：空间执行、完整搜索与计量 | `MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE` |
-| [explore/query-value-feasibility](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/explore/query-value-feasibility) | 活动：合法信息、配对收件及学习接口 | `MAPF_QUERY_VALUE_FEASIBILITY` |
+| [explore/error-aware-guidance](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/explore/error-aware-guidance) | 执行与计量复用；新框架及空间占用接口待核，旧选组扩展停止 | `MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE` |
+| [explore/query-value-feasibility](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/explore/query-value-feasibility) | 合法反馈、配对工具与后续误差数据资格；不重开查询学习 | `MAPF_QUERY_VALUE_FEASIBILITY` |
 | [explore/learned-query](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/explore/learned-query) | 归档：旧模型及正负证据，不重开 | `MAPF_PIED_MDDR_LEARNING_EXPLORE` |
-| [explore/gaussian-mapf-feasibility](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/explore/gaussian-mapf-feasibility) | 优先适配评估：合成机制诊断已完成；真实来源与同风险外部比较待补 | `MAPF_GAUSSIAN_FEASIBILITY` |
+| [explore/gaussian-mapf-feasibility](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/explore/gaussian-mapf-feasibility) | 误差来源与范围传播评估，保留有界/概率同条件比较；分布未锁定 | `MAPF_GAUSSIAN_FEASIBILITY` |
 
 四探索分支各有独有提交，不能当作已合并临时分支删除。其 `.github/README.md` 提供当前角色并指向main；根README保留冻结L7快照。支线进度中的旧日期、运行许可和“下一步”只描述当时状态。活动代码/运行工件很多仅在本机，远端导航不代表已公开这些内容。
 
