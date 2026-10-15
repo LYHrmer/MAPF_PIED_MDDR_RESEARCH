@@ -1,3 +1,15 @@
+# G2b 连续参考与整窗风险：最小诊断准备完成
+
+<a id="probabilistic-window-g2b"></a>
+
+2026-10-15。最新总入口为 [main](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/.github/README.md)，[完整G2b报告](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/PROBABILISTIC_WINDOW_CONTRACT_20261015.md)。连续quintic参考、Gaussian桥来源、全部等待/目标驻留和共同全任务风险事件已写清；仅为新声明合成诊断，真实校准/执行适配仍UNKNOWN。
+
+本机 exploration/gaussian_mapf/g2b_window_contract_20261015/ 已有合同、INPUT、3份Python、RUN_PLAN/RUN_CHECKLIST及false授权模板；复用既有监督，默认静态入口和260来源核验通过。唯一计划8c798d8c…，一次worker比较两内部无学习规则与三完整排程，host8/CPU6秒、全批60+5秒、4GiB/进程、全目录16MiB、零重试。runtime未创建；未执行诊断/solver/world/采样/训练/测试。代码和原作者来源仍留本机，导航提交不表示公开代码。
+
+作者固定empty-8-8输入与N=3最小非退化规则对照、真实CLI、无seed、输出目录重建及OMPL版本差别已核；全体/成对风险预算和连续窗口语义未齐，不列为同风险已就绪基线。内部合成诊断即使通过也只说明包络保守性，若简单方向规则已充分利用信息，不进入学习。原有界模型、G1/G2a、P2/P3旧工件和主稿保持；CONDITIONAL，不重开旧任务或归档学习线。
+
+---
+
 # 概率模型优先适配评估（G2a）
 
 <a id="probabilistic-model-g2a"></a>
