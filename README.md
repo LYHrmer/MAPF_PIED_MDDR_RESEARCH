@@ -1,6 +1,6 @@
 # MAPF：有界跟踪误差下的执行协调
 
-研究问题：MAPF执行中，如何依据合法进度信息，在空间误差与有限真实更新资源下安全协调。现有有界模型及结果作为基线；当前已准备[连续参考、整窗风险与无学习最小诊断](PROBABILISTIC_WINDOW_CONTRACT_20261015.md)，有同风险强规则之外的完整收益再引入学习。L20/21当前任务上的选组扩展与训练保持停止。
+研究问题：MAPF执行中，如何依据合法进度信息，在空间误差与有限真实更新资源下安全协调。现有有界模型及结果作为基线；当前已完成[一次无学习有限机制诊断](PROBABILISTIC_WINDOW_DIAGNOSTIC_20261016.md)：方向强规则改变了合成参考排程，本例不进入学习；先核可信误差来源和同风险比较，再判断学习增量。L20/21当前任务上的选组扩展与训练保持停止。
 
 - [当前状态、资格与下一步](.github/README.md)：唯一当前入口。
 - [进度历史](GITHUB_PROGRESS.md)：按轮次查成果、失败和当时的限制。
@@ -17,7 +17,7 @@
 | [explore/error-aware-guidance](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/explore/error-aware-guidance) | 活动：空间执行、完整搜索与计量 | `MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE` |
 | [explore/query-value-feasibility](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/explore/query-value-feasibility) | 活动：合法信息、配对收件及学习接口 | `MAPF_QUERY_VALUE_FEASIBILITY` |
 | [explore/learned-query](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/explore/learned-query) | 归档：旧模型及正负证据，不重开 | `MAPF_PIED_MDDR_LEARNING_EXPLORE` |
-| [explore/gaussian-mapf-feasibility](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/explore/gaussian-mapf-feasibility) | 优先适配评估：误差对象、概率占用与同风险比较；尚未运行 | `MAPF_GAUSSIAN_FEASIBILITY` |
+| [explore/gaussian-mapf-feasibility](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/explore/gaussian-mapf-feasibility) | 优先适配评估：合成机制诊断已完成；真实来源与同风险外部比较待补 | `MAPF_GAUSSIAN_FEASIBILITY` |
 
 四探索分支各有独有提交，不能当作已合并临时分支删除。其 `.github/README.md` 提供当前角色并指向main；根README保留冻结L7快照。支线进度中的旧日期、运行许可和“下一步”只描述当时状态。活动代码/运行工件很多仅在本机，远端导航不代表已公开这些内容。
 
