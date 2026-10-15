@@ -12,6 +12,45 @@ CONTROLLER = 'ideal_feedforward_trapezoid_v1'
 COMMITMENT = 'A_east_to_2_permanent_hold_v1'
 
 
+@dataclass(frozen=True)
+class Envelope:
+    """Local reference-axis half widths; never an empirical maximum."""
+    along: Q
+    cross: Q
+    heading: Q
+
+    def __post_init__(self):
+        if min(self.along, self.cross, self.heading) < 0:
+            raise ValueError('negative uncertainty extent')
+
+
+def propagate_straight(initial, length):
+    length = Q(length)
+    if not Q('.25') <= length <= 3 or not admits_straight(initial):
+        raise ValueError('new straight primitive outside admitted initial set')
+    return Envelope(initial.along+length*initial.heading**2/2,
+                    initial.cross+length*initial.heading, initial.heading)
+
+
+def admits_straight(initial):
+    return (initial.along <= Q('.02') and initial.cross <= Q('.01')
+            and initial.heading <= Q('.002'))
+
+
+def stopped_quarter_turn(initial, *, speed='0', omega='0'):
+    if Q(speed) != 0 or Q(omega) != 0 or max(initial.along, initial.cross) > Q('.03'):
+        raise ValueError('turn requires stopped state in the declared position set')
+    # Position does not move under the declared ideal pivot controller. Express
+    # the same error in the new local axes; do not reset it at the waypoint.
+    return Envelope(initial.cross, initial.along, initial.heading)
+
+
+def permanent_hold(initial, *, drift='0'):
+    if Q(drift) != 0:
+        raise ValueError('nonzero indefinite drift has no finite declared hold bound')
+    return initial
+
+
 def bounds(length='3', heading='.002'):
     length, heading = Q(length), Q(heading)
     if not 0 < length <= 3 or not 0 <= heading <= Q('.002'):
