@@ -6,4 +6,8 @@ R1：`protocol.py` 将公开定位观测绑定 task/robot/action/condition/不�
 
 Producer 的身份是可信仿真进程内的对象/合同绑定，并非网络密码认证；主机恶意伪造不在本例威胁模型内。中心接口不接收真值，并不单独证明整个仿真进程的信息隔离，联合执行时还需分别记录两条输出通道。
 
-共同验收由执行分支 `exploration/spatial_constraints_s1_20261016/verify_integration.py` 调用。新协议初始仅生产 PROGRESS_BOUND；完整 END 及端到端计量在下一轮补入。旧学习代码已退出当前 Git 列表，历史与本机原路径保留。
+共同验收由执行分支 `exploration/spatial_constraints_s1_20261016/verify_integration.py` 调用。旧学习代码已退出当前 Git 列表，历史与本机原路径保留。
+
+第二轮：补入带同时刻公开定位的 END 包、交付队列、动作 END 后封口、配对身份核验与嵌套费用账本。END 仍不能独立放行；下游必须额外验完整占用。END 包比历史 END-only 协议多定位字段，按新协议显式统计字节；各臂采用相同生成规则，因实际完成不同而产生的 B-END 时刻不要求人为相等。A 的两份进度包则逐字节相同。
+
+配对合同固定 source/path/order/controller/initial/protocol/units/safety_set 及 A 进度流身份；改变任一项即拒收为不公平配对。费用以外层 wall/CPU 包络为总量，嵌套段只作诊断、不重复求和；目前仅核对账本语义，无性能结论。`completion_summary` 保留失败任务和未完成机器人，按预登记 horizon 计删失完成时间；成功比例须并列，不把删失值称为真实完成时间，也不静默删除失败。
