@@ -1,5 +1,7 @@
 # 当前进度：explore/query-value-feasibility
 
+后继三轮·第3轮完成（2026-10-16）：新增同信息会话比较和完整计划账目；缺失/失败行保留，失败惩罚(n+1)H与实测完成分列，拒绝虚假配对。 各分支本轮完成三次实质提交，累计检查15→53→99通过（非独立任务数）；22个窗口和12条约束不变，求值8738→446。用户明确仅实现/静态核验，科学运行0。[当前后继入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/QUALIFICATION_NOTICE.md)。以下T1及更早段落保留历史状态。
+
 后继三轮·第2轮（2026-10-16）：实现等价构造配对账目，拒绝不同条件/不同窗口配对；记录操作数减少，实耗未知不能写加速。 累计53项静态检查通过；本轮科学运行0。
 
 后继三轮·第1轮（2026-10-16）：新增跨车辆CausalClock，拒绝回溯事件与未交付信息，失败校验不改变有效前沿。 当前仅实现/静态核验，用户明确保留运行待授权。结果见执行分支 `QUALIFICATION_CHECK.json`，旧T1证据不改。
