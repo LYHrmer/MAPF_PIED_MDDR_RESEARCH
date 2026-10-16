@@ -1,0 +1,39 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "PASS",
+      "checks": 87,
+      "manifest_sha256": "bb3fa4abb35ca7713539a8d4903e2b4a0975a1fd47f02808007ef1fa5966a4dd",
+      "fixture_sha256": "cebd5e6f5d01771b55c7429ada5bae56ce8eefd71decf50ab77a110bc5013505",
+      "note": "No implementation/scenario correction. Next pass adds constraint table and completion/wait fields to receipt only."
+    },
+    {
+      "attempt": 2,
+      "status": "PASS",
+      "checks": 87,
+      "manifest_sha256": "11c11daf0373f50fadced56e959059e5d28da96a14d801f16485acf23580a7f0",
+      "fixture_sha256": "cebd5e6f5d01771b55c7429ada5bae56ce8eefd71decf50ab77a110bc5013505",
+      "note": "Added receipt fields only; fixed fixture unchanged. Frozen C1 63 checks rerun PASS; frozen outputs not rewritten."
+    },
+    {
+      "attempt": 3,
+      "status": "PASS",
+      "checks": 87,
+      "manifest_sha256": "9ec6de1cce0f62eefc24af9568796c338c6cdbe7a1f43d512e925d6cd2556c47",
+      "fixture_sha256": "cebd5e6f5d01771b55c7429ada5bae56ce8eefd71decf50ab77a110bc5013505",
+      "note": "Runner hardening: preserve malformed/over-budget child outcomes, exclusive child-start marker, disable bytecode writes. No scenario change or scientific run."
+    }
+  ],
+  "scientific_runs": 0,
+  "final_checklist_sha256": "a12f21ec24e33b1a45fa1263f028beecd31d696dd68575926a9d92f9ad25ef1e",
+  "final_check_sha256": "7d90ca49e6ec94b184bce49c42a88b2dc20a75e92dcfd856b5a1c23c8e5bba15",
+  "frozen_C1_regression": {
+    "checks": 63,
+    "status": "PASS",
+    "outputs_rewritten": false
+  },
+  "runtime_directory_absent": true,
+  "permission_absent": true,
+  "consumption_markers_absent": true
+}

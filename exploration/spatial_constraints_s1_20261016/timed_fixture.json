@@ -1,0 +1,23 @@
+{
+  "status": "PREDECLARED_DEV_INTERFACE_NOT_SCIENTIFIC_RESULT",
+  "task": "T1_physical_time",
+  "base_fixture": "composition_fixture.json",
+  "base_sha256": "21505bab2eceb3b86c311bf870d8c70b3c81621ff194466b3be25fc62681d68a",
+  "sizes": [2, 3],
+  "third_robot": {"origin": ["-1", "1.6"], "heading": 0, "actions": [["MOVE", ".5"], ["HOLD", "0"]]},
+  "engines": ["guard", "SADG_events"],
+  "feedback_delay": ".1",
+  "phase_half_width": ".005",
+  "feedback_ttl": "1",
+  "periodic_capture_interval": ".5",
+  "dispatch_delay": "0",
+  "phase_resolution": "1/64",
+  "certificate_max_cells": 4096,
+  "horizon": "40",
+  "initial_conditions": {"all_robots": [".02", "-.01", ".002", ".009999", "-.009999"]},
+  "static_progress_capture": "9.35",
+  "controller_commitment": "synchronous_actual_inputs_nonpreemptive_chain_to_goal",
+  "scientific_run_status": "NOT_AUTHORIZED_NOT_RUN",
+  "run_budget": {"children": 4, "wall_seconds_per_child": 60, "cpu_seconds_per_child": 45, "address_space_bytes_per_child": 536870912, "max_physical_seconds": 40, "max_events_per_child": 1024, "output_bytes_per_child": 16777216, "retry": 0},
+  "stop": "Retain every failure. Stop on contract, coverage, collision witness, hash or resource violation. No scenario/parameter tuning. If conservatism, total cost and guarantee all show no increment, close this candidate."
+}
