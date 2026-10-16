@@ -1,17 +1,15 @@
 # MAPF 空间占用与执行约束
 
-2026-10-16。`explore/query-value-feasibility`：合法反馈、配对收件和完整费用工具。四个活动分支服务一个论文问题，旧查询学习分支已归档退出。
+2026-10-16。`explore/query-value-feasibility`：实际输入相位反馈、完整END与计费工具。四个活动分支服务同一个论文问题，旧查询学习继续归档。
 
-**已完成三轮实质推进：来源与消息接通 → 同信息强对照与失效核验 → 完整接口及收缩验收。** 最终 66 项联合合同检查、原 37 项解析检查通过；21 个冻结集成输入 SHA 已核。无新科学批次、world 时间步、优化器或训练。
+最新已完成 T1：任务初态联合传播、保留物理时间的连续占用、时序/制动/承诺检查及两三车完整公共消息会话。87项新静态检查和63项C1回归通过；保留所有冻结证据与旧失败。固定消息夹具中，两臂放行、完成时间、消息流和证书工作量相同，没有独有保证；总运行实耗未测，不宣称相对强基线的创新。
 
-最新定点推进：新 v2 理想同输入模型的跨动作条件已闭合，旧 v1 拼接失败保留。C1 新63项静态/解析检查识别11对潜在连续空间冲突；共享占用、反馈和证书时，SADG 事件适配与自有 guard 均9.95 s放行，本例独立调度增量为0。完整带时间占用、world会话与总成本仍待验证；当前不训练、不启动新科学批次。
+- [本分支当前入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/query-value-feasibility/exploration/execution_feedback/timed_protocol.py)
+- [统一方案与具体约束表](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)
+- [当前公共进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md)
+- [有限运行清单：未授权未执行](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/TIMED_RUN_CHECKLIST.md)
+- [工作区、归档和恢复](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/REPOSITORY_NAVIGATION.md)
 
-- [本入口成果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/query-value-feasibility/exploration/execution_feedback/README.md)
-- [统一方案与导师分析](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)
-- [当前进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md)
-- [工作区、文件归档和恢复](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/REPOSITORY_NAVIGATION.md)
-- [G2c 来源与失败](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/PROBABILISTIC_ERROR_SOURCE_20261016.md)
+科学事件循环、world、优化器和训练本次均0。G2c两次许可已消费，短IPC清单仍未授权未执行；旧拖车不阻塞主线。L20/L21、旧查询学习、RL/换序/LMAPF和实物后置。当前同证书接线若无约束、算法成本或保证增量，结束候选并保留接口，不增加场景寻找正结果。
 
-G2c 两次许可已消费，新数据 0；短 IPC 计划未授权未执行，旧拖车不阻塞主线。本轮没有新 world 批次或默认运行许可。L20/L21 和旧查询学习保持停止，RL/换序/LMAPF/实物后置。
-
-[清理前完整历史](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/archive/pre-cleanup-tools-20261016)。冻结文件保留本机原路径；Git 当前文件列表已精简，不代表磁盘数据被删除。支线旧根 README 属于本机冻结历史，日常以本页和 main 为准。
+冻结文件保留本机原路径；Git入口精简不代表已物理删除数据。支线旧根README属于冻结历史，日常从本页及main进入。
