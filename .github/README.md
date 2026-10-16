@@ -1,5 +1,9 @@
 # MAPF 空间占用与执行约束
 
+## 本轮增量审查（2026-10-16）
+
+第1轮已完成作者接口定点核对：SADG固定核心可以承载合法预约事件，WinkTPG已有离开上界/进入下界预约；PSIPP/CTC已有非共同路点的连续点—边、边—边冲突及多安全区间，MAPF-X也检查膨胀路段。故“新增空间边、提前释放、保留时间”不足以构成独立执行算法。原C1/T1及99项收据复用，当前相同信息放行一致的负结果保留。作者函数、版本和证据见[main最新审查](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)。本分支下一轮只核当前约束的实际瓶颈，不创建后继运行清单。
+
 **最新：后继三轮已完成，99项累计静态检查通过。** 修正跨车辆回溯放行；等价窗口构造求值8738→446；两/三车完整消息配对仍无独有放行或保证。总实耗未测，当前同证书接线贡献候选关闭，保留工程接口。本轮仅静态核验，不运行、不训练。[当前说明](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/QUALIFICATION_NOTICE.md)。下文为T1基座背景。
 
 2026-10-16。`explore/error-aware-guidance`：连续时空约束、完整任务接口及强基线适配。四个活动分支服务同一个论文问题，旧查询学习继续归档。
