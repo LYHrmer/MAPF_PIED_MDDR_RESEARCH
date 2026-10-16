@@ -2,7 +2,8 @@
   "schema": "targeted_increment_audit_v1",
   "date": "2026-10-16",
   "rounds_completed": [
-    1
+    1,
+    2
   ],
   "scope": "research qualification, author source inspection and static algebra only; no candidate or scientific run",
   "source_code": [
@@ -154,5 +155,169 @@
   ],
   "scientific_runs": 0,
   "training_runs": 0,
-  "successor_run_plan_prepared": false
+  "successor_run_plan_prepared": false,
+  "static_arithmetic": {
+    "scope": "exact arithmetic from frozen report and message fixture, not an execution or earliest-feasible-launch search",
+    "phase_low": "1849/200",
+    "last_possible_origin": "21/200",
+    "critical": {
+      "entry": "11901/1600",
+      "exit": "2351/256",
+      "head": "B_2",
+      "kind": "SPATIAL_PASSAGE",
+      "tail": "A_2",
+      "required_launch_lower": "7401879/4000000",
+      "slack_at_9_45": "30398121/4000000"
+    },
+    "second": {
+      "entry": "17613/12800",
+      "exit": "3195/1024",
+      "head": "B_0",
+      "kind": "SPATIAL_PASSAGE",
+      "tail": "A_0",
+      "required_launch_lower": "29585641/16000000",
+      "slack_at_9_45": "121614359/16000000"
+    },
+    "gap_to_second": "7/5120",
+    "all_constraints_slack_at_fixture_launch": true,
+    "records": [
+      {
+        "entry": "17613/12800",
+        "exit": "3195/1024",
+        "head": "B_0",
+        "kind": "SPATIAL_PASSAGE",
+        "tail": "A_0",
+        "required_launch_lower": "29585641/16000000",
+        "slack_at_9_45": "121614359/16000000"
+      },
+      {
+        "entry": "103/50",
+        "exit": "3645/1024",
+        "head": "B_1",
+        "kind": "SPATIAL_PASSAGE",
+        "tail": "A_0",
+        "required_launch_lower": "25673141/16000000",
+        "slack_at_9_45": "125526859/16000000"
+      },
+      {
+        "entry": "303/50",
+        "exit": "9/2",
+        "head": "B_2",
+        "kind": "SPATIAL_PASSAGE",
+        "tail": "A_0",
+        "required_launch_lower": "-1454999/1000000",
+        "slack_at_9_45": "10904999/1000000"
+      },
+      {
+        "entry": "204/25",
+        "exit": "9/2",
+        "head": "B_3",
+        "kind": "SPATIAL_PASSAGE",
+        "tail": "A_0",
+        "required_launch_lower": "-3554999/1000000",
+        "slack_at_9_45": "13004999/1000000"
+      },
+      {
+        "entry": "304/25",
+        "exit": "9/2",
+        "head": "B_4",
+        "kind": "SPATIAL_PASSAGE",
+        "tail": "A_0",
+        "required_launch_lower": "-7554999/1000000",
+        "slack_at_9_45": "17004999/1000000"
+      },
+      {
+        "entry": "89643/12800",
+        "exit": "17/2",
+        "head": "B_2",
+        "kind": "SPATIAL_PASSAGE",
+        "tail": "A_1",
+        "required_launch_lower": "12813133/8000000",
+        "slack_at_9_45": "62786867/8000000"
+      },
+      {
+        "entry": "204/25",
+        "exit": "17/2",
+        "head": "B_3",
+        "kind": "SPATIAL_PASSAGE",
+        "tail": "A_1",
+        "required_launch_lower": "445001/1000000",
+        "slack_at_9_45": "9004999/1000000"
+      },
+      {
+        "entry": "304/25",
+        "exit": "17/2",
+        "head": "B_4",
+        "kind": "SPATIAL_PASSAGE",
+        "tail": "A_1",
+        "required_launch_lower": "-3554999/1000000",
+        "slack_at_9_45": "13004999/1000000"
+      },
+      {
+        "entry": "11901/1600",
+        "exit": "2351/256",
+        "head": "B_2",
+        "kind": "SPATIAL_PASSAGE",
+        "tail": "A_2",
+        "required_launch_lower": "7401879/4000000",
+        "slack_at_9_45": "30398121/4000000"
+      },
+      {
+        "entry": "204/25",
+        "exit": "4927/512",
+        "head": "B_3",
+        "kind": "SPATIAL_PASSAGE",
+        "tail": "A_2",
+        "required_launch_lower": "12544383/8000000",
+        "slack_at_9_45": "63055617/8000000"
+      },
+      {
+        "entry": "304/25",
+        "exit": "4907/512",
+        "head": "B_4",
+        "kind": "SPATIAL_PASSAGE",
+        "tail": "A_2",
+        "required_launch_lower": "-19768117/8000000",
+        "slack_at_9_45": "95368117/8000000"
+      },
+      {
+        "entry": "303/50",
+        "exit": "9/2",
+        "head": "B_2",
+        "kind": "EXISTING_ORDER",
+        "tail": "A_0",
+        "required_launch_lower": "-1454999/1000000",
+        "slack_at_9_45": "10904999/1000000"
+      }
+    ],
+    "operation_ratio": "223/4369",
+    "ideal_cost_example_f_0_1": "21845/19772",
+    "inputs": {
+      "TIMED_CHECK.json": "7d90ca49e6ec94b184bce49c42a88b2dc20a75e92dcfd856b5a1c23c8e5bba15",
+      "timed_fixture.json": "cebd5e6f5d01771b55c7429ada5bae56ce8eefd71decf50ab77a110bc5013505",
+      "verify_timed.py": "8a93785c5860ded20c7bf97e9bc10abc2812f1521f330776f1431cd22951900b",
+      "timed_constraints.py": "b9e58cd11ab44e14014e098a6e5efcd7858f25191ee2ae2243e46c47798bd3a0",
+      "timed_session.py": "807875df7ffe04b75b4a91b235aae30315004ee6acebb4d6451fa8beb10f29ab",
+      "qualified_session.py": "1f58c5ca6258a7749882b29eb29fc83948ae9f95df0f1aaae365e5c9339433bd"
+    },
+    "author_code_calls": 0,
+    "task_child_calls": 0,
+    "scientific_runs": 0
+  },
+  "quantifier_result": {
+    "assumptions": [
+      "fixed committed trajectories",
+      "hard collision avoidance for every time and every allowed task parameter",
+      "joint cross-robot parameter domain is a product",
+      "same exact marginal occupancy sets conditioned on the same delivered history"
+    ],
+    "conclusion": "preserving cross-time parameter identity alone does not enlarge robust-safe schedules when exact time marginals are unchanged",
+    "exclusions": [
+      "correlated cross-robot admissible parameters",
+      "chance constraints",
+      "observation-driven domain contraction",
+      "feedback-policy synthesis"
+    ]
+  },
+  "total_runtime_comparison": "UNKNOWN; both arms already share endpoint optimization"
 }
