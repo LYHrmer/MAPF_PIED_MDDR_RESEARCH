@@ -1,6 +1,6 @@
 # MAPF 空间占用与执行约束
 
-**最新：联合支持与直行解析界已实现，216条固定静态断言通过。** 禁行右端1.74546875→1.738392026978 s；相对同支持解析首尾适配的内部差额约3.136 ms。仅更换联合盒仍无改善。原反馈放行负结果不变，外部方法与完整成本优势未证，不准备科学运行。[详细判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md) · [证明与精确收据](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/DEPARTURE_NOTICE.md)。以下为前轮状态。
+**最新：学习建议接口与强解析对照已实现，60条固定静态断言通过。** 五个MOVE对十个极值相同；矩形裁剪需20次交点、82次顶点检查，完美建议仍需10次原始解、10次对偶解及80次原始约束检查。净全成本优势未证，不为当前二维八面问题开训或准备运行清单。上一轮7.077 ms内部几何收紧与同信息放行负结果保留，旧216/99项不重跑。[导师判断与重启条件](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md) · [实现、证明与收据](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/DEPARTURE_NOTICE.md)。以下为前轮状态。
 
 **最新：鲁棒相对出发集合完成实现与固定静态核验。** 同几何直接投影有一处局部收紧，但被原END次序覆盖，11条有效下界全部不变；外包求值446→542。解析碰撞见证限定当前有序边界剩余收紧量至多约17.473 ms，非已实现收益。当前投影候选停止，不准备后继有限运行；联合支持函数仅保留推导，未实现或证明外部增量。[详细判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md) · [代码、证明与收据](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/DEPARTURE_NOTICE.md)。四分支保持一个问题，旧99项证据复用，下文为冻结背景，T1清单不是当前推荐动作。
 

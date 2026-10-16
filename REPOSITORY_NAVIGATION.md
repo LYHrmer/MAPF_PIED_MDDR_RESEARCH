@@ -2,7 +2,7 @@
 
 2026-10-16。按现行职责保留四个活动分支，旧学习分支由历史标签保存。本页同时记录入口整理和之后的有限物理清理；工作树、实验原始记录和冻结证据保留。
 
-**最新：联合支持与直行解析构造已获得内部几何差异。** 从[统一方案开头](SPACE_TIME_INTERFACE_PLAN_20261016.md)及执行分支[现有推导/代码/收据入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/DEPARTURE_NOTICE.md)进入。同分割换联合盒仍无改善；解析成对界收紧约7.077 ms，相对同支持解析首尾对照多收紧约3.136 ms。216条静态断言通过，未形成反馈放行或任务收益，外部充分适配与完整成本优势未证，不准备后继科学运行。前轮同几何失败及17.473 ms改善上限保留；四分支仍服务一个问题，旧99项证据复用，无新world、控制会话或训练。
+**最新：可验证学习建议接口与强解析对照已实现，当前训练资格未通过。** 从[统一方案开头](SPACE_TIME_INTERFACE_PLAN_20261016.md)及执行分支[现有推导/代码/收据入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/DEPARTURE_NOTICE.md)进入。60条固定静态断言通过，五个MOVE对十个极值不变；精确矩形裁剪已显著减少相对旧枚举的交点和检查次数，完美建议仍需完整证书，未证明净全成本收益。保留接口，不为当前二维八面问题训练或准备新运行。上一轮7.077 ms内部几何收紧、旧放行负结果及216/99项证据保留；本轮无新world、控制会话或训练，四分支仍服务一个问题。
 
 | 入口 | 当前职责 | 本机路径 |
 |---|---|---|
