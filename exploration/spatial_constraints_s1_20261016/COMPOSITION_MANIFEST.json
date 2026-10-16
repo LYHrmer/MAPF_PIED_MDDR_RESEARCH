@@ -1,0 +1,20 @@
+{
+  "status": "FIXED_ANALYTIC_INTERFACE_INPUTS_NOT_SCIENTIFIC_RUN_PERMISSION",
+  "files": {
+    "execution": {
+      "composition_fixture.json": "21505bab2eceb3b86c311bf870d8c70b3c81621ff194466b3be25fc62681d68a",
+      "composition_constraints.py": "74a0aa043e34ef5275df246589e412e75c0a6c04fe79ac2c795d73ac977eb49e",
+      "verify_composition.py": "4de33d6137c24eff5e89d9f15655e4eef2651d4dfbcc49d1979af3150745d71d",
+      "COMPOSITION_NOTICE.md": "dbe33870463b46d9bd9c27bf5ecea471dabc2856db4c02364e4d9f4e8bec61d0"
+    },
+    "source": {
+      "composition.py": "e294be82cc6277fac462f61450685820f2d9f1b2c49f1c07c814f7abe4f08453",
+      "COMPOSITION.md": "63c7a5fca05adc4470817fe86fe2c55cb44306c89ebcb928629d2561e40fd7d7"
+    }
+  },
+  "old_manifest_sha256": "0cf354cff7260bdbd46451f6a5e05e903104fc627915666898eb62078390fa9a",
+  "scope": "single preregistered C1 plus listed negative contract checks; no optimizer/world/training; do not tune scenario after result",
+  "implementation_notes": [
+    "After initial 60 checks: retain unwrapped reference heading, guard frozen contract, and verify returned-suffix denial in the author event adapter; fixture unchanged."
+  ]
+}

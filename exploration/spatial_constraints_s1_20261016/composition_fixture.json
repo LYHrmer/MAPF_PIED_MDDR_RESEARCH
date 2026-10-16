@@ -1,0 +1,20 @@
+{
+  "status": "PREDECLARED_ANALYTIC_INTERFACE_CASE_NOT_WORLD_DATA",
+  "task": "C1_joint_initial_error",
+  "condition": "joint_initial_se2_stopped_primitives_v2",
+  "units": "metre_second_radian",
+  "rank_rule": "robot_priority_then_action_index",
+  "robot_priority": ["A", "B"],
+  "existing_passage_order": [["A_0", "B_2"]],
+  "world_bounds": ["-2", "2", "-2", "2"],
+  "robots": {
+    "A": {"origin": ["-1", "0"], "heading": 0, "actions": [["MOVE", "2"], ["TURN", 1], ["MOVE", "1"], ["HOLD", "0"]]},
+    "B": {"origin": ["0", "-1"], "heading": 1, "actions": [["MOVE", ".78"], ["TURN", -1], ["MOVE", ".8"], ["TURN", -1], ["MOVE", ".78"], ["HOLD", "0"]]}
+  },
+  "public_progress": [
+    {"action": "A_2", "capture": "9.35", "delivery": "9.45", "observed_x": "1", "observed_y": ".30"},
+    {"action": "A_2", "capture": "9.85", "delivery": "9.95", "observed_x": "1", "observed_y": ".55"}
+  ],
+  "negative_checks": ["old_v1_transition_rejected", "changed_controller", "changed_speed", "nonzero_drift", "moving_pivot", "post_hold_action", "out_of_domain", "wrong_binding", "undelivered_progress", "ordinary_END_is_not_CLEAR", "future_reentry", "permanent_goal_conflict", "precedence_cycle", "acyclic_time_infeasible"],
+  "stop_rule": "If shared occupancy, feedback and guards give no additional legal window over SADG event adaptation, record zero scheduler increment; do not tune this case or train."
+}

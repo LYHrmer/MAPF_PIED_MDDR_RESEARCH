@@ -1,0 +1,374 @@
+{
+  "status": "ANALYTIC_INTERFACE_CHECK_PASS",
+  "checks": [
+    "whole_chain_start_wait_goal_and_world_qualified",
+    "no_shared_waypoints_diagnostic_not_author_run",
+    "adjacent_straights_add_spatial_conflict",
+    "continuous_turn_sweeps_add_conflicts",
+    "existing_passage_and_action_order_preserved",
+    "predeclared_rank_applied_to_all_new_conflicts",
+    "order_graph_acyclic_is_only_one_gate",
+    "indefinite_occupancy_not_given_fake_completion",
+    "old_v1_failure_preserved",
+    "same_global_error_carried_through_turn",
+    "next_local_cross_bound_is_not_reset_to_old_initial_box",
+    "composed_window_bound_derived_from_task_initial_set",
+    "changed_controller_requires_new_qualification",
+    "changed_speed_requires_new_qualification",
+    "changed_acceleration_requires_new_qualification",
+    "nonzero_hold_drift_requires_new_qualification",
+    "moving_pivot_requires_new_qualification",
+    "moving_angular_initial_state_requires_new_qualification",
+    "post_permanent_hold_action_rejected",
+    "reference_domain_escape_rejected",
+    "missing_terminal_hold_rejected",
+    "inexact_certificate_input_rejected",
+    "closed_loop_returns_to_initial_position_error_set",
+    "reference_heading_is_unwrapped_across_full_rotation",
+    "closed_form_invariant_probe_24",
+    "closed_form_invariant_probe_25",
+    "closed_form_invariant_probe_26",
+    "closed_form_invariant_probe_27",
+    "closed_form_invariant_probe_28",
+    "closed_form_invariant_probe_29",
+    "closed_form_invariant_probe_30",
+    "closed_form_invariant_probe_31",
+    "closed_form_invariant_probe_32",
+    "closed_form_invariant_probe_33",
+    "indefinite_zero_input_hold_keeps_residual",
+    "stopped_turn_has_separate_angular_controller",
+    "author_event_graph_blocks_unconfirmed_spatial_conflicts",
+    "public_packet_has_allowed_zero_error_realization_9.35",
+    "local_action_binding_matches_controller_9.35",
+    "public_packet_has_allowed_zero_error_realization_9.85",
+    "local_action_binding_matches_controller_9.85",
+    "capture_not_delivered_progress",
+    "wrong_full_chain_commitment_rejected",
+    "caller_cannot_shrink_projection_bound",
+    "ordinary_END_never_completes_CLEAR_event",
+    "same_information_author_gate_equality_0",
+    "CLEAR_is_not_physical_END_0",
+    "same_information_author_gate_equality_1",
+    "CLEAR_is_not_physical_END_1",
+    "frozen_early_reject_later_release_case",
+    "equal_public_message_bytes_not_free_feedback",
+    "replayed_progress_rejected",
+    "changed_complete_suffix_contract_rejected",
+    "no_private_truth_in_release_input",
+    "returning_suffix_has_no_start_or_terminal_shortcut_rejection",
+    "future_reentry_blocks_release_despite_same_observation",
+    "future_reentry_blocks_adapted_author_graph_too",
+    "permanent_goal_conflict_not_finite_END_edge",
+    "unqualified_goal_arrangement_cannot_dispatch",
+    "current_order_cycle_reported_without_global_impossibility_claim",
+    "acyclic_order_does_not_imply_feasible_time_window",
+    "analytic_allowed_schedule_has_consistent_time_constraints",
+    "allowed_witness_overlaps_A_final_motion_without_completing_it"
+  ],
+  "check_count": 63,
+  "scope": "exploratory_fixed_case_not_world_or_author_optimizer_results",
+  "source_condition": "joint_initial_se2_stopped_primitives_v2",
+  "source_contract": {
+    "condition": "joint_initial_se2_stopped_primitives_v2",
+    "controller": "ideal_feedforward_stopped_v05_a1_pivot_w05_alpha1_v2",
+    "model": "ideal_unicycle_identical_reference_actual_inputs",
+    "units": "metre_second_radian",
+    "body_half": [
+      ".3",
+      ".1"
+    ],
+    "task_initial_local_box": [
+      ".02",
+      ".01",
+      ".002"
+    ],
+    "speed": ".5",
+    "acceleration": "1",
+    "omega": ".5",
+    "alpha": "1",
+    "move_length": [
+      ".25",
+      "3"
+    ],
+    "turn_slot_seconds": "4",
+    "reference_displacement_axis_limit": "8",
+    "reference_coordinate_limit": "10",
+    "localization_physical_axis_bound": ".009999",
+    "numerical_reserve": "1/1000000",
+    "stop_at_each_action_boundary": true,
+    "hold_drift": "0",
+    "scope": "whole declared chain including permanent terminal hold; no learning claim"
+  },
+  "spatial_pairs": [
+    [
+      "A_0",
+      "B_0"
+    ],
+    [
+      "A_0",
+      "B_1"
+    ],
+    [
+      "A_0",
+      "B_2"
+    ],
+    [
+      "A_0",
+      "B_3"
+    ],
+    [
+      "A_0",
+      "B_4"
+    ],
+    [
+      "A_1",
+      "B_2"
+    ],
+    [
+      "A_1",
+      "B_3"
+    ],
+    [
+      "A_1",
+      "B_4"
+    ],
+    [
+      "A_2",
+      "B_2"
+    ],
+    [
+      "A_2",
+      "B_3"
+    ],
+    [
+      "A_2",
+      "B_4"
+    ]
+  ],
+  "existing_order_edges": [
+    [
+      "A_0",
+      "A_1"
+    ],
+    [
+      "A_1",
+      "A_2"
+    ],
+    [
+      "B_0",
+      "B_1"
+    ],
+    [
+      "B_1",
+      "B_2"
+    ],
+    [
+      "B_2",
+      "B_3"
+    ],
+    [
+      "B_3",
+      "B_4"
+    ],
+    [
+      "A_0",
+      "B_2"
+    ]
+  ],
+  "compiled_order_edges": [
+    [
+      "A_0",
+      "A_1"
+    ],
+    [
+      "A_1",
+      "A_2"
+    ],
+    [
+      "B_0",
+      "B_1"
+    ],
+    [
+      "B_1",
+      "B_2"
+    ],
+    [
+      "B_2",
+      "B_3"
+    ],
+    [
+      "B_3",
+      "B_4"
+    ],
+    [
+      "A_0",
+      "B_2"
+    ],
+    [
+      "A_0",
+      "B_0"
+    ],
+    [
+      "A_0",
+      "B_1"
+    ],
+    [
+      "A_0",
+      "B_3"
+    ],
+    [
+      "A_0",
+      "B_4"
+    ],
+    [
+      "A_1",
+      "B_2"
+    ],
+    [
+      "A_1",
+      "B_3"
+    ],
+    [
+      "A_1",
+      "B_4"
+    ],
+    [
+      "A_2",
+      "B_2"
+    ],
+    [
+      "A_2",
+      "B_3"
+    ],
+    [
+      "A_2",
+      "B_4"
+    ]
+  ],
+  "shared_waypoints": [],
+  "occupancy_boxes": {
+    "A_START_WAIT": {
+      "xmin": "-1320201/1000000",
+      "xmax": "-679799/1000000",
+      "ymin": "-110601/1000000",
+      "ymax": "110601/1000000"
+    },
+    "A_0": {
+      "xmin": "-264041/200000",
+      "xmax": "264041/200000",
+      "ymin": "-114601/1000000",
+      "ymax": "114601/1000000"
+    },
+    "A_1": {
+      "xmin": "131999/200000",
+      "xmax": "268001/200000",
+      "ymin": "-334001/1000000",
+      "ymax": "334001/1000000"
+    },
+    "A_2": {
+      "xmin": "175479/200000",
+      "xmax": "224521/200000",
+      "ymin": "-314203/1000000",
+      "ymax": "1314203/1000000"
+    },
+    "A_3": {
+      "xmin": "175479/200000",
+      "xmax": "224521/200000",
+      "ymin": "685797/1000000",
+      "ymax": "1314203/1000000"
+    },
+    "B_START_WAIT": {
+      "xmin": "-110601/1000000",
+      "xmax": "110601/1000000",
+      "ymin": "-1320201/1000000",
+      "ymax": "-679799/1000000"
+    },
+    "B_0": {
+      "xmin": "-112161/1000000",
+      "xmax": "112161/1000000",
+      "ymin": "-4125633/3125000",
+      "ymax": "313133/3125000"
+    },
+    "B_1": {
+      "xmin": "-331561/1000000",
+      "xmax": "331561/1000000",
+      "ymin": "-218751/390625",
+      "ymax": "46876/390625"
+    },
+    "B_2": {
+      "xmin": "-1558813/5000000",
+      "xmax": "5558813/5000000",
+      "ymin": "-1069383/3125000",
+      "ymax": "-305617/3125000"
+    },
+    "B_3": {
+      "xmin": "2342187/5000000",
+      "xmax": "5657813/5000000",
+      "ymin": "-219376/390625",
+      "ymax": "47501/390625"
+    },
+    "B_4": {
+      "xmin": "3439187/5000000",
+      "xmax": "4560813/5000000",
+      "ymin": "-4130633/3125000",
+      "ymax": "318133/3125000"
+    },
+    "B_5": {
+      "xmin": "3446987/5000000",
+      "xmax": "4553013/5000000",
+      "ymin": "-1321801/1000000",
+      "ymax": "-678199/1000000"
+    }
+  },
+  "decisions": [
+    {
+      "delivery": "189/20",
+      "guard": {
+        "accepted": false,
+        "reason": "FUTURE_OCCUPANCY_OVERLAP",
+        "progress_lower": "13/50",
+        "commitment": "0e11b2da476a09cab73f72b3507e0d8e325104751699ea53ae7b90e76463f766",
+        "coverage": null
+      },
+      "adapted_SADG_can_start_B": false
+    },
+    {
+      "delivery": "199/20",
+      "guard": {
+        "accepted": true,
+        "reason": "FULL_SUFFIX_SEPARATED",
+        "progress_lower": "51/100",
+        "commitment": "0e11b2da476a09cab73f72b3507e0d8e325104751699ea53ae7b90e76463f766",
+        "coverage": "ALL_ALLOWED_SUFFIX_AND_PERMANENT_HOLD"
+      },
+      "adapted_SADG_can_start_B": true
+    }
+  ],
+  "same_information": {
+    "messages_per_arm": 2,
+    "bytes_per_arm": 726,
+    "wire_sha256": "82a50efb80398e3d8ee8bf158514058b97f44c8ec64ac7063763fc7718f5ad1a",
+    "scheduler_increment": "ZERO_FOR_SHARED_COMPILER_AND_CERTIFICATES_BY_REPRESENTATION"
+  },
+  "analytic_witness": {
+    "A_completion": "11",
+    "B_duration": "711/50",
+    "B_start": "199/20",
+    "B_completion": "2417/100",
+    "sum_completion": "3517/100",
+    "makespan": "2417/100",
+    "not_a_measured_execution_result": true
+  },
+  "world_steps": 0,
+  "optimizer_calls": 0,
+  "training": 0,
+  "scientific_batches": 0,
+  "continuous_coverage_basis": "joint_initial_SE2_invariant_plus_exact_interval_enclosures; probes_are_not_proof",
+  "remaining": [
+    "full controller/feedback execution session",
+    "world continuous safety and all online costs",
+    "independent contribution beyond same-information spatial SADG adaptation"
+  ],
+  "old_pins_verified": 21,
+  "new_pins_verified": 6
+}
