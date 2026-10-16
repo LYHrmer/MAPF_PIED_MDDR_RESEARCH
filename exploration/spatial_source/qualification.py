@@ -2,6 +2,55 @@
 from fractions import Fraction as Q
 
 
+class WindowBudget(ValueError):
+    def __init__(self, nodes):
+        self.nodes = nodes
+        super().__init__('interval budget exhausted without a certified window')
+
+
+def extreme_window(begin, end, clear, *, resolution, max_nodes):
+    """Same extremal leaves as exhaustive dyadic traversal, fewer evaluations.
+
+    Each search uses the identical prune predicate and leaf threshold. Left-
+    first DFS returns the first possible leaf; right-first DFS returns the last.
+    A per-query memo prevents evaluating any node twice. Visited nodes are a
+    subset of the exhaustive tree; even disconnected possible regions are safe
+    because the output remains their conservative hull. No monotonic collision
+    predicate or convex trajectory assumption is needed.
+    """
+    begin, end, resolution = Q(begin), Q(end), Q(resolution)
+    if begin > end or resolution <= 0 or type(max_nodes) is not int or max_nodes < 1:
+        raise ValueError('ordered interval, positive resolution and budget required')
+    memo, hits = {}, 0
+
+    def search(reverse):
+        nonlocal hits
+        stack = [(begin, end)]
+        while stack:
+            lo, hi = stack.pop()
+            key = (lo, hi)
+            if key not in memo:
+                if len(memo) >= max_nodes:
+                    raise WindowBudget(len(memo))
+                memo[key] = bool(clear(lo, hi))
+            else:
+                hits += 1
+            if memo[key]:
+                continue
+            if hi-lo <= resolution:
+                return lo, hi
+            mid = (lo+hi)/2
+            children = [(lo, mid), (mid, hi)]
+            stack.extend(children if reverse else reversed(children))
+        return None
+
+    first = search(False)
+    last = search(True) if first is not None else None
+    return {'window': None if first is None else (first[0], last[1]),
+            'nodes': len(memo), 'memo_hits': hits,
+            'first_leaf': first, 'last_leaf': last}
+
+
 def phase_segments(trajectory):
     """Exact finite controller phases plus permanent HOLD, no waypoint reset.
 
