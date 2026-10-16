@@ -1,5 +1,7 @@
 # 当前公共进度
 
+本地整理补充（2026-10-16）：四个活动分支保留，旧查询学习继续归档。四份过时根说明先保存并核对远端 `archive/superseded-local-notes-20261016`，再删除本地副本（共 31,752 字节）；另删除 13 个空缓存目录，未显著回收磁盘空间。冻结路径绑定的旧方案、编译产物和失败证据保留。经验和可交给另一终端的执行段落已并入[现有导航](REPOSITORY_NAVIGATION.md#停止路线留下的经验)，没有新增计划文件、算法实现、检查或科学运行，主稿未提交修改不变。
+
 三轮之后的代码补充（本窗口，2026-10-16）：已将共享初态的跨动作关系实现为独立 v2 条件，C1 新63项静态/解析检查通过；旧37/66项和冻结输入保留。预冻结路径识别11对潜在连续空间冲突。相同占用、合法反馈和证书下，自有 guard 与 SADG 事件适配均9.45 s拒绝、9.95 s放行，每臂2包/726字节，本例独立调度增量为0。仅关闭理想同输入模型和此事件接口的资格问题，不证明一般控制器闭合或所有方法等价；完整带时间占用、world会话与成本比较仍待验证。定点源码学习实际覆盖固定 SADG/WinkTPG，后者只读；详见[统一方案新增节](SPACE_TIME_INTERFACE_PLAN_20261016.md)。本补充优先于下文对“尚未实现”的此前设计状态描述。
 
 更新：2026-10-16。四个活动分支各完成三轮推进，全部服务[同一研究问题](SPACE_TIME_INTERFACE_PLAN_20261016.md)。资格仍 CONDITIONAL。
@@ -33,4 +35,4 @@
 
 代码复核入口：[执行模块说明](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/INTEGRATION_NOTICE.md)。来源和反馈模块分别在对应工作分支，不复制到 main；跨工作区依赖由固定清单明确记录。
 
-清理前完整进度：[2026-10-16 归档](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/archive/pre-cleanup-main-20261016/GITHUB_PROGRESS.md)。从活动 Git 列表移出 2547 项重复/历史文件，旧 learned-query 分支由归档标签保留；本机冻结原路径和独有文件未物理删除，磁盘空间未回收。
+清理前完整进度：[2026-10-16 归档](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/archive/pre-cleanup-main-20261016/GITHUB_PROGRESS.md)。此前从活动 Git 列表移出 2547 项重复/历史文件，旧 learned-query 分支由归档标签保留，当时未物理删除文件。后续有限物理清理见本页开头；冻结原路径和本机独有实验记录仍保留。

@@ -6,6 +6,7 @@
 - [最小可复核实例](SPACE_TIME_MINIMAL_EXAMPLE_20261016.md)
 - [当前进度](GITHUB_PROGRESS.md)
 - [分支职责、文件导航与历史恢复](REPOSITORY_NAVIGATION.md)
+- [停止路线的经验与下一终端执行说明](REPOSITORY_NAVIGATION.md#停止路线留下的经验)
 - [文献依据](LITERATURE_GUIDED_RESEARCH_PLAN_20261016.md)
 - [最新误差来源诊断与失败](PROBABILISTIC_ERROR_SOURCE_20261016.md)
 
