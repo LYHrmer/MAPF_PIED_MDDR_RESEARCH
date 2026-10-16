@@ -1,5 +1,7 @@
 # MAPF 空间占用与执行约束
 
+**最新：联合支持界已落实为有理数代码。** [support.py](../exploration/spatial_source/support.py)保留任务位移/车身共用δ，以带符号余项和二次极值覆盖整个朝向域；MOVE按单调距离端点，WAIT/HOLD按零漂移条件，TURN回退旧整圆。支持函数凸性还提供整动作的仿射上界，未重置跨动作误差。同树换盒无边界收益；直行解析层取得内部几何差异，仍无任务收益/外部优势。[证明、适用域及216条静态断言](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/DEPARTURE_NOTICE.md)。旧来源和碰撞见证冻结，不训练。以下为前轮状态。
+
 **最新：联合车身支持函数与原先验内碰撞见证已推导。** 同一δ旋转任务位移及车身；固定朝向单调MOVE的时间极值可化到区间两端，再检查顶点和一维三角极值。公式未实现，TURN连续角度、向外舍入和原同步输入条件仍不可省。固定C1在两组MOVE对中存在Δ≈1.72799575466667 s的严格内部碰撞，限制当前1.74546875 s有序边界剩余收紧量至多约17.473 ms。该见证仅为原先验下的解析反例，不是反馈或实测参数；来源代码、旧失败和数据保持冻结。[完整推导与边界](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/DEPARTURE_NOTICE.md)。
 
 ## 前轮增量审查（2026-10-16）
