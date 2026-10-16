@@ -1,5 +1,7 @@
 # 当前进度：explore/gaussian-mapf-feasibility
 
+后继三轮·第3轮完成（2026-10-16）：增加最晚可能完成之后的永久HOLD证据，起点等待不能冒充目标；几何证书不等于物理END。 各分支本轮完成三次实质提交，累计检查15→53→99通过（非独立任务数）；22个窗口和12条约束不变，求值8738→446。用户明确仅实现/静态核验，科学运行0。[当前后继入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/QUALIFICATION_NOTICE.md)。以下T1及更早段落保留历史状态。
+
 后继三轮·第2轮（2026-10-16）：实现首尾叶搜索与查询内缓存；访问原二分树的子集，覆盖不连通可能区间，预算耗尽不交付部分窗口。 累计53项静态检查通过；本轮科学运行0。
 
 后继三轮·第1轮（2026-10-16）：新增动作阶段连续分区及反馈相位到物理时间窗映射，显式保留加速/制动/转弯槽/永久HOLD，不重置任务初态。 当前仅实现/静态核验，用户明确保留运行待授权。结果见执行分支 `QUALIFICATION_CHECK.json`，旧T1证据不改。

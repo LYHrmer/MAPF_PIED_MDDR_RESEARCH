@@ -84,6 +84,8 @@ def physical_windows(trajectory, anchor, now):
     collision test, and do not replace the continuous trajectory-family box.
     """
     now = Q(now)
+    if anchor.duration != trajectory.chain.duration:
+        raise ValueError('feedback duration does not match this trajectory')
     anchor.phases(now, now)  # reject retrospective use
     if not anchor.moving:
         return ({'mode': 'CONFIRMED_STATIONARY', 'start': now, 'end': None,
@@ -96,3 +98,24 @@ def physical_windows(trajectory, anchor, now):
         result.append({'action': index, 'mode': mode,
                        'start': max(now, anchor.capture+lo-anchor.high), 'end': end})
     return tuple(result)
+
+
+def terminal_hold_certificate(trajectory, anchor, now):
+    """Conditional future geometry, NOT confirmation that a task has completed.
+
+    Earliest possible goal entry is insufficient. All allowed phases must have
+    reached the terminal state, using the LOW phase bound. A stationary initial
+    wait cannot be repurposed as a goal certificate.
+    """
+    now = Q(now)
+    if anchor.duration != trajectory.chain.duration:
+        raise ValueError('feedback duration does not match this trajectory')
+    anchor.phases(now, now)
+    finish = anchor.finish_upper()
+    if finish is None or (not anchor.moving and anchor.low != anchor.high):
+        return None
+    end = trajectory.chain.duration
+    return {'valid_from': max(now, finish), 'valid_until': None,
+            'box': trajectory.box(end, end),
+            'basis': 'unchanged_v2_shared_task_parameters_and_zero_input_permanent_hold',
+            'is_physical_END_confirmation': False}
