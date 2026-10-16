@@ -1,5 +1,9 @@
 # MAPF 空间占用与执行约束
 
+## 本轮增量审查（2026-10-16）
+
+第1轮核对费用近邻：PSIPP/CTC已有几何预处理、缓存查询及区间更新；MAPF-X缓存动作预测和后继；ESADG预印本已有廉价递推筛选。8738→446是本地旧/新构造器的外包求值数，两比较臂已同时采用；不能据此报完整计算提速。下一轮逐项列出首次构造、每次反馈更新、缓存失效、控制和日志的总费用边界。证据见[main最新审查](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)。公共工具保留，旧查询学习停止，后继有限清单尚不准备。
+
 **最新：后继三轮已完成，99项累计静态检查通过。** 修正跨车辆回溯放行；等价窗口构造求值8738→446；两/三车完整消息配对仍无独有放行或保证。总实耗未测，当前同证书接线贡献候选关闭，保留工程接口。本轮仅静态核验，不运行、不训练。[当前说明](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/QUALIFICATION_NOTICE.md)。下文为T1基座背景。
 
 2026-10-16。`explore/query-value-feasibility`：实际输入相位反馈、完整END与计费工具。四个活动分支服务同一个论文问题，旧查询学习继续归档。
