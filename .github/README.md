@@ -1,29 +1,20 @@
-# MAPF 空间占用与执行约束
+# MAPF 连续占用与执行约束
 
-**最新：学习建议的验证、回退和缓存成本已单列，训练资格未通过。** 固定五个多边形中，裁剪需20次交点/82次顶点检查；零推理费用的完美建议仍需10次原始解、10次对偶解和80次原始约束检查。两者有理除法为20/40次，不能按异类操作数宣称wall/CPU优势。上一动作对8项实际建议仅1项通过，5/5问题回退，提取/缓存维护已计数；该顺序不是在线反馈序列。所有共同来源、几何回退、承诺、反馈、控制至END和日志成本仍保留。完美标签提取费用另列，既不是训练成果，也不是所有学习算法上限。[60项静态收据、完整费用口径与判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/DEPARTURE_NOTICE.md)。公共工具保持冻结，不扩运行器或准备新清单。以下为前轮状态。
+当前统一对象：**初始位姿不确定性下的连续占用与协调**。四个活动分支只服务一个论文问题，当前资格CONDITIONAL。
 
-**最新：直接相位对投影未支持成本收益。** 同11动作对/同几何/同精度，外包求值由已有优化构造的446次增至542次（+21.52%），另记录601次成对判定、622次出队和962次入队。最终有序下界不变；静态操作数不等于总wall/CPU，不以8738次旧全遍历作唯一强对照。反馈、承诺、完整连续检查、控制到END和日志费用仍须全部计入，当前完整实耗UNKNOWN。公共计费代码及冻结收据复用，不扩运行器或准备清单。[构造与费用证据](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/DEPARTURE_NOTICE.md)。
+本分支 `explore/query-value-feasibility`：合法反馈、配对日志、完整成本与失败账本。现有公共字段足够，本轮不改协议或运行器；保留冷启动、缓存失效、验证、回退及全部控制至END的费用。
 
-## 前轮增量审查（2026-10-16）
+**最新决定：** 联合相位差已作为更强的非学习对照实现，冻结例全局上界1.738392026978→1.737460840749 s，但既有9.45 s放行不变。没有新任务收益或全成本加速证据；停止继续打磨C1毫秒差额。历史观测缩域只完成可辨识性和合同判断，尚无可重放T1公共包与关键决策差异，不新增估计器或采集。
 
-第3轮验收：现有首尾搜索最好情形可访问两条深度D路径的2D+1节点，但中间单一可能叶且内部均不可剪枝时仍可遍历全树，最坏阶没有改善。与作者预处理/解析区间法的全成本差异未成立。后续只有明确减少的完整工作或新保证才扩计费与运行器；缓存冷启动、维护/回退、失败、全部END和日志一律保留。当前不准备后继清单，已消费许可不复用。
+- [唯一当前方案与继续/停止判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)
+- [模型、联合逆映射证明、反馈可辨识性及精确收据](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/DEPARTURE_NOTICE.md)
+- [公共进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md)
+- [分支、归档和恢复](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/REPOSITORY_NAVIGATION.md)
 
-第2轮完成成本调用链核对：8738→446只减少首次22个窗口的外包求值，未减少make_problem构造、承诺逐次比较、相位/定位校验、差分约束、每次放行全车对时间检查和最终END/日志。当前缓存不提供跨放行请求的连续证书复用。完整口径分冷启动/复用、中心在线/仿真评估、总wall/CPU/峰值内存，嵌套计时不相加。若该求值仅占总成本10%，忽略新增开销的理想加速也仅约1.105倍；非实测。
+停止项：同证书接线贡献、同几何直接投影候选、当前小问题网络训练、旧查询学习。RL、换序、LMAPF与实物后置。WinkTPG仍只读且有许可缺口；SADG执行核心复用，冲突构造以充分适配的PSIPP/CTC为比较对象。
 
-第1轮核对费用近邻：PSIPP/CTC已有几何预处理、缓存查询及区间更新；MAPF-X缓存动作预测和后继；ESADG预印本已有廉价递推筛选。8738→446是本地旧/新构造器的外包求值数，两比较臂已同时采用；不能据此报完整计算提速。下一轮逐项列出首次构造、每次反馈更新、缓存失效、控制和日志的总费用边界。证据见[main最新审查](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)。公共工具保留，旧查询学习停止，后继有限清单尚不准备。
+本轮只做必要静态核验，没有world、训练、任务会话或科学运行。旧T1及G2c清单是历史证据，不构成当前运行建议或授权，已消费许可不得复用。主稿未提交修改、旧失败、来源代码及冻结证据不改。
 
-**最新：后继三轮已完成，99项累计静态检查通过。** 修正跨车辆回溯放行；等价窗口构造求值8738→446；两/三车完整消息配对仍无独有放行或保证。总实耗未测，当前同证书接线贡献候选关闭，保留工程接口。本轮仅静态核验，不运行、不训练。[当前说明](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/QUALIFICATION_NOTICE.md)。下文为T1基座背景。
+此前入口和结果保留在[本轮前固定版本](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/6d09dce/GITHUB_PROGRESS.md)，详细技术历史见上方模块说明。日常只从本页进入，避免按旧根README或旧“下一步”恢复停止路线。
 
-2026-10-16。`explore/query-value-feasibility`：实际输入相位反馈、完整END与计费工具。四个活动分支服务同一个论文问题，旧查询学习继续归档。
-
-最新已完成 T1：任务初态联合传播、保留物理时间的连续占用、时序/制动/承诺检查及两三车完整公共消息会话。87项新静态检查和63项C1回归通过；保留所有冻结证据与旧失败。固定消息夹具中，两臂放行、完成时间、消息流和证书工作量相同，没有独有保证；总运行实耗未测，不宣称相对强基线的创新。
-
-- [本分支当前入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/query-value-feasibility/exploration/execution_feedback/timed_protocol.py)
-- [统一方案与具体约束表](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)
-- [当前公共进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md)
-- [有限运行清单：未授权未执行](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/TIMED_RUN_CHECKLIST.md)
-- [工作区、归档和恢复](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/REPOSITORY_NAVIGATION.md)
-
-科学事件循环、world、优化器和训练本次均0。G2c两次许可已消费，短IPC清单仍未授权未执行；旧拖车不阻塞主线。L20/L21、旧查询学习、RL/换序/LMAPF和实物后置。当前同证书接线若无约束、算法成本或保证增量，结束候选并保留接口，不增加场景寻找正结果。
-
-冻结文件保留本机原路径；Git入口精简不代表已物理删除数据。支线旧根README属于冻结历史，日常从本页及main进入。
+费用结论：原裁剪20次交点/82次顶点检查/40次极值求值之外，联合目标增加10次域比较和8次目标求值，不能报加速。冻结T1摘要只含包数/字节/流SHA和结果，没有完整公共包流；旧C1无T1相位字段，不能混用为观测缩域证据。
