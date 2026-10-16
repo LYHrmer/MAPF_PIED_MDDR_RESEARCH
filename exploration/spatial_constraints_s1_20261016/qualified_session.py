@@ -2,11 +2,33 @@
 from copy import deepcopy
 
 from composition import CONDITION
-from timed_constraints import Certificates
+from timed_constraints import Certificates, CertificateBudget
+from interface import Box
 from timed_session import TaskSession, AuthorTaskEvents
 from timed_protocol import Binding, Costs, TaskInbox
-from source_qualification import phase_segments, physical_windows
+from source_qualification import phase_segments, physical_windows, extreme_window, WindowBudget
 from feedback_qualification import CausalClock
+
+
+class EndpointCertificates(Certificates):
+    """Shared engineering optimization; preserves every T1 compiled window."""
+    def visits(self, name, region):
+        key = (name, region)
+        if key in self.cache:
+            self.operations['phase_cache_hits'] += 1
+            return self.cache[key]
+        robot, index = self.problem['finite'][name]
+        tr = self.problem['trajectories'][robot]
+        lo, hi = self.problem['intervals'][name]
+        try:
+            result = extreme_window(lo, hi, lambda a, b: Box(*tr.action_box(index, a, b)).separated(region),
+                                    resolution=self.resolution, max_nodes=self.limit)
+        except WindowBudget as exc:
+            self.operations['phase_cells'] += exc.nodes
+            raise CertificateBudget(str(exc)) from exc
+        self.operations['phase_cells'] += result['nodes']
+        self.cache[key] = result['window']
+        return result['window']
 
 
 class CheckedSession(TaskSession):

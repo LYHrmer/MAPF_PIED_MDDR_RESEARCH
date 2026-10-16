@@ -63,6 +63,33 @@ def check(round_number):
         rejects(lambda: new.authorize('A', now=0), engine+'_retrospective_dispatch_rejected')
         need(not new.started and not new.commands, engine+'_rejected_request_has_no_control_side_effect')
         need(new.authorize('A', now='.1')['accepted'], engine+'_normal_forward_dispatch_preserved')
+    if round_number >= 2:
+        # Independently enumerated four-leaf outcomes, including disconnected
+        # allowed leaves and an empty region. No trajectory sampling proof.
+        for mask in range(16):
+            leaves = [i for i in range(4) if mask & (1 << i)]
+            clear = lambda lo, hi: not any(Q(i) < hi and Q(i+1) > lo for i in leaves)
+            found = source.extreme_window(0, 4, clear, resolution=1, max_nodes=7)
+            expected = None if not leaves else (Q(min(leaves)), Q(max(leaves)+1))
+            need(found['window'] == expected, 'extremal_tree_mask_'+str(mask))
+            need(found['nodes'] <= 7, 'memoized_search_does_not_exceed_full_tree_'+str(mask))
+        rejects(lambda: source.extreme_window(0, 4, lambda a, b: False, resolution=1, max_nodes=1),
+                'budget_exhaustion_never_returns_partial_window')
+        reference, candidate = constraints.Certificates(problem), successor.EndpointCertificates(problem)
+        need(reference.constraints == candidate.constraints, 'all_twelve_C1_constraints_exactly_equal')
+        need(reference.cache == candidate.cache, 'all_twenty_two_action_region_windows_exactly_equal')
+        left = {'commitment': problem['commitment'], 'constraints': reference.constraints,
+                'phase_cells': reference.operations['phase_cells']}
+        right = {**left, 'phase_cells': candidate.operations['phase_cells']}
+        comparison = transport.construction_comparison(left, right)
+        need(comparison['saved_phase_cells'] > 0 and not comparison['runtime_speedup_claim_allowed'],
+             'fewer_enclosure_evaluations_do_not_assert_measured_runtime_speedup')
+        rejects(lambda: transport.construction_comparison(left, {**right, 'commitment': 'foreign'}),
+                'different_motion_inputs_cannot_form_speedup_pair')
+        rejects(lambda: transport.construction_comparison(left, {**right, 'constraints': []}),
+                'different_output_windows_cannot_form_exact_optimization_pair')
+        evidence['construction'] = comparison
+        evidence['construction']['query_count'] = len(reference.cache)
     return {'status': 'PASS', 'round': round_number, 'check_count': len(checks), 'checks': checks,
             'evidence': evidence, 'scientific_runs': 0, 'world_steps': 0, 'training': 0}
 
