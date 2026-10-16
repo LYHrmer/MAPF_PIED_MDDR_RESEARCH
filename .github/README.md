@@ -4,7 +4,7 @@
 
 **已完成三轮实质推进：来源与消息接通 → 同信息强对照与失效核验 → 完整接口及收缩验收。** 最终 66 项联合合同检查、原 37 项解析检查通过；21 个冻结集成输入 SHA 已核。无新科学批次、world 时间步、优化器或训练。
 
-主要判断：相同空间证书和进度信息下，SADG 事件适配与自有 guard 的放行一致。停止“仅提前释放即可形成独立调度新意”的解释；保留接口。直行—转向后初态集不闭合，不能直接扩大地图实验。学习保持关闭。
+最新定点推进：新 v2 理想同输入模型的跨动作条件已闭合，旧 v1 拼接失败保留。C1 新63项静态/解析检查识别11对潜在连续空间冲突；共享占用、反馈和证书时，SADG 事件适配与自有 guard 均9.95 s放行，本例独立调度增量为0。完整带时间占用、world会话与总成本仍待验证；当前不训练、不启动新科学批次。
 
 - [本入口成果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/gaussian-mapf-feasibility/exploration/spatial_source/README.md)
 - [统一方案与导师分析](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)
