@@ -1,29 +1,20 @@
-# MAPF 空间占用与执行约束
+# MAPF 连续占用与执行约束
 
-**最新：学习资格预检不改变v2来源或覆盖范围。** 执行侧新增活动行建议和精确验证，60条固定断言通过，但只保证给定进度多边形的极值；当前没有净全成本优势，不开训。[support.py](../exploration/spatial_source/support.py)中的共享δ、支持弦线、同步实际输入、共同暂停/恢复/切换时钟及TURN整圆回退保持。来源是已声明的解析模型，不能以网络缩小既定允许域或重置跨动作误差；160次支持二次界的既有工作没有被建议接口省掉。旧来源、216项证据及碰撞见证冻结，无新数据、动力学或训练。[完整判断和适用边界](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)。以下为前轮状态。
+当前统一对象：**初始位姿不确定性下的连续占用与协调**。四个活动分支只服务一个论文问题，当前资格CONDITIONAL。
 
-**最新：联合车身支持函数与原先验内碰撞见证已推导。** 同一δ旋转任务位移及车身；固定朝向单调MOVE的时间极值可化到区间两端，再检查顶点和一维三角极值。公式未实现，TURN连续角度、向外舍入和原同步输入条件仍不可省。固定C1在两组MOVE对中存在Δ≈1.72799575466667 s的严格内部碰撞，限制当前1.74546875 s有序边界剩余收紧量至多约17.473 ms。该见证仅为原先验下的解析反例，不是反馈或实测参数；来源代码、旧失败和数据保持冻结。[完整推导与边界](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/DEPARTURE_NOTICE.md)。
+本分支 `explore/gaussian-mapf-feasibility`：误差来源、跨动作传播和覆盖条件；分支名不要求采用高斯。首版整任务共用初始位置/朝向参数，实际输入与参考完全相同、时钟同步，零输入无漂移；不涵盖滑移、轮速实现误差或闭环纠偏。
 
-## 前轮增量审查（2026-10-16）
+**最新决定：** 联合相位差已作为更强的非学习对照实现，冻结例全局上界1.738392026978→1.737460840749 s，但既有9.45 s放行不变。没有新任务收益或全成本加速证据；停止继续打磨C1毫秒差额。历史观测缩域只完成可辨识性和合同判断，尚无可重放T1公共包与关键决策差异，不新增估计器或采集。
 
-第3轮验收：v2范围在原同步实际输入和不可变承诺内维持覆盖资格；没有额外安全定理。硬安全关联等价命题不适用于机会约束/跨车耦合/观测缩域。任何下一候选须指出究竟缩小哪一时刻的允许占用或哪一禁行时段，并证明TURN/制动/等待/永久驻留仍覆盖；不能靠换动作重置误差。当前不扩大动力学、不训练，不准备新来源运行。
+- [唯一当前方案与继续/停止判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)
+- [模型、联合逆映射证明、反馈可辨识性及精确收据](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/DEPARTURE_NOTICE.md)
+- [公共进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md)
+- [分支、归档和恢复](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/REPOSITORY_NAVIGATION.md)
 
-第2轮完成量词推导：跨车允许参数域为直积、固定运动与全时刻硬安全时，∀参数∀时刻的碰撞规避等价于每时刻精确边际占用分离。因此共享跨时刻参数主要保证覆盖合法；若边际集合不变，关联本身不增加可行安排。当前中心/车身同δ的公式最终仍经轴对齐盒和TURN整圆松弛；定位反馈只作一致性校验，没有历史参数交集。机会约束、跨车耦合或观测缩域不在此等价命题内。
+停止项：同证书接线贡献、同几何直接投影候选、当前小问题网络训练、旧查询学习。RL、换序、LMAPF与实物后置。WinkTPG仍只读且有许可缺口；SADG执行核心复用，冲突构造以充分适配的PSIPP/CTC为比较对象。
 
-第1轮对照作者模型：PSIPP/CTC固定圆形/线段的解析冲突与转向耗时映射已经存在；MAPF-X将预测空间偏差用于路段膨胀。二者均不能直接充作v2共享初态矩形旋转的覆盖证明，但这个模型差异本身也不证明方法创新。dSLAP的条件安全定理不随范围预测接口迁移。下一轮分清“跨动作传播正确”与“同条件下减少保守性”，推导共享参数在全时刻硬安全中的具体作用。固定源码及原文见[main最新审查](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)。来源代码与旧失败保持冻结，不准备训练或新来源运行。
+本轮只做必要静态核验，没有world、训练、任务会话或科学运行。旧T1及G2c清单是历史证据，不构成当前运行建议或授权，已消费许可不得复用。主稿未提交修改、旧失败、来源代码及冻结证据不改。
 
-**最新：后继三轮已完成，99项累计静态检查通过。** 修正跨车辆回溯放行；等价窗口构造求值8738→446；两/三车完整消息配对仍无独有放行或保证。总实耗未测，当前同证书接线贡献候选关闭，保留工程接口。本轮仅静态核验，不运行、不训练。[当前说明](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/QUALIFICATION_NOTICE.md)。下文为T1基座背景。
+此前入口和结果保留在[本轮前固定版本](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/6d09dce/GITHUB_PROGRESS.md)，详细技术历史见上方模块说明。日常只从本页进入，避免按旧根README或旧“下一步”恢复停止路线。
 
-2026-10-16。`explore/gaussian-mapf-feasibility`：任务共享初态、物理时间占用与运动条件。四个活动分支服务同一个论文问题，旧查询学习继续归档。
-
-最新已完成 T1：任务初态联合传播、保留物理时间的连续占用、时序/制动/承诺检查及两三车完整公共消息会话。87项新静态检查和63项C1回归通过；保留所有冻结证据与旧失败。固定消息夹具中，两臂放行、完成时间、消息流和证书工作量相同，没有独有保证；总运行实耗未测，不宣称相对强基线的创新。
-
-- [本分支当前入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/gaussian-mapf-feasibility/exploration/spatial_source/TIMED.md)
-- [统一方案与具体约束表](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)
-- [当前公共进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md)
-- [有限运行清单：未授权未执行](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/TIMED_RUN_CHECKLIST.md)
-- [工作区、归档和恢复](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/REPOSITORY_NAVIGATION.md)
-
-科学事件循环、world、优化器和训练本次均0。G2c两次许可已消费，短IPC清单仍未授权未执行；旧拖车不阻塞主线。L20/L21、旧查询学习、RL/换序/LMAPF和实物后置。当前同证书接线若无约束、算法成本或保证增量，结束候选并保留接口，不增加场景寻找正结果。
-
-冻结文件保留本机原路径；Git入口精简不代表已物理删除数据。支线旧根README属于冻结历史，日常从本页及main进入。
+来源复核：[COMPOSITION.md](../exploration/spatial_source/COMPOSITION.md)及现行代码保持冻结。初始平移b与固定定位偏置ℓ存在观测不变性；重复帧不能唯一分开二者，但仍可能缩小允许集合。源内固定偏置不自动等于公开接收合同已证明可跨帧抵消，条件说明见当前证据入口。
