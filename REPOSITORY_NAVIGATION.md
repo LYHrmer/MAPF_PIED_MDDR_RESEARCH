@@ -2,7 +2,7 @@
 
 2026-10-16。按现行职责保留四个活动分支，旧学习分支由历史标签保存。本页同时记录入口整理和之后的有限物理清理；工作树、实验原始记录和冻结证据保留。
 
-**最新：可验证学习建议接口与强解析对照已实现，当前训练资格未通过。** 从[统一方案开头](SPACE_TIME_INTERFACE_PLAN_20261016.md)及执行分支[现有推导/代码/收据入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/DEPARTURE_NOTICE.md)进入。60条固定静态断言通过，五个MOVE对十个极值不变；精确矩形裁剪已显著减少相对旧枚举的交点和检查次数，完美建议仍需完整证书，未证明净全成本收益。保留接口，不为当前二维八面问题训练或准备新运行。上一轮7.077 ms内部几何收紧、旧放行负结果及216/99项证据保留；本轮无新world、控制会话或训练，四分支仍服务一个问题。
+**当前：首版研究初始位姿不确定性下的连续占用与协调。** 联合相位差对照已补齐，禁行上界收紧但既有放行不变；停止打磨C1毫秒差额。反馈缩域先过可辨识性与合法历史证据门，当前未实现、不采集。旧小问题网络训练、直接投影和同证书接线候选保持停止。[唯一当前判断](SPACE_TIME_INTERFACE_PLAN_20261016.md#当前短周期明确模型保留联合解析对照反馈缩域待证据) · [实现与证据](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/DEPARTURE_NOTICE.md)。各分支从`.github/README.md`进入，历史段落和旧清单不构成重启授权。
 
 | 入口 | 当前职责 | 本机路径 |
 |---|---|---|
@@ -12,7 +12,7 @@
 | explore/query-value-feasibility | 合法反馈、配对日志及费用工具 | `/home/lyh/MAPF_QUERY_VALUE_FEASIBILITY` |
 | archive/learned-query-20261016（标签） | 停止的查询学习历史、正负结果 | `/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE`，detached HEAD |
 
-分支名称保留以免扰动其他窗口，但 gaussian/query 不再代表独立选题。三轮推进依次解决接口、同信息对照、联合验收；详见[当前方案](SPACE_TIME_INTERFACE_PLAN_20261016.md)。
+分支名称保留以免扰动其他窗口，但 gaussian/query 不代表独立选题。main只维护问题、证据和决定；执行分支只推进连续占用、时窗和构造；来源分支负责传播与覆盖，不要求高斯；工具分支负责合法反馈、配对和完整成本，不恢复“查询谁”。公共协议已有字段够用，算法确需新字段时才改。RL、换序和LMAPF后置；不以提交轮次或检查数量表示科研进展。
 
 ## 日常只读这些入口
 

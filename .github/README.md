@@ -1,21 +1,18 @@
-# MAPF 空间占用与执行约束
+# MAPF 连续占用与执行约束
 
-**最新：学习建议接口与强解析对照已实现，60条固定静态断言通过。** 五个MOVE对十个极值相同；矩形裁剪需20次交点、82次顶点检查，完美建议仍需10次原始解、10次对偶解及80次原始约束检查。净全成本优势未证，不为当前二维八面问题开训或准备运行清单。上一轮7.077 ms内部几何收紧与同信息放行负结果保留，旧216/99项不重跑。[导师判断与重启条件](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md) · [实现、证明与收据](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/DEPARTURE_NOTICE.md)。以下为前轮状态。
+当前统一对象：**初始位姿不确定性下的连续占用与协调**。四个活动分支只服务一个论文问题，当前资格CONDITIONAL。
 
-**最新：鲁棒相对出发集合完成实现与固定静态核验。** 同几何直接投影有一处局部收紧，但被原END次序覆盖，11条有效下界全部不变；外包求值446→542。解析碰撞见证限定当前有序边界剩余收紧量至多约17.473 ms，非已实现收益。当前投影候选停止，不准备后继有限运行；联合支持函数仅保留推导，未实现或证明外部增量。[详细判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md) · [代码、证明与收据](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/DEPARTURE_NOTICE.md)。四分支保持一个问题，旧99项证据复用，下文为冻结背景，T1清单不是当前推荐动作。
+本分支 `main`：问题定义、已发表近邻、证据与继续/停止决定。避免每轮扩写总方案，不以检查数或提交轮次代替科研进展。
 
-**最新：后继三轮已完成，99项累计静态检查通过。** 修正跨车辆回溯放行；等价窗口构造求值8738→446；两/三车完整消息配对仍无独有放行或保证。总实耗未测，当前同证书接线贡献候选关闭，保留工程接口。本轮仅静态核验，不运行、不训练。[当前说明](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/QUALIFICATION_NOTICE.md)。下文为T1基座背景。
+**最新决定：** 联合相位差已作为更强的非学习对照实现，冻结例全局上界1.738392026978→1.737460840749 s，但既有9.45 s放行不变。没有新任务收益或全成本加速证据；停止继续打磨C1毫秒差额。历史观测缩域只完成可辨识性和合同判断，尚无可重放T1公共包与关键决策差异，不新增估计器或采集。
 
-2026-10-16。`main`：统一合同、验收与论文判断。四个活动分支服务同一个论文问题，旧查询学习继续归档。
+- [唯一当前方案与继续/停止判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)
+- [模型、联合逆映射证明、反馈可辨识性及精确收据](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/DEPARTURE_NOTICE.md)
+- [公共进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md)
+- [分支、归档和恢复](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/REPOSITORY_NAVIGATION.md)
 
-最新已完成 T1：任务初态联合传播、保留物理时间的连续占用、时序/制动/承诺检查及两三车完整公共消息会话。87项新静态检查和63项C1回归通过；保留所有冻结证据与旧失败。固定消息夹具中，两臂放行、完成时间、消息流和证书工作量相同，没有独有保证；总运行实耗未测，不宣称相对强基线的创新。
+停止项：同证书接线贡献、同几何直接投影候选、当前小问题网络训练、旧查询学习。RL、换序、LMAPF与实物后置。WinkTPG仍只读且有许可缺口；SADG执行核心复用，冲突构造以充分适配的PSIPP/CTC为比较对象。
 
-- [本分支当前入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)
-- [统一方案与具体约束表](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)
-- [当前公共进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md)
-- [有限运行清单：未授权未执行](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/TIMED_RUN_CHECKLIST.md)
-- [工作区、归档和恢复](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/REPOSITORY_NAVIGATION.md)
+本轮只做必要静态核验，没有world、训练、任务会话或科学运行。旧T1及G2c清单是历史证据，不构成当前运行建议或授权，已消费许可不得复用。主稿未提交修改、旧失败、来源代码及冻结证据不改。
 
-科学事件循环、world、优化器和训练本次均0。G2c两次许可已消费，短IPC清单仍未授权未执行；旧拖车不阻塞主线。L20/L21、旧查询学习、RL/换序/LMAPF和实物后置。当前同证书接线若无约束、算法成本或保证增量，结束候选并保留接口，不增加场景寻找正结果。
-
-冻结文件保留本机原路径；Git入口精简不代表已物理删除数据。支线旧根README属于冻结历史，日常从本页及main进入。
+此前入口和结果保留在[本轮前固定版本](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/6d09dce/GITHUB_PROGRESS.md)，详细技术历史见上方模块说明。日常只从本页进入，避免按旧根README或旧“下一步”恢复停止路线。
