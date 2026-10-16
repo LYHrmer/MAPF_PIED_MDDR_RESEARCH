@@ -2,7 +2,7 @@
 
 2026-10-16。按现行职责保留四个活动分支，旧学习分支由历史标签保存。本页同时记录入口整理和之后的有限物理清理；工作树、实验原始记录和冻结证据保留。
 
-**最新：相对出发禁行集合已完成固定静态构造。** 现从[统一方案开头](SPACE_TIME_INTERFACE_PLAN_20261016.md)及执行分支[推导/代码/收据入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/DEPARTURE_NOTICE.md)进入。直接相位对投影的局部收紧被原END关系覆盖，11条有效下界不变，外包求值446→542；原先验下的解析碰撞见证把剩余有序边界收紧空间限制在约17.473 ms以内。未证明相对强基线的约束/全成本/保证增量，不准备后继有限运行。四分支仍各司其职，复用前轮源码审查与99项证据；没有新world、任务会话或训练，旧T1清单仅保留历史未授权状态。
+**最新：联合支持与直行解析构造已获得内部几何差异。** 从[统一方案开头](SPACE_TIME_INTERFACE_PLAN_20261016.md)及执行分支[现有推导/代码/收据入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/DEPARTURE_NOTICE.md)进入。同分割换联合盒仍无改善；解析成对界收紧约7.077 ms，相对同支持解析首尾对照多收紧约3.136 ms。216条静态断言通过，未形成反馈放行或任务收益，外部充分适配与完整成本优势未证，不准备后继科学运行。前轮同几何失败及17.473 ms改善上限保留；四分支仍服务一个问题，旧99项证据复用，无新world、控制会话或训练。
 
 | 入口 | 当前职责 | 本机路径 |
 |---|---|---|

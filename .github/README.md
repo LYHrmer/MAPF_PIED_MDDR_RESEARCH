@@ -1,5 +1,7 @@
 # MAPF 空间占用与执行约束
 
+**最新：联合支持与直行解析界已实现，216条固定静态断言通过。** 禁行右端1.74546875→1.738392026978 s；相对同支持解析首尾适配的内部差额约3.136 ms。仅更换联合盒仍无改善。原反馈放行负结果不变，外部方法与完整成本优势未证，不准备科学运行。[详细判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md) · [证明与精确收据](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/DEPARTURE_NOTICE.md)。以下为前轮状态。
+
 **最新：鲁棒相对出发集合完成实现与固定静态核验。** 同几何直接投影有一处局部收紧，但被原END次序覆盖，11条有效下界全部不变；外包求值446→542。解析碰撞见证限定当前有序边界剩余收紧量至多约17.473 ms，非已实现收益。当前投影候选停止，不准备后继有限运行；联合支持函数仅保留推导，未实现或证明外部增量。[详细判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md) · [代码、证明与收据](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/DEPARTURE_NOTICE.md)。四分支保持一个问题，旧99项证据复用，下文为冻结背景，T1清单不是当前推荐动作。
 
 **最新：后继三轮已完成，99项累计静态检查通过。** 修正跨车辆回溯放行；等价窗口构造求值8738→446；两/三车完整消息配对仍无独有放行或保证。总实耗未测，当前同证书接线贡献候选关闭，保留工程接口。本轮仅静态核验，不运行、不训练。[当前说明](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/QUALIFICATION_NOTICE.md)。下文为T1基座背景。
