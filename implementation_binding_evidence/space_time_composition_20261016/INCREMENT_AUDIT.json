@@ -3,7 +3,8 @@
   "date": "2026-10-16",
   "rounds_completed": [
     1,
-    2
+    2,
+    3
   ],
   "scope": "research qualification, author source inspection and static algebra only; no candidate or scientific run",
   "source_code": [
@@ -319,5 +320,66 @@
       "feedback-policy synthesis"
     ]
   },
-  "total_runtime_comparison": "UNKNOWN; both arms already share endpoint optimization"
+  "total_runtime_comparison": "UNKNOWN; both arms already share endpoint optimization",
+  "decision": {
+    "current_event_wiring_contribution": "STOP",
+    "new_robust_conflict_constructor": "UNKNOWN_NO_STRICT_WITNESS_OR_EXTERNAL_COMPLEXITY_INCREMENT",
+    "full_cost_advantage": "UNKNOWN_NOT_MEASURED",
+    "stronger_guarantee": "NOT_ESTABLISHED",
+    "successor_run_gate": "NOT_PASSED",
+    "new_candidate_implementation": false,
+    "successor_run_plan_prepared": false,
+    "old_T1_plan": "historical unexecuted artifact; not current recommended next step"
+  },
+  "search_complexity": {
+    "scope": "same finite dyadic tree and prune predicate",
+    "all_leaves_possible_nodes": "2*D+1 vs 2**(D+1)-1",
+    "worst_case": "single interior possible leaf, no internal pruning: union of both searches can cover the full tree",
+    "claim": "node-subset engineering property; no asymptotic advantage over published collision methods established"
+  },
+  "fairness": {
+    "hold_fixed": [
+      "allowed physical trajectory family",
+      "delivered information and event granularity",
+      "paths and existing order",
+      "controller and safety semantics"
+    ],
+    "do_not_conflate": "shared-certificate event-wrapper comparison does not establish or disprove novelty of a future certificate constructor"
+  },
+  "static_validation": {
+    "status": "PASS",
+    "protected_files_unchanged": 48,
+    "manuscript_sha256": "204316c27e17ecb37a8646d53cb5941a9b11b6c8eff3378ce55e80878b271452",
+    "checks": [
+      "fixed-source Git identifiers well formed",
+      "12 frozen inequalities recomputed exactly",
+      "bottleneck and second-bound gap verified",
+      "3-round documents consistent with no-run gate",
+      "modified paths limited to explicit documentation and audit receipt",
+      "48 pre-existing manuscript/module/fixture/manifest/report files byte-identical"
+    ],
+    "scope": "metadata, exact arithmetic and preservation; no research modules imported or executed",
+    "preexisting_validation_reused": "99 cumulative checks; not rerun or added to sample count"
+  },
+  "round_commits_before_final_main_decision": {
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH": [
+      "be33d6f36346e81b8be7724fbe11d5efdf6e5a22",
+      "04d576b1266099617471f36f7509163c5fbd52b4"
+    ],
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE": [
+      "c8ecc24224ecef9f01027a07217fc8de809d9faf",
+      "09adb4fed249a592b5a90545f66b89df36afef58",
+      "724e9cbbc9a263b40b17264a9a4bfc65a6b357ec"
+    ],
+    "/home/lyh/MAPF_GAUSSIAN_FEASIBILITY": [
+      "22f28a543aa6e4888cf1ea0296ee3c561980aa14",
+      "a8bbf7b7a521d04694a0c8ce0d646c8cd3ae485d",
+      "57a7335a240b1b47cf3873455e5372ec6e2e8e87"
+    ],
+    "/home/lyh/MAPF_QUERY_VALUE_FEASIBILITY": [
+      "d6f9b156ce5b025acb371d915b5b74cde998a591",
+      "84392f8c7caee69497c0fc21e9dd8978b6062f9f",
+      "3d40ed13b854780222211f0d7cd0aaa9d3191c16"
+    ]
+  }
 }
