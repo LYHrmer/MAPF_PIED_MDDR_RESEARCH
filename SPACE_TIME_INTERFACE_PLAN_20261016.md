@@ -17,6 +17,67 @@
 
 总判定 **CONDITIONAL**。用户已明确授权方案修订、接口实现、静态检查与可复核实例，本轮将其限定为探索性原型；不等于锁题、通过科学实验资格或可投稿。
 
+## 最新定点推进：从基线源码学习，并关闭两项资格问题
+
+本节更新于三轮验收之后。科研导师判断沿用原资格卡，不重开全面审查：**在声明的理想模型内，跨动作条件已闭合；相对同信息、同空间证书的 SADG 适配，当前独立调度增量为零。** 原 v1 的拼接失败保留，下面是单独版本的探索性解析接口，不是科学运行结果或可投稿结论。
+
+### 基线作者代码中值得保留的设计
+
+本次重点逐函数阅读固定 SADG 与 WinkTPG。SADG 复用本机原版及 R16/R17 核验；WinkTPG 通过 GitHub API 只读固定提交，不修改、不构建、不运行。没有新下载或复制大型项目。dSLAP 本轮只核原文；未取得可确认的作者代码。MAPF-X 和 ExecTimeNet/ESADG 沿用既有身份及适配分析，本轮未完成其源码定点阅读，不把它们写入“已读代码”清单。
+
+| 实际代码 | 值得学习的具体设计 | 本项目的处理与边界 |
+|---|---|---|
+| SADG `sadg/compiler.py:30` 及 `core/geometry.py:21` | 路径编译与执行/优化分层；先得到同车动作边，再生成跨车依赖。当前 `intersects` 是坐标相等，跨车关系还检查路径时刻 | 空间工作的入口应是冲突编译器。原版点/格抽象不能直接承担连续车身误差；这说明需要共同问题适配，不证明论文算法普遍漏检 |
+| SADG `vertex.py:113`、`:147` | 执行资格由活动依赖前驱 COMPLETED 决定；物理状态与依赖可分开 | 一个明确的逻辑 CLEAR 节点就能表达空间释放，不能把这种事件细化当成独立新算法。`get_progress()` 固定返回0.5，不能借它充当真实进度 |
+| SADG `sadg.py:230`、`dependency_group.py:168` | 目标已是各车最后节点完成时刻之和；相关依赖分组、按状态和预测窗控制切换 | 复用目标定义和状态纪律。首版保持既有次序，关闭切换；不能把新的空间边直接套进原分组/无死锁结论 |
+| SADG `comms.py:73–96` | ROS 回调完成状态后推进当前动作 | 原版用观测 x/y 与目标精确相等判定完成；本模型必须用本地动作完成语义加独立空间 guard，不能继承“到点即无残差” |
+| WinkTPG `inc/temporal_constraint.h:23–48` | 每个路径索引保存时间区间，并保留产生约束的机器人和路径索引 | 借鉴可追溯的冲突—时间窗映射；后续每个窗口必须能回查由哪个连续占用事件产生 |
+| WinkTPG `src/speed_solver.cpp:21–189,324–383` | 从最后反馈和已入队动作估计执行前沿；`findCommitCut` 划定本次可处理部分；前车离开上界衔接后车进入下界 | 已承诺动作必须纳入释放证明。不能只检查当前离开点，也不能把预测离开时刻当作本项目的确认消息 |
+| WinkTPG `src/tpg_execute.cpp:35–71`、`src/simulator.cpp:146` | 普通 TPG 路径中区分最后完成和最后入队索引；反馈取模拟器已保存的前一状态 | 记录完成、承诺和待执行三种边界。`tpg_execute.cpp` 是普通 TPG 分支，WinkTPG 主要时序逻辑在 `speed_solver.cpp`，两者不能混称 |
+
+源码定位：[SADG compiler 固定版](https://github.com/alexberndt/sadg-controller/blob/c2626d996121a9d6c128844a167b917db24418ac/sadg_controller/sadg_controller/sadg/compiler.py#L30)、[SADG 状态接口](https://github.com/alexberndt/sadg-controller/blob/c2626d996121a9d6c128844a167b917db24418ac/sadg_controller/sadg_controller/sadg/vertex.py#L113)、[SADG 完成回调](https://github.com/alexberndt/sadg-controller/blob/c2626d996121a9d6c128844a167b917db24418ac/sadg_controller/sadg_controller/comms.py#L73)、[WinkTPG speedSolver](https://github.com/JingtianYan/WinkTPG-IEEE-TASE/blob/dd96946f225e206de35b041320786eab43210658/src/speed_solver.cpp#L324)、[WinkTPG 区间表](https://github.com/JingtianYan/WinkTPG-IEEE-TASE/blob/dd96946f225e206de35b041320786eab43210658/inc/temporal_constraint.h#L23)。
+
+不能直接借用的另一处是 WinkTPG `computeGaussianDelay`：固定版按 `2*k*(dis1+dis2)+EPS` 构造时间附加量，并在对应延迟模式中使用。它不是本项目动作窗口的空间覆盖界，不能因函数名含 Gaussian 就拿来支持任务级概率安全。WinkTPG 的项目许可缺口仍未关闭；这里只借鉴结构，不移植源码或继承证明。
+
+### 跨动作适用条件怎样闭合
+
+新增来源条件 `joint_initial_se2_stopped_primitives_v2`。保留同样任务初态±.02 m沿向、±.01 m横向、±.002 rad朝向；真实和参考接收相同的理想单轮车控制输入。对任务共享初始世界位置偏置 b 和朝向偏置 δ，有
+
+`p_true(t) = p0 + b + R(δ)(p_ref(t)-p0)`，`theta_true(t)=theta_ref(t)+δ`。
+
+同角速度使 δ 不变，位置式初值和导数均相等，故该关系跨直行/加减速、停止转向、等待和永久驻留成立。下一原语继承同一 b,δ 与累计参考位移，不重新抽取误差，也不恢复旧±.01 m局部横向初态。
+
+令 Dx、Dy 是完整动作窗口内各轴参考位移绝对值的最大值，h=.002；位置外包为 `Ex=bx+Dx*h²/2+Dy*h`、`Ey=by+Dx*h+Dy*h²/2`。轴向段极值在端点取得，但覆盖的是整个连续段。车身另按朝向包络；停止转向覆盖完整旋转扫掠，而非仅两个端姿态。三米E—转N—WAIT—一米N后的世界半宽为(.022006,.016002) m；旧 v1 转向后横向超界的事实不改。
+
+适用域明确限制：每段 .25–3 m、最高 .5 m/s、加减速1 m/s²，原语边界停稳；转向最高 .5 rad/s、角加减速1 rad/s²，四秒槽含实际转向及余下零输入驻留；参考相对初点每轴≤8 m、绝对坐标≤10 m。地图检查再覆盖车身。无滑移、输入偏差、闭环反馈修正或驻留漂移。**闭合仅针对这一理想模型的允许动作链**，未解决一般真实控制误差的可达集传播；改变条件直接拒绝沿用证书。
+
+来源接口与推导：[COMPOSITION.md](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/gaussian-mapf-feasibility/exploration/spatial_source/COMPOSITION.md)。新文件在原模块内，旧代码、旧失败和21项冻结输入均不改。学习继续关闭，因为此范围可直接解析计算。
+
+### 具体冲突、事件和允许时间窗：C1
+
+首次检查前固定 `composition_fixture.json`，SHA256 `21505bab2eceb3b86c311bf870d8c70b3c81621ff194466b3be25fc62681d68a`，检查后未调场景。
+A：(-1,0)向东至(1,0)，左转向北到(1,1)，永久驻留。
+B：(0,-1)向北到(0,-.22)，右转向东到(.8,-.22)，再右转向南到(.8,-1)，永久驻留。
+两条路径没有共同路点，但连续占用有11对潜在冲突，包含 A_0/B_2 的相邻直段，以及 A_1/B_3 等转向扫掠。它们是保守外包重叠，不等于11次真实碰撞。
+
+原有 A_0→B_2 通过次序保留；所有新增关系按既有可达关系、再按冻结的 A/B 优先级与动作索引确定。通过次序图无环；起点等待、无限终点驻留、地图边界独立通过。每对冲突产生逻辑 CLEAR 事件，本例采用保守共同策略：A 的完整允许后缀与 B 的完整走廊分离后才启动 B。该策略也交给 SADG，不暗中限制强基线。
+
+| 合同事件 | 已交付公开信息及完整后缀检查 | 自有 guard | SADG 共同问题事件适配 |
+|---|---|---|---|
+| capture9.35、delivery9.45 s | A_2 北向，observed_y=.30；参考下界=.26，剩余占用仍重叠 | 不放行 | 不放行 |
+| capture9.85、delivery9.95 s | observed_y=.55；参考下界=.51，至(1,1)及永久驻留均分离 | 放行 | 放行 |
+| 相同当前位置但后续允许返回 | 剩余转向/返回段仍与 B 相交，即使最终目标清空也拒绝 | 不放行 | 同一证书不可完成事件 |
+
+两个正常包每臂均726字节；无私有真值、无额外查询。使用旧工具的绑定/交付/去重/计费，只在新执行适配器中消费合法包的 observed_y。旧 .03 跟踪字段只在当前北向投影的解析界≤.03时允许复用，不推广到整个 v2 状态域。来源动作身份是显式可信本地接口，两臂都获得；它不是普通 END，也不是时间推断。
+
+新合法窗口为 `B_start≥9.95 s`，同时不违反当前固定通过次序和停止动作条件；A 仍在最后北向运动中。零误差允许实现的解析时间表为 A完成11 s，B本体动作14.22 s，B完成24.17 s，ΣT=35.17 s。**这些是闭式可行见证，不是测得执行收益**；本轮没有完整 v2 world/END 会话。旧37项、66项结果继续保留，新63项检查只是合同检查数。
+
+增量分三层记录：①相对原版路点抽象，补齐11对连续空间冲突及适用条件，是必要的模型适配；②相对粗END，出现允许更早启动的窗口，是事件粒度差异；③相对同信息、同占用和同证书的 SADG 适配，**额外合法选择为0**。共享证书映射为完成事件后的结果相同是可表示性事实，不能当作两个独立算法的统计比较，也不能把适配量包装成创新量。
+
+可执行入口、完整冲突边/外包/时间安排和反例：[COMPOSITION_NOTICE.md](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/COMPOSITION_NOTICE.md)、[COMPOSITION_CHECK.json](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/COMPOSITION_CHECK.json)。新条件证明、接口适配和解析见证已完成；实际端到端执行、全部在线开销、独立任务净收益仍 UNKNOWN。
+
+导师决定：保留非学习的来源/空间编译/事件接口作为公共基础，停止当前“空间提前释放本身优于同信息 SADG”的贡献候选。不准备扩图、训练或新科学批次。若要继续形成论文主张，须先指出共享空间强基线在相同信息、条件和可比计算代价下仍未解决的具体约束；否则收缩为复现与接口研究，不能靠增加场景寻找正结果。后续原节中的三轮状态是历史记录，以本节为最新资格判断。
+
 ## 清理后的三轮推进与导师判断
 
 这三轮只推进仍有职责的 main、执行、误差来源和公共工具分支。它们是同一接口的分工；每轮在同一模块内迭代，提交保存旧版本，避免再铺开独立课题和测试目录。
