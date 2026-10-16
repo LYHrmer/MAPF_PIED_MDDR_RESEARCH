@@ -2,7 +2,7 @@
 
 2026-10-16。按现行职责保留四个活动分支，旧学习分支由历史标签保存。本页同时记录入口整理和之后的有限物理清理；工作树、实验原始记录和冻结证据保留。
 
-**当前：首版研究初始位姿不确定性下的连续占用与协调。** 联合相位差对照已补齐，禁行上界收紧但既有放行不变；停止打磨C1毫秒差额。反馈缩域先过可辨识性与合法历史证据门，当前未实现、不采集。旧小问题网络训练、直接投影和同证书接线候选保持停止。[唯一当前判断](SPACE_TIME_INTERFACE_PLAN_20261016.md#当前短周期明确模型保留联合解析对照反馈缩域待证据) · [实现与证据](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/DEPARTURE_NOTICE.md)。各分支从`.github/README.md`进入，历史段落和旧清单不构成重启授权。
+**当前：五轮反馈机制预检已完成，C1平移投影贡献候选关闭。** 原公开包字节可恢复，初始范围确实收缩，但完整阻塞关系和放行不变，强简单增量交集已得到同样结果。T1全流、同模型外部适配和独立任务证据仍缺。四分支不扩为四个课题，不恢复旧网络/查询学习，不新增协议字段。[唯一当前判断](SPACE_TIME_INTERFACE_PLAN_20261016.md#当前五轮反馈机制预检完成关闭c1平移投影贡献候选) · [五轮职责和证据](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/DEPARTURE_NOTICE.md#五轮推进旧c1公开历史能否改变完整后缀约束)。各分支从`.github/README.md`进入，旧清单不构成重启授权。
 
 | 入口 | 当前职责 | 本机路径 |
 |---|---|---|
