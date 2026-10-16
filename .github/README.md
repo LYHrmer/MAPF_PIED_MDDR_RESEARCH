@@ -1,5 +1,9 @@
 # MAPF 空间占用与执行约束
 
+## 本轮增量审查（2026-10-16）
+
+第1轮对照作者模型：PSIPP/CTC固定圆形/线段的解析冲突与转向耗时映射已经存在；MAPF-X将预测空间偏差用于路段膨胀。二者均不能直接充作v2共享初态矩形旋转的覆盖证明，但这个模型差异本身也不证明方法创新。dSLAP的条件安全定理不随范围预测接口迁移。下一轮分清“跨动作传播正确”与“同条件下减少保守性”，推导共享参数在全时刻硬安全中的具体作用。固定源码及原文见[main最新审查](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)。来源代码与旧失败保持冻结，不准备训练或新来源运行。
+
 **最新：后继三轮已完成，99项累计静态检查通过。** 修正跨车辆回溯放行；等价窗口构造求值8738→446；两/三车完整消息配对仍无独有放行或保证。总实耗未测，当前同证书接线贡献候选关闭，保留工程接口。本轮仅静态核验，不运行、不训练。[当前说明](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/QUALIFICATION_NOTICE.md)。下文为T1基座背景。
 
 2026-10-16。`explore/gaussian-mapf-feasibility`：任务共享初态、物理时间占用与运动条件。四个活动分支服务同一个论文问题，旧查询学习继续归档。
