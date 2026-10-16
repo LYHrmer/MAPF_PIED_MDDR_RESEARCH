@@ -1,5 +1,9 @@
 # 当前进度：explore/gaussian-mapf-feasibility
 
+最新 T1 实施（2026-10-16）：已补物理时间连续占用、同一任务初态与同一朝向偏差、时间可行性和不可变动作承诺，并接通两/三车控制—公共反馈—预约—最终 END 接口。新87项固定静态检查通过；旧C1的63项回归通过，21+6项冻结输入继续核验。相同几何/反馈/证书下，两臂的放行、完成、消息和核心操作数均相同，没有独有保证；进程总实耗尚未测量。旧C1负结果保留，检查数不是实验样本数。
+
+已准备[四子进程有限清单](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/TIMED_RUN_CHECKLIST.md)，每次≤60 s wall/45 s CPU/512 MiB/40 s物理时间，重试0，未授权未执行。无新 world、训练或科学事件循环运行；不复用旧许可。资格仍CONDITIONAL，当前接线本身不作为贡献，有限验收仍无增量即结束这一候选。见[T1说明](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/TIMED_NOTICE.md)。以下为历史进度，状态以本段优先。
+
 三轮后的定点推进（2026-10-16）：最新定点推进：新 v2 理想同输入模型的跨动作条件已闭合，旧 v1 拼接失败保留。C1 新63项静态/解析检查识别11对潜在连续空间冲突；共享占用、反馈和证书时，SADG 事件适配与自有 guard 均9.95 s放行，本例独立调度增量为0。完整带时间占用、world会话与总成本仍待验证；当前不训练、不启动新科学批次。
 
 新入口为 `exploration/spatial_source/COMPOSITION.md` / `composition.py`。共享初态的 SE(2) 关系覆盖直行、加减速、停止转向、等待和永久驻留；限于声明的理想同输入模型，不推广到一般闭环/滑移/漂移。旧 v1 及其失败不改。
