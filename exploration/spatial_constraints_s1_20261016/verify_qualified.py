@@ -1,12 +1,34 @@
 """Three staged STATIC checks; never calls T1 task_child or an adaptive task loop."""
 import argparse
 import json
+import hashlib
+from copy import deepcopy
+from dataclasses import replace
 from fractions import Fraction as Q
 
 from run_timed import BASE, HOME, inputs, load_components, dump
 
 
+def verify_qualification_pins():
+    manifest = json.loads((BASE/'QUALIFICATION_MANIFEST.json').read_text())
+    sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
+    if sha(BASE/'TIMED_MANIFEST.json') != manifest['frozen_T1_manifest_sha256']:
+        raise ValueError('frozen T1 identity changed')
+    roots = {'execution': BASE,
+             'source': HOME/'MAPF_GAUSSIAN_FEASIBILITY/exploration/spatial_source',
+             'tools': HOME/'MAPF_QUERY_VALUE_FEASIBILITY/exploration/execution_feedback'}
+    count = 0
+    for group, files in manifest['files'].items():
+        for name, expected in files.items():
+            path = (roots[group]/name).resolve()
+            if not path.is_relative_to(roots[group]) or sha(path) != expected:
+                raise ValueError('successor input changed: '+group+'/'+name)
+            count += 1
+    return count
+
+
 def check(round_number):
+    pin_count = verify_qualification_pins() if round_number == 3 else None
     timed, protocol, feedback, constraints, sessions, author = load_components()
     from verify_integration import module
     source = module('source_qualification', HOME/'MAPF_GAUSSIAN_FEASIBILITY/exploration/spatial_source/qualification.py')
@@ -90,8 +112,99 @@ def check(round_number):
                 'different_output_windows_cannot_form_exact_optimization_pair')
         evidence['construction'] = comparison
         evidence['construction']['query_count'] = len(reference.cache)
+    if round_number >= 3:
+        hold = source.terminal_hold_certificate(tr, anchor, Q(2))
+        need(hold['valid_from'] == Q('11.2') and not hold['is_physical_END_confirmation'],
+             'all_phase_realizations_must_finish_before_permanent_tail_certificate')
+        still = timed.Anchor(Q(0), Q(0), Q(0), False, Q(11))
+        need(source.terminal_hold_certificate(tr, still, Q(2)) is None, 'initial_wait_cannot_be_relabelled_as_goal_hold')
+        wrong = timed.Anchor(Q(0), Q(0), Q(0), False, Q(12))
+        rejects(lambda: source.terminal_hold_certificate(tr, wrong, Q(2)), 'feedback_duration_bound_to_trajectory')
+        # A receipt without END may only report missing terminal evidence.
+        empty = successor.CheckedSession(problem, author, engine='guard')
+        need(all(v is None for v in empty.receipt()['terminal_geometry_after_delivered_END'].values()),
+             'no_private_truth_or_nominal_time_fills_missing_END')
+        # Per-robot packet validation can pass while the global frontier is past it.
+        causal = successor.CheckedSession(problem, author, engine='guard')
+        stopped_messages(causal)
+        causal.authorize('A', now='.1')
+        causal.authorize('B', now='.3')  # no ACK: denied, but this event happened
+        packet = feedback.TaskProducer(causal.bindings['B']).capture(timed.Plant(problem['trajectories']['B']).observe('.1'), now='.1')
+        packet = replace(packet, seq=1)
+        causal.inboxes['B'].validate(packet, now='.2')
+        rejects(lambda: causal.receive(packet, now='.2'), 'cross_robot_receive_frontier_cannot_go_backwards')
+        need(len(causal.packets) == 2, 'failed_cross_robot_receive_retains_previous_public_state')
+
+        receipts, planned, pairs = [], [], []
+        initial = tuple(map(float, config['initial_conditions']['all_robots']))
+        for size in config['sizes']:
+            pair = []
+            for engine in config['engines']:
+                p = constraints.make_problem(base, config, size)
+                s = successor.CheckedSession(p, author, engine=engine)
+                plants = {r: timed.Plant(t, initial) for r, t in p['trajectories'].items()}
+                producers = {r: feedback.TaskProducer(s.bindings[r]) for r in plants}
+
+                def send(robot, capture):
+                    with s.costs.measure('fixed_controller_sensor_public_message'):
+                        packet = producers[robot].capture(plants[robot].observe(capture), now=capture)
+                        s.receive(packet, now=packet.delivery)
+
+                for r in plants:
+                    send(r, '0')
+                need(s.authorize('A', now='.1')['accepted'], str(size)+engine+'_first_chain_still_qualified')
+                plants['A'].clock.resume('.1')
+                send('A', '.1')
+                need(not s.authorize('B', now='.2')['accepted'], str(size)+engine+'_early_release_still_rejected')
+                if size == 3:
+                    need(s.authorize('C', now='.2')['accepted'], engine+'_independent_third_chain_qualified')
+                    plants['C'].clock.resume('.2')
+                    send('C', '.2'); send('C', '1.7')
+                for r in ('A', 'B'):
+                    send(r, config['static_progress_capture'])
+                need(not s.authorize('B', now='9.45', deadline='10')['accepted'], str(size)+engine+'_short_deadline_still_infeasible')
+                need(s.authorize('B', now='9.45')['accepted'], str(size)+engine+'_unchanged_fixed_time_release')
+                plants['B'].clock.resume('9.45')
+                send('B', '9.45'); send('A', '11.1'); send('B', '23.67')
+                result = s.receipt()
+                need(result['success'] and all(result['terminal_geometry_after_delivered_END'].values()),
+                     str(size)+engine+'_all_END_and_permanent_geometry_present')
+                need(result['operations']['phase_cells'] == 446, str(size)+engine+'_endpoint_compiler_used_in_complete_session')
+                need(result['costs']['aggregation'] == 'OUTER_ENVELOPE_ONLY_DO_NOT_SUM_NESTED' and
+                     any(x['name'] == 'final_source_and_constraint_audit' for x in result['costs']['segments']),
+                     str(size)+engine+'_final_source_audit_cost_included')
+                pair.append(result); receipts.append(result)
+                planned.append({'task': result['task'], 'arm': engine, 'robots': list(plants)})
+            audit = transport.fixed_session_comparison(*pair)
+            need(all(audit[k] for k in ('both_success', 'same_launches', 'same_completion', 'same_core_work')),
+                 str(size)+'_optimized_strong_adapter_preserves_negative_result')
+            need(not audit['new_relative_guarantee'] and audit['total_process_cost_status'] == 'UNKNOWN_NOT_MEASURED',
+                 str(size)+'_neither_new_guarantee_nor_runtime_gain_invented')
+            pairs.append({'size': size, **audit, 'completion': pair[0]['completion'],
+                          'messages_per_arm': pair[0]['messages'], 'bytes_per_arm': pair[0]['bytes'],
+                          'constraint_signature': pair[0]['constraint_signature'],
+                          'operations_per_arm': pair[0]['operations']})
+        ledger = transport.task_ledger(planned, receipts, horizon=config['horizon'])
+        need(ledger['planned_count'] == 4 and ledger['success_count'] == 4, 'four_fixed_message_fixtures_accounted_for')
+        negative = deepcopy(receipts[:1])
+        negative[0]['success'], negative[0]['status'] = False, 'FAILED'
+        failures = transport.task_ledger(planned[:2], negative, horizon=config['horizon'])
+        need(failures['failure_or_missing_count'] == 2 and failures['failed_rows_excluded'] == 0,
+             'failure_and_absent_result_both_retained')
+        need(all(r['penalized_sum_completion'] == '120' for r in failures['rows']),
+             'failure_with_END_cannot_outscore_success_via_small_completion_sum')
+        bad = deepcopy(receipts[0]); bad['completion']['A'] = None
+        rejects(lambda: transport.task_ledger(planned[:1], [bad], horizon=config['horizon']), 'missing_completion_cannot_be_success')
+        rejects(lambda: transport.task_ledger(planned[:1], [receipts[0], receipts[0]], horizon=config['horizon']), 'duplicate_results_not_silently_dropped')
+        bad = deepcopy(receipts[1]); bad['public_wire_sha256'] = 'foreign'
+        rejects(lambda: transport.fixed_session_comparison(receipts[0], bad), 'different_feedback_stream_not_same_information')
+        evidence.update(fixed_session_pairs=pairs, fixed_fixture_ledger=ledger, failure_fixture_ledger=failures,
+                        scientific_decision={'shared_event_wiring_candidate': 'CLOSED_AS_INDEPENDENT_CONTRIBUTION',
+                                             'endpoint_optimization': 'ENGINEERING_RESULT_NO_NOVELTY_CLAIM',
+                                             'total_runtime': 'UNKNOWN', 'next_scientific_run': 'NOT_AUTHORIZED'})
     return {'status': 'PASS', 'round': round_number, 'check_count': len(checks), 'checks': checks,
-            'evidence': evidence, 'scientific_runs': 0, 'world_steps': 0, 'training': 0}
+            'evidence': evidence, 'successor_input_pins': pin_count,
+            'scientific_runs': 0, 'world_steps': 0, 'training': 0}
 
 
 if __name__ == '__main__':

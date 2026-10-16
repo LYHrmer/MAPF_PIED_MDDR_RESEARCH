@@ -1,5 +1,7 @@
 # 当前进度：explore/error-aware-guidance
 
+后继三轮·第3轮完成（2026-10-16）：同一首尾构造器接通两/三车全部END；两臂结果/信息/核心工作量相同，约束签名与终点证据加入收据。 各分支本轮完成三次实质提交，累计检查15→53→99通过（非独立任务数）；22个窗口和12条约束不变，求值8738→446。用户明确仅实现/静态核验，科学运行0。[当前后继入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/QUALIFICATION_NOTICE.md)。以下T1及更早段落保留历史状态。
+
 后继三轮·第2轮（2026-10-16）：实现EndpointCertificates，沿用原有几何、时间安全和预算；与全遍历的全部窗口及约束精确相同。 累计53项静态检查通过；本轮科学运行0。
 
 后继三轮·第1轮（2026-10-16）：新增CheckedSession统一收件与放行时钟，拒绝已收 .1 s反馈却以0 s请求放行；原T1反例保留，正序放行不变。 当前仅实现/静态核验，用户明确保留运行待授权。结果见执行分支 `QUALIFICATION_CHECK.json`，旧T1证据不改。

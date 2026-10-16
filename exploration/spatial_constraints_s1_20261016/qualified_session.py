@@ -1,12 +1,16 @@
 """Successor adapter; frozen T1 source, packets and original evidence stay intact."""
 from copy import deepcopy
+import hashlib
+import json
+from fractions import Fraction as Q
 
 from composition import CONDITION
 from timed_constraints import Certificates, CertificateBudget
 from interface import Box
 from timed_session import TaskSession, AuthorTaskEvents
 from timed_protocol import Binding, Costs, TaskInbox
-from source_qualification import phase_segments, physical_windows, extreme_window, WindowBudget
+from timed import Anchor
+from source_qualification import phase_segments, physical_windows, extreme_window, WindowBudget, terminal_hold_certificate
 from feedback_qualification import CausalClock
 
 
@@ -32,7 +36,7 @@ class EndpointCertificates(Certificates):
 
 
 class CheckedSession(TaskSession):
-    def __init__(self, problem, author, *, engine, costs=None, certificate_factory=Certificates):
+    def __init__(self, problem, author, *, engine, costs=None, certificate_factory=EndpointCertificates):
         if engine not in ('guard', 'SADG_events'):
             raise ValueError('unregistered engine')
         self.problem, self._qualified_problem = deepcopy(problem), deepcopy(problem)
@@ -66,3 +70,21 @@ class CheckedSession(TaskSession):
         self.causal_clock.validate(now, deliveries=(p.delivery for p in self.latest.values()))
         anchors = self.anchors(now)
         return {r: physical_windows(self.problem['trajectories'][r], a, now) for r, a in anchors.items()}
+
+    def receipt(self, *, status=None):
+        with self.costs.measure('final_source_and_constraint_audit'):
+            self.check_commitment()
+            terminal = {}
+            for robot, tr in self.problem['trajectories'].items():
+                p = self.latest.get(robot)
+                if p is None or p.kind != 'END':
+                    terminal[robot] = None
+                    continue
+                anchor = Anchor(Q(p.capture), Q(p.phase_lo), Q(p.phase_hi), False, tr.chain.duration)
+                terminal[robot] = terminal_hold_certificate(tr, anchor, self.causal_clock.frontier)
+            wire = json.dumps(self.certificates.constraints, sort_keys=True, separators=(',', ':'), default=str).encode()
+            signature = hashlib.sha256(wire).hexdigest()
+        result = super().receipt(status=status)
+        return {**result, 'commitment': self.problem['commitment'], 'constraint_signature': signature,
+                'terminal_geometry_after_delivered_END': terminal,
+                'qualification_version': 'causal_endpoint_v1', 'causal_frontier': str(self.causal_clock.frontier)}
