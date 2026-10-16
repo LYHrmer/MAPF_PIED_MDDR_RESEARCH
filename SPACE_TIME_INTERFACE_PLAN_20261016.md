@@ -2,6 +2,27 @@
 
 2026-10-16。当前研究设计与探索性接口交付；接续 G2c，不是新实验结果，也不宣布创新成立。本文覆盖旧方案的后续投入建议，冻结结果与旧失败不回写。科研导师判断只复用已核依据并处理本轮缺口，未重开全面审查。
 
+## 最新增量审查：先判差异，再决定后继运行
+
+2026-10-16。本节覆盖后文旧“下一步运行”建议。用户要求继续三轮实质推进，同时要求只有相对已有强基线的差异成立才准备后继有限运行。本轮沿用科研导师资格卡，四分支围绕**约束、完整成本、保证**开展定点源码核对、静态推导和继续/停止验收；不重做99项验收或全面文献审查。当前实现及冻结负结果保持原样。
+
+### 第1轮：作者代码实际已经做到什么
+
+| 基线与固定版本 | 本轮核对的具体能力 | 对本候选的约束 |
+|---|---|---|
+| SADG `c2626d9…`，沿用已核AGPL-3.0核心 | `compiler.py:92–105`按共享位置构造跨车依赖；`vertex.py:113–124`按前驱完成状态放行 | 原版不含当前连续车身证书；给同一逻辑预约事件和证书后，作者状态核心可表达同样决策，已有C1/T1配对支持。不能拿粗物理END作唯一强基线 |
+| WinkTPG `dd96946…`，只读，许可缺口沿用 | `speed_solver.cpp`的`noiseEstimation`处理反馈与已入队动作，`insertEdge2Table`以离开上界和进入下界更新预约；原文III–V节含速度规划及执行反馈更新 | “保持次序但提前预约”和“反馈缩小时间不确定性”已有近邻。原文时间扰动不等于本项目空间偏差；也不能据此宣称作者已实现当前联合车身族。未修改、构建或运行作者实现 |
+| PSIPP/CTC `43634ec…`，MIT，本轮新增定点源码核验 | `problem_with_explicit_collisions.hpp:64–109,143–205`预计算点—边、边—边相对时间冲突，并用空间分桶/线段交叉筛选；`PrioritizedSIPP.cpp:10–70,138–179`拆分安全区间、平移预存冲突；272–274保留无限终点等待 | 非共同路点冲突、连续禁行时间窗、预计算与查表都已存在。`problem_with_turning.hpp:75–80,126–142,199–240`还有转向/停留耗时和冲突映射，不能写成完全忽略转向。其圆形、线段运动几何不直接覆盖v2不确定矩形旋转 |
+| MAPF-X `8eda15f…`，MIT，本轮补读作者代码 | `state.cpp:194–220,296–317`把动作空间偏差和时间偏差带入状态，碰撞距离包含双方空间偏差；`action_model_torch.cpp:102–163`已有预测缓存，`state.cpp:159–162,237–238`缓存后继 | “学习范围后扩大占用”“缓存减少重复预测”不能单独作为新意。固定路径/固定次序不是其原始完整搜索问题；本轮没有原版实验对比，µ+kσ也不直接变成本任务硬界 |
+| ExecTimeNet/REMAP/ESADG，固定预印本v2 | V-D已用便宜的到达时间递推筛选换序候选，再调用预测器；VI开头脚注说明代码待录用后公开，本轮未获得可确认作者版本 | 本任务固定次序，不恢复换序或查询学习；“先筛选、少预测几次”已有近邻。未读到作者代码不能作为它做不到的证据 |
+| dSLAP，作者稿v8，复用已核发表身份 | III-E及定理III.2/III.3给出其学习动力学、集合传播和初始安全等条件下的安全结论 | 已有不确定性传播与条件安全路线；本项目没有其假设/控制策略，不能继承证明，也没有相对新增的任务级概率保证 |
+
+源码依据：[SADG compiler](https://github.com/alexberndt/sadg-controller/blob/c2626d996121a9d6c128844a167b917db24418ac/sadg_controller/sadg_controller/sadg/compiler.py#L92)、[状态接口](https://github.com/alexberndt/sadg-controller/blob/c2626d996121a9d6c128844a167b917db24418ac/sadg_controller/sadg_controller/sadg/vertex.py#L113)、[WinkTPG时窗更新](https://github.com/JingtianYan/WinkTPG-IEEE-TASE/blob/dd96946f225e206de35b041320786eab43210658/src/speed_solver.cpp#L324)、[CTC构造](https://github.com/omron-sinicx/PSIPP-CTC/blob/43634ec3d1d231ccfeabbefd8384273292a06e86/src/base/problem_with_explicit_collisions.hpp#L64)、[CTC解析几何](https://github.com/omron-sinicx/PSIPP-CTC/blob/43634ec3d1d231ccfeabbefd8384273292a06e86/src/base/geometry_2D.hpp#L164)、[安全区间更新](https://github.com/omron-sinicx/PSIPP-CTC/blob/43634ec3d1d231ccfeabbefd8384273292a06e86/src/planners/PrioritizedSIPP.cpp#L10)、[CTC转向扩展](https://github.com/omron-sinicx/PSIPP-CTC/blob/43634ec3d1d231ccfeabbefd8384273292a06e86/src/base/problem_with_turning.hpp#L126)、[MAPF-X碰撞接口](https://github.com/proroklab/agile-mapf/blob/8eda15f0b8384f195ccb65a2eac910bf2aa094c8/lacam/src/state.cpp#L296)、[预测缓存](https://github.com/proroklab/agile-mapf/blob/8eda15f0b8384f195ccb65a2eac910bf2aa094c8/lacam/src/action_model_torch.cpp#L102)。
+
+原文依据：[WinkTPG v2](https://arxiv.org/html/2508.01495v2)、[PSIPP/CTC作者项目及出版记录](https://omron-sinicx.github.io/PSIPP-CTC/)、[MAPF-X出版版](https://www.nature.com/articles/s44182-026-00083-2)、[ESADG预印本v2](https://arxiv.org/html/2511.21886v2)、[dSLAP v8](https://arxiv.org/html/2207.07824v8)。本轮记录固定commit、Git blob和读取范围于[增量审查收据](implementation_binding_evidence/space_time_composition_20261016/INCREMENT_AUDIT.json)，不复制第三方代码。新核对不覆盖旧报告的历史状态，不把代码存在当作原版复现通过。
+
+**第一轮判断：** 细化释放、连续冲突、区间预约、预计算缓存和条件安全这些抽象名词均不足以建立差异。尚未解决的技术问题必须落到：同一允许运动集合下，哪个禁行时段被严格删除；或者同一输出的全部构造/更新工作减少；或者在同样条件下严格加强哪个命题。
+
 ## T1之后的三轮推进：资格修正、计算整理与证据闭合
 
 用户本轮明确选择“仅实现和静态核验，保留运行待授权”。已有清理和四个活动分支保留，不再删冻结路径或制造平行课题。科研导师判断沿用既有资格卡：问题合同与已发表锚点PASS；SADG固定核心R0 PASS、共同问题科学比较UNKNOWN；显式v2来源可用、独立任务数据UNKNOWN；纯仿真设计PASS、论文结果UNKNOWN；总状态仍CONDITIONAL。下面是已授权的探索性工程推进，不是新题目通过。

@@ -1,0 +1,158 @@
+{
+  "schema": "targeted_increment_audit_v1",
+  "date": "2026-10-16",
+  "rounds_completed": [
+    1
+  ],
+  "scope": "research qualification, author source inspection and static algebra only; no candidate or scientific run",
+  "source_code": [
+    {
+      "method": "PSIPP-CTC",
+      "repository": "https://github.com/omron-sinicx/PSIPP-CTC",
+      "commit": "43634ec3d1d231ccfeabbefd8384273292a06e86",
+      "files": [
+        {
+          "path": "src/base/problem_with_explicit_collisions.hpp",
+          "git_blob_sha1": "2d03601b7f3624d0c10337b8215f74b2a56818bf",
+          "lines": 288,
+          "url": "https://github.com/omron-sinicx/PSIPP-CTC/blob/43634ec3d1d231ccfeabbefd8384273292a06e86/src/base/problem_with_explicit_collisions.hpp"
+        },
+        {
+          "path": "src/base/geometry_2D.hpp",
+          "git_blob_sha1": "ac2d246a327bca749581cdcc8ebf1a47d608b1e2",
+          "lines": 286,
+          "url": "https://github.com/omron-sinicx/PSIPP-CTC/blob/43634ec3d1d231ccfeabbefd8384273292a06e86/src/base/geometry_2D.hpp"
+        },
+        {
+          "path": "src/planners/PrioritizedSIPP.cpp",
+          "git_blob_sha1": "e4b5f61c4b3659d3448bb089918a827353e173ea",
+          "lines": 307,
+          "url": "https://github.com/omron-sinicx/PSIPP-CTC/blob/43634ec3d1d231ccfeabbefd8384273292a06e86/src/planners/PrioritizedSIPP.cpp"
+        },
+        {
+          "path": "src/base/problem_with_turning.hpp",
+          "git_blob_sha1": "28b701dee7c8969d643b2bf320c449a8cef912d9",
+          "lines": 255,
+          "url": "https://github.com/omron-sinicx/PSIPP-CTC/blob/43634ec3d1d231ccfeabbefd8384273292a06e86/src/base/problem_with_turning.hpp"
+        },
+        {
+          "path": "LICENSE",
+          "git_blob_sha1": "1ee6653affb2f464bac57c55ab42a9846d458b16",
+          "lines": 22,
+          "url": "https://github.com/omron-sinicx/PSIPP-CTC/blob/43634ec3d1d231ccfeabbefd8384273292a06e86/LICENSE"
+        }
+      ],
+      "scope": "read_only_selected_author_source; no build or scientific execution"
+    },
+    {
+      "method": "MAPF-X",
+      "repository": "https://github.com/proroklab/agile-mapf",
+      "commit": "8eda15f0b8384f195ccb65a2eac910bf2aa094c8",
+      "files": [
+        {
+          "path": "lacam/src/action_model.cpp",
+          "git_blob_sha1": "9c1290f6293cd0b53736730c7674d1002522bbc2",
+          "lines": 25,
+          "url": "https://github.com/proroklab/agile-mapf/blob/8eda15f0b8384f195ccb65a2eac910bf2aa094c8/lacam/src/action_model.cpp"
+        },
+        {
+          "path": "lacam/src/action_model_torch.cpp",
+          "git_blob_sha1": "f437bcc422dbf366850b705526f12b950971e67d",
+          "lines": 176,
+          "url": "https://github.com/proroklab/agile-mapf/blob/8eda15f0b8384f195ccb65a2eac910bf2aa094c8/lacam/src/action_model_torch.cpp"
+        },
+        {
+          "path": "lacam/src/planner.cpp",
+          "git_blob_sha1": "fb442e38fe984eb8877cf8eed85a28c1c47365df",
+          "lines": 151,
+          "url": "https://github.com/proroklab/agile-mapf/blob/8eda15f0b8384f195ccb65a2eac910bf2aa094c8/lacam/src/planner.cpp"
+        },
+        {
+          "path": "lacam/src/state.cpp",
+          "git_blob_sha1": "c25920d6e002c5776d63f2e0b4cc5f750742d285",
+          "lines": 604,
+          "url": "https://github.com/proroklab/agile-mapf/blob/8eda15f0b8384f195ccb65a2eac910bf2aa094c8/lacam/src/state.cpp"
+        },
+        {
+          "path": "LICENSE",
+          "git_blob_sha1": "5864517bab32654b0caadf805409c238d63fbf31",
+          "lines": 22,
+          "url": "https://github.com/proroklab/agile-mapf/blob/8eda15f0b8384f195ccb65a2eac910bf2aa094c8/LICENSE"
+        }
+      ],
+      "scope": "read_only_selected_author_source; no build or scientific execution"
+    },
+    {
+      "method": "WinkTPG",
+      "repository": "https://github.com/JingtianYan/WinkTPG-IEEE-TASE",
+      "commit": "dd96946f225e206de35b041320786eab43210658",
+      "files": [
+        {
+          "path": "src/speed_solver.cpp",
+          "git_blob_sha1": "5420a6b7a9585906fcc7b1f550b193cc65ea7151"
+        }
+      ],
+      "scope": "read_only; fixed-version project license unresolved from prior audit; not copied, built or run"
+    },
+    {
+      "method": "SADG",
+      "repository": "https://github.com/alexberndt/sadg-controller",
+      "commit": "c2626d996121a9d6c128844a167b917db24418ac",
+      "files": [
+        {
+          "path": "sadg_controller/sadg_controller/sadg/compiler.py",
+          "git_blob_sha1": "f221e8dfb68707fbc91754ff82abbfc922772422"
+        },
+        {
+          "path": "sadg_controller/sadg_controller/sadg/vertex.py",
+          "git_blob_sha1": "7fe4e0127c41ed8d2d5e4f820a1a375a7f7390be"
+        }
+      ],
+      "scope": "selected cached original source; prior R16/R17 and 99 checks reused; no optimizer or ROS run"
+    }
+  ],
+  "papers": [
+    {
+      "method": "WinkTPG",
+      "url": "https://arxiv.org/html/2508.01495v2",
+      "sections": [
+        "III-B/C",
+        "IV",
+        "V"
+      ],
+      "status": "author v2; published identity reused from prior verification"
+    },
+    {
+      "method": "PSIPP-CTC",
+      "url": "https://omron-sinicx.github.io/PSIPP-CTC/",
+      "status": "RA-L 7(4):10494-10501,2022; official project"
+    },
+    {
+      "method": "MAPF-X",
+      "url": "https://www.nature.com/articles/s44182-026-00083-2",
+      "status": "npj Robotics 2026, official project links code"
+    },
+    {
+      "method": "ExecTimeNet/REMAP/ESADG",
+      "url": "https://arxiv.org/html/2511.21886v2",
+      "sections": [
+        "V-D",
+        "V-E",
+        "VI opening footnote"
+      ],
+      "status": "preprint; v2 says code will be public after acceptance; no confirmed author code obtained in this audit"
+    },
+    {
+      "method": "dSLAP",
+      "url": "https://arxiv.org/html/2207.07824v8",
+      "sections": [
+        "III-E",
+        "Theorems III.2/III.3"
+      ],
+      "status": "paper-only reuse; no author code obtained"
+    }
+  ],
+  "scientific_runs": 0,
+  "training_runs": 0,
+  "successor_run_plan_prepared": false
+}
