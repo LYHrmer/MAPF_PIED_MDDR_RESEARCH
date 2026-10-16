@@ -1,6 +1,6 @@
 # MAPF 空间占用与执行约束
 
-**最新：新增解析构造的费用已拆开记录，尚无全成本优势。** 联合盒同树仍求542次原盒，另增2784次二次界且不改变边界。成对解析部分有160次二次界、128次交点及501次半平面检验；同支持首尾适配有160次二次界、40次线性检验及22次原盒调用。旧构造/回退与全部反馈、控制到END和日志都未免除，不能按异类算子次数报加速。相对内部对照的3.136 ms几何差额不是完成时间收益。[完整口径与静态收据](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/DEPARTURE_NOTICE.md)。不改冻结工具、不扩运行器。以下为前轮状态。
+**最新：学习建议的验证、回退和缓存成本已单列，训练资格未通过。** 固定五个多边形中，裁剪需20次交点/82次顶点检查；零推理费用的完美建议仍需10次原始解、10次对偶解和80次原始约束检查。两者有理除法为20/40次，不能按异类操作数宣称wall/CPU优势。上一动作对8项实际建议仅1项通过，5/5问题回退，提取/缓存维护已计数；该顺序不是在线反馈序列。所有共同来源、几何回退、承诺、反馈、控制至END和日志成本仍保留。完美标签提取费用另列，既不是训练成果，也不是所有学习算法上限。[60项静态收据、完整费用口径与判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/DEPARTURE_NOTICE.md)。公共工具保持冻结，不扩运行器或准备新清单。以下为前轮状态。
 
 **最新：直接相位对投影未支持成本收益。** 同11动作对/同几何/同精度，外包求值由已有优化构造的446次增至542次（+21.52%），另记录601次成对判定、622次出队和962次入队。最终有序下界不变；静态操作数不等于总wall/CPU，不以8738次旧全遍历作唯一强对照。反馈、承诺、完整连续检查、控制到END和日志费用仍须全部计入，当前完整实耗UNKNOWN。公共计费代码及冻结收据复用，不扩运行器或准备清单。[构造与费用证据](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/DEPARTURE_NOTICE.md)。
 
