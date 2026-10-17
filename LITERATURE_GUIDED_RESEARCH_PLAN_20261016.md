@@ -34,7 +34,17 @@ Sun等文中将避开一个区间写为两个半空间的“或”；一般而�
 
 **原版对应仍有限制：** RA-L2019指向作者`UDP`分支；本次远端heads未含该分支，不能把当前master说成论文原版。README的三车示例`TestTrajectoryEnvelopeCoordinatorThreeRobots`只是已找到的入口，未运行。已有SADG基线优先复用；本次不另立作者系统复现工程。
 
-### 现在真正待核验的规则
+### 反馈联合域与批量构造的定点核对
+
+2026-10-17。本次仅核对新候选的直接算法基础，不再扩全文综述。
+
+- **包络构造已有成熟算法。** Felzenszwalb与Huttenlocher，*Distance Transforms of Sampled Functions*，Theory of Computing8(19):415–428，2012，§1.1明确说明一般抛物线下包络可在O(n log n)时间构造；论文自身的线性算法另需同形状和排序条件，不能套给本项目不同二次系数。[作者全文](https://cs.brown.edu/people/pfelzens/papers/dt-final.pdf)，DOI`10.4086/toc.2012.v008a019`。ETH课程作者的[《Geometry: Combinatorics & Algorithms》§8.10–8.11](https://geometry.inf.ethz.ch/gca18.pdf)给出共同定义区间、两两至多s次相交的包络复杂度与分治构造；s=2对应线性片数。此处引用的是代数操作模型，不是有限精度程序的wall/CPU界。
+- **集合成员配准已有直接近邻。** Radwan、Rohou、Trombettoni，*Exhaustive interval-based 2D shape registration under similarity transformation*，IJAR，2026，DOI`10.1016/j.ijar.2026.109727`。[出版方摘要及预览](https://www.sciencedirect.com/science/article/pii/S0888613X26001039)说明其对象是连续形状集合，采用最小外接圆与分离器，把相似配准主要分支降到角度；并非已知对应定位点的逐消息矩形误差问题。仅据摘要/预览核对这一范围，作者全文链接访问失败；不声称核对了其所有算子，也不把问题差别当作本项目新颖性证据。
+- **批量冲突不能以朴素全对扫描为强对照。** 已有PSIPP/CTC作者缓存`43634ec3d1d231ccfeabbefd8384273292a06e86`的`src/base/problem_with_explicit_collisions.hpp`118–205行包含空间桶、邻接和线段相交扫描后才构造冲突区间。[固定作者源码](https://github.com/omron-sinicx/PSIPP-CTC/blob/43634ec3d1d231ccfeabbefd8384273292a06e86/src/base/problem_with_explicit_collisions.hpp)。对无重复访问的单位格点路径和当前有限车身，有限邻域已限制每段潜在空间邻居；不能先假设必须扫描全部动作笛卡尔积，再把消去该扫描算作独有加速。重复访问、多尺度等不在这个限定判断中。
+
+统一方案已给出反馈二次包络候选H的完整变换与适用条件。其代数表示和经典包络算法可直接组合，但目前没有标准包络适配之外的新求解规则，也没有既有关键放行前多位置恒定中心消息的材料依据。因此不实现H，不把“精确表示联合集”单独计为新保证；完整费用和文献独立性未证实。
+
+### 前轮已核规则：接触极值系统
 
 统一方案已写出并核对E：在共享进度/相位消元之后，保留接触候选的朝向函数与有效域，生成包含异常情形的最优性方程。正则分支的朝向驻点方程与原最优性系统显式消元一致，尚无额外排除能力，不进入实现。Fritz–John条件和区间求根均是通用工具，不能单独声称原创；该恒等关系不证明实际运行时间相同。
 
