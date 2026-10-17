@@ -1,0 +1,267 @@
+{
+  "adaptation_operations": {
+    "eliminated_bound_pairs": 112,
+    "inverse_domain_checks": 10,
+    "normalized_coefficients": 120,
+    "preimage_bound_tests": 192,
+    "preimage_row_tests": 192,
+    "projected_inequality_tests": 132,
+    "projections": 12,
+    "row_transformations": 96
+  },
+  "all_eleven_bounds_equal": true,
+  "author_code_calls": 0,
+  "author_commit": "43634ec3d1d231ccfeabbefd8384273292a06e86",
+  "author_license": "MIT",
+  "author_sources": [
+    {
+      "git_blob_sha1": "ac2d246a327bca749581cdcc8ebf1a47d608b1e2",
+      "path": "src/base/geometry_2D.hpp",
+      "sha256": "1697b90bdc6467305c2c30f86058853fc30f7f16524b725beeb6dd54489284dc",
+      "url": "https://raw.githubusercontent.com/omron-sinicx/PSIPP-CTC/43634ec3d1d231ccfeabbefd8384273292a06e86/src/base/geometry_2D.hpp"
+    },
+    {
+      "git_blob_sha1": "2d03601b7f3624d0c10337b8215f74b2a56818bf",
+      "path": "src/base/problem_with_explicit_collisions.hpp",
+      "sha256": "2795798af8a27e23fcb304fec7f08e3d505134605c46282adc9af6e0feb7a085",
+      "url": "https://raw.githubusercontent.com/omron-sinicx/PSIPP-CTC/43634ec3d1d231ccfeabbefd8384273292a06e86/src/base/problem_with_explicit_collisions.hpp"
+    },
+    {
+      "git_blob_sha1": "1ee6653affb2f464bac57c55ab42a9846d458b16",
+      "path": "LICENSE",
+      "sha256": "eecdb4eb12ce651576ae199dfebeae8db9dcf265034a059ac4ef4078bfa55133",
+      "url": "https://raw.githubusercontent.com/omron-sinicx/PSIPP-CTC/43634ec3d1d231ccfeabbefd8384273292a06e86/LICENSE"
+    }
+  ],
+  "boundary_checks": [
+    "rectangle_projection",
+    "coupled_triangle",
+    "empty_not_safe_release",
+    "closed_singleton_retained",
+    "inverse_domain_fallback",
+    "offset_and_relative_start_sign",
+    "changed_speed_rejected",
+    "float_rejected"
+  ],
+  "candidate_operations_reused": {
+    "clip_intersections": 20,
+    "clip_vertex_tests": 82,
+    "inverse_domain_checks": 10,
+    "joint_objective_vertex_tests": 8,
+    "normalized_coefficients": 120,
+    "objective_vertex_tests": 40
+  },
+  "cost_advantage": "NOT_ESTABLISHED",
+  "decision": "STOP_JOINT_AFFINE_PROJECTION_AS_INDEPENDENT_TIGHTNESS_CONTRIBUTION",
+  "extra_guarantee": "NONE_ESTABLISHED_UNDER_COMMON_CONDITIONS",
+  "feedback_release": "prior fixed-message negative results reused, no session called",
+  "independent_projection_pairs": 2,
+  "independent_scientific_validation": false,
+  "input_sha256": {
+    "/home/lyh/MAPF_GAUSSIAN_FEASIBILITY/exploration/spatial_source/composition.py": "e294be82cc6277fac462f61450685820f2d9f1b2c49f1c07c814f7abe4f08453",
+    "/home/lyh/MAPF_GAUSSIAN_FEASIBILITY/exploration/spatial_source/support.py": "e06735d9a48f0890270dd301e1a582c21397b1e43982d3a9ac3fb431732f124e",
+    "/home/lyh/MAPF_GAUSSIAN_FEASIBILITY/exploration/spatial_source/timed.py": "f713b63382d3a10539d3b565fb442f55e8bc08682c22037d18ce9f3ebf6b226d",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/DEPARTURE_CHECK.json": "c0ad00946f7bd1b814200af23f81e1dbe0b02f85097e0e0b97e3d3365ada2cf4",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/JOINT_PHASE_CHECK.json": "e3b23415c067bab855db800c6367ed905131c14698bb12a77e96e7b2ff43c680",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/SUPPORT_CHECK.json": "2abdd3448f6820a253782b4c09a3f51a78764c1ce8bcb009112c37b671cb3b4c",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/TIMED_CHECK.json": "7d90ca49e6ec94b184bce49c42a88b2dc20a75e92dcfd856b5a1c23c8e5bba15",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/active_advice.py": "35923de43d2e82a9bc76fec1be18776d49315b64311c1a1e93db76bb14a08455",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/composition_fixture.json": "21505bab2eceb3b86c311bf870d8c70b3c81621ff194466b3be25fc62681d68a",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/ctc_adaptation.py": "a1706346044f2472722bef28bc970da29ad174499325c2cf42338fc1bb01c98c",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/departure_constraints.py": "557b1d13160009d22c26979ef8c51cdb1e613b973cb3a07ebe1a562182a69bb4",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/interface.py": "986aeee580e4cd724b6790c0d0b187a7901c8a6764d79c268b9a5d8fedb1e89c",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/joint_phase.py": "95ac9bffbdb37b7f805af3f99211cf969fae154c293967842e9be606b8159533",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/support_constraints.py": "123ab61aa10d167459f76bb533f04cd6b0cbc44e059bd91e7f144f858c791a14",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/timed_fixture.json": "cebd5e6f5d01771b55c7429ada5bae56ce8eefd71decf50ab77a110bc5013505",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/verify_support.py": "4db3f9a28b75d8739a69d151f4ed2103d97c8886f2cfcabf40167e58a617d81a",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/verify_timed.py": "8a93785c5860ded20c7bf97e9bc10abc2812f1521f330776f1431cd22951900b"
+  },
+  "is_release_authorization": false,
+  "method_identity": "project CTC-style half-plane adaptation, not original author execution",
+  "ordered_upper": "977321722931555122184634818/562500000005737500025000075",
+  "original_order_lower": "-39/25",
+  "records": [
+    {
+      "adaptation": {
+        "attained_in_progress_relaxation": true,
+        "collision_witness": false,
+        "is_release_authorization": false,
+        "max_a": "14323612015736/9999980000001",
+        "min_b": "127425612771012566932907994/225000000002272500055000015",
+        "relative_affine_projection": {
+          "lower": "-389520306238482665934184092/225000000002272500055000015",
+          "lower_preimage": [
+            "64437153178050779980000008/45000000000454500011000003",
+            "127425612771012566932907994/225000000002272500055000015"
+          ],
+          "upper": "15926973118059/37499925000025",
+          "upper_preimage": [
+            "4257290988198/7499985000005",
+            "39/50"
+          ]
+        },
+        "status": "CTC_STYLE_ONE_SIDED_UPPER",
+        "upper": "389520306238482665934184092/225000000002272500055000015"
+      },
+      "adapted_upper": "389520306238482665934184092/225000000002272500055000015",
+      "candidate_upper": "389520306238482665934184092/225000000002272500055000015",
+      "equal": true,
+      "head": "B_0",
+      "shared_fallback_upper": "3897118248750305468806093282625214656092/2249995500022949955100001322499755000015",
+      "tail": "A_0"
+    },
+    {
+      "adaptation": {
+        "status": "FALLBACK_NON_MOVE",
+        "upper": null
+      },
+      "adapted_upper": "38389/25600",
+      "candidate_upper": "38389/25600",
+      "equal": true,
+      "head": "B_1",
+      "shared_fallback_upper": "38389/25600",
+      "tail": "A_0"
+    },
+    {
+      "adaptation": {
+        "collision_witness": false,
+        "is_release_authorization": false,
+        "status": "FALLBACK_INVERSE_DOMAIN",
+        "upper": null
+      },
+      "adapted_upper": "-4071/1600",
+      "candidate_upper": "-4071/1600",
+      "equal": true,
+      "head": "B_2",
+      "shared_fallback_upper": "-4071/1600",
+      "tail": "A_0"
+    },
+    {
+      "adaptation": {
+        "status": "FALLBACK_NON_MOVE",
+        "upper": null
+      },
+      "adapted_upper": "-183/50",
+      "candidate_upper": "-183/50",
+      "equal": true,
+      "head": "B_3",
+      "shared_fallback_upper": "-183/50",
+      "tail": "A_0"
+    },
+    {
+      "adaptation": {
+        "collision_witness": false,
+        "is_release_authorization": false,
+        "status": "FALLBACK_INVERSE_DOMAIN",
+        "upper": null
+      },
+      "adapted_upper": "-383/50",
+      "candidate_upper": "-383/50",
+      "equal": true,
+      "head": "B_4",
+      "shared_fallback_upper": "-383/50",
+      "tail": "A_0"
+    },
+    {
+      "adaptation": {
+        "status": "FALLBACK_NON_MOVE",
+        "upper": null
+      },
+      "adapted_upper": "19157/12800",
+      "candidate_upper": "19157/12800",
+      "equal": true,
+      "head": "B_2",
+      "shared_fallback_upper": "19157/12800",
+      "tail": "A_1"
+    },
+    {
+      "adaptation": {
+        "status": "FALLBACK_NON_MOVE",
+        "upper": null
+      },
+      "adapted_upper": "17/50",
+      "candidate_upper": "17/50",
+      "equal": true,
+      "head": "B_3",
+      "shared_fallback_upper": "17/50",
+      "tail": "A_1"
+    },
+    {
+      "adaptation": {
+        "status": "FALLBACK_NON_MOVE",
+        "upper": null
+      },
+      "adapted_upper": "-183/50",
+      "candidate_upper": "-183/50",
+      "equal": true,
+      "head": "B_4",
+      "shared_fallback_upper": "-183/50",
+      "tail": "A_1"
+    },
+    {
+      "adaptation": {
+        "attained_in_progress_relaxation": true,
+        "collision_witness": false,
+        "is_release_authorization": false,
+        "max_a": "16229973320059/74999850000015",
+        "min_b": "127620914306441004695693191/225000000002295000010000030",
+        "relative_affine_projection": {
+          "lower": "79035655416488875575273073/112500000001147500005000015",
+          "lower_preimage": [
+            "24292629444976064560210059/112500000001147500005000015",
+            "127620914306441004695693191/225000000002295000010000030"
+          ],
+          "upper": "8/5",
+          "upper_preimage": [
+            "0",
+            "4/5"
+          ]
+        },
+        "status": "CTC_STYLE_ONE_SIDED_UPPER",
+        "upper": "977321722931555122184634818/562500000005737500025000075"
+      },
+      "adapted_upper": "977321722931555122184634818/562500000005737500025000075",
+      "candidate_upper": "977321722931555122184634818/562500000005737500025000075",
+      "equal": true,
+      "head": "B_2",
+      "shared_fallback_upper": "14667653392416788670120996952502697204454/8437483125087749828250017587497825000225",
+      "tail": "A_2"
+    },
+    {
+      "adaptation": {
+        "status": "FALLBACK_NON_MOVE",
+        "upper": null
+      },
+      "adapted_upper": "18727/12800",
+      "candidate_upper": "18727/12800",
+      "equal": true,
+      "head": "B_3",
+      "shared_fallback_upper": "18727/12800",
+      "tail": "A_2"
+    },
+    {
+      "adaptation": {
+        "collision_witness": false,
+        "is_release_authorization": false,
+        "status": "FALLBACK_INVERSE_DOMAIN",
+        "upper": null
+      },
+      "adapted_upper": "-32973/12800",
+      "candidate_upper": "-32973/12800",
+      "equal": true,
+      "head": "B_4",
+      "shared_fallback_upper": "-32973/12800",
+      "tail": "A_2"
+    }
+  ],
+  "remaining_external_gap": "full original-system execution and general robust constructor comparison",
+  "scientific_runs": 0,
+  "scope": "right-hand ordered safe ray on frozen C1 supports, not full exact forbidden sets",
+  "shared_fallback_pairs": 9,
+  "source_supports_and_fallback_shared": true,
+  "status": "FIXED_CTC_ADAPTATION_STATIC_PASS",
+  "successor_run_plan_prepared": false,
+  "task_session_calls": 0,
+  "training_runs": 0,
+  "whole_task_cost": "NOT_MEASURED"
+}
