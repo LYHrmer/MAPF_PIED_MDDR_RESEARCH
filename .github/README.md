@@ -2,7 +2,7 @@
 
 本分支 `explore/error-aware-guidance`：连续占用、冲突时窗及构造算法。 四个活动分支服务同一论文问题，资格保持CANDIDATE_TOPIC。
 
-2026-10-18后继：SOLVER_RULE_COMPARISON.md新增单位格点的统一分离/共同接触位置证明、单有限动作禁行时间连通证明及R16静态计数。没有额外求解算子通过准入，不实现删完整潜在对或区间内部孔洞的搜索器。全链、可变等待和反馈截短域仍须另查；[唯一当前方案](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)为准。以下保留前轮记录。
+2026-10-18当前：SOLVER_RULE_COMPARISON.md纠正Q整体等价的过强解释，并给出固定相对角/平移/车身点后的真实接触族搜索：半角变量将进度边界及目标驻点化为二次根。它只提供下界见证，必须与同族强解析处理比较；没有合格剩余请求、实现或运行。[唯一当前方案](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)为准；旧线性恢复主张的停止、单位格点结构证明和冻结结果保留，以下是前轮记录。
 
 2026-10-18：SOLVER_RULE_COMPARISON.md新增Q的条件证明，并给出G_linear的同一残差、Jacobian及恢复步。一次Newton/线性消元严格匹配Q，不必另求固定姿态极值，原成本差提议不成立，停止独立实现。未测完整费用，不准备运行。下面保留前轮依据，当前决定见[统一方案开头](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)。
 
