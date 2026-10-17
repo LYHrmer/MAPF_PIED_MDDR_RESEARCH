@@ -2,7 +2,7 @@
 
 2026-10-16。按现行职责保留四个活动分支，旧学习分支由历史标签保存。本页同时记录入口整理和之后的有限物理清理；工作树、实验原始记录和冻结证据保留。
 
-**当前：五轮反馈机制预检已完成，C1平移投影贡献候选关闭。** 原公开包字节可恢复，初始范围确实收缩，但完整阻塞关系和放行不变，强简单增量交集已得到同样结果。T1全流、同模型外部适配和独立任务证据仍缺。四分支不扩为四个课题，不恢复旧网络/查询学习，不新增协议字段。[唯一当前判断](SPACE_TIME_INTERFACE_PLAN_20261016.md#当前五轮反馈机制预检完成关闭c1平移投影贡献候选) · [五轮职责和证据](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/DEPARTURE_NOTICE.md#五轮推进旧c1公开历史能否改变完整后缀约束)。各分支从`.github/README.md`进入，旧清单不构成重启授权。
+**当前：CTC同模型消元适配得到相同联合相位界，关闭独有收紧候选。** 两个有效动作对独立投影相等，其余九对同一回退，十一最终约束不变。完整PSIPP/CTC系统复现、T1全流、独立任务及总成本仍缺；不把本项目适配写成作者原版能力。C1平移投影及同信息放行的旧负结果保持。四分支按需要分工，不扩为四个课题或强求每轮代码；旧学习停止。[唯一当前判断](SPACE_TIME_INTERFACE_PLAN_20261016.md) · [公式、实现与证据](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/DEPARTURE_NOTICE.md#ctc同模型消元适配联合相位收紧不是独有能力)。各分支从`.github/README.md`进入，旧清单不构成重启授权。
 
 | 入口 | 当前职责 | 本机路径 |
 |---|---|---|

@@ -4,15 +4,17 @@
 
 本分支 `main`：问题定义、已发表近邻、证据与继续/停止决定。避免每轮扩写总方案，不以检查数或提交轮次代替科研进展。
 
-**最新决定：五轮反馈机制预检完成，关闭当前C1初始平移投影贡献候选。** 原两包公开消息按冻结哈希恢复，每臂726字节；b_x范围从±.02 m收缩到约[−.010680,.010684] m，但9.45 s的A₂—B₃/A₂—B₄阻塞仍在，9.95 s先验/单包/历史三组均分离。强简单区间交集与候选更新相同，没有约束、决定或全成本优势。保留复核工具，不扩场景或网络找正结果。T1全流、外部充分适配和独立任务证据仍缺；C1与T1合同不混报。
+**最新决定：CTC同模型消元得到相同联合相位界，关闭独有收紧候选。** 执行分支新增精确半平面消元对照，使用冻结v2支持和同一逆映射条件；两个有效动作对的界与候选精确相等，另九对共享回退，十一最终约束不变。PSIPP/CTC原始源码和MIT许可匹配既有Git blob；这是本项目的CTC式适配，非作者全系统复现。全任务成本和独立任务仍未测，无额外保证，不准备新运行清单。旧C1平移投影和同信息放行负结果保持。
 
 - [唯一当前方案与继续/停止判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)
 - [模型、联合逆映射证明、反馈可辨识性及精确收据](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/DEPARTURE_NOTICE.md)
 - [公共进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md)
 - [分支、归档和恢复](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/REPOSITORY_NAVIGATION.md)
 
-停止项：C1平移历史投影贡献、同证书接线贡献、同几何直接投影候选、当前小问题网络训练、旧查询学习。RL、换序、LMAPF与实物后置。WinkTPG仍只读且有许可缺口；SADG执行核心复用，冲突构造以充分适配的PSIPP/CTC为比较对象。
+停止项：联合仿射投影独有收紧、C1平移历史投影、同证书接线、同几何直接投影贡献，以及当前小问题网络和旧查询学习。RL、换序、LMAPF与实物后置。来源/工具按需求支持同一主线，本轮复用既有组件，不强求每个分支新增代码。
 
-本轮只做必要静态核验，没有world、训练、任务会话或科学运行。旧T1及G2c清单是历史证据，不构成当前运行建议或授权，已消费许可不得复用。主稿未提交修改、旧失败、来源代码及冻结证据不改。
+本轮只做一次固定代数和必要边界核验，作者代码、world、训练、任务会话和科学运行调用均0。旧T1及G2c清单不构成当前运行建议或授权，已消费许可不得复用。主稿未提交修改、旧失败、来源代码及冻结证据不改。
 
-此前结果保留在[本轮前固定进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/e670598/GITHUB_PROGRESS.md)，详细技术历史见上方模块说明。日常只从本页进入，避免按旧根README或旧“下一步”恢复停止路线。
+此前结果保留在[本轮前固定进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/34b9e83/GITHUB_PROGRESS.md)，详细技术历史见上方模块说明。日常只从本页进入，避免按旧根README或旧“下一步”恢复停止路线。
+
+当前对照：[CTC适配与等价核验](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/ctc_adaptation.py) · [固定收据](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/CTC_ADAPTATION_CHECK.json)。下一投入先指出具体算法差异或有证据的新工程缺口；不重复已完成核验。
