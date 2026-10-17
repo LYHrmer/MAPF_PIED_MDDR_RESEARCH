@@ -1,7 +1,9 @@
 # 硕士论文集成支线
 
-工作树 `/home/lyh/MAPF_THESIS_RESEARCH`，分支 `research/thesis-integration`。[总体决定](../../docs/RESEARCH_PLAN.md)是唯一总体计划；[本线最新实现](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/research/thesis-integration/tracks/thesis)。main本页只作入口。
+工作树 `/home/lyh/MAPF_THESIS_RESEARCH`，分支 `research/thesis-integration`。[总体决定](../../docs/RESEARCH_PLAN.md)是唯一当前总体计划。main本页只作索引，不复制导出器和数据。
 
-围绕与SCI一致的MAPF核心问题，条件式组织传统改进、学习辅助、执行误差扩展与系统验证。SCI成熟算法按固定提交引用，不能复制为第二套算法。原v2只用于已声明的初始位姿不确定性，LIMO不能提供独立真实误差上界。
+已核交付固定在 [6771137](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/677113791c780e38333c9638632e6f02928e1a6a/tracks/thesis/README.md)：冻结日志离线导出器、10项解析契约、262条同刻参考/真值/定位/控制/公共反馈记录及10条由接受送达END支持的完成记录。产物是`OFFLINE_REEXPORT`，不是新实验或独立样本；传输延迟不充作轨迹时间误差。
 
-下一项实质交付为冻结日志的离线轨迹对齐导出器，关联同刻参考、真值、定位、控制及公共反馈；它服务误差分解与验证图表，不重新仿真，也不自动证明连续安全。之后再衔接SCI路径与连续原语适用条件。
+下一项是消费SCI固定提交的路径与成本输出，建立到连续运动原语的适配，重新核对物理时间、转弯、等待、终点驻留及模型条件。此适配尚未实现。SCI算法维护一份，不复制成第二套优化器。
+
+条件式组织为传统改进、学习辅助、执行误差扩展与系统验证；学校和导师具体要求仍待核定。原v2只描述整任务初始位姿不确定性及同步实际输入，LIMO自身定位/里程计不能证明真实跟踪误差上界。
