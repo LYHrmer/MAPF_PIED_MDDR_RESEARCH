@@ -2,6 +2,8 @@
 
 本分支 `explore/error-aware-guidance`：连续占用、冲突时窗及构造算法。 四个活动分支服务同一论文问题，资格保持CANDIDATE_TOPIC。
 
+2026-10-18：SOLVER_RULE_COMPARISON.md新增Q的条件证明，并给出G_linear的同一残差、Jacobian及恢复步。一次Newton/线性消元严格匹配Q，不必另求固定姿态极值，原成本差提议不成立，停止独立实现。未测完整费用，不准备运行。下面保留前轮依据，当前决定见[统一方案开头](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)。
+
 **当前没有放行新求解器投入。下一项须先提出共享基座之外的具体算子及合格请求。** 全链最右禁行边界是辅助目标，不能替代固定各处已有通行次序的完整协调。旧45份计划中31份存在同车对在不同位置先后相反，共599对；这些是输入结构，不是连续安全或性能结果。
 
 SOLVER_RULE_COMPARISON.md已明确全链右端子问题范围；无新增求解器或执行接线。
