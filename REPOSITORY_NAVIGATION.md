@@ -2,7 +2,7 @@
 
 2026-10-16。按现行职责保留四个活动分支，旧学习分支由历史标签保存。本页同时记录入口整理和之后的有限物理清理；工作树、实验原始记录和冻结证据保留。
 
-**当前：固定C1的几何禁行右端已由支持函数与单调性证书闭合。** 两瓶颈在合法共同初态角点取到实体接触，u*约1.727999754667 s，比旧几何上界低约9.461086 ms；此为解析证据，不是任务时间收益。通用方法可共享该证书，不再为已闭合C1设计分支或训练，完整成本和独立增量未成立。[唯一当前判断](SPACE_TIME_INTERFACE_PLAN_20261016.md) · [固定证书实现](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/support_endpoint.py)。四分支继续按需求分工，各分支从`.github/README.md`进入；旧清单不构成运行授权。
+**当前：四分支完成支持证书适用域、跨动作条件和完整成本核验。** 已闭合两对以外的九对全部有旧上界低于全局接触端点；几何单调、时间适用及接触可达分别判定，不能互相替代。停止为C1非主导回退继续扩算法，u*及旧放行负结果保持。强同条件基线仍共享新解析能力，独立增量、任务与完整成本证据未成立。[唯一当前判断](SPACE_TIME_INTERFACE_PLAN_20261016.md) · [四分支实现与证据](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/SUPPORT_SCOPE_NOTICE.md)。各分支从`.github/README.md`进入；当前只完成静态核验，无新科学运行清单，旧清单不构成运行授权。
 
 | 入口 | 当前职责 | 本机路径 |
 |---|---|---|
