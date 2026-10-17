@@ -1,0 +1,129 @@
+{
+  "status": "STATIC_DOMINANCE_PROOF_CHECK",
+  "scope": "Original v2 prior containing zero parameters; full finite-chain rightmost forbidden lag, not arbitrary restricted lag/local feedback queries.",
+  "input_record_sha256": "3cb4a2b49497519012fc3e934aff3f22da53a03611f164c88f296f4c4da74979",
+  "source_record": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/TURN_ENDPOINT_CHECK.json",
+  "uniform_bound": {
+    "relative_actual_axis": "1127751/15625000",
+    "turn_constant_upper": "4431063/3906250",
+    "following_MOVE_witness_constants": {
+      "same_heading": "7/6",
+      "perpendicular": "5/4",
+      "opposite_heading": "3/2"
+    },
+    "minimum_strict_margin": "189343/5859375"
+  },
+  "derivation": "U_turn <= offset_A-offset_B+T_A-2*ell_B+.99+2E. First later MOVE is at same pivot after nonnegative delay. q_A=1/4 has tau_A>=3/4; q_B=ell_B-c is cruise, c=1/3,3/8,1/2 for same/perpendicular/opposite. Zero task parameters give strict cardinal-rectangle intersection. Thus L_later >= offset_A-offset_B+T_A-2*ell_B+C, C>=7/6> .99+2E. If no later MOVE, permanent HOLD at the pivot intersects B for arbitrarily late B departure, so finite rightmost-lag qualification fails.",
+  "old_R16_rows": [
+    {
+      "A": "agent1",
+      "B": "agent0",
+      "turn_index": 1,
+      "move_index": 4,
+      "directions": "perpendicular",
+      "later_move_progress": "1/4",
+      "B_progress": "5/8",
+      "zero_task_parameters": true,
+      "strict_body_overlap_axis_lengths": [
+        "3/20",
+        "1/40"
+      ],
+      "shared_turn_outer_upper": "-276863497/62500000",
+      "later_move_contact_lower": "-17/4",
+      "prune_margin": "11238497/62500000",
+      "uses_T_rate_lemma": false,
+      "pruned": true
+    },
+    {
+      "A": "agent1",
+      "B": "agent3",
+      "turn_index": 6,
+      "move_index": 3,
+      "directions": "perpendicular",
+      "later_move_progress": "1/4",
+      "B_progress": "5/8",
+      "zero_task_parameters": true,
+      "strict_body_overlap_axis_lengths": [
+        "1/40",
+        "3/20"
+      ],
+      "shared_turn_outer_upper": "662138501/62500000",
+      "later_move_contact_lower": "43/4",
+      "prune_margin": "9736499/62500000",
+      "uses_T_rate_lemma": false,
+      "pruned": true
+    },
+    {
+      "A": "agent2",
+      "B": "agent1",
+      "turn_index": 1,
+      "move_index": 10,
+      "directions": "perpendicular",
+      "later_move_progress": "1/4",
+      "B_progress": "5/8",
+      "zero_task_parameters": true,
+      "strict_body_overlap_axis_lengths": [
+        "3/20",
+        "1/40"
+      ],
+      "shared_turn_outer_upper": "-1400861497/62500000",
+      "later_move_contact_lower": "-89/4",
+      "prune_margin": "10236497/62500000",
+      "uses_T_rate_lemma": false,
+      "pruned": true
+    },
+    {
+      "A": "agent3",
+      "B": "agent1",
+      "turn_index": 1,
+      "move_index": 3,
+      "directions": "same_heading",
+      "later_move_progress": "1/4",
+      "B_progress": "2/3",
+      "zero_task_parameters": true,
+      "strict_body_overlap_axis_lengths": [
+        "1/60",
+        "1/5"
+      ],
+      "shared_turn_outer_upper": "-213863499/62500000",
+      "later_move_contact_lower": "-10/3",
+      "prune_margin": "16590497/187500000",
+      "uses_T_rate_lemma": false,
+      "pruned": true
+    },
+    {
+      "A": "agent3",
+      "B": "agent1",
+      "turn_index": 4,
+      "move_index": 5,
+      "directions": "perpendicular",
+      "later_move_progress": "1/4",
+      "B_progress": "5/8",
+      "zero_task_parameters": true,
+      "strict_body_overlap_axis_lengths": [
+        "1/40",
+        "3/20"
+      ],
+      "shared_turn_outer_upper": "37138501/62500000",
+      "later_move_contact_lower": "3/4",
+      "prune_margin": "9736499/62500000",
+      "uses_T_rate_lemma": false,
+      "pruned": true
+    }
+  ],
+  "counts": {
+    "old_qualified_T_pairs": 5,
+    "closed_without_T": 5,
+    "remaining": 0
+  },
+  "no_later_MOVE_case": "Requires the existing terminal-occupancy check; not a finite-right-endpoint problem.",
+  "not_claimed": [
+    "new T theorem false",
+    "all possible TURN queries dominated",
+    "all MAPF directions impossible",
+    "measured acceleration"
+  ],
+  "scientific_runs": 0,
+  "pose_or_controller_calls": 0,
+  "root_solves": 0
+}
