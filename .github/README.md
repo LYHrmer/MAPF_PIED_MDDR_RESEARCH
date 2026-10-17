@@ -2,7 +2,7 @@
 
 本分支 `explore/query-value-feasibility`：合法反馈、配对日志、完整成本与失败账目；不恢复查询对象选择。 四个活动分支服务同一论文问题，资格保持CANDIDATE_TOPIC。
 
-2026-10-18当前：已只读核对C1两包旧反馈：首包完整空间后缀有合法实体接触见证，次包共同AABB分离，均不提供新未决请求；不升级为T1物理时钟证据。组合比较必须计入P/分解、族选择、根隔离、失败建议及回退，不能免费共享候选产物。没有新费用结果或运行，协议不改；[唯一当前方案](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)为准，以下是前轮记录。
+2026-10-18当前：新局部换序候选复用Costs及最终END账本；旧L20/L21逻辑边权差不能作当前物理收益标签。候选几何验证预算仅为局部预算，整体优化/进程/反馈费用和联合END待接，不将预执行计划写成运行成功。无新运行或查询学习。 以[统一方案开头](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)为准；下面为前轮证据。
 
 2026-10-18：Q恢复步被G_linear逐式匹配，原成本差提议不成立，停止独立实现。不以对照多做一次固定姿态极值制造收益，也不强迫原G0支付不用的Q外包/分解成本。没有新费用测量，原协议和费用代码不改、不准备运行。[统一方案开头](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)为准，下面保留前轮依据。
 
