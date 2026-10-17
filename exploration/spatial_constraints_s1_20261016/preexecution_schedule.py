@@ -1,4 +1,4 @@
-"""Conditional schedule GEOMETRY certificates; no dispatcher or optimizer.
+"""Declared pre-start orders, earliest schedules and conditional certificates.
 
 Explicit starts insert finite WAITs into unchanged v2 primitives. A certificate
 assumes one common, zero-jitter program epoch and immutable complete chains.
@@ -7,7 +7,7 @@ Imports have no scientific-run side effects. Calling consider() does perform
 continuous interval checks and requires a separately authorized run budget.
 """
 from copy import deepcopy
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from fractions import Fraction as Q
 from itertools import combinations
 from pathlib import Path
@@ -18,11 +18,13 @@ import json
 import composition
 import interface
 import protocol
+import preexecution_order
 import timed
 import timed_constraints
 import timed_protocol
 from composition import Chain, contract, exact
 from interface import Box
+from preexecution_order import OrderContract
 from timed import Anchor, Trajectory
 from timed_constraints import Certificates
 from timed_protocol import Costs
@@ -34,7 +36,8 @@ def _digest(value):
 
 
 def _code_identity():
-    modules = (composition, interface, protocol, timed, timed_constraints, timed_protocol)
+    modules = (composition, interface, protocol, preexecution_order,
+               timed, timed_constraints, timed_protocol)
     paths = {m.__name__: Path(m.__file__) for m in modules}
     paths['preexecution_schedule'] = Path(__file__)
     return {name: hashlib.sha256(path.read_bytes()).hexdigest()
@@ -68,6 +71,97 @@ def _cap_deadlines(local, external):
     if len(external) != 2 or any(type(x) is not int or x <= 0 for x in external):
         raise ValueError('absolute monotonic wall/CPU nanosecond deadlines required')
     return tuple(min(a, b) for a, b in zip(local, external))
+
+
+class _ActionWindowCertificates(Certificates):
+    """Only the shared visits kernel; do not append C1's old END constraints."""
+    def __init__(self, trajectories, budget):
+        finite, intervals = {}, {}
+        for robot, tr in trajectories.items():
+            for index, action in enumerate(tr.chain.primitives[:-1]):
+                name, begin = (robot, index), tr.offsets[index]
+                finite[name], intervals[name] = name, (begin, begin+action.duration)
+        self.problem = {'trajectories': trajectories, 'finite': finite, 'intervals': intervals}
+        self.resolution, self.limit, self.cache = budget.resolution, budget.max_cells, {}
+        self.operations = {'phase_cells': 0, 'time_cells': 0,
+                           'phase_cache_hits': 0, 'time_checks': 0}
+
+
+def _compile_order_contract(specs, declaration, mode, gap, budget, deadlines, audit):
+    """Build both alternatives once, charging failures and cached visits alike.
+
+    Window lags are sufficient conditions for a declared finite action pair.
+    They are not a complete schedule certificate. Original task offsets are
+    subtracted, but original task origins/initial parameters are never reset.
+    Separated declared pairs retain END semantics as an explicit conservative
+    fallback; this compiler never silently removes a caller's required order.
+    """
+    base = OrderContract(specs, declaration, separation_gap=gap)
+    audit.update(status='BUILD_STARTED', mode=mode, base_contract_sha256=base.sha256, edges=[],
+                 operations={'phase_cells': 0, 'time_cells': 0,
+                             'phase_cache_hits': 0, 'time_checks': 0},
+                 complete_schedule_safety_checked=False)
+    if mode == 'END_TO_START':
+        audit.update(status='BUILT_END_ORDER_CONTRACT', contract_sha256=base.sha256)
+        return base
+    if mode != 'WINDOW_START_LAGS':
+        raise ValueError('unknown order mode')
+    trajectories = {r: Trajectory(r, Chain.build(s)) for r, s in specs.items()}
+    checker = _ActionWindowCertificates(trajectories, budget)
+    # Keep a live counter reference so incomplete/failed builds remain charged.
+    audit['operations'] = checker.operations
+    boxes = {}
+    for name, (r, i) in checker.problem['finite'].items():
+        if _expired(deadlines):
+            raise ValueError('time budget exhausted in action-window construction')
+        boxes[name] = Box(*trajectories[r].action_box(i, *checker.problem['intervals'][name]))
+    lags = {}
+    for a, b in base.all_cross_edges:
+        if _expired(deadlines):
+            raise ValueError('time budget exhausted in cross-window construction')
+        oa, ea = checker.problem['intervals'][a]
+        ob, eb = checker.problem['intervals'][b]
+        ba, bb = boxes[a], boxes[b]
+        record = {'tail': a, 'head': b, 'kind': 'DECLARED_END_FALLBACK',
+                  'fallback_reason': 'DISJOINT_FULL_OUTERS', 'windows': None}
+        lag = ea-oa+gap
+        if not ba.separated(bb):
+            region = Box(max(ba.xmin, bb.xmin), min(ba.xmax, bb.xmax),
+                         max(ba.ymin, bb.ymin), min(ba.ymax, bb.ymax))
+            windows = []
+            for name in (a, b):
+                if _expired(deadlines):
+                    raise ValueError('time budget exhausted before phase check')
+                remaining = budget.max_cells-checker.operations['phase_cells']
+                if (name, region) not in checker.cache and remaining <= 0:
+                    raise ValueError('total cell budget exhausted in phase check')
+                # visits charges the first over-limit cell, as pair does.
+                checker.limit = max(0, remaining-1)
+                windows.append(checker.visits(name, region))
+                if _expired(deadlines):
+                    raise ValueError('time budget exhausted after phase check')
+            wa, wb = windows
+            record.update(region=(region.xmin, region.xmax, region.ymin, region.ymax),
+                          windows=windows, original_offsets=(oa, ob),
+                          fallback_reason='EMPTY_VISIT_OUTER')
+            if wa is not None and wb is not None:
+                lag = (wa[1]-oa)-(wb[0]-ob)+gap
+                record.update(kind='ROBUST_VISIT_WINDOW', fallback_reason=None)
+        lags[(a, b)] = lag
+        record['start_lag'] = lag
+        audit['edges'].append(record)
+    binding = {'specs_sha256': base.specs_sha256, 'declaration_sha256': _digest(declaration),
+               'code_sha256': _code_identity(), 'resolution': budget.resolution,
+               'gap': gap, 'edges': audit['edges']}
+    proof_sha = _digest(binding)
+    result = OrderContract(specs, declaration, separation_gap=gap,
+                           cross_lags=lags, lag_provenance=proof_sha)
+    audit.update(status='BUILT_CONDITIONAL_ACTION_WINDOWS', proof_sha256=proof_sha,
+                 contract_sha256=result.sha256,
+                 condition='ORIGINAL_V2_TASK_PARAMETERS_AND_UNCHANGED_STOPPED_PRIMITIVES',
+                 interval_proof='CONTACT_IMPLIES_BOTH_BODIES_VISIT_FULL_OUTER_INTERSECTION',
+                 uncertainty_domain='FROZEN_V2_NO_POSTERIOR_SHRINKAGE')
+    return result
 
 
 def compile_schedule(specs, starts, world_bounds, *, obstacles, horizon):
@@ -167,21 +261,22 @@ def certify_schedule(compiled, budget, *, deadlines=None):
     pairs = tuple(combinations(sorted(trajectories), 2))
     status = 'CERTIFIED_CONDITIONAL_GEOMETRY'
     for a, b in pairs:
+        pair_key = json.dumps((a, b), separators=(',', ':'))
         if _expired(deadlines):
             status = 'UNRESOLVED'
-            records[a+'|'+b] = {'status': 'UNRESOLVED', 'reason': 'TIME_BUDGET'}
+            records[pair_key] = {'status': 'UNRESOLVED', 'reason': 'TIME_BUDGET'}
             break
         remaining = budget.max_cells-checker.operations['time_cells']
         if remaining <= 0:
             status = 'UNRESOLVED'
-            records[a+'|'+b] = {'status': 'UNRESOLVED', 'reason': 'TOTAL_CELL_BUDGET'}
+            records[pair_key] = {'status': 'UNRESOLVED', 'reason': 'TOTAL_CELL_BUDGET'}
             break
         # Existing pair() charges its first over-budget cell. Reserve that
         # charge so the declared TOTAL ceiling cannot be exceeded.
         checker.limit = remaining-1
         record = checker.pair(a, anchors[a], b, anchors[b], now=Q(0))
         checked.add((a, b))
-        records[a+'|'+b] = record
+        records[pair_key] = record
         if _expired(deadlines):
             record['expired_after_pair'] = True
             status = 'UNRESOLVED'
@@ -201,22 +296,33 @@ def certify_schedule(compiled, budget, *, deadlines=None):
 
 
 class ScheduleIncumbent:
-    """Keep geometry-certified proposals; task admissibility is NOT checked.
+    """Keep declared-order and geometry-certified pre-start proposals.
 
     No initial schedule is manufactured or assumed feasible by serializing
-    robots. Callers/optimizers must supply complete starts. All rejected
-    attempts are retained, but there is no optimizer or local-order selector.
+    robots. Earliest starts may be generated for explicit group directions.
+    Groups are caller-declared, not automatically inferred maximal SADG groups.
+    All rejected attempts are retained. There is no local-order selector or
+    dispatch authority. Acyclic action graphs remain an adapter restriction.
     """
-    def __init__(self, specs, world_bounds, budget, *, obstacles):
+    def __init__(self, specs, world_bounds, budget, *, obstacles,
+                 order_declaration, separation_gap, order_mode='WINDOW_START_LAGS'):
         if type(budget) is not ValidationBudget:
             raise ValueError('explicit immutable validation budget required')
         self._specs, self._world = deepcopy(specs), tuple(world_bounds)
         if not isinstance(obstacles, (list, tuple)):
             raise ValueError('explicit obstacle list required; no implicit obstacle-free map')
         self._obstacles = deepcopy(obstacles)
+        if order_mode not in ('WINDOW_START_LAGS', 'END_TO_START'):
+            raise ValueError('explicit window or END comparison mode required')
+        self._declaration, self._gap = deepcopy(order_declaration), exact(separation_gap)
+        if self._gap <= 0:
+            raise ValueError('strict positive separation gap required')
+        self._order_mode, self._order, self._order_audit = order_mode, None, None
         self._budget, self._incumbent, self._attempts = budget, None, []
         self._identity = _digest({'specs': self._specs, 'world': self._world,
                                   'obstacles': self._obstacles,
+                                  'order_declaration': self._declaration,
+                                  'order_mode': self._order_mode, 'separation_gap': self._gap,
                                   'source': contract(), 'budget': budget.__dict__})
         self._code = _code_identity()
 
@@ -228,26 +334,53 @@ class ScheduleIncumbent:
     def attempts(self):
         return deepcopy(self._attempts)
 
-    def consider(self, starts, *, absolute_deadlines=None):
+    def consider(self, starts=None, *, directions, absolute_deadlines=None):
         costs, candidate, validation, reason = Costs(), None, None, None
+        order_check, build_audit, phase_cells = None, {}, 0
         deadlines = (costs.wall_start+self._budget.wall_ns, costs.cpu_start+self._budget.cpu_ns)
         accepted, proposal_sha = False, None
         previous = self._incumbent
         try:
-            with costs.measure('compile_complete_schedule'):
+            with costs.measure('shared_order_windows_build_or_cache'):
                 deadlines = _cap_deadlines(deadlines, absolute_deadlines)
                 if _expired(deadlines):
                     raise ValueError('time budget exhausted before compilation')
-                starts = deepcopy(starts)
-                proposal_sha = _digest(starts)
+                starts, directions = deepcopy(starts), deepcopy(directions)
+                proposal_sha = _digest({'starts': starts, 'directions': directions})
                 if _code_identity() != self._code:
                     raise ValueError('source/checker changed; new qualification required')
+                if self._order is None:
+                    order = _compile_order_contract(self._specs, self._declaration,
+                                                    self._order_mode, self._gap, self._budget,
+                                                    deadlines, build_audit)
+                    if _expired(deadlines) or _code_identity() != self._code:
+                        raise ValueError('expired/changed order construction; cache not installed')
+                    self._order, self._order_audit = order, deepcopy(build_audit)
+                else:
+                    build_audit = {'status': 'SHARED_ORDER_CACHE_HIT',
+                                   'contract_sha256': self._order.sha256,
+                                   'operations': {'phase_cells': 0}}
+                phase_cells = build_audit['operations']['phase_cells']
+            with costs.measure('earliest_times_and_declared_order_validation'):
+                if starts is None:
+                    starts = self._order.earliest(directions)
+                order_check = self._order.validate(starts, directions)
+                if not order_check['action_graph_acyclic']:
+                    raise ValueError('CURRENT_ACTION_GRAPH_CYCLE_OUTSIDE_ADAPTER; '
+                                     'not a claim of temporal or all-arrangement infeasibility')
+            with costs.measure('compile_complete_schedule'):
+                if _expired(deadlines):
+                    raise ValueError('time budget exhausted before schedule compilation')
                 candidate = compile_schedule(self._specs, starts, self._world,
                                              obstacles=self._obstacles, horizon=self._budget.horizon)
             with costs.measure('final_complete_continuous_validation'):
                 if _expired(deadlines):
                     raise ValueError('time budget exhausted before validation')
-                validation = certify_schedule(candidate, self._budget, deadlines=deadlines)
+                remaining = self._budget.max_cells-phase_cells
+                if remaining <= 0:
+                    raise ValueError('total phase/time cell budget exhausted before final validation')
+                validation = certify_schedule(candidate, replace(self._budget, max_cells=remaining),
+                                              deadlines=deadlines)
                 if _code_identity() != self._code:
                     raise ValueError('source/checker changed during validation')
             with costs.measure('incumbent_comparison_and_artifact'):
@@ -260,7 +393,9 @@ class ScheduleIncumbent:
                     record = {k: v for k, v in candidate.items() if k != 'trajectories'}
                     record.update(validation=validation, input_sha256=self._identity,
                                   code_sha256=self._code, execution_status='NOT_EXECUTED',
-                                  problem_admissibility='NOT_CHECKED_NO_SWITCH_GROUP_CONTRACT')
+                                  declared_orders=order_check, order_construction=self._order_audit,
+                                  problem_admissibility='DECLARED_PRESTART_ORDERS_AND_CONDITIONAL_GEOMETRY',
+                                  group_completeness='CALLER_DECLARED_NOT_SADG_MAXIMAL_GROUP_REPRODUCTION')
                     # Exact decimal/rational strings and independent owned data.
                     record = json.loads(json.dumps(record, default=str, sort_keys=True))
                     record['schedule_sha256'] = _digest(record)
@@ -270,12 +405,14 @@ class ScheduleIncumbent:
         except Exception as exc:
             reason = type(exc).__name__+': '+str(exc)
         report = {'accepted': accepted, 'reason': reason, 'validation': validation,
+                  'declared_orders': order_check, 'order_build_or_cache': build_audit,
                   'proposal_sha256': proposal_sha, 'attempt_index': len(self._attempts),
-                  'status': 'NEW_GEOMETRY_CERTIFIED_INCUMBENT' if accepted else
+                  'status': 'NEW_CONDITIONAL_PRESTART_INCUMBENT' if accepted else
                   'NO_CERTIFIED_INCUMBENT' if self._incumbent is None else 'RETAINED_INCUMBENT',
                   'candidate_sum_completion': None if candidate is None else str(candidate['sum_completion']),
                   'incumbent_sha256': None if self._incumbent is None else self._incumbent['schedule_sha256'],
-                  'problem_admissibility': 'NOT_CHECKED_NO_SWITCH_GROUP_CONTRACT',
+                  'problem_admissibility': 'DECLARED_PRESTART_ORDERS_AND_CONDITIONAL_GEOMETRY' if accepted
+                  else 'NO_NEW_ADMISSIBLE_CANDIDATE',
                   'execution_interface': 'NOT_CONNECTED_NO_ATOMIC_JOINT_START_OR_END',
                   'hard_time_limit': 'EXTERNAL_SUPERVISOR_REQUIRED_NOT_ENFORCED_INSIDE_PAIR',
                   'budget_scope': 'PER_PROPOSAL_CAPPED_BY_OPTIONAL_CALLER_DEADLINES_TOTAL_OPTIMIZER_BUDGET_EXTERNAL',
@@ -288,6 +425,7 @@ class ScheduleIncumbent:
                 for row in (stored, result):
                     row.update(accepted=False, reason='TIME_BUDGET_AFTER_LEDGER',
                                status='NO_CERTIFIED_INCUMBENT' if previous is None else 'RETAINED_INCUMBENT',
+                               problem_admissibility='NO_NEW_ADMISSIBLE_CANDIDATE',
                                incumbent_sha256=None if previous is None else previous['schedule_sha256'])
         stored['costs'] = costs.finish()
         result['costs'] = deepcopy(stored['costs'])

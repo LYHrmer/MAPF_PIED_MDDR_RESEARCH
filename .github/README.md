@@ -1,25 +1,17 @@
-# MAPF 连续占用与执行约束
+# MAPF 预执行局部重优化原型
 
-本分支 `explore/error-aware-guidance`：连续占用、冲突时窗及构造算法。 四个活动分支服务同一论文问题，资格保持CANDIDATE_TOPIC。
+explore/error-aware-guidance负责连续占用、鲁棒时窗及完整执行比较。现有实现均在exploration/spatial_constraints_s1_20261016内迭代，不复制框架。
 
-2026-10-18当前：新增preexecution_schedule.py，将预定边界等待写入原WAIT并复用全车连续核验；当前仅条件几何证书，组方向资格、传统局部优化器、联合启动/END尚未接通。只做静态检查，未执行证书、优化或任务。 以[统一方案开头](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)为准；下面为前轮证据。
+四个活动分支只服务一个问题：固定路径和原v2原语，在执行前调整声明的局部通行组，保留完整鲁棒可行安排，在同一计算预算下比较组选取。当前为CANDIDATE_TOPIC，尚未建立独立创新或任务收益。
 
-2026-10-18：SOLVER_RULE_COMPARISON.md新增Q的条件证明，并给出G_linear的同一残差、Jacobian及恢复步。一次Newton/线性消元严格匹配Q，不必另求固定姿态极值，原成本差提议不成立，停止独立实现。未测完整费用，不准备运行。下面保留前轮依据，当前决定见[统一方案开头](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)。
+- [唯一当前方案](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)
+- [公共进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md) · [导航及归档](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/REPOSITORY_NAVIGATION.md)
+- [文献与基线身份](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/LITERATURE_GUIDED_RESEARCH_PLAN_20261016.md)
 
-**当前没有放行新求解器投入。下一项须先提出共享基座之外的具体算子及合格请求。** 全链最右禁行边界是辅助目标，不能替代固定各处已有通行次序的完整协调。旧45份计划中31份存在同车对在不同位置先后相反，共599对；这些是输入结构，不是连续安全或性能结果。
+2026-10-18已实现：原子组/固定边/锁组合同、双向鲁棒访问窗口、最早时间求解、WAIT日程、地图及全车连续占用核验。时间正环与动作图成环分开报告；当前适配器拒绝后者。声明组还不是作者SADG最大组复现，条件证书还不是执行许可。仅AST/compile与只读复核，未调用新求解或证书入口。
 
-SOLVER_RULE_COMPARISON.md已明确全链右端子问题范围；无新增求解器或执行接线。
+END-to-START加固定原语时长不能让误差进入优化价值，现只作内部消融。正式ESADG式规则与后继候选共享相同窗口、候选组、优化器、缓存、总预算和最终检查。当前冻结v2域只能支持同域时窗比较，尚不支持后验缩域实验。UNRESOLVED保留，不能把已认证候选中的最好值称全体最优。
 
-本轮另给出重复停稳直行的周期增量规则P及原R16实体见证；其当前完整链请求已被共同粗界/后续见证覆盖，不进入实现。详细公式和适用范围见唯一当前方案。
+仍缺任务级组生成/选择器、联合启动至合法END、外层总预算和完整成本、独立合格任务及新运行清单。R16可复用为DEV；45份R18仍超原v2必要位移域。来源仅为整任务共享初始位姿偏差、同步实际输入与时钟，非LIMO标定或一般持续跟踪扰动。
 
-重复动作偏移聚合和普通事件图阈值求解均未建立额外算法差异，不进入实现。T的原v2/全链右端停止证明、W在已核材料上的停止、E/H及C1放行相同的负结果均保留；不从尚未覆盖的范围推定正例。
-
-- [唯一当前方案：具体规则、范围和准入条件](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)
-- [定点近邻依据](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/LITERATURE_GUIDED_RESEARCH_PLAN_20261016.md)
-- [旧输入结构记录](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/gaussian-mapf-feasibility/exploration/spatial_source/INPUT_STRUCTURE_SCREEN.json)
-- [全链辅助求解规则及范围补充](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/SOLVER_RULE_COMPARISON.md)
-- [公共进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md) · [导航及历史恢复](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/REPOSITORY_NAVIGATION.md)
-
-来源仍是整任务共享初始位姿参数、同步实际输入与时钟、零输入无漂移；不声称一般持续跟踪误差。45份R18仍不满足原v2位移必要条件，结构记录不授予执行资格。放行须有有效反馈、动作承诺、制动及完整后缀无再进入依据。
-
-本次仅静态核查与设计判断；没有新求根、B&B、任务会话、world、作者算法或训练，不准备新运行清单，不复用T1/G2c已消费许可。主稿未提交修改、旧失败及冻结证据保护不变。旧查询、RL、换序和LMAPF保持停止或后置。
+旧C1同信息放行相同及Q/P/T/W等停止结论在原范围保留，见历史进度和执行SOLVER_RULE_COMPARISON.md。旧查询学习、ins2/ins3扩展不重启；RL、运行中换序、变速和LMAPF后置。主稿未提交修改与冻结证据保护；科学运行待新授权，不复用T1/G2c许可。
