@@ -2,7 +2,7 @@
 
 本分支 `main`：问题定义、近邻、证据与继续/停止决定。 四个活动分支服务同一论文问题，资格保持CANDIDATE_TOPIC。
 
-2026-10-18后继：已证明单位格点完整动作域的潜在冲突对不因单纯初态缩域消失，非空单动作禁行时间集合为区间。旧R16有限动作324对中295分离、29共享顶点。范围与下一候选门槛见[唯一当前方案](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)；没有新求解器或运行。以下保留前轮记录。
+2026-10-18当前：允许改进、模型组合和后继学习。已纠正Q“给定候选姿态后的线性等价”不能否定整个组合的比较边界；提出真实接触族的有限二次搜索设计，学习仅作为族选择候选。尚无合格剩余请求或净收益，不实现/训练/运行。[唯一当前方案](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)为准；单位格点结构限制及旧证据保持，以下是前轮记录。
 
 2026-10-18：先提出Q的接触恢复规则，再发现G_linear的一次Newton/线性消元与其逐式相同，停止独立实现。条件证明和错误凸化反例保留；没有独立创新或完整加速结论，无新运行清单。以[统一方案开头](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)为准；下面保留前轮依据。
 
