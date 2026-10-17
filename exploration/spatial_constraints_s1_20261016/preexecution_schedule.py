@@ -3,8 +3,8 @@
 Explicit starts insert finite WAITs into unchanged v2 primitives. A certificate
 assumes one common, zero-jitter program epoch and immutable complete chains.
 It does not confirm that commands were accepted, authorize motion, or supply END.
-Imports have no scientific-run side effects. Calling consider() does perform
-continuous interval checks and requires a separately authorized run budget.
+Imports have no scientific-run side effects. Calling consider() may construct
+interval windows or pair certificates and requires an authorized run budget.
 """
 from copy import deepcopy
 from dataclasses import dataclass, replace
@@ -14,6 +14,7 @@ from pathlib import Path
 from time import perf_counter_ns, process_time_ns
 import hashlib
 import json
+import weakref
 
 import composition
 import interface
@@ -76,7 +77,12 @@ def _cap_deadlines(local, external):
 
 @dataclass(frozen=True)
 class LocalGroupCatalog:
-    """Owned, immutable DEV contact-token abstraction, not SADG maximal groups."""
+    """Data container; only a fully checked builder instance has qualification.
+
+    Public construction/deserialization cannot manufacture a trusted catalog.
+    This is an in-process provenance boundary, not protection against arbitrary
+    mutation of Python module internals by an adversarial caller.
+    """
     specs_sha256: str
     payload_json: str
     code_json: str
@@ -90,8 +96,88 @@ class LocalGroupCatalog:
         return _digest((self.specs_sha256, self.payload_json, self.code_json))
 
     def validate_for(self, specs):
-        if self.specs_sha256 != _digest(specs) or json.loads(self.code_json) != _code_identity():
-            raise ValueError('group catalog input/source changed; rebuild required')
+        _catalog_qualification(self, specs)
+
+
+_CATALOG_QUALIFICATIONS = {}
+
+
+def _catalog_qualification(catalog, specs):
+    entry = _CATALOG_QUALIFICATIONS.get(id(catalog))
+    if (type(catalog) is not LocalGroupCatalog or entry is None or entry['object']() is not catalog
+            or entry['catalog_sha256'] != catalog.sha256 or catalog.specs_sha256 != _digest(specs)
+            or json.loads(catalog.code_json) != _code_identity()):
+        raise ValueError('catalog lacks complete factory qualification or input/source changed')
+    return entry
+
+
+def _bounds(box):
+    return tuple(map(str, (box.xmin, box.xmax, box.ymin, box.ymax)))
+
+
+def _token_partition(trajectories, payload, tokens, deadlines, stats, max_pair_checks):
+    """Reconcile the FULL Chain-derived universe, not supplied count/flags.
+
+    Each cross-robot A_i/D_k pair is strictly separated or exactly one member.
+    All original finite actions and every stopped boundary, including both
+    infinite-time ends of the task partition, occur in the certificate.
+    """
+    sizes = {r: len(t.chain.primitives)-1 for r, t in trajectories.items()}
+    universe = {(r, kind, i) for r, n in sizes.items()
+                for kind, count in (('A', n), ('D', n+1)) for i in range(count)}
+    if sizes != payload['sizes'] or set(tokens) != universe:
+        raise ValueError('incomplete Chain-derived A/D token universe')
+    members, group_ids = {}, set()
+
+    def insert(tail, head, scope, group):
+        tail, head = tuple(tail), tuple(head)
+        key = tuple(sorted((tail, head)))
+        if (tail not in universe or head not in universe or tail[0] == head[0]
+                or key in members or _project_token_order(tail, head, sizes) is None):
+            raise ValueError('missing/duplicate/unsupported token membership')
+        members[key] = {'scope': scope, 'group': group, 'forward': (tail, head)}
+
+    for tail, head in payload['fixed_members']:
+        insert(tail, head, 'fixed', None)
+    for group in payload['groups']:
+        name = group['id']
+        forward = tuple((tuple(a), tuple(b)) for a, b in group['forward'])
+        reverse = tuple((tuple(a), tuple(b)) for a, b in group['reverse'])
+        if (name in group_ids or not forward or group['initial'] not in ('forward', 'reverse')
+                or reverse != tuple((b, a) for a, b in forward)
+                or any(_project_token_order(a, b, sizes) is None for a, b in reverse)):
+            raise ValueError('group alternatives must cover identical complete reversed members')
+        group_ids.add(name)
+        for a, b in forward:
+            insert(a, b, 'group', name)
+    records, covered = [], set()
+    for ra, rb in combinations(sorted(trajectories), 2):
+        for a in sorted(t for t in universe if t[0] == ra):
+            for b in sorted(t for t in universe if t[0] == rb):
+                if _expired(deadlines):
+                    raise ValueError('complete token coverage qualification deadline')
+                if stats['pair_checks']+stats['coverage_pair_checks'] >= max_pair_checks:
+                    raise ValueError('total initial plus qualification pair-check limit')
+                stats['coverage_pair_checks'] += 1
+                key, ba, bb = (a, b), tokens[a]['box'], tokens[b]['box']
+                if ba.separated(bb):
+                    if key in members:
+                        raise ValueError('a separated token pair was declared as a contact member')
+                    records.append({'tokens': key, 'relation': 'STRICT_FULL_OUTER_SEPARATION'})
+                else:
+                    if key not in members:
+                        raise ValueError('UNREGISTERED_TOKEN_CONTACT: no complete window certificate')
+                    covered.add(key)
+                    records.append({'tokens': key, 'relation': 'COMPLETE_CONTACT_MEMBER', **members[key]})
+    if covered != set(members):
+        raise ValueError('member partition contains omitted or foreign contacts')
+    return {'schema': 'complete_chain_action_dwell_partition_v1', 'sizes': sizes,
+            'tokens': [{'token': t, 'phase': tuple(map(str, tokens[t]['phase'])),
+                        'outer_box': _bounds(tokens[t]['box'])} for t in sorted(universe)],
+            'cross_pairs': records, 'pair_count': len(records), 'contact_count': len(covered),
+            'source_condition': contract(), 'clock_condition': 'COMMON_ZERO_JITTER_EPOCH_IMMUTABLE_V2_CHAINS',
+            'source_sha256': _digest(payload['source']),
+            'proof': 'ALL_CLOSED_TOKEN_PAIRS_ARE_SEPARATED_OR_HAVE_COMPLETE_EXIT_ENTRY_MEMBERS'}
 
 
 def _intersection(a, b):
@@ -141,7 +227,9 @@ def build_local_groups(task, *, max_pair_checks, max_link_checks, deadlines):
         raise ValueError('complete hash-bound R16 DEV adaptation required')
     trajectories = {r: Trajectory(r, Chain.build(s)) for r, s in specs.items()}
     tokens, sizes = {}, {}
-    stats = {'pair_checks': 0, 'boundary_link_checks': 0, 'potential_token_pairs': 0}
+    stats = {'pair_checks': 0, 'coverage_pair_checks': 0,
+             'boundary_link_checks': 0, 'potential_token_pairs': 0,
+             'pair_limit_scope': 'INITIAL_PLUS_COMPLETE_COVERAGE_QUALIFICATION'}
 
     def budget():
         if _expired(deadlines):
@@ -200,9 +288,9 @@ def build_local_groups(task, *, max_pair_checks, max_link_checks, deadlines):
                 if b[0] != rb:
                     continue
                 budget()
-                stats['pair_checks'] += 1
-                if stats['pair_checks'] > max_pair_checks:
+                if stats['pair_checks']+stats['coverage_pair_checks'] >= max_pair_checks:
                     raise ValueError('group pair-check limit; construction unresolved')
+                stats['pair_checks'] += 1
                 region = _intersection(ta['box'], tb['box'])
                 if region is None:
                     continue
@@ -278,11 +366,20 @@ def build_local_groups(task, *, max_pair_checks, max_link_checks, deadlines):
                'scope': 'CONSERVATIVE_COMMON_BOUNDARY_CONTACT_COMPONENTS_NOT_SADG_MAXIMAL_GROUPS',
                'complete_continuous_safety_checked': False, 'task_execution_performed': False,
                'dwell_scope': 'ALL_BOUNDARIES_INITIAL_WAIT_AND_PERMANENT_GOAL'}
+    coverage = _token_partition(trajectories, payload, tokens, deadlines, stats, max_pair_checks)
+    payload['token_coverage'] = coverage
+    stats['coverage_partition_checks'] = coverage['pair_count']
     if _code_identity() != code:
         raise ValueError('source changed during group construction')
     catalog = LocalGroupCatalog(_digest(specs), json.dumps(payload, sort_keys=True, default=str),
                                 json.dumps(code, sort_keys=True))
     budget()
+    key = id(catalog)
+    _CATALOG_QUALIFICATIONS[key] = {
+        'object': weakref.ref(catalog, lambda unused: _CATALOG_QUALIFICATIONS.pop(key, None)),
+        'catalog_sha256': catalog.sha256, 'coverage_sha256': _digest(coverage),
+        'coverage_json': json.dumps(coverage, sort_keys=True, default=str),
+        'boxes': tuple((t, tokens[t]['box']) for t in sorted(tokens)), 'maps': {}}
     return catalog
 
 
@@ -302,7 +399,7 @@ class _ActionWindowCertificates(Certificates):
 
 def _compile_local_contract(specs, catalog, mode, gap, budget, deadlines, audit):
     """Action/dwell exit-entry clauses; never merge groups through time aliases."""
-    catalog.validate_for(specs)
+    qualification = _catalog_qualification(catalog, specs)
     payload = catalog.payload
     trajectories = {r: Trajectory(r, Chain.build(s)) for r, s in specs.items()}
     checker = _ActionWindowCertificates(trajectories, budget)
@@ -310,7 +407,11 @@ def _compile_local_contract(specs, catalog, mode, gap, budget, deadlines, audit)
     if sizes != payload['sizes']:
         raise ValueError('catalog primitive counts changed')
     audit.update(status='BUILD_STARTED', mode=mode, catalog_sha256=catalog.sha256,
-                 operations=checker.operations, clauses=[], complete_schedule_safety_checked=False)
+                 operations=checker.operations, clauses=[], complete_schedule_safety_checked=False,
+                 token_coverage=json.loads(qualification['coverage_json']),
+                 coverage_sha256=qualification['coverage_sha256'],
+                 specs_sha256=_digest(specs), code_sha256=_code_identity(),
+                 separation_gap=str(gap), resolution=str(budget.resolution))
 
     def token_box(token):
         r, kind, k = token
@@ -378,7 +479,8 @@ def _compile_local_contract(specs, catalog, mode, gap, budget, deadlines, audit)
         group_lags[name] = {'forward': forward, 'reverse': reverse}
     declaration = {'schema': preexecution_order.SCHEMA, 'fixed_edges': sorted(fixed),
                    'groups': declarations}
-    proof_sha = _digest({'catalog': catalog.sha256, 'mode': mode, 'gap': gap,
+    proof_sha = _digest({'catalog': catalog.sha256, 'coverage': qualification['coverage_sha256'],
+                         'mode': mode, 'gap': gap,
                          'resolution': budget.resolution, 'clauses': audit['clauses'],
                          'code': _code_identity()})
     result = OrderContract(specs, declaration, separation_gap=gap,
@@ -471,7 +573,41 @@ def _compile_order_contract(specs, declaration, mode, gap, budget, deadlines, au
     return result
 
 
-def compile_schedule(specs, starts, world_bounds, *, obstacles, horizon):
+def _static_map_certificate(catalog, specs, world, blocked, deadlines):
+    """Cache only geometry independent of inserted WAIT lengths and starts."""
+    entry = _catalog_qualification(catalog, specs)
+    binding = {'kind': 'ALL_ORIGINAL_ACTION_AND_DWELL_STATIC_MAP',
+               'specs_sha256': _digest(specs), 'catalog_sha256': catalog.sha256,
+               'coverage_sha256': entry['coverage_sha256'], 'code_sha256': _code_identity(),
+               'world': _bounds(world), 'obstacles': tuple(_bounds(b) for b in blocked)}
+    key = _digest(binding)
+    if _expired(deadlines):
+        raise ValueError('static map qualification deadline')
+    if key in entry['maps']:
+        result = json.loads(entry['maps'][key])
+        return {**result, 'cache_hit': True, 'operations': {'static_checks': 0}}
+    checks = 0
+    for token, occupied in entry['boxes']:
+        if _expired(deadlines):
+            raise ValueError('static map qualification deadline')
+        checks += 1
+        if (occupied.xmin < world.xmin or occupied.xmax > world.xmax
+                or occupied.ymin < world.ymin or occupied.ymax > world.ymax):
+            raise ValueError('complete original action/dwell outer exceeds world')
+        for obstacle in blocked:
+            checks += 1
+            if not occupied.separated(obstacle):
+                raise ValueError('static obstacle separation UNRESOLVED; outer overlap is not collision')
+    result = {**binding, 'token_count': len(entry['boxes']), 'status': 'CERTIFIED_STATIC_SEPARATION'}
+    result['proof_sha256'] = _digest(result)
+    if _expired(deadlines) or _code_identity() != json.loads(catalog.code_json):
+        raise ValueError('expired/changed static qualification; cache not installed')
+    entry['maps'][key] = json.dumps(result, sort_keys=True, default=str)
+    return {**result, 'cache_hit': False, 'operations': {'static_checks': checks}}
+
+
+def compile_schedule(specs, starts, world_bounds, *, obstacles, horizon,
+                     local_groups=None, deadlines=None):
     """Starts name EVERY original finite primitive, including original WAITs.
 
     Keys are robot IDs; each value is a sequence of exact start times relative
@@ -489,6 +625,10 @@ def compile_schedule(specs, starts, world_bounds, *, obstacles, horizon):
         raise ValueError('explicit closed axis-aligned obstacle rectangles required; [] is allowed')
     blocked = tuple(Box(*map(exact, bounds)) for bounds in obstacles)
     horizon = exact(horizon)
+    if local_groups is not None and deadlines is None:
+        raise ValueError('explicit deadlines required for shared static-map qualification')
+    static = None if local_groups is None else _static_map_certificate(
+        local_groups, specs, world, blocked, deadlines)
     plans, trajectories, mapping, normalized = {}, {}, {}, {}
     for robot in sorted(specs):
         original = Chain.build(specs[robot])
@@ -517,20 +657,22 @@ def compile_schedule(specs, starts, world_bounds, *, obstacles, horizon):
         if scheduled.primitives[-1] != original.primitives[-1]:
             raise ValueError('terminal HOLD changed')
         tr = Trajectory(robot, scheduled)
-        box = Box(*tr.box(Q(0), scheduled.duration))
-        if (box.xmin < world.xmin or box.xmax > world.xmax
-                or box.ymin < world.ymin or box.ymax > world.ymax):
-            raise ValueError('complete continuous outer occupancy not certified inside world')
-        for index, (action, begin) in enumerate(zip(scheduled.primitives, tr.offsets)):
-            end = begin+(action.duration or 0)
-            occupied = Box(*tr.action_box(index, begin, end))
-            if any(not occupied.separated(obstacle) for obstacle in blocked):
-                raise ValueError('static obstacle separation UNRESOLVED; outer overlap is not collision')
+        if static is None:
+            box = Box(*tr.box(Q(0), scheduled.duration))
+            if (box.xmin < world.xmin or box.xmax > world.xmax
+                    or box.ymin < world.ymin or box.ymax > world.ymax):
+                raise ValueError('complete continuous outer occupancy not certified inside world')
+            for index, (action, begin) in enumerate(zip(scheduled.primitives, tr.offsets)):
+                end = begin+(action.duration or 0)
+                occupied = Box(*tr.action_box(index, begin, end))
+                if any(not occupied.separated(obstacle) for obstacle in blocked):
+                    raise ValueError('static obstacle separation UNRESOLVED; outer overlap is not collision')
         plans[robot], trajectories[robot] = spec, tr
         mapping[robot], normalized[robot] = indices, tuple(map(str, times))
     return {'scheduled_specs': plans, 'trajectories': trajectories,
             'original_to_scheduled': mapping, 'starts': normalized,
             'static_obstacles_checked': True,
+            'static_certificate': static,
             'obstacle_scope': 'EXPLICIT_CLOSED_AXIS_ALIGNED_RECTANGLES_ONLY',
             'obstacles': [tuple(map(str, (b.xmin, b.xmax, b.ymin, b.ymax))) for b in blocked],
             'sum_completion': sum(t.chain.duration for t in trajectories.values()),
@@ -546,7 +688,7 @@ class _FullScheduleCertificates(Certificates):
                            'phase_cache_hits': 0, 'time_checks': 0}
 
 
-def certify_schedule(compiled, budget, *, deadlines=None):
+def certify_schedule(compiled, budget, *, deadlines=None, _audit=None):
     """All unordered robot pairs, [0,last finish] and permanent terminal tails.
 
     Planned anchors are used only in this conditional offline proof. They are
@@ -567,6 +709,10 @@ def certify_schedule(compiled, budget, *, deadlines=None):
     records, checked = {}, set()
     pairs = tuple(combinations(sorted(trajectories), 2))
     status = 'CERTIFIED_CONDITIONAL_GEOMETRY'
+    if _audit is not None:
+        _audit.update(kind='CONTINUOUS_PAIR_CERTIFICATE', status='UNRESOLVED', pairs=records,
+                      operations=checker.operations, coverage_certified=None,
+                      unchecked_pairs=list(pairs), reason='PAIR_CALL_DID_NOT_RETURN')
     for a, b in pairs:
         pair_key = json.dumps((a, b), separators=(',', ':'))
         if _expired(deadlines):
@@ -592,7 +738,8 @@ def certify_schedule(compiled, budget, *, deadlines=None):
             status = 'UNRESOLVED'
             break
     coverage = 'ALL_TASK_SHARED_INITIAL_PARAMETERS_CONTINUOUS_TIME_AND_HOLDS'
-    return {'status': status, 'pairs': records, 'operations': dict(checker.operations),
+    result = {'kind': 'CONTINUOUS_PAIR_CERTIFICATE',
+            'status': status, 'pairs': records, 'operations': dict(checker.operations),
             'unchecked_pairs': [p for p in pairs if p not in checked],
             'coverage_requested': coverage,
             'coverage_certified': coverage if status == 'CERTIFIED_CONDITIONAL_GEOMETRY' else None,
@@ -600,6 +747,101 @@ def certify_schedule(compiled, budget, *, deadlines=None):
             'condition': 'COMMON_ZERO_JITTER_EPOCH_IMMUTABLE_V2_CHAINS',
             'overlap_is_collision': False, 'is_dispatch_authorization': False,
             'physical_END_received': False}
+    if _audit is not None:
+        _audit.pop('reason', None)
+        _audit.update(result)
+    return result
+
+
+def _certify_token_windows(compiled, specs, catalog, order, checked, audit, gap, deadlines):
+    """Sufficient complete certificate shared by every arm using this catalog.
+
+    Contact implies both bodies occupy their full-outer intersection. A body's
+    corresponding closed visit window or entire D dwell must then be active.
+    A positive exit-to-entry gap rules this out for every registered pair; the
+    remaining pairs have strict full-outer separation. No pair() result is
+    invented, and ordinary action-graph acyclicity is not the safety argument.
+    """
+    entry = _catalog_qualification(catalog, specs)
+    proof = _digest({'catalog': catalog.sha256, 'coverage': entry['coverage_sha256'],
+                     'mode': audit['mode'], 'gap': gap, 'resolution': audit['resolution'],
+                     'clauses': audit['clauses'], 'code': _code_identity()})
+    if (gap <= 0 or checked.get('valid') is not True or order.sha256 != checked['contract_sha256']
+            or order.sha256 != audit['contract_sha256'] or checked['lag_provenance'] != proof
+            or audit['proof_sha256'] != proof or audit['specs_sha256'] != _digest(specs)
+            or audit['code_sha256'] != _code_identity()
+            or audit['coverage_sha256'] != entry['coverage_sha256']
+            or _digest(audit['token_coverage']) != entry['coverage_sha256']
+            or checked['starts_sha256'] != _digest(compiled['starts'])):
+        raise ValueError('unbound/incomplete token, window, or selected-time qualification')
+    static = compiled['static_certificate']
+    binding = {k: static[k] for k in ('kind', 'specs_sha256', 'catalog_sha256', 'coverage_sha256',
+                                    'code_sha256', 'world', 'obstacles')}
+    cached = entry['maps'].get(_digest(binding))
+    if cached is None or _digest(json.loads(cached)) != _digest(
+            {k: v for k, v in static.items() if k not in ('cache_hit', 'operations')}):
+        raise ValueError('static map proof was not issued by the common complete token checker')
+    payload = catalog.payload
+    expected = {('fixed', None, None, tuple(a), tuple(b)) for a, b in payload['fixed_members']}
+    for group in payload['groups']:
+        for direction in ('forward', 'reverse'):
+            expected.update(('group', group['id'], direction, tuple(a), tuple(b))
+                            for a, b in group[direction])
+    rows = audit['clauses']
+    keys = [(row['scope'], row['group'], row['direction'], tuple(row['tail_token']),
+             tuple(row['head_token'])) for row in rows]
+    if len(set(keys)) != len(keys) or set(keys) != expected:
+        raise ValueError('window clauses omit/duplicate a complete contact alternative')
+    durations = {r: tuple(a.duration for a in Chain.build(s).primitives[:-1]) for r, s in specs.items()}
+    times = {r: tuple(map(exact, starts)) for r, starts in compiled['starts'].items()}
+    selected, covered = [], set()
+    for key, row in zip(keys, rows):
+        if _expired(deadlines):
+            raise ValueError('complete window certificate deadline')
+        scope, group, direction, tail, head = key
+        if scope == 'group' and checked['directions'][group] != direction:
+            continue
+        edge = _project_token_order(tail, head, payload['sizes'])
+        if edge != tuple(tuple(x) for x in row['time_edge']):
+            raise ValueError('window projected onto different start variables')
+        offsets = []
+        for token, window, is_exit in ((tail, row['tail_window'], True),
+                                      (head, row['head_window'], False)):
+            r, kind, i = token
+            if kind == 'D':
+                if window is not None:
+                    raise ValueError('dwell must retain variable physical endpoints')
+                offsets.append(Q(0) if is_exit else durations[r][i-1])
+            else:
+                lo, hi = map(exact, window)
+                if not 0 <= lo <= hi <= durations[r][i]:
+                    raise ValueError('visit window outside unchanged original primitive')
+                offsets.append(hi if is_exit else lo)
+        lag = offsets[0]-offsets[1]+gap
+        exit_time, enter_time = (times[r][i]+offset for (r, i), offset in zip(edge, offsets))
+        pair = tuple(sorted((tail, head)))
+        if exact(row['start_lag']) != lag or enter_time < exit_time+gap or pair in covered:
+            raise ValueError('selected full contact member lacks a strict physical exit-entry gap')
+        covered.add(pair)
+        selected.append({'tokens': pair, 'scope': scope, 'group': group, 'direction': direction,
+                         'exit': str(exit_time), 'entry': str(enter_time), 'gap': str(gap)})
+    contacts = {tuple(tuple(t) for t in row['tokens']) for row in audit['token_coverage']['cross_pairs']
+                if row['relation'] == 'COMPLETE_CONTACT_MEMBER'}
+    if covered != contacts:
+        raise ValueError('selected windows do not cover the complete cross-token contact set')
+    return {'kind': 'COMPLETE_TOKEN_WINDOW_CERTIFICATE', 'status': 'CERTIFIED_CONDITIONAL_GEOMETRY',
+            'catalog_sha256': catalog.sha256, 'token_partition_sha256': entry['coverage_sha256'],
+            'window_proof_sha256': proof, 'order_contract_sha256': order.sha256,
+            'starts_sha256': _digest(compiled['starts']),
+            'scheduled_specs_sha256': _digest(compiled['scheduled_specs']),
+            'static_proof_sha256': static['proof_sha256'], 'selected_members': selected,
+            'cross_token_pair_count': audit['token_coverage']['pair_count'], 'unchecked_token_pairs': [],
+            'operations': {'phase_cells': 0, 'time_cells': 0, 'phase_cache_hits': 0,
+                           'time_checks': 0, 'window_clause_checks': len(rows), 'member_checks': len(selected)},
+            'coverage_requested': 'ALL_TASK_SHARED_INITIAL_PARAMETERS_CONTINUOUS_TIME_AND_HOLDS',
+            'coverage_certified': 'ALL_TASK_SHARED_INITIAL_PARAMETERS_CONTINUOUS_TIME_AND_HOLDS',
+            'condition': 'COMMON_ZERO_JITTER_EPOCH_IMMUTABLE_V2_CHAINS',
+            'overlap_is_collision': False, 'is_dispatch_authorization': False, 'physical_END_received': False}
 
 
 class ScheduleIncumbent:
@@ -614,7 +856,7 @@ class ScheduleIncumbent:
     """
     def __init__(self, specs, world_bounds, budget, *, obstacles,
                  separation_gap, order_declaration=None, local_groups=None,
-                 order_mode='WINDOW_START_LAGS'):
+                 order_mode='WINDOW_START_LAGS', pair_crosscheck=False):
         if type(budget) is not ValidationBudget:
             raise ValueError('explicit immutable validation budget required')
         self._specs, self._world = deepcopy(specs), tuple(world_bounds)
@@ -630,6 +872,9 @@ class ScheduleIncumbent:
                 raise ValueError('typed source-bound local group catalog required')
             local_groups.validate_for(specs)
         self._catalog = local_groups
+        if type(pair_crosscheck) is not bool:
+            raise ValueError('shared pair crosscheck option must be explicit boolean')
+        self._pair_crosscheck = pair_crosscheck
         self._declaration, self._gap = deepcopy(order_declaration), exact(separation_gap)
         if self._gap <= 0:
             raise ValueError('strict positive separation gap required')
@@ -639,6 +884,7 @@ class ScheduleIncumbent:
                                   'obstacles': self._obstacles,
                                   'order_declaration': self._declaration,
                                   'group_catalog': None if local_groups is None else local_groups.sha256,
+                                  'pair_crosscheck': pair_crosscheck,
                                   'order_mode': self._order_mode, 'separation_gap': self._gap,
                                   'source': contract(), 'budget': budget.__dict__})
         self._code = _code_identity()
@@ -651,7 +897,7 @@ class ScheduleIncumbent:
     def attempts(self):
         return deepcopy(self._attempts)
 
-    def consider(self, starts=None, *, directions=None, absolute_deadlines=None):
+    def consider(self, starts=None, *, directions=None, absolute_deadlines=None, max_cells=None):
         costs, candidate, validation, reason = Costs(), None, None, None
         order_check, build_audit, phase_cells = None, {}, 0
         deadlines = (costs.wall_start+self._budget.wall_ns, costs.cpu_start+self._budget.cpu_ns)
@@ -659,6 +905,10 @@ class ScheduleIncumbent:
         previous = self._incumbent
         try:
             with costs.measure('shared_order_windows_build_or_cache'):
+                ceiling = self._budget.max_cells if max_cells is None else max_cells
+                if type(ceiling) is not int or not 0 < ceiling <= self._budget.max_cells:
+                    raise ValueError('per-call remaining cells must be positive and at most bound total')
+                call_budget = replace(self._budget, max_cells=ceiling)
                 deadlines = _cap_deadlines(deadlines, absolute_deadlines)
                 if _expired(deadlines):
                     raise ValueError('time budget exhausted before compilation')
@@ -668,7 +918,7 @@ class ScheduleIncumbent:
                     raise ValueError('source/checker changed; new qualification required')
                 if self._order is None:
                     order = _compile_order_contract(self._specs, self._declaration,
-                                                    self._order_mode, self._gap, self._budget,
+                                                    self._order_mode, self._gap, call_budget,
                                                     deadlines, build_audit, self._catalog)
                     if _expired(deadlines) or _code_identity() != self._code:
                         raise ValueError('expired/changed order construction; cache not installed')
@@ -684,6 +934,8 @@ class ScheduleIncumbent:
                 if starts is None:
                     starts = self._order.earliest(directions)
                 order_check = self._order.validate(starts, directions)
+                order_check['starts_sha256'] = _digest({r: tuple(str(exact(t)) for t in ts)
+                                                       for r, ts in starts.items()})
                 if self._catalog is not None:
                     self._catalog.validate_for(self._specs)
                     order_check['physical_event_order'] = 'PHYSICAL_EXIT_ENTRY_ORDERS_VERIFIED_BY_EXACT_TIMES'
@@ -695,15 +947,36 @@ class ScheduleIncumbent:
                 if _expired(deadlines):
                     raise ValueError('time budget exhausted before schedule compilation')
                 candidate = compile_schedule(self._specs, starts, self._world,
-                                             obstacles=self._obstacles, horizon=self._budget.horizon)
+                                             obstacles=self._obstacles, horizon=self._budget.horizon,
+                                             local_groups=self._catalog, deadlines=deadlines)
             with costs.measure('final_complete_continuous_validation'):
                 if _expired(deadlines):
                     raise ValueError('time budget exhausted before validation')
-                remaining = self._budget.max_cells-phase_cells
-                if remaining <= 0:
-                    raise ValueError('total phase/time cell budget exhausted before final validation')
-                validation = certify_schedule(candidate, replace(self._budget, max_cells=remaining),
-                                              deadlines=deadlines)
+                remaining = call_budget.max_cells-phase_cells
+                if self._catalog is not None:
+                    validation = _certify_token_windows(candidate, self._specs, self._catalog,
+                                                        self._order, order_check, self._order_audit,
+                                                        self._gap, deadlines)
+                if self._catalog is None or self._pair_crosscheck:
+                    if remaining <= 0:
+                        if validation is not None:
+                            validation.update(status='UNRESOLVED', coverage_certified=None,
+                                              pair_crosscheck={'status': 'UNRESOLVED',
+                                                               'reason': 'NO_REMAINING_PAIR_CELLS'})
+                        raise ValueError('total phase/time cell budget exhausted before pair validation')
+                    pair = {}
+                    try:
+                        certify_schedule(candidate, replace(call_budget, max_cells=remaining),
+                                         deadlines=deadlines, _audit=pair)
+                    finally:
+                        if validation is None:
+                            validation = pair
+                        else:
+                            validation['pair_crosscheck'] = pair
+                            for name, value in pair.get('operations', {}).items():
+                                validation['operations'][name] = validation['operations'].get(name, 0)+value
+                            if pair.get('status') != 'CERTIFIED_CONDITIONAL_GEOMETRY':
+                                validation['status'], validation['coverage_certified'] = 'UNRESOLVED', None
                 if _code_identity() != self._code:
                     raise ValueError('source/checker changed during validation')
             with costs.measure('incumbent_comparison_and_artifact'):
@@ -729,7 +1002,14 @@ class ScheduleIncumbent:
                     self._incumbent, accepted = record, True
         except Exception as exc:
             reason = type(exc).__name__+': '+str(exc)
+        # Read live build counters even when compilation failed before its
+        # result assignment; failed work remains in the full-run cell ledger.
+        phase_cells = build_audit.get('operations', {}).get('phase_cells', 0)
+        validation_ops = {} if validation is None else validation.get('operations', {})
         report = {'accepted': accepted, 'reason': reason, 'validation': validation,
+                  'operations': {'phase_cells': phase_cells+validation_ops.get('phase_cells', 0),
+                                 'time_cells': validation_ops.get('time_cells', 0)},
+                  'pair_crosscheck': self._pair_crosscheck,
                   'declared_orders': order_check, 'order_build_or_cache': build_audit,
                   'proposal_sha256': proposal_sha, 'attempt_index': len(self._attempts),
                   'status': 'NEW_CONDITIONAL_PRESTART_INCUMBENT' if accepted else

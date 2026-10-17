@@ -34,6 +34,7 @@ def _input_identity(manager):
     return _digest({'specs': manager._specs, 'world': manager._world,
                     'obstacles': manager._obstacles, 'order_declaration': manager._declaration,
                     'group_catalog': None if manager._catalog is None else manager._catalog.sha256,
+                    'pair_crosscheck': manager._pair_crosscheck,
                     'order_mode': manager._order_mode, 'separation_gap': manager._gap,
                     'source': contract(), 'budget': manager._budget.__dict__})
 
@@ -130,6 +131,33 @@ class JointTaskSession:
                          and order['lag_provenance'] == p['order_construction'].get('proof_sha256'))
         robots = tuple(sorted(p['scheduled_specs']))
         pair_keys = {json.dumps(pair, separators=(',', ':')) for pair in combinations(robots, 2)}
+
+        def pair_complete(record):
+            return (record.get('kind') == 'CONTINUOUS_PAIR_CERTIFICATE'
+                    and record.get('status') == 'CERTIFIED_CONDITIONAL_GEOMETRY'
+                    and record.get('unchecked_pairs') == [] and set(record.get('pairs', {})) == pair_keys
+                    and all(row.get('status') == 'CERTIFIED_SEPARATED' for row in record['pairs'].values()))
+
+        if v.get('kind') == 'COMPLETE_TOKEN_WINDOW_CERTIFICATE' and catalog_order:
+            m._catalog.validate_for(m._specs)
+            coverage = m._catalog.payload['token_coverage']
+            contacts = {tuple(tuple(t) for t in row['tokens']) for row in coverage['cross_pairs']
+                        if row['relation'] == 'COMPLETE_CONTACT_MEMBER'}
+            selected = [tuple(tuple(t) for t in row['tokens']) for row in v['selected_members']]
+            complete = (v.get('catalog_sha256') == m._catalog.sha256
+                        and v.get('token_partition_sha256') == _digest(coverage)
+                        and v.get('token_partition_sha256') == p['order_construction']['coverage_sha256']
+                        and v.get('window_proof_sha256') == p['order_construction']['proof_sha256']
+                        and v.get('order_contract_sha256') == m._order.sha256
+                        and v.get('starts_sha256') == _digest(p['starts'])
+                        and v.get('scheduled_specs_sha256') == _digest(p['scheduled_specs'])
+                        and v.get('static_proof_sha256') == p['static_certificate']['proof_sha256']
+                        and v.get('unchecked_token_pairs') == []
+                        and v.get('cross_token_pair_count') == len(coverage['cross_pairs'])
+                        and len(selected) == len(contacts) and set(selected) == contacts
+                        and (not m._pair_crosscheck or pair_complete(v.get('pair_crosscheck', {}))))
+        else:
+            complete = pair_complete(v)
         if (not 2 <= len(robots) <= 3 or p.get('execution_status') != 'NOT_EXECUTED'
                 or p.get('problem_admissibility') != 'DECLARED_PRESTART_ORDERS_AND_CONDITIONAL_GEOMETRY'
                 or order.get('valid') is not True
@@ -142,9 +170,8 @@ class JointTaskSession:
                 or v.get('status') != 'CERTIFIED_CONDITIONAL_GEOMETRY'
                 or v.get('coverage_certified') != 'ALL_TASK_SHARED_INITIAL_PARAMETERS_CONTINUOUS_TIME_AND_HOLDS'
                 or v.get('condition') != 'COMMON_ZERO_JITTER_EPOCH_IMMUTABLE_V2_CHAINS'
-                or v.get('unchecked_pairs') != [] or set(v['pairs']) != pair_keys
-                or any(row.get('status') != 'CERTIFIED_SEPARATED' for row in v['pairs'].values())):
-            raise ValueError('complete static/order/all-pair conditional certificate required')
+                or not complete):
+            raise ValueError('complete static/order and qualified pair OR token-window certificate required')
 
     def _check(self):
         self._qualify()

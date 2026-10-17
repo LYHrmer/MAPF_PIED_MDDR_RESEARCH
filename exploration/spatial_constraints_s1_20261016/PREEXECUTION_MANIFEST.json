@@ -1,0 +1,94 @@
+{
+  "author_dir": "/home/lyh/.cache/mapf_research/sadg-controller-c2626d9",
+  "budget": {
+    "address_space_bytes": 536870912,
+    "cpu_seconds": 45,
+    "max_cells_per_proposal": 200000,
+    "max_cells_total": 200000,
+    "max_events": 2000,
+    "max_group_link_checks": 10000,
+    "max_group_pair_checks": 10000,
+    "max_groups": 6,
+    "max_proposals": 64,
+    "optimizer_cpu_seconds": 30,
+    "optimizer_wall_seconds": 40,
+    "output_bytes": 16777216,
+    "wall_seconds": 60
+  },
+  "cases": {
+    "ids013_enumerate": {
+      "arm": "enumerate",
+      "selected_ids": [
+        0,
+        1,
+        3
+      ]
+    },
+    "ids013_initial": {
+      "arm": "initial",
+      "selected_ids": [
+        0,
+        1,
+        3
+      ]
+    },
+    "ids13_enumerate": {
+      "arm": "enumerate",
+      "selected_ids": [
+        1,
+        3
+      ]
+    },
+    "ids13_initial": {
+      "arm": "initial",
+      "selected_ids": [
+        1,
+        3
+      ]
+    }
+  },
+  "checklist_path": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/PREEXECUTION_RUN_CHECKLIST.md",
+  "files": {
+    "/home/lyh/.cache/mapf_research/sadg-controller-c2626d9/sadg_controller/data/ecbs/test.yaml": "c8b4344b62e77fb7dbe9029fc2173749f72631e7ce63a7a0b0d71d11a18ab656",
+    "/home/lyh/MAPF_GAUSSIAN_FEASIBILITY/exploration/spatial_source/composition.py": "e294be82cc6277fac462f61450685820f2d9f1b2c49f1c07c814f7abe4f08453",
+    "/home/lyh/MAPF_GAUSSIAN_FEASIBILITY/exploration/spatial_source/timed.py": "f713b63382d3a10539d3b565fb442f55e8bc08682c22037d18ce9f3ebf6b226d",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/sadg_preflight_20261004_r16/inputs/official_test_staged.json": "e24af3c1c95fe57f7512f5d3ed6826f3ec4007b27ddc69c879cea30624487f13",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/composition_constraints.py": "74a0aa043e34ef5275df246589e412e75c0a6c04fe79ac2c795d73ac977eb49e",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/interface.py": "986aeee580e4cd724b6790c0d0b187a7901c8a6764d79c268b9a5d8fedb1e89c",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/preexecution_driver.py": "f783c060b17460ed5cc4d254fd18ba42528902fad6f5426aa0e7aa3cf594883a",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/preexecution_input.py": "fb416bb5521f737cec766a7db31577cbc99080fc9b441f46d99987d91fed61b0",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/preexecution_order.py": "72112aff8959ef4bde2a9406924748a59b2a1bdc6a7a7d96d95159a106a57c52",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/preexecution_schedule.py": "1d30d526cecf74574f27f75b229fbcc23c62c393b3f3d8b2d81aa043094a3a86",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/preexecution_session.py": "7f1c877a55496c15ce2889bdebcaa3c3a6a6784d3e2b0ad17ea15a404e644cd8",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/timed_constraints.py": "b9e58cd11ab44e14014e098a6e5efcd7858f25191ee2ae2243e46c47798bd3a0",
+    "/home/lyh/MAPF_QUERY_VALUE_FEASIBILITY/exploration/execution_feedback/protocol.py": "ec9e516a3d1dd04da72c3935db3150d7c3b593f596a3002a725cb832fb11911d",
+    "/home/lyh/MAPF_QUERY_VALUE_FEASIBILITY/exploration/execution_feedback/timed_protocol.py": "9da951e16b1656a15ed2ca22b6fda2ebc81349aad2f9ade978653407c6b97f40"
+  },
+  "output_root": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/preexecution_dev_once_20261018",
+  "parameters": {
+    "capture_interval": "1",
+    "epoch": "1",
+    "feedback_delay": ".1",
+    "feedback_ttl": "1",
+    "initial": [
+      ".01",
+      "-.005",
+      ".001",
+      ".005",
+      "-.005"
+    ],
+    "pair_crosscheck": true,
+    "plan_horizon": "120",
+    "resolution": "1/64",
+    "separation_gap": "1/20",
+    "task_horizon": "121"
+  },
+  "r16_dir": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/sadg_preflight_20261004_r16",
+  "schema": "preexecution_dev_manifest_v1",
+  "scope": "R16_TWO_TASKS_TWO_ARMS_CLOSED_FORM_DEV_ONCE",
+  "source_roots": {
+    "execution": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016",
+    "source": "/home/lyh/MAPF_GAUSSIAN_FEASIBILITY/exploration/spatial_source",
+    "tools": "/home/lyh/MAPF_QUERY_VALUE_FEASIBILITY/exploration/execution_feedback"
+  }
+}
