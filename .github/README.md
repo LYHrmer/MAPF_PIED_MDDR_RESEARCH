@@ -4,9 +4,13 @@
 
 2026-10-18当前：执行前局部换序原型已接入共同的`Costs`，本分支继续复用合法反馈、配对费用和最终END账本，不新增协议或独立框架。代码中的**单个候选费用边界**已纳入：组schema核验、固定边及两方向冲突窗口构造与缓存、最早时差求解、组/完整时间表校验、静态矩形地图检查、全车连续占用证书，以及失败收据的复制和账本追加。这是已实现的计费入口，**没有运行费用测量或加速结果**。入口见执行模块[预执行调度原型](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/preexecution_schedule.py)与[组及时差合同](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/preexecution_order.py)。
 
-仍未覆盖constructor/import、最后的计时metadata填充、外层序列化和进程费用；完整优化总预算及硬时限监督也尚未接通。现有预算是逐候选预算，可受调用方绝对截止进一步限制，不代表整个优化过程有了总预算。联合实际起动、反馈支持的提交及最终END尚未接通，不能把计划证书写成完整任务运行或完整成本测量。
+联合启动和反馈至END的事件接口已在执行模块`preexecution_session.py`实现，复用原Plant/TaskPacket/Inbox/Costs，不修改冻结协议。全部程序本地准备并获得合法STOPPED回执后，才在同一独占回调的共同epoch安装clock；计划时钟不填写完成时间，完成只由本地产生且合法送达的END入账。逐车PREPARE/LAUNCH命令、反馈生成/到达尝试/接受、失败分别计数、计字节与SHA。参考/真值/观测/控制只存控制端评估通道，账本关闭后才导出。仅静态核验，未运行联合会话；不是网络原子启动保证。
+
+会话构造已纳入其Costs入口，但目录构造、导入、构造失败外层账本、最后计时metadata、外层序列化和进程费用仍未完整覆盖；全优化总预算、硬时限及自主事件驱动也未接通。逐候选预算可受调用方绝对截止限制，不代表整个优化过程有总预算。已有接口不等于完整任务运行或完整成本测量。
 
 后续两臂须使用相同的窗口来源、构造核、缓存规则、精度和预算，构造失败及缓存开销均保留。`END_TO_START`与空间窗口约束是内部消融，不能用较弱END对照单独证明新的选择策略优越；外部强对照仍按统一方案适配。UNRESOLVED、超时、无改善和没有初始可行计划的尝试不得从账本删除。只有通过声明组/时间表、静态地图及全车完整连续检查的有效schedule，才可形成候选改进标签；其计划完成时间之和不是收到END后的实际完成指标。旧L20/L21逻辑边权差也不能充作当前物理收益标签。
+
+完整动作/驻留覆盖证书若成立，可由双方复用以免逐候选重复pair细分；相同几何的地图检查也可共享缓存。该快路尚缺可核验覆盖记录与证书类型，未实现或计时，现保留最终pair检查；不得把要求基线重复认证造成的费用差归为学习收益。
 
 以[统一方案开头](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)为准；下面保留前轮范围和负结果，不作为恢复旧计划的入口。
 
