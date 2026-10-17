@@ -2,7 +2,7 @@
 
 本分支 `explore/gaussian-mapf-feasibility`：误差来源、跨动作传播与覆盖条件；不要求高斯。 四个活动分支服务同一论文问题，资格保持CANDIDATE_TOPIC。
 
-2026-10-18当前：后继组合仅复用原v2模型，不改成新的学习误差来源。接触族草案要求固定合法g/t/车身点、原乘积初态域及双方匀速片；共同角必须满足I_g及当前子域，非乘积反馈不能以外接盒见证替代。每个见证的同一b/delta贯穿全任务。没有扩域、改参数、采集或训练；[唯一当前方案](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)为准，旧单位格点证明和R18域限制保持，以下是前轮记录。
+2026-10-18当前：新候选允许执行前局部换序，但原v2矩形/共享初态/运动参数和8米/10米域不改。插入原WAIT不重置b/delta；新的条件日程证书假设共同零抖动起点，启动协议仍待资格化，不能等同旧T1反馈证据。无新来源或训练。 以[统一方案开头](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)为准；下面为前轮证据。
 
 2026-10-18：Q的条件推导保留，但恢复步被G_linear逐式匹配，停止独立实现。来源仍保留同任务b/delta和原8米/10米条件；相对角替换必须保留alpha/gamma耦合，反馈非乘积允许集不适用。旋转并集非凸，不能用凸包点签发真实接触。无来源扩域、新采集或训练；当前决定见[统一方案开头](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)。下面保留前轮依据。
 
