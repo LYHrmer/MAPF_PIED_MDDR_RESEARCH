@@ -1,0 +1,497 @@
+{
+  "status": "STATIC_PERIODIC_STOP_BOUND_AND_SCOPE_CHECK",
+  "parallel_input_screen": {
+    "status": "STATIC_R16_PARALLEL_INPUT_STRUCTURE_ONLY",
+    "input_sha256": "e24af3c1c95fe57f7512f5d3ed6826f3ec4007b27ddc69c879cea30624487f13",
+    "bound": "0.64+0.072032 < 1 m",
+    "counts": {
+      "all_cross_robot_MOVE_pairs": 204,
+      "opposite_direction": 62,
+      "opposite_direction_shared_AABB_separated": 57,
+      "perpendicular": 96,
+      "opposite_direction_not_separated": 5,
+      "same_direction": 46,
+      "same_direction_shared_AABB_separated": 41,
+      "same_direction_not_separated": 5
+    },
+    "retained_pairs": [
+      {
+        "robots": [
+          "agent0",
+          "agent1"
+        ],
+        "path_edge_indices": [
+          4,
+          0
+        ],
+        "kind": "opposite_direction",
+        "A": [
+          [
+            7,
+            5
+          ],
+          [
+            7,
+            6
+          ]
+        ],
+        "B": [
+          [
+            7,
+            7
+          ],
+          [
+            7,
+            6
+          ]
+        ]
+      },
+      {
+        "robots": [
+          "agent0",
+          "agent1"
+        ],
+        "path_edge_indices": [
+          5,
+          0
+        ],
+        "kind": "opposite_direction",
+        "A": [
+          [
+            7,
+            6
+          ],
+          [
+            7,
+            7
+          ]
+        ],
+        "B": [
+          [
+            7,
+            7
+          ],
+          [
+            7,
+            6
+          ]
+        ]
+      },
+      {
+        "robots": [
+          "agent1",
+          "agent2"
+        ],
+        "path_edge_indices": [
+          8,
+          0
+        ],
+        "kind": "opposite_direction",
+        "A": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "B": [
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ]
+      },
+      {
+        "robots": [
+          "agent1",
+          "agent2"
+        ],
+        "path_edge_indices": [
+          9,
+          0
+        ],
+        "kind": "opposite_direction",
+        "A": [
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "B": [
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ]
+      },
+      {
+        "robots": [
+          "agent1",
+          "agent3"
+        ],
+        "path_edge_indices": [
+          2,
+          1
+        ],
+        "kind": "same_direction",
+        "A": [
+          [
+            6,
+            6
+          ],
+          [
+            5,
+            6
+          ]
+        ],
+        "B": [
+          [
+            5,
+            6
+          ],
+          [
+            4,
+            6
+          ]
+        ]
+      },
+      {
+        "robots": [
+          "agent1",
+          "agent3"
+        ],
+        "path_edge_indices": [
+          3,
+          1
+        ],
+        "kind": "same_direction",
+        "A": [
+          [
+            5,
+            6
+          ],
+          [
+            4,
+            6
+          ]
+        ],
+        "B": [
+          [
+            5,
+            6
+          ],
+          [
+            4,
+            6
+          ]
+        ]
+      },
+      {
+        "robots": [
+          "agent1",
+          "agent3"
+        ],
+        "path_edge_indices": [
+          3,
+          2
+        ],
+        "kind": "same_direction",
+        "A": [
+          [
+            5,
+            6
+          ],
+          [
+            4,
+            6
+          ]
+        ],
+        "B": [
+          [
+            4,
+            6
+          ],
+          [
+            3,
+            6
+          ]
+        ]
+      },
+      {
+        "robots": [
+          "agent1",
+          "agent3"
+        ],
+        "path_edge_indices": [
+          4,
+          1
+        ],
+        "kind": "same_direction",
+        "A": [
+          [
+            4,
+            6
+          ],
+          [
+            3,
+            6
+          ]
+        ],
+        "B": [
+          [
+            5,
+            6
+          ],
+          [
+            4,
+            6
+          ]
+        ]
+      },
+      {
+        "robots": [
+          "agent1",
+          "agent3"
+        ],
+        "path_edge_indices": [
+          4,
+          2
+        ],
+        "kind": "same_direction",
+        "A": [
+          [
+            4,
+            6
+          ],
+          [
+            3,
+            6
+          ]
+        ],
+        "B": [
+          [
+            4,
+            6
+          ],
+          [
+            3,
+            6
+          ]
+        ]
+      },
+      {
+        "robots": [
+          "agent1",
+          "agent3"
+        ],
+        "path_edge_indices": [
+          5,
+          3
+        ],
+        "kind": "opposite_direction",
+        "A": [
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            5
+          ]
+        ],
+        "B": [
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ]
+        ]
+      }
+    ],
+    "limits": [
+      "Nominal input structure with original-v2 common radius bound only",
+      "No contact optimizer, endpoint computation or complete-task qualification",
+      "Path indices are discrete edge indices, not expanded primitive indices",
+      "Remaining pair is not a candidate gain or independently tested task"
+    ]
+  },
+  "candidate": "P: whole straight-run periodic inverse-time bound",
+  "unit_profile": {
+    "length_m": "1",
+    "v_max": "1/2",
+    "acceleration": "1",
+    "T_seconds": "5/2",
+    "stops_at_every_original_waypoint": true
+  },
+  "formula": "B(c)=floor(c)*5/2+M(c-floor(c)); M(r)=2*sqrt(r) for 0<=r<=1/4 else 2*r+1/2",
+  "r16_same_direction_run": {
+    "A": "agent3, original path edges 1..2",
+    "B": "agent1, original path edges 1..4",
+    "both_run_start_phase": "13/2",
+    "original_passage_order": "agent3 before agent1 at (5,6),(4,6),(3,6)",
+    "support_exact": "3/5+(11/5)*tan(1/500)-(99/50)/cos(1/500)",
+    "support_enclosure": [
+      "-5158504511/3749992500",
+      "-25792522554992489/18749962500012500"
+    ],
+    "periodic_bound_enclosure": [
+      "-3048001318/937498125",
+      "-15240006589997807/4687490625003125"
+    ],
+    "common_affine_bound_enclosure": [
+      "-4558505711/1499997000",
+      "-22792528554990489/7499985000005000"
+    ],
+    "bound_improvement_enclosure": [
+      "11936091045129886409857/56249775000262499925000",
+      "2387218209092683482011/11249955000052499985000"
+    ],
+    "physical_contact": {
+      "delta_A": "H",
+      "delta_B": "-H",
+      "q_A": "1/4",
+      "q_B_enclosure": [
+        "15240006589997807/9374981250006250",
+        "1524000659/937498125"
+      ],
+      "b_A_x": "1/100",
+      "b_B_x": "-1/100",
+      "b_A_y": "sin(H)*(q_A+q_B)/2",
+      "b_B_y": "-sin(H)*(q_A+q_B)/2",
+      "same_task_parameters": true,
+      "symbolic_contact_identity_verified": true,
+      "both_contacts_in_cruise": true
+    }
+  },
+  "common_full_chain_dominance": {
+    "lower_witness": "1/2",
+    "A_north_move_phase": "9+3/4 relative to run start",
+    "B_last_west_move_phase": "15/2+7/4 relative to run start",
+    "zero_task_parameters": true,
+    "center_axis_distances": [
+      "1/4",
+      "1/4"
+    ],
+    "body_half_sums": [
+      "2/5",
+      "2/5"
+    ],
+    "coarse_bound_already_below_witness": true,
+    "scope": "Fixed entire-chain phase offsets only; not arbitrary local block schedules"
+  },
+  "not_established": [
+    "An independent algorithm beyond shared periodic-envelope adaptation",
+    "A qualified request surviving all common pruning",
+    "Complete construction/update/control-to-END cost advantage",
+    "General finite-run support attainability",
+    "A complete MAPF task execution guarantee"
+  ],
+  "scientific_runs": 0,
+  "pose_control_or_solver_calls": 0,
+  "new_run_checklist": false,
+  "input_sha256": {
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/sadg_preflight_20261004_r16/inputs/official_test_staged.json": "e24af3c1c95fe57f7512f5d3ed6826f3ec4007b27ddc69c879cea30624487f13",
+    "/home/lyh/MAPF_GAUSSIAN_FEASIBILITY/exploration/spatial_source/composition.py": "e294be82cc6277fac462f61450685820f2d9f1b2c49f1c07c814f7abe4f08453"
+  },
+  "opposite_pairs_shared_timebox_dominance": [
+    {
+      "A": "agent1",
+      "B": "agent0",
+      "A_path_edge": 0,
+      "B_path_edge": 4,
+      "coarse_timebox_upper": "-15/2",
+      "shared_zero_pose_boundary_lower": "-6",
+      "boundary_vertex": [
+        7,
+        6
+      ],
+      "A_boundary_phase": "13/2",
+      "B_boundary_phase": "25/2",
+      "closed_by_timebox": true,
+      "matches_all_original_shared_vertex_orders": true
+    },
+    {
+      "A": "agent1",
+      "B": "agent0",
+      "A_path_edge": 0,
+      "B_path_edge": 5,
+      "coarse_timebox_upper": "-10",
+      "shared_zero_pose_boundary_lower": "-6",
+      "boundary_vertex": [
+        7,
+        6
+      ],
+      "A_boundary_phase": "13/2",
+      "B_boundary_phase": "25/2",
+      "closed_by_timebox": true,
+      "matches_all_original_shared_vertex_orders": true
+    },
+    {
+      "A": "agent2",
+      "B": "agent1",
+      "A_path_edge": 0,
+      "B_path_edge": 8,
+      "coarse_timebox_upper": "-51/2",
+      "shared_zero_pose_boundary_lower": "-24",
+      "boundary_vertex": [
+        3,
+        2
+      ],
+      "A_boundary_phase": "13/2",
+      "B_boundary_phase": "61/2",
+      "closed_by_timebox": true,
+      "matches_all_original_shared_vertex_orders": true
+    },
+    {
+      "A": "agent2",
+      "B": "agent1",
+      "A_path_edge": 0,
+      "B_path_edge": 9,
+      "coarse_timebox_upper": "-28",
+      "shared_zero_pose_boundary_lower": "-24",
+      "boundary_vertex": [
+        3,
+        2
+      ],
+      "A_boundary_phase": "13/2",
+      "B_boundary_phase": "61/2",
+      "closed_by_timebox": true,
+      "matches_all_original_shared_vertex_orders": true
+    },
+    {
+      "A": "agent3",
+      "B": "agent1",
+      "A_path_edge": 3,
+      "B_path_edge": 5,
+      "coarse_timebox_upper": "-5/2",
+      "shared_zero_pose_boundary_lower": "-1",
+      "boundary_vertex": [
+        3,
+        6
+      ],
+      "A_boundary_phase": "31/2",
+      "B_boundary_phase": "33/2",
+      "closed_by_timebox": true,
+      "matches_all_original_shared_vertex_orders": true
+    }
+  ],
+  "parallel_fixed_full_chain_screen_remaining": 0
+}
