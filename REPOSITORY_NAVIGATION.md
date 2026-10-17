@@ -2,7 +2,7 @@
 
 2026-10-16。按现行职责保留四个活动分支，旧学习分支由历史标签保存。本页同时记录入口整理和之后的有限物理清理；工作树、实验原始记录和冻结证据保留。
 
-**当前：CTC同模型消元适配得到相同联合相位界，关闭独有收紧候选。** 两个有效动作对独立投影相等，其余九对同一回退，十一最终约束不变。完整PSIPP/CTC系统复现、T1全流、独立任务及总成本仍缺；不把本项目适配写成作者原版能力。C1平移投影及同信息放行的旧负结果保持。四分支按需要分工，不扩为四个课题或强求每轮代码；旧学习停止。[唯一当前判断](SPACE_TIME_INTERFACE_PLAN_20261016.md) · [公式、实现与证据](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/DEPARTURE_NOTICE.md#ctc同模型消元适配联合相位收紧不是独有能力)。各分支从`.github/README.md`进入，旧清单不构成重启授权。
+**当前：重新筛选后仅保留一项条件性理论预检，零项已成立新算法缺口。** TURN全旋转外包不随时间细分收缩，但只修TURN不能改善C1全局界，相关旋转/保守CCD也已有成熟方法。预检聚焦鲁棒禁行右端的可核验上下界与同精度计算，须先超过充分适配的强通用对照；不把标准模块组合当作贡献。旧联合相位、平移投影及同信息放行负结果保持。四分支按需要分工，源码不改、不训练。[唯一当前判断](SPACE_TIME_INTERFACE_PLAN_20261016.md) · [筛选证据](implementation_binding_evidence/space_time_composition_20261016/ALGORITHM_GAP_SCREEN_20261017.json)。各分支从`.github/README.md`进入，旧清单不构成重启授权。
 
 | 入口 | 当前职责 | 本机路径 |
 |---|---|---|

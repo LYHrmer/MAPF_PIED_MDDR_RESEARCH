@@ -1,0 +1,239 @@
+{
+  "date": "2026-10-17",
+  "status": "SCREENED_CONDITIONAL_NOT_VALIDATED_TOPIC",
+  "scope": "targeted source/paper inspection and exact arithmetic; no task or research module executed",
+  "local_gap": {
+    "location": "spatial_source/timed.py:73; support.py:71",
+    "finding": "TURN body outer box is independent of phase subinterval width",
+    "safety_failure": false,
+    "overapproximation_floor": true
+  },
+  "frozen_A1_endpoint": {
+    "phase": "4.5",
+    "reference_center": [
+      "1",
+      "0"
+    ],
+    "task_origin": [
+      "-1",
+      "0"
+    ],
+    "heading": "E",
+    "delta_half_width": ".002",
+    "body_half_extents": [
+      ".3",
+      ".1"
+    ],
+    "initial_world_y_half_width": ".01",
+    "numeric_reserve": ".000001",
+    "old_upper_formula": ".32+.01+2*.002+.000001",
+    "same_delta_endpoint_upper_formula": ".01+(2+.3)*.002+.1+.000001",
+    "old_y_upper": "334001/1000000",
+    "valid_endpoint_y_upper": "114601/1000000",
+    "excess_at_least_m": "1097/5000",
+    "proof": "y=b_y+(2+u_x)*sin(delta)+u_y*cos(delta), |u_x|<=.3, |u_y|<=.1; apply |sin(delta)|<=h and |cos(delta)|<=1",
+    "is_collision_or_release_witness": false
+  },
+  "negative_mechanism_evidence": {
+    "turn_pairs": [
+      {
+        "tail": "A_0",
+        "head": "B_1",
+        "refined_upper": "38389/25600"
+      },
+      {
+        "tail": "A_0",
+        "head": "B_3",
+        "refined_upper": "-183/50"
+      },
+      {
+        "tail": "A_1",
+        "head": "B_2",
+        "refined_upper": "19157/12800"
+      },
+      {
+        "tail": "A_1",
+        "head": "B_3",
+        "refined_upper": "17/50"
+      },
+      {
+        "tail": "A_1",
+        "head": "B_4",
+        "refined_upper": "-183/50"
+      },
+      {
+        "tail": "A_2",
+        "head": "B_3",
+        "refined_upper": "18727/12800"
+      }
+    ],
+    "max_turn_upper": "38389/25600",
+    "global_upper": "977321722931555122184634818/562500000005737500025000075",
+    "conclusion": "tightening only TURN pairs cannot improve the frozen global ordered safe ray while MOVE constraints are retained"
+  },
+  "screening": [
+    {
+      "candidate": "tighter_turn_outer_box",
+      "decision": "ENGINEERING_BASELINE_REPAIR_ONLY",
+      "novelty": "NOT_ESTABLISHED_EXISTING_ROTATIONAL_CCD"
+    },
+    {
+      "candidate": "certified_robust_departure_right_endpoint_with_equal_precision_cost",
+      "decision": "CONDITIONAL_THEORY_PREFLIGHT_ONLY",
+      "novelty": "UNKNOWN",
+      "full_cost": "UNKNOWN",
+      "task_value": "UNKNOWN"
+    },
+    {
+      "candidate": "no_false_negative_precision_and_fallback_as_novelty",
+      "decision": "REJECT_GENERIC_CLAIM_ALREADY_IN_CCD"
+    },
+    {
+      "candidate": "timing_uncertainty_STNU_execution",
+      "decision": "DEFER_NEAR_NEIGHBORS_AND_SOURCE_CHANGE"
+    },
+    {
+      "candidate": "learned_collision_or_branch_selection",
+      "decision": "STOP_NO_NEW_BOTTLENECK_OR_DATA_EVIDENCE"
+    }
+  ],
+  "preflight_contract": {
+    "target": "u*=sup K for nonempty robust possible-contact set on qualified finite action domains",
+    "lower": "allowed-parameter physical-contact witness, not outer-box overlap or private online truth",
+    "upper": "all allowed parameters and continuous phases covered",
+    "precision": "U-L<=epsilon_time must be proved; spatial tolerance is not temporal tolerance",
+    "degenerate_cases": "empty requires global separation; tangency or exhausted budget may remain unresolved",
+    "strong_baseline": "same-model general interval branch-and-bound with equal bounds, analytic fast paths, caches, budgets and fallbacks; author CCD kernels only after qualified adaptation",
+    "stop": "standard assembly alone, no specific equal-precision work reduction, or only improvement over frozen full-turn box",
+    "existing_evidence": "C1 already has a physical-contact witness and a valid upper bound, yielding a 9.465086 ms bracket; missing is a distinctive algorithm for requested accuracy and total work reduction, not the existence of any lower bound"
+  },
+  "author_sources": [
+    {
+      "repository": "https://github.com/ipc-sim/ipc-toolkit",
+      "commit": "4b3059c8539eed52fc9319c44756fa2136b88fa6",
+      "license": "MIT",
+      "files": [
+        {
+          "path": "src/ipc/ccd/nonlinear_ccd.hpp",
+          "cache_path": "/home/lyh/.cache/mapf_research/ipc-toolkit-4b3059c/nonlinear_ccd.hpp",
+          "sha256": "0cbc5de2269f1d11bd0b70665da19c43005b31f6671c8cf1b9db088fb0195a75",
+          "git_blob_sha1": "dee5c1ffac118a10aa1663e26a21dfde43c54b46",
+          "url": "https://raw.githubusercontent.com/ipc-sim/ipc-toolkit/4b3059c8539eed52fc9319c44756fa2136b88fa6/src/ipc/ccd/nonlinear_ccd.hpp"
+        },
+        {
+          "path": "src/ipc/ccd/nonlinear_ccd.cpp",
+          "cache_path": "/home/lyh/.cache/mapf_research/ipc-toolkit-4b3059c/nonlinear_ccd.cpp",
+          "sha256": "c0c39a99e1222177c88204a95d366323f3887f718024b0d10ad4d37e72daa917",
+          "git_blob_sha1": "23246e6686475a04cdd8018783174f6bc8473d60",
+          "url": "https://raw.githubusercontent.com/ipc-sim/ipc-toolkit/4b3059c8539eed52fc9319c44756fa2136b88fa6/src/ipc/ccd/nonlinear_ccd.cpp"
+        },
+        {
+          "path": "LICENSE",
+          "cache_path": "/home/lyh/.cache/mapf_research/ipc-toolkit-4b3059c/LICENSE",
+          "sha256": "b50d8e6d16f9bc060b4e424bdb1f8eaf994156ea4844184ab6b864f08f852228",
+          "git_blob_sha1": "a8adb0d801e2775bcacde5f419d7d34450dfdbda",
+          "url": "https://raw.githubusercontent.com/ipc-sim/ipc-toolkit/4b3059c8539eed52fc9319c44756fa2136b88fa6/LICENSE"
+        }
+      ],
+      "inspection": "selected_source_and_license_only",
+      "built": false,
+      "executed": false
+    },
+    {
+      "repository": "https://github.com/Continuous-Collision-Detection/Tight-Inclusion",
+      "commit": "6f84001a790a9d3362b7c13d410037140d83fa2c",
+      "license": "MIT",
+      "files": [
+        {
+          "path": "src/tight_inclusion/ccd.hpp",
+          "cache_path": "/home/lyh/.cache/mapf_research/tight-inclusion-6f84001/ccd.hpp",
+          "sha256": "51b5d906765e6c2e4883ca783c68ba5eadb7d6298ab56a9c7cdcb0cf3274008e",
+          "git_blob_sha1": "e71378c361351328ed9673f23edd9fbc2823c9dd",
+          "url": "https://raw.githubusercontent.com/Continuous-Collision-Detection/Tight-Inclusion/6f84001a790a9d3362b7c13d410037140d83fa2c/src/tight_inclusion/ccd.hpp"
+        },
+        {
+          "path": "README.md",
+          "cache_path": "/home/lyh/.cache/mapf_research/tight-inclusion-6f84001/README.md",
+          "sha256": "c1e0cd8220489703630b9f4339e1221a1469cc8c5c97d4e5326e9d9635736499",
+          "git_blob_sha1": "7dc77b597bb9e68b092a0396f3ea98a3737447c6",
+          "url": "https://raw.githubusercontent.com/Continuous-Collision-Detection/Tight-Inclusion/6f84001a790a9d3362b7c13d410037140d83fa2c/README.md"
+        },
+        {
+          "path": "LICENSE",
+          "cache_path": "/home/lyh/.cache/mapf_research/tight-inclusion-6f84001/LICENSE",
+          "sha256": "f37ed264b627f3349f00adaec2256a138c5454bcdef2ed52008d20c9c4cc61c6",
+          "git_blob_sha1": "da9ee15a668eaf439683a2c10d4e504423fb1db1",
+          "url": "https://raw.githubusercontent.com/Continuous-Collision-Detection/Tight-Inclusion/6f84001a790a9d3362b7c13d410037140d83fa2c/LICENSE"
+        }
+      ],
+      "inspection": "selected_source_and_license_only",
+      "built": false,
+      "executed": false
+    }
+  ],
+  "papers": [
+    {
+      "title": "Real-time Continuous Collision Detection for Mobile Manipulators - A General Approach",
+      "year": 2012,
+      "venue": "Humanoids",
+      "url": "https://www.dfki.de/en/web/research/projects-and-publications/publication/6454",
+      "inspected": "author PDF section III, publisher metadata",
+      "limits": "author library version/license not established; no reproduction"
+    },
+    {
+      "title": "A Large-scale Benchmark and an Inclusion-based Algorithm for Continuous Collision Detection",
+      "year": 2021,
+      "venue": "ACM TOG 40(5):188",
+      "doi": "10.1145/3460775",
+      "url": "https://doi.org/10.1145/3460775",
+      "inspected": "publisher abstract/metadata and pinned author API/README; not full-paper reproduction"
+    },
+    {
+      "title": "Robust Multi-Agent Pathfinding with Continuous Time",
+      "year": 2024,
+      "venue": "ICAPS 34(1):570-578",
+      "doi": "10.1609/icaps.v34i1.31519",
+      "url": "https://ojs.aaai.org/index.php/ICAPS/article/view/31519",
+      "inspected": "published PDF pp.572-575 and abstract",
+      "limits": "separate author TR-CCBS artifact not confirmed; do not substitute parent CCBS repository"
+    },
+    {
+      "title": "Multi-Agent Path Finding with Tasks Under Time Uncertainty",
+      "year": 2026,
+      "published": "2026-10-10",
+      "venue": "TIME 2026",
+      "doi": "10.4230/OASIcs.TIME.2026.13",
+      "url": "https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.TIME.2026.13",
+      "inspected": "official metadata and abstract only",
+      "limits": "no claims about full geometry or dynamic controllability"
+    }
+  ],
+  "input_sha256": {
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/JOINT_PHASE_CHECK.json": "e3b23415c067bab855db800c6367ed905131c14698bb12a77e96e7b2ff43c680",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/CTC_ADAPTATION_CHECK.json": "895129d5bc0266a42f6745313e12f08a96245c62ed9baea38a87f0800556929b",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/composition_fixture.json": "21505bab2eceb3b86c311bf870d8c70b3c81621ff194466b3be25fc62681d68a",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/departure_constraints.py": "557b1d13160009d22c26979ef8c51cdb1e613b973cb3a07ebe1a562182a69bb4",
+    "/home/lyh/MAPF_GAUSSIAN_FEASIBILITY/exploration/spatial_source/timed.py": "f713b63382d3a10539d3b565fb442f55e8bc08682c22037d18ce9f3ebf6b226d",
+    "/home/lyh/MAPF_GAUSSIAN_FEASIBILITY/exploration/spatial_source/support.py": "e06735d9a48f0890270dd301e1a582c21397b1e43982d3a9ac3fb431732f124e",
+    "/home/lyh/MAPF_GAUSSIAN_FEASIBILITY/exploration/spatial_source/composition.py": "e294be82cc6277fac462f61450685820f2d9f1b2c49f1c07c814f7abe4f08453",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/DEPARTURE_NOTICE.md": "f4be9006f1064652c6541077f1875acba92a5108bdfa600bb8c82692a5fd461e"
+  },
+  "scientific_runs": 0,
+  "world_steps": 0,
+  "author_code_calls": 0,
+  "training_runs": 0,
+  "new_algorithm_implemented": false,
+  "successor_run_plan_prepared": false,
+  "independent_scientific_validation": false,
+  "existing_contact_witness_reused": {
+    "source": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/DEPARTURE_NOTICE.md",
+    "section": "原v2允许域内的解析碰撞见证：限制最大可收紧量",
+    "allowed_parameters": "b_A=(-.02,-.01), b_B=(.01,.02), delta_A=delta_B=-.002 throughout each task",
+    "contact_formula": "1.6+.12*cos(.002)+4*sin(.002)-4e-6",
+    "certified_lower": "80999801/46875000",
+    "current_certified_upper": "977321722931555122184634818/562500000005737500025000075",
+    "existing_bracket_width_s": "9982707978076399685690239750597/1054687500010757812546875140625000",
+    "new_guarantee": false,
+    "limitation": "original prior only; feedback-restricted sets must requalify this witness; no runtime saving follows"
+  }
+}
