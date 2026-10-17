@@ -1,27 +1,28 @@
 # 当前公共进度
 
-2026-10-17。当前状态以[统一方案开头](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)为准；[本轮前进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/59d356b/GITHUB_PROGRESS.md)保留上一轮缺口筛选及旧否证。
+2026-10-17。当前状态以[统一方案开头](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)为准；[本轮前进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/717ad51/GITHUB_PROGRESS.md)保留上一轮同多边形逆映射比较及旧否证。
 
 | 项目 | 当前证据与决定 |
 |---|---|
 | 研究对象 | 固定MAPF路径和通行次序，初始位姿不确定性下的连续占用与协调。同步实际输入、共享任务参数，不声称一般持续跟踪误差 |
-| 本轮交付 | 分相位进度边界枚举的公式、伪代码与强B&B比较；固定系数/顶点代数核对，无新求解器实现或运行 |
+| 本轮交付 | 原执行模块新增固定C1支持函数/单调性证书；一次符号恒等式与有理数核对通过，不运行优化器/B&B或轨迹采样 |
 | 实现缺口 | TURN全旋转外包不随相位细分收缩。原C1 A₁起点旧y上界.334001 m，同δ安全解析界.114601 m，局部至少松弛.2194 m；不代表碰撞或任务收益 |
-| 不利证据 | 六个含TURN动作对最大右界1.4995703125 s，低于MOVE全局界1.737460840749 s；只修TURN不能改变该例全局约束 |
-| 具体规则 | MOVE距离按双方三速度相位裁片，枚举边界端点和一次方程驻点；可覆盖旧仿射逆式必须回退的情况。几何外包顶点仍非实体见证 |
-| 同条件比较 | R只分朝向；G共享几何/完整边界快路/缓存/回退并允许自适应分支。相同P下额外进度分割不收紧已精确求尽的上界；G的显式朝向策略可复现R，但不是所有B&B等价 |
-| 固定C1 | 两个瓶颈在旧多边形匀速段顶点取等，完整分段逆式最大值不变；其余九界仍低于瓶颈，全局U及约9.465086 ms夹逼保持。不报新放行或净计算收益 |
+| 不利证据 | 六个含TURN动作对最大右界1.4995703125 s，仍低于本轮闭合的MOVE端点1.727999754667 s；只修TURN不能改变该例全局约束 |
+| 具体规则 | 用n=M^(-T)(1,-1)将最大进度差包为完整实体支持值h_Z(n)-n·r0；原一侧逆映射资格保持，认证两个朝向全域单调后直接确定角点 |
+| 同条件比较 | 两臂得到同一有效支持表达式和导数界时，标准单调性也可使用同一根域证书。无需角度分支，不等于已测相对强基线加速；完整成本与独立增量仍未知 |
+| 固定C1新证据 | 两瓶颈均在原朝向角点达到合法实体接触；其余九界更小。几何右端u*=1.6+.12cos(.002)+4sin(.002)，约1.727999754667 s，旧上界降低约9.461086 ms；未改善已核反馈放行 |
+| 数值范围 | 闭式常数有理包络宽约8.11e-14 s，不是控制或反馈精度；原数值保护与安全要求未改。旧9.465086 ms间隙作为历史证据保留 |
 | 强对照 | 同模型通用区间分支定界，允许相同紧几何、解析快路、缓存和回退。IPC非线性CCD/Tight-Inclusion核须先适配验证，不能把给定轨迹TOI当鲁棒出发右端 |
-| 近邻核验 | 沿用Täubig2012、TOG2021 TI、TR-CCBS2024和TIME2026依据，以及前轮两个作者库固定版本与MIT许可。本轮核对IBEX官方目标界/可行性/未决状态和收缩器接口，未构建或运行作者程序 |
+| 近邻核验 | 沿用Täubig2012、TOG2021 TI、TR-CCBS2024和TIME2026依据，以及前轮两个作者库固定版本与MIT许可。本轮定点核对CP2009单调函数角点极值依据及IBEX通用优化接口，未构建或运行作者程序 |
 | 旧反馈结果 | C1平移投影缩小范围但不改变阻塞与放行；9.45 s仍阻塞、9.95 s三组分离。不混用T1的9.45 s结果；T1全流仍缺 |
 | 旧外部身份 | PSIPP/CTC同模型消元适配与联合相位界相同，非作者全系统复现；SADG核心、WinkTPG只读限制、MAPF-X近邻依据均复用 |
 | 已停止 | 联合仿射投影独有收紧、C1平移历史投影、同证书接线、同几何直接投影贡献；当前小问题网络、旧查询学习及C1毫秒调优 |
 | 后置 | RL、换序、LMAPF、实物；不扩大场景或扰动寻找正结果 |
-| 运行状态 | 只做来源读取及精确算术，不导入/执行研究模块；world/控制会话/训练/科学运行/作者代码调用均0。不准备新运行清单 |
+| 运行状态 | 执行一次新固定证书的符号/有理数核验；不导入旧研究运行器，不执行优化器。world/控制会话/训练/科学运行/作者基线调用均0。不准备新运行清单 |
 | G2c历史 | 两次新采集失败，有效新数据0，两次许可均消费；短IPC旧计划未授权未执行，不阻塞当前解析主线 |
 
-本轮依据见执行分支[具体求解规则与比较](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/SOLVER_RULE_COMPARISON.md)和[固定代数收据](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/SOLVER_RULE_CHECK.json)。上一轮[筛选记录](implementation_binding_evidence/space_time_composition_20261016/ALGORITHM_GAP_SCREEN_20261017.json)保持。当前仍CANDIDATE_TOPIC，完整几何/求解器未实现、总成本未测。
+本轮依据见[支持端点证书](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/support_endpoint.py)和[固定收据](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/SUPPORT_ENDPOINT_CHECK.json)。上一轮“同冻结多边形上仅换逆映射无改善”仍成立；本轮用完整实体支持值构造更强共同解析对照。当前仅固定实例解析核对通过，未独立复核，不升级论文资格。
 
-四活动分支仍各司其职：[当前职责与停止投入](REPOSITORY_NAVIGATION.md)。本轮在执行模块原目录交付规则和解析核对，各入口同步，源码不改。保留共同解析设计，暂不把“进度消元后只分朝向”作为独立贡献推进。若继续，须先给出共享快路后仍不同的规则和完整工作量依据；本轮不准备有限运行，不因负结果扩场景、改噪声或训练。
+四活动分支仍各司其职：[当前职责与停止投入](REPOSITORY_NAVIGATION.md)。C1的几何右端已闭合，停止继续为此例优化分支或准备学习；通用核、一般独立任务和完整费用仍缺。后继先指出本证书适用域外已有材料支持的具体缺口及强基线差异，不扩场景或噪声追求正结果。
 
 保留主稿未提交修改、冻结来源/实现/清单、旧失败及本机原路径。旧T1有限清单和历史建议不是当前授权；不复用已消费许可。归档及历轮依据从[导航](REPOSITORY_NAVIGATION.md)恢复。

@@ -2,7 +2,7 @@
 
 2026-10-16。按现行职责保留四个活动分支，旧学习分支由历史标签保存。本页同时记录入口整理和之后的有限物理清理；工作树、实验原始记录和冻结证据保留。
 
-**当前：具体求解规则已推导，共享快路后的算法增量未成立。** MOVE按双方三速度相位分片后枚举边界端点与驻点，处理加速/制动逆映射；两臂共享该快路与紧几何。原C1两个瓶颈最大值仍与旧界相等，没有新任务或计算收益证据。保留共同解析设计，暂不推进“只分朝向”为独立贡献，不准备科学运行或训练。[唯一当前判断](SPACE_TIME_INTERFACE_PLAN_20261016.md) · [公式与比较](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/SOLVER_RULE_COMPARISON.md)。四分支继续按需求分工，各分支从`.github/README.md`进入，旧清单不构成重启授权。
+**当前：固定C1的几何禁行右端已由支持函数与单调性证书闭合。** 两瓶颈在合法共同初态角点取到实体接触，u*约1.727999754667 s，比旧几何上界低约9.461086 ms；此为解析证据，不是任务时间收益。通用方法可共享该证书，不再为已闭合C1设计分支或训练，完整成本和独立增量未成立。[唯一当前判断](SPACE_TIME_INTERFACE_PLAN_20261016.md) · [固定证书实现](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/support_endpoint.py)。四分支继续按需求分工，各分支从`.github/README.md`进入；旧清单不构成运行授权。
 
 | 入口 | 当前职责 | 本机路径 |
 |---|---|---|
