@@ -6,6 +6,40 @@
 
 本文件是当前研究设计草案，覆盖旧方案的后续投入建议；旧实验、运行合同和停止决定保留。已完成的是文献与接口判断，尚未实现或验证下述候选方法。主稿不据此改写。
 
+## 2026-10-17定点补充：已有能力与当前求解差异
+
+仅处理“共享基座之外还剩什么”的定点问题，不重开全文综述。下列能力已经有直接来源，因此不能单独作为本项目新增贡献；没有声称这些系统原生支持本项目全部v2联合初态条件。
+
+| 近邻及原文位置 | 已核能力 | 对当前候选的约束 |
+|---|---|---|
+| Pecora等，*A Loosely-Coupled Approach for Multi-Robot Coordination, Motion Planning and Control*，ICAPS2018，协调与控制部分 | 根据路径车身扫掠形成关键冲突区，以进度设置优先关系，并用前向动力学检查停让可行性 | 空间冲突区、进度条件和动力学接口已有直接基础；不能只对比粗END |
+| Mannucci等，*Provably Safe Multi-Robot Coordination With Unreliable Communication*，RA-L4(4)，2019，§II及算法 | 剩余路径空间占用、状态报告和停车条件进入在线协调，并分析通信问题 | 通信保证有其假设，不能继承为当前v2/反馈的保证；该文将死锁避免/解决列为后续工作 |
+| Sun等，*A decoupled time-optimized multi-robot path parameterization method*，Complex & Intelligent Systems12:3(2026)，在线2025-11-06，GCR建模与Algorithm1 | 在采样配置碰撞区域上构造边界，沿边界计算双方到达时间差的上下端；声明数据可合理请求获取 | 相对出发禁行区间与动力学到达时间已有直接先例；采样构造不能直接充作本项目连续鲁棒覆盖证书。本文所示数据声明不是公开代码许可 |
+| Mandalika等，*Generalized Lazy Search for Robot Motion Planning*，ICAPS2019，§3–5 | 用Event/Selector平衡边检查与图更新，讨论总规划成本 | “只算重要冲突”“少查边”及学习选择顺序本身不足以立项；不恢复旧查询学习 |
+| Wang等，*A Large Scale Benchmark and an Inclusion-Based Algorithm for Continuous Collision Detection*，TOG40(5):188，2021 | 用区间根查找与包含判定研究CCD的正确性、保守性和费用 | 接触方程、区间求根或避免漏碰本身不是新工具；作者CCD问题与v2鲁棒相对出发端点不同，不能直接宣称等价 |
+
+来源：[ICAPS2018作者PDF](https://iliad-project.eu/wp-content/uploads/papers/PecoraEtAlICAPS2018.pdf)；[RA-L2019作者PDF](https://iliad-project.eu/wp-content/uploads/papers/Provably_Safe_Multi-Robot_Coordination_With_Unreliable_Communication.pdf)，DOI`10.1109/LRA.2019.2924849`；[Sun等正式全文](https://link.springer.com/article/10.1007/s40747-025-02110-5)；[GLS正式论文](https://ojs.aaai.org/index.php/ICAPS/article/download/3543/3411/6592)；[Tight Inclusion作者项目](https://continuous-collision-detection.github.io/tight_inclusion/)。
+
+Sun等文中将避开一个区间写为两个半空间的“或”；一般而言，两凸半空间的并不因此成为凸集。本项目固定已有顺序后才选定相应半空间，不能直接援引该文的全局凸性叙述。此为对所列公式的数学限定，不是数值复现或对整篇算法的否定。
+
+### 作者代码定点只读核查：coordination_oru
+
+固定[作者仓库](https://github.com/FedericoPecora/coordination_oru/tree/7332cdeee220129c44aa3318e4812966fc85f261)默认分支提交`7332cdeee220129c44aa3318e4812966fc85f261`。LICENSE为GPLv3；本次只下载少量源文件作只读核查，逐份Git blob SHA与该提交的完整树条目一致，未修改、编译、运行或纳入本项目源码。
+
+- [AbstractTrajectoryEnvelopeCoordinator.java](https://github.com/FedericoPecora/coordination_oru/blob/7332cdeee220129c44aa3318e4812966fc85f261/src/main/java/se/oru/coordination/coordination_oru/AbstractTrajectoryEnvelopeCoordinator.java#L795)：795–818行将领先车余下路径位姿的车身几何求并，并据相交位置返回让行点；1151行起先求空间包络交集，再建立关键区。该具体循环使用存储的路径位姿，不据此声称已核验任意插值运动的连续覆盖。
+- [ConstantAccelerationForwardModel.java](https://github.com/FedericoPecora/coordination_oru/blob/7332cdeee220129c44aa3318e4812966fc85f261/src/main/java/se/oru/coordination/coordination_oru/ConstantAccelerationForwardModel.java#L26)：`canStop`与`getEarliestStoppingPathIndex`考虑控制/通信前视和加减速，调用RK4积分。学到的是停让条件必须结合当前速度及延迟；本次未核验其数值误差是否构成硬上界。
+- [RobotReport.java](https://github.com/FedericoPecora/coordination_oru/blob/7332cdeee220129c44aa3318e4812966fc85f261/src/main/java/se/oru/coordination/coordination_oru/RobotReport.java#L31)：报告包含pose、pathIndex、velocity、distanceTraveled、criticalPoint；所核入口没有本项目的整任务联合允许集。不能由字段不同推断作者系统无法做共同问题适配。
+
+文件SHA256依次为`d1f812fee40d17096d4d202f90709a5f10b27a9f21f7a4e1845209c2f2e96557`、`399632e56aad45642823190236dc7fba1c64e654d6bcc99f06e69ce1a7527df3`、`4082fa1e1fb95ade5762fd75d575e357081d329092e336e04b0892d82aa9a448`；LICENSE为`8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903`。另核对主Coordinator文件SHA为`1a8d1ecb90080600e7d75663ef20f0b32fd565a519be9ee2808378ce29d05517`，不将下载等同于通读或复现。
+
+**原版对应仍有限制：** RA-L2019指向作者`UDP`分支；本次远端heads未含该分支，不能把当前master说成论文原版。README的三车示例`TestTrajectoryEnvelopeCoordinatorThreeRobots`只是已找到的入口，未运行。已有SADG基线优先复用；本次不另立作者系统复现工程。
+
+### 现在真正待核验的规则
+
+统一方案已写出并核对E：在共享进度/相位消元之后，保留接触候选的朝向函数与有效域，生成包含异常情形的最优性方程。正则分支的朝向驻点方程与原最优性系统显式消元一致，尚无额外排除能力，不进入实现。Fritz–John条件和区间求根均是通用工具，不能单独声称原创；该恒等关系不证明实际运行时间相同。
+
+[IBEX官方可组合优化器接口](https://ibex-team.github.io/ibex-lib/optim-prog.html)支持组装收缩、分支、队列及见证方法；[严格等式模式说明](https://ibex-team.github.io/ibex-lib/optim.html)区分严格可行证书与默认等式松弛。不能把默认命令配置当成最强适配基线，或让两臂采用不同等式口径。本次未确认某个固定IBEX版本已原生生成上述全部候选系统，也未运行IBEX。规则的文献独立性、净成本及独立任务价值均UNKNOWN；未检索到同名方法不是新颖性证据。
+
 ## 1. 修正后的问题与研究范围
 
 多台小车沿 MAPF 给出的路径运动，直行、转弯和停等时的空间偏差并不相同。执行器需要把这些偏差计入共享路段的占用，判断哪些动作需要等待，以及何时可以开始后续动作。拟研究如何用有依据的动作误差范围安排执行，在满足相同安全要求和信息条件的前提下减少等待与完成时间。
