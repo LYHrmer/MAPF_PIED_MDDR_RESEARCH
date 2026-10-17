@@ -2,7 +2,7 @@
 
 2026-10-16。按现行职责保留四个活动分支，旧学习分支由历史标签保存。本页同时记录入口整理和之后的有限物理清理；工作树、实验原始记录和冻结证据保留。
 
-**当前：重新筛选后仅保留一项条件性理论预检，零项已成立新算法缺口。** TURN全旋转外包不随时间细分收缩，但只修TURN不能改善C1全局界，相关旋转/保守CCD也已有成熟方法。预检聚焦鲁棒禁行右端的可核验上下界与同精度计算，须先超过充分适配的强通用对照；不把标准模块组合当作贡献。旧联合相位、平移投影及同信息放行负结果保持。四分支按需要分工，源码不改、不训练。[唯一当前判断](SPACE_TIME_INTERFACE_PLAN_20261016.md) · [筛选证据](implementation_binding_evidence/space_time_composition_20261016/ALGORITHM_GAP_SCREEN_20261017.json)。各分支从`.github/README.md`进入，旧清单不构成重启授权。
+**当前：具体求解规则已推导，共享快路后的算法增量未成立。** MOVE按双方三速度相位分片后枚举边界端点与驻点，处理加速/制动逆映射；两臂共享该快路与紧几何。原C1两个瓶颈最大值仍与旧界相等，没有新任务或计算收益证据。保留共同解析设计，暂不推进“只分朝向”为独立贡献，不准备科学运行或训练。[唯一当前判断](SPACE_TIME_INTERFACE_PLAN_20261016.md) · [公式与比较](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/SOLVER_RULE_COMPARISON.md)。四分支继续按需求分工，各分支从`.github/README.md`进入，旧清单不构成重启授权。
 
 | 入口 | 当前职责 | 本机路径 |
 |---|---|---|
