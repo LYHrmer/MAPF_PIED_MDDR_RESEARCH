@@ -2,9 +2,11 @@
 
 本分支 `explore/gaussian-mapf-feasibility`：误差来源、跨动作传播与覆盖条件；不要求高斯。 四个活动分支服务同一论文问题，资格保持CANDIDATE_TOPIC。
 
-2026-10-18当前：新候选允许执行前局部换序，但原v2矩形/共享初态/运动参数和8米/10米域不改。插入原WAIT不重置b/delta；新的条件日程证书假设共同零抖动起点，启动协议仍待资格化，不能等同旧T1反馈证据。无新来源或训练。 以[统一方案开头](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)为准；下面为前轮证据。
+2026-10-18当前：预执行局部换序仍保持原v2矩形、共享初态、原语及8米/10米域；插入WAIT不重置b/delta。任务级动作/边界驻留保守组已实现；可信catalog经精确物理退出—进入时间验证后可保留带负lag的起始变量环，手工声明路径仍保守拒绝结构环，时间正环仍拒绝。共同零抖动起点条件不变；`JointTaskSession`可信进程内联合启动至公共END API已实现、静态核对、未运行，尚无本次联合会话执行证据。以[统一方案开头](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)为准。
 
-来源输入准备已补入[COMPOSITION.md](../exploration/spatial_source/COMPOSITION.md)：R16原路径可作2/3车完整DEV投影，保留1米共同适配、原SHA、闭单元障碍和起终点限制；未取得独立测试或完整执行结果。两个作者8×8 `ex0` 问题仅列为未来一次规划的预注册候选，独立性查重和运行授权待做。当前窗口代码仍写定原初态域Θ，只截取同域动作/相位时窗，没有将反馈后验收缩接入窗口证书；插入WAIT仍共享原任务参数。
+来源输入准备见[COMPOSITION.md](../exploration/spatial_source/COMPOSITION.md)：R16 DEV子任务(1,3)/(0,1,3)已完成纯标准库文件解析、映射及摘要检查，保留1米共同适配、原SHA、闭单元障碍和完整路径；没有分组、几何、求解或任务运行，没有新组数量/可行性结果。两个作者8×8 `ex0` 问题仍为未来一次规划候选，独立性查重和运行授权待做。窗口代码写定原初态域Θ，尚无后验收缩。
+
+仍缺组选择器、自主会话驱动、共同可复用覆盖证书、全进程预算/成本验收及新清单。全部基线应共享完整窗口覆盖证书快路，该快路尚未实现。以下保留前轮证据；无新来源采集或训练。
 
 2026-10-18：Q的条件推导保留，但恢复步被G_linear逐式匹配，停止独立实现。来源仍保留同任务b/delta和原8米/10米条件；相对角替换必须保留alpha/gamma耦合，反馈非乘积允许集不适用。旋转并集非凸，不能用凸包点签发真实接触。无来源扩域、新采集或训练；当前决定见[统一方案开头](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)。下面保留前轮依据。
 
