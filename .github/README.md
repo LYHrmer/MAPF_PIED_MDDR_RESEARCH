@@ -1,22 +1,23 @@
 # MAPF 连续占用与执行约束
 
-本分支 `main`：统一问题、近邻与证据，并作继续/停止决定。 四个活动分支共同服务固定路径/次序下的一个论文问题，当前资格CANDIDATE_TOPIC，独立算法增量未成立。
+本分支 `main`：一个论文问题、证明、近邻、证据与继续/停止决定。四个活动分支只服务固定路径、固定次序下的一个论文问题，资格保持CANDIDATE_TOPIC。
 
-**当前：不等权支持规则W已推导出一个四次多项式和至多16个极值候选覆盖。** 只完成一般代数/退化核对，未求根、实现优化器或证明完整加速。原v2单位格点的简单权重仍由强基线单调性快路结束；W只有在确有未被旧快路和全局剪枝消去的独立请求时才值得投入。旧E/H、四角点及C1的停止/负结果保持。
+**当前候选T：用全段接触变化率证书，将合格TURN–MOVE的禁行右端精确归约到TURN结束姿态。** 唯一拟新增能力是删除转弯时间搜索变量；两臂仍共享紧几何、来源、解析快路、导数/单调性、全局剪枝、缓存、精度与回退。条件证明及资格化原型完成，独立创新和完整加速均未证明。
 
-本分支交付：[本轮统一判断](../SPACE_TIME_INTERFACE_PLAN_20261016.md)。
+条件证明和W停止范围已写入统一方案；主稿未改。
 
-- [统一方案与继续/停止判断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)
-- [本次近邻及固定作者代码核查](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/LITERATURE_GUIDED_RESEARCH_PLAN_20261016.md#2026-10-17定点补充已有能力与当前求解差异)
-- [此前四角点规则、原型与停止依据](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/HEADING_CORNER_RULE.md)
-- [四分支条件命题、边界反例和实现说明](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/SUPPORT_SCOPE_NOTICE.md)
-- [固定静态核验收据](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/SUPPORT_SCOPE_CHECK.json)
-- [公共进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md) · [导航、归档与恢复](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/REPOSITORY_NAVIGATION.md)
+旧R16输入有5个合格动作对；共同边界下界剪去1个，余4个中3个在该顶点符合原次序。这不是全部G0剪枝后存活请求，也不是完整任务实验。原输入采用明确的1米共同问题适配，作者原2.5米尺度未复现；四车时序、起点等待/终点驻留及共同紧端点几何仍待核验。
 
-来源保持v2任务初始位姿模型：同一任务参数作用于累计位移与车身、实际输入与参考同步、零输入无漂移；原先验的描述不能冒充一般反馈联合域。几何支持上界、物理时间资格和可达实体接触分别核验，任何一个都不单独授权释放。
+W在45份R18原输入上的简单(2,4)/(4,2)权重请求已全部被共享分离/单调性结束，停止该材料范围的求根器投入；不为它扩大v2来源域。原E/H、四角点和C1放行相同的停止/负结果保持。
 
-所有既有快路、几何、精度、缓存与回退保持共同。W受评差异仅为具体有限候选消元；必须与一般代数消元及区间强对照比较。通用框架能表达W不自动否定它，有限候选数也不自动证明加速。当前不准备运行清单。
+- [唯一当前方案、条件证明及投入门槛](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/SPACE_TIME_INTERFACE_PLAN_20261016.md)
+- [直接近邻与强适配对照](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/LITERATURE_GUIDED_RESEARCH_PLAN_20261016.md#转弯端点归约的直接对照)
+- [T资格化原型](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/turn_endpoint.py) · [静态记录](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/TURN_ENDPOINT_CHECK.json)
+- [W输入资格停止记录](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/WEIGHTED_SCOPE_CHECK.json)
+- [公共进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md) · [导航与历史恢复](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/REPOSITORY_NAVIGATION.md)
 
-本次另核查全部45份R18输入及其地图SHA：30份满足一个参数化解析占用的静态地图充分条件，15份未决。原v2的8米/10米限制未改，不能把这些输入记为已获v2或完整任务资格。原输入、尺度与误差未改，没有新观测、任务会话、world、优化器、作者算法或训练。旧T1/G2c许可不复用，主稿、旧失败及冻结证据保持。
+下一项只核查T剩余请求上的强通用接触变化率适配及完整共同剪枝。如果同等或更便宜的已有规则已闭合，或请求全被主导，停止T；否则先闭合共享几何和完整任务资格，再考虑有限运行。不能将“框架可加入T”当作已有等价算法，也不能把少一个变量当作完整加速。
 
-学习、旧查询、RL、换序和LMAPF停止或后置；实物不阻塞纯仿真主线。历史结果从[本轮前进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/73bda0c/GITHUB_PROGRESS.md)恢复，不从旧根README重启过时计划。
+来源仍是整任务共用初始位姿参数、同步实际输入/时钟、零输入无漂移；不声称一般持续跟踪误差。端点归约不是在线放行，合法反馈、动作承诺、制动和完整后缀无再进入条件保持。
+
+本轮无求根、B&B、姿态/控制调用、任务会话、world、作者算法或训练；不准备新运行清单、不复用T1/G2c已消费许可。主稿未提交修改、旧失败及冻结证据保护不变。学习、旧查询、RL、换序和LMAPF继续停止或后置，实物不阻塞纯仿真主线。
