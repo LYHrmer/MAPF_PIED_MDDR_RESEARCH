@@ -45,7 +45,11 @@ class OrderContract:
     Both complete group alternatives must be explicit and nonempty. They may
     contain different endpoint pairs; completeness relative to geometry is not
     inferred. Fixed edges and different groups cannot own the same unordered
-    endpoint pair. Shared nodes are allowed; resulting cycles are checked.
+    endpoint pair, except in explicit clause_lags mode. There, different clauses
+    may project to the same pair; only selected directions contribute weights.
+    clause_lags = {'fixed': {edge: lag, ...}, 'groups': {
+        'g0': {'forward': {edge: lag, ...}, 'reverse': {edge: lag, ...}}, ...}}
+    Shared nodes are allowed; resulting cycles are checked.
     phase is a static precondition, not evidence from delivered execution feedback.
     """
     _durations: tuple
@@ -56,13 +60,16 @@ class OrderContract:
     _specs_sha: str
     _sha: str
     _cross_lags: tuple
+    _clause_lags: tuple
     _semantics: str
     _provenance: object
 
     def __init__(self, specs, declaration, *, separation_gap, phase=PRE_START,
-                 cross_lags=None, lag_provenance=None):
+                 cross_lags=None, lag_provenance=None, clause_lags=None):
         if phase != PRE_START:
             raise ValueError('only PRE_START_NO_ACTION_COMMITTED is supported')
+        if cross_lags is not None and clause_lags is not None:
+            raise ValueError('cross_lags and clause_lags are mutually exclusive')
         gap = exact(separation_gap)
         if gap <= 0:
             raise ValueError('positive exact END-to-START separation_gap required')
@@ -96,7 +103,7 @@ class OrderContract:
                 edge = endpoint(item[0]), endpoint(item[1])
                 if edge[0][0] == edge[1][0]:
                     raise ValueError('declared cross edges must connect different robots')
-                key = frozenset(edge)
+                key = edge if clause_lags is not None else frozenset(edge)
                 if key in pairs:
                     raise ValueError('duplicate/conflicting endpoint pair in one alternative')
                 pairs.add(key)
@@ -120,7 +127,7 @@ class OrderContract:
                 raise ValueError('common directed edges belong in fixed_edges, not both alternatives')
             for edge in forward+reverse:
                 key, owner = frozenset(edge), ('group', name)
-                if key in owners and owners[key] != owner:
+                if clause_lags is None and key in owners and owners[key] != owner:
                     raise ValueError('edge pair has multiple fixed/group owners')
                 owners[key] = owner
             ids.add(name)
@@ -128,10 +135,44 @@ class OrderContract:
         all_cross = set(fixed)
         for _, forward, reverse, _, _ in groups:
             all_cross.update(forward+reverse)
-        semantics, lags, provenance = 'END_TO_START', (), None
-        if cross_lags is None:
+        semantics, lags, clauses, provenance = 'END_TO_START', (), (), None
+        if clause_lags is not None:
+            if (not isinstance(clause_lags, dict) or set(clause_lags) != {'fixed', 'groups'}
+                    or not isinstance(clause_lags['groups'], dict)
+                    or set(clause_lags['groups']) != ids
+                    or not isinstance(lag_provenance, str) or not lag_provenance.strip()):
+                raise ValueError('all fixed/group clauses and nonempty provenance required')
+
+            def weighted(values, declared):
+                if not isinstance(values, dict):
+                    raise ValueError('each clause alternative needs an explicit edge-to-lag map')
+                result = {}
+                for edge, value in values.items():
+                    if not isinstance(edge, (list, tuple)) or len(edge) != 2:
+                        raise ValueError('two endpoints per weighted clause required')
+                    normalized = endpoint(edge[0]), endpoint(edge[1])
+                    if normalized in result:
+                        raise ValueError('duplicate normalized weighted clause')
+                    result[normalized] = exact(value)
+                if set(result) != set(declared):
+                    raise ValueError('clause lags must cover all and only their declared edges')
+                return tuple(sorted(result.items()))
+
+            records = [('fixed', None, None, edge, lag)
+                       for edge, lag in weighted(clause_lags['fixed'], fixed)]
+            for name, forward, reverse, _, _ in sorted(groups):
+                alternatives = clause_lags['groups'][name]
+                if (not isinstance(alternatives, dict)
+                        or set(alternatives) != {'forward', 'reverse'}):
+                    raise ValueError('exactly forward/reverse clause alternatives required')
+                for direction, declared in (('forward', forward), ('reverse', reverse)):
+                    records.extend(('group', name, direction, edge, lag)
+                                   for edge, lag in weighted(alternatives[direction], declared))
+            clauses = tuple(records)
+            semantics, provenance = 'WINDOW_CLAUSE_LAGS', lag_provenance
+        elif cross_lags is None:
             if lag_provenance is not None:
-                raise ValueError('lag provenance without explicit cross_lags')
+                raise ValueError('lag provenance without explicit cross_lags or clause_lags')
         else:
             if (not isinstance(cross_lags, dict) or set(cross_lags) != all_cross
                     or not isinstance(lag_provenance, str) or not lag_provenance.strip()):
@@ -142,11 +183,13 @@ class OrderContract:
         source, specs_sha = _source_identity(), _sha(specs)
         values = {'_durations': durations, '_fixed': fixed, '_groups': tuple(sorted(groups)),
                   '_gap': gap, '_source': source, '_specs_sha': specs_sha,
-                  '_cross_lags': lags, '_semantics': semantics, '_provenance': provenance,
+                  '_cross_lags': lags, '_clause_lags': clauses,
+                  '_semantics': semantics, '_provenance': provenance,
                   '_sha': _sha({'schema': SCHEMA, 'specs_sha256': specs_sha,
                                 'source_sha256': source, 'declaration': declaration,
                                 'separation_gap': gap, 'phase': phase,
-                                'cross_lags': lags, 'semantics': semantics, 'lag_provenance': provenance})}
+                                'cross_lags': lags, 'clause_lags': clauses,
+                                'semantics': semantics, 'lag_provenance': provenance})}
         for name, value in values.items():
             object.__setattr__(self, name, value)
 
@@ -189,14 +232,25 @@ class OrderContract:
             result.extend(forward if choice == 'forward' else reverse)
         return tuple(result)
 
+    def _active_clauses(self, directions):
+        """Caller has validated directions through _selected; retain duplicates."""
+        return tuple(clause for clause in self._clause_lags
+                     if clause[0] == 'fixed' or directions[clause[1]] == clause[2])
+
     def _graph(self, directions):
         selected = self._selected(directions)
         duration = {(r, i): value for r, ds in self._durations for i, value in enumerate(ds)}
         edges = [((r, i), (r, i+1), ds[i])
                  for r, ds in self._durations for i in range(len(ds)-1)]
-        lags = dict(self._cross_lags)
-        edges += [(a, b, lags[(a, b)] if self._semantics == 'WINDOW_START_LAGS'
-                   else duration[a]+self._gap) for a, b in selected]
+        if self._semantics == 'WINDOW_CLAUSE_LAGS':
+            # Duplicated projected edges remain separate selected constraints.
+            # A max across all directions here would activate unselected clauses.
+            edges += [(edge[0], edge[1], lag)
+                      for _, _, _, edge, lag in self._active_clauses(directions)]
+        else:
+            lags = dict(self._cross_lags)
+            edges += [(a, b, lags[(a, b)] if self._semantics == 'WINDOW_START_LAGS'
+                       else duration[a]+self._gap) for a, b in selected]
         return duration, tuple(edges), selected
 
     @staticmethod
@@ -259,11 +313,18 @@ class OrderContract:
         for a, b, lag in edges:
             if times[b] < times[a]+lag:
                 raise ValueError('declared cross-time/own-action order violated: '+repr((a, b)))
-        return {'valid': True, 'contract_sha256': self.sha256, 'specs_sha256': self.specs_sha256,
-                'directions': dict(directions), 'selected_edges': selected,
-                'semantics': self._semantics, 'separation_gap': str(self._gap),
-                'lag_provenance': self._provenance, 'window_provenance_certified_here': False,
-                'action_graph_acyclic': self._acyclic(duration, edges),
-                'phase': PRE_START, 'spatial_safety_checked': False,
-                'group_completeness': 'DECLARED_NOT_AUTOMATICALLY_INFERRED_FROM_GEOMETRY',
-                'dispatch_authorized': False, 'physical_END_received': False}
+        result = {'valid': True, 'contract_sha256': self.sha256, 'specs_sha256': self.specs_sha256,
+                  'directions': dict(directions), 'selected_edges': selected,
+                  'semantics': self._semantics, 'separation_gap': str(self._gap),
+                  'lag_provenance': self._provenance, 'window_provenance_certified_here': False,
+                  'action_graph_acyclic': self._acyclic(duration, edges),
+                  'phase': PRE_START, 'spatial_safety_checked': False,
+                  'group_completeness': 'DECLARED_NOT_AUTOMATICALLY_INFERRED_FROM_GEOMETRY',
+                  'dispatch_authorized': False, 'physical_END_received': False}
+        if self._semantics == 'WINDOW_CLAUSE_LAGS':
+            result['selected_clauses'] = tuple(
+                {'scope': scope, 'group': name, 'direction': direction,
+                 'tail': edge[0], 'head': edge[1], 'start_lag': lag,
+                 'lag_provenance': self._provenance}
+                for scope, name, direction, edge, lag in self._active_clauses(directions))
+        return result
