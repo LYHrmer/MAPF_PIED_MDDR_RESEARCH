@@ -1,0 +1,184 @@
+--- a/src/LNS.cpp
++++ b/src/LNS.cpp
+@@ -479,6 +479,10 @@
+ }
+ bool LNS::runPP()
+ {
++    // REVIEW PATCH: same PP order/core, classical remaining-cost bound.
++    // The host must validate the complete plan and enforce its total deadline.
++    last_pp_outcome = PPRepairOutcome::FAILED;
++    const bool improving = !neighbor.old_paths.empty();
+     auto shuffled_agents = neighbor.agents;
+     std::random_shuffle(shuffled_agents.begin(), shuffled_agents.end());
+     if (screen >= 2) {
+@@ -497,83 +501,83 @@
+     auto time = Time::now();
+ 
+     ConstraintTable constraint_table(instance.num_of_cols, instance.map_size, &path_table);
++    const int base_length_max = constraint_table.length_max;
++    long long remaining_lb = 0;
++    for (int id : shuffled_agents)
++        remaining_lb += agents[id].path_planner->my_heuristic[agents[id].path_planner->start_location];
+     while (p != shuffled_agents.end() && ((fsec)(Time::now() - time)).count() < T)
+     {
+         int id = *p;
++        const int h = agents[id].path_planner->my_heuristic[agents[id].path_planner->start_location];
++        constraint_table.length_max = base_length_max;
++        if (improving && pp_remaining_cost_bound)
++        {
++            const long long cap = static_cast<long long>(neighbor.old_sum_of_costs) - 1
++                - neighbor.sum_of_costs - (remaining_lb - h);
++            if (h < 0 || cap < h)
++            {
++                last_pp_outcome = h < 0 ? PPRepairOutcome::FAILED : PPRepairOutcome::NO_IMPROVEMENT;
++                break; // only this priority order and its already fixed prefix
++            }
++            constraint_table.length_max = static_cast<int>(std::min<long long>(base_length_max, cap));
++        }
+         if (screen >= 3)
+             cout << "Remaining agents = " << remaining_agents <<
+                  ", remaining time = " << T - ((fsec)(Time::now() - time)).count() << " seconds. " << endl
+                  << "Agent " << agents[id].id << endl;
+-        agents[id].path = agents[id].path_planner->findPath(constraint_table);
+-        if (agents[id].path.empty()) break;
+-        neighbor.sum_of_costs += (int)agents[id].path.size() - 1;
+-        if (neighbor.sum_of_costs >= neighbor.old_sum_of_costs)
+-            break;
++        // Do not overwrite the incumbent path on an incomplete low-level call.
++        Path candidate;
++        try {
++            candidate = agents[id].path_planner->findPath(constraint_table);
++        } catch (...) {
++            last_pp_outcome = PPRepairOutcome::FAILED;
++            break;
++        }
++        if (((fsec)(Time::now() - time)).count() >= T)
++        {
++            last_pp_outcome = PPRepairOutcome::TIMEOUT;
++            break;
++        }
++        if (candidate.empty())
++        {
++            last_pp_outcome = improving && pp_remaining_cost_bound
++                ? PPRepairOutcome::NO_PATH_WITHIN_IMPROVEMENT_CAP
++                : PPRepairOutcome::NO_PATH_WITHIN_BASE_LIMIT;
++            break; // never label capped exhaustion as global infeasibility
++        }
++        const int candidate_cost = static_cast<int>(candidate.size()) - 1;
++        if (candidate_cost > constraint_table.length_max || candidate_cost < h)
++        {
++            last_pp_outcome = PPRepairOutcome::FAILED;
++            break;
++        }
++        agents[id].path = std::move(candidate);
++        neighbor.sum_of_costs += candidate_cost;
++        remaining_lb -= h;
++        if (improving && neighbor.sum_of_costs >= neighbor.old_sum_of_costs)
++        {
++            last_pp_outcome = PPRepairOutcome::NO_IMPROVEMENT;
++            break;
++        }
+         remaining_agents--;
+         path_table.insertPath(agents[id].id, agents[id].path);
+         ++p;
+     }
+-     if ((destroy_strategy == RANDOMWALK || destroy_strategy == DESTROY_COUNT) && (algo != CANONICAL)){
+-        if (current_index != -1){
+-            //update q_values:
+-            long sum = ((*q_values)[current_index] * ((*frequency)[current_index] - 1)) + sum_of_costs;
+-            long temp = (sum / (*frequency)[current_index]);
+-            (*q_values)[current_index] = (int)temp;
+-            //for bernoulie bandit update distribution
+-            if (algo == BERNOULIE|| destroy_strategy == DESTROY_COUNT){
+-                int suc = (neighbor.old_sum_of_costs - neighbor.sum_of_costs) > 0 ? 1 : -1;
+-                if (suc == 1){
+-                    alpha[current_index]++;
+-                } else {
+-                    beta[current_index]++;
+-                }
+-            }
+-            //for normal distribution
+-            else if (algo == NORMAL){
+-                double reward = sum_of_costs;
+-                double n = (*frequency)[current_index];
+-                double old_mu = mu[current_index];
+-                double old_sigma2 = sigma2[current_index];
+-
+-                // Update mean and variance
+-                double new_mu = old_mu + (reward - old_mu) / n;
+-                double new_sigma2 = ((n - 1) * old_sigma2 + (reward - old_mu) * (reward - new_mu)) / n;
+-
+-                mu[current_index] = new_mu;
+-                sigma2[current_index] = new_sigma2;
+-            }
+-        } 
+-    } else if (destroy_strategy == INTERSECTION){
+-        if (algo != CANONICAL && current_index != -1){
+-            //update location q values
+-            //outFile << "old: " << neighbor.old_sum_of_costs << " new : " << neighbor.sum_of_costs << endl;
+-            double sum = ((*location_q_values)[current_index] * ((*location_frequency)[current_index] - 1)) + ((neighbor.old_sum_of_costs - neighbor.sum_of_costs));
+-            double temp = (sum / (*location_frequency)[current_index]);
+-            (*location_q_values)[current_index] = temp;
+-            if (algo == BERNOULIE){
+-                int suc = (neighbor.old_sum_of_costs - neighbor.sum_of_costs) > 0 ? 1 : -1;
+-                if (suc == 1){
+-                    location_alpha[current_index]++;
+-                } else {
+-                    location_beta[current_index]++;
+-                }
+-            }
+-            else if (algo == NORMAL){
+-                double reward = sum_of_costs;
+-                double n = (*location_frequency)[current_index];
+-                double old_mu = location_mu[current_index];
+-                double old_sigma2 = location_sigma2[current_index];
+-
+-                // Update mean and variance
+-                double new_mu = old_mu + (reward - old_mu) / n;
+-                double new_sigma2 = ((n - 1) * old_sigma2 + (reward - old_mu) * (reward - new_mu)) / n;
+-
+-                location_mu[current_index] = new_mu;
+-                location_sigma2[current_index] = new_sigma2;
+-            }
+-        }
+-    }
+-    if (remaining_agents == 0 && neighbor.sum_of_costs <= neighbor.old_sum_of_costs) // accept new paths
++    const bool within_time = ((fsec)(Time::now() - time)).count() < T;
++    const bool complete = remaining_agents == 0;
++    const bool improved = complete && within_time && improving
++        && neighbor.sum_of_costs < neighbor.old_sum_of_costs;
++    const bool accepted = complete && within_time && (!improving || improved);
++    if (!within_time)
++        last_pp_outcome = PPRepairOutcome::TIMEOUT;
++    else if (accepted)
++        last_pp_outcome = improving ? PPRepairOutcome::IMPROVED : PPRepairOutcome::INITIAL_COMPLETE;
++    // REPLAY-ONLY integration draft. Do not update native bandit statistics:
++    // selection code increments frequency before repair, so dropping a timeout
++    // reward alone is not correct censoring. The first prototype uses a fixed
++    // request/order tape and consumes the host transaction's final result.
++    // last_pp_outcome is a native diagnostic, not a validated learning label.
++    if (accepted) // complete PP result; host complete-plan validator still required
+     {
+         return true;
+     }
+--- a/inc/LNS.h
++++ b/inc/LNS.h
+@@ -19,10 +19,18 @@
+ // increase it if no progress is made for a while
+ // decrease it if replanning fails to find any solutions for several times
+ 
++enum class PPRepairOutcome {
++    NOT_RUN, INITIAL_COMPLETE, IMPROVED, NO_IMPROVEMENT,
++    NO_PATH_WITHIN_IMPROVEMENT_CAP, NO_PATH_WITHIN_BASE_LIMIT, TIMEOUT, FAILED
++};
++
+ class LNS : public BasicLNS
+ {
+ public:
+     vector<Agent> agents;
++    // Same corrected terminal semantics in both arms; bound off is the control.
++    bool pp_remaining_cost_bound = false;
++    PPRepairOutcome last_pp_outcome = PPRepairOutcome::NOT_RUN;
+     double preprocessing_time = 0;
+     double initial_solution_runtime = 0;
+     int initial_sum_of_costs = -1;
