@@ -6,6 +6,16 @@
 
 本文件是当前研究设计草案，覆盖旧方案的后续投入建议；旧实验、运行合同和停止决定保留。已完成的是文献与接口判断，尚未实现或验证下述候选方法。主稿不据此改写。
 
+## 2026-10-18补充：相对姿态和可行见证恢复的直接对照
+
+本轮只核对Q相关能力，不重开全面综述，也没有下载/改动/运行作者代码。
+
+- Schömer、Sellen、Welsch，*Exact Geometric Collision Detection*，[作者全文](https://www.staff.uni-mainz.de/schoemer/publications/EGCD.pdf)，§2.2–4：旋转接触可归结为代数谓词及二次方程，随后核对有限特征是否真实接触。该短文明确略去退化情形，其精确位长保证使用特定输入表示；不能直接移植成当前有理弧度、鲁棒出发时间的完整保证。
+- J. M. P. van Waveren，*Robust Continuous Collision Detection Between Arbitrary Polyhedra Using Trajectory Parameterization of Polyhedral Features*，2005-03-10，[作者技术报告](https://mrelusive.com/publications/papers/Robust-Continuous-Collision-Detection.pdf)，§2：明确讨论用相对运动转成一方静止；报告采用的分离平移/旋转近似不能代替本项目真实连续运动。相对坐标和低阶旋转接触本身已有先例，不是Q的独立差异。
+- [IBEX官方优化说明](https://ibex-team.github.io/ibex-lib/optim.html)，输出语义及FAQ：rigor模式认证原等式的可行解存在，并给出目标值区间；可行性认证使用区间Newton，存在正则性限制。默认relaxed模式放松等式，不能当成当前真实实体接触证书。一般可行点恢复和区间目标保证已有基础。
+
+Q提出了特定旋转松弛的凸组合恢复、2×2进度修正及目标损失界。进一步定点核对得到明确匹配：同一恢复姿态/车身点下，接触残差`f(q)=M_g*q+k-y`为仿射，一次Newton/线性消元严格等于Q修正。强适配G_linear无需另求固定姿态极值，故Q相对G_pose省去一次极值求解并非独立差异。这里的等价由公式证明，不推定原版IBEX自动完成全部前处理。整套条件界的文献独立性及不同库实现的完整费用仍UNKNOWN，但不能据此继续Q恢复步骤的独立算法投入。保留不支付Q外包费用的原G0。公式和停止依据见执行模块SOLVER_RULE_COMPARISON.md及统一方案开头。
+
 ## 2026-10-17补充：重复停稳直行不能只对比逐周期枚举
 
 本轮P给出了特定三相位逆进度的整段周期增量公式，拟减少重复相位构造。周期函数的有限表示、min-plus/max-plus运算已有网络演算算法基础。[Nancy的SoftwareX作者工件](https://github.com/ElsevierSoftwareX/SOFTX-D-22-00130)明确支持最终伪周期的分段仿射函数，标明MIT许可和对应SoftwareX2022论文。当前tau含根式，不能把该库原生支持范围写成相同模型；也不能从函数类型不同推定P独立创新。此次只核对作者说明，未固定/运行该库代码。另一个作者机构全文链接返回403，未把检索摘要冒充全文核验。
