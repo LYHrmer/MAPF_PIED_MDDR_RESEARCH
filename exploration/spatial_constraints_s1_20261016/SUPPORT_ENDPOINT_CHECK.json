@@ -1,0 +1,194 @@
+{
+  "status": "FIXED_C1_SUPPORT_ENDPOINT_ALGEBRAIC_PASS",
+  "scope": "original prior and frozen C1 only; exact physical contact endpoint, no release authority",
+  "symbolic_identities": [
+    {
+      "pair": [
+        "A_0",
+        "B_0"
+      ],
+      "support_identity": true,
+      "both_derivative_identities": true,
+      "same_delta_body_and_motion_contact": true
+    },
+    {
+      "pair": [
+        "A_2",
+        "B_2"
+      ],
+      "support_identity": true,
+      "both_derivative_identities": true,
+      "same_delta_body_and_motion_contact": true
+    }
+  ],
+  "sympy_version": "1.14.0",
+  "derivative_numerator_upper_bounds": {
+    "A0_B0_d_alpha_numerator_upper": "-61402897/50000000",
+    "A0_B0_d_beta_numerator_upper": "-38396903/50000000",
+    "A2_B2_d_alpha_numerator_upper": "-99396903/50000000",
+    "A2_B2_d_beta_numerator_upper": "-402897/50000000"
+  },
+  "derivative_denominator_lower_bound": "249/250",
+  "support_sign_domain": {
+    "heading_half_width": "1/500",
+    "cos_difference_lower": "124999/125000",
+    "normal_component_numerator_lower": "498999/500000"
+  },
+  "exact_endpoint_expression": "8/5 + (3/25)*cos(1/500) + 4*sin(1/500)",
+  "endpoint_enclosure": [
+    "161999977/93750000",
+    "404999942500019/234375000000000"
+  ],
+  "enclosure_width_seconds": "19/234375000000000",
+  "old_geometric_upper": "977321722931555122184634818/562500000005737500025000075",
+  "old_upper_minus_exact_endpoint_enclosure": [
+    "49892446139954283272195900750153499943/5273437500053789062734375703125000000000",
+    "19956978456152713308880104500069/2109375000021515625093750281250000"
+  ],
+  "witness": {
+    "b_A": [
+      "-.02",
+      "-.01"
+    ],
+    "b_B": [
+      ".01",
+      ".02"
+    ],
+    "delta_A": "-.002",
+    "delta_B": "-.002",
+    "progress_enclosures": {
+      "A_0": [
+        "107395345403/75000000000",
+        "178992242338419199/125000000000000000"
+      ],
+      "B_0": [
+        "212976773014999897/375000000000000000",
+        "28396903068699/50000000000000"
+      ],
+      "A_2": [
+        "10603096931301/50000000000000",
+        "79523226985000103/375000000000000000"
+      ],
+      "B_2": [
+        "71007757661580801/125000000000000000",
+        "42604654597/75000000000"
+      ]
+    },
+    "both_contacts_in_rotated_frame": [
+      ".4",
+      ".4"
+    ],
+    "contact_type": "closed body boundary; original strict-interior witness preserved",
+    "task_constant_parameters": true,
+    "private_online_truth_used": false
+  },
+  "other_nine_bounds_reused": [
+    {
+      "pair": [
+        "A_0",
+        "B_1"
+      ],
+      "upper": "38389/25600"
+    },
+    {
+      "pair": [
+        "A_0",
+        "B_2"
+      ],
+      "upper": "-4071/1600"
+    },
+    {
+      "pair": [
+        "A_0",
+        "B_3"
+      ],
+      "upper": "-183/50"
+    },
+    {
+      "pair": [
+        "A_0",
+        "B_4"
+      ],
+      "upper": "-383/50"
+    },
+    {
+      "pair": [
+        "A_1",
+        "B_2"
+      ],
+      "upper": "19157/12800"
+    },
+    {
+      "pair": [
+        "A_1",
+        "B_3"
+      ],
+      "upper": "17/50"
+    },
+    {
+      "pair": [
+        "A_1",
+        "B_4"
+      ],
+      "upper": "-183/50"
+    },
+    {
+      "pair": [
+        "A_2",
+        "B_3"
+      ],
+      "upper": "18727/12800"
+    },
+    {
+      "pair": [
+        "A_2",
+        "B_4"
+      ],
+      "upper": "-32973/12800"
+    }
+  ],
+  "guard_and_coverage": "reuse frozen start/goal, original order and one-sided inverse qualifications; release numerical guard unchanged",
+  "baseline_comparison": {
+    "same_reduced_support_objective_and_sign_bounds": "generic monotonicity can use the same root certificate",
+    "angle_bisections_required_by_this_certificate": 0,
+    "author_baseline_executed": false,
+    "whole_cost_advantage": "NOT_MEASURED",
+    "novel_algorithm_advantage": "NOT_ESTABLISHED",
+    "same_feedback_release": "old negative result retained; no replay"
+  },
+  "operations_scope": "finite symbolic identities and rational signs/Taylor enclosures, no search tree or sampled trajectory",
+  "independent_scientific_validation": false,
+  "successor_run_plan_prepared": false,
+  "scientific_runs": 0,
+  "world_steps": 0,
+  "task_session_calls": 0,
+  "training_runs": 0,
+  "author_code_calls": 0,
+  "optimizer_calls": 0,
+  "input_sha256": {
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/composition_fixture.json": "21505bab2eceb3b86c311bf870d8c70b3c81621ff194466b3be25fc62681d68a",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/JOINT_PHASE_CHECK.json": "e3b23415c067bab855db800c6367ed905131c14698bb12a77e96e7b2ff43c680",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/SUPPORT_CHECK.json": "2abdd3448f6820a253782b4c09a3f51a78764c1ce8bcb009112c37b671cb3b4c",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/DEPARTURE_CHECK.json": "c0ad00946f7bd1b814200af23f81e1dbe0b02f85097e0e0b97e3d3365ada2cf4",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/DEPARTURE_NOTICE.md": "f4be9006f1064652c6541077f1875acba92a5108bdfa600bb8c82692a5fd461e",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/SOLVER_RULE_CHECK.json": "4c394f99a9881c67bbeb4f63dca53a2015d42f58a773931592a42e7bf32d38c6",
+    "/home/lyh/MAPF_GAUSSIAN_FEASIBILITY/exploration/spatial_source/composition.py": "e294be82cc6277fac462f61450685820f2d9f1b2c49f1c07c814f7abe4f08453",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/TIMED_CHECK.json": "7d90ca49e6ec94b184bce49c42a88b2dc20a75e92dcfd856b5a1c23c8e5bba15",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/active_advice.py": "35923de43d2e82a9bc76fec1be18776d49315b64311c1a1e93db76bb14a08455",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/interface.py": "986aeee580e4cd724b6790c0d0b187a7901c8a6764d79c268b9a5d8fedb1e89c",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/joint_phase.py": "95ac9bffbdb37b7f805af3f99211cf969fae154c293967842e9be606b8159533",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/timed_fixture.json": "cebd5e6f5d01771b55c7429ada5bae56ce8eefd71decf50ab77a110bc5013505",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/verify_timed.py": "8a93785c5860ded20c7bf97e9bc10abc2812f1521f330776f1431cd22951900b",
+    "/home/lyh/MAPF_GAUSSIAN_FEASIBILITY/exploration/spatial_source/support.py": "e06735d9a48f0890270dd301e1a582c21397b1e43982d3a9ac3fb431732f124e",
+    "/home/lyh/MAPF_GAUSSIAN_FEASIBILITY/exploration/spatial_source/timed.py": "f713b63382d3a10539d3b565fb442f55e8bc08682c22037d18ce9f3ebf6b226d",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/departure_constraints.py": "557b1d13160009d22c26979ef8c51cdb1e613b973cb3a07ebe1a562182a69bb4",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/support_constraints.py": "123ab61aa10d167459f76bb533f04cd6b0cbc44e059bd91e7f144f858c791a14",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/verify_support.py": "4db3f9a28b75d8739a69d151f4ed2103d97c8886f2cfcabf40167e58a617d81a",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/QUALIFICATION_CHECK.json": "3acae0fae718becc0ab866bfbc8ca56f26ef615cf0f728772c1406fa917227fe",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/verify_departure.py": "b34f41579a06da0f3e168eda94046c21dbb08b5dff750d9251abfd240f9920be",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/CTC_ADAPTATION_CHECK.json": "895129d5bc0266a42f6745313e12f08a96245c62ed9baea38a87f0800556929b",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/SOLVER_RULE_COMPARISON.md": "29da61f5dfb045a78b2edf61750b3430f1f9f812e9486ad6f0cb705ce40a5fc5",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/space_time_composition_20261016/ALGORITHM_GAP_SCREEN_20261017.json": "9f08673e2a5c792911e4380a452fd9d5da2e3a93ceecab47c12ed7fcd48febdb",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/support_endpoint.py": "c6543f0b8c25c72df24046ad21195c8d648bbc19f8cd6ba357ec819e27fa1570"
+  }
+}
