@@ -6,6 +6,20 @@
 
 本文件是当前研究设计草案，覆盖旧方案的后续投入建议；旧实验、运行合同和停止决定保留。已完成的是文献与接口判断，尚未实现或验证下述候选方法。主稿不据此改写。
 
+## 2026-10-18后继：局部时序与固定优先关系不能视为新缺口
+
+本次仅核对与“离开全链出发偏移后还剩什么”直接相关的已有能力，不重启全文审查。以下依据不授予当前v2相同保证，也没有运行或修改作者代码。
+
+| 来源 | 已核依据 | 适配边界 |
+|---|---|---|
+| Gregoire、Bonnabel、de La Fortelle，*Priority-based intersection management with kinodynamic constraints*，ECC2014，[作者全文v2](https://arxiv.org/pdf/1310.5828v2) | §I–II、贡献段已把固定路径/既定优先关系与连续运动协调分开；使用虚拟制动轨迹保持安全 | 假定每对车的协调空间碰撞截面凸；不是当前任意多次相遇、v2初态误差及原固定原语的直接复现 |
+| 同作者，*Robust multirobot coordination using priority encoded homotopic constraints*，[arXiv:1306.0785v3](https://arxiv.org/abs/1306.0785v3)及[全文](https://arxiv.org/pdf/1306.0785v3) | §2采用单对凸碰撞截面和安全起终点，§4处理保持既定优先关系的协调；§6明确将横向路径误差列为待扩展条件，并提出最坏碰撞区思路 | 本次核定身份是2015年v3预印本，页面写在修订中，不把它写成已核SCL正式论文；不直接继承其同伦/安全结论 |
+| Hönig等，*Multi-Agent Path Finding with Kinematic Constraints*，ICAPS2016，[出版方页面](https://ojs.aaai.org/index.php/ICAPS/article/view/13796)，DOI10.1609/icaps.v26i1.13796 | MAPF-POST已经用STN对MAPF路径后处理，纳入速度限制、安全距离和执行松弛 | STN接线及固定次序后的时间优化不是新算子；本次复用其已核定位，没有声称其原版直接支持当前误差集合 |
+
+据此，原R18的局部次序结构差别值得纠正，但“按相遇分段、保留次序、加入等待和制动”不足以单独立项。执行模块本次给出的单位格点共同接触位置/单动作禁行区间命题是当前模型的范围依据，尚未核定为独立理论贡献；不能把已有STN求解器连接起来就宣称完成算法增量。全链多动作、永久驻留和反馈截短域仍需分别处理。
+
+另已从[MIT作者稿机构记录](https://dspace.mit.edu/entities/publication/c7edda65-4d68-4f0a-99f4-ac2d427a0214)核定Gregoire、Čáp、Frazzoli的*Locally-optimal multi-robot navigation under delaying disturbances using homotopy constraints*正式发表于Autonomous Robots42(4):895–907（2018；在线2017），DOI10.1007/s10514-017-9673-6。其摘要明确研究延迟扰动下保持同伦约束的执行与时间性能；本轮尚未核对全文算法及代码，不能将其具体适配能力写为PASS。该条供下一项确实涉及局部执行算法时定点核对，不自动新增复现任务。
+
 ## 2026-10-18补充：相对姿态和可行见证恢复的直接对照
 
 本轮只核对Q相关能力，不重开全面综述，也没有下载/改动/运行作者代码。
