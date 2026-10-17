@@ -1,92 +1,33 @@
-# 当前工作区与历史归档
+# 工作树与模块导航
 
-2026-10-16。按现行职责保留四个活动分支，旧学习分支由历史标签保存。本页同时记录入口整理和之后的有限物理清理；工作树、实验原始记录和冻结证据保留。
+当前总体决定只有 [docs/RESEARCH_PLAN.md](docs/RESEARCH_PLAN.md)。2026-10-18起是两条研究线；main负责入口、必要公共组件和经核成果集成。旧三个探索分支属于底座交接，不计作研究选题。
 
-**当前：评估执行前局部换序候选，先做完整可行性原型。** 保持原v2与原语，旧固定次序结果作为对照；SADG/ESADG和L20/L21已覆盖选组基础，不重开旧ins2/ins3训练。已实现任务级动作/边界驻留保守组、逐条款窗口和WAIT日程。可信catalog经精确物理退出—进入时间验证后可保留带负lag的起始变量环，手工声明路径仍保守拒绝结构环；时间正环均拒绝。
-
-R16 DEV子任务(1,3)/(0,1,3)只完成纯标准库文件解析、映射及摘要检查，没有执行分组/几何/求解。`JointTaskSession`可信进程内联合启动至公共END API已实现、静态核对、未运行。仍缺组选择器、自主会话驱动、共同可复用覆盖证书、全进程预算/成本验收、独立合格任务及新清单。全部基线应共享完整窗口覆盖证书快路，该快路尚未实现；不将接口进展写成新组数量、可行性或收益。[唯一当前判断](SPACE_TIME_INTERFACE_PLAN_20261016.md)。
-
-**以下是此前固定次序候选的准入判断；新局部换序原型以当前方案为准。** 全链最右禁行边界只是辅助子问题，不能替代固定各处已有通行关系的论文问题。旧45份计划中31份包含同一车对在不同位置先后相反，共599对；这只支持范围纠正，不授予连续任务资格。重复几何聚合和普通事件图阈值求解尚无额外算法差异，不进入实现。[唯一当前判断](SPACE_TIME_INTERFACE_PLAN_20261016.md)。
-
-**前轮：T已触发停止。** 共同转弯外包上界与后续MOVE的实体见证下界证明，原v2先验/全完整链右端目标下的当前合格TURN可由G0主导剪枝结束；旧R16的5对全部关闭，不接线新求解器或准备运行。原T条件命题、原型及证据保留。W简单权重、E/H、四角点及C1旧停止/负结果保持，仍未找到可确认的新算法方向。[唯一当前判断](SPACE_TIME_INTERFACE_PLAN_20261016.md) · [定点近邻依据](LITERATURE_GUIDED_RESEARCH_PLAN_20261016.md#转弯端点归约的直接对照)。主稿和冻结证据保持。
-
-| 入口 | 当前职责 | 本机路径 |
+| 分支/状态 | 本机工作树 | 当前职责 |
 |---|---|---|
-| main | 一个论文问题、统一合同、验收和结论 | `/home/lyh/MAPF_PIED_MDDR_RESEARCH` |
-| explore/error-aware-guidance | 空间占用—冲突—释放及完整执行比较 | `/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE` |
-| explore/gaussian-mapf-feasibility | 声明动力学、动作条件、误差范围及覆盖 | `/home/lyh/MAPF_GAUSSIAN_FEASIBILITY` |
-| explore/query-value-feasibility | 合法反馈、配对日志及费用工具 | `/home/lyh/MAPF_QUERY_VALUE_FEASIBILITY` |
-| archive/learned-query-20261016（标签） | 停止的查询学习历史、正负结果 | `/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE`，detached HEAD |
+| main | `/home/lyh/MAPF_PIED_MDDR_RESEARCH` | 总入口、共享版本、已核成果 |
+| research/sci-mapf | `/home/lyh/MAPF_SCI_RESEARCH` | `tracks/sci/`：局部路径修复方法与后续学习候选 |
+| research/thesis-integration | `/home/lyh/MAPF_THESIS_RESEARCH` | `tracks/thesis/`：论文集成、执行误差与系统验证 |
+| explore/error-aware-guidance，交接 | `/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE` | `exploration/spatial_constraints_s1_20261016/`：连续约束与完整执行DEV |
+| explore/gaussian-mapf-feasibility，交接 | `/home/lyh/MAPF_GAUSSIAN_FEASIBILITY` | `exploration/spatial_source/`：v2来源与传播 |
+| explore/query-value-feasibility，交接 | `/home/lyh/MAPF_QUERY_VALUE_FEASIBILITY` | `exploration/execution_feedback/`：反馈和费用 |
+| archive/learned-query-20261016，detached | `/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE` | 停止的查询学习与失败证据，HEAD `57aee7b` |
 
-分支名称保留以免扰动其他窗口，但 gaussian/query 不代表独立选题。main只维护问题、证据和决定；执行分支推进连续占用、时窗及预执行局部重优化；来源分支负责传播与覆盖，不要求高斯；工具分支负责合法反馈、配对和完整成本，不恢复“查询谁”。公共协议已有字段够用，算法确需新字段时才改。当前仅开放执行前声明组换序候选，运行中换序、RL和LMAPF仍后置；不以提交轮次或检查数量表示科研进展。
+日常先读[总入口](README.md)、[进度](GITHUB_PROGRESS.md)、相应支线README。代码在研究分支的专用目录推进，main只集成核定成果。不能把相邻工作树的最新文件当共享依赖；详见[共享清单](shared/README.md)。
 
-## 日常只读这些入口
+## 固定依赖和原位证据
 
-1. [统一研究方案](SPACE_TIME_INTERFACE_PLAN_20261016.md)：问题、模型、四组比较、外部基线、继续/停止条件。
-2. [最小空间—执行实例](SPACE_TIME_MINIMAL_EXAMPLE_20261016.md)：坐标、约束、释放及失效情形。
-3. [当前进度](GITHUB_PROGRESS.md)：已完成、失败、待验证与运行状态。
-4. [最新来源报告](PROBABILISTIC_ERROR_SOURCE_20261016.md)：G2c 两次失败、短 IPC 清单及边界。
-5. [文献依据](LITERATURE_GUIDED_RESEARCH_PLAN_20261016.md)：固定版本和近邻定位，后续决策以统一方案覆盖。
+- 12份旧运行代码分别固定执行`81f5866`、来源`43806cf`、工具`5589a7b`；新的文档交接提交不会静默改变代码pin。
+- 实际四次DEV固定于执行证据提交`ae058c5`：[完整报告](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/ae058c5025eaaa61a424ef7627515d40c2e83997/exploration/spatial_constraints_s1_20261016/PREEXECUTION_DEV_RESULT.md)。原路径、收据SHA和消费标记不迁移、不重写。
+- 原v2 `composition.py`、C1夹具与失败证据保持原路径。旧运行器仍有绝对路径/`__file__`依赖；只有完成小文件固定bundle适配和新清单后才能脱离旧树运行。
+- `MANUSCRIPT_PREEXPERIMENT.md`仅main现有未提交版受保护，不复制到两线作为新稿。
+- 现行综述：[本机文献目录](/home/lyh/桌面/MAPF_开题文献综述_20260921/MAPF误差综述_20261011)，仅索引，不复制文库。
+- 师兄论文：[原PDF](/home/lyh/文档/xwechat_files/wxid_byi6dg2u66wi22_3837/business/favorite/temp/M202110551-硕士论文.pdf)，用于组织参考，非学校规定。
 
-MANUSCRIPT_PREEXPERIMENT.md 保留用户未提交修改。旧概率诊断、仿真说明及编号文档是证据；不把旧“下一步”或已消费授权作为当前任务。
+## 交接顺序
 
-## 清理范围与恢复
+1. 已保存领先提交、原DEV文件及真实结果；旧分支入口改为交接状态。
+2. 建立两研究工作树，逐项登记所需依赖及消费者；新产物进入对应`tracks/<line>/results/<run_id>/`，run_id由已授权清单确定，不每轮另建日期框架。
+3. 迁移非冻结代码前查调用、SHA、路径及其他窗口；共享实现只维护一份。SCI成熟成果由大论文引用固定SCI提交，只有确需公共API才提升到main/shared。
+4. 旧底座无活动调用、独有提交已推送且原位证据约束解决之后，才考虑退出工作树。**本轮未删除、改名或整体合并旧树。**
 
-| 快照标签 | 原提交 | 从当前 Git 列表退出的文件数 |
-|---|---|---:|
-| archive/pre-cleanup-main-20261016 | bedf23b8 | 263 |
-| archive/pre-cleanup-execution-20261016 | 0e1cc23b | 293 |
-| archive/pre-cleanup-source-20261016 | e48d218f | 293 |
-| archive/pre-cleanup-tools-20261016 | 36564301 | 1698 |
-| archive/learned-query-20261016 | 57aee7b6 | 整条停止分支归档 |
-
-共 2547 个重复/历史文件退出活动 Git 列表，其中公共工具分支的 1405 个旧学习文件回到历史快照。main 保留当前文稿引用闭包内的 27 个编号文件及统计工具，避免破坏在用引用。三个支线的旧根 README、旧主稿和导师简报也退出当前 Git 列表，改用 `.github/README.md` 指向 main。
-
-上述归档标签已先推送并核对远端 SHA。2547 项使用 `git rm --cached` 保留冻结原路径字节；这一步没有物理删除数据，也没有回收磁盘空间。本机根目录仍可见冻结文件，GitHub 当前文件列表与日常入口已精简。main 的约 69 GB 主要是历史证据、第三方依赖和 Git 对象，不能按“旧文件”整体清空。不得用 `git clean -fdx` 清理这些保留文件。
-
-历史内容可在 [GitHub 标签列表](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tags) 查看。读一个旧文件可使用：
-
-```bash
-rtk proxy git show archive/pre-cleanup-main-20261016:GITHUB_PROGRESS.md
-```
-
-若以后确需恢复旧分支，先检查本机 detached 工作树和其他窗口，再从 `archive/learned-query-20261016` 建分支；不直接覆盖现有目录。旧学习分支存在 16 个独有历史提交，标签完整保护；其已跟踪代码与公共工具分支旧快照相同，但本机未跟踪内容不同，故保留原目录。
-
-本机整理前逐文件 SHA、移出清单与整理后核验保存在 `implementation_binding_evidence/repository_cleanup_20261016/`。未复制大型目录，冻结证据及失败不回写。后续新增代码进入各分支单一活动模块，轮次写入同一进度文件，不再每轮生成一套孤立目录。
-
-## 追加物理清理
-
-已删除根目录中四份过时说明：`task_plan.md`、`findings.md`、`progress.md` 和 `RESEARCH_DIRECTION_RECOMMENDATION_20260919.md`。前三份停留于 9 月 14 日的旧付费查询准备，后一份仍以查询评分为主要方向，均已由现行方案覆盖。删除前，原文保存至 [archive/superseded-local-notes-20261016](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/archive/superseded-local-notes-20261016)，归档提交 `ed5dc232`；远端提交和逐文件 SHA 核对后才删除本地副本。
-
-四份文件共 31,752 字节，另删除 13 个空的 `__pycache__` 目录。本次清理量很小，没有显著回收磁盘空间。逐项清单保存在同一清理目录的 `PHYSICAL_CLEANUP_20261016.json`，没有新增科学运行。
-
-`LEARNING_ASSISTED_OPTIMIZER_PLAN_20261011.md` 和 `RESEARCH_PORTFOLIO_20261010.md` 已过时，但历史交付清单仍绑定其绝对原路径和 SHA，须原位保留；不能以标签备份替代这项约束。旧学习目录的部分编译文件也已进入冻结或执行收据，保留原路径。主稿未提交修改保持不变。
-
-## 停止路线留下的经验
-
-- **先消除对照的信息差。** 当前例中，几何、反馈和事件粒度相同时，SADG 事件适配也能得到相同放行。相对粗 END 的提前不能直接算作独立调度贡献；这个结果也不说明所有任务上方法等价。
-- **动作拼接必须继承误差。** 每台车整条轨迹共享任务初始位置与朝向的联合参数，车身朝向使用同一偏差。旧固定初态界的拼接失败应保留，不能在路点重置误差后扩实验。v2 的同步实际输入条件改变后，推导也要重做。
-- **空间和时间都要保留。** 扫掠外包重叠不等于发生碰撞，依赖图无环也不等于连续执行可行。还要检查已承诺动作、等待、制动及永久驻留；放行须依据有效反馈支持的范围，计划时钟不是退出确认。
-- **学习需要明确用途。** 简单解析模型不必训练误差预测器。以后学习即使不改变最终决策，也可凭含校验、回退和数据成本的净计算收益进入比较；相对调优后的解析方法和查表仍无增量，就停止该候选。
-- **把接口、实验和论文证据分开。** 合同检查通过及两三车任务验收是必要准备，不能代替独立任务表现。旧查询学习、规划停止和 L20/L21 扩展保持停止，不通过增加分支或场景寻找正结果。
-- **归档与删除分别处理。** Git 忽略、停止使用和可删除不是同一件事。先核对活动引用与冻结路径，保存尚未备份的原文，再删明确过时的副本；后续在现有模块中迭代，避免再次复制整套目录。
-
-## 三轮后继的最新入口
-
-四个活动分支在T1之后又完成三轮实质推进：全局事件因果性修正 → 首尾窗口等价构造 → 完整消息配对和失败账目。累计15→53→99项静态检查通过；22个动作—区域窗口与12条约束保持精确一致，外包求值8738→446。此为工程操作数改进，总实耗仍未测。两臂同样采用优化，旧放行相同的结果保留。
-
-现从[统一方案的后继三轮节](SPACE_TIME_INTERFACE_PLAN_20261016.md)和[QUALIFICATION_NOTICE.md](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/QUALIFICATION_NOTICE.md)进入。来源/工具各在原模块增加 `qualification.py`，执行复用原 S1 模块的 `qualified_session.py` 和 `verify_qualified.py`，不复制框架。T1旧入口继续冻结。
-
-“相同证书事件接线”已退出独立论文贡献候选，非学习工程基座仍保留。用户最新明确只实现和静态核验，所有科学运行待授权；后继不能沿用或静默替换T1清单。下一终端先核定具体额外贡献再决定是否准备后继运行，不重做已完成三轮、不恢复旧查询/LMAPF。主稿未提交修改及冻结证据继续保留。
-
-## T1入口（后继沿用的冻结基座）
-
-物理时间占用和两/三车完整公共消息接口已实现，87项新静态检查及63项C1回归通过。固定夹具的两臂放行、完成、消息流及证书工作量相同，没有独有保证；总进程成本未测。旧C1和早期冻结结果不变，主稿未提交修改保留。
-
-下一终端先读[方案最新T1节](SPACE_TIME_INTERFACE_PLAN_20261016.md)和[执行模块T1说明](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/TIMED_NOTICE.md)。来源新增 `spatial_source/timed.py`，公共工具新增 `execution_feedback/timed_protocol.py`，执行仍在原 S1 模块，不新建研究分支或复制框架。
-
-自主完整事件循环入口已准备但未执行；[有限运行清单](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/TIMED_RUN_CHECKLIST.md)固定4子进程及输入SHA，须有绑定该清单的新明确授权才能启动。不要再次实现相同接口，也不要把静态夹具时间写成自主运行结果。若当前同证书接线在约束、算法成本和保证三项均无增量，结束候选，保留接口；不能靠新场景、训练或删弱基线制造结果。
-
-## 上轮交接说明（已由上述T1实施推进）
-
-请接续 `/home/lyh/MAPF_PIED_MDDR_RESEARCH`，先读 `REPOSITORY_NAVIGATION.md`、`GITHUB_PROGRESS.md` 和 `SPACE_TIME_INTERFACE_PLAN_20261016.md` 的最新补充，再读执行分支的 `COMPOSITION_NOTICE.md`。四个活动分支只分担同一论文问题，复用已有 v2 来源、C1 实例、SADG 事件适配及合法反馈/计费组件，不重搭框架。先在现有模块中补齐保留物理时间的连续占用：每台车整条轨迹共享同一任务初始位置—朝向联合参数，车身旋转使用同一朝向偏差，遵守 v2 同步实际输入及共同暂停、恢复、切换时钟的条件，不在路点重置误差。固定 MAPF 路径和已有通行次序，复用现有无环及起终点占用检查，补新增时空约束的时间可行性、已承诺动作、制动和驻留检查；不满足就明确报告不可行，不把外包重叠直接当作碰撞。随后补两三车从控制、合法反馈、释放到最终 END 的完整任务接口及总在线成本记录；放行依据有效反馈支持的状态/进度范围，不能只看计划时钟。向公平适配后的强基线提供相同几何、反馈、事件粒度、运动条件和安全要求，分别检验是否减少保守约束、降低总构造/更新成本或增加可证明保证；当前例放行相同的结论保留，三项均无增量则结束该贡献候选。先完成实质实现和必要静态检查，准备含具体命令、输入 SHA、预算、失败保留及停止条件的有限运行清单；本次不启动新 world、训练或旧查询学习/LMAPF 扩展，不复用已消费许可，科学运行按现行授权边界另行处理。保护主稿未提交修改和全部冻结证据，及时同步 GitHub，只提交本次明确修改的文件。
+[归档入口](archive/README.md)保留旧清理标签、L20/L21及各负结果；[旧完整导航](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/c9985fb/REPOSITORY_NAVIGATION.md)仅供历史恢复。
