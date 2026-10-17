@@ -1,0 +1,178 @@
+{
+  "date": "2026-10-17",
+  "status": "RULE_DESIGN_WITH_FIXED_ALGEBRAIC_CHECKS",
+  "scope": "read frozen coefficients/vertices and verify rational identities; no solver, research module or task execution",
+  "candidate": "R: shared piecewise progress-boundary enumeration, then angle-only branching for qualified MOVE pairs",
+  "baseline": "G: same geometry, analytic kernels, witness validation, caches and fallback; interval sensitivity branching, with explicitly declared G_angle option",
+  "frozen_bottleneck_equalities": [
+    {
+      "pair": [
+        "A_0",
+        "B_0"
+      ],
+      "stored_maximizer": [
+        "64437153178050779980000008/45000000000454500011000003",
+        "127425612771012566932907994/225000000002272500055000015"
+      ],
+      "point_feasible_in_frozen_outer_polygon": true,
+      "both_inverse_values_exactly_cruise": true,
+      "reused_upper": "389520306238482665934184092/225000000002272500055000015",
+      "new_piecewise_max_equals_old_upper_by_sandwich": true,
+      "physical_collision_witness": false
+    },
+    {
+      "pair": [
+        "A_2",
+        "B_2"
+      ],
+      "stored_maximizer": [
+        "24292629444976064560210059/112500000001147500005000015",
+        "127620914306441004695693191/225000000002295000010000030"
+      ],
+      "point_feasible_in_frozen_outer_polygon": true,
+      "both_inverse_values_exactly_cruise": true,
+      "reused_upper": "977321722931555122184634818/562500000005737500025000075",
+      "new_piecewise_max_equals_old_upper_by_sandwich": true,
+      "physical_collision_witness": false
+    }
+  ],
+  "other_pair_bounds_preserved": [
+    {
+      "pair": [
+        "A_0",
+        "B_1"
+      ],
+      "prior_upper": "38389/25600",
+      "strictly_below_global": true
+    },
+    {
+      "pair": [
+        "A_0",
+        "B_2"
+      ],
+      "prior_upper": "-4071/1600",
+      "strictly_below_global": true
+    },
+    {
+      "pair": [
+        "A_0",
+        "B_3"
+      ],
+      "prior_upper": "-183/50",
+      "strictly_below_global": true
+    },
+    {
+      "pair": [
+        "A_0",
+        "B_4"
+      ],
+      "prior_upper": "-383/50",
+      "strictly_below_global": true
+    },
+    {
+      "pair": [
+        "A_1",
+        "B_2"
+      ],
+      "prior_upper": "19157/12800",
+      "strictly_below_global": true
+    },
+    {
+      "pair": [
+        "A_1",
+        "B_3"
+      ],
+      "prior_upper": "17/50",
+      "strictly_below_global": true
+    },
+    {
+      "pair": [
+        "A_1",
+        "B_4"
+      ],
+      "prior_upper": "-183/50",
+      "strictly_below_global": true
+    },
+    {
+      "pair": [
+        "A_2",
+        "B_3"
+      ],
+      "prior_upper": "18727/12800",
+      "strictly_below_global": true
+    },
+    {
+      "pair": [
+        "A_2",
+        "B_4"
+      ],
+      "prior_upper": "-32973/12800",
+      "strictly_below_global": true
+    }
+  ],
+  "global_upper": "977321722931555122184634818/562500000005737500025000075",
+  "old_contact_lower_reused": "80999801/46875000",
+  "unchanged_bracket_width_s": "9982707978076399685690239750597/1054687500010757812546875140625000",
+  "stationary_formula_countercheck": {
+    "type": "algebraic_edge_not_MAPF_task",
+    "slope": "2",
+    "intercept": "1/32",
+    "x_domain": [
+      "1/128",
+      "1/32"
+    ],
+    "stationary_point": [
+      "1/64",
+      "1/16"
+    ],
+    "left_derivative_sign": "+",
+    "right_derivative_sign": "-",
+    "vertices_only_underestimates": true
+  },
+  "analytical_comparison": {
+    "progress_partition": "sup over a covering union equals max of suprema when the same P is only restricted",
+    "R_equals_G_angle": "conditional induction on identical oracle/state/policy; not a runtime experiment",
+    "R_vs_adaptive_G": "no dominance or full-cost improvement established",
+    "novelty_boundary": "embedding in generic B&B alone does not refute the value of the analytic kernel; no exclusive R gain under the requested shared-kernel comparison"
+  },
+  "decision": "RETAIN_SHARED_ANALYTIC_DESIGN_DO_NOT_PROMOTE_ANGLE_ONLY_SOLVER",
+  "implementation": {
+    "piecewise_boundary_kernel": false,
+    "full_angle_geometry": false,
+    "candidate_BB": false,
+    "baseline_BB": false
+  },
+  "performance_measured": false,
+  "independent_scientific_validation": false,
+  "new_release_benefit": false,
+  "successor_run_plan_prepared": false,
+  "scientific_runs": 0,
+  "author_code_calls": 0,
+  "world_steps": 0,
+  "task_session_calls": 0,
+  "training_runs": 0,
+  "new_solver_calls": 0,
+  "primary_baseline_references": [
+    {
+      "url": "https://ibex-team.github.io/ibex-lib/optim.html",
+      "inspected": "objective enclosure, feasibility, precision and unresolved status documentation",
+      "reproduction": false
+    },
+    {
+      "url": "https://ibex-team.github.io/ibex-lib/contractor.html",
+      "inspected": "feasible-set preserving contractor composition",
+      "reproduction": false
+    }
+  ],
+  "input_sha256": {
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/SUPPORT_CHECK.json": "2abdd3448f6820a253782b4c09a3f51a78764c1ce8bcb009112c37b671cb3b4c",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/JOINT_PHASE_CHECK.json": "e3b23415c067bab855db800c6367ed905131c14698bb12a77e96e7b2ff43c680",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/CTC_ADAPTATION_CHECK.json": "895129d5bc0266a42f6745313e12f08a96245c62ed9baea38a87f0800556929b",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/composition_fixture.json": "21505bab2eceb3b86c311bf870d8c70b3c81621ff194466b3be25fc62681d68a",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/DEPARTURE_NOTICE.md": "f4be9006f1064652c6541077f1875acba92a5108bdfa600bb8c82692a5fd461e",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/joint_phase.py": "95ac9bffbdb37b7f805af3f99211cf969fae154c293967842e9be606b8159533",
+    "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/spatial_constraints_s1_20261016/SOLVER_RULE_COMPARISON.md": "29da61f5dfb045a78b2edf61750b3430f1f9f812e9486ad6f0cb705ce40a5fc5",
+    "/home/lyh/MAPF_GAUSSIAN_FEASIBILITY/exploration/spatial_source/composition.py": "e294be82cc6277fac462f61450685820f2d9f1b2c49f1c07c814f7abe4f08453",
+    "/home/lyh/MAPF_PIED_MDDR_RESEARCH/implementation_binding_evidence/space_time_composition_20261016/ALGORITHM_GAP_SCREEN_20261017.json": "9f08673e2a5c792911e4380a452fd9d5da2e3a93ceecab47c12ed7fcd48febdb"
+  }
+}
