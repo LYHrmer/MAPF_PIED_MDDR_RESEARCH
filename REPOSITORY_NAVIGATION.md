@@ -2,7 +2,7 @@
 
 2026-10-16。按现行职责保留四个活动分支，旧学习分支由历史标签保存。本页同时记录入口整理和之后的有限物理清理；工作树、实验原始记录和冻结证据保留。
 
-**当前：提出共享基座之外的四角点支持消元规则。** 原独立盒及合格MOVE下，切片重参数化凸性允许无需全域单调证书求最坏支持值。已完成条件证明、算子原型和一般代数静态核对；独立新颖性、任务价值及完整加速仍未成立。原C1早已由共有快路闭合，负结果和冻结证据保持，不重复筛选非主导回退。[唯一当前判断](SPACE_TIME_INTERFACE_PLAN_20261016.md) · [具体规则、边界与对照](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/HEADING_CORNER_RULE.md)。各分支从`.github/README.md`进入；无新科学运行清单，旧清单不构成运行授权。
+**当前：停止四角点候选的标准格点搜索增量投入。** 条件命题保留，但既定1米格点及v2条件下已推导统一单调性证书，充分适配基线同样可在根域结束。首个旧独立任务也不能直接满足新来源条件；没有选定已通过证据门槛的新论文方向。原C1负结果和冻结证据保持，不为候选改尺度或造场景。[唯一当前判断](SPACE_TIME_INTERFACE_PLAN_20261016.md) · [具体规则及第9节筛选结论](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/explore/error-aware-guidance/exploration/spatial_constraints_s1_20261016/HEADING_CORNER_RULE.md)。各分支从`.github/README.md`进入；无新科学运行清单，旧清单不构成运行授权。
 
 | 入口 | 当前职责 | 本机路径 |
 |---|---|---|
