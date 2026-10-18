@@ -561,4 +561,168 @@ int main(int argc,char**argv){
         self.assertTrue(value['initial_and_final_validated']);self.assertEqual(value['final_soc'],1)
 
 
+class RewardContracts(unittest.TestCase):
+    """Actual reward-overlay PP body with the existing fake planner/clock.
+
+    These cases do not construct an author Instance or invoke SIPP.
+    """
+    @classmethod
+    def setUpClass(cls):
+        from address_reward import adapt as reward_adapt
+        cls.base=sources();cls.base.update(adapt(cls.base))
+        cls.changed=reward_adapt(cls.base)
+        cls.tmp=tempfile.TemporaryDirectory();cls.root=Path(cls.tmp.name)
+        for name,raw in dict(cls.base,**cls.changed).items():
+            if name.startswith('inc/address_'):
+                (cls.root/Path(name).name).write_bytes(raw)
+
+    @classmethod
+    def tearDownClass(cls):cls.tmp.cleanup()
+
+    def compile(self,name,code):
+        src=self.root/(name+'.cpp');exe=src.with_suffix('');src.write_text(code)
+        result=subprocess.run(['rtk','proxy','g++','-std=c++14','-O0','-I',str(self.root),
+                               str(src),'-o',str(exe)],capture_output=True,text=True,timeout=30)
+        self.assertEqual(result.returncode,0,result.stderr);return exe
+
+    def execute(self,exe,*args):
+        result=subprocess.run(['rtk','proxy',str(exe),*map(str,args)],capture_output=True,text=True,timeout=5)
+        self.assertEqual(result.returncode,0,result.stderr)
+        return result
+
+    def test_actual_pp_separates_candidate_commit_failure_and_deadline(self):
+        code=pp_fixture(self.changed['src/LNS.cpp'].decode())
+        code=code.replace('      if(expire_call==-4)', '''      if(expire_call==-5&&calls==3){Path p(6,PathEntry{start_location});p.push_back({start_location+1});p.push_back({start_location+2});return p;}
+      if(expire_call==-6&&calls==3)return {{start_location},{start_location+1},{start_location}};
+      if(expire_call==-4)''')
+        code=code.replace('    bool accepted=test.runPP();', '''    address_reward::configure("cumulative",0,3,argv[3]);
+    test.alpha.assign(3,1);test.beta.assign(3,1);
+    address_reward::SelectionScope selection(9);address_reward::bind_seed(0);
+    bool accepted=false;
+    try{accepted=test.runPP();}catch(const runtime_error&){
+        assert(expire_call==-6);assert(!address_reward::state().active);
+        for(int a=0;a<3;++a)assert(test.path_table.paths.at(a).size()==4);
+        assert(test.alpha[0]==1&&test.beta[0]==1);return 0;
+    }
+    assert(test.alpha[0]==(expire_call?1:2));
+    assert(test.beta[0]==((expire_call<0)?2:1));''')
+        # argv[3] is the new event trace, not the older per-repair trace.
+        code=code.replace('    if(argc>3)address_budget::configure_trace(argv[3]);','')
+        exe=self.compile('reward_pp',code)
+        for mode in (0,1,3,-2,-4,-5,-6):
+            receipt=self.root/('reward_native'+str(mode)+'.json')
+            trace=self.root/('reward_pp'+str(mode)+'.jsonl')
+            self.execute(exe,mode,receipt,trace)
+            rows=[json.loads(line) for line in trace.read_text().splitlines()]
+            self.assertEqual(len(rows),1)
+            row=rows[0];self.assertEqual(row['selection_id'],1)
+            self.assertEqual(row['repair_attempt_id'],1)
+            self.assertEqual(row['committed_gain'],3 if mode==0 else 0)
+            self.assertEqual(row['candidate_reward'],{0:3,-4:0,-5:-2}.get(mode))
+            self.assertEqual(row['censored'],mode in (1,3))
+            if row['censored']:
+                self.assertTrue(row['global_deadline'] or row['local_deadline'])
+                self.assertNotEqual(row['deadline_stage'],'NONE')
+            self.assertEqual(row['memory_eligible'],mode not in (1,3,-6))
+            if mode!=-6:
+                native=json.loads(receipt.read_text())
+                self.assertTrue(native['initial_and_final_validated'])
+                self.assertEqual(native['reward_contract']['selections'],native['reward_contract']['settlements'])
+
+    def test_shared_memory_rule_empty_groups_censoring_and_exactly_once(self):
+        code=COMMON+r'''
+int main(int argc,char**argv){
+    setup();string mode=argv[1];int width=atoi(argv[2]);
+    address_reward::configure(mode,width,2,argv[3]);
+    vector<int> alpha(2,1),beta(2,1);
+    for(bool win:{true,false,false,true}){
+        address_reward::SelectionScope selection(10);address_reward::bind_seed(0);
+        if(win){address_reward::group(1,5);auto&e=address_reward::pending();
+            e.candidate=4;e.candidate_valid=true;address_reward::settle(true,4,"FOUND",alpha,beta);}
+        else address_reward::no_repair("GROUP_TOO_SMALL",alpha,beta);
+        bool duplicate=false;try{address_reward::no_repair("DUPLICATE",alpha,beta);}
+        catch(const runtime_error&){duplicate=true;}assert(duplicate);
+    }
+    auto expected_a=alpha,expected_b=beta;
+    {address_reward::SelectionScope selection(9);address_reward::bind_seed(0);
+     address_budget::state().global_deadline=true;address_reward::no_repair("DEADLINE",alpha,beta);}
+    assert(alpha==expected_a&&beta==expected_b);
+    address_budget::state().global_deadline=false;
+    {address_reward::SelectionScope selection(9);address_reward::no_repair("NO_SEED",alpha,beta);}
+    assert(alpha==expected_a&&beta==expected_b);
+    assert(address_reward::state().started==6&&address_reward::state().settled==6);
+    assert(address_reward::state().arms[0].completed==4&&address_reward::state().arms[0].censored==1);
+    assert(address_reward::state().arms[1].completed==0);
+    if(mode=="window"&&width==2)assert(alpha[0]==2&&beta[0]==2);
+    else if(mode=="author")assert(alpha[0]==1&&beta[0]==1);
+    else assert(alpha[0]==3&&beta[0]==3);
+    // An unclosed selection is an error event, never an implicit reward zero.
+    {address_reward::SelectionScope incomplete(9);}
+    assert(address_reward::state().errors==1);
+    bool rejected=false;try{ostringstream out;address_reward::summary(out);}catch(const runtime_error&){rejected=true;}
+    assert(rejected);
+}
+'''
+        exe=self.compile('reward_memory',code)
+        outputs={}
+        for mode,width in (('cumulative',0),('window',2),('window',4),('author',0)):
+            path=self.root/(mode+str(width)+'.jsonl');self.execute(exe,mode,width,path)
+            outputs[mode,width]=[json.loads(line) for line in path.read_text().splitlines()]
+        # Memory alone changes retained counts; event rewards and costs match.
+        self.assertEqual(outputs['cumulative',0],outputs['window',4])
+        self.assertEqual(outputs['cumulative',0],outputs['window',2])
+        self.assertIsNone(outputs['window',2][-1]['committed_gain'])
+
+    def test_overlay_connections_preserve_old_build_and_reject_duplicate(self):
+        from address_reward import adapt as reward_adapt
+        with self.assertRaises(ValueError):reward_adapt(dict(self.base,**self.changed))
+        old=method(self.base['src/LNS.cpp'].decode(),'bool LNS::runPP()')
+        new=method(self.changed['src/LNS.cpp'].decode(),'bool LNS::runPP()')
+        marker='     if ((destroy_strategy == RANDOMWALK || destroy_strategy == DESTROY_COUNT) && (algo != CANONICAL))'
+        original=old[old.index(marker):old.index('    if (!address_budget::expired("ACCEPT")')]
+        self.assertIn('if(address_reward::author()) {\n'+original,new)
+        run=method(self.changed['src/LNS.cpp'].decode(),'bool LNS::run()')
+        self.assertEqual(run.count('SelectionScope reward_selection'),1)
+        self.assertEqual(run.count('address_reward::no_repair'),2)
+        self.assertEqual(new.count('address_reward::settle('),2)
+        self.assertLess(new.index('budget_attempt.end_rollback()'),new.index('address_reward::settle(false'))
+        self.assertNotIn('address_reward',self.base['src/LNS.cpp'].decode())
+
+    def test_actual_outer_loop_settles_failed_group_and_formed_deadline(self):
+        code=loop_fixture(self.changed['src/LNS.cpp'].decode())
+        code=COMMON+code.replace('#include "address_adapter_support.h"','')
+        # Existing fixture declarations use different path/clock types.
+        code=code.replace('struct PathEntry { int location;PathEntry(int x):location(x){};PathEntry():location(0){}; };\nusing Path=vector<PathEntry>;','')
+        code=code.replace('struct Agent { vector<Vertex> path; Planner* path_planner; };',
+            'struct Agent { vector<Vertex> path; Planner* path_planner; int getNumOfDelays()const{return int(path.size())-1-path_planner->my_heuristic[path_planner->start_location];} };')
+        code=code.replace('    int wrapper() { ++generated; return 0; }',
+            '    vector<int> alpha=vector<int>(9,1),beta=vector<int>(9,1);\n    int wrapper() { ++generated; address_reward::bind_seed(0); return 0; }')
+        code=code.replace('    srand(0); LNS test(argc>2);', '''    setup(1);increment=.01;
+    address_reward::configure("cumulative",0,9,argv[2]);
+    srand(0); LNS test(true);''')
+        # Exercise actual failed-construct control flow; graph yields no neighbor.
+        code=code.replace('++calls; agents.insert((a+1)%9);','++calls;')
+        code=code.replace('int code=address_adapter::finish();','int code=address_budget::finish();')
+        exe=self.compile('reward_loop_no_group',code)
+        receipt=self.root/'loop_no_group.json';trace=self.root/'loop_no_group.jsonl'
+        self.execute(exe,receipt,trace)
+        rows=[json.loads(line) for line in trace.read_text().splitlines()]
+        self.assertTrue(rows)
+        self.assertEqual([r['selection_id'] for r in rows],list(range(1,len(rows)+1)))
+        self.assertTrue(all(r['committed_gain']==0 for r in rows))
+        self.assertTrue(all(r['outcome'] in ('NO_GROUP','CENSORED') for r in rows))
+        self.assertEqual(json.loads(receipt.read_text())['reward_contract']['settlements'],len(rows))
+        # Formed group crosses the global cutoff immediately after generation;
+        # the real outer admission branch must settle before break, with no PP.
+        formed=code.replace('++calls;', '++calls; agents.insert((a+1)%9);')
+        formed=formed.replace('        if(address_budget::expired("GROUP")) {\n            address_reward::no_repair',
+            '        ::tick=100;\n        if(address_budget::expired("GROUP")) {\n            address_reward::no_repair')
+        formed=formed.replace('setup(1);increment=.01;', 'setup(100);increment=0;')
+        exe=self.compile('reward_loop_formed_deadline',formed)
+        receipt=self.root/'loop_formed.json';trace=self.root/'loop_formed.jsonl';self.execute(exe,receipt,trace)
+        row=json.loads(trace.read_text())
+        self.assertEqual(row['outcome'],'CENSORED');self.assertEqual(row['stop'],'GROUP_ADMISSION_DEADLINE')
+        self.assertFalse(row['memory_eligible']);self.assertEqual(row['fresh_paths'],0)
+
+
 if __name__=='__main__':unittest.main()

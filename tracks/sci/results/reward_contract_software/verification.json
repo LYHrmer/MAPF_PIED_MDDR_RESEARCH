@@ -1,0 +1,24 @@
+{
+  "schema": "ADDRESS_REWARD_SOFTWARE_VERIFICATION_V1",
+  "status": "SOFTWARE_AND_COMPILE_HELP_PASS",
+  "scientific_runs": 0,
+  "training": false,
+  "author_commit": "b3d35c431ce03834f95e834d87986f2f341394a1",
+  "binary_sha256": "bafa04e5357f2c6dae7e5c316d84b6acd743a7838cf5809d73e9e8de22227330",
+  "build_receipt_sha256": "0828ff877e95ebc2917211f619f48687c85adde126568b2135999ba29062dc7e",
+  "code_sha256": {
+    "address_reward.py": "5741cfa9e80a6c97ac8667b92a9d11df05eb97e258f9de03b33b79a1b7d3fb45",
+    "address_reward_support.h": "bda5b8755212bce5163f1b9c5aa4fc9632a3615b2987c76ac623bea28e89ff6c",
+    "build_address_full.py": "4f547311af0f200b17df397a181841764004072d45aae625ef8fd251cea94ae4",
+    "test_address_budget.py": "f1217c8879d237a6124276bc0eb309fdd87df5c2f0afb0743bcebb0a03c02405"
+  },
+  "regression_scope": "37 tests passed before adding repair ID/deadline metadata; all 4 reward tests rerun on final code afterward",
+  "development_failure": "First outer-loop fixture compile failed because fake Agent lacked getNumOfDelays; fixture repaired. This is a development summary, not a reconstructed compiler log or scientific failure.",
+  "limits": "Actual transformed PP/outer control flow with fake graph/planner/clocks; full binary only --help; no author Instance, SIPP task, performance comparison or training.",
+  "artifacts": {
+    "reward_checks.log": "11be9afa270a0a0e86c36a266b65d6ab8d88668b31c7992c889d3e4443b53f53",
+    "reward_checks.json": "8747175721ad0cba3a97a5e564df9e47fe49043153a04bab126b1c3a3e21f373",
+    "regression.log": "b653c5a13fb2b3b42596f7e47013386e2102973d67b4305ac887b3f1fa02bbd7",
+    "regression.json": "1463009949f13695134615171d11ec8025825396c5153677fa362baf2b7fdab9"
+  }
+}

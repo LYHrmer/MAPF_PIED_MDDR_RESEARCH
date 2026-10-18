@@ -58,7 +58,7 @@ def source_identity(root):
 def build(root, output, adapter=False, extension=None):
     if extension == 'recovery':
         raise ValueError('legacy recovery requires its frozen commit; use budget_recovery for the shared deadline')
-    if extension not in (None, 'loop_guard', 'budget_guard', 'budget_recovery') or (extension and not adapter):
+    if extension not in (None, 'loop_guard', 'budget_guard', 'budget_recovery', 'reward_contract') or (extension and not adapter):
         raise ValueError('extensions require the common-initial adapter')
     root, output = root.resolve(), output.resolve()
     if output == root or root in output.parents:
@@ -123,10 +123,13 @@ def build(root, output, adapter=False, extension=None):
             if extension:
                 import importlib
                 modules = ['address_loop_guard']
-                if extension in ('budget_guard', 'budget_recovery'):
+                if extension in ('budget_guard', 'budget_recovery', 'reward_contract'):
                     modules.append('address_budget')
                 if extension == 'budget_recovery':
                     modules.append('address_recovery')
+                if extension == 'reward_contract':
+                    modules.append('address_reward')
+                    receipt['reward_semantics'] = 'EXPLICIT_AUTHOR_OR_POST_COMMIT_BERNOULLI'
                 receipt['extension_order'] = modules
                 receipt['extension_sources'] = {}
                 receipt['extension_script_sha256'] = {}
@@ -168,12 +171,17 @@ def build(root, output, adapter=False, extension=None):
             raise ValueError('unexpected full-author help entry')
         if adapter and not all(flag in help_raw for flag in (b'--initialPaths', b'--adapterReceipt', b'--finalReserve')):
             raise ValueError('adapter help contract missing')
-        if extension in ('budget_guard', 'budget_recovery') and not all(
+        if extension in ('budget_guard', 'budget_recovery', 'reward_contract') and not all(
                 flag in help_raw for flag in (b'--cpuLimit', b'--cpuReserve', b'--attemptTrace', b'--phaseProfile', b'--seedAdmission', b'--effortMode')):
             raise ValueError('shared CPU budget help contract missing')
-        if extension in ('budget_guard', 'budget_recovery'):
+        if extension in ('budget_guard', 'budget_recovery', 'reward_contract'):
             receipt['seed_admission_policies'] = ['all', 'positive_delay']
             receipt['effort_modes'] = ['fixed_repairs', 'total_budget']
+        if extension == 'reward_contract':
+            if not all(flag in help_raw for flag in (b'--rewardMemory', b'--rewardWindow', b'--rewardTrace')):
+                raise ValueError('reward settlement help contract missing')
+            receipt['reward_memory_modes'] = ['author', 'cumulative', 'window']
+            receipt['scientific_runner_admitted'] = False
         if extension == 'budget_recovery' and not all(
                 flag in help_raw for flag in (b'--recoveryPolicy', b'--recoveryTrace')):
             raise ValueError('recovery diagnostic help contract missing')
@@ -195,7 +203,7 @@ if __name__ == '__main__':
     parser.add_argument('--author-root', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--adapter', action='store_true', help='compile project-owned common-initial overlay')
-    parser.add_argument('--extension', choices=('loop_guard', 'budget_guard', 'budget_recovery'),
+    parser.add_argument('--extension', choices=('loop_guard', 'budget_guard', 'budget_recovery', 'reward_contract'),
                         help='shared deadline precedes optional recovery; legacy recovery uses its frozen commit')
     args = parser.parse_args()
     print(json.dumps(build(args.author_root, args.output, args.adapter, args.extension), sort_keys=True))
