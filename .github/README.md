@@ -7,4 +7,4 @@ GitHub入口与 [项目README](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARC
 - [硕士论文支线](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/research/thesis-integration/tracks/thesis/README.md)
 - [最新进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md) · [导航](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/REPOSITORY_NAVIGATION.md)
 
-四次闭式功能DEV已实际完成，全部SUCCESS、枚举收益为零，[原始依据](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/ae058c5025eaaa61a424ef7627515d40c2e83997/exploration/spatial_constraints_s1_20261016/PREEXECUTION_DEV_RESULT.md)。当前只推进两线实现和静态核验，不重用已消费许可，不恢复旧查询学习。
+四次闭式功能DEV已实际完成，全部SUCCESS、枚举收益为零，[原始依据](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/ae058c5025eaaa61a424ef7627515d40c2e83997/exploration/spatial_constraints_s1_20261016/PREEXECUTION_DEV_RESULT.md)。另经新授权完成SCI六臂局部修复DEV：经典下界解释全部搜索减少，路径质量不变，见[结果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/c0bd1345b8e192380ce2b1313e11475b54bbfa3d/tracks/sci/DEV_RESULT.md)。两批许可均已消费，不恢复旧查询学习。

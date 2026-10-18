@@ -12,7 +12,7 @@
 | explore/query-value-feasibility，交接 | `/home/lyh/MAPF_QUERY_VALUE_FEASIBILITY` | `exploration/execution_feedback/`：反馈和费用 |
 | archive/learned-query-20261016，detached | `/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE` | 停止的查询学习与失败证据，HEAD `57aee7b` |
 
-两研究树的公共文档是创建时快照；唯一当前总体决定始终读取main的`docs/RESEARCH_PLAN.md`。已核SCI实现`818f1e9`、硕士实现`6771137`分别在本线维护，main用固定提交索引，不复制算法。SCI有限运行入口为该提交的`tracks/sci/RUN_CHECKLIST.md`，状态为待新授权。
+两研究树的公共文档是创建时快照；唯一当前总体决定始终读取main的`docs/RESEARCH_PLAN.md`。SCI运行代码`818f1e9`、六臂证据`c0bd134`、硕士实现`6771137`分别在本线维护，main用固定提交索引，不复制算法。SCI六臂见`tracks/sci/DEV_RESULT.md`；原`RUN_CHECKLIST.md`已消费，不能重跑。
 
 日常先读[总入口](README.md)、[进度](GITHUB_PROGRESS.md)、相应支线README。代码在研究分支的专用目录推进，main只集成核定成果。不能把相邻工作树的最新文件当共享依赖；详见[共享清单](shared/README.md)。
 
