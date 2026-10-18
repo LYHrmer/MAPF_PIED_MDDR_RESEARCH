@@ -1,0 +1,31 @@
+{
+  "schema": "motion_comparison_actual_user_authorization_v1",
+  "recorded_utc": "2026-10-18T07:50:44.623587+00:00",
+  "authorization_source": "CURRENT_USER_MESSAGE_NEW_AUTHORIZATION_NOT_PREVIOUS_SCI_PERMISSION",
+  "original_user_excerpt": "大论文先完成已准备好的原方案、冻结SOC方案、转向感知方案三臂运动比较，回答离散路径变短是否真正降低运动完成时间，并把转向、离散等待和全局同步等待分别统计；这批使用旧SCI冻结结果，后续再接入稳定的新版本。",
+  "scope_interpretation": "Execute existing frozen MOTION_RUN_CHECKLIST.md six cases x three arms once, sequentially; no optimizer search, error extension, training, world, or retries. This user message is the original authorization; the record does not itself grant permission.",
+  "recording_incident": "The initial administrative record write failed because results parent did not exist (mkdir omitted parents=True). The first authorized case started before this record was written. The actual user authorization preceded execution. No scientific retry or parameter change occurred. This record honestly preserves the sequence.",
+  "scientific_code_commit": "a4ad94c5c84dc9f2239bc9b77e00a36740f70d2f",
+  "manifest": "tracks/thesis/config/nominal_motion_v1_manifest.json",
+  "manifest_sha256": "dfac22c05d73e712cadc8937e2ccc4a855e2764ef8f2b4c5f4f9546dd33b3b7c",
+  "checklist_sha256": "3b76bc8bdff09c34d91ae1633081b90021dac0c9074a20e3e38eb9da11d589ff",
+  "ordered_cases": [
+    "maze-32-32-2__s01__n16",
+    "maze-32-32-2__s01__n32",
+    "random-32-32-10__s01__n16",
+    "random-32-32-10__s01__n32",
+    "warehouse-10-20-10-2-1__s01__n16",
+    "warehouse-10-20-10-2-1__s01__n32"
+  ],
+  "limits": {
+    "total_admission_wall_s": 60,
+    "worker_cpu_s": 45,
+    "worker_as_mib": 512,
+    "per_file_mib": 16,
+    "outer_term_s": 62,
+    "outer_kill_after_s": 2,
+    "retries": 0,
+    "stop_batch_on_first_hard_failure": true
+  },
+  "sole_executor": "/root/thesis_motion_batch"
+}

@@ -1,0 +1,59 @@
+{
+  "accounting": "Total includes Git reads, imports, selection, all geometry/construction, metric checks, result serialization, fsync, artifact hashes, and supervisor wait. Administrative receipt write and final process exit excluded. Nested times are not additive. Prior SCI optimization cost is source metadata, not this motion-adaptation cost.",
+  "artifacts": {
+    "arm_frozen_soc.json": {
+      "bytes": 623766,
+      "sha256": "d53d8389b81f624b9ea305dfc7879fe2b584d92a3a87f60aee6a180d6b24a791"
+    },
+    "arm_original.json": {
+      "bytes": 609064,
+      "sha256": "3cf2582123002c1498f033cd5e617205b4b6ce5296594a7e4df29472b665758c"
+    },
+    "arm_turn_aware.json": {
+      "bytes": 624346,
+      "sha256": "b6f081486992e12b76b4d2050efc9c4cd18ddd3a8a5c1011a21ae167be43f822"
+    },
+    "attempt.json": {
+      "bytes": 339,
+      "sha256": "72b43f426ee3b3de76cfde597c0f89310e9eab2b0f50adcdbbaf9fa1bab90d4d"
+    },
+    "result.json": {
+      "bytes": 18979,
+      "sha256": "f8cd763bc5cc6e534d4d9dc5c6c8dbd59c468414239968f5ca5b634b828d6290"
+    },
+    "worker.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "worker.stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "case": "random-32-32-10__s01__n32",
+  "entry_through_import_input_validation_output_and_hash_ns": 3510348730,
+  "manifest_sha256": "dfac22c05d73e712cadc8937e2ccc4a855e2764ef8f2b4c5f4f9546dd33b3b7c",
+  "new_scientific_motion_comparison": true,
+  "retry_allowed": false,
+  "status": "COMPLETE",
+  "supervisor_self_cpu_s": 0.10330899999999998,
+  "worker_costs": {
+    "all_descendant_system_s": 0.14112199999999997,
+    "all_descendant_user_s": 3.0818399999999997,
+    "exit_code": 0,
+    "forced_cleanup": false,
+    "interruption": null,
+    "largest_child_maxrss_kib": 25920,
+    "reaped": [
+      {
+        "exit_code": 0,
+        "maxrss_kib": 25920,
+        "pid": 60,
+        "system_s": 0.141122,
+        "user_s": 3.08184
+      }
+    ],
+    "scope": "WORKER_IMPORT_TO_EXIT_INCLUDING_RESULT_IO_AND_WAITED_NATIVE",
+    "wall_ns": 3253186620
+  }
+}

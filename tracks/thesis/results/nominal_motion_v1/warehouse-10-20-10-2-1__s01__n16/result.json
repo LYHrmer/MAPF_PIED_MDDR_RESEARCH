@@ -1,0 +1,421 @@
+{
+  "arm_serialization_and_fsync_ns": {
+    "frozen_soc": 27671761,
+    "original": 25920649,
+    "turn_aware": 27883051
+  },
+  "case": "warehouse-10-20-10-2-1__s01__n16",
+  "common_initial_and_optimized_validation_ns": 4503513,
+  "comparison_scope": "NOMINAL_SHARED_PHASE_BARRIER_CONTROL",
+  "independent_performance_experiment": false,
+  "initial_headings_quarters": {
+    "0": 0,
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 0,
+    "6": 0,
+    "7": 0,
+    "8": 0,
+    "9": 0,
+    "10": 0,
+    "11": 0,
+    "12": 0,
+    "13": 0,
+    "14": 0,
+    "15": 0
+  },
+  "input_provenance": {
+    "inputs": {
+      "blob_oid": "33f9abdfe0898204aa297984379ed3c4859630f7",
+      "commit": "535ee1adf3135ab79565e0b3aa5d189348fe7ab2",
+      "path": "tracks/sci/config/repair_residual_v1_inputs.json",
+      "sha256": "be1e912e1e2ea3f59fcdc5d0c5737118e7f96d92227be536ada605f6751c0e5b"
+    },
+    "receipt": {
+      "blob_oid": "531c76d7f4a7de4c902c0c8469be05a707e1fa79",
+      "commit": "535ee1adf3135ab79565e0b3aa5d189348fe7ab2",
+      "path": "tracks/sci/results/repair_residual_v1/warehouse-10-20-10-2-1__s01__n16__remaining_bound/receipt.json",
+      "sha256": "1dad05fee3fd38ed47a2214e969889d74a76717974b632a1d3863fe8041bbe2e"
+    },
+    "result": {
+      "blob_oid": "0d581e80ef6f242d533bc9d015f5bcbdb4620ad5",
+      "commit": "535ee1adf3135ab79565e0b3aa5d189348fe7ab2",
+      "path": "tracks/sci/results/repair_residual_v1/warehouse-10-20-10-2-1__s01__n16__remaining_bound/result.json",
+      "sha256": "8131a320aa89472237c614a6d1a8ca061d5e53b05dec7f062d39b17912296f1d"
+    },
+    "source_job": {
+      "case": "warehouse-10-20-10-2-1__s01__n16",
+      "id": "warehouse-10-20-10-2-1__s01__n16__remaining_bound",
+      "policy": "REMAINING_BOUND"
+    },
+    "summary": {
+      "blob_oid": "f83dbb9db76b61ae0e6402f38b29dd35af5c9d29",
+      "commit": "535ee1adf3135ab79565e0b3aa5d189348fe7ab2",
+      "path": "tracks/sci/results/repair_residual_v1/summary.json",
+      "sha256": "ddad64b659096b6efb903b6d74c26f8a4a2d95f4bb48884a96dc81c22906bced"
+    }
+  },
+  "learning_used": false,
+  "limits": [
+    "Global barriers add conservative waiting; no optimal scheduling claim.",
+    "Circle separation failure is inconclusive about rectangular-body collision.",
+    "Motion parameters are synthetic declarations, not measured LIMO parameters.",
+    "No independently delayed clocks, tracking disturbance or feedback controller."
+  ],
+  "load_and_pinned_evidence_validation_ns": 150108422,
+  "manifest_sha256": "dfac22c05d73e712cadc8937e2ccc4a855e2764ef8f2b4c5f4f9546dd33b3b7c",
+  "motion_model": {
+    "accel_m_s2": "1/2",
+    "body_length_m": "11/50",
+    "body_width_m": "4/25",
+    "cell_m": "1/2",
+    "decel_m_s2": "1/2",
+    "speed_m_s": "1/2",
+    "turn_accel_rad_s2": "1",
+    "turn_decel_rad_s2": "1",
+    "turn_speed_rad_s": "1"
+  },
+  "optimizer_called": false,
+  "prior_optimizer_costs_not_new_run": {
+    "accounting_note": "worker wall includes imports and all result writes; supervisor bookkeeping separate; its final receipt write/exit excluded from its self-timer",
+    "costs": {
+      "all_descendant_system_s": 0.009739,
+      "all_descendant_user_s": 0.071199,
+      "exit_code": 0,
+      "forced_cleanup": false,
+      "interruption": null,
+      "largest_child_maxrss_kib": 20908,
+      "reaped": [
+        {
+          "exit_code": 0,
+          "maxrss_kib": 20908,
+          "pid": 11,
+          "system_s": 0.009739,
+          "user_s": 0.071199
+        }
+      ],
+      "scope": "WORKER_IMPORT_TO_EXIT_INCLUDING_RESULT_IO_AND_WAITED_NATIVE",
+      "wall_ns": 92508200
+    },
+    "supervisor_entry_through_artifact_hash_ns": 115996126,
+    "supervisor_self_cpu_s": 0.043584
+  },
+  "rows": [
+    {
+      "arm": "original",
+      "grid_makespan": 174,
+      "metrics": {
+        "collision_claim": false,
+        "completion_sum_s": 3061.504380495905,
+        "discrete_wait_slot_s": 0.0,
+        "feasibility": "CERTIFIED_NOMINAL_REFERENCE",
+        "goal_hold_in_wait_sum": false,
+        "makespan_s": 418.982297150257,
+        "move_s": 2224.0,
+        "per_agent": {
+          "0": {
+            "completion_s": 418.982297150257,
+            "wait_s": 59.12831551628254
+          },
+          "1": {
+            "completion_s": 188.12831551628256,
+            "wait_s": 51.41592653589788
+          },
+          "2": {
+            "completion_s": 218.69911184307745,
+            "wait_s": 53.98672286269277
+          },
+          "3": {
+            "completion_s": 75.84955592153875,
+            "wait_s": 29.84955592153876
+          },
+          "4": {
+            "completion_s": 73.84955592153875,
+            "wait_s": 24.70796326794897
+          },
+          "5": {
+            "completion_s": 152.98672286269277,
+            "wait_s": 47.845130209103
+          },
+          "6": {
+            "completion_s": 122.13274122871832,
+            "wait_s": 33.420352248333636
+          },
+          "7": {
+            "completion_s": 104.99114857512853,
+            "wait_s": 28.278759594743853
+          },
+          "8": {
+            "completion_s": 75.84955592153875,
+            "wait_s": 19.566370614359172
+          },
+          "9": {
+            "completion_s": 266.4115008234621,
+            "wait_s": 53.98672286269277
+          },
+          "10": {
+            "completion_s": 198.12831551628256,
+            "wait_s": 48.84513020910299
+          },
+          "11": {
+            "completion_s": 181.55751918948766,
+            "wait_s": 51.41592653589788
+          },
+          "12": {
+            "completion_s": 320.4115008234621,
+            "wait_s": 60.69911184307745
+          },
+          "13": {
+            "completion_s": 154.98672286269277,
+            "wait_s": 43.7035375555132
+          },
+          "14": {
+            "completion_s": 314.4115008234621,
+            "wait_s": 60.699111843077446
+          },
+          "15": {
+            "completion_s": 194.12831551628256,
+            "wait_s": 50.41592653589789
+          }
+        },
+        "permanent_goal_hold_count": 16,
+        "turn_barrier_wait_s": 717.9645641561585,
+        "turn_s": 119.53981633974473,
+        "wait_sum_s": 717.9645641561585
+      },
+      "selection": {
+        "rule": "original",
+        "search_calls": 0,
+        "selected": "incumbent"
+      },
+      "soc": 1112,
+      "stage_wall_ns": {
+        "complete_discrete_and_continuous_checks_and_schedule": 1036686726,
+        "metric_validation": 364009,
+        "whole_plan_selection": 874
+      }
+    },
+    {
+      "arm": "frozen_soc",
+      "grid_makespan": 174,
+      "metrics": {
+        "collision_claim": false,
+        "completion_sum_s": 3061.504380495905,
+        "discrete_wait_slot_s": 0.0,
+        "feasibility": "CERTIFIED_NOMINAL_REFERENCE",
+        "goal_hold_in_wait_sum": false,
+        "makespan_s": 418.982297150257,
+        "move_s": 2224.0,
+        "per_agent": {
+          "0": {
+            "completion_s": 418.982297150257,
+            "wait_s": 59.12831551628254
+          },
+          "1": {
+            "completion_s": 188.12831551628256,
+            "wait_s": 51.41592653589788
+          },
+          "2": {
+            "completion_s": 218.69911184307745,
+            "wait_s": 53.98672286269277
+          },
+          "3": {
+            "completion_s": 75.84955592153875,
+            "wait_s": 29.84955592153876
+          },
+          "4": {
+            "completion_s": 73.84955592153875,
+            "wait_s": 24.70796326794897
+          },
+          "5": {
+            "completion_s": 152.98672286269277,
+            "wait_s": 47.845130209103
+          },
+          "6": {
+            "completion_s": 122.13274122871832,
+            "wait_s": 33.420352248333636
+          },
+          "7": {
+            "completion_s": 104.99114857512853,
+            "wait_s": 28.278759594743853
+          },
+          "8": {
+            "completion_s": 75.84955592153875,
+            "wait_s": 19.566370614359172
+          },
+          "9": {
+            "completion_s": 266.4115008234621,
+            "wait_s": 53.98672286269277
+          },
+          "10": {
+            "completion_s": 198.12831551628256,
+            "wait_s": 48.84513020910299
+          },
+          "11": {
+            "completion_s": 181.55751918948766,
+            "wait_s": 51.41592653589788
+          },
+          "12": {
+            "completion_s": 320.4115008234621,
+            "wait_s": 60.69911184307745
+          },
+          "13": {
+            "completion_s": 154.98672286269277,
+            "wait_s": 43.7035375555132
+          },
+          "14": {
+            "completion_s": 314.4115008234621,
+            "wait_s": 60.699111843077446
+          },
+          "15": {
+            "completion_s": 194.12831551628256,
+            "wait_s": 50.41592653589789
+          }
+        },
+        "permanent_goal_hold_count": 16,
+        "turn_barrier_wait_s": 717.9645641561585,
+        "turn_s": 119.53981633974473,
+        "wait_sum_s": 717.9645641561585
+      },
+      "selection": {
+        "rule": "frozen_soc",
+        "search_calls": 0,
+        "selected": "frozen_proposal"
+      },
+      "soc": 1112,
+      "stage_wall_ns": {
+        "complete_discrete_and_continuous_checks_and_schedule": 1111227325,
+        "metric_validation": 332068,
+        "whole_plan_selection": 1397
+      }
+    },
+    {
+      "arm": "turn_aware",
+      "grid_makespan": 174,
+      "metrics": {
+        "collision_claim": false,
+        "completion_sum_s": 3061.504380495905,
+        "discrete_wait_slot_s": 0.0,
+        "feasibility": "CERTIFIED_NOMINAL_REFERENCE",
+        "goal_hold_in_wait_sum": false,
+        "makespan_s": 418.982297150257,
+        "move_s": 2224.0,
+        "per_agent": {
+          "0": {
+            "completion_s": 418.982297150257,
+            "wait_s": 59.12831551628254
+          },
+          "1": {
+            "completion_s": 188.12831551628256,
+            "wait_s": 51.41592653589788
+          },
+          "2": {
+            "completion_s": 218.69911184307745,
+            "wait_s": 53.98672286269277
+          },
+          "3": {
+            "completion_s": 75.84955592153875,
+            "wait_s": 29.84955592153876
+          },
+          "4": {
+            "completion_s": 73.84955592153875,
+            "wait_s": 24.70796326794897
+          },
+          "5": {
+            "completion_s": 152.98672286269277,
+            "wait_s": 47.845130209103
+          },
+          "6": {
+            "completion_s": 122.13274122871832,
+            "wait_s": 33.420352248333636
+          },
+          "7": {
+            "completion_s": 104.99114857512853,
+            "wait_s": 28.278759594743853
+          },
+          "8": {
+            "completion_s": 75.84955592153875,
+            "wait_s": 19.566370614359172
+          },
+          "9": {
+            "completion_s": 266.4115008234621,
+            "wait_s": 53.98672286269277
+          },
+          "10": {
+            "completion_s": 198.12831551628256,
+            "wait_s": 48.84513020910299
+          },
+          "11": {
+            "completion_s": 181.55751918948766,
+            "wait_s": 51.41592653589788
+          },
+          "12": {
+            "completion_s": 320.4115008234621,
+            "wait_s": 60.69911184307745
+          },
+          "13": {
+            "completion_s": 154.98672286269277,
+            "wait_s": 43.7035375555132
+          },
+          "14": {
+            "completion_s": 314.4115008234621,
+            "wait_s": 60.699111843077446
+          },
+          "15": {
+            "completion_s": 194.12831551628256,
+            "wait_s": 50.41592653589789
+          }
+        },
+        "permanent_goal_hold_count": 16,
+        "turn_barrier_wait_s": 717.9645641561585,
+        "turn_s": 119.53981633974473,
+        "wait_sum_s": 717.9645641561585
+      },
+      "selection": {
+        "candidates": [
+          {
+            "changed_paths": 0,
+            "internal_quarter_turns": 31,
+            "name": "incumbent",
+            "soc": 1112,
+            "valid": true
+          },
+          {
+            "changed_paths": 0,
+            "internal_quarter_turns": 31,
+            "name": "proposal",
+            "soc": 1112,
+            "valid": true
+          },
+          {
+            "changed_paths": 0,
+            "internal_quarter_turns": 31,
+            "name": "retain_equal_cost_batch",
+            "soc": 1112,
+            "valid": true
+          }
+        ],
+        "continuous_safety_checked": false,
+        "final_validated": true,
+        "rule": "turn_aware",
+        "scope": "DISCRETE_WHOLE_PLAN_CONTROL_ONLY",
+        "search_calls": 0,
+        "selected": "incumbent"
+      },
+      "soc": 1112,
+      "stage_wall_ns": {
+        "complete_discrete_and_continuous_checks_and_schedule": 1036895702,
+        "metric_validation": 355160,
+        "whole_plan_selection": 9696903
+      }
+    }
+  ],
+  "sci_commit": "535ee1adf3135ab79565e0b3aa5d189348fe7ab2",
+  "source_family": "repair_residual_v1_remaining_bound_NOT_FULL_ADDRESS",
+  "status": "COMPLETE",
+  "v2_applied": false,
+  "validator_import_and_problem_setup_ns": 54345556,
+  "worker_entry_through_before_result_write_ns": 3507646351
+}

@@ -1,0 +1,869 @@
+{
+  "schema": "thesis_nominal_motion_batch_summary_v1",
+  "status": "ALL_COMPLETE",
+  "scope": "OFFLINE_SUMMARY_OF_AUTHORIZED_DEV_NO_NEW_SCIENTIFIC_EXECUTION",
+  "independent_performance_experiment": false,
+  "manifest_sha256": "dfac22c05d73e712cadc8937e2ccc4a855e2764ef8f2b4c5f4f9546dd33b3b7c",
+  "scientific_code_commit": "a4ad94c5c84dc9f2239bc9b77e00a36740f70d2f",
+  "sci_commit": "535ee1adf3135ab79565e0b3aa5d189348fe7ab2",
+  "summarizer_sha256": "cc0e5d35ff4938ca6f4d9b53d19061002f227b91a1139fbfb056abe52779cd62",
+  "source_artifact_sha256": {
+    "AUTHORIZATION.json": "ffa53f5c1bd4c9ce6db341c0b995de012d66c134db46481a34b51e14636db477",
+    "ADMINISTRATIVE_INCIDENT.json": "f47ed41c24d5cf6240682ce35c696f7cbae5159962887cd486426058c4e55304",
+    "maze-32-32-2__s01__n16/receipt.json": "02ffb4a47947b4433ac317820e6ed6dde8904c6df634bd4adae3423855f76563",
+    "maze-32-32-2__s01__n32/receipt.json": "1cd19eed8f19609ad22fb29f4a79c623e09e8b56f090365d43857ec85bdffcb3",
+    "random-32-32-10__s01__n16/receipt.json": "d0f1c532c10c4757aee068f3d393018631b38c45c279292de61361a938d23e74",
+    "random-32-32-10__s01__n32/receipt.json": "b992d808cf6239e837cb5b6d5c01d4c9eba807fac0e3d6680eab7f821a46f01c",
+    "warehouse-10-20-10-2-1__s01__n16/receipt.json": "8d703cc4481927aeb2bf95640f9dc5a54b77a3604aa9de14e0b7e6d86c8bf7d7",
+    "warehouse-10-20-10-2-1__s01__n32/receipt.json": "0a6a8731e061b607eff63d120598522d6d796e742bdf5f0c16fc0c6e08cd8e81"
+  },
+  "counts": {
+    "COMPLETE": 6,
+    "FAILED_OR_INCOMPLETE": 0,
+    "NOT_RUN": 0
+  },
+  "rows": [
+    {
+      "case": "maze-32-32-2__s01__n16",
+      "status": "COMPLETE",
+      "arms": [
+        {
+          "arm": "original",
+          "soc": 690,
+          "grid_makespan": 94,
+          "selection": {
+            "rule": "original",
+            "search_calls": 0,
+            "selected": "incumbent"
+          },
+          "metrics": {
+            "feasibility": "CERTIFIED_NOMINAL_REFERENCE",
+            "completion_sum_s": 3020.017612416681,
+            "makespan_s": 363.3849465488476,
+            "wait_sum_s": 1209.4114405347452,
+            "move_s": 1376.0,
+            "turn_s": 434.60617188192657,
+            "turn_barrier_wait_s": 1205.4114405347455,
+            "discrete_wait_slot_s": 4.0,
+            "move_actions": 688,
+            "turn_actions": 166,
+            "turn_quarters_including_initial": 171,
+            "discrete_wait_actions": 2
+          },
+          "stage_wall_ns": {
+            "complete_discrete_and_continuous_checks_and_schedule": 584608488,
+            "metric_validation": 304392,
+            "whole_plan_selection": 630
+          }
+        },
+        {
+          "arm": "frozen_soc",
+          "soc": 689,
+          "grid_makespan": 94,
+          "selection": {
+            "rule": "frozen_soc",
+            "search_calls": 0,
+            "selected": "frozen_proposal"
+          },
+          "metrics": {
+            "feasibility": "CERTIFIED_NOMINAL_REFERENCE",
+            "completion_sum_s": 3045.8715940506554,
+            "makespan_s": 369.5265392024374,
+            "wait_sum_s": 1211.5574589007692,
+            "move_s": 1372.0,
+            "turn_s": 462.3141351498754,
+            "turn_barrier_wait_s": 1205.5574589007695,
+            "discrete_wait_slot_s": 6.0,
+            "move_actions": 686,
+            "turn_actions": 178,
+            "turn_quarters_including_initial": 181,
+            "discrete_wait_actions": 3
+          },
+          "stage_wall_ns": {
+            "complete_discrete_and_continuous_checks_and_schedule": 597137811,
+            "metric_validation": 443488,
+            "whole_plan_selection": 1163
+          }
+        },
+        {
+          "arm": "turn_aware",
+          "soc": 689,
+          "grid_makespan": 94,
+          "selection": {
+            "candidates": [
+              {
+                "changed_paths": 0,
+                "internal_quarter_turns": 157,
+                "name": "incumbent",
+                "soc": 690,
+                "valid": true
+              },
+              {
+                "changed_paths": 7,
+                "internal_quarter_turns": 168,
+                "name": "proposal",
+                "soc": 689,
+                "valid": true
+              },
+              {
+                "changed_paths": 1,
+                "internal_quarter_turns": 155,
+                "name": "retain_equal_cost_batch",
+                "soc": 689,
+                "valid": true
+              }
+            ],
+            "continuous_safety_checked": false,
+            "final_validated": true,
+            "rule": "turn_aware",
+            "scope": "DISCRETE_WHOLE_PLAN_CONTROL_ONLY",
+            "search_calls": 0,
+            "selected": "retain_equal_cost_batch"
+          },
+          "metrics": {
+            "feasibility": "CERTIFIED_NOMINAL_REFERENCE",
+            "completion_sum_s": 2914.7609813841154,
+            "makespan_s": 356.67255756846293,
+            "wait_sum_s": 1112.296402155771,
+            "move_s": 1372.0,
+            "turn_s": 430.46457922833673,
+            "turn_barrier_wait_s": 1106.296402155771,
+            "discrete_wait_slot_s": 6.0,
+            "move_actions": 686,
+            "turn_actions": 165,
+            "turn_quarters_including_initial": 169,
+            "discrete_wait_actions": 3
+          },
+          "stage_wall_ns": {
+            "complete_discrete_and_continuous_checks_and_schedule": 566116448,
+            "metric_validation": 356622,
+            "whole_plan_selection": 7144429
+          }
+        }
+      ],
+      "entry_through_output_and_hash_s": 2.262201857,
+      "worker_costs": {
+        "all_descendant_system_s": 0.111701,
+        "all_descendant_user_s": 1.948537,
+        "exit_code": 0,
+        "forced_cleanup": false,
+        "interruption": null,
+        "largest_child_maxrss_kib": 25344,
+        "reaped": [
+          {
+            "exit_code": 0,
+            "maxrss_kib": 25344,
+            "pid": 60,
+            "system_s": 0.111701,
+            "user_s": 1.948537
+          }
+        ],
+        "scope": "WORKER_IMPORT_TO_EXIT_INCLUDING_RESULT_IO_AND_WAITED_NATIVE",
+        "wall_ns": 2089735684
+      },
+      "supervisor_self_cpu_s": 0.086696
+    },
+    {
+      "case": "maze-32-32-2__s01__n32",
+      "status": "COMPLETE",
+      "arms": [
+        {
+          "arm": "original",
+          "soc": 1873,
+          "grid_makespan": 129,
+          "selection": {
+            "rule": "original",
+            "search_calls": 0,
+            "selected": "incumbent"
+          },
+          "metrics": {
+            "feasibility": "CERTIFIED_NOMINAL_REFERENCE",
+            "completion_sum_s": 8811.256359733381,
+            "makespan_s": 541.6415775814129,
+            "wait_sum_s": 3971.4245669503593,
+            "move_s": 3594.0,
+            "turn_s": 1245.8317927830763,
+            "turn_barrier_wait_s": 3819.4245669503575,
+            "discrete_wait_slot_s": 152.0,
+            "move_actions": 1797,
+            "turn_actions": 473,
+            "turn_quarters_including_initial": 492,
+            "discrete_wait_actions": 76
+          },
+          "stage_wall_ns": {
+            "complete_discrete_and_continuous_checks_and_schedule": 2504034613,
+            "metric_validation": 899063,
+            "whole_plan_selection": 580
+          }
+        },
+        {
+          "arm": "frozen_soc",
+          "soc": 1871,
+          "grid_makespan": 129,
+          "selection": {
+            "rule": "frozen_soc",
+            "search_calls": 0,
+            "selected": "frozen_proposal"
+          },
+          "metrics": {
+            "feasibility": "CERTIFIED_NOMINAL_REFERENCE",
+            "completion_sum_s": 8809.822730347736,
+            "makespan_s": 540.6415775814128,
+            "wait_sum_s": 3939.7166036824015,
+            "move_s": 3578.0,
+            "turn_s": 1292.106126665383,
+            "turn_barrier_wait_s": 3775.716603682401,
+            "discrete_wait_slot_s": 163.99999999999997,
+            "move_actions": 1789,
+            "turn_actions": 491,
+            "turn_quarters_including_initial": 510,
+            "discrete_wait_actions": 82
+          },
+          "stage_wall_ns": {
+            "complete_discrete_and_continuous_checks_and_schedule": 2500385044,
+            "metric_validation": 810164,
+            "whole_plan_selection": 964
+          }
+        },
+        {
+          "arm": "turn_aware",
+          "soc": 1871,
+          "grid_makespan": 129,
+          "selection": {
+            "candidates": [
+              {
+                "changed_paths": 0,
+                "internal_quarter_turns": 466,
+                "name": "incumbent",
+                "soc": 1873,
+                "valid": true
+              },
+              {
+                "changed_paths": 8,
+                "internal_quarter_turns": 484,
+                "name": "proposal",
+                "soc": 1871,
+                "valid": true
+              },
+              {
+                "name": "retain_equal_cost_batch",
+                "reason": "vertex/goal-hold conflict",
+                "valid": false
+              }
+            ],
+            "continuous_safety_checked": false,
+            "final_validated": true,
+            "rule": "turn_aware",
+            "scope": "DISCRETE_WHOLE_PLAN_CONTROL_ONLY",
+            "search_calls": 0,
+            "selected": "proposal"
+          },
+          "metrics": {
+            "feasibility": "CERTIFIED_NOMINAL_REFERENCE",
+            "completion_sum_s": 8809.822730347736,
+            "makespan_s": 540.6415775814128,
+            "wait_sum_s": 3939.7166036824015,
+            "move_s": 3578.0,
+            "turn_s": 1292.106126665383,
+            "turn_barrier_wait_s": 3775.716603682401,
+            "discrete_wait_slot_s": 163.99999999999997,
+            "move_actions": 1789,
+            "turn_actions": 491,
+            "turn_quarters_including_initial": 510,
+            "discrete_wait_actions": 82
+          },
+          "stage_wall_ns": {
+            "complete_discrete_and_continuous_checks_and_schedule": 2505770313,
+            "metric_validation": 926708,
+            "whole_plan_selection": 20137330
+          }
+        }
+      ],
+      "entry_through_output_and_hash_s": 8.258384154,
+      "worker_costs": {
+        "all_descendant_system_s": 0.12369799999999999,
+        "all_descendant_user_s": 7.8189709999999994,
+        "exit_code": 0,
+        "forced_cleanup": false,
+        "interruption": null,
+        "largest_child_maxrss_kib": 31296,
+        "reaped": [
+          {
+            "exit_code": 0,
+            "maxrss_kib": 31296,
+            "pid": 60,
+            "system_s": 0.12369699999999999,
+            "user_s": 7.81897
+          }
+        ],
+        "scope": "WORKER_IMPORT_TO_EXIT_INCLUDING_RESULT_IO_AND_WAITED_NATIVE",
+        "wall_ns": 8016477693
+      },
+      "supervisor_self_cpu_s": 0.129041
+    },
+    {
+      "case": "random-32-32-10__s01__n16",
+      "status": "COMPLETE",
+      "arms": [
+        {
+          "arm": "original",
+          "soc": 407,
+          "grid_makespan": 53,
+          "selection": {
+            "rule": "original",
+            "search_calls": 0,
+            "selected": "incumbent"
+          },
+          "metrics": {
+            "feasibility": "CERTIFIED_NOMINAL_REFERENCE",
+            "completion_sum_s": 1800.6105674500093,
+            "makespan_s": 200.1194640914111,
+            "wait_sum_s": 724.6769531365442,
+            "move_s": 814.0,
+            "turn_s": 261.93361431346375,
+            "turn_barrier_wait_s": 724.6769531365442,
+            "discrete_wait_slot_s": 0.0,
+            "move_actions": 407,
+            "turn_actions": 97,
+            "turn_quarters_including_initial": 105,
+            "discrete_wait_actions": 0
+          },
+          "stage_wall_ns": {
+            "complete_discrete_and_continuous_checks_and_schedule": 296530003,
+            "metric_validation": 167546,
+            "whole_plan_selection": 845
+          }
+        },
+        {
+          "arm": "frozen_soc",
+          "soc": 407,
+          "grid_makespan": 53,
+          "selection": {
+            "rule": "frozen_soc",
+            "search_calls": 0,
+            "selected": "frozen_proposal"
+          },
+          "metrics": {
+            "feasibility": "CERTIFIED_NOMINAL_REFERENCE",
+            "completion_sum_s": 1800.6105674500093,
+            "makespan_s": 200.1194640914111,
+            "wait_sum_s": 724.6769531365442,
+            "move_s": 814.0,
+            "turn_s": 261.93361431346375,
+            "turn_barrier_wait_s": 724.6769531365442,
+            "discrete_wait_slot_s": 0.0,
+            "move_actions": 407,
+            "turn_actions": 97,
+            "turn_quarters_including_initial": 105,
+            "discrete_wait_actions": 0
+          },
+          "stage_wall_ns": {
+            "complete_discrete_and_continuous_checks_and_schedule": 296013784,
+            "metric_validation": 214867,
+            "whole_plan_selection": 890
+          }
+        },
+        {
+          "arm": "turn_aware",
+          "soc": 407,
+          "grid_makespan": 53,
+          "selection": {
+            "candidates": [
+              {
+                "changed_paths": 0,
+                "internal_quarter_turns": 89,
+                "name": "incumbent",
+                "soc": 407,
+                "valid": true
+              },
+              {
+                "changed_paths": 0,
+                "internal_quarter_turns": 89,
+                "name": "proposal",
+                "soc": 407,
+                "valid": true
+              },
+              {
+                "changed_paths": 0,
+                "internal_quarter_turns": 89,
+                "name": "retain_equal_cost_batch",
+                "soc": 407,
+                "valid": true
+              }
+            ],
+            "continuous_safety_checked": false,
+            "final_validated": true,
+            "rule": "turn_aware",
+            "scope": "DISCRETE_WHOLE_PLAN_CONTROL_ONLY",
+            "search_calls": 0,
+            "selected": "incumbent"
+          },
+          "metrics": {
+            "feasibility": "CERTIFIED_NOMINAL_REFERENCE",
+            "completion_sum_s": 1800.6105674500093,
+            "makespan_s": 200.1194640914111,
+            "wait_sum_s": 724.6769531365442,
+            "move_s": 814.0,
+            "turn_s": 261.93361431346375,
+            "turn_barrier_wait_s": 724.6769531365442,
+            "discrete_wait_slot_s": 0.0,
+            "move_actions": 407,
+            "turn_actions": 97,
+            "turn_quarters_including_initial": 105,
+            "discrete_wait_actions": 0
+          },
+          "stage_wall_ns": {
+            "complete_discrete_and_continuous_checks_and_schedule": 304862092,
+            "metric_validation": 177513,
+            "whole_plan_selection": 4275028
+          }
+        }
+      ],
+      "entry_through_output_and_hash_s": 1.299076291,
+      "worker_costs": {
+        "all_descendant_system_s": 0.093102,
+        "all_descendant_user_s": 1.041005,
+        "exit_code": 0,
+        "forced_cleanup": false,
+        "interruption": null,
+        "largest_child_maxrss_kib": 24768,
+        "reaped": [
+          {
+            "exit_code": 0,
+            "maxrss_kib": 24768,
+            "pid": 60,
+            "system_s": 0.09310199999999999,
+            "user_s": 1.041005
+          }
+        ],
+        "scope": "WORKER_IMPORT_TO_EXIT_INCLUDING_RESULT_IO_AND_WAITED_NATIVE",
+        "wall_ns": 1161453425
+      },
+      "supervisor_self_cpu_s": 0.079856
+    },
+    {
+      "case": "random-32-32-10__s01__n32",
+      "status": "COMPLETE",
+      "arms": [
+        {
+          "arm": "original",
+          "soc": 771,
+          "grid_makespan": 53,
+          "selection": {
+            "rule": "original",
+            "search_calls": 0,
+            "selected": "incumbent"
+          },
+          "metrics": {
+            "feasibility": "CERTIFIED_NOMINAL_REFERENCE",
+            "completion_sum_s": 3533.216709187582,
+            "makespan_s": 223.2566310325651,
+            "wait_sum_s": 1447.7831099462853,
+            "move_s": 1542.0,
+            "turn_s": 543.4335992412865,
+            "turn_barrier_wait_s": 1447.7831099462853,
+            "discrete_wait_slot_s": 0.0,
+            "move_actions": 771,
+            "turn_actions": 201,
+            "turn_quarters_including_initial": 218,
+            "discrete_wait_actions": 0
+          },
+          "stage_wall_ns": {
+            "complete_discrete_and_continuous_checks_and_schedule": 950848445,
+            "metric_validation": 353493,
+            "whole_plan_selection": 793
+          }
+        },
+        {
+          "arm": "frozen_soc",
+          "soc": 770,
+          "grid_makespan": 53,
+          "selection": {
+            "rule": "frozen_soc",
+            "search_calls": 0,
+            "selected": "frozen_proposal"
+          },
+          "metrics": {
+            "feasibility": "CERTIFIED_NOMINAL_REFERENCE",
+            "completion_sum_s": 3551.7830798019413,
+            "makespan_s": 230.96902001294978,
+            "wait_sum_s": 1181.5618846132127,
+            "move_s": 1538.0,
+            "turn_s": 832.2211951887269,
+            "turn_barrier_wait_s": 1179.561884613213,
+            "discrete_wait_slot_s": 2.0,
+            "move_actions": 769,
+            "turn_actions": 317,
+            "turn_quarters_including_initial": 328,
+            "discrete_wait_actions": 1
+          },
+          "stage_wall_ns": {
+            "complete_discrete_and_continuous_checks_and_schedule": 958262827,
+            "metric_validation": 334135,
+            "whole_plan_selection": 1493
+          }
+        },
+        {
+          "arm": "turn_aware",
+          "soc": 770,
+          "grid_makespan": 53,
+          "selection": {
+            "candidates": [
+              {
+                "changed_paths": 0,
+                "internal_quarter_turns": 183,
+                "name": "incumbent",
+                "soc": 771,
+                "valid": true
+              },
+              {
+                "changed_paths": 31,
+                "internal_quarter_turns": 291,
+                "name": "proposal",
+                "soc": 770,
+                "valid": true
+              },
+              {
+                "name": "retain_equal_cost_batch",
+                "reason": "vertex/goal-hold conflict",
+                "valid": false
+              }
+            ],
+            "continuous_safety_checked": false,
+            "final_validated": true,
+            "rule": "turn_aware",
+            "scope": "DISCRETE_WHOLE_PLAN_CONTROL_ONLY",
+            "search_calls": 0,
+            "selected": "proposal"
+          },
+          "metrics": {
+            "feasibility": "CERTIFIED_NOMINAL_REFERENCE",
+            "completion_sum_s": 3551.7830798019413,
+            "makespan_s": 230.96902001294978,
+            "wait_sum_s": 1181.5618846132127,
+            "move_s": 1538.0,
+            "turn_s": 832.2211951887269,
+            "turn_barrier_wait_s": 1179.561884613213,
+            "discrete_wait_slot_s": 2.0,
+            "move_actions": 769,
+            "turn_actions": 317,
+            "turn_quarters_including_initial": 328,
+            "discrete_wait_actions": 1
+          },
+          "stage_wall_ns": {
+            "complete_discrete_and_continuous_checks_and_schedule": 961457609,
+            "metric_validation": 333281,
+            "whole_plan_selection": 5573971
+          }
+        }
+      ],
+      "entry_through_output_and_hash_s": 3.51034873,
+      "worker_costs": {
+        "all_descendant_system_s": 0.14112199999999997,
+        "all_descendant_user_s": 3.0818399999999997,
+        "exit_code": 0,
+        "forced_cleanup": false,
+        "interruption": null,
+        "largest_child_maxrss_kib": 25920,
+        "reaped": [
+          {
+            "exit_code": 0,
+            "maxrss_kib": 25920,
+            "pid": 60,
+            "system_s": 0.141122,
+            "user_s": 3.08184
+          }
+        ],
+        "scope": "WORKER_IMPORT_TO_EXIT_INCLUDING_RESULT_IO_AND_WAITED_NATIVE",
+        "wall_ns": 3253186620
+      },
+      "supervisor_self_cpu_s": 0.10330899999999998
+    },
+    {
+      "case": "warehouse-10-20-10-2-1__s01__n16",
+      "status": "COMPLETE",
+      "arms": [
+        {
+          "arm": "original",
+          "soc": 1112,
+          "grid_makespan": 174,
+          "selection": {
+            "rule": "original",
+            "search_calls": 0,
+            "selected": "incumbent"
+          },
+          "metrics": {
+            "feasibility": "CERTIFIED_NOMINAL_REFERENCE",
+            "completion_sum_s": 3061.504380495905,
+            "makespan_s": 418.982297150257,
+            "wait_sum_s": 717.9645641561585,
+            "move_s": 2224.0,
+            "turn_s": 119.53981633974473,
+            "turn_barrier_wait_s": 717.9645641561585,
+            "discrete_wait_slot_s": 0.0,
+            "move_actions": 1112,
+            "turn_actions": 41,
+            "turn_quarters_including_initial": 50,
+            "discrete_wait_actions": 0
+          },
+          "stage_wall_ns": {
+            "complete_discrete_and_continuous_checks_and_schedule": 1036686726,
+            "metric_validation": 364009,
+            "whole_plan_selection": 874
+          }
+        },
+        {
+          "arm": "frozen_soc",
+          "soc": 1112,
+          "grid_makespan": 174,
+          "selection": {
+            "rule": "frozen_soc",
+            "search_calls": 0,
+            "selected": "frozen_proposal"
+          },
+          "metrics": {
+            "feasibility": "CERTIFIED_NOMINAL_REFERENCE",
+            "completion_sum_s": 3061.504380495905,
+            "makespan_s": 418.982297150257,
+            "wait_sum_s": 717.9645641561585,
+            "move_s": 2224.0,
+            "turn_s": 119.53981633974473,
+            "turn_barrier_wait_s": 717.9645641561585,
+            "discrete_wait_slot_s": 0.0,
+            "move_actions": 1112,
+            "turn_actions": 41,
+            "turn_quarters_including_initial": 50,
+            "discrete_wait_actions": 0
+          },
+          "stage_wall_ns": {
+            "complete_discrete_and_continuous_checks_and_schedule": 1111227325,
+            "metric_validation": 332068,
+            "whole_plan_selection": 1397
+          }
+        },
+        {
+          "arm": "turn_aware",
+          "soc": 1112,
+          "grid_makespan": 174,
+          "selection": {
+            "candidates": [
+              {
+                "changed_paths": 0,
+                "internal_quarter_turns": 31,
+                "name": "incumbent",
+                "soc": 1112,
+                "valid": true
+              },
+              {
+                "changed_paths": 0,
+                "internal_quarter_turns": 31,
+                "name": "proposal",
+                "soc": 1112,
+                "valid": true
+              },
+              {
+                "changed_paths": 0,
+                "internal_quarter_turns": 31,
+                "name": "retain_equal_cost_batch",
+                "soc": 1112,
+                "valid": true
+              }
+            ],
+            "continuous_safety_checked": false,
+            "final_validated": true,
+            "rule": "turn_aware",
+            "scope": "DISCRETE_WHOLE_PLAN_CONTROL_ONLY",
+            "search_calls": 0,
+            "selected": "incumbent"
+          },
+          "metrics": {
+            "feasibility": "CERTIFIED_NOMINAL_REFERENCE",
+            "completion_sum_s": 3061.504380495905,
+            "makespan_s": 418.982297150257,
+            "wait_sum_s": 717.9645641561585,
+            "move_s": 2224.0,
+            "turn_s": 119.53981633974473,
+            "turn_barrier_wait_s": 717.9645641561585,
+            "discrete_wait_slot_s": 0.0,
+            "move_actions": 1112,
+            "turn_actions": 41,
+            "turn_quarters_including_initial": 50,
+            "discrete_wait_actions": 0
+          },
+          "stage_wall_ns": {
+            "complete_discrete_and_continuous_checks_and_schedule": 1036895702,
+            "metric_validation": 355160,
+            "whole_plan_selection": 9696903
+          }
+        }
+      ],
+      "entry_through_output_and_hash_s": 3.741552262,
+      "worker_costs": {
+        "all_descendant_system_s": 0.113427,
+        "all_descendant_user_s": 3.3625149999999997,
+        "exit_code": 0,
+        "forced_cleanup": false,
+        "interruption": null,
+        "largest_child_maxrss_kib": 27648,
+        "reaped": [
+          {
+            "exit_code": 0,
+            "maxrss_kib": 27648,
+            "pid": 60,
+            "system_s": 0.113427,
+            "user_s": 3.362515
+          }
+        ],
+        "scope": "WORKER_IMPORT_TO_EXIT_INCLUDING_RESULT_IO_AND_WAITED_NATIVE",
+        "wall_ns": 3552867042
+      },
+      "supervisor_self_cpu_s": 0.11630199999999999
+    },
+    {
+      "case": "warehouse-10-20-10-2-1__s01__n32",
+      "status": "COMPLETE",
+      "arms": [
+        {
+          "arm": "original",
+          "soc": 2486,
+          "grid_makespan": 174,
+          "selection": {
+            "rule": "original",
+            "search_calls": 0,
+            "selected": "incumbent"
+          },
+          "metrics": {
+            "feasibility": "CERTIFIED_NOMINAL_REFERENCE",
+            "completion_sum_s": 8081.51311134336,
+            "makespan_s": 496.1061869541038,
+            "wait_sum_s": 2842.725515395946,
+            "move_s": 4972.0,
+            "turn_s": 266.7875959474382,
+            "turn_barrier_wait_s": 2842.725515395946,
+            "discrete_wait_slot_s": 0.0,
+            "move_actions": 2486,
+            "turn_actions": 94,
+            "turn_quarters_including_initial": 110,
+            "discrete_wait_actions": 0
+          },
+          "stage_wall_ns": {
+            "complete_discrete_and_continuous_checks_and_schedule": 3443774135,
+            "metric_validation": 890126,
+            "whole_plan_selection": 631
+          }
+        },
+        {
+          "arm": "frozen_soc",
+          "soc": 2486,
+          "grid_makespan": 174,
+          "selection": {
+            "rule": "frozen_soc",
+            "search_calls": 0,
+            "selected": "frozen_proposal"
+          },
+          "metrics": {
+            "feasibility": "CERTIFIED_NOMINAL_REFERENCE",
+            "completion_sum_s": 8081.51311134336,
+            "makespan_s": 496.1061869541038,
+            "wait_sum_s": 2842.725515395946,
+            "move_s": 4972.0,
+            "turn_s": 266.7875959474382,
+            "turn_barrier_wait_s": 2842.725515395946,
+            "discrete_wait_slot_s": 0.0,
+            "move_actions": 2486,
+            "turn_actions": 94,
+            "turn_quarters_including_initial": 110,
+            "discrete_wait_actions": 0
+          },
+          "stage_wall_ns": {
+            "complete_discrete_and_continuous_checks_and_schedule": 3448566344,
+            "metric_validation": 781629,
+            "whole_plan_selection": 5865
+          }
+        },
+        {
+          "arm": "turn_aware",
+          "soc": 2486,
+          "grid_makespan": 174,
+          "selection": {
+            "candidates": [
+              {
+                "changed_paths": 0,
+                "internal_quarter_turns": 75,
+                "name": "incumbent",
+                "soc": 2486,
+                "valid": true
+              },
+              {
+                "changed_paths": 0,
+                "internal_quarter_turns": 75,
+                "name": "proposal",
+                "soc": 2486,
+                "valid": true
+              },
+              {
+                "changed_paths": 0,
+                "internal_quarter_turns": 75,
+                "name": "retain_equal_cost_batch",
+                "soc": 2486,
+                "valid": true
+              }
+            ],
+            "continuous_safety_checked": false,
+            "final_validated": true,
+            "rule": "turn_aware",
+            "scope": "DISCRETE_WHOLE_PLAN_CONTROL_ONLY",
+            "search_calls": 0,
+            "selected": "incumbent"
+          },
+          "metrics": {
+            "feasibility": "CERTIFIED_NOMINAL_REFERENCE",
+            "completion_sum_s": 8081.51311134336,
+            "makespan_s": 496.1061869541038,
+            "wait_sum_s": 2842.725515395946,
+            "move_s": 4972.0,
+            "turn_s": 266.7875959474382,
+            "turn_barrier_wait_s": 2842.725515395946,
+            "discrete_wait_slot_s": 0.0,
+            "move_actions": 2486,
+            "turn_actions": 94,
+            "turn_quarters_including_initial": 110,
+            "discrete_wait_actions": 0
+          },
+          "stage_wall_ns": {
+            "complete_discrete_and_continuous_checks_and_schedule": 3480862576,
+            "metric_validation": 1327650,
+            "whole_plan_selection": 18515739
+          }
+        }
+      ],
+      "entry_through_output_and_hash_s": 11.054396095,
+      "worker_costs": {
+        "all_descendant_system_s": 0.136146,
+        "all_descendant_user_s": 10.683475,
+        "exit_code": 0,
+        "forced_cleanup": false,
+        "interruption": null,
+        "largest_child_maxrss_kib": 33148,
+        "reaped": [
+          {
+            "exit_code": 0,
+            "maxrss_kib": 33148,
+            "pid": 60,
+            "system_s": 0.136146,
+            "user_s": 10.683474
+          }
+        ],
+        "scope": "WORKER_IMPORT_TO_EXIT_INCLUDING_RESULT_IO_AND_WAITED_NATIVE",
+        "wall_ns": 10853172397
+      },
+      "supervisor_self_cpu_s": 0.142733
+    }
+  ],
+  "closing_reason": null,
+  "authorization_consumed_or_closed": true,
+  "retries": 0,
+  "administrative_recording_incident": "The initial administrative record write failed because results parent did not exist (mkdir omitted parents=True). The first authorized case started before this record was written. The actual user authorization preceded execution. No scientific retry or parameter change occurred. This record honestly preserves the sequence.",
+  "administrative_incident_disposition": "No scientific input/code/SHA/budget/output failure occurred. Original user authorization preceded execution. Preserve current AUTHORIZATION bytes, no retry/parameter change, resume original order for remaining four tasks. Any scientific hard failure still stops batch.",
+  "validation_scope": "Artifact SHA/size, budget/exit, arm/result consistency and independent arithmetic over saved actions. Continuous geometric certificate is the frozen runtime result, not independently re-proved here."
+}

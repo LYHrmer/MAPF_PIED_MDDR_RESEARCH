@@ -1,0 +1,3305 @@
+{
+  "status": "PASS",
+  "schema": "INDEPENDENT_OFFLINE_FROZEN_MOTION_AUDIT_V1",
+  "batch_receipt_sha256": "b0a49406a094955d2499c829e6b0dfce539188ec08f34576abb203b482c086bd",
+  "script_sha256": "dba8b9e5fb1ee0cf2b9bd0095a08b1439085486957d2d463c442603b518e0b9e",
+  "scientific_search_or_motion_construction_executed": false,
+  "frozen_code_pins_checked": 8,
+  "sci_git_object_pins_checked": 14,
+  "job_artifact_hashes_checked": 42,
+  "full_arm_schedules_checked": 18,
+  "per_agent_decompositions_checked": 432,
+  "exact_common_progress_pair_segments_checked": 645288,
+  "administrative_recording_incident_preserved": true,
+  "scope": "Declared zero-error synchronized reference primitives, not actual robot/error-model validation; source frozen REMAINING_BOUND not new ADDRESS",
+  "rows": [
+    {
+      "case": "maze-32-32-2__s01__n16",
+      "arms": {
+        "original": {
+          "soc": 690,
+          "completion_sum_s": 3020.017612416681,
+          "makespan_s": 363.3849465488476,
+          "MOVE": 1376.0,
+          "TURN": 434.60617188192657,
+          "TURN_BARRIER": 1205.4114405347455,
+          "DISCRETE_WAIT_SLOT": 4.0,
+          "selected": "incumbent",
+          "per_agent": {
+            "0": {
+              "MOVE": 138.0,
+              "TURN": 33.4203522483336,
+              "TURN_BARRIER": 123.96902001294977,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 295.38937226128337
+            },
+            "1": {
+              "MOVE": 40.0,
+              "TURN": 12.853981633974483,
+              "TURN_BARRIER": 41.703537555513236,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 94.55751918948772
+            },
+            "2": {
+              "MOVE": 122.0,
+              "TURN": 37.561944901923404,
+              "TURN_BARRIER": 106.97344572538552,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 266.5353906273089
+            },
+            "3": {
+              "MOVE": 34.0,
+              "TURN": 22.137166941154064,
+              "TURN_BARRIER": 24.707963267948983,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 80.84513020910305
+            },
+            "4": {
+              "MOVE": 30.0,
+              "TURN": 14.424777960769386,
+              "TURN_BARRIER": 32.42035224833366,
+              "DISCRETE_WAIT_SLOT": 4.0,
+              "completion": 80.84513020910305
+            },
+            "5": {
+              "MOVE": 66.0,
+              "TURN": 17.995574287564253,
+              "TURN_BARRIER": 69.98229715025705,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 153.9778714378213
+            },
+            "6": {
+              "MOVE": 148.0,
+              "TURN": 43.703537555513165,
+              "TURN_BARRIER": 118.82742735935999,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 310.53096491487315
+            },
+            "7": {
+              "MOVE": 98.0,
+              "TURN": 23.137166941154042,
+              "TURN_BARRIER": 100.83185307179573,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 221.96902001294978
+            },
+            "8": {
+              "MOVE": 104.0,
+              "TURN": 33.42035224833362,
+              "TURN_BARRIER": 95.69026041820595,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 233.11061266653957
+            },
+            "9": {
+              "MOVE": 2.0,
+              "TURN": 2.5707963267948966,
+              "TURN_BARRIER": 1.5707963267948966,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 6.141592653589793
+            },
+            "10": {
+              "MOVE": 128.0,
+              "TURN": 30.84955592153872,
+              "TURN_BARRIER": 118.82742735935997,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 277.6769832808987
+            },
+            "11": {
+              "MOVE": 94.0,
+              "TURN": 41.132741228718295,
+              "TURN_BARRIER": 77.69468613064171,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 212.82742735936
+            },
+            "12": {
+              "MOVE": 188.0,
+              "TURN": 58.128315516282534,
+              "TURN_BARRIER": 117.25663103256508,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 363.3849465488476
+            },
+            "13": {
+              "MOVE": 34.0,
+              "TURN": 7.712388980384695,
+              "TURN_BARRIER": 39.13274122871835,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 80.84513020910305
+            },
+            "14": {
+              "MOVE": 108.0,
+              "TURN": 33.42035224833362,
+              "TURN_BARRIER": 100.83185307179573,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 242.25220532012935
+            },
+            "15": {
+              "MOVE": 42.0,
+              "TURN": 22.13716694115407,
+              "TURN_BARRIER": 34.99114857512854,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 99.12831551628261
+            }
+          }
+        },
+        "frozen_soc": {
+          "soc": 689,
+          "completion_sum_s": 3045.8715940506554,
+          "makespan_s": 369.5265392024374,
+          "MOVE": 1372.0,
+          "TURN": 462.3141351498754,
+          "TURN_BARRIER": 1205.5574589007695,
+          "DISCRETE_WAIT_SLOT": 6.0,
+          "selected": "frozen_proposal",
+          "per_agent": {
+            "0": {
+              "MOVE": 138.0,
+              "TURN": 38.56194490192338,
+              "TURN_BARRIER": 124.96902001294976,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 301.53096491487315
+            },
+            "1": {
+              "MOVE": 40.0,
+              "TURN": 12.853981633974483,
+              "TURN_BARRIER": 40.13274122871833,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 92.98672286269282
+            },
+            "2": {
+              "MOVE": 122.00000000000001,
+              "TURN": 48.845130209102976,
+              "TURN_BARRIER": 101.8318530717957,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 272.6769832808987
+            },
+            "3": {
+              "MOVE": 34.0,
+              "TURN": 23.137166941154064,
+              "TURN_BARRIER": 22.137166941154078,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 79.27433388230814
+            },
+            "4": {
+              "MOVE": 26.0,
+              "TURN": 10.283185307179592,
+              "TURN_BARRIER": 32.42035224833366,
+              "DISCRETE_WAIT_SLOT": 6.0,
+              "completion": 74.70353755551325
+            },
+            "5": {
+              "MOVE": 66.00000000000001,
+              "TURN": 23.137166941154035,
+              "TURN_BARRIER": 63.269908169872366,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 152.40707511102642
+            },
+            "6": {
+              "MOVE": 148.0,
+              "TURN": 43.70353755551318,
+              "TURN_BARRIER": 124.96902001294974,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 316.67255756846293
+            },
+            "7": {
+              "MOVE": 98.00000000000001,
+              "TURN": 32.420352248333614,
+              "TURN_BARRIER": 92.54866776461616,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 222.96902001294978
+            },
+            "8": {
+              "MOVE": 104.00000000000001,
+              "TURN": 33.42035224833362,
+              "TURN_BARRIER": 99.26105674500081,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 236.68140899333446
+            },
+            "9": {
+              "MOVE": 2.0,
+              "TURN": 2.5707963267948966,
+              "TURN_BARRIER": 1.5707963267948966,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 6.141592653589793
+            },
+            "10": {
+              "MOVE": 128.0,
+              "TURN": 30.84955592153872,
+              "TURN_BARRIER": 124.96902001294974,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 283.8185759344885
+            },
+            "11": {
+              "MOVE": 94.00000000000001,
+              "TURN": 41.132741228718295,
+              "TURN_BARRIER": 78.69468613064168,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 213.82742735936
+            },
+            "12": {
+              "MOVE": 188.0,
+              "TURN": 58.128315516282534,
+              "TURN_BARRIER": 123.39822368615484,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 369.5265392024374
+            },
+            "13": {
+              "MOVE": 34.0,
+              "TURN": 7.712388980384695,
+              "TURN_BARRIER": 37.56194490192345,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 79.27433388230814
+            },
+            "14": {
+              "MOVE": 108.00000000000001,
+              "TURN": 33.42035224833362,
+              "TURN_BARRIER": 104.4026493985906,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 245.82300164692424
+            },
+            "15": {
+              "MOVE": 42.0,
+              "TURN": 22.13716694115407,
+              "TURN_BARRIER": 33.420352248333636,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 97.5575191894877
+            }
+          }
+        },
+        "turn_aware": {
+          "soc": 689,
+          "completion_sum_s": 2914.7609813841154,
+          "makespan_s": 356.67255756846293,
+          "MOVE": 1372.0,
+          "TURN": 430.46457922833673,
+          "TURN_BARRIER": 1106.296402155771,
+          "DISCRETE_WAIT_SLOT": 6.0,
+          "selected": "retain_equal_cost_batch",
+          "per_agent": {
+            "0": {
+              "MOVE": 138.00000000000003,
+              "TURN": 33.4203522483336,
+              "TURN_BARRIER": 117.25663103256508,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 288.6769832808987
+            },
+            "1": {
+              "MOVE": 39.99999999999999,
+              "TURN": 12.853981633974481,
+              "TURN_BARRIER": 34.99114857512855,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 87.84513020910302
+            },
+            "2": {
+              "MOVE": 122.00000000000003,
+              "TURN": 37.561944901923404,
+              "TURN_BARRIER": 100.26105674500081,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 259.82300164692424
+            },
+            "3": {
+              "MOVE": 33.99999999999999,
+              "TURN": 22.137166941154064,
+              "TURN_BARRIER": 17.99557428756429,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 74.13274122871834
+            },
+            "4": {
+              "MOVE": 25.999999999999993,
+              "TURN": 10.28318530717959,
+              "TURN_BARRIER": 27.27875959474387,
+              "DISCRETE_WAIT_SLOT": 6.0,
+              "completion": 69.56194490192345
+            },
+            "5": {
+              "MOVE": 66.0,
+              "TURN": 17.995574287564253,
+              "TURN_BARRIER": 63.26990816987236,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 147.2654824574366
+            },
+            "6": {
+              "MOVE": 148.00000000000003,
+              "TURN": 43.703537555513165,
+              "TURN_BARRIER": 112.1150383789753,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 303.8185759344885
+            },
+            "7": {
+              "MOVE": 98.0,
+              "TURN": 23.137166941154042,
+              "TURN_BARRIER": 94.11946409141105,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 215.25663103256508
+            },
+            "8": {
+              "MOVE": 104.0,
+              "TURN": 33.42035224833362,
+              "TURN_BARRIER": 88.97787143782125,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 226.39822368615486
+            },
+            "9": {
+              "MOVE": 2.0,
+              "TURN": 2.5707963267948966,
+              "TURN_BARRIER": 1.5707963267948966,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 6.141592653589793
+            },
+            "10": {
+              "MOVE": 128.00000000000003,
+              "TURN": 30.84955592153872,
+              "TURN_BARRIER": 112.11503837897529,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 270.964594300514
+            },
+            "11": {
+              "MOVE": 94.0,
+              "TURN": 41.132741228718295,
+              "TURN_BARRIER": 70.98229715025701,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 206.1150383789753
+            },
+            "12": {
+              "MOVE": 188.00000000000003,
+              "TURN": 58.128315516282534,
+              "TURN_BARRIER": 110.54424205218038,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 356.67255756846293
+            },
+            "13": {
+              "MOVE": 33.99999999999999,
+              "TURN": 7.712388980384695,
+              "TURN_BARRIER": 32.42035224833366,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 74.13274122871834
+            },
+            "14": {
+              "MOVE": 108.0,
+              "TURN": 33.42035224833362,
+              "TURN_BARRIER": 94.11946409141103,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 235.53981633974465
+            },
+            "15": {
+              "MOVE": 41.99999999999999,
+              "TURN": 22.13716694115407,
+              "TURN_BARRIER": 28.278759594743846,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 92.41592653589791
+            }
+          }
+        }
+      },
+      "frozen_minus_original_completion_s": 25.8539816339744,
+      "turn_minus_original_completion_s": -105.25663103256556,
+      "entry_wall_s": 2.262201857
+    },
+    {
+      "case": "maze-32-32-2__s01__n32",
+      "arms": {
+        "original": {
+          "soc": 1873,
+          "completion_sum_s": 8811.256359733381,
+          "makespan_s": 541.6415775814129,
+          "MOVE": 3594.0,
+          "TURN": 1245.8317927830763,
+          "TURN_BARRIER": 3819.4245669503575,
+          "DISCRETE_WAIT_SLOT": 152.0,
+          "selected": "incumbent",
+          "per_agent": {
+            "0": {
+              "MOVE": 138.0,
+              "TURN": 33.4203522483336,
+              "TURN_BARRIER": 158.672557568463,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 330.0929098167966
+            },
+            "1": {
+              "MOVE": 44.0,
+              "TURN": 19.56637061435916,
+              "TURN_BARRIER": 63.41150082346218,
+              "DISCRETE_WAIT_SLOT": 12.0,
+              "completion": 138.97787143782134
+            },
+            "2": {
+              "MOVE": 126.0,
+              "TURN": 42.703537555513186,
+              "TURN_BARRIER": 136.53539062730894,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 305.2389281828221
+            },
+            "3": {
+              "MOVE": 34.0,
+              "TURN": 17.995574287564267,
+              "TURN_BARRIER": 31.991148575128577,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 83.98672286269284
+            },
+            "4": {
+              "MOVE": 34.0,
+              "TURN": 18.566370614359183,
+              "TURN_BARRIER": 31.42035224833366,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 83.98672286269284
+            },
+            "5": {
+              "MOVE": 70.0,
+              "TURN": 24.707963267948955,
+              "TURN_BARRIER": 128.25220532012935,
+              "DISCRETE_WAIT_SLOT": 38.0,
+              "completion": 260.9601685880783
+            },
+            "6": {
+              "MOVE": 148.0,
+              "TURN": 43.703537555513165,
+              "TURN_BARRIER": 161.24335389525788,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 352.94689145077103
+            },
+            "7": {
+              "MOVE": 106.0,
+              "TURN": 36.5619449019234,
+              "TURN_BARRIER": 116.39822368615492,
+              "DISCRETE_WAIT_SLOT": 2.0,
+              "completion": 260.9601685880783
+            },
+            "8": {
+              "MOVE": 104.0,
+              "TURN": 33.42035224833362,
+              "TURN_BARRIER": 112.82742735936,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 250.24777960769362
+            },
+            "9": {
+              "MOVE": 2.0,
+              "TURN": 2.5707963267948966,
+              "TURN_BARRIER": 1.5707963267948966,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 6.141592653589793
+            },
+            "10": {
+              "MOVE": 128.0,
+              "TURN": 30.84955592153872,
+              "TURN_BARRIER": 150.9601685880783,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 309.809724509617
+            },
+            "11": {
+              "MOVE": 90.0,
+              "TURN": 30.849555921538723,
+              "TURN_BARRIER": 99.97344572538555,
+              "DISCRETE_WAIT_SLOT": 2.0,
+              "completion": 222.82300164692427
+            },
+            "12": {
+              "MOVE": 192.0,
+              "TURN": 65.8407044966672,
+              "TURN_BARRIER": 189.52211349000166,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 447.36281798666886
+            },
+            "13": {
+              "MOVE": 34.0,
+              "TURN": 7.712388980384688,
+              "TURN_BARRIER": 42.274333882308156,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 83.98672286269284
+            },
+            "14": {
+              "MOVE": 116.0,
+              "TURN": 38.5619449019234,
+              "TURN_BARRIER": 124.68140899333449,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 279.2433538952579
+            },
+            "15": {
+              "MOVE": 42.0,
+              "TURN": 22.13716694115407,
+              "TURN_BARRIER": 38.13274122871834,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 102.26990816987241
+            },
+            "16": {
+              "MOVE": 180.0,
+              "TURN": 64.26990816987234,
+              "TURN_BARRIER": 178.23892818282206,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 422.5088363526944
+            },
+            "17": {
+              "MOVE": 236.0,
+              "TURN": 77.12388980384677,
+              "TURN_BARRIER": 196.23450247038633,
+              "DISCRETE_WAIT_SLOT": 2.0,
+              "completion": 511.3583922742331
+            },
+            "18": {
+              "MOVE": 176.0,
+              "TURN": 46.274333882308056,
+              "TURN_BARRIER": 189.5221134900017,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 411.79644737230973
+            },
+            "19": {
+              "MOVE": 258.0,
+              "TURN": 84.83627878423167,
+              "TURN_BARRIER": 198.80529879718122,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 541.6415775814129
+            },
+            "20": {
+              "MOVE": 212.0,
+              "TURN": 56.55751918948762,
+              "TURN_BARRIER": 209.08848410436082,
+              "DISCRETE_WAIT_SLOT": 2.0,
+              "completion": 479.6460032938484
+            },
+            "21": {
+              "MOVE": 140.0,
+              "TURN": 59.69911184307746,
+              "TURN_BARRIER": 182.80972450961696,
+              "DISCRETE_WAIT_SLOT": 40.0,
+              "completion": 422.5088363526944
+            },
+            "22": {
+              "MOVE": 74.0,
+              "TURN": 42.274333882308085,
+              "TURN_BARRIER": 129.25220532012935,
+              "DISCRETE_WAIT_SLOT": 46.0,
+              "completion": 291.52653920243745
+            },
+            "23": {
+              "MOVE": 134.0,
+              "TURN": 56.557519189487635,
+              "TURN_BARRIER": 132.96459430051405,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 323.5221134900017
+            },
+            "24": {
+              "MOVE": 34.0,
+              "TURN": 19.566370614359172,
+              "TURN_BARRIER": 30.42035224833367,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 83.98672286269284
+            },
+            "25": {
+              "MOVE": 120.0,
+              "TURN": 47.845130209102955,
+              "TURN_BARRIER": 123.68140899333449,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 291.52653920243745
+            },
+            "26": {
+              "MOVE": 102.0,
+              "TURN": 57.128315516282555,
+              "TURN_BARRIER": 95.83185307179576,
+              "DISCRETE_WAIT_SLOT": 6.0,
+              "completion": 260.9601685880783
+            },
+            "27": {
+              "MOVE": 184.0,
+              "TURN": 48.845130209102955,
+              "TURN_BARRIER": 201.3760951239761,
+              "DISCRETE_WAIT_SLOT": 2.0,
+              "completion": 436.2212253330791
+            },
+            "28": {
+              "MOVE": 74.0,
+              "TURN": 17.99557428756426,
+              "TURN_BARRIER": 88.11946409141109,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 180.11503837897536
+            },
+            "29": {
+              "MOVE": 104.0,
+              "TURN": 38.561944901923404,
+              "TURN_BARRIER": 107.68583470577022,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 250.24777960769362
+            },
+            "30": {
+              "MOVE": 38.0,
+              "TURN": 7.712388980384693,
+              "TURN_BARRIER": 47.41592653589793,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 93.12831551628263
+            },
+            "31": {
+              "MOVE": 120.0,
+              "TURN": 51.41592653589785,
+              "TURN_BARRIER": 120.1106126665396,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 291.52653920243745
+            }
+          }
+        },
+        "frozen_soc": {
+          "soc": 1871,
+          "completion_sum_s": 8809.822730347736,
+          "makespan_s": 540.6415775814128,
+          "MOVE": 3578.0,
+          "TURN": 1292.106126665383,
+          "TURN_BARRIER": 3775.716603682401,
+          "DISCRETE_WAIT_SLOT": 163.99999999999997,
+          "selected": "frozen_proposal",
+          "per_agent": {
+            "0": {
+              "MOVE": 137.99999999999997,
+              "TURN": 33.4203522483336,
+              "TURN_BARRIER": 160.24335389525783,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 331.6637061435914
+            },
+            "1": {
+              "MOVE": 44.0,
+              "TURN": 19.56637061435916,
+              "TURN_BARRIER": 63.41150082346218,
+              "DISCRETE_WAIT_SLOT": 12.0,
+              "completion": 138.97787143782134
+            },
+            "2": {
+              "MOVE": 125.99999999999997,
+              "TURN": 42.703537555513186,
+              "TURN_BARRIER": 138.1061869541038,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 306.80972450961696
+            },
+            "3": {
+              "MOVE": 34.0,
+              "TURN": 17.995574287564267,
+              "TURN_BARRIER": 30.42035224833367,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 82.41592653589794
+            },
+            "4": {
+              "MOVE": 34.0,
+              "TURN": 18.566370614359183,
+              "TURN_BARRIER": 29.849555921538755,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 82.41592653589794
+            },
+            "5": {
+              "MOVE": 69.99999999999997,
+              "TURN": 24.707963267948927,
+              "TURN_BARRIER": 129.82300164692424,
+              "DISCRETE_WAIT_SLOT": 38.0,
+              "completion": 262.53096491487315
+            },
+            "6": {
+              "MOVE": 147.99999999999997,
+              "TURN": 43.703537555513165,
+              "TURN_BARRIER": 162.81415022205272,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 354.51768777756587
+            },
+            "7": {
+              "MOVE": 105.99999999999997,
+              "TURN": 36.5619449019234,
+              "TURN_BARRIER": 117.96902001294978,
+              "DISCRETE_WAIT_SLOT": 2.0,
+              "completion": 262.53096491487315
+            },
+            "8": {
+              "MOVE": 104.0,
+              "TURN": 33.42035224833362,
+              "TURN_BARRIER": 114.39822368615489,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 251.8185759344885
+            },
+            "9": {
+              "MOVE": 2.0,
+              "TURN": 2.5707963267948966,
+              "TURN_BARRIER": 1.5707963267948966,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 6.141592653589793
+            },
+            "10": {
+              "MOVE": 127.99999999999997,
+              "TURN": 30.84955592153872,
+              "TURN_BARRIER": 152.53096491487315,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 311.38052083641185
+            },
+            "11": {
+              "MOVE": 90.0,
+              "TURN": 30.849555921538723,
+              "TURN_BARRIER": 101.54424205218044,
+              "DISCRETE_WAIT_SLOT": 2.0,
+              "completion": 224.39379797371916
+            },
+            "12": {
+              "MOVE": 191.99999999999997,
+              "TURN": 65.8407044966672,
+              "TURN_BARRIER": 188.52211349000163,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 446.3628179866688
+            },
+            "13": {
+              "MOVE": 34.0,
+              "TURN": 7.712388980384688,
+              "TURN_BARRIER": 40.70353755551325,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 82.41592653589794
+            },
+            "14": {
+              "MOVE": 115.99999999999997,
+              "TURN": 38.5619449019234,
+              "TURN_BARRIER": 126.25220532012935,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 280.8141502220527
+            },
+            "15": {
+              "MOVE": 42.0,
+              "TURN": 22.13716694115407,
+              "TURN_BARRIER": 36.56194490192343,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 100.6991118430775
+            },
+            "16": {
+              "MOVE": 179.99999999999997,
+              "TURN": 64.26990816987234,
+              "TURN_BARRIER": 177.23892818282204,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 421.50883635269435
+            },
+            "17": {
+              "MOVE": 235.99999999999997,
+              "TURN": 77.12388980384677,
+              "TURN_BARRIER": 195.2345024703863,
+              "DISCRETE_WAIT_SLOT": 2.0,
+              "completion": 510.35839227423304
+            },
+            "18": {
+              "MOVE": 175.99999999999997,
+              "TURN": 46.274333882308056,
+              "TURN_BARRIER": 188.52211349000163,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 410.7964473723097
+            },
+            "19": {
+              "MOVE": 258.0,
+              "TURN": 84.83627878423161,
+              "TURN_BARRIER": 197.8052987971812,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 540.6415775814128
+            },
+            "20": {
+              "MOVE": 211.99999999999997,
+              "TURN": 56.55751918948762,
+              "TURN_BARRIER": 208.08848410436076,
+              "DISCRETE_WAIT_SLOT": 2.0,
+              "completion": 478.64600329384837
+            },
+            "21": {
+              "MOVE": 139.99999999999997,
+              "TURN": 59.69911184307743,
+              "TURN_BARRIER": 181.80972450961696,
+              "DISCRETE_WAIT_SLOT": 40.0,
+              "completion": 421.50883635269435
+            },
+            "22": {
+              "MOVE": 74.0,
+              "TURN": 42.274333882308085,
+              "TURN_BARRIER": 130.82300164692424,
+              "DISCRETE_WAIT_SLOT": 45.99999999999997,
+              "completion": 293.0973355292323
+            },
+            "23": {
+              "MOVE": 133.99999999999997,
+              "TURN": 56.557519189487635,
+              "TURN_BARRIER": 134.5353906273089,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 325.0929098167965
+            },
+            "24": {
+              "MOVE": 34.0,
+              "TURN": 20.566370614359172,
+              "TURN_BARRIER": 27.849555921538766,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 82.41592653589794
+            },
+            "25": {
+              "MOVE": 119.99999999999997,
+              "TURN": 57.128315516282534,
+              "TURN_BARRIER": 115.96902001294978,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 293.0973355292323
+            },
+            "26": {
+              "MOVE": 89.99999999999997,
+              "TURN": 51.98672286269275,
+              "TURN_BARRIER": 102.54424205218044,
+              "DISCRETE_WAIT_SLOT": 18.0,
+              "completion": 262.53096491487315
+            },
+            "27": {
+              "MOVE": 183.99999999999997,
+              "TURN": 48.845130209102955,
+              "TURN_BARRIER": 197.8052987971812,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 430.6504290062841
+            },
+            "28": {
+              "MOVE": 74.0,
+              "TURN": 33.420352248333614,
+              "TURN_BARRIER": 74.26548245743663,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 181.68583470577025
+            },
+            "29": {
+              "MOVE": 100.0,
+              "TURN": 38.56194490192339,
+              "TURN_BARRIER": 104.11503837897533,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 242.67698328089872
+            },
+            "30": {
+              "MOVE": 34.0,
+              "TURN": 2.5707963267948983,
+              "TURN_BARRIER": 45.84513020910304,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 82.41592653589794
+            },
+            "31": {
+              "MOVE": 123.99999999999997,
+              "TURN": 82.26548245743658,
+              "TURN_BARRIER": 98.54424205218041,
+              "DISCRETE_WAIT_SLOT": 2.0,
+              "completion": 306.80972450961696
+            }
+          }
+        },
+        "turn_aware": {
+          "soc": 1871,
+          "completion_sum_s": 8809.822730347736,
+          "makespan_s": 540.6415775814128,
+          "MOVE": 3578.0,
+          "TURN": 1292.106126665383,
+          "TURN_BARRIER": 3775.716603682401,
+          "DISCRETE_WAIT_SLOT": 163.99999999999997,
+          "selected": "proposal",
+          "per_agent": {
+            "0": {
+              "MOVE": 137.99999999999997,
+              "TURN": 33.4203522483336,
+              "TURN_BARRIER": 160.24335389525783,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 331.6637061435914
+            },
+            "1": {
+              "MOVE": 44.0,
+              "TURN": 19.56637061435916,
+              "TURN_BARRIER": 63.41150082346218,
+              "DISCRETE_WAIT_SLOT": 12.0,
+              "completion": 138.97787143782134
+            },
+            "2": {
+              "MOVE": 125.99999999999997,
+              "TURN": 42.703537555513186,
+              "TURN_BARRIER": 138.1061869541038,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 306.80972450961696
+            },
+            "3": {
+              "MOVE": 34.0,
+              "TURN": 17.995574287564267,
+              "TURN_BARRIER": 30.42035224833367,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 82.41592653589794
+            },
+            "4": {
+              "MOVE": 34.0,
+              "TURN": 18.566370614359183,
+              "TURN_BARRIER": 29.849555921538755,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 82.41592653589794
+            },
+            "5": {
+              "MOVE": 69.99999999999997,
+              "TURN": 24.707963267948927,
+              "TURN_BARRIER": 129.82300164692424,
+              "DISCRETE_WAIT_SLOT": 38.0,
+              "completion": 262.53096491487315
+            },
+            "6": {
+              "MOVE": 147.99999999999997,
+              "TURN": 43.703537555513165,
+              "TURN_BARRIER": 162.81415022205272,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 354.51768777756587
+            },
+            "7": {
+              "MOVE": 105.99999999999997,
+              "TURN": 36.5619449019234,
+              "TURN_BARRIER": 117.96902001294978,
+              "DISCRETE_WAIT_SLOT": 2.0,
+              "completion": 262.53096491487315
+            },
+            "8": {
+              "MOVE": 104.0,
+              "TURN": 33.42035224833362,
+              "TURN_BARRIER": 114.39822368615489,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 251.8185759344885
+            },
+            "9": {
+              "MOVE": 2.0,
+              "TURN": 2.5707963267948966,
+              "TURN_BARRIER": 1.5707963267948966,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 6.141592653589793
+            },
+            "10": {
+              "MOVE": 127.99999999999997,
+              "TURN": 30.84955592153872,
+              "TURN_BARRIER": 152.53096491487315,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 311.38052083641185
+            },
+            "11": {
+              "MOVE": 90.0,
+              "TURN": 30.849555921538723,
+              "TURN_BARRIER": 101.54424205218044,
+              "DISCRETE_WAIT_SLOT": 2.0,
+              "completion": 224.39379797371916
+            },
+            "12": {
+              "MOVE": 191.99999999999997,
+              "TURN": 65.8407044966672,
+              "TURN_BARRIER": 188.52211349000163,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 446.3628179866688
+            },
+            "13": {
+              "MOVE": 34.0,
+              "TURN": 7.712388980384688,
+              "TURN_BARRIER": 40.70353755551325,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 82.41592653589794
+            },
+            "14": {
+              "MOVE": 115.99999999999997,
+              "TURN": 38.5619449019234,
+              "TURN_BARRIER": 126.25220532012935,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 280.8141502220527
+            },
+            "15": {
+              "MOVE": 42.0,
+              "TURN": 22.13716694115407,
+              "TURN_BARRIER": 36.56194490192343,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 100.6991118430775
+            },
+            "16": {
+              "MOVE": 179.99999999999997,
+              "TURN": 64.26990816987234,
+              "TURN_BARRIER": 177.23892818282204,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 421.50883635269435
+            },
+            "17": {
+              "MOVE": 235.99999999999997,
+              "TURN": 77.12388980384677,
+              "TURN_BARRIER": 195.2345024703863,
+              "DISCRETE_WAIT_SLOT": 2.0,
+              "completion": 510.35839227423304
+            },
+            "18": {
+              "MOVE": 175.99999999999997,
+              "TURN": 46.274333882308056,
+              "TURN_BARRIER": 188.52211349000163,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 410.7964473723097
+            },
+            "19": {
+              "MOVE": 258.0,
+              "TURN": 84.83627878423161,
+              "TURN_BARRIER": 197.8052987971812,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 540.6415775814128
+            },
+            "20": {
+              "MOVE": 211.99999999999997,
+              "TURN": 56.55751918948762,
+              "TURN_BARRIER": 208.08848410436076,
+              "DISCRETE_WAIT_SLOT": 2.0,
+              "completion": 478.64600329384837
+            },
+            "21": {
+              "MOVE": 139.99999999999997,
+              "TURN": 59.69911184307743,
+              "TURN_BARRIER": 181.80972450961696,
+              "DISCRETE_WAIT_SLOT": 40.0,
+              "completion": 421.50883635269435
+            },
+            "22": {
+              "MOVE": 74.0,
+              "TURN": 42.274333882308085,
+              "TURN_BARRIER": 130.82300164692424,
+              "DISCRETE_WAIT_SLOT": 45.99999999999997,
+              "completion": 293.0973355292323
+            },
+            "23": {
+              "MOVE": 133.99999999999997,
+              "TURN": 56.557519189487635,
+              "TURN_BARRIER": 134.5353906273089,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 325.0929098167965
+            },
+            "24": {
+              "MOVE": 34.0,
+              "TURN": 20.566370614359172,
+              "TURN_BARRIER": 27.849555921538766,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 82.41592653589794
+            },
+            "25": {
+              "MOVE": 119.99999999999997,
+              "TURN": 57.128315516282534,
+              "TURN_BARRIER": 115.96902001294978,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 293.0973355292323
+            },
+            "26": {
+              "MOVE": 89.99999999999997,
+              "TURN": 51.98672286269275,
+              "TURN_BARRIER": 102.54424205218044,
+              "DISCRETE_WAIT_SLOT": 18.0,
+              "completion": 262.53096491487315
+            },
+            "27": {
+              "MOVE": 183.99999999999997,
+              "TURN": 48.845130209102955,
+              "TURN_BARRIER": 197.8052987971812,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 430.6504290062841
+            },
+            "28": {
+              "MOVE": 74.0,
+              "TURN": 33.420352248333614,
+              "TURN_BARRIER": 74.26548245743663,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 181.68583470577025
+            },
+            "29": {
+              "MOVE": 100.0,
+              "TURN": 38.56194490192339,
+              "TURN_BARRIER": 104.11503837897533,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 242.67698328089872
+            },
+            "30": {
+              "MOVE": 34.0,
+              "TURN": 2.5707963267948983,
+              "TURN_BARRIER": 45.84513020910304,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 82.41592653589794
+            },
+            "31": {
+              "MOVE": 123.99999999999997,
+              "TURN": 82.26548245743658,
+              "TURN_BARRIER": 98.54424205218041,
+              "DISCRETE_WAIT_SLOT": 2.0,
+              "completion": 306.80972450961696
+            }
+          }
+        }
+      },
+      "frozen_minus_original_completion_s": -1.433629385644963,
+      "turn_minus_original_completion_s": -1.433629385644963,
+      "entry_wall_s": 8.258384154
+    },
+    {
+      "case": "random-32-32-10__s01__n16",
+      "arms": {
+        "original": {
+          "soc": 407,
+          "completion_sum_s": 1800.6105674500093,
+          "makespan_s": 200.1194640914111,
+          "MOVE": 814.0,
+          "TURN": 261.93361431346375,
+          "TURN_BARRIER": 724.6769531365442,
+          "DISCRETE_WAIT_SLOT": 0.0,
+          "selected": "incumbent",
+          "per_agent": {
+            "0": {
+              "MOVE": 32.0,
+              "TURN": 16.995574287564274,
+              "TURN_BARRIER": 25.707963267948976,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 74.70353755551325
+            },
+            "1": {
+              "MOVE": 70.0,
+              "TURN": 29.84955592153873,
+              "TURN_BARRIER": 53.986722862692794,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 153.83627878423152
+            },
+            "2": {
+              "MOVE": 50.0,
+              "TURN": 12.853981633974476,
+              "TURN_BARRIER": 50.4159265358979,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 113.26990816987238
+            },
+            "3": {
+              "MOVE": 18.0,
+              "TURN": 7.712388980384695,
+              "TURN_BARRIER": 16.99557428756428,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 42.707963267948976
+            },
+            "4": {
+              "MOVE": 30.0,
+              "TURN": 15.424777960769381,
+              "TURN_BARRIER": 24.707963267948976,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 70.13274122871836
+            },
+            "5": {
+              "MOVE": 60.0,
+              "TURN": 32.420352248333636,
+              "TURN_BARRIER": 43.703537555513215,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 136.12388980384685
+            },
+            "6": {
+              "MOVE": 50.0,
+              "TURN": 12.853981633974477,
+              "TURN_BARRIER": 50.4159265358979,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 113.26990816987238
+            },
+            "7": {
+              "MOVE": 106.0,
+              "TURN": 27.27875959474383,
+              "TURN_BARRIER": 66.84070449666726,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 200.1194640914111
+            },
+            "8": {
+              "MOVE": 10.0,
+              "TURN": 6.7123889803846915,
+              "TURN_BARRIER": 7.7123889803846915,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 24.424777960769383
+            },
+            "9": {
+              "MOVE": 38.0,
+              "TURN": 23.137166941154078,
+              "TURN_BARRIER": 27.278759594743846,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 88.41592653589792
+            },
+            "10": {
+              "MOVE": 54.0,
+              "TURN": 11.853981633974467,
+              "TURN_BARRIER": 56.55751918948769,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 122.41150082346216
+            },
+            "11": {
+              "MOVE": 28.0,
+              "TURN": 6.7123889803846915,
+              "TURN_BARRIER": 30.849555921538776,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 65.56194490192347
+            },
+            "12": {
+              "MOVE": 68.0,
+              "TURN": 10.283185307179565,
+              "TURN_BARRIER": 73.55309347705196,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 151.83627878423152
+            },
+            "13": {
+              "MOVE": 68.0,
+              "TURN": 27.278759594743843,
+              "TURN_BARRIER": 56.55751918948768,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 151.83627878423152
+            },
+            "14": {
+              "MOVE": 72.0,
+              "TURN": 7.712388980384686,
+              "TURN_BARRIER": 76.12388980384684,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 155.83627878423152
+            },
+            "15": {
+              "MOVE": 60.0,
+              "TURN": 12.853981633974477,
+              "TURN_BARRIER": 63.26990816987237,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 136.12388980384685
+            }
+          }
+        },
+        "frozen_soc": {
+          "soc": 407,
+          "completion_sum_s": 1800.6105674500093,
+          "makespan_s": 200.1194640914111,
+          "MOVE": 814.0,
+          "TURN": 261.93361431346375,
+          "TURN_BARRIER": 724.6769531365442,
+          "DISCRETE_WAIT_SLOT": 0.0,
+          "selected": "frozen_proposal",
+          "per_agent": {
+            "0": {
+              "MOVE": 32.0,
+              "TURN": 16.995574287564274,
+              "TURN_BARRIER": 25.707963267948976,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 74.70353755551325
+            },
+            "1": {
+              "MOVE": 70.0,
+              "TURN": 29.84955592153873,
+              "TURN_BARRIER": 53.986722862692794,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 153.83627878423152
+            },
+            "2": {
+              "MOVE": 50.0,
+              "TURN": 12.853981633974476,
+              "TURN_BARRIER": 50.4159265358979,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 113.26990816987238
+            },
+            "3": {
+              "MOVE": 18.0,
+              "TURN": 7.712388980384695,
+              "TURN_BARRIER": 16.99557428756428,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 42.707963267948976
+            },
+            "4": {
+              "MOVE": 30.0,
+              "TURN": 15.424777960769381,
+              "TURN_BARRIER": 24.707963267948976,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 70.13274122871836
+            },
+            "5": {
+              "MOVE": 60.0,
+              "TURN": 32.420352248333636,
+              "TURN_BARRIER": 43.703537555513215,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 136.12388980384685
+            },
+            "6": {
+              "MOVE": 50.0,
+              "TURN": 12.853981633974477,
+              "TURN_BARRIER": 50.4159265358979,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 113.26990816987238
+            },
+            "7": {
+              "MOVE": 106.0,
+              "TURN": 27.27875959474383,
+              "TURN_BARRIER": 66.84070449666726,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 200.1194640914111
+            },
+            "8": {
+              "MOVE": 10.0,
+              "TURN": 6.7123889803846915,
+              "TURN_BARRIER": 7.7123889803846915,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 24.424777960769383
+            },
+            "9": {
+              "MOVE": 38.0,
+              "TURN": 23.137166941154078,
+              "TURN_BARRIER": 27.278759594743846,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 88.41592653589792
+            },
+            "10": {
+              "MOVE": 54.0,
+              "TURN": 11.853981633974467,
+              "TURN_BARRIER": 56.55751918948769,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 122.41150082346216
+            },
+            "11": {
+              "MOVE": 28.0,
+              "TURN": 6.7123889803846915,
+              "TURN_BARRIER": 30.849555921538776,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 65.56194490192347
+            },
+            "12": {
+              "MOVE": 68.0,
+              "TURN": 10.283185307179565,
+              "TURN_BARRIER": 73.55309347705196,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 151.83627878423152
+            },
+            "13": {
+              "MOVE": 68.0,
+              "TURN": 27.278759594743843,
+              "TURN_BARRIER": 56.55751918948768,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 151.83627878423152
+            },
+            "14": {
+              "MOVE": 72.0,
+              "TURN": 7.712388980384686,
+              "TURN_BARRIER": 76.12388980384684,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 155.83627878423152
+            },
+            "15": {
+              "MOVE": 60.0,
+              "TURN": 12.853981633974477,
+              "TURN_BARRIER": 63.26990816987237,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 136.12388980384685
+            }
+          }
+        },
+        "turn_aware": {
+          "soc": 407,
+          "completion_sum_s": 1800.6105674500093,
+          "makespan_s": 200.1194640914111,
+          "MOVE": 814.0,
+          "TURN": 261.93361431346375,
+          "TURN_BARRIER": 724.6769531365442,
+          "DISCRETE_WAIT_SLOT": 0.0,
+          "selected": "incumbent",
+          "per_agent": {
+            "0": {
+              "MOVE": 32.0,
+              "TURN": 16.995574287564274,
+              "TURN_BARRIER": 25.707963267948976,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 74.70353755551325
+            },
+            "1": {
+              "MOVE": 70.0,
+              "TURN": 29.84955592153873,
+              "TURN_BARRIER": 53.986722862692794,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 153.83627878423152
+            },
+            "2": {
+              "MOVE": 50.0,
+              "TURN": 12.853981633974476,
+              "TURN_BARRIER": 50.4159265358979,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 113.26990816987238
+            },
+            "3": {
+              "MOVE": 18.0,
+              "TURN": 7.712388980384695,
+              "TURN_BARRIER": 16.99557428756428,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 42.707963267948976
+            },
+            "4": {
+              "MOVE": 30.0,
+              "TURN": 15.424777960769381,
+              "TURN_BARRIER": 24.707963267948976,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 70.13274122871836
+            },
+            "5": {
+              "MOVE": 60.0,
+              "TURN": 32.420352248333636,
+              "TURN_BARRIER": 43.703537555513215,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 136.12388980384685
+            },
+            "6": {
+              "MOVE": 50.0,
+              "TURN": 12.853981633974477,
+              "TURN_BARRIER": 50.4159265358979,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 113.26990816987238
+            },
+            "7": {
+              "MOVE": 106.0,
+              "TURN": 27.27875959474383,
+              "TURN_BARRIER": 66.84070449666726,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 200.1194640914111
+            },
+            "8": {
+              "MOVE": 10.0,
+              "TURN": 6.7123889803846915,
+              "TURN_BARRIER": 7.7123889803846915,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 24.424777960769383
+            },
+            "9": {
+              "MOVE": 38.0,
+              "TURN": 23.137166941154078,
+              "TURN_BARRIER": 27.278759594743846,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 88.41592653589792
+            },
+            "10": {
+              "MOVE": 54.0,
+              "TURN": 11.853981633974467,
+              "TURN_BARRIER": 56.55751918948769,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 122.41150082346216
+            },
+            "11": {
+              "MOVE": 28.0,
+              "TURN": 6.7123889803846915,
+              "TURN_BARRIER": 30.849555921538776,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 65.56194490192347
+            },
+            "12": {
+              "MOVE": 68.0,
+              "TURN": 10.283185307179565,
+              "TURN_BARRIER": 73.55309347705196,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 151.83627878423152
+            },
+            "13": {
+              "MOVE": 68.0,
+              "TURN": 27.278759594743843,
+              "TURN_BARRIER": 56.55751918948768,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 151.83627878423152
+            },
+            "14": {
+              "MOVE": 72.0,
+              "TURN": 7.712388980384686,
+              "TURN_BARRIER": 76.12388980384684,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 155.83627878423152
+            },
+            "15": {
+              "MOVE": 60.0,
+              "TURN": 12.853981633974477,
+              "TURN_BARRIER": 63.26990816987237,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 136.12388980384685
+            }
+          }
+        }
+      },
+      "frozen_minus_original_completion_s": 0.0,
+      "turn_minus_original_completion_s": 0.0,
+      "entry_wall_s": 1.299076291
+    },
+    {
+      "case": "random-32-32-10__s01__n32",
+      "arms": {
+        "original": {
+          "soc": 771,
+          "completion_sum_s": 3533.216709187582,
+          "makespan_s": 223.2566310325651,
+          "MOVE": 1542.0,
+          "TURN": 543.4335992412865,
+          "TURN_BARRIER": 1447.7831099462853,
+          "DISCRETE_WAIT_SLOT": 0.0,
+          "selected": "incumbent",
+          "per_agent": {
+            "0": {
+              "MOVE": 32.0,
+              "TURN": 16.995574287564274,
+              "TURN_BARRIER": 25.707963267948976,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 74.70353755551325
+            },
+            "1": {
+              "MOVE": 70.00000000000001,
+              "TURN": 29.84955592153873,
+              "TURN_BARRIER": 61.69911184307745,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 161.5486677646162
+            },
+            "2": {
+              "MOVE": 50.0,
+              "TURN": 12.853981633974476,
+              "TURN_BARRIER": 52.986722862692794,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 115.84070449666727
+            },
+            "3": {
+              "MOVE": 18.0,
+              "TURN": 7.712388980384695,
+              "TURN_BARRIER": 16.99557428756428,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 42.707963267948976
+            },
+            "4": {
+              "MOVE": 30.0,
+              "TURN": 15.424777960769381,
+              "TURN_BARRIER": 24.707963267948976,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 70.13274122871836
+            },
+            "5": {
+              "MOVE": 60.000000000000014,
+              "TURN": 32.420352248333636,
+              "TURN_BARRIER": 46.27433388230809,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 138.69468613064174
+            },
+            "6": {
+              "MOVE": 50.0,
+              "TURN": 23.137166941154042,
+              "TURN_BARRIER": 42.70353755551323,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 115.84070449666727
+            },
+            "7": {
+              "MOVE": 106.00000000000001,
+              "TURN": 27.27875959474383,
+              "TURN_BARRIER": 89.97787143782126,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 223.2566310325651
+            },
+            "8": {
+              "MOVE": 10.0,
+              "TURN": 6.7123889803846915,
+              "TURN_BARRIER": 7.7123889803846915,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 24.424777960769383
+            },
+            "9": {
+              "MOVE": 38.0,
+              "TURN": 23.137166941154078,
+              "TURN_BARRIER": 27.278759594743846,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 88.41592653589792
+            },
+            "10": {
+              "MOVE": 54.0,
+              "TURN": 11.853981633974467,
+              "TURN_BARRIER": 59.12831551628258,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 124.98229715025705
+            },
+            "11": {
+              "MOVE": 28.0,
+              "TURN": 6.7123889803846915,
+              "TURN_BARRIER": 30.849555921538776,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 65.56194490192347
+            },
+            "12": {
+              "MOVE": 68.00000000000001,
+              "TURN": 10.283185307179565,
+              "TURN_BARRIER": 78.69468613064173,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 156.9778714378213
+            },
+            "13": {
+              "MOVE": 68.00000000000001,
+              "TURN": 27.278759594743843,
+              "TURN_BARRIER": 61.699111843077446,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 156.9778714378213
+            },
+            "14": {
+              "MOVE": 72.00000000000001,
+              "TURN": 17.995574287564253,
+              "TURN_BARRIER": 76.12388980384682,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 166.1194640914111
+            },
+            "15": {
+              "MOVE": 60.000000000000014,
+              "TURN": 17.995574287564246,
+              "TURN_BARRIER": 60.69911184307748,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 138.69468613064174
+            },
+            "16": {
+              "MOVE": 18.0,
+              "TURN": 6.7123889803846915,
+              "TURN_BARRIER": 17.995574287564285,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 42.707963267948976
+            },
+            "17": {
+              "MOVE": 46.0,
+              "TURN": 16.995574287564263,
+              "TURN_BARRIER": 43.70353755551322,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 106.69911184307749
+            },
+            "18": {
+              "MOVE": 28.0,
+              "TURN": 2.5707963267948983,
+              "TURN_BARRIER": 34.99114857512857,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 65.56194490192347
+            },
+            "19": {
+              "MOVE": 44.0,
+              "TURN": 22.13716694115407,
+              "TURN_BARRIER": 35.99114857512853,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 102.1283155162826
+            },
+            "20": {
+              "MOVE": 54.0,
+              "TURN": 17.995574287564274,
+              "TURN_BARRIER": 52.98672286269278,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 124.98229715025705
+            },
+            "21": {
+              "MOVE": 50.0,
+              "TURN": 12.853981633974481,
+              "TURN_BARRIER": 52.98672286269279,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 115.84070449666727
+            },
+            "22": {
+              "MOVE": 66.00000000000001,
+              "TURN": 32.42035224833363,
+              "TURN_BARRIER": 53.98672286269277,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 152.40707511102642
+            },
+            "23": {
+              "MOVE": 22.0,
+              "TURN": 11.853981633974488,
+              "TURN_BARRIER": 17.995574287564285,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 51.84955592153877
+            },
+            "24": {
+              "MOVE": 42.0,
+              "TURN": 6.7123889803846915,
+              "TURN_BARRIER": 48.84513020910302,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 97.5575191894877
+            },
+            "25": {
+              "MOVE": 32.0,
+              "TURN": 2.5707963267948983,
+              "TURN_BARRIER": 40.13274122871835,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 74.70353755551325
+            },
+            "26": {
+              "MOVE": 32.0,
+              "TURN": 20.56637061435918,
+              "TURN_BARRIER": 22.13716694115407,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 74.70353755551325
+            },
+            "27": {
+              "MOVE": 70.00000000000001,
+              "TURN": 17.99557428756425,
+              "TURN_BARRIER": 73.55309347705193,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 161.5486677646162
+            },
+            "28": {
+              "MOVE": 24.0,
+              "TURN": 6.7123889803846915,
+              "TURN_BARRIER": 25.70796326794898,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 56.42035224833367
+            },
+            "29": {
+              "MOVE": 100.00000000000001,
+              "TURN": 42.70353755551318,
+              "TURN_BARRIER": 66.84070449666724,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 209.54424205218044
+            },
+            "30": {
+              "MOVE": 74.00000000000001,
+              "TURN": 27.27875959474383,
+              "TURN_BARRIER": 69.41150082346213,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 170.69026041820598
+            },
+            "31": {
+              "MOVE": 26.0,
+              "TURN": 7.712388980384695,
+              "TURN_BARRIER": 27.278759594743875,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 60.99114857512857
+            }
+          }
+        },
+        "frozen_soc": {
+          "soc": 770,
+          "completion_sum_s": 3551.7830798019413,
+          "makespan_s": 230.96902001294978,
+          "MOVE": 1538.0,
+          "TURN": 832.2211951887269,
+          "TURN_BARRIER": 1179.561884613213,
+          "DISCRETE_WAIT_SLOT": 2.0,
+          "selected": "frozen_proposal",
+          "per_agent": {
+            "0": {
+              "MOVE": 32.0,
+              "TURN": 19.566370614359172,
+              "TURN_BARRIER": 23.137166941154078,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 74.70353755551325
+            },
+            "1": {
+              "MOVE": 70.00000000000001,
+              "TURN": 25.707963267948962,
+              "TURN_BARRIER": 65.84070449666723,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 161.5486677646162
+            },
+            "2": {
+              "MOVE": 50.0,
+              "TURN": 17.995574287564274,
+              "TURN_BARRIER": 47.845130209103,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 115.84070449666727
+            },
+            "3": {
+              "MOVE": 18.0,
+              "TURN": 7.712388980384695,
+              "TURN_BARRIER": 19.56637061435918,
+              "DISCRETE_WAIT_SLOT": 2.0,
+              "completion": 47.278759594743875
+            },
+            "4": {
+              "MOVE": 30.0,
+              "TURN": 17.99557428756429,
+              "TURN_BARRIER": 22.13716694115407,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 70.13274122871836
+            },
+            "5": {
+              "MOVE": 60.000000000000014,
+              "TURN": 47.845130209103004,
+              "TURN_BARRIER": 30.849555921538723,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 138.69468613064174
+            },
+            "6": {
+              "MOVE": 50.0,
+              "TURN": 38.56194490192341,
+              "TURN_BARRIER": 27.278759594743857,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 115.84070449666727
+            },
+            "7": {
+              "MOVE": 106.00000000000001,
+              "TURN": 76.1238898038468,
+              "TURN_BARRIER": 48.845130209102976,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 230.96902001294978
+            },
+            "8": {
+              "MOVE": 10.0,
+              "TURN": 6.7123889803846915,
+              "TURN_BARRIER": 7.7123889803846915,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 24.424777960769383
+            },
+            "9": {
+              "MOVE": 38.0,
+              "TURN": 15.424777960769385,
+              "TURN_BARRIER": 34.99114857512854,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 88.41592653589792
+            },
+            "10": {
+              "MOVE": 54.0,
+              "TURN": 45.274333882308106,
+              "TURN_BARRIER": 25.707963267948948,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 124.98229715025705
+            },
+            "11": {
+              "MOVE": 28.0,
+              "TURN": 15.424777960769386,
+              "TURN_BARRIER": 22.13716694115408,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 65.56194490192347
+            },
+            "12": {
+              "MOVE": 68.00000000000001,
+              "TURN": 30.849555921538716,
+              "TURN_BARRIER": 58.128315516282576,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 156.9778714378213
+            },
+            "13": {
+              "MOVE": 68.00000000000001,
+              "TURN": 42.70353755551319,
+              "TURN_BARRIER": 46.2743338823081,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 156.9778714378213
+            },
+            "14": {
+              "MOVE": 72.00000000000001,
+              "TURN": 43.703537555513186,
+              "TURN_BARRIER": 50.41592653589789,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 166.1194640914111
+            },
+            "15": {
+              "MOVE": 60.000000000000014,
+              "TURN": 25.70796326794894,
+              "TURN_BARRIER": 52.98672286269279,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 138.69468613064174
+            },
+            "16": {
+              "MOVE": 18.0,
+              "TURN": 10.283185307179588,
+              "TURN_BARRIER": 14.424777960769388,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 42.707963267948976
+            },
+            "17": {
+              "MOVE": 46.0,
+              "TURN": 24.707963267948966,
+              "TURN_BARRIER": 35.99114857512852,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 106.69911184307749
+            },
+            "18": {
+              "MOVE": 28.0,
+              "TURN": 17.99557428756429,
+              "TURN_BARRIER": 19.56637061435918,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 65.56194490192347
+            },
+            "19": {
+              "MOVE": 40.0,
+              "TURN": 9.283185307179588,
+              "TURN_BARRIER": 43.70353755551323,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 92.98672286269282
+            },
+            "20": {
+              "MOVE": 54.0,
+              "TURN": 28.278759594743864,
+              "TURN_BARRIER": 42.70353755551319,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 124.98229715025705
+            },
+            "21": {
+              "MOVE": 50.0,
+              "TURN": 15.424777960769372,
+              "TURN_BARRIER": 50.415926535897896,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 115.84070449666727
+            },
+            "22": {
+              "MOVE": 66.00000000000001,
+              "TURN": 30.849555921538748,
+              "TURN_BARRIER": 55.55751918948765,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 152.40707511102642
+            },
+            "23": {
+              "MOVE": 22.0,
+              "TURN": 11.853981633974488,
+              "TURN_BARRIER": 17.995574287564285,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 51.84955592153877
+            },
+            "24": {
+              "MOVE": 42.0,
+              "TURN": 16.995574287564285,
+              "TURN_BARRIER": 38.561944901923425,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 97.5575191894877
+            },
+            "25": {
+              "MOVE": 32.0,
+              "TURN": 7.7123889803846915,
+              "TURN_BARRIER": 34.99114857512856,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 74.70353755551325
+            },
+            "26": {
+              "MOVE": 32.0,
+              "TURN": 20.56637061435918,
+              "TURN_BARRIER": 22.13716694115407,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 74.70353755551325
+            },
+            "27": {
+              "MOVE": 70.00000000000001,
+              "TURN": 35.99114857512852,
+              "TURN_BARRIER": 55.557519189487664,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 161.5486677646162
+            },
+            "28": {
+              "MOVE": 24.0,
+              "TURN": 11.853981633974486,
+              "TURN_BARRIER": 20.566370614359187,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 56.42035224833367
+            },
+            "29": {
+              "MOVE": 100.00000000000001,
+              "TURN": 66.84070449666723,
+              "TURN_BARRIER": 58.12831551628255,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 224.96902001294978
+            },
+            "30": {
+              "MOVE": 74.00000000000001,
+              "TURN": 33.42035224833365,
+              "TURN_BARRIER": 63.269908169872316,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 170.69026041820598
+            },
+            "31": {
+              "MOVE": 26.0,
+              "TURN": 12.853981633974488,
+              "TURN_BARRIER": 22.13716694115408,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 60.99114857512857
+            }
+          }
+        },
+        "turn_aware": {
+          "soc": 770,
+          "completion_sum_s": 3551.7830798019413,
+          "makespan_s": 230.96902001294978,
+          "MOVE": 1538.0,
+          "TURN": 832.2211951887269,
+          "TURN_BARRIER": 1179.561884613213,
+          "DISCRETE_WAIT_SLOT": 2.0,
+          "selected": "proposal",
+          "per_agent": {
+            "0": {
+              "MOVE": 32.0,
+              "TURN": 19.566370614359172,
+              "TURN_BARRIER": 23.137166941154078,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 74.70353755551325
+            },
+            "1": {
+              "MOVE": 70.00000000000001,
+              "TURN": 25.707963267948962,
+              "TURN_BARRIER": 65.84070449666723,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 161.5486677646162
+            },
+            "2": {
+              "MOVE": 50.0,
+              "TURN": 17.995574287564274,
+              "TURN_BARRIER": 47.845130209103,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 115.84070449666727
+            },
+            "3": {
+              "MOVE": 18.0,
+              "TURN": 7.712388980384695,
+              "TURN_BARRIER": 19.56637061435918,
+              "DISCRETE_WAIT_SLOT": 2.0,
+              "completion": 47.278759594743875
+            },
+            "4": {
+              "MOVE": 30.0,
+              "TURN": 17.99557428756429,
+              "TURN_BARRIER": 22.13716694115407,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 70.13274122871836
+            },
+            "5": {
+              "MOVE": 60.000000000000014,
+              "TURN": 47.845130209103004,
+              "TURN_BARRIER": 30.849555921538723,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 138.69468613064174
+            },
+            "6": {
+              "MOVE": 50.0,
+              "TURN": 38.56194490192341,
+              "TURN_BARRIER": 27.278759594743857,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 115.84070449666727
+            },
+            "7": {
+              "MOVE": 106.00000000000001,
+              "TURN": 76.1238898038468,
+              "TURN_BARRIER": 48.845130209102976,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 230.96902001294978
+            },
+            "8": {
+              "MOVE": 10.0,
+              "TURN": 6.7123889803846915,
+              "TURN_BARRIER": 7.7123889803846915,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 24.424777960769383
+            },
+            "9": {
+              "MOVE": 38.0,
+              "TURN": 15.424777960769385,
+              "TURN_BARRIER": 34.99114857512854,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 88.41592653589792
+            },
+            "10": {
+              "MOVE": 54.0,
+              "TURN": 45.274333882308106,
+              "TURN_BARRIER": 25.707963267948948,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 124.98229715025705
+            },
+            "11": {
+              "MOVE": 28.0,
+              "TURN": 15.424777960769386,
+              "TURN_BARRIER": 22.13716694115408,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 65.56194490192347
+            },
+            "12": {
+              "MOVE": 68.00000000000001,
+              "TURN": 30.849555921538716,
+              "TURN_BARRIER": 58.128315516282576,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 156.9778714378213
+            },
+            "13": {
+              "MOVE": 68.00000000000001,
+              "TURN": 42.70353755551319,
+              "TURN_BARRIER": 46.2743338823081,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 156.9778714378213
+            },
+            "14": {
+              "MOVE": 72.00000000000001,
+              "TURN": 43.703537555513186,
+              "TURN_BARRIER": 50.41592653589789,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 166.1194640914111
+            },
+            "15": {
+              "MOVE": 60.000000000000014,
+              "TURN": 25.70796326794894,
+              "TURN_BARRIER": 52.98672286269279,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 138.69468613064174
+            },
+            "16": {
+              "MOVE": 18.0,
+              "TURN": 10.283185307179588,
+              "TURN_BARRIER": 14.424777960769388,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 42.707963267948976
+            },
+            "17": {
+              "MOVE": 46.0,
+              "TURN": 24.707963267948966,
+              "TURN_BARRIER": 35.99114857512852,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 106.69911184307749
+            },
+            "18": {
+              "MOVE": 28.0,
+              "TURN": 17.99557428756429,
+              "TURN_BARRIER": 19.56637061435918,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 65.56194490192347
+            },
+            "19": {
+              "MOVE": 40.0,
+              "TURN": 9.283185307179588,
+              "TURN_BARRIER": 43.70353755551323,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 92.98672286269282
+            },
+            "20": {
+              "MOVE": 54.0,
+              "TURN": 28.278759594743864,
+              "TURN_BARRIER": 42.70353755551319,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 124.98229715025705
+            },
+            "21": {
+              "MOVE": 50.0,
+              "TURN": 15.424777960769372,
+              "TURN_BARRIER": 50.415926535897896,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 115.84070449666727
+            },
+            "22": {
+              "MOVE": 66.00000000000001,
+              "TURN": 30.849555921538748,
+              "TURN_BARRIER": 55.55751918948765,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 152.40707511102642
+            },
+            "23": {
+              "MOVE": 22.0,
+              "TURN": 11.853981633974488,
+              "TURN_BARRIER": 17.995574287564285,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 51.84955592153877
+            },
+            "24": {
+              "MOVE": 42.0,
+              "TURN": 16.995574287564285,
+              "TURN_BARRIER": 38.561944901923425,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 97.5575191894877
+            },
+            "25": {
+              "MOVE": 32.0,
+              "TURN": 7.7123889803846915,
+              "TURN_BARRIER": 34.99114857512856,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 74.70353755551325
+            },
+            "26": {
+              "MOVE": 32.0,
+              "TURN": 20.56637061435918,
+              "TURN_BARRIER": 22.13716694115407,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 74.70353755551325
+            },
+            "27": {
+              "MOVE": 70.00000000000001,
+              "TURN": 35.99114857512852,
+              "TURN_BARRIER": 55.557519189487664,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 161.5486677646162
+            },
+            "28": {
+              "MOVE": 24.0,
+              "TURN": 11.853981633974486,
+              "TURN_BARRIER": 20.566370614359187,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 56.42035224833367
+            },
+            "29": {
+              "MOVE": 100.00000000000001,
+              "TURN": 66.84070449666723,
+              "TURN_BARRIER": 58.12831551628255,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 224.96902001294978
+            },
+            "30": {
+              "MOVE": 74.00000000000001,
+              "TURN": 33.42035224833365,
+              "TURN_BARRIER": 63.269908169872316,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 170.69026041820598
+            },
+            "31": {
+              "MOVE": 26.0,
+              "TURN": 12.853981633974488,
+              "TURN_BARRIER": 22.13716694115408,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 60.99114857512857
+            }
+          }
+        }
+      },
+      "frozen_minus_original_completion_s": 18.56637061435913,
+      "turn_minus_original_completion_s": 18.56637061435913,
+      "entry_wall_s": 3.51034873
+    },
+    {
+      "case": "warehouse-10-20-10-2-1__s01__n16",
+      "arms": {
+        "original": {
+          "soc": 1112,
+          "completion_sum_s": 3061.504380495905,
+          "makespan_s": 418.982297150257,
+          "MOVE": 2224.0,
+          "TURN": 119.53981633974473,
+          "TURN_BARRIER": 717.9645641561585,
+          "DISCRETE_WAIT_SLOT": 0.0,
+          "selected": "incumbent",
+          "per_agent": {
+            "0": {
+              "MOVE": 348.0,
+              "TURN": 11.853981633974481,
+              "TURN_BARRIER": 59.12831551628254,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 418.982297150257
+            },
+            "1": {
+              "MOVE": 130.0,
+              "TURN": 6.712388980384684,
+              "TURN_BARRIER": 51.41592653589788,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 188.12831551628256
+            },
+            "2": {
+              "MOVE": 158.0,
+              "TURN": 6.712388980384684,
+              "TURN_BARRIER": 53.98672286269277,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 218.69911184307745
+            },
+            "3": {
+              "MOVE": 45.99999999999999,
+              "TURN": 0.0,
+              "TURN_BARRIER": 29.84955592153876,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 75.84955592153875
+            },
+            "4": {
+              "MOVE": 43.99999999999999,
+              "TURN": 5.14159265358979,
+              "TURN_BARRIER": 24.70796326794897,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 73.84955592153875
+            },
+            "5": {
+              "MOVE": 100.0,
+              "TURN": 5.1415926535897825,
+              "TURN_BARRIER": 47.845130209103,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 152.98672286269277
+            },
+            "6": {
+              "MOVE": 82.0,
+              "TURN": 6.71238898038469,
+              "TURN_BARRIER": 33.420352248333636,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 122.13274122871832
+            },
+            "7": {
+              "MOVE": 70.0,
+              "TURN": 6.71238898038469,
+              "TURN_BARRIER": 28.278759594743853,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 104.99114857512853
+            },
+            "8": {
+              "MOVE": 45.99999999999999,
+              "TURN": 10.283185307179586,
+              "TURN_BARRIER": 19.566370614359172,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 75.84955592153875
+            },
+            "9": {
+              "MOVE": 198.0,
+              "TURN": 14.424777960769358,
+              "TURN_BARRIER": 53.98672286269277,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 266.4115008234621
+            },
+            "10": {
+              "MOVE": 140.0,
+              "TURN": 9.283185307179576,
+              "TURN_BARRIER": 48.84513020910299,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 198.12831551628256
+            },
+            "11": {
+              "MOVE": 126.0,
+              "TURN": 4.141592653589793,
+              "TURN_BARRIER": 51.41592653589788,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 181.55751918948766
+            },
+            "12": {
+              "MOVE": 252.0,
+              "TURN": 7.712388980384674,
+              "TURN_BARRIER": 60.69911184307745,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 320.4115008234621
+            },
+            "13": {
+              "MOVE": 102.0,
+              "TURN": 9.283185307179581,
+              "TURN_BARRIER": 43.7035375555132,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 154.98672286269277
+            },
+            "14": {
+              "MOVE": 246.0,
+              "TURN": 7.712388980384684,
+              "TURN_BARRIER": 60.699111843077446,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 314.4115008234621
+            },
+            "15": {
+              "MOVE": 136.0,
+              "TURN": 7.712388980384674,
+              "TURN_BARRIER": 50.41592653589789,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 194.12831551628256
+            }
+          }
+        },
+        "frozen_soc": {
+          "soc": 1112,
+          "completion_sum_s": 3061.504380495905,
+          "makespan_s": 418.982297150257,
+          "MOVE": 2224.0,
+          "TURN": 119.53981633974473,
+          "TURN_BARRIER": 717.9645641561585,
+          "DISCRETE_WAIT_SLOT": 0.0,
+          "selected": "frozen_proposal",
+          "per_agent": {
+            "0": {
+              "MOVE": 348.0,
+              "TURN": 11.853981633974481,
+              "TURN_BARRIER": 59.12831551628254,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 418.982297150257
+            },
+            "1": {
+              "MOVE": 130.0,
+              "TURN": 6.712388980384684,
+              "TURN_BARRIER": 51.41592653589788,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 188.12831551628256
+            },
+            "2": {
+              "MOVE": 158.0,
+              "TURN": 6.712388980384684,
+              "TURN_BARRIER": 53.98672286269277,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 218.69911184307745
+            },
+            "3": {
+              "MOVE": 45.99999999999999,
+              "TURN": 0.0,
+              "TURN_BARRIER": 29.84955592153876,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 75.84955592153875
+            },
+            "4": {
+              "MOVE": 43.99999999999999,
+              "TURN": 5.14159265358979,
+              "TURN_BARRIER": 24.70796326794897,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 73.84955592153875
+            },
+            "5": {
+              "MOVE": 100.0,
+              "TURN": 5.1415926535897825,
+              "TURN_BARRIER": 47.845130209103,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 152.98672286269277
+            },
+            "6": {
+              "MOVE": 82.0,
+              "TURN": 6.71238898038469,
+              "TURN_BARRIER": 33.420352248333636,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 122.13274122871832
+            },
+            "7": {
+              "MOVE": 70.0,
+              "TURN": 6.71238898038469,
+              "TURN_BARRIER": 28.278759594743853,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 104.99114857512853
+            },
+            "8": {
+              "MOVE": 45.99999999999999,
+              "TURN": 10.283185307179586,
+              "TURN_BARRIER": 19.566370614359172,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 75.84955592153875
+            },
+            "9": {
+              "MOVE": 198.0,
+              "TURN": 14.424777960769358,
+              "TURN_BARRIER": 53.98672286269277,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 266.4115008234621
+            },
+            "10": {
+              "MOVE": 140.0,
+              "TURN": 9.283185307179576,
+              "TURN_BARRIER": 48.84513020910299,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 198.12831551628256
+            },
+            "11": {
+              "MOVE": 126.0,
+              "TURN": 4.141592653589793,
+              "TURN_BARRIER": 51.41592653589788,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 181.55751918948766
+            },
+            "12": {
+              "MOVE": 252.0,
+              "TURN": 7.712388980384674,
+              "TURN_BARRIER": 60.69911184307745,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 320.4115008234621
+            },
+            "13": {
+              "MOVE": 102.0,
+              "TURN": 9.283185307179581,
+              "TURN_BARRIER": 43.7035375555132,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 154.98672286269277
+            },
+            "14": {
+              "MOVE": 246.0,
+              "TURN": 7.712388980384684,
+              "TURN_BARRIER": 60.699111843077446,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 314.4115008234621
+            },
+            "15": {
+              "MOVE": 136.0,
+              "TURN": 7.712388980384674,
+              "TURN_BARRIER": 50.41592653589789,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 194.12831551628256
+            }
+          }
+        },
+        "turn_aware": {
+          "soc": 1112,
+          "completion_sum_s": 3061.504380495905,
+          "makespan_s": 418.982297150257,
+          "MOVE": 2224.0,
+          "TURN": 119.53981633974473,
+          "TURN_BARRIER": 717.9645641561585,
+          "DISCRETE_WAIT_SLOT": 0.0,
+          "selected": "incumbent",
+          "per_agent": {
+            "0": {
+              "MOVE": 348.0,
+              "TURN": 11.853981633974481,
+              "TURN_BARRIER": 59.12831551628254,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 418.982297150257
+            },
+            "1": {
+              "MOVE": 130.0,
+              "TURN": 6.712388980384684,
+              "TURN_BARRIER": 51.41592653589788,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 188.12831551628256
+            },
+            "2": {
+              "MOVE": 158.0,
+              "TURN": 6.712388980384684,
+              "TURN_BARRIER": 53.98672286269277,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 218.69911184307745
+            },
+            "3": {
+              "MOVE": 45.99999999999999,
+              "TURN": 0.0,
+              "TURN_BARRIER": 29.84955592153876,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 75.84955592153875
+            },
+            "4": {
+              "MOVE": 43.99999999999999,
+              "TURN": 5.14159265358979,
+              "TURN_BARRIER": 24.70796326794897,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 73.84955592153875
+            },
+            "5": {
+              "MOVE": 100.0,
+              "TURN": 5.1415926535897825,
+              "TURN_BARRIER": 47.845130209103,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 152.98672286269277
+            },
+            "6": {
+              "MOVE": 82.0,
+              "TURN": 6.71238898038469,
+              "TURN_BARRIER": 33.420352248333636,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 122.13274122871832
+            },
+            "7": {
+              "MOVE": 70.0,
+              "TURN": 6.71238898038469,
+              "TURN_BARRIER": 28.278759594743853,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 104.99114857512853
+            },
+            "8": {
+              "MOVE": 45.99999999999999,
+              "TURN": 10.283185307179586,
+              "TURN_BARRIER": 19.566370614359172,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 75.84955592153875
+            },
+            "9": {
+              "MOVE": 198.0,
+              "TURN": 14.424777960769358,
+              "TURN_BARRIER": 53.98672286269277,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 266.4115008234621
+            },
+            "10": {
+              "MOVE": 140.0,
+              "TURN": 9.283185307179576,
+              "TURN_BARRIER": 48.84513020910299,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 198.12831551628256
+            },
+            "11": {
+              "MOVE": 126.0,
+              "TURN": 4.141592653589793,
+              "TURN_BARRIER": 51.41592653589788,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 181.55751918948766
+            },
+            "12": {
+              "MOVE": 252.0,
+              "TURN": 7.712388980384674,
+              "TURN_BARRIER": 60.69911184307745,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 320.4115008234621
+            },
+            "13": {
+              "MOVE": 102.0,
+              "TURN": 9.283185307179581,
+              "TURN_BARRIER": 43.7035375555132,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 154.98672286269277
+            },
+            "14": {
+              "MOVE": 246.0,
+              "TURN": 7.712388980384684,
+              "TURN_BARRIER": 60.699111843077446,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 314.4115008234621
+            },
+            "15": {
+              "MOVE": 136.0,
+              "TURN": 7.712388980384674,
+              "TURN_BARRIER": 50.41592653589789,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 194.12831551628256
+            }
+          }
+        }
+      },
+      "frozen_minus_original_completion_s": 0.0,
+      "turn_minus_original_completion_s": 0.0,
+      "entry_wall_s": 3.741552262
+    },
+    {
+      "case": "warehouse-10-20-10-2-1__s01__n32",
+      "arms": {
+        "original": {
+          "soc": 2486,
+          "completion_sum_s": 8081.51311134336,
+          "makespan_s": 496.1061869541038,
+          "MOVE": 4972.0,
+          "TURN": 266.7875959474382,
+          "TURN_BARRIER": 2842.725515395946,
+          "DISCRETE_WAIT_SLOT": 0.0,
+          "selected": "incumbent",
+          "per_agent": {
+            "0": {
+              "MOVE": 348.0,
+              "TURN": 16.995574287564263,
+              "TURN_BARRIER": 131.1106126665395,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 496.1061869541038
+            },
+            "1": {
+              "MOVE": 130.0,
+              "TURN": 6.712388980384684,
+              "TURN_BARRIER": 89.97787143782126,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 226.69026041820595
+            },
+            "2": {
+              "MOVE": 158.00000000000003,
+              "TURN": 6.712388980384684,
+              "TURN_BARRIER": 95.11946409141105,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 259.83185307179576
+            },
+            "3": {
+              "MOVE": 46.0,
+              "TURN": 0.0,
+              "TURN_BARRIER": 42.703537555513236,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 88.70353755551324
+            },
+            "4": {
+              "MOVE": 44.0,
+              "TURN": 5.14159265358979,
+              "TURN_BARRIER": 37.56194490192345,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 86.70353755551324
+            },
+            "5": {
+              "MOVE": 100.0,
+              "TURN": 5.1415926535897825,
+              "TURN_BARRIER": 78.69468613064171,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 183.8362787842315
+            },
+            "6": {
+              "MOVE": 82.0,
+              "TURN": 6.71238898038469,
+              "TURN_BARRIER": 61.69911184307746,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 150.41150082346215
+            },
+            "7": {
+              "MOVE": 70.0,
+              "TURN": 6.71238898038469,
+              "TURN_BARRIER": 51.415926535897896,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 128.12831551628258
+            },
+            "8": {
+              "MOVE": 46.0,
+              "TURN": 10.28318530717958,
+              "TURN_BARRIER": 32.42035224833366,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 88.70353755551324
+            },
+            "9": {
+              "MOVE": 198.00000000000003,
+              "TURN": 14.424777960769358,
+              "TURN_BARRIER": 118.25663103256507,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 330.68140899333446
+            },
+            "10": {
+              "MOVE": 140.0,
+              "TURN": 9.283185307179576,
+              "TURN_BARRIER": 89.97787143782126,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 239.26105674500084
+            },
+            "11": {
+              "MOVE": 126.0,
+              "TURN": 4.141592653589793,
+              "TURN_BARRIER": 87.40707511102637,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 217.54866776461617
+            },
+            "12": {
+              "MOVE": 252.00000000000003,
+              "TURN": 7.712388980384674,
+              "TURN_BARRIER": 130.11061266653954,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 389.82300164692424
+            },
+            "13": {
+              "MOVE": 102.0,
+              "TURN": 9.283185307179581,
+              "TURN_BARRIER": 74.55309347705192,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 185.8362787842315
+            },
+            "14": {
+              "MOVE": 246.00000000000003,
+              "TURN": 12.853981633974467,
+              "TURN_BARRIER": 124.96902001294974,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 383.82300164692424
+            },
+            "15": {
+              "MOVE": 136.0,
+              "TURN": 7.712388980384674,
+              "TURN_BARRIER": 88.97787143782128,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 232.69026041820595
+            },
+            "16": {
+              "MOVE": 116.0,
+              "TURN": 5.1415926535897825,
+              "TURN_BARRIER": 83.8362787842315,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 204.97787143782128
+            },
+            "17": {
+              "MOVE": 302.0,
+              "TURN": 6.712388980384684,
+              "TURN_BARRIER": 141.39379797371907,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 450.1061869541038
+            },
+            "18": {
+              "MOVE": 122.0,
+              "TURN": 6.712388980384684,
+              "TURN_BARRIER": 84.83627878423148,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 213.54866776461617
+            },
+            "19": {
+              "MOVE": 246.00000000000003,
+              "TURN": 2.5707963267948912,
+              "TURN_BARRIER": 135.25220532012932,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 383.82300164692424
+            },
+            "20": {
+              "MOVE": 140.0,
+              "TURN": 5.1415926535897825,
+              "TURN_BARRIER": 94.11946409141106,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 239.26105674500084
+            },
+            "21": {
+              "MOVE": 192.00000000000003,
+              "TURN": 5.1415926535897825,
+              "TURN_BARRIER": 122.39822368615486,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 319.5398163397447
+            },
+            "22": {
+              "MOVE": 142.0,
+              "TURN": 9.283185307179576,
+              "TURN_BARRIER": 89.97787143782126,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 241.26105674500084
+            },
+            "23": {
+              "MOVE": 6.0,
+              "TURN": 2.5707963267948966,
+              "TURN_BARRIER": 6.71238898038469,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 15.283185307179586
+            },
+            "24": {
+              "MOVE": 172.00000000000003,
+              "TURN": 10.283185307179576,
+              "TURN_BARRIER": 101.83185307179572,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 284.1150383789753
+            },
+            "25": {
+              "MOVE": 330.0,
+              "TURN": 11.853981633974474,
+              "TURN_BARRIER": 136.2522053201293,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 478.1061869541038
+            },
+            "26": {
+              "MOVE": 56.0,
+              "TURN": 6.7123889803846915,
+              "TURN_BARRIER": 43.70353755551322,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 106.41592653589791
+            },
+            "27": {
+              "MOVE": 148.0,
+              "TURN": 10.28318530717958,
+              "TURN_BARRIER": 88.97787143782126,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 247.26105674500084
+            },
+            "28": {
+              "MOVE": 260.0,
+              "TURN": 23.13716694115403,
+              "TURN_BARRIER": 117.25663103256507,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 400.39379797371913
+            },
+            "29": {
+              "MOVE": 166.00000000000003,
+              "TURN": 9.283185307179576,
+              "TURN_BARRIER": 97.69026041820594,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 272.97344572538555
+            },
+            "30": {
+              "MOVE": 40.0,
+              "TURN": 5.14159265358979,
+              "TURN_BARRIER": 32.420352248333664,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 77.56194490192345
+            },
+            "31": {
+              "MOVE": 310.0,
+              "TURN": 16.995574287564263,
+              "TURN_BARRIER": 131.1106126665395,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 458.1061869541038
+            }
+          }
+        },
+        "frozen_soc": {
+          "soc": 2486,
+          "completion_sum_s": 8081.51311134336,
+          "makespan_s": 496.1061869541038,
+          "MOVE": 4972.0,
+          "TURN": 266.7875959474382,
+          "TURN_BARRIER": 2842.725515395946,
+          "DISCRETE_WAIT_SLOT": 0.0,
+          "selected": "frozen_proposal",
+          "per_agent": {
+            "0": {
+              "MOVE": 348.0,
+              "TURN": 16.995574287564263,
+              "TURN_BARRIER": 131.1106126665395,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 496.1061869541038
+            },
+            "1": {
+              "MOVE": 130.0,
+              "TURN": 6.712388980384684,
+              "TURN_BARRIER": 89.97787143782126,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 226.69026041820595
+            },
+            "2": {
+              "MOVE": 158.00000000000003,
+              "TURN": 6.712388980384684,
+              "TURN_BARRIER": 95.11946409141105,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 259.83185307179576
+            },
+            "3": {
+              "MOVE": 46.0,
+              "TURN": 0.0,
+              "TURN_BARRIER": 42.703537555513236,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 88.70353755551324
+            },
+            "4": {
+              "MOVE": 44.0,
+              "TURN": 5.14159265358979,
+              "TURN_BARRIER": 37.56194490192345,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 86.70353755551324
+            },
+            "5": {
+              "MOVE": 100.0,
+              "TURN": 5.1415926535897825,
+              "TURN_BARRIER": 78.69468613064171,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 183.8362787842315
+            },
+            "6": {
+              "MOVE": 82.0,
+              "TURN": 6.71238898038469,
+              "TURN_BARRIER": 61.69911184307746,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 150.41150082346215
+            },
+            "7": {
+              "MOVE": 70.0,
+              "TURN": 6.71238898038469,
+              "TURN_BARRIER": 51.415926535897896,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 128.12831551628258
+            },
+            "8": {
+              "MOVE": 46.0,
+              "TURN": 10.28318530717958,
+              "TURN_BARRIER": 32.42035224833366,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 88.70353755551324
+            },
+            "9": {
+              "MOVE": 198.00000000000003,
+              "TURN": 14.424777960769358,
+              "TURN_BARRIER": 118.25663103256507,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 330.68140899333446
+            },
+            "10": {
+              "MOVE": 140.0,
+              "TURN": 9.283185307179576,
+              "TURN_BARRIER": 89.97787143782126,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 239.26105674500084
+            },
+            "11": {
+              "MOVE": 126.0,
+              "TURN": 4.141592653589793,
+              "TURN_BARRIER": 87.40707511102637,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 217.54866776461617
+            },
+            "12": {
+              "MOVE": 252.00000000000003,
+              "TURN": 7.712388980384674,
+              "TURN_BARRIER": 130.11061266653954,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 389.82300164692424
+            },
+            "13": {
+              "MOVE": 102.0,
+              "TURN": 9.283185307179581,
+              "TURN_BARRIER": 74.55309347705192,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 185.8362787842315
+            },
+            "14": {
+              "MOVE": 246.00000000000003,
+              "TURN": 12.853981633974467,
+              "TURN_BARRIER": 124.96902001294974,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 383.82300164692424
+            },
+            "15": {
+              "MOVE": 136.0,
+              "TURN": 7.712388980384674,
+              "TURN_BARRIER": 88.97787143782128,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 232.69026041820595
+            },
+            "16": {
+              "MOVE": 116.0,
+              "TURN": 5.1415926535897825,
+              "TURN_BARRIER": 83.8362787842315,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 204.97787143782128
+            },
+            "17": {
+              "MOVE": 302.0,
+              "TURN": 6.712388980384684,
+              "TURN_BARRIER": 141.39379797371907,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 450.1061869541038
+            },
+            "18": {
+              "MOVE": 122.0,
+              "TURN": 6.712388980384684,
+              "TURN_BARRIER": 84.83627878423148,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 213.54866776461617
+            },
+            "19": {
+              "MOVE": 246.00000000000003,
+              "TURN": 2.5707963267948912,
+              "TURN_BARRIER": 135.25220532012932,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 383.82300164692424
+            },
+            "20": {
+              "MOVE": 140.0,
+              "TURN": 5.1415926535897825,
+              "TURN_BARRIER": 94.11946409141106,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 239.26105674500084
+            },
+            "21": {
+              "MOVE": 192.00000000000003,
+              "TURN": 5.1415926535897825,
+              "TURN_BARRIER": 122.39822368615486,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 319.5398163397447
+            },
+            "22": {
+              "MOVE": 142.0,
+              "TURN": 9.283185307179576,
+              "TURN_BARRIER": 89.97787143782126,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 241.26105674500084
+            },
+            "23": {
+              "MOVE": 6.0,
+              "TURN": 2.5707963267948966,
+              "TURN_BARRIER": 6.71238898038469,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 15.283185307179586
+            },
+            "24": {
+              "MOVE": 172.00000000000003,
+              "TURN": 10.283185307179576,
+              "TURN_BARRIER": 101.83185307179572,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 284.1150383789753
+            },
+            "25": {
+              "MOVE": 330.0,
+              "TURN": 11.853981633974474,
+              "TURN_BARRIER": 136.2522053201293,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 478.1061869541038
+            },
+            "26": {
+              "MOVE": 56.0,
+              "TURN": 6.7123889803846915,
+              "TURN_BARRIER": 43.70353755551322,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 106.41592653589791
+            },
+            "27": {
+              "MOVE": 148.0,
+              "TURN": 10.28318530717958,
+              "TURN_BARRIER": 88.97787143782126,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 247.26105674500084
+            },
+            "28": {
+              "MOVE": 260.0,
+              "TURN": 23.13716694115403,
+              "TURN_BARRIER": 117.25663103256507,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 400.39379797371913
+            },
+            "29": {
+              "MOVE": 166.00000000000003,
+              "TURN": 9.283185307179576,
+              "TURN_BARRIER": 97.69026041820594,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 272.97344572538555
+            },
+            "30": {
+              "MOVE": 40.0,
+              "TURN": 5.14159265358979,
+              "TURN_BARRIER": 32.420352248333664,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 77.56194490192345
+            },
+            "31": {
+              "MOVE": 310.0,
+              "TURN": 16.995574287564263,
+              "TURN_BARRIER": 131.1106126665395,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 458.1061869541038
+            }
+          }
+        },
+        "turn_aware": {
+          "soc": 2486,
+          "completion_sum_s": 8081.51311134336,
+          "makespan_s": 496.1061869541038,
+          "MOVE": 4972.0,
+          "TURN": 266.7875959474382,
+          "TURN_BARRIER": 2842.725515395946,
+          "DISCRETE_WAIT_SLOT": 0.0,
+          "selected": "incumbent",
+          "per_agent": {
+            "0": {
+              "MOVE": 348.0,
+              "TURN": 16.995574287564263,
+              "TURN_BARRIER": 131.1106126665395,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 496.1061869541038
+            },
+            "1": {
+              "MOVE": 130.0,
+              "TURN": 6.712388980384684,
+              "TURN_BARRIER": 89.97787143782126,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 226.69026041820595
+            },
+            "2": {
+              "MOVE": 158.00000000000003,
+              "TURN": 6.712388980384684,
+              "TURN_BARRIER": 95.11946409141105,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 259.83185307179576
+            },
+            "3": {
+              "MOVE": 46.0,
+              "TURN": 0.0,
+              "TURN_BARRIER": 42.703537555513236,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 88.70353755551324
+            },
+            "4": {
+              "MOVE": 44.0,
+              "TURN": 5.14159265358979,
+              "TURN_BARRIER": 37.56194490192345,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 86.70353755551324
+            },
+            "5": {
+              "MOVE": 100.0,
+              "TURN": 5.1415926535897825,
+              "TURN_BARRIER": 78.69468613064171,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 183.8362787842315
+            },
+            "6": {
+              "MOVE": 82.0,
+              "TURN": 6.71238898038469,
+              "TURN_BARRIER": 61.69911184307746,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 150.41150082346215
+            },
+            "7": {
+              "MOVE": 70.0,
+              "TURN": 6.71238898038469,
+              "TURN_BARRIER": 51.415926535897896,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 128.12831551628258
+            },
+            "8": {
+              "MOVE": 46.0,
+              "TURN": 10.28318530717958,
+              "TURN_BARRIER": 32.42035224833366,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 88.70353755551324
+            },
+            "9": {
+              "MOVE": 198.00000000000003,
+              "TURN": 14.424777960769358,
+              "TURN_BARRIER": 118.25663103256507,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 330.68140899333446
+            },
+            "10": {
+              "MOVE": 140.0,
+              "TURN": 9.283185307179576,
+              "TURN_BARRIER": 89.97787143782126,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 239.26105674500084
+            },
+            "11": {
+              "MOVE": 126.0,
+              "TURN": 4.141592653589793,
+              "TURN_BARRIER": 87.40707511102637,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 217.54866776461617
+            },
+            "12": {
+              "MOVE": 252.00000000000003,
+              "TURN": 7.712388980384674,
+              "TURN_BARRIER": 130.11061266653954,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 389.82300164692424
+            },
+            "13": {
+              "MOVE": 102.0,
+              "TURN": 9.283185307179581,
+              "TURN_BARRIER": 74.55309347705192,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 185.8362787842315
+            },
+            "14": {
+              "MOVE": 246.00000000000003,
+              "TURN": 12.853981633974467,
+              "TURN_BARRIER": 124.96902001294974,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 383.82300164692424
+            },
+            "15": {
+              "MOVE": 136.0,
+              "TURN": 7.712388980384674,
+              "TURN_BARRIER": 88.97787143782128,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 232.69026041820595
+            },
+            "16": {
+              "MOVE": 116.0,
+              "TURN": 5.1415926535897825,
+              "TURN_BARRIER": 83.8362787842315,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 204.97787143782128
+            },
+            "17": {
+              "MOVE": 302.0,
+              "TURN": 6.712388980384684,
+              "TURN_BARRIER": 141.39379797371907,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 450.1061869541038
+            },
+            "18": {
+              "MOVE": 122.0,
+              "TURN": 6.712388980384684,
+              "TURN_BARRIER": 84.83627878423148,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 213.54866776461617
+            },
+            "19": {
+              "MOVE": 246.00000000000003,
+              "TURN": 2.5707963267948912,
+              "TURN_BARRIER": 135.25220532012932,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 383.82300164692424
+            },
+            "20": {
+              "MOVE": 140.0,
+              "TURN": 5.1415926535897825,
+              "TURN_BARRIER": 94.11946409141106,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 239.26105674500084
+            },
+            "21": {
+              "MOVE": 192.00000000000003,
+              "TURN": 5.1415926535897825,
+              "TURN_BARRIER": 122.39822368615486,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 319.5398163397447
+            },
+            "22": {
+              "MOVE": 142.0,
+              "TURN": 9.283185307179576,
+              "TURN_BARRIER": 89.97787143782126,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 241.26105674500084
+            },
+            "23": {
+              "MOVE": 6.0,
+              "TURN": 2.5707963267948966,
+              "TURN_BARRIER": 6.71238898038469,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 15.283185307179586
+            },
+            "24": {
+              "MOVE": 172.00000000000003,
+              "TURN": 10.283185307179576,
+              "TURN_BARRIER": 101.83185307179572,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 284.1150383789753
+            },
+            "25": {
+              "MOVE": 330.0,
+              "TURN": 11.853981633974474,
+              "TURN_BARRIER": 136.2522053201293,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 478.1061869541038
+            },
+            "26": {
+              "MOVE": 56.0,
+              "TURN": 6.7123889803846915,
+              "TURN_BARRIER": 43.70353755551322,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 106.41592653589791
+            },
+            "27": {
+              "MOVE": 148.0,
+              "TURN": 10.28318530717958,
+              "TURN_BARRIER": 88.97787143782126,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 247.26105674500084
+            },
+            "28": {
+              "MOVE": 260.0,
+              "TURN": 23.13716694115403,
+              "TURN_BARRIER": 117.25663103256507,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 400.39379797371913
+            },
+            "29": {
+              "MOVE": 166.00000000000003,
+              "TURN": 9.283185307179576,
+              "TURN_BARRIER": 97.69026041820594,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 272.97344572538555
+            },
+            "30": {
+              "MOVE": 40.0,
+              "TURN": 5.14159265358979,
+              "TURN_BARRIER": 32.420352248333664,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 77.56194490192345
+            },
+            "31": {
+              "MOVE": 310.0,
+              "TURN": 16.995574287564263,
+              "TURN_BARRIER": 131.1106126665395,
+              "DISCRETE_WAIT_SLOT": 0.0,
+              "completion": 458.1061869541038
+            }
+          }
+        }
+      },
+      "frozen_minus_original_completion_s": 0.0,
+      "turn_minus_original_completion_s": 0.0,
+      "entry_wall_s": 11.054396095
+    }
+  ]
+}

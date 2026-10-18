@@ -1,0 +1,59 @@
+{
+  "accounting": "Total includes Git reads, imports, selection, all geometry/construction, metric checks, result serialization, fsync, artifact hashes, and supervisor wait. Administrative receipt write and final process exit excluded. Nested times are not additive. Prior SCI optimization cost is source metadata, not this motion-adaptation cost.",
+  "artifacts": {
+    "arm_frozen_soc.json": {
+      "bytes": 324414,
+      "sha256": "2bf52934ae8d1db09881d0942d26bb5a9532b7603c437dce758002b516f4826c"
+    },
+    "arm_original.json": {
+      "bytes": 324404,
+      "sha256": "2ef036abbeea860e0dd9b1df6c892d9a98949605a87a7116bfc1e6889313cbb6"
+    },
+    "arm_turn_aware.json": {
+      "bytes": 325031,
+      "sha256": "3bfa04d5c0145b3dbb3bac6628c20bf71670f9e23a39bbe004f9932b32137383"
+    },
+    "attempt.json": {
+      "bytes": 339,
+      "sha256": "7473cc686001c3cd938eb2fa67b3f75149c91a7099dc7c755dfc04c1ac472fc4"
+    },
+    "result.json": {
+      "bytes": 13085,
+      "sha256": "d7dd8045351765b21f89037f95840d0ca9a1afcf21dfe9d5e6a3b49b6ada28d9"
+    },
+    "worker.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "worker.stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "case": "random-32-32-10__s01__n16",
+  "entry_through_import_input_validation_output_and_hash_ns": 1299076291,
+  "manifest_sha256": "dfac22c05d73e712cadc8937e2ccc4a855e2764ef8f2b4c5f4f9546dd33b3b7c",
+  "new_scientific_motion_comparison": true,
+  "retry_allowed": false,
+  "status": "COMPLETE",
+  "supervisor_self_cpu_s": 0.079856,
+  "worker_costs": {
+    "all_descendant_system_s": 0.093102,
+    "all_descendant_user_s": 1.041005,
+    "exit_code": 0,
+    "forced_cleanup": false,
+    "interruption": null,
+    "largest_child_maxrss_kib": 24768,
+    "reaped": [
+      {
+        "exit_code": 0,
+        "maxrss_kib": 24768,
+        "pid": 60,
+        "system_s": 0.09310199999999999,
+        "user_s": 1.041005
+      }
+    ],
+    "scope": "WORKER_IMPORT_TO_EXIT_INCLUDING_RESULT_IO_AND_WAITED_NATIVE",
+    "wall_ns": 1161453425
+  }
+}

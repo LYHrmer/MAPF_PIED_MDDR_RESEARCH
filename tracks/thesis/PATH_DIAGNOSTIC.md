@@ -1,5 +1,7 @@
 # 等成本改路与运动适配：现有六任务的离线诊断
 
+> 本文保留运动模块实现前的离线诊断，不再代表当前运行状态。六任务三臂比较已完成，最新结果及0.5m/格下v2资格决定见[MOTION_RESULT.md](MOTION_RESULT.md)；旧几何证据与下文历史判断原样保留。
+
 状态：`OFFLINE_EQUAL_COST_AND_DISPLACEMENT_AUDIT`，`new_experiment=false`。本轮只解析SCI固定提交`535ee1adf3135ab79565e0b3aa5d189348fe7ab2`的输入及最终结果；未生成新路径、调用SIPP、枚举真实任务上的路径组合、启动world或训练。六项科学DEV许可已消费。两条研究线仍是候选问题，当前不承诺独立学习/RL章节。
 
 ## 现象分解：哪些车以什么代价改变了路线
