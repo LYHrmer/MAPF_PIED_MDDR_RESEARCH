@@ -1,15 +1,17 @@
 # 两线最新进度
 
-2026-10-18。唯一当前决定：[docs/RESEARCH_PLAN.md](docs/RESEARCH_PLAN.md)。两线均为候选问题验证阶段；main维护总体决定，详细数值集中在各线报告。本轮新增明确授权的ADDRESS功能批次，遇第3项失败停止；没有训练或world。
+2026-10-18。唯一当前决定：[docs/RESEARCH_PLAN.md](docs/RESEARCH_PLAN.md)。两线均为候选问题验证阶段；main维护总体决定，详细数值集中在各线报告。本轮按明确授权执行根界修补版四项功能清单，遇第2项失败停批，零重试；没有训练或world。
 
 ## 当前交付
 
 | 研究线 | 已完成 | 下一项与边界 |
 |---|---|---|
-| SCI：给定合法初解，在有限总预算内改善路径质量 | 完整ADDRESS功能批次2项成功、1项失败、3项停批未运行；零余量空构组的共同根界终止已完成软件复现、修补与单独编译 | 原许可关闭，新四项功能清单待授权。后段恢复仍无科学结果，完整强基线上的适用机会尚未证实 |
+| SCI：给定合法初解，在有限总预算内改善路径质量 | 原完整ADDRESS批2成功/1失败/3未运行；本轮根界修补批1成功/1失败/2未运行。零余量正常返回，正余量仍无最终输出 | 两批许可均关闭。先使共同预算检查覆盖构组与单次SIPP、到期回滚及末检输出；恢复机会与收益仍未证实 |
 | 硕士：同一优化器的运动与误差扩展 | 已实现统一转向barrier、共同移动phase的无误差物理时序及整段圆外包充分检查；固定引用SCI验证器 | 8项软件夹具通过，未应用旧六任务或新ADDRESS结果。共享phase的实际反馈执行、误差扩展和任务收益仍待验证 |
 
-SCI[本批完整报告](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/eb4a60f236447505e6bb2cb0cc7e0e96cdfaa919/tracks/sci/ADDRESS_DEV_RESULT.md)：maze16/32改善SOC 3/7步、makespan不变；random16原生SIGKILL，约10秒CPU，未产生最终有效输出；后三项按清单未运行。失败不删、不填作0改善成功。原源码的零余量严格randomWalk与构组失败continue可形成不计入16次修复的忙循环，纯软件夹具已复现；共同根界break修补通过3项检查，原runPP/奖励不变，不计为贡献。7项适配检查通过；[新四项清单](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/eb4a60f236447505e6bb2cb0cc7e0e96cdfaa919/tracks/sci/ADDRESS_GUARD_CHECKLIST.md)已编译/help/inspect，待新授权，不复用旧许可。
+SCI[根界修补批报告](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/65a968c7138cfdc6097a81178362c6e03f2dfbd3/tracks/sci/ADDRESS_GUARD_RESULT.md)：random16保持SOC407/makespan53，完整准入128.565ms；random32原生退出−9，无有效最终输出，完整准入10161.731ms；warehouse两项未运行。独立离线BFS核对random32下界为769、初解771，根界在初态不触发。日志至少六次组修复已返回，最终停在构组或搜索尚不能确定；不能宣称故障整体解决。共同软截止需进入单次SIPP，保留末检预算与原硬限；DEADLINE不得作为搜索穷尽或恢复标签。23项工件已核，原失败证据未变；许可全部关闭。
+
+SCI[上一批完整报告](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/eb4a60f236447505e6bb2cb0cc7e0e96cdfaa919/tracks/sci/ADDRESS_DEV_RESULT.md)保留maze16/32的SOC改善3/7步及random16失败，后三项未运行。根界修补属于共同工程条件，不计作贡献；旧结果与新结果不构成独立配对性能对照。
 
 [失败诊断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/032bf223b78e6698821cbdee14a63cb8c8bc7718/tracks/sci/LATE_FAILURE_DIAGNOSIS.md)保留全部17项：13项失败位置在组后半；7项失败车旧路径无阻挡但超当次cap，10项旧路径在cap内而与新prefix冲突。它们来自固定ID组探针，尚不能认定完整ADDRESS有同样瓶颈。候选为失败车旧路径前移、保留未受影响前段、最多一次尾段重算；未执行、未证明能恢复或节省成本。回退本身不是创新，需对照直接放弃、随机重排与适配后的优先级搜索。
 

@@ -12,11 +12,11 @@
 | explore/query-value-feasibility，交接 | `/home/lyh/MAPF_QUERY_VALUE_FEASIBILITY` | `exploration/execution_feedback/`：反馈和费用 |
 | archive/learned-query-20261016，detached | `/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE` | 停止的查询学习与失败证据，HEAD `57aee7b` |
 
-两研究树的总体README/计划/进度/导航已改为main与本线入口的简短索引；创建时快照保留在历史提交中。唯一当前总体决定始终读取main的`docs/RESEARCH_PLAN.md`。SCI当前实现与停批证据为`eb4a60f`、硕士无误差运动参考为`e507702`，main用固定提交索引，不复制算法。SCI原8车六臂见`c0bd134`的`tracks/sci/DEV_RESULT.md`；其`RUN_CHECKLIST.md`已消费，不能重跑。
+两研究树的总体README/计划/进度/导航已改为main与本线入口的简短索引；创建时快照保留在历史提交中。唯一当前总体决定始终读取main的`docs/RESEARCH_PLAN.md`。SCI当前入口与停批证据为`65a968c`、硕士无误差运动参考为`e507702`，main用固定提交索引，不复制算法。SCI原8车六臂见`c0bd134`的`tracks/sci/DEV_RESULT.md`；其`RUN_CHECKLIST.md`已消费，不能重跑。
 
 SCI六份16/32车诊断已获本批新授权并全部完成：[PROFILE_RESULT.md](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/535ee1adf3135ab79565e0b3aa5d189348fe7ab2/tracks/sci/PROFILE_RESULT.md)。配置在`tracks/sci/config/repair_residual_v1_*`，冻结结果在`tracks/sci/results/repair_residual_v1/`；`PROFILE_CHECKLIST.md`许可已消费。`repair_profile.py`增加仅解析已有记录的费用拆分，不替换原运行代码或旧消费记录。
 
-SCI[eb4a60f](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/eb4a60f236447505e6bb2cb0cc7e0e96cdfaa919/tracks/sci/README.md)保存完整ADDRESS功能批次：2成功、1失败、3停批未运行。科学运行代码仍固定`032bf22`；原始结果在`results/address_common_initial_v1/`，新共同根界及原生恢复扩展没有回填旧结果。`ADDRESS_GUARD_CHECKLIST.md`准备四项新版本功能核验，待新授权；恢复原型只编译/help与软件检查，运行器尚拒绝该变体。
+SCI[65a968c](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/65a968c7138cfdc6097a81178362c6e03f2dfbd3/tracks/sci/README.md)保存两批完整ADDRESS功能结果：原批2成功、1失败、3未运行，科学代码`032bf22`、产物`results/address_common_initial_v1/`；根界修补批1成功、1失败、2未运行，科学代码`eb4a60f`、产物`results/address_loop_guard_v1/`。两批均零重试、许可关闭，原证据未回填。`ADDRESS_GUARD_RESULT.md`记录本轮退出缺口与下一共同预算修补；恢复原型只编译/help与软件检查，运行器尚拒绝该变体。
 
 硕士[e507702](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/e5077026e16a869499fc03444f03bb433665cce8/tracks/thesis/README.md)在等成本诊断与整方案规则上新增`nominal_motion.py`，生成共享phase的无误差时序并做连续圆外包充分检查；尚无任务比较或真实反馈执行。`sci.lock.json`仍消费SCI`535ee1a`的14个证据，`plan_selection.lock.json`固定同版原验证器，来源条件文档仍固定`16b1ee0`，不互读新树或自动消费本次ADDRESS结果。此前全部派生证据原字节保留。
 
@@ -27,7 +27,7 @@ SCI[eb4a60f](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/eb4a60f2364
 - 12份旧运行代码分别固定执行`81f5866`、来源`43806cf`、工具`5589a7b`；新的文档交接提交不会静默改变代码pin。
 - SCI的ADDRESS原版依赖固定`b3d35c431ce03834f95e834d87986f2f341394a1`；作者缓存`/home/lyh/.cache/mapf_research/address-b3d35c4`保持原样，本线提交保存许可、源文件摘要和编译收据，二进制不入库。它是SCI专用依赖，尚未提升为两线公共API。
 - 完整ADDRESS原版编译工件见SCI固定[57c3d69](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/57c3d6999e27e50e05164af0686ab6f461dfe1bf/tracks/sci/full_address_build_receipt.json)：`build_address_full.py`树外编译并只查询help，本机`.full_address_build/build/address`。尚未科学运行，也不是六任务清单锁定的SIPP桥接程序；不得替换清单二进制。
-- 完整ADDRESS适配版收据见SCI[032bf22](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/032bf223b78e6698821cbdee14a63cb8c8bc7718/tracks/sci/adapter_build_receipt.json)，本机`.address_adapter_build/build/address`，已用于上述停批功能DEV。另有`.address_loop_guard_build/`与`.address_recovery_build/`两个独立小型构建overlay及二进制，分别保存收据；只编译/help，未科学运行，不覆盖旧产物。作者缓存始终保持原样。
+- 完整ADDRESS适配版收据见SCI[032bf22](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/032bf223b78e6698821cbdee14a63cb8c8bc7718/tracks/sci/adapter_build_receipt.json)，本机`.address_adapter_build/build/address`，已用于原停批功能DEV。`.address_loop_guard_build/`用于本轮根界修补功能DEV；`.address_recovery_build/`仍只编译/help、未科学运行。两个小型overlay分别保留收据与二进制，不覆盖旧产物。作者缓存始终保持原样。
 - 实际四次DEV固定于执行证据提交`ae058c5`：[完整报告](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/ae058c5025eaaa61a424ef7627515d40c2e83997/exploration/spatial_constraints_s1_20261016/PREEXECUTION_DEV_RESULT.md)。原路径、收据SHA和消费标记不迁移、不重写。
 - 原v2 `composition.py`、C1夹具与失败证据保持原路径。旧运行器仍有绝对路径/`__file__`依赖；只有完成小文件固定bundle适配和新清单后才能脱离旧树运行。
 - `MANUSCRIPT_PREEXPERIMENT.md`仅main现有未提交版受保护，不复制到两线作为新稿。
