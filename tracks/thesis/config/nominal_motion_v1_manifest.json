@@ -1,0 +1,66 @@
+{
+  "arms": [
+    "original",
+    "frozen_soc",
+    "turn_aware"
+  ],
+  "authorization": "PENDING_USER",
+  "batch_id": "nominal_motion_v1",
+  "cases": [
+    "maze-32-32-2__s01__n16",
+    "maze-32-32-2__s01__n32",
+    "random-32-32-10__s01__n16",
+    "random-32-32-10__s01__n32",
+    "warehouse-10-20-10-2-1__s01__n16",
+    "warehouse-10-20-10-2-1__s01__n32"
+  ],
+  "initial_heading_quarters": 0,
+  "input_sha256": "be1e912e1e2ea3f59fcdc5d0c5737118e7f96d92227be536ada605f6751c0e5b",
+  "limits": {
+    "final_artifact_reserve_s": 2,
+    "outer_kill_after_s": 2,
+    "outer_term_s": 62,
+    "per_file_mib": 16,
+    "total_admission_wall_s": 60,
+    "worker_as_mib": 512,
+    "worker_cpu_s": 45
+  },
+  "motion_model": {
+    "accel_m_s2": "1/2",
+    "body_length_m": "11/50",
+    "body_width_m": "4/25",
+    "cell_m": "1/2",
+    "decel_m_s2": "1/2",
+    "speed_m_s": "1/2",
+    "turn_accel_rad_s2": "1",
+    "turn_decel_rad_s2": "1",
+    "turn_speed_rad_s": "1"
+  },
+  "motion_parameter_source": "SYNTHETIC_DECLARED_IDEAL_MODEL_NOT_LIMO_MEASUREMENT",
+  "new_world": false,
+  "optimizer_search": false,
+  "retries": 0,
+  "runtime_sha256": {
+    "compare_nominal_motion.py": "97cf7a235485977d2dae8c0e23c11aae29fb9cf073cd2ed47c25d6c83d480627",
+    "export_frozen_trace.py": "defcfb2dfe0b2fd848dc46f11c5bc9ca1e68c10445632dcce2d9d3fb2c248ca9",
+    "inspect_sci_paths.py": "70cd150b5f9bed974004e2f6f418aaa6578f4682132b782fdc6847967c72a95d",
+    "nominal_motion.py": "50da3cf4d23f17f01d682b6f236f510362a230472293b5da164d04d48a8e1bc6",
+    "plan_selection.lock.json": "3eed667929d3e7abd8f0c750047746550e7a87285fb567806e9a84d2a87c0395",
+    "plan_selection.py": "4118efa6dda6a34dca6309a0933e11106242fcff1b3cbad15d405a39f2ac941c",
+    "sci.lock.json": "1c4c57844beb8839335f6e7b52e4f739a7c9a82d65d0f93c61f77317c4de6e66",
+    "shared.lock.json": "82ab83894e4b393e7f8202309debb3f0220a3ec78011be446cf99edd98098709"
+  },
+  "schema": "thesis_nominal_comparison_v1",
+  "sci_commit": "535ee1adf3135ab79565e0b3aa5d189348fe7ab2",
+  "source_family": "repair_residual_v1_remaining_bound_NOT_FULL_ADDRESS",
+  "stop_batch_on_failure": true,
+  "sufficient_geometry_rejection_is_retained_result": true,
+  "supervisor_pin": {
+    "blob_oid": "496b4bfdc8d5ef45ed575622c79c17b7f58153b8",
+    "commit": "535ee1adf3135ab79565e0b3aa5d189348fe7ab2",
+    "path": "tracks/sci/run_repair_dev.py",
+    "sha256": "c2e6eb8ecc825d2d7560157d5d325f62420d4f06d4fc9cb3f6aadd35d28f8397"
+  },
+  "training": false,
+  "waiting_rule": "Every step: turn barrier then one shared move phase. Explicit discrete waits cost one move slot. Completed robots hold forever but post-completion hold is excluded from wait cost."
+}

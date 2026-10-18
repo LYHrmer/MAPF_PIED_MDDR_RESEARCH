@@ -131,6 +131,24 @@ class NominalMotionContracts(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.model(speed_m_s='0')
 
+    def test_obstacle_broadphase_keeps_every_circle_intersection(self):
+        # Exhaustive synthetic tiny grids; not a scientific task or optimizer.
+        problem = self.Grid(7, 7, set(range(49))-{24, 25}, {0: (24, 25)})
+        for values in ({}, {'body_length_m': '.8', 'body_width_m': '1.6'},
+                       {'cell_m': '.3', 'body_length_m': '2', 'body_width_m': '.1'}):
+            model = self.model(**values)
+            for start, end in ((24, 25), (24, 24), (24, 17), (24, 23)):
+                a = motion._point(start, problem.cols, model.cell_m)
+                b = motion._point(end, problem.cols, model.cell_m)
+                candidates = set(motion.obstacle_candidates(problem, a, b, model))
+                for vertex in problem.blocked:
+                    x, y = motion._point(vertex, problem.cols, model.cell_m)
+                    half = model.cell_m/2
+                    distance2 = motion.segment_box_distance_squared(a, b,
+                        (x-half, x+half, y-half, y+half))
+                    if distance2 <= model.body_circle_radius_squared:
+                        self.assertIn(vertex, candidates)
+
     def test_analytic_profiles_are_rest_to_rest_and_share_monotone_progress(self):
         for distance in (.05, 2):
             p = motion.rest_to_rest_profile(distance, .5, 1, .8)

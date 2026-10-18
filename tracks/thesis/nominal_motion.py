@@ -118,6 +118,24 @@ def segment_box_distance_squared(start, end, box):
                             box[2*i], box[2*i+1])**2 for i in (0, 1))
 
 
+def obstacle_candidates(problem, start, end, model):
+    """Conservative grid broadphase; final distance tests remain exact.
+
+    rho <= (length+width)/2. An obstacle centre outside this expanded segment
+    box has an axis distance > rho + cell/2, so its closed cell square cannot
+    intersect the circular enclosure. Inclusive floor/ceil bounds retain all
+    boundary cases; this helper never certifies a candidate by itself.
+    """
+    scale = model.cell_m
+    reach = (model.body_length_m+model.body_width_m+scale)/2
+    left = max(0, math.floor((min(start[0], end[0])-reach)/scale))
+    right = min(problem.cols-1, math.ceil((max(start[0], end[0])+reach)/scale))
+    top = max(0, math.floor((-max(start[1], end[1])-reach)/scale))
+    bottom = min(problem.rows-1, math.ceil((-min(start[1], end[1])+reach)/scale))
+    return [row*problem.cols+col for row in range(top, bottom+1)
+            for col in range(left, right+1) if row*problem.cols+col in problem.blocked]
+
+
 def _point(vertex, cols, scale):
     # Explicit world coordinates: x right, y up; input grid rows increase down.
     return (vertex % cols*scale, -(vertex // cols)*scale)
@@ -192,7 +210,8 @@ def compile_motion(problem, paths, model, initial_headings):
                                         'agent': a, 'clearances_m': [str(v) for v in clearances]}
                     output['checks_attempted'] = checks
                     return output
-                for obstacle, box in obstacles.items():
+                for obstacle in obstacle_candidates(problem, start, end, model):
+                    box = obstacles[obstacle]
                     distance2 = segment_box_distance_squared(start, end, box)
                     checks['obstacle_segments'] += 1
                     if distance2 <= radius2:
@@ -287,8 +306,9 @@ def compile_motion(problem, paths, model, initial_headings):
             'certificate': {'arithmetic': 'EXACT_RATIONAL_GEOMETRY_NO_TIME_SAMPLING',
                 'body_circle_radius_squared_m2': str(radius2), 'strict_separation': True,
                 'checks': checks, 'every_step_and_all_robot_pairs_checked': True,
+                'obstacle_broadphase': 'Inclusive grid box expanded by (body_length+body_width+cell)/2; exact candidate distance checks; excluded closed cells separated by an axis lower bound.',
                 'obstacles_are_closed_grid_squares': True, 'terminal_holds_permanent': True,
-                'argument': 'The rectangle is inside its orientation-invariant circle. During turn/wait centres are fixed. During translation relative centres equal a+q*b for one shared q in [0,1]; the convex quadratic minimum and every axis-aligned segment/closed-obstacle distance are checked exactly. Endpoints cover all barriers and permanent terminal holds.',
+                'argument': 'The rectangle is inside its orientation-invariant circle. During turn/wait centres are fixed. During translation relative centres equal a+q*b for one shared q in [0,1]; the convex quadratic minimum and candidate axis-aligned segment/closed-obstacle distances are checked exactly; all other obstacles are excluded by a conservative axis-distance lower bound. Endpoints cover all barriers and permanent terminal holds.',
                 'conditions': ['Exact ideal tracking of these reference primitives; zero error only.',
                     'Moving robots share one physical progress value and every barrier start; no independent time shifts.',
                     'No continuous safety claim for different speed/turn/clock conditions or an actual feedback controller.',
