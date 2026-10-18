@@ -1,0 +1,32 @@
+In file included from /tmp/dymab-window-software-5f8zwz18/BasicLNS.cpp:1:
+/tmp/dymab-window-software-5f8zwz18/BasicLNS.h: In constructor ‘BasicLNS::BasicLNS(const Instance&, double, int, int, const string&, int, int, double, double, double, double)’:
+/tmp/dymab-window-software-5f8zwz18/BasicLNS.h:127:9: warning: ‘BasicLNS::numberOfDestroyHeuristics’ will be initialized after [-Wreorder]
+  127 |     int numberOfDestroyHeuristics=8;
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/dymab-window-software-5f8zwz18/BasicLNS.h:115:12: warning:   ‘double BasicLNS::alphaUCB’ [-Wreorder]
+  115 |     double alphaUCB = 10000;
+      |            ^~~~~~~~
+/tmp/dymab-window-software-5f8zwz18/BasicLNS.cpp:10:1: warning:   when initialized here [-Wreorder]
+   10 | BasicLNS::BasicLNS(const Instance& instance, double time_limit, int neighbor_size, int screen, const std::string & bandit_algorithm_name, int neighborhoodSizes, int numberOfDestroyHeuristics, double alphaUCB, double initialEpsilon, double lambdaDecay, double decayWindow)
+      | ^~~~~~~~
+In file included from /tmp/dymab-window-software-5f8zwz18/BasicLNS.cpp:1:
+/tmp/dymab-window-software-5f8zwz18/BasicLNS.h:118:12: warning: ‘BasicLNS::decayWindow’ will be initialized after [-Wreorder]
+  118 |     double decayWindow = 100;
+      |            ^~~~~~~~~~~
+/tmp/dymab-window-software-5f8zwz18/BasicLNS.h:114:9: warning:   ‘int BasicLNS::iterationCount’ [-Wreorder]
+  114 |     int iterationCount = 0;
+      |         ^~~~~~~~~~~~~~
+/tmp/dymab-window-software-5f8zwz18/BasicLNS.cpp:10:1: warning:   when initialized here [-Wreorder]
+   10 | BasicLNS::BasicLNS(const Instance& instance, double time_limit, int neighbor_size, int screen, const std::string & bandit_algorithm_name, int neighborhoodSizes, int numberOfDestroyHeuristics, double alphaUCB, double initialEpsilon, double lambdaDecay, double decayWindow)
+      | ^~~~~~~~
+/tmp/dymab-window-software-5f8zwz18/BasicLNS.cpp: In member function ‘void BasicLNS::sampleDestroyHeuristicAndNeighborhoodSize()’:
+/tmp/dymab-window-software-5f8zwz18/BasicLNS.cpp:79:15: warning: unused variable ‘numberOfArms’ [-Wunused-variable]
+   79 |     const int numberOfArms = heuristicBanditStats.destroy_weights.size();
+      |               ^~~~~~~~~~~~
+/tmp/dymab-window-software-5f8zwz18/BasicLNS.cpp: In member function ‘int BasicLNS::sampleDestroyHeuristic(BanditStats*)’:
+/tmp/dymab-window-software-5f8zwz18/BasicLNS.cpp:142:35: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  142 |         for (int index = 0; index < stats->destroy_weights.size(); ++index) {
+      |                             ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/dymab-window-software-5f8zwz18/BasicLNS.cpp:170:39: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  170 |             for (int index = 0; index < stats->destroy_weights.size(); ++index) {
+      |                                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
