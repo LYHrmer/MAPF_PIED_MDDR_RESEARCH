@@ -1,0 +1,2879 @@
+{
+  "cases": [
+    {
+      "all_attempts_and_final_plan_reconstructed": true,
+      "attempts": 6,
+      "cap_failures": 5,
+      "case": "maze-32-32-2__s01__n16"
+    },
+    {
+      "all_attempts_and_final_plan_reconstructed": true,
+      "attempts": 10,
+      "cap_failures": 9,
+      "case": "maze-32-32-2__s01__n32"
+    },
+    {
+      "all_attempts_and_final_plan_reconstructed": true,
+      "attempts": 6,
+      "cap_failures": 0,
+      "case": "random-32-32-10__s01__n16"
+    },
+    {
+      "all_attempts_and_final_plan_reconstructed": true,
+      "attempts": 10,
+      "cap_failures": 3,
+      "case": "random-32-32-10__s01__n32"
+    },
+    {
+      "all_attempts_and_final_plan_reconstructed": true,
+      "attempts": 6,
+      "cap_failures": 0,
+      "case": "warehouse-10-20-10-2-1__s01__n16"
+    },
+    {
+      "all_attempts_and_final_plan_reconstructed": true,
+      "attempts": 10,
+      "cap_failures": 0,
+      "case": "warehouse-10-20-10-2-1__s01__n32"
+    }
+  ],
+  "failures": [
+    {
+      "attempt_index": 0,
+      "attempt_outside_rpc_wall_ns": 7890515,
+      "attempt_python_cpu_ns": 8267843,
+      "attempt_wall_ns": 9683330,
+      "before_incumbent_sha256": "050fae566a6718c294dc1bd71bdf37b6b76adbae824201091a9aed2a9af5c4bb",
+      "bounded_order_descriptions": [
+        {
+          "cut_index": 4,
+          "order": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            4,
+            6,
+            7
+          ],
+          "remaining_old_path_prefix_blockers": [],
+          "reusable_prefix_agents": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "rule": "LATEST_OLD_PATH_BLOCKER",
+          "status": "UNEVALUATED_ORDER_DESCRIPTION_NOT_A_RECOVERY",
+          "suffix_agents_requiring_new_joint_check_or_replan": [
+            5,
+            4,
+            6,
+            7
+          ]
+        }
+      ],
+      "cap_minus_h": 0,
+      "case": "maze-32-32-2__s01__n16",
+      "completed_fraction": 0.625,
+      "earliest_old_path_conflict": {
+        "agent": 4,
+        "first_conflict": {
+          "kind": "VERTEX",
+          "left_at_terminal": false,
+          "right_at_terminal": false,
+          "time": 10,
+          "vertex": 1009
+        },
+        "prefix_index": 4,
+        "scope": "PREFIX"
+      },
+      "empty_capped_calls": 1,
+      "expanded": 218,
+      "failed_agent": 5,
+      "failed_cap": 33,
+      "failed_expanded": 12,
+      "failed_old_path_cost": 33,
+      "failed_old_path_sha256": "64acfd77a95dd8e73f8ba77ddc810ece98c422c7dcc6fdc6eab1fd9061a6a8ac",
+      "failed_old_path_within_cap": true,
+      "failed_order_position_1based": 6,
+      "failed_rpc_wall_ns": 275197,
+      "failed_static_h": 33,
+      "failure_strictly_after_half": true,
+      "found_calls": 5,
+      "group_size": 8,
+      "old_group_cost": 340,
+      "old_path_blockers": [
+        {
+          "agent": 4,
+          "first_conflict": {
+            "kind": "VERTEX",
+            "left_at_terminal": false,
+            "right_at_terminal": false,
+            "time": 10,
+            "vertex": 1009
+          },
+          "prefix_index": 4,
+          "scope": "PREFIX"
+        }
+      ],
+      "order": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "prefix_found_rpc_wall_ns": 1517618,
+      "role": "LOCAL_ID_BLOCK_8",
+      "search_calls": 6,
+      "search_rpc_wall_ns": 1792815,
+      "strict_group_target": 339,
+      "successful_prefix": [
+        {
+          "agent": 0,
+          "cost": 69,
+          "path_sha256": "5b2db9d0616298c4322811cc187d466f18be9c9a6cd13ce43ddbb383c401e403",
+          "rpc_index": 1
+        },
+        {
+          "agent": 1,
+          "cost": 20,
+          "path_sha256": "1b7aed360bba26c532b9d9501d85109ccfeb56d729fc042b30b6855322c4105d",
+          "rpc_index": 2
+        },
+        {
+          "agent": 2,
+          "cost": 61,
+          "path_sha256": "e071a75c8013c79904f7afd4672db063e54325a9d7ddedb87d225ad55694ac1c",
+          "rpc_index": 3
+        },
+        {
+          "agent": 3,
+          "cost": 17,
+          "path_sha256": "265133579c1caf3338de8e572170ad6b2dd713fbee803b31c653f4942711a177",
+          "rpc_index": 4
+        },
+        {
+          "agent": 4,
+          "cost": 16,
+          "path_sha256": "35e3b8a1b41899cb476285348a84d6a6c5cb183a1547ac2d5ba77abee20a5ad3",
+          "rpc_index": 5
+        }
+      ],
+      "successful_prefix_cost": 183,
+      "unchanged_after_sha256": "050fae566a6718c294dc1bd71bdf37b6b76adbae824201091a9aed2a9af5c4bb"
+    },
+    {
+      "attempt_index": 2,
+      "attempt_outside_rpc_wall_ns": 9266291,
+      "attempt_python_cpu_ns": 10182084,
+      "attempt_wall_ns": 11180859,
+      "before_incumbent_sha256": "3d5f8e96986542aa09d76f4ec057875e4f78bb9919e4d7c7e28c6c3d33e114bc",
+      "bounded_order_descriptions": [],
+      "cap_minus_h": 1,
+      "case": "maze-32-32-2__s01__n16",
+      "completed_fraction": 0.875,
+      "earliest_old_path_conflict": null,
+      "empty_capped_calls": 1,
+      "expanded": 359,
+      "failed_agent": 15,
+      "failed_cap": 20,
+      "failed_expanded": 14,
+      "failed_old_path_cost": 21,
+      "failed_old_path_sha256": "f0aa9f0419df25a13a1e9c573f1435025e0d9b46f63f807e9ce801a5e38ad77f",
+      "failed_old_path_within_cap": false,
+      "failed_order_position_1based": 8,
+      "failed_rpc_wall_ns": 249323,
+      "failed_static_h": 19,
+      "failure_strictly_after_half": true,
+      "found_calls": 7,
+      "group_size": 8,
+      "old_group_cost": 350,
+      "old_path_blockers": [],
+      "order": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "prefix_found_rpc_wall_ns": 1665245,
+      "role": "LOCAL_ID_BLOCK_8",
+      "search_calls": 8,
+      "search_rpc_wall_ns": 1914568,
+      "strict_group_target": 349,
+      "successful_prefix": [
+        {
+          "agent": 8,
+          "cost": 52,
+          "path_sha256": "5ef98fddbb9eae4713f5164bad812f21134074378e38bde969cf5b42f4775bf3",
+          "rpc_index": 15
+        },
+        {
+          "agent": 9,
+          "cost": 1,
+          "path_sha256": "e84f0c612e56ed0a565072543aed73bf6e0ca6ddb16a60e4713e8cfbb13f3e34",
+          "rpc_index": 16
+        },
+        {
+          "agent": 10,
+          "cost": 64,
+          "path_sha256": "4c2df6f6c02660e009033f1cd548ac9e4bbac72032cbd7d291c64aaeb5af9157",
+          "rpc_index": 17
+        },
+        {
+          "agent": 11,
+          "cost": 47,
+          "path_sha256": "bdc908fd53457049bc3e87c6a162e4c36608254588c92d8c1f8f57a7f449a8a9",
+          "rpc_index": 18
+        },
+        {
+          "agent": 12,
+          "cost": 94,
+          "path_sha256": "8ff2e067a28ab23a1bc5ed0b5f0b270d7c0b82c53c4f3e4766614711ec8ba30c",
+          "rpc_index": 19
+        },
+        {
+          "agent": 13,
+          "cost": 17,
+          "path_sha256": "6ba193b3823a60097967bb69e8eb448909b9b42af8164026370ff6eb7240a490",
+          "rpc_index": 20
+        },
+        {
+          "agent": 14,
+          "cost": 54,
+          "path_sha256": "bd89f2235c1d3ff8fd3e3960f686755f0ef989c5f0fcf29d4e3938c08045034c",
+          "rpc_index": 21
+        }
+      ],
+      "successful_prefix_cost": 329,
+      "unchanged_after_sha256": "3d5f8e96986542aa09d76f4ec057875e4f78bb9919e4d7c7e28c6c3d33e114bc"
+    },
+    {
+      "attempt_index": 3,
+      "attempt_outside_rpc_wall_ns": 5217394,
+      "attempt_python_cpu_ns": 5551400,
+      "attempt_wall_ns": 6838068,
+      "before_incumbent_sha256": "3d5f8e96986542aa09d76f4ec057875e4f78bb9919e4d7c7e28c6c3d33e114bc",
+      "bounded_order_descriptions": [],
+      "cap_minus_h": 1,
+      "case": "maze-32-32-2__s01__n16",
+      "completed_fraction": 0.5,
+      "earliest_old_path_conflict": null,
+      "empty_capped_calls": 1,
+      "expanded": 230,
+      "failed_agent": 11,
+      "failed_cap": 46,
+      "failed_expanded": 32,
+      "failed_old_path_cost": 47,
+      "failed_old_path_sha256": "6c689ea774e1aea97319d9e2b57fad836ee10bccfb1c454fbe18b7c38eb03082",
+      "failed_old_path_within_cap": false,
+      "failed_order_position_1based": 5,
+      "failed_rpc_wall_ns": 218735,
+      "failed_static_h": 45,
+      "failure_strictly_after_half": true,
+      "found_calls": 4,
+      "group_size": 8,
+      "old_group_cost": 350,
+      "old_path_blockers": [],
+      "order": [
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        9,
+        8
+      ],
+      "prefix_found_rpc_wall_ns": 1401939,
+      "role": "LOCAL_ID_BLOCK_8",
+      "search_calls": 5,
+      "search_rpc_wall_ns": 1620674,
+      "strict_group_target": 349,
+      "successful_prefix": [
+        {
+          "agent": 15,
+          "cost": 19,
+          "path_sha256": "1c5b552e5fc98d36129c836c5ba9c26ba775600dcd017483863225875a7c874d",
+          "rpc_index": 23
+        },
+        {
+          "agent": 14,
+          "cost": 54,
+          "path_sha256": "f74ea4d3e30108c403f7ce902e5a175a781fb079133bfabdb255c046110d30a6",
+          "rpc_index": 24
+        },
+        {
+          "agent": 13,
+          "cost": 17,
+          "path_sha256": "0e9cc722cef6b09f2433785fb47deb42fcc7d51cf5272f42d85172cf86f8aaea",
+          "rpc_index": 25
+        },
+        {
+          "agent": 12,
+          "cost": 96,
+          "path_sha256": "06d88ba170a4e3e319b5a98e85a2facfce3a6f9e4b4305dde5e952b06382088a",
+          "rpc_index": 26
+        }
+      ],
+      "successful_prefix_cost": 186,
+      "unchanged_after_sha256": "3d5f8e96986542aa09d76f4ec057875e4f78bb9919e4d7c7e28c6c3d33e114bc"
+    },
+    {
+      "attempt_index": 4,
+      "attempt_outside_rpc_wall_ns": 7703139,
+      "attempt_python_cpu_ns": 8361492,
+      "attempt_wall_ns": 11112651,
+      "before_incumbent_sha256": "3d5f8e96986542aa09d76f4ec057875e4f78bb9919e4d7c7e28c6c3d33e114bc",
+      "bounded_order_descriptions": [
+        {
+          "cut_index": 4,
+          "order": [
+            0,
+            1,
+            2,
+            3,
+            11,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            12,
+            13,
+            14,
+            15
+          ],
+          "remaining_old_path_prefix_blockers": [],
+          "reusable_prefix_agents": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "rule": "LATEST_OLD_PATH_BLOCKER",
+          "status": "UNEVALUATED_ORDER_DESCRIPTION_NOT_A_RECOVERY",
+          "suffix_agents_requiring_new_joint_check_or_replan": [
+            11,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            12,
+            13,
+            14,
+            15
+          ]
+        }
+      ],
+      "cap_minus_h": 8,
+      "case": "maze-32-32-2__s01__n16",
+      "completed_fraction": 0.6875,
+      "earliest_old_path_conflict": {
+        "agent": 4,
+        "first_conflict": {
+          "kind": "VERTEX",
+          "left_at_terminal": false,
+          "right_at_terminal": false,
+          "time": 12,
+          "vertex": 1007
+        },
+        "prefix_index": 4,
+        "scope": "PREFIX"
+      },
+      "empty_capped_calls": 1,
+      "expanded": 491,
+      "failed_agent": 11,
+      "failed_cap": 53,
+      "failed_expanded": 27,
+      "failed_old_path_cost": 47,
+      "failed_old_path_sha256": "6c689ea774e1aea97319d9e2b57fad836ee10bccfb1c454fbe18b7c38eb03082",
+      "failed_old_path_within_cap": true,
+      "failed_order_position_1based": 12,
+      "failed_rpc_wall_ns": 191023,
+      "failed_static_h": 45,
+      "failure_strictly_after_half": true,
+      "found_calls": 11,
+      "group_size": 16,
+      "old_group_cost": 689,
+      "old_path_blockers": [
+        {
+          "agent": 4,
+          "first_conflict": {
+            "kind": "VERTEX",
+            "left_at_terminal": false,
+            "right_at_terminal": false,
+            "time": 12,
+            "vertex": 1007
+          },
+          "prefix_index": 4,
+          "scope": "PREFIX"
+        }
+      ],
+      "order": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "prefix_found_rpc_wall_ns": 3218489,
+      "role": "WHOLE_TASK_CONTROL",
+      "search_calls": 12,
+      "search_rpc_wall_ns": 3409512,
+      "strict_group_target": 688,
+      "successful_prefix": [
+        {
+          "agent": 0,
+          "cost": 69,
+          "path_sha256": "24fa1c82c775b516bf3949c5c2db42891a3aa80171e05082feda94e486ac03d9",
+          "rpc_index": 28
+        },
+        {
+          "agent": 1,
+          "cost": 20,
+          "path_sha256": "fcbd9f620f39d9624e1ba57ea85dae2f56f0e69d69d1cbeb3f531b13a81f8038",
+          "rpc_index": 29
+        },
+        {
+          "agent": 2,
+          "cost": 61,
+          "path_sha256": "ab7a38cc5b2056e24e3c530ce64ab3935aed50216b3f248a368c57b5b66ede46",
+          "rpc_index": 30
+        },
+        {
+          "agent": 3,
+          "cost": 17,
+          "path_sha256": "6c3f56c326a4dcb0ec7cd174179d031912b13d7a2bebcbdddabfb548b196c285",
+          "rpc_index": 31
+        },
+        {
+          "agent": 4,
+          "cost": 13,
+          "path_sha256": "52161cc45cf9c806cb3b9836e327e57fa0b6f479ff40b0b5e827b71bc58f98f3",
+          "rpc_index": 32
+        },
+        {
+          "agent": 5,
+          "cost": 33,
+          "path_sha256": "9c9500f6cbb85e46eb480236eab9853da85a62c12a8233ed6740fc66e06681ac",
+          "rpc_index": 33
+        },
+        {
+          "agent": 6,
+          "cost": 74,
+          "path_sha256": "cee643887d52ced292f7e3f5a67fa847a5c5e709a11121e92e4747a86e71d7dd",
+          "rpc_index": 34
+        },
+        {
+          "agent": 7,
+          "cost": 49,
+          "path_sha256": "40b6cf3e96b57a72097d039a114bde4c78aa506928485596d29d69855efba253",
+          "rpc_index": 35
+        },
+        {
+          "agent": 8,
+          "cost": 52,
+          "path_sha256": "9beb272529e9cdb3c0d0845095c6abbf909476712d1fbfe77f904288d92f226f",
+          "rpc_index": 36
+        },
+        {
+          "agent": 9,
+          "cost": 1,
+          "path_sha256": "e84f0c612e56ed0a565072543aed73bf6e0ca6ddb16a60e4713e8cfbb13f3e34",
+          "rpc_index": 37
+        },
+        {
+          "agent": 10,
+          "cost": 64,
+          "path_sha256": "9f78a50d44955da170794672b50b3b020584bcb0aca9c96221ee16560552b169",
+          "rpc_index": 38
+        }
+      ],
+      "successful_prefix_cost": 453,
+      "unchanged_after_sha256": "3d5f8e96986542aa09d76f4ec057875e4f78bb9919e4d7c7e28c6c3d33e114bc"
+    },
+    {
+      "attempt_index": 5,
+      "attempt_outside_rpc_wall_ns": 12440915,
+      "attempt_python_cpu_ns": 13021217,
+      "attempt_wall_ns": 15341649,
+      "before_incumbent_sha256": "3d5f8e96986542aa09d76f4ec057875e4f78bb9919e4d7c7e28c6c3d33e114bc",
+      "bounded_order_descriptions": [
+        {
+          "cut_index": 4,
+          "order": [
+            15,
+            14,
+            13,
+            12,
+            1,
+            11,
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            0
+          ],
+          "remaining_old_path_prefix_blockers": [],
+          "reusable_prefix_agents": [
+            15,
+            14,
+            13,
+            12
+          ],
+          "rule": "LATEST_OLD_PATH_BLOCKER",
+          "status": "UNEVALUATED_ORDER_DESCRIPTION_NOT_A_RECOVERY",
+          "suffix_agents_requiring_new_joint_check_or_replan": [
+            1,
+            11,
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            0
+          ]
+        }
+      ],
+      "cap_minus_h": 3,
+      "case": "maze-32-32-2__s01__n16",
+      "completed_fraction": 0.875,
+      "earliest_old_path_conflict": {
+        "agent": 11,
+        "first_conflict": {
+          "kind": "VERTEX",
+          "left_at_terminal": true,
+          "right_at_terminal": false,
+          "time": 26,
+          "vertex": 654
+        },
+        "prefix_index": 4,
+        "scope": "PREFIX"
+      },
+      "empty_capped_calls": 1,
+      "expanded": 703,
+      "failed_agent": 1,
+      "failed_cap": 23,
+      "failed_expanded": 75,
+      "failed_old_path_cost": 20,
+      "failed_old_path_sha256": "e57bb2750a6fb55c88913321fbc261cc8795c219d0ee84c02b57473859bdc3cf",
+      "failed_old_path_within_cap": true,
+      "failed_order_position_1based": 15,
+      "failed_rpc_wall_ns": 213828,
+      "failed_static_h": 20,
+      "failure_strictly_after_half": true,
+      "found_calls": 14,
+      "group_size": 16,
+      "old_group_cost": 689,
+      "old_path_blockers": [
+        {
+          "agent": 11,
+          "first_conflict": {
+            "kind": "VERTEX",
+            "left_at_terminal": true,
+            "right_at_terminal": false,
+            "time": 26,
+            "vertex": 654
+          },
+          "prefix_index": 4,
+          "scope": "PREFIX"
+        }
+      ],
+      "order": [
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "prefix_found_rpc_wall_ns": 2686906,
+      "role": "WHOLE_TASK_CONTROL",
+      "search_calls": 15,
+      "search_rpc_wall_ns": 2900734,
+      "strict_group_target": 688,
+      "successful_prefix": [
+        {
+          "agent": 15,
+          "cost": 19,
+          "path_sha256": "1c5b552e5fc98d36129c836c5ba9c26ba775600dcd017483863225875a7c874d",
+          "rpc_index": 40
+        },
+        {
+          "agent": 14,
+          "cost": 52,
+          "path_sha256": "637738cc61941887986c0130d6cc1d96a3035ee8e965da59acd2c44bab363b02",
+          "rpc_index": 41
+        },
+        {
+          "agent": 13,
+          "cost": 17,
+          "path_sha256": "b2c5b0e0c150d35ed45a4226d099ed34594fe9bd217d031c83295beb88398de0",
+          "rpc_index": 42
+        },
+        {
+          "agent": 12,
+          "cost": 96,
+          "path_sha256": "b5abeb5f1b97f7fcf84884895000a323062bd34a0247ac94e96907769b0e21c6",
+          "rpc_index": 43
+        },
+        {
+          "agent": 11,
+          "cost": 45,
+          "path_sha256": "dd28b6d6604ba40309b191da60fc3c824784f8b461bacab0fd94c756988ef4d7",
+          "rpc_index": 44
+        },
+        {
+          "agent": 10,
+          "cost": 64,
+          "path_sha256": "73bab5b4415abd13b89be6cabd547c5ae61ece6acea10ce62242bb5eaa325a83",
+          "rpc_index": 45
+        },
+        {
+          "agent": 9,
+          "cost": 1,
+          "path_sha256": "e84f0c612e56ed0a565072543aed73bf6e0ca6ddb16a60e4713e8cfbb13f3e34",
+          "rpc_index": 46
+        },
+        {
+          "agent": 8,
+          "cost": 52,
+          "path_sha256": "b9a7ec41e969d3a0e46f1e499b21e9ac9661ef2cd9accaf9465d83cb7f49bb41",
+          "rpc_index": 47
+        },
+        {
+          "agent": 7,
+          "cost": 49,
+          "path_sha256": "66e637c4b1f276fe4acc41e5974bc2adac448b0134d4be7ce553d34dfb063d46",
+          "rpc_index": 48
+        },
+        {
+          "agent": 6,
+          "cost": 74,
+          "path_sha256": "a0d1eb3746463ca8f0c761a7672e558e961851d95335020ba17bb0cdee3f74d5",
+          "rpc_index": 49
+        },
+        {
+          "agent": 5,
+          "cost": 33,
+          "path_sha256": "2dc827e0b4b788bed66aadfcf469d69b143da20a6061139db92c569c52cb69e2",
+          "rpc_index": 50
+        },
+        {
+          "agent": 4,
+          "cost": 16,
+          "path_sha256": "8d62718531b44fa37a7e749e3ad577487d7032550cec8803819fd2d89b88b94e",
+          "rpc_index": 51
+        },
+        {
+          "agent": 3,
+          "cost": 17,
+          "path_sha256": "dd0f37e07ddfd312d61237fc8b575491396a1d2335a3d5047bff35c196177d18",
+          "rpc_index": 52
+        },
+        {
+          "agent": 2,
+          "cost": 61,
+          "path_sha256": "afce1f577e879e60598e787fa2debd66b675777163eb3145df7cec71e32da8a8",
+          "rpc_index": 53
+        }
+      ],
+      "successful_prefix_cost": 596,
+      "unchanged_after_sha256": "3d5f8e96986542aa09d76f4ec057875e4f78bb9919e4d7c7e28c6c3d33e114bc"
+    },
+    {
+      "attempt_index": 0,
+      "attempt_outside_rpc_wall_ns": 26239725,
+      "attempt_python_cpu_ns": 27053837,
+      "attempt_wall_ns": 30440358,
+      "before_incumbent_sha256": "55f1df9a51e5875ecbeedc7be547912351f6857c5b331e1bdd7b7f4860021125",
+      "bounded_order_descriptions": [],
+      "cap_minus_h": 9,
+      "case": "maze-32-32-2__s01__n32",
+      "completed_fraction": 0.625,
+      "earliest_old_path_conflict": null,
+      "empty_capped_calls": 1,
+      "expanded": 531,
+      "failed_agent": 5,
+      "failed_cap": 42,
+      "failed_expanded": 303,
+      "failed_old_path_cost": 54,
+      "failed_old_path_sha256": "cb83ec80061c46697966ccbf2298562e4577781b296b878be2abebfe792a5415",
+      "failed_old_path_within_cap": false,
+      "failed_order_position_1based": 6,
+      "failed_rpc_wall_ns": 700863,
+      "failed_static_h": 33,
+      "failure_strictly_after_half": true,
+      "found_calls": 5,
+      "group_size": 8,
+      "old_group_cost": 376,
+      "old_path_blockers": [],
+      "order": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "prefix_found_rpc_wall_ns": 3499770,
+      "role": "LOCAL_ID_BLOCK_8",
+      "search_calls": 6,
+      "search_rpc_wall_ns": 4200633,
+      "strict_group_target": 375,
+      "successful_prefix": [
+        {
+          "agent": 0,
+          "cost": 69,
+          "path_sha256": "015df709ac3c0fa226115689e56757981cb9847a2e23076f87374430d4cabbd0",
+          "rpc_index": 1
+        },
+        {
+          "agent": 1,
+          "cost": 28,
+          "path_sha256": "9f288ed2f15ef9b6a7a1714e8010036441aaf99b86842a5f5a2f8c719bd041fc",
+          "rpc_index": 2
+        },
+        {
+          "agent": 2,
+          "cost": 61,
+          "path_sha256": "4d742f039cfc42bb15287657089f564f85b74a3dfba0088fb24ab0462e179fd4",
+          "rpc_index": 3
+        },
+        {
+          "agent": 3,
+          "cost": 35,
+          "path_sha256": "1d54dd9f7eb7ebd25f23ac6b1cb80d8b1d298cc4d88358b0e5dd0d2f49c263f1",
+          "rpc_index": 4
+        },
+        {
+          "agent": 4,
+          "cost": 17,
+          "path_sha256": "dfbc6d0697c31d4bfc4888c5200d7d458bc8c5a2cac3f6006cc0671012e38543",
+          "rpc_index": 5
+        }
+      ],
+      "successful_prefix_cost": 210,
+      "unchanged_after_sha256": "55f1df9a51e5875ecbeedc7be547912351f6857c5b331e1bdd7b7f4860021125"
+    },
+    {
+      "attempt_index": 1,
+      "attempt_outside_rpc_wall_ns": 14881707,
+      "attempt_python_cpu_ns": 15250465,
+      "attempt_wall_ns": 17348959,
+      "before_incumbent_sha256": "55f1df9a51e5875ecbeedc7be547912351f6857c5b331e1bdd7b7f4860021125",
+      "bounded_order_descriptions": [
+        {
+          "cut_index": 2,
+          "order": [
+            7,
+            6,
+            4,
+            5,
+            3,
+            2,
+            1,
+            0
+          ],
+          "remaining_old_path_prefix_blockers": [],
+          "reusable_prefix_agents": [
+            7,
+            6
+          ],
+          "rule": "LATEST_OLD_PATH_BLOCKER",
+          "status": "UNEVALUATED_ORDER_DESCRIPTION_NOT_A_RECOVERY",
+          "suffix_agents_requiring_new_joint_check_or_replan": [
+            4,
+            5,
+            3,
+            2,
+            1,
+            0
+          ]
+        }
+      ],
+      "cap_minus_h": 13,
+      "case": "maze-32-32-2__s01__n32",
+      "completed_fraction": 0.375,
+      "earliest_old_path_conflict": {
+        "agent": 5,
+        "first_conflict": {
+          "kind": "OPPOSITE_EDGE",
+          "left_at_terminal": false,
+          "left_edge": [
+            1008,
+            1007
+          ],
+          "right_at_terminal": false,
+          "right_edge": [
+            1007,
+            1008
+          ],
+          "time": 16
+        },
+        "prefix_index": 2,
+        "scope": "PREFIX"
+      },
+      "empty_capped_calls": 1,
+      "expanded": 333,
+      "failed_agent": 4,
+      "failed_cap": 26,
+      "failed_expanded": 102,
+      "failed_old_path_cost": 17,
+      "failed_old_path_sha256": "dadd99fc0783d613a6b2793fdefb46aee6e748aa1a7f06aa189e5b4822c9d858",
+      "failed_old_path_within_cap": true,
+      "failed_order_position_1based": 4,
+      "failed_rpc_wall_ns": 617207,
+      "failed_static_h": 13,
+      "failure_strictly_after_half": false,
+      "found_calls": 3,
+      "group_size": 8,
+      "old_group_cost": 376,
+      "old_path_blockers": [
+        {
+          "agent": 5,
+          "first_conflict": {
+            "kind": "OPPOSITE_EDGE",
+            "left_at_terminal": false,
+            "left_edge": [
+              1008,
+              1007
+            ],
+            "right_at_terminal": false,
+            "right_edge": [
+              1007,
+              1008
+            ],
+            "time": 16
+          },
+          "prefix_index": 2,
+          "scope": "PREFIX"
+        }
+      ],
+      "order": [
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "prefix_found_rpc_wall_ns": 1850045,
+      "role": "LOCAL_ID_BLOCK_8",
+      "search_calls": 4,
+      "search_rpc_wall_ns": 2467252,
+      "strict_group_target": 375,
+      "successful_prefix": [
+        {
+          "agent": 7,
+          "cost": 54,
+          "path_sha256": "0723578d39050ffdc3029859e8f9de18e2fa9f6752a9dbdb7c4deb7cdc1e1944",
+          "rpc_index": 7
+        },
+        {
+          "agent": 6,
+          "cost": 74,
+          "path_sha256": "4f6d2e89bd5fa18d68e040b7a7dc361714ca77c7bf5ec8b3f5f163ee5bb166a1",
+          "rpc_index": 8
+        },
+        {
+          "agent": 5,
+          "cost": 54,
+          "path_sha256": "797d9e0b8479fb613aabddab0434ae10873b53adc77137fa464c1b5fe6639243",
+          "rpc_index": 9
+        }
+      ],
+      "successful_prefix_cost": 182,
+      "unchanged_after_sha256": "55f1df9a51e5875ecbeedc7be547912351f6857c5b331e1bdd7b7f4860021125"
+    },
+    {
+      "attempt_index": 2,
+      "attempt_outside_rpc_wall_ns": 30522628,
+      "attempt_python_cpu_ns": 31109524,
+      "attempt_wall_ns": 34546145,
+      "before_incumbent_sha256": "55f1df9a51e5875ecbeedc7be547912351f6857c5b331e1bdd7b7f4860021125",
+      "bounded_order_descriptions": [
+        {
+          "cut_index": 0,
+          "order": [
+            14,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            15
+          ],
+          "remaining_old_path_prefix_blockers": [],
+          "reusable_prefix_agents": [],
+          "rule": "LATEST_OLD_PATH_BLOCKER",
+          "status": "UNEVALUATED_ORDER_DESCRIPTION_NOT_A_RECOVERY",
+          "suffix_agents_requiring_new_joint_check_or_replan": [
+            14,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            15
+          ]
+        }
+      ],
+      "cap_minus_h": 7,
+      "case": "maze-32-32-2__s01__n32",
+      "completed_fraction": 0.75,
+      "earliest_old_path_conflict": {
+        "agent": 8,
+        "first_conflict": {
+          "kind": "OPPOSITE_EDGE",
+          "left_at_terminal": false,
+          "left_edge": [
+            709,
+            710
+          ],
+          "right_at_terminal": false,
+          "right_edge": [
+            710,
+            709
+          ],
+          "time": 32
+        },
+        "prefix_index": 0,
+        "scope": "PREFIX"
+      },
+      "empty_capped_calls": 1,
+      "expanded": 401,
+      "failed_agent": 14,
+      "failed_cap": 59,
+      "failed_expanded": 76,
+      "failed_old_path_cost": 58,
+      "failed_old_path_sha256": "9e694bfb6ed588b8e7a516c036058fb5ede08de9ed9d741081c753319486323a",
+      "failed_old_path_within_cap": true,
+      "failed_order_position_1based": 7,
+      "failed_rpc_wall_ns": 545959,
+      "failed_static_h": 52,
+      "failure_strictly_after_half": true,
+      "found_calls": 6,
+      "group_size": 8,
+      "old_group_cost": 355,
+      "old_path_blockers": [
+        {
+          "agent": 8,
+          "first_conflict": {
+            "kind": "OPPOSITE_EDGE",
+            "left_at_terminal": false,
+            "left_edge": [
+              709,
+              710
+            ],
+            "right_at_terminal": false,
+            "right_edge": [
+              710,
+              709
+            ],
+            "time": 32
+          },
+          "prefix_index": 0,
+          "scope": "PREFIX"
+        }
+      ],
+      "order": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "prefix_found_rpc_wall_ns": 3477558,
+      "role": "LOCAL_ID_BLOCK_8",
+      "search_calls": 7,
+      "search_rpc_wall_ns": 4023517,
+      "strict_group_target": 354,
+      "successful_prefix": [
+        {
+          "agent": 8,
+          "cost": 52,
+          "path_sha256": "3dd1a58a57cefb4a3ed4593a950f9a769f6721bf5332091b47c953d3976caead",
+          "rpc_index": 11
+        },
+        {
+          "agent": 9,
+          "cost": 1,
+          "path_sha256": "e84f0c612e56ed0a565072543aed73bf6e0ca6ddb16a60e4713e8cfbb13f3e34",
+          "rpc_index": 12
+        },
+        {
+          "agent": 10,
+          "cost": 64,
+          "path_sha256": "61369fb5bd926f9181b895a73c179f6fbb4956aeea8e2f8c2353a408273ebe0f",
+          "rpc_index": 13
+        },
+        {
+          "agent": 11,
+          "cost": 46,
+          "path_sha256": "f82f72cd2b6da814642f4fbdb616b1d5dd4eae5ae938296471cf9c4d15f06a3e",
+          "rpc_index": 14
+        },
+        {
+          "agent": 12,
+          "cost": 96,
+          "path_sha256": "e6678e262640f64651749aa42bdbb3119f328b239e6bac469acf34abd3101b70",
+          "rpc_index": 15
+        },
+        {
+          "agent": 13,
+          "cost": 17,
+          "path_sha256": "65cff7d1c3ffea40bdd572268f7bc60a139e298207e17a8f013a88f7e48f797a",
+          "rpc_index": 16
+        }
+      ],
+      "successful_prefix_cost": 276,
+      "unchanged_after_sha256": "55f1df9a51e5875ecbeedc7be547912351f6857c5b331e1bdd7b7f4860021125"
+    },
+    {
+      "attempt_index": 3,
+      "attempt_outside_rpc_wall_ns": 15743327,
+      "attempt_python_cpu_ns": 16045144,
+      "attempt_wall_ns": 18047442,
+      "before_incumbent_sha256": "55f1df9a51e5875ecbeedc7be547912351f6857c5b331e1bdd7b7f4860021125",
+      "bounded_order_descriptions": [
+        {
+          "cut_index": 0,
+          "order": [
+            12,
+            15,
+            14,
+            13,
+            11,
+            10,
+            9,
+            8
+          ],
+          "remaining_old_path_prefix_blockers": [],
+          "reusable_prefix_agents": [],
+          "rule": "LATEST_OLD_PATH_BLOCKER",
+          "status": "UNEVALUATED_ORDER_DESCRIPTION_NOT_A_RECOVERY",
+          "suffix_agents_requiring_new_joint_check_or_replan": [
+            12,
+            15,
+            14,
+            13,
+            11,
+            10,
+            9,
+            8
+          ]
+        }
+      ],
+      "cap_minus_h": 4,
+      "case": "maze-32-32-2__s01__n32",
+      "completed_fraction": 0.375,
+      "earliest_old_path_conflict": {
+        "agent": 15,
+        "first_conflict": {
+          "kind": "VERTEX",
+          "left_at_terminal": false,
+          "right_at_terminal": false,
+          "time": 12,
+          "vertex": 230
+        },
+        "prefix_index": 0,
+        "scope": "PREFIX"
+      },
+      "empty_capped_calls": 1,
+      "expanded": 323,
+      "failed_agent": 12,
+      "failed_cap": 98,
+      "failed_expanded": 190,
+      "failed_old_path_cost": 96,
+      "failed_old_path_sha256": "ed389851d1cb1c61e80756ed8a71c3de6153d1edf5e22183142f1cc79f241a90",
+      "failed_old_path_within_cap": true,
+      "failed_order_position_1based": 4,
+      "failed_rpc_wall_ns": 606492,
+      "failed_static_h": 94,
+      "failure_strictly_after_half": false,
+      "found_calls": 3,
+      "group_size": 8,
+      "old_group_cost": 355,
+      "old_path_blockers": [
+        {
+          "agent": 15,
+          "first_conflict": {
+            "kind": "VERTEX",
+            "left_at_terminal": false,
+            "right_at_terminal": false,
+            "time": 12,
+            "vertex": 230
+          },
+          "prefix_index": 0,
+          "scope": "PREFIX"
+        }
+      ],
+      "order": [
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        9,
+        8
+      ],
+      "prefix_found_rpc_wall_ns": 1697623,
+      "role": "LOCAL_ID_BLOCK_8",
+      "search_calls": 4,
+      "search_rpc_wall_ns": 2304115,
+      "strict_group_target": 354,
+      "successful_prefix": [
+        {
+          "agent": 15,
+          "cost": 19,
+          "path_sha256": "dd41d64c2be7fc8ba8003a9035fb0261cc22a64158c3c1332d311068c2207b44",
+          "rpc_index": 18
+        },
+        {
+          "agent": 14,
+          "cost": 58,
+          "path_sha256": "23b5fca3fc4ef1a535a64453306af849407c6f9de026457709930e5696f59b46",
+          "rpc_index": 19
+        },
+        {
+          "agent": 13,
+          "cost": 17,
+          "path_sha256": "9dc1802ee65fd9bfa64fc23c28ce8ab009ea070c892c1cffa69d6efaea9e9047",
+          "rpc_index": 20
+        }
+      ],
+      "successful_prefix_cost": 94,
+      "unchanged_after_sha256": "55f1df9a51e5875ecbeedc7be547912351f6857c5b331e1bdd7b7f4860021125"
+    },
+    {
+      "attempt_index": 4,
+      "attempt_outside_rpc_wall_ns": 33798907,
+      "attempt_python_cpu_ns": 34361800,
+      "attempt_wall_ns": 38826584,
+      "before_incumbent_sha256": "55f1df9a51e5875ecbeedc7be547912351f6857c5b331e1bdd7b7f4860021125",
+      "bounded_order_descriptions": [
+        {
+          "cut_index": 5,
+          "order": [
+            16,
+            17,
+            18,
+            19,
+            20,
+            23,
+            21,
+            22
+          ],
+          "remaining_old_path_prefix_blockers": [],
+          "reusable_prefix_agents": [
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "rule": "LATEST_OLD_PATH_BLOCKER",
+          "status": "UNEVALUATED_ORDER_DESCRIPTION_NOT_A_RECOVERY",
+          "suffix_agents_requiring_new_joint_check_or_replan": [
+            23,
+            21,
+            22
+          ]
+        }
+      ],
+      "cap_minus_h": 4,
+      "case": "maze-32-32-2__s01__n32",
+      "completed_fraction": 0.875,
+      "earliest_old_path_conflict": {
+        "agent": 21,
+        "first_conflict": {
+          "kind": "VERTEX",
+          "left_at_terminal": false,
+          "right_at_terminal": false,
+          "time": 18,
+          "vertex": 919
+        },
+        "prefix_index": 5,
+        "scope": "PREFIX"
+      },
+      "empty_capped_calls": 1,
+      "expanded": 914,
+      "failed_agent": 23,
+      "failed_cap": 69,
+      "failed_expanded": 73,
+      "failed_old_path_cost": 67,
+      "failed_old_path_sha256": "1cf3daf658e2f114514780e39fab0ddb1c8191b482c9374dfa11ae89e09fee86",
+      "failed_old_path_within_cap": true,
+      "failed_order_position_1based": 8,
+      "failed_rpc_wall_ns": 615292,
+      "failed_static_h": 65,
+      "failure_strictly_after_half": true,
+      "found_calls": 7,
+      "group_size": 8,
+      "old_group_cost": 750,
+      "old_path_blockers": [
+        {
+          "agent": 21,
+          "first_conflict": {
+            "kind": "VERTEX",
+            "left_at_terminal": false,
+            "right_at_terminal": false,
+            "time": 18,
+            "vertex": 919
+          },
+          "prefix_index": 5,
+          "scope": "PREFIX"
+        }
+      ],
+      "order": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "prefix_found_rpc_wall_ns": 4412385,
+      "role": "LOCAL_ID_BLOCK_8",
+      "search_calls": 8,
+      "search_rpc_wall_ns": 5027677,
+      "strict_group_target": 749,
+      "successful_prefix": [
+        {
+          "agent": 16,
+          "cost": 90,
+          "path_sha256": "9a885b03e15e1fc849a2d4cc0407d83c8e7a1779f99a8729fd6876aff4d8d263",
+          "rpc_index": 22
+        },
+        {
+          "agent": 17,
+          "cost": 118,
+          "path_sha256": "b8c2c6d3df7f4590276dc4c393d884acceaa8c3b9ba14ff0ee6ad65d15eeaa82",
+          "rpc_index": 23
+        },
+        {
+          "agent": 18,
+          "cost": 88,
+          "path_sha256": "660bfec02cfcbbcda6c324c9df62960da62b0a62bdb502c53c866e19ae41a152",
+          "rpc_index": 24
+        },
+        {
+          "agent": 19,
+          "cost": 129,
+          "path_sha256": "8e85bf15d2c785e758ea204aee7ab571ba3d557bf63492c8ef8373014ceacbae",
+          "rpc_index": 25
+        },
+        {
+          "agent": 20,
+          "cost": 105,
+          "path_sha256": "6d0291a8f828c6b53b41fdfddb4c8637b22c1e32ce2aaf3049847951376b4b90",
+          "rpc_index": 26
+        },
+        {
+          "agent": 21,
+          "cost": 90,
+          "path_sha256": "f3c840a74e00e819d0cd59808aaa55af39f45f767e26021e6595ce2071fc14aa",
+          "rpc_index": 27
+        },
+        {
+          "agent": 22,
+          "cost": 60,
+          "path_sha256": "be847b56f424da392dbf07605045d69c317421e251022208b9260dcbebe67430",
+          "rpc_index": 28
+        }
+      ],
+      "successful_prefix_cost": 680,
+      "unchanged_after_sha256": "55f1df9a51e5875ecbeedc7be547912351f6857c5b331e1bdd7b7f4860021125"
+    },
+    {
+      "attempt_index": 5,
+      "attempt_outside_rpc_wall_ns": 27056650,
+      "attempt_python_cpu_ns": 27832444,
+      "attempt_wall_ns": 32314367,
+      "before_incumbent_sha256": "55f1df9a51e5875ecbeedc7be547912351f6857c5b331e1bdd7b7f4860021125",
+      "bounded_order_descriptions": [
+        {
+          "cut_index": 5,
+          "order": [
+            23,
+            22,
+            21,
+            20,
+            19,
+            17,
+            18,
+            16
+          ],
+          "remaining_old_path_prefix_blockers": [
+            20,
+            19
+          ],
+          "reusable_prefix_agents": [
+            23,
+            22,
+            21,
+            20,
+            19
+          ],
+          "rule": "LATEST_OLD_PATH_BLOCKER",
+          "status": "UNEVALUATED_ORDER_DESCRIPTION_NOT_A_RECOVERY",
+          "suffix_agents_requiring_new_joint_check_or_replan": [
+            17,
+            18,
+            16
+          ]
+        },
+        {
+          "cut_index": 3,
+          "order": [
+            23,
+            22,
+            21,
+            17,
+            20,
+            19,
+            18,
+            16
+          ],
+          "remaining_old_path_prefix_blockers": [],
+          "reusable_prefix_agents": [
+            23,
+            22,
+            21
+          ],
+          "rule": "EARLIEST_OLD_PATH_BLOCKER",
+          "status": "UNEVALUATED_ORDER_DESCRIPTION_NOT_A_RECOVERY",
+          "suffix_agents_requiring_new_joint_check_or_replan": [
+            17,
+            20,
+            19,
+            18,
+            16
+          ]
+        }
+      ],
+      "cap_minus_h": 12,
+      "case": "maze-32-32-2__s01__n32",
+      "completed_fraction": 0.75,
+      "earliest_old_path_conflict": {
+        "agent": 18,
+        "first_conflict": {
+          "kind": "VERTEX",
+          "left_at_terminal": false,
+          "right_at_terminal": false,
+          "time": 57,
+          "vertex": 522
+        },
+        "prefix_index": 5,
+        "scope": "PREFIX"
+      },
+      "empty_capped_calls": 1,
+      "expanded": 2204,
+      "failed_agent": 17,
+      "failed_cap": 126,
+      "failed_expanded": 1572,
+      "failed_old_path_cost": 119,
+      "failed_old_path_sha256": "07d4e559888d4aaa41bddfefdb8ebefb17207ae8c4c0e5d32c8ecdbc352d96d2",
+      "failed_old_path_within_cap": true,
+      "failed_order_position_1based": 7,
+      "failed_rpc_wall_ns": 1364583,
+      "failed_static_h": 114,
+      "failure_strictly_after_half": true,
+      "found_calls": 6,
+      "group_size": 8,
+      "old_group_cost": 750,
+      "old_path_blockers": [
+        {
+          "agent": 18,
+          "first_conflict": {
+            "kind": "VERTEX",
+            "left_at_terminal": false,
+            "right_at_terminal": false,
+            "time": 57,
+            "vertex": 522
+          },
+          "prefix_index": 5,
+          "scope": "PREFIX"
+        },
+        {
+          "agent": 20,
+          "first_conflict": {
+            "kind": "VERTEX",
+            "left_at_terminal": false,
+            "right_at_terminal": false,
+            "time": 65,
+            "vertex": 422
+          },
+          "prefix_index": 3,
+          "scope": "PREFIX"
+        },
+        {
+          "agent": 19,
+          "first_conflict": {
+            "kind": "VERTEX",
+            "left_at_terminal": true,
+            "right_at_terminal": false,
+            "time": 144,
+            "vertex": 139
+          },
+          "prefix_index": 4,
+          "scope": "PREFIX"
+        }
+      ],
+      "order": [
+        23,
+        22,
+        21,
+        20,
+        19,
+        18,
+        17,
+        16
+      ],
+      "prefix_found_rpc_wall_ns": 3893134,
+      "role": "LOCAL_ID_BLOCK_8",
+      "search_calls": 7,
+      "search_rpc_wall_ns": 5257717,
+      "strict_group_target": 749,
+      "successful_prefix": [
+        {
+          "agent": 23,
+          "cost": 67,
+          "path_sha256": "f240c900489e4a64af47f10e477a972d44a899d0d885196ee3816764d0205d55",
+          "rpc_index": 30
+        },
+        {
+          "agent": 22,
+          "cost": 60,
+          "path_sha256": "909d5218b222a592440006e708885f6b5bdbab2f83734c67394fe745fe38a61c",
+          "rpc_index": 31
+        },
+        {
+          "agent": 21,
+          "cost": 68,
+          "path_sha256": "93984f7e4c8e7eccb8f4599268cc29c72b8553c65844954592f2c942e5910099",
+          "rpc_index": 32
+        },
+        {
+          "agent": 20,
+          "cost": 105,
+          "path_sha256": "f83337c6d6f2035d6abb6d4dabe8740bed20b1cb47e63e05a8e65c859cfe54f5",
+          "rpc_index": 33
+        },
+        {
+          "agent": 19,
+          "cost": 149,
+          "path_sha256": "835f329c83e1fdbd65c294fa7fbc18e17e90163bc09b6389d5ae4041ad8ce1f1",
+          "rpc_index": 34
+        },
+        {
+          "agent": 18,
+          "cost": 86,
+          "path_sha256": "e518605c9a8eb58358a2f06f61e812970c4e541771737f9e68834f79c24da98c",
+          "rpc_index": 35
+        }
+      ],
+      "successful_prefix_cost": 535,
+      "unchanged_after_sha256": "55f1df9a51e5875ecbeedc7be547912351f6857c5b331e1bdd7b7f4860021125"
+    },
+    {
+      "attempt_index": 7,
+      "attempt_outside_rpc_wall_ns": 29588986,
+      "attempt_python_cpu_ns": 30409277,
+      "attempt_wall_ns": 33863551,
+      "before_incumbent_sha256": "993fbaf2a343e956f0ae32ca5fe1779ee07fd49ced9ab7df134f1cec003a12d0",
+      "bounded_order_descriptions": [],
+      "cap_minus_h": 0,
+      "case": "maze-32-32-2__s01__n32",
+      "completed_fraction": 0.75,
+      "earliest_old_path_conflict": null,
+      "empty_capped_calls": 1,
+      "expanded": 466,
+      "failed_agent": 25,
+      "failed_cap": 58,
+      "failed_expanded": 30,
+      "failed_old_path_cost": 60,
+      "failed_old_path_sha256": "90feaa9503ee2d764f4ec2d1746dee1a32405d7e8f8959b334640e184ca031b6",
+      "failed_old_path_within_cap": false,
+      "failed_order_position_1based": 7,
+      "failed_rpc_wall_ns": 524032,
+      "failed_static_h": 58,
+      "failure_strictly_after_half": true,
+      "found_calls": 6,
+      "group_size": 8,
+      "old_group_cost": 390,
+      "old_path_blockers": [],
+      "order": [
+        31,
+        30,
+        29,
+        28,
+        27,
+        26,
+        25,
+        24
+      ],
+      "prefix_found_rpc_wall_ns": 3750533,
+      "role": "LOCAL_ID_BLOCK_8",
+      "search_calls": 7,
+      "search_rpc_wall_ns": 4274565,
+      "strict_group_target": 389,
+      "successful_prefix": [
+        {
+          "agent": 31,
+          "cost": 60,
+          "path_sha256": "f43ef2f229fc757cf496ba6aa37d4cf3077d36d6a42c8f45aee69cc086a0210e",
+          "rpc_index": 45
+        },
+        {
+          "agent": 30,
+          "cost": 19,
+          "path_sha256": "f45ec995e85af2e14401f5dc7e203787c1aae728389de022cc1ba8344dc39f3d",
+          "rpc_index": 46
+        },
+        {
+          "agent": 29,
+          "cost": 50,
+          "path_sha256": "bae101f19588fd8fd1aa70bb717cb4b1dfb6b42a40ff3a786ac3bcf76275dc82",
+          "rpc_index": 47
+        },
+        {
+          "agent": 28,
+          "cost": 39,
+          "path_sha256": "8753805ca42ce66e63160b26d52407e6c4dc3ad6c1c2ae46aa8172196c9070fa",
+          "rpc_index": 48
+        },
+        {
+          "agent": 27,
+          "cost": 92,
+          "path_sha256": "91037d94c66cc6020a51e2081dbfea754ec623edc9670497ef05c2d544e3828e",
+          "rpc_index": 49
+        },
+        {
+          "agent": 26,
+          "cost": 54,
+          "path_sha256": "671714e2f05834e90cd4b3d48489eef882fdc584f3667f6f9da0b9ff0e2e16f4",
+          "rpc_index": 50
+        }
+      ],
+      "successful_prefix_cost": 314,
+      "unchanged_after_sha256": "993fbaf2a343e956f0ae32ca5fe1779ee07fd49ced9ab7df134f1cec003a12d0"
+    },
+    {
+      "attempt_index": 8,
+      "attempt_outside_rpc_wall_ns": 7319668,
+      "attempt_python_cpu_ns": 7673956,
+      "attempt_wall_ns": 9313525,
+      "before_incumbent_sha256": "993fbaf2a343e956f0ae32ca5fe1779ee07fd49ced9ab7df134f1cec003a12d0",
+      "bounded_order_descriptions": [
+        {
+          "cut_index": 4,
+          "order": [
+            0,
+            1,
+            2,
+            3,
+            11,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31
+          ],
+          "remaining_old_path_prefix_blockers": [
+            1
+          ],
+          "reusable_prefix_agents": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "rule": "LATEST_OLD_PATH_BLOCKER",
+          "status": "UNEVALUATED_ORDER_DESCRIPTION_NOT_A_RECOVERY",
+          "suffix_agents_requiring_new_joint_check_or_replan": [
+            11,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31
+          ]
+        },
+        {
+          "cut_index": 1,
+          "order": [
+            0,
+            11,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31
+          ],
+          "remaining_old_path_prefix_blockers": [],
+          "reusable_prefix_agents": [
+            0
+          ],
+          "rule": "EARLIEST_OLD_PATH_BLOCKER",
+          "status": "UNEVALUATED_ORDER_DESCRIPTION_NOT_A_RECOVERY",
+          "suffix_agents_requiring_new_joint_check_or_replan": [
+            11,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31
+          ]
+        }
+      ],
+      "cap_minus_h": 135,
+      "case": "maze-32-32-2__s01__n32",
+      "completed_fraction": 0.34375,
+      "earliest_old_path_conflict": {
+        "agent": 4,
+        "first_conflict": {
+          "kind": "OPPOSITE_EDGE",
+          "left_at_terminal": false,
+          "left_edge": [
+            1006,
+            1007
+          ],
+          "right_at_terminal": false,
+          "right_edge": [
+            1007,
+            1006
+          ],
+          "time": 13
+        },
+        "prefix_index": 4,
+        "scope": "PREFIX"
+      },
+      "empty_capped_calls": 1,
+      "expanded": 495,
+      "failed_agent": 11,
+      "failed_cap": 180,
+      "failed_expanded": 27,
+      "failed_old_path_cost": 46,
+      "failed_old_path_sha256": "4c8d6afc71a85fb198ea621f493166a8280f7602f07513d0c0e86be351b7e9a7",
+      "failed_old_path_within_cap": true,
+      "failed_order_position_1based": 12,
+      "failed_rpc_wall_ns": 189346,
+      "failed_static_h": 45,
+      "failure_strictly_after_half": false,
+      "found_calls": 11,
+      "group_size": 32,
+      "old_group_cost": 1871,
+      "old_path_blockers": [
+        {
+          "agent": 4,
+          "first_conflict": {
+            "kind": "OPPOSITE_EDGE",
+            "left_at_terminal": false,
+            "left_edge": [
+              1006,
+              1007
+            ],
+            "right_at_terminal": false,
+            "right_edge": [
+              1007,
+              1006
+            ],
+            "time": 13
+          },
+          "prefix_index": 4,
+          "scope": "PREFIX"
+        },
+        {
+          "agent": 1,
+          "first_conflict": {
+            "kind": "VERTEX",
+            "left_at_terminal": false,
+            "right_at_terminal": true,
+            "time": 27,
+            "vertex": 654
+          },
+          "prefix_index": 1,
+          "scope": "PREFIX"
+        }
+      ],
+      "order": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "prefix_found_rpc_wall_ns": 1804511,
+      "role": "WHOLE_TASK_CONTROL",
+      "search_calls": 12,
+      "search_rpc_wall_ns": 1993857,
+      "strict_group_target": 1870,
+      "successful_prefix": [
+        {
+          "agent": 0,
+          "cost": 69,
+          "path_sha256": "e4c438e79f697765463d1796c84fbbf3057b51cdbe92e5f0f87c8c6d07c4fe7d",
+          "rpc_index": 52
+        },
+        {
+          "agent": 1,
+          "cost": 20,
+          "path_sha256": "61188134a4fe3fe217c2dc708cb7de0a977d054ca38612664f02e9a6bdf9ecf4",
+          "rpc_index": 53
+        },
+        {
+          "agent": 2,
+          "cost": 61,
+          "path_sha256": "c03f85680271c659637633b9f5264675fcc8bb1c046760ac1ae9ceeb5e582fd3",
+          "rpc_index": 54
+        },
+        {
+          "agent": 3,
+          "cost": 17,
+          "path_sha256": "98e1d2cf207bf07802389b5eec06e3a2df7c4f9fdaabfe6fa9b7a9380d2481e2",
+          "rpc_index": 55
+        },
+        {
+          "agent": 4,
+          "cost": 13,
+          "path_sha256": "408fca96fc59c19d1fbde09e4d45c1d616ef0e6ba3c50cf89ffb570dc3a28e37",
+          "rpc_index": 56
+        },
+        {
+          "agent": 5,
+          "cost": 35,
+          "path_sha256": "8cbbc7f60d5f3293b71b9cb776e1c255b724e6798e574c72adf99e4f00f1c055",
+          "rpc_index": 57
+        },
+        {
+          "agent": 6,
+          "cost": 74,
+          "path_sha256": "f1bc518239a0aea7fa2037cd5d4bc2c2681836f1aec9e674de86639e23edb308",
+          "rpc_index": 58
+        },
+        {
+          "agent": 7,
+          "cost": 49,
+          "path_sha256": "d77bf402aa2a297bb8e183157e934e7712a6cdbe9879e20560a5785b624f1fd1",
+          "rpc_index": 59
+        },
+        {
+          "agent": 8,
+          "cost": 52,
+          "path_sha256": "c6a6fd2b3d72cccb87466dc4d215e5dacd624b4fa78b0e542af9252c30ebdc36",
+          "rpc_index": 60
+        },
+        {
+          "agent": 9,
+          "cost": 1,
+          "path_sha256": "e84f0c612e56ed0a565072543aed73bf6e0ca6ddb16a60e4713e8cfbb13f3e34",
+          "rpc_index": 61
+        },
+        {
+          "agent": 10,
+          "cost": 64,
+          "path_sha256": "3e4ba54c9a968eaf9f467f2c33bd9c9d6c55a0b31e73996349e021cc59fae1a6",
+          "rpc_index": 62
+        }
+      ],
+      "successful_prefix_cost": 455,
+      "unchanged_after_sha256": "993fbaf2a343e956f0ae32ca5fe1779ee07fd49ced9ab7df134f1cec003a12d0"
+    },
+    {
+      "attempt_index": 9,
+      "attempt_outside_rpc_wall_ns": 28410475,
+      "attempt_python_cpu_ns": 29394189,
+      "attempt_wall_ns": 34495135,
+      "before_incumbent_sha256": "993fbaf2a343e956f0ae32ca5fe1779ee07fd49ced9ab7df134f1cec003a12d0",
+      "bounded_order_descriptions": [
+        {
+          "cut_index": 14,
+          "order": [
+            31,
+            30,
+            29,
+            28,
+            27,
+            26,
+            25,
+            24,
+            23,
+            22,
+            21,
+            20,
+            19,
+            18,
+            13,
+            17,
+            16,
+            15,
+            14,
+            12,
+            11,
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "remaining_old_path_prefix_blockers": [
+            23
+          ],
+          "reusable_prefix_agents": [
+            31,
+            30,
+            29,
+            28,
+            27,
+            26,
+            25,
+            24,
+            23,
+            22,
+            21,
+            20,
+            19,
+            18
+          ],
+          "rule": "LATEST_OLD_PATH_BLOCKER",
+          "status": "UNEVALUATED_ORDER_DESCRIPTION_NOT_A_RECOVERY",
+          "suffix_agents_requiring_new_joint_check_or_replan": [
+            13,
+            17,
+            16,
+            15,
+            14,
+            12,
+            11,
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ]
+        },
+        {
+          "cut_index": 8,
+          "order": [
+            31,
+            30,
+            29,
+            28,
+            27,
+            26,
+            25,
+            24,
+            13,
+            23,
+            22,
+            21,
+            20,
+            19,
+            18,
+            17,
+            16,
+            15,
+            14,
+            12,
+            11,
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "remaining_old_path_prefix_blockers": [],
+          "reusable_prefix_agents": [
+            31,
+            30,
+            29,
+            28,
+            27,
+            26,
+            25,
+            24
+          ],
+          "rule": "EARLIEST_OLD_PATH_BLOCKER",
+          "status": "UNEVALUATED_ORDER_DESCRIPTION_NOT_A_RECOVERY",
+          "suffix_agents_requiring_new_joint_check_or_replan": [
+            13,
+            23,
+            22,
+            21,
+            20,
+            19,
+            18,
+            17,
+            16,
+            15,
+            14,
+            12,
+            11,
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ]
+        }
+      ],
+      "cap_minus_h": 23,
+      "case": "maze-32-32-2__s01__n32",
+      "completed_fraction": 0.5625,
+      "earliest_old_path_conflict": {
+        "agent": 17,
+        "first_conflict": {
+          "kind": "VERTEX",
+          "left_at_terminal": false,
+          "right_at_terminal": false,
+          "time": 14,
+          "vertex": 538
+        },
+        "prefix_index": 14,
+        "scope": "PREFIX"
+      },
+      "empty_capped_calls": 1,
+      "expanded": 2085,
+      "failed_agent": 13,
+      "failed_cap": 40,
+      "failed_expanded": 544,
+      "failed_old_path_cost": 17,
+      "failed_old_path_sha256": "70aea67a16c0a63eb4c1bda24328a306dcc9ec513baabc2f435da8b9d190bea0",
+      "failed_old_path_within_cap": true,
+      "failed_order_position_1based": 19,
+      "failed_rpc_wall_ns": 633565,
+      "failed_static_h": 17,
+      "failure_strictly_after_half": true,
+      "found_calls": 18,
+      "group_size": 32,
+      "old_group_cost": 1871,
+      "old_path_blockers": [
+        {
+          "agent": 17,
+          "first_conflict": {
+            "kind": "VERTEX",
+            "left_at_terminal": false,
+            "right_at_terminal": false,
+            "time": 14,
+            "vertex": 538
+          },
+          "prefix_index": 14,
+          "scope": "PREFIX"
+        },
+        {
+          "agent": 23,
+          "first_conflict": {
+            "kind": "VERTEX",
+            "left_at_terminal": true,
+            "right_at_terminal": false,
+            "time": 86,
+            "vertex": 442
+          },
+          "prefix_index": 8,
+          "scope": "PREFIX"
+        }
+      ],
+      "order": [
+        31,
+        30,
+        29,
+        28,
+        27,
+        26,
+        25,
+        24,
+        23,
+        22,
+        21,
+        20,
+        19,
+        18,
+        17,
+        16,
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "prefix_found_rpc_wall_ns": 5451095,
+      "role": "WHOLE_TASK_CONTROL",
+      "search_calls": 19,
+      "search_rpc_wall_ns": 6084660,
+      "strict_group_target": 1870,
+      "successful_prefix": [
+        {
+          "agent": 31,
+          "cost": 58,
+          "path_sha256": "8fb083897cd580c3b773aef481ab97068885d1afa04f3ae4c73c40906ca03db1",
+          "rpc_index": 64
+        },
+        {
+          "agent": 30,
+          "cost": 19,
+          "path_sha256": "2f6f4ac6547966b9c16d8788e086fa95fe0baf1c4c72fc9e8899af97991df6b4",
+          "rpc_index": 65
+        },
+        {
+          "agent": 29,
+          "cost": 50,
+          "path_sha256": "3b2ec99dc4cb69fdf6becbc8cf148c8a5eac5327d9fcd8ab89731b774569ca9f",
+          "rpc_index": 66
+        },
+        {
+          "agent": 28,
+          "cost": 38,
+          "path_sha256": "4ddf45d55cb60d137a0240102168e31615efd9e3b0418ed8c3c25a5a0a40461f",
+          "rpc_index": 67
+        },
+        {
+          "agent": 27,
+          "cost": 90,
+          "path_sha256": "c70130c66cf834713e0ee17c6be3ff872bfa9377a7ae62a36d1ef71211104bac",
+          "rpc_index": 68
+        },
+        {
+          "agent": 26,
+          "cost": 51,
+          "path_sha256": "7b9a47174e6e8f8916631b6facc6f92c0a8f5521d8bd1834b4f9da04157395e8",
+          "rpc_index": 69
+        },
+        {
+          "agent": 25,
+          "cost": 58,
+          "path_sha256": "0afb14517fa38879286f7d180462559c294d72395c180de9590ffb58420cc503",
+          "rpc_index": 70
+        },
+        {
+          "agent": 24,
+          "cost": 19,
+          "path_sha256": "874cde9ea0522a91f229873e11f135ba98a5aa54dc79ed3def3b838c3ef46a0d",
+          "rpc_index": 71
+        },
+        {
+          "agent": 23,
+          "cost": 87,
+          "path_sha256": "6609378a073725ee5dd48990b8f3d9bb20945cfebea0cdd90998134341abb3ca",
+          "rpc_index": 72
+        },
+        {
+          "agent": 22,
+          "cost": 45,
+          "path_sha256": "e9fd6f942d55667fafa7bf46254beab3673c480e25a99a85a60f6781dd148077",
+          "rpc_index": 73
+        },
+        {
+          "agent": 21,
+          "cost": 68,
+          "path_sha256": "2b1581bfb2bfa757554829c7e230a58ce3beb3a0c66c029d8ed7513fd106c7f3",
+          "rpc_index": 74
+        },
+        {
+          "agent": 20,
+          "cost": 106,
+          "path_sha256": "381f72a534793944b146e7895355f8eccb9b0de3ddcb918c2cc7fb39b508e357",
+          "rpc_index": 75
+        },
+        {
+          "agent": 19,
+          "cost": 148,
+          "path_sha256": "22b141570c40f4075e2117af7fce768671d65db6b532b607a1659b9d0d14ed8d",
+          "rpc_index": 76
+        },
+        {
+          "agent": 18,
+          "cost": 86,
+          "path_sha256": "2ce94f4d8e1f9946ec6b41ae89cc7e83d3ac73fed6f640fa6350ad11fa34a47a",
+          "rpc_index": 77
+        },
+        {
+          "agent": 17,
+          "cost": 144,
+          "path_sha256": "ff80b146f0bb46cbbc5e0d6559f818f4218aad7c8a91dc1b1fb3dca2388a0655",
+          "rpc_index": 78
+        },
+        {
+          "agent": 16,
+          "cost": 92,
+          "path_sha256": "e9664a7141132e8fcdcec4043cc804fce983c573b3a8805fc8e6772f15f03993",
+          "rpc_index": 79
+        },
+        {
+          "agent": 15,
+          "cost": 21,
+          "path_sha256": "d02e20a2df92d597a8b1f8d4cb3dd82af71ff089d9b01838e306e3f0ca686075",
+          "rpc_index": 80
+        },
+        {
+          "agent": 14,
+          "cost": 58,
+          "path_sha256": "5092c68710359d9ba8b7cd70e9b02c5f90f00fe9a0cffcdf8daf2cc58329fbdb",
+          "rpc_index": 81
+        }
+      ],
+      "successful_prefix_cost": 1238,
+      "unchanged_after_sha256": "993fbaf2a343e956f0ae32ca5fe1779ee07fd49ced9ab7df134f1cec003a12d0"
+    },
+    {
+      "attempt_index": 4,
+      "attempt_outside_rpc_wall_ns": 6478153,
+      "attempt_python_cpu_ns": 7161150,
+      "attempt_wall_ns": 7962625,
+      "before_incumbent_sha256": "ec9560323d8dff78c010a0326a858de392d94f6026a5719ae9d3217a7a029c15",
+      "bounded_order_descriptions": [],
+      "cap_minus_h": 1,
+      "case": "random-32-32-10__s01__n32",
+      "completed_fraction": 0.375,
+      "earliest_old_path_conflict": null,
+      "empty_capped_calls": 1,
+      "expanded": 60,
+      "failed_agent": 19,
+      "failed_cap": 21,
+      "failed_expanded": 11,
+      "failed_old_path_cost": 22,
+      "failed_old_path_sha256": "4cf5b580291f35b136d6fb6f5dc0c7621ce7ac63400b0005fa1230d3a98498fb",
+      "failed_old_path_within_cap": false,
+      "failed_order_position_1based": 4,
+      "failed_rpc_wall_ns": 368479,
+      "failed_static_h": 20,
+      "failure_strictly_after_half": false,
+      "found_calls": 3,
+      "group_size": 8,
+      "old_group_cost": 164,
+      "old_path_blockers": [],
+      "order": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "prefix_found_rpc_wall_ns": 1115993,
+      "role": "LOCAL_ID_BLOCK_8",
+      "search_calls": 4,
+      "search_rpc_wall_ns": 1484472,
+      "strict_group_target": 163,
+      "successful_prefix": [
+        {
+          "agent": 16,
+          "cost": 9,
+          "path_sha256": "e9764f1bebc620c2a29a84324011a527fe1d937a45c09269a44fbcd96cf13bd6",
+          "rpc_index": 1
+        },
+        {
+          "agent": 17,
+          "cost": 23,
+          "path_sha256": "c817debccfaeb8cc9d95e1e777e73dbda1931d3f38717200932b927e0f823fed",
+          "rpc_index": 2
+        },
+        {
+          "agent": 18,
+          "cost": 14,
+          "path_sha256": "95c21b79d0410cb6ff057a82c88f325337e85c100f8fe40aebc20be56c2b3f72",
+          "rpc_index": 3
+        }
+      ],
+      "successful_prefix_cost": 46,
+      "unchanged_after_sha256": "ec9560323d8dff78c010a0326a858de392d94f6026a5719ae9d3217a7a029c15"
+    },
+    {
+      "attempt_index": 5,
+      "attempt_outside_rpc_wall_ns": 7565151,
+      "attempt_python_cpu_ns": 7833881,
+      "attempt_wall_ns": 9353630,
+      "before_incumbent_sha256": "ec9560323d8dff78c010a0326a858de392d94f6026a5719ae9d3217a7a029c15",
+      "bounded_order_descriptions": [],
+      "cap_minus_h": 1,
+      "case": "random-32-32-10__s01__n32",
+      "completed_fraction": 0.5,
+      "earliest_old_path_conflict": null,
+      "empty_capped_calls": 1,
+      "expanded": 112,
+      "failed_agent": 19,
+      "failed_cap": 21,
+      "failed_expanded": 11,
+      "failed_old_path_cost": 22,
+      "failed_old_path_sha256": "4cf5b580291f35b136d6fb6f5dc0c7621ce7ac63400b0005fa1230d3a98498fb",
+      "failed_old_path_within_cap": false,
+      "failed_order_position_1based": 5,
+      "failed_rpc_wall_ns": 427787,
+      "failed_static_h": 20,
+      "failure_strictly_after_half": true,
+      "found_calls": 4,
+      "group_size": 8,
+      "old_group_cost": 164,
+      "old_path_blockers": [],
+      "order": [
+        23,
+        22,
+        21,
+        20,
+        19,
+        18,
+        17,
+        16
+      ],
+      "prefix_found_rpc_wall_ns": 1360692,
+      "role": "LOCAL_ID_BLOCK_8",
+      "search_calls": 5,
+      "search_rpc_wall_ns": 1788479,
+      "strict_group_target": 163,
+      "successful_prefix": [
+        {
+          "agent": 23,
+          "cost": 11,
+          "path_sha256": "f990b28c95cf95b179a9d6c29c4067419c72fb38551f74b4d4d1390d1cb96c3c",
+          "rpc_index": 5
+        },
+        {
+          "agent": 22,
+          "cost": 33,
+          "path_sha256": "ff9586ff38ee089acd4da659186e78b90c7a96740e09afc09f62540715eef832",
+          "rpc_index": 6
+        },
+        {
+          "agent": 21,
+          "cost": 25,
+          "path_sha256": "19afc99f5e34ddc7dd13e17d9960607f54a3aa787d6edf3ea6e87adfb0d4856f",
+          "rpc_index": 7
+        },
+        {
+          "agent": 20,
+          "cost": 27,
+          "path_sha256": "9f24a49181c4a7d95bcf0dbfcf6cfe7ec8f5061a10d0d0673c297d4e043d0163",
+          "rpc_index": 8
+        }
+      ],
+      "successful_prefix_cost": 96,
+      "unchanged_after_sha256": "ec9560323d8dff78c010a0326a858de392d94f6026a5719ae9d3217a7a029c15"
+    },
+    {
+      "attempt_index": 8,
+      "attempt_outside_rpc_wall_ns": 17307866,
+      "attempt_python_cpu_ns": 18491308,
+      "attempt_wall_ns": 22067875,
+      "before_incumbent_sha256": "ec9560323d8dff78c010a0326a858de392d94f6026a5719ae9d3217a7a029c15",
+      "bounded_order_descriptions": [],
+      "cap_minus_h": 1,
+      "case": "random-32-32-10__s01__n32",
+      "completed_fraction": 0.59375,
+      "earliest_old_path_conflict": null,
+      "empty_capped_calls": 1,
+      "expanded": 519,
+      "failed_agent": 19,
+      "failed_cap": 21,
+      "failed_expanded": 11,
+      "failed_old_path_cost": 22,
+      "failed_old_path_sha256": "4cf5b580291f35b136d6fb6f5dc0c7621ce7ac63400b0005fa1230d3a98498fb",
+      "failed_old_path_within_cap": false,
+      "failed_order_position_1based": 20,
+      "failed_rpc_wall_ns": 232721,
+      "failed_static_h": 20,
+      "failure_strictly_after_half": true,
+      "found_calls": 19,
+      "group_size": 32,
+      "old_group_cost": 771,
+      "old_path_blockers": [],
+      "order": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "prefix_found_rpc_wall_ns": 4527288,
+      "role": "WHOLE_TASK_CONTROL",
+      "search_calls": 20,
+      "search_rpc_wall_ns": 4760009,
+      "strict_group_target": 770,
+      "successful_prefix": [
+        {
+          "agent": 0,
+          "cost": 16,
+          "path_sha256": "1e7813b7e943fe9653121077a091c86af6bd2c1a16b2c685473076767ed6a15a",
+          "rpc_index": 10
+        },
+        {
+          "agent": 1,
+          "cost": 35,
+          "path_sha256": "31958689ab37ab4b2cf4de4123777122c36e6f6a23884eb272114c323787802c",
+          "rpc_index": 11
+        },
+        {
+          "agent": 2,
+          "cost": 25,
+          "path_sha256": "214f8c2a5e3b863dc493ea74fda3a5c936f6d366e3180c886e1d1fa2e29913c0",
+          "rpc_index": 12
+        },
+        {
+          "agent": 3,
+          "cost": 9,
+          "path_sha256": "9c44c812274422e36944b162d9e5072414e1a3f87ad2b48e5b791bf8d511d3ac",
+          "rpc_index": 13
+        },
+        {
+          "agent": 4,
+          "cost": 15,
+          "path_sha256": "fa9eeb21015a4c9068737bd61fa4d937583e8e1b920d47030318a8648594f2c2",
+          "rpc_index": 14
+        },
+        {
+          "agent": 5,
+          "cost": 30,
+          "path_sha256": "8e5b88f952a956c836a1851287f86b20b3bd7d68889d2ce127113ad94eba4ac7",
+          "rpc_index": 15
+        },
+        {
+          "agent": 6,
+          "cost": 25,
+          "path_sha256": "e79a9a2cc591157fb5f4c0ee6376e6473cc99e026e5a377bf1ff56d49f729f69",
+          "rpc_index": 16
+        },
+        {
+          "agent": 7,
+          "cost": 53,
+          "path_sha256": "12d87417f9ed5aabdd9a911e2bc4088a20554e9b9f416d75752516f206a9ed29",
+          "rpc_index": 17
+        },
+        {
+          "agent": 8,
+          "cost": 5,
+          "path_sha256": "bc650afbd0bca0ea0eeefdaa77781f826527c8ff76f261dd0eec70be3785039c",
+          "rpc_index": 18
+        },
+        {
+          "agent": 9,
+          "cost": 19,
+          "path_sha256": "fd3da227e9c7a48101e9c9bd08087c35af158c257c84c74220f0266510e5d70f",
+          "rpc_index": 19
+        },
+        {
+          "agent": 10,
+          "cost": 27,
+          "path_sha256": "e00d9fa75d55559706935ced23ca4d7cba5c1e2774a8a3597e0850c48a1a7ad5",
+          "rpc_index": 20
+        },
+        {
+          "agent": 11,
+          "cost": 14,
+          "path_sha256": "4f2ca8ef8c2c7df0d06aad212c609fdd775db6e0ef8fa75bb8e84c80690f0330",
+          "rpc_index": 21
+        },
+        {
+          "agent": 12,
+          "cost": 34,
+          "path_sha256": "8da27fb45568044a064d8074da707c1b11ccc917491ef53148b3640742efb946",
+          "rpc_index": 22
+        },
+        {
+          "agent": 13,
+          "cost": 34,
+          "path_sha256": "b09a5bbedb58e7b8331407289a7052cd949dbdac6fdf37038e4c19a644e63591",
+          "rpc_index": 23
+        },
+        {
+          "agent": 14,
+          "cost": 36,
+          "path_sha256": "16a74e93a77934ff765bb88af3e0c2c92d6b2eacb5e11f68f7559b17beacfba6",
+          "rpc_index": 24
+        },
+        {
+          "agent": 15,
+          "cost": 30,
+          "path_sha256": "caf203afa9380b8280f696d3ac129a6898a2a8835e5f2391e317bcb36a9eae4c",
+          "rpc_index": 25
+        },
+        {
+          "agent": 16,
+          "cost": 9,
+          "path_sha256": "d028974234e821a441df81ab2d1831298cd4b49c7a67bf70675029032494348d",
+          "rpc_index": 26
+        },
+        {
+          "agent": 17,
+          "cost": 23,
+          "path_sha256": "6679f5bebb582730dc26d4a3fda25b85abde69bfcf4bb2e00bce6dcdf72132ed",
+          "rpc_index": 27
+        },
+        {
+          "agent": 18,
+          "cost": 14,
+          "path_sha256": "e7c1132d05cb1ba48bc949369389903f559afc95d69f1219552e9268c0349e74",
+          "rpc_index": 28
+        }
+      ],
+      "successful_prefix_cost": 453,
+      "unchanged_after_sha256": "ec9560323d8dff78c010a0326a858de392d94f6026a5719ae9d3217a7a029c15"
+    }
+  ],
+  "generator_sha256": "68884d2cbbce340e23a09d44639192e9a9c31c9f3ae921f019bbb3257effcd24",
+  "limits": [
+    "These fixed ID groups and residual-h caps are not the full ADDRESS recommended policy.",
+    "Old-incumbent-path conflicts do not explain exhaustive SIPP failure, certify recovery or prove global infeasibility.",
+    "Attempt and RPC intervals are nested; prefix RPC is not measured recoverable cost.",
+    "Described priority moves are unevaluated. No incumbent or frozen result was changed."
+  ],
+  "new_scientific_run": false,
+  "scope": "OFFLINE_RECONSTRUCTION_OF_FIXED_HOST_CAP_FAILURES",
+  "source_commit": "535ee1adf3135ab79565e0b3aa5d189348fe7ab2",
+  "source_objects": {
+    "tracks/sci/config/repair_residual_v1_inputs.json": {
+      "bytes": 95144,
+      "sha256": "be1e912e1e2ea3f59fcdc5d0c5737118e7f96d92227be536ada605f6751c0e5b"
+    },
+    "tracks/sci/config/repair_residual_v1_manifest.json": {
+      "bytes": 1894,
+      "sha256": "cff28cdbac11caf58f1eab952d954e907c877fa8355c5f4c38bec095f8987039"
+    },
+    "tracks/sci/results/repair_residual_v1/maze-32-32-2__s01__n16__remaining_bound/attempt.json": {
+      "bytes": 703,
+      "sha256": "4561f726ca88a5b7a45099294e72938da8e17b3882a1313682b1daf6419d4035"
+    },
+    "tracks/sci/results/repair_residual_v1/maze-32-32-2__s01__n16__remaining_bound/native/agents.txt": {
+      "bytes": 173,
+      "sha256": "038e3663c565e723b8d438b9dd47a022ee9f1c5bee4b8676fa207f9c21beaef5"
+    },
+    "tracks/sci/results/repair_residual_v1/maze-32-32-2__s01__n16__remaining_bound/native/map.txt": {
+      "bytes": 1062,
+      "sha256": "ddaea38f44b66e6cd1b1cf58ef2b6caa9db3b951ef5db0839737ef8373b8694a"
+    },
+    "tracks/sci/results/repair_residual_v1/maze-32-32-2__s01__n16__remaining_bound/native/native.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "tracks/sci/results/repair_residual_v1/maze-32-32-2__s01__n16__remaining_bound/receipt.json": {
+      "bytes": 2061,
+      "sha256": "a4a1b99b46a7f48d6ee80d5cbf460f5a043b92b7ac07534e6634288b0347dd0f"
+    },
+    "tracks/sci/results/repair_residual_v1/maze-32-32-2__s01__n16__remaining_bound/result.json": {
+      "bytes": 78567,
+      "sha256": "4a487ea98f7e6fbc83ca7cddcadd22de233501972a5fdf1001f48521b8268578"
+    },
+    "tracks/sci/results/repair_residual_v1/maze-32-32-2__s01__n16__remaining_bound/worker.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "tracks/sci/results/repair_residual_v1/maze-32-32-2__s01__n16__remaining_bound/worker.stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "tracks/sci/results/repair_residual_v1/maze-32-32-2__s01__n32__remaining_bound/attempt.json": {
+      "bytes": 703,
+      "sha256": "f1da47001367ac2c51093d90481d8c58eea4193c0005d4558cd96cd6603c36e7"
+    },
+    "tracks/sci/results/repair_residual_v1/maze-32-32-2__s01__n32__remaining_bound/native/agents.txt": {
+      "bytes": 349,
+      "sha256": "9d97cee9cb17697a8b48b9a129a380f2ff1821b8c4e458af99f1b7179d74a895"
+    },
+    "tracks/sci/results/repair_residual_v1/maze-32-32-2__s01__n32__remaining_bound/native/map.txt": {
+      "bytes": 1062,
+      "sha256": "ddaea38f44b66e6cd1b1cf58ef2b6caa9db3b951ef5db0839737ef8373b8694a"
+    },
+    "tracks/sci/results/repair_residual_v1/maze-32-32-2__s01__n32__remaining_bound/native/native.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "tracks/sci/results/repair_residual_v1/maze-32-32-2__s01__n32__remaining_bound/receipt.json": {
+      "bytes": 2050,
+      "sha256": "e22c2d38897ce694bc4af02dcdfb783c49d8f7f3db303207e09bfc9738dec528"
+    },
+    "tracks/sci/results/repair_residual_v1/maze-32-32-2__s01__n32__remaining_bound/result.json": {
+      "bytes": 147048,
+      "sha256": "75872d319a2b75af0dd770fdef13b151bc630ca6155f3f5af6cde658b50dcd76"
+    },
+    "tracks/sci/results/repair_residual_v1/maze-32-32-2__s01__n32__remaining_bound/worker.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "tracks/sci/results/repair_residual_v1/maze-32-32-2__s01__n32__remaining_bound/worker.stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "tracks/sci/results/repair_residual_v1/random-32-32-10__s01__n16__remaining_bound/attempt.json": {
+      "bytes": 709,
+      "sha256": "e9f9bde1fa58c265bf1ff3556fc4e4ced58da47c540d2d9f5f41ec582400de25"
+    },
+    "tracks/sci/results/repair_residual_v1/random-32-32-10__s01__n16__remaining_bound/native/agents.txt": {
+      "bytes": 173,
+      "sha256": "64c4faf7400d6f9fb46d16d43d66c81dcad3117faff29293d7946b1ee842de32"
+    },
+    "tracks/sci/results/repair_residual_v1/random-32-32-10__s01__n16__remaining_bound/native/map.txt": {
+      "bytes": 1062,
+      "sha256": "fe0aa228ea1d880f3a91ae6ff4ee049e8435affca28f985974bb4137802aaeb6"
+    },
+    "tracks/sci/results/repair_residual_v1/random-32-32-10__s01__n16__remaining_bound/native/native.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "tracks/sci/results/repair_residual_v1/random-32-32-10__s01__n16__remaining_bound/receipt.json": {
+      "bytes": 2054,
+      "sha256": "cc0ba906d724f1a7569afb677b59024625b8ab4a5bd939fa97b1db9bd15faa8b"
+    },
+    "tracks/sci/results/repair_residual_v1/random-32-32-10__s01__n16__remaining_bound/result.json": {
+      "bytes": 11383,
+      "sha256": "def50b154e4ddfb68f464fc6aef459de1acdb8a5789e992ad0b5c003931bed07"
+    },
+    "tracks/sci/results/repair_residual_v1/random-32-32-10__s01__n16__remaining_bound/worker.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "tracks/sci/results/repair_residual_v1/random-32-32-10__s01__n16__remaining_bound/worker.stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "tracks/sci/results/repair_residual_v1/random-32-32-10__s01__n32__remaining_bound/attempt.json": {
+      "bytes": 709,
+      "sha256": "89003427f2ba55d7bca7890206f77e9b44c7149bb5da7b2d4476aa16f53af58e"
+    },
+    "tracks/sci/results/repair_residual_v1/random-32-32-10__s01__n32__remaining_bound/native/agents.txt": {
+      "bytes": 350,
+      "sha256": "7c8de943d744a33dabba692cdbffd9fca845c55de32d667045323a66b6b02cbe"
+    },
+    "tracks/sci/results/repair_residual_v1/random-32-32-10__s01__n32__remaining_bound/native/map.txt": {
+      "bytes": 1062,
+      "sha256": "fe0aa228ea1d880f3a91ae6ff4ee049e8435affca28f985974bb4137802aaeb6"
+    },
+    "tracks/sci/results/repair_residual_v1/random-32-32-10__s01__n32__remaining_bound/native/native.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "tracks/sci/results/repair_residual_v1/random-32-32-10__s01__n32__remaining_bound/receipt.json": {
+      "bytes": 2089,
+      "sha256": "01a95dbaa84017e40691724e75f834ed764e357dc7662bcadf36ac8f467b0c94"
+    },
+    "tracks/sci/results/repair_residual_v1/random-32-32-10__s01__n32__remaining_bound/result.json": {
+      "bytes": 76893,
+      "sha256": "475e50ce3d32197b2bfde104cfbec3e68c0f8da5f26f5a14b959b4201fd50670"
+    },
+    "tracks/sci/results/repair_residual_v1/random-32-32-10__s01__n32__remaining_bound/worker.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "tracks/sci/results/repair_residual_v1/random-32-32-10__s01__n32__remaining_bound/worker.stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "tracks/sci/results/repair_residual_v1/warehouse-10-20-10-2-1__s01__n16__remaining_bound/attempt.json": {
+      "bytes": 723,
+      "sha256": "67f62ff26a30268774b25174e0cc5bbd4aae0e0daf45165cb6d069d7f7d88187"
+    },
+    "tracks/sci/results/repair_residual_v1/warehouse-10-20-10-2-1__s01__n16__remaining_bound/native/agents.txt": {
+      "bytes": 199,
+      "sha256": "f9e86e2d69ebafdac087c06aa3413c734b4961c4bd3c3cda478f8e33138a89fe"
+    },
+    "tracks/sci/results/repair_residual_v1/warehouse-10-20-10-2-1__s01__n16__remaining_bound/native/map.txt": {
+      "bytes": 10213,
+      "sha256": "e6dc2b24d8555ff37004831b65996e36697c841097a060028eaad655300d0aa7"
+    },
+    "tracks/sci/results/repair_residual_v1/warehouse-10-20-10-2-1__s01__n16__remaining_bound/native/native.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "tracks/sci/results/repair_residual_v1/warehouse-10-20-10-2-1__s01__n16__remaining_bound/receipt.json": {
+      "bytes": 2057,
+      "sha256": "1dad05fee3fd38ed47a2214e969889d74a76717974b632a1d3863fe8041bbe2e"
+    },
+    "tracks/sci/results/repair_residual_v1/warehouse-10-20-10-2-1__s01__n16__remaining_bound/result.json": {
+      "bytes": 20256,
+      "sha256": "8131a320aa89472237c614a6d1a8ca061d5e53b05dec7f062d39b17912296f1d"
+    },
+    "tracks/sci/results/repair_residual_v1/warehouse-10-20-10-2-1__s01__n16__remaining_bound/worker.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "tracks/sci/results/repair_residual_v1/warehouse-10-20-10-2-1__s01__n16__remaining_bound/worker.stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "tracks/sci/results/repair_residual_v1/warehouse-10-20-10-2-1__s01__n32__remaining_bound/attempt.json": {
+      "bytes": 723,
+      "sha256": "edf67c25beba94dd68869d293655dbcac7e1cf75d609a5cf12443dbc1bb20181"
+    },
+    "tracks/sci/results/repair_residual_v1/warehouse-10-20-10-2-1__s01__n32__remaining_bound/native/agents.txt": {
+      "bytes": 399,
+      "sha256": "e7254f96d622f7cf0bbe2d917b2c503becaac948b674ce92be5c9fa07da7353e"
+    },
+    "tracks/sci/results/repair_residual_v1/warehouse-10-20-10-2-1__s01__n32__remaining_bound/native/map.txt": {
+      "bytes": 10213,
+      "sha256": "e6dc2b24d8555ff37004831b65996e36697c841097a060028eaad655300d0aa7"
+    },
+    "tracks/sci/results/repair_residual_v1/warehouse-10-20-10-2-1__s01__n32__remaining_bound/native/native.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "tracks/sci/results/repair_residual_v1/warehouse-10-20-10-2-1__s01__n32__remaining_bound/receipt.json": {
+      "bytes": 2058,
+      "sha256": "abd14e910cba40e7ee1a03f680060a4362a35f4e9dc9d8bf35956188f56e5ef8"
+    },
+    "tracks/sci/results/repair_residual_v1/warehouse-10-20-10-2-1__s01__n32__remaining_bound/result.json": {
+      "bytes": 40755,
+      "sha256": "f1d9ec58931e9431f967bfcd3c88f5222efa948c661f3c5208cb34c7e2dbe6ae"
+    },
+    "tracks/sci/results/repair_residual_v1/warehouse-10-20-10-2-1__s01__n32__remaining_bound/worker.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "tracks/sci/results/repair_residual_v1/warehouse-10-20-10-2-1__s01__n32__remaining_bound/worker.stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "totals": {
+    "all_search_calls_in_failed_attempts": 149,
+    "attempt_wall_ns": 342736753,
+    "failed_rpc_wall_ns": 7974432,
+    "failures": 17,
+    "failures_strictly_after_half": 13,
+    "found_prefix_calls": 132,
+    "no_old_path_conflict": 7,
+    "old_path_fixed_blockers": 0,
+    "old_path_over_cap": 7,
+    "prefix_found_rpc_wall_ns": 47330824,
+    "search_rpc_wall_ns": 55305256
+  }
+}

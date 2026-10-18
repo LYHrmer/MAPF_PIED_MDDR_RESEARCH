@@ -55,7 +55,7 @@ def source_identity(root):
     return pins
 
 
-def build(root, output):
+def build(root, output, adapter=False):
     root, output = root.resolve(), output.resolve()
     if output == root or root in output.parents:
         raise ValueError('build must be outside author checkout')
@@ -65,6 +65,11 @@ def build(root, output):
                'solver_instance_constructed': False, 'scientific_search_executed': False,
                'author_commit': AUTHOR, 'author_files': pins, 'stages': [],
                'script_sha256': sha(Path(__file__).read_bytes()), 'status': 'BUILDING'}
+    compile_root = root
+    if adapter:
+        receipt['scope'] = 'ADDRESS_COMMON_INITIAL_ADAPTER_COMPILE_AND_HELP_ONLY'
+        receipt['reward_semantics'] = 'AUTHOR_ATTEMPT_UPDATE_BEFORE_ROLLBACK_UNCHANGED'
+        receipt['external_total_budget_integration'] = 'PENDING'
     target = output/'build_receipt.json'
 
     def save():
@@ -103,6 +108,12 @@ def build(root, output):
 
     save()
     try:
+        if adapter:
+            from address_adapter import materialize
+            compile_root = output/'source_overlay'
+            receipt['adapter_script_sha256'] = sha((HERE/'address_adapter.py').read_bytes())
+            receipt['adapter_sources'] = materialize(root, compile_root, pins)
+            save()
         compiler = Path(shutil.which('g++') or '').resolve()
         cmake = Path(shutil.which('cmake') or '').resolve()
         if not compiler.is_file() or not cmake.is_file():
@@ -115,7 +126,7 @@ def build(root, output):
                 'libboost-filesystem-dev', 'libeigen3-dev']).decode().splitlines(),
             'environment_note': 'Host build evidence; author README requests Boost 1.81, installed version recorded, not a portable lock or paper environment match.'})
         save()
-        stage('configure', [str(cmake), '-S', str(root), '-B', str(output/'build'),
+        stage('configure', [str(cmake), '-S', str(compile_root), '-B', str(output/'build'),
                            '-DCMAKE_BUILD_TYPE=Release', '-DCMAKE_CXX_COMPILER='+str(compiler)], 30)
         stage('compile', [str(cmake), '--build', str(output/'build'), '--parallel', '2'], 240)
         binary = output/'build/address'
@@ -123,6 +134,8 @@ def build(root, output):
         help_raw = stage('help', [str(binary), '--help'], 5, accepted=(1,))
         if b'--maxIterations' not in help_raw or b'--destroyStrategy' not in help_raw:
             raise ValueError('unexpected full-author help entry')
+        if adapter and not all(flag in help_raw for flag in (b'--initialPaths', b'--adapterReceipt', b'--finalReserve')):
+            raise ValueError('adapter help contract missing')
         if source_identity(root) != pins:
             raise ValueError('author source changed during build')
         receipt.update({'binary_sha256': sha(binary.read_bytes()), 'binary_bytes': binary.stat().st_size,
@@ -140,5 +153,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--author-root', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--adapter', action='store_true', help='compile project-owned common-initial overlay')
     args = parser.parse_args()
-    print(json.dumps(build(args.author_root, args.output), sort_keys=True))
+    print(json.dumps(build(args.author_root, args.output, args.adapter), sort_keys=True))

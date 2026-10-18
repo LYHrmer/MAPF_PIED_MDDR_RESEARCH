@@ -6,6 +6,7 @@ user authorization. Positive SOC-minus-h is not an improvement label.
 import argparse
 import json
 from pathlib import Path
+import subprocess
 
 from prepare_repair_dev import RUNTIME, prepare_case, sha
 from run_repair_dev import HERE, inspect_inputs, load, unpack, write_json
@@ -13,6 +14,7 @@ from run_repair_dev import HERE, inspect_inputs, load, unpack, write_json
 BATCH = 'repair_residual_v1'
 FAMILIES = ('maze-32-32-2', 'random-32-32-10', 'warehouse-10-20-10-2-1')
 CASES = tuple(f'{family}__s01__n{n:02d}' for family in FAMILIES for n in (16, 32))
+FAILURE_SOURCE = '535ee1adf3135ab79565e0b3aa5d189348fe7ab2'
 
 
 def fixed_orders(agents):
@@ -273,14 +275,315 @@ def costs(manifest, expected_sha):
     print(json.dumps({'output': str(root/'costs.json'), 'sha256': sha((root/'costs.json').read_bytes())}))
 
 
+def first_path_conflict(left, right):
+    """First discrete vertex/swap conflict, with both goals held forever."""
+    for t in range(max(len(left), len(right))):
+        u, v = left[min(t, len(left)-1)], right[min(t, len(right)-1)]
+        if u == v:
+            return {'time': t, 'kind': 'VERTEX', 'vertex': u,
+                    'left_at_terminal': t >= len(left)-1, 'right_at_terminal': t >= len(right)-1}
+        if t and left[min(t-1, len(left)-1)] == v and right[min(t-1, len(right)-1)] == u:
+            return {'time': t, 'kind': 'OPPOSITE_EDGE', 'left_edge': [v, u], 'right_edge': [u, v],
+                    'left_at_terminal': False, 'right_at_terminal': False}
+    return None
+
+
+def bounded_recovery_plan(problem, incumbent, order, prefix, failed_agent, bounds, *, max_suffix_calls=8):
+    """Describe at most one recovery; no path search or incumbent mutation.
+
+    This residual-h-cap rule is a prototype-host proposal, not an ADDRESS rule.
+    A new order invalidates the old exhaustive-search/cap conclusion.
+    """
+    from address_backend import canonical
+    order = tuple(order)
+    position = order.index(failed_agent)
+    if type(max_suffix_calls) is not int or max_suffix_calls < 0 or set(prefix) != set(order[:position]):
+        raise ValueError('invalid prefix or proposed suffix allowance')
+    fixed = {a: p for a, p in incumbent.items() if a not in order}
+    target = sum(len(incumbent[a])-1 for a in order)-1
+    old_path = incumbent[failed_agent]
+    cap = target-sum(len(p)-1 for p in prefix.values())-sum(bounds[a] for a in order[position+1:])
+    result = {'failed_agent': failed_agent, 'original_order': order,
+        'max_candidates': 1, 'max_suffix_attempts': 1, 'max_suffix_search_calls': max_suffix_calls,
+        'no_recursive_recovery': True, 'old_exhaustion_certificate_reusable': False,
+        'original_failed_cap': cap, 'candidates': [], 'selected_candidate': None,
+        'status': 'NOT_ELIGIBLE', 'budget_basis': 'PROPOSAL_QUOTA_NOT_A_RUN_AUTHORIZATION'}
+    if len(old_path)-1 > cap:
+        return dict(result, reason='OLD_PATH_OVER_ORIGINAL_CAP')
+    if position+1 <= len(order)/2:
+        return dict(result, reason='FAILURE_NOT_IN_SECOND_HALF')
+    if any(first_path_conflict(old_path, p) for p in fixed.values()):
+        return dict(result, reason='OLD_PATH_CONFLICTS_WITH_FIXED_PATHS')
+    blockers = [i for i, a in enumerate(order[:position]) if first_path_conflict(old_path, prefix[a])]
+    if not blockers:
+        return dict(result, reason='NO_OLD_PATH_PREFIX_BLOCKER')
+    # The earliest blocker is the unique insertion point preserving the longest
+    # contiguous prefix compatible with this particular old path. Trying a later
+    # blocker would knowingly leave an earlier one in the retained prefix.
+    cut = min(blockers)
+    kept = {a: prefix[a] for a in order[:cut]}
+    new_order = order[:cut]+(failed_agent,)+order[cut:position]+order[position+1:]
+    suffix = new_order[cut+1:]
+    new_cap = target-sum(len(p)-1 for p in kept.values())-sum(bounds[a] for a in suffix)
+    remaining_blockers = [a for a, p in kept.items() if first_path_conflict(old_path, p)]
+    partial = {**fixed, **kept, failed_agent: old_path}
+    candidate = {'order': new_order, 'cut_index': cut, 'retained_prefix_agents': list(kept),
+        'retained_prefix_sha256': sha(canonical(sorted(kept.items()))),
+        'fixed_paths_sha256': sha(canonical(sorted(fixed.items()))),
+        'anchor_old_path_sha256': sha(canonical(old_path)),
+        'new_anchor_cap': new_cap, 'suffix_to_recompute': suffix,
+        'suffix_search_calls_upper_bound': len(suffix), 'remaining_old_path_blockers': remaining_blockers,
+        'status': 'REJECTED_OFFLINE'}
+    if remaining_blockers:
+        candidate['reason'] = 'OLD_PATH_STILL_BLOCKED_BY_RETAINED_PREFIX'
+    elif len(old_path)-1 > new_cap:
+        candidate['reason'] = 'OLD_PATH_OVER_NEW_CAP'
+    else:
+        problem.validate(partial, complete=False)
+        candidate['verified_partial_plan_sha256'] = sha(canonical(sorted(partial.items())))
+        if len(suffix) > max_suffix_calls:
+            candidate['reason'] = 'SUFFIX_EXCEEDS_PROPOSED_CALL_QUOTA'
+        else:
+            candidate.update(status='ELIGIBLE_PARTIAL_PLAN_ONLY', reason='NO_RECOVERY_SEARCH_PERFORMED')
+    result['candidates'].append(candidate)
+    if candidate['status'] == 'ELIGIBLE_PARTIAL_PLAN_ONLY':
+        result.update(status='DESCRIBED_NOT_EXECUTED', selected_candidate=0,
+                      reason='LONGEST_VERIFIED_PREFIX_THEN_AT_MOST_ONE_SUFFIX')
+    else:
+        result['reason'] = 'NO_ELIGIBLE_CANDIDATE_WITHIN_PROPOSED_QUOTA'
+    return result
+
+
+def reconstruct_failures(case, result, *, recovery_plans=None):
+    """Replay recorded paths and hashes only; never invoke the search backend."""
+    from address_backend import canonical, MAX_TIMESTEP
+    from pp_repair import Incumbent
+    checked = diagnose(case, result)
+    problem, incumbent = unpack(case)
+    bounds = {int(a): h for a, h in result['lower_bounds'].items()}
+    failures = []
+    for index, (attempt, diagnosis) in enumerate(zip(result['attempts'], checked['attempts'])):
+        order = tuple(attempt['order'])
+        if Incumbent(incumbent).snapshot().sha256 != attempt['before_sha256']:
+            raise ValueError('cannot reconstruct incumbent before attempt')
+        old_cost = sum(len(incumbent[a])-1 for a in order)
+        if old_cost != attempt['old_cost']:
+            raise ValueError('incumbent group cost mismatch')
+        fixed = {a: p for a, p in incumbent.items() if a not in order}
+        prefix, prefix_cost, prefix_rows = {}, 0, []
+        lo, hi = attempt['rpc_indices']
+        calls = result['rpc'][lo:hi]
+        if len(calls) != attempt['search_calls'] or any(r['op'] != 'search' for r in calls):
+            raise ValueError('attempt RPC slice mismatch')
+        for position, rpc in enumerate(calls):
+            agent = order[position]
+            cap = old_cost-1-prefix_cost-sum(bounds[a] for a in order[position+1:])
+            constraints = {**fixed, **prefix}
+            seed_key = (case['seed'], agent, order, sorted(constraints.items()))
+            seed = int(sha(canonical(seed_key))[:8], 16) % MAX_TIMESTEP
+            reply = rpc['response']
+            request = {'op': 'search', 'seq': reply['seq'], 'agent': problem.native_ids[agent],
+                'seed': seed, 'max_cost': cap,
+                'fixed_paths': [{'agent': problem.native_ids[a], 'path': p} for a, p in sorted(constraints.items())]}
+            wire = canonical(request)+b'\n'
+            response_wire = canonical(reply)+b'\n'
+            if (sha(wire) != rpc['request_sha256'] or len(wire) != rpc['request_bytes']
+                    or sha(response_wire) != rpc['response_sha256']
+                    or len(response_wire) != rpc['response_bytes']
+                    or reply['effective_max_cost'] != cap):
+                raise ValueError('reconstructed native request/response differs from frozen bytes')
+            if reply['status'] == 'FOUND':
+                path = tuple(reply['path'])
+                problem.validate({**constraints, agent: path}, complete=False)
+                cost = len(path)-1
+                if not bounds[agent] <= cost <= cap or reply['num_collisions'] != 0:
+                    raise ValueError('recorded prefix violates its model/cap')
+                prefix[agent] = path
+                prefix_cost += cost
+                prefix_rows.append({'agent': agent, 'cost': cost, 'path_sha256': sha(canonical(path)),
+                                    'rpc_index': lo+position})
+                continue
+            if (reply['status'] != 'EMPTY_CAPPED' or reply['path'] != [] or position != len(calls)-1
+                    or diagnosis['diagnosis'] != 'CAP_EXHAUSTED_CURRENT_PREFIX_ONLY'
+                    or attempt['completed_agents'] != len(prefix)):
+                raise ValueError('unexpected or incomplete failure in frozen complete batch')
+            old_path = incumbent[agent]
+            if recovery_plans is not None:
+                plan = bounded_recovery_plan(problem, incumbent, order, prefix, agent, bounds)
+                recovery_plans.append(dict(plan, case=case['id'], attempt_index=index,
+                    before_incumbent_sha256=attempt['before_sha256']))
+            blockers = []
+            for other, path in constraints.items():
+                conflict = first_path_conflict(old_path, path)
+                if conflict is not None:
+                    blockers.append({'agent': other, 'scope': 'PREFIX' if other in prefix else 'FIXED',
+                                     'prefix_index': order.index(other) if other in prefix else None,
+                                     'first_conflict': conflict})
+            blockers.sort(key=lambda x: (x['first_conflict']['time'], x['agent']))
+            prefix_blockers = [b['agent'] for b in blockers if b['scope'] == 'PREFIX']
+            # Candidate descriptions only: no new path, order evaluation or search.
+            moves = []
+            if prefix_blockers:
+                indices = sorted(order.index(a) for a in prefix_blockers)
+                for label, cut in (('LATEST_OLD_PATH_BLOCKER', indices[-1]),
+                                   ('EARLIEST_OLD_PATH_BLOCKER', indices[0])):
+                    if any(m['cut_index'] == cut for m in moves):
+                        continue
+                    new_order = order[:cut]+(agent,)+order[cut:position]+order[position+1:]
+                    moves.append({'rule': label, 'cut_index': cut, 'order': new_order,
+                        'reusable_prefix_agents': list(order[:cut]),
+                        'suffix_agents_requiring_new_joint_check_or_replan': list(new_order[cut:]),
+                        'remaining_old_path_prefix_blockers': [a for a in prefix_blockers if order.index(a) < cut],
+                        'status': 'UNEVALUATED_ORDER_DESCRIPTION_NOT_A_RECOVERY'})
+            rpc_wall = sum(r['wall_ns'] for r in calls)
+            if rpc_wall > attempt['wall_ns']:
+                raise ValueError('nested RPC exceeds attempt wall time')
+            failures.append({'case': case['id'], 'attempt_index': index, 'role': diagnosis['role'],
+                'before_incumbent_sha256': attempt['before_sha256'],
+                'unchanged_after_sha256': attempt['after_sha256'],
+                'order': order, 'group_size': len(order), 'old_group_cost': old_cost,
+                'strict_group_target': old_cost-1, 'successful_prefix': prefix_rows,
+                'successful_prefix_cost': prefix_cost, 'failed_agent': agent, 'failed_order_position_1based': position+1,
+                'completed_fraction': len(prefix)/len(order), 'failure_strictly_after_half': position+1 > len(order)/2,
+                'failed_cap': cap, 'failed_static_h': bounds[agent], 'cap_minus_h': cap-bounds[agent],
+                'failed_old_path_cost': len(old_path)-1,
+                'failed_old_path_within_cap': len(old_path)-1 <= cap,
+                'failed_old_path_sha256': sha(canonical(old_path)),
+                'old_path_blockers': blockers, 'earliest_old_path_conflict': blockers[0] if blockers else None,
+                'bounded_order_descriptions': moves,
+                'search_calls': len(calls), 'found_calls': len(prefix), 'empty_capped_calls': 1,
+                'attempt_wall_ns': attempt['wall_ns'], 'attempt_python_cpu_ns': attempt['cpu_ns'],
+                'search_rpc_wall_ns': rpc_wall, 'prefix_found_rpc_wall_ns': sum(r['wall_ns'] for r in calls[:-1]),
+                'failed_rpc_wall_ns': rpc['wall_ns'], 'attempt_outside_rpc_wall_ns': attempt['wall_ns']-rpc_wall,
+                'expanded': sum(r['response']['num_expanded'] for r in calls),
+                'failed_expanded': reply['num_expanded']})
+        if attempt['status'] == 'ACCEPTED':
+            if len(prefix) != len(order) or prefix_cost != attempt['candidate_cost']:
+                raise ValueError('accepted repair reconstruction incomplete')
+            incumbent = {**fixed, **prefix}
+            problem.validate(incumbent)
+        if Incumbent(incumbent).snapshot().sha256 != attempt['after_sha256']:
+            raise ValueError('reconstructed after incumbent SHA differs')
+    if incumbent != {int(a): tuple(p) for a, p in result['final_paths'].items()}:
+        raise ValueError('reconstructed full final plan differs')
+    return failures
+
+
+def failures(output):
+    """All 17 historical cap failures, read from fixed Git objects, no solver."""
+    output = output.resolve()
+    if HERE/'results' in output.parents:
+        raise ValueError('frozen result directories are not a derived-output destination')
+    if output.exists():
+        raise FileExistsError('preserve the existing offline derivation')
+    pins = {}
+    def read(path):
+        relative = 'tracks/sci/'+path
+        raw = subprocess.run(['rtk', 'proxy', 'git', 'show', FAILURE_SOURCE+':'+relative],
+            cwd=HERE, check=True, stdout=subprocess.PIPE).stdout
+        pins[relative] = {'sha256': sha(raw), 'bytes': len(raw)}
+        return raw
+    manifest_raw = read('config/'+BATCH+'_manifest.json')
+    manifest_sha = sha(manifest_raw)
+    config = json.loads(manifest_raw)
+    input_raw = read('config/'+config['input_file'])
+    if config['batch_id'] != BATCH or sha(input_raw) != config['input_sha256']:
+        raise ValueError('frozen input identity mismatch')
+    bundle = json.loads(input_raw)
+    rows, cases = [], []
+    for job in config['jobs']:
+        stem = 'results/'+BATCH+'/'+job['id']+'/'
+        receipt = json.loads(read(stem+'receipt.json'))
+        if (receipt['status'] != 'COMPLETE' or receipt['job'] != job
+                or receipt['manifest_sha256'] != manifest_sha):
+            raise ValueError('expected a complete fixed-source receipt')
+        for name, pin in receipt['artifacts'].items():
+            relative = Path(name)
+            if relative.is_absolute() or '..' in relative.parts:
+                raise ValueError('artifact path escape')
+            raw = read(stem+name)
+            if sha(raw) != pin['sha256'] or len(raw) != pin['bytes']:
+                raise ValueError('frozen artifact differs from receipt')
+        result = json.loads(read(stem+'result.json'))
+        case = next(c for c in bundle['cases'] if c['id'] == job['case'])
+        if result['manifest_sha256'] != manifest_sha or result['case'] != case['id']:
+            raise ValueError('result identity mismatch')
+        reconstructed = reconstruct_failures(case, result)
+        rows.extend(reconstructed)
+        cases.append({'case': case['id'], 'attempts': len(result['attempts']),
+                      'cap_failures': len(reconstructed), 'all_attempts_and_final_plan_reconstructed': True})
+    if len(rows) != 17:
+        raise ValueError('fixed-source all-failure sample differs from the recorded 17')
+    totals = {'failures': len(rows), 'found_prefix_calls': sum(r['found_calls'] for r in rows),
+        'all_search_calls_in_failed_attempts': sum(r['search_calls'] for r in rows),
+        'failures_strictly_after_half': sum(r['failure_strictly_after_half'] for r in rows),
+        'no_old_path_conflict': sum(not r['old_path_blockers'] for r in rows),
+        'old_path_over_cap': sum(not r['failed_old_path_within_cap'] for r in rows),
+        'old_path_fixed_blockers': sum(sum(b['scope'] == 'FIXED' for b in r['old_path_blockers']) for r in rows),
+        'attempt_wall_ns': sum(r['attempt_wall_ns'] for r in rows),
+        'search_rpc_wall_ns': sum(r['search_rpc_wall_ns'] for r in rows),
+        'prefix_found_rpc_wall_ns': sum(r['prefix_found_rpc_wall_ns'] for r in rows),
+        'failed_rpc_wall_ns': sum(r['failed_rpc_wall_ns'] for r in rows)}
+    value = {'scope': 'OFFLINE_RECONSTRUCTION_OF_FIXED_HOST_CAP_FAILURES',
+        'source_commit': FAILURE_SOURCE, 'source_objects': pins,
+        'generator_sha256': sha(Path(__file__).read_bytes()), 'new_scientific_run': False,
+        'cases': cases, 'totals': totals, 'failures': rows,
+        'limits': ['These fixed ID groups and residual-h caps are not the full ADDRESS recommended policy.',
+                   'Old-incumbent-path conflicts do not explain exhaustive SIPP failure, certify recovery or prove global infeasibility.',
+                   'Attempt and RPC intervals are nested; prefix RPC is not measured recoverable cost.',
+                   'Described priority moves are unevaluated. No incumbent or frozen result was changed.']}
+    output.parent.mkdir(parents=True, exist_ok=True)
+    write_json(output, value)
+    print(json.dumps({'output': str(output), 'sha256': sha(output.read_bytes()), 'totals': totals}, indent=2))
+
+
+def recoveries(output):
+    """Describe a fixed-quota recovery candidate from the existing diagnosis."""
+    output = output.resolve()
+    if HERE/'results' in output.parents or output.exists():
+        raise ValueError('use a fresh derived path outside frozen results')
+    diagnosis_raw = (HERE/'derived'/'late_failure_diagnosis.json').read_bytes()
+    diagnosis = json.loads(diagnosis_raw)
+    if diagnosis['source_commit'] != FAILURE_SOURCE:
+        raise ValueError('wrong diagnosis source')
+    def read(relative):
+        raw = subprocess.run(['rtk', 'proxy', 'git', 'show', FAILURE_SOURCE+':'+relative],
+            cwd=HERE, check=True, stdout=subprocess.PIPE).stdout
+        pin = diagnosis['source_objects'][relative]
+        if sha(raw) != pin['sha256'] or len(raw) != pin['bytes']:
+            raise ValueError('source differs from fixed diagnostic input')
+        return json.loads(raw)
+    bundle = read('tracks/sci/config/'+BATCH+'_inputs.json')
+    plans = []
+    for case in bundle['cases']:
+        result = read('tracks/sci/results/'+BATCH+'/'+case['id']+'__remaining_bound/result.json')
+        reconstruct_failures(case, result, recovery_plans=plans)
+    if len(plans) != len(diagnosis['failures']):
+        raise ValueError('all failure cases must be retained')
+    value = {'scope': 'OFFLINE_BOUNDED_RECOVERY_ORDER_DESCRIPTIONS_NO_SEARCH',
+        'source_commit': FAILURE_SOURCE, 'diagnosis_sha256': sha(diagnosis_raw),
+        'generator_sha256': sha(Path(__file__).read_bytes()), 'new_scientific_run': False,
+        'limits': 'Residual-h-cap Python host only; adapt actual ADDRESS stopping/reward semantics before comparisons.',
+        'plans': plans, 'described_not_executed': sum(p['selected_candidate'] is not None for p in plans)}
+    output.parent.mkdir(parents=True, exist_ok=True)
+    write_json(output, value)
+    print(json.dumps({'output': str(output), 'sha256': sha(output.read_bytes()),
+                      'described_not_executed': value['described_not_executed']}, indent=2))
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('mode', choices=('prepare', 'summarize', 'costs'))
+    parser.add_argument('mode', choices=('prepare', 'summarize', 'costs', 'failures', 'recoveries'))
     parser.add_argument('--manifest', type=Path)
     parser.add_argument('--sha256')
+    parser.add_argument('--output', type=Path)
     args = parser.parse_args()
     if args.mode == 'prepare':
         prepare()
+    elif args.mode == 'failures':
+        failures(args.output or HERE/'derived'/'late_failure_diagnosis.json')
+    elif args.mode == 'recoveries':
+        recoveries(args.output or HERE/'derived'/'late_failure_recovery_candidates.json')
     elif args.manifest and args.sha256:
         (costs if args.mode == 'costs' else summarize)(args.manifest, args.sha256)
     else:

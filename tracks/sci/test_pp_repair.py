@@ -12,7 +12,7 @@ from unittest.mock import Mock, patch
 
 from pp_repair import (Incumbent, Policy, RepairStatus, SearchReply, SearchStatus,
                        SearchRequest, SharedBudget, repair)
-from address_backend import GridProblem, NativeBackend, MAX_TIMESTEP
+from address_backend import GridProblem, NativeBackend, PathValidationCache, MAX_TIMESTEP
 from run_repair_dev import supervise, worker, write_json
 
 
@@ -201,6 +201,9 @@ class BackendContracts(unittest.TestCase):
         self.backend.budget = SharedBudget(time.monotonic_ns() + 10**9, 10)
         self.backend.cache = {}
         self.backend.seed = 12
+        self.backend.cost_wall_ns, self.backend.cost_python_cpu_ns = {}, {}
+        self.backend.validation = PathValidationCache(self.problem)
+        self.backend.validation.validate_complete(self.paths)
         self.backend.close = Mock()
         self.backend._rpc = Mock(return_value={'status': 'FOUND', 'path': [0, 1, 2],
             'num_collisions': 0, 'effective_max_cost': 2})
@@ -246,6 +249,21 @@ class BackendContracts(unittest.TestCase):
         second = self.backend._rpc.call_args.args[0]
         self.assertEqual({k: v for k, v in first.items() if k != 'max_cost'},
                          {k: v for k, v in second.items() if k != 'max_cost'})
+
+    def test_callback_costs_are_nested_observations_and_failures_are_retained(self):
+        self.backend.search(self.request)
+        report = self.backend.accounting()
+        parts = report['parents']['search_total']
+        self.assertGreater(report['wall_ns']['search_total'], 0)
+        self.assertGreaterEqual(report['wall_ns']['search_total'],
+                                sum(report['wall_ns'].get(name, 0) for name in parts))
+        # The mocked RPC has no native/IPC time to report.
+        self.assertNotIn('rpc_search_total', report['wall_ns'])
+        self.assertEqual(self.backend.budget.stage_wall_ns, {})
+        before = report['wall_ns']['search_total']
+        with self.assertRaises(ValueError):
+            self.backend.search(replace(self.request, model_key='changed'))
+        self.assertGreater(report['wall_ns']['search_total'], before)
 
     def test_backend_rejects_missing_prefix_and_changed_shared_identity(self):
         for request in (replace(self.request, fixed_paths={}),
@@ -302,6 +320,93 @@ class BackendContracts(unittest.TestCase):
         self.assertEqual(self.backend.records[0]['status'], 'TIMEOUT')
         self.assertGreater(self.backend.records[0]['wall_ns'], 0)
         self.backend.close.assert_called_once()
+
+
+class ValidationProofContracts(unittest.TestCase):
+    """Geometry fixtures only: no solver, benchmark or measured speedup."""
+    def setUp(self):
+        self.problem = GridProblem(3, 4, [], {0: (0, 3), 1: (4, 7), 2: (8, 11)})
+        self.paths = {0: (0, 1, 2, 3), 1: (4, 5, 6, 7), 2: (8, 9, 10, 11)}
+        self.cache = PathValidationCache(self.problem)
+        self.cache.validate_complete(self.paths)
+
+    def test_unchanged_subset_and_progressive_prefix_reuse_without_rechecking(self):
+        with patch.object(self.problem, 'validate_extension', wraps=self.problem.validate_extension) as extension:
+            self.cache.validate_subset({2: self.paths[2]})
+            prefix = {2: self.paths[2], 0: (0, 0, 1, 2, 3)}
+            self.cache.validate_subset(prefix)
+            self.cache.validate_subset(prefix)
+            self.assertEqual(extension.call_count, 1)
+        self.assertEqual(self.cache.counts['paths_checked'], 1)
+        self.assertEqual(self.cache.counts['pair_checks'], 1)
+
+    def test_mutable_caller_path_and_mapping_cannot_change_a_certificate(self):
+        incoming = {a: list(p) for a, p in self.paths.items()}
+        self.cache.validate_complete(incoming)
+        incoming[0][1] = 5  # Mutates caller data, not the frozen certificate.
+        with self.assertRaises(ValueError):
+            self.cache.validate_subset(incoming)
+        incoming[0] = (0, 0, 1, 2, 3)
+        frozen = self.cache.validate_subset(incoming)
+        with self.assertRaises(TypeError):
+            frozen[0] = (0, 5, 2, 3)
+        with self.assertRaises(TypeError):
+            self.cache.complete[0] = (0, 5, 2, 3)
+        incoming[0] = (0, 5, 2, 3)
+        self.assertEqual(frozen[0], (0, 0, 1, 2, 3))
+        incoming[0] = frozen[0]
+        self.assertTrue(self.problem.validate(incoming))
+
+    def test_replaced_path_is_checked_against_all_other_paths_and_goal_holds(self):
+        problem = GridProblem(2, 3, [], {0: (0, 1), 1: (3, 2)})
+        cache = PathValidationCache(problem)
+        original = {0: (0, 1), 1: (3, 4, 5, 2)}
+        cache.validate_complete(original)
+        for changed in ({0: original[0], 1: (3, 4, 1, 2)},
+                        {0: (0, 0, 1), 1: (3, 0, 1, 2)}):
+            with self.assertRaises(ValueError):
+                cache.validate_subset(changed)
+        self.assertEqual(cache.latest, {})
+        self.assertTrue(cache.validate_complete(original))
+
+    def test_replacement_and_rollback_keep_only_content_bound_evidence(self):
+        self.cache.validate_subset({0: (0, 0, 1, 2, 3), 1: self.paths[1]})
+        with patch.object(self.problem, 'validate_extension', wraps=self.problem.validate_extension) as extension:
+            self.cache.validate_subset(self.paths)  # Exact old complete plan can be reused.
+            extension.assert_not_called()
+        # Equality alone is not a certificate hit; this conservative miss is safe.
+        copy = {a: tuple(list(p)) for a, p in self.paths.items()}
+        checked = self.cache.counts['paths_checked']
+        self.cache.validate_subset(copy)
+        self.assertEqual(self.cache.counts['paths_checked'] - checked, 3)
+        # The exact same tuple under a different agent is not inherited proof.
+        with self.assertRaisesRegex(ValueError, 'endpoints changed'):
+            self.cache.validate_subset({1: self.paths[0]})
+
+    def test_complete_validation_never_uses_cached_subset_instead(self):
+        with patch.object(self.problem, 'validate', wraps=self.problem.validate) as full:
+            self.assertTrue(self.cache.validate_complete(self.paths))
+            full.assert_called_once()
+        with self.assertRaises(ValueError):
+            self.cache.validate_complete({0: self.paths[0]})
+
+    def test_changed_model_is_rejected_and_other_task_starts_without_proof(self):
+        other = PathValidationCache(GridProblem(3, 4, [], {0: (0, 3), 1: (4, 7), 2: (8, 11)}))
+        other.validate_subset(self.paths)
+        self.assertEqual(other.counts['paths_reused'], 0)
+        other.problem = self.problem  # Equal geometry does not transfer a task-local certificate.
+        with self.assertRaisesRegex(ValueError, 'problem changed'):
+            other.validate_subset(self.paths)
+        self.problem.blocked = frozenset({1})
+        with self.assertRaisesRegex(ValueError, 'problem changed'):
+            self.cache.validate_subset(self.paths)
+
+    def test_incremental_rejects_opposite_edges_with_distinct_endpoints(self):
+        problem = GridProblem(2, 3, [], {0: (0, 2), 1: (1, 4)})
+        cache = PathValidationCache(problem)
+        cache.validate_subset({0: (0, 1, 2)})
+        with self.assertRaisesRegex(ValueError, 'opposite-edge'):
+            cache.validate_subset({0: (0, 1, 2), 1: (1, 0, 3, 4)})
 
 
 class CaseHostContracts(unittest.TestCase):

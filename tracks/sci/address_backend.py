@@ -67,19 +67,7 @@ class GridProblem:
         if (complete and set(paths) != set(self.ids)) or not set(paths) <= set(self.ids):
             raise ValueError('robot set does not match the declared problem')
         for a, path in paths.items():
-            if not path or len(path) > 1_000_000:
-                raise ValueError('adapter requires 1..1000000 vertices per path')
-            if (path[0], path[-1]) != self.endpoints[a]:
-                raise ValueError('path endpoints changed')
-            for t, v in enumerate(path):
-                integer(v, 0, self.rows * self.cols)
-                if v in self.blocked:
-                    raise ValueError('path enters obstacle')
-                if t:
-                    before = path[t - 1]
-                    distance = abs(v // self.cols - before // self.cols) + abs(v % self.cols - before % self.cols)
-                    if distance > 1:
-                        raise ValueError('nonlocal/diagonal grid move')
+            self._validate_path(a, path)
         for t in range(max(map(len, paths.values()), default=0)):
             occupied, edges = {}, set()
             for a, path in paths.items():
@@ -94,6 +82,41 @@ class GridProblem:
                     edges.add((u, v))
         return True
 
+    def _validate_path(self, agent, path):
+        if not path or len(path) > 1_000_000:
+            raise ValueError('adapter requires 1..1000000 vertices per path')
+        if (path[0], path[-1]) != self.endpoints[agent]:
+            raise ValueError('path endpoints changed')
+        for t, v in enumerate(path):
+            integer(v, 0, self.rows * self.cols)
+            if v in self.blocked:
+                raise ValueError('path enters obstacle')
+            if t:
+                before = path[t - 1]
+                distance = abs(v // self.cols - before // self.cols) + abs(v % self.cols - before % self.cols)
+                if distance > 1:
+                    raise ValueError('nonlocal/diagonal grid move')
+
+    def validate_extension(self, certified, agent, path):
+        """Check one path against an already valid subset, including goal holds.
+
+        Internal proof-cache helper: the caller must have certified `certified`.
+        This does not replace validate() at complete-plan acceptance or END.
+        """
+        if agent not in self.endpoints or agent in certified:
+            raise ValueError('extension must add one declared agent')
+        self._validate_path(agent, path)
+        for other in certified.values():
+            # After this horizon both vehicles hold distinct declared goals.
+            for t in range(max(len(path), len(other))):
+                v, w = path[min(t, len(path)-1)], other[min(t, len(other)-1)]
+                if v == w:
+                    raise ValueError('vertex/goal-hold conflict')
+                if t and (path[min(t-1, len(path)-1)] == w
+                          and other[min(t-1, len(other)-1)] == v):
+                    raise ValueError('opposite-edge conflict')
+        return True
+
     def author_files(self):
         # Exactly the author's custom format. Not MovingAI seconds/metres.
         grid = str(self.rows) + ',' + str(self.cols) + '\n'
@@ -104,6 +127,60 @@ class GridProblem:
             s, g = self.endpoints[a]
             agents += ','.join(map(str, (s // self.cols, s % self.cols, g // self.cols, g % self.cols))) + '\n'
         return grid.encode(), agents.encode()
+
+
+class PathValidationCache:
+    """At most two immutable validity certificates; no search-result cache.
+
+    A subset of one valid joint plan is valid. Reuse requires the same agent and
+    the identical immutable tuple, held by the certificate (never a bare id()).
+    Lists are copied before checking, so later caller mutation cannot alter a
+    certificate. A changed path is checked against every retained/new path.
+    Complete acceptance always performs the original independent full check.
+    """
+    def __init__(self, problem):
+        self.problem = problem
+        self._owner = problem
+        self.domain = self._domain()
+        self.complete, self.latest = MappingProxyType({}), MappingProxyType({})
+        self.counts = {'full_checks': 0, 'subset_reuses': 0, 'paths_reused': 0,
+                       'paths_checked': 0, 'pair_checks': 0}
+
+    def _domain(self):
+        p = self.problem
+        return (p.rows, p.cols, p.blocked, p.endpoints, p.ids, p.model_key)
+
+    def _freeze(self, paths):
+        if self.problem is not self._owner or self.domain != self._domain():
+            raise ValueError('validation-cache problem changed; create a new backend')
+        frozen = {a: p if type(p) is tuple else tuple(p) for a, p in paths.items()}
+        if any(type(a) is not int for a in frozen) or not set(frozen) <= set(self.problem.ids):
+            raise ValueError('robot set does not match the declared problem')
+        return frozen
+
+    def validate_complete(self, paths):
+        frozen = self._freeze(paths)
+        self.counts['full_checks'] += 1
+        self.problem.validate(frozen)
+        self.complete, self.latest = MappingProxyType(frozen), MappingProxyType({})
+        return True
+
+    def validate_subset(self, paths):
+        frozen = self._freeze(paths)
+        candidates = [{a: p for a, p in frozen.items() if proof.get(a) is p}
+                      for proof in (self.complete, self.latest)]
+        certified = max(candidates, key=len)
+        self.counts['paths_reused'] += len(certified)
+        if len(certified) == len(frozen):
+            self.counts['subset_reuses'] += 1
+        for a, path in frozen.items():
+            if a not in certified:
+                self.counts['paths_checked'] += 1
+                self.counts['pair_checks'] += len(certified)
+                self.problem.validate_extension(certified, a, path)
+                certified[a] = path
+        self.latest = MappingProxyType(frozen)
+        return self.latest
 
 
 class NativeBackend:
@@ -122,14 +199,17 @@ class NativeBackend:
         self.proc, self.log, self.seq = None, None, 0
         self.separate_group = not supervised
         self.buffer = bytearray()
-        self.cache = {'model_key': problem.model_key, 'scope': 'AUTHOR_H_TABLES_NO_PATH_RESULT_CACHE'}
+        self.cache = {'model_key': problem.model_key,
+            'scope': 'AUTHOR_H_TABLES_AND_HOST_VALIDATION_PROOFS_NO_SEARCH_RESULT_CACHE'}
         self.records, self.child_usage = [], None
+        self.cost_wall_ns, self.cost_python_cpu_ns = {}, {}
+        self.validation = PathValidationCache(problem)
         self.lower_bounds = None
         try:
             budget.check()
             if budget.clock_ns is not time.monotonic_ns:
                 raise ValueError('native deadline requires the real monotonic clock')
-            problem.validate(incumbent_paths)
+            self._timed('initial_complete_validation', lambda: self.validation.validate_complete(incumbent_paths))
             self.initial_sha256 = sha(canonical(sorted(incumbent_paths.items())))
             binary = Path(binary).resolve()
             receipt = json.loads(Path(build_receipt).read_bytes())
@@ -178,17 +258,48 @@ class NativeBackend:
             raise TimeoutError('native RPC deadline reached')
         return remaining
 
+    def _timed(self, stage, callback):
+        # These are nested observations, not additional charges. SharedBudget
+        # still charges the enclosing callback and the outer host charges all I/O.
+        wall, cpu = time.monotonic_ns(), time.process_time_ns()
+        try:
+            return callback()
+        finally:
+            self.cost_wall_ns[stage] = self.cost_wall_ns.get(stage, 0) + time.monotonic_ns() - wall
+            self.cost_python_cpu_ns[stage] = self.cost_python_cpu_ns.get(stage, 0) + time.process_time_ns() - cpu
+
+    def accounting(self):
+        return {'schema': 'host_callback_costs_v1', 'wall_ns': self.cost_wall_ns,
+            'python_cpu_ns': self.cost_python_cpu_ns, 'validation_counts': self.validation.counts,
+            'scope': 'NESTED_OBSERVATIONS_DO_NOT_ADD_TO_SHARED_BUDGET_OR_WORKER_TOTAL',
+            'parents': {
+                'search_total': ['search_constraints_validation', 'search_seed_request_hashing',
+                                 'rpc_search_total', 'search_response_validation'],
+                'rpc_search_total': ['rpc_search_encode_hash', 'rpc_search_transport_native',
+                                     'rpc_search_decode_hash'],
+                'rpc_init_total': ['rpc_init_encode_hash', 'rpc_init_transport_native', 'rpc_init_decode_hash']},
+            'unassigned': 'Parent minus listed children includes dispatch, identity checks and instrumentation; '
+                          'transport_native includes IPC and author work, not pure SIPP time. '
+                          'Python CPU excludes native CPU. Final host validation remains in stage_wall_ns.'}
+
     def _rpc(self, request):
+        return self._timed('rpc_' + request['op'] + '_total', lambda: self._rpc_inner(request))
+
+    def _rpc_inner(self, request):
+        stage = 'rpc_' + request['op']
         request = dict(request, seq=self.seq)
         self.seq += 1
-        wire = canonical(request) + b'\n'
+        def encode():
+            wire = canonical(request) + b'\n'
+            return wire, sha(wire)
+        wire, request_sha = self._timed(stage + '_encode_hash', encode)
         if len(wire) > MAX_FRAME or self.proc is None:
             raise ValueError('native RPC unavailable or request exceeds frame limit')
-        entry = {'request_sha256': sha(wire), 'request_bytes': len(wire), 'op': request['op'],
+        entry = {'request_sha256': request_sha, 'request_bytes': len(wire), 'op': request['op'],
                  'status': 'PENDING'}
         self.records.append(entry)
         started = time.monotonic_ns()
-        try:
+        def transport():
             view = memoryview(wire)
             while view:
                 _, writable, _ = select.select([], [self.proc.stdin.fileno()], [], self._remaining())
@@ -207,6 +318,8 @@ class NativeBackend:
                     raise ValueError('native response exceeds frame limit')
             raw, _, tail = self.buffer.partition(b'\n')
             self.buffer = bytearray(tail)
+            return raw
+        def decode(raw):
             answer = json.loads(raw)
             if answer['seq'] != request['seq'] or answer['author_commit'] != AUTHOR:
                 raise ValueError('native response identity mismatch')
@@ -214,6 +327,9 @@ class NativeBackend:
             entry.update({'response_sha256': sha(raw + b'\n'), 'response_bytes': len(raw) + 1,
                           'status': answer['status'], 'response': answer})
             return answer
+        try:
+            raw = self._timed(stage + '_transport_native', transport)
+            return self._timed(stage + '_decode_hash', lambda: decode(raw))
         except Exception as error:
             entry.update({'status': 'TIMEOUT' if isinstance(error, TimeoutError) else 'FAILED',
                           'reason': type(error).__name__ + ': ' + str(error)})
@@ -223,31 +339,44 @@ class NativeBackend:
             entry['wall_ns'] = time.monotonic_ns() - started
 
     def search(self, request):
-        if (request.budget is not self.budget or request.shared_cache is not self.cache
+        return self._timed('search_total', lambda: self._search(request))
+
+    def _search(self, request):
+        if (self.validation.problem is not self.problem
+                or request.budget is not self.budget or request.shared_cache is not self.cache
                 or request.model_key != self.problem.model_key
                 or (request.start, request.goal) != self.problem.endpoints[request.agent]):
             raise ValueError('backend request does not match its model/budget/cache')
-        if set(request.fixed_paths) & set(request.prefix_paths):
-            raise ValueError('fixed/prefix overlap')
         order = tuple(request.order)
-        if (not order or len(set(order)) != len(order)
-                or not set(order) <= set(self.problem.ids) or request.agent not in order
-                or set(request.fixed_paths) != set(self.problem.ids) - set(order)
-                or set(request.prefix_paths) != set(order[:order.index(request.agent)])):
-            raise ValueError('fixed/prefix paths do not cover the declared PP request')
-        paths = {**request.fixed_paths, **request.prefix_paths}
-        self.problem.validate(paths, complete=False)
+        def validate_constraints():
+            # Freeze caller-owned mappings before both coverage and collision
+            # checks; later mutation must not change the request sent to native.
+            fixed = {a: tuple(p) for a, p in request.fixed_paths.items()}
+            prefix = {a: tuple(p) for a, p in request.prefix_paths.items()}
+            if set(fixed) & set(prefix):
+                raise ValueError('fixed/prefix overlap')
+            if (not order or len(set(order)) != len(order)
+                    or not set(order) <= set(self.problem.ids) or request.agent not in order
+                    or set(fixed) != set(self.problem.ids) - set(order)
+                    or set(prefix) != set(order[:order.index(request.agent)])):
+                raise ValueError('fixed/prefix paths do not cover the declared PP request')
+            return self.validation.validate_subset({**fixed, **prefix})
+        paths = self._timed('search_constraints_validation', validate_constraints)
         if request.max_cost is not None:
             integer(request.max_cost)
         # Same RNG seed for identical geometry/order/prefix across the two cap policies.
-        seed_key = (self.seed, request.agent, request.order, sorted(paths.items()))
-        seed = int(sha(canonical(seed_key))[:8], 16) % MAX_TIMESTEP
-        answer = self._rpc({'op': 'search', 'agent': self.problem.native_ids[request.agent],
-            'seed': seed, 'max_cost': request.max_cost,
-            'fixed_paths': [{'agent': self.problem.native_ids[a], 'path': p} for a, p in sorted(paths.items())]})
+        def prepare_request():
+            ordered = sorted(paths.items())
+            seed_key = (self.seed, request.agent, order, ordered)
+            seed = int(sha(canonical(seed_key))[:8], 16) % MAX_TIMESTEP
+            return {'op': 'search', 'agent': self.problem.native_ids[request.agent],
+                'seed': seed, 'max_cost': request.max_cost,
+                'fixed_paths': [{'agent': self.problem.native_ids[a], 'path': p} for a, p in ordered]}
+        answer = self._rpc(self._timed('search_seed_request_hashing', prepare_request))
         if answer['status'] == 'FOUND':
             candidate = tuple(answer['path'])
-            self.problem.validate({**paths, request.agent: candidate}, complete=False)
+            self._timed('search_response_validation', lambda: self.validation.validate_subset(
+                {**paths, request.agent: candidate}))
             expected_cap = MAX_TIMESTEP if request.max_cost is None else request.max_cost
             if (answer['effective_max_cost'] != expected_cap
                     or (request.max_cost is not None and len(candidate) - 1 > request.max_cost)):
@@ -272,10 +401,11 @@ class NativeBackend:
         return SearchReply(SearchStatus.FAILED, reason='native ' + answer['status'] + ': ' + answer.get('reason', 'empty/unknown search result'))
 
     def validate(self, request):
-        if (request.model_key != self.problem.model_key or request.budget is not self.budget
+        if (self.validation.problem is not self.problem
+                or request.model_key != self.problem.model_key or request.budget is not self.budget
                 or request.shared_cache is not self.cache):
             raise ValueError('validator identity mismatch')
-        return self.problem.validate(request.paths)
+        return self._timed('accept_complete_validation', lambda: self.validation.validate_complete(request.paths))
 
     def close(self):
         """Terminate/reap exactly this child; preserve stderr and CPU/RSS accounting."""

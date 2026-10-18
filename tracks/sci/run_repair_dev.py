@@ -134,6 +134,7 @@ def worker(config, case, policy, binary, output, deadline_ns, backend_factory=No
             'search_calls': budget.search_calls, 'stage_wall_ns': budget.stage_wall_ns,
             'stage_python_cpu_ns': budget.stage_cpu_ns,
             'rpc': getattr(backend, 'records', []), 'native_usage': getattr(backend, 'child_usage', None),
+            'host_callback_costs': backend.accounting() if hasattr(backend, 'accounting') else None,
             'worker_before_write_wall_ns': time.monotonic_ns()-started,
             'worker_python_cpu_ns': time.process_time_ns()-cpu})
         write_json(output / 'result.json', payload)

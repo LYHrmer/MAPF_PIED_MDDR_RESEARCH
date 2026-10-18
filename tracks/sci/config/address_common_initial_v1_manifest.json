@@ -1,0 +1,95 @@
+{
+  "authorization": "PENDING_USER",
+  "batch_id": "address_common_initial_v1",
+  "binary": "../../.address_adapter_build/build/address",
+  "binary_sha256": "e14f8805270ac7a09ea748413274e8d1c6c163f79e806050691878bf20b7d11a",
+  "build_source_sha256": {
+    "address_adapter.py": "7bd6ee6e969cb27414626289398b657f0b9ad7398903c9ab16cc76a5fcc00632",
+    "address_adapter_support.h": "8d9fbea2048eac1245df4d743580f994a23f2cb4d48089e9575de2508be94bc2",
+    "build_address_full.py": "93883809ef8ec03cc82a032a21cb5284b5bdaee98a4f27aafcbc0b1f8b38d369"
+  },
+  "code_sha256": {
+    "adapter_build_receipt.json": "e08ea13fb04425970965c364846b4e6ef66d20a084e88565d1b45e8dc07d465a",
+    "address_backend.py": "04cabeaf78f0425a6c9835d6c3e5eb2ee53fb2a1f63db907c456bbbbba94fd84",
+    "pp_repair.py": "f6a64ddee77c5a6d15659bf69fff5d3b75fc9ca936d2b4a46942d3f7467ea782",
+    "run_address_adapter.py": "bc98ec41c26ff32b3cf76389caf51196a8b21c9e57a6b11b68ea17583cc2636e",
+    "run_repair_dev.py": "fc9573e1f1f55a890b93b717fe082eb7beedb69f33d731988ef68709781be29e"
+  },
+  "evidence_limits": [
+    "old train DEV tasks, nested n16/n32",
+    "not paired with historical fixed-ID probe timings",
+    "real user approval required"
+  ],
+  "external_command_guard": {
+    "kill_grace_s": 2,
+    "required": true,
+    "term_after_s": 20,
+    "tool": "timeout"
+  },
+  "input_file": "repair_residual_v1_inputs.json",
+  "input_sha256": "be1e912e1e2ea3f59fcdc5d0c5737118e7f96d92227be536ada605f6751c0e5b",
+  "jobs": [
+    {
+      "case": "maze-32-32-2__s01__n16",
+      "id": "maze-32-32-2__s01__n16__address",
+      "iterations": 16,
+      "seed": 0,
+      "top_k": 16
+    },
+    {
+      "case": "maze-32-32-2__s01__n32",
+      "id": "maze-32-32-2__s01__n32__address",
+      "iterations": 16,
+      "seed": 0,
+      "top_k": 32
+    },
+    {
+      "case": "random-32-32-10__s01__n16",
+      "id": "random-32-32-10__s01__n16__address",
+      "iterations": 16,
+      "seed": 0,
+      "top_k": 16
+    },
+    {
+      "case": "random-32-32-10__s01__n32",
+      "id": "random-32-32-10__s01__n32__address",
+      "iterations": 16,
+      "seed": 0,
+      "top_k": 32
+    },
+    {
+      "case": "warehouse-10-20-10-2-1__s01__n16",
+      "id": "warehouse-10-20-10-2-1__s01__n16__address",
+      "iterations": 16,
+      "seed": 0,
+      "top_k": 16
+    },
+    {
+      "case": "warehouse-10-20-10-2-1__s01__n32",
+      "id": "warehouse-10-20-10-2-1__s01__n32__address",
+      "iterations": 16,
+      "seed": 0,
+      "top_k": 32
+    }
+  ],
+  "limits": {
+    "external_final_reserve_s": 0.5,
+    "inner_final_reserve_s": 0.25,
+    "native_cpu_s": 10,
+    "per_process_as_mib": 512,
+    "total_wall_s": 15,
+    "worker_cpu_s": 10
+  },
+  "purpose": "Complete common-initial ADDRESS functionality DEV, not candidate recovery, not independent performance comparison",
+  "retry": 0,
+  "schema": "address_common_initial_dev_v1",
+  "scope_limits": [
+    "zero retries",
+    "no new initial planner",
+    "no recovery candidate",
+    "no new map/world",
+    "no training",
+    "no model expansion"
+  ],
+  "stop_batch_on_any_failure": true
+}
