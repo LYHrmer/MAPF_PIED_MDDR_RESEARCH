@@ -1,74 +1,71 @@
 # SCI MAPF 支线
 
-工作树 `/home/lyh/MAPF_SCI_RESEARCH`，分支 `research/sci-mapf`。[main 总体决定](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/docs/RESEARCH_PLAN.md)是唯一总体计划；[本线最新实现](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/tree/research/sci-mapf/tracks/sci)。本树的总体文件是创建时快照，本页只维护本线具体实现与证据边界。
+工作树 `/home/lyh/MAPF_SCI_RESEARCH`，分支 `research/sci-mapf`。[main 总体决定](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/docs/RESEARCH_PLAN.md)是唯一当前总体计划；本树的总体文件是创建时快照。算法只在本线维护，大论文引用核定提交。
 
-当前候选为标准离散 MAPF 局部路径修复中的无效计算。**2026-10-18 已实现 PP 剩余成本策略、完整修复终态与 incumbent 事务，并提供固定 ADDRESS 的实际源码补丁；只完成软件契约与静态核验。** 尚未构建或运行作者修复器，没有加速、路径质量或学习收益证据。经典下界先作为增强传统基线，不单独作为创新。
+当前候选为标准离散 MAPF 局部路径修复中的无效计算。**2026-10-18 已实现固定顺序 PP 宿主、剩余成本预算、原版 ADDRESS SIPP 回调及完整共同校验器；原版 SIPP 适配程序已编译链接。** 尚未调用真实实例初始化或路径搜索，没有加速、路径质量或学习收益证据。经典下界先作为增强传统基线，不单独作为创新。
 
-外部比较以NNS/ADDRESS/TACKLE同问题方法为主；固定路径的Improved GSES/ESADG只作问题边界参照。原v2误差底座不强制接入SCI，L20/L21与单组DEV不作新标签。新运行仍待具体授权。
-
-## 当前可审阅产物
+## 实现与证据
 
 | 文件 | 实际作用 |
 |---|---|
-| [pp_repair.py](pp_repair.py) | 给现有低层搜索器编译每车成本上限、固定外部路径和当前已规划前缀；通过完整共同核验后原子接纳整组结果。没有内置搜索器。 |
-| [test_pp_repair.py](test_pp_repair.py) | 13 个脚本 callback 契约检查，覆盖上限、残余下界、超时、异常、完整核验、缓存传递与并发版本失配；没有地图或科学实例。 |
-| [address_remaining_budget.patch](address_remaining_budget.patch) | 针对作者固定版本的 `inc/LNS.h` 和 `src/LNS.cpp` 修改：开关、原生诊断终态、下界、`length_max`、返回后时限检查；禁用此入口的 bandit 奖励更新，仅供固定请求回放接入。未应用到作者缓存。 |
-| [address_source_manifest.json](address_source_manifest.json) | 固定作者 commit、所读 6 个文件的 Git blob/SHA256、补丁 SHA；原文件逐项通过 Git blob 核对。 |
-| [ADDRESS_LICENSE.txt](ADDRESS_LICENSE.txt) | 作者原许可原字节副本；允许教育、研究、非营利用途，整个作者项目不能标成 MIT。 |
+| [pp_repair.py](pp_repair.py) | 固定邻域及顺序的 PP 修复；给低层传成本上限，整组通过共同校验和截止/版本检查后才替换 incumbent。 |
+| [address_backend.py](address_backend.py) | 作者持久子进程、固定输入转换、相同地图/路径/预算/缓存身份检查、完整离散冲突校验、RPC 截止、失败关闭及子进程 CPU/RSS 记录。 |
+| [address_sipp_bridge.cpp](address_sipp_bridge.cpp) | 调用未修改的作者 `Instance`、`PathTable`、`ConstraintTable`、`SIPP::findPath`；复用每车静态目标距离表，无自写搜索替身。 |
+| [build_address_backend.py](build_address_backend.py) / [编译收据](build_receipt.json) | 按固定 Git blob/SHA 核对 7 份源文件及作者头文件，编译并只调用 `--describe`；记录编译器、头文件包版本、二进制 SHA。输出目录必须为新目录，保留失败与超时记录。 |
+| [test_pp_repair.py](test_pp_repair.py) | 23 项软件契约：脚本回调、明确给定的离散路径、假原生响应；没有初始化原生求解器或解科学实例。 |
+| [address_remaining_budget.patch](address_remaining_budget.patch) / [原源码清单](address_source_manifest.json) | 先前对完整 `runPP` 的可审阅修改草案；`git apply --check` 通过，但未应用。实际新后端直接复用原版 SIPP，不依赖此补丁。 |
+| [ADDRESS_LICENSE.txt](ADDRESS_LICENSE.txt) | 作者原许可字节，限教育、研究、非营利；不能称 MIT。 |
 
-本线此次不消费旧连续误差模块或 shared reader，因此没有为未使用的公共接口新增 loader；未来实际消费时再固定其 commit/blob/SHA。旧作者树、冻结证据和主稿均未修改。
+作者固定提交 `b3d35c431ce03834f95e834d87986f2f341394a1`；原树在 `/home/lyh/.cache/mapf_research/address-b3d35c4`，保持原样。编译产物在本机 `.native_build_checked/`，不入库；前一次编译记录在 `.native_build/` 原样保留。当前二进制 SHA 为 `2f1f2ddc394961e055ad737debd700c7fc6b2b1c5c939767b8cd07ffb282f347`。收据是当前主机的构建证据，不是跨平台环境锁，也不代表完整 ADDRESS 系统或论文实验复现。
 
-## 具体规则及保证范围
+本线不消费原 v2 误差模块或 shared reader，不为未使用的接口增加 loader。冻结证据、作者代码和主稿未修改；L20/L21 和旧单组 DEV 不产生新学习标签。
 
-固定本次邻域及 PP 优先顺序。设旧邻域整数路径成本为 `C_old`，严格改善目标为 `U=C_old-1`；已承诺前缀成本为 `C_prefix`，未规划车辆的同模型可采纳下界为 `h_i`。
+## 具体规则与保证范围
 
-1. 若 `C_prefix + sum_remaining(h_i) > U`，结束当前尝试。
-2. 下一车辆 `j` 的成本上限为 `U-C_prefix-sum_other_remaining(h_i)`。
-3. 完整修复的成本须严格小于 `C_old`，所有未选车辆路径不变，并由同一完整 MAPF 核验器检查地图、动作、顶点冲突、对向边冲突及终点驻留，才接纳新 incumbent。
+固定邻域及 PP 顺序。设旧邻域整数路径成本为 `C_old`，严格改善目标为 `U=C_old−1`；已规划前缀成本为 `g`，剩余车辆同模型的可采纳下界为 `h_i`。
 
-任何可能严格改善的当前前缀延续都必须满足上述上限，因为其他剩余路径的成本不能低于其 `h_i`。这只是经典可采纳下界推理。它不排除改变当前 PP 顺序、已选前缀或邻域后得到改善，也不证明 MAPF 整体无解。`h_i <= 旧路径成本`只是必要一致性检查，不是下界可采纳性的证明；实际后端必须复用同一地图与目标的已核静态最短路下界。
+1. 若 `g+sum_remaining(h_i)>U`，结束当前尝试。
+2. 下一车 `j` 的成本上限为 `U−g−sum_other_remaining(h_i)`。
+3. 整组成本严格改善，外部路径不变，完整共同校验通过，且锁内总截止与版本检查通过，才接纳。
 
-Python 的 `Policy.ORIGINAL_PREFIX` 不向单车搜索传递新上限，仅按已发生的前缀成本停止；`REMAINING_BOUND` 使用剩余下界和每车 cap。双方共享完整终态处理、验证器、缓存对象及一个跨尝试的绝对预算。固定本次 order，模块不采样新邻域或优先级，不重开 L20/L21 组选取。
+任何可能改善的当前前缀延续必须满足该上限。这是经典可采纳下界推理，只排除当前顺序及已固定前缀；不排除换顺序/前缀/邻域，也不证明 MAPF 整体无解。`h_i≤旧成本`仅为必要一致性检查；实际后端使用作者在同地图、同目标上构造的静态最短路表。
 
-## Callback 与终态
+`ORIGINAL_PREFIX` 不传新增单车 cap，按已发生的前缀成本停止；`REMAINING_BOUND` 使用剩余下界和 cap。共同校验/终态处理/静态距离缓存/预算相同。作者原 `ConstraintTable.length_max` 和 SIPP 已支持有界搜索，本工作只提供更强的调用上限，不能称首次有界搜索或首次下界剪枝。
 
-`search(SearchRequest)` 收到 agent/start/goal、`max_cost`、不可变 `fixed_paths`/`prefix_paths`、model/constraint key、共同预算与缓存；返回 `SearchReply`。模型 key 必须标识同一地图和冲突语义。constraint key 绑定保留路径、前缀、车辆和 cap；实际后端缓存还需区分自身算法配置。费用包含 callback 内的缓存访问，不把特征或缓存构造免费移出总成本。
+## 接口、费用与失败语义
 
-| 后端结果 | 解释与接纳 |
-|---|---|
-| `FOUND` | 仅为单车候选；仍检查端点、整数路径成本、cap，整组完成后共同核验。 |
-| `EXHAUSTED_WITHIN_CAP` | 后端已穷尽当前改善上限内的搜索；记录 `NO_IMPROVEMENT`，不能称无限制无路。 |
-| `INFEASIBLE` | 仅在没有改善 cap 且后端完成无限制问题搜索时允许；范围仍是当前固定前缀。 |
-| `TIMEOUT` / `FAILED` | 部分搜索、后端异常、未知结果；保留 incumbent，学习标签为 `None`。 |
+模型明确为四邻域、单位步时与成本、允许等待、顶点/对向边冲突、终点永久驻留。整数顶点按行编码，不是米或秒。`GridProblem` 生成作者原格式，稀疏外部车号映射为稳定原生编号；不调用缺文件时的作者随机地图生成。完整校验展开到所有给定路径的最长长度，再利用各不重复终点恒定驻留的条件覆盖之后的离散时刻。它不证明连续车身安全。
 
-最终正标签只在整组严格改善、完整核验返回真正的 `True`、且锁内 deadline 与版本检查通过后产生。`NO_IMPROVEMENT`/已证明的前缀 `INFEASIBLE` 可作本次固定尝试的负标签，不是任意邻域修复能力的负标签。迟到 callback 即便返回完整路径也不接纳；最终校验迟到也不接纳。并发 incumbent 已变化时返回 `STALE_INCUMBENT`。
+`NativeBackend` 构造会初始化真实作者求解器，因此属于科学运行授权范围。导入模块、编译、`--describe` 不调用该构造。每臂一个持久作者子进程，距离表复用；无路径结果缓存。每次原生搜索的随机种子由相同车辆、固定 order 和前缀派生，不包含 cap；相同请求的两臂有相同随机起点，不保证剪枝改变后消耗同一 RNG 序列。不能把这一固定请求宿主称为完整 ADDRESS 自适应 LNS。
 
-`SharedBudget` 不会因失败重置；search-call 配额计已保留的调用尝试。wall/CPU 记录失败和异常阶段，`RepairResult` 记录整个 repair 调用耗时。它是合作式预算，不能抢占一个阻塞 callback；下一项科学运行必须使用进程级硬预算，并计入导入、外部预处理、序列化与日志成本。incumbent 是可信单进程宿主内的事务，不是恶意代码隔离或分布式机器人原子启动。
+`search(SearchRequest)` 检查外部车辆集合和已规划前缀完整覆盖；传同一个绝对预算与缓存身份。返回的 `FOUND` 仍检查几何、cap、碰撞字段，完整修复后再共同校验。最终 `True` 标签仅由整组接纳事务产生；超时、异常、未知与版本失配标签为 `None`。
 
-## ADDRESS 接入范围
+作者空路径目前保留为 `EMPTY_CAPPED/EMPTY_BASE_LIMIT` 原生诊断，并在修复层记为 `FAILED`（未知、删失），不自动当作已核穷尽搜索或无限制不可行。仅 Python 下界直接排除、完整无改善等已核条件形成当前尝试的负标签。空返回语义的原生资格仍待闭合。
 
-固定作者版本 `b3d35c431ce03834f95e834d87986f2f341394a1`，可审阅原入口：[runPP](https://github.com/JimyZ13/ADDRESS/blob/b3d35c431ce03834f95e834d87986f2f341394a1/src/LNS.cpp#L462)、[ConstraintTable](https://github.com/JimyZ13/ADDRESS/blob/b3d35c431ce03834f95e834d87986f2f341394a1/inc/ConstraintTable.h)、[SIPP](https://github.com/JimyZ13/ADDRESS/blob/b3d35c431ce03834f95e834d87986f2f341394a1/src/SIPP.cpp#L25)。
+RPC 使用非阻塞管道和同一单调时钟截止，原生子进程有 CPU/地址空间限制，异常时终止且无重启；请求/响应摘要、失败原因、RPC wall 及被回收子进程的 CPU/RSS 保留。**这些尚不代替完整案例的进程监督器。** 完整费用仍须包含 Python 导入、初解校验、原生初始化/距离表、序列化、搜索、恢复、完整校验、退出与写盘；Python `process_time` 不包含原生 CPU，不能只报它。共同验证器可能消耗预算，接纳前检查防止迟到采用，整体硬停仍由外层监督器承担。
 
-原版已经在低层使用 `length_max`，SIPP 的 82/101 行及 SpaceTimeAStar 的后继检查可裁剪超长候选。本补丁只给已有算子提供来自 incumbent 与剩余 `h` 的上限，**不是新增有界搜索或首次下界剪枝**。公开开关 `pp_remaining_cost_bound=false` 为关闭新增界的共同控制臂，`true` 才开启。
+旧原生 `runPP` 补丁禁用尚未闭合的 bandit 奖励更新，只适合固定请求回放草案；它保留原 `random_shuffle`，不得用于宣称跨臂相同顺序。新的 Python 固定顺序宿主没有这个随机换序入口，也不实现作者邻域选择与 bandit 循环。
 
-本次原调用的 `ConstraintTable(...,&path_table)` 将已有路径传给 `path_table_for_CT`，软冲突表参数使用默认空值；不能将 SIPP 通用函数的“优先少碰撞”注释当作此处已完成的整任务安全证书。真实后端接入 Python 接纳层时仍须提供完整共同 validator；该 validator 本轮未连接作者系统。
+## 已完成的检查
 
-原 `runPP` 在完整接纳检查前更新成功计数，且选择器在进入修复前已增加 `frequency`。只忽略 timeout 的奖励更新仍会把该次尝试带入后续均值分母，并不构成正确 censor。**本补丁直接禁用 runPP 的 bandit 奖励更新，仅允许准备固定邻域/顺序回放；不用于原版自适应 LNS 循环。** 原生 `complete && within_time && strict_improvement` 只是诊断终态，不是经过完整共同 validator 和宿主总截止检查的学习标签；只有 Python 接纳事务产生该标签。源码风险尚未测得实际发生频率，不扩展为对原论文结果的否定。
+- `python3 -B -m unittest discover -s tracks/sci -p test_pp_repair.py -v`：23 项软件契约通过，未调用真实搜索。
+- 固定作者文件按 blob/SHA 核验；C++17 编译链接成功；只执行 `--describe`，明确 `solver_called=false`。原作者树前后保持干净。
+- 旧补丁的 `git apply --check` 证据保留，未重写成完整系统复现。
 
-补丁是可应用的原生接入草案，沿用作者函数的单线程可变 path-table 与普通返回路径回滚，不把它声称为 Python 事务的异常隔离替代。低层 `findPath` 没有新增硬抢占；原生 `within_time` 取值不覆盖后续函数返回开销，因此 `IMPROVED` 不保证整函数及时完成。原生结果在后端返回后仍须经过共同总 deadline 和完整 validator 才能作为被接纳的任务结果。原作者 `random_shuffle` 入口仍保留；首次固定顺序回放须由实际后端明确绑定，不把设随机种子等同于跨臂固定 order。C++ 整库构建、固定 request/order 宿主、内存异常下的原生回滚、完整 validator 和进程预算接线均尚待完成；不得仅凭本补丁调用科学实例。
+若需重新编译，给出不存在的输出目录，例如：
 
-## 已完成的非科学检查
+```bash
+rtk proxy python3 -I -B tracks/sci/build_address_backend.py \
+  --author-root /home/lyh/.cache/mapf_research/address-b3d35c4 \
+  --output /tmp/address-build-review
+```
 
-- `python3 -B -m unittest discover -s tracks/sci -p test_pp_repair.py -v`：13 项纯软件契约通过。
-- 固定作者 6 个文件与 Git blob OID 一致；补丁对其精确字节运行 `git apply --check` 通过，未应用到作者缓存。
-- Python 文件语法核验；补丁仅触及声明的 2 个作者文件。
+这条命令仅编译及查询描述。没有附带实例求解或训练命令。
 
-脚本回调中的顶点整数只是软件值，验证回调是桩函数；这些检查不构成地图可行性、碰撞安全、科学运行、加速或训练结果。原始作者、共同终态修正版、修正版加剩余界须分别命名；不能把修复终态错误的收益算成下界算法优势。
+## 近邻与下一项实质交付
 
-## 直接近邻与下一交付边界
+同问题参照为 [NNS，ICLR2024](https://proceedings.iclr.cc/paper_files/paper/2024/file/d41f8403e9bb5141bc2c81fad7658185-Paper-Conference.pdf)、[ADDRESS，AAAI2025](https://ojs.aaai.org/index.php/AAAI/article/view/34495)、[TACKLE，AAAI2026正式论文](https://ojs.aaai.org/index.php/AAAI/article/view/40207)。NNS/TACKLE 新增作者代码许可未核，不直接修改再分发；既有学习选邻域/共享计算/反事实组合不能当作本项目原创。固定路径的 Improved GSES、ESADG 不直接作为路径修复的公平性能对照，后者仍按已核来源标作预印本。
 
-[NNS，ICLR 2024](https://proceedings.iclr.cc/paper_files/paper/2024/file/d41f8403e9bb5141bc2c81fad7658185-Paper-Conference.pdf)已学习选择需重规划的子集并共享表示计算；[ADDRESS，AAAI 2025](https://ojs.aaai.org/index.php/AAAI/article/view/34495)已有 top-K 种子与在线成功学习；[TACKLE，AAAI 2026 正式论文](https://ojs.aaai.org/index.php/AAAI/article/view/40207)已有规则意图与反事实学习组合。TACKLE §5.4 的低覆盖/排序开销负例是待检查的预算现象，不是本项目已解决的缺口。NNS/TACKLE 作者仓库的许可本次未核定，不将“公开可读”写成可直接修改再分发。
+**下一交付：完整案例宿主与固定配对输入。** 先接进程级硬预算、统一产物写盘、空返回语义；再固定少量完整初解、邻域/顺序、输入 SHA、命令、总预算与零重试/失败保留清单。只有取得新科学运行的真实授权才调用后端。强基线和候选共同计入初始化/缓存/搜索/验证/写盘，不将预处理移出计时。
 
-[Improved GSES](https://ojs.aaai.org/index.php/AAAI/article/view/34487)是固定路径执行图优化，本地 MIT 作者版与预检保留；[ESADG v2](https://arxiv.org/html/2511.21886v2)仍按作者页核为预印本，已有组选取、收益估计与环修复，固定作者工件/许可未取得。两者不作为本次局部路径修复的同问题性能对照。
-
-下一项仅接通一个固定作者修复后端、完整共同 validator 与原子宿主，再准备独立输入和一次有限预算清单。瓶颈假设是“当前改善已不可能时，仍支付后续修复搜索费用”；源码存在条件差别，实际占比尚未知。若增强廉价规则没有减少完整成本，或构造/核验费用抵消收益，记录停止或收缩；即便获得收益，也须进一步核对算法近邻，不能直接据此宣布 SCI 创新或开始网络训练。
+获授权后，先检查“已经不可能改善时仍继续搜索”是否占实际完整费用、增强规则能消除多少。若完整成本无净收益或低成本规则已解决主要浪费，记录停止/收缩，不为保留学习而扩大任务；若仍有可重复的预算错配，再选择一个学习任务。不能把编译、接口检查或经典下界升级为 SCI 创新证据。

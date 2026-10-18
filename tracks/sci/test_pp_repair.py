@@ -1,9 +1,13 @@
-"""Pure software contracts with scripted callbacks; no MAPF solver or instance."""
+"""Software contracts and declared path fixtures; no solver search or benchmark."""
 
+from dataclasses import replace
+import time
 import unittest
+from unittest.mock import Mock, patch
 
 from pp_repair import (Incumbent, Policy, RepairStatus, SearchReply, SearchStatus,
-                       SharedBudget, repair)
+                       SearchRequest, SharedBudget, repair)
+from address_backend import GridProblem, NativeBackend, MAX_TIMESTEP
 
 
 class Clock:
@@ -178,6 +182,110 @@ class RepairContracts(unittest.TestCase):
         self.assertEqual(result.after.version, 1)
         self.assertEqual(dict(result.after.paths), self.original)
         self.assertIsNone(result.improvement_label)
+
+
+class BackendContracts(unittest.TestCase):
+    """All native replies are scripted. NativeBackend.__init__ is never called."""
+
+    def setUp(self):
+        self.problem = GridProblem(2, 3, [], {5: (0, 2), 9: (3, 5)})
+        self.paths = {5: (0, 0, 1, 2), 9: (3, 3, 4, 5)}
+        self.backend = NativeBackend.__new__(NativeBackend)
+        self.backend.problem = self.problem
+        self.backend.budget = SharedBudget(time.monotonic_ns() + 10**9, 10)
+        self.backend.cache = {}
+        self.backend.seed = 12
+        self.backend.close = Mock()
+        self.backend._rpc = Mock(return_value={'status': 'FOUND', 'path': [0, 1, 2],
+            'num_collisions': 0, 'effective_max_cost': 2})
+        self.request = SearchRequest(5, 0, 2, 2, {9: self.paths[9]}, {}, (5,),
+            self.problem.model_key, 'scripted-key', self.backend.budget, self.backend.cache)
+
+    def test_common_validator_checks_waits_endpoints_and_all_robots(self):
+        self.assertIs(self.problem.validate(self.paths), True)
+        for paths in ({5: self.paths[5]}, {5: (0, 1), 9: self.paths[9]},
+                      {5: (False, 1, 2), 9: self.paths[9]}):
+            with self.assertRaises(ValueError):
+                self.problem.validate(paths)
+
+    def test_common_validator_rejects_vertex_swap_and_later_goal_entry(self):
+        examples = [
+            (GridProblem(1, 3, [], {0: (0, 2), 1: (2, 0)}), {0: (0, 1, 2), 1: (2, 1, 0)}),
+            (GridProblem(1, 2, [], {0: (0, 1), 1: (1, 0)}), {0: (0, 1), 1: (1, 0)}),
+            (GridProblem(2, 3, [], {0: (0, 1), 1: (3, 2)}), {0: (0, 1), 1: (3, 4, 1, 2)})]
+        for problem, paths in examples:
+            with self.assertRaises(ValueError):
+                problem.validate(paths)
+
+    def test_grid_motion_excludes_obstacle_row_wrap_and_diagonal(self):
+        problem = GridProblem(2, 3, [1], {0: (0, 5)})
+        self.assertTrue(problem.validate({0: (0, 3, 4, 5)}))
+        for path in ((0, 1, 2, 5), (0, 3, 2, 5), (0, 4, 5)):
+            with self.assertRaises(ValueError):
+                problem.validate({0: path})
+
+    def test_author_serialization_pins_sparse_robot_mapping(self):
+        grid, agents = self.problem.author_files()
+        self.assertEqual(grid, b'2,3\n...\n...\n')
+        self.assertEqual(agents, b'2\n0,0,0,2\n1,0,1,2\n')
+        self.assertEqual(self.problem.native_ids, {5: 0, 9: 1})
+        same = GridProblem(2, 3, [], {9: (3, 5), 5: (0, 2)})
+        self.assertEqual(same.model_key, self.problem.model_key)
+
+    def test_both_cap_policies_share_native_prefix_seed_and_geometry(self):
+        self.assertEqual(self.backend.search(self.request).status, SearchStatus.FOUND)
+        first = self.backend._rpc.call_args.args[0]
+        self.backend._rpc.return_value['effective_max_cost'] = MAX_TIMESTEP
+        self.backend.search(replace(self.request, max_cost=None))
+        second = self.backend._rpc.call_args.args[0]
+        self.assertEqual({k: v for k, v in first.items() if k != 'max_cost'},
+                         {k: v for k, v in second.items() if k != 'max_cost'})
+
+    def test_backend_rejects_missing_prefix_and_changed_shared_identity(self):
+        for request in (replace(self.request, fixed_paths={}),
+                        replace(self.request, order=(9, 5)),
+                        replace(self.request, model_key='other'),
+                        replace(self.request, shared_cache={})):
+            with self.assertRaises(ValueError):
+                self.backend.search(request)
+        self.backend._rpc.assert_not_called()
+
+    def test_author_found_still_requires_geometry_and_cap_checks(self):
+        for answer in ({'path': [0, 4, 2]}, {'effective_max_cost': 3},
+                       {'path': [0, 0, 1, 2]}, {'num_collisions': 1}):
+            self.backend._rpc.return_value = dict(status='FOUND', path=[0, 1, 2],
+                num_collisions=0, effective_max_cost=2)
+            self.backend._rpc.return_value.update(answer)
+            with self.assertRaises(ValueError):
+                self.backend.search(self.request)
+
+    def test_empty_native_result_is_censored_and_keeps_incumbent(self):
+        self.backend._rpc.return_value = {'status': 'EMPTY_CAPPED'}
+        store = Incumbent(self.paths)
+        result = repair(store, (5,), {5: 2}, model_key=self.problem.model_key,
+            search=self.backend.search, validate=self.backend.validate,
+            budget=self.backend.budget, shared_cache=self.backend.cache)
+        self.assertEqual(result.status, RepairStatus.FAILED)
+        self.assertIsNone(result.improvement_label)
+        self.assertIs(result.before, result.after)
+
+    def test_native_failure_ends_session_without_retry(self):
+        self.backend._rpc.return_value = {'status': 'FAILED', 'reason': 'scripted exception'}
+        self.assertEqual(self.backend.search(self.request).status, SearchStatus.FAILED)
+        self.backend.close.assert_called_once()
+        self.backend._rpc.assert_called_once()
+
+    def test_rpc_timeout_is_retained_and_closes_child(self):
+        self.backend.proc = Mock()
+        self.backend.proc.stdin.fileno.return_value = 100
+        self.backend.proc.stdout.fileno.return_value = 101
+        self.backend.seq, self.backend.records, self.backend.buffer = 0, [], bytearray()
+        with patch('address_backend.select.select', return_value=([], [], [])):
+            with self.assertRaises(TimeoutError):
+                NativeBackend._rpc(self.backend, {'op': 'search'})
+        self.assertEqual(self.backend.records[0]['status'], 'TIMEOUT')
+        self.assertGreater(self.backend.records[0]['wall_ns'], 0)
+        self.backend.close.assert_called_once()
 
 
 if __name__ == "__main__":
