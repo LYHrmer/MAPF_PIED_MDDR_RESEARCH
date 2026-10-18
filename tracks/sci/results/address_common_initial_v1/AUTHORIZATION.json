@@ -1,0 +1,34 @@
+{
+  "status": "AUTHORIZED_FOR_ONE_SEQUENTIAL_BATCH",
+  "user_quote": "授权这6项，严格按清单执行",
+  "question_item_id": "[request_user_input_async,call_1e3eb23f7f0b41bd9b1a24b81a053a3e,0]",
+  "source": "actual user reply in current conversation; this file is a record, not self-authorization",
+  "manifest_sha256": "5f89443a8ad7e9281fffa74e8c9b47b1edf79c2a41203068057840046183bb3d",
+  "scientific_code_commit": "032bf223b78e6698821cbdee14a63cb8c8bc7718",
+  "created_utc": "2026-10-18T05:25:05.895967+00:00",
+  "retry": 0,
+  "stop_batch_on_any_failure": true,
+  "jobs": [
+    "maze-32-32-2__s01__n16__address",
+    "maze-32-32-2__s01__n32__address",
+    "random-32-32-10__s01__n16__address",
+    "random-32-32-10__s01__n32__address",
+    "warehouse-10-20-10-2-1__s01__n16__address",
+    "warehouse-10-20-10-2-1__s01__n32__address"
+  ],
+  "limits": {
+    "external_final_reserve_s": 0.5,
+    "inner_final_reserve_s": 0.25,
+    "native_cpu_s": 10,
+    "per_process_as_mib": 512,
+    "total_wall_s": 15,
+    "worker_cpu_s": 10
+  },
+  "external_command_guard": {
+    "kill_grace_s": 2,
+    "required": true,
+    "term_after_s": 20,
+    "tool": "timeout"
+  },
+  "no_training_world_recovery": true
+}

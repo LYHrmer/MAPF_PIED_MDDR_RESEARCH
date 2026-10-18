@@ -54,9 +54,10 @@ class AdapterContracts(unittest.TestCase):
                                  'per_process_as_mib': 512, 'external_final_reserve_s': .5,
                                  'inner_final_reserve_s': .25}}
             def inspect(receipt):
-                (root/'adapter_build_receipt.json').write_text(json.dumps(receipt))
+                receipt_name = config.get('build_receipt', 'adapter_build_receipt.json')
+                (root/receipt_name).write_text(json.dumps(receipt))
                 config['code_sha256'] = {name: sha((root/name).read_bytes())
-                                        for name in names+['adapter_build_receipt.json']}
+                                        for name in names+[receipt_name]}
                 raw = json.dumps(config).encode()
                 (root/'manifest.json').write_bytes(raw)
                 with patch('run_address_adapter.HERE', root):
@@ -67,6 +68,17 @@ class AdapterContracts(unittest.TestCase):
                              ('author_unchanged', False)]:
                 with self.subTest(key=key), self.assertRaisesRegex(ValueError, 'build receipt'):
                     inspect(dict(good, **{key: bad}))
+            config.update(variant='loop_guard', build_receipt='loop_guard_build_receipt.json')
+            guarded = dict(good, scope='ADDRESS_COMMON_INITIAL_LOOP_GUARD_COMPILE_AND_HELP_ONLY',
+                           extension='loop_guard')
+            self.assertEqual(inspect(guarded)[2], root/'binary')
+            with self.assertRaisesRegex(ValueError, 'build receipt'):
+                inspect(good)  # A pristine/base receipt cannot certify the guard.
+            with self.assertRaisesRegex(ValueError, 'root bound'):
+                inspect(dict(guarded, extension=None))
+            config['variant'] = 'recovery'
+            with self.assertRaisesRegex(ValueError, 'unreviewed runner variant'):
+                inspect(guarded)  # Recovery is not a runnable scientific arm yet.
 
     def test_fail_closed_patch_anchor(self):
         with self.assertRaises(ValueError):

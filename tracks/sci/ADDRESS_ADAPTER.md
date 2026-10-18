@@ -1,6 +1,6 @@
 # 共同初解适配后的 ADDRESS 推荐配置
 
-状态：**实现、完整编译及无搜索软件核验完成；真实实例的完整 ADDRESS 尚未运行，公平比较尚未成立。**
+状态：**实现、编译及软件核验完成；新授权功能批次已有2项成功、1项失败，余3项停批未运行。公平方法比较尚未成立。** 见[本批结果](ADDRESS_DEV_RESULT.md)。
 旧 `repair_residual_v1` 的六次许可已经消费。本页及配置文件均不能授权新运行。
 
 ## 对照的身份和保留语义
@@ -75,12 +75,12 @@ worker和native分别限制CPU、地址空间、文件大小，禁用core文件�
   收据保留当时生成器SHA，不改写为补修后的脚本SHA。
 - 本地二进制 `.address_adapter_build/build/address`，SHA256
   `e14f8805270ac7a09ea748413274e8d1c6c163f79e806050691878bf20b7d11a`。
-- 未完成：真实任务导入/搜索/末检闭环、跨方法公平配对、运行可重复性与性能结论。
+- 两份maze任务已完成真实导入/搜索/末检闭环；random16失败且停止全批。仍未完成全部任务闭环、跨方法公平配对、运行可重复性与性能结论。
   作者奖励语义被保留，不等于已经证明它合理。
 
-## 后继清单接口（SHA已冻结、待新授权）
+## 已消费的清单接口（SHA冻结、本批关闭）
 
-具体六项输入、代码SHA、命令、预算和停止条件已固定在[ADDRESS_RUN_CHECKLIST.md](ADDRESS_RUN_CHECKLIST.md)。已执行只读`inspect`，没有科学运行。下列接口说明服从该清单，不使用占位配置执行。
+具体六项输入、代码SHA、命令、预算和停止条件固定在[ADDRESS_RUN_CHECKLIST.md](ADDRESS_RUN_CHECKLIST.md)。本批已按真实授权执行并因第3项失败关闭。下列接口作为历史说明保留，不授权继续剩余项目或重试。
 
 沿用现有 `repair_residual_v1_inputs.json`，输入SHA
 `be1e912e1e2ea3f59fcdc5d0c5737118e7f96d92227be536ada605f6751c0e5b`；
@@ -104,5 +104,5 @@ rtk proxy python3 -B tracks/sci/run_address_adapter.py inspect \
 # --job <frozen_job> --authorization-reference '<实际用户授权原文及范围>'
 ```
 
-下一项任务是按统一初解和总预算完成完整ADDRESS功能闭环，再让候选方法使用
+下一项任务是修补共同终止条件，按新版本与新授权完成剩余功能核验，再让候选方法使用
 相同宿主优化、反馈和末检。当前工程适配本身不是论文方法增量。

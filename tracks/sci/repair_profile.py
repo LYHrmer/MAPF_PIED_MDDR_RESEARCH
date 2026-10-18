@@ -571,9 +571,106 @@ def recoveries(output):
                       'described_not_executed': value['described_not_executed']}, indent=2))
 
 
+def address_results(manifest, expected_sha, output=None):
+    """Audit the completed/stopped ADDRESS batch; never launch or retry a job."""
+    manifest = manifest.resolve()
+    raw = manifest.read_bytes()
+    if sha(raw) != expected_sha:
+        raise ValueError('ADDRESS manifest SHA mismatch')
+    config = json.loads(raw)
+    if config['schema'] != 'address_common_initial_dev_v1' or config['retry'] != 0:
+        raise ValueError('unexpected ADDRESS batch contract')
+    raw_inputs = (manifest.parent/config['input_file']).read_bytes()
+    if sha(raw_inputs) != config['input_sha256']:
+        raise ValueError('ADDRESS input identity changed')
+    cases = {case['id']: case for case in json.loads(raw_inputs)['cases']}
+    batch = HERE/'results'/config['batch_id']
+    output = output or batch/'RUN_RECEIPT.json'
+    if output.exists():
+        raise FileExistsError('preserve original batch audit; choose a new output')
+    auth = json.loads((batch/'AUTHORIZATION.json').read_bytes())
+    if auth['manifest_sha256'] != expected_sha or auth['jobs'] != [j['id'] for j in config['jobs']]:
+        raise ValueError('authorization record / manifest mismatch')
+    rows, failed_job = [], None
+    for job in config['jobs']:
+        folder = batch/job['id']
+        problem, initial = unpack(cases[job['case']])
+        row = {'job': job['id'], 'case': job['case'],
+               'initial_soc': sum(len(p)-1 for p in initial.values()),
+               'initial_makespan': max(len(p)-1 for p in initial.values()),
+               'final_soc': None, 'final_makespan': None, 'improvement': None}
+        if not folder.exists():
+            if failed_job is None:
+                raise ValueError('unattempted job before a recorded batch stop')
+            row['status'] = 'NOT_RUN_AFTER_BATCH_STOP'
+            rows.append(row)
+            continue
+        if failed_job is not None:
+            raise ValueError('job attempted after the first failure')
+        receipt_raw = (folder/'receipt.json').read_bytes()
+        receipt = json.loads(receipt_raw)
+        result = json.loads((folder/'result.json').read_bytes())
+        attempt = json.loads((folder/'attempt.json').read_bytes())
+        for record in (receipt, result, attempt):
+            if record['job'] != job or record['manifest_sha256'] != expected_sha:
+                raise ValueError('ADDRESS job identity mismatch')
+        if result['case'] != job['case'] or result['initial_soc'] != row['initial_soc']:
+            raise ValueError('ADDRESS initial plan identity mismatch')
+        for name, pin in receipt['artifacts'].items():
+            relative = Path(name)
+            if relative.is_absolute() or '..' in relative.parts:
+                raise ValueError('artifact path escape')
+            artifact = (folder/relative).read_bytes()
+            if sha(artifact) != pin['sha256'] or len(artifact) != pin['bytes']:
+                raise ValueError('ADDRESS evidence bytes changed: '+name)
+        row.update({'status': receipt['status'], 'receipt_sha256': sha(receipt_raw),
+                    'total_entry_through_output_validation_and_hash_ns':
+                        receipt['total_entry_through_output_validation_and_hash_ns'],
+                    'costs': receipt['costs'], 'stage_wall_ns': result['stage_wall_ns']})
+        if receipt['status'] == 'COMPLETE':
+            final = {int(a): tuple(p) for a, p in result['final_paths'].items()}
+            problem.validate(final)  # Offline audit, outside the recorded run timing.
+            soc = sum(len(p)-1 for p in final.values())
+            makespan = max(len(p)-1 for p in final.values())
+            if (result['status'] != 'COMPLETE' or not result['final_validated']
+                or receipt['costs']['exit_code'] != 0 or receipt['costs']['forced_cleanup']
+                or row['total_entry_through_output_validation_and_hash_ns'] >= config['limits']['total_wall_s']*1e9
+                or soc != result['final_soc'] or makespan != result['final_makespan']
+                or soc > row['initial_soc']):
+                raise ValueError('ADDRESS complete result violates its contract')
+            row.update({'final_soc': soc, 'final_makespan': makespan,
+                        'improvement': row['initial_soc']-soc})
+        elif receipt['status'] == 'FAILED_OR_INCOMPLETE':
+            failed_job = job['id']
+            row['reason'] = result.get('reason', 'missing success validation')
+            row['initial_retained_is_not_a_successful_final_output'] = True
+        else:
+            raise ValueError('unknown ADDRESS terminal status')
+        rows.append(row)
+    artifacts = {str(p.relative_to(batch)): {'bytes': p.stat().st_size, 'sha256': sha(p.read_bytes())}
+                 for p in sorted(batch.rglob('*')) if p.is_file()}
+    value = {'scope': 'ADDRESS_FUNCTIONAL_DEV_STOPPED_BATCH_AUDIT',
+        'manifest_sha256': expected_sha, 'scientific_code_commit': auth['scientific_code_commit'],
+        'analyzer_sha256': sha(Path(__file__).read_bytes()), 'new_search_by_analyzer': False,
+        'status': 'STOPPED_ON_FIRST_FAILURE' if failed_job else 'ALL_COMPLETE',
+        'first_failed_job': failed_job, 'jobs': rows, 'artifacts': artifacts,
+        'counts': {status: sum(row['status'] == status for row in rows)
+                   for status in ('COMPLETE', 'FAILED_OR_INCOMPLETE', 'NOT_RUN_AFTER_BATCH_STOP')},
+        'authorization_consumed_or_closed': True, 'retry_allowed': False,
+        'remaining_jobs_require_new_authorization': bool(failed_job),
+        'limits': ['single functional DEV, no candidate recovery or learning',
+                   'historical fixed-ID probe times are not paired performance baselines',
+                   'failures and unattempted jobs retained; no survivor-only aggregate',
+                   'nested native/worker/entry timings must not be added',
+                   'offline audit timing is separate from recorded scientific run costs']}
+    write_json(output, value)
+    print(json.dumps({'output': str(output), 'sha256': sha(output.read_bytes()),
+                      'status': value['status'], 'counts': value['counts'], 'jobs': rows}, indent=2))
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('mode', choices=('prepare', 'summarize', 'costs', 'failures', 'recoveries'))
+    parser.add_argument('mode', choices=('prepare', 'summarize', 'costs', 'failures', 'recoveries', 'address'))
     parser.add_argument('--manifest', type=Path)
     parser.add_argument('--sha256')
     parser.add_argument('--output', type=Path)
@@ -584,6 +681,8 @@ if __name__ == '__main__':
         failures(args.output or HERE/'derived'/'late_failure_diagnosis.json')
     elif args.mode == 'recoveries':
         recoveries(args.output or HERE/'derived'/'late_failure_recovery_candidates.json')
+    elif args.mode == 'address' and args.manifest and args.sha256:
+        address_results(args.manifest, args.sha256, args.output)
     elif args.manifest and args.sha256:
         (costs if args.mode == 'costs' else summarize)(args.manifest, args.sha256)
     else:

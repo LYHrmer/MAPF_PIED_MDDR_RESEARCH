@@ -55,7 +55,9 @@ def source_identity(root):
     return pins
 
 
-def build(root, output, adapter=False):
+def build(root, output, adapter=False, extension=None):
+    if extension not in (None, 'loop_guard', 'recovery') or (extension and not adapter):
+        raise ValueError('extensions require the common-initial adapter')
     root, output = root.resolve(), output.resolve()
     if output == root or root in output.parents:
         raise ValueError('build must be outside author checkout')
@@ -70,6 +72,11 @@ def build(root, output, adapter=False):
         receipt['scope'] = 'ADDRESS_COMMON_INITIAL_ADAPTER_COMPILE_AND_HELP_ONLY'
         receipt['reward_semantics'] = 'AUTHOR_ATTEMPT_UPDATE_BEFORE_ROLLBACK_UNCHANGED'
         receipt['external_total_budget_integration'] = 'PENDING'
+        if extension:
+            receipt['scope'] = ('ADDRESS_COMMON_INITIAL_LOOP_GUARD_COMPILE_AND_HELP_ONLY'
+                                if extension == 'loop_guard' else
+                                'ADDRESS_COMMON_INITIAL_RECOVERY_COMPILE_AND_HELP_ONLY')
+            receipt['extension'] = extension
     target = output/'build_receipt.json'
 
     def save():
@@ -113,6 +120,26 @@ def build(root, output, adapter=False):
             compile_root = output/'source_overlay'
             receipt['adapter_script_sha256'] = sha((HERE/'address_adapter.py').read_bytes())
             receipt['adapter_sources'] = materialize(root, compile_root, pins)
+            if extension:
+                import importlib
+                modules = ['address_loop_guard'] + (['address_recovery'] if extension == 'recovery' else [])
+                receipt['extension_sources'] = {}
+                receipt['extension_script_sha256'] = {}
+                for name in modules:
+                    module = importlib.import_module(name)
+                    files = {str(p.relative_to(compile_root)): p.read_bytes()
+                             for p in compile_root.rglob('*') if p.is_file()}
+                    changed = module.adapt(files)
+                    for relative, raw in changed.items():
+                        part = Path(relative)
+                        if part.is_absolute() or '..' in part.parts:
+                            raise ValueError('extension path escape')
+                        target_file = compile_root/part
+                        target_file.parent.mkdir(parents=True, exist_ok=True)
+                        target_file.write_bytes(raw)
+                    receipt['extension_script_sha256'][name] = sha((HERE/(name+'.py')).read_bytes())
+                    receipt['extension_sources'][name] = {
+                        path: {'sha256': sha(raw), 'bytes': len(raw)} for path, raw in changed.items()}
             save()
         compiler = Path(shutil.which('g++') or '').resolve()
         cmake = Path(shutil.which('cmake') or '').resolve()
@@ -154,5 +181,7 @@ if __name__ == '__main__':
     parser.add_argument('--author-root', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--adapter', action='store_true', help='compile project-owned common-initial overlay')
+    parser.add_argument('--extension', choices=('loop_guard', 'recovery'),
+                        help='optional shared stop guard, or guard plus recovery prototype')
     args = parser.parse_args()
-    print(json.dumps(build(args.author_root, args.output, args.adapter), sort_keys=True))
+    print(json.dumps(build(args.author_root, args.output, args.adapter, args.extension), sort_keys=True))

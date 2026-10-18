@@ -29,8 +29,16 @@ def load(path, expected_sha):
     config = json.loads(raw)
     if config['schema'] != 'address_common_initial_dev_v1' or config['authorization'] != 'PENDING_USER':
         raise ValueError('proposal schema required; authorization is external')
+    receipt_name = config.get('build_receipt', 'adapter_build_receipt.json')
+    if not isinstance(receipt_name, str) or Path(receipt_name).name != receipt_name:
+        raise ValueError('build receipt must be a local basename')
+    variant = config.get('variant', 'base')
+    scopes = {'base': 'ADDRESS_COMMON_INITIAL_ADAPTER_COMPILE_AND_HELP_ONLY',
+              'loop_guard': 'ADDRESS_COMMON_INITIAL_LOOP_GUARD_COMPILE_AND_HELP_ONLY'}
+    if variant not in scopes:
+        raise ValueError('unreviewed runner variant')
     required = {'run_address_adapter.py', 'run_repair_dev.py', 'address_backend.py',
-                'pp_repair.py', 'adapter_build_receipt.json'}
+                'pp_repair.py', receipt_name}
     if not required <= config['code_sha256'].keys():
         raise ValueError('missing runtime/build receipt pins')
     for name, expected in config['code_sha256'].items():
@@ -43,14 +51,16 @@ def load(path, expected_sha):
     binary_sha = digest(binary.read_bytes())
     if binary_sha != config['binary_sha256']:
         raise ValueError('changed adapter binary; no silent rebuild')
-    receipt = json.loads((HERE/'adapter_build_receipt.json').read_bytes())
+    receipt = json.loads((HERE/receipt_name).read_bytes())
     if (receipt.get('status') != 'COMPILED_HELP_ONLY'
-        or receipt.get('scope') != 'ADDRESS_COMMON_INITIAL_ADAPTER_COMPILE_AND_HELP_ONLY'
+        or receipt.get('scope') != scopes[variant]
         or receipt.get('author_commit') != AUTHOR or receipt.get('author_unchanged') is not True
         or receipt.get('solver_instance_constructed') is not False
         or receipt.get('scientific_search_executed') is not False
         or receipt.get('binary_sha256') != binary_sha):
         raise ValueError('build receipt does not certify this adapter binary and author identity')
+    if variant == 'loop_guard' and receipt.get('extension') != 'loop_guard':
+        raise ValueError('shared root bound missing from build receipt')
     if config.get('retry') != 0:
         raise ValueError('zero retry required')
     limits = config['limits']
