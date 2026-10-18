@@ -46,6 +46,8 @@ SCI下一项先核定同模型非零余量的既有完整任务，再针对共�
 
 后继准备已落地于SCI`32bbc38`：复用原运行器五文件及原SIPP二进制，固定三地图s01各16/32车，95,144字节输入包SHA `be1e912e…1c0e5b`、清单SHA `cff28cdb…987039`。已有完整路径重验通过；新增5项软件检查及对原六臂记录的离线解析核对通过。新运行目录不存在、同模型h尚未计算；待新授权后最多六任务，每任务15秒工作组wall、各进程10秒CPU/512 MiB、最多128次搜索、零重试、任一失败即停。固定ID组不是ADDRESS自适应选组器，整任务顺序不是局部修复；本批只诊断余量和开销，不声称方法加速。
 
+SCI后续实质交付[57c3d69](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/57c3d6999e27e50e05164af0686ab6f461dfe1bf/tracks/sci/README.md)：已树外编译完整原版ADDRESS，86份文件按固定提交核对，实际仅运行`--help`，无实例构造/搜索。完整二进制SHA `837a15e8…1268b`，[构建收据](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/57c3d6999e27e50e05164af0686ab6f461dfe1bf/tracks/sci/full_address_build_receipt.json)记录本机依赖和原始日志SHA；作者树保持干净。完整对照仍待共同初解、随机性和费用/奖励适配：原默认0次修复迭代，Thompson随机源不由CLI seed全部控制，构造器固定初始邻域为8。这里只补齐工件，不声称原论文实验或公平完整系统复现，不改变待授权六任务的代码/输入/范围。
+
 源码定点核对进一步明确：ADDRESS原driver不接收外部完整初解，正式对照适配仍缺；当前cap满足后会维持`g+sum(h)≤U`，后续同一前缀界拒绝本应不可达。后继若出现该分类按契约异常处理，不把它记成剪枝收益。主稿SHA仍为`204316c2…71452`，原证据和作者树未改动。
 
 更早详细进度在 [迁移前快照](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/c9985fb/GITHUB_PROGRESS.md)；空间执行技术史原位见[旧方案](SPACE_TIME_INTERFACE_PLAN_20261016.md)，均不授予新运行或恢复旧路线。
