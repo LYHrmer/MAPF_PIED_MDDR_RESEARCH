@@ -4,6 +4,8 @@
 
 当前候选为标准离散 MAPF 局部路径修复中的无效计算。**2026-10-18 已实现固定顺序 PP 宿主、剩余成本预算、原版 ADDRESS SIPP 回调及完整共同校验器；原版 SIPP 适配程序已编译链接。** 经用户明确授权的六臂DEV现已完成：原控制共48次搜索，增强臂根节点检查全部结束，最终SOC与路径SHA相同。三个初解都达到静态最短路和；保留经典界为强基线，停止这批任务上的学习候选。独立加速或创新尚未成立。见[完整结果](DEV_RESULT.md)。
 
+最新进展：[六任务诊断已完成](PROFILE_RESULT.md)，本批新许可已消费。maze16/32的局部组分别改善1/2步，random32的整任务逆序改善1步；其余三份初解已达到下界。3个有搜索任务的回调时间约79%—86%在原生RPC之外，当前优先消除宿主重复工作并接通公平强基线，暂停学习跳过SIPP的投入。下文的原待运行提案由此结果覆盖。
+
 ## 实现与证据
 
 | 文件 | 实际作用 |
@@ -16,7 +18,7 @@
 | [test_pp_repair.py](test_pp_repair.py) | 28 项软件契约：脚本回调、明确给定的离散路径、假原生响应；没有初始化原生求解器或解科学实例。 |
 | [address_remaining_budget.patch](address_remaining_budget.patch) / [原源码清单](address_source_manifest.json) | 先前对完整 `runPP` 的可审阅修改草案；`git apply --check` 通过，但未应用。实际新后端直接复用原版 SIPP，不依赖此补丁。 |
 | [run_repair_dev.py](run_repair_dev.py) / [运行清单](RUN_CHECKLIST.md) | 完整案例监督器、单次消费和失败总账；固定六臂已按新授权运行并保留全部产物；许可已消费，不能再次执行。 |
-| [repair_profile.py](repair_profile.py) / [后继诊断清单](PROFILE_CHECKLIST.md) | 已准备三类地图s01各16/32车的六份完整任务，复用不变运行器；只用经典强策略定位剩余瓶颈。输入重验和离线解析软件检查完成，科学运行待新授权。 |
+| [repair_profile.py](repair_profile.py) / [诊断清单](PROFILE_CHECKLIST.md) | 六任务已完成，许可已消费；原汇总及新增离线费用拆分见[结果](PROFILE_RESULT.md)。运行器未改动。 |
 | [ADDRESS_LICENSE.txt](ADDRESS_LICENSE.txt) | 作者原许可字节，限教育、研究、非营利；不能称 MIT。 |
 
 作者固定提交 `b3d35c431ce03834f95e834d87986f2f341394a1`；原树在 `/home/lyh/.cache/mapf_research/address-b3d35c4`，保持原样。编译产物在本机 `.native_build_checked/`，不入库；前一次编译记录在 `.native_build/` 原样保留。当前二进制 SHA 为 `2f1f2ddc394961e055ad737debd700c7fc6b2b1c5c939767b8cd07ffb282f347`。收据是当前主机的构建证据，不是跨平台环境锁，也不代表完整 ADDRESS 系统或论文实验复现。
@@ -73,7 +75,7 @@ rtk proxy python3 -I -B tracks/sci/build_address_backend.py \
 
 本轮决定是保留强基线并停止零余量任务上的学习投入。单次完整wall的差异不足以证明稳定加速；所有后继方法必须共用这一廉价检查。新运行须另给清单与真实授权，不能复用本批许可。
 
-后继的[具体诊断](PROFILE_CHECKLIST.md)已准备：六份已有完整16/32车初解；按固定8车组及两项整任务顺序诊断根拒绝、前缀拒绝、有限cap穷尽、接受和总费用，输入SHA `be1e912e…1c0e5b`、清单SHA `cff28cdb…987039`。没有初始化新的作者实例，没有计算其同模型h。新增5项离线解析/固定范围软件检查通过；正差额、真实接受、超时/未知严格分开。
+后继的[具体诊断](PROFILE_CHECKLIST.md)已获新授权并完成：六份已有16/32车完整初解，输入SHA `be1e912e…1c0e5b`、清单SHA `cff28cdb…987039`保持不变。实际完成6次作者初始化、197次搜索，48次修复中3次接受、17次有限cap穷尽、28次根拒绝；无失败/超时/重试。新增费用拆分只读原记录。原5项软件检查不替代这些科学DEV证据。
 
 作者原版driver未提供加载现有完整初解的选项，完整ADDRESS公平对照仍需初解适配。上述ID分组固定探针也不是其自适应选组策略；后继六项只作一次瓶颈筛选，不是独立性能实验、加速对比或学习标签集。
 

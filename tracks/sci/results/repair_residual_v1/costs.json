@@ -1,0 +1,201 @@
+{
+  "interpretation": "RPC includes pipe wait, native table construction/search and response decode; callback minus RPC includes host validation, hashes and serialization, not a measured breakdown of these components. Worker/supervisor and native/descendant intervals are nested, do not add them. One sample per case, no speedup comparison.",
+  "manifest_sha256": "cff28cdbac11caf58f1eab952d954e907c877fa8355c5f4c38bec095f8987039",
+  "postprocessor_sha256": "98cd78d5b66e16925aca1cbdec8a780560934c581aabaa36f071255136e411b9",
+  "rows": [
+    {
+      "all_descendant_cpu_s": 0.13860799999999998,
+      "callback_outside_rpc_fraction": 0.7903284132747515,
+      "callback_outside_rpc_wall_ns": 53158002,
+      "case": "maze-32-32-2__s01__n16",
+      "combined_cpu_before_receipt_s": 0.178386,
+      "groups": {
+        "CAP_EXHAUSTED_CURRENT_PREFIX_ONLY": {
+          "attempt_wall_ns": 54156557,
+          "attempts": 5,
+          "completed_agents": 41,
+          "search_calls": 46
+        },
+        "COMPLETE_ACCEPTED_IMPROVEMENT": {
+          "attempt_wall_ns": 16047540,
+          "attempts": 1,
+          "completed_agents": 8,
+          "search_calls": 8
+        }
+      },
+      "largest_child_maxrss_kib": 20544,
+      "native_usage_nested_in_descendants": {
+        "exit_code": -15,
+        "maxrss_kib": 13520,
+        "system_s": 0.001794,
+        "user_s": 0.011663
+      },
+      "search_callback_wall_ns": 67260649,
+      "search_rpc_wall_ns": 14102647,
+      "status": "COMPLETE",
+      "supervisor_inclusive_before_receipt_ns": 238956979,
+      "supervisor_self_cpu_s": 0.039778,
+      "worker_import_to_exit_wall_ns": 163437797
+    },
+    {
+      "all_descendant_cpu_s": 0.374372,
+      "callback_outside_rpc_fraction": 0.859243179541384,
+      "callback_outside_rpc_wall_ns": 246928688,
+      "case": "maze-32-32-2__s01__n32",
+      "combined_cpu_before_receipt_s": 0.415859,
+      "groups": {
+        "CAP_EXHAUSTED_CURRENT_PREFIX_ONLY": {
+          "attempt_wall_ns": 249196066,
+          "attempts": 9,
+          "completed_agents": 65,
+          "search_calls": 74
+        },
+        "COMPLETE_ACCEPTED_IMPROVEMENT": {
+          "attempt_wall_ns": 44937304,
+          "attempts": 1,
+          "completed_agents": 8,
+          "search_calls": 8
+        }
+      },
+      "largest_child_maxrss_kib": 20312,
+      "native_usage_nested_in_descendants": {
+        "exit_code": -15,
+        "maxrss_kib": 13404,
+        "system_s": 0.0019039999999999999,
+        "user_s": 0.035231
+      },
+      "search_callback_wall_ns": 287379282,
+      "search_rpc_wall_ns": 40450594,
+      "status": "COMPLETE",
+      "supervisor_inclusive_before_receipt_ns": 422904397,
+      "supervisor_self_cpu_s": 0.041486999999999996,
+      "worker_import_to_exit_wall_ns": 395149406
+    },
+    {
+      "all_descendant_cpu_s": 0.07744999999999999,
+      "callback_outside_rpc_fraction": null,
+      "callback_outside_rpc_wall_ns": 0,
+      "case": "random-32-32-10__s01__n16",
+      "combined_cpu_before_receipt_s": 0.116229,
+      "groups": {
+        "ROOT_BOUND": {
+          "attempt_wall_ns": 272317,
+          "attempts": 6,
+          "completed_agents": 0,
+          "search_calls": 0
+        }
+      },
+      "largest_child_maxrss_kib": 20152,
+      "native_usage_nested_in_descendants": {
+        "exit_code": -15,
+        "maxrss_kib": 13412,
+        "system_s": 0.0018039999999999998,
+        "user_s": 0.0036079999999999997
+      },
+      "search_callback_wall_ns": 0,
+      "search_rpc_wall_ns": 0,
+      "status": "COMPLETE",
+      "supervisor_inclusive_before_receipt_ns": 120909604,
+      "supervisor_self_cpu_s": 0.038778999999999994,
+      "worker_import_to_exit_wall_ns": 92691774
+    },
+    {
+      "all_descendant_cpu_s": 0.16252099999999997,
+      "callback_outside_rpc_fraction": 0.8023805385129527,
+      "callback_outside_rpc_wall_ns": 68271182,
+      "case": "random-32-32-10__s01__n32",
+      "combined_cpu_before_receipt_s": 0.20406499999999997,
+      "groups": {
+        "CAP_EXHAUSTED_CURRENT_PREFIX_ONLY": {
+          "attempt_wall_ns": 39384130,
+          "attempts": 3,
+          "completed_agents": 26,
+          "search_calls": 29
+        },
+        "COMPLETE_ACCEPTED_IMPROVEMENT": {
+          "attempt_wall_ns": 49757651,
+          "attempts": 1,
+          "completed_agents": 32,
+          "search_calls": 32
+        },
+        "ROOT_BOUND": {
+          "attempt_wall_ns": 530337,
+          "attempts": 6,
+          "completed_agents": 0,
+          "search_calls": 0
+        }
+      },
+      "largest_child_maxrss_kib": 20048,
+      "native_usage_nested_in_descendants": {
+        "exit_code": -15,
+        "maxrss_kib": 13348,
+        "system_s": 0.004057,
+        "user_s": 0.013524999999999999
+      },
+      "search_callback_wall_ns": 85085790,
+      "search_rpc_wall_ns": 16814608,
+      "status": "COMPLETE",
+      "supervisor_inclusive_before_receipt_ns": 198997550,
+      "supervisor_self_cpu_s": 0.041544,
+      "worker_import_to_exit_wall_ns": 173324802
+    },
+    {
+      "all_descendant_cpu_s": 0.080938,
+      "callback_outside_rpc_fraction": null,
+      "callback_outside_rpc_wall_ns": 0,
+      "case": "warehouse-10-20-10-2-1__s01__n16",
+      "combined_cpu_before_receipt_s": 0.124522,
+      "groups": {
+        "ROOT_BOUND": {
+          "attempt_wall_ns": 305043,
+          "attempts": 6,
+          "completed_agents": 0,
+          "search_calls": 0
+        }
+      },
+      "largest_child_maxrss_kib": 20908,
+      "native_usage_nested_in_descendants": {
+        "exit_code": -15,
+        "maxrss_kib": 13660,
+        "system_s": 0.001903,
+        "user_s": 0.010466999999999999
+      },
+      "search_callback_wall_ns": 0,
+      "search_rpc_wall_ns": 0,
+      "status": "COMPLETE",
+      "supervisor_inclusive_before_receipt_ns": 115996126,
+      "supervisor_self_cpu_s": 0.043584,
+      "worker_import_to_exit_wall_ns": 92508200
+    },
+    {
+      "all_descendant_cpu_s": 0.10278999999999999,
+      "callback_outside_rpc_fraction": null,
+      "callback_outside_rpc_wall_ns": 0,
+      "case": "warehouse-10-20-10-2-1__s01__n32",
+      "combined_cpu_before_receipt_s": 0.14332099999999998,
+      "groups": {
+        "ROOT_BOUND": {
+          "attempt_wall_ns": 1246102,
+          "attempts": 10,
+          "completed_agents": 0,
+          "search_calls": 0
+        }
+      },
+      "largest_child_maxrss_kib": 20816,
+      "native_usage_nested_in_descendants": {
+        "exit_code": -15,
+        "maxrss_kib": 13392,
+        "system_s": 0.0010019999999999999,
+        "user_s": 0.024071
+      },
+      "search_callback_wall_ns": 0,
+      "search_rpc_wall_ns": 0,
+      "status": "COMPLETE",
+      "supervisor_inclusive_before_receipt_ns": 137571564,
+      "supervisor_self_cpu_s": 0.040531,
+      "worker_import_to_exit_wall_ns": 112542615
+    }
+  ],
+  "scope": "OFFLINE_DERIVATION_OF_RECORDED_NESTED_INTERVALS",
+  "summary_sha256": "ddad64b659096b6efb903b6d74c26f8a4a2d95f4bb48884a96dc81c22906bced"
+}

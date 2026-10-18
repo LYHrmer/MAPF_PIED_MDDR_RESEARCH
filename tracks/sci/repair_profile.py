@@ -209,15 +209,79 @@ def summarize(manifest, expected_sha):
     print(json.dumps({'output': str(root/'summary.json'), 'jobs': len(rows)}))
 
 
+def costs(manifest, expected_sha):
+    """Derive nested cost intervals from completed receipts; no re-timing/search."""
+    raw = manifest.read_bytes()
+    if sha(raw) != expected_sha:
+        raise ValueError('manifest SHA mismatch')
+    config = json.loads(raw)
+    if config['batch_id'] != BATCH:
+        raise ValueError('unexpected batch')
+    root = HERE/'results'/BATCH
+    summary_raw = (root/'summary.json').read_bytes()
+    summary = json.loads(summary_raw)
+    if summary['manifest_sha256'] != expected_sha:
+        raise ValueError('summary manifest mismatch')
+    rows = []
+    for row in summary['rows']:
+        folder = root/row['job']['id']
+        receipt_raw = (folder/'receipt.json').read_bytes()
+        receipt = json.loads(receipt_raw)
+        if sha(receipt_raw) != row['receipt_sha256'] or receipt['job'] != row['job']:
+            raise ValueError('receipt changed')
+        for name, pin in receipt['artifacts'].items():
+            relative = Path(name)
+            if relative.is_absolute() or '..' in relative.parts:
+                raise ValueError('invalid artifact path')
+            data = (folder/relative).read_bytes()
+            if sha(data) != pin['sha256'] or len(data) != pin['bytes']:
+                raise ValueError('artifact changed')
+        result = json.loads((folder/'result.json').read_bytes())
+        callback = result['stage_wall_ns'].get('search', 0)
+        rpc = sum(r['wall_ns'] for r in result['rpc'] if r['op'] == 'search')
+        if rpc > callback:
+            raise ValueError('nested RPC interval exceeds callback interval')
+        groups = {}
+        for a, recorded in zip(row['diagnostic']['attempts'], result['attempts']):
+            group = groups.setdefault(a['diagnosis'], {'attempts': 0, 'search_calls': 0,
+                                                      'completed_agents': 0, 'attempt_wall_ns': 0})
+            group['attempts'] += 1
+            group['search_calls'] += a['search_calls']
+            group['completed_agents'] += a['completed_agents']
+            group['attempt_wall_ns'] += a['wall_ns']
+            lo, hi = recorded['rpc_indices']
+            calls = [r for r in result['rpc'][lo:hi] if r['op'] == 'search']
+            if len(calls) != a['search_calls']:
+                raise ValueError('RPC slice/call mismatch')
+        usage = receipt['costs']
+        rows.append({'case': result['case'], 'status': receipt['status'], 'groups': groups,
+            'search_callback_wall_ns': callback, 'search_rpc_wall_ns': rpc,
+            'callback_outside_rpc_wall_ns': callback-rpc,
+            'callback_outside_rpc_fraction': (callback-rpc)/callback if callback else None,
+            'worker_import_to_exit_wall_ns': usage['wall_ns'],
+            'supervisor_inclusive_before_receipt_ns': receipt['supervisor_entry_through_artifact_hash_ns'],
+            'all_descendant_cpu_s': usage['all_descendant_user_s']+usage['all_descendant_system_s'],
+            'supervisor_self_cpu_s': receipt['supervisor_self_cpu_s'],
+            'combined_cpu_before_receipt_s': receipt['supervisor_self_cpu_s']+usage['all_descendant_user_s']+usage['all_descendant_system_s'],
+            'native_usage_nested_in_descendants': result['native_usage'],
+            'largest_child_maxrss_kib': usage['largest_child_maxrss_kib']})
+    value = {'scope': 'OFFLINE_DERIVATION_OF_RECORDED_NESTED_INTERVALS',
+        'manifest_sha256': expected_sha, 'summary_sha256': sha(summary_raw),
+        'postprocessor_sha256': sha(Path(__file__).read_bytes()), 'rows': rows,
+        'interpretation': 'RPC includes pipe wait, native table construction/search and response decode; callback minus RPC includes host validation, hashes and serialization, not a measured breakdown of these components. Worker/supervisor and native/descendant intervals are nested, do not add them. One sample per case, no speedup comparison.'}
+    write_json(root/'costs.json', value)
+    print(json.dumps({'output': str(root/'costs.json'), 'sha256': sha((root/'costs.json').read_bytes())}))
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('mode', choices=('prepare', 'summarize'))
+    parser.add_argument('mode', choices=('prepare', 'summarize', 'costs'))
     parser.add_argument('--manifest', type=Path)
     parser.add_argument('--sha256')
     args = parser.parse_args()
     if args.mode == 'prepare':
         prepare()
     elif args.manifest and args.sha256:
-        summarize(args.manifest, args.sha256)
+        (costs if args.mode == 'costs' else summarize)(args.manifest, args.sha256)
     else:
         parser.error('summarize requires --manifest and --sha256')

@@ -1,0 +1,63 @@
+{
+  "accounting_note": "worker wall includes imports and all result writes; supervisor bookkeeping separate; its final receipt write/exit excluded from its self-timer",
+  "artifacts": {
+    "attempt.json": {
+      "bytes": 703,
+      "sha256": "4561f726ca88a5b7a45099294e72938da8e17b3882a1313682b1daf6419d4035"
+    },
+    "native/agents.txt": {
+      "bytes": 173,
+      "sha256": "038e3663c565e723b8d438b9dd47a022ee9f1c5bee4b8676fa207f9c21beaef5"
+    },
+    "native/map.txt": {
+      "bytes": 1062,
+      "sha256": "ddaea38f44b66e6cd1b1cf58ef2b6caa9db3b951ef5db0839737ef8373b8694a"
+    },
+    "native/native.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "result.json": {
+      "bytes": 78567,
+      "sha256": "4a487ea98f7e6fbc83ca7cddcadd22de233501972a5fdf1001f48521b8268578"
+    },
+    "worker.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "worker.stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "costs": {
+    "all_descendant_system_s": 0.013904999999999999,
+    "all_descendant_user_s": 0.124703,
+    "exit_code": 0,
+    "forced_cleanup": false,
+    "interruption": null,
+    "largest_child_maxrss_kib": 20544,
+    "reaped": [
+      {
+        "exit_code": 0,
+        "maxrss_kib": 20544,
+        "pid": 11,
+        "system_s": 0.013904999999999999,
+        "user_s": 0.124703
+      }
+    ],
+    "scope": "WORKER_IMPORT_TO_EXIT_INCLUDING_RESULT_IO_AND_WAITED_NATIVE",
+    "wall_ns": 163437797
+  },
+  "independent_performance_result": false,
+  "job": {
+    "case": "maze-32-32-2__s01__n16",
+    "id": "maze-32-32-2__s01__n16__remaining_bound",
+    "policy": "REMAINING_BOUND"
+  },
+  "manifest_sha256": "cff28cdbac11caf58f1eab952d954e907c877fa8355c5f4c38bec095f8987039",
+  "retry_allowed": false,
+  "status": "COMPLETE",
+  "supervisor_entry_through_artifact_hash_ns": 238956979,
+  "supervisor_self_cpu_s": 0.039778
+}

@@ -1,0 +1,63 @@
+{
+  "accounting_note": "worker wall includes imports and all result writes; supervisor bookkeeping separate; its final receipt write/exit excluded from its self-timer",
+  "artifacts": {
+    "attempt.json": {
+      "bytes": 723,
+      "sha256": "67f62ff26a30268774b25174e0cc5bbd4aae0e0daf45165cb6d069d7f7d88187"
+    },
+    "native/agents.txt": {
+      "bytes": 199,
+      "sha256": "f9e86e2d69ebafdac087c06aa3413c734b4961c4bd3c3cda478f8e33138a89fe"
+    },
+    "native/map.txt": {
+      "bytes": 10213,
+      "sha256": "e6dc2b24d8555ff37004831b65996e36697c841097a060028eaad655300d0aa7"
+    },
+    "native/native.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "result.json": {
+      "bytes": 20256,
+      "sha256": "8131a320aa89472237c614a6d1a8ca061d5e53b05dec7f062d39b17912296f1d"
+    },
+    "worker.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "worker.stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "costs": {
+    "all_descendant_system_s": 0.009739,
+    "all_descendant_user_s": 0.071199,
+    "exit_code": 0,
+    "forced_cleanup": false,
+    "interruption": null,
+    "largest_child_maxrss_kib": 20908,
+    "reaped": [
+      {
+        "exit_code": 0,
+        "maxrss_kib": 20908,
+        "pid": 11,
+        "system_s": 0.009739,
+        "user_s": 0.071199
+      }
+    ],
+    "scope": "WORKER_IMPORT_TO_EXIT_INCLUDING_RESULT_IO_AND_WAITED_NATIVE",
+    "wall_ns": 92508200
+  },
+  "independent_performance_result": false,
+  "job": {
+    "case": "warehouse-10-20-10-2-1__s01__n16",
+    "id": "warehouse-10-20-10-2-1__s01__n16__remaining_bound",
+    "policy": "REMAINING_BOUND"
+  },
+  "manifest_sha256": "cff28cdbac11caf58f1eab952d954e907c877fa8355c5f4c38bec095f8987039",
+  "retry_allowed": false,
+  "status": "COMPLETE",
+  "supervisor_entry_through_artifact_hash_ns": 115996126,
+  "supervisor_self_cpu_s": 0.043584
+}
