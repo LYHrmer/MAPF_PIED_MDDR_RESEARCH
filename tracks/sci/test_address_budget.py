@@ -168,6 +168,8 @@ class BudgetContracts(unittest.TestCase):
     def test_positive_slack_failed_groups_stop_before_iteration_cap(self):
         for variant,files in (('red',self.base),('green',self.guarded)):
             code=loop_fixture(files['src/LNS.cpp'].decode())
+            code=code.replace('struct Agent { vector<Vertex> path; Planner* path_planner; };',
+                'struct Agent { vector<Vertex> path; Planner* path_planner; int getNumOfDelays() const {return int(path.size())-1-path_planner->my_heuristic[path_planner->start_location];} };')
             code=code.replace('#include "address_adapter_support.h"','#include "address_budget_support.h"\ndouble ticks=0;double stepclock(){return ++ticks;}double zerocpu(){return 0;}')
             code=code.replace('agents.insert((a+1)%9);','/* never generates another agent */')
             code=code.replace('    if(!test.run_fixture())','    address_budget::state().configured=true;address_budget::state().wall=stepclock;address_budget::state().cpu=zerocpu;address_budget::state().wall_stop=30;address_budget::state().cpu_limit=10;address_budget::state().cpu_reserve=1;\n    if(!test.run_fixture())')
@@ -227,6 +229,141 @@ int main(){setup(100);tick=0;cputick=9;
 }
 '''
         exe=self.compile('clock',code);self.execute(exe)
+
+    def test_phase_profile_exclusive_scopes_return_and_deadline_unwind(self):
+        code=COMMON+r'''
+int main(){
+    using namespace address_budget;
+    setup();configure_profile(1);::tick=1;
+    { PhaseScope outer(Phase::PREPROCESS);::tick=2;
+      {PhaseScope child(Phase::TOPK);::tick=4;}
+      ::tick=5;outer.set(Phase::BETA);::tick=8;
+      [](){PhaseScope early(Phase::WALK);::tick=10;return;}();
+      ::tick=11;
+    }
+    ::tick=12;profile_finish();auto& p=state().profile;
+    const auto cost=[&](Phase phase){return p.phases[static_cast<size_t>(phase)].wall_ns;};
+    assert(p.window_ns==12000000000LL);
+    assert(cost(Phase::DRIVER_OTHER)==2000000000LL);
+    assert(cost(Phase::PREPROCESS)==2000000000LL);
+    assert(cost(Phase::TOPK)==2000000000LL);
+    assert(cost(Phase::BETA)==4000000000LL);
+    assert(cost(Phase::WALK)==2000000000LL);
+    long long sum=0;for(auto c:p.phases)sum+=c.wall_ns;assert(sum==p.window_ns);
+    cout<<"{";write_profile(cout);cout<<"}\n";
+    setup();configure_profile(1);::tick=1;
+    try{PhaseScope scope(Phase::REPAIR);::tick=3;throw Deadline{};}catch(const Deadline&){}
+    ::tick=5;profile_finish();assert(state().profile.window_ns==5000000000LL);
+    assert(state().profile.phases[static_cast<size_t>(Phase::REPAIR)].wall_ns==2000000000LL);
+    assert(state().profile.phases[static_cast<size_t>(Phase::DRIVER_OTHER)].wall_ns==3000000000LL);
+}
+'''
+        exe=self.compile('profile_scopes',code)
+        # write_profile appends a comma because it is embedded in a receipt.
+        raw=self.execute(exe).replace('{,','{',1)
+        row=json.loads(raw)['phase_profile']
+        self.assertEqual(row['window_wall_ns'],row['accounted_wall_ns'])
+        self.assertEqual(row['residual_wall_ns'],0)
+        self.assertEqual(sum(v['wall_ns'] for v in row['phases'].values()),row['window_wall_ns'])
+
+    def test_phase_profile_off_has_no_extra_clock_or_rng_side_effect(self):
+        code=COMMON+r'''
+int wall_calls=0,cpu_calls=0;
+double counted_wall(){++wall_calls;return 0;}
+double counted_cpu(){++cpu_calls;return 0;}
+int main(){
+    using namespace address_budget;
+    setup();state().wall=counted_wall;state().cpu=counted_cpu;
+    srand(7);const auto expected=rand();srand(7);
+    configure_profile(0);
+    {PhaseScope outer(Phase::PREPROCESS);outer.set(Phase::TOPK);{PhaseScope child(Phase::REPAIR);}}
+    profile_finish();std::ostringstream text;write_profile(text);
+    assert(text.str().empty()&&wall_calls==0&&cpu_calls==0&&rand()==expected);
+    assert(!expired("OFF"));assert(wall_calls==1&&cpu_calls==1);
+    assert(state().profile.expired_calls==0);
+    bool rejected=false;try{configure_profile(2);}catch(const std::runtime_error&){rejected=true;}
+    assert(rejected&&wall_calls==1&&cpu_calls==1);
+}
+'''
+        self.execute(self.compile('profile_off',code))
+
+    def test_expired_profile_sampling_exact_boundaries_without_extra_cpu_calls(self):
+        code=COMMON+r'''
+int wall_calls=0,cpu_calls=0;
+double counted_wall(){return double(++wall_calls)/1000000;}
+double counted_cpu(){++cpu_calls;return 0;}
+int main(){
+    using namespace address_budget;
+    setup();state().wall=counted_wall;state().cpu=counted_cpu;configure_profile(1);
+    for(int i=0;i<1023;++i)assert(!expired("SAMPLED"));
+    assert(state().profile.expired_samples==0);
+    assert(!expired("SAMPLED"));assert(state().profile.expired_samples==1);
+    for(int i=1024;i<2050;++i)assert(!expired("SAMPLED"));
+    profile_finish();const auto& p=state().profile;
+    assert(p.expired_calls==2050&&p.expired_samples==2);
+    assert(wall_calls==2056&&cpu_calls==2050);
+    const auto& c=p.phases[static_cast<size_t>(Phase::DRIVER_OTHER)];
+    assert(c.expired_calls==2050&&c.expired_samples==2);
+    assert(c.expired_sampled_wall_ns==p.expired_sampled_wall_ns&&p.expired_sampled_wall_ns>0);
+    cout<<"{";write_profile(cout);cout<<"}\n";
+}
+'''
+        row=json.loads(self.execute(self.compile('profile_sampling',code)).replace('{,','{',1))['phase_profile']
+        sample=row['expired_sampling']
+        self.assertEqual(sample['samples'],sample['calls']//sample['stride'])
+        self.assertFalse(sample['extrapolated'])
+        self.assertEqual(row['residual_wall_ns'],0)
+        from run_address_adapter import verify_phase_profile
+        verify_phase_profile({'phase_profile': row, 'inner_wall_before_receipt_s': .01,
+                              'group_calls': 0, 'attempt_trace_rows': 0}, {'phase_profile': True})
+
+    def test_profile_generated_anchors_preserve_rng_and_reward(self):
+        old=self.base['src/LNS.cpp'].decode();new=self.guarded['src/LNS.cpp'].decode()
+        driver=self.guarded['src/driver.cpp'].decode()
+        self.assertIn('("phaseProfile", po::value<int>()->default_value(0)',driver)
+        self.assertLess(driver.index('configure_profile('),driver.index('Instance instance('))
+        self.assertLess(driver.index('budget_preprocess.stop();'),driver.index('bool succ = lns.run();'))
+        self.assertIn('Phase::FINAL_CHECK_OUTPUT',driver)
+        seed=method(new,'int LNS::bernoulie()')
+        self.assertLess(seed.index('Phase::TOPK'),seed.index('std::mt19937 gen(rd());'))
+        self.assertLess(seed.index('queue.pop();'),seed.index('Phase::BETA'))
+        self.assertLess(seed.index('Phase::BETA'),seed.index('beta_dist(alpha[i], beta[i])'))
+        for signature in ('int LNS::bernoulie()','void LNS::randomWalk(',
+                          'bool LNS::generateNeighborByRandomWalk(','bool LNS::runPP()'):
+            before,after=method(old,signature),method(new,signature)
+            # Inserted timers/counters do not add/remove random draws or reorder them.
+            import re
+            random_lines=lambda src:[line.strip() for line in src.splitlines()
+                if re.search(r'\brand\(|\brd\(\)|beta_dist\(gen\)|random_shuffle',line)]
+            self.assertEqual(random_lines(before),random_lines(after))
+        self.assertIn('a = i;',method(new,'bool LNS::generateNeighborByRandomWalk('))
+
+    def test_profile_actual_group_outcomes_on_fake_graph_and_seed(self):
+        for mode in ('formed','no_seed','too_small','deadline'):
+            code=loop_fixture(self.guarded['src/LNS.cpp'].decode())
+            code=code.replace('#include "address_adapter_support.h"',
+                '#include "address_budget_support.h"\ndouble ticks=0;double stepclock(){ticks+=0.001;return ticks;}double zerocpu(){return 0;}')
+            code=code.replace('struct Agent { vector<Vertex> path; Planner* path_planner; };',
+                'struct Agent { vector<Vertex> path; Planner* path_planner; int getNumOfDelays() const {return int(path.size())-1-path_planner->my_heuristic[path_planner->start_location];} };')
+            code=code.replace('int wrapper() { ++generated; return 0; }',
+                'int wrapper() { ++generated; if(address_budget::state().profile.active)++address_budget::state().profile.seed_calls; return '+('-1' if mode=='no_seed' else '0')+'; }')
+            if mode=='too_small':code=code.replace('agents.insert((a+1)%9);','/* fake graph has no blocker */')
+            stop='0.003' if mode=='deadline' else '100'
+            code=code.replace('    if(!test.run_fixture())',
+                '    auto& budget=address_budget::state();budget.configured=true;budget.wall=stepclock;budget.cpu=zerocpu;budget.wall_stop='+stop+';budget.cpu_limit=10;budget.cpu_reserve=1;address_budget::configure_profile(1);\n    if(!test.run_fixture())')
+            code=code.replace('int code=address_adapter::finish();','int code=address_budget::finish();')
+            receipt=self.root/('profile_groups_'+mode+'.json')
+            self.execute(self.compile('profile_groups_'+mode,code),receipt,'slack')
+            native=json.loads(receipt.read_text());profile=native['phase_profile'];counts=profile['counters']
+            outcomes=('groups_formed','groups_no_seed','groups_too_small','groups_deadline')
+            self.assertEqual(sum(counts[k] for k in outcomes),counts['group_calls'])
+            self.assertEqual(counts['group_calls'],native['group_calls'])
+            key={'formed':'groups_formed','no_seed':'groups_no_seed','too_small':'groups_too_small','deadline':'groups_deadline'}[mode]
+            self.assertGreater(counts[key],0)
+            for other in set(outcomes)-{key}:self.assertEqual(counts[other],0)
+            self.assertEqual(profile['residual_wall_ns'],0)
+            self.assertEqual(counts['seed_zero_delay_selected'],0)
+            self.assertLessEqual(counts['seed_positive_delay_selected'],counts['seed_calls'])
 
     def test_overlay_preserves_author_reward_and_complete_rollback(self):
         old=self.base['src/LNS.cpp'].decode();new=self.guarded['src/LNS.cpp'].decode()

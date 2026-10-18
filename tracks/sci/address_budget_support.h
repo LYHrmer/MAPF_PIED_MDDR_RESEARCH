@@ -5,6 +5,7 @@
 #include <exception>
 #include <limits>
 #include <memory>
+#include <array>
 
 namespace address_budget {
 struct Deadline : std::exception {};
@@ -18,6 +19,24 @@ inline double real_cpu() {
     return double(value.tv_sec)+double(value.tv_nsec)*1e-9;
 }
 using ClockFunction = double (*)();
+enum class Phase { DRIVER_OTHER, PREPROCESS, LNS_OTHER, GROUP_OTHER, TOPK, BETA, WALK,
+    NEIGHBOR_PREPARE, REPAIR, POST_REPAIR, FINAL_CHECK_OUTPUT, COUNT };
+inline const char* phase_name(Phase phase) {
+    static const char* names[]={"DRIVER_OTHER","PREPROCESS","LNS_OTHER","GROUP_OTHER","TOPK","BETA","WALK",
+        "NEIGHBOR_PREPARE","REPAIR","POST_REPAIR","FINAL_CHECK_OUTPUT"};
+    return names[static_cast<size_t>(phase)];
+}
+struct PhaseCosts {
+    long long wall_ns=0,scope_entries=0,expired_calls=0,expired_samples=0,expired_sampled_wall_ns=0;
+};
+struct PhaseProfile {
+    bool enabled=false,active=false;
+    Phase current=Phase::DRIVER_OTHER;
+    long long begin_ns=0,last_ns=0,window_ns=0,expired_calls=0,expired_samples=0,expired_sampled_wall_ns=0;
+    long long group_calls=0,groups_formed=0,groups_no_seed=0,groups_too_small=0,groups_deadline=0;
+    long long seed_calls=0,walk_calls=0,seed_zero_delay_selected=0,seed_positive_delay_selected=0;
+    std::array<PhaseCosts,static_cast<size_t>(Phase::COUNT)> phases{};
+};
 struct State {
     ClockFunction wall = real_wall, cpu = real_cpu;
     bool configured=false, global_deadline=false, repair_deadline=false, search_active=false;
@@ -28,8 +47,96 @@ struct State {
     long attempts=0,attempt_trace_rows=0;
     long long trace_io_wall_ns=0,trace_io_cpu_ns=0;
     std::string last_stage="NONE", termination="NORMAL", last_sipp_end="NONE";
+    PhaseProfile profile;
 };
 inline State& state() { static State s; return s; }
+// Profiling is optional, wall-only, and charged to the existing deadlines. It
+// never consumes RNG values or adds process-CPU clock calls. Parent scopes are
+// paused while a child is active: sampled expired() time is a subset, not a
+// second cost added to these exclusive wall totals.
+inline long long profile_wall_ns(){return static_cast<long long>(state().wall()*1e9);}
+inline void configure_profile(int enabled) {
+    if(enabled!=0&&enabled!=1)throw std::runtime_error("budget: phaseProfile must be 0 or 1");
+    if(!enabled)return;
+    auto& p=state().profile;
+    if(p.enabled)throw std::runtime_error("budget: duplicate phase profile");
+    p.enabled=p.active=true;p.begin_ns=p.last_ns=profile_wall_ns();
+    p.phases[static_cast<size_t>(p.current)].scope_entries=1;
+}
+inline void profile_switch(Phase next,bool entering) {
+    auto& p=state().profile;if(!p.active)return;
+    const auto now=profile_wall_ns();
+    p.phases[static_cast<size_t>(p.current)].wall_ns+=std::max(0LL,now-p.last_ns);
+    p.last_ns=now;p.current=next;
+    if(entering)++p.phases[static_cast<size_t>(next)].scope_entries;
+}
+struct PhaseScope {
+    Phase previous;bool active;
+    explicit PhaseScope(Phase phase):previous(state().profile.current),active(state().profile.active){
+        if(active)profile_switch(phase,true);
+    }
+    PhaseScope(const PhaseScope&)=delete;PhaseScope& operator=(const PhaseScope&)=delete;
+    void set(Phase phase){if(active)profile_switch(phase,true);}
+    void stop(){if(active){profile_switch(previous,false);active=false;}}
+    ~PhaseScope(){stop();}
+};
+inline void profile_finish() {
+    auto& p=state().profile;if(!p.active)return;
+    const auto now=profile_wall_ns();
+    p.phases[static_cast<size_t>(p.current)].wall_ns+=std::max(0LL,now-p.last_ns);
+    p.last_ns=now;p.window_ns=std::max(0LL,now-p.begin_ns);p.active=false;
+}
+enum class GroupResult { FORMED, NO_SEED, TOO_SMALL, DEADLINE };
+inline bool profile_group_result(GroupResult result) {
+    auto& s=state();auto& p=s.profile;
+    // A seed/walk checkpoint can return through the author's no-seed or small
+    // group branch. Classify that as deadline, without another budget call.
+    if(result!=GroupResult::FORMED&&(s.global_deadline||s.repair_deadline))result=GroupResult::DEADLINE;
+    if(p.active)switch(result){
+        case GroupResult::FORMED:++p.groups_formed;break;
+        case GroupResult::NO_SEED:++p.groups_no_seed;break;
+        case GroupResult::TOO_SMALL:++p.groups_too_small;break;
+        case GroupResult::DEADLINE:++p.groups_deadline;break;
+    }
+    return result==GroupResult::FORMED;
+}
+struct ExpiredSample {
+    bool sampled=false;Phase phase=Phase::DRIVER_OTHER;long long begin_ns=0;
+    ExpiredSample(){
+        auto& p=state().profile;if(!p.active)return;
+        phase=p.current;auto& cost=p.phases[static_cast<size_t>(phase)];
+        ++cost.expired_calls;++p.expired_calls;
+        sampled=p.expired_calls%1024==0;
+        if(sampled)begin_ns=profile_wall_ns();
+    }
+    ~ExpiredSample(){
+        if(!sampled)return;
+        const auto elapsed=std::max(0LL,profile_wall_ns()-begin_ns);auto& p=state().profile;
+        auto& cost=p.phases[static_cast<size_t>(phase)];
+        ++cost.expired_samples;cost.expired_sampled_wall_ns+=elapsed;
+        ++p.expired_samples;p.expired_sampled_wall_ns+=elapsed;
+    }
+};
+inline void write_profile(std::ostream& out) {
+    const auto& p=state().profile;if(!p.enabled)return;
+    long long accounted=0;for(const auto& c:p.phases)accounted+=c.wall_ns;
+    out<<",\"phase_profile\":{\"schema\":\"ADDRESS_PHASE_PROFILE_V1\",\"clock\":\"STEADY_WALL_NS\","
+       <<"\"window\":\"CONFIGURED_TO_FINISH_BEFORE_RECEIPT\",\"window_wall_ns\":"<<p.window_ns
+       <<",\"accounted_wall_ns\":"<<accounted<<",\"residual_wall_ns\":"<<p.window_ns-accounted
+       <<",\"exclusive\":true,\"includes_instrumentation\":true,\"phases\":{";
+    for(size_t i=0;i<p.phases.size();++i){const auto& c=p.phases[i];out<<(i?",":"")
+       <<"\""<<phase_name(static_cast<Phase>(i))<<"\":{\"wall_ns\":"<<c.wall_ns<<",\"scope_entries\":"<<c.scope_entries
+       <<",\"expired_calls\":"<<c.expired_calls<<",\"expired_samples\":"<<c.expired_samples
+       <<",\"expired_sampled_wall_ns\":"<<c.expired_sampled_wall_ns<<"}";}
+    out<<"},\"expired_sampling\":{\"sampled\":true,\"stride\":1024,\"calls\":"<<p.expired_calls
+       <<",\"samples\":"<<p.expired_samples<<",\"sampled_wall_ns\":"<<p.expired_sampled_wall_ns
+       <<",\"extrapolated\":false},\"counters\":{\"group_calls\":"<<p.group_calls
+       <<",\"groups_formed\":"<<p.groups_formed<<",\"groups_no_seed\":"<<p.groups_no_seed
+       <<",\"groups_too_small\":"<<p.groups_too_small<<",\"groups_deadline\":"<<p.groups_deadline
+       <<",\"seed_calls\":"<<p.seed_calls<<",\"walk_calls\":"<<p.walk_calls
+       <<",\"seed_zero_delay_selected\":"<<p.seed_zero_delay_selected
+       <<",\"seed_positive_delay_selected\":"<<p.seed_positive_delay_selected<<"}}";
+}
 inline void configure(double cpu_limit,double cpu_reserve) {
     auto& s=state();
     if (!std::isfinite(cpu_limit)||!std::isfinite(cpu_reserve)||cpu_reserve<=0||cpu_limit<=cpu_reserve)
@@ -41,6 +148,7 @@ inline void configure(double cpu_limit,double cpu_reserve) {
 }
 inline bool expired(const char* stage) {
     auto& s=state();if(!s.configured)return false;
+    ExpiredSample profile_sample;
     const double wall=s.wall(),cpu=s.cpu();
     if(wall>=s.wall_stop||cpu>=s.cpu_limit-s.cpu_reserve) {
         s.global_deadline=true;s.termination="GLOBAL_DEADLINE";
@@ -159,6 +267,7 @@ inline address_adapter::Paths prevalidate(const InstanceT& instance,size_t count
 }
 template<class InstanceT>
 inline void output_initial(const address_adapter::Paths& paths,const InstanceT& instance,const std::string& file) {
+    PhaseScope profile_output(Phase::FINAL_CHECK_OUTPUT);
     const auto begin=address_adapter::Clock::now();
     address_adapter::state().final_soc=address_adapter::check(paths,instance);
     if(address_adapter::state().final_soc!=address_adapter::state().initial_soc)
@@ -176,6 +285,7 @@ inline void output_initial(const address_adapter::Paths& paths,const InstanceT& 
     state().preprocessing_fallback=true;
 }
 inline int finish() {
+    profile_finish();
     const auto& a=address_adapter::state();const auto& s=state();
     const bool valid=a.initial_validated&&a.final_validated;
     const double cpu=s.cpu(),wall=address_adapter::elapsed();
@@ -196,7 +306,8 @@ inline int finish() {
       <<",\"attempt_trace_rows\":"<<s.attempt_trace_rows<<",\"trace_io_wall_ns\":"<<s.trace_io_wall_ns
       <<",\"trace_io_cpu_ns\":"<<s.trace_io_cpu_ns
       <<",\"attempt_trace_enabled\":"<<(attempt_stream().is_open()?"true":"false")
-      <<",\"reward_semantics\":\"AUTHOR_ATTEMPT_UPDATE_BEFORE_ROLLBACK\",\"external_total_budget_verified\":false}\n";
+      <<",\"reward_semantics\":\"AUTHOR_ATTEMPT_UPDATE_BEFORE_ROLLBACK\",\"external_total_budget_verified\":false";
+    write_profile(receipt);receipt<<"}\n";
     receipt.close();if(!receipt)throw std::runtime_error("budget: receipt write failed");
     return valid&&address_adapter::remaining()>=0&&s.cpu()<s.cpu_limit?0:74;
 }

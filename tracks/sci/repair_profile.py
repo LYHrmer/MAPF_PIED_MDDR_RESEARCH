@@ -647,6 +647,12 @@ def address_results(manifest, expected_sha, output=None):
                 if summary != result.get('attempt_diagnostics'):
                     raise ValueError('offline attempt diagnosis disagrees with worker')
                 row['attempt_diagnostics'] = summary
+            if config.get('phase_profile', False):
+                from run_address_adapter import verify_phase_profile
+                profile = verify_phase_profile(result['native_receipt'], config)
+                if profile != result.get('phase_diagnostics'):
+                    raise ValueError('offline phase accounting disagrees with worker')
+                row['phase_diagnostics'] = profile
         elif receipt['status'] == 'FAILED_OR_INCOMPLETE':
             failed_job = job['id']
             row['reason'] = result.get('reason', 'missing success validation')
@@ -675,14 +681,83 @@ def address_results(manifest, expected_sha, output=None):
                       'status': value['status'], 'counts': value['counts'], 'jobs': rows}, indent=2))
 
 
+def outside_repair(output=None):
+    """Analyze frozen trace bytes and pinned source; no solver or new timings."""
+    source_commit = '7e77e9a4310928a7a273d4dac458d5536e7450d4'
+    batch = HERE/'results/address_attempt_trace_v1'
+    expected = '308e5a65e98270b6049336dff0c50da88bbbf137755fc2875a9203d91d5a8632'
+    raw = (batch/'RUN_RECEIPT.json').read_bytes()
+    if sha(raw) != expected:
+        raise ValueError('frozen trace batch changed')
+    receipt = json.loads(raw)
+    for name, pin in receipt['artifacts'].items():
+        artifact = (batch/name).read_bytes()
+        if sha(artifact) != pin['sha256'] or len(artifact) != pin['bytes']:
+            raise ValueError('frozen trace artifact changed: '+name)
+    # Read the actual compiled overlay, not current mutable budget source.
+    build = json.loads((HERE/'budget_trace_build_receipt.json').read_bytes())
+    source = HERE.parents[1]/'.address_attempt_trace_build/source_overlay/src/LNS.cpp'
+    source_raw = source.read_bytes()
+    source_pin = build['extension_sources']['address_budget']['src/LNS.cpp']['sha256']
+    if sha(source_raw) != source_pin:
+        raise ValueError('frozen compiled LNS source changed')
+    source_text = source_raw.decode()
+    for anchor in ('if(!succ)\n            continue;', 'a = i;',
+                   'if (neighbor.sum_of_costs >= neighbor.old_sum_of_costs)'):
+        if anchor not in source_text:
+            raise ValueError('fixed source anchor missing')
+    rows = []
+    for item in receipt['jobs']:
+        folder = batch/item['job']
+        result = json.loads((folder/'result.json').read_bytes())
+        native = result['native_receipt']
+        attempts = [json.loads(line) for line in (folder/'attempts.jsonl').read_text().splitlines()]
+        attempt_ns = sum(a['cost']['attempt_wall_before_trace_ns'] for a in attempts)
+        inner_ns = round(native['inner_wall_before_receipt_s']*1e9)
+        trace_ns = native['trace_io_wall_ns']
+        if inner_ns < attempt_ns+trace_ns:
+            raise ValueError('nested times exceed native window')
+        formed = [a['group_calls_so_far'] for a in attempts]
+        rows.append({'job': item['job'], 'total_entry_ns': item['total_entry_through_output_validation_and_hash_ns'],
+            'native_window_ns': inner_ns, 'recorded_attempt_wall_before_trace_ns': attempt_ns,
+            'trace_io_wall_ns': trace_ns,
+            'native_outside_recorded_attempt_and_trace_ns': inner_ns-attempt_ns-trace_ns,
+            'residual_is_not_group_time_or_savable_time': True,
+            'group_calls': native['group_calls'], 'formed_group_call_indices': formed,
+            'calls_after_last_recorded_repair': native['group_calls']-(formed[-1] if formed else 0),
+            'calls_after_last_repair_may_include_interrupted_call': True,
+            'sipp_calls': native['sipp_calls'],
+            'phases_unmeasured': ['preprocessing', 'top_k', 'beta_sampling', 'walk',
+                                  'budget_clock_overhead', 'outer_loop_other']})
+    value = {'scope': 'FROZEN_TRACE_AND_SOURCE_ANALYSIS_NO_NEW_SCIENTIFIC_RUN',
+        'source_evidence_commit': source_commit, 'batch_receipt_sha256': expected,
+        'frozen_compiled_lns_sha256': source_pin, 'analyzer_sha256': sha(Path(__file__).read_bytes()),
+        'new_search': False, 'new_runtime_measurement': False, 'jobs': rows,
+        'source_findings': [
+            'Failed group construction continues before iteration_stats grows.',
+            'For n=k=32 each completed bernoulie call has 96 per-element budget checks across heap build, extraction and beta sampling; this is a source-derived count, not a measured time.',
+            'Top-k heap and its extraction order are rebuilt even if incumbent paths have not changed.',
+            'Random-walk continuation uses set-position i as agent ID instead of element n; any correction is a shared baseline change requiring explicit validation.',
+            'Do not change clock frequency, tie order, RNG, reward or acceptance while measuring phases.'],
+        'decision': 'Add opt-in disjoint phase accounting and bounded clock sampling before choosing an optimization.'}
+    output = output or batch/'NONREPAIR_ANALYSIS.json'
+    if output.exists():
+        raise FileExistsError('preserve prior offline analysis; choose another output')
+    write_json(output, value)
+    print(json.dumps({'output': str(output), 'sha256': sha(output.read_bytes()),
+                      'new_search': False, 'jobs': rows}, indent=2))
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('mode', choices=('prepare', 'summarize', 'costs', 'failures', 'recoveries', 'address'))
+    parser.add_argument('mode', choices=('prepare', 'summarize', 'costs', 'failures', 'recoveries', 'address', 'outside_repair'))
     parser.add_argument('--manifest', type=Path)
     parser.add_argument('--sha256')
     parser.add_argument('--output', type=Path)
     args = parser.parse_args()
-    if args.mode == 'prepare':
+    if args.mode == 'outside_repair':
+        outside_repair(args.output)
+    elif args.mode == 'prepare':
         prepare()
     elif args.mode == 'failures':
         failures(args.output or HERE/'derived'/'late_failure_diagnosis.json')

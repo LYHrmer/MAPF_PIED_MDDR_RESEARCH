@@ -1,0 +1,86 @@
+{
+  "analyzer_sha256": "38ed83c202a72b8f5dc4a56bb9b4e3d05c199d63181a0739587b530702692720",
+  "batch_receipt_sha256": "308e5a65e98270b6049336dff0c50da88bbbf137755fc2875a9203d91d5a8632",
+  "decision": "Add opt-in disjoint phase accounting and bounded clock sampling before choosing an optimization.",
+  "frozen_compiled_lns_sha256": "1d4ab143c0f0debd743df7501fe7ea03d79160f9f151c9debddfe8f2a794d622",
+  "jobs": [
+    {
+      "calls_after_last_recorded_repair": 40396,
+      "calls_after_last_repair_may_include_interrupted_call": true,
+      "formed_group_call_indices": [
+        15,
+        232,
+        4569,
+        153487,
+        220101
+      ],
+      "group_calls": 260497,
+      "job": "random-32-32-10__s01__n32__attempt_trace",
+      "native_outside_recorded_attempt_and_trace_ns": 8991869165,
+      "native_window_ns": 8998065176,
+      "phases_unmeasured": [
+        "preprocessing",
+        "top_k",
+        "beta_sampling",
+        "walk",
+        "budget_clock_overhead",
+        "outer_loop_other"
+      ],
+      "recorded_attempt_wall_before_trace_ns": 6091463,
+      "residual_is_not_group_time_or_savable_time": true,
+      "sipp_calls": 23,
+      "total_entry_ns": 9176288373,
+      "trace_io_wall_ns": 104548
+    },
+    {
+      "calls_after_last_recorded_repair": 0,
+      "calls_after_last_repair_may_include_interrupted_call": true,
+      "formed_group_call_indices": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        10,
+        11,
+        13,
+        14,
+        16,
+        18,
+        19,
+        21,
+        22
+      ],
+      "group_calls": 22,
+      "job": "maze-32-32-2__s01__n32__attempt_trace",
+      "native_outside_recorded_attempt_and_trace_ns": 38399945,
+      "native_window_ns": 317169271,
+      "phases_unmeasured": [
+        "preprocessing",
+        "top_k",
+        "beta_sampling",
+        "walk",
+        "budget_clock_overhead",
+        "outer_loop_other"
+      ],
+      "recorded_attempt_wall_before_trace_ns": 278531740,
+      "residual_is_not_group_time_or_savable_time": true,
+      "sipp_calls": 108,
+      "total_entry_ns": 489910144,
+      "trace_io_wall_ns": 237586
+    }
+  ],
+  "new_runtime_measurement": false,
+  "new_search": false,
+  "scope": "FROZEN_TRACE_AND_SOURCE_ANALYSIS_NO_NEW_SCIENTIFIC_RUN",
+  "source_evidence_commit": "7e77e9a4310928a7a273d4dac458d5536e7450d4",
+  "source_findings": [
+    "Failed group construction continues before iteration_stats grows.",
+    "For n=k=32 each completed bernoulie call has 96 per-element budget checks across heap build, extraction and beta sampling; this is a source-derived count, not a measured time.",
+    "Top-k heap and its extraction order are rebuilt even if incumbent paths have not changed.",
+    "Random-walk continuation uses set-position i as agent ID instead of element n; any correction is a shared baseline change requiring explicit validation.",
+    "Do not change clock frequency, tie order, RNG, reward or acceptance while measuring phases."
+  ]
+}

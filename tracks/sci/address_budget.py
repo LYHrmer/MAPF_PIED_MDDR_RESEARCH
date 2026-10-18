@@ -44,21 +44,30 @@ def adapt(files):
     driver=replace_exact(driver,'("help", "produce help message")','''("help", "produce help message")
         ("cpuLimit", po::value<double>()->required(), "absolute process CPU hard-limit contract in seconds")
         ("cpuReserve", po::value<double>()->required(), "CPU seconds reserved for rollback/final checks/output")
-        ("attemptTrace", po::value<string>()->default_value(""), "optional new common primary-attempt JSONL")''')
+        ("attemptTrace", po::value<string>()->default_value(""), "optional new common primary-attempt JSONL")
+        ("phaseProfile", po::value<int>()->default_value(0), "optional wall-only exclusive phase profile (0 or 1)")''')
     driver=replace_exact(driver,'    srand(config.seed);','''    srand(config.seed);
     address_budget::configure(vm["cpuLimit"].as<double>(),vm["cpuReserve"].as<double>());
+    address_budget::configure_profile(vm["phaseProfile"].as<int>());
     address_budget::configure_trace(vm["attemptTrace"].as<string>());''')
+    driver=replace_exact(driver,'\tInstance instance(','''    address_budget::PhaseScope budget_preprocess(address_budget::Phase::PREPROCESS);
+\tInstance instance(''')
     driver=replace_exact(driver,'        LNS lns(instance, time_limit,','''        const auto budget_initial=address_budget::prevalidate(instance,size_t(n));
         try {
         address_budget::state().preprocessing=true;
         address_budget::checkpoint("PREPROCESSING");
         LNS lns(instance, time_limit,''')
     driver=replace_exact(driver,'        bool succ = lns.run();','''        address_budget::state().preprocessing=false;
+        budget_preprocess.stop();
         bool succ = lns.run();''')
+    driver=replace_exact(driver,'        if (succ)\n        {','''        address_budget::PhaseScope budget_final_output(address_budget::Phase::FINAL_CHECK_OUTPUT);
+        if (succ)
+        {''')
     driver=replace_exact(driver,'            lns.writeIterStatsToFile(vm["stats"].as<string>());','''            lns.writeIterStatsToFile(vm["stats"].as<string>());
         } catch(const address_budget::Deadline&) {
             if(!address_budget::state().preprocessing)throw;
             address_budget::state().preprocessing=false;
+            budget_preprocess.stop();
             address_budget::output_initial(budget_initial,instance,vm["outputPaths"].as<string>());
         }''')
     driver=replace_exact(driver,'return address_adapter::finish();','return address_budget::finish();')
@@ -72,16 +81,59 @@ def adapt(files):
     anchor='    while (runtime < time_limit && iteration_stats.size() <= num_of_iterations)\n    {\n'
     lns=replace_exact(lns,anchor,anchor+'        if(address_budget::expired("GROUP"))break;\n')
     lns=replace_exact(lns,'        // store the neighbor information','''        if(address_budget::expired("GROUP"))break;
+        address_budget::PhaseScope budget_neighbor_prepare(address_budget::Phase::NEIGHBOR_PREPARE);
         // store the neighbor information''')
+    def run(src):
+        src=src.replace('{\n','{\n    address_budget::PhaseScope budget_run(address_budget::Phase::LNS_OTHER);\n',1)
+        src=replace_exact(src,'        if (replan_algo_name == "EECBS")',
+            '        budget_neighbor_prepare.stop();\n        if (replan_algo_name == "EECBS")')
+        src=replace_exact(src,'        if (ALNS) // update destroy heuristics',
+            '        address_budget::PhaseScope budget_post_repair(address_budget::Phase::POST_REPAIR);\n        if (ALNS) // update destroy heuristics')
+        return src
+    lns=edit_function(lns,'bool LNS::run()',run)
     def group(src):
-        src=src.replace('{\n','{\n    ++address_budget::state().group_calls;\n    if(address_budget::expired("GROUP"))return false;\n',1)
-        src=loop_checkpoints(src,'if(address_budget::expired("GROUP"))return false;')
+        src=src.replace('{\n','''{
+    address_budget::PhaseScope budget_group(address_budget::Phase::GROUP_OTHER);
+    ++address_budget::state().group_calls;
+    if(address_budget::state().profile.active)++address_budget::state().profile.group_calls;
+    if(address_budget::expired("GROUP"))return address_budget::profile_group_result(address_budget::GroupResult::DEADLINE);
+''',1)
+        src=loop_checkpoints(src,'if(address_budget::expired("GROUP"))return address_budget::profile_group_result(address_budget::GroupResult::DEADLINE);')
+        src=replace_exact(src,'    if (a < 0)\n        return false;',
+            '    if (a < 0)\n        return address_budget::profile_group_result(address_budget::GroupResult::NO_SEED);')
+        src=replace_exact(src,'    if (neighbors_set.size() < 2){\n        return false;',
+            '    if (neighbors_set.size() < 2){\n        return address_budget::profile_group_result(address_budget::GroupResult::TOO_SMALL);')
+        src=replace_exact(src,'    set<int> neighbors_set;','''    if(address_budget::state().profile.active){
+        const int budget_seed_delay=agents[a].getNumOfDelays();
+        if(budget_seed_delay==0)++address_budget::state().profile.seed_zero_delay_selected;
+        else if(budget_seed_delay>0)++address_budget::state().profile.seed_positive_delay_selected;
+    }
+    set<int> neighbors_set;''')
+        if src.count('return true;')!=2:raise ValueError('group success anchors changed')
+        src=src.replace('return true;','return address_budget::profile_group_result(address_budget::GroupResult::FORMED);')
         return src
     lns=edit_function(lns,'bool LNS::generateNeighborByRandomWalk(',group)
-    lns=edit_function(lns,'void LNS::randomWalk(',lambda s:loop_checkpoints(s,'if(address_budget::expired("GROUP_WALK"))return;'))
-    lns=edit_function(lns,'int LNS::bernoulie()',lambda s:loop_checkpoints(s,'if(address_budget::expired("GROUP_SEED"))return -1;'))
+    def walk(src):
+        src=src.replace('{\n','''{
+    address_budget::PhaseScope budget_walk(address_budget::Phase::WALK);
+    if(address_budget::state().profile.active)++address_budget::state().profile.walk_calls;
+''',1)
+        return loop_checkpoints(src,'if(address_budget::expired("GROUP_WALK"))return;')
+    lns=edit_function(lns,'void LNS::randomWalk(',walk)
+    def seed(src):
+        src=src.replace('{\n','''{
+    address_budget::PhaseScope budget_seed(address_budget::Phase::TOPK);
+    if(address_budget::state().profile.active)++address_budget::state().profile.seed_calls;
+''',1)
+        src=replace_exact(src,'    int cnt = 0;',
+            '    budget_seed.set(address_budget::Phase::BETA);\n    int cnt = 0;')
+        return loop_checkpoints(src,'if(address_budget::expired("GROUP_SEED"))return -1;')
+    lns=edit_function(lns,'int LNS::bernoulie()',seed)
     def repair(src):
-        src=src.replace('{\n','{\n    address_budget::AttemptTrace budget_attempt(neighbor.old_sum_of_costs);\n',1)
+        src=src.replace('{\n','''{
+    address_budget::PhaseScope budget_repair_profile(address_budget::Phase::REPAIR);
+    address_budget::AttemptTrace budget_attempt(neighbor.old_sum_of_costs);
+''',1)
         src=replace_exact(src,'    std::random_shuffle(shuffled_agents.begin(), shuffled_agents.end());',
             '    std::random_shuffle(shuffled_agents.begin(), shuffled_agents.end());\n    budget_attempt.order=shuffled_agents;')
         src=replace_exact(src,'    auto time = Time::now();','''    auto time = Time::now();

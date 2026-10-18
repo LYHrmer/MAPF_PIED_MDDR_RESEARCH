@@ -8,6 +8,7 @@ import time
 ENTERED_NS = time.monotonic_ns()
 import argparse
 import json
+import math
 import os
 from pathlib import Path
 import re
@@ -42,6 +43,10 @@ def load(path, expected_sha):
         raise ValueError('attempt_trace must be boolean')
     if config.get('attempt_trace', False) and variant != 'budget_guard':
         raise ValueError('attempt trace requires the shared budget baseline')
+    if type(config.get('phase_profile', False)) is not bool:
+        raise ValueError('phase_profile must be boolean')
+    if config.get('phase_profile', False) and (variant != 'budget_guard' or not config.get('attempt_trace', False)):
+        raise ValueError('phase profile requires budget baseline with attempt trace')
     required = {'run_address_adapter.py', 'run_repair_dev.py', 'address_backend.py',
                 'pp_repair.py', receipt_name}
     if not required <= config['code_sha256'].keys():
@@ -174,6 +179,72 @@ def verify_budget_receipt(native, config):
             raise ValueError('invalid native budget counter: '+name)
     if native['sipp_deadlines'] > native['sipp_calls']:
         raise ValueError('more SIPP deadlines than calls')
+
+
+PHASE_NAMES = ('DRIVER_OTHER', 'PREPROCESS', 'LNS_OTHER', 'GROUP_OTHER', 'TOPK',
+               'BETA', 'WALK', 'NEIGHBOR_PREPARE', 'REPAIR', 'POST_REPAIR', 'FINAL_CHECK_OUTPUT')
+
+
+def verify_phase_profile(native, config):
+    """Verify exclusive accounting. Sampled clock cost is never a total estimate."""
+    if not config.get('phase_profile', False):
+        if 'phase_profile' in native:
+            raise ValueError('unexpected phase profile in unprofiled run')
+        return None
+    p = native.get('phase_profile')
+    if not isinstance(p, dict) or p.get('schema') != 'ADDRESS_PHASE_PROFILE_V1':
+        raise ValueError('missing phase profile')
+    if (p.get('clock') != 'STEADY_WALL_NS' or p.get('window') != 'CONFIGURED_TO_FINISH_BEFORE_RECEIPT'
+        or p.get('exclusive') is not True or p.get('includes_instrumentation') is not True):
+        raise ValueError('phase accounting scope mismatch')
+    def nonnegative(obj, names):
+        for name in names:
+            if type(obj.get(name)) is not int or obj[name] < 0:
+                raise ValueError('invalid phase field '+name)
+    nonnegative(p, ('window_wall_ns', 'accounted_wall_ns', 'residual_wall_ns'))
+    phases = p.get('phases', {})
+    if set(phases) != set(PHASE_NAMES):
+        raise ValueError('phase names mismatch')
+    for value in phases.values():
+        nonnegative(value, ('wall_ns', 'scope_entries', 'expired_calls', 'expired_samples', 'expired_sampled_wall_ns'))
+        if value['expired_samples'] > value['expired_calls']:
+            raise ValueError('more sampled checks than calls')
+        if value['expired_sampled_wall_ns'] > value['wall_ns']:
+            raise ValueError('sampled check time outside owning phase')
+    accounted = sum(value['wall_ns'] for value in phases.values())
+    if (p['accounted_wall_ns'] != accounted or p['residual_wall_ns'] != 0
+        or accounted != p['window_wall_ns']):
+        raise ValueError('exclusive phase accounting does not close')
+    native_wall = native.get('inner_wall_before_receipt_s')
+    if type(native_wall) not in (float, int) or not math.isfinite(native_wall) or native_wall < 0:
+        raise ValueError('invalid native wall duration')
+    if p['window_wall_ns'] > round(native_wall*1e9)+1000:
+        raise ValueError('profile window exceeds native lifetime')
+    sample = p.get('expired_sampling', {})
+    if sample.get('sampled') is not True or sample.get('stride') != 1024 or sample.get('extrapolated') is not False:
+        raise ValueError('sampling scope mismatch')
+    nonnegative(sample, ('calls', 'samples', 'sampled_wall_ns'))
+    for total, per in (('calls', 'expired_calls'), ('samples', 'expired_samples'),
+                       ('sampled_wall_ns', 'expired_sampled_wall_ns')):
+        if sample[total] != sum(value[per] for value in phases.values()):
+            raise ValueError('sample aggregate mismatch')
+    if sample['samples'] != sample['calls']//1024:
+        raise ValueError('sample stride count mismatch')
+    counters = p.get('counters', {})
+    nonnegative(counters, ('group_calls', 'groups_formed', 'groups_no_seed', 'groups_too_small',
+                           'groups_deadline', 'seed_calls', 'walk_calls',
+                           'seed_zero_delay_selected', 'seed_positive_delay_selected'))
+    if (counters['group_calls'] != native['group_calls']
+        or sum(counters[k] for k in ('groups_formed', 'groups_no_seed', 'groups_too_small', 'groups_deadline')) != counters['group_calls']
+        or counters['groups_formed'] < native['attempt_trace_rows']):
+        raise ValueError('group outcomes mismatch')
+    if counters['seed_zero_delay_selected']+counters['seed_positive_delay_selected'] > counters['seed_calls']:
+        raise ValueError('selected seed counts exceed calls')
+    for phase, calls in (('GROUP_OTHER', counters['group_calls']), ('TOPK', counters['seed_calls']),
+                         ('WALK', counters['walk_calls']), ('REPAIR', native['attempt_trace_rows'])):
+        if phases[phase]['scope_entries'] != calls:
+            raise ValueError('phase entry count disagrees with calls')
+    return p
 
 
 def verify_attempt_trace(raw, native, count):
@@ -320,6 +391,8 @@ def worker(config, case, job, binary, folder, deadline_ns, command_factory=comma
                     '--cpuReserve', str(limits['native_cpu_reserve_s'])]
         if config.get('attempt_trace', False):
             cmd += ['--attemptTrace', str(folder/'attempts.jsonl')]
+        if config.get('phase_profile', False):
+            cmd += ['--phaseProfile', '1']
         payload['native_command'] = cmd
         def native_limits():
             resource.setrlimit(resource.RLIMIT_CPU, (limits['native_cpu_s'],)*2)
@@ -344,6 +417,9 @@ def worker(config, case, job, binary, folder, deadline_ns, command_factory=comma
                 or soc > payload['initial_soc']):
                 raise ValueError('native / external full validation disagreement')
             verify_budget_receipt(native, config)
+            phase = verify_phase_profile(native, config)
+            if phase is not None:
+                payload['phase_diagnostics'] = phase
             if config.get('attempt_trace', False):
                 payload['attempt_diagnostics'] = verify_attempt_trace(
                     (folder/'attempts.jsonl').read_bytes(), native, len(problem.ids))

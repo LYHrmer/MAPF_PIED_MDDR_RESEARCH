@@ -9,7 +9,8 @@ from unittest.mock import patch
 
 from address_adapter import adapt, replace_exact
 from build_address_full import AUTHOR, build, source_identity
-from run_address_adapter import load, parse_paths, verify_attempt_trace, verify_budget_receipt, worker
+from run_address_adapter import (load, parse_paths, verify_attempt_trace, verify_budget_receipt,
+                                 verify_phase_profile, PHASE_NAMES, worker)
 from run_repair_dev import unpack
 
 
@@ -114,6 +115,49 @@ class AdapterContracts(unittest.TestCase):
     def test_fail_closed_patch_anchor(self):
         with self.assertRaises(ValueError):
             replace_exact('a a', 'a', 'b')
+
+    def test_exclusive_phase_profile_closes_without_extrapolating_clock_samples(self):
+        import copy
+        phases = {name: {'wall_ns': 0, 'scope_entries': 0, 'expired_calls': 0,
+                         'expired_samples': 0, 'expired_sampled_wall_ns': 0} for name in PHASE_NAMES}
+        phases['TOPK'].update(wall_ns=800, scope_entries=2, expired_calls=2048,
+                             expired_samples=2, expired_sampled_wall_ns=40)
+        phases['DRIVER_OTHER'].update(wall_ns=200, scope_entries=1, expired_calls=1)
+        phases['GROUP_OTHER']['scope_entries'] = 2
+        phases['WALK']['scope_entries'] = 3
+        phases['REPAIR']['scope_entries'] = 1
+        profile = {'schema': 'ADDRESS_PHASE_PROFILE_V1', 'clock': 'STEADY_WALL_NS',
+                   'window': 'CONFIGURED_TO_FINISH_BEFORE_RECEIPT',
+                   'window_wall_ns': 1000, 'accounted_wall_ns': 1000, 'residual_wall_ns': 0,
+                   'exclusive': True, 'includes_instrumentation': True, 'phases': phases,
+                   'expired_sampling': {'sampled': True, 'stride': 1024, 'calls': 2049,
+                                        'samples': 2, 'sampled_wall_ns': 40, 'extrapolated': False},
+                   'counters': {'group_calls': 2, 'groups_formed': 1, 'groups_no_seed': 0,
+                                'groups_too_small': 1, 'groups_deadline': 0, 'seed_calls': 2, 'walk_calls': 3,
+                                'seed_zero_delay_selected': 1, 'seed_positive_delay_selected': 1}}
+        native = {'phase_profile': profile, 'inner_wall_before_receipt_s': .000002,
+                  'group_calls': 2, 'attempt_trace_rows': 1}
+        config = {'phase_profile': True}
+        self.assertEqual(verify_phase_profile(native, config), profile)
+        for mutate in (lambda p: p.update(exclusive=False),
+                       lambda p: p.update(accounted_wall_ns=1040),
+                       lambda p: p.update(residual_wall_ns=1),
+                       lambda p: p['expired_sampling'].update(extrapolated=True),
+                       lambda p: p['expired_sampling'].update(samples=3),
+                       lambda p: p['phases']['TOPK'].update(expired_sampled_wall_ns=900),
+                       lambda p: p['counters'].update(groups_too_small=0),
+                       lambda p: p['counters'].update(seed_zero_delay_selected=3),
+                       lambda p: p['phases']['WALK'].update(scope_entries=2),
+                       lambda p: p['phases']['TOPK'].update(wall_ns=True)):
+            bad = copy.deepcopy(native); mutate(bad['phase_profile'])
+            with self.assertRaises(ValueError): verify_phase_profile(bad, config)
+        with self.assertRaisesRegex(ValueError, 'missing phase'):
+            verify_phase_profile({}, config)
+        with self.assertRaisesRegex(ValueError, 'unexpected phase'):
+            verify_phase_profile(native, {})
+        self.assertIsNone(verify_phase_profile({}, {}))
+        with self.assertRaisesRegex(ValueError, 'native wall'):
+            verify_phase_profile(dict(native, inner_wall_before_receipt_s=float('nan')), config)
 
     def test_attempt_trace_distinguishes_normal_failure_deadline_and_unknown(self):
         import copy, json
