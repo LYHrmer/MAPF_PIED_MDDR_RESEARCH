@@ -1,19 +1,23 @@
 # 两线最新进度
 
-2026-10-18。唯一当前决定：[docs/RESEARCH_PLAN.md](docs/RESEARCH_PLAN.md)。两线均为候选问题验证阶段；main维护总体决定，详细数值集中在各线报告。既有科学DEV许可全部消费，本轮没有新科学运行或训练。
+2026-10-18。唯一当前决定：[docs/RESEARCH_PLAN.md](docs/RESEARCH_PLAN.md)。两线均为候选问题验证阶段；main维护总体决定，详细数值集中在各线报告。本轮新增明确授权的ADDRESS功能批次，遇第3项失败停止；没有训练或world。
 
 ## 当前交付
 
 | 研究线 | 已完成 | 下一项与边界 |
 |---|---|---|
-| SCI：给定合法初解，在有限总预算内改善路径质量 | 以ADDRESS为主干。共同宿主的路径检查复用/细分计时已实现；完整ADDRESS共同初解、显式随机源、原推荐配置和总预算wrapper已实现、编译及无搜索检查。旧17次失败已离线重建 | 新六项完整ADDRESS功能清单已固定SHA，inspect通过，待授权；尚无真实完整基线闭环或新方法比较。下一机制只候选有限后段恢复 |
-| 硕士：同一优化器的运动与误差扩展 | 等成本改路分解、全方案保留/转向规则与v2必要位移资格检查完成；通过固定Git对象引用SCI模块 | 简单规则仅在软件夹具检查，未生成六任务新比较。先无误差原语时序/连续占用，再检查误差改变哪些约束；连续执行未实现 |
+| SCI：给定合法初解，在有限总预算内改善路径质量 | 完整ADDRESS功能批次2项成功、1项失败、3项停批未运行；零余量空构组的共同根界终止已完成软件复现、修补与单独编译 | 原许可关闭，新四项功能清单待授权。后段恢复仍无科学结果，完整强基线上的适用机会尚未证实 |
+| 硕士：同一优化器的运动与误差扩展 | 已实现统一转向barrier、共同移动phase的无误差物理时序及整段圆外包充分检查；固定引用SCI验证器 | 8项软件夹具通过，未应用旧六任务或新ADDRESS结果。共享phase的实际反馈执行、误差扩展和任务收益仍待验证 |
 
-SCI实现与证据：[本线入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/032bf223b78e6698821cbdee14a63cb8c8bc7718/tracks/sci/README.md)、[完整ADDRESS适配](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/032bf223b78e6698821cbdee14a63cb8c8bc7718/tracks/sci/ADDRESS_ADAPTER.md)、[新功能清单](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/032bf223b78e6698821cbdee14a63cb8c8bc7718/tracks/sci/ADDRESS_RUN_CHECKLIST.md)。宿主41项、ADDRESS适配7项软件检查通过；它们不是性能实验。两处构建失败收据/二进制身份关联问题已修复，作者缓存未改。原生完整循环没有逐次Python RPC，不能将两种架构的开销差额称为算法增量。
+SCI[本批完整报告](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/eb4a60f236447505e6bb2cb0cc7e0e96cdfaa919/tracks/sci/ADDRESS_DEV_RESULT.md)：maze16/32改善SOC 3/7步、makespan不变；random16原生SIGKILL，约10秒CPU，未产生最终有效输出；后三项按清单未运行。失败不删、不填作0改善成功。原源码的零余量严格randomWalk与构组失败continue可形成不计入16次修复的忙循环，纯软件夹具已复现；共同根界break修补通过3项检查，原runPP/奖励不变，不计为贡献。7项适配检查通过；[新四项清单](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/eb4a60f236447505e6bb2cb0cc7e0e96cdfaa919/tracks/sci/ADDRESS_GUARD_CHECKLIST.md)已编译/help/inspect，待新授权，不复用旧许可。
 
 [失败诊断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/032bf223b78e6698821cbdee14a63cb8c8bc7718/tracks/sci/LATE_FAILURE_DIAGNOSIS.md)保留全部17项：13项失败位置在组后半；7项失败车旧路径无阻挡但超当次cap，10项旧路径在cap内而与新prefix冲突。它们来自固定ID组探针，尚不能认定完整ADDRESS有同样瓶颈。候选为失败车旧路径前移、保留未受影响前段、最多一次尾段重算；未执行、未证明能恢复或节省成本。回退本身不是创新，需对照直接放弃、随机重排与适配后的优先级搜索。
 
+[原生恢复扩展](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/eb4a60f236447505e6bb2cb0cc7e0e96cdfaa919/tracks/sci/ADDRESS_RECOVERY.md)已实现abandon/random/anchor、返回类别、一次尾段及逐尝试费用，3项软件检查及完整编译/help通过，运行器仍拒绝恢复变体。带恢复诊断的abandon仅作机制对照；不能替代无附加诊断的ADDRESS强基线。正式比较前还须对齐单次修复截止；后续随机流可能分化，尚无恢复科学结果。
+
 硕士[路径诊断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/aea4ffad2dfdf59a163436a21ee35c0f7b75c333/tracks/thesis/PATH_DIAGNOSTIC.md)核实random32的29条等成本实际改路增加113个四分之一圈，另两条成本改变路径合计减少5个；这不是实际运动时长。新增整方案规则复用固定SCI校验器，混合方案必须全车合法。9项路径/规则检查通过。1m/格下六案均不满足原v2的8m必要轴界；仓储两案在“一格边一个原MOVE、统一尺度”条件下也不存在同时满足最小MOVE长度与位移界的尺度。没有静默缩放或扩域。
+
+硕士当前[无误差运动模块](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/e5077026e16a869499fc03444f03bb433665cce8/tracks/thesis/nominal_motion.py)输出直行/转向/等待/永久终点驻留及物理完成时间。共同进度下的连续相对距离、闭障碍及外边界采用精确有理几何；圆外包重叠只导致充分条件未建立，不当作真实矩形碰撞。此为保守理想参考，尚无控制器、误差或最优性结论。
 
 ## 冻结科学结果
 

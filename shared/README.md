@@ -35,4 +35,6 @@ Python接口为`read_blob(repo, pin) -> bytes`、`audit_manifest(repo, manifest)
 
 硕士[aea4ffa](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/aea4ffad2dfdf59a163436a21ee35c0f7b75c333/tracks/thesis/README.md)的`tracks/thesis/sci.lock.json`继续用同一读取器固定SCI`535ee1a`的14个证据对象（输入、汇总、六份结果与六份收据），供运动结构和等成本改路离线解析。新增`source_contract`固定来源`16b1ee0`的`COMPOSITION.md`，只核对v2条件文档，不代表模型运行或路径资格通过。
 
-同提交的`plan_selection.lock.json`固定SCI`535ee1a`的`pp_repair.py`与`address_backend.py`，在校验Git对象字节后复用原`GridProblem`及完整路径检查，支持SOC、保留等成本路径、转向感知的整方案选择规则；没有复制或启动原生求解器。两份消费者锁由硕士维护，当前SCI`032bf22`的新实现不自动进入该消费者。当前没有新增公共运行接口，也不把SCI专用优化器或证据复制进公共目录。
+同提交的`plan_selection.lock.json`固定SCI`535ee1a`的`pp_repair.py`与`address_backend.py`，在校验Git对象字节后复用原`GridProblem`及完整路径检查，支持SOC、保留等成本路径、转向感知的整方案选择规则；没有复制或启动原生求解器。两份消费者锁由硕士维护，SCI`032bf22`及其后续实现不自动进入该消费者。当前没有新增公共运行接口，也不把SCI专用优化器或证据复制进公共目录。
+
+硕士`e507702`的无误差运动参考继续使用该固定GridProblem入口，不改变锁文件；SCI`eb4a60f`新增的运行结果、共同终止与恢复原型也不自动进入硕士。运动编译器目前只有硕士消费者，留在`tracks/thesis/`，不为形式上的共享复制到此目录。
