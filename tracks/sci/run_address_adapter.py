@@ -34,7 +34,8 @@ def load(path, expected_sha):
         raise ValueError('build receipt must be a local basename')
     variant = config.get('variant', 'base')
     scopes = {'base': 'ADDRESS_COMMON_INITIAL_ADAPTER_COMPILE_AND_HELP_ONLY',
-              'loop_guard': 'ADDRESS_COMMON_INITIAL_LOOP_GUARD_COMPILE_AND_HELP_ONLY'}
+              'loop_guard': 'ADDRESS_COMMON_INITIAL_LOOP_GUARD_COMPILE_AND_HELP_ONLY',
+              'budget_guard': 'ADDRESS_COMMON_INITIAL_BUDGET_GUARD_COMPILE_AND_HELP_ONLY'}
     if variant not in scopes:
         raise ValueError('unreviewed runner variant')
     required = {'run_address_adapter.py', 'run_repair_dev.py', 'address_backend.py',
@@ -61,6 +62,8 @@ def load(path, expected_sha):
         raise ValueError('build receipt does not certify this adapter binary and author identity')
     if variant == 'loop_guard' and receipt.get('extension') != 'loop_guard':
         raise ValueError('shared root bound missing from build receipt')
+    if variant == 'budget_guard' and receipt.get('extension') != 'budget_guard':
+        raise ValueError('shared budget extension missing from build receipt')
     if config.get('retry') != 0:
         raise ValueError('zero retry required')
     limits = config['limits']
@@ -72,6 +75,10 @@ def load(path, expected_sha):
         raise ValueError('integer resource limits required')
     if limits['external_final_reserve_s']+limits['inner_final_reserve_s'] >= limits['total_wall_s']:
         raise ValueError('reserves consume entire budget')
+    if variant == 'budget_guard':
+        reserve = limits.get('native_cpu_reserve_s')
+        if type(reserve) not in (int, float) or not 0 < reserve < limits['native_cpu_s']:
+            raise ValueError('native CPU reserve must be inside the hard limit')
     config['manifest_sha256'] = expected_sha
     bundle = json.loads(raw_inputs)
     ids = {case['id'] for case in bundle['cases']}
@@ -120,6 +127,34 @@ def command(binary, folder, job, count, cutoff, reserve):
         '--neighborSize', '8', '--b', 'canonical', '--sipp', '1', '--screen', '0']
 
 
+def verify_budget_receipt(native, config):
+    """A cooperative stop may succeed only after complete final validation.
+
+    The inner CPU value is absolute process CPU, not descendant CPU summed by
+    the supervisor. It is a recorded admission check, not a hard-time proof.
+    """
+    if config.get('variant', 'base') != 'budget_guard':
+        return
+    limits = config['limits']
+    if (native.get('budget_scope') != 'SHARED_WALL_PROCESS_CPU_WITH_FINAL_RESERVE'
+        or native.get('cpu_limit_s') != limits['native_cpu_s']
+        or native.get('cpu_reserve_s') != limits['native_cpu_reserve_s']
+        or type(native.get('inner_cpu_s')) not in (int, float)
+        or not 0 <= native['inner_cpu_s'] < limits['native_cpu_s']):
+        raise ValueError('native shared CPU budget receipt mismatch')
+    for name in ('global_deadline', 'preprocessing_fallback'):
+        if type(native.get(name)) is not bool:
+            raise ValueError('missing native budget state: '+name)
+    for name in ('last_stage', 'termination', 'last_sipp_end'):
+        if not isinstance(native.get(name), str) or not native[name]:
+            raise ValueError('missing native termination field: '+name)
+    for name in ('group_calls', 'sipp_calls', 'sipp_deadlines', 'repair_deadlines', 'rollbacks'):
+        if type(native.get(name)) is not int or native[name] < 0:
+            raise ValueError('invalid native budget counter: '+name)
+    if native['sipp_deadlines'] > native['sipp_calls']:
+        raise ValueError('more SIPP deadlines than calls')
+
+
 def worker(config, case, job, binary, folder, deadline_ns, command_factory=command):
     started, cpu = time.monotonic_ns(), time.process_time_ns()
     payload = {'scope': 'COMMON_INITIAL_ADDRESS_DEV_NOT_INDEPENDENT_PERFORMANCE', 'status': 'FAILED',
@@ -155,6 +190,9 @@ def worker(config, case, job, binary, folder, deadline_ns, command_factory=comma
         if cutoff <= limits['inner_final_reserve_s']:
             raise TimeoutError('no budget for ADDRESS construction and final validation')
         cmd = command_factory(binary, folder, job, len(initial), cutoff, limits['inner_final_reserve_s'])
+        if config.get('variant', 'base') == 'budget_guard':
+            cmd += ['--cpuLimit', str(limits['native_cpu_s']),
+                    '--cpuReserve', str(limits['native_cpu_reserve_s'])]
         payload['native_command'] = cmd
         def native_limits():
             resource.setrlimit(resource.RLIMIT_CPU, (limits['native_cpu_s'],)*2)
@@ -178,6 +216,7 @@ def worker(config, case, job, binary, folder, deadline_ns, command_factory=comma
                 or native['initial_soc'] != payload['initial_soc'] or native['final_soc'] != soc
                 or soc > payload['initial_soc']):
                 raise ValueError('native / external full validation disagreement')
+            verify_budget_receipt(native, config)
             payload.update({'final_paths': paths, 'final_soc': soc,
                             'final_makespan': max(len(p)-1 for p in paths.values()),
                             'final_validated': True, 'native_receipt': native})

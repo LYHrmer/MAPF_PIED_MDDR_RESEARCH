@@ -1,0 +1,87 @@
+{
+  "authorization": "PENDING_USER",
+  "batch_id": "address_budget_guard_v1",
+  "binary": "../../.address_budget_guard_build/build/address",
+  "binary_sha256": "6d94e123a7a825e65aaaa7a30339de49856b98e60e841980eae671051c374c33",
+  "build_receipt": "budget_guard_build_receipt.json",
+  "build_source_sha256": {
+    "address_adapter.py": "7bd6ee6e969cb27414626289398b657f0b9ad7398903c9ab16cc76a5fcc00632",
+    "address_adapter_support.h": "8d9fbea2048eac1245df4d743580f994a23f2cb4d48089e9575de2508be94bc2",
+    "address_budget.py": "087672e25335abff17538d765bf5f2afcbeff935969b7fd5c2d289646f785e4f",
+    "address_budget_support.h": "32a7463c2a15a2bfb69517ba68d313e9ef716cd04f82de917459854350460b38",
+    "address_loop_guard.py": "e533545391e86aaac0b1c057c14eee398c5dd46343a1b677d355087df1c4b8df",
+    "build_address_full.py": "6f93016cc76314dca438779fae409dd1e7eb7cc418d5f2d830db0a0920e75f8b"
+  },
+  "code_sha256": {
+    "address_backend.py": "04cabeaf78f0425a6c9835d6c3e5eb2ee53fb2a1f63db907c456bbbbba94fd84",
+    "budget_guard_build_receipt.json": "0cd92d9931558b78e1317998b874ec3b68a5465db0b0ef08b8b3cce30b64c7c8",
+    "pp_repair.py": "f6a64ddee77c5a6d15659bf69fff5d3b75fc9ca936d2b4a46942d3f7467ea782",
+    "run_address_adapter.py": "bdfde1c0caa30dc58d4da084b05fde0978ed00ecae6f95df6caa67994b682498",
+    "run_repair_dev.py": "fc9573e1f1f55a890b93b717fe082eb7beedb69f33d731988ef68709781be29e"
+  },
+  "evidence_limits": [
+    "old train DEV tasks; single functional check not independent performance",
+    "new common budget implementation after preserved failures; previous authorizations closed",
+    "random32 prior failure, maze32 positive-slack normal case, warehouse32 zero-slack case",
+    "all future comparator arms must share this budget mechanism and charge full cost",
+    "declared 1 second wall and CPU cleanup reserves are not a hard-real-time bound for arbitrary instances",
+    "initial validation, rollback, output and OS scheduling remain non-preemptive",
+    "real user approval required; no scientific search has been executed with this manifest"
+  ],
+  "external_command_guard": {
+    "kill_grace_s": 2,
+    "required": true,
+    "term_after_s": 20,
+    "tool": "timeout"
+  },
+  "input_file": "repair_residual_v1_inputs.json",
+  "input_sha256": "be1e912e1e2ea3f59fcdc5d0c5737118e7f96d92227be536ada605f6751c0e5b",
+  "jobs": [
+    {
+      "case": "random-32-32-10__s01__n32",
+      "id": "random-32-32-10__s01__n32__budget_guard",
+      "iterations": 16,
+      "seed": 0,
+      "top_k": 32
+    },
+    {
+      "case": "maze-32-32-2__s01__n32",
+      "id": "maze-32-32-2__s01__n32__budget_guard",
+      "iterations": 16,
+      "seed": 0,
+      "top_k": 32
+    },
+    {
+      "case": "warehouse-10-20-10-2-1__s01__n32",
+      "id": "warehouse-10-20-10-2-1__s01__n32__budget_guard",
+      "iterations": 16,
+      "seed": 0,
+      "top_k": 32
+    }
+  ],
+  "limits": {
+    "external_final_reserve_s": 0.5,
+    "inner_final_reserve_s": 1,
+    "native_cpu_reserve_s": 1,
+    "native_cpu_s": 10,
+    "per_process_as_mib": 512,
+    "total_wall_s": 15,
+    "worker_cpu_s": 10
+  },
+  "predecessor_batch": "address_loop_guard_v1",
+  "predecessor_status": "STOPPED_ON_FIRST_FAILURE_1_COMPLETE_1_FAILED_2_NOT_RUN",
+  "previous_authorization_reusable": false,
+  "purpose": "Verify complete common-initial ADDRESS cooperative budget stop and legal final output; no recovery or performance comparison",
+  "retry": 0,
+  "schema": "address_common_initial_dev_v1",
+  "scope_limits": [
+    "zero retries",
+    "no new initial planner",
+    "no recovery candidate",
+    "no new map/world",
+    "no training",
+    "no error-model expansion"
+  ],
+  "stop_batch_on_any_failure": true,
+  "variant": "budget_guard"
+}

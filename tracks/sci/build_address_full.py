@@ -56,7 +56,7 @@ def source_identity(root):
 
 
 def build(root, output, adapter=False, extension=None):
-    if extension not in (None, 'loop_guard', 'recovery') or (extension and not adapter):
+    if extension not in (None, 'loop_guard', 'recovery', 'budget_guard', 'budget_recovery') or (extension and not adapter):
         raise ValueError('extensions require the common-initial adapter')
     root, output = root.resolve(), output.resolve()
     if output == root or root in output.parents:
@@ -73,9 +73,7 @@ def build(root, output, adapter=False, extension=None):
         receipt['reward_semantics'] = 'AUTHOR_ATTEMPT_UPDATE_BEFORE_ROLLBACK_UNCHANGED'
         receipt['external_total_budget_integration'] = 'PENDING'
         if extension:
-            receipt['scope'] = ('ADDRESS_COMMON_INITIAL_LOOP_GUARD_COMPILE_AND_HELP_ONLY'
-                                if extension == 'loop_guard' else
-                                'ADDRESS_COMMON_INITIAL_RECOVERY_COMPILE_AND_HELP_ONLY')
+            receipt['scope'] = 'ADDRESS_COMMON_INITIAL_'+extension.upper()+'_COMPILE_AND_HELP_ONLY'
             receipt['extension'] = extension
     target = output/'build_receipt.json'
 
@@ -122,7 +120,11 @@ def build(root, output, adapter=False, extension=None):
             receipt['adapter_sources'] = materialize(root, compile_root, pins)
             if extension:
                 import importlib
-                modules = ['address_loop_guard'] + (['address_recovery'] if extension == 'recovery' else [])
+                modules = ['address_loop_guard']
+                if extension in ('recovery', 'budget_recovery'):
+                    modules.append('address_recovery')
+                if extension in ('budget_guard', 'budget_recovery'):
+                    modules.append('address_budget')
                 receipt['extension_sources'] = {}
                 receipt['extension_script_sha256'] = {}
                 for name in modules:
@@ -181,7 +183,7 @@ if __name__ == '__main__':
     parser.add_argument('--author-root', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--adapter', action='store_true', help='compile project-owned common-initial overlay')
-    parser.add_argument('--extension', choices=('loop_guard', 'recovery'),
+    parser.add_argument('--extension', choices=('loop_guard', 'recovery', 'budget_guard', 'budget_recovery'),
                         help='optional shared stop guard, or guard plus recovery prototype')
     args = parser.parse_args()
     print(json.dumps(build(args.author_root, args.output, args.adapter, args.extension), sort_keys=True))

@@ -9,7 +9,7 @@ from unittest.mock import patch
 
 from address_adapter import adapt, replace_exact
 from build_address_full import AUTHOR, build, source_identity
-from run_address_adapter import load, parse_paths, worker
+from run_address_adapter import load, parse_paths, verify_budget_receipt, worker
 from run_repair_dev import unpack
 
 
@@ -76,9 +76,40 @@ class AdapterContracts(unittest.TestCase):
                 inspect(good)  # A pristine/base receipt cannot certify the guard.
             with self.assertRaisesRegex(ValueError, 'root bound'):
                 inspect(dict(guarded, extension=None))
+            config.update(variant='budget_guard', build_receipt='budget_guard_build_receipt.json')
+            config['limits']['native_cpu_reserve_s'] = 1
+            budgeted = dict(good, scope='ADDRESS_COMMON_INITIAL_BUDGET_GUARD_COMPILE_AND_HELP_ONLY',
+                            extension='budget_guard')
+            self.assertEqual(inspect(budgeted)[2], root/'binary')
+            with self.assertRaisesRegex(ValueError, 'budget extension'):
+                inspect(dict(budgeted, extension='loop_guard'))
+            for reserve in (0, 10, float('nan'), True):
+                config['limits']['native_cpu_reserve_s'] = reserve
+                with self.assertRaisesRegex(ValueError, 'CPU reserve'):
+                    inspect(budgeted)
+            config['limits']['native_cpu_reserve_s'] = 1
             config['variant'] = 'recovery'
             with self.assertRaisesRegex(ValueError, 'unreviewed runner variant'):
                 inspect(guarded)  # Recovery is not a runnable scientific arm yet.
+            config['variant'] = 'budget_recovery'
+            with self.assertRaisesRegex(ValueError, 'unreviewed runner variant'):
+                inspect(budgeted)
+
+    def test_soft_stop_receipt_is_distinct_from_failed_or_over_budget_output(self):
+        config = {'variant': 'budget_guard', 'limits': {
+            'native_cpu_s': 10, 'native_cpu_reserve_s': 1}}
+        native = {'budget_scope': 'SHARED_WALL_PROCESS_CPU_WITH_FINAL_RESERVE',
+                  'cpu_limit_s': 10, 'cpu_reserve_s': 1, 'inner_cpu_s': 9.1,
+                  'global_deadline': True, 'preprocessing_fallback': False,
+                  'last_stage': 'SIPP', 'termination': 'DEADLINE', 'last_sipp_end': 'DEADLINE',
+                  'group_calls': 7, 'sipp_calls': 20, 'sipp_deadlines': 1,
+                  'repair_deadlines': 1, 'rollbacks': 1}
+        verify_budget_receipt(native, config)  # A soft stop is not itself a failed final output.
+        for key, value in [('cpu_reserve_s', 0), ('cpu_limit_s', 11), ('inner_cpu_s', 10),
+                           ('inner_cpu_s', float('nan')), ('global_deadline', 'true'),
+                           ('sipp_deadlines', 21), ('rollbacks', -1), ('termination', '')]:
+            with self.subTest(key=key, value=value), self.assertRaises(ValueError):
+                verify_budget_receipt(dict(native, **{key: value}), config)
 
     def test_fail_closed_patch_anchor(self):
         with self.assertRaises(ValueError):
