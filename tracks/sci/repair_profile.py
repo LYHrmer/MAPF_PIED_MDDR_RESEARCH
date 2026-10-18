@@ -640,6 +640,13 @@ def address_results(manifest, expected_sha, output=None):
                 raise ValueError('ADDRESS complete result violates its contract')
             row.update({'final_soc': soc, 'final_makespan': makespan,
                         'improvement': row['initial_soc']-soc})
+            if config.get('attempt_trace', False):
+                from run_address_adapter import verify_attempt_trace
+                summary = verify_attempt_trace((folder/'attempts.jsonl').read_bytes(),
+                                               result['native_receipt'], len(problem.ids))
+                if summary != result.get('attempt_diagnostics'):
+                    raise ValueError('offline attempt diagnosis disagrees with worker')
+                row['attempt_diagnostics'] = summary
         elif receipt['status'] == 'FAILED_OR_INCOMPLETE':
             failed_job = job['id']
             row['reason'] = result.get('reason', 'missing success validation')

@@ -38,6 +38,10 @@ def load(path, expected_sha):
               'budget_guard': 'ADDRESS_COMMON_INITIAL_BUDGET_GUARD_COMPILE_AND_HELP_ONLY'}
     if variant not in scopes:
         raise ValueError('unreviewed runner variant')
+    if type(config.get('attempt_trace', False)) is not bool:
+        raise ValueError('attempt_trace must be boolean')
+    if config.get('attempt_trace', False) and variant != 'budget_guard':
+        raise ValueError('attempt trace requires the shared budget baseline')
     required = {'run_address_adapter.py', 'run_repair_dev.py', 'address_backend.py',
                 'pp_repair.py', receipt_name}
     if not required <= config['code_sha256'].keys():
@@ -45,6 +49,14 @@ def load(path, expected_sha):
     for name, expected in config['code_sha256'].items():
         if Path(name).name != name or digest((HERE/name).read_bytes()) != expected:
             raise ValueError('changed adapter runtime: '+name)
+    build_sources = config.get('build_source_sha256', {})
+    if config.get('attempt_trace', False) and not {
+            'build_address_full.py', 'address_adapter.py', 'address_adapter_support.h',
+            'address_loop_guard.py', 'address_budget.py', 'address_budget_support.h'} <= build_sources.keys():
+        raise ValueError('missing attempt-trace build source pins')
+    for name, expected in build_sources.items():
+        if Path(name).name != name or digest((HERE/name).read_bytes()) != expected:
+            raise ValueError('changed build source: '+name)
     raw_inputs = (path.parent/config['input_file']).read_bytes()
     if digest(raw_inputs) != config['input_sha256']:
         raise ValueError('changed input bundle')
@@ -64,6 +76,15 @@ def load(path, expected_sha):
         raise ValueError('shared root bound missing from build receipt')
     if variant == 'budget_guard' and receipt.get('extension') != 'budget_guard':
         raise ValueError('shared budget extension missing from build receipt')
+    if config.get('attempt_trace', False):
+        if (receipt.get('extension_order') != ['address_loop_guard', 'address_budget']
+            or receipt.get('script_sha256') != build_sources['build_address_full.py']
+            or receipt.get('adapter_script_sha256') != build_sources['address_adapter.py']
+            or any(receipt.get('extension_script_sha256', {}).get(name) != build_sources[name+'.py']
+                   for name in ('address_loop_guard', 'address_budget'))
+            or receipt.get('extension_sources', {}).get('address_budget', {}).get(
+                'inc/address_budget_support.h', {}).get('sha256') != build_sources['address_budget_support.h']):
+            raise ValueError('attempt-trace build receipt/source mismatch')
     if config.get('retry') != 0:
         raise ValueError('zero retry required')
     limits = config['limits']
@@ -155,6 +176,110 @@ def verify_budget_receipt(native, config):
         raise ValueError('more SIPP deadlines than calls')
 
 
+def verify_attempt_trace(raw, native, count):
+    """Check recorded execution sites, not recoverability or search completeness.
+
+    The optional baseline trace never runs blocker diagnostics. Zero records
+    means no runPP was entered; group construction is outside this denominator.
+    """
+    rows = []
+    if native.get('attempt_trace_enabled') is not True:
+        raise ValueError('attempt trace was not enabled in native receipt')
+    if raw and not raw.endswith(b'\n'):
+        raise ValueError('partial attempt trace line')
+    allowed = {'UNKNOWN', 'FOUND', 'DEADLINE', 'COST_STOP', 'EMPTY_UNCLASSIFIED',
+               'START_BLOCKED', 'FOCAL_DRAINED_EMPTY'}
+    counters = {}
+    search_calls = rollbacks = 0
+    late_normal = []
+    def integer(value, minimum=0):
+        return type(value) is int and value >= minimum
+    for line in raw.splitlines():
+        row = json.loads(line)
+        order = row.get('order')
+        returns = row.get('primary_returns')
+        if (row.get('schema') != 'ADDRESS_ATTEMPT_V2'
+            or type(row.get('attempt_id')) is not int or row['attempt_id'] != len(rows)+1
+            or not isinstance(order, list) or not order or len(set(order)) != len(order)
+            or any(not integer(a) or a >= count for a in order)
+            or row.get('group_size') != len(order)
+            or not isinstance(returns, list)
+            or not integer(row.get('primary_calls')) or row['primary_calls'] != len(returns)
+            or len(returns) > len(order)):
+            raise ValueError('attempt trace identity or call count mismatch')
+        for index, call in enumerate(returns):
+            if (call.get('position_zero_based') != index or call.get('agent') != order[index]
+                or call.get('stop') not in allowed
+                or call.get('native_end') not in allowed
+                or type(call.get('empty')) is not bool
+                or not integer(call.get('path_cost'), -1)
+                or (call['empty'] != (call['path_cost'] == -1))
+                or not integer(call.get('wall_ns')) or not integer(call.get('cpu_ns'))):
+                raise ValueError('invalid per-call attempt record')
+        if row.get('primary_stop') not in allowed:
+            raise ValueError('invalid primary stop class')
+        for name in ('primary_complete', 'failed_agent_attempted', 'local_deadline_reached',
+                     'global_deadline_reached', 'accepted'):
+            if type(row.get(name)) is not bool:
+                raise ValueError('missing attempt state: '+name)
+        pos, agent = row.get('failed_position_zero_based'), row.get('failed_agent')
+        if (not integer(pos, -1) or not integer(agent, -1)
+            or (pos == -1 and agent != -1)
+            or (pos >= 0 and (pos >= len(order) or agent != order[pos]))):
+            raise ValueError('invalid failed position/agent')
+        if row['primary_complete'] and (pos != -1 or row['primary_calls'] != len(order)):
+            raise ValueError('complete primary has a failed agent or missing call')
+        if row['failed_agent_attempted'] != (0 <= pos < len(returns)):
+            raise ValueError('failed agent attempted flag disagrees with calls')
+        if row.get('failure_site') not in {'BEFORE_CALL', 'RETURN', 'COST_BOUND', 'COMPLETE', 'FINAL_ADMISSION'}:
+            raise ValueError('invalid failure site')
+        if row.get('recovery_decision') != 'NONE':
+            raise ValueError('recovery is outside this baseline diagnostic manifest')
+        if row.get('blockers_checked') is not False or row.get('recoverability_established') is not False:
+            raise ValueError('baseline trace cannot certify recovery diagnostics')
+        for name in ('old_group_cost', 'final_group_cost', 'group_calls_so_far'):
+            if not integer(row.get(name)):
+                raise ValueError('invalid attempt cost/counter')
+        if ((row['accepted'] and (not row['primary_complete']
+                                 or row['final_group_cost'] > row['old_group_cost']))
+            or (not row['accepted'] and row['final_group_cost'] != row['old_group_cost'])):
+            raise ValueError('attempt acceptance or rollback cost mismatch')
+        cost = row.get('cost', {})
+        for name in ('primary_search_wall_ns', 'primary_search_cpu_ns', 'rollback_wall_ns',
+                     'rollback_cpu_ns', 'attempt_wall_before_trace_ns', 'attempt_cpu_before_trace_ns'):
+            if not integer(cost.get(name)):
+                raise ValueError('invalid attempt timing: '+name)
+        if (sum(c['wall_ns'] for c in returns) != cost['primary_search_wall_ns']
+            or sum(c['cpu_ns'] for c in returns) != cost['primary_search_cpu_ns']):
+            raise ValueError('per-call timing disagrees with search interval sum')
+        stop = row['primary_stop']
+        if (row['global_deadline_reached'] or row['local_deadline_reached']) and row['accepted']:
+            raise ValueError('attempt accepted after its deadline')
+        counters[stop] = counters.get(stop, 0)+1
+        search_calls += len(returns)
+        rollbacks += not row['accepted']
+        # An observed late focal-empty return is only a diagnosis candidate.
+        # Old-path conflicts and usable retained prefixes remain unexamined.
+        if (stop == 'FOCAL_DRAINED_EMPTY' and pos >= len(order)//2
+            and row['failed_agent_attempted'] and not row['global_deadline_reached']
+            and not row['local_deadline_reached']):
+            late_normal.append(row['attempt_id'])
+        rows.append(row)
+    if (native.get('attempt_trace_rows') != len(rows)
+        or native.get('sipp_calls') != search_calls or native.get('rollbacks') != rollbacks):
+        raise ValueError('trace/native attempt counters disagree')
+    for name in ('trace_io_wall_ns', 'trace_io_cpu_ns'):
+        if not integer(native.get(name)):
+            raise ValueError('trace I/O cost missing')
+    return {'schema': 'ADDRESS_ATTEMPT_DIAGNOSTIC_SUMMARY_V1',
+            'attempts': len(rows), 'primary_search_calls': search_calls,
+            'primary_stop_counts': counters, 'late_normal_empty_attempt_ids': late_normal,
+            'blockers_checked': False, 'recoverability_established': False,
+            'group_construction_in_attempt_denominator': False,
+            'trace_io_wall_ns': native['trace_io_wall_ns'],
+            'trace_io_cpu_ns': native['trace_io_cpu_ns']}
+
+
 def worker(config, case, job, binary, folder, deadline_ns, command_factory=command):
     started, cpu = time.monotonic_ns(), time.process_time_ns()
     payload = {'scope': 'COMMON_INITIAL_ADDRESS_DEV_NOT_INDEPENDENT_PERFORMANCE', 'status': 'FAILED',
@@ -193,6 +318,8 @@ def worker(config, case, job, binary, folder, deadline_ns, command_factory=comma
         if config.get('variant', 'base') == 'budget_guard':
             cmd += ['--cpuLimit', str(limits['native_cpu_s']),
                     '--cpuReserve', str(limits['native_cpu_reserve_s'])]
+        if config.get('attempt_trace', False):
+            cmd += ['--attemptTrace', str(folder/'attempts.jsonl')]
         payload['native_command'] = cmd
         def native_limits():
             resource.setrlimit(resource.RLIMIT_CPU, (limits['native_cpu_s'],)*2)
@@ -217,6 +344,9 @@ def worker(config, case, job, binary, folder, deadline_ns, command_factory=comma
                 or soc > payload['initial_soc']):
                 raise ValueError('native / external full validation disagreement')
             verify_budget_receipt(native, config)
+            if config.get('attempt_trace', False):
+                payload['attempt_diagnostics'] = verify_attempt_trace(
+                    (folder/'attempts.jsonl').read_bytes(), native, len(problem.ids))
             payload.update({'final_paths': paths, 'final_soc': soc,
                             'final_makespan': max(len(p)-1 for p in paths.values()),
                             'final_validated': True, 'native_receipt': native})

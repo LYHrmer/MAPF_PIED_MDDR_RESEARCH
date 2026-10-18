@@ -56,7 +56,9 @@ def source_identity(root):
 
 
 def build(root, output, adapter=False, extension=None):
-    if extension not in (None, 'loop_guard', 'recovery', 'budget_guard', 'budget_recovery') or (extension and not adapter):
+    if extension == 'recovery':
+        raise ValueError('legacy recovery requires its frozen commit; use budget_recovery for the shared deadline')
+    if extension not in (None, 'loop_guard', 'budget_guard', 'budget_recovery') or (extension and not adapter):
         raise ValueError('extensions require the common-initial adapter')
     root, output = root.resolve(), output.resolve()
     if output == root or root in output.parents:
@@ -121,10 +123,11 @@ def build(root, output, adapter=False, extension=None):
             if extension:
                 import importlib
                 modules = ['address_loop_guard']
-                if extension in ('recovery', 'budget_recovery'):
-                    modules.append('address_recovery')
                 if extension in ('budget_guard', 'budget_recovery'):
                     modules.append('address_budget')
+                if extension == 'budget_recovery':
+                    modules.append('address_recovery')
+                receipt['extension_order'] = modules
                 receipt['extension_sources'] = {}
                 receipt['extension_script_sha256'] = {}
                 for name in modules:
@@ -165,6 +168,12 @@ def build(root, output, adapter=False, extension=None):
             raise ValueError('unexpected full-author help entry')
         if adapter and not all(flag in help_raw for flag in (b'--initialPaths', b'--adapterReceipt', b'--finalReserve')):
             raise ValueError('adapter help contract missing')
+        if extension in ('budget_guard', 'budget_recovery') and not all(
+                flag in help_raw for flag in (b'--cpuLimit', b'--cpuReserve', b'--attemptTrace')):
+            raise ValueError('shared CPU budget help contract missing')
+        if extension == 'budget_recovery' and not all(
+                flag in help_raw for flag in (b'--recoveryPolicy', b'--recoveryTrace')):
+            raise ValueError('recovery diagnostic help contract missing')
         if source_identity(root) != pins:
             raise ValueError('author source changed during build')
         receipt.update({'binary_sha256': sha(binary.read_bytes()), 'binary_bytes': binary.stat().st_size,
@@ -183,7 +192,7 @@ if __name__ == '__main__':
     parser.add_argument('--author-root', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--adapter', action='store_true', help='compile project-owned common-initial overlay')
-    parser.add_argument('--extension', choices=('loop_guard', 'recovery', 'budget_guard', 'budget_recovery'),
-                        help='optional shared stop guard, or guard plus recovery prototype')
+    parser.add_argument('--extension', choices=('loop_guard', 'budget_guard', 'budget_recovery'),
+                        help='shared deadline precedes optional recovery; legacy recovery uses its frozen commit')
     args = parser.parse_args()
     print(json.dumps(build(args.author_root, args.output, args.adapter, args.extension), sort_keys=True))

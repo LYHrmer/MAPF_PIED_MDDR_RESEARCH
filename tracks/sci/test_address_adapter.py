@@ -9,7 +9,7 @@ from unittest.mock import patch
 
 from address_adapter import adapt, replace_exact
 from build_address_full import AUTHOR, build, source_identity
-from run_address_adapter import load, parse_paths, verify_budget_receipt, worker
+from run_address_adapter import load, parse_paths, verify_attempt_trace, verify_budget_receipt, worker
 from run_repair_dev import unpack
 
 
@@ -115,6 +115,57 @@ class AdapterContracts(unittest.TestCase):
         with self.assertRaises(ValueError):
             replace_exact('a a', 'a', 'b')
 
+    def test_attempt_trace_distinguishes_normal_failure_deadline_and_unknown(self):
+        import copy, json
+        row = {'schema': 'ADDRESS_ATTEMPT_V2', 'attempt_id': 1, 'order': [0, 1],
+               'group_size': 2, 'old_group_cost': 8, 'final_group_cost': 8,
+               'primary_calls': 2, 'primary_stop': 'FOCAL_DRAINED_EMPTY',
+               'primary_complete': False, 'failed_position_zero_based': 1, 'failed_agent': 1,
+               'failed_agent_attempted': True, 'failure_site': 'RETURN',
+               'local_deadline_reached': False, 'global_deadline_reached': False,
+               'accepted': False, 'recovery_decision': 'NONE', 'group_calls_so_far': 3,
+               'blockers_checked': False, 'recoverability_established': False,
+               'primary_returns': [
+                   {'position_zero_based': 0, 'agent': 0, 'stop': 'FOUND', 'native_end': 'FOUND',
+                    'empty': False, 'path_cost': 3, 'wall_ns': 4, 'cpu_ns': 2},
+                   {'position_zero_based': 1, 'agent': 1, 'stop': 'FOCAL_DRAINED_EMPTY',
+                    'native_end': 'FOCAL_DRAINED_EMPTY', 'empty': True, 'path_cost': -1,
+                    'wall_ns': 5, 'cpu_ns': 3}],
+               'cost': {'primary_search_wall_ns': 9, 'primary_search_cpu_ns': 5,
+                        'rollback_wall_ns': 1, 'rollback_cpu_ns': 1,
+                        'attempt_wall_before_trace_ns': 13, 'attempt_cpu_before_trace_ns': 8}}
+        native = {'attempt_trace_enabled': True, 'attempt_trace_rows': 1, 'sipp_calls': 2, 'rollbacks': 1,
+                  'trace_io_wall_ns': 2, 'trace_io_cpu_ns': 1}
+        def audit(record, receipt=native):
+            return verify_attempt_trace((json.dumps(record)+'\n').encode(), receipt, 2)
+        result = audit(row)
+        self.assertEqual(result['late_normal_empty_attempt_ids'], [1])
+        self.assertFalse(result['recoverability_established'])
+        self.assertFalse(result['blockers_checked'])
+        for stop in ('DEADLINE', 'COST_STOP', 'EMPTY_UNCLASSIFIED', 'START_BLOCKED'):
+            changed = copy.deepcopy(row)
+            changed['primary_stop'] = stop
+            if stop == 'DEADLINE':
+                changed['local_deadline_reached'] = True
+                changed['primary_returns'][-1]['stop'] = 'DEADLINE'
+            self.assertEqual(audit(changed)['late_normal_empty_attempt_ids'], [])
+        for key, value in [('failed_agent', 0), ('primary_calls', 1), ('accepted', True),
+                           ('recovery_decision', 'RECOVERY_ACCEPTED')]:
+            changed = copy.deepcopy(row)
+            changed[key] = value
+            if key == 'accepted':
+                changed['local_deadline_reached'] = True
+            with self.subTest(key=key), self.assertRaises(ValueError):
+                audit(changed)
+        with self.assertRaisesRegex(ValueError, 'counters'):
+            audit(row, dict(native, sipp_calls=3))
+        with self.assertRaisesRegex(ValueError, 'partial'):
+            verify_attempt_trace(json.dumps(row).encode(), native, 2)
+        empty = verify_attempt_trace(b'', dict(native, attempt_trace_rows=0,
+                                              sipp_calls=0, rollbacks=0), 2)
+        self.assertEqual(empty['attempts'], 0)
+        self.assertFalse(empty['group_construction_in_attempt_denominator'])
+
     def test_author_reward_and_acceptance_bodies_unchanged(self):
         root = Path(os.environ.get('ADDRESS_AUTHOR_ROOT', '/home/lyh/.cache/mapf_research/address-b3d35c4'))
         pins = source_identity(root)
@@ -206,6 +257,47 @@ root=Path(sys.argv[1])
             self.assertEqual(result['status'], 'FAILED')
             self.assertIn('exited 7', result['reason'])
             self.assertTrue((folder/'initial.txt').exists())
+
+    def test_optional_trace_is_charged_and_required_for_traced_worker(self):
+        import json, sys
+        case = {'id': 'fixture', 'rows': 2, 'cols': 4, 'blocked': [],
+                'paths': {str(i): [i] for i in range(8)},
+                'endpoints': {str(i): [i, i] for i in range(8)}, 'orders': []}
+        config = {'variant': 'budget_guard', 'attempt_trace': True,
+                  'manifest_sha256': 'fixture', 'limits': {
+                      'external_final_reserve_s': .1, 'inner_final_reserve_s': .1,
+                      'native_cpu_s': 2, 'native_cpu_reserve_s': 1, 'per_process_as_mib': 128}}
+        native = {'initial_and_final_validated': True, 'seed': 1, 'initial_soc': 0, 'final_soc': 0,
+                  'budget_scope': 'SHARED_WALL_PROCESS_CPU_WITH_FINAL_RESERVE',
+                  'cpu_limit_s': 2, 'cpu_reserve_s': 1, 'inner_cpu_s': .01,
+                  'global_deadline': False, 'preprocessing_fallback': False,
+                  'last_stage': 'NONE', 'termination': 'NORMAL', 'last_sipp_end': 'NONE',
+                  'group_calls': 0, 'sipp_calls': 0, 'sipp_deadlines': 0,
+                  'repair_deadlines': 0, 'rollbacks': 0, 'attempt_trace_enabled': True,
+                  'attempt_trace_rows': 0, 'trace_io_wall_ns': 0, 'trace_io_cpu_ns': 0}
+        # Only materializes known fixture outputs, never runs a solver.
+        for trace in ('EMPTY', 'MISSING', 'TRUNCATED'):
+            with self.subTest(trace=trace), tempfile.TemporaryDirectory() as directory:
+                folder = Path(directory)
+                child = folder/'fake.py'
+                child.write_text('from pathlib import Path\nimport sys\np=Path(sys.argv[1])\n'
+                    +'assert "--attemptTrace" in sys.argv\n'
+                    +"(p/'final.paths').write_text(''.join(f'Agent {i}:({i//4},{i%4})->\\n' for i in range(8)))\n"
+                    +"(p/'native_receipt.json').write_text("+repr(json.dumps(native))+')\n'
+                    +( "(p/'attempts.jsonl').write_text("+repr('' if trace=='EMPTY' else '{')+')\n'
+                       if trace!='MISSING' else ''))
+                factory = lambda *args: [sys.executable, '-B', str(child), str(folder)]
+                okay = worker(config, case, {'seed': 1, 'iterations': 1, 'top_k': 4},
+                              None, folder, time.monotonic_ns()+3_000_000_000, factory)
+                self.assertEqual(okay, trace=='EMPTY')
+                result = json.loads((folder/'result.json').read_bytes())
+                if okay:
+                    self.assertEqual(result['attempt_diagnostics']['attempts'], 0)
+                    self.assertFalse(result['attempt_diagnostics']['recoverability_established'])
+                    self.assertIn('output_parse_and_external_final_validation', result['stage_wall_ns'])
+                else:
+                    self.assertFalse(result['final_validated'])
+                    self.assertEqual(result['status'], 'FAILED')
 
 
 if __name__ == '__main__':

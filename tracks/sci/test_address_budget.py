@@ -50,7 +50,13 @@ struct Time {static fsec now(){return fsec(0);}};
 int calls=0,expire_call=0;
 struct Planner {
     int start_location=0;vector<int>my_heuristic{0};
-    template<class T>Path findPath(const T&) {++calls;if(calls==expire_call)tick=100;return {{start_location},{start_location+1},{start_location+2}};}
+    template<class T>Path findPath(const T&) {
+      ++calls;++address_budget::state().sipp_calls;address_budget::state().last_sipp_end="FOUND";
+      if(calls==expire_call)tick=100;
+      if(expire_call==-2&&calls==2){address_budget::state().last_sipp_end="FOCAL_DRAINED_EMPTY";return {};}
+      if(expire_call==-4)return {{start_location},{start_location},{start_location+1},{start_location+2}};
+      return {{start_location},{start_location+1},{start_location+2}};
+    }
 };
 struct Agent {int id;Path path;Planner* path_planner;};
 struct FakeTable {
@@ -79,6 +85,7 @@ struct LNS {
 '''+method(source,'bool LNS::runPP()')+r'''
 int main(int argc,char**argv){
     setup();expire_call=atoi(argv[1]);LNS test;
+    if(argc>3)address_budget::configure_trace(argv[3]);
     auto original=test.neighbor.old_paths;
     bool accepted=test.runPP();
     if(expire_call){assert(!accepted);assert(test.neighbor.sum_of_costs==9);assert(address_budget::state().rollbacks==1);
@@ -186,6 +193,26 @@ class BudgetContracts(unittest.TestCase):
             value=json.loads(receipt.read_text());self.assertTrue(value['initial_and_final_validated'])
             self.assertEqual(value['final_soc'],9 if expiry else 6)
             self.assertEqual(value['rollbacks'],int(bool(expiry)))
+
+    def test_trace_uses_real_call_position_and_preserves_no_diagnosis(self):
+        from run_address_adapter import verify_attempt_trace
+        exe=self.compile('trace_pp',pp_fixture(self.guarded['src/LNS.cpp'].decode()))
+        for mode,stop,position,site in ((0,'FOUND',-1,'COMPLETE'),(2,'DEADLINE',1,'RETURN'),
+                                       (-2,'FOCAL_DRAINED_EMPTY',1,'RETURN'),(-4,'COST_STOP',2,'COST_BOUND')):
+            receipt=self.root/('trace_receipt'+str(mode)+'.json');trace=self.root/('trace'+str(mode)+'.jsonl')
+            self.execute(exe,mode,receipt,trace)
+            row=json.loads(trace.read_text());native=json.loads(receipt.read_text())
+            verify_attempt_trace(trace.read_bytes(),native,3)
+            self.assertEqual(row['primary_stop'],stop);self.assertEqual(row['failed_position_zero_based'],position)
+            self.assertEqual(row['failure_site'],site)
+            self.assertEqual(row['failed_agent'],-1 if position<0 else row['order'][position])
+            self.assertFalse(row['blockers_checked']);self.assertFalse(row['recoverability_established'])
+            self.assertEqual(row['primary_calls'],len(row['primary_returns']))
+            self.assertEqual(row['primary_calls'],native['sipp_calls'])
+            self.assertTrue(native['attempt_trace_enabled']);self.assertEqual(native['attempt_trace_rows'],1)
+            for metric in ('wall','cpu'):
+                self.assertEqual(row['cost']['primary_search_'+metric+'_ns'],
+                    sum(x[metric+'_ns'] for x in row['primary_returns']))
 
     def test_absolute_cpu_and_deadline_node_ownership(self):
         code=COMMON+r'''

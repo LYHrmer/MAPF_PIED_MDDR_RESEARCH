@@ -1,6 +1,6 @@
 """Shared cooperative deadline overlay. Source transformation only, no search.
 
-Apply after common initial adapter + loop guard (+ optional recovery overlay).
+Apply after common initial adapter + loop guard, before optional recovery overlay.
 Frozen older overlays/manifests remain reproducible at their recorded commits.
 """
 from pathlib import Path
@@ -43,9 +43,11 @@ def adapt(files):
     driver='#include "address_budget_support.h"\n'+driver
     driver=replace_exact(driver,'("help", "produce help message")','''("help", "produce help message")
         ("cpuLimit", po::value<double>()->required(), "absolute process CPU hard-limit contract in seconds")
-        ("cpuReserve", po::value<double>()->required(), "CPU seconds reserved for rollback/final checks/output")''')
+        ("cpuReserve", po::value<double>()->required(), "CPU seconds reserved for rollback/final checks/output")
+        ("attemptTrace", po::value<string>()->default_value(""), "optional new common primary-attempt JSONL")''')
     driver=replace_exact(driver,'    srand(config.seed);','''    srand(config.seed);
-    address_budget::configure(vm["cpuLimit"].as<double>(),vm["cpuReserve"].as<double>());''')
+    address_budget::configure(vm["cpuLimit"].as<double>(),vm["cpuReserve"].as<double>());
+    address_budget::configure_trace(vm["attemptTrace"].as<string>());''')
     driver=replace_exact(driver,'        LNS lns(instance, time_limit,','''        const auto budget_initial=address_budget::prevalidate(instance,size_t(n));
         try {
         address_budget::state().preprocessing=true;
@@ -79,25 +81,35 @@ def adapt(files):
     lns=edit_function(lns,'void LNS::randomWalk(',lambda s:loop_checkpoints(s,'if(address_budget::expired("GROUP_WALK"))return;'))
     lns=edit_function(lns,'int LNS::bernoulie()',lambda s:loop_checkpoints(s,'if(address_budget::expired("GROUP_SEED"))return -1;'))
     def repair(src):
+        src=src.replace('{\n','{\n    address_budget::AttemptTrace budget_attempt(neighbor.old_sum_of_costs);\n',1)
+        src=replace_exact(src,'    std::random_shuffle(shuffled_agents.begin(), shuffled_agents.end());',
+            '    std::random_shuffle(shuffled_agents.begin(), shuffled_agents.end());\n    budget_attempt.order=shuffled_agents;')
         src=replace_exact(src,'    auto time = Time::now();','''    auto time = Time::now();
     address_budget::RepairScope budget_repair(T);''')
-        src=replace_exact(src,'        int id = *p;','''        if(address_budget::expired("REPAIR"))break;
-        int id = *p;''')
+        src=replace_exact(src,'    while (p != shuffled_agents.end() && ((fsec)(Time::now() - time)).count() < T)',
+            '    while (p != shuffled_agents.end() && !address_budget::expired("REPAIR"))')
         src=replace_exact(src,'        agents[id].path = agents[id].path_planner->findPath(constraint_table);','''        agents[id].path = agents[id].path_planner->findPath(constraint_table);
+        budget_attempt.returned(id,int(p-shuffled_agents.begin()),agents[id].path.empty(),
+            agents[id].path.empty()?-1:int(agents[id].path.size())-1);
         if(address_budget::expired("SIPP_RETURN"))break;''')
+        src=replace_exact(src,'        agents[id].path = agents[id].path_planner->findPath(constraint_table);',
+            '        budget_attempt.before_call();\n        agents[id].path = agents[id].path_planner->findPath(constraint_table);')
+        src=replace_exact(src,'        if (neighbor.sum_of_costs >= neighbor.old_sum_of_costs)\n            break;',
+            '        if (neighbor.sum_of_costs >= neighbor.old_sum_of_costs) {\n            budget_attempt.primary_stop="COST_STOP";budget_attempt.failure_site="COST_BOUND";\n            break;\n        }')
+        reward='     if ((destroy_strategy == RANDOMWALK || destroy_strategy == DESTROY_COUNT) && (algo != CANONICAL))'
+        src=replace_exact(src,reward,
+            '    budget_attempt.primary_done(remaining_agents,int(p-shuffled_agents.begin()));\n'+reward)
         # Reject even a complete FOUND whose final return consumes the deadline.
         src=replace_exact(src,'    if (remaining_agents == 0 && neighbor.sum_of_costs <= neighbor.old_sum_of_costs',
                           '    if (!address_budget::expired("ACCEPT") && remaining_agents == 0 && neighbor.sum_of_costs <= neighbor.old_sum_of_costs')
         src=replace_exact(src,'    else // stick to old paths\n    {','''    else // stick to old paths
     {
+        budget_attempt.begin_rollback();
         ++address_budget::state().rollbacks;''')
-        if 'address_recovery::Context' in src:
-            # All calls use the same local/global deadline. These substitutions
-            # prevent deadline-empty returns from becoming FOCAL_DRAINED labels.
-            src=src.replace('address_recovery::now_ns()>=recovery_deadline_ns',
-                            '(address_budget::expired("RECOVERY") || address_recovery::now_ns()>=recovery_deadline_ns)')
-            src=src.replace('address_recovery::now_ns()<recovery_deadline_ns',
-                            '(!address_budget::expired("RECOVERY") && address_recovery::now_ns()<recovery_deadline_ns)')
+        src=replace_exact(src,'        return true;',
+            '        budget_attempt.finish(true,neighbor.sum_of_costs);\n        return true;')
+        src=replace_exact(src,'        return false;',
+            '        budget_attempt.end_rollback();\n        budget_attempt.finish(false,neighbor.sum_of_costs);\n        return false;')
         return src
     lns=edit_function(lns,'bool LNS::runPP()',repair)
 
@@ -141,6 +153,12 @@ def adapt(files):
     changed={'src/driver.cpp':driver.encode(),'src/LNS.cpp':lns.encode(),'src/SIPP.cpp':sipp.encode(),
         'src/SingleAgentSolver.cpp':single.encode(),
         'inc/address_budget_support.h':(HERE/'address_budget_support.h').read_bytes()}
+    adapter=files['inc/address_adapter_support.h'].decode()
+    adapter='#include <functional>\n'+adapter
+    adapter=replace_exact(adapter,'const std::vector<int>& goals) {',
+        'const std::vector<int>& goals, const std::function<void()>& cancel=std::function<void()>()) {')
+    adapter=edit_function(adapter,'inline int validate(',lambda s:loop_checkpoints(s,'if(cancel)cancel();'))
+    changed['inc/address_adapter_support.h']=adapter.encode()
     for name in ('src/ReservationTable.cpp','src/PathTable.cpp'):
         raw=files[name].decode()
         if name=='src/PathTable.cpp':

@@ -1,5 +1,6 @@
 // Optional recovery contract; independent of ADDRESS types and search engines.
 #pragma once
+#include "address_budget_support.h"
 #include <algorithm>
 #include <chrono>
 #include <functional>
@@ -29,6 +30,11 @@ inline const char* name(Stop stop) {
         case Stop::START_BLOCKED:return "START_BLOCKED";
         case Stop::FOCAL_DRAINED_EMPTY:return "FOCAL_DRAINED_EMPTY";
     }return "UNKNOWN";
+}
+inline Stop from_name(const std::string& value) {
+    for(auto s:{Stop::FOUND,Stop::DEADLINE,Stop::COST_STOP,Stop::EMPTY_UNCLASSIFIED,Stop::START_BLOCKED,Stop::FOCAL_DRAINED_EMPTY})
+        if(value==name(s))return s;
+    return Stop::UNKNOWN;
 }
 struct Settings {
     Policy policy=Policy::ABANDON;
@@ -62,15 +68,17 @@ struct Context {
     size_t failed_position=0;
     int old_group_cost=0, primary_calls=0;
     Stop stop=Stop::UNKNOWN;
-    long long deadline_ns=0; // min(original repair deadline, total deadline), never reset
 };
 struct Trace {
     std::string decision="UNSET";
     int primary_calls=0, extra_requests=0, extra_calls=0, pair_checks=0, partial_checks=0, full_checks=0;
     size_t kept=0, tail=0;
-    size_t failed_position=0;
+    int failed_position=-1;
     int failed_agent=-1, prefix_cost=-1, old_failed_cost=-1, remaining_realized_budget=-1;
-    bool blockers_checked=false;
+    bool blockers_checked=false, snapshot_complete=false, final_check_complete=false;
+    long attempt_id=0;
+    std::string deadline_phase="NONE";
+    int checks_completed=0;
     std::vector<int> blocking_prefix_agents;
     std::vector<int> original_order;
     int old_group_cost=0;
@@ -78,20 +86,43 @@ struct Trace {
     std::vector<Stop> extra_returns;
     long long diagnosis_ns=0, search_ns=0, validation_ns=0, total_ns=0;
     long long attempt_wall_before_trace_ns=0;
+    long long context_ns=0,context_cpu_ns=0,callback_ns=0,callback_cpu_ns=0;
+    long long reservation_ns=0,reservation_cpu_ns=0,search_cpu_ns=0,validation_cpu_ns=0;
+    long long commit_prepare_ns=0,commit_prepare_cpu_ns=0,commit_ns=0,commit_cpu_ns=0;
+    long long total_cpu_ns=0,hook_wall_ns=0,hook_cpu_ns=0;
+
 };
-struct Reply { Stop stop; std::vector<int> path; bool search_executed=true; };
+struct Reply {
+    Stop stop; std::vector<int> path; bool search_executed=true;
+    long long reservation_ns=0,reservation_cpu_ns=0,search_ns=0,search_cpu_ns=0;
+};
+struct Charge {
+    long long &wall,&cpu;address_budget::Tick start;bool active=true;
+    Charge(long long&w,long long&c):wall(w),cpu(c),start(address_budget::tick()){}
+    void finish(){if(!active)return;auto end=address_budget::tick();wall+=address_budget::difference(end.wall,start.wall);cpu+=address_budget::difference(end.cpu,start.cpu);active=false;}
+    ~Charge(){finish();}
+};
 struct Result { bool accepted=false; Paths paths; std::vector<int> order; Trace trace; };
 using Search = std::function<Reply(int,const Paths&)>;
 using Validate = std::function<void(const Paths&,bool)>;
 inline int at(const std::vector<int>& p,size_t t) {return p[std::min(t,p.size()-1)];}
 inline bool conflict(const std::vector<int>& a,const std::vector<int>& b) {
     for(size_t t=0;t<std::max(a.size(),b.size());++t) {
+        address_budget::checkpoint("RECOVERY_CONFLICT");
         if(at(a,t)==at(b,t)) return true;
         if(t && at(a,t-1)==at(b,t) && at(b,t-1)==at(a,t)) return true;
     }
     return false;
 }
 inline int cost(const std::vector<int>& path) {return int(path.size())-1;}
+inline std::vector<int> copy_path(const std::vector<int>& path) {
+    std::vector<int> result;result.reserve(path.size());
+    for(int loc:path){address_budget::checkpoint("RECOVERY_COPY");result.push_back(loc);}return result;
+}
+inline Paths copy_paths(const Paths& paths) {
+    Paths result;result.reserve(paths.size());
+    for(const auto& path:paths){address_budget::checkpoint("RECOVERY_COPY");result.push_back(copy_path(path));}return result;
+}
 
 // Normal empty means an instrumented return site, NOT a completeness theorem.
 // Unknown/timeout/cost-cutoff/start-blocked do not trigger this first mechanism.
@@ -101,49 +132,60 @@ inline Result recover(const Context& c, Policy policy, int max_calls, std::mt199
     tr.original_order=c.order;tr.old_group_cost=c.old_group_cost;
     tr.failed_position=c.failed_position;
     if(c.failed_position<c.order.size()) tr.failed_agent=c.order[c.failed_position];
-    const auto start=now();
+    const auto start=now();const auto cpu_start=address_budget::state().cpu();
     auto finish=[&](const std::string& why) {
-        tr.decision=why;tr.total_ns=now()-start;return out;
+        tr.decision=why;tr.total_ns=now()-start;
+        tr.total_cpu_ns=static_cast<long long>(std::max(0.0,address_budget::state().cpu()-cpu_start)*1e9);
+        tr.diagnosis_ns=std::max(0LL,tr.total_ns-tr.callback_ns-tr.validation_ns);
+        return out;
     };
     auto check=[&](const Paths& paths,bool complete) {
-        const auto begin=now();
+        address_budget::checkpoint("RECOVERY_VALIDATE");
+        Charge charge(tr.validation_ns,tr.validation_cpu_ns);
         if(complete) ++tr.full_checks; else ++tr.partial_checks;
-        validate(paths,complete);tr.validation_ns+=now()-begin;
+        validate(paths,complete);
+        address_budget::checkpoint("RECOVERY_VALIDATE");++tr.checks_completed;
     };
+    try {
+    address_budget::checkpoint("RECOVERY_ENTRY");
+    // Continue-neighborhood baseline never pays blocker/full-plan diagnosis.
+    if(policy==Policy::ABANDON)return finish("ABANDON_NO_DIAGNOSIS");
+    if(c.stop!=Stop::FOCAL_DRAINED_EMPTY)return finish("INELIGIBLE_STOP");
+    if(c.failed_position>=c.order.size() || 2*(c.failed_position+1)<=c.order.size())return finish("NOT_LATE");
     if(c.incumbent.size()!=c.primary.size() || c.order.empty() || max_calls<1 || max_calls>8)
         throw std::runtime_error("invalid recovery context");
     std::vector<bool> member(c.incumbent.size(),false);
     int old_cost=0;
     for(int a:c.order) {
+        address_budget::checkpoint("RECOVERY_DIAGNOSIS");
         if(a<0 || size_t(a)>=member.size() || member[a] || c.incumbent[a].empty())
             throw std::runtime_error("invalid recovery agent");
         member[a]=true;old_cost+=cost(c.incumbent[a]);
     }
     if(old_cost!=c.old_group_cost) throw std::runtime_error("incumbent group cost mismatch");
-    if(now()>=c.deadline_ns) return finish("DEADLINE");
-    check(c.incumbent,true); // same observation/validation protocol in all arms
-    if(now()>=c.deadline_ns) return finish("DEADLINE");
-    if(c.stop!=Stop::FOCAL_DRAINED_EMPTY) return finish("INELIGIBLE_STOP");
-    if(c.failed_position>=c.order.size() || 2*(c.failed_position+1)<=c.order.size())
-        return finish("NOT_LATE");
+    address_budget::checkpoint("RECOVERY_DIAGNOSIS");
+    check(c.incumbent,true); // candidate policies only; abandon returned before diagnostics
+    address_budget::checkpoint("RECOVERY_DIAGNOSIS");
     const int failed=c.order[c.failed_position];
-    Paths fixed=c.incumbent;
+    Paths fixed=copy_paths(c.incumbent);
     for(int a:c.order) fixed[a].clear();
-    Paths current=fixed;
+    Paths current=copy_paths(fixed);
     int prefix_cost=0;
     for(size_t i=0;i<c.failed_position;++i) {
+        address_budget::checkpoint("RECOVERY_DIAGNOSIS");
         const int a=c.order[i];
         if(c.primary[a].empty()) throw std::runtime_error("missing completed prefix");
-        current[a]=c.primary[a];prefix_cost+=cost(current[a]);
+        current[a]=copy_path(c.primary[a]);prefix_cost+=cost(current[a]);
     }
     check(current,false);
-    if(now()>=c.deadline_ns) return finish("DEADLINE");
+    address_budget::checkpoint("RECOVERY_DIAGNOSIS");
     // Author runPP has no remaining-h per-agent cap. Only its strict realized
     // group-cost bound is used here; no old EMPTY_CAPPED certificate is imported.
     tr.prefix_cost=prefix_cost;tr.old_failed_cost=cost(c.incumbent[failed]);
     tr.remaining_realized_budget=old_cost-1-prefix_cost;
     size_t insertion=c.failed_position;
     for(size_t i=0;i<c.failed_position;++i) {
+        address_budget::checkpoint("RECOVERY_DIAGNOSIS");
         ++tr.pair_checks;
         if(conflict(c.incumbent[failed],c.primary[c.order[i]])) {
             insertion=std::min(insertion,i);tr.blocking_prefix_agents.push_back(c.order[i]);
@@ -156,18 +198,19 @@ inline Result recover(const Context& c, Policy policy, int max_calls, std::mt199
         if(conflict(c.incumbent[failed],fixed[a])) return finish("FIXED_PATH_BLOCKS_ANCHOR");
     }
     if(insertion==c.failed_position) return finish("NO_PREFIX_BLOCKER");
-    Paths trial=fixed;
+    Paths trial=copy_paths(fixed);
     int trial_cost=0;
     std::vector<int> new_order,tail;
     for(size_t i=0;i<insertion;++i) {
-        const int a=c.order[i];trial[a]=c.primary[a];trial_cost+=cost(trial[a]);new_order.push_back(a);
+        address_budget::checkpoint("RECOVERY_DIAGNOSIS");
+        const int a=c.order[i];trial[a]=copy_path(c.primary[a]);trial_cost+=cost(trial[a]);new_order.push_back(a);
     }
-    trial[failed]=c.incumbent[failed];trial_cost+=cost(trial[failed]);new_order.push_back(failed);
+    trial[failed]=copy_path(c.incumbent[failed]);trial_cost+=cost(trial[failed]);new_order.push_back(failed);
     for(size_t i=insertion;i<c.order.size();++i) if(c.order[i]!=failed) tail.push_back(c.order[i]);
     tr.kept=insertion;tr.tail=tail.size();
     check(trial,false);
     tr.diagnosis_ns=now()-start;
-    if(now()>=c.deadline_ns) return finish("DEADLINE");
+    address_budget::checkpoint("RECOVERY_DIAGNOSIS");
     if(trial_cost>=old_cost) return finish("ANCHOR_OVER_REALIZED_BUDGET");
     // Eligibility is shared. Random is a one-shot whole-group permutation;
     // with the author's <=8 group size both methods share the same call cap.
@@ -175,34 +218,41 @@ inline Result recover(const Context& c, Policy policy, int max_calls, std::mt199
     // Do not give anchor a larger eligible denominator when random's complete
     // one-shot permutation cannot fit the same call allowance.
     if(c.order.size()>size_t(max_calls)) return finish("GROUP_EXCEEDS_SHARED_CALL_CAP");
-    if(policy==Policy::ABANDON) return finish("ABANDON");
     if(policy==Policy::RANDOM) {
         tail=c.order;
         if(tail.size()>size_t(max_calls)) return finish("RANDOM_EXCEEDS_CALL_CAP");
-        std::shuffle(tail.begin(),tail.end(),rng);trial=fixed;trial_cost=0;new_order.clear();
+        std::shuffle(tail.begin(),tail.end(),rng);trial=copy_paths(fixed);trial_cost=0;new_order.clear();
         tr.kept=0;tr.tail=tail.size();
     }
     for(int a:tail) {
-        if(now()>=c.deadline_ns) return finish("DEADLINE");
+        address_budget::checkpoint("RECOVERY_DIAGNOSIS");
         ++tr.extra_requests;
-        const auto begin=now();const Reply reply=search(a,trial);tr.search_ns+=now()-begin;
+        Reply reply;
+        {Charge charge(tr.callback_ns,tr.callback_cpu_ns);reply=search(a,trial);}
+        tr.reservation_ns+=reply.reservation_ns;tr.reservation_cpu_ns+=reply.reservation_cpu_ns;
+        tr.search_ns+=reply.search_ns;tr.search_cpu_ns+=reply.search_cpu_ns;
         if(reply.search_executed) ++tr.extra_calls;
         tr.extra_returns.push_back(reply.stop);
-        if(now()>=c.deadline_ns) return finish("DEADLINE");
+        address_budget::checkpoint("RECOVERY_DIAGNOSIS");
         if(reply.stop!=Stop::FOUND || reply.path.empty()) return finish("TAIL_NOT_FOUND");
-        trial[a]=reply.path;trial_cost+=cost(reply.path);new_order.push_back(a);
+        trial[a]=copy_path(reply.path);trial_cost+=cost(reply.path);new_order.push_back(a);
         if(trial_cost>=old_cost) return finish("TAIL_COST_STOP");
         check(trial,false);
-        if(now()>=c.deadline_ns) return finish("DEADLINE");
+        address_budget::checkpoint("RECOVERY_DIAGNOSIS");
     }
     check(trial,true);
-    if(now()>=c.deadline_ns) return finish("DEADLINE");
+    address_budget::checkpoint("RECOVERY_DIAGNOSIS");tr.final_check_complete=true;
     out.accepted=true;out.paths=std::move(trial);out.order=std::move(new_order);
     return finish("ACCEPTED");
+    }catch(const address_budget::Deadline&){
+        tr.deadline_phase=address_budget::state().last_stage;
+        return finish("DEADLINE");
+    }
 }
-inline void emit(const Trace& t,Stop stop,bool accepted) {
+inline void emit(const Trace& t,Stop stop,bool accepted,const Context& context) {
+    const auto io_start=address_budget::tick();
     auto& out=settings().trace;
-    out << "{\"decision\":\"" <<t.decision<<"\",\"stop\":\""<<name(stop)<<"\""
+    out << "{\"schema\":\"ADDRESS_RECOVERY_DETAIL_V2\",\"decision\":\"" <<t.decision<<"\",\"stop\":\""<<name(stop)<<"\""
         <<",\"policy\":"<<int(settings().policy)<<",\"accepted\":"<<(accepted?"true":"false")
         <<",\"old_group_cost\":"<<t.old_group_cost
         <<",\"final_group_cost\":"<<t.final_group_cost
@@ -224,8 +274,29 @@ inline void emit(const Trace& t,Stop stop,bool accepted) {
         <<",\"full_checks\":"<<t.full_checks<<",\"diagnosis_ns\":"<<t.diagnosis_ns
         <<",\"search_ns\":"<<t.search_ns<<",\"validation_ns\":"<<t.validation_ns
         <<",\"attempt_wall_before_trace_ns\":"<<t.attempt_wall_before_trace_ns
-        <<",\"recovery_wall_ns\":"<<t.total_ns<<"}\n";
+        <<",\"recovery_wall_ns\":"<<t.total_ns
+        <<",\"attempt_id\":"<<t.attempt_id<<",\"snapshot_complete\":"<<(t.snapshot_complete?"true":"false")
+        <<",\"final_check_complete\":"<<(t.final_check_complete?"true":"false")
+        <<",\"checks_completed\":"<<t.checks_completed<<",\"deadline_phase\":\""<<t.deadline_phase<<"\""
+        <<",\"context_ns\":"<<t.context_ns<<",\"context_cpu_ns\":"<<t.context_cpu_ns
+        <<",\"callback_ns\":"<<t.callback_ns<<",\"callback_cpu_ns\":"<<t.callback_cpu_ns
+        <<",\"reservation_ns\":"<<t.reservation_ns<<",\"reservation_cpu_ns\":"<<t.reservation_cpu_ns
+        <<",\"search_cpu_ns\":"<<t.search_cpu_ns<<",\"validation_cpu_ns\":"<<t.validation_cpu_ns
+        <<",\"commit_prepare_ns\":"<<t.commit_prepare_ns<<",\"commit_prepare_cpu_ns\":"<<t.commit_prepare_cpu_ns
+        <<",\"commit_ns\":"<<t.commit_ns<<",\"commit_cpu_ns\":"<<t.commit_cpu_ns
+        <<",\"recovery_cpu_ns\":"<<t.total_cpu_ns<<",\"hook_wall_ns\":"<<t.hook_wall_ns
+        <<",\"hook_cpu_ns\":"<<t.hook_cpu_ns;
+    auto paths=[&](const char* label,const Paths& value){
+        out<<",\""<<label<<"\":[";
+        if(t.snapshot_complete)for(size_t a=0;a<value.size();++a){out<<(a?",":"")<<"[";for(size_t i=0;i<value[a].size();++i)out<<(i?",":"")<<value[a][i];out<<"]";}
+        out<<"]";
+    };
+    paths("incumbent_witness",context.incumbent);paths("primary_prefix_witness",context.primary);
+    out<<"}\n";
     out.flush();
     if(!out) throw std::runtime_error("recovery trace output failure");
+    const auto end=address_budget::tick();
+    address_budget::state().trace_io_wall_ns+=address_budget::difference(end.wall,io_start.wall);
+    address_budget::state().trace_io_cpu_ns+=address_budget::difference(end.cpu,io_start.cpu);
 }
 } // namespace address_recovery

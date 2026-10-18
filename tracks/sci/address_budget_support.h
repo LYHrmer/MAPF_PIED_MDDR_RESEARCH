@@ -22,8 +22,11 @@ struct State {
     ClockFunction wall = real_wall, cpu = real_cpu;
     bool configured=false, global_deadline=false, repair_deadline=false, search_active=false;
     bool preprocessing=false, preprocessing_fallback=false;
+    bool recovery_active=false;
     double wall_stop=0, cpu_limit=0, cpu_reserve=0, local_stop=std::numeric_limits<double>::infinity();
     long group_calls=0,sipp_calls=0,sipp_deadlines=0,repair_deadlines=0,rollbacks=0;
+    long attempts=0,attempt_trace_rows=0;
+    long long trace_io_wall_ns=0,trace_io_cpu_ns=0;
     std::string last_stage="NONE", termination="NORMAL", last_sipp_end="NONE";
 };
 inline State& state() { static State s; return s; }
@@ -49,7 +52,83 @@ inline bool expired(const char* stage) {
     return false;
 }
 inline void checkpoint(const char* stage) { if(expired(stage))throw Deadline{}; }
-inline void search_checkpoint(const char* stage) { if(state().search_active)checkpoint(stage); }
+inline void search_checkpoint(const char* stage) { if(state().search_active||state().recovery_active)checkpoint(stage); }
+struct RecoveryScope {
+    bool previous;
+    RecoveryScope():previous(state().recovery_active){state().recovery_active=true;}
+    ~RecoveryScope(){state().recovery_active=previous;}
+};
+struct Tick { long long wall,cpu; };
+inline Tick tick() { return {static_cast<long long>(state().wall()*1e9),static_cast<long long>(state().cpu()*1e9)}; }
+inline long long difference(long long end,long long begin){return std::max(0LL,end-begin);}
+inline std::ofstream& attempt_stream(){static std::ofstream out;return out;}
+inline void configure_trace(const std::string& path){
+    if(path.empty())return;
+    if(std::ifstream(path)||attempt_stream().is_open())throw std::runtime_error("budget: attempt trace exists");
+    attempt_stream().open(path);if(!attempt_stream())throw std::runtime_error("budget: attempt trace open");
+}
+struct ReturnRecord {
+    int position=-1,agent=-1,path_cost=-1;bool empty=true;
+    std::string stop="UNKNOWN",native_end="UNKNOWN";long long wall_ns=0,cpu_ns=0;
+};
+struct AttemptTrace {
+    long id;std::vector<int>order;int old_cost,final_cost=-1,calls=0,failed_position=-1,failed_agent=-1;
+    bool complete=false,failed_attempted=false,accepted=false;
+    bool blockers_checked=false,recoverability_established=false;
+    std::string primary_stop="UNKNOWN",failure_site="BEFORE_CALL",recovery_decision="NONE";
+    std::vector<ReturnRecord>returns;
+    Tick begin,call_begin,rollback_begin;long long search_wall=0,search_cpu=0,rollback_wall=0,rollback_cpu=0;
+    explicit AttemptTrace(int cost):id(++state().attempts),old_cost(cost),begin(tick()){}
+    void before_call(){call_begin=tick();}
+    void returned(int agent,int position,bool empty,int path_cost){
+        const auto end=tick();++calls;
+        ReturnRecord r;r.agent=agent;r.position=position;r.empty=empty;r.path_cost=path_cost;
+        r.native_end=state().last_sipp_end;
+        r.stop=expired("SIPP_RETURN")?"DEADLINE":(!empty?"FOUND":
+          ((r.native_end=="START_BLOCKED"||r.native_end=="FOCAL_DRAINED_EMPTY")?r.native_end:"EMPTY_UNCLASSIFIED"));
+        r.wall_ns=difference(end.wall,call_begin.wall);r.cpu_ns=difference(end.cpu,call_begin.cpu);
+        search_wall+=r.wall_ns;search_cpu+=r.cpu_ns;primary_stop=r.stop;failure_site="RETURN";
+        if(attempt_stream().is_open())returns.push_back(r);
+    }
+    void primary_done(int remaining,int position){
+        complete=remaining==0;
+        if(expired("PRIMARY_DONE")){primary_stop="DEADLINE";if(complete)failure_site="COMPLETE";else if(position>=calls)failure_site="BEFORE_CALL";}
+        else if(complete){primary_stop="FOUND";failure_site="COMPLETE";}
+        failed_position=complete?-1:position;
+        failed_agent=failed_position>=0&&size_t(failed_position)<order.size()?order[failed_position]:-1;
+        failed_attempted=failed_position>=0&&failed_position<calls;
+    }
+    void begin_rollback(){rollback_begin=tick();}
+    void end_rollback(){const auto end=tick();rollback_wall=difference(end.wall,rollback_begin.wall);rollback_cpu=difference(end.cpu,rollback_begin.cpu);}
+    void finish(bool ok,int cost){
+        accepted=ok;final_cost=cost;
+        if(!ok&&complete&&(state().repair_deadline||state().global_deadline))failure_site="FINAL_ADMISSION";
+        auto& out=attempt_stream();if(!out.is_open())return;
+        const auto end=tick();
+        out<<"{\"schema\":\"ADDRESS_ATTEMPT_V2\",\"attempt_id\":"<<id<<",\"order\":[";
+        for(size_t i=0;i<order.size();++i)out<<(i?",":"")<<order[i];
+        out<<"],\"group_size\":"<<order.size()<<",\"old_group_cost\":"<<old_cost<<",\"final_group_cost\":"<<final_cost
+           <<",\"primary_calls\":"<<calls<<",\"primary_returns\":[";
+        for(size_t i=0;i<returns.size();++i){const auto&r=returns[i];out<<(i?",":"")
+          <<"{\"position_zero_based\":"<<r.position<<",\"agent\":"<<r.agent<<",\"stop\":\""<<r.stop
+          <<"\",\"native_end\":\""<<r.native_end<<"\",\"empty\":"<<(r.empty?"true":"false")
+          <<",\"path_cost\":"<<r.path_cost<<",\"wall_ns\":"<<r.wall_ns<<",\"cpu_ns\":"<<r.cpu_ns<<"}";}
+        out<<"],\"primary_stop\":\""<<primary_stop<<"\",\"primary_complete\":"<<(complete?"true":"false")
+           <<",\"failed_position_zero_based\":"<<failed_position<<",\"failed_agent\":"<<failed_agent
+           <<",\"failed_agent_attempted\":"<<(failed_attempted?"true":"false")<<",\"failure_site\":\""<<failure_site
+           <<"\",\"local_deadline_reached\":"<<(state().repair_deadline?"true":"false")
+           <<",\"global_deadline_reached\":"<<(state().global_deadline?"true":"false")
+           <<",\"accepted\":"<<(accepted?"true":"false")<<",\"blockers_checked\":"<<(blockers_checked?"true":"false")
+           <<",\"recoverability_established\":"<<(recoverability_established?"true":"false")<<",\"recovery_decision\":\""<<recovery_decision
+           <<"\",\"group_calls_so_far\":"<<state().group_calls<<",\"cost\":{\"primary_search_wall_ns\":"<<search_wall
+           <<",\"primary_search_cpu_ns\":"<<search_cpu<<",\"rollback_wall_ns\":"<<rollback_wall
+           <<",\"rollback_cpu_ns\":"<<rollback_cpu<<",\"attempt_wall_before_trace_ns\":"<<difference(end.wall,begin.wall)
+           <<",\"attempt_cpu_before_trace_ns\":"<<difference(end.cpu,begin.cpu)<<"}}\n";
+        out.flush();if(!out)throw std::runtime_error("budget: attempt trace write");
+        const auto wrote=tick();state().trace_io_wall_ns+=difference(wrote.wall,end.wall);
+        state().trace_io_cpu_ns+=difference(wrote.cpu,end.cpu);++state().attempt_trace_rows;
+    }
+};
 struct RepairScope {
     double previous;
     explicit RepairScope(double seconds):previous(state().local_stop) {
@@ -114,6 +193,9 @@ inline int finish() {
       <<",\"group_calls\":"<<s.group_calls<<",\"sipp_calls\":"<<s.sipp_calls
       <<",\"sipp_deadlines\":"<<s.sipp_deadlines<<",\"repair_deadlines\":"<<s.repair_deadlines
       <<",\"rollbacks\":"<<s.rollbacks
+      <<",\"attempt_trace_rows\":"<<s.attempt_trace_rows<<",\"trace_io_wall_ns\":"<<s.trace_io_wall_ns
+      <<",\"trace_io_cpu_ns\":"<<s.trace_io_cpu_ns
+      <<",\"attempt_trace_enabled\":"<<(attempt_stream().is_open()?"true":"false")
       <<",\"reward_semantics\":\"AUTHOR_ATTEMPT_UPDATE_BEFORE_ROLLBACK\",\"external_total_budget_verified\":false}\n";
     receipt.close();if(!receipt)throw std::runtime_error("budget: receipt write failed");
     return valid&&address_adapter::remaining()>=0&&s.cpu()<s.cpu_limit?0:74;
