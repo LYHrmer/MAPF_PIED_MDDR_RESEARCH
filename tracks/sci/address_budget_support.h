@@ -37,6 +37,12 @@ struct PhaseProfile {
     long long seed_calls=0,walk_calls=0,seed_zero_delay_selected=0,seed_positive_delay_selected=0;
     std::array<PhaseCosts,static_cast<size_t>(Phase::COUNT)> phases{};
 };
+struct SeedAdmission {
+    std::string policy="all";
+    long long selection_calls=0,agents_checked=0,topk_candidates=0,filtered_zero_candidates=0;
+    long long retained_topk_candidates=0,empty_eligible_calls=0,deadline_calls=0,selected_calls=0;
+    bool static_soc_lower_bound_reached=false;
+};
 struct State {
     ClockFunction wall = real_wall, cpu = real_cpu;
     bool configured=false, global_deadline=false, repair_deadline=false, search_active=false;
@@ -47,9 +53,70 @@ struct State {
     long attempts=0,attempt_trace_rows=0;
     long long trace_io_wall_ns=0,trace_io_cpu_ns=0;
     std::string last_stage="NONE", termination="NORMAL", last_sipp_end="NONE";
+    std::string effort_mode="fixed_repairs",deadline_resource="NONE";
+    int repair_cap=0;
     PhaseProfile profile;
+    SeedAdmission seed_admission;
 };
 inline State& state() { static State s; return s; }
+inline void configure_effort(const std::string& mode,int limit) {
+    if((mode=="fixed_repairs"&&limit>0)||(mode=="total_budget"&&limit==0)) {
+        state().effort_mode=mode;state().repair_cap=limit;return;
+    }
+    throw std::runtime_error("budget: effortMode and maxIterations disagree");
+}
+inline bool below_repair_cap(size_t stats,int limit) {
+    return state().effort_mode=="total_budget"||stats<=size_t(limit);
+}
+inline void record_loop_exit(size_t stats,int limit) {
+    auto& s=state();
+    if(s.termination!="NORMAL")return;
+    s.termination=s.effort_mode=="fixed_repairs"&&stats>size_t(limit)?"REPAIR_CAP":"AUTHOR_TIME_LIMIT";
+}
+inline void configure_seed_admission(const std::string& policy) {
+    if(policy!="all"&&policy!="positive_delay")throw std::runtime_error("budget: unknown seedAdmission");
+    state().seed_admission.policy=policy;
+}
+inline bool positive_seed_admission(){return state().seed_admission.policy=="positive_delay";}
+// Read the currently committed paths on every selection; never cache labels
+// across acceptance or rollback. The pinned solver computes exact distances on
+// the same unit-cost graph before any seed selection can take place.
+template<class Agent> inline void check_seed_delay(const Agent& agent,int delay) {
+    if(!positive_seed_admission())return;
+    auto& counters=state().seed_admission;++counters.agents_checked;
+    const auto* planner=agent.path_planner;
+    if(!planner||agent.path.empty()||agent.path.size()-1>size_t(std::numeric_limits<int>::max())
+       ||planner->start_location<0||size_t(planner->start_location)>=planner->my_heuristic.size()
+       ||agent.path.front().location!=planner->start_location)
+        throw std::runtime_error("budget: invalid seed path or distance index");
+    const int cost=int(agent.path.size())-1,h=planner->my_heuristic[planner->start_location];
+    if(h<0||h>cost||delay!=cost-h)
+        throw std::runtime_error("budget: invalid current-path static-distance delay");
+}
+inline bool retain_seed_candidate(int delay) {
+    auto& counters=state().seed_admission;++counters.topk_candidates;
+    if(positive_seed_admission()&&delay==0){++counters.filtered_zero_candidates;return false;}
+    ++counters.retained_topk_candidates;return true;
+}
+inline int seed_selection_deadline(){++state().seed_admission.deadline_calls;return -1;}
+inline void mark_static_soc_lower_bound() {
+    state().seed_admission.static_soc_lower_bound_reached=true;
+    state().termination="STATIC_SOC_BOUND";
+}
+inline int no_positive_seed(int total_positive) {
+    if(!positive_seed_admission()||total_positive!=0)
+        throw std::runtime_error("budget: empty top-k is not a certified all-zero incumbent");
+    ++state().seed_admission.empty_eligible_calls;mark_static_soc_lower_bound();return -1;
+}
+inline void write_seed_admission(std::ostream& out) {
+    const auto& c=state().seed_admission;
+    out<<",\"seed_admission\":{\"schema\":\"ADDRESS_SEED_ADMISSION_V1\",\"policy\":\""<<c.policy
+       <<"\",\"selection_calls\":"<<c.selection_calls<<",\"agents_checked\":"<<c.agents_checked
+       <<",\"topk_candidates\":"<<c.topk_candidates<<",\"filtered_zero_candidates\":"<<c.filtered_zero_candidates
+       <<",\"retained_topk_candidates\":"<<c.retained_topk_candidates<<",\"empty_eligible_calls\":"<<c.empty_eligible_calls
+       <<",\"deadline_calls\":"<<c.deadline_calls<<",\"selected_calls\":"<<c.selected_calls
+       <<",\"static_soc_lower_bound_reached\":"<<(c.static_soc_lower_bound_reached?"true":"false")<<"}";
+}
 // Profiling is optional, wall-only, and charged to the existing deadlines. It
 // never consumes RNG values or adds process-CPU clock calls. Parent scopes are
 // paused while a child is active: sampled expired() time is a subset, not a
@@ -150,7 +217,9 @@ inline bool expired(const char* stage) {
     auto& s=state();if(!s.configured)return false;
     ExpiredSample profile_sample;
     const double wall=s.wall(),cpu=s.cpu();
-    if(wall>=s.wall_stop||cpu>=s.cpu_limit-s.cpu_reserve) {
+    const bool wall_expired=wall>=s.wall_stop,cpu_expired=cpu>=s.cpu_limit-s.cpu_reserve;
+    if(wall_expired||cpu_expired) {
+        if(!s.global_deadline)s.deadline_resource=wall_expired?(cpu_expired?"WALL_AND_CPU":"WALL"):"CPU";
         s.global_deadline=true;s.termination="GLOBAL_DEADLINE";
     }
     if(s.global_deadline||wall>=s.local_stop||s.repair_deadline) {
@@ -283,6 +352,7 @@ inline void output_initial(const address_adapter::Paths& paths,const InstanceT& 
     }
     output.close();if(!output)throw std::runtime_error("budget: fallback output write failed");
     state().preprocessing_fallback=true;
+    state().termination="PREPROCESS_FALLBACK";
 }
 inline int finish() {
     profile_finish();
@@ -303,11 +373,16 @@ inline int finish() {
       <<",\"group_calls\":"<<s.group_calls<<",\"sipp_calls\":"<<s.sipp_calls
       <<",\"sipp_deadlines\":"<<s.sipp_deadlines<<",\"repair_deadlines\":"<<s.repair_deadlines
       <<",\"rollbacks\":"<<s.rollbacks
+      <<",\"effort_mode\":\""<<s.effort_mode<<"\",\"repair_cap\":"
+      <<(s.effort_mode=="total_budget"?"null":std::to_string(s.repair_cap))
+      <<",\"repair_attempts\":"<<s.attempts<<",\"loop_exit_reason\":\""<<s.termination
+      <<"\",\"deadline_resource\":\""<<s.deadline_resource<<"\""
+      <<",\"static_soc_lower_bound_reached\":"<<(s.seed_admission.static_soc_lower_bound_reached?"true":"false")
       <<",\"attempt_trace_rows\":"<<s.attempt_trace_rows<<",\"trace_io_wall_ns\":"<<s.trace_io_wall_ns
       <<",\"trace_io_cpu_ns\":"<<s.trace_io_cpu_ns
       <<",\"attempt_trace_enabled\":"<<(attempt_stream().is_open()?"true":"false")
       <<",\"reward_semantics\":\"AUTHOR_ATTEMPT_UPDATE_BEFORE_ROLLBACK\",\"external_total_budget_verified\":false";
-    write_profile(receipt);receipt<<"}\n";
+    write_profile(receipt);write_seed_admission(receipt);receipt<<"}\n";
     receipt.close();if(!receipt)throw std::runtime_error("budget: receipt write failed");
     return valid&&address_adapter::remaining()>=0&&s.cpu()<s.cpu_limit?0:74;
 }

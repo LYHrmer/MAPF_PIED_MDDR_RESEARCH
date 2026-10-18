@@ -1,0 +1,105 @@
+{
+  "attempt_trace": false,
+  "authorization": "PENDING_USER",
+  "batch_id": "address_seed_time_v1",
+  "binary": "../../.address_seed_admission_build/build/address",
+  "binary_sha256": "d4dc680dee3d4d9ad7ebd3d4da391618a29f8868cf5d1f6c427e56f28e7de473",
+  "build_receipt": "seed_admission_build_receipt.json",
+  "build_source_sha256": {
+    "address_adapter.py": "7bd6ee6e969cb27414626289398b657f0b9ad7398903c9ab16cc76a5fcc00632",
+    "address_adapter_support.h": "8d9fbea2048eac1245df4d743580f994a23f2cb4d48089e9575de2508be94bc2",
+    "address_budget.py": "8417f25d068a54fb9bfc7631eb9249023e70d21746aebde8caea93774479d385",
+    "address_budget_support.h": "00b35d3b785df993dbd4048a6d68f50341ea723aad0dd6ce3bc3c0e2aaff565e",
+    "address_loop_guard.py": "e533545391e86aaac0b1c057c14eee398c5dd46343a1b677d355087df1c4b8df",
+    "build_address_full.py": "244482bc8f22d249a56ce8894c5afdbc5deb290a2d876fe65b8f9b31d26f2075"
+  },
+  "code_sha256": {
+    "address_backend.py": "04cabeaf78f0425a6c9835d6c3e5eb2ee53fb2a1f63db907c456bbbbba94fd84",
+    "pp_repair.py": "f6a64ddee77c5a6d15659bf69fff5d3b75fc9ca936d2b4a46942d3f7467ea782",
+    "repair_profile.py": "418c01a92623b3148107d82d13c91eed229bc93a1da87d2735804393e1940185",
+    "run_address_adapter.py": "de23edaeb79b08684dfd92560a75acacfa951dddaf985f657485fbf65aba6383",
+    "run_repair_dev.py": "fc9573e1f1f55a890b93b717fe082eb7beedb69f33d731988ef68709781be29e",
+    "seed_admission_build_receipt.json": "83452ed1636d5d76b568741a34eee07296eb855d06ae2cdba74ca26198ddf87e"
+  },
+  "combined_proposal_order": [
+    "address_seed_fixed_v1",
+    "address_seed_time_v1"
+  ],
+  "comparison_protocol": "seed_admission_v1",
+  "evidence_limits": [
+    "existing random32/maze32 are development tasks, never holdout",
+    "two policies use the same binary, inputs, low-level solver and per-protocol resource bounds",
+    "seed0 does not imply the same candidate sequence after filtering",
+    "fixed-count timing is censored unless both arms complete the target",
+    "total-budget mode has no repair-count cap; early exact SOC bound is reported",
+    "all host, filtering, grouping, repair, verification and output costs remain inside budgets",
+    "single DEV pair is not stable speedup, generalization or novelty evidence"
+  ],
+  "external_command_guard": {
+    "kill_grace_s": 2,
+    "required": true,
+    "term_after_s": 10,
+    "tool": "timeout"
+  },
+  "input_file": "repair_residual_v1_inputs.json",
+  "input_sha256": "be1e912e1e2ea3f59fcdc5d0c5737118e7f96d92227be536ada605f6751c0e5b",
+  "jobs": [
+    {
+      "case": "random-32-32-10__s01__n32",
+      "effort_mode": "total_budget",
+      "id": "random-32-32-10__s01__n32__total_budget__all",
+      "iterations": 0,
+      "seed": 0,
+      "seed_admission": "all",
+      "top_k": 32
+    },
+    {
+      "case": "random-32-32-10__s01__n32",
+      "effort_mode": "total_budget",
+      "id": "random-32-32-10__s01__n32__total_budget__positive_delay",
+      "iterations": 0,
+      "seed": 0,
+      "seed_admission": "positive_delay",
+      "top_k": 32
+    },
+    {
+      "case": "maze-32-32-2__s01__n32",
+      "effort_mode": "total_budget",
+      "id": "maze-32-32-2__s01__n32__total_budget__all",
+      "iterations": 0,
+      "seed": 0,
+      "seed_admission": "all",
+      "top_k": 32
+    },
+    {
+      "case": "maze-32-32-2__s01__n32",
+      "effort_mode": "total_budget",
+      "id": "maze-32-32-2__s01__n32__total_budget__positive_delay",
+      "iterations": 0,
+      "seed": 0,
+      "seed_admission": "positive_delay",
+      "top_k": 32
+    }
+  ],
+  "limits": {
+    "external_final_reserve_s": 0.5,
+    "inner_final_reserve_s": 1,
+    "native_cpu_reserve_s": 1,
+    "native_cpu_s": 10,
+    "per_process_as_mib": 512,
+    "total_wall_s": 5,
+    "worker_cpu_s": 10
+  },
+  "phase_profile": false,
+  "previous_authorization_reusable": false,
+  "purpose": "Simple positive-delay initial-seed control; total_budget",
+  "retry": 0,
+  "schema": "address_common_initial_dev_v1",
+  "scope_limits": [
+    "no new initial solver or tasks",
+    "no recovery, training or world",
+    "zero retries; first hard failure closes all remaining jobs in both protocols"
+  ],
+  "stop_batch_on_any_failure": true,
+  "variant": "budget_guard"
+}

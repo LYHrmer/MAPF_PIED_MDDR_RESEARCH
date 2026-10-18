@@ -22,6 +22,28 @@ from address_backend import AUTHOR
 HERE = Path(__file__).resolve().parent
 
 
+def comparison_settings(config, job):
+    """Explicit opt-in; old manifests never silently acquire a new policy."""
+    protocol = config.get('comparison_protocol')
+    if protocol is None:
+        if 'seed_admission' in job or 'effort_mode' in job:
+            raise ValueError('seed/effort settings require comparison protocol')
+        return None
+    if protocol != 'seed_admission_v1' or config.get('variant') != 'budget_guard':
+        raise ValueError('unsupported seed comparison protocol')
+    if config.get('attempt_trace', False) or config.get('phase_profile', False):
+        raise ValueError('seed comparison uses matched unprofiled, untraced arms')
+    policy, mode = job.get('seed_admission'), job.get('effort_mode')
+    if policy not in ('all', 'positive_delay') or mode not in ('fixed_repairs', 'total_budget'):
+        raise ValueError('explicit seed admission and effort mode required')
+    iterations = job.get('iterations')
+    if (type(iterations) is not int or
+            (mode == 'fixed_repairs' and iterations < 1) or
+            (mode == 'total_budget' and iterations != 0)):
+        raise ValueError('repair cap must be positive for fixed work and zero for total budget')
+    return policy, mode
+
+
 def load(path, expected_sha):
     path = Path(path).resolve()
     raw = path.read_bytes()
@@ -55,10 +77,10 @@ def load(path, expected_sha):
         if Path(name).name != name or digest((HERE/name).read_bytes()) != expected:
             raise ValueError('changed adapter runtime: '+name)
     build_sources = config.get('build_source_sha256', {})
-    if config.get('attempt_trace', False) and not {
+    if (config.get('attempt_trace', False) or config.get('comparison_protocol')) and not {
             'build_address_full.py', 'address_adapter.py', 'address_adapter_support.h',
             'address_loop_guard.py', 'address_budget.py', 'address_budget_support.h'} <= build_sources.keys():
-        raise ValueError('missing attempt-trace build source pins')
+        raise ValueError('missing diagnostic/comparison build source pins')
     for name, expected in build_sources.items():
         if Path(name).name != name or digest((HERE/name).read_bytes()) != expected:
             raise ValueError('changed build source: '+name)
@@ -81,7 +103,7 @@ def load(path, expected_sha):
         raise ValueError('shared root bound missing from build receipt')
     if variant == 'budget_guard' and receipt.get('extension') != 'budget_guard':
         raise ValueError('shared budget extension missing from build receipt')
-    if config.get('attempt_trace', False):
+    if config.get('attempt_trace', False) or config.get('comparison_protocol'):
         if (receipt.get('extension_order') != ['address_loop_guard', 'address_budget']
             or receipt.get('script_sha256') != build_sources['build_address_full.py']
             or receipt.get('adapter_script_sha256') != build_sources['address_adapter.py']
@@ -90,6 +112,10 @@ def load(path, expected_sha):
             or receipt.get('extension_sources', {}).get('address_budget', {}).get(
                 'inc/address_budget_support.h', {}).get('sha256') != build_sources['address_budget_support.h']):
             raise ValueError('attempt-trace build receipt/source mismatch')
+    if config.get('comparison_protocol'):
+        if (receipt.get('seed_admission_policies') != ['all', 'positive_delay'] or
+                receipt.get('effort_modes') != ['fixed_repairs', 'total_budget']):
+            raise ValueError('binary lacks reviewed seed admission / effort capabilities')
     if config.get('retry') != 0:
         raise ValueError('zero retry required')
     limits = config['limits']
@@ -116,7 +142,8 @@ def load(path, expected_sha):
             raise ValueError('unknown case or invalid job id')
         if any(type(job[key]) is not int for key in ('seed', 'iterations', 'top_k')):
             raise ValueError('integer solver settings required')
-        if job['seed'] < 0 or job['iterations'] < 1 or job['top_k'] < 1:
+        settings = comparison_settings(config, job)
+        if job['seed'] < 0 or (settings is None and job['iterations'] < 1) or job['top_k'] < 1:
             raise ValueError('invalid solver settings')
     if not re.fullmatch(r'[A-Za-z0-9_-]+', config['batch_id']):
         raise ValueError('invalid batch id')
@@ -179,6 +206,68 @@ def verify_budget_receipt(native, config):
             raise ValueError('invalid native budget counter: '+name)
     if native['sipp_deadlines'] > native['sipp_calls']:
         raise ValueError('more SIPP deadlines than calls')
+
+
+def verify_seed_comparison(native, config, job):
+    """Keep policy identity, partial work, and budget-limited quality separate."""
+    settings = comparison_settings(config, job)
+    if settings is None:
+        return None
+    policy, mode = settings
+    cap = job['iterations'] if mode == 'fixed_repairs' else None
+    if (native.get('effort_mode') != mode or native.get('repair_cap') != cap or
+            (cap is not None and type(native.get('repair_cap')) is not int)):
+        raise ValueError('native effort mode/cap differs from requested comparison')
+    attempts = native.get('repair_attempts')
+    if (type(attempts) is not int or attempts < 0 or
+            (cap is not None and attempts > cap) or
+            native.get('attempt_trace_rows') != 0):
+        raise ValueError('invalid repair attempt count')
+    if (attempts > native['group_calls'] or native['rollbacks'] > attempts or
+            native.get('attempt_trace_enabled') is not False or
+            any(type(native.get(k)) is not int or native[k] != 0
+                for k in ('trace_io_wall_ns', 'trace_io_cpu_ns'))):
+        raise ValueError('comparison repair/group/trace accounting mismatch')
+    reason = native.get('loop_exit_reason')
+    if reason not in ('REPAIR_CAP', 'GLOBAL_DEADLINE', 'STATIC_SOC_BOUND',
+                      'PREPROCESS_FALLBACK', 'AUTHOR_TIME_LIMIT') or reason != native['termination']:
+        raise ValueError('unknown or inconsistent comparison stop reason')
+    resource = native.get('deadline_resource')
+    if (resource not in ('NONE', 'WALL', 'CPU', 'WALL_AND_CPU') or
+            native['global_deadline'] != (resource != 'NONE')):
+        raise ValueError('comparison deadline resource mismatch')
+    reached = native.get('static_soc_lower_bound_reached')
+    if type(reached) is not bool:
+        raise ValueError('missing explicit static-bound state')
+    if ((reason == 'REPAIR_CAP' and (cap is None or attempts != cap or native['global_deadline'])) or
+            (reason == 'GLOBAL_DEADLINE' and not native['global_deadline']) or
+            (reason == 'STATIC_SOC_BOUND' and not reached) or
+            (reason == 'PREPROCESS_FALLBACK') != native['preprocessing_fallback']):
+        raise ValueError('comparison termination does not match work/budget state')
+    admission = native.get('seed_admission', {})
+    if (admission.get('schema') != 'ADDRESS_SEED_ADMISSION_V1' or
+            admission.get('policy') != policy or
+            admission.get('static_soc_lower_bound_reached') is not reached):
+        raise ValueError('seed admission policy or static bound mismatch')
+    counters = ('selection_calls', 'agents_checked', 'topk_candidates', 'filtered_zero_candidates',
+                'retained_topk_candidates', 'empty_eligible_calls', 'deadline_calls', 'selected_calls')
+    if any(type(admission.get(k)) is not int or admission[k] < 0 for k in counters):
+        raise ValueError('invalid seed admission counter')
+    if (admission['selection_calls'] != sum(admission[k] for k in
+            ('empty_eligible_calls', 'deadline_calls', 'selected_calls')) or
+            admission['selection_calls'] > native['group_calls'] or
+            admission['topk_candidates'] != admission['filtered_zero_candidates']+admission['retained_topk_candidates'] or
+            (policy == 'all' and any(admission[k] for k in
+                ('agents_checked', 'filtered_zero_candidates', 'empty_eligible_calls')))):
+        raise ValueError('seed admission accounting does not close')
+    target_met = (attempts == cap and reason in ('REPAIR_CAP', 'STATIC_SOC_BOUND')) if cap is not None else None
+    return {'schema': 'ADDRESS_SEED_COMPARISON_V1', 'seed_admission': admission,
+            'effort_mode': mode, 'repair_target': cap, 'repair_attempts': attempts,
+            'repair_target_met': target_met,
+            'equal_work_timing_eligible': target_met if cap is not None else False,
+            'stop_reason': reason, 'deadline_resource': resource,
+            'final_quality_at_return': True,
+            'same_seed_does_not_imply_same_neighborhood_sequence': True}
 
 
 PHASE_NAMES = ('DRIVER_OTHER', 'PREPROCESS', 'LNS_OTHER', 'GROUP_OTHER', 'TOPK',
@@ -393,6 +482,9 @@ def worker(config, case, job, binary, folder, deadline_ns, command_factory=comma
             cmd += ['--attemptTrace', str(folder/'attempts.jsonl')]
         if config.get('phase_profile', False):
             cmd += ['--phaseProfile', '1']
+        settings = comparison_settings(config, job)
+        if settings is not None:
+            cmd += ['--seedAdmission', settings[0], '--effortMode', settings[1]]
         payload['native_command'] = cmd
         def native_limits():
             resource.setrlimit(resource.RLIMIT_CPU, (limits['native_cpu_s'],)*2)
@@ -417,6 +509,9 @@ def worker(config, case, job, binary, folder, deadline_ns, command_factory=comma
                 or soc > payload['initial_soc']):
                 raise ValueError('native / external full validation disagreement')
             verify_budget_receipt(native, config)
+            comparison = verify_seed_comparison(native, config, job)
+            if comparison is not None:
+                payload['comparison_diagnostics'] = comparison
             phase = verify_phase_profile(native, config)
             if phase is not None:
                 payload['phase_diagnostics'] = phase

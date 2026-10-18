@@ -45,10 +45,16 @@ def adapt(files):
         ("cpuLimit", po::value<double>()->required(), "absolute process CPU hard-limit contract in seconds")
         ("cpuReserve", po::value<double>()->required(), "CPU seconds reserved for rollback/final checks/output")
         ("attemptTrace", po::value<string>()->default_value(""), "optional new common primary-attempt JSONL")
-        ("phaseProfile", po::value<int>()->default_value(0), "optional wall-only exclusive phase profile (0 or 1)")''')
+        ("phaseProfile", po::value<int>()->default_value(0), "optional wall-only exclusive phase profile (0 or 1)")
+        ("seedAdmission", po::value<string>()->default_value("all"), "initial seeds: all or positive_delay; neighbors are not filtered")
+        ("effortMode", po::value<string>()->default_value("fixed_repairs"), "fixed_repairs requires positive maxIterations; total_budget requires zero")''')
+    driver=replace_exact(driver,'vm["maxIterations"].as<int>() <= 0',
+        '(vm["effortMode"].as<string>() == "total_budget" ? vm["maxIterations"].as<int>() != 0 : vm["maxIterations"].as<int>() <= 0)')
     driver=replace_exact(driver,'    srand(config.seed);','''    srand(config.seed);
     address_budget::configure(vm["cpuLimit"].as<double>(),vm["cpuReserve"].as<double>());
     address_budget::configure_profile(vm["phaseProfile"].as<int>());
+    address_budget::configure_seed_admission(vm["seedAdmission"].as<string>());
+    address_budget::configure_effort(vm["effortMode"].as<string>(),vm["maxIterations"].as<int>());
     address_budget::configure_trace(vm["attemptTrace"].as<string>());''')
     driver=replace_exact(driver,'\tInstance instance(','''    address_budget::PhaseScope budget_preprocess(address_budget::Phase::PREPROCESS);
 \tInstance instance(''')
@@ -80,6 +86,12 @@ def adapt(files):
     }''')
     anchor='    while (runtime < time_limit && iteration_stats.size() <= num_of_iterations)\n    {\n'
     lns=replace_exact(lns,anchor,anchor+'        if(address_budget::expired("GROUP"))break;\n')
+    lns=replace_exact(lns,'runtime < time_limit && iteration_stats.size() <= num_of_iterations',
+        'runtime < time_limit && address_budget::below_repair_cap(iteration_stats.size(),num_of_iterations)')
+    lns=replace_exact(lns,'        if (sum_of_costs == sum_of_distances)\n            break;',
+        '        if (sum_of_costs == sum_of_distances) {\n            address_budget::mark_static_soc_lower_bound();\n            break;\n        }')
+    lns=replace_exact(lns,'        if(!succ)\n            continue;',
+        '        if(!succ) {\n            if(address_budget::state().seed_admission.static_soc_lower_bound_reached)break;\n            continue;\n        }')
     lns=replace_exact(lns,'        // store the neighbor information','''        if(address_budget::expired("GROUP"))break;
         address_budget::PhaseScope budget_neighbor_prepare(address_budget::Phase::NEIGHBOR_PREPARE);
         // store the neighbor information''')
@@ -89,6 +101,8 @@ def adapt(files):
             '        budget_neighbor_prepare.stop();\n        if (replan_algo_name == "EECBS")')
         src=replace_exact(src,'        if (ALNS) // update destroy heuristics',
             '        address_budget::PhaseScope budget_post_repair(address_budget::Phase::POST_REPAIR);\n        if (ALNS) // update destroy heuristics')
+        src=replace_exact(src,'    average_group_size = - iteration_stats.front().num_of_agents;',
+            '    if(!address_budget::state().global_deadline&&sum_of_costs==sum_of_distances)\n        address_budget::mark_static_soc_lower_bound();\n    address_budget::record_loop_exit(iteration_stats.size(),num_of_iterations);\n    average_group_size = - iteration_stats.front().num_of_agents;')
         return src
     lns=edit_function(lns,'bool LNS::run()',run)
     def group(src):
@@ -124,10 +138,20 @@ def adapt(files):
         src=src.replace('{\n','''{
     address_budget::PhaseScope budget_seed(address_budget::Phase::TOPK);
     if(address_budget::state().profile.active)++address_budget::state().profile.seed_calls;
+    ++address_budget::state().seed_admission.selection_calls;
+    int budget_positive_agents=0;
 ''',1)
+        src=replace_exact(src,'        int delay = agent.getNumOfDelays();',
+            '        int delay = agent.getNumOfDelays();\n        address_budget::check_seed_delay(agent,delay);\n        if(delay>0)++budget_positive_agents;')
+        src=replace_exact(src,'        topAgents.push_back(queue.top().second);',
+            '        if(address_budget::retain_seed_candidate(queue.top().first))\n            topAgents.push_back(queue.top().second);')
+        src=replace_exact(src,'    int cnt = 0;',
+            '    if(address_budget::positive_seed_admission()) {\n        if(topAgents.empty())return address_budget::no_positive_seed(budget_positive_agents);\n        samples.resize(topAgents.size());\n    }\n    int cnt = 0;')
         src=replace_exact(src,'    int cnt = 0;',
             '    budget_seed.set(address_budget::Phase::BETA);\n    int cnt = 0;')
-        return loop_checkpoints(src,'if(address_budget::expired("GROUP_SEED"))return -1;')
+        src=replace_exact(src,'    return best_agent;',
+            '    ++address_budget::state().seed_admission.selected_calls;\n    return best_agent;')
+        return loop_checkpoints(src,'if(address_budget::expired("GROUP_SEED"))return address_budget::seed_selection_deadline();')
     lns=edit_function(lns,'int LNS::bernoulie()',seed)
     def repair(src):
         src=src.replace('{\n','''{

@@ -169,8 +169,11 @@ def build(root, output, adapter=False, extension=None):
         if adapter and not all(flag in help_raw for flag in (b'--initialPaths', b'--adapterReceipt', b'--finalReserve')):
             raise ValueError('adapter help contract missing')
         if extension in ('budget_guard', 'budget_recovery') and not all(
-                flag in help_raw for flag in (b'--cpuLimit', b'--cpuReserve', b'--attemptTrace', b'--phaseProfile')):
+                flag in help_raw for flag in (b'--cpuLimit', b'--cpuReserve', b'--attemptTrace', b'--phaseProfile', b'--seedAdmission', b'--effortMode')):
             raise ValueError('shared CPU budget help contract missing')
+        if extension in ('budget_guard', 'budget_recovery'):
+            receipt['seed_admission_policies'] = ['all', 'positive_delay']
+            receipt['effort_modes'] = ['fixed_repairs', 'total_budget']
         if extension == 'budget_recovery' and not all(
                 flag in help_raw for flag in (b'--recoveryPolicy', b'--recoveryTrace')):
             raise ValueError('recovery diagnostic help contract missing')

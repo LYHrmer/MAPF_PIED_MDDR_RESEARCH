@@ -10,9 +10,18 @@ import unittest
 
 from address_budget import adapt, function_span
 from test_address_recovery import sources
-from test_address_loop_guard import fixture as loop_fixture
+import test_address_loop_guard as loop_contract
 
 HERE=Path(__file__).resolve().parent
+
+
+def loop_fixture(source):
+    old=loop_contract.LOOP_ANCHOR
+    if 'address_budget::below_repair_cap(iteration_stats.size(),num_of_iterations)' in source:
+        loop_contract.LOOP_ANCHOR=old.replace('iteration_stats.size() <= num_of_iterations',
+            'address_budget::below_repair_cap(iteration_stats.size(),num_of_iterations)')
+    try:return loop_contract.fixture(source)
+    finally:loop_contract.LOOP_ANCHOR=old
 
 
 def method(source,signature):
@@ -99,6 +108,81 @@ int main(int argc,char**argv){
 '''
 
 
+def seed_fixture(source):
+    return COMMON+r'''
+vector<int> sampled;
+namespace boost { namespace random {
+template<class T=double>struct beta_distribution {
+    int id;beta_distribution(int alpha,int):id(alpha-100){}
+    template<class RNG> double operator()(RNG& gen){sampled.push_back(id);return double(gen())/RNG::max();}
+};}}
+struct Planner {int start_location=0;vector<int>my_heuristic{1};};
+struct Agent {int id;Path path{{0},{1}};Planner* path_planner;
+    int getNumOfDelays()const{return int(path.size())-1-path_planner->my_heuristic[path_planner->start_location];}};
+struct AgentComparator {bool operator()(const pair<int,int>&a,const pair<int,int>&b)const{return a.first<b.first;}};
+struct LNS {
+    vector<Planner> planners=vector<Planner>(9);vector<Agent>agents;
+    vector<int>alpha,beta,counts=vector<int>(9,0);vector<int>*frequency=&counts;
+    int k=9,current_index=-1,neighbor_size=8,screen=0;
+    struct {vector<int>agents;}neighbor;
+    LNS(){for(int i=0;i<9;++i){agents.push_back({i,{{0},{1}},&planners[i]});alpha.push_back(100+i);beta.push_back(1);}}
+    int bernoulie();int wrapper(){return bernoulie();}
+    bool generateNeighborByRandomWalk(int);
+    void randomWalk(int,int,int,set<int>&members,int,int){members.insert(0);}
+    vector<int>expected(bool filter)const{
+        priority_queue<pair<int,int>,vector<pair<int,int>>,AgentComparator>q;
+        for(const auto&a:agents)q.push({a.getNumOfDelays(),a.id});
+        vector<int>ids;for(int i=0;i<k&&!q.empty();++i){if(!filter||q.top().first>0)ids.push_back(q.top().second);q.pop();}return ids;
+    }
+};
+'''+method(source,'int LNS::bernoulie()')+'\n'+method(source,'bool LNS::generateNeighborByRandomWalk(')+r'''
+int main(int argc,char**argv){
+    setup();LNS x;const string mode=argv[1];
+    address_adapter::state().seeds.seed(123);srand(123);
+    if(mode=="off"){
+        x.agents[1].path={{0},{0},{1}};x.agents[3].path={{0},{0},{1}};
+        for(int j=0;j<4;++j){sampled.clear();const int chosen=x.bernoulie();assert(sampled==x.expected(false));cout<<chosen<<",";}
+        cout<<address_adapter::next_seed()<<","<<rand()<<"\n";return 0;
+    }
+    address_budget::configure_seed_admission("positive_delay");
+    if(mode=="zero"){
+        assert(x.bernoulie()==-1);assert(sampled.empty());
+        const auto&c=address_budget::state().seed_admission;
+        assert(c.empty_eligible_calls==1&&c.static_soc_lower_bound_reached&&c.filtered_zero_candidates==9);
+        assert(!address_budget::state().global_deadline&&c.deadline_calls==0);return 0;
+    }
+    if(mode=="deadline"){
+        increment=1;address_budget::state().wall_stop=4;
+        assert(x.bernoulie()==-1);const auto&c=address_budget::state().seed_admission;
+        assert(c.empty_eligible_calls==0&&!c.static_soc_lower_bound_reached&&c.deadline_calls==1);
+        assert(address_budget::state().global_deadline&&address_budget::state().deadline_resource=="WALL");return 0;
+    }
+    if(mode=="full_group"){
+        x.neighbor_size=9;assert(x.generateNeighborByRandomWalk(0));
+        assert(x.neighbor.agents.size()==9&&address_budget::state().seed_admission.selection_calls==0);return 0;
+    }
+    x.agents[1].path={{0},{0},{1}};
+    if(mode=="member"){
+        assert(x.generateNeighborByRandomWalk(0));assert(x.neighbor.agents==vector<int>({0,1}));
+        assert(x.agents[0].getNumOfDelays()==0);return 0;
+    }
+    if(mode=="invalid"){
+        x.planners[0].my_heuristic[0]=2;bool caught=false;
+        try{x.bernoulie();}catch(const runtime_error&){caught=true;}
+        assert(caught&&!address_budget::state().seed_admission.static_soc_lower_bound_reached);return 0;
+    }
+    assert(mode=="updates");
+    assert(x.bernoulie()==1&&sampled==vector<int>{1});
+    sampled.clear();x.agents[3].path={{0},{0},{1}};x.agents[5].path={{0},{0},{1}};
+    x.bernoulie();assert(sampled==x.expected(true));
+    sampled.clear();x.agents[1].path={{0},{1}}; // accepted incumbent removes eligibility
+    x.bernoulie();assert(sampled==x.expected(true));assert(find(sampled.begin(),sampled.end(),1)==sampled.end());
+    sampled.clear();x.agents[1].path={{0},{0},{1}}; // rolled-back incumbent restores eligibility
+    x.bernoulie();assert(sampled==x.expected(true));assert(find(sampled.begin(),sampled.end(),1)!=sampled.end());
+}
+'''
+
+
 def sipp_fixture(source,reservation_source):
     return COMMON+r'''
 using Interval=tuple<int,int,bool>;
@@ -178,6 +262,76 @@ class BudgetContracts(unittest.TestCase):
             generated,repairs,stats,tick=map(int,raw[:4]);self.assertEqual((repairs,stats),(0,1))
             if variant=='red':self.assertEqual(generated,100)
             else:self.assertLess(generated,100);self.assertGreater(generated,0)
+
+    def test_seed_admission_exact_order_updates_and_zero_neighbor_membership(self):
+        exe=self.compile('seed_admission',seed_fixture(self.guarded['src/LNS.cpp'].decode()))
+        for mode in ('zero','deadline','full_group','member','invalid','updates'):
+            self.execute(exe,mode)
+
+    def test_seed_admission_default_preserves_selection_and_rng_stream(self):
+        outputs=[]
+        for name,files in (('original',self.base),('current',self.guarded)):
+            outputs.append(self.execute(self.compile('seed_default_'+name,
+                seed_fixture(files['src/LNS.cpp'].decode())),'off'))
+        self.assertEqual(outputs[0],outputs[1])
+
+    def test_effort_mode_and_termination_contracts(self):
+        code=COMMON+r'''
+int main(){
+ using namespace address_budget;setup();
+ configure_effort("fixed_repairs",16);assert(below_repair_cap(16,16));assert(!below_repair_cap(17,16));
+ record_loop_exit(17,16);assert(state().termination=="REPAIR_CAP");
+ setup();configure_effort("total_budget",0);assert(below_repair_cap(1000000,0));
+ ::tick=100;assert(expired("GROUP"));record_loop_exit(20,0);
+ assert(state().termination=="GLOBAL_DEADLINE"&&state().deadline_resource=="WALL");
+ setup();cputick=9;assert(expired("CPU"));assert(state().deadline_resource=="CPU");
+ setup();::tick=100;cputick=9;assert(expired("BOTH"));assert(state().deadline_resource=="WALL_AND_CPU");
+ setup();configure_effort("total_budget",0);mark_static_soc_lower_bound();record_loop_exit(1,0);
+ assert(state().termination=="STATIC_SOC_BOUND");
+ for(auto invalid:vector<pair<string,int>>{{"fixed_repairs",0},{"total_budget",1},{"other",1}}){
+    bool caught=false;try{configure_effort(invalid.first,invalid.second);}catch(const runtime_error&){caught=true;}assert(caught);
+ }
+}
+'''
+        self.execute(self.compile('effort_modes',code))
+
+    def test_seed_eligibility_reads_actual_acceptance_and_rollback_paths(self):
+        code=pp_fixture(self.guarded['src/LNS.cpp'].decode())
+        code=code.replace('vector<int>my_heuristic{0};','vector<int>my_heuristic=vector<int>(15,2);')
+        code=code.replace('    bool accepted=test.runPP();','''    address_budget::configure_seed_admission("positive_delay");
+    for(const auto&a:test.agents)address_budget::check_seed_delay(a,1);
+    bool accepted=test.runPP();
+    for(const auto&a:test.agents)address_budget::check_seed_delay(a,accepted?0:1);
+    assert(address_budget::state().seed_admission.agents_checked==6);''')
+        exe=self.compile('seed_transaction',code)
+        for expiry in (0,2,-2,-4):
+            receipt=self.root/('seed_transaction_'+str(expiry)+'.json');self.execute(exe,expiry,receipt)
+            row=json.loads(receipt.read_text());self.assertTrue(row['initial_and_final_validated'])
+            self.assertEqual(row['repair_attempts'],1)
+            self.assertEqual(row['seed_admission']['agents_checked'],6)
+
+    def test_actual_loop_total_budget_has_no_iteration_cap_and_zero_bound_stops(self):
+        code=loop_fixture(self.guarded['src/LNS.cpp'].decode())
+        code=code.replace('#include "address_adapter_support.h"','#include "address_budget_support.h"')
+        code=code.replace('struct Agent { vector<Vertex> path; Planner* path_planner; };',
+            'struct Agent { vector<Vertex> path; Planner* path_planner; int getNumOfDelays() const {return int(path.size())-1-path_planner->my_heuristic[path_planner->start_location];} };')
+        code=code.replace('    if(!test.run_fixture())','''    address_budget::configure_effort("total_budget",0);
+    address_budget::state().cpu_limit=10;address_budget::state().cpu_reserve=1;
+    address_budget::configure_seed_admission("positive_delay");test.num_of_iterations=0;
+    if(!test.run_fixture())''')
+        code=code.replace('int code=address_adapter::finish();','int code=address_budget::finish();')
+        exe=self.compile('actual_total_budget',code)
+        for slack in (False,True):
+            receipt=self.root/('actual_total_'+str(slack)+'.json')
+            raw=self.execute(exe,receipt,*(['slack'] if slack else [])).split()
+            # A total-budget run with num_of_iterations=0 still performs one
+            # useful fixture repair; both paths stop at the complete SOC bound.
+            self.assertEqual(int(raw[1]),int(slack))
+            value=json.loads(receipt.read_text());self.assertIsNone(value['repair_cap'])
+            self.assertEqual(value['effort_mode'],'total_budget')
+            self.assertEqual(value['termination'],'STATIC_SOC_BOUND')
+            self.assertTrue(value['static_soc_lower_bound_reached'])
+            self.assertTrue(value['initial_and_final_validated'])
 
     def test_actual_sipp_and_safe_interval_interrupt_classified_deadline(self):
         for variant,files in (('red',self.base),('green',self.guarded)):

@@ -571,6 +571,75 @@ def recoveries(output):
                       'described_not_executed': value['described_not_executed']}, indent=2))
 
 
+def prepare_seed_comparison():
+    """Freeze two comparison protocols using GIVEN paths; construct no solver."""
+    from run_address_adapter import load as load_address
+    folder = HERE/'config'
+    batches = ('address_seed_fixed_v1', 'address_seed_time_v1')
+    targets = [folder/(batch+'_manifest.json') for batch in batches]
+    if any(p.exists() for p in targets) or any((HERE/'results'/b).exists() for b in batches):
+        raise FileExistsError('preserve existing proposals/results; no implicit regeneration')
+    source_input = folder/'repair_residual_v1_inputs.json'
+    expected_input = 'be1e912e1e2ea3f59fcdc5d0c5737118e7f96d92227be536ada605f6751c0e5b'
+    if sha(source_input.read_bytes()) != expected_input:
+        raise ValueError('given DEV input changed')
+    receipt_name = 'seed_admission_build_receipt.json'
+    receipt = json.loads((HERE/receipt_name).read_bytes())
+    binary = HERE/'../../.address_seed_admission_build/build/address'
+    if sha(binary.read_bytes()) != receipt['binary_sha256']:
+        raise ValueError('new comparison build differs from receipt')
+    base = {'schema': 'address_common_initial_dev_v1', 'authorization': 'PENDING_USER',
+            'comparison_protocol': 'seed_admission_v1', 'variant': 'budget_guard',
+            'attempt_trace': False, 'phase_profile': False, 'retry': 0,
+            'stop_batch_on_any_failure': True, 'previous_authorization_reusable': False,
+            'input_file': source_input.name, 'input_sha256': expected_input,
+            'binary': '../../.address_seed_admission_build/build/address',
+            'binary_sha256': receipt['binary_sha256'], 'build_receipt': receipt_name,
+            'code_sha256': {name: sha((HERE/name).read_bytes()) for name in
+                ('run_address_adapter.py','run_repair_dev.py','address_backend.py','pp_repair.py',
+                 'repair_profile.py',receipt_name)},
+            'build_source_sha256': {name: sha((HERE/name).read_bytes()) for name in
+                ('build_address_full.py','address_adapter.py','address_adapter_support.h',
+                 'address_loop_guard.py','address_budget.py','address_budget_support.h')},
+            'scope_limits': ['no new initial solver or tasks', 'no recovery, training or world',
+                             'zero retries; first hard failure closes all remaining jobs in both protocols'],
+            'evidence_limits': ['existing random32/maze32 are development tasks, never holdout',
+                'two policies use the same binary, inputs, low-level solver and per-protocol resource bounds',
+                'seed0 does not imply the same candidate sequence after filtering',
+                'fixed-count timing is censored unless both arms complete the target',
+                'total-budget mode has no repair-count cap; early exact SOC bound is reported',
+                'all host, filtering, grouping, repair, verification and output costs remain inside budgets',
+                'single DEV pair is not stable speedup, generalization or novelty evidence']}
+    configs = []
+    cases = ('random-32-32-10__s01__n32', 'maze-32-32-2__s01__n32')
+    for batch,mode,budget,outer in ((batches[0],'fixed_repairs',15,20),
+                                     (batches[1],'total_budget',5,10)):
+        config = dict(base, batch_id=batch, purpose='Simple positive-delay initial-seed control; '+mode,
+            limits={'total_wall_s':budget,'worker_cpu_s':10,'native_cpu_s':10,
+                    'native_cpu_reserve_s':1,'per_process_as_mib':512,
+                    'external_final_reserve_s':.5,'inner_final_reserve_s':1},
+            external_command_guard={'required':True,'tool':'timeout','term_after_s':outer,'kill_grace_s':2},
+            jobs=[{'id':case+'__'+mode+'__'+policy,'case':case,'seed':0,'top_k':32,
+                   'iterations':16 if mode=='fixed_repairs' else 0,
+                   'seed_admission':policy,'effort_mode':mode}
+                  for case in cases for policy in ('all','positive_delay')])
+        config['combined_proposal_order'] = list(batches)
+        configs.append(config)
+    outputs = []
+    for path,config in zip(targets,configs):
+        with path.open('x') as stream:
+            stream.write(json.dumps(config,indent=2,sort_keys=True)+'\n')
+        pin = sha(path.read_bytes())
+        checked,bundle,_ = load_address(path,pin)
+        by_id = {c['id']:c for c in bundle['cases']}
+        for job in checked['jobs']:
+            problem,paths = unpack(by_id[job['case']])
+            if len(paths)!=32 or job['top_k']!=32:
+                raise ValueError('unexpected fixed DEV domain')
+        outputs.append({'path':str(path),'sha256':pin,'jobs':len(config['jobs'])})
+    print(json.dumps({'proposals':outputs,'scientific_search_executed':False,'new_authorization_required':True},indent=2))
+
+
 def address_results(manifest, expected_sha, output=None):
     """Audit the completed/stopped ADDRESS batch; never launch or retry a job."""
     manifest = manifest.resolve()
@@ -653,6 +722,13 @@ def address_results(manifest, expected_sha, output=None):
                 if profile != result.get('phase_diagnostics'):
                     raise ValueError('offline phase accounting disagrees with worker')
                 row['phase_diagnostics'] = profile
+            if config.get('comparison_protocol'):
+                from run_address_adapter import verify_budget_receipt, verify_seed_comparison
+                verify_budget_receipt(result['native_receipt'], config)
+                summary = verify_seed_comparison(result['native_receipt'], config, job)
+                if summary != result.get('comparison_diagnostics'):
+                    raise ValueError('offline seed comparison differs from worker')
+                row['comparison_diagnostics'] = summary
         elif receipt['status'] == 'FAILED_OR_INCOMPLETE':
             failed_job = job['id']
             row['reason'] = result.get('reason', 'missing success validation')
@@ -750,13 +826,15 @@ def outside_repair(output=None):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('mode', choices=('prepare', 'summarize', 'costs', 'failures', 'recoveries', 'address', 'outside_repair'))
+    parser.add_argument('mode', choices=('prepare', 'summarize', 'costs', 'failures', 'recoveries', 'address', 'outside_repair', 'prepare_seed_comparison'))
     parser.add_argument('--manifest', type=Path)
     parser.add_argument('--sha256')
     parser.add_argument('--output', type=Path)
     args = parser.parse_args()
     if args.mode == 'outside_repair':
         outside_repair(args.output)
+    elif args.mode == 'prepare_seed_comparison':
+        prepare_seed_comparison()
     elif args.mode == 'prepare':
         prepare()
     elif args.mode == 'failures':

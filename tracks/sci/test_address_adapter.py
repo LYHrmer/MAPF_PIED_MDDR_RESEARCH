@@ -10,11 +10,65 @@ from unittest.mock import patch
 from address_adapter import adapt, replace_exact
 from build_address_full import AUTHOR, build, source_identity
 from run_address_adapter import (load, parse_paths, verify_attempt_trace, verify_budget_receipt,
-                                 verify_phase_profile, PHASE_NAMES, worker)
+                                 verify_phase_profile, verify_seed_comparison, comparison_settings,
+                                 PHASE_NAMES, worker)
 from run_repair_dev import unpack
 
 
 class AdapterContracts(unittest.TestCase):
+    def test_seed_comparison_requires_explicit_policy_and_uncapped_time_mode(self):
+        config = {'comparison_protocol': 'seed_admission_v1', 'variant': 'budget_guard'}
+        job = {'seed_admission': 'positive_delay', 'effort_mode': 'total_budget', 'iterations': 0}
+        self.assertEqual(comparison_settings(config, job), ('positive_delay', 'total_budget'))
+        self.assertIsNone(comparison_settings({}, {'iterations': 16}))
+        bad = [({}, job), (dict(config, variant='base'), job),
+               (dict(config, attempt_trace=True), job), (dict(config, phase_profile=True), job),
+               (config, dict(job, iterations=16)), (config, dict(job, iterations=True)),
+               (config, dict(job, effort_mode='fixed_repairs')),
+               (config, dict(job, seed_admission='unknown'))]
+        for cfg, setting in bad:
+            with self.subTest(config=cfg, job=setting), self.assertRaises(ValueError):
+                comparison_settings(cfg, setting)
+
+    def test_seed_receipt_does_not_turn_censored_work_into_equal_work_speedup(self):
+        import copy
+        config = {'comparison_protocol': 'seed_admission_v1', 'variant': 'budget_guard'}
+        job = {'seed_admission': 'all', 'effort_mode': 'fixed_repairs', 'iterations': 16}
+        admission = {'schema': 'ADDRESS_SEED_ADMISSION_V1', 'policy': 'all',
+                     'selection_calls': 6, 'agents_checked': 0, 'topk_candidates': 48,
+                     'filtered_zero_candidates': 0, 'retained_topk_candidates': 48,
+                     'empty_eligible_calls': 0, 'deadline_calls': 1, 'selected_calls': 5,
+                     'static_soc_lower_bound_reached': False}
+        native = {'effort_mode': 'fixed_repairs', 'repair_cap': 16, 'repair_attempts': 4,
+                  'attempt_trace_rows': 0, 'attempt_trace_enabled': False, 'group_calls': 6,
+                  'trace_io_wall_ns': 0, 'trace_io_cpu_ns': 0,
+                  'rollbacks': 4, 'loop_exit_reason': 'GLOBAL_DEADLINE', 'termination': 'GLOBAL_DEADLINE',
+                  'global_deadline': True, 'deadline_resource': 'CPU', 'preprocessing_fallback': False,
+                  'static_soc_lower_bound_reached': False, 'seed_admission': admission}
+        out = verify_seed_comparison(native, config, job)
+        self.assertFalse(out['repair_target_met'])
+        self.assertFalse(out['equal_work_timing_eligible'])
+        for mutate in (lambda x: x.update(repair_attempts=17),
+                       lambda x: x.update(repair_cap=True),
+                       lambda x: x.update(termination='REPAIR_CAP', loop_exit_reason='REPAIR_CAP'),
+                       lambda x: x.update(deadline_resource='NONE'),
+                       lambda x: x.update(attempt_trace_rows=4),
+                       lambda x: x.update(trace_io_wall_ns=1),
+                       lambda x: x['seed_admission'].update(filtered_zero_candidates=1),
+                       lambda x: x['seed_admission'].update(policy='positive_delay'),
+                       lambda x: x['seed_admission'].update(selected_calls=6)):
+            bad = copy.deepcopy(native); mutate(bad)
+            with self.assertRaises(ValueError): verify_seed_comparison(bad, config, job)
+        total = dict(native, effort_mode='total_budget', repair_cap=None)
+        total_job = dict(job, effort_mode='total_budget', iterations=0)
+        self.assertIsNone(verify_seed_comparison(total, config, total_job)['repair_target_met'])
+        with self.assertRaises(ValueError):
+            verify_seed_comparison(dict(total, termination='REPAIR_CAP', loop_exit_reason='REPAIR_CAP'), config, total_job)
+        completed = dict(native, repair_attempts=16, group_calls=16,
+                         termination='REPAIR_CAP', loop_exit_reason='REPAIR_CAP',
+                         global_deadline=False, deadline_resource='NONE')
+        self.assertTrue(verify_seed_comparison(completed, config, job)['repair_target_met'])
+
     def test_materialization_failure_retains_build_receipt(self):
         import json
         for error in (ValueError('anchor mismatch'), FileNotFoundError('missing header'),
