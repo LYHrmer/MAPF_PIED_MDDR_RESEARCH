@@ -1,6 +1,6 @@
-# 完整 ADDRESS 逐次失败记录：两项 DEV 待授权清单
+# 完整 ADDRESS 逐次失败记录：两项 DEV 已完成，许可已消费
 
-**状态：实现、软件核验、独立编译/help及inspect完成；本清单尚未获得运行授权，未执行科学任务。** 先确认实际正常失败的位置与原因，不运行恢复或判断方法优势。既有三项预算DEV和此前各批授权均已消费或关闭。
+**状态：用户明确回复“授权这2项”后，两项按顺序全部 COMPLETE，零重试，许可已消费。** [结果及停止决定](ADDRESS_TRACE_RESULT.md)确认没有满足原后段门槛的正常空返回；停止当前材料上的恢复候选。以下保留原预算、命令和验收合同供审计，不能据此重跑。JSON清单及其SHA不变。
 
 ## 固定输入与代码
 
@@ -24,7 +24,7 @@
 
 任一异常、非零退出、超限、工件缺失或SHA变化、trace截断/不一致、末检失败或SOC变差即停整批，**零重试**，余项许可同时关闭。partial、stderr、失败收据全部保留；磁盘上还存在初解不能替代有效最终输出。正常软截止并输出合法方案属于功能成功，不作为穷尽、不可行或恢复训练标签。
 
-输出固定到`tracks/sci/results/address_attempt_trace_v1/`，当前不存在。授权后另存真实指示记录，每项独占子目录，逐项检查后才继续。沿用`repair_profile.py address`生成包含失败/停批未运行项的总账，不覆盖任何旧批。
+输出已保存到`tracks/sci/results/address_attempt_trace_v1/`；真实指示、逐项收据和总账齐全，原27项工件已复核。总收据SHA `308e5a65e98270b6049336dff0c50da88bbbf137755fc2875a9203d91d5a8632`，不覆盖任何旧批。
 
 ## 只允许得出什么结论
 
@@ -40,7 +40,7 @@
 rtk proxy python3 -B tracks/sci/run_address_adapter.py inspect --manifest tracks/sci/config/address_attempt_trace_v1_manifest.json --sha256 edf8516ab73919c0fedc0542c407c5775f8601383259f69ead6949146f43c2f3
 ```
 
-取得对这两项的真实新授权后，按上列顺序逐项替换job和授权引用，不并行执行：
+以下是本批已执行命令模板，仅供审计；许可已消费，输出独占目录不可重用：
 
 ```bash
 rtk proxy timeout --signal=TERM --kill-after=2s 20s python3 -B tracks/sci/run_address_adapter.py run \
@@ -50,7 +50,7 @@ rtk proxy timeout --signal=TERM --kill-after=2s 20s python3 -B tracks/sci/run_ad
   --authorization-reference '<真实用户授权原文及本批范围>'
 ```
 
-批次终止后仅离线核对，不启动任何新搜索：
+以下离线汇总已执行并保存总收据；不得覆盖原收据。后续只读复核使用结果报告中的独立核验脚本：
 
 ```bash
 rtk proxy python3 -B tracks/sci/repair_profile.py address --manifest tracks/sci/config/address_attempt_trace_v1_manifest.json --sha256 edf8516ab73919c0fedc0542c407c5775f8601383259f69ead6949146f43c2f3

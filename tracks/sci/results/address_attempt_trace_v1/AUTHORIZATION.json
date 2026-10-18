@@ -1,0 +1,31 @@
+{
+  "schema": "actual_user_authorization_record_v1",
+  "recorded_utc": "2026-10-18T07:08:41.836239+00:00",
+  "user_message": "- 授权这2项",
+  "source": "Direct user reply in this conversation to the two-item ADDRESS_TRACE_CHECKLIST approval question",
+  "scope": "Only two baseline attempt-trace DEV jobs, ordered random32 then maze32; no recovery, training, world, or thesis runs",
+  "scientific_code_commit": "b0fa19e2b01d043968228a2d9e9c285eb3d3d9f7",
+  "manifest_sha256": "edf8516ab73919c0fedc0542c407c5775f8601383259f69ead6949146f43c2f3",
+  "jobs": [
+    "random-32-32-10__s01__n32__attempt_trace",
+    "maze-32-32-2__s01__n32__attempt_trace"
+  ],
+  "limits": {
+    "external_final_reserve_s": 0.5,
+    "inner_final_reserve_s": 1,
+    "native_cpu_reserve_s": 1,
+    "native_cpu_s": 10,
+    "per_process_as_mib": 512,
+    "total_wall_s": 15,
+    "worker_cpu_s": 10
+  },
+  "external_command_guard": {
+    "tool": "timeout",
+    "term_after_s": 20,
+    "kill_grace_s": 2,
+    "required": true
+  },
+  "retry": 0,
+  "stop_batch_on_any_failure": true,
+  "record_is_not_permission_source": true
+}

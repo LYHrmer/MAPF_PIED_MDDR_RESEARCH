@@ -1,0 +1,563 @@
+{
+  "status": "PASS_INDEPENDENT_READONLY_AUDIT",
+  "manifest_sha256": "edf8516ab73919c0fedc0542c407c5775f8601383259f69ead6949146f43c2f3",
+  "input_sha256": "be1e912e1e2ea3f59fcdc5d0c5737118e7f96d92227be536ada605f6751c0e5b",
+  "jobs": [
+    {
+      "job": "random-32-32-10__s01__n32__attempt_trace",
+      "receipt_sha256": "2f952cc727b80418cc2fed51fee5f76b400d0fde4941256c7ce51afcea0f9b69",
+      "trace_sha256": "74d649c5534fc660a5b8bc22594c02881cd49eca3025c04211955afda820c7e5",
+      "initial": {
+        "soc": 771,
+        "makespan": 53,
+        "agents": 32,
+        "validated_terminal_residence": true
+      },
+      "final": {
+        "soc": 771,
+        "makespan": 53,
+        "agents": 32,
+        "validated_terminal_residence": true
+      },
+      "entry_wall_s": 9.176288373,
+      "native_cpu_s": 9.000352829,
+      "native_termination": {
+        "global_deadline": true,
+        "last_stage": "GROUP",
+        "termination": "GLOBAL_DEADLINE",
+        "group_calls": 260497,
+        "sipp_calls": 23,
+        "sipp_deadlines": 0,
+        "repair_deadlines": 0,
+        "rollbacks": 5
+      },
+      "attempts": 5,
+      "stop_counts": {
+        "COST_STOP": 5
+      },
+      "late_normal_empty_attempt_ids": [],
+      "cost_totals_ns": {
+        "primary_search_wall_ns": 6046748,
+        "primary_search_cpu_ns": 5999809,
+        "rollback_wall_ns": 5906,
+        "rollback_cpu_ns": 0,
+        "attempt_wall_before_trace_ns": 6091463,
+        "attempt_cpu_before_trace_ns": 5999809
+      },
+      "trace_io_wall_ns": 104548,
+      "trace_io_cpu_ns": 1000245,
+      "compact_attempts": [
+        {
+          "attempt_id": 1,
+          "order": [
+            21,
+            19,
+            12,
+            3
+          ],
+          "primary_calls": 4,
+          "primary_stop": "COST_STOP",
+          "failed_position_zero_based": 3,
+          "failed_agent": 3,
+          "failure_site": "COST_BOUND",
+          "accepted": false,
+          "old_group_cost": 90,
+          "final_group_cost": 90,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 2,
+          "order": [
+            19,
+            12,
+            3,
+            21
+          ],
+          "primary_calls": 4,
+          "primary_stop": "COST_STOP",
+          "failed_position_zero_based": 3,
+          "failed_agent": 21,
+          "failure_site": "COST_BOUND",
+          "accepted": false,
+          "old_group_cost": 90,
+          "final_group_cost": 90,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 3,
+          "order": [
+            21,
+            12,
+            19,
+            3,
+            25
+          ],
+          "primary_calls": 5,
+          "primary_stop": "COST_STOP",
+          "failed_position_zero_based": 4,
+          "failed_agent": 25,
+          "failure_site": "COST_BOUND",
+          "accepted": false,
+          "old_group_cost": 106,
+          "final_group_cost": 106,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 4,
+          "order": [
+            12,
+            19,
+            25,
+            21,
+            3
+          ],
+          "primary_calls": 5,
+          "primary_stop": "COST_STOP",
+          "failed_position_zero_based": 4,
+          "failed_agent": 3,
+          "failure_site": "COST_BOUND",
+          "accepted": false,
+          "old_group_cost": 106,
+          "final_group_cost": 106,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 5,
+          "order": [
+            25,
+            3,
+            19,
+            21,
+            12
+          ],
+          "primary_calls": 5,
+          "primary_stop": "COST_STOP",
+          "failed_position_zero_based": 4,
+          "failed_agent": 12,
+          "failure_site": "COST_BOUND",
+          "accepted": false,
+          "old_group_cost": 106,
+          "final_group_cost": 106,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        }
+      ]
+    },
+    {
+      "job": "maze-32-32-2__s01__n32__attempt_trace",
+      "receipt_sha256": "2c3585d1686ab271bb474182a935eb2222374c21608035251e6e93797800fe15",
+      "trace_sha256": "f4de92d3a45b7c6dce99f828b671371a5330efdca0f3645d9ae69a31968002da",
+      "initial": {
+        "soc": 1873,
+        "makespan": 129,
+        "agents": 32,
+        "validated_terminal_residence": true
+      },
+      "final": {
+        "soc": 1866,
+        "makespan": 129,
+        "agents": 32,
+        "validated_terminal_residence": true
+      },
+      "entry_wall_s": 0.489910144,
+      "native_cpu_s": 0.319070167,
+      "native_termination": {
+        "global_deadline": false,
+        "last_stage": "NONE",
+        "termination": "NORMAL",
+        "group_calls": 22,
+        "sipp_calls": 108,
+        "sipp_deadlines": 0,
+        "repair_deadlines": 0,
+        "rollbacks": 14
+      },
+      "attempts": 16,
+      "stop_counts": {
+        "COST_STOP": 12,
+        "FOUND": 2,
+        "FOCAL_DRAINED_EMPTY": 2
+      },
+      "late_normal_empty_attempt_ids": [],
+      "cost_totals_ns": {
+        "primary_search_wall_ns": 278238718,
+        "primary_search_cpu_ns": 279974156,
+        "rollback_wall_ns": 50903,
+        "rollback_cpu_ns": 0,
+        "attempt_wall_before_trace_ns": 278531740,
+        "attempt_cpu_before_trace_ns": 279974156
+      },
+      "trace_io_wall_ns": 237586,
+      "trace_io_cpu_ns": 0,
+      "compact_attempts": [
+        {
+          "attempt_id": 1,
+          "order": [
+            21,
+            22,
+            2,
+            16,
+            26,
+            11,
+            8,
+            5
+          ],
+          "primary_calls": 8,
+          "primary_stop": "COST_STOP",
+          "failed_position_zero_based": 7,
+          "failed_agent": 5,
+          "failure_site": "COST_BOUND",
+          "accepted": false,
+          "old_group_cost": 509,
+          "final_group_cost": 509,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 2,
+          "order": [
+            21,
+            28,
+            16,
+            11,
+            4,
+            22,
+            31,
+            8
+          ],
+          "primary_calls": 8,
+          "primary_stop": "COST_STOP",
+          "failed_position_zero_based": 7,
+          "failed_agent": 8,
+          "failure_site": "COST_BOUND",
+          "accepted": false,
+          "old_group_cost": 452,
+          "final_group_cost": 452,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 3,
+          "order": [
+            8,
+            2,
+            11,
+            16,
+            25,
+            23,
+            21,
+            5
+          ],
+          "primary_calls": 8,
+          "primary_stop": "FOUND",
+          "failed_position_zero_based": -1,
+          "failed_agent": -1,
+          "failure_site": "COMPLETE",
+          "accepted": true,
+          "old_group_cost": 522,
+          "final_group_cost": 520,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 4,
+          "order": [
+            1,
+            11,
+            16,
+            8
+          ],
+          "primary_calls": 4,
+          "primary_stop": "COST_STOP",
+          "failed_position_zero_based": 3,
+          "failed_agent": 8,
+          "failure_site": "COST_BOUND",
+          "accepted": false,
+          "old_group_cost": 217,
+          "final_group_cost": 217,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 5,
+          "order": [
+            5,
+            26,
+            21,
+            11,
+            1,
+            19
+          ],
+          "primary_calls": 2,
+          "primary_stop": "FOCAL_DRAINED_EMPTY",
+          "failed_position_zero_based": 1,
+          "failed_agent": 26,
+          "failure_site": "RETURN",
+          "accepted": false,
+          "old_group_cost": 401,
+          "final_group_cost": 401,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 6,
+          "order": [
+            16,
+            22,
+            3,
+            31,
+            11,
+            14,
+            27,
+            5
+          ],
+          "primary_calls": 8,
+          "primary_stop": "COST_STOP",
+          "failed_position_zero_based": 7,
+          "failed_agent": 5,
+          "failure_site": "COST_BOUND",
+          "accepted": false,
+          "old_group_cost": 479,
+          "final_group_cost": 479,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 7,
+          "order": [
+            8,
+            25,
+            26,
+            11,
+            19,
+            21,
+            16,
+            29
+          ],
+          "primary_calls": 8,
+          "primary_stop": "COST_STOP",
+          "failed_position_zero_based": 7,
+          "failed_agent": 29,
+          "failure_site": "COST_BOUND",
+          "accepted": false,
+          "old_group_cost": 573,
+          "final_group_cost": 573,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 8,
+          "order": [
+            8,
+            16,
+            1,
+            26,
+            11,
+            21,
+            19
+          ],
+          "primary_calls": 7,
+          "primary_stop": "COST_STOP",
+          "failed_position_zero_based": 6,
+          "failed_agent": 19,
+          "failure_site": "COST_BOUND",
+          "accepted": false,
+          "old_group_cost": 490,
+          "final_group_cost": 490,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 9,
+          "order": [
+            22,
+            16,
+            4,
+            1,
+            5,
+            24,
+            31,
+            7
+          ],
+          "primary_calls": 8,
+          "primary_stop": "COST_STOP",
+          "failed_position_zero_based": 7,
+          "failed_agent": 7,
+          "failure_site": "COST_BOUND",
+          "accepted": false,
+          "old_group_cost": 381,
+          "final_group_cost": 381,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 10,
+          "order": [
+            29,
+            26,
+            1,
+            23,
+            17,
+            19,
+            11,
+            5
+          ],
+          "primary_calls": 8,
+          "primary_stop": "COST_STOP",
+          "failed_position_zero_based": 7,
+          "failed_agent": 5,
+          "failure_site": "COST_BOUND",
+          "accepted": false,
+          "old_group_cost": 549,
+          "final_group_cost": 549,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 11,
+          "order": [
+            8,
+            6,
+            26,
+            22,
+            21,
+            5,
+            2,
+            16
+          ],
+          "primary_calls": 8,
+          "primary_stop": "COST_STOP",
+          "failed_position_zero_based": 7,
+          "failed_agent": 16,
+          "failure_site": "COST_BOUND",
+          "accepted": false,
+          "old_group_cost": 536,
+          "final_group_cost": 536,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 12,
+          "order": [
+            31,
+            30,
+            1,
+            11
+          ],
+          "primary_calls": 4,
+          "primary_stop": "COST_STOP",
+          "failed_position_zero_based": 3,
+          "failed_agent": 11,
+          "failure_site": "COST_BOUND",
+          "accepted": false,
+          "old_group_cost": 153,
+          "final_group_cost": 153,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 13,
+          "order": [
+            7,
+            20,
+            17,
+            11,
+            1,
+            10,
+            16,
+            0
+          ],
+          "primary_calls": 8,
+          "primary_stop": "FOUND",
+          "failed_position_zero_based": -1,
+          "failed_agent": -1,
+          "failure_site": "COMPLETE",
+          "accepted": true,
+          "old_group_cost": 578,
+          "final_group_cost": 573,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 14,
+          "order": [
+            0,
+            8,
+            17,
+            16,
+            12,
+            11,
+            6
+          ],
+          "primary_calls": 7,
+          "primary_stop": "COST_STOP",
+          "failed_position_zero_based": 6,
+          "failed_agent": 6,
+          "failure_site": "COST_BOUND",
+          "accepted": false,
+          "old_group_cost": 544,
+          "final_group_cost": 544,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 15,
+          "order": [
+            23,
+            11,
+            21,
+            4,
+            26,
+            8,
+            5,
+            16
+          ],
+          "primary_calls": 8,
+          "primary_stop": "COST_STOP",
+          "failed_position_zero_based": 7,
+          "failed_agent": 16,
+          "failure_site": "COST_BOUND",
+          "accepted": false,
+          "old_group_cost": 470,
+          "final_group_cost": 470,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 16,
+          "order": [
+            31,
+            5,
+            16,
+            26,
+            19,
+            11,
+            21,
+            8
+          ],
+          "primary_calls": 4,
+          "primary_stop": "FOCAL_DRAINED_EMPTY",
+          "failed_position_zero_based": 3,
+          "failed_agent": 26,
+          "failure_site": "RETURN",
+          "accepted": false,
+          "old_group_cost": 575,
+          "final_group_cost": 575,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        }
+      ]
+    }
+  ],
+  "batch_receipt_sha256": "308e5a65e98270b6049336dff0c50da88bbbf137755fc2875a9203d91d5a8632",
+  "batch_artifacts_verified": 27,
+  "cost_stop_candidate_cost_counts": {
+    "equal": 9,
+    "worse": 8
+  },
+  "cost_stop_interpretation": "All 17 COST_STOP attempts have full FOUND calls; 9 equal-cost and 8 worse-cost, not single-agent search failures.",
+  "scope_decision": "No observed normal late empty return meets the preregistered position threshold; stop or narrow the present late-failure recovery candidate on these tasks. No assertion that all local recovery is ineffective."
+}

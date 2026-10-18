@@ -38,6 +38,6 @@ rtk proxy python3 -B -m unittest test_address_budget -v
 
 `101f18c`时的`budget_recovery`只接入SIPP/主修复截止，恢复诊断仍有独立墙钟；该历史缺口及原证据不改写。当前[恢复接口](ADDRESS_RECOVERY.md)已改为budget先于recovery叠加，删除独立期限，完整验证加入公共取消回调，私有候选与完整占用表先构造后交换。现有模块内的软件夹具核对了到期撤销和作者rollback；真实恢复比较尚未执行，runner仍拒绝恢复变体。
 
-强基线的三项功能验收已完成。新的可选`--attemptTrace`只记录primary实际调用和失败位置/原因，并在总预算内计入日志开销；它不检查阻挡或证明可恢复。[两项记录清单](ADDRESS_TRACE_CHECKLIST.md)准备核对正常失败机会，待新授权。通过后才评估与继续选邻域、随机重排和适配优先级搜索的同预算比较。新层未证明恢复收益或学习价值。
+强基线的三项功能验收已完成。新的可选`--attemptTrace`只记录primary实际调用和失败位置/原因，并在总预算内计入日志开销；它不检查阻挡或证明可恢复。[两项记录清单](ADDRESS_TRACE_CHECKLIST.md)已授权执行且许可消费，[真实结果](ADDRESS_TRACE_RESULT.md)没有符合原门槛的后段正常空返回，因此停止当前材料上的恢复候选，不进入收益比较。新层未证明恢复收益或学习价值。
 
 当前构建入口和runner已发生变化。旧manifest保持原SHA不刷新；复核或重建旧版本须回到其固定历史提交，不能用当前源码冒充旧产物。
