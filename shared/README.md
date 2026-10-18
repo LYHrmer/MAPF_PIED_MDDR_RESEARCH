@@ -32,3 +32,5 @@ Python接口为`read_blob(repo, pin) -> bytes`、`audit_manifest(repo, manifest)
 固定提交必须由保留并推送的分支或归档标签保持可达；JSON中的提交字符串本身不能防止Git回收。对象缺失即失败，不隐式联网。以后若做运行适配，应逐项提取已核验小文件到每次运行独占的bundle、绑定新运行清单，避免共享可写缓存或`PYTHONPATH`混入另一研究线的版本；不得改写冻结运行及其收据。
 
 本轮工具在主机Python 3.10.12以标准库完成静态核验，不要求LIMO车载系统升级。硕士消费者的`tracks/thesis/shared.lock.json`固定读取器与manifest于公共提交`4a89183cf0827dcae2fa20a7d816c760e4150457`，仅加载所需9份证据。SCI当前不消费这12个误差执行模块，后续有真实公共依赖时才增加pin。
+
+硕士`32db58f`新增的`tracks/thesis/sci.lock.json`用同一读取器固定SCI`535ee1a`的14个证据对象（输入、汇总、六份结果与六份收据），供路径结构离线解析。锁文件由硕士消费者维护，不把SCI专用优化器或证据复制进公共目录；当前没有新增公共运行接口。

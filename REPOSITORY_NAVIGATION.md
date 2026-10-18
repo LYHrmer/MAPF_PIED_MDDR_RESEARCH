@@ -12,9 +12,11 @@
 | explore/query-value-feasibility，交接 | `/home/lyh/MAPF_QUERY_VALUE_FEASIBILITY` | `exploration/execution_feedback/`：反馈和费用 |
 | archive/learned-query-20261016，detached | `/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE` | 停止的查询学习与失败证据，HEAD `57aee7b` |
 
-两研究树的公共文档是创建时快照；唯一当前总体决定始终读取main的`docs/RESEARCH_PLAN.md`。SCI运行代码`818f1e9`、六臂证据`c0bd134`、硕士实现`6771137`分别在本线维护，main用固定提交索引，不复制算法。SCI六臂见`tracks/sci/DEV_RESULT.md`；原`RUN_CHECKLIST.md`已消费，不能重跑。
+两研究树的公共文档是创建时快照；唯一当前总体决定始终读取main的`docs/RESEARCH_PLAN.md`。SCI最新证据为`535ee1a`、硕士离线集成为`32db58f`，main用固定提交索引，不复制算法。SCI原8车六臂见`c0bd134`的`tracks/sci/DEV_RESULT.md`；其`RUN_CHECKLIST.md`已消费，不能重跑。
 
-SCI后继准备固定`32bbc38`：[PROFILE_CHECKLIST.md](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/32bbc38c732bdc7b1c0b172f9c7b2074275ff38d/tracks/sci/PROFILE_CHECKLIST.md)，六份既有16/32车完整任务与单一强策略诊断，尚未获新授权/运行。`repair_profile.py`负责准备和离线解析，复用原运行器；配置在`tracks/sci/config/repair_residual_v1_*`，新结果目录尚不存在。不替换旧消费记录或另起研究分支。
+SCI六份16/32车诊断已获本批新授权并全部完成：[PROFILE_RESULT.md](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/535ee1adf3135ab79565e0b3aa5d189348fe7ab2/tracks/sci/PROFILE_RESULT.md)。配置在`tracks/sci/config/repair_residual_v1_*`，冻结结果在`tracks/sci/results/repair_residual_v1/`；`PROFILE_CHECKLIST.md`许可已消费。`repair_profile.py`增加仅解析已有记录的费用拆分，不替换原运行代码或旧消费记录。
+
+硕士[32db58f](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/32db58f1cd4c45b905b5557a26203a31bf49b7d8/tracks/thesis/README.md)的`inspect_sci_paths.py`及`sci.lock.json`消费SCI`535ee1a`的14个固定对象；`derived/sci_path_structure.json`为六任务运动结构分解，无新搜索。此前`6771137`日志再导出仍保留；连续运动原语适配尚未完成。
 
 日常先读[总入口](README.md)、[进度](GITHUB_PROGRESS.md)、相应支线README。代码在研究分支的专用目录推进，main只集成核定成果。不能把相邻工作树的最新文件当共享依赖；详见[共享清单](shared/README.md)。
 
