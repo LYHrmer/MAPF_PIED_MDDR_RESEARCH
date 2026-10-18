@@ -1,0 +1,32 @@
+{
+  "schema": "actual_user_authorization_record_v1",
+  "recorded_utc": "2026-10-18T05:42:51.490592+00:00",
+  "user_message": "授权",
+  "in_reply_to": "是否授权按新四项清单验证修补版？每项总准入15秒、各进程CPU≤10秒、内存≤512 MiB，零重试，任一失败停批。",
+  "scope": "Four loop_guard functional DEV jobs only; no recovery comparison, training or world",
+  "manifest_sha256": "73662d861eda4f9618e23029deb67c53708921a745c8660fd7c587fb6fabd91d",
+  "scientific_code_commit": "eb4a60f236447505e6bb2cb0cc7e0e96cdfaa919",
+  "jobs": [
+    "random-32-32-10__s01__n16__loop_guard",
+    "random-32-32-10__s01__n32__loop_guard",
+    "warehouse-10-20-10-2-1__s01__n16__loop_guard",
+    "warehouse-10-20-10-2-1__s01__n32__loop_guard"
+  ],
+  "limits": {
+    "external_final_reserve_s": 0.5,
+    "inner_final_reserve_s": 0.25,
+    "native_cpu_s": 10,
+    "per_process_as_mib": 512,
+    "total_wall_s": 15,
+    "worker_cpu_s": 10
+  },
+  "external_command_guard": {
+    "kill_grace_s": 2,
+    "required": true,
+    "term_after_s": 20,
+    "tool": "timeout"
+  },
+  "retry": 0,
+  "stop_batch_on_any_failure": true,
+  "record_is_not_permission_source": true
+}

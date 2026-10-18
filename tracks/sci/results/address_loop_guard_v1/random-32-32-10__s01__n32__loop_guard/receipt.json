@@ -1,0 +1,76 @@
+{
+  "artifacts": {
+    "agents.txt": {
+      "bytes": 350,
+      "sha256": "7c8de943d744a33dabba692cdbffd9fca845c55de32d667045323a66b6b02cbe"
+    },
+    "attempt.json": {
+      "bytes": 464,
+      "sha256": "46caa3884bb5b8f653c7c6d76c154ad4af5a2c4e0fcc498954bdacdfa4aa147f"
+    },
+    "initial.txt": {
+      "bytes": 3270,
+      "sha256": "88d82f00a973a96bb65d934fca9fd48fa01066cf707b94922b1313b11e5357f0"
+    },
+    "map.txt": {
+      "bytes": 1062,
+      "sha256": "fe0aa228ea1d880f3a91ae6ff4ee049e8435affca28f985974bb4137802aaeb6"
+    },
+    "native.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "native.stdout.log": {
+      "bytes": 18,
+      "sha256": "4572c95e33bbfc84160c7b5087201218f8e482ec9cdff7b7f8c2be067c57b400"
+    },
+    "result.json": {
+      "bytes": 2065,
+      "sha256": "66e8fcf65836d51f304b732275187b0d1c9d6edc41d7d761cfc99a13182aac72"
+    },
+    "worker.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "worker.stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "audit_receipt_write_and_process_exit_excluded": true,
+  "budget_scope": "ENTRY_THROUGH_RESULT_OUTPUT_EXTERNAL_FINAL_CHECK_AND_ARTIFACT_HASH",
+  "coordinator_io_is_not_preemptively_bounded_here": true,
+  "costs": {
+    "all_descendant_system_s": 0.016659,
+    "all_descendant_user_s": 10.057716,
+    "exit_code": 2,
+    "forced_cleanup": false,
+    "interruption": null,
+    "largest_child_maxrss_kib": 20456,
+    "reaped": [
+      {
+        "exit_code": 2,
+        "maxrss_kib": 20456,
+        "pid": 12,
+        "system_s": 0.016659,
+        "user_s": 10.057716
+      }
+    ],
+    "scope": "WORKER_IMPORT_TO_EXIT_INCLUDING_RESULT_IO_AND_WAITED_NATIVE",
+    "wall_ns": 10115881748
+  },
+  "independent_performance_result": false,
+  "job": {
+    "case": "random-32-32-10__s01__n32",
+    "id": "random-32-32-10__s01__n32__loop_guard",
+    "iterations": 16,
+    "seed": 0,
+    "top_k": 32
+  },
+  "manifest_sha256": "73662d861eda4f9618e23029deb67c53708921a745c8660fd7c587fb6fabd91d",
+  "retry_allowed": false,
+  "status": "FAILED_OR_INCOMPLETE",
+  "supervisor_self_cpu_s": 0.09017399999999999,
+  "total_entry_through_output_validation_and_hash_ns": 10161730701,
+  "total_wall_is_success_admission_budget": true
+}

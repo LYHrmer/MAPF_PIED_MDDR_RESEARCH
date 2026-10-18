@@ -1,6 +1,6 @@
 # 共同根界终止修补：四项功能验证提案
 
-状态：**代码、二进制、输入和预算已准备；未获新科学运行授权，未执行。** 上一批第3项失败后全部许可已关闭，不能据其剩余数量继续。本清单只验证新版本，不测试恢复机制、训练、world或方法优势。
+状态：**已获用户明确“授权”并执行：1项完成、1项失败、2项停批未运行，零重试，许可全部关闭。** 结果与证据见[本批报告](ADDRESS_GUARD_RESULT.md)。下面保留原核定版本、命令和预算；不能据未运行数量继续。本清单只验证新版本，不测试恢复机制、训练、world或方法优势。
 
 ## 固定版本与处理
 
@@ -27,9 +27,9 @@
 
 任一非零退出、超时、强制回收、身份变化、路径/收据缺失、全车验证失败、SOC劣化或总费用超限即停全批。零重试；失败和partial保留，不修好后沿用剩余许可。零改善允许成功，不能当学习负标签或方法无价值证明。
 
-## 待授权命令
+## 原核定命令（许可已关闭）
 
-从`/home/lyh/MAPF_SCI_RESEARCH`执行；只有新真实用户授权本清单后可运行，逐项替换job。
+本批从`/home/lyh/MAPF_SCI_RESEARCH`顺序执行。以下保留命令模板供追溯，不是再次运行许可。
 
 ```bash
 rtk proxy timeout --signal=TERM --kill-after=2s 20s python3 -B tracks/sci/run_address_adapter.py run \
@@ -39,4 +39,4 @@ rtk proxy timeout --signal=TERM --kill-after=2s 20s python3 -B tracks/sci/run_ad
   --authorization-reference '<用户对本新清单的明确授权原文与范围>'
 ```
 
-输出固定`tracks/sci/results/address_loop_guard_v1/`，当前不存在；每项独占目录保存attempt、输入、原生stdout/stderr、最终路径/原生收据（若产生）、外部完整校验与总费用，失败也保留。所有已尝试、未尝试及失败项目都进入总账。不得覆盖上一批`address_common_initial_v1`或把失败改为成功。
+输出固定`tracks/sci/results/address_loop_guard_v1/`，现在包含授权记录、前两项独占目录和总账；后两项目录不存在。每项保存attempt、输入、原生stdout/stderr、最终路径/原生收据（若产生）、外部完整校验与总费用，失败也保留。所有已尝试、未尝试及失败项目都进入总账。不得覆盖上一批`address_common_initial_v1`或把失败改为成功。
