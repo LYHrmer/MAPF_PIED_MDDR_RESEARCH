@@ -1,15 +1,15 @@
 # 两线最新进度
 
-2026-10-18。唯一当前决定：[docs/RESEARCH_PLAN.md](docs/RESEARCH_PLAN.md)。两线均为候选问题验证阶段。新授权的SCI两项逐次失败记录DEV已全部COMPLETE，零重试、许可消费；当前材料没有符合原后段门槛的正常空返回，停止该恢复候选。大论文运动比较未获授权、未运行；此前停批许可保持关闭。
+2026-10-18。唯一当前决定：[docs/RESEARCH_PLAN.md](docs/RESEARCH_PLAN.md)。两线均为候选问题验证阶段。SCI新授权的两项非修复费用计时DEV已全部COMPLETE、零重试、许可消费，已定位任务间不同瓶颈；未运行新优化。后段恢复候选保持停止；大论文运动比较仍未授权、未运行。
 
 ## 当前交付
 
 | 研究线 | 已完成 | 下一项与边界 |
 |---|---|---|
-| SCI：给定合法初解，在有限总预算内改善路径质量 | 两项逐次失败记录已核；17次成本停止，2次前半段正常空返回，没有符合原门槛的后段失败 | 停止当前材料上的后段恢复候选；非runPP计时/计数接口已编译，下一项两任务诊断待新授权；暂不准备恢复比较或训练 |
+| SCI：给定合法初解，在有限总预算内改善路径质量 | 两项阶段计时及完整方案独立复核通过：random主要耗在选种子/构组，maze主要耗在修复 | 下一项选择严格改善游走下的正延迟种子准入，作为朴素强对照；尚未实现或比较，不直接训练 |
 | 硕士：同一优化器的运动与误差扩展 | 三臂完整任务接口接通原方案、固定SOC方案和经全车检查的转向感知方案；共用运动参数、初向和等待，分解完成时间与等待、保留拒绝和全部成本 | 新六项×三臂比较待授权，固定引用旧SCI535方案，不冒充完整ADDRESS结果。共同等待保守性、空间误差及反馈执行边界明确 |
 
-SCI[非修复费用核查](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/f6e1d01df2a4782cf97d02fa4cdfb4fc23dce69d/tracks/sci/ADDRESS_NONREPAIR.md)已完成旧证据离线分析：random31车零延迟，仅车辆19延迟2；源码显示构组失败不更新Beta，而成组修复无收益会降权，形成一个明确的抽样机会错配线索。该结论是源码/冻结路径推导，非新种子实测；预算层可能产生约2500万次种子循环检查，费用尚未分账。11阶段独占wall、种子延迟/构组结局计数及1024间隔预算采样已实现、软件与编译/help通过，不外推采样总成本。[两项计时清单](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/f6e1d01df2a4782cf97d02fa4cdfb4fc23dce69d/tracks/sci/ADDRESS_PHASE_CHECKLIST.md)SHA `0d4e0827…442ab7`，原15秒/各CPU10秒/512MiB、零重试/首失败停批，待新授权。未运行优化、恢复或训练；先测量，再判断简单准入、排序缓存或共同预算修补是否足以解释问题。
+SCI[两项阶段计时结果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/d51fff2855686c1dffb5fe84fc9de8fa3b205e88/tracks/sci/ADDRESS_PHASE_RESULT.md)：科学代码`f6e1d01`、证据`d51fff2`；random32 SOC771不变、总9.172秒，maze32为1873→1866、总0.452秒，makespan均不变。random的选种子/构组四阶段占原生计时窗口98.93%，195157次构组中选中195153次零延迟种子，只进入4次修复；maze窗口92.65%在修复内部。详表及全部成本只在该报告维护。总收据SHA `e64d0824…bf6011`、27原工件、全体路径与费用经独立离线复核；[清单](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/d51fff2855686c1dffb5fe84fc9de8fa3b205e88/tracks/sci/ADDRESS_PHASE_CHECKLIST.md)许可已消费，JSON原SHA不变。预算检查的确定性采样不能外推总费用，旧无profile批次不是配对计时。下一项先检验正延迟种子准入，零延迟车仍可作为邻域成员；这是改变抽样分布的ADDRESS适配强对照，尚无净收益或创新结果。
 
 SCI[共同预算结果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/97d88a2e49a5a77078f56d6447e632fd5692d401/tracks/sci/ADDRESS_BUDGET_RESULT.md)：科学代码固定`101f18c`、清单SHA `edcef325…67cd1`，三项全部在15秒总准入/各进程10秒CPU/512MiB原限内正常输出。random32的SOC771不变，总9.169秒；maze32为1873→1866，总0.470秒；warehouse32为2486不变，总0.284秒，三项makespan均不变。完整路径与37个工件独立复核通过，总收据SHA `e39e60…b3ab`。random32实际触发GROUP阶段CPU软截止；三项均未触发SIPP内部deadline或预处理fallback，后两者仍只有软件证据。预算层是共同基线完善，不是性能优势或任意规模硬实时保证。
 
@@ -23,7 +23,7 @@ SCI[上一批完整报告](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/bl
 
 [当前恢复实现](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/b0fa19e2b01d043968228a2d9e9c285eb3d3d9f7/tracks/sci/ADDRESS_RECOVERY.md)已统一诊断、私有占用表、搜索、完整校验和提交的wall/CPU/原repair期限；私有完整候选交换提交，到期逆交换或走作者原rollback。实际生成控制流的假时钟/假搜索夹具覆盖提交与全检取消，两个变体完整编译/help通过，不是恢复科学结果。`budget_guard --attemptTrace`记录primary真实调用位置、车辆、返回分类及费用，不做阻挡诊断；外部核对日志与搜索/rollback计数。恢复runner仍拒绝该变体，裸基线不承担恢复诊断费用。
 
-[两项记录结果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/7e77e9a4310928a7a273d4dac458d5536e7450d4/tracks/sci/ADDRESS_TRACE_RESULT.md)：科学代码`b0fa19e`，两项全部COMPLETE、零重试、许可消费。random32 SOC771不变、总9.176秒；maze32为1873→1866、总0.490秒，makespan均不变。21次修复中17次成本停止的全部单车调用均FOUND（9等成本、8变差）；两次空返回发生在第2/6辆、第4/8辆，不满足预设后段门槛。总收据SHA `308e5a65…a8632`、27项原工件和完整32车方案经独立离线复核。停止当前材料上的后段恢复候选，不放宽门槛、不追加场景追求正例；这不是所有恢复无效的证明。random的已测runPP仅约6.1ms，余下时间尚未细分，不能全归为可省构组开销。
+[两项记录结果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/7e77e9a4310928a7a273d4dac458d5536e7450d4/tracks/sci/ADDRESS_TRACE_RESULT.md)：科学代码`b0fa19e`，两项全部COMPLETE、零重试、许可消费。random32 SOC771不变、总9.176秒；maze32为1873→1866、总0.490秒，makespan均不变。21次修复中17次成本停止的全部单车调用均FOUND（9等成本、8变差）；两次空返回发生在第2/6辆、第4/8辆，不满足预设后段门槛。总收据SHA `308e5a65…a8632`、27项原工件和完整32车方案经独立离线复核。停止当前材料上的后段恢复候选，不放宽门槛、不追加场景追求正例；这不是所有恢复无效的证明。当时random已测runPP仅约6.1ms；后续分项计时见本页最新报告，不能把旧残差全归为可省费用。
 
 硕士[路径诊断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/aea4ffad2dfdf59a163436a21ee35c0f7b75c333/tracks/thesis/PATH_DIAGNOSTIC.md)核实random32的29条等成本实际改路增加113个四分之一圈，另两条成本改变路径合计减少5个；这不是实际运动时长。新增整方案规则复用固定SCI校验器，混合方案必须全车合法。9项路径/规则检查通过。1m/格下六案均不满足原v2的8m必要轴界；仓储两案在“一格边一个原MOVE、统一尺度”条件下也不存在同时满足最小MOVE长度与位移界的尺度。没有静默缩放或扩域。
 
