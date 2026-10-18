@@ -1,0 +1,406 @@
+{
+  "boundary_argument": "For circle distance d and a common boundary heading h, |d(h,u)-d(h,v)| <= d(u,v). Apply at both ends of each moving path and sum. This is a direction-sequence bound, not a vehicle dynamics guarantee.",
+  "generator_sha256": "84efd68c0ad8c58943e09265923323bfcdd4abb8affde971f6ce0d326ffb1a01",
+  "lock_sha256": "78a2babb349348d3d965ecb86fcf4c54b9ef3b2c374cbb929e29bfae513eb154",
+  "new_experiment": false,
+  "physical_duration_or_safety_verified": false,
+  "rows": [
+    {
+      "after": {
+        "internal_quarter_turns": 168,
+        "moves": 686,
+        "waits": 3
+      },
+      "before": {
+        "internal_quarter_turns": 157,
+        "moves": 688,
+        "waits": 2
+      },
+      "boundary_heading_difference_bound_quarters": 3,
+      "case": "maze-32-32-2__s01__n16",
+      "changed_paths": [
+        {
+          "agent": 0,
+          "new_cost": 69,
+          "old_cost": 69
+        },
+        {
+          "agent": 2,
+          "new_cost": 61,
+          "old_cost": 61
+        },
+        {
+          "agent": 3,
+          "new_cost": 17,
+          "old_cost": 17
+        },
+        {
+          "agent": 4,
+          "new_cost": 16,
+          "old_cost": 17
+        },
+        {
+          "agent": 5,
+          "new_cost": 33,
+          "old_cost": 33
+        },
+        {
+          "agent": 6,
+          "new_cost": 74,
+          "old_cost": 74
+        },
+        {
+          "agent": 7,
+          "new_cost": 49,
+          "old_cost": 49
+        }
+      ],
+      "delta": {
+        "internal_quarter_turns": 11,
+        "moves": -2,
+        "waits": 1
+      },
+      "final_soc": 689,
+      "initial_soc": 690,
+      "interpretation": "Geometry only. Interval allows arbitrary common initial/final headings and shortest heading changes while facing each edge. Reverse driving, smooth dynamics, overlapping turn/wait and multi-robot retiming are not evaluated.",
+      "total_direction_rotation_delta_interval_quarters": [
+        8,
+        14
+      ]
+    },
+    {
+      "after": {
+        "internal_quarter_turns": 484,
+        "moves": 1789,
+        "waits": 82
+      },
+      "before": {
+        "internal_quarter_turns": 466,
+        "moves": 1797,
+        "waits": 76
+      },
+      "boundary_heading_difference_bound_quarters": 2,
+      "case": "maze-32-32-2__s01__n32",
+      "changed_paths": [
+        {
+          "agent": 24,
+          "new_cost": 17,
+          "old_cost": 17
+        },
+        {
+          "agent": 25,
+          "new_cost": 60,
+          "old_cost": 60
+        },
+        {
+          "agent": 26,
+          "new_cost": 54,
+          "old_cost": 54
+        },
+        {
+          "agent": 27,
+          "new_cost": 92,
+          "old_cost": 93
+        },
+        {
+          "agent": 28,
+          "new_cost": 37,
+          "old_cost": 37
+        },
+        {
+          "agent": 29,
+          "new_cost": 50,
+          "old_cost": 52
+        },
+        {
+          "agent": 30,
+          "new_cost": 17,
+          "old_cost": 19
+        },
+        {
+          "agent": 31,
+          "new_cost": 63,
+          "old_cost": 60
+        }
+      ],
+      "delta": {
+        "internal_quarter_turns": 18,
+        "moves": -8,
+        "waits": 6
+      },
+      "final_soc": 1871,
+      "initial_soc": 1873,
+      "interpretation": "Geometry only. Interval allows arbitrary common initial/final headings and shortest heading changes while facing each edge. Reverse driving, smooth dynamics, overlapping turn/wait and multi-robot retiming are not evaluated.",
+      "total_direction_rotation_delta_interval_quarters": [
+        16,
+        20
+      ]
+    },
+    {
+      "after": {
+        "internal_quarter_turns": 89,
+        "moves": 407,
+        "waits": 0
+      },
+      "before": {
+        "internal_quarter_turns": 89,
+        "moves": 407,
+        "waits": 0
+      },
+      "boundary_heading_difference_bound_quarters": 0,
+      "case": "random-32-32-10__s01__n16",
+      "changed_paths": [],
+      "delta": {
+        "internal_quarter_turns": 0,
+        "moves": 0,
+        "waits": 0
+      },
+      "final_soc": 407,
+      "initial_soc": 407,
+      "interpretation": "Geometry only. Interval allows arbitrary common initial/final headings and shortest heading changes while facing each edge. Reverse driving, smooth dynamics, overlapping turn/wait and multi-robot retiming are not evaluated.",
+      "total_direction_rotation_delta_interval_quarters": [
+        0,
+        0
+      ]
+    },
+    {
+      "after": {
+        "internal_quarter_turns": 291,
+        "moves": 769,
+        "waits": 1
+      },
+      "before": {
+        "internal_quarter_turns": 183,
+        "moves": 771,
+        "waits": 0
+      },
+      "boundary_heading_difference_bound_quarters": 28,
+      "case": "random-32-32-10__s01__n32",
+      "changed_paths": [
+        {
+          "agent": 0,
+          "new_cost": 16,
+          "old_cost": 16
+        },
+        {
+          "agent": 1,
+          "new_cost": 35,
+          "old_cost": 35
+        },
+        {
+          "agent": 2,
+          "new_cost": 25,
+          "old_cost": 25
+        },
+        {
+          "agent": 3,
+          "new_cost": 10,
+          "old_cost": 9
+        },
+        {
+          "agent": 4,
+          "new_cost": 15,
+          "old_cost": 15
+        },
+        {
+          "agent": 5,
+          "new_cost": 30,
+          "old_cost": 30
+        },
+        {
+          "agent": 6,
+          "new_cost": 25,
+          "old_cost": 25
+        },
+        {
+          "agent": 7,
+          "new_cost": 53,
+          "old_cost": 53
+        },
+        {
+          "agent": 9,
+          "new_cost": 19,
+          "old_cost": 19
+        },
+        {
+          "agent": 10,
+          "new_cost": 27,
+          "old_cost": 27
+        },
+        {
+          "agent": 11,
+          "new_cost": 14,
+          "old_cost": 14
+        },
+        {
+          "agent": 12,
+          "new_cost": 34,
+          "old_cost": 34
+        },
+        {
+          "agent": 13,
+          "new_cost": 34,
+          "old_cost": 34
+        },
+        {
+          "agent": 14,
+          "new_cost": 36,
+          "old_cost": 36
+        },
+        {
+          "agent": 15,
+          "new_cost": 30,
+          "old_cost": 30
+        },
+        {
+          "agent": 16,
+          "new_cost": 9,
+          "old_cost": 9
+        },
+        {
+          "agent": 17,
+          "new_cost": 23,
+          "old_cost": 23
+        },
+        {
+          "agent": 18,
+          "new_cost": 14,
+          "old_cost": 14
+        },
+        {
+          "agent": 19,
+          "new_cost": 20,
+          "old_cost": 22
+        },
+        {
+          "agent": 20,
+          "new_cost": 27,
+          "old_cost": 27
+        },
+        {
+          "agent": 21,
+          "new_cost": 25,
+          "old_cost": 25
+        },
+        {
+          "agent": 22,
+          "new_cost": 33,
+          "old_cost": 33
+        },
+        {
+          "agent": 23,
+          "new_cost": 11,
+          "old_cost": 11
+        },
+        {
+          "agent": 24,
+          "new_cost": 21,
+          "old_cost": 21
+        },
+        {
+          "agent": 25,
+          "new_cost": 16,
+          "old_cost": 16
+        },
+        {
+          "agent": 26,
+          "new_cost": 16,
+          "old_cost": 16
+        },
+        {
+          "agent": 27,
+          "new_cost": 35,
+          "old_cost": 35
+        },
+        {
+          "agent": 28,
+          "new_cost": 12,
+          "old_cost": 12
+        },
+        {
+          "agent": 29,
+          "new_cost": 50,
+          "old_cost": 50
+        },
+        {
+          "agent": 30,
+          "new_cost": 37,
+          "old_cost": 37
+        },
+        {
+          "agent": 31,
+          "new_cost": 13,
+          "old_cost": 13
+        }
+      ],
+      "delta": {
+        "internal_quarter_turns": 108,
+        "moves": -2,
+        "waits": 1
+      },
+      "final_soc": 770,
+      "initial_soc": 771,
+      "interpretation": "Geometry only. Interval allows arbitrary common initial/final headings and shortest heading changes while facing each edge. Reverse driving, smooth dynamics, overlapping turn/wait and multi-robot retiming are not evaluated.",
+      "total_direction_rotation_delta_interval_quarters": [
+        80,
+        136
+      ]
+    },
+    {
+      "after": {
+        "internal_quarter_turns": 31,
+        "moves": 1112,
+        "waits": 0
+      },
+      "before": {
+        "internal_quarter_turns": 31,
+        "moves": 1112,
+        "waits": 0
+      },
+      "boundary_heading_difference_bound_quarters": 0,
+      "case": "warehouse-10-20-10-2-1__s01__n16",
+      "changed_paths": [],
+      "delta": {
+        "internal_quarter_turns": 0,
+        "moves": 0,
+        "waits": 0
+      },
+      "final_soc": 1112,
+      "initial_soc": 1112,
+      "interpretation": "Geometry only. Interval allows arbitrary common initial/final headings and shortest heading changes while facing each edge. Reverse driving, smooth dynamics, overlapping turn/wait and multi-robot retiming are not evaluated.",
+      "total_direction_rotation_delta_interval_quarters": [
+        0,
+        0
+      ]
+    },
+    {
+      "after": {
+        "internal_quarter_turns": 75,
+        "moves": 2486,
+        "waits": 0
+      },
+      "before": {
+        "internal_quarter_turns": 75,
+        "moves": 2486,
+        "waits": 0
+      },
+      "boundary_heading_difference_bound_quarters": 0,
+      "case": "warehouse-10-20-10-2-1__s01__n32",
+      "changed_paths": [],
+      "delta": {
+        "internal_quarter_turns": 0,
+        "moves": 0,
+        "waits": 0
+      },
+      "final_soc": 2486,
+      "initial_soc": 2486,
+      "interpretation": "Geometry only. Interval allows arbitrary common initial/final headings and shortest heading changes while facing each edge. Reverse driving, smooth dynamics, overlapping turn/wait and multi-robot retiming are not evaluated.",
+      "total_direction_rotation_delta_interval_quarters": [
+        0,
+        0
+      ]
+    }
+  ],
+  "sci_commit": "535ee1adf3135ab79565e0b3aa5d189348fe7ab2",
+  "scope": "OFFLINE_GEOMETRY_OF_EXISTING_SCI_PLANS"
+}

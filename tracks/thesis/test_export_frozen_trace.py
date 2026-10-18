@@ -153,5 +153,35 @@ class FrozenTraceTests(unittest.TestCase):
                 exporter.load_reader(self.repo, lock)
 
 
+class SciPathStructureTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        spec = importlib.util.spec_from_file_location('sci_path_audit', HERE/'inspect_sci_paths.py')
+        cls.audit = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(cls.audit)
+
+    def test_waits_preserve_direction_and_reversal_is_two_quarters(self):
+        shape = self.audit.path_shape([0, 1, 1, 2, 1, 4], 2, 3)
+        self.assertEqual((shape['moves'], shape['waits'], shape['internal_quarter_turns']), (4, 1, 3))
+
+    def test_stationary_path_does_not_invent_heading(self):
+        shape = self.audit.path_shape([0, 0], 2, 3)
+        self.assertIsNone(shape['first_direction'])
+        self.assertIsNone(shape['last_direction'])
+        self.assertEqual(shape['internal_quarter_turns'], 0)
+
+    def test_invalid_geometry_rejected(self):
+        for path in ([2, 3], [0, 4], [0, 1]):
+            with self.assertRaises(ValueError):
+                self.audit.path_shape(path, 2, 3, blocked=[1])
+
+    def test_boundary_triangle_bound_on_declared_heading_values(self):
+        d = self.audit.quarter_distance
+        for u in range(4):
+            for v in range(4):
+                for h in range(4):
+                    self.assertLessEqual(abs(d(h, u)-d(h, v)), d(u, v))
+
+
 if __name__ == '__main__':
     unittest.main(verbosity=2)
