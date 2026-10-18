@@ -1,0 +1,56 @@
+{
+  "authorization": "PENDING_USER",
+  "batch_id": "repair_residual_v1",
+  "binary": ".native_build_checked/address_sipp_bridge",
+  "code_sha256": {
+    "address_backend.py": "9fe6503ad50c87b267e09ed1df372eb78793c01c3774354265c82b5e57110c42",
+    "address_sipp_bridge.cpp": "3c7a15f05a1dd5b40b2e3b3c8d0ebb8c15dfa42b019d3e75c9a2bdee1c7473c8",
+    "build_receipt.json": "78cee7e038210e0b5955a2f45d24f7c95f5b64d2d3900463c256e49e0faef0a7",
+    "pp_repair.py": "f6a64ddee77c5a6d15659bf69fff5d3b75fc9ca936d2b4a46942d3f7467ea782",
+    "run_repair_dev.py": "c2e6eb8ecc825d2d7560157d5d325f62420d4f06d4fc9cb3f6aadd35d28f8397"
+  },
+  "input_file": "repair_residual_v1_inputs.json",
+  "input_sha256": "be1e912e1e2ea3f59fcdc5d0c5737118e7f96d92227be536ada605f6751c0e5b",
+  "jobs": [
+    {
+      "case": "maze-32-32-2__s01__n16",
+      "id": "maze-32-32-2__s01__n16__remaining_bound",
+      "policy": "REMAINING_BOUND"
+    },
+    {
+      "case": "maze-32-32-2__s01__n32",
+      "id": "maze-32-32-2__s01__n32__remaining_bound",
+      "policy": "REMAINING_BOUND"
+    },
+    {
+      "case": "random-32-32-10__s01__n16",
+      "id": "random-32-32-10__s01__n16__remaining_bound",
+      "policy": "REMAINING_BOUND"
+    },
+    {
+      "case": "random-32-32-10__s01__n32",
+      "id": "random-32-32-10__s01__n32__remaining_bound",
+      "policy": "REMAINING_BOUND"
+    },
+    {
+      "case": "warehouse-10-20-10-2-1__s01__n16",
+      "id": "warehouse-10-20-10-2-1__s01__n16__remaining_bound",
+      "policy": "REMAINING_BOUND"
+    },
+    {
+      "case": "warehouse-10-20-10-2-1__s01__n32",
+      "id": "warehouse-10-20-10-2-1__s01__n32__remaining_bound",
+      "policy": "REMAINING_BOUND"
+    }
+  ],
+  "limits": {
+    "algorithm_wall_s": 10,
+    "case_wall_s": 15,
+    "native_cpu_s": 10,
+    "per_process_as_mib": 512,
+    "search_calls": 128,
+    "worker_cpu_s": 10
+  },
+  "retry": 0,
+  "schema": "repair_dev_v1"
+}

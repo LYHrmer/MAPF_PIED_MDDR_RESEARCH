@@ -370,5 +370,88 @@ class CaseHostContracts(unittest.TestCase):
             self.assertEqual(payload['native_usage']['scope'], 'MOCK_NO_PROCESS')
 
 
+class ResidualProfileContracts(unittest.TestCase):
+    """Recorded software fixtures only; no native solver or benchmark calls."""
+
+    def fixture(self, *, accepted=False, gap=True):
+        initial = {0: [0, 0, 1, 2] if gap else [0, 1, 2], 1: [3, 4, 5]}
+        final = {**initial, 0: [0, 1, 2]} if accepted else initial
+        before = Incumbent(initial).snapshot().sha256
+        after = Incumbent(final).snapshot().sha256
+        case = {'id': 'SOFTWARE_FIXTURE', 'rows': 2, 'cols': 3, 'blocked': [],
+                'endpoints': {0: [0, 2], 1: [3, 5]}, 'paths': initial,
+                'orders': [[0]], 'order_roles': ['LOCAL_ID_BLOCK_8']}
+        problem = GridProblem(2, 3, [], case['endpoints'])
+        calls = 1 if accepted or gap else 0
+        attempt = {'order': [0], 'before_sha256': before, 'after_sha256': after,
+                   'old_cost': len(initial[0])-1, 'candidate_cost': 2 if accepted else None,
+                   'status': 'ACCEPTED' if accepted else 'NO_IMPROVEMENT',
+                   'improvement_label': accepted, 'search_calls': calls,
+                   'completed_agents': 1 if accepted else 0, 'wall_ns': 123,
+                   'reason': 'complete strict improvement accepted' if accepted else (
+                       'complete search exhausted the current improvement cap' if gap else
+                       'remaining lower bound exceeds strict target')}
+        result = {'case': case['id'], 'model_key': problem.model_key,
+                  'lower_bounds': {'0': 2, '1': 2}, 'initial_soc': sum(len(p)-1 for p in initial.values()),
+                  'final_soc': sum(len(p)-1 for p in final.values()), 'final_paths': final,
+                  'final_sha256': after, 'attempts': [attempt], 'status': 'COMPLETE',
+                  'final_validated': True, 'search_calls': calls, 'rpc': [],
+                  'stage_wall_ns': {}, 'bootstrap_through_native_ready_ns': 1}
+        return case, result
+
+    def test_positive_gap_is_not_improvement_or_global_infeasibility(self):
+        from repair_profile import diagnose
+        case, result = self.fixture()
+        row = diagnose(case, result)
+        self.assertEqual(row['decision'], 'POSITIVE_BOUND_GAP_BUT_IMPROVABILITY_UNPROVEN')
+        self.assertEqual(row['attempts'][0]['diagnosis'], 'CAP_EXHAUSTED_CURRENT_PREFIX_ONLY')
+        self.assertEqual(row['accepted_gain'], 0)
+
+    def test_root_closure_and_complete_improvement_are_distinct(self):
+        from repair_profile import diagnose
+        case, result = self.fixture(gap=False)
+        self.assertEqual(diagnose(case, result)['decision'], 'ZERO_SAME_MODEL_GAP_STOP_THIS_TASK')
+        case, result = self.fixture(accepted=True)
+        row = diagnose(case, result)
+        self.assertEqual(row['accepted_gain'], 1)
+        self.assertEqual(row['decision'], 'CLASSICAL_POLICY_REACHES_BOUND_NO_REMAINING_SOC_HEADROOM')
+
+    def test_timeout_is_unknown_and_bad_label_is_rejected(self):
+        from repair_profile import diagnose
+        case, result = self.fixture()
+        result['status'] = result['attempts'][0]['status'] = 'TIMEOUT'
+        result['attempts'][0]['improvement_label'] = None
+        row = diagnose(case, result)
+        self.assertIsNone(row['attempts'][0]['improvement_label'])
+        self.assertEqual(row['decision'], 'INCOMPLETE_NO_NEGATIVE_REWARD_LABEL')
+        result['attempts'][0]['improvement_label'] = False
+        with self.assertRaises(ValueError):
+            diagnose(case, result)
+
+    def test_wrong_final_path_hash_and_broken_incumbent_chain_rejected(self):
+        from repair_profile import diagnose
+        case, result = self.fixture()
+        result['final_sha256'] = 'bad'
+        with self.assertRaises(ValueError):
+            diagnose(case, result)
+        case, result = self.fixture()
+        result['attempts'][0]['before_sha256'] = 'bad'
+        with self.assertRaises(ValueError):
+            diagnose(case, result)
+
+    def test_fixed_scope_covers_every_agent_without_outcome_selection(self):
+        from repair_profile import fixed_orders
+        for n in (16, 32):
+            orders = fixed_orders(range(n))
+            self.assertEqual(sum(map(len, orders)), n*4)
+            self.assertEqual(orders[-2], list(range(n)))
+            self.assertEqual(orders[-1], list(reversed(range(n))))
+            self.assertEqual(set(a for order in orders[:-2] for a in order), set(range(n)))
+            for first, reverse in zip(orders[::2], orders[1::2]):
+                self.assertEqual(first, reverse[::-1])
+        with self.assertRaises(ValueError):
+            fixed_orders(range(8))
+
+
 if __name__ == "__main__":
     unittest.main()
