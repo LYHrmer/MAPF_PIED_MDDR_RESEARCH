@@ -1,6 +1,6 @@
-# 正延迟种子对照：八项有限DEV待授权
+# 正延迟种子对照：八项有限DEV已完成，许可已消费
 
-状态：实现、软件核验、编译/help和固定输入检查完成；**未运行科学比较**。此前全部SCI许可已消费。此文件是待批准的具体范围，不替代真实用户指示；不据本文件自行授权。
+状态：用户针对提交`93af30f`明确回复“授权这8项，严格按清单执行”，问题引用`call_b30d0e75ab0d47969e79ae4b9641c810`。本批按原顺序全部COMPLETE，零硬失败、零未运行、零重试，许可已消费；[结果及独立核验](ADDRESS_SEED_RESULT.md)。random/all固定次数项仅完成4/16后CPU软截止，保留为截尾。原两JSON、输入、二进制及代码摘要不改，以下为实际执行范围的记录，不得据此重跑。
 
 比较依据与边界见[实现说明](ADDRESS_SEED_COMPARISON.md)。两口径使用同一二进制，复用两份32车开发初解，不调用初始规划器、不训练、不启动world、不恢复后段候选。
 
@@ -21,9 +21,9 @@
 
 零重试。任一代码/输入/二进制SHA不符、异常、非法最终方案、缺工件、超限、非零退出或强制清理立即关闭**两份清单的全部剩余项**。保留成功、失败、未运行和partial日志，不修复后沿用余下许可。科学退出到期且合法输出为成功准入；固定16未达目标须标截尾，不能报等工作量加速；零SOC改善不是硬失败。
 
-输出分别独占`results/address_seed_fixed_v1/`、`results/address_seed_time_v1/`，均尚不存在。实际授权记录包含原始用户指示、两JSON SHA、顺序和科学提交，执行前保存；目录存在即拒绝覆盖。5秒仍包含CPU保护，按实际截止来源报告，不预称纯wall先到。因原单次修复额度随总预算变化，禁止跨两口径合并归因。
+输出分别独占`results/address_seed_fixed_v1/`、`results/address_seed_time_v1/`，现均已冻结。实际授权记录包含原始用户指示、两JSON SHA、顺序和科学提交，全部科学启动前保存；目录存在即拒绝覆盖。固定次数总收据SHA `f33214f2…9a1ff`，总预算总收据SHA `1dd7777c…6f22d`，完整摘要见结果报告。5秒仍包含CPU保护，本批四项实际均为wall截止。因原单次修复额度随总预算变化，禁止跨两口径合并归因。
 
-## 执行命令（当前不执行）
+## 已执行命令格式（许可已消费，不重跑）
 
 工作目录`/home/lyh/MAPF_SCI_RESEARCH`。只读检查：
 
@@ -32,7 +32,7 @@ rtk proxy python3 -B tracks/sci/run_address_adapter.py inspect --manifest tracks
 rtk proxy python3 -B tracks/sci/run_address_adapter.py inspect --manifest tracks/sci/config/address_seed_time_v1_manifest.json --sha256 508652f403e758e4fd1d0831b7a7093b3b56c317bb92d9414a8ba5514acb8d31
 ```
 
-固定次数四项在获得新授权后，逐项用下列格式执行；真实授权引用必须替换占位，job严格按表顺序：
+固定次数四项已按下列格式逐项执行，实际授权引用已保存于各项attempt；job严格按表顺序：
 
 ```bash
 rtk proxy timeout --signal=TERM --kill-after=2s 20s python3 -B tracks/sci/run_address_adapter.py run --manifest tracks/sci/config/address_seed_fixed_v1_manifest.json --sha256 c5e6f03bc9378b52dc3ab88a7fba4688dc41f7f3f14910aced73b3e1efd23993 --job random-32-32-10__s01__n32__fixed_repairs__all --authorization-reference '<本次真实用户授权>'
@@ -45,7 +45,7 @@ rtk proxy timeout --signal=TERM --kill-after=2s 20s python3 -B tracks/sci/run_ad
 | 3 | `maze-32-32-2__s01__n32__fixed_repairs__all` |
 | 4 | `maze-32-32-2__s01__n32__fixed_repairs__positive_delay` |
 
-前四项全部通过后，才执行固定时间四项：
+前四项全部通过后，按以下格式完成固定时间四项：
 
 ```bash
 rtk proxy timeout --signal=TERM --kill-after=2s 10s python3 -B tracks/sci/run_address_adapter.py run --manifest tracks/sci/config/address_seed_time_v1_manifest.json --sha256 508652f403e758e4fd1d0831b7a7093b3b56c317bb92d9414a8ba5514acb8d31 --job random-32-32-10__s01__n32__total_budget__all --authorization-reference '<同次真实用户授权>'

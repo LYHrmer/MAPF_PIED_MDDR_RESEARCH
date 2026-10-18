@@ -1,0 +1,44 @@
+{
+  "schema": "ACTUAL_USER_AUTHORIZATION_V1",
+  "source_question_id": "call_b30d0e75ab0d47969e79ae4b9641c810",
+  "actual_user_answer": "授权这8项，严格按清单执行",
+  "recorded_before_any_scientific_launch": true,
+  "recorded_utc": "2026-10-18T08:04:16.501318+00:00",
+  "scientific_code_commit": "93af30fd4aeb00c0d1fe4c2836c6a6a59f746599",
+  "manifest_sha256": "c5e6f03bc9378b52dc3ab88a7fba4688dc41f7f3f14910aced73b3e1efd23993",
+  "jobs": [
+    "random-32-32-10__s01__n32__fixed_repairs__all",
+    "random-32-32-10__s01__n32__fixed_repairs__positive_delay",
+    "maze-32-32-2__s01__n32__fixed_repairs__all",
+    "maze-32-32-2__s01__n32__fixed_repairs__positive_delay"
+  ],
+  "combined_manifest_order": [
+    {
+      "batch": "address_seed_fixed_v1",
+      "sha256": "c5e6f03bc9378b52dc3ab88a7fba4688dc41f7f3f14910aced73b3e1efd23993"
+    },
+    {
+      "batch": "address_seed_time_v1",
+      "sha256": "508652f403e758e4fd1d0831b7a7093b3b56c317bb92d9414a8ba5514acb8d31"
+    }
+  ],
+  "first_hard_failure_closes_remaining_jobs_in_both_manifests": true,
+  "retry_allowed": false,
+  "scope": "2 existing DEV tasks x 2 seed policies x 2 effort modes; no training/recovery/world/holdout",
+  "limits": {
+    "external_final_reserve_s": 0.5,
+    "inner_final_reserve_s": 1,
+    "native_cpu_reserve_s": 1,
+    "native_cpu_s": 10,
+    "per_process_as_mib": 512,
+    "total_wall_s": 15,
+    "worker_cpu_s": 10
+  },
+  "external_command_guard": {
+    "kill_grace_s": 2,
+    "required": true,
+    "term_after_s": 20,
+    "tool": "timeout"
+  },
+  "sole_executor": "/root"
+}
