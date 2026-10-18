@@ -12,13 +12,15 @@
 | explore/query-value-feasibility，交接 | `/home/lyh/MAPF_QUERY_VALUE_FEASIBILITY` | `exploration/execution_feedback/`：反馈和费用 |
 | archive/learned-query-20261016，detached | `/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE` | 停止的查询学习与失败证据，HEAD `57aee7b` |
 
-两研究树的总体README/计划/进度/导航已改为main与本线入口的简短索引；创建时快照保留在历史提交中。唯一当前总体决定始终读取main的`docs/RESEARCH_PLAN.md`。SCI当前共同预算结果为`97d88a2`（科学代码`101f18c`）、硕士完整任务比较接口为`a4ad94c`，main用固定提交索引，不复制算法。SCI原8车六臂见`c0bd134`的`tracks/sci/DEV_RESULT.md`；其`RUN_CHECKLIST.md`已消费，不能重跑。
+两研究树的总体README/计划/进度/导航已改为main与本线入口的简短索引；创建时快照保留在历史提交中。唯一当前总体决定始终读取main的`docs/RESEARCH_PLAN.md`。SCI当前恢复/日志接口为`b0fa19e`，最新科学结果仍为`97d88a2`（科学代码`101f18c`）；硕士完整任务比较接口为`a4ad94c`，main用固定提交索引，不复制算法。SCI原8车六臂见`c0bd134`的`tracks/sci/DEV_RESULT.md`；其`RUN_CHECKLIST.md`已消费，不能重跑。
 
 SCI六份16/32车诊断已获本批新授权并全部完成：[PROFILE_RESULT.md](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/535ee1adf3135ab79565e0b3aa5d189348fe7ab2/tracks/sci/PROFILE_RESULT.md)。配置在`tracks/sci/config/repair_residual_v1_*`，冻结结果在`tracks/sci/results/repair_residual_v1/`；`PROFILE_CHECKLIST.md`许可已消费。`repair_profile.py`增加仅解析已有记录的费用拆分，不替换原运行代码或旧消费记录。
 
 SCI[65a968c](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/65a968c7138cfdc6097a81178362c6e03f2dfbd3/tracks/sci/README.md)保存两批完整ADDRESS功能结果：原批2成功、1失败、3未运行，科学代码`032bf22`、产物`results/address_common_initial_v1/`；根界修补批1成功、1失败、2未运行，科学代码`eb4a60f`、产物`results/address_loop_guard_v1/`。两批均零重试、许可关闭，原证据未回填。`ADDRESS_GUARD_RESULT.md`记录本轮退出缺口与下一共同预算修补；恢复原型只编译/help与软件检查，运行器尚拒绝该变体。
 
 SCI[97d88a2结果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/97d88a2e49a5a77078f56d6447e632fd5692d401/tracks/sci/ADDRESS_BUDGET_RESULT.md)保存科学代码`101f18c`的三项共同预算功能验收，全部COMPLETE、零重试、许可已消费。产物位于`tracks/sci/results/address_budget_guard_v1/`，包含实际授权、逐项输出和总收据，不覆盖旧批。`ADDRESS_BUDGET_CHECKLIST.md`现标记已消费，JSON保持原SHA。
+
+SCI[b0fa19e](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/b0fa19e2b01d043968228a2d9e9c285eb3d3d9f7/tracks/sci/ADDRESS_RECOVERY.md)统一恢复内部截止并添加可选轻量primary trace。新`.address_attempt_trace_build/`和`.address_recovery_budget_build/`均只编译/help，各自收据在本线固定；没有覆盖旧build。`ADDRESS_TRACE_CHECKLIST.md`与`config/address_attempt_trace_v1_manifest.json`只准备两项无恢复记录DEV，输出`tracks/sci/results/address_attempt_trace_v1/`当前不存在，待新授权。恢复收益与实际失败分布未知。
 
 硕士[a4ad94c](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/a4ad94c5c84dc9f2239bc9b77e00a36740f70d2f/tracks/thesis/README.md)新增`compare_nominal_motion.py`，三方案共用运动条件并保留完整成本；`MOTION_RUN_CHECKLIST.md`与`config/nominal_motion_v1_manifest.json`准备六项三臂比较，未执行。产物计划进入`results/nominal_motion_v1/`，目录尚不存在。`sci.lock.json`仍消费SCI`535ee1a`的14个证据，validator与supervisor也固定同版Git对象；来源文档固定`16b1ee0`。不互读最新树，不自动消费完整ADDRESS新结果，全部旧派生产物原字节保留。
 
