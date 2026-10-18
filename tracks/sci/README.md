@@ -2,7 +2,7 @@
 
 工作树 `/home/lyh/MAPF_SCI_RESEARCH`，分支 `research/sci-mapf`。[main 总体决定](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/docs/RESEARCH_PLAN.md)是唯一当前总体计划；本树的总体文件是创建时快照。算法只在本线维护，大论文引用核定提交。
 
-当前候选为标准离散 MAPF 局部路径修复中的无效计算。**2026-10-18 已实现固定顺序 PP 宿主、剩余成本预算、原版 ADDRESS SIPP 回调及完整共同校验器；原版 SIPP 适配程序已编译链接。** 尚未调用真实实例初始化或路径搜索，没有加速、路径质量或学习收益证据。经典下界先作为增强传统基线，不单独作为创新。
+当前候选为标准离散 MAPF 局部路径修复中的无效计算。**2026-10-18 已实现固定顺序 PP 宿主、剩余成本预算、原版 ADDRESS SIPP 回调及完整共同校验器；原版 SIPP 适配程序已编译链接。** 经用户明确授权的六臂DEV现已完成：原控制共48次搜索，增强臂根节点检查全部结束，最终SOC与路径SHA相同。三个初解都达到静态最短路和；保留经典界为强基线，停止这批任务上的学习候选。独立加速或创新尚未成立。见[完整结果](DEV_RESULT.md)。
 
 ## 实现与证据
 
@@ -14,7 +14,7 @@
 | [build_address_backend.py](build_address_backend.py) / [编译收据](build_receipt.json) | 按固定 Git blob/SHA 核对 7 份源文件及作者头文件，编译并只调用 `--describe`；记录编译器、头文件包版本、二进制 SHA。输出目录必须为新目录，保留失败与超时记录。 |
 | [test_pp_repair.py](test_pp_repair.py) | 28 项软件契约：脚本回调、明确给定的离散路径、假原生响应；没有初始化原生求解器或解科学实例。 |
 | [address_remaining_budget.patch](address_remaining_budget.patch) / [原源码清单](address_source_manifest.json) | 先前对完整 `runPP` 的可审阅修改草案；`git apply --check` 通过，但未应用。实际新后端直接复用原版 SIPP，不依赖此补丁。 |
-| [run_repair_dev.py](run_repair_dev.py) / [运行清单](RUN_CHECKLIST.md) | 完整案例监督器、单次消费和失败总账；三份既有8车初解与六臂命令已固定，科学运行待授权。 |
+| [run_repair_dev.py](run_repair_dev.py) / [运行清单](RUN_CHECKLIST.md) | 完整案例监督器、单次消费和失败总账；固定六臂已按新授权运行并保留全部产物；许可已消费，不能再次执行。 |
 | [ADDRESS_LICENSE.txt](ADDRESS_LICENSE.txt) | 作者原许可字节，限教育、研究、非营利；不能称 MIT。 |
 
 作者固定提交 `b3d35c431ce03834f95e834d87986f2f341394a1`；原树在 `/home/lyh/.cache/mapf_research/address-b3d35c4`，保持原样。编译产物在本机 `.native_build_checked/`，不入库；前一次编译记录在 `.native_build/` 原样保留。当前二进制 SHA 为 `2f1f2ddc394961e055ad737debd700c7fc6b2b1c5c939767b8cd07ffb282f347`。收据是当前主机的构建证据，不是跨平台环境锁，也不代表完整 ADDRESS 系统或论文实验复现。
@@ -43,7 +43,7 @@
 
 固定原版 `findPath` 的正常空返回只有起点不可用或搜索集合耗尽，内部没有超时返回。匹配cap且收到完整正常空回应时，采用作者离散SIPP的有限搜索语义，记为当前cap内穷尽；超时、缺字段或异常仍删失。默认 `MAX_TIMESTEP` 的空返回不作无限制不可行。此接口依赖作者算法，不是本项目独立完备性证明；详见运行清单。
 
-RPC 使用非阻塞管道和同一单调时钟截止，原生子进程有 CPU/地址空间限制，异常时终止且无重启；请求/响应摘要、失败原因、RPC wall 及被回收子进程的 CPU/RSS 保留。已接通案例进程组监督器，超时/中断回收后代、保留退出费用，脚本子进程检查通过；真实作者运行尚待授权。完整费用包含 Python 导入、初解校验、原生初始化/距离表、序列化、搜索、恢复、完整校验、退出与写盘；Python `process_time` 不包含原生 CPU，不能只报它。共同验证器可能消耗预算，接纳前检查防止迟到采用，整体硬停由外层监督器承担。完整工作进程wall含最终结果写盘；父审计开销另列，末份审计收据自身写盘不在自身计时内，不以局部耗时宣称完整加速。
+RPC 使用非阻塞管道和同一单调时钟截止，原生子进程有 CPU/地址空间限制，异常时终止且无重启；请求/响应摘要、失败原因、RPC wall 及被回收子进程的 CPU/RSS 保留。已接通案例进程组监督器，超时/中断回收后代、保留退出费用，脚本子进程检查通过；六臂真实作者初始化及控制臂48次搜索已完成。完整费用包含 Python 导入、初解校验、原生初始化/距离表、序列化、搜索、恢复、完整校验、退出与写盘；Python `process_time` 不包含原生 CPU，不能只报它。共同验证器可能消耗预算，接纳前检查防止迟到采用，整体硬停由外层监督器承担。完整工作进程wall含最终结果写盘；父审计开销另列，末份审计收据自身写盘不在自身计时内，不以局部耗时宣称完整加速。
 
 旧原生 `runPP` 补丁禁用尚未闭合的 bandit 奖励更新，只适合固定请求回放草案；它保留原 `random_shuffle`，不得用于宣称跨臂相同顺序。新的 Python 固定顺序宿主没有这个随机换序入口，也不实现作者邻域选择与 bandit 循环。
 
@@ -67,6 +67,6 @@ rtk proxy python3 -I -B tracks/sci/build_address_backend.py \
 
 同问题参照为 [NNS，ICLR2024](https://proceedings.iclr.cc/paper_files/paper/2024/file/d41f8403e9bb5141bc2c81fad7658185-Paper-Conference.pdf)、[ADDRESS，AAAI2025](https://ojs.aaai.org/index.php/AAAI/article/view/34495)、[TACKLE，AAAI2026正式论文](https://ojs.aaai.org/index.php/AAAI/article/view/40207)。NNS/TACKLE 新增作者代码许可未核，不直接修改再分发；既有学习选邻域/共享计算/反事实组合不能当作本项目原创。固定路径的 Improved GSES、ESADG 不直接作为路径修复的公平性能对照，后者仍按已核来源标作预印本。
 
-**完整案例宿主与固定配对输入已准备，下一项是获授权后的六臂DEV。** [清单](RUN_CHECKLIST.md)固定三类地图的既有s01/n08初解、四个邻域顺序、代码/输入SHA、15秒工作组wall、逐进程CPU/内存限制及零重试。旧输入仅作复用DEV，不是未见独立测试。没有开启新求解、world或训练。
+**六臂DEV已完成，授权已消费。** [结果](DEV_RESULT.md)表明三个初解均已达到同模型下界，廉价根节点检查解释了全部搜索减少；增强臂未实跑逐车cap分支。下一项先核定具有同模型非零余量的既有完整任务，再研究共享根节点检查之外的具体求解差异。scenario末列与四邻域h不一致，不能用其差额制造“协调余量”。旧输入只是DEV，不是独立测试；没有world或训练。
 
-获授权后，先检查“已经不可能改善时仍继续搜索”是否占实际完整费用、增强规则能消除多少。若完整成本无净收益或低成本规则已解决主要浪费，记录停止/收缩，不为保留学习而扩大任务；若仍有可重复的预算错配，再选择一个学习任务。不能把编译、接口检查或经典下界升级为 SCI 创新证据。
+本轮决定是保留强基线并停止零余量任务上的学习投入。单次完整wall的差异不足以证明稳定加速；所有后继方法必须共用这一廉价检查。新运行须另给清单与真实授权，不能复用本批许可。
