@@ -12,13 +12,14 @@
 | explore/query-value-feasibility，交接 | `/home/lyh/MAPF_QUERY_VALUE_FEASIBILITY` | `exploration/execution_feedback/`：反馈和费用 |
 | archive/learned-query-20261016，detached | `/home/lyh/MAPF_PIED_MDDR_LEARNING_EXPLORE` | 停止的查询学习与失败证据，HEAD `57aee7b` |
 
-两研究树的公共文档是创建时快照；唯一当前总体决定始终读取main的`docs/RESEARCH_PLAN.md`。已核SCI实现`379df37`、硕士实现`6771137`分别在本线维护，main用固定提交索引，不复制算法。
+两研究树的公共文档是创建时快照；唯一当前总体决定始终读取main的`docs/RESEARCH_PLAN.md`。已核SCI实现`56351ce`、硕士实现`6771137`分别在本线维护，main用固定提交索引，不复制算法。
 
 日常先读[总入口](README.md)、[进度](GITHUB_PROGRESS.md)、相应支线README。代码在研究分支的专用目录推进，main只集成核定成果。不能把相邻工作树的最新文件当共享依赖；详见[共享清单](shared/README.md)。
 
 ## 固定依赖和原位证据
 
 - 12份旧运行代码分别固定执行`81f5866`、来源`43806cf`、工具`5589a7b`；新的文档交接提交不会静默改变代码pin。
+- SCI的ADDRESS原版依赖固定`b3d35c431ce03834f95e834d87986f2f341394a1`；作者缓存`/home/lyh/.cache/mapf_research/address-b3d35c4`保持原样，本线提交保存许可、源文件摘要和编译收据，二进制不入库。它是SCI专用依赖，尚未提升为两线公共API。
 - 实际四次DEV固定于执行证据提交`ae058c5`：[完整报告](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/ae058c5025eaaa61a424ef7627515d40c2e83997/exploration/spatial_constraints_s1_20261016/PREEXECUTION_DEV_RESULT.md)。原路径、收据SHA和消费标记不迁移、不重写。
 - 原v2 `composition.py`、C1夹具与失败证据保持原路径。旧运行器仍有绝对路径/`__file__`依赖；只有完成小文件固定bundle适配和新清单后才能脱离旧树运行。
 - `MANUSCRIPT_PREEXPERIMENT.md`仅main现有未提交版受保护，不复制到两线作为新稿。
