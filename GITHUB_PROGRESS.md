@@ -1,15 +1,15 @@
 # 两线最新进度
 
-2026-10-18。唯一当前决定：[docs/RESEARCH_PLAN.md](docs/RESEARCH_PLAN.md)。两线均为候选问题验证阶段；main维护总体决定，详细数值集中在各线报告。本轮完成共同预算退出和三方案运动比较的实现、软件核验及有限运行准备，**没有新增科学运行**。此前停批许可均已关闭。
+2026-10-18。唯一当前决定：[docs/RESEARCH_PLAN.md](docs/RESEARCH_PLAN.md)。两线均为候选问题验证阶段；main维护总体决定，详细数值集中在各线报告。用户仅授权SCI三项共同预算功能DEV，现已全部完成、零重试，许可已消费。大论文运动比较未获授权、未运行；此前停批许可保持关闭。
 
 ## 当前交付
 
 | 研究线 | 已完成 | 下一项与边界 |
 |---|---|---|
-| SCI：给定合法初解，在有限总预算内改善路径质量 | 共同墙钟/绝对进程CPU截止贯穿构组、SIPP内部和预处理；完整回滚/末检输出及预处理初解回退已实现、编译/help通过 | 新三项功能DEV待授权，random32未重跑。预算层是基线完善；恢复内部诊断尚须统一截止，方法收益未知 |
+| SCI：给定合法初解，在有限总预算内改善路径质量 | 共同预算三项全部COMPLETE；random32在构组CPU软截止后返回合法方案，maze保留SOC改善，warehouse保留初解 | 统一恢复内部预算并核对真实失败机会，再准备同预算机制比较；本批不证明SIPP真实到期路径、普遍保证或恢复收益 |
 | 硕士：同一优化器的运动与误差扩展 | 三臂完整任务接口接通原方案、固定SOC方案和经全车检查的转向感知方案；共用运动参数、初向和等待，分解完成时间与等待、保留拒绝和全部成本 | 新六项×三臂比较待授权，固定引用旧SCI535方案，不冒充完整ADDRESS结果。共同等待保守性、空间误差及反馈执行边界明确 |
 
-SCI[共同预算实现](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/101f18c6d65ae3d8b1ba263bd95e0397df21eaf0/tracks/sci/ADDRESS_BUDGET.md)和[三项清单](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/101f18c6d65ae3d8b1ba263bd95e0397df21eaf0/tracks/sci/ADDRESS_BUDGET_CHECKLIST.md)：软件夹具验证构组不进展、搜索内部到期、部分/最后FOUND回滚与预处理初解回退；运行器核对CPU预算收据。deadline与穷尽分开。1秒墙钟/CPU收尾预留仍需真实任务验证，不承诺任意规模硬实时返回。新清单SHA `edcef325…67cd1`，3项每项15秒总准入/各进程10秒CPU/512MiB，零重试。
+SCI[共同预算结果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/97d88a2e49a5a77078f56d6447e632fd5692d401/tracks/sci/ADDRESS_BUDGET_RESULT.md)：科学代码固定`101f18c`、清单SHA `edcef325…67cd1`，三项全部在15秒总准入/各进程10秒CPU/512MiB原限内正常输出。random32的SOC771不变，总9.169秒；maze32为1873→1866，总0.470秒；warehouse32为2486不变，总0.284秒，三项makespan均不变。完整路径与37个工件独立复核通过，总收据SHA `e39e60…b3ab`。random32实际触发GROUP阶段CPU软截止；三项均未触发SIPP内部deadline或预处理fallback，后两者仍只有软件证据。预算层是共同基线完善，不是性能优势或任意规模硬实时保证。
 
 硕士[三方案接口与清单](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/a4ad94c5c84dc9f2239bc9b77e00a36740f70d2f/tracks/thesis/MOTION_RUN_CHECKLIST.md)冻结0.5m/格、0.22×0.16m声明仿真车身、共同E初向与运动参数，非LIMO实测。报告完成时间之和、makespan、转向barrier/离散等待及几何充分条件状态；永久驻留不算无限等待。共用保守障碍窗口，剩余候选仍精确检查。清单SHA `dfac22c0…3b7c`，6项各含3臂、每项60秒总准入/45秒CPU/512MiB，零重试；未构造六任务的新运动日程。
 
@@ -19,7 +19,7 @@ SCI[上一批完整报告](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/bl
 
 [失败诊断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/032bf223b78e6698821cbdee14a63cb8c8bc7718/tracks/sci/LATE_FAILURE_DIAGNOSIS.md)保留全部17项：13项失败位置在组后半；7项失败车旧路径无阻挡但超当次cap，10项旧路径在cap内而与新prefix冲突。它们来自固定ID组探针，尚不能认定完整ADDRESS有同样瓶颈。候选为失败车旧路径前移、保留未受影响前段、最多一次尾段重算；未执行、未证明能恢复或节省成本。回退本身不是创新，需对照直接放弃、随机重排与适配后的优先级搜索。
 
-[原生恢复扩展](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/101f18c6d65ae3d8b1ba263bd95e0397df21eaf0/tracks/sci/ADDRESS_RECOVERY.md)保留abandon/random/anchor、一次尾段及费用。新增budget_recovery只通过语法核验，共享SIPP和主修复边界，但其内部诊断仍有独立wall截止、CPU检查未贯穿，运行器拒绝。先完成强基线功能验收，再解决该缺口，只检验恢复是否比同时间继续选邻域更有任务收益；不以诊断更重的abandon替代完整ADDRESS强基线。
+[原生恢复扩展](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/101f18c6d65ae3d8b1ba263bd95e0397df21eaf0/tracks/sci/ADDRESS_RECOVERY.md)保留abandon/random/anchor、一次尾段及费用。budget_recovery只通过语法核验，内部诊断仍有独立wall截止、CPU检查未贯穿，运行器拒绝。下一项先解决该缺口并核对真实失败机会，再检验恢复是否比同时间继续选邻域更有任务收益。本批random32构组调用很多，但没有阶段计时和逐次失败位置，不能认定后段恢复是主要瓶颈；不以诊断更重的abandon替代完整ADDRESS强基线。
 
 硕士[路径诊断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/aea4ffad2dfdf59a163436a21ee35c0f7b75c333/tracks/thesis/PATH_DIAGNOSTIC.md)核实random32的29条等成本实际改路增加113个四分之一圈，另两条成本改变路径合计减少5个；这不是实际运动时长。新增整方案规则复用固定SCI校验器，混合方案必须全车合法。9项路径/规则检查通过。1m/格下六案均不满足原v2的8m必要轴界；仓储两案在“一格边一个原MOVE、统一尺度”条件下也不存在同时满足最小MOVE长度与位移界的尺度。没有静默缩放或扩域。
 
