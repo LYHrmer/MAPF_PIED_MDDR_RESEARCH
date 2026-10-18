@@ -37,4 +37,4 @@ Python接口为`read_blob(repo, pin) -> bytes`、`audit_manifest(repo, manifest)
 
 同提交的`plan_selection.lock.json`固定SCI`535ee1a`的`pp_repair.py`与`address_backend.py`，在校验Git对象字节后复用原`GridProblem`及完整路径检查，支持SOC、保留等成本路径、转向感知的整方案选择规则；没有复制或启动原生求解器。两份消费者锁由硕士维护，SCI`032bf22`及其后续实现不自动进入该消费者。当前没有新增公共运行接口，也不把SCI专用优化器或证据复制进公共目录。
 
-硕士`e507702`的无误差运动参考继续使用该固定GridProblem入口，不改变锁文件；SCI`eb4a60f`新增的运行结果、共同终止与恢复原型也不自动进入硕士。运动编译器目前只有硕士消费者，留在`tracks/thesis/`，不为形式上的共享复制到此目录。
+硕士`a4ad94c`的完整运动比较继续使用该固定GridProblem入口，不改变旧锁文件；其新清单同时固定SCI`535ee1a`的`run_repair_dev.py` supervisor对象，复用进程管理但不调用优化器。SCI`101f18c`的共同预算层和较新完整ADDRESS结果均不自动进入硕士。运动编译器仍只有硕士消费者，留在`tracks/thesis/`，不复制到公共目录；所有运行对象以清单固定，互不读取工作树最新版本。
