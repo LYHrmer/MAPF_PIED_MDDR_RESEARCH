@@ -12,6 +12,7 @@
 | [address_backend.py](address_backend.py) | 作者持久子进程、固定输入转换、相同地图/路径/预算/缓存身份检查、完整离散冲突校验、RPC 截止、失败关闭及子进程 CPU/RSS 记录。 |
 | [address_sipp_bridge.cpp](address_sipp_bridge.cpp) | 调用未修改的作者 `Instance`、`PathTable`、`ConstraintTable`、`SIPP::findPath`；复用每车静态目标距离表，无自写搜索替身。 |
 | [build_address_backend.py](build_address_backend.py) / [编译收据](build_receipt.json) | 按固定 Git blob/SHA 核对 7 份源文件及作者头文件，编译并只调用 `--describe`；记录编译器、头文件包版本、二进制 SHA。输出目录必须为新目录，保留失败与超时记录。 |
+| [build_address_full.py](build_address_full.py) / [完整原版编译收据](full_address_build_receipt.json) | 固定作者86份文件、树外编译完整ADDRESS并只执行`--help`；已成功，未构造实例或搜索。完整系统的公平比较仍需初解与随机性适配。 |
 | [test_pp_repair.py](test_pp_repair.py) | 28 项软件契约：脚本回调、明确给定的离散路径、假原生响应；没有初始化原生求解器或解科学实例。 |
 | [address_remaining_budget.patch](address_remaining_budget.patch) / [原源码清单](address_source_manifest.json) | 先前对完整 `runPP` 的可审阅修改草案；`git apply --check` 通过，但未应用。实际新后端直接复用原版 SIPP，不依赖此补丁。 |
 | [run_repair_dev.py](run_repair_dev.py) / [运行清单](RUN_CHECKLIST.md) | 完整案例监督器、单次消费和失败总账；固定六臂已按新授权运行并保留全部产物；许可已消费，不能再次执行。 |
@@ -75,3 +76,19 @@ rtk proxy python3 -I -B tracks/sci/build_address_backend.py \
 后继的[具体诊断](PROFILE_CHECKLIST.md)已准备：六份已有完整16/32车初解；按固定8车组及两项整任务顺序诊断根拒绝、前缀拒绝、有限cap穷尽、接受和总费用，输入SHA `be1e912e…1c0e5b`、清单SHA `cff28cdb…987039`。没有初始化新的作者实例，没有计算其同模型h。新增5项离线解析/固定范围软件检查通过；正差额、真实接受、超时/未知严格分开。
 
 作者原版driver未提供加载现有完整初解的选项，完整ADDRESS公平对照仍需初解适配。上述ID分组固定探针也不是其自适应选组策略；后继六项只作一次瓶颈筛选，不是独立性能实验、加速对比或学习标签集。
+
+## 完整原版ADDRESS工件及适配缺口
+
+已按作者原CMake树外编译完整可执行程序，保留作者所有源码字节。86份源/头文件、CMake与许可等逐项固定blob/SHA；配置、编译均退出0，原版`--help`按其入口约定退出1，在`Instance`与`LNS`构造之前返回。完整二进制位于`.full_address_build/build/address`，SHA256 `837a15e82251a92cf025bdf067811dae02e82a792dfb7b17238c45019d51268b`。这是编译与入口证据，没有执行完整ADDRESS科学任务。
+
+配置/编译/help原始日志在`.full_address_build/`，其SHA与命令在[固定收据](full_address_build_receipt.json)，收据SHA `c2d22fececdfc4288d438d6d7004aa52a6fa33c079ea620f2f113e7ff2dbfb62`。本机GCC11、Boost1.74、Eigen3.4编译成功；作者README要求Boost1.81，不宣称环境完全匹配。编译保留`LNS::wrapper`的非void函数末端返回告警，未静默修改作者代码。
+
+以下均为固定源码的定点结论，不是新实验结果：
+
+- [driver.cpp](https://github.com/JimyZ13/ADDRESS/blob/b3d35c431ce03834f95e834d87986f2f341394a1/src/driver.cpp#L49)默认`maxIterations=0`；`run()`先记录一次初解，再检查`iteration_stats.size() <= num_of_iterations`，因此默认不做修复迭代。原README运行示例显式给了非零上限，后续必须固定完整方法配置，不能把默认调用当完整ADDRESS性能。
+- [LNS.cpp](https://github.com/JimyZ13/ADDRESS/blob/b3d35c431ce03834f95e834d87986f2f341394a1/src/LNS.cpp#L1188)的`bernoulie()`每次从`random_device`构造独立mt19937；命令行`seed`控制的`rand`不覆盖这部分。共同种子声明需明确适配，不能只传`--seed`就写成可重复配对。
+- 同文件构造器会把`neighbor_size`赋为8；需要核对实际行为，不能仅依据`--neighborSize`宣称改变了邻域规模。本批已准备的固定宿主也不替代作者自适应选组。
+- `getInitialSolution()`仍调用规划器，没有外部完整初解入口。公平比较可选择显式适配初解导入，或为双方采用相同端到端初解策略；在诊断结果明确前不自行切换问题或运行原版生成新初解。
+- 原版`runPP`在完整接纳/回滚前更新部分bandit字段；此前剩余下界补丁未闭合这部分反馈语义。后续共同强基线必须处理完整接纳奖励和失败删失，不能把旧禁用学习更新的补丁直接叫完整ADDRESS。
+
+该完整二进制不是当前待授权六任务清单锁定的SIPP桥接二进制，不得替换运行器或扩大授权。只有共同初解、原版随机性、完整费用与奖励适配闭合后，才准备完整系统比较。此工件不是新的算法贡献，也不改变“先看强传统方法之后的真实剩余瓶颈，再决定学习”的研究顺序。
