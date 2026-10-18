@@ -33,4 +33,6 @@ Python接口为`read_blob(repo, pin) -> bytes`、`audit_manifest(repo, manifest)
 
 本轮工具在主机Python 3.10.12以标准库完成静态核验，不要求LIMO车载系统升级。硕士消费者的`tracks/thesis/shared.lock.json`固定读取器与manifest于公共提交`4a89183cf0827dcae2fa20a7d816c760e4150457`，仅加载所需9份证据。SCI当前不消费这12个误差执行模块，后续有真实公共依赖时才增加pin。
 
-硕士`32db58f`新增的`tracks/thesis/sci.lock.json`用同一读取器固定SCI`535ee1a`的14个证据对象（输入、汇总、六份结果与六份收据），供路径结构离线解析。锁文件由硕士消费者维护，不把SCI专用优化器或证据复制进公共目录；当前没有新增公共运行接口。
+硕士[aea4ffa](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/aea4ffad2dfdf59a163436a21ee35c0f7b75c333/tracks/thesis/README.md)的`tracks/thesis/sci.lock.json`继续用同一读取器固定SCI`535ee1a`的14个证据对象（输入、汇总、六份结果与六份收据），供运动结构和等成本改路离线解析。新增`source_contract`固定来源`16b1ee0`的`COMPOSITION.md`，只核对v2条件文档，不代表模型运行或路径资格通过。
+
+同提交的`plan_selection.lock.json`固定SCI`535ee1a`的`pp_repair.py`与`address_backend.py`，在校验Git对象字节后复用原`GridProblem`及完整路径检查，支持SOC、保留等成本路径、转向感知的整方案选择规则；没有复制或启动原生求解器。两份消费者锁由硕士维护，当前SCI`032bf22`的新实现不自动进入该消费者。当前没有新增公共运行接口，也不把SCI专用优化器或证据复制进公共目录。
