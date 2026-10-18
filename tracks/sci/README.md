@@ -1,6 +1,6 @@
 # SCI MAPF 支线索引
 
-工作树`/home/lyh/MAPF_SCI_RESEARCH`，分支`research/sci-mapf`。main只维护索引；当前实现与明细见[本线入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/6bee04b2cedf554a5b8ef0a6b58fc25bca319948/tracks/sci/README.md)。
+工作树`/home/lyh/MAPF_SCI_RESEARCH`，分支`research/sci-mapf`。main只维护索引；当前实现与明细见[本线入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/a25aa8d18816ec597736bb4776f2b5f847520854/tracks/sci/README.md)。
 
 问题是给定合法初解，在有限总计算预算内改善MAPF路径质量。以ADDRESS为实现主干，BALANCE/TACKLE提供针对性参考，确需神经表示时再看NNS。后段恢复候选保持停止；正延迟初始种子规则已完成八项开发对照，保留为朴素强对照，不把必要条件或共同工程优化称为创新。下一项准备未参与规则设计的完整任务输入和预先固定多seed的有限清单，尚未启动；当前random仅一个正延迟候选，不支持训练其种子排序。
 
@@ -15,4 +15,4 @@
 
 算法只在SCI维护，硕士引用固定版本。学习保留条件，不重启旧查询、L20/L21或零余量材料训练。总研究决定见[main计划](../../docs/RESEARCH_PLAN.md)。
 
-已完成[DyMAB窗口奖励接口核对](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/6bee04b2cedf554a5b8ef0a6b58fc25bca319948/tracks/sci/REFERENCE_REPRODUCTION.md)：原辅助模块编译与人工奖励夹具确认窗口/参数/选择差异，完整DyMAB与科学性能未复现。下一项在同一ADDRESS主干明确候选奖励、提交收益与截尾的结算接口，之后才比较共享条件下的累计与窗口记忆；CPLNS/X*继续作方法参考。首次检查脚本失败与修正后核验均保留，未消费或重用科学许可。
+已完成[ADDRESS奖励事务实现](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/a25aa8d18816ec597736bb4776f2b5f847520854/tracks/sci/ADDRESS_BUDGET.md#奖励事务适配实现完成科学比较未运行)：完整候选、提交收益、截尾分开，原奖励/累计/窗口三种模式显式命名；软件夹具及编译/help通过，尚无新科学运行。窗口机制已有先例，此处是车辆种子适配；下一项补runner核验及有限功能清单，之后按新授权比较。DyMAB核对原证据、八项结果和旧失败保留，不复用科学许可。
