@@ -4,7 +4,7 @@
 
 ## 当前交付
 
-用户进一步要求多借鉴和复现成熟期刊机制。已完成[DyMAB/CPLNS/X*定点原文与源码对应](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/eb3d2872c0062b4c0737168bf15df00caee8326f/tracks/sci/REFERENCE_REPRODUCTION.md)，优先准备DyMAB窗口奖励的软件语义复现；作者代码已有正延迟种子先例，当前规则继续作为强对照。新增作者程序未编译或运行，未产生额外科学结果；源码与论文差异、许可/版本缺口具体记录，不改变已冻结的八项结果。
+已完成[DyMAB窗口奖励接口核对](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/6bee04b2cedf554a5b8ef0a6b58fc25bca319948/tracks/sci/REFERENCE_REPRODUCTION.md)：固定作者辅助模块编译与人工奖励执行确认成功才入队、预填零、参数绑定、UCB分母及选择时钟差异；相同队列下论文公式与源码选择不同算子。仅修参数绑定还暴露3行奖励/5行大小权重不匹配。首次检查脚本误要求特定stderr文本的失败与修正后核验均保留。未运行完整DyMAB、MAPF或训练，不改变八项冻结结果；下一项是明确候选奖励、提交收益与截尾的单次结算接口，再准备共享条件下的记忆机制对照。CPLNS/X*继续作为定点方法参考。
 
 | 研究线 | 已完成 | 下一项与边界 |
 |---|---|---|

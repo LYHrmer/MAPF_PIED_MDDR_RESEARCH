@@ -30,7 +30,7 @@
 | [ADDRESS，AAAI2025](https://ojs.aaai.org/index.php/AAAI/article/view/34495) | 延迟种子、受限Thompson Sampling及PP修复 | [固定源码](https://github.com/JimyZ13/ADDRESS/blob/b3d35c431ce03834f95e834d87986f2f341394a1/src/LNS.cpp#L462)；[许可](https://github.com/JimyZ13/ADDRESS/blob/b3d35c431ce03834f95e834d87986f2f341394a1/license.txt)限教育/研究/非营利，不称MIT |
 | [BALANCE，AAAI2024](https://ojs.aaai.org/index.php/AAAI/article/view/29701) | 双层多臂老虎机选择破坏策略和邻域大小 | 轻量在线学习参考；自动改变重规划车辆数已有先例，暂不新增一套完整实现 |
 | [TACKLE，AAAI2026正式论文](https://ojs.aaai.org/index.php/AAAI/article/view/40207) | 规则意图、反事实在线学习及邻域选择 | 已研究top-K/计算开销；原文Random地图负结果是诊断线索，不是我们改进有效的证据；代码许可待核 |
-| [DyMAB，JAIR2026正式论文](https://jair.org/index.php/jair/article/view/19324) | 非平稳邻域算子选择与近期奖励队列 | 新增首选期刊机制参考；作者固定MIT代码已有正延迟种子，论文/代码奖励语义及源码构造实参映射待处理，尚未运行复现 |
+| [DyMAB，JAIR2026正式论文](https://jair.org/index.php/jair/article/view/19324) | 非平稳邻域算子选择与近期奖励队列 | 固定MIT辅助模块软件核验完成，论文/代码的窗口与选择差异已实证到人工输入；完整求解/性能未复现。窗口思想和正延迟种子均是已有机制 |
 | [PBS，AAAI2019](https://ojs.aaai.org/index.php/AAAI/article/view/4758) | 冲突驱动的部分优先关系搜索 | 局部回退与换序候选的直接方法参照；须适配固定外部路径、成本上限与相同总预算，不能以自写随机换序冒称PBS |
 | [Improved GSES，AAAI2025](https://ojs.aaai.org/index.php/AAAI/article/view/34487) | 固定路径的通行次序优化 | 问题不同，不直接作为路径重规划性能基线；保留既有MIT工件索引 |
 | [ExecTimeNet/ESADG v2](https://arxiv.org/html/2511.21886v2) | 固定路径、执行时间与组反转 | 当前依据为预印本；已有组选取/环修复，不把这些当原创 |
@@ -65,7 +65,7 @@
 
 **下一项实质交付：** 准备未参与规则设计的完整任务输入包及多seed有限清单；原六份16/32车DEV及嵌套/同源重采样排除，预先固定地图家族、场景ID、初解策略、种子和预算，初解构造也计入新科学授权。当前尚未生成初解或运行未见比较。若规则只增加修复次数而未改善完整质量，停止把它作为质量改进候选；退化、失败与超时全部保留，不挑任务或追加seed追求正结果。若有跨任务可重复的构组成功率、修复收益和费用差异，再定义一个轻量在线学习决策并核对与ADDRESS/TACKLE/BALANCE的区别。random当前仅一个正延迟种子，不存在训练其种子排序的选择空间。后段恢复继续停止，深度RL不另建。
 
-按用户新要求，增加[期刊机制的定点学习与复现安排](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/eb3d2872c0062b4c0737168bf15df00caee8326f/tracks/sci/REFERENCE_REPRODUCTION.md)：ADDRESS仍是唯一实现主干，优先借鉴JAIR2026 DyMAB的近期奖励窗口，CPLNS（TPDS2024）与X*（AIJ2021）分别提供多样性/计算资源和窗口搜索复用参考。已核DyMAB正式全文、作者固定提交与MIT，发现正延迟种子的直接代码先例，以及构造参数映射、仅成功更新窗口等具体复现差异；下一项先把窗口/奖励接口的软件语义核对做实，不默改作者代码，不将只读核查称为复现结果。CPLNS、X*的复用和完整复现条件尚有缺口，暂不移植或同时新搭系统。完整原版、共同问题适配和本项目新增机制分开评价；期刊身份不替代问题匹配或实际收益。
+按用户要求完成[DyMAB窗口奖励的定点软件核验](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/6bee04b2cedf554a5b8ef0a6b58fc25bca319948/tracks/sci/REFERENCE_REPRODUCTION.md)：ADDRESS仍是唯一实现主干，DyMAB提供近期算子奖励窗口参考，CPLNS（TPDS2024）与X*（AIJ2021）提供多样性/计算资源和搜索复用参考。固定作者辅助模块已编译并在人工奖励上执行，确认成功才入队、零预填、参数映射、UCB分母/时钟及仅修绑定后的大小选择维度问题；保留首次检查脚本失败和修正后收据。未运行完整作者程序或科学任务。下一项实现须先定义完整候选奖励与实际提交收益，未完成/截止不伪造成完整候选代价；每次选择只结算一次，各层按自己的臂数分配。然后固定算子池、大小、奖励、初解、低层和总预算，比较累计与窗口记忆；若移到车辆种子则标注项目适配。现有窗口思想不是新增贡献，不能把作者源码问题当作本项目性能优势。CPLNS/X*复用条件仍有缺口，暂不移植或新搭系统；完整原版、适配版与新增机制分开评价。
 
 后继有限原型允许检验尚未成立的具体假设，先固定机制、输入、比较与停止条件，不必先证明论文创新。完整ADDRESS继续其正常外层搜索，不空等、不承担候选额外诊断；各臂同初解、低层、缓存、总预算和安全条件，诊断、复用检查、重算、末检均计费，以预算结束时的完整任务SOC及全部成本判断。少调用或恢复成功率不代替任务收益；额外搜索会改变随机流，不假称端到端邻域序列相同。学习投入仍须有简单强对照后的明确决策空间，后段恢复停止不变。
 
