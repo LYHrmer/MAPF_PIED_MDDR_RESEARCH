@@ -6,6 +6,7 @@ not measured robot rotations, motion durations or a continuous-safety proof.
 import hashlib
 import importlib.util
 import json
+from fractions import Fraction
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -52,7 +53,7 @@ def compare(case, result):
     require(set(initial) == set(final) == set(case['endpoints']), 'robot coverage mismatch')
     names = ('moves', 'waits', 'internal_quarter_turns')
     before, after = ({k: 0 for k in names} for _ in range(2))
-    boundary_bound, changed = 0, []
+    boundary_bound, changed, agents = 0, [], []
     for agent in sorted(initial, key=int):
         old, new = initial[agent], final[agent]
         start, goal = case['endpoints'][agent]
@@ -71,12 +72,46 @@ def compare(case, result):
                                    + quarter_distance(a['last_direction'], b['last_direction']))
         if old != new:
             changed.append({'agent': int(agent), 'old_cost': len(old)-1, 'new_cost': len(new)-1})
+        category = ('unchanged' if old == new else 'equal_cost_reroute' if len(old) == len(new)
+                    else 'shorter' if len(new) < len(old) else 'longer')
+        start_x, start_y = start % case['cols'], start // case['cols']
+        displacement = lambda path: {
+            'x': max(abs(v % case['cols']-start_x) for v in path),
+            'y': max(abs(v // case['cols']-start_y) for v in path)}
+        agents.append({'agent': int(agent), 'category': category,
+                       'old_cost': len(old)-1, 'new_cost': len(new)-1,
+                       'before': a, 'after': b, 'delta': {k: b[k]-a[k] for k in names},
+                       'max_relative_axis_displacement_cells': {
+                           'before': displacement(old), 'after': displacement(new)}})
     require(before['moves']+before['waits'] == result['initial_soc']
             and after['moves']+after['waits'] == result['final_soc'], 'SOC decomposition mismatch')
     delta = {k: after[k]-before[k] for k in names}
     turn_delta = delta['internal_quarter_turns']
+    groups = {}
+    for category in ('unchanged', 'equal_cost_reroute', 'shorter', 'longer'):
+        group = [a for a in agents if a['category'] == category]
+        groups[category] = {'count': len(group), 'agents': [a['agent'] for a in group],
+                           'soc_delta': sum(a['new_cost']-a['old_cost'] for a in group),
+                           'delta': {k: sum(a['delta'][k] for a in group) for k in names}}
+    extents = {phase: {axis: max(a['max_relative_axis_displacement_cells'][phase][axis]
+                                for a in agents) for axis in ('x', 'y')}
+               for phase in ('before', 'after')}
+    scales = {}
+    for phase, axes in extents.items():
+        largest = max(axes.values())
+        upper = Fraction(8, largest) if largest else None
+        scales[phase] = {'lower_m_per_cell': '1/4',
+                         'upper_m_per_cell_from_axis_bound': str(upper) if upper is not None else None,
+                         'necessary_interval_nonempty': upper is None or upper >= Fraction(1, 4),
+                         'assumption': 'Every moving grid edge is one original v2 MOVE, all with one common scale. This tests only the 0.25 m minimum MOVE and 8 m task-relative axis bound.'}
     return {'case': case['id'], 'initial_soc': result['initial_soc'], 'final_soc': result['final_soc'],
             'before': before, 'after': after, 'delta': delta, 'changed_paths': changed,
+            'per_agent': agents, 'path_change_groups': groups,
+            'max_relative_axis_displacement_cells': extents,
+            'v2_one_edge_per_move_necessary_scale_interval': scales,
+            'v2_displacement_screen_at_hypothetical_1m_cell': {
+                phase: 'FAIL_NECESSARY_AXIS_BOUND' if max(extents[phase].values()) > 8
+                else 'AXIS_BOUND_ONLY_NOT_FULL_QUALIFICATION' for phase in extents},
             'boundary_heading_difference_bound_quarters': boundary_bound,
             'total_direction_rotation_delta_interval_quarters': None if boundary_bound is None else
                 [turn_delta-boundary_bound, turn_delta+boundary_bound],
@@ -94,6 +129,14 @@ def analyze(repo):
     require(lock['schema'] == 'thesis_sci_path_audit_v1' and lock['commit'] == SCI
             and len(lock['entries']) == 14, 'unexpected SCI evidence lock')
     require(all(pin['commit'] == SCI for pin in lock['entries'].values()), 'mixed SCI commits')
+    source_pin = lock['source_contract']
+    require(source_pin['commit'] == '16b1ee089be20cafaf4818c3dbb7b259659b021d'
+            and source_pin['path'] == 'exploration/spatial_source/COMPOSITION.md',
+            'unexpected v2 source contract')
+    source_contract = reader.read_blob(repo, source_pin).decode('utf-8')
+    require('每个 MOVE 长 .25–3 m' in source_contract
+            and '参考相对初点每轴位移≤8 m' in source_contract,
+            'declared v2 screening constants do not match the fixed contract')
     raw = {key: reader.read_blob(repo, pin) for key, pin in lock['entries'].items()}
     inputs = json.loads(raw['inputs'])
     summary = json.loads(raw['summary'])
@@ -116,14 +159,28 @@ def analyze(repo):
     require(len(rows) == 6, 'six consumed tasks required')
     return {'scope': 'OFFLINE_GEOMETRY_OF_EXISTING_SCI_PLANS', 'new_experiment': False,
             'sci_commit': SCI, 'lock_sha256': hashlib.sha256(lock_raw).hexdigest(),
+            'v2_source_contract': source_pin, 'v2_source_model_imported': False,
             'generator_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(), 'rows': rows,
             'physical_duration_or_safety_verified': False,
             'boundary_argument': 'For circle distance d and a common boundary heading h, |d(h,u)-d(h,v)| <= d(u,v). Apply at both ends of each moving path and sum. This is a direction-sequence bound, not a vehicle dynamics guarantee.'}
 
 
+def analyze_details(repo):
+    value = analyze(repo)
+    # Keep the previous geometry artifact byte-for-byte; this is a finer audit
+    # of the same fixed inputs and outputs, never a new optimization run.
+    value['scope'] = 'OFFLINE_EQUAL_COST_AND_DISPLACEMENT_AUDIT'
+    value['map_scale_metres_per_cell'] = None
+    value['displacement_screen_limit'] = ('Only a necessary v2 axis-displacement condition at a hypothetical '
+        '1 m/cell scale; no map scale is selected, no automatic scaling or v2 extension. '
+        'Primitive lengths/speeds, absolute coordinates, body clearance, synchronous actual '
+        'inputs, shared task initial pose and zero wait drift remain unchecked.')
+    return value
+
+
 if __name__ == '__main__':
-    value = analyze(HERE.parents[1])
-    output = HERE/'derived/sci_path_structure.json'
+    value = analyze_details(HERE.parents[1])
+    output = HERE/'derived/sci_equal_cost_structure.json'
     with output.open('x') as stream:
         json.dump(value, stream, indent=2, sort_keys=True)
         stream.write('\n')

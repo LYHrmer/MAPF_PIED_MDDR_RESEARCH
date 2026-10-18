@@ -1,0 +1,6045 @@
+{
+  "boundary_argument": "For circle distance d and a common boundary heading h, |d(h,u)-d(h,v)| <= d(u,v). Apply at both ends of each moving path and sum. This is a direction-sequence bound, not a vehicle dynamics guarantee.",
+  "displacement_screen_limit": "Only a necessary v2 axis-displacement condition at a hypothetical 1 m/cell scale; no map scale is selected, no automatic scaling or v2 extension. Primitive lengths/speeds, absolute coordinates, body clearance, synchronous actual inputs, shared task initial pose and zero wait drift remain unchecked.",
+  "generator_sha256": "70cd150b5f9bed974004e2f6f418aaa6578f4682132b782fdc6847967c72a95d",
+  "lock_sha256": "1c4c57844beb8839335f6e7b52e4f739a7c9a82d65d0f93c61f77317c4de6e66",
+  "map_scale_metres_per_cell": null,
+  "new_experiment": false,
+  "physical_duration_or_safety_verified": false,
+  "rows": [
+    {
+      "after": {
+        "internal_quarter_turns": 168,
+        "moves": 686,
+        "waits": 3
+      },
+      "before": {
+        "internal_quarter_turns": 157,
+        "moves": 688,
+        "waits": 2
+      },
+      "boundary_heading_difference_bound_quarters": 3,
+      "case": "maze-32-32-2__s01__n16",
+      "changed_paths": [
+        {
+          "agent": 0,
+          "new_cost": 69,
+          "old_cost": 69
+        },
+        {
+          "agent": 2,
+          "new_cost": 61,
+          "old_cost": 61
+        },
+        {
+          "agent": 3,
+          "new_cost": 17,
+          "old_cost": 17
+        },
+        {
+          "agent": 4,
+          "new_cost": 16,
+          "old_cost": 17
+        },
+        {
+          "agent": 5,
+          "new_cost": 33,
+          "old_cost": 33
+        },
+        {
+          "agent": 6,
+          "new_cost": 74,
+          "old_cost": 74
+        },
+        {
+          "agent": 7,
+          "new_cost": 49,
+          "old_cost": 49
+        }
+      ],
+      "delta": {
+        "internal_quarter_turns": 11,
+        "moves": -2,
+        "waits": 1
+      },
+      "final_soc": 689,
+      "initial_soc": 690,
+      "interpretation": "Geometry only. Interval allows arbitrary common initial/final headings and shortest heading changes while facing each edge. Reverse driving, smooth dynamics, overlapping turn/wait and multi-robot retiming are not evaluated.",
+      "max_relative_axis_displacement_cells": {
+        "after": {
+          "x": 22,
+          "y": 29
+        },
+        "before": {
+          "x": 22,
+          "y": 29
+        }
+      },
+      "path_change_groups": {
+        "equal_cost_reroute": {
+          "agents": [
+            0,
+            2,
+            3,
+            5,
+            6,
+            7
+          ],
+          "count": 6,
+          "delta": {
+            "internal_quarter_turns": 13,
+            "moves": 0,
+            "waits": 0
+          },
+          "soc_delta": 0
+        },
+        "longer": {
+          "agents": [],
+          "count": 0,
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "soc_delta": 0
+        },
+        "shorter": {
+          "agents": [
+            4
+          ],
+          "count": 1,
+          "delta": {
+            "internal_quarter_turns": -2,
+            "moves": -2,
+            "waits": 1
+          },
+          "soc_delta": -1
+        },
+        "unchanged": {
+          "agents": [
+            1,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "count": 9,
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "soc_delta": 0
+        }
+      },
+      "per_agent": [
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 15,
+            "last_direction": 1,
+            "moves": 69,
+            "waits": 0
+          },
+          "agent": 0,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 13,
+            "last_direction": 1,
+            "moves": 69,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 2,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 14,
+              "y": 25
+            },
+            "before": {
+              "x": 14,
+              "y": 25
+            }
+          },
+          "new_cost": 69,
+          "old_cost": 69
+        },
+        {
+          "after": {
+            "first_direction": 1,
+            "internal_quarter_turns": 4,
+            "last_direction": 3,
+            "moves": 20,
+            "waits": 0
+          },
+          "agent": 1,
+          "before": {
+            "first_direction": 1,
+            "internal_quarter_turns": 4,
+            "last_direction": 3,
+            "moves": 20,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 9,
+              "y": 6
+            },
+            "before": {
+              "x": 9,
+              "y": 6
+            }
+          },
+          "new_cost": 20,
+          "old_cost": 20
+        },
+        {
+          "after": {
+            "first_direction": 3,
+            "internal_quarter_turns": 18,
+            "last_direction": 1,
+            "moves": 61,
+            "waits": 0
+          },
+          "agent": 2,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 13,
+            "last_direction": 1,
+            "moves": 61,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 5,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 19,
+              "y": 20
+            },
+            "before": {
+              "x": 19,
+              "y": 20
+            }
+          },
+          "new_cost": 61,
+          "old_cost": 61
+        },
+        {
+          "after": {
+            "first_direction": 3,
+            "internal_quarter_turns": 8,
+            "last_direction": 3,
+            "moves": 17,
+            "waits": 0
+          },
+          "agent": 3,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 7,
+            "last_direction": 3,
+            "moves": 17,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 1,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 9,
+              "y": 7
+            },
+            "before": {
+              "x": 9,
+              "y": 7
+            }
+          },
+          "new_cost": 17,
+          "old_cost": 17
+        },
+        {
+          "after": {
+            "first_direction": 1,
+            "internal_quarter_turns": 3,
+            "last_direction": 2,
+            "moves": 13,
+            "waits": 3
+          },
+          "agent": 4,
+          "before": {
+            "first_direction": 1,
+            "internal_quarter_turns": 5,
+            "last_direction": 2,
+            "moves": 15,
+            "waits": 2
+          },
+          "category": "shorter",
+          "delta": {
+            "internal_quarter_turns": -2,
+            "moves": -2,
+            "waits": 1
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 5,
+              "y": 8
+            },
+            "before": {
+              "x": 5,
+              "y": 8
+            }
+          },
+          "new_cost": 16,
+          "old_cost": 17
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 9,
+            "last_direction": 3,
+            "moves": 33,
+            "waits": 0
+          },
+          "agent": 5,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 7,
+            "last_direction": 3,
+            "moves": 33,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 2,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 22,
+              "y": 7
+            },
+            "before": {
+              "x": 22,
+              "y": 7
+            }
+          },
+          "new_cost": 33,
+          "old_cost": 33
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 17,
+            "last_direction": 3,
+            "moves": 74,
+            "waits": 0
+          },
+          "agent": 6,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 17,
+            "last_direction": 3,
+            "moves": 74,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 17,
+              "y": 29
+            },
+            "before": {
+              "x": 17,
+              "y": 29
+            }
+          },
+          "new_cost": 74,
+          "old_cost": 74
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 11,
+            "last_direction": 3,
+            "moves": 49,
+            "waits": 0
+          },
+          "agent": 7,
+          "before": {
+            "first_direction": 1,
+            "internal_quarter_turns": 8,
+            "last_direction": 3,
+            "moves": 49,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 3,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 9,
+              "y": 17
+            },
+            "before": {
+              "x": 9,
+              "y": 17
+            }
+          },
+          "new_cost": 49,
+          "old_cost": 49
+        },
+        {
+          "after": {
+            "first_direction": 3,
+            "internal_quarter_turns": 12,
+            "last_direction": 3,
+            "moves": 52,
+            "waits": 0
+          },
+          "agent": 8,
+          "before": {
+            "first_direction": 3,
+            "internal_quarter_turns": 12,
+            "last_direction": 3,
+            "moves": 52,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 17,
+              "y": 13
+            },
+            "before": {
+              "x": 17,
+              "y": 13
+            }
+          },
+          "new_cost": 52,
+          "old_cost": 52
+        },
+        {
+          "after": {
+            "first_direction": 1,
+            "internal_quarter_turns": 0,
+            "last_direction": 1,
+            "moves": 1,
+            "waits": 0
+          },
+          "agent": 9,
+          "before": {
+            "first_direction": 1,
+            "internal_quarter_turns": 0,
+            "last_direction": 1,
+            "moves": 1,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 0,
+              "y": 1
+            },
+            "before": {
+              "x": 0,
+              "y": 1
+            }
+          },
+          "new_cost": 1,
+          "old_cost": 1
+        },
+        {
+          "after": {
+            "first_direction": 1,
+            "internal_quarter_turns": 11,
+            "last_direction": 0,
+            "moves": 64,
+            "waits": 0
+          },
+          "agent": 10,
+          "before": {
+            "first_direction": 1,
+            "internal_quarter_turns": 11,
+            "last_direction": 0,
+            "moves": 64,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 18,
+              "y": 18
+            },
+            "before": {
+              "x": 18,
+              "y": 18
+            }
+          },
+          "new_cost": 64,
+          "old_cost": 64
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 16,
+            "last_direction": 2,
+            "moves": 47,
+            "waits": 0
+          },
+          "agent": 11,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 16,
+            "last_direction": 2,
+            "moves": 47,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 12,
+              "y": 17
+            },
+            "before": {
+              "x": 12,
+              "y": 17
+            }
+          },
+          "new_cost": 47,
+          "old_cost": 47
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 21,
+            "last_direction": 1,
+            "moves": 94,
+            "waits": 0
+          },
+          "agent": 12,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 21,
+            "last_direction": 1,
+            "moves": 94,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 17,
+              "y": 21
+            },
+            "before": {
+              "x": 17,
+              "y": 21
+            }
+          },
+          "new_cost": 94,
+          "old_cost": 94
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 3,
+            "last_direction": 3,
+            "moves": 17,
+            "waits": 0
+          },
+          "agent": 13,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 3,
+            "last_direction": 3,
+            "moves": 17,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 10,
+              "y": 7
+            },
+            "before": {
+              "x": 10,
+              "y": 7
+            }
+          },
+          "new_cost": 17,
+          "old_cost": 17
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 13,
+            "last_direction": 3,
+            "moves": 54,
+            "waits": 0
+          },
+          "agent": 14,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 13,
+            "last_direction": 3,
+            "moves": 54,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 21,
+              "y": 14
+            },
+            "before": {
+              "x": 21,
+              "y": 14
+            }
+          },
+          "new_cost": 54,
+          "old_cost": 54
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 7,
+            "last_direction": 3,
+            "moves": 21,
+            "waits": 0
+          },
+          "agent": 15,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 7,
+            "last_direction": 3,
+            "moves": 21,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 7,
+              "y": 6
+            },
+            "before": {
+              "x": 7,
+              "y": 6
+            }
+          },
+          "new_cost": 21,
+          "old_cost": 21
+        }
+      ],
+      "total_direction_rotation_delta_interval_quarters": [
+        8,
+        14
+      ],
+      "v2_displacement_screen_at_hypothetical_1m_cell": {
+        "after": "FAIL_NECESSARY_AXIS_BOUND",
+        "before": "FAIL_NECESSARY_AXIS_BOUND"
+      },
+      "v2_one_edge_per_move_necessary_scale_interval": {
+        "after": {
+          "assumption": "Every moving grid edge is one original v2 MOVE, all with one common scale. This tests only the 0.25 m minimum MOVE and 8 m task-relative axis bound.",
+          "lower_m_per_cell": "1/4",
+          "necessary_interval_nonempty": true,
+          "upper_m_per_cell_from_axis_bound": "8/29"
+        },
+        "before": {
+          "assumption": "Every moving grid edge is one original v2 MOVE, all with one common scale. This tests only the 0.25 m minimum MOVE and 8 m task-relative axis bound.",
+          "lower_m_per_cell": "1/4",
+          "necessary_interval_nonempty": true,
+          "upper_m_per_cell_from_axis_bound": "8/29"
+        }
+      }
+    },
+    {
+      "after": {
+        "internal_quarter_turns": 484,
+        "moves": 1789,
+        "waits": 82
+      },
+      "before": {
+        "internal_quarter_turns": 466,
+        "moves": 1797,
+        "waits": 76
+      },
+      "boundary_heading_difference_bound_quarters": 2,
+      "case": "maze-32-32-2__s01__n32",
+      "changed_paths": [
+        {
+          "agent": 24,
+          "new_cost": 17,
+          "old_cost": 17
+        },
+        {
+          "agent": 25,
+          "new_cost": 60,
+          "old_cost": 60
+        },
+        {
+          "agent": 26,
+          "new_cost": 54,
+          "old_cost": 54
+        },
+        {
+          "agent": 27,
+          "new_cost": 92,
+          "old_cost": 93
+        },
+        {
+          "agent": 28,
+          "new_cost": 37,
+          "old_cost": 37
+        },
+        {
+          "agent": 29,
+          "new_cost": 50,
+          "old_cost": 52
+        },
+        {
+          "agent": 30,
+          "new_cost": 17,
+          "old_cost": 19
+        },
+        {
+          "agent": 31,
+          "new_cost": 63,
+          "old_cost": 60
+        }
+      ],
+      "delta": {
+        "internal_quarter_turns": 18,
+        "moves": -8,
+        "waits": 6
+      },
+      "final_soc": 1871,
+      "initial_soc": 1873,
+      "interpretation": "Geometry only. Interval allows arbitrary common initial/final headings and shortest heading changes while facing each edge. Reverse driving, smooth dynamics, overlapping turn/wait and multi-robot retiming are not evaluated.",
+      "max_relative_axis_displacement_cells": {
+        "after": {
+          "x": 28,
+          "y": 29
+        },
+        "before": {
+          "x": 28,
+          "y": 29
+        }
+      },
+      "path_change_groups": {
+        "equal_cost_reroute": {
+          "agents": [
+            24,
+            25,
+            26,
+            28
+          ],
+          "count": 4,
+          "delta": {
+            "internal_quarter_turns": 8,
+            "moves": -6,
+            "waits": 6
+          },
+          "soc_delta": 0
+        },
+        "longer": {
+          "agents": [
+            31
+          ],
+          "count": 1,
+          "delta": {
+            "internal_quarter_turns": 12,
+            "moves": 2,
+            "waits": 1
+          },
+          "soc_delta": 3
+        },
+        "shorter": {
+          "agents": [
+            27,
+            29,
+            30
+          ],
+          "count": 3,
+          "delta": {
+            "internal_quarter_turns": -2,
+            "moves": -4,
+            "waits": -1
+          },
+          "soc_delta": -5
+        },
+        "unchanged": {
+          "agents": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23
+          ],
+          "count": 24,
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "soc_delta": 0
+        }
+      },
+      "per_agent": [
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 13,
+            "last_direction": 1,
+            "moves": 69,
+            "waits": 0
+          },
+          "agent": 0,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 13,
+            "last_direction": 1,
+            "moves": 69,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 14,
+              "y": 25
+            },
+            "before": {
+              "x": 14,
+              "y": 25
+            }
+          },
+          "new_cost": 69,
+          "old_cost": 69
+        },
+        {
+          "after": {
+            "first_direction": 1,
+            "internal_quarter_turns": 7,
+            "last_direction": 0,
+            "moves": 22,
+            "waits": 6
+          },
+          "agent": 1,
+          "before": {
+            "first_direction": 1,
+            "internal_quarter_turns": 7,
+            "last_direction": 0,
+            "moves": 22,
+            "waits": 6
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 9,
+              "y": 6
+            },
+            "before": {
+              "x": 9,
+              "y": 6
+            }
+          },
+          "new_cost": 28,
+          "old_cost": 28
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 15,
+            "last_direction": 1,
+            "moves": 63,
+            "waits": 0
+          },
+          "agent": 2,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 15,
+            "last_direction": 1,
+            "moves": 63,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 19,
+              "y": 20
+            },
+            "before": {
+              "x": 19,
+              "y": 20
+            }
+          },
+          "new_cost": 63,
+          "old_cost": 63
+        },
+        {
+          "after": {
+            "first_direction": 3,
+            "internal_quarter_turns": 6,
+            "last_direction": 3,
+            "moves": 17,
+            "waits": 0
+          },
+          "agent": 3,
+          "before": {
+            "first_direction": 3,
+            "internal_quarter_turns": 6,
+            "last_direction": 3,
+            "moves": 17,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 9,
+              "y": 7
+            },
+            "before": {
+              "x": 9,
+              "y": 7
+            }
+          },
+          "new_cost": 17,
+          "old_cost": 17
+        },
+        {
+          "after": {
+            "first_direction": 1,
+            "internal_quarter_turns": 7,
+            "last_direction": 2,
+            "moves": 17,
+            "waits": 0
+          },
+          "agent": 4,
+          "before": {
+            "first_direction": 1,
+            "internal_quarter_turns": 7,
+            "last_direction": 2,
+            "moves": 17,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 5,
+              "y": 8
+            },
+            "before": {
+              "x": 5,
+              "y": 8
+            }
+          },
+          "new_cost": 17,
+          "old_cost": 17
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 10,
+            "last_direction": 0,
+            "moves": 35,
+            "waits": 19
+          },
+          "agent": 5,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 10,
+            "last_direction": 0,
+            "moves": 35,
+            "waits": 19
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 22,
+              "y": 7
+            },
+            "before": {
+              "x": 22,
+              "y": 7
+            }
+          },
+          "new_cost": 54,
+          "old_cost": 54
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 17,
+            "last_direction": 3,
+            "moves": 74,
+            "waits": 0
+          },
+          "agent": 6,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 17,
+            "last_direction": 3,
+            "moves": 74,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 17,
+              "y": 29
+            },
+            "before": {
+              "x": 17,
+              "y": 29
+            }
+          },
+          "new_cost": 74,
+          "old_cost": 74
+        },
+        {
+          "after": {
+            "first_direction": 1,
+            "internal_quarter_turns": 14,
+            "last_direction": 3,
+            "moves": 53,
+            "waits": 1
+          },
+          "agent": 7,
+          "before": {
+            "first_direction": 1,
+            "internal_quarter_turns": 14,
+            "last_direction": 3,
+            "moves": 53,
+            "waits": 1
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 9,
+              "y": 17
+            },
+            "before": {
+              "x": 9,
+              "y": 17
+            }
+          },
+          "new_cost": 54,
+          "old_cost": 54
+        },
+        {
+          "after": {
+            "first_direction": 3,
+            "internal_quarter_turns": 12,
+            "last_direction": 3,
+            "moves": 52,
+            "waits": 0
+          },
+          "agent": 8,
+          "before": {
+            "first_direction": 3,
+            "internal_quarter_turns": 12,
+            "last_direction": 3,
+            "moves": 52,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 17,
+              "y": 13
+            },
+            "before": {
+              "x": 17,
+              "y": 13
+            }
+          },
+          "new_cost": 52,
+          "old_cost": 52
+        },
+        {
+          "after": {
+            "first_direction": 1,
+            "internal_quarter_turns": 0,
+            "last_direction": 1,
+            "moves": 1,
+            "waits": 0
+          },
+          "agent": 9,
+          "before": {
+            "first_direction": 1,
+            "internal_quarter_turns": 0,
+            "last_direction": 1,
+            "moves": 1,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 0,
+              "y": 1
+            },
+            "before": {
+              "x": 0,
+              "y": 1
+            }
+          },
+          "new_cost": 1,
+          "old_cost": 1
+        },
+        {
+          "after": {
+            "first_direction": 1,
+            "internal_quarter_turns": 11,
+            "last_direction": 0,
+            "moves": 64,
+            "waits": 0
+          },
+          "agent": 10,
+          "before": {
+            "first_direction": 1,
+            "internal_quarter_turns": 11,
+            "last_direction": 0,
+            "moves": 64,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 18,
+              "y": 18
+            },
+            "before": {
+              "x": 18,
+              "y": 18
+            }
+          },
+          "new_cost": 64,
+          "old_cost": 64
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 12,
+            "last_direction": 2,
+            "moves": 45,
+            "waits": 1
+          },
+          "agent": 11,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 12,
+            "last_direction": 2,
+            "moves": 45,
+            "waits": 1
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 12,
+              "y": 17
+            },
+            "before": {
+              "x": 12,
+              "y": 17
+            }
+          },
+          "new_cost": 46,
+          "old_cost": 46
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 24,
+            "last_direction": 0,
+            "moves": 96,
+            "waits": 0
+          },
+          "agent": 12,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 24,
+            "last_direction": 0,
+            "moves": 96,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 17,
+              "y": 21
+            },
+            "before": {
+              "x": 17,
+              "y": 21
+            }
+          },
+          "new_cost": 96,
+          "old_cost": 96
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 3,
+            "last_direction": 3,
+            "moves": 17,
+            "waits": 0
+          },
+          "agent": 13,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 3,
+            "last_direction": 3,
+            "moves": 17,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 10,
+              "y": 7
+            },
+            "before": {
+              "x": 10,
+              "y": 7
+            }
+          },
+          "new_cost": 17,
+          "old_cost": 17
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 15,
+            "last_direction": 3,
+            "moves": 58,
+            "waits": 0
+          },
+          "agent": 14,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 15,
+            "last_direction": 3,
+            "moves": 58,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 21,
+              "y": 14
+            },
+            "before": {
+              "x": 21,
+              "y": 14
+            }
+          },
+          "new_cost": 58,
+          "old_cost": 58
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 7,
+            "last_direction": 3,
+            "moves": 21,
+            "waits": 0
+          },
+          "agent": 15,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 7,
+            "last_direction": 3,
+            "moves": 21,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 7,
+              "y": 6
+            },
+            "before": {
+              "x": 7,
+              "y": 6
+            }
+          },
+          "new_cost": 21,
+          "old_cost": 21
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 25,
+            "last_direction": 3,
+            "moves": 90,
+            "waits": 0
+          },
+          "agent": 16,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 25,
+            "last_direction": 3,
+            "moves": 90,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 10,
+              "y": 28
+            },
+            "before": {
+              "x": 10,
+              "y": 28
+            }
+          },
+          "new_cost": 90,
+          "old_cost": 90
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 30,
+            "last_direction": 0,
+            "moves": 118,
+            "waits": 1
+          },
+          "agent": 17,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 30,
+            "last_direction": 0,
+            "moves": 118,
+            "waits": 1
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 20,
+              "y": 13
+            },
+            "before": {
+              "x": 20,
+              "y": 13
+            }
+          },
+          "new_cost": 119,
+          "old_cost": 119
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 18,
+            "last_direction": 0,
+            "moves": 88,
+            "waits": 0
+          },
+          "agent": 18,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 18,
+            "last_direction": 0,
+            "moves": 88,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 14,
+              "y": 24
+            },
+            "before": {
+              "x": 14,
+              "y": 24
+            }
+          },
+          "new_cost": 88,
+          "old_cost": 88
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 33,
+            "last_direction": 3,
+            "moves": 129,
+            "waits": 0
+          },
+          "agent": 19,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 33,
+            "last_direction": 3,
+            "moves": 129,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 26,
+              "y": 27
+            },
+            "before": {
+              "x": 26,
+              "y": 27
+            }
+          },
+          "new_cost": 129,
+          "old_cost": 129
+        },
+        {
+          "after": {
+            "first_direction": 1,
+            "internal_quarter_turns": 21,
+            "last_direction": 0,
+            "moves": 106,
+            "waits": 1
+          },
+          "agent": 20,
+          "before": {
+            "first_direction": 1,
+            "internal_quarter_turns": 21,
+            "last_direction": 0,
+            "moves": 106,
+            "waits": 1
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 23,
+              "y": 20
+            },
+            "before": {
+              "x": 23,
+              "y": 20
+            }
+          },
+          "new_cost": 107,
+          "old_cost": 107
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 22,
+            "last_direction": 0,
+            "moves": 70,
+            "waits": 20
+          },
+          "agent": 21,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 22,
+            "last_direction": 0,
+            "moves": 70,
+            "waits": 20
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 21,
+              "y": 21
+            },
+            "before": {
+              "x": 21,
+              "y": 21
+            }
+          },
+          "new_cost": 90,
+          "old_cost": 90
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 16,
+            "last_direction": 0,
+            "moves": 37,
+            "waits": 23
+          },
+          "agent": 22,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 16,
+            "last_direction": 0,
+            "moves": 37,
+            "waits": 23
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 21,
+              "y": 11
+            },
+            "before": {
+              "x": 21,
+              "y": 11
+            }
+          },
+          "new_cost": 60,
+          "old_cost": 60
+        },
+        {
+          "after": {
+            "first_direction": 1,
+            "internal_quarter_turns": 21,
+            "last_direction": 0,
+            "moves": 67,
+            "waits": 0
+          },
+          "agent": 23,
+          "before": {
+            "first_direction": 1,
+            "internal_quarter_turns": 21,
+            "last_direction": 0,
+            "moves": 67,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 16,
+              "y": 18
+            },
+            "before": {
+              "x": 16,
+              "y": 18
+            }
+          },
+          "new_cost": 67,
+          "old_cost": 67
+        },
+        {
+          "after": {
+            "first_direction": 3,
+            "internal_quarter_turns": 7,
+            "last_direction": 0,
+            "moves": 17,
+            "waits": 0
+          },
+          "agent": 24,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 6,
+            "last_direction": 0,
+            "moves": 17,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 1,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 3,
+              "y": 13
+            },
+            "before": {
+              "x": 3,
+              "y": 13
+            }
+          },
+          "new_cost": 17,
+          "old_cost": 17
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 21,
+            "last_direction": 1,
+            "moves": 60,
+            "waits": 0
+          },
+          "agent": 25,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 17,
+            "last_direction": 1,
+            "moves": 60,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 4,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 28,
+              "y": 11
+            },
+            "before": {
+              "x": 28,
+              "y": 11
+            }
+          },
+          "new_cost": 60,
+          "old_cost": 60
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 19,
+            "last_direction": 3,
+            "moves": 45,
+            "waits": 9
+          },
+          "agent": 26,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 21,
+            "last_direction": 3,
+            "moves": 51,
+            "waits": 3
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": -2,
+            "moves": -6,
+            "waits": 6
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 9,
+              "y": 11
+            },
+            "before": {
+              "x": 9,
+              "y": 11
+            }
+          },
+          "new_cost": 54,
+          "old_cost": 54
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 19,
+            "last_direction": 3,
+            "moves": 92,
+            "waits": 0
+          },
+          "agent": 27,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 19,
+            "last_direction": 3,
+            "moves": 92,
+            "waits": 1
+          },
+          "category": "shorter",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": -1
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 21,
+              "y": 18
+            },
+            "before": {
+              "x": 21,
+              "y": 18
+            }
+          },
+          "new_cost": 92,
+          "old_cost": 93
+        },
+        {
+          "after": {
+            "first_direction": 1,
+            "internal_quarter_turns": 12,
+            "last_direction": 3,
+            "moves": 37,
+            "waits": 0
+          },
+          "agent": 28,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 7,
+            "last_direction": 3,
+            "moves": 37,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 5,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 10,
+              "y": 13
+            },
+            "before": {
+              "x": 10,
+              "y": 13
+            }
+          },
+          "new_cost": 37,
+          "old_cost": 37
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 15,
+            "last_direction": 3,
+            "moves": 50,
+            "waits": 0
+          },
+          "agent": 29,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 15,
+            "last_direction": 3,
+            "moves": 52,
+            "waits": 0
+          },
+          "category": "shorter",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": -2,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 10,
+              "y": 8
+            },
+            "before": {
+              "x": 11,
+              "y": 8
+            }
+          },
+          "new_cost": 50,
+          "old_cost": 52
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 1,
+            "last_direction": 3,
+            "moves": 17,
+            "waits": 0
+          },
+          "agent": 30,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 3,
+            "last_direction": 3,
+            "moves": 19,
+            "waits": 0
+          },
+          "category": "shorter",
+          "delta": {
+            "internal_quarter_turns": -2,
+            "moves": -2,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 5,
+              "y": 12
+            },
+            "before": {
+              "x": 5,
+              "y": 12
+            }
+          },
+          "new_cost": 17,
+          "old_cost": 19
+        },
+        {
+          "after": {
+            "first_direction": 1,
+            "internal_quarter_turns": 31,
+            "last_direction": 0,
+            "moves": 62,
+            "waits": 1
+          },
+          "agent": 31,
+          "before": {
+            "first_direction": 1,
+            "internal_quarter_turns": 19,
+            "last_direction": 0,
+            "moves": 60,
+            "waits": 0
+          },
+          "category": "longer",
+          "delta": {
+            "internal_quarter_turns": 12,
+            "moves": 2,
+            "waits": 1
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 24,
+              "y": 16
+            },
+            "before": {
+              "x": 24,
+              "y": 16
+            }
+          },
+          "new_cost": 63,
+          "old_cost": 60
+        }
+      ],
+      "total_direction_rotation_delta_interval_quarters": [
+        16,
+        20
+      ],
+      "v2_displacement_screen_at_hypothetical_1m_cell": {
+        "after": "FAIL_NECESSARY_AXIS_BOUND",
+        "before": "FAIL_NECESSARY_AXIS_BOUND"
+      },
+      "v2_one_edge_per_move_necessary_scale_interval": {
+        "after": {
+          "assumption": "Every moving grid edge is one original v2 MOVE, all with one common scale. This tests only the 0.25 m minimum MOVE and 8 m task-relative axis bound.",
+          "lower_m_per_cell": "1/4",
+          "necessary_interval_nonempty": true,
+          "upper_m_per_cell_from_axis_bound": "8/29"
+        },
+        "before": {
+          "assumption": "Every moving grid edge is one original v2 MOVE, all with one common scale. This tests only the 0.25 m minimum MOVE and 8 m task-relative axis bound.",
+          "lower_m_per_cell": "1/4",
+          "necessary_interval_nonempty": true,
+          "upper_m_per_cell_from_axis_bound": "8/29"
+        }
+      }
+    },
+    {
+      "after": {
+        "internal_quarter_turns": 89,
+        "moves": 407,
+        "waits": 0
+      },
+      "before": {
+        "internal_quarter_turns": 89,
+        "moves": 407,
+        "waits": 0
+      },
+      "boundary_heading_difference_bound_quarters": 0,
+      "case": "random-32-32-10__s01__n16",
+      "changed_paths": [],
+      "delta": {
+        "internal_quarter_turns": 0,
+        "moves": 0,
+        "waits": 0
+      },
+      "final_soc": 407,
+      "initial_soc": 407,
+      "interpretation": "Geometry only. Interval allows arbitrary common initial/final headings and shortest heading changes while facing each edge. Reverse driving, smooth dynamics, overlapping turn/wait and multi-robot retiming are not evaluated.",
+      "max_relative_axis_displacement_cells": {
+        "after": {
+          "x": 28,
+          "y": 29
+        },
+        "before": {
+          "x": 28,
+          "y": 29
+        }
+      },
+      "path_change_groups": {
+        "equal_cost_reroute": {
+          "agents": [],
+          "count": 0,
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "soc_delta": 0
+        },
+        "longer": {
+          "agents": [],
+          "count": 0,
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "soc_delta": 0
+        },
+        "shorter": {
+          "agents": [],
+          "count": 0,
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "soc_delta": 0
+        },
+        "unchanged": {
+          "agents": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "count": 16,
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "soc_delta": 0
+        }
+      },
+      "per_agent": [
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 5,
+            "last_direction": 1,
+            "moves": 16,
+            "waits": 0
+          },
+          "agent": 0,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 5,
+            "last_direction": 1,
+            "moves": 16,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 4,
+              "y": 12
+            },
+            "before": {
+              "x": 4,
+              "y": 12
+            }
+          },
+          "new_cost": 16,
+          "old_cost": 16
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 10,
+            "last_direction": 2,
+            "moves": 35,
+            "waits": 0
+          },
+          "agent": 1,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 10,
+            "last_direction": 2,
+            "moves": 35,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 28,
+              "y": 7
+            },
+            "before": {
+              "x": 28,
+              "y": 7
+            }
+          },
+          "new_cost": 35,
+          "old_cost": 35
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 5,
+            "last_direction": 1,
+            "moves": 25,
+            "waits": 0
+          },
+          "agent": 2,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 5,
+            "last_direction": 1,
+            "moves": 25,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 4,
+              "y": 21
+            },
+            "before": {
+              "x": 4,
+              "y": 21
+            }
+          },
+          "new_cost": 25,
+          "old_cost": 25
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 3,
+            "last_direction": 1,
+            "moves": 9,
+            "waits": 0
+          },
+          "agent": 3,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 3,
+            "last_direction": 1,
+            "moves": 9,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 7,
+              "y": 2
+            },
+            "before": {
+              "x": 7,
+              "y": 2
+            }
+          },
+          "new_cost": 9,
+          "old_cost": 9
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 6,
+            "last_direction": 0,
+            "moves": 15,
+            "waits": 0
+          },
+          "agent": 4,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 6,
+            "last_direction": 0,
+            "moves": 15,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 4,
+              "y": 11
+            },
+            "before": {
+              "x": 4,
+              "y": 11
+            }
+          },
+          "new_cost": 15,
+          "old_cost": 15
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 11,
+            "last_direction": 1,
+            "moves": 30,
+            "waits": 0
+          },
+          "agent": 5,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 11,
+            "last_direction": 1,
+            "moves": 30,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 17,
+              "y": 13
+            },
+            "before": {
+              "x": 17,
+              "y": 13
+            }
+          },
+          "new_cost": 30,
+          "old_cost": 30
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 5,
+            "last_direction": 3,
+            "moves": 25,
+            "waits": 0
+          },
+          "agent": 6,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 5,
+            "last_direction": 3,
+            "moves": 25,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 8,
+              "y": 17
+            },
+            "before": {
+              "x": 8,
+              "y": 17
+            }
+          },
+          "new_cost": 25,
+          "old_cost": 25
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 9,
+            "last_direction": 1,
+            "moves": 53,
+            "waits": 0
+          },
+          "agent": 7,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 9,
+            "last_direction": 1,
+            "moves": 53,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 24,
+              "y": 29
+            },
+            "before": {
+              "x": 24,
+              "y": 29
+            }
+          },
+          "new_cost": 53,
+          "old_cost": 53
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 1,
+            "last_direction": 3,
+            "moves": 5,
+            "waits": 0
+          },
+          "agent": 8,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 1,
+            "last_direction": 3,
+            "moves": 5,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 4,
+              "y": 1
+            },
+            "before": {
+              "x": 4,
+              "y": 1
+            }
+          },
+          "new_cost": 5,
+          "old_cost": 5
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 9,
+            "last_direction": 1,
+            "moves": 19,
+            "waits": 0
+          },
+          "agent": 9,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 9,
+            "last_direction": 1,
+            "moves": 19,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 9,
+              "y": 10
+            },
+            "before": {
+              "x": 9,
+              "y": 10
+            }
+          },
+          "new_cost": 19,
+          "old_cost": 19
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 3,
+            "last_direction": 3,
+            "moves": 27,
+            "waits": 0
+          },
+          "agent": 10,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 3,
+            "last_direction": 3,
+            "moves": 27,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 16,
+              "y": 11
+            },
+            "before": {
+              "x": 16,
+              "y": 11
+            }
+          },
+          "new_cost": 27,
+          "old_cost": 27
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 1,
+            "last_direction": 1,
+            "moves": 14,
+            "waits": 0
+          },
+          "agent": 11,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 1,
+            "last_direction": 1,
+            "moves": 14,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 10,
+              "y": 4
+            },
+            "before": {
+              "x": 10,
+              "y": 4
+            }
+          },
+          "new_cost": 14,
+          "old_cost": 14
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 4,
+            "last_direction": 0,
+            "moves": 34,
+            "waits": 0
+          },
+          "agent": 12,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 4,
+            "last_direction": 0,
+            "moves": 34,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 18,
+              "y": 16
+            },
+            "before": {
+              "x": 18,
+              "y": 16
+            }
+          },
+          "new_cost": 34,
+          "old_cost": 34
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 9,
+            "last_direction": 1,
+            "moves": 34,
+            "waits": 0
+          },
+          "agent": 13,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 9,
+            "last_direction": 1,
+            "moves": 34,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 13,
+              "y": 21
+            },
+            "before": {
+              "x": 13,
+              "y": 21
+            }
+          },
+          "new_cost": 34,
+          "old_cost": 34
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 3,
+            "last_direction": 3,
+            "moves": 36,
+            "waits": 0
+          },
+          "agent": 14,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 3,
+            "last_direction": 3,
+            "moves": 36,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 18,
+              "y": 18
+            },
+            "before": {
+              "x": 18,
+              "y": 18
+            }
+          },
+          "new_cost": 36,
+          "old_cost": 36
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 5,
+            "last_direction": 3,
+            "moves": 30,
+            "waits": 0
+          },
+          "agent": 15,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 5,
+            "last_direction": 3,
+            "moves": 30,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 7,
+              "y": 23
+            },
+            "before": {
+              "x": 7,
+              "y": 23
+            }
+          },
+          "new_cost": 30,
+          "old_cost": 30
+        }
+      ],
+      "total_direction_rotation_delta_interval_quarters": [
+        0,
+        0
+      ],
+      "v2_displacement_screen_at_hypothetical_1m_cell": {
+        "after": "FAIL_NECESSARY_AXIS_BOUND",
+        "before": "FAIL_NECESSARY_AXIS_BOUND"
+      },
+      "v2_one_edge_per_move_necessary_scale_interval": {
+        "after": {
+          "assumption": "Every moving grid edge is one original v2 MOVE, all with one common scale. This tests only the 0.25 m minimum MOVE and 8 m task-relative axis bound.",
+          "lower_m_per_cell": "1/4",
+          "necessary_interval_nonempty": true,
+          "upper_m_per_cell_from_axis_bound": "8/29"
+        },
+        "before": {
+          "assumption": "Every moving grid edge is one original v2 MOVE, all with one common scale. This tests only the 0.25 m minimum MOVE and 8 m task-relative axis bound.",
+          "lower_m_per_cell": "1/4",
+          "necessary_interval_nonempty": true,
+          "upper_m_per_cell_from_axis_bound": "8/29"
+        }
+      }
+    },
+    {
+      "after": {
+        "internal_quarter_turns": 291,
+        "moves": 769,
+        "waits": 1
+      },
+      "before": {
+        "internal_quarter_turns": 183,
+        "moves": 771,
+        "waits": 0
+      },
+      "boundary_heading_difference_bound_quarters": 28,
+      "case": "random-32-32-10__s01__n32",
+      "changed_paths": [
+        {
+          "agent": 0,
+          "new_cost": 16,
+          "old_cost": 16
+        },
+        {
+          "agent": 1,
+          "new_cost": 35,
+          "old_cost": 35
+        },
+        {
+          "agent": 2,
+          "new_cost": 25,
+          "old_cost": 25
+        },
+        {
+          "agent": 3,
+          "new_cost": 10,
+          "old_cost": 9
+        },
+        {
+          "agent": 4,
+          "new_cost": 15,
+          "old_cost": 15
+        },
+        {
+          "agent": 5,
+          "new_cost": 30,
+          "old_cost": 30
+        },
+        {
+          "agent": 6,
+          "new_cost": 25,
+          "old_cost": 25
+        },
+        {
+          "agent": 7,
+          "new_cost": 53,
+          "old_cost": 53
+        },
+        {
+          "agent": 9,
+          "new_cost": 19,
+          "old_cost": 19
+        },
+        {
+          "agent": 10,
+          "new_cost": 27,
+          "old_cost": 27
+        },
+        {
+          "agent": 11,
+          "new_cost": 14,
+          "old_cost": 14
+        },
+        {
+          "agent": 12,
+          "new_cost": 34,
+          "old_cost": 34
+        },
+        {
+          "agent": 13,
+          "new_cost": 34,
+          "old_cost": 34
+        },
+        {
+          "agent": 14,
+          "new_cost": 36,
+          "old_cost": 36
+        },
+        {
+          "agent": 15,
+          "new_cost": 30,
+          "old_cost": 30
+        },
+        {
+          "agent": 16,
+          "new_cost": 9,
+          "old_cost": 9
+        },
+        {
+          "agent": 17,
+          "new_cost": 23,
+          "old_cost": 23
+        },
+        {
+          "agent": 18,
+          "new_cost": 14,
+          "old_cost": 14
+        },
+        {
+          "agent": 19,
+          "new_cost": 20,
+          "old_cost": 22
+        },
+        {
+          "agent": 20,
+          "new_cost": 27,
+          "old_cost": 27
+        },
+        {
+          "agent": 21,
+          "new_cost": 25,
+          "old_cost": 25
+        },
+        {
+          "agent": 22,
+          "new_cost": 33,
+          "old_cost": 33
+        },
+        {
+          "agent": 23,
+          "new_cost": 11,
+          "old_cost": 11
+        },
+        {
+          "agent": 24,
+          "new_cost": 21,
+          "old_cost": 21
+        },
+        {
+          "agent": 25,
+          "new_cost": 16,
+          "old_cost": 16
+        },
+        {
+          "agent": 26,
+          "new_cost": 16,
+          "old_cost": 16
+        },
+        {
+          "agent": 27,
+          "new_cost": 35,
+          "old_cost": 35
+        },
+        {
+          "agent": 28,
+          "new_cost": 12,
+          "old_cost": 12
+        },
+        {
+          "agent": 29,
+          "new_cost": 50,
+          "old_cost": 50
+        },
+        {
+          "agent": 30,
+          "new_cost": 37,
+          "old_cost": 37
+        },
+        {
+          "agent": 31,
+          "new_cost": 13,
+          "old_cost": 13
+        }
+      ],
+      "delta": {
+        "internal_quarter_turns": 108,
+        "moves": -2,
+        "waits": 1
+      },
+      "final_soc": 770,
+      "initial_soc": 771,
+      "interpretation": "Geometry only. Interval allows arbitrary common initial/final headings and shortest heading changes while facing each edge. Reverse driving, smooth dynamics, overlapping turn/wait and multi-robot retiming are not evaluated.",
+      "max_relative_axis_displacement_cells": {
+        "after": {
+          "x": 30,
+          "y": 29
+        },
+        "before": {
+          "x": 30,
+          "y": 29
+        }
+      },
+      "path_change_groups": {
+        "equal_cost_reroute": {
+          "agents": [
+            0,
+            1,
+            2,
+            4,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31
+          ],
+          "count": 29,
+          "delta": {
+            "internal_quarter_turns": 113,
+            "moves": 0,
+            "waits": 0
+          },
+          "soc_delta": 0
+        },
+        "longer": {
+          "agents": [
+            3
+          ],
+          "count": 1,
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 1
+          },
+          "soc_delta": 1
+        },
+        "shorter": {
+          "agents": [
+            19
+          ],
+          "count": 1,
+          "delta": {
+            "internal_quarter_turns": -5,
+            "moves": -2,
+            "waits": 0
+          },
+          "soc_delta": -2
+        },
+        "unchanged": {
+          "agents": [
+            8
+          ],
+          "count": 1,
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "soc_delta": 0
+        }
+      },
+      "per_agent": [
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 6,
+            "last_direction": 2,
+            "moves": 16,
+            "waits": 0
+          },
+          "agent": 0,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 5,
+            "last_direction": 1,
+            "moves": 16,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 1,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 4,
+              "y": 12
+            },
+            "before": {
+              "x": 4,
+              "y": 12
+            }
+          },
+          "new_cost": 16,
+          "old_cost": 16
+        },
+        {
+          "after": {
+            "first_direction": 1,
+            "internal_quarter_turns": 9,
+            "last_direction": 2,
+            "moves": 35,
+            "waits": 0
+          },
+          "agent": 1,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 10,
+            "last_direction": 2,
+            "moves": 35,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": -1,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 28,
+              "y": 7
+            },
+            "before": {
+              "x": 28,
+              "y": 7
+            }
+          },
+          "new_cost": 35,
+          "old_cost": 35
+        },
+        {
+          "after": {
+            "first_direction": 1,
+            "internal_quarter_turns": 6,
+            "last_direction": 1,
+            "moves": 25,
+            "waits": 0
+          },
+          "agent": 2,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 5,
+            "last_direction": 1,
+            "moves": 25,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 1,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 4,
+              "y": 21
+            },
+            "before": {
+              "x": 4,
+              "y": 21
+            }
+          },
+          "new_cost": 25,
+          "old_cost": 25
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 3,
+            "last_direction": 1,
+            "moves": 9,
+            "waits": 1
+          },
+          "agent": 3,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 3,
+            "last_direction": 1,
+            "moves": 9,
+            "waits": 0
+          },
+          "category": "longer",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 1
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 7,
+              "y": 2
+            },
+            "before": {
+              "x": 7,
+              "y": 2
+            }
+          },
+          "new_cost": 10,
+          "old_cost": 9
+        },
+        {
+          "after": {
+            "first_direction": 3,
+            "internal_quarter_turns": 6,
+            "last_direction": 3,
+            "moves": 15,
+            "waits": 0
+          },
+          "agent": 4,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 6,
+            "last_direction": 0,
+            "moves": 15,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 4,
+              "y": 11
+            },
+            "before": {
+              "x": 4,
+              "y": 11
+            }
+          },
+          "new_cost": 15,
+          "old_cost": 15
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 17,
+            "last_direction": 1,
+            "moves": 30,
+            "waits": 0
+          },
+          "agent": 5,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 11,
+            "last_direction": 1,
+            "moves": 30,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 6,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 17,
+              "y": 13
+            },
+            "before": {
+              "x": 17,
+              "y": 13
+            }
+          },
+          "new_cost": 30,
+          "old_cost": 30
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 15,
+            "last_direction": 3,
+            "moves": 25,
+            "waits": 0
+          },
+          "agent": 6,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 9,
+            "last_direction": 3,
+            "moves": 25,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 6,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 8,
+              "y": 17
+            },
+            "before": {
+              "x": 8,
+              "y": 17
+            }
+          },
+          "new_cost": 25,
+          "old_cost": 25
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 28,
+            "last_direction": 2,
+            "moves": 53,
+            "waits": 0
+          },
+          "agent": 7,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 9,
+            "last_direction": 1,
+            "moves": 53,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 19,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 24,
+              "y": 29
+            },
+            "before": {
+              "x": 24,
+              "y": 29
+            }
+          },
+          "new_cost": 53,
+          "old_cost": 53
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 1,
+            "last_direction": 3,
+            "moves": 5,
+            "waits": 0
+          },
+          "agent": 8,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 1,
+            "last_direction": 3,
+            "moves": 5,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 4,
+              "y": 1
+            },
+            "before": {
+              "x": 4,
+              "y": 1
+            }
+          },
+          "new_cost": 5,
+          "old_cost": 5
+        },
+        {
+          "after": {
+            "first_direction": 1,
+            "internal_quarter_turns": 5,
+            "last_direction": 0,
+            "moves": 19,
+            "waits": 0
+          },
+          "agent": 9,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 9,
+            "last_direction": 1,
+            "moves": 19,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": -4,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 9,
+              "y": 10
+            },
+            "before": {
+              "x": 9,
+              "y": 10
+            }
+          },
+          "new_cost": 19,
+          "old_cost": 19
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 16,
+            "last_direction": 2,
+            "moves": 27,
+            "waits": 0
+          },
+          "agent": 10,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 3,
+            "last_direction": 3,
+            "moves": 27,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 13,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 16,
+              "y": 11
+            },
+            "before": {
+              "x": 16,
+              "y": 11
+            }
+          },
+          "new_cost": 27,
+          "old_cost": 27
+        },
+        {
+          "after": {
+            "first_direction": 1,
+            "internal_quarter_turns": 5,
+            "last_direction": 2,
+            "moves": 14,
+            "waits": 0
+          },
+          "agent": 11,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 1,
+            "last_direction": 1,
+            "moves": 14,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 4,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 10,
+              "y": 4
+            },
+            "before": {
+              "x": 10,
+              "y": 4
+            }
+          },
+          "new_cost": 14,
+          "old_cost": 14
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 12,
+            "last_direction": 0,
+            "moves": 34,
+            "waits": 0
+          },
+          "agent": 12,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 4,
+            "last_direction": 0,
+            "moves": 34,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 8,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 18,
+              "y": 16
+            },
+            "before": {
+              "x": 18,
+              "y": 16
+            }
+          },
+          "new_cost": 34,
+          "old_cost": 34
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 15,
+            "last_direction": 1,
+            "moves": 34,
+            "waits": 0
+          },
+          "agent": 13,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 9,
+            "last_direction": 1,
+            "moves": 34,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 6,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 13,
+              "y": 21
+            },
+            "before": {
+              "x": 13,
+              "y": 21
+            }
+          },
+          "new_cost": 34,
+          "old_cost": 34
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 17,
+            "last_direction": 3,
+            "moves": 36,
+            "waits": 0
+          },
+          "agent": 14,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 7,
+            "last_direction": 3,
+            "moves": 36,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 10,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 18,
+              "y": 18
+            },
+            "before": {
+              "x": 18,
+              "y": 18
+            }
+          },
+          "new_cost": 36,
+          "old_cost": 36
+        },
+        {
+          "after": {
+            "first_direction": 3,
+            "internal_quarter_turns": 9,
+            "last_direction": 0,
+            "moves": 30,
+            "waits": 0
+          },
+          "agent": 15,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 7,
+            "last_direction": 3,
+            "moves": 30,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 2,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 7,
+              "y": 23
+            },
+            "before": {
+              "x": 7,
+              "y": 23
+            }
+          },
+          "new_cost": 30,
+          "old_cost": 30
+        },
+        {
+          "after": {
+            "first_direction": 1,
+            "internal_quarter_turns": 3,
+            "last_direction": 2,
+            "moves": 9,
+            "waits": 0
+          },
+          "agent": 16,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 1,
+            "last_direction": 1,
+            "moves": 9,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 2,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 7,
+              "y": 2
+            },
+            "before": {
+              "x": 7,
+              "y": 2
+            }
+          },
+          "new_cost": 9,
+          "old_cost": 9
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 8,
+            "last_direction": 2,
+            "moves": 23,
+            "waits": 0
+          },
+          "agent": 17,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 5,
+            "last_direction": 1,
+            "moves": 23,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 3,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 16,
+              "y": 7
+            },
+            "before": {
+              "x": 16,
+              "y": 7
+            }
+          },
+          "new_cost": 23,
+          "old_cost": 23
+        },
+        {
+          "after": {
+            "first_direction": 1,
+            "internal_quarter_turns": 6,
+            "last_direction": 1,
+            "moves": 14,
+            "waits": 0
+          },
+          "agent": 18,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 1,
+            "last_direction": 1,
+            "moves": 14,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 5,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 7,
+              "y": 7
+            },
+            "before": {
+              "x": 7,
+              "y": 7
+            }
+          },
+          "new_cost": 14,
+          "old_cost": 14
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 2,
+            "last_direction": 2,
+            "moves": 20,
+            "waits": 0
+          },
+          "agent": 19,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 7,
+            "last_direction": 1,
+            "moves": 22,
+            "waits": 0
+          },
+          "category": "shorter",
+          "delta": {
+            "internal_quarter_turns": -5,
+            "moves": -2,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 18,
+              "y": 2
+            },
+            "before": {
+              "x": 18,
+              "y": 2
+            }
+          },
+          "new_cost": 20,
+          "old_cost": 22
+        },
+        {
+          "after": {
+            "first_direction": 1,
+            "internal_quarter_turns": 10,
+            "last_direction": 1,
+            "moves": 27,
+            "waits": 0
+          },
+          "agent": 20,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 7,
+            "last_direction": 1,
+            "moves": 27,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 3,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 6,
+              "y": 21
+            },
+            "before": {
+              "x": 6,
+              "y": 21
+            }
+          },
+          "new_cost": 27,
+          "old_cost": 27
+        },
+        {
+          "after": {
+            "first_direction": 1,
+            "internal_quarter_turns": 5,
+            "last_direction": 0,
+            "moves": 25,
+            "waits": 0
+          },
+          "agent": 21,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 5,
+            "last_direction": 1,
+            "moves": 25,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 19,
+              "y": 6
+            },
+            "before": {
+              "x": 19,
+              "y": 6
+            }
+          },
+          "new_cost": 25,
+          "old_cost": 25
+        },
+        {
+          "after": {
+            "first_direction": 1,
+            "internal_quarter_turns": 11,
+            "last_direction": 2,
+            "moves": 33,
+            "waits": 0
+          },
+          "agent": 22,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 11,
+            "last_direction": 1,
+            "moves": 33,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 27,
+              "y": 6
+            },
+            "before": {
+              "x": 27,
+              "y": 6
+            }
+          },
+          "new_cost": 33,
+          "old_cost": 33
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 3,
+            "last_direction": 3,
+            "moves": 11,
+            "waits": 0
+          },
+          "agent": 23,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 3,
+            "last_direction": 3,
+            "moves": 11,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 9,
+              "y": 1
+            },
+            "before": {
+              "x": 9,
+              "y": 1
+            }
+          },
+          "new_cost": 11,
+          "old_cost": 11
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 5,
+            "last_direction": 1,
+            "moves": 21,
+            "waits": 0
+          },
+          "agent": 24,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 1,
+            "last_direction": 1,
+            "moves": 21,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 4,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 6,
+              "y": 15
+            },
+            "before": {
+              "x": 6,
+              "y": 15
+            }
+          },
+          "new_cost": 21,
+          "old_cost": 21
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 3,
+            "last_direction": 1,
+            "moves": 16,
+            "waits": 0
+          },
+          "agent": 25,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 1,
+            "last_direction": 1,
+            "moves": 16,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 2,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 3,
+              "y": 13
+            },
+            "before": {
+              "x": 3,
+              "y": 13
+            }
+          },
+          "new_cost": 16,
+          "old_cost": 16
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 8,
+            "last_direction": 0,
+            "moves": 16,
+            "waits": 0
+          },
+          "agent": 26,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 8,
+            "last_direction": 0,
+            "moves": 16,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 12,
+              "y": 4
+            },
+            "before": {
+              "x": 12,
+              "y": 4
+            }
+          },
+          "new_cost": 16,
+          "old_cost": 16
+        },
+        {
+          "after": {
+            "first_direction": 1,
+            "internal_quarter_turns": 13,
+            "last_direction": 2,
+            "moves": 35,
+            "waits": 0
+          },
+          "agent": 27,
+          "before": {
+            "first_direction": 1,
+            "internal_quarter_turns": 6,
+            "last_direction": 3,
+            "moves": 35,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 7,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 27,
+              "y": 6
+            },
+            "before": {
+              "x": 27,
+              "y": 6
+            }
+          },
+          "new_cost": 35,
+          "old_cost": 35
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 3,
+            "last_direction": 3,
+            "moves": 12,
+            "waits": 0
+          },
+          "agent": 28,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 1,
+            "last_direction": 3,
+            "moves": 12,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 2,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 3,
+              "y": 9
+            },
+            "before": {
+              "x": 3,
+              "y": 9
+            }
+          },
+          "new_cost": 12,
+          "old_cost": 12
+        },
+        {
+          "after": {
+            "first_direction": 3,
+            "internal_quarter_turns": 25,
+            "last_direction": 2,
+            "moves": 50,
+            "waits": 0
+          },
+          "agent": 29,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 15,
+            "last_direction": 3,
+            "moves": 50,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 10,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 30,
+              "y": 20
+            },
+            "before": {
+              "x": 30,
+              "y": 20
+            }
+          },
+          "new_cost": 50,
+          "old_cost": 50
+        },
+        {
+          "after": {
+            "first_direction": 3,
+            "internal_quarter_turns": 12,
+            "last_direction": 3,
+            "moves": 37,
+            "waits": 0
+          },
+          "agent": 30,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 9,
+            "last_direction": 3,
+            "moves": 37,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 3,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 27,
+              "y": 10
+            },
+            "before": {
+              "x": 27,
+              "y": 10
+            }
+          },
+          "new_cost": 37,
+          "old_cost": 37
+        },
+        {
+          "after": {
+            "first_direction": 3,
+            "internal_quarter_turns": 4,
+            "last_direction": 3,
+            "moves": 13,
+            "waits": 0
+          },
+          "agent": 31,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 3,
+            "last_direction": 3,
+            "moves": 13,
+            "waits": 0
+          },
+          "category": "equal_cost_reroute",
+          "delta": {
+            "internal_quarter_turns": 1,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 8,
+              "y": 5
+            },
+            "before": {
+              "x": 8,
+              "y": 5
+            }
+          },
+          "new_cost": 13,
+          "old_cost": 13
+        }
+      ],
+      "total_direction_rotation_delta_interval_quarters": [
+        80,
+        136
+      ],
+      "v2_displacement_screen_at_hypothetical_1m_cell": {
+        "after": "FAIL_NECESSARY_AXIS_BOUND",
+        "before": "FAIL_NECESSARY_AXIS_BOUND"
+      },
+      "v2_one_edge_per_move_necessary_scale_interval": {
+        "after": {
+          "assumption": "Every moving grid edge is one original v2 MOVE, all with one common scale. This tests only the 0.25 m minimum MOVE and 8 m task-relative axis bound.",
+          "lower_m_per_cell": "1/4",
+          "necessary_interval_nonempty": true,
+          "upper_m_per_cell_from_axis_bound": "4/15"
+        },
+        "before": {
+          "assumption": "Every moving grid edge is one original v2 MOVE, all with one common scale. This tests only the 0.25 m minimum MOVE and 8 m task-relative axis bound.",
+          "lower_m_per_cell": "1/4",
+          "necessary_interval_nonempty": true,
+          "upper_m_per_cell_from_axis_bound": "4/15"
+        }
+      }
+    },
+    {
+      "after": {
+        "internal_quarter_turns": 31,
+        "moves": 1112,
+        "waits": 0
+      },
+      "before": {
+        "internal_quarter_turns": 31,
+        "moves": 1112,
+        "waits": 0
+      },
+      "boundary_heading_difference_bound_quarters": 0,
+      "case": "warehouse-10-20-10-2-1__s01__n16",
+      "changed_paths": [],
+      "delta": {
+        "internal_quarter_turns": 0,
+        "moves": 0,
+        "waits": 0
+      },
+      "final_soc": 1112,
+      "initial_soc": 1112,
+      "interpretation": "Geometry only. Interval allows arbitrary common initial/final headings and shortest heading changes while facing each edge. Reverse driving, smooth dynamics, overlapping turn/wait and multi-robot retiming are not evaluated.",
+      "max_relative_axis_displacement_cells": {
+        "after": {
+          "x": 133,
+          "y": 49
+        },
+        "before": {
+          "x": 133,
+          "y": 49
+        }
+      },
+      "path_change_groups": {
+        "equal_cost_reroute": {
+          "agents": [],
+          "count": 0,
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "soc_delta": 0
+        },
+        "longer": {
+          "agents": [],
+          "count": 0,
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "soc_delta": 0
+        },
+        "shorter": {
+          "agents": [],
+          "count": 0,
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "soc_delta": 0
+        },
+        "unchanged": {
+          "agents": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "count": 16,
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "soc_delta": 0
+        }
+      },
+      "per_agent": [
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 3,
+            "last_direction": 3,
+            "moves": 174,
+            "waits": 0
+          },
+          "agent": 0,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 3,
+            "last_direction": 3,
+            "moves": 174,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 133,
+              "y": 41
+            },
+            "before": {
+              "x": 133,
+              "y": 41
+            }
+          },
+          "new_cost": 174,
+          "old_cost": 174
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 1,
+            "last_direction": 3,
+            "moves": 65,
+            "waits": 0
+          },
+          "agent": 1,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 1,
+            "last_direction": 3,
+            "moves": 65,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 43,
+              "y": 22
+            },
+            "before": {
+              "x": 43,
+              "y": 22
+            }
+          },
+          "new_cost": 65,
+          "old_cost": 65
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 1,
+            "last_direction": 1,
+            "moves": 79,
+            "waits": 0
+          },
+          "agent": 2,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 1,
+            "last_direction": 1,
+            "moves": 79,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 30,
+              "y": 49
+            },
+            "before": {
+              "x": 30,
+              "y": 49
+            }
+          },
+          "new_cost": 79,
+          "old_cost": 79
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 0,
+            "last_direction": 0,
+            "moves": 23,
+            "waits": 0
+          },
+          "agent": 3,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 0,
+            "last_direction": 0,
+            "moves": 23,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 23,
+              "y": 0
+            },
+            "before": {
+              "x": 23,
+              "y": 0
+            }
+          },
+          "new_cost": 23,
+          "old_cost": 23
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 2,
+            "last_direction": 2,
+            "moves": 22,
+            "waits": 0
+          },
+          "agent": 4,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 2,
+            "last_direction": 2,
+            "moves": 22,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 9,
+              "y": 12
+            },
+            "before": {
+              "x": 9,
+              "y": 12
+            }
+          },
+          "new_cost": 22,
+          "old_cost": 22
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 2,
+            "last_direction": 0,
+            "moves": 50,
+            "waits": 0
+          },
+          "agent": 5,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 2,
+            "last_direction": 0,
+            "moves": 50,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 38,
+              "y": 12
+            },
+            "before": {
+              "x": 38,
+              "y": 12
+            }
+          },
+          "new_cost": 50,
+          "old_cost": 50
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 1,
+            "last_direction": 1,
+            "moves": 41,
+            "waits": 0
+          },
+          "agent": 6,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 1,
+            "last_direction": 1,
+            "moves": 41,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 1,
+              "y": 40
+            },
+            "before": {
+              "x": 1,
+              "y": 40
+            }
+          },
+          "new_cost": 41,
+          "old_cost": 41
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 1,
+            "last_direction": 3,
+            "moves": 35,
+            "waits": 0
+          },
+          "agent": 7,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 1,
+            "last_direction": 3,
+            "moves": 35,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 2,
+              "y": 33
+            },
+            "before": {
+              "x": 2,
+              "y": 33
+            }
+          },
+          "new_cost": 35,
+          "old_cost": 35
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 4,
+            "last_direction": 0,
+            "moves": 23,
+            "waits": 0
+          },
+          "agent": 8,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 4,
+            "last_direction": 0,
+            "moves": 23,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 18,
+              "y": 5
+            },
+            "before": {
+              "x": 18,
+              "y": 5
+            }
+          },
+          "new_cost": 23,
+          "old_cost": 23
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 4,
+            "last_direction": 2,
+            "moves": 99,
+            "waits": 0
+          },
+          "agent": 9,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 4,
+            "last_direction": 2,
+            "moves": 99,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 77,
+              "y": 22
+            },
+            "before": {
+              "x": 77,
+              "y": 22
+            }
+          },
+          "new_cost": 99,
+          "old_cost": 99
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 2,
+            "last_direction": 2,
+            "moves": 70,
+            "waits": 0
+          },
+          "agent": 10,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 2,
+            "last_direction": 2,
+            "moves": 70,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 46,
+              "y": 24
+            },
+            "before": {
+              "x": 46,
+              "y": 24
+            }
+          },
+          "new_cost": 70,
+          "old_cost": 70
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 0,
+            "last_direction": 2,
+            "moves": 63,
+            "waits": 0
+          },
+          "agent": 11,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 0,
+            "last_direction": 2,
+            "moves": 63,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 63,
+              "y": 0
+            },
+            "before": {
+              "x": 63,
+              "y": 0
+            }
+          },
+          "new_cost": 63,
+          "old_cost": 63
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 3,
+            "last_direction": 1,
+            "moves": 126,
+            "waits": 0
+          },
+          "agent": 12,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 3,
+            "last_direction": 1,
+            "moves": 126,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 85,
+              "y": 41
+            },
+            "before": {
+              "x": 85,
+              "y": 41
+            }
+          },
+          "new_cost": 126,
+          "old_cost": 126
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 2,
+            "last_direction": 0,
+            "moves": 51,
+            "waits": 0
+          },
+          "agent": 13,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 2,
+            "last_direction": 0,
+            "moves": 51,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 4,
+              "y": 45
+            },
+            "before": {
+              "x": 4,
+              "y": 45
+            }
+          },
+          "new_cost": 51,
+          "old_cost": 51
+        },
+        {
+          "after": {
+            "first_direction": 1,
+            "internal_quarter_turns": 2,
+            "last_direction": 1,
+            "moves": 123,
+            "waits": 0
+          },
+          "agent": 14,
+          "before": {
+            "first_direction": 1,
+            "internal_quarter_turns": 2,
+            "last_direction": 1,
+            "moves": 123,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 94,
+              "y": 29
+            },
+            "before": {
+              "x": 94,
+              "y": 29
+            }
+          },
+          "new_cost": 123,
+          "old_cost": 123
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 3,
+            "last_direction": 1,
+            "moves": 68,
+            "waits": 0
+          },
+          "agent": 15,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 3,
+            "last_direction": 1,
+            "moves": 68,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 55,
+              "y": 13
+            },
+            "before": {
+              "x": 55,
+              "y": 13
+            }
+          },
+          "new_cost": 68,
+          "old_cost": 68
+        }
+      ],
+      "total_direction_rotation_delta_interval_quarters": [
+        0,
+        0
+      ],
+      "v2_displacement_screen_at_hypothetical_1m_cell": {
+        "after": "FAIL_NECESSARY_AXIS_BOUND",
+        "before": "FAIL_NECESSARY_AXIS_BOUND"
+      },
+      "v2_one_edge_per_move_necessary_scale_interval": {
+        "after": {
+          "assumption": "Every moving grid edge is one original v2 MOVE, all with one common scale. This tests only the 0.25 m minimum MOVE and 8 m task-relative axis bound.",
+          "lower_m_per_cell": "1/4",
+          "necessary_interval_nonempty": false,
+          "upper_m_per_cell_from_axis_bound": "8/133"
+        },
+        "before": {
+          "assumption": "Every moving grid edge is one original v2 MOVE, all with one common scale. This tests only the 0.25 m minimum MOVE and 8 m task-relative axis bound.",
+          "lower_m_per_cell": "1/4",
+          "necessary_interval_nonempty": false,
+          "upper_m_per_cell_from_axis_bound": "8/133"
+        }
+      }
+    },
+    {
+      "after": {
+        "internal_quarter_turns": 75,
+        "moves": 2486,
+        "waits": 0
+      },
+      "before": {
+        "internal_quarter_turns": 75,
+        "moves": 2486,
+        "waits": 0
+      },
+      "boundary_heading_difference_bound_quarters": 0,
+      "case": "warehouse-10-20-10-2-1__s01__n32",
+      "changed_paths": [],
+      "delta": {
+        "internal_quarter_turns": 0,
+        "moves": 0,
+        "waits": 0
+      },
+      "final_soc": 2486,
+      "initial_soc": 2486,
+      "interpretation": "Geometry only. Interval allows arbitrary common initial/final headings and shortest heading changes while facing each edge. Reverse driving, smooth dynamics, overlapping turn/wait and multi-robot retiming are not evaluated.",
+      "max_relative_axis_displacement_cells": {
+        "after": {
+          "x": 136,
+          "y": 49
+        },
+        "before": {
+          "x": 136,
+          "y": 49
+        }
+      },
+      "path_change_groups": {
+        "equal_cost_reroute": {
+          "agents": [],
+          "count": 0,
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "soc_delta": 0
+        },
+        "longer": {
+          "agents": [],
+          "count": 0,
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "soc_delta": 0
+        },
+        "shorter": {
+          "agents": [],
+          "count": 0,
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "soc_delta": 0
+        },
+        "unchanged": {
+          "agents": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31
+          ],
+          "count": 32,
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "soc_delta": 0
+        }
+      },
+      "per_agent": [
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 5,
+            "last_direction": 3,
+            "moves": 174,
+            "waits": 0
+          },
+          "agent": 0,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 5,
+            "last_direction": 3,
+            "moves": 174,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 133,
+              "y": 41
+            },
+            "before": {
+              "x": 133,
+              "y": 41
+            }
+          },
+          "new_cost": 174,
+          "old_cost": 174
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 1,
+            "last_direction": 3,
+            "moves": 65,
+            "waits": 0
+          },
+          "agent": 1,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 1,
+            "last_direction": 3,
+            "moves": 65,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 43,
+              "y": 22
+            },
+            "before": {
+              "x": 43,
+              "y": 22
+            }
+          },
+          "new_cost": 65,
+          "old_cost": 65
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 1,
+            "last_direction": 1,
+            "moves": 79,
+            "waits": 0
+          },
+          "agent": 2,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 1,
+            "last_direction": 1,
+            "moves": 79,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 30,
+              "y": 49
+            },
+            "before": {
+              "x": 30,
+              "y": 49
+            }
+          },
+          "new_cost": 79,
+          "old_cost": 79
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 0,
+            "last_direction": 0,
+            "moves": 23,
+            "waits": 0
+          },
+          "agent": 3,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 0,
+            "last_direction": 0,
+            "moves": 23,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 23,
+              "y": 0
+            },
+            "before": {
+              "x": 23,
+              "y": 0
+            }
+          },
+          "new_cost": 23,
+          "old_cost": 23
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 2,
+            "last_direction": 2,
+            "moves": 22,
+            "waits": 0
+          },
+          "agent": 4,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 2,
+            "last_direction": 2,
+            "moves": 22,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 9,
+              "y": 12
+            },
+            "before": {
+              "x": 9,
+              "y": 12
+            }
+          },
+          "new_cost": 22,
+          "old_cost": 22
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 2,
+            "last_direction": 0,
+            "moves": 50,
+            "waits": 0
+          },
+          "agent": 5,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 2,
+            "last_direction": 0,
+            "moves": 50,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 38,
+              "y": 12
+            },
+            "before": {
+              "x": 38,
+              "y": 12
+            }
+          },
+          "new_cost": 50,
+          "old_cost": 50
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 1,
+            "last_direction": 1,
+            "moves": 41,
+            "waits": 0
+          },
+          "agent": 6,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 1,
+            "last_direction": 1,
+            "moves": 41,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 1,
+              "y": 40
+            },
+            "before": {
+              "x": 1,
+              "y": 40
+            }
+          },
+          "new_cost": 41,
+          "old_cost": 41
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 1,
+            "last_direction": 3,
+            "moves": 35,
+            "waits": 0
+          },
+          "agent": 7,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 1,
+            "last_direction": 3,
+            "moves": 35,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 2,
+              "y": 33
+            },
+            "before": {
+              "x": 2,
+              "y": 33
+            }
+          },
+          "new_cost": 35,
+          "old_cost": 35
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 4,
+            "last_direction": 0,
+            "moves": 23,
+            "waits": 0
+          },
+          "agent": 8,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 4,
+            "last_direction": 0,
+            "moves": 23,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 18,
+              "y": 5
+            },
+            "before": {
+              "x": 18,
+              "y": 5
+            }
+          },
+          "new_cost": 23,
+          "old_cost": 23
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 4,
+            "last_direction": 2,
+            "moves": 99,
+            "waits": 0
+          },
+          "agent": 9,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 4,
+            "last_direction": 2,
+            "moves": 99,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 77,
+              "y": 22
+            },
+            "before": {
+              "x": 77,
+              "y": 22
+            }
+          },
+          "new_cost": 99,
+          "old_cost": 99
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 2,
+            "last_direction": 2,
+            "moves": 70,
+            "waits": 0
+          },
+          "agent": 10,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 2,
+            "last_direction": 2,
+            "moves": 70,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 46,
+              "y": 24
+            },
+            "before": {
+              "x": 46,
+              "y": 24
+            }
+          },
+          "new_cost": 70,
+          "old_cost": 70
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 0,
+            "last_direction": 2,
+            "moves": 63,
+            "waits": 0
+          },
+          "agent": 11,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 0,
+            "last_direction": 2,
+            "moves": 63,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 63,
+              "y": 0
+            },
+            "before": {
+              "x": 63,
+              "y": 0
+            }
+          },
+          "new_cost": 63,
+          "old_cost": 63
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 3,
+            "last_direction": 1,
+            "moves": 126,
+            "waits": 0
+          },
+          "agent": 12,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 3,
+            "last_direction": 1,
+            "moves": 126,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 85,
+              "y": 41
+            },
+            "before": {
+              "x": 85,
+              "y": 41
+            }
+          },
+          "new_cost": 126,
+          "old_cost": 126
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 2,
+            "last_direction": 0,
+            "moves": 51,
+            "waits": 0
+          },
+          "agent": 13,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 2,
+            "last_direction": 0,
+            "moves": 51,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 4,
+              "y": 45
+            },
+            "before": {
+              "x": 4,
+              "y": 45
+            }
+          },
+          "new_cost": 51,
+          "old_cost": 51
+        },
+        {
+          "after": {
+            "first_direction": 1,
+            "internal_quarter_turns": 4,
+            "last_direction": 1,
+            "moves": 123,
+            "waits": 0
+          },
+          "agent": 14,
+          "before": {
+            "first_direction": 1,
+            "internal_quarter_turns": 4,
+            "last_direction": 1,
+            "moves": 123,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 94,
+              "y": 29
+            },
+            "before": {
+              "x": 94,
+              "y": 29
+            }
+          },
+          "new_cost": 123,
+          "old_cost": 123
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 3,
+            "last_direction": 1,
+            "moves": 68,
+            "waits": 0
+          },
+          "agent": 15,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 3,
+            "last_direction": 1,
+            "moves": 68,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 55,
+              "y": 13
+            },
+            "before": {
+              "x": 55,
+              "y": 13
+            }
+          },
+          "new_cost": 68,
+          "old_cost": 68
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 2,
+            "last_direction": 0,
+            "moves": 58,
+            "waits": 0
+          },
+          "agent": 16,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 2,
+            "last_direction": 0,
+            "moves": 58,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 37,
+              "y": 21
+            },
+            "before": {
+              "x": 37,
+              "y": 21
+            }
+          },
+          "new_cost": 58,
+          "old_cost": 58
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 1,
+            "last_direction": 3,
+            "moves": 151,
+            "waits": 0
+          },
+          "agent": 17,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 1,
+            "last_direction": 3,
+            "moves": 151,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 121,
+              "y": 30
+            },
+            "before": {
+              "x": 121,
+              "y": 30
+            }
+          },
+          "new_cost": 151,
+          "old_cost": 151
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 1,
+            "last_direction": 1,
+            "moves": 61,
+            "waits": 0
+          },
+          "agent": 18,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 1,
+            "last_direction": 1,
+            "moves": 61,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 27,
+              "y": 34
+            },
+            "before": {
+              "x": 27,
+              "y": 34
+            }
+          },
+          "new_cost": 61,
+          "old_cost": 61
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 1,
+            "last_direction": 3,
+            "moves": 123,
+            "waits": 0
+          },
+          "agent": 19,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 1,
+            "last_direction": 3,
+            "moves": 123,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 90,
+              "y": 33
+            },
+            "before": {
+              "x": 90,
+              "y": 33
+            }
+          },
+          "new_cost": 123,
+          "old_cost": 123
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 2,
+            "last_direction": 0,
+            "moves": 70,
+            "waits": 0
+          },
+          "agent": 20,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 2,
+            "last_direction": 0,
+            "moves": 70,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 67,
+              "y": 3
+            },
+            "before": {
+              "x": 67,
+              "y": 3
+            }
+          },
+          "new_cost": 70,
+          "old_cost": 70
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 2,
+            "last_direction": 0,
+            "moves": 96,
+            "waits": 0
+          },
+          "agent": 21,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 2,
+            "last_direction": 0,
+            "moves": 96,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 87,
+              "y": 9
+            },
+            "before": {
+              "x": 87,
+              "y": 9
+            }
+          },
+          "new_cost": 96,
+          "old_cost": 96
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 2,
+            "last_direction": 2,
+            "moves": 71,
+            "waits": 0
+          },
+          "agent": 22,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 2,
+            "last_direction": 2,
+            "moves": 71,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 50,
+              "y": 21
+            },
+            "before": {
+              "x": 50,
+              "y": 21
+            }
+          },
+          "new_cost": 71,
+          "old_cost": 71
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 1,
+            "last_direction": 1,
+            "moves": 3,
+            "waits": 0
+          },
+          "agent": 23,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 1,
+            "last_direction": 1,
+            "moves": 3,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 2,
+              "y": 1
+            },
+            "before": {
+              "x": 2,
+              "y": 1
+            }
+          },
+          "new_cost": 3,
+          "old_cost": 3
+        },
+        {
+          "after": {
+            "first_direction": 1,
+            "internal_quarter_turns": 3,
+            "last_direction": 2,
+            "moves": 86,
+            "waits": 0
+          },
+          "agent": 24,
+          "before": {
+            "first_direction": 1,
+            "internal_quarter_turns": 3,
+            "last_direction": 2,
+            "moves": 86,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 72,
+              "y": 14
+            },
+            "before": {
+              "x": 72,
+              "y": 14
+            }
+          },
+          "new_cost": 86,
+          "old_cost": 86
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 3,
+            "last_direction": 3,
+            "moves": 165,
+            "waits": 0
+          },
+          "agent": 25,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 3,
+            "last_direction": 3,
+            "moves": 165,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 135,
+              "y": 30
+            },
+            "before": {
+              "x": 135,
+              "y": 30
+            }
+          },
+          "new_cost": 165,
+          "old_cost": 165
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 1,
+            "last_direction": 3,
+            "moves": 28,
+            "waits": 0
+          },
+          "agent": 26,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 1,
+            "last_direction": 3,
+            "moves": 28,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 7,
+              "y": 21
+            },
+            "before": {
+              "x": 7,
+              "y": 21
+            }
+          },
+          "new_cost": 28,
+          "old_cost": 28
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 4,
+            "last_direction": 0,
+            "moves": 74,
+            "waits": 0
+          },
+          "agent": 27,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 4,
+            "last_direction": 0,
+            "moves": 74,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 42,
+              "y": 32
+            },
+            "before": {
+              "x": 42,
+              "y": 32
+            }
+          },
+          "new_cost": 74,
+          "old_cost": 74
+        },
+        {
+          "after": {
+            "first_direction": 1,
+            "internal_quarter_turns": 8,
+            "last_direction": 1,
+            "moves": 130,
+            "waits": 0
+          },
+          "agent": 28,
+          "before": {
+            "first_direction": 1,
+            "internal_quarter_turns": 8,
+            "last_direction": 1,
+            "moves": 130,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 118,
+              "y": 12
+            },
+            "before": {
+              "x": 118,
+              "y": 12
+            }
+          },
+          "new_cost": 130,
+          "old_cost": 130
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 2,
+            "last_direction": 2,
+            "moves": 83,
+            "waits": 0
+          },
+          "agent": 29,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 2,
+            "last_direction": 2,
+            "moves": 83,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 68,
+              "y": 15
+            },
+            "before": {
+              "x": 68,
+              "y": 15
+            }
+          },
+          "new_cost": 83,
+          "old_cost": 83
+        },
+        {
+          "after": {
+            "first_direction": 0,
+            "internal_quarter_turns": 2,
+            "last_direction": 0,
+            "moves": 20,
+            "waits": 0
+          },
+          "agent": 30,
+          "before": {
+            "first_direction": 0,
+            "internal_quarter_turns": 2,
+            "last_direction": 0,
+            "moves": 20,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 18,
+              "y": 2
+            },
+            "before": {
+              "x": 18,
+              "y": 2
+            }
+          },
+          "new_cost": 20,
+          "old_cost": 20
+        },
+        {
+          "after": {
+            "first_direction": 2,
+            "internal_quarter_turns": 5,
+            "last_direction": 1,
+            "moves": 155,
+            "waits": 0
+          },
+          "agent": 31,
+          "before": {
+            "first_direction": 2,
+            "internal_quarter_turns": 5,
+            "last_direction": 1,
+            "moves": 155,
+            "waits": 0
+          },
+          "category": "unchanged",
+          "delta": {
+            "internal_quarter_turns": 0,
+            "moves": 0,
+            "waits": 0
+          },
+          "max_relative_axis_displacement_cells": {
+            "after": {
+              "x": 136,
+              "y": 19
+            },
+            "before": {
+              "x": 136,
+              "y": 19
+            }
+          },
+          "new_cost": 155,
+          "old_cost": 155
+        }
+      ],
+      "total_direction_rotation_delta_interval_quarters": [
+        0,
+        0
+      ],
+      "v2_displacement_screen_at_hypothetical_1m_cell": {
+        "after": "FAIL_NECESSARY_AXIS_BOUND",
+        "before": "FAIL_NECESSARY_AXIS_BOUND"
+      },
+      "v2_one_edge_per_move_necessary_scale_interval": {
+        "after": {
+          "assumption": "Every moving grid edge is one original v2 MOVE, all with one common scale. This tests only the 0.25 m minimum MOVE and 8 m task-relative axis bound.",
+          "lower_m_per_cell": "1/4",
+          "necessary_interval_nonempty": false,
+          "upper_m_per_cell_from_axis_bound": "1/17"
+        },
+        "before": {
+          "assumption": "Every moving grid edge is one original v2 MOVE, all with one common scale. This tests only the 0.25 m minimum MOVE and 8 m task-relative axis bound.",
+          "lower_m_per_cell": "1/4",
+          "necessary_interval_nonempty": false,
+          "upper_m_per_cell_from_axis_bound": "1/17"
+        }
+      }
+    }
+  ],
+  "sci_commit": "535ee1adf3135ab79565e0b3aa5d189348fe7ab2",
+  "scope": "OFFLINE_EQUAL_COST_AND_DISPLACEMENT_AUDIT",
+  "v2_source_contract": {
+    "blob_oid": "a35b5faf777499b4c0372311660f861904cee98c",
+    "commit": "16b1ee089be20cafaf4818c3dbb7b259659b021d",
+    "path": "exploration/spatial_source/COMPOSITION.md",
+    "sha256": "70bc8dd038f9dcd922fcb7ac987f0e6f7568867fcbdd8751847edfbf6501bf7d"
+  },
+  "v2_source_model_imported": false
+}

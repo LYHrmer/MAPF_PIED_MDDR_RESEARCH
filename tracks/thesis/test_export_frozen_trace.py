@@ -182,6 +182,77 @@ class SciPathStructureTests(unittest.TestCase):
                 for h in range(4):
                     self.assertLessEqual(abs(d(h, u)-d(h, v)), d(u, v))
 
+    def test_existing_random32_equal_cost_reroute_decomposition(self):
+        rows = self.audit.analyze(HERE.parents[1])['rows']
+        row = next(r for r in rows if r['case'] == 'random-32-32-10__s01__n32')
+        group = row['path_change_groups']
+        self.assertEqual(group['equal_cost_reroute']['count'], 29)
+        self.assertEqual(group['equal_cost_reroute']['delta']['internal_quarter_turns'], 113)
+        self.assertEqual(group['unchanged']['agents'], [8])
+        self.assertEqual(group['shorter']['agents'], [19])
+        self.assertEqual(group['shorter']['soc_delta'], -2)
+        self.assertEqual(group['longer']['agents'], [3])
+        self.assertEqual(group['longer']['soc_delta'], 1)
+        for r in rows:
+            self.assertEqual(sum(g['count'] for g in r['path_change_groups'].values()), len(r['per_agent']))
+            self.assertEqual(sum(g['soc_delta'] for g in r['path_change_groups'].values()),
+                             r['final_soc']-r['initial_soc'])
+            self.assertEqual(sum(g['delta']['internal_quarter_turns'] for g in r['path_change_groups'].values()),
+                             r['delta']['internal_quarter_turns'])
+            if r['case'].startswith('warehouse'):
+                for screen in r['v2_one_edge_per_move_necessary_scale_interval'].values():
+                    self.assertFalse(screen['necessary_interval_nonempty'])
+
+
+class WholePlanSelectionTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        spec = importlib.util.spec_from_file_location('plan_selection', HERE/'plan_selection.py')
+        cls.selection = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(cls.selection)
+        cls.Grid = cls.selection.load_grid_problem(HERE.parents[1])
+
+    def test_equal_cost_retention_must_pass_full_multirobot_check(self):
+        problem = self.Grid(3, 3, [], {0: (0, 4), 1: (2, 6)})
+        old = {0: [0, 1, 4], 1: [2, 2, 5, 8, 7, 6]}
+        new = {0: [0, 3, 4], 1: [2, 1, 0, 3, 6]}
+        untouched = copy.deepcopy((old, new))
+        result = self.selection.select_complete_plan(problem, old, new, rule='preserve_equal_cost')
+        self.assertEqual(result['selected'], 'proposal')
+        retained = next(c for c in result['candidates'] if c['name'] == 'retain_equal_cost_batch')
+        self.assertFalse(retained['valid'])
+        self.assertIn('vertex/goal-hold', retained['reason'])
+        self.assertEqual((old, new), untouched)
+
+    def test_turn_aware_control_has_explicit_secondary_objective(self):
+        problem = self.Grid(3, 3, [], {0: (0, 8)})
+        old, new = {0: [0, 1, 4, 5, 8]}, {0: [0, 1, 2, 5, 8]}
+        preserved = self.selection.select_complete_plan(problem, old, new, rule='preserve_equal_cost')
+        turns = self.selection.select_complete_plan(problem, old, new, rule='turn_aware')
+        original = self.selection.select_complete_plan(problem, old, new, rule='soc_only')
+        self.assertEqual(preserved['selected'], 'incumbent')
+        self.assertEqual(original['selected'], 'incumbent')
+        self.assertEqual(turns['selected'], 'proposal')
+        self.assertEqual(turns['candidates'][0]['internal_quarter_turns'], 3)
+        self.assertEqual(turns['candidates'][1]['internal_quarter_turns'], 1)
+
+    def test_goal_hold_conflict_and_incomplete_proposal_fall_back(self):
+        problem = self.Grid(3, 3, [], {0: (1, 1), 1: (0, 2)})
+        old = {0: [1], 1: [0, 3, 4, 5, 2]}
+        for proposal in ({0: [1], 1: [0, 0, 1, 2]}, {1: [0, 3, 4, 5, 2]}):
+            with self.subTest(proposal=proposal):
+                answer = self.selection.select_complete_plan(problem, old, proposal, rule='turn_aware')
+                self.assertEqual(answer['selected'], 'incumbent')
+                self.assertTrue(answer['final_validated'])
+                self.assertFalse(answer['continuous_safety_checked'])
+                self.assertEqual(answer['search_calls'], 0)
+
+    def test_invalid_incumbent_cannot_be_repaired_silently(self):
+        problem = self.Grid(1, 2, [], {0: (0, 1), 1: (1, 0)})
+        with self.assertRaisesRegex(ValueError, 'opposite-edge'):
+            self.selection.select_complete_plan(problem, {0: [0, 1], 1: [1, 0]},
+                                                {0: [0, 1], 1: [1, 0]}, rule='soc_only')
+
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
