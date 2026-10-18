@@ -26,7 +26,7 @@ SCI后继准备固定`32bbc38`：[PROFILE_CHECKLIST.md](https://github.com/LYHrm
 - 原v2 `composition.py`、C1夹具与失败证据保持原路径。旧运行器仍有绝对路径/`__file__`依赖；只有完成小文件固定bundle适配和新清单后才能脱离旧树运行。
 - `MANUSCRIPT_PREEXPERIMENT.md`仅main现有未提交版受保护，不复制到两线作为新稿。
 - 现行综述：[本机文献目录](/home/lyh/桌面/MAPF_开题文献综述_20260921/MAPF误差综述_20261011)，仅索引，不复制文库。
-- 师兄论文：[原PDF](/home/lyh/文档/xwechat_files/wxid_byi6dg2u66wi22_3837/business/favorite/temp/M202110551-硕士论文.pdf)，用于组织参考，非学校规定。
+- 师兄论文：[现存PDF](/home/lyh/.var/app/com.tencent.WeChat/xwechat_files/wxid_byi6dg2u66wi22_3837/msg/file/2026-06/M202110551-硕士论文.pdf)，用于组织参考，非学校规定。原`文档/.../business/favorite/temp/`入口已失效；现存文件核对题名、林威及81页，SHA256 `e57e11dc85d902f74901d53eca13685f635d68d4a0adb84c95abcf7ece6a4f5a`，未复制PDF。
 
 ## 交接顺序
 
