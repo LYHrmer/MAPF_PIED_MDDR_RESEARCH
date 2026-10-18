@@ -1,6 +1,6 @@
-# ADDRESS 非修复费用：两项计时诊断待授权
+# ADDRESS 非修复费用：两项计时诊断已完成、许可已消费
 
-状态：实现、软件核验、完整编译/help已完成；未获新运行授权。全部旧科学许可已消费。该清单仅测费用与事件分布，不运行新增优化机制、恢复、训练、world或大论文运动任务。
+状态：用户明确回复“授权这2项（推荐）”后，按下列冻结条件顺序执行，两项均COMPLETE、零重试、许可已消费。科学代码`f6e1d01`；[真实授权](results/address_phase_profile_v1/AUTHORIZATION.json)、[总收据](results/address_phase_profile_v1/RUN_RECEIPT.json)及[结果与下一步](ADDRESS_PHASE_RESULT.md)已保留。以下条件和命令是本批执行记录，不是可再次使用的运行许可。没有运行新增优化机制、恢复、训练、world或大论文运动任务。
 
 - JSON：[address_phase_profile_v1_manifest.json](config/address_phase_profile_v1_manifest.json)，SHA `0d4e08274314bb96f4596c3d43c3e4117c43d0f223b16af74e8850fa3c442ab7`。
 - 输入仍为`repair_residual_v1_inputs.json`，SHA `be1e912e1e2ea3f59fcdc5d0c5737118e7f96d92227be536ada605f6751c0e5b`；复用初解，不换任务或参数。
@@ -13,7 +13,7 @@
 
 新增验收：11个阶段独占wall之和等于配置至finish窗口；残差0；四类构组出口之和等于原生组调用数；scope次数与组/种子/游走/修复计数对应；seed分类数不超过seed调用；预算采样数量等于检查调用数整除1024。所有样本保持`extrapolated=false`，不当完整clock成本，嵌套费用不重复相加。不得据单次计时或旧无profile记录宣称稳定加速。
 
-输出独占`tracks/sci/results/address_phase_profile_v1/`，当前不存在。实际授权后另存真实用户指示；运行前核对本清单所在已推送SCI提交和下列SHA。它不是继续消费旧两项许可。
+输出独占`tracks/sci/results/address_phase_profile_v1/`，现已冻结；不得覆盖。运行前已核对推送提交`f6e1d01`和下列SHA，并另存真实用户指示。总收据SHA `e64d082418a1f5fa4f9e7070a571fd941ef6037e08bf4416e7f569d26bbf6011`，附加独立审计通过；JSON与二进制摘要未变。
 
 当前可做无搜索inspect：
 
@@ -21,7 +21,7 @@
 rtk proxy python3 -B tracks/sci/run_address_adapter.py inspect --manifest tracks/sci/config/address_phase_profile_v1_manifest.json --sha256 0d4e08274314bb96f4596c3d43c3e4117c43d0f223b16af74e8850fa3c442ab7
 ```
 
-获得这两项新授权后，在SCI工作树按上述顺序逐项执行（替换job与真实授权引用）：
+本批已执行的命令格式（仅供复核，不得重跑；运行时替换job与真实授权引用）：
 
 ```bash
 rtk proxy timeout --signal=TERM --kill-after=2s 20s python3 -B tracks/sci/run_address_adapter.py run \

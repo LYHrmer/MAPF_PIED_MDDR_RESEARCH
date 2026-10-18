@@ -1,0 +1,31 @@
+{
+  "schema": "actual_user_authorization_record_v1",
+  "recorded_utc": "2026-10-18T07:33:34.476119+00:00",
+  "user_message": "授权这2项（推荐）",
+  "source": "Direct user reply to this session question call_01f6ff742e8f44249eb88b70a0d3be7b",
+  "scope": "Only two ADDRESS phase-profile DEV jobs, ordered random32 then maze32; no new optimization, recovery, training, world, or thesis runs",
+  "scientific_code_commit": "f6e1d01df2a4782cf97d02fa4cdfb4fc23dce69d",
+  "manifest_sha256": "0d4e08274314bb96f4596c3d43c3e4117c43d0f223b16af74e8850fa3c442ab7",
+  "jobs": [
+    "random-32-32-10__s01__n32__phase_profile",
+    "maze-32-32-2__s01__n32__phase_profile"
+  ],
+  "limits": {
+    "external_final_reserve_s": 0.5,
+    "inner_final_reserve_s": 1,
+    "native_cpu_reserve_s": 1,
+    "native_cpu_s": 10,
+    "per_process_as_mib": 512,
+    "total_wall_s": 15,
+    "worker_cpu_s": 10
+  },
+  "external_command_guard": {
+    "kill_grace_s": 2,
+    "required": true,
+    "term_after_s": 20,
+    "tool": "timeout"
+  },
+  "retry": 0,
+  "stop_batch_on_any_failure": true,
+  "record_is_not_permission_source": true
+}

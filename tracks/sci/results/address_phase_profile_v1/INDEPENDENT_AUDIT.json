@@ -1,0 +1,832 @@
+{
+  "status": "PASS_INDEPENDENT_READONLY_PHASE_AUDIT",
+  "manifest_sha256": "0d4e08274314bb96f4596c3d43c3e4117c43d0f223b16af74e8850fa3c442ab7",
+  "input_sha256": "be1e912e1e2ea3f59fcdc5d0c5737118e7f96d92227be536ada605f6751c0e5b",
+  "batch_receipt_sha256": "e64d082418a1f5fa4f9e7070a571fd941ef6037e08bf4416e7f569d26bbf6011",
+  "batch_artifacts_verified": 27,
+  "script_sha256": "7bc3fa6d5b53af0036461ec004be4390a6190518cd7dffd29ea9a5fe52c8ce90",
+  "scientific_runs_executed_by_this_script": 0,
+  "jobs": [
+    {
+      "job": "random-32-32-10__s01__n32__phase_profile",
+      "phase_audit": {
+        "window_wall_ns": 9000316599,
+        "residual_wall_ns": 0,
+        "phases": {
+          "DRIVER_OTHER": {
+            "wall_ns": 76036,
+            "scope_entries": 1,
+            "expired_calls": 0,
+            "expired_samples": 0,
+            "expired_sampled_wall_ns": 0
+          },
+          "PREPROCESS": {
+            "wall_ns": 36493307,
+            "scope_entries": 1,
+            "expired_calls": 133153,
+            "expired_samples": 130,
+            "expired_sampled_wall_ns": 42068
+          },
+          "LNS_OTHER": {
+            "wall_ns": 52782186,
+            "scope_entries": 1,
+            "expired_calls": 195162,
+            "expired_samples": 196,
+            "expired_sampled_wall_ns": 46004
+          },
+          "GROUP_OTHER": {
+            "wall_ns": 1022577735,
+            "scope_entries": 195157,
+            "expired_calls": 4098358,
+            "expired_samples": 3964,
+            "expired_sampled_wall_ns": 927348
+          },
+          "TOPK": {
+            "wall_ns": 2949360147,
+            "scope_entries": 195157,
+            "expired_calls": 12490048,
+            "expired_samples": 12185,
+            "expired_sampled_wall_ns": 2855619
+          },
+          "BETA": {
+            "wall_ns": 2121759836,
+            "scope_entries": 195157,
+            "expired_calls": 6245024,
+            "expired_samples": 6096,
+            "expired_sampled_wall_ns": 1456630
+          },
+          "WALK": {
+            "wall_ns": 2810592434,
+            "scope_entries": 2146720,
+            "expired_calls": 11303035,
+            "expired_samples": 11087,
+            "expired_sampled_wall_ns": 2667189
+          },
+          "NEIGHBOR_PREPARE": {
+            "wall_ns": 8744,
+            "scope_entries": 4,
+            "expired_calls": 0,
+            "expired_samples": 0,
+            "expired_sampled_wall_ns": 0
+          },
+          "REPAIR": {
+            "wall_ns": 6332042,
+            "scope_entries": 4,
+            "expired_calls": 25148,
+            "expired_samples": 23,
+            "expired_sampled_wall_ns": 5756
+          },
+          "POST_REPAIR": {
+            "wall_ns": 42307,
+            "scope_entries": 4,
+            "expired_calls": 0,
+            "expired_samples": 0,
+            "expired_sampled_wall_ns": 0
+          },
+          "FINAL_CHECK_OUTPUT": {
+            "wall_ns": 291825,
+            "scope_entries": 1,
+            "expired_calls": 0,
+            "expired_samples": 0,
+            "expired_sampled_wall_ns": 0
+          }
+        },
+        "counters": {
+          "group_calls": 195157,
+          "groups_formed": 4,
+          "groups_no_seed": 0,
+          "groups_too_small": 195152,
+          "groups_deadline": 1,
+          "seed_calls": 195157,
+          "walk_calls": 2146720,
+          "seed_zero_delay_selected": 195153,
+          "seed_positive_delay_selected": 4
+        },
+        "expired_sampling": {
+          "sampled": true,
+          "stride": 1024,
+          "calls": 34489928,
+          "samples": 33681,
+          "sampled_wall_ns": 8000614,
+          "extrapolated": false
+        },
+        "phase_percent_of_profile_window": {
+          "DRIVER_OTHER": 0.0008448147258336239,
+          "PREPROCESS": 0.40546692550853897,
+          "LNS_OTHER": 0.5864481034574326,
+          "GROUP_OTHER": 11.36157515962956,
+          "TOPK": 32.76951554490533,
+          "BETA": 23.574280000725118,
+          "WALK": 31.227706304379083,
+          "NEIGHBOR_PREPARE": 9.715213797003009e-05,
+          "REPAIR": 0.07035354734858477,
+          "POST_REPAIR": 0.0004700612421200896,
+          "FINAL_CHECK_OUTPUT": 0.0032423859404281828
+        },
+        "zero_delay_fraction_of_classified_selected_seeds": 0.9999795036816512,
+        "extrapolated_clock_total": null,
+        "event_pairing_limit": "Counters aggregate events; they do not pair each selected seed with its group outcome. A task-specific source proof may support narrower deductions."
+      },
+      "supervised_costs": {
+        "all_descendant_system_s": 3.998192,
+        "all_descendant_user_s": 5.091098,
+        "exit_code": 0,
+        "forced_cleanup": false,
+        "interruption": null,
+        "largest_child_maxrss_kib": 21164,
+        "reaped": [
+          {
+            "exit_code": 0,
+            "maxrss_kib": 21164,
+            "pid": 12,
+            "system_s": 3.998192,
+            "user_s": 5.091098
+          }
+        ],
+        "scope": "WORKER_IMPORT_TO_EXIT_INCLUDING_RESULT_IO_AND_WAITED_NATIVE",
+        "wall_ns": 9124120261
+      },
+      "worker_cpu_ns": 17766327,
+      "stage_wall_ns": {
+        "common_initial_materialization": 332907,
+        "initial_complete_validation": 1118555,
+        "native_launch_through_exit": 9036481798,
+        "output_parse_and_external_final_validation": 4051957
+      },
+      "receipt_sha256": "f7c748b6c847863dcfbbb3b1815bdfbc56f66cee85cb3303d4dc6b5b0b4ad690",
+      "trace_sha256": "c163eb14be416b53727fb944f4e5e6cff7c9ac7bfa110f2fbce2e0ff8ed07553",
+      "initial": {
+        "soc": 771,
+        "makespan": 53,
+        "agents": 32,
+        "validated_terminal_residence": true
+      },
+      "final": {
+        "soc": 771,
+        "makespan": 53,
+        "agents": 32,
+        "validated_terminal_residence": true
+      },
+      "entry_wall_s": 9.171769708,
+      "native_cpu_s": 9.000258611,
+      "native_termination": {
+        "global_deadline": true,
+        "last_stage": "GROUP",
+        "termination": "GLOBAL_DEADLINE",
+        "group_calls": 195157,
+        "sipp_calls": 18,
+        "sipp_deadlines": 0,
+        "repair_deadlines": 0,
+        "rollbacks": 4
+      },
+      "attempts": 4,
+      "stop_counts": {
+        "COST_STOP": 4
+      },
+      "late_normal_empty_attempt_ids": [],
+      "cost_totals_ns": {
+        "primary_search_wall_ns": 6145806,
+        "primary_search_cpu_ns": 3992039,
+        "rollback_wall_ns": 4576,
+        "rollback_cpu_ns": 0,
+        "attempt_wall_before_trace_ns": 6199211,
+        "attempt_cpu_before_trace_ns": 4992412
+      },
+      "trace_io_wall_ns": 130059,
+      "trace_io_cpu_ns": 0,
+      "compact_attempts": [
+        {
+          "attempt_id": 1,
+          "order": [
+            21,
+            19,
+            12,
+            3
+          ],
+          "primary_calls": 4,
+          "primary_stop": "COST_STOP",
+          "failed_position_zero_based": 3,
+          "failed_agent": 3,
+          "failure_site": "COST_BOUND",
+          "accepted": false,
+          "old_group_cost": 90,
+          "final_group_cost": 90,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 2,
+          "order": [
+            19,
+            12,
+            3,
+            21
+          ],
+          "primary_calls": 4,
+          "primary_stop": "COST_STOP",
+          "failed_position_zero_based": 3,
+          "failed_agent": 21,
+          "failure_site": "COST_BOUND",
+          "accepted": false,
+          "old_group_cost": 90,
+          "final_group_cost": 90,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 3,
+          "order": [
+            21,
+            12,
+            19,
+            3,
+            25
+          ],
+          "primary_calls": 5,
+          "primary_stop": "COST_STOP",
+          "failed_position_zero_based": 4,
+          "failed_agent": 25,
+          "failure_site": "COST_BOUND",
+          "accepted": false,
+          "old_group_cost": 106,
+          "final_group_cost": 106,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 4,
+          "order": [
+            12,
+            19,
+            25,
+            21,
+            3
+          ],
+          "primary_calls": 5,
+          "primary_stop": "COST_STOP",
+          "failed_position_zero_based": 4,
+          "failed_agent": 3,
+          "failure_site": "COST_BOUND",
+          "accepted": false,
+          "old_group_cost": 106,
+          "final_group_cost": 106,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        }
+      ]
+    },
+    {
+      "job": "maze-32-32-2__s01__n32__phase_profile",
+      "phase_audit": {
+        "window_wall_ns": 302763946,
+        "residual_wall_ns": 0,
+        "phases": {
+          "DRIVER_OTHER": {
+            "wall_ns": 55793,
+            "scope_entries": 1,
+            "expired_calls": 0,
+            "expired_samples": 0,
+            "expired_sampled_wall_ns": 0
+          },
+          "PREPROCESS": {
+            "wall_ns": 18735505,
+            "scope_entries": 1,
+            "expired_calls": 83745,
+            "expired_samples": 81,
+            "expired_sampled_wall_ns": 18672
+          },
+          "LNS_OTHER": {
+            "wall_ns": 350536,
+            "scope_entries": 1,
+            "expired_calls": 38,
+            "expired_samples": 0,
+            "expired_sampled_wall_ns": 0
+          },
+          "GROUP_OTHER": {
+            "wall_ns": 143453,
+            "scope_entries": 22,
+            "expired_calls": 544,
+            "expired_samples": 1,
+            "expired_sampled_wall_ns": 198
+          },
+          "TOPK": {
+            "wall_ns": 361638,
+            "scope_entries": 22,
+            "expired_calls": 1408,
+            "expired_samples": 1,
+            "expired_sampled_wall_ns": 197
+          },
+          "BETA": {
+            "wall_ns": 303844,
+            "scope_entries": 22,
+            "expired_calls": 704,
+            "expired_samples": 0,
+            "expired_sampled_wall_ns": 0
+          },
+          "WALK": {
+            "wall_ns": 1767865,
+            "scope_entries": 183,
+            "expired_calls": 7223,
+            "expired_samples": 9,
+            "expired_sampled_wall_ns": 2119
+          },
+          "NEIGHBOR_PREPARE": {
+            "wall_ns": 38793,
+            "scope_entries": 16,
+            "expired_calls": 0,
+            "expired_samples": 0,
+            "expired_sampled_wall_ns": 0
+          },
+          "REPAIR": {
+            "wall_ns": 280511188,
+            "scope_entries": 16,
+            "expired_calls": 1369206,
+            "expired_samples": 1336,
+            "expired_sampled_wall_ns": 291075
+          },
+          "POST_REPAIR": {
+            "wall_ns": 91568,
+            "scope_entries": 16,
+            "expired_calls": 0,
+            "expired_samples": 0,
+            "expired_sampled_wall_ns": 0
+          },
+          "FINAL_CHECK_OUTPUT": {
+            "wall_ns": 403763,
+            "scope_entries": 1,
+            "expired_calls": 0,
+            "expired_samples": 0,
+            "expired_sampled_wall_ns": 0
+          }
+        },
+        "counters": {
+          "group_calls": 22,
+          "groups_formed": 16,
+          "groups_no_seed": 0,
+          "groups_too_small": 6,
+          "groups_deadline": 0,
+          "seed_calls": 22,
+          "walk_calls": 183,
+          "seed_zero_delay_selected": 6,
+          "seed_positive_delay_selected": 16
+        },
+        "expired_sampling": {
+          "sampled": true,
+          "stride": 1024,
+          "calls": 1462868,
+          "samples": 1428,
+          "sampled_wall_ns": 312261,
+          "extrapolated": false
+        },
+        "phase_percent_of_profile_window": {
+          "DRIVER_OTHER": 0.018427887711570518,
+          "PREPROCESS": 6.188155904137939,
+          "LNS_OTHER": 0.11577864690665644,
+          "GROUP_OTHER": 0.04738113698650235,
+          "TOPK": 0.11944553001697236,
+          "BETA": 0.10035673137910549,
+          "WALK": 0.583908693011948,
+          "NEIGHBOR_PREPARE": 0.012812952305754398,
+          "REPAIR": 92.65012948404365,
+          "POST_REPAIR": 0.03024402383763356,
+          "FINAL_CHECK_OUTPUT": 0.13335900966226671
+        },
+        "zero_delay_fraction_of_classified_selected_seeds": 0.2727272727272727,
+        "extrapolated_clock_total": null,
+        "event_pairing_limit": "Counters aggregate events; they do not pair each selected seed with its group outcome. A task-specific source proof may support narrower deductions."
+      },
+      "supervised_costs": {
+        "all_descendant_system_s": 0.164906,
+        "all_descendant_user_s": 0.218665,
+        "exit_code": 0,
+        "forced_cleanup": false,
+        "interruption": null,
+        "largest_child_maxrss_kib": 21096,
+        "reaped": [
+          {
+            "exit_code": 0,
+            "maxrss_kib": 21096,
+            "pid": 12,
+            "system_s": 0.164906,
+            "user_s": 0.218665
+          }
+        ],
+        "scope": "WORKER_IMPORT_TO_EXIT_INCLUDING_RESULT_IO_AND_WAITED_NATIVE",
+        "wall_ns": 405133734
+      },
+      "worker_cpu_ns": 9245853,
+      "stage_wall_ns": {
+        "common_initial_materialization": 459443,
+        "initial_complete_validation": 2334106,
+        "native_launch_through_exit": 315782442,
+        "output_parse_and_external_final_validation": 5579358
+      },
+      "receipt_sha256": "3fa23a7c7377a4f9e88de819b47c37279af65764b6e0db44dfcba4fab10b63ac",
+      "trace_sha256": "cc645323846e1d66268014198deebf547febd5f335a68b0008f3cefe9ddbe467",
+      "initial": {
+        "soc": 1873,
+        "makespan": 129,
+        "agents": 32,
+        "validated_terminal_residence": true
+      },
+      "final": {
+        "soc": 1866,
+        "makespan": 129,
+        "agents": 32,
+        "validated_terminal_residence": true
+      },
+      "entry_wall_s": 0.451746072,
+      "native_cpu_s": 0.30509226100000003,
+      "native_termination": {
+        "global_deadline": false,
+        "last_stage": "NONE",
+        "termination": "NORMAL",
+        "group_calls": 22,
+        "sipp_calls": 108,
+        "sipp_deadlines": 0,
+        "repair_deadlines": 0,
+        "rollbacks": 14
+      },
+      "attempts": 16,
+      "stop_counts": {
+        "COST_STOP": 12,
+        "FOUND": 2,
+        "FOCAL_DRAINED_EMPTY": 2
+      },
+      "late_normal_empty_attempt_ids": [],
+      "cost_totals_ns": {
+        "primary_search_wall_ns": 279817869,
+        "primary_search_cpu_ns": 280732989,
+        "rollback_wall_ns": 52582,
+        "rollback_cpu_ns": 0,
+        "attempt_wall_before_trace_ns": 280167465,
+        "attempt_cpu_before_trace_ns": 281732564
+      },
+      "trace_io_wall_ns": 332433,
+      "trace_io_cpu_ns": 0,
+      "compact_attempts": [
+        {
+          "attempt_id": 1,
+          "order": [
+            21,
+            22,
+            2,
+            16,
+            26,
+            11,
+            8,
+            5
+          ],
+          "primary_calls": 8,
+          "primary_stop": "COST_STOP",
+          "failed_position_zero_based": 7,
+          "failed_agent": 5,
+          "failure_site": "COST_BOUND",
+          "accepted": false,
+          "old_group_cost": 509,
+          "final_group_cost": 509,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 2,
+          "order": [
+            21,
+            28,
+            16,
+            11,
+            4,
+            22,
+            31,
+            8
+          ],
+          "primary_calls": 8,
+          "primary_stop": "COST_STOP",
+          "failed_position_zero_based": 7,
+          "failed_agent": 8,
+          "failure_site": "COST_BOUND",
+          "accepted": false,
+          "old_group_cost": 452,
+          "final_group_cost": 452,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 3,
+          "order": [
+            8,
+            2,
+            11,
+            16,
+            25,
+            23,
+            21,
+            5
+          ],
+          "primary_calls": 8,
+          "primary_stop": "FOUND",
+          "failed_position_zero_based": -1,
+          "failed_agent": -1,
+          "failure_site": "COMPLETE",
+          "accepted": true,
+          "old_group_cost": 522,
+          "final_group_cost": 520,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 4,
+          "order": [
+            1,
+            11,
+            16,
+            8
+          ],
+          "primary_calls": 4,
+          "primary_stop": "COST_STOP",
+          "failed_position_zero_based": 3,
+          "failed_agent": 8,
+          "failure_site": "COST_BOUND",
+          "accepted": false,
+          "old_group_cost": 217,
+          "final_group_cost": 217,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 5,
+          "order": [
+            5,
+            26,
+            21,
+            11,
+            1,
+            19
+          ],
+          "primary_calls": 2,
+          "primary_stop": "FOCAL_DRAINED_EMPTY",
+          "failed_position_zero_based": 1,
+          "failed_agent": 26,
+          "failure_site": "RETURN",
+          "accepted": false,
+          "old_group_cost": 401,
+          "final_group_cost": 401,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 6,
+          "order": [
+            16,
+            22,
+            3,
+            31,
+            11,
+            14,
+            27,
+            5
+          ],
+          "primary_calls": 8,
+          "primary_stop": "COST_STOP",
+          "failed_position_zero_based": 7,
+          "failed_agent": 5,
+          "failure_site": "COST_BOUND",
+          "accepted": false,
+          "old_group_cost": 479,
+          "final_group_cost": 479,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 7,
+          "order": [
+            8,
+            25,
+            26,
+            11,
+            19,
+            21,
+            16,
+            29
+          ],
+          "primary_calls": 8,
+          "primary_stop": "COST_STOP",
+          "failed_position_zero_based": 7,
+          "failed_agent": 29,
+          "failure_site": "COST_BOUND",
+          "accepted": false,
+          "old_group_cost": 573,
+          "final_group_cost": 573,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 8,
+          "order": [
+            8,
+            16,
+            1,
+            26,
+            11,
+            21,
+            19
+          ],
+          "primary_calls": 7,
+          "primary_stop": "COST_STOP",
+          "failed_position_zero_based": 6,
+          "failed_agent": 19,
+          "failure_site": "COST_BOUND",
+          "accepted": false,
+          "old_group_cost": 490,
+          "final_group_cost": 490,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 9,
+          "order": [
+            22,
+            16,
+            4,
+            1,
+            5,
+            24,
+            31,
+            7
+          ],
+          "primary_calls": 8,
+          "primary_stop": "COST_STOP",
+          "failed_position_zero_based": 7,
+          "failed_agent": 7,
+          "failure_site": "COST_BOUND",
+          "accepted": false,
+          "old_group_cost": 381,
+          "final_group_cost": 381,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 10,
+          "order": [
+            29,
+            26,
+            1,
+            23,
+            17,
+            19,
+            11,
+            5
+          ],
+          "primary_calls": 8,
+          "primary_stop": "COST_STOP",
+          "failed_position_zero_based": 7,
+          "failed_agent": 5,
+          "failure_site": "COST_BOUND",
+          "accepted": false,
+          "old_group_cost": 549,
+          "final_group_cost": 549,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 11,
+          "order": [
+            8,
+            6,
+            26,
+            22,
+            21,
+            5,
+            2,
+            16
+          ],
+          "primary_calls": 8,
+          "primary_stop": "COST_STOP",
+          "failed_position_zero_based": 7,
+          "failed_agent": 16,
+          "failure_site": "COST_BOUND",
+          "accepted": false,
+          "old_group_cost": 536,
+          "final_group_cost": 536,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 12,
+          "order": [
+            31,
+            30,
+            1,
+            11
+          ],
+          "primary_calls": 4,
+          "primary_stop": "COST_STOP",
+          "failed_position_zero_based": 3,
+          "failed_agent": 11,
+          "failure_site": "COST_BOUND",
+          "accepted": false,
+          "old_group_cost": 153,
+          "final_group_cost": 153,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 13,
+          "order": [
+            7,
+            20,
+            17,
+            11,
+            1,
+            10,
+            16,
+            0
+          ],
+          "primary_calls": 8,
+          "primary_stop": "FOUND",
+          "failed_position_zero_based": -1,
+          "failed_agent": -1,
+          "failure_site": "COMPLETE",
+          "accepted": true,
+          "old_group_cost": 578,
+          "final_group_cost": 573,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 14,
+          "order": [
+            0,
+            8,
+            17,
+            16,
+            12,
+            11,
+            6
+          ],
+          "primary_calls": 7,
+          "primary_stop": "COST_STOP",
+          "failed_position_zero_based": 6,
+          "failed_agent": 6,
+          "failure_site": "COST_BOUND",
+          "accepted": false,
+          "old_group_cost": 544,
+          "final_group_cost": 544,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 15,
+          "order": [
+            23,
+            11,
+            21,
+            4,
+            26,
+            8,
+            5,
+            16
+          ],
+          "primary_calls": 8,
+          "primary_stop": "COST_STOP",
+          "failed_position_zero_based": 7,
+          "failed_agent": 16,
+          "failure_site": "COST_BOUND",
+          "accepted": false,
+          "old_group_cost": 470,
+          "final_group_cost": 470,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        },
+        {
+          "attempt_id": 16,
+          "order": [
+            31,
+            5,
+            16,
+            26,
+            19,
+            11,
+            21,
+            8
+          ],
+          "primary_calls": 4,
+          "primary_stop": "FOCAL_DRAINED_EMPTY",
+          "failed_position_zero_based": 3,
+          "failed_agent": 26,
+          "failure_site": "RETURN",
+          "accepted": false,
+          "old_group_cost": 575,
+          "final_group_cost": 575,
+          "local_deadline_reached": false,
+          "global_deadline_reached": false
+        }
+      ]
+    }
+  ],
+  "cost_stop_candidate_cost_counts": {
+    "equal": 8,
+    "worse": 8
+  },
+  "limits": "Instrumented diagnostic only; phase totals include instrumentation, clock samples are nested and never extrapolated; no speedup or novelty result."
+}
