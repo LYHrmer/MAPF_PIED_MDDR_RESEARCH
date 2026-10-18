@@ -114,12 +114,13 @@ class NativeBackend:
     deadline do not replace a hard supervisor for the entire Python process.
     """
     def __init__(self, problem, incumbent_paths, binary, build_receipt, session_dir,
-                 budget, *, seed, cpu_seconds=45, memory_mib=512):
+                 budget, *, seed, cpu_seconds=45, memory_mib=512, supervised=False):
         self.problem, self.budget = problem, budget
         self.seed = integer(seed)
         integer(cpu_seconds, 1)
         integer(memory_mib, 64)
         self.proc, self.log, self.seq = None, None, 0
+        self.separate_group = not supervised
         self.buffer = bytearray()
         self.cache = {'model_key': problem.model_key, 'scope': 'AUTHOR_H_TABLES_NO_PATH_RESULT_CACHE'}
         self.records, self.child_usage = [], None
@@ -152,7 +153,8 @@ class NativeBackend:
                 resource.setrlimit(resource.RLIMIT_AS, (memory_mib * 1024**2,) * 2)
                 resource.setrlimit(resource.RLIMIT_CORE, (0, 0))
             self.proc = subprocess.Popen([str(binary), '--serve'], stdin=subprocess.PIPE,
-                stdout=subprocess.PIPE, stderr=self.log, start_new_session=True, preexec_fn=limits)
+                stdout=subprocess.PIPE, stderr=self.log,
+                start_new_session=self.separate_group, preexec_fn=limits)
             os.set_blocking(self.proc.stdin.fileno(), False)
             os.set_blocking(self.proc.stdout.fileno(), False)
             answer = self._rpc({'op': 'init', 'map_file': str(folder / 'map.txt'),
@@ -253,8 +255,18 @@ class NativeBackend:
             if answer['num_collisions'] != 0:
                 raise ValueError('native returned a colliding path')
             return SearchReply(SearchStatus.FOUND, candidate)
-        # Empty author return alone is not promoted to a verified exhaustive-search
-        # certificate. Retain and censor until that backend qualification is done.
+        # At the pinned findPath entry, a normal empty return occurs only when
+        # the start has no safe interval at t=0 or the focal list is exhausted.
+        # There is no internal timeout return. A killed/failed RPC never reaches
+        # this branch. This inherits the author's discrete SIPP search semantics;
+        # it is not an independent completeness proof or global MAPF infeasibility.
+        if (answer['status'] == 'EMPTY_CAPPED' and request.max_cost is not None
+                and answer.get('effective_max_cost') == request.max_cost
+                and answer.get('path') == []):
+            return SearchReply(SearchStatus.EXHAUSTED_WITHIN_CAP,
+                               reason='pinned author SIPP completed the finite capped request')
+        # The uncapped author default is itself finite (MAX_TIMESTEP), so do not
+        # promote EMPTY_BASE_LIMIT to unrestricted infeasibility.
         if answer['status'] not in ('EMPTY_CAPPED', 'EMPTY_BASE_LIMIT'):
             self.close()  # An exception may leave author search state incomplete.
         return SearchReply(SearchStatus.FAILED, reason='native ' + answer['status'] + ': ' + answer.get('reason', 'empty/unknown search result'))
@@ -269,8 +281,9 @@ class NativeBackend:
         """Terminate/reap exactly this child; preserve stderr and CPU/RSS accounting."""
         if self.proc is not None:
             process, self.proc = self.proc, None
+            send = os.killpg if self.separate_group else os.kill
             try:
-                os.killpg(process.pid, signal.SIGTERM)
+                send(process.pid, signal.SIGTERM)
             except ProcessLookupError:
                 pass
             until = time.monotonic() + 0.25
@@ -284,7 +297,7 @@ class NativeBackend:
                     break
                 if time.monotonic() >= until:
                     try:
-                        os.killpg(process.pid, signal.SIGKILL)
+                        send(process.pid, signal.SIGKILL)
                     except ProcessLookupError:
                         pass
                     pid, status, usage = os.wait4(process.pid, 0)

@@ -1,6 +1,11 @@
 """Software contracts and declared path fixtures; no solver search or benchmark."""
 
 from dataclasses import replace
+import json
+import os
+from pathlib import Path
+import sys
+import tempfile
 import time
 import unittest
 from unittest.mock import Mock, patch
@@ -8,6 +13,7 @@ from unittest.mock import Mock, patch
 from pp_repair import (Incumbent, Policy, RepairStatus, SearchReply, SearchStatus,
                        SearchRequest, SharedBudget, repair)
 from address_backend import GridProblem, NativeBackend, MAX_TIMESTEP
+from run_repair_dev import supervise, worker, write_json
 
 
 class Clock:
@@ -260,6 +266,7 @@ class BackendContracts(unittest.TestCase):
                 self.backend.search(self.request)
 
     def test_empty_native_result_is_censored_and_keeps_incumbent(self):
+        # Missing terminal fields cannot certify exhaustion.
         self.backend._rpc.return_value = {'status': 'EMPTY_CAPPED'}
         store = Incumbent(self.paths)
         result = repair(store, (5,), {5: 2}, model_key=self.problem.model_key,
@@ -268,6 +275,15 @@ class BackendContracts(unittest.TestCase):
         self.assertEqual(result.status, RepairStatus.FAILED)
         self.assertIsNone(result.improvement_label)
         self.assertIs(result.before, result.after)
+
+    def test_completed_cap_exhaustion_is_scoped_to_that_request(self):
+        self.backend._rpc.return_value = {'status': 'EMPTY_CAPPED', 'path': [], 'effective_max_cost': 2}
+        reply = self.backend.search(self.request)
+        self.assertEqual(reply.status, SearchStatus.EXHAUSTED_WITHIN_CAP)
+        self.backend._rpc.return_value = {'status': 'EMPTY_BASE_LIMIT', 'path': [],
+                                         'effective_max_cost': MAX_TIMESTEP}
+        reply = self.backend.search(replace(self.request, max_cost=None))
+        self.assertEqual(reply.status, SearchStatus.FAILED)
 
     def test_native_failure_ends_session_without_retry(self):
         self.backend._rpc.return_value = {'status': 'FAILED', 'reason': 'scripted exception'}
@@ -286,6 +302,72 @@ class BackendContracts(unittest.TestCase):
         self.assertEqual(self.backend.records[0]['status'], 'TIMEOUT')
         self.assertGreater(self.backend.records[0]['wall_ns'], 0)
         self.backend.close.assert_called_once()
+
+
+class CaseHostContracts(unittest.TestCase):
+    """The watchdog sees only trivial Python children, never ADDRESS/search."""
+    def test_normal_subprocess_is_reaped_and_receipt_write_is_exclusive(self):
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder)
+            cost = supervise([sys.executable, '-c', 'print("software contract")'], path,
+                             wall_s=2, cpu_s=1, memory_mib=128)
+            self.assertEqual(cost['exit_code'], 0)
+            self.assertFalse(cost['forced_cleanup'])
+            self.assertEqual(len(cost['reaped']), 1)
+            write_json(path/'receipt.json', cost)
+            with self.assertRaises(FileExistsError):
+                write_json(path/'receipt.json', {'replacement': True})
+            self.assertEqual(json.loads((path/'receipt.json').read_text()), cost)
+
+    def test_timeout_kills_and_accounts_for_orphan_grandchild(self):
+        code = 'import os,time; p=os.fork(); print(os.getpid(),flush=True); time.sleep(10)'
+        with tempfile.TemporaryDirectory() as folder:
+            cost = supervise([sys.executable, '-c', code], Path(folder),
+                             wall_s=0.3, cpu_s=1, memory_mib=128)
+            self.assertTrue(cost['forced_cleanup'])
+            self.assertEqual(len(cost['reaped']), 2)
+            for child in cost['reaped']:
+                self.assertEqual(child['exit_code'], -9)
+                with self.assertRaises(ProcessLookupError):
+                    os.kill(child['pid'], 0)
+            self.assertGreaterEqual(cost['all_descendant_user_s'], 0)
+
+    def test_interruption_reaps_child_and_records_failure(self):
+        with tempfile.TemporaryDirectory() as folder:
+            with patch('run_repair_dev.time.sleep', side_effect=KeyboardInterrupt('scripted stop')):
+                cost = supervise([sys.executable, '-c', 'import time; time.sleep(10)'], Path(folder),
+                                 wall_s=2, cpu_s=1, memory_mib=128)
+            self.assertTrue(cost['forced_cleanup'])
+            self.assertIn('scripted stop', cost['interruption'])
+            self.assertEqual(cost['exit_code'], -9)
+
+    def test_worker_serializes_complete_fixture_with_fake_backend_only(self):
+        class ScriptedBackend:
+            def __init__(self, problem, initial, binary, receipt, output, budget, **kwargs):
+                self.problem, self.cache, self.records = problem, {}, []
+                self.lower_bounds = {5: 2, 9: 2}
+                self.proc, self.child_usage = None, {'scope': 'MOCK_NO_PROCESS'}
+            def search(self, request):
+                return SearchReply(SearchStatus.FOUND, (0, 1, 2))
+            def validate(self, request):
+                return self.problem.validate(request.paths)
+            def close(self):
+                pass
+        case = {'id': 'software-fixture', 'rows': 2, 'cols': 3, 'blocked': [],
+                'endpoints': {'5': [0, 2], '9': [3, 5]},
+                'paths': {'5': [0, 0, 1, 2], '9': [3, 3, 4, 5]},
+                'orders': [[5]], 'seed': 0}
+        config = {'manifest_sha256': 'scripted', 'limits': {'search_calls': 2,
+                  'native_cpu_s': 1, 'per_process_as_mib': 128}}
+        with tempfile.TemporaryDirectory() as folder:
+            good = worker(config, case, 'REMAINING_BOUND', 'NO_BINARY', Path(folder),
+                          time.monotonic_ns()+10**9, backend_factory=ScriptedBackend)
+            payload = json.loads((Path(folder)/'result.json').read_text())
+            self.assertTrue(good)
+            self.assertEqual(payload['final_soc'], 5)
+            self.assertEqual(payload['initial_soc'], 6)
+            self.assertTrue(payload['final_validated'])
+            self.assertEqual(payload['native_usage']['scope'], 'MOCK_NO_PROCESS')
 
 
 if __name__ == "__main__":
