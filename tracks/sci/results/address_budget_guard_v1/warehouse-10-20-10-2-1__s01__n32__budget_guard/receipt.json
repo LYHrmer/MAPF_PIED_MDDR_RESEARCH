@@ -1,0 +1,84 @@
+{
+  "artifacts": {
+    "agents.txt": {
+      "bytes": 399,
+      "sha256": "e7254f96d622f7cf0bbe2d917b2c503becaac948b674ce92be5c9fa07da7353e"
+    },
+    "attempt.json": {
+      "bytes": 491,
+      "sha256": "e99e92fd74cce88f78e946325ffe5ba4f74135c76ae05ca845faf905259d5fae"
+    },
+    "final.paths": {
+      "bytes": 23274,
+      "sha256": "f08a4c88e44af5e27265341a3b3c43ba5d073e7dab395cfb0fae1eb337513597"
+    },
+    "initial.txt": {
+      "bytes": 12479,
+      "sha256": "3c8f4b0e7dff9503cda1228cfe8901758f87ebbb995037baa8c363d4fbe55fe7"
+    },
+    "map.txt": {
+      "bytes": 10213,
+      "sha256": "e6dc2b24d8555ff37004831b65996e36697c841097a060028eaad655300d0aa7"
+    },
+    "native.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "native.stdout.log": {
+      "bytes": 125,
+      "sha256": "315716a46bb472ea3543131be15331c2ca4f52fe31061c8bdded602ffd3c0369"
+    },
+    "native_receipt.json": {
+      "bytes": 678,
+      "sha256": "b12b2d1c1ac71e1f373a283418bc25d5ab5ad369e9ea2de82cb33e165005cc95"
+    },
+    "result.json": {
+      "bytes": 33679,
+      "sha256": "fb4ae99bf1b18e46c52761adc3346fe286e396f9f32b578a71438d7910e03384"
+    },
+    "worker.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "worker.stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "audit_receipt_write_and_process_exit_excluded": true,
+  "budget_scope": "ENTRY_THROUGH_RESULT_OUTPUT_EXTERNAL_FINAL_CHECK_AND_ARTIFACT_HASH",
+  "coordinator_io_is_not_preemptively_bounded_here": true,
+  "costs": {
+    "all_descendant_system_s": 0.09054899999999999,
+    "all_descendant_user_s": 0.14726699999999998,
+    "exit_code": 0,
+    "forced_cleanup": false,
+    "interruption": null,
+    "largest_child_maxrss_kib": 20308,
+    "reaped": [
+      {
+        "exit_code": 0,
+        "maxrss_kib": 20308,
+        "pid": 12,
+        "system_s": 0.09054899999999999,
+        "user_s": 0.14726699999999998
+      }
+    ],
+    "scope": "WORKER_IMPORT_TO_EXIT_INCLUDING_RESULT_IO_AND_WAITED_NATIVE",
+    "wall_ns": 243688536
+  },
+  "independent_performance_result": false,
+  "job": {
+    "case": "warehouse-10-20-10-2-1__s01__n32",
+    "id": "warehouse-10-20-10-2-1__s01__n32__budget_guard",
+    "iterations": 16,
+    "seed": 0,
+    "top_k": 32
+  },
+  "manifest_sha256": "edcef325cb0099550f99b9200aa386625c5815bdf3e806cd90a5088486d67cd1",
+  "retry_allowed": false,
+  "status": "COMPLETE",
+  "supervisor_self_cpu_s": 0.056644,
+  "total_entry_through_output_validation_and_hash_ns": 284261943,
+  "total_wall_is_success_admission_budget": true
+}

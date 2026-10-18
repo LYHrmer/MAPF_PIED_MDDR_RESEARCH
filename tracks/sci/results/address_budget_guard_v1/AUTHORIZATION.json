@@ -1,0 +1,32 @@
+{
+  "schema": "actual_user_authorization_record_v1",
+  "recorded_utc": "2026-10-18T06:24:47.046250+00:00",
+  "user_message": "先授权SCI三项（推荐）",
+  "source": "Direct user reply to this session question call_246c3964e21c49edbfc5ea8ccec7df82",
+  "scope": "Only the three SCI ADDRESS_BUDGET_CHECKLIST jobs; thesis motion batch not authorized",
+  "scientific_code_commit": "101f18c6d65ae3d8b1ba263bd95e0397df21eaf0",
+  "manifest_sha256": "edcef325cb0099550f99b9200aa386625c5815bdf3e806cd90a5088486d67cd1",
+  "jobs": [
+    "random-32-32-10__s01__n32__budget_guard",
+    "maze-32-32-2__s01__n32__budget_guard",
+    "warehouse-10-20-10-2-1__s01__n32__budget_guard"
+  ],
+  "limits": {
+    "external_final_reserve_s": 0.5,
+    "inner_final_reserve_s": 1,
+    "native_cpu_reserve_s": 1,
+    "native_cpu_s": 10,
+    "per_process_as_mib": 512,
+    "total_wall_s": 15,
+    "worker_cpu_s": 10
+  },
+  "external_command_guard": {
+    "kill_grace_s": 2,
+    "required": true,
+    "term_after_s": 20,
+    "tool": "timeout"
+  },
+  "retry": 0,
+  "stop_batch_on_any_failure": true,
+  "record_is_not_permission_source": true
+}

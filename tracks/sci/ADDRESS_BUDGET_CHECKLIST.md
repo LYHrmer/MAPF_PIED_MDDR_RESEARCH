@@ -1,10 +1,10 @@
-# 完整ADDRESS共同截止：三项功能DEV待授权清单
+# 完整ADDRESS共同截止：三项功能DEV清单（已消费）
 
-**状态：实现、软件夹具、编译/help和inspect完成，未科学运行。**
-本提案仅验证基线在当前预算内输出完整合法方案，不测试恢复收益或学习。
+**当前状态：用户回复“先授权SCI三项（推荐）”后，三项全部COMPLETE、零重试，许可已消费，不得重跑。** 结果、实际覆盖及费用见[结果报告](ADDRESS_BUDGET_RESULT.md)。执行代码固定`101f18c`；原JSON清单及以下执行条件保留，不按结果放宽。
+本清单仅验证基线在当前预算内输出完整合法方案，不测试恢复收益或学习。
 此前两批完整ADDRESS在失败后关闭的许可均不可复用。
 
-[实现与适用边界](ADDRESS_BUDGET.md)采用共同墙钟/进程CPU软截止，覆盖构组、单次SIPP内部及预处理，收尾保留完整回滚、校验和输出。初解验证、回滚、清理、输出和系统调度没有任意规模硬实时保证；下面的固定任务仍须真实验证，不能把编译成功称为random32问题已解决。
+[实现与适用边界](ADDRESS_BUDGET.md)采用共同墙钟/进程CPU软截止，覆盖构组、单次SIPP内部及预处理，收尾保留完整回滚、校验和输出。初解验证、回滚、清理、输出和系统调度没有任意规模硬实时保证；本次固定任务的真实覆盖见结果报告，不能从构组到期成功推广至所有截止位置。
 
 ## 固定身份
 
@@ -30,7 +30,7 @@
 
 任一异常、非零退出、超限、缺文件、错SHA、全检失败或SOC变差即停整批，零重试。即使初解仍在磁盘，缺有效最终输出仍是失败。剩余许可同时关闭，不修好后接续。失败与partial全部保留，计入分母；`DEADLINE`不是穷尽、不可行或恢复训练标签。
 
-三项输出固定在`tracks/sci/results/address_budget_guard_v1/`，当前不存在。取得真实授权后另存授权记录，每项独占子目录；逐项核对attempt、result、receipt与工件后才执行下一项。沿用`repair_profile.py address`生成包含成功、失败和停批未运行项目的总账，不仅统计成功者。
+三项输出固定在`tracks/sci/results/address_budget_guard_v1/`，现已包含实际授权、三项独占子目录及总收据。执行时逐项核对attempt、result、receipt与工件后才执行下一项。沿用`repair_profile.py address`生成完整总账；旧批证据未覆盖。
 
 ## 命令
 
@@ -40,7 +40,7 @@
 rtk proxy python3 -B tracks/sci/run_address_adapter.py inspect --manifest tracks/sci/config/address_budget_guard_v1_manifest.json --sha256 edcef325cb0099550f99b9200aa386625c5815bdf3e806cd90a5088486d67cd1
 ```
 
-取得对本清单的真实用户授权后，逐项替换job和授权引用，不能并行或忽略退出码：
+以下保留已消费批次的命令格式，仅供审阅；不得再执行或复用本次授权：
 
 ```bash
 rtk proxy timeout --signal=TERM --kill-after=2s 20s python3 -B tracks/sci/run_address_adapter.py run \
