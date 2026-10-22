@@ -29,7 +29,8 @@ def comparison_settings(config, job):
         if any(key in job for key in ('seed_admission', 'effort_mode', 'reward_memory', 'reward_window')):
             raise ValueError('seed/effort settings require comparison protocol')
         return None
-    variants = {'seed_admission_v1': 'budget_guard', 'reward_memory_v1': 'reward_contract'}
+    variants = {'seed_admission_v1': 'budget_guard', 'reward_memory_v1': 'reward_contract',
+                'reward_cost_diagnostic_v1': 'reward_contract'}
     if protocol not in variants or config.get('variant') != variants[protocol]:
         raise ValueError('unsupported seed comparison protocol')
     if config.get('attempt_trace', False) or config.get('phase_profile', False):
@@ -42,12 +43,15 @@ def comparison_settings(config, job):
             (mode == 'fixed_repairs' and iterations < 1) or
             (mode == 'total_budget' and iterations != 0)):
         raise ValueError('repair cap must be positive for fixed work and zero for total budget')
-    if protocol == 'reward_memory_v1':
+    if protocol in ('reward_memory_v1', 'reward_cost_diagnostic_v1'):
         memory, width = job.get('reward_memory'), job.get('reward_window')
         if (policy != 'positive_delay' or mode != 'total_budget' or
                 memory not in ('author', 'cumulative', 'window') or type(width) is not int or
                 (width <= 0 if memory == 'window' else width != 0)):
             raise ValueError('reward comparison requires common positive-delay/time policy and explicit memory')
+        if protocol == 'reward_cost_diagnostic_v1' and (memory != 'author' or width != 0 or
+                config.get('cost_diagnostics') is not True):
+            raise ValueError('cost diagnostic fixes author memory and explicit instrumentation')
     elif 'reward_memory' in job or 'reward_window' in job:
         raise ValueError('reward settings require reward comparison protocol')
     return policy, mode
@@ -71,6 +75,9 @@ def load(path, expected_sha):
               'reward_contract': 'ADDRESS_COMMON_INITIAL_REWARD_CONTRACT_COMPILE_AND_HELP_ONLY'}
     if variant not in scopes:
         raise ValueError('unreviewed runner variant')
+    if type(config.get('cost_diagnostics', False)) is not bool or (
+            config.get('cost_diagnostics', False) != (config.get('comparison_protocol') == 'reward_cost_diagnostic_v1')):
+        raise ValueError('cost instrumentation requires its separate diagnostic protocol')
     if type(config.get('attempt_trace', False)) is not bool:
         raise ValueError('attempt_trace must be boolean')
     if config.get('attempt_trace', False) and variant != 'budget_guard':
@@ -83,7 +90,7 @@ def load(path, expected_sha):
                 'pp_repair.py', receipt_name}
     if variant == 'reward_contract':
         required.add('reward_analysis.py')
-        if config.get('comparison_protocol') != 'reward_memory_v1':
+        if config.get('comparison_protocol') not in ('reward_memory_v1', 'reward_cost_diagnostic_v1'):
             raise ValueError('reward binary requires an explicit comparison protocol')
     if not required <= config['code_sha256'].keys():
         raise ValueError('missing runtime/build receipt pins')
@@ -141,6 +148,8 @@ def load(path, expected_sha):
             raise ValueError('binary lacks reviewed seed admission / effort capabilities')
     if variant == 'reward_contract' and receipt.get('reward_memory_modes') != ['author', 'cumulative', 'window']:
         raise ValueError('binary lacks reviewed reward modes')
+    if config.get('cost_diagnostics') and receipt.get('reward_cost_diagnostics_schema') != 'ADDRESS_REWARD_COST_V1':
+        raise ValueError('binary lacks reviewed reward cost instrumentation')
     if config.get('retry') != 0:
         raise ValueError('zero retry required')
     limits = config['limits']
@@ -170,7 +179,7 @@ def load(path, expected_sha):
         settings = comparison_settings(config, job)
         if job['seed'] < 0 or (settings is None and job['iterations'] < 1) or job['top_k'] < 1:
             raise ValueError('invalid solver settings')
-    if variant == 'reward_contract':
+    if variant == 'reward_contract' and config['comparison_protocol'] == 'reward_memory_v1':
         expected = {(case, seed, mode) for case in ids for seed in (0, 1, 2)
                     for mode in ('author', 'cumulative', 'window')}
         actual = [(j['case'], j['seed'], j['reward_memory']) for j in jobs]
@@ -179,6 +188,15 @@ def load(path, expected_sha):
                 any(c.get('current_split') != 'HISTORICAL_TEST_HELD_OUT_FROM_S01_REWARD_DESIGN' for c in bundle['cases']) or
                 config.get('evidence_scope') != 'HELD_OUT_FROM_REWARD_DESIGN_HISTORICAL_TASK_PILOT'):
             raise ValueError('reward pilot requires its fixed four-task/three-seed/three-mode design')
+    if config.get('comparison_protocol') == 'reward_cost_diagnostic_v1':
+        cases = ('maze-32-32-2__s05__n32', 'random-32-32-10__s05__n32')
+        expected = [(case, seed, 'author') for seed in (0, 1, 2) for case in cases]
+        actual = [(j['case'], j['seed'], j['reward_memory']) for j in jobs]
+        if (actual != expected or any(j['top_k'] != 32 for j in jobs) or
+                not set(cases) <= ids or config.get('evidence_scope') != 'COST_DIAGNOSIS_ON_KNOWN_DESIGN_TASKS' or
+                config.get('stop_batch_on_any_failure') is not True or
+                config.get('previous_authorization_reusable') is not False):
+            raise ValueError('cost diagnostic requires fixed six-job known-task design and fresh authorization')
     if not re.fullmatch(r'[A-Za-z0-9_-]+', config['batch_id']):
         raise ValueError('invalid batch id')
     return config, bundle, binary
@@ -523,6 +541,8 @@ def worker(config, case, job, binary, folder, deadline_ns, command_factory=comma
         if config.get('variant') == 'reward_contract':
             cmd += ['--rewardMemory', job['reward_memory'], '--rewardWindow', str(job['reward_window']),
                     '--rewardTrace', str(folder/'rewards.jsonl')]
+            if config.get('cost_diagnostics'):
+                cmd += ['--costDiagnostics', '1']
         payload['native_command'] = cmd
         def native_limits():
             resource.setrlimit(resource.RLIMIT_CPU, (limits['native_cpu_s'],)*2)
@@ -553,7 +573,8 @@ def worker(config, case, job, binary, folder, deadline_ns, command_factory=comma
             if config.get('variant') == 'reward_contract':
                 from reward_analysis import verify_reward_trace
                 payload['reward_diagnostics'] = verify_reward_trace(
-                    (folder/'rewards.jsonl').read_bytes(), native, job, len(problem.ids))
+                    (folder/'rewards.jsonl').read_bytes(), native, job, len(problem.ids),
+                    require_cost_diagnostics=config.get('cost_diagnostics', False))
             phase = verify_phase_profile(native, config)
             if phase is not None:
                 payload['phase_diagnostics'] = phase
@@ -584,7 +605,7 @@ def execute(args, config, bundle, binary):
     if not args.authorization_reference or len(args.authorization_reference.strip()) < 8:
         raise ValueError('actual user permission reference required; a flag is not permission')
     job = next(job for job in config['jobs'] if job['id'] == args.job)
-    if config.get('comparison_protocol') == 'reward_memory_v1':
+    if config.get('comparison_protocol') in ('reward_memory_v1', 'reward_cost_diagnostic_v1'):
         # A missing terminal receipt is also a stop, not permission to skip it.
         for prior in config['jobs'][:config['jobs'].index(job)]:
             saved = json.loads((HERE/'results'/config['batch_id']/prior['id']/'receipt.json').read_bytes())
@@ -652,6 +673,14 @@ def main():
     if args.mode == 'inspect':
         for job in config['jobs']:
             case = next(case for case in bundle['cases'] if case['id'] == job['case'])
+            if config.get('comparison_protocol') == 'reward_cost_diagnostic_v1':
+                paths = case['paths']
+                if len(paths) != 32 or job['top_k'] != len(paths):
+                    raise ValueError('invalid fixed diagnostic task domain')
+                print(json.dumps({'job': job, 'initial_soc': sum(len(p)-1 for p in paths.values()),
+                    'inspection': 'PINNED_BYTES_AND_JSON_ONLY', 'problem_constructed': False,
+                    'search_executed': False}))
+                continue
             problem, paths = unpack(case)
             if len(paths) < 8 or job['top_k'] > len(paths):
                 raise ValueError('invalid ADDRESS task domain')

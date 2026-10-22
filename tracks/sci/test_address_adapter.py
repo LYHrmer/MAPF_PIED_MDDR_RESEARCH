@@ -13,10 +13,58 @@ from run_address_adapter import (load, parse_paths, verify_attempt_trace, verify
                                  verify_phase_profile, verify_seed_comparison, comparison_settings,
                                  PHASE_NAMES, worker)
 from run_repair_dev import unpack
-from reward_analysis import diagnose_legacy, verify_reward_trace, committed_magnitude_feedback
+from reward_analysis import (diagnose_legacy, verify_reward_trace, committed_magnitude_feedback,
+                             verify_deadline_observations)
 
 
 class AdapterContracts(unittest.TestCase):
+    def test_cost_inspection_never_constructs_problem_or_search(self):
+        import io
+        import json
+        import run_address_adapter
+        job=dict(case='fixture',top_k=32)
+        config=dict(comparison_protocol='reward_cost_diagnostic_v1',jobs=[job])
+        bundle=dict(cases=[dict(id='fixture',paths={str(i):[i,i] for i in range(32)})])
+        output=io.StringIO()
+        with patch('sys.argv',['runner','inspect','--manifest','unused.json','--sha256','unused']), \
+                patch('run_address_adapter.load',return_value=(config,bundle,Path('unused'))), \
+                patch('run_address_adapter.unpack',side_effect=AssertionError('must not construct GridProblem')), \
+                patch('sys.stdout',output):
+            self.assertEqual(run_address_adapter.main(),0)
+        value=json.loads(output.getvalue())
+        self.assertFalse(value['problem_constructed'])
+        self.assertFalse(value['search_executed'])
+
+    def test_cost_diagnostic_requires_explicit_protocol_and_fixed_author_rule(self):
+        config=dict(variant='reward_contract',comparison_protocol='reward_cost_diagnostic_v1',cost_diagnostics=True)
+        job=dict(seed_admission='positive_delay',effort_mode='total_budget',iterations=0,
+                 reward_memory='author',reward_window=0)
+        self.assertEqual(comparison_settings(config,job),('positive_delay','total_budget'))
+        for changed in (dict(job,reward_memory='cumulative'),dict(job,reward_memory='window',reward_window=16)):
+            with self.assertRaises(ValueError):comparison_settings(config,changed)
+        with self.assertRaises(ValueError):comparison_settings(dict(config,cost_diagnostics=False),job)
+
+    def test_first_observation_rejects_missing_simultaneous_scope_and_false_trigger(self):
+        import copy
+        o=dict(stage='SIPP_RETURN',resource='WALL_AND_CPU',scope='LOCAL_AND_GLOBAL',
+               observed_wall_ns=100,observed_cpu_ns=90,global_wall_limit_ns=200,global_cpu_limit_ns=90,
+               local_wall_limit_ns=100,local_wall_triggered=True,global_wall_triggered=False,global_cpu_triggered=True)
+        data=dict(first_observed_deadline=o,first_observed_local_deadline=o,first_observed_global_deadline=o,
+                  wall_clock='STEADY_ABSOLUTE_NS',cpu_clock='PROCESS_CPU_ABSOLUTE_NS')
+        verify_deadline_observations(data)
+        # A false global-wall flag may share its integer-ns bin with the limit.
+        rounded={key:dict(value,global_wall_limit_ns=100) if isinstance(value,dict) else value
+                 for key,value in data.items()}
+        verify_deadline_observations(rounded)
+        with self.assertRaises(ValueError):verify_deadline_observations(dict(data,first_observed_global_deadline=None))
+        overwritten=dict(data,first_observed_global_deadline=dict(o,
+            observed_wall_ns=110,observed_cpu_ns=95,stage='REWARD_VALIDATION'))
+        with self.assertRaises(ValueError):verify_deadline_observations(overwritten)
+        bad=copy.deepcopy(data)
+        for key in ('first_observed_deadline','first_observed_local_deadline','first_observed_global_deadline'):
+            bad[key]['observed_wall_ns']=201
+        with self.assertRaises(ValueError):verify_deadline_observations(bad)
+
     def test_magnitude_feedback_preserves_terminal_objective_and_censor_unknown(self):
         rows = [dict(old_task_soc=10, committed_task_soc=8, committed_gain=2,
                      selection_wall_before_log_ns=20, outcome='ACCEPTED',

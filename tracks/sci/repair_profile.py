@@ -844,10 +844,11 @@ def address_results(manifest, expected_sha, output=None):
                 if summary != result.get('comparison_diagnostics'):
                     raise ValueError('offline seed comparison differs from worker')
                 row['comparison_diagnostics'] = summary
-            if config.get('comparison_protocol') == 'reward_memory_v1':
+            if config.get('comparison_protocol') in ('reward_memory_v1', 'reward_cost_diagnostic_v1'):
                 from reward_analysis import verify_reward_trace
                 summary = verify_reward_trace((folder/'rewards.jsonl').read_bytes(),
-                                              result['native_receipt'], job, len(problem.ids))
+                                              result['native_receipt'], job, len(problem.ids),
+                                              require_cost_diagnostics=config.get('cost_diagnostics', False))
                 if summary != result.get('reward_diagnostics'):
                     raise ValueError('offline reward ledger differs from worker')
                 row['reward_diagnostics'] = summary
@@ -863,7 +864,9 @@ def address_results(manifest, expected_sha, output=None):
     artifacts = {str(p.relative_to(batch)): {'bytes': p.stat().st_size, 'sha256': sha(p.read_bytes())}
                  for p in sorted(batch.rglob('*')) if p.is_file()}
     reward_comparison = config.get('comparison_protocol') == 'reward_memory_v1'
-    value = {'scope': 'ADDRESS_REWARD_HELDOUT_TASK_PILOT' if reward_comparison else 'ADDRESS_FUNCTIONAL_DEV_STOPPED_BATCH_AUDIT',
+    cost_diagnostic = config.get('comparison_protocol') == 'reward_cost_diagnostic_v1'
+    value = {'scope': 'ADDRESS_REWARD_COST_KNOWN_TASK_DIAGNOSTIC' if cost_diagnostic else
+                     'ADDRESS_REWARD_HELDOUT_TASK_PILOT' if reward_comparison else 'ADDRESS_FUNCTIONAL_DEV_STOPPED_BATCH_AUDIT',
         'manifest_sha256': expected_sha, 'scientific_code_commit': auth['scientific_code_commit'],
         'analyzer_sha256': sha(Path(__file__).read_bytes()), 'new_search_by_analyzer': False,
         'status': 'STOPPED_ON_FIRST_FAILURE' if failed_job else 'ALL_COMPLETE',
@@ -872,7 +875,8 @@ def address_results(manifest, expected_sha, output=None):
                    for status in ('COMPLETE', 'FAILED_OR_INCOMPLETE', 'NOT_RUN_AFTER_BATCH_STOP')},
         'authorization_consumed_or_closed': True, 'retry_allowed': False,
         'remaining_jobs_require_new_authorization': bool(failed_job),
-        'limits': [('four held-out-from-reward-design historical tasks; solver seeds are within-task repeats; no offline training'
+        'limits': [('two known design tasks; three within-task seeds; author mode only; observations do not establish a new policy benefit'
+                    if cost_diagnostic else 'four held-out-from-reward-design historical tasks; solver seeds are within-task repeats; no offline training'
                     if reward_comparison else 'single functional DEV, no candidate recovery or learning'),
                    'historical fixed-ID probe times are not paired performance baselines',
                    'failures and unattempted jobs retained; no survivor-only aggregate',

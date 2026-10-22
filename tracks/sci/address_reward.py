@@ -35,8 +35,13 @@ def adapt(files):
     lns = edit_function(lns, 'bool LNS::run()', run)
     lns = edit_function(lns, 'int LNS::bernoulie()', lambda src: replace_exact(src,
         '    return best_agent;', '    address_reward::bind_seed(best_agent);\n    return best_agent;'))
+    lns = edit_function(lns, 'int LNS::bernoulie()', lambda src: replace_exact(src,
+        '    if(address_budget::positive_seed_admission()) {',
+        '    address_reward::seed_pool_completed(int(topAgents.size()));\n    if(address_budget::positive_seed_admission()) {'))
 
     def repair(src):
+        src = replace_exact(src, '    budget_attempt.primary_done(remaining_agents,int(p-shuffled_agents.begin()));',
+            '    address_reward::search_returned(budget_attempt.primary_stop,remaining_agents);\n    budget_attempt.primary_done(remaining_agents,int(p-shuffled_agents.begin()));')
         src = replace_exact(src, '    auto shuffled_agents = neighbor.agents;', '''    address_reward::group(int(neighbor.agents.size()),neighbor.old_sum_of_costs);
     auto shuffled_agents = neighbor.agents;''')
         src = replace_exact(src, '        budget_attempt.returned(id,', '''        if(!agents[id].path.empty())address_reward::found(int(agents[id].path.size())-1);

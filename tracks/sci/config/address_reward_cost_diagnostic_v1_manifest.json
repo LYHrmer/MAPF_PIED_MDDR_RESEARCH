@@ -1,0 +1,146 @@
+{
+  "attempt_trace": false,
+  "authorization": "PENDING_USER",
+  "batch_id": "address_reward_cost_diagnostic_v1",
+  "binary": ".address_reward_build/cost_diagnostic_v1_final/build/address",
+  "binary_sha256": "56348dd7b42a51ad5f94e90a5bb07328f2010159b07ee42722c8798c56d39609",
+  "build_receipt": "reward_cost_diagnostic_build_receipt.json",
+  "build_source_sha256": {
+    "address_adapter.py": "7bd6ee6e969cb27414626289398b657f0b9ad7398903c9ab16cc76a5fcc00632",
+    "address_adapter_support.h": "8d9fbea2048eac1245df4d743580f994a23f2cb4d48089e9575de2508be94bc2",
+    "address_budget.py": "54657e47cffeaf279f043c179ff3188323d7e70ff2ccf9d8811c5285955e18b7",
+    "address_budget_support.h": "3a91ae1441ec377dd4ddb1c701163793ea0e93b45052ee658d0d8a64ac7603a6",
+    "address_loop_guard.py": "e533545391e86aaac0b1c057c14eee398c5dd46343a1b677d355087df1c4b8df",
+    "address_reward.py": "1eed4ac2e2a0dec8cc95a4f1cd876e8a6cf0c91e0ef25fa5d3571a26a4153595",
+    "address_reward_support.h": "e08600c44fb254640b322ead677aa90062e9a2e4b94a262ce8965ff36fbd03b0",
+    "build_address_full.py": "8dafd16145f3c9216409d754e3d775ea89dbaa50d54956248b8ebcc759d1385e"
+  },
+  "code_sha256": {
+    "address_backend.py": "04cabeaf78f0425a6c9835d6c3e5eb2ee53fb2a1f63db907c456bbbbba94fd84",
+    "pp_repair.py": "f6a64ddee77c5a6d15659bf69fff5d3b75fc9ca936d2b4a46942d3f7467ea782",
+    "repair_profile.py": "e25b609fd48bee39a3516a5c08a233de24dbda1f5d38e2e8f509324eccc78450",
+    "reward_analysis.py": "c56538e595cc889d6fde3e75f72e3040e55bcee0c931977890486e5793ba2eeb",
+    "reward_cost_diagnostic_build_receipt.json": "1d526714bb44523697089a683baa8d8f0b267e44c2e1a09bfb77b2b033fdafc2",
+    "run_address_adapter.py": "b932737e5f6a1fb8c7bc037e04dbba739f6b1c31823c3827f15563d8fc9c2394",
+    "run_repair_dev.py": "fc9573e1f1f55a890b93b717fe082eb7beedb69f33d731988ef68709781be29e"
+  },
+  "comparison_protocol": "reward_cost_diagnostic_v1",
+  "contrasts": [],
+  "cost_diagnostics": true,
+  "decision_rule": "one fixed diagnostic batch; classify shared engineering cost before any new reward comparison; no policy benefit claim",
+  "evidence_scope": "COST_DIAGNOSIS_ON_KNOWN_DESIGN_TASKS",
+  "external_command_guard": {
+    "kill_grace_s": 2,
+    "required": true,
+    "term_after_s": 10,
+    "tool": "timeout"
+  },
+  "historical_uninstrumented_runs_are_not_paired_speed_baselines": true,
+  "independent_task_units": 2,
+  "input_file": "address_reward_holdout_v1_inputs.json",
+  "input_sha256": "660b7bc4b4282db1feedd373a9220dc98638c18bcb835123aff448c83eadcf3e",
+  "jobs": [
+    {
+      "case": "maze-32-32-2__s05__n32",
+      "effort_mode": "total_budget",
+      "id": "maze-32-32-2__s05__n32__seed0__author",
+      "iterations": 0,
+      "reward_memory": "author",
+      "reward_window": 0,
+      "seed": 0,
+      "seed_admission": "positive_delay",
+      "top_k": 32
+    },
+    {
+      "case": "random-32-32-10__s05__n32",
+      "effort_mode": "total_budget",
+      "id": "random-32-32-10__s05__n32__seed0__author",
+      "iterations": 0,
+      "reward_memory": "author",
+      "reward_window": 0,
+      "seed": 0,
+      "seed_admission": "positive_delay",
+      "top_k": 32
+    },
+    {
+      "case": "maze-32-32-2__s05__n32",
+      "effort_mode": "total_budget",
+      "id": "maze-32-32-2__s05__n32__seed1__author",
+      "iterations": 0,
+      "reward_memory": "author",
+      "reward_window": 0,
+      "seed": 1,
+      "seed_admission": "positive_delay",
+      "top_k": 32
+    },
+    {
+      "case": "random-32-32-10__s05__n32",
+      "effort_mode": "total_budget",
+      "id": "random-32-32-10__s05__n32__seed1__author",
+      "iterations": 0,
+      "reward_memory": "author",
+      "reward_window": 0,
+      "seed": 1,
+      "seed_admission": "positive_delay",
+      "top_k": 32
+    },
+    {
+      "case": "maze-32-32-2__s05__n32",
+      "effort_mode": "total_budget",
+      "id": "maze-32-32-2__s05__n32__seed2__author",
+      "iterations": 0,
+      "reward_memory": "author",
+      "reward_window": 0,
+      "seed": 2,
+      "seed_admission": "positive_delay",
+      "top_k": 32
+    },
+    {
+      "case": "random-32-32-10__s05__n32",
+      "effort_mode": "total_budget",
+      "id": "random-32-32-10__s05__n32__seed2__author",
+      "iterations": 0,
+      "reward_memory": "author",
+      "reward_window": 0,
+      "seed": 2,
+      "seed_admission": "positive_delay",
+      "top_k": 32
+    }
+  ],
+  "limits": {
+    "external_final_reserve_s": 1,
+    "inner_final_reserve_s": 1,
+    "native_cpu_reserve_s": 1,
+    "native_cpu_s": 10,
+    "per_process_as_mib": 512,
+    "total_wall_s": 5,
+    "worker_cpu_s": 10
+  },
+  "maximum_sum_external_guard_wall_s": 72,
+  "maximum_total_success_admission_wall_s": 30,
+  "new_initial_search": false,
+  "new_selection_policy": false,
+  "phase_profile": false,
+  "previous_authorization_reusable": false,
+  "primary_endpoint": "first_observed_deadline_and_exclusive_cost_attribution",
+  "retry": 0,
+  "schema": "address_common_initial_dev_v1",
+  "secondary_endpoints": [
+    "final_validated_SOC",
+    "makespan",
+    "censor_and_candidate_state",
+    "completed_eligible_topk_pool_size",
+    "full_admission_cost"
+  ],
+  "selection_instrumentation_charged_to_existing_budget": true,
+  "stop_batch_on_any_failure": true,
+  "tasks_are_known_design_data": true,
+  "training": false,
+  "variant": "reward_contract",
+  "within_task_solver_seeds": [
+    0,
+    1,
+    2
+  ],
+  "world": false
+}

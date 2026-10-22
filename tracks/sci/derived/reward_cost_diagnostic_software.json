@@ -1,0 +1,79 @@
+{
+  "schema": "ADDRESS_REWARD_COST_SOFTWARE_ONLY_V1",
+  "manifest_sha256": "baf2255de8838c2d3bc2dc253523693fe78f9e3ceb24a04dad495a1b0aedf3cd",
+  "scientific_runs": 0,
+  "solver_instance_constructed": false,
+  "training": false,
+  "checks": [
+    {
+      "name": "software_fixtures",
+      "command": [
+        "rtk",
+        "proxy",
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "test_address_adapter",
+        "test_address_budget",
+        "test_address_loop_guard"
+      ],
+      "exit_code": 0,
+      "wall_ns": 23928838208,
+      "stdout": "",
+      "stderr": "..................................................\n----------------------------------------------------------------------\nRan 50 tests in 23.818s\n\nOK\n"
+    },
+    {
+      "name": "byte_only_inspection",
+      "command": [
+        "rtk",
+        "proxy",
+        "/usr/bin/python3",
+        "-B",
+        "run_address_adapter.py",
+        "inspect",
+        "--manifest",
+        "/home/lyh/MAPF_SCI_RESEARCH/tracks/sci/config/address_reward_cost_diagnostic_v1_manifest.json",
+        "--sha256",
+        "baf2255de8838c2d3bc2dc253523693fe78f9e3ceb24a04dad495a1b0aedf3cd"
+      ],
+      "exit_code": 0,
+      "wall_ns": 90343307,
+      "stdout": "{\"job\": {\"case\": \"maze-32-32-2__s05__n32\", \"effort_mode\": \"total_budget\", \"id\": \"maze-32-32-2__s05__n32__seed0__author\", \"iterations\": 0, \"reward_memory\": \"author\", \"reward_window\": 0, \"seed\": 0, \"seed_admission\": \"positive_delay\", \"top_k\": 32}, \"initial_soc\": 2000, \"inspection\": \"PINNED_BYTES_AND_JSON_ONLY\", \"problem_constructed\": false, \"search_executed\": false}\n{\"job\": {\"case\": \"random-32-32-10__s05__n32\", \"effort_mode\": \"total_budget\", \"id\": \"random-32-32-10__s05__n32__seed0__author\", \"iterations\": 0, \"reward_memory\": \"author\", \"reward_window\": 0, \"seed\": 0, \"seed_admission\": \"positive_delay\", \"top_k\": 32}, \"initial_soc\": 753, \"inspection\": \"PINNED_BYTES_AND_JSON_ONLY\", \"problem_constructed\": false, \"search_executed\": false}\n{\"job\": {\"case\": \"maze-32-32-2__s05__n32\", \"effort_mode\": \"total_budget\", \"id\": \"maze-32-32-2__s05__n32__seed1__author\", \"iterations\": 0, \"reward_memory\": \"author\", \"reward_window\": 0, \"seed\": 1, \"seed_admission\": \"positive_delay\", \"top_k\": 32}, \"initial_soc\": 2000, \"inspection\": \"PINNED_BYTES_AND_JSON_ONLY\", \"problem_constructed\": false, \"search_executed\": false}\n{\"job\": {\"case\": \"random-32-32-10__s05__n32\", \"effort_mode\": \"total_budget\", \"id\": \"random-32-32-10__s05__n32__seed1__author\", \"iterations\": 0, \"reward_memory\": \"author\", \"reward_window\": 0, \"seed\": 1, \"seed_admission\": \"positive_delay\", \"top_k\": 32}, \"initial_soc\": 753, \"inspection\": \"PINNED_BYTES_AND_JSON_ONLY\", \"problem_constructed\": false, \"search_executed\": false}\n{\"job\": {\"case\": \"maze-32-32-2__s05__n32\", \"effort_mode\": \"total_budget\", \"id\": \"maze-32-32-2__s05__n32__seed2__author\", \"iterations\": 0, \"reward_memory\": \"author\", \"reward_window\": 0, \"seed\": 2, \"seed_admission\": \"positive_delay\", \"top_k\": 32}, \"initial_soc\": 2000, \"inspection\": \"PINNED_BYTES_AND_JSON_ONLY\", \"problem_constructed\": false, \"search_executed\": false}\n{\"job\": {\"case\": \"random-32-32-10__s05__n32\", \"effort_mode\": \"total_budget\", \"id\": \"random-32-32-10__s05__n32__seed2__author\", \"iterations\": 0, \"reward_memory\": \"author\", \"reward_window\": 0, \"seed\": 2, \"seed_admission\": \"positive_delay\", \"top_k\": 32}, \"initial_soc\": 753, \"inspection\": \"PINNED_BYTES_AND_JSON_ONLY\", \"problem_constructed\": false, \"search_executed\": false}\n",
+      "stderr": ""
+    }
+  ],
+  "legacy_exact_summary_matches": 36,
+  "legacy_events_verified": 21873,
+  "legacy_receipt_sha256": "e7a131d70d573f87c734ce467282b7835e7f1a74f9c8ca0d6f814903018fe16c",
+  "legacy_frozen_artifacts_changed": false,
+  "build_receipt_sha256": "1d526714bb44523697089a683baa8d8f0b267e44c2e1a09bfb77b2b033fdafc2",
+  "binary_sha256": "56348dd7b42a51ad5f94e90a5bb07328f2010159b07ee42722c8798c56d39609",
+  "author_unchanged": true,
+  "source_sha256": {
+    "test_address_adapter.py": "caa7e8611810d015721c33084129fa200211530bb0898932d853e54e1baee5ae",
+    "test_address_budget.py": "9139d5f1e1a6b2a1321f6ef9ffad26b0f4075ec20dbd2baf25e88192c452fc6e",
+    "test_address_loop_guard.py": "e46691e58f4abde846ad9d2a2f6d16f2c02e9cdf91d3a814f22a98b29a6d4865",
+    "address_backend.py": "04cabeaf78f0425a6c9835d6c3e5eb2ee53fb2a1f63db907c456bbbbba94fd84",
+    "pp_repair.py": "f6a64ddee77c5a6d15659bf69fff5d3b75fc9ca936d2b4a46942d3f7467ea782",
+    "repair_profile.py": "e25b609fd48bee39a3516a5c08a233de24dbda1f5d38e2e8f509324eccc78450",
+    "reward_analysis.py": "c56538e595cc889d6fde3e75f72e3040e55bcee0c931977890486e5793ba2eeb",
+    "reward_cost_diagnostic_build_receipt.json": "1d526714bb44523697089a683baa8d8f0b267e44c2e1a09bfb77b2b033fdafc2",
+    "run_address_adapter.py": "b932737e5f6a1fb8c7bc037e04dbba739f6b1c31823c3827f15563d8fc9c2394",
+    "run_repair_dev.py": "fc9573e1f1f55a890b93b717fe082eb7beedb69f33d731988ef68709781be29e",
+    "address_adapter.py": "7bd6ee6e969cb27414626289398b657f0b9ad7398903c9ab16cc76a5fcc00632",
+    "address_adapter_support.h": "8d9fbea2048eac1245df4d743580f994a23f2cb4d48089e9575de2508be94bc2",
+    "address_budget.py": "54657e47cffeaf279f043c179ff3188323d7e70ff2ccf9d8811c5285955e18b7",
+    "address_budget_support.h": "3a91ae1441ec377dd4ddb1c701163793ea0e93b45052ee658d0d8a64ac7603a6",
+    "address_loop_guard.py": "e533545391e86aaac0b1c057c14eee398c5dd46343a1b677d355087df1c4b8df",
+    "address_reward.py": "1eed4ac2e2a0dec8cc95a4f1cd876e8a6cf0c91e0ef25fa5d3571a26a4153595",
+    "address_reward_support.h": "e08600c44fb254640b322ead677aa90062e9a2e4b94a262ce8965ff36fbd03b0",
+    "build_address_full.py": "8dafd16145f3c9216409d754e3d775ea89dbaa50d54956248b8ebcc759d1385e"
+  },
+  "diagnostic_jobs_started": 0,
+  "diagnostic_authorization": "PENDING_USER",
+  "limitations": [
+    "software fixtures and help are not scientific performance evidence",
+    "diagnostic clocks and bookkeeping remain charged to existing total budget"
+  ]
+}

@@ -370,6 +370,34 @@ int main(){
                 self.assertEqual(row['cost']['primary_search_'+metric+'_ns'],
                     sum(x[metric+'_ns'] for x in row['primary_returns']))
 
+    def test_first_observed_deadlines_keep_local_global_and_last_distinct(self):
+        code=COMMON+r'''
+int main(){
+    setup();address_budget::configure_cost_diagnostics(1);
+    {address_budget::RepairScope repair(1);
+     tick=2;assert(address_budget::expired("SEARCH_RETURN"));
+     const auto first=address_budget::state().event_deadlines.first;
+     assert(first.stage=="SEARCH_RETURN"&&first.local_wall&&!first.global_cpu&&!first.global_wall);
+     cputick=9;assert(address_budget::expired("VALIDATION_ENTRY"));
+     auto&s=address_budget::state();
+     assert(s.event_deadlines.first.stage=="SEARCH_RETURN");
+     assert(s.event_deadlines.global.stage=="VALIDATION_ENTRY"&&s.event_deadlines.global.global_cpu);
+     assert(s.last_stage=="VALIDATION_ENTRY");
+     assert(address_budget::expired("ACCEPT"));
+     assert(s.event_deadlines.first.stage=="SEARCH_RETURN"&&s.event_deadlines.global.stage=="VALIDATION_ENTRY");
+     assert(s.last_stage=="ACCEPT");}
+    setup();address_budget::configure_cost_diagnostics(1);cputick=9;
+    assert(address_budget::expired("CPU_ONLY"));
+    assert(address_budget::state().repair_deadline); // Historical latch, NOT local-wall evidence.
+    assert(!address_budget::state().event_deadlines.local.seen);
+    assert(address_budget::state().event_deadlines.first.resource=="CPU");
+    setup();tick=100;assert(address_budget::expired("OFF"));
+    assert(!address_budget::state().run_deadlines.first.seen);
+}
+'''
+        exe=self.compile('first_deadline',code)
+        subprocess.run([str(exe)],check=True,timeout=5)
+
     def test_absolute_cpu_and_deadline_node_ownership(self):
         code=COMMON+r'''
 struct Node{static int alive;Node(){++alive;}~Node(){--alive;}};int Node::alive=0;
@@ -628,6 +656,78 @@ class RewardContracts(unittest.TestCase):
                 native=json.loads(receipt.read_text())
                 self.assertTrue(native['initial_and_final_validated'])
                 self.assertEqual(native['reward_contract']['selections'],native['reward_contract']['settlements'])
+
+    def test_cost_diagnostics_actual_pp_deadline_unwind_and_external_validation(self):
+        from reward_analysis import verify_reward_trace
+        code=pp_fixture(self.changed['src/LNS.cpp'].decode())
+        code=code.replace('double fake_cpu(){return cputick;}',
+                          'double fake_cpu(){cputick+=0.000001;return cputick;}')
+        code=code.replace('bool isObstacle(int)const{return false;}',
+                          'bool isObstacle(int)const{if(expire_call==-7)tick=100;return false;}')
+        code=code.replace('vector<int>getStarts()const{return {0,5,10};}',
+                          'vector<int>getStarts()const{if(expire_call==-8)tick=100;return {0,5,10};}')
+        code=code.replace('    if(argc>3)address_budget::configure_trace(argv[3]);','')
+        code=code.replace('    bool accepted=test.runPP();', '''    increment=0.000001;
+    address_budget::configure_cost_diagnostics(1);
+    address_reward::configure("cumulative",0,3,argv[3]);
+    address_budget::state().group_calls=1; // Fixture enters runPP directly, bypassing group wrapper.
+    test.alpha.assign(3,1);test.beta.assign(3,1);
+    address_reward::SelectionScope selection(9);address_reward::bind_seed(0);
+    address_reward::seed_pool_completed(3);
+    bool accepted=test.runPP();''')
+        exe=self.compile('reward_cost_pp',code)
+        for mode in (0,1,3,-2,-4,-7,-8):
+            native_path=self.root/('cost_native'+str(mode)+'.json')
+            trace=self.root/('cost_pp'+str(mode)+'.jsonl')
+            self.execute(exe,mode,native_path,trace)
+            native=json.loads(native_path.read_text())
+            raw=trace.read_bytes();row=json.loads(raw);d=row['cost_diagnostics']
+            verify_reward_trace(raw,native,dict(reward_memory='cumulative',reward_window=0),3,True)
+            self.assertEqual(d['eligible_topk_candidates'],3)
+            self.assertTrue(d['seed_pool_completed'])
+            self.assertGreater(d['post_search_through_settlement_wall_ns'],0)
+            self.assertGreater(d['post_search_through_settlement_cpu_ns'],0)
+            if mode in (0,3,-4,-7,-8):
+                self.assertGreater(d['candidate_validation_wall_ns'],0)
+                self.assertGreater(d['candidate_validation_cpu_ns'],0)
+            else:
+                self.assertEqual(d['candidate_validation_wall_ns'],0)
+            if mode in (1,3):
+                self.assertEqual(d['first_observed_deadline']['stage'],'SIPP_RETURN')
+            if mode in (-7,-8):
+                self.assertEqual(d['validation_result'],'DEADLINE')
+                self.assertEqual(d['first_observed_deadline']['stage'],
+                                 'REWARD_VALIDATION_MAP' if mode==-7 else 'REWARD_VALIDATION_JOINT')
+                self.assertFalse(row['candidate_validated'])
+                self.assertEqual(row['committed_gain'],0)
+            # No double billing or fabricated complete pool can pass the validator.
+            for key,value in (('post_search_other_wall_ns',d['post_search_other_wall_ns']+1),
+                              ('eligible_topk_candidates',None)):
+                bad=dict(row,cost_diagnostics=dict(d,**{key:value}))
+                with self.assertRaises(ValueError):
+                    verify_reward_trace((json.dumps(bad)+'\n').encode(),native,
+                                        dict(reward_memory='cumulative',reward_window=0),3,True)
+
+    def test_cost_diagnostic_completed_seed_pool_and_interrupted_pool_unknown(self):
+        from reward_analysis import verify_event_cost
+        code=seed_fixture(self.changed['src/LNS.cpp'].decode()).split('int main(int argc,char**argv){')[0]+r'''
+int main(int argc,char**argv){
+    setup(1000);address_budget::configure_cost_diagnostics(1);
+    address_budget::configure_seed_admission("positive_delay");
+    address_reward::configure("cumulative",0,9,argv[2]);LNS x;
+    x.agents[1].path={{0},{0},{1}};x.agents[3].path={{0},{0},{1}};
+    if(string(argv[1])=="deadline"){increment=1;address_budget::state().wall_stop=4;}
+    address_reward::SelectionScope selection(11);
+    x.bernoulie();address_reward::no_repair("GROUP_TOO_SMALL",x.alpha,x.beta);
+}
+'''
+        exe=self.compile('reward_seed_pool',code)
+        for mode in ('complete','deadline'):
+            trace=self.root/('cost_seed_'+mode+'.jsonl');self.execute(exe,mode,trace)
+            row=json.loads(trace.read_bytes());d=verify_event_cost(row)
+            self.assertEqual(d['seed_pool_completed'],mode=='complete')
+            self.assertEqual(d['eligible_topk_candidates'],2 if mode=='complete' else None)
+            if mode=='deadline':self.assertEqual(d['first_observed_deadline']['stage'],'GROUP_SEED')
 
     def test_shared_memory_rule_empty_groups_censoring_and_exactly_once(self):
         code=COMMON+r'''

@@ -8,8 +8,139 @@ import hashlib
 import json
 from pathlib import Path
 
+COST_TOTAL_FIELDS = tuple(prefix+'_'+clock+'_ns' for prefix in (
+    'candidate_validation', 'candidate_materialization', 'candidate_joint_check',
+    'candidate_validation_other', 'post_search_through_settlement') for clock in ('wall', 'cpu'))
 
-def verify_reward_trace(raw, native, job, count):
+def verify_deadline_observations(data):
+    """Check sampled deadline evidence; never infer the true crossing instant."""
+    if (data.get('wall_clock') != 'STEADY_ABSOLUTE_NS' or
+            data.get('cpu_clock') != 'PROCESS_CPU_ABSOLUTE_NS'):
+        raise ValueError('deadline observation clock identity')
+    observations = [data.get('first_observed_'+kind) for kind in
+                    ('deadline', 'local_deadline', 'global_deadline')]
+    for o in observations:
+        if o is None:
+            continue
+        flags = [o.get(k+'_triggered') for k in ('local_wall', 'global_wall', 'global_cpu')]
+        if any(type(v) is not bool for v in flags) or not any(flags):
+            raise ValueError('deadline observation trigger flags')
+        local, wall, cpu = flags
+        for key in ('observed_wall_ns', 'observed_cpu_ns', 'global_wall_limit_ns', 'global_cpu_limit_ns'):
+            if type(o.get(key)) is not int or o[key] < 0:
+                raise ValueError('deadline observation clock value')
+        limit = o.get('local_wall_limit_ns')
+        if limit is not None and (type(limit) is not int or limit < 0):
+            raise ValueError('deadline observation local limit')
+        if ((local and (limit is None or o['observed_wall_ns'] < limit)) or
+                (wall and o['observed_wall_ns'] < o['global_wall_limit_ns']) or
+                (cpu and o['observed_cpu_ns'] < o['global_cpu_limit_ns'])):
+            raise ValueError('deadline observed before triggered limit')
+        # Conversion from double seconds truncates sub-nanosecond differences.
+        if ((not local and limit is not None and o['observed_wall_ns'] > limit) or
+                (not wall and o['observed_wall_ns'] > o['global_wall_limit_ns']) or
+                (not cpu and o['observed_cpu_ns'] > o['global_cpu_limit_ns'])):
+            raise ValueError('deadline observation omits an exceeded trigger')
+        scope = 'LOCAL_AND_GLOBAL' if local and (wall or cpu) else 'LOCAL' if local else 'GLOBAL'
+        resource = 'WALL_AND_CPU' if (local or wall) and cpu else 'WALL' if local or wall else 'CPU'
+        if (o.get('scope') != scope or o.get('resource') != resource or
+                not isinstance(o.get('stage'), str) or o['stage'] in ('', 'NONE')):
+            raise ValueError('deadline observation identity')
+    first, local, global_ = observations
+    if first is None:
+        if local is not None or global_ is not None:
+            raise ValueError('missing first observed deadline')
+    else:
+        if (local is None and global_ is None or
+                local is not None and not local['local_wall_triggered'] or
+                global_ is not None and not (global_['global_wall_triggered'] or global_['global_cpu_triggered'])):
+            raise ValueError('deadline observation scope mismatch')
+        if first not in (local, global_):
+            raise ValueError('first deadline is not the first local/global observation')
+        for o in observations:
+            if o is not None and ((o['local_wall_triggered'] and local is None) or
+                    ((o['global_wall_triggered'] or o['global_cpu_triggered']) and global_ is None)):
+                raise ValueError('triggered deadline missing its first scoped observation')
+        if ((first['local_wall_triggered'] and local != first) or
+                ((first['global_wall_triggered'] or first['global_cpu_triggered']) and global_ != first)):
+            raise ValueError('simultaneous first scoped deadline overwritten')
+        for o in observations:
+            if o is None:
+                continue
+            for triggered, saved in ((o['local_wall_triggered'], local),
+                    (o['global_wall_triggered'] or o['global_cpu_triggered'], global_)):
+                if triggered and any(saved[key] > o[key] for key in ('observed_wall_ns', 'observed_cpu_ns')):
+                    raise ValueError('scoped deadline overwritten by later observation')
+        for later in (local, global_):
+            if later is not None and any(later[key] < first[key] for key in ('observed_wall_ns', 'observed_cpu_ns')):
+                raise ValueError('first deadline overwritten by a later observation')
+
+
+def verify_event_cost(row):
+    d = row['cost_diagnostics']
+    if (d.get('schema') != 'ADDRESS_REWARD_COST_V1' or d.get('cost_scope') !=
+            'VALIDATION_SUBSET_OF_POST_SEARCH_SUBSET_OF_SELECTION_BEFORE_LOG'):
+        raise ValueError('reward cost schema/scope mismatch')
+    verify_deadline_observations(d)
+    if (d['first_observed_deadline'] is not None) != row['censored']:
+        raise ValueError('censor missing first-observed deadline')
+    for flag in ('search_return_observed', 'inspection_entered', 'validation_entered', 'seed_pool_completed'):
+        if type(d.get(flag)) is not bool:
+            raise ValueError('invalid reward cost flag')
+    pool = d.get('eligible_topk_candidates')
+    if ((type(pool) is int and pool >= 0) != d['seed_pool_completed'] or
+            not d['seed_pool_completed'] and pool is not None):
+        raise ValueError('partial seed pool cannot be a completed opportunity count')
+    if row['seed_id'] is not None and (not d['seed_pool_completed'] or pool < 1):
+        raise ValueError('selected seed lacks a completed nonempty pool')
+    entered = row['repair_attempt_id'] is not None
+    if d['search_return_observed'] != entered or d['inspection_entered'] != entered:
+        raise ValueError('repair/search-return/inspection identity mismatch')
+    remaining = d.get('remaining_at_search_return')
+    if entered:
+        if type(remaining) is not int or not 0 <= remaining <= row['group_size']:
+            raise ValueError('invalid remaining agents after search')
+        if d.get('search_loop_exit_stop') not in ('COMPLETE', 'COST_STOP', 'DEADLINE',
+                'START_BLOCKED', 'FOCAL_DRAINED_EMPTY', 'EMPTY_UNCLASSIFIED', 'UNKNOWN'):
+            raise ValueError('unknown search-loop return status')
+        if d.get('raw_primary_stop_before_finalization') not in ('FOUND', 'COST_STOP', 'DEADLINE',
+                'START_BLOCKED', 'FOCAL_DRAINED_EMPTY', 'EMPTY_UNCLASSIFIED', 'UNKNOWN'):
+            raise ValueError('unknown raw last search return status')
+        if (d['search_loop_exit_stop'] == 'COMPLETE') and remaining != 0:
+            raise ValueError('partial search cannot be complete')
+    elif remaining is not None or d.get('search_loop_exit_stop') != 'NOT_ENTERED':
+        raise ValueError('unentered search has return data')
+    full = entered and row['fresh_paths'] == row['group_size']
+    if d['validation_entered'] != full:
+        raise ValueError('candidate validation entry/fresh-path mismatch')
+    result = d.get('validation_result')
+    stage = d.get('validation_last_stage')
+    if row['candidate_validated']:
+        if result != 'VALIDATED' or stage != 'COMPLETE':
+            raise ValueError('validated candidate lacks completion state')
+    elif full:
+        if result != 'DEADLINE' or stage not in ('ENTRY_CHECKPOINT', 'PATH_MATERIALIZATION',
+                'MAP_MATERIALIZATION', 'JOINT_CHECK', 'FINAL_CHECKPOINT') or not row['censored']:
+            raise ValueError('unfinished validation lacks observed deadline')
+    elif result != ('INCOMPLETE_SKIPPED' if entered else 'NOT_ENTERED') or stage != 'NOT_ENTERED':
+        raise ValueError('unentered validation state mismatch')
+    for clock in ('wall', 'cpu'):
+        keys = ['candidate_validation_'+clock+'_ns', 'post_search_through_settlement_'+clock+'_ns',
+                'post_search_other_'+clock+'_ns']
+        if any(type(d.get(key)) is not int or d[key] < 0 for key in keys):
+            raise ValueError('invalid cost diagnostic duration')
+        validation, post, other = (d[key] for key in keys)
+        if (validation+other != post or post > row['selection_'+clock+'_before_log_ns'] or
+                not full and validation or not entered and post):
+            raise ValueError('nested cost diagnostic does not close')
+        parts = [d.get('candidate_'+phase+'_'+clock+'_ns') for phase in
+                 ('materialization', 'joint_check', 'validation_other')]
+        if any(type(value) is not int or value < 0 for value in parts) or sum(parts) != validation:
+            raise ValueError('exclusive validation phases do not close')
+    return d
+
+
+def verify_reward_trace(raw, native, job, count, require_cost_diagnostics=False):
     """Reconcile every selection, retained plan, censor and memory summary."""
     if raw and not raw.endswith(b'\n'):
         raise ValueError('partial reward trace')
@@ -29,6 +160,13 @@ def verify_reward_trace(raw, native, job, count):
     previous = native['initial_soc']
     selections = repairs = gain = wall = cpu = 0
     outcomes = Counter()
+    cost_totals = Counter({key: 0 for key in COST_TOTAL_FIELDS})
+    diagnostic = 'cost_diagnostics' in summary
+    first_stages, validation_results, pool_sizes = Counter(), Counter(), Counter()
+    if require_cost_diagnostics and not diagnostic:
+        raise ValueError('required reward cost diagnostics missing')
+    if diagnostic:
+        verify_deadline_observations(native['deadline_observations'])
     for line in raw.splitlines():
         row = json.loads(line)
         selections += 1
@@ -106,6 +244,16 @@ def verify_reward_trace(raw, native, job, count):
         wall += row['selection_wall_before_log_ns']
         cpu += row['selection_cpu_before_log_ns']
         outcomes[outcome] += 1
+        if ('cost_diagnostics' in row) != diagnostic:
+            raise ValueError('mixed/missing per-event cost diagnostics')
+        if diagnostic:
+            d = verify_event_cost(row)
+            for key in COST_TOTAL_FIELDS:
+                cost_totals[key] += d[key]
+            first = d['first_observed_deadline']
+            first_stages[first['stage'] if first is not None else 'NONE'] += 1
+            validation_results[d['validation_result']] += 1
+            pool_sizes[str(d['eligible_topk_candidates']) if d['seed_pool_completed'] else 'UNKNOWN'] += 1
     if (previous != native['final_soc'] or gain != native['initial_soc']-native['final_soc'] or
             selections != summary.get('selections') or selections != summary.get('settlements') or
             selections != native.get('group_calls') or repairs != native.get('repair_attempts') or
@@ -114,12 +262,22 @@ def verify_reward_trace(raw, native, job, count):
     for key in ('log_wall_ns', 'log_cpu_ns'):
         if not integer(summary.get(key)):
             raise ValueError('missing reward logging cost')
-    return {'schema': 'ADDRESS_REWARD_DIAGNOSTIC_V1', 'selections': selections, 'repairs': repairs,
+    if diagnostic and summary['cost_diagnostics'] != dict(schema='ADDRESS_REWARD_COST_V1', **cost_totals):
+        raise ValueError('reward cost summary does not close')
+    result = {'schema': 'ADDRESS_REWARD_DIAGNOSTIC_V1', 'selections': selections, 'repairs': repairs,
             'outcomes': dict(outcomes), 'actual_committed_gain': gain,
             'selection_wall_before_log_ns': wall, 'selection_cpu_before_log_ns': cpu,
             'log_wall_ns': summary['log_wall_ns'], 'log_cpu_ns': summary['log_cpu_ns'],
             'scope': 'SELECTION_INTERVALS_NOT_TOTAL_RUN_COST',
             'author_arm_summary_is_committed_outcome_audit_not_author_posterior': mode == 'author'}
+    if diagnostic:
+        result['cost_diagnostics'] = dict(cost_totals,
+            first_observed_deadline_stage_counts=dict(first_stages),
+            validation_result_counts=dict(validation_results),
+            completed_eligible_topk_size_counts=dict(pool_sizes),
+            timings_are_nested_not_additive=True,
+            historical_uninstrumented_runs_are_not_a_paired_speed_baseline=True)
+    return result
 
 
 def diagnose_legacy(rows):

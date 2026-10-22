@@ -46,6 +46,7 @@ def adapt(files):
         ("cpuReserve", po::value<double>()->required(), "CPU seconds reserved for rollback/final checks/output")
         ("attemptTrace", po::value<string>()->default_value(""), "optional new common primary-attempt JSONL")
         ("phaseProfile", po::value<int>()->default_value(0), "optional wall-only exclusive phase profile (0 or 1)")
+        ("costDiagnostics", po::value<int>()->default_value(0), "optional first-observed deadlines and reward cost diagnostics (0 or 1)")
         ("seedAdmission", po::value<string>()->default_value("all"), "initial seeds: all or positive_delay; neighbors are not filtered")
         ("effortMode", po::value<string>()->default_value("fixed_repairs"), "fixed_repairs requires positive maxIterations; total_budget requires zero")''')
     driver=replace_exact(driver,'vm["maxIterations"].as<int>() <= 0',
@@ -53,6 +54,7 @@ def adapt(files):
     driver=replace_exact(driver,'    srand(config.seed);','''    srand(config.seed);
     address_budget::configure(vm["cpuLimit"].as<double>(),vm["cpuReserve"].as<double>());
     address_budget::configure_profile(vm["phaseProfile"].as<int>());
+    address_budget::configure_cost_diagnostics(vm["costDiagnostics"].as<int>());
     address_budget::configure_seed_admission(vm["seedAdmission"].as<string>());
     address_budget::configure_effort(vm["effortMode"].as<string>(),vm["maxIterations"].as<int>());
     address_budget::configure_trace(vm["attemptTrace"].as<string>());''')

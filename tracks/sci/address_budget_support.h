@@ -43,6 +43,15 @@ struct SeedAdmission {
     long long retained_topk_candidates=0,empty_eligible_calls=0,deadline_calls=0,selected_calls=0;
     bool static_soc_lower_bound_reached=false;
 };
+// Checkpoint observations, not the instant a deadline actually elapsed. The
+// clocks are the values already read by expired(); observing adds no clock call.
+struct DeadlineObservation {
+    bool seen=false;
+    bool local_wall=false,global_wall=false,global_cpu=false;
+    std::string stage="NONE",resource="NONE",scope="NONE";
+    long long wall_ns=0,cpu_ns=0,global_wall_limit_ns=0,global_cpu_limit_ns=0,local_wall_limit_ns=-1;
+};
+struct DeadlineObservations { DeadlineObservation first,local,global; };
 struct State {
     ClockFunction wall = real_wall, cpu = real_cpu;
     bool configured=false, global_deadline=false, repair_deadline=false, search_active=false;
@@ -57,8 +66,46 @@ struct State {
     int repair_cap=0;
     PhaseProfile profile;
     SeedAdmission seed_admission;
+    bool cost_diagnostics=false;
+    DeadlineObservations run_deadlines,event_deadlines;
 };
 inline State& state() { static State s; return s; }
+inline void configure_cost_diagnostics(int enabled) {
+    if(enabled!=0&&enabled!=1)throw std::runtime_error("budget: costDiagnostics must be 0 or 1");
+    state().cost_diagnostics=enabled;
+}
+inline void observe_deadline(const char* stage,double wall,double cpu,bool local,bool global_wall,bool global_cpu) {
+    auto& s=state();if(!s.cost_diagnostics||!(local||global_wall||global_cpu))return;
+    DeadlineObservation o;o.seen=true;o.stage=stage;
+    o.local_wall=local;o.global_wall=global_wall;o.global_cpu=global_cpu;
+    o.scope=local?((global_wall||global_cpu)?"LOCAL_AND_GLOBAL":"LOCAL"):"GLOBAL";
+    o.resource=(local||global_wall)?(global_cpu?"WALL_AND_CPU":"WALL"):"CPU";
+    o.wall_ns=static_cast<long long>(wall*1e9);o.cpu_ns=static_cast<long long>(cpu*1e9);
+    o.global_wall_limit_ns=static_cast<long long>(s.wall_stop*1e9);
+    o.global_cpu_limit_ns=static_cast<long long>((s.cpu_limit-s.cpu_reserve)*1e9);
+    if(std::isfinite(s.local_stop))o.local_wall_limit_ns=static_cast<long long>(s.local_stop*1e9);
+    for(auto* observations:{&s.run_deadlines,&s.event_deadlines}) {
+        if(!observations->first.seen)observations->first=o;
+        if(local&&!observations->local.seen)observations->local=o;
+        if((global_wall||global_cpu)&&!observations->global.seen)observations->global=o;
+    }
+}
+inline void write_deadline_observation(std::ostream& out,const DeadlineObservation& o) {
+    if(!o.seen){out<<"null";return;}
+    out<<"{\"stage\":\""<<o.stage<<"\",\"resource\":\""<<o.resource<<"\",\"scope\":\""<<o.scope
+       <<"\",\"observed_wall_ns\":"<<o.wall_ns<<",\"observed_cpu_ns\":"<<o.cpu_ns
+       <<",\"global_wall_limit_ns\":"<<o.global_wall_limit_ns<<",\"global_cpu_limit_ns\":"<<o.global_cpu_limit_ns
+       <<",\"local_wall_triggered\":"<<(o.local_wall?"true":"false")
+       <<",\"global_wall_triggered\":"<<(o.global_wall?"true":"false")
+       <<",\"global_cpu_triggered\":"<<(o.global_cpu?"true":"false")
+       <<",\"local_wall_limit_ns\":"<<(o.local_wall_limit_ns<0?"null":std::to_string(o.local_wall_limit_ns))<<"}";
+}
+inline void write_deadline_observations(std::ostream& out,const DeadlineObservations& d) {
+    out<<"\"first_observed_deadline\":";write_deadline_observation(out,d.first);
+    out<<",\"first_observed_local_deadline\":";write_deadline_observation(out,d.local);
+    out<<",\"first_observed_global_deadline\":";write_deadline_observation(out,d.global);
+    out<<",\"wall_clock\":\"STEADY_ABSOLUTE_NS\",\"cpu_clock\":\"PROCESS_CPU_ABSOLUTE_NS\"";
+}
 inline void configure_effort(const std::string& mode,int limit) {
     if((mode=="fixed_repairs"&&limit>0)||(mode=="total_budget"&&limit==0)) {
         state().effort_mode=mode;state().repair_cap=limit;return;
@@ -218,6 +265,7 @@ inline bool expired(const char* stage) {
     ExpiredSample profile_sample;
     const double wall=s.wall(),cpu=s.cpu();
     const bool wall_expired=wall>=s.wall_stop,cpu_expired=cpu>=s.cpu_limit-s.cpu_reserve;
+    observe_deadline(stage,wall,cpu,std::isfinite(s.local_stop)&&wall>=s.local_stop,wall_expired,cpu_expired);
     if(wall_expired||cpu_expired) {
         if(!s.global_deadline)s.deadline_resource=wall_expired?(cpu_expired?"WALL_AND_CPU":"WALL"):"CPU";
         s.global_deadline=true;s.termination="GLOBAL_DEADLINE";
@@ -382,6 +430,7 @@ inline int finish() {
       <<",\"trace_io_cpu_ns\":"<<s.trace_io_cpu_ns
       <<",\"attempt_trace_enabled\":"<<(attempt_stream().is_open()?"true":"false")
       <<",\"reward_semantics\":\"AUTHOR_ATTEMPT_UPDATE_BEFORE_ROLLBACK\",\"external_total_budget_verified\":false";
+    if(s.cost_diagnostics){receipt<<",\"deadline_observations\":{";write_deadline_observations(receipt,s.run_deadlines);receipt<<"}";}
     write_profile(receipt);write_seed_admission(receipt);receipt<<"}\n";
     receipt.close();if(!receipt)throw std::runtime_error("budget: receipt write failed");
     return valid&&address_adapter::remaining()>=0&&s.cpu()<s.cpu_limit?0:74;

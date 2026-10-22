@@ -178,9 +178,10 @@ def build(root, output, adapter=False, extension=None):
             receipt['seed_admission_policies'] = ['all', 'positive_delay']
             receipt['effort_modes'] = ['fixed_repairs', 'total_budget']
         if extension == 'reward_contract':
-            if not all(flag in help_raw for flag in (b'--rewardMemory', b'--rewardWindow', b'--rewardTrace')):
+            if not all(flag in help_raw for flag in (b'--rewardMemory', b'--rewardWindow', b'--rewardTrace', b'--costDiagnostics')):
                 raise ValueError('reward settlement help contract missing')
             receipt['reward_memory_modes'] = ['author', 'cumulative', 'window']
+            receipt['reward_cost_diagnostics_schema'] = 'ADDRESS_REWARD_COST_V1'
             receipt['scientific_runner_admitted'] = False
         if extension == 'budget_recovery' and not all(
                 flag in help_raw for flag in (b'--recoveryPolicy', b'--recoveryTrace')):
