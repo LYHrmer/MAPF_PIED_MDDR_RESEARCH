@@ -55,6 +55,9 @@ def load(manifest, expected_sha, repo):
     raw = Path(manifest).read_bytes()
     require(sha(raw) == expected_sha, 'manifest SHA mismatch')
     config = json.loads(raw)
+    if config.get('schema') == 'thesis_v2_pair_v1':
+        from v2_motion_inputs import load_pair
+        return load_pair(config, repo)
     require(config['schema'] == SCHEMA and config['authorization'] == 'PENDING_USER',
             'manifest is a proposal, not an authorization')
     require(set(config['runtime_sha256']) == RUNTIME, 'incomplete runtime/lock pin set')
@@ -129,7 +132,7 @@ def motion_metrics(answer):
                 'wait_sum_s': None, 'reason': answer['reason']}
     schedule = answer['schedule']
     totals = dict(turn_s=0.0, move_s=0.0, wait_sum_s=0.0,
-                  turn_barrier_wait_s=0.0, discrete_wait_slot_s=0.0)
+                  turn_barrier_wait_s=0.0, discrete_wait_slot_s=0.0, turn_slot_padding_wait_s=0.0)
     per_agent = {}
     for agent, actions in schedule['agents'].items():
         total, wait = 0.0, 0.0
@@ -143,6 +146,7 @@ def motion_metrics(answer):
                 wait += duration
                 totals['wait_sum_s'] += duration
                 key = {'TURN_BARRIER': 'turn_barrier_wait_s',
+                       'TURN_SLOT_PADDING': 'turn_slot_padding_wait_s',
                        'DISCRETE_WAIT_SLOT': 'discrete_wait_slot_s'}[action['reason']]
                 totals[key] += duration
             else:
@@ -203,6 +207,9 @@ def compare_plans(problem, initial, optimized, model, headings, emit=None):
 
 
 def execute_worker(config, case, source, output, repo, load_ns):
+    if config.get('schema') == 'thesis_v2_pair_v1':
+        from v2_motion_inputs import execute_pair_worker
+        return execute_pair_worker(config, case, source, output, repo, load_ns, ENTERED_NS)
     started = time.monotonic_ns()
     Grid = selection.load_grid_problem(repo)
     endpoints = {int(a): tuple(p) for a, p in case['endpoints'].items()}
@@ -271,7 +278,7 @@ def run(args, config, cases, results, supervisor):
     accepted = (costs['exit_code'] == 0 and not costs['forced_cleanup']
         and payload is not None and payload.get('status') == 'COMPLETE'
         and payload.get('manifest_sha256') == args.sha256 and payload.get('case') == args.case
-        and [row['arm'] for row in payload.get('rows', [])] == list(ARMS)
+        and [row['arm'] for row in payload.get('rows', [])] == config['arms']
         and elapsed <= config['limits']['total_admission_wall_s']*1e9)
     usage = resource.getrusage(resource.RUSAGE_SELF)
     status = 'COMPLETE' if accepted else 'FAILED_OR_INCOMPLETE'

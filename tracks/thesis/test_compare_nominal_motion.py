@@ -3,6 +3,7 @@ from pathlib import Path
 import unittest
 import tempfile
 import json
+import time
 from types import SimpleNamespace
 from unittest.mock import patch
 
@@ -24,6 +25,31 @@ class CompareContracts(unittest.TestCase):
             turn_speed_rad_s='1', turn_accel_rad_s2='1', turn_decel_rad_s2='1')
         values.update(changes)
         return motion.MotionModel(**values)
+
+    def test_v2_worker_fixture_keeps_padding_cost_and_reference_end_separate(self):
+        from v2_motion_inputs import execute_pair_worker
+        case = {'id': 'synthetic_fixture', 'rows': 5, 'cols': 5, 'blocked': [],
+                'paths': {'0': [6, 7], '1': [16, 17]},
+                'endpoints': {'0': [6, 7], '1': [16, 17]},
+                'initial_headings': {'0': 2, '1': 1}, 'source': {'fixture_only': True},
+                'coordinate_translation_m': ['0', '0'], 'data_class': 'SOFTWARE_FIXTURE'}
+        config = {'manifest_sha256': 'fixture_not_a_run_manifest'}
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory)
+            execute_pair_worker(config, case, {}, output, HERE.parents[1], 0, time.monotonic_ns())
+            result = json.loads((output/'result.json').read_text())
+            self.assertEqual(result['status'], 'COMPLETE')
+            self.assertFalse(result['common_end_received'])
+            self.assertTrue(result['pair']['both_arms_same_reference_time'])
+            nominal, uncertain = result['rows']
+            self.assertEqual(uncertain['metrics']['feasibility'], 'CERTIFIED_INITIAL_POSE_ENCLOSURE')
+            self.assertEqual(nominal['metrics']['completion_sum_s'], uncertain['metrics']['completion_sum_s'])
+            for row in result['rows']:
+                metrics = row['metrics']
+                self.assertGreater(metrics['turn_slot_padding_wait_s'], 0)
+                self.assertAlmostEqual(metrics['wait_sum_s'], sum(metrics[k] for k in
+                    ('turn_barrier_wait_s', 'discrete_wait_slot_s', 'turn_slot_padding_wait_s')))
+                self.assertEqual(metrics['permanent_goal_hold_count'], 2)
 
     def test_frozen_equal_soc_proposal_is_not_silently_replaced(self):
         original, proposal = {0: (6, 7, 8, 13, 18)}, {0: (6, 11, 12, 13, 18)}

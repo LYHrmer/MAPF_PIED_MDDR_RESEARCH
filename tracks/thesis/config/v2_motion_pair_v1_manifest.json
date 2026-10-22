@@ -1,0 +1,74 @@
+{
+  "arms": [
+    "zero_initial_pose_error",
+    "propagated_initial_pose_error"
+  ],
+  "authorization": "PENDING_USER",
+  "batch_id": "v2_motion_pair_v1",
+  "cases": [
+    "r16_ids13",
+    "r16_ids013"
+  ],
+  "input_file": "v2_motion_pair_v1_inputs.json",
+  "input_sha256": "8628186eb61ab9d8795a511b8c319afe08df46f49b64e0bb5f19a74647a8f396",
+  "limits": {
+    "final_artifact_reserve_s": 1,
+    "outer_kill_after_s": 2,
+    "outer_term_s": 20,
+    "per_file_mib": 16,
+    "total_admission_wall_s": 15,
+    "worker_as_mib": 512,
+    "worker_cpu_s": 10
+  },
+  "motion_model": {
+    "accel_m_s2": "1",
+    "body_length_m": "3/5",
+    "body_width_m": "1/5",
+    "cell_m": "1",
+    "decel_m_s2": "1",
+    "speed_m_s": "1/2",
+    "turn_accel_rad_s2": "1",
+    "turn_decel_rad_s2": "1",
+    "turn_speed_rad_s": "1/2"
+  },
+  "new_world": false,
+  "optimizer_search": false,
+  "physical_END": false,
+  "previous_authorization_reusable": false,
+  "retries": 0,
+  "runtime_sha256": {
+    "compare_nominal_motion.py": "a28bec924305348dd5429c882656b1b3bca47d4f7cd05389e3f967a8675be0df",
+    "export_frozen_trace.py": "defcfb2dfe0b2fd848dc46f11c5bc9ca1e68c10445632dcce2d9d3fb2c248ca9",
+    "nominal_motion.py": "7913e00a169ad8ea70a5d0d9d1fe61129441abb0a97f266bed1feaca322a08d7",
+    "plan_selection.lock.json": "3eed667929d3e7abd8f0c750047746550e7a87285fb567806e9a84d2a87c0395",
+    "plan_selection.py": "4118efa6dda6a34dca6309a0933e11106242fcff1b3cbad15d405a39f2ac941c",
+    "shared.lock.json": "82ab83894e4b393e7f8202309debb3f0220a3ec78011be446cf99edd98098709",
+    "v2_motion.py": "9a91d1cd405d1ac6bdbfe0815b380b072d1e38f49b7e84dd31e6e67033e9bd27",
+    "v2_motion_inputs.py": "1f20034272108fa0f2f9fea969c9d97a2225222bffcdd957cf8c209fc4ed2430"
+  },
+  "schema": "thesis_v2_pair_v1",
+  "sci_commit": "535ee1adf3135ab79565e0b3aa5d189348fe7ab2",
+  "source_pins": {
+    "composition": {
+      "blob_oid": "032213935c2d4d9644100f7c71e1f3de11900619",
+      "commit": "43806cff38d70efd868658db898f8f723aa25527",
+      "path": "exploration/spatial_source/composition.py",
+      "sha256": "e294be82cc6277fac462f61450685820f2d9f1b2c49f1c07c814f7abe4f08453"
+    },
+    "preexecution_input": {
+      "blob_oid": "2da27998bae67e0825adb271cbe8447504df30b1",
+      "commit": "81f586669c961392dbc27e6f9ae8cb7f32297584",
+      "path": "exploration/spatial_constraints_s1_20261016/preexecution_input.py",
+      "sha256": "fb416bb5521f737cec766a7db31577cbc99080fc9b441f46d99987d91fed61b0"
+    }
+  },
+  "stop_batch_on_failure": true,
+  "sufficient_geometry_rejection_is_retained_result": true,
+  "supervisor_pin": {
+    "blob_oid": "496b4bfdc8d5ef45ed575622c79c17b7f58153b8",
+    "commit": "535ee1adf3135ab79565e0b3aa5d189348fe7ab2",
+    "path": "tracks/sci/run_repair_dev.py",
+    "sha256": "c2e6eb8ecc825d2d7560157d5d325f62420d4f06d4fc9cb3f6aadd35d28f8397"
+  },
+  "training": false
+}

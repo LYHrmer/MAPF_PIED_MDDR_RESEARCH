@@ -22,6 +22,35 @@ def positive(value, name):
     return exact
 
 
+def nonnegative(value, name):
+    """Exact rational validation for an additive radius increment."""
+    if isinstance(value, bool):
+        raise ValueError(name+' must be a non-negative finite quantity')
+    try:
+        exact = Fraction(str(value))
+    except (ValueError, ZeroDivisionError) as error:
+        raise ValueError(name+' must be a non-negative finite quantity') from error
+    if exact < 0 or not math.isfinite(float(exact)):
+        raise ValueError(name+' must be a non-negative finite quantity')
+    return exact
+
+
+def rational_sqrt_ceiling(value, denominator=10**12):
+    """Exact rational upper bound for sqrt(value) on a fixed rational grid.
+
+    Both the scaled numerator and the integer square root are exact. The result
+    satisfies result**2 >= value and result < sqrt(value)+1/denominator.
+    """
+    value = positive(value, 'value')
+    denominator = int(denominator)
+    if denominator <= 0:
+        raise ValueError('denominator must be positive')
+    scaled = value.numerator*denominator*denominator
+    numerator = -(-scaled//value.denominator)  # ceil of the exact rational.
+    root = math.isqrt(numerator-1)+1
+    return Fraction(root, denominator)
+
+
 @dataclass(frozen=True)
 class MotionModel:
     """SI units; all parameters explicit, identical for every robot.
@@ -118,16 +147,18 @@ def segment_box_distance_squared(start, end, box):
                             box[2*i], box[2*i+1])**2 for i in (0, 1))
 
 
-def obstacle_candidates(problem, start, end, model):
+def obstacle_candidates(problem, start, end, model, radius=None):
     """Conservative grid broadphase; final distance tests remain exact.
 
-    rho <= (length+width)/2. An obstacle centre outside this expanded segment
-    box has an axis distance > rho + cell/2, so its closed cell square cannot
-    intersect the circular enclosure. Inclusive floor/ceil bounds retain all
-    boundary cases; this helper never certifies a candidate by itself.
+    By default rho <= (length+width)/2. With an inflated circle radius, rho is
+    exactly that supplied upper bound. An obstacle centre outside the expanded
+    segment box has an axis distance greater than rho + cell/2, so its closed
+    cell square cannot intersect the circle. Inclusive floor/ceil bounds retain
+    all boundary cases; this helper never certifies a candidate by itself.
     """
     scale = model.cell_m
-    reach = (model.body_length_m+model.body_width_m+scale)/2
+    reach = ((model.body_length_m+model.body_width_m+scale)/2 if radius is None
+             else Fraction(radius)+scale/2)
     left = max(0, math.floor((min(start[0], end[0])-reach)/scale))
     right = min(problem.cols-1, math.ceil((max(start[0], end[0])+reach)/scale))
     top = max(0, math.floor((-max(start[1], end[1])-reach)/scale))
@@ -155,7 +186,9 @@ def _turn(old, new):
     return -1 if difference == 3 else difference  # pi tie is +pi (CCW).
 
 
-def compile_motion(problem, paths, model, initial_headings):
+def compile_motion(problem, paths, model, initial_headings, *,
+                   turn_quarter_slot_s=None, radius_increments=None,
+                   body_radius_m=None):
     """Build a full nominal schedule or reject; never return a partial safe plan.
 
     `problem` is the shared SCI GridProblem, obtained through the existing fixed
@@ -163,6 +196,20 @@ def compile_motion(problem, paths, model, initial_headings):
     quarter-turn: E=0,N=1,W=2,S=3. Every integer MAPF step receives one straight-slot
     duration, even if all active robots wait. A preceding turn barrier lasts as
     long as that step's slowest required rotation; others wait at fixed centres.
+
+    Optional `turn_quarter_slot_s` switches to fixed quarter-turn slots. A 180
+    degree rotation then becomes two explicit 90 degree TURN actions, each in
+    its own slot. Any time left in a slot after the analytic angular profile is
+    an explicit zero-input WAIT at the fixed centre; shorter rotations/stationary
+    robots wait out the global barrier. `None` preserves the legacy profile-timed
+    turn barrier.
+
+    Optional `radius_increments` is one mapping per step over the complete global
+    horizon (including stationary and terminal-goal steps), giving every agent a
+    non-negative exact circle-radius increment. Optional `body_radius_m` replaces
+    the exact body circle radius by a rational upper bound; it must actually
+    upper-bound the declared rectangle. With neither option the original exact
+    squared-distance checks are unchanged.
 
     Geometric certificate assumptions: exact ideal reference tracking, shared
     phase and barrier clocks, centre-aligned equal rectangular bodies, closed
@@ -182,12 +229,46 @@ def compile_motion(problem, paths, model, initial_headings):
         if set(initial_headings) != set(normalized) or any(type(h) is not int or not 0 <= h < 4
                                                          for h in initial_headings.values()):
             raise ValueError('every robot requires an explicit cardinal initial heading')
+        agents = tuple(problem.ids)
+        if set(normalized) != set(agents):
+            raise ValueError('paths must cover exactly the problem agents')
+        count = max(len(p)-1 for p in normalized.values())
+        horizon = max(1, count)
+        scale, radius2 = model.cell_m, model.body_circle_radius_squared
         linear = rest_to_rest_profile(model.cell_m, model.speed_m_s, model.accel_m_s2, model.decel_m_s2)
         turns = {quarters: rest_to_rest_profile(quarters*math.pi/2, model.turn_speed_rad_s,
                   model.turn_accel_rad_s2, model.turn_decel_rad_s2) for quarters in (1, 2)}
-        agents = tuple(problem.ids)
-        count = max(len(p)-1 for p in normalized.values())
-        scale, radius2 = model.cell_m, model.body_circle_radius_squared
+        slot = None
+        if turn_quarter_slot_s is not None:
+            slot = positive(turn_quarter_slot_s, 'turn_quarter_slot_s')
+            if Fraction(str(turns[1]['duration_s'])) > slot:
+                raise ValueError('turn_quarter_slot_s is shorter than one 90 degree turn')
+        base_radius = None
+        if body_radius_m is not None:
+            base_radius = positive(body_radius_m, 'body_radius_m')
+            if base_radius*base_radius < radius2:
+                raise ValueError('body_radius_m must upper-bound the body circle radius')
+        elif radius_increments is not None:
+            base_radius = rational_sqrt_ceiling(radius2)
+        increments = None
+        if radius_increments is not None:
+            try:
+                rows = list(radius_increments)
+            except TypeError as error:
+                raise ValueError('radius_increments must be a per-step sequence') from error
+            if len(rows) < horizon:
+                raise ValueError('radius_increments must cover the complete horizon including '
+                                 'stationary and terminal-goal segments')
+            increments = []
+            for step in range(horizon):
+                row = rows[step]
+                try:
+                    if set(row.keys()) != set(agents):
+                        raise ValueError('every agent requires one radius increment at every step')
+                except AttributeError as error:
+                    raise ValueError('each radius_increments step must map agents to increments') from error
+                increments.append({a: nonnegative(row[a], 'radius increment') for a in agents})
+        radius_upper_used = base_radius is not None
         boundary = (-scale/2, (problem.cols-Fraction(1, 2))*scale,
                     -(problem.rows-Fraction(1, 2))*scale, scale/2)
         obstacles = {}
@@ -195,9 +276,17 @@ def compile_motion(problem, paths, model, initial_headings):
             x, y = _point(vertex, problem.cols, scale)
             obstacles[vertex] = (x-scale/2, x+scale/2, y-scale/2, y+scale/2)
         checks = {'pair_segments': 0, 'obstacle_segments': 0, 'map_boundary_segments': 0}
+        maximum_increment = Fraction(0)
         # q=0 and q=1 are included, so this also checks every rotation/wait
         # barrier and final permanent hold. The zero-step case is checked once.
-        for step in range(max(1, count)):
+        for step in range(horizon):
+            step_radius = ({a: base_radius+(increments[step][a] if increments is not None
+                                            else Fraction(0)) for a in agents}
+                           if radius_upper_used else None)
+            if increments is not None:
+                maximum_increment = max(maximum_increment,
+                                        max(increments[step].values()))
+            step_reach = max(step_radius.values()) if radius_upper_used else None
             segments = {a: (_point(normalized[a][min(step, len(normalized[a])-1)], problem.cols, scale),
                             _point(normalized[a][min(step+1, len(normalized[a])-1)], problem.cols, scale))
                         for a in agents}
@@ -205,30 +294,37 @@ def compile_motion(problem, paths, model, initial_headings):
                 clearances = (min(start[0], end[0])-boundary[0], boundary[1]-max(start[0], end[0]),
                               min(start[1], end[1])-boundary[2], boundary[3]-max(start[1], end[1]))
                 checks['map_boundary_segments'] += 1
-                if any(gap <= 0 or gap*gap <= radius2 for gap in clearances):
+                required_radius2 = step_radius[a]*step_radius[a] if radius_upper_used else radius2
+                if any(gap <= 0 or gap*gap <= required_radius2 for gap in clearances):
                     output['reason'] = {'kind': 'CIRCLE_MAP_CONTAINMENT_NOT_ESTABLISHED', 'step': step,
                                         'agent': a, 'clearances_m': [str(v) for v in clearances]}
                     output['checks_attempted'] = checks
                     return output
-                for obstacle in obstacle_candidates(problem, start, end, model):
+                for obstacle in obstacle_candidates(problem, start, end, model,
+                                                    radius=step_reach):
                     box = obstacles[obstacle]
                     distance2 = segment_box_distance_squared(start, end, box)
                     checks['obstacle_segments'] += 1
-                    if distance2 <= radius2:
+                    if distance2 <= required_radius2:
                         output['reason'] = {'kind': 'CIRCLE_OBSTACLE_SEPARATION_NOT_ESTABLISHED', 'step': step,
                             'agent': a, 'obstacle': obstacle, 'distance_squared_m2': str(distance2),
-                            'required_strictly_greater_than_m2': str(radius2)}
+                            'inflated_radius_m': (str(step_radius[a]) if radius_upper_used else None),
+                            'required_strictly_greater_than_m2': str(required_radius2)}
                         output['checks_attempted'] = checks
                         return output
             for index, a in enumerate(agents):
                 for b in agents[index+1:]:
                     distance2, q = relative_minimum_squared(*segments[a], *segments[b])
                     checks['pair_segments'] += 1
-                    if distance2 <= 4*radius2:
+                    required_pair2 = ((step_radius[a]+step_radius[b])**2
+                                      if radius_upper_used else 4*radius2)
+                    if distance2 <= required_pair2:
                         output['reason'] = {'kind': 'CIRCLE_PAIR_SEPARATION_NOT_ESTABLISHED', 'step': step,
                             'agents': [a, b], 'common_progress_at_minimum': str(q),
                             'distance_squared_m2': str(distance2),
-                            'required_strictly_greater_than_m2': str(4*radius2)}
+                            'inflated_radii_m': ([str(step_radius[a]), str(step_radius[b])]
+                                                 if radius_upper_used else None),
+                            'required_strictly_greater_than_m2': str(required_pair2)}
                         output['checks_attempted'] = checks
                         return output
         heading = dict(initial_headings)
@@ -255,23 +351,61 @@ def compile_motion(problem, paths, model, initial_headings):
             moving = {a for a in agents if old[a] != new[a]}
             target = {a: _heading(old[a], new[a]) if a in moving else heading[a] for a in agents}
             rotations = {a: _turn(heading[a], target[a]) for a in agents}
-            barrier = max((turns[abs(q)]['duration_s'] for q in rotations.values() if q), default=0.0)
-            if barrier:
-                stages.append({'step': step, 'kind': 'TURN_BARRIER', 'start_s': clock,
-                               'end_s': clock+barrier, 'centres_fixed': True})
-                for a in agents:
-                    if a in completion:
-                        continue
-                    delta = rotations[a]
-                    duration = turns[abs(delta)]['duration_s'] if delta else 0.0
-                    if delta:
-                        append(a, 'TURN', clock, clock+duration, center_m=_point_record(old[a]),
-                               heading_from_quarters=heading[a], heading_to_quarters=target[a],
-                               signed_quarters=delta, profile='turn_'+str(abs(delta)))
-                    if duration < barrier:
-                        append(a, 'WAIT', clock+duration, clock+barrier, center_m=_point_record(old[a]),
-                               heading_quarters=target[a], reason='TURN_BARRIER')
-                clock += barrier
+            if slot is None:
+                barrier = max((turns[abs(q)]['duration_s'] for q in rotations.values() if q), default=0.0)
+                if barrier:
+                    stages.append({'step': step, 'kind': 'TURN_BARRIER', 'start_s': clock,
+                                   'end_s': clock+barrier, 'centres_fixed': True})
+                    for a in agents:
+                        if a in completion:
+                            continue
+                        delta = rotations[a]
+                        duration = turns[abs(delta)]['duration_s'] if delta else 0.0
+                        if delta:
+                            append(a, 'TURN', clock, clock+duration, center_m=_point_record(old[a]),
+                                   heading_from_quarters=heading[a], heading_to_quarters=target[a],
+                                   signed_quarters=delta, profile='turn_'+str(abs(delta)))
+                        if duration < barrier:
+                            append(a, 'WAIT', clock+duration, clock+barrier, center_m=_point_record(old[a]),
+                                   heading_quarters=target[a], reason='TURN_BARRIER')
+                    clock += barrier
+            else:
+                quarters = max((abs(q) for q in rotations.values() if q), default=0)
+                slot_float = float(slot)
+                barrier = quarters*slot_float
+                if barrier:
+                    stages.append({'step': step, 'kind': 'TURN_BARRIER', 'start_s': clock,
+                                   'end_s': clock+barrier, 'centres_fixed': True,
+                                   'quarter_slot_s': str(slot), 'split_180_into_two_90': True})
+                    for a in agents:
+                        if a in completion:
+                            continue
+                        delta = rotations[a]
+                        count_quarters = abs(delta)
+                        if count_quarters:
+                            direction = 1 if delta > 0 else -1
+                            for turn_index in range(count_quarters):
+                                start = clock+turn_index*slot_float
+                                duration = turns[1]['duration_s']
+                                heading_from = (heading[a]+direction*turn_index) % 4
+                                heading_to = (heading[a]+direction*(turn_index+1)) % 4
+                                append(a, 'TURN', start, start+duration, center_m=_point_record(old[a]),
+                                       heading_from_quarters=heading_from,
+                                       heading_to_quarters=heading_to,
+                                       signed_quarters=direction, profile='turn_1',
+                                       quarter_slot_index=turn_index)
+                                padding = slot_float-duration
+                                if padding > 0:
+                                    append(a, 'WAIT', start+duration, start+slot_float,
+                                           center_m=_point_record(old[a]),
+                                           heading_quarters=heading_to,
+                                           reason='TURN_SLOT_PADDING', zero_input=True)
+                        ended = clock+count_quarters*slot_float
+                        if ended < clock+barrier:
+                            append(a, 'WAIT', ended, clock+barrier, center_m=_point_record(old[a]),
+                                   heading_quarters=target[a], reason='TURN_BARRIER',
+                                   zero_input=True)
+                    clock += barrier
             heading = target
             phase = 'step_'+str(step)+'_shared_move'
             finish = clock+linear['duration_s']
@@ -296,23 +430,54 @@ def compile_motion(problem, paths, model, initial_headings):
             raise ValueError('incomplete task completion/terminal hold')
         if not math.isfinite(sum(completion.values())):
             raise ValueError('completion sum cannot be represented finitely')
+        conditions = (['Caller-supplied non-negative circle-radius increments conservatively '
+                       'enclose the declared uncertainty; no feedback tracking claim.',
+                       'Increments are fixed by global step and the task initial state; this '
+                       'constructor never resets them at waypoints.']
+                      if increments is not None else
+                      ['Exact ideal tracking of these reference primitives; zero error only.'])
+        conditions += ['Moving robots share one physical progress value and every barrier start; '
+                       'no independent time shifts.',
+                       'No continuous safety claim for different speed/turn/clock conditions or an '
+                       'actual feedback controller.',
+                       'Printed float times/progress samples represent analytic profiles; they are '
+                       'not a verified floating-point controller.']
+        if increments is not None:
+            scope = 'ADDITIVE_CIRCLE_INCREMENT_SHARED_PHASE_BARRIER_REFERENCE'
+        elif base_radius is not None:
+            scope = 'ERROR_FREE_RATIONAL_RADIUS_UPPER_BOUND_REFERENCE'
+        else:
+            scope = 'ERROR_FREE_SHARED_PHASE_BARRIER_REFERENCE'
         output.update({'status': 'CERTIFIED_NOMINAL_REFERENCE', 'certified_nominal_reference': True,
+            'scope': scope,
             'model': model.record(), 'initial_headings_quarters': dict(initial_headings),
             'grid_problem_key': problem.model_key,
             'world_coordinates': 'x=column*cell_m; y=-row*cell_m; E/N/W/S=0/1/2/3 counterclockwise',
+            'construction': {'turn_quarter_slot_s': None if slot is None else str(slot),
+                'fixed_quarter_slots': slot is not None,
+                'split_180_into_two_90': slot is not None,
+                'radius_increments_applied': increments is not None,
+                'increment_horizon_steps': (len(increments)
+                                            if increments is not None else None),
+                'maximum_radius_increment_m': str(maximum_increment),
+                'body_radius_upper_m': None if base_radius is None else str(base_radius),
+                'legacy_exact_squared_checks': not radius_upper_used},
             'schedule': {'stages': stages, 'agents': actions, 'completion_s': completion,
                          'completion_sum_s': sum(completion.values()), 'makespan_s': clock},
             'profiles': dict(linear_one_cell=linear, **{'turn_'+str(k): v for k, v in turns.items()}),
             'certificate': {'arithmetic': 'EXACT_RATIONAL_GEOMETRY_NO_TIME_SAMPLING',
-                'body_circle_radius_squared_m2': str(radius2), 'strict_separation': True,
+                'body_circle_radius_squared_m2': str(radius2),
+                'body_circle_radius_upper_m': None if base_radius is None else str(base_radius),
+                'strict_separation': True,
                 'checks': checks, 'every_step_and_all_robot_pairs_checked': True,
-                'obstacle_broadphase': 'Inclusive grid box expanded by (body_length+body_width+cell)/2; exact candidate distance checks; excluded closed cells separated by an axis lower bound.',
+                'obstacle_broadphase': ('Inclusive grid box expanded by the maximum inflated '
+                    'circle radius plus cell/2; exact candidate distance checks; excluded closed '
+                    'cells separated by an axis lower bound.' if radius_upper_used else
+                    'Inclusive grid box expanded by (body_length+body_width+cell)/2; exact '
+                    'candidate distance checks; excluded closed cells separated by an axis lower bound.'),
                 'obstacles_are_closed_grid_squares': True, 'terminal_holds_permanent': True,
                 'argument': 'The rectangle is inside its orientation-invariant circle. During turn/wait centres are fixed. During translation relative centres equal a+q*b for one shared q in [0,1]; the convex quadratic minimum and candidate axis-aligned segment/closed-obstacle distances are checked exactly; all other obstacles are excluded by a conservative axis-distance lower bound. Endpoints cover all barriers and permanent terminal holds.',
-                'conditions': ['Exact ideal tracking of these reference primitives; zero error only.',
-                    'Moving robots share one physical progress value and every barrier start; no independent time shifts.',
-                    'No continuous safety claim for different speed/turn/clock conditions or an actual feedback controller.',
-                    'Printed float times/progress samples represent analytic profiles; they are not a verified floating-point controller.']}})
+                'conditions': conditions}})
     except (ValueError, TypeError, OverflowError, ZeroDivisionError) as error:
         output.update({'reason': {'kind': 'INVALID_INPUT_OR_UNREPRESENTABLE_SCHEDULE',
                                   'detail': type(error).__name__+': '+str(error)}})

@@ -1,0 +1,385 @@
+{
+  "cases": [
+    {
+      "blocked": [
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        63,
+        65,
+        67,
+        69,
+        71,
+        54,
+        62,
+        45,
+        47,
+        49,
+        51,
+        53,
+        36,
+        44,
+        27,
+        29,
+        31,
+        33,
+        35,
+        18,
+        26,
+        9,
+        11,
+        13,
+        15,
+        17,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "cols": 9,
+      "continuous_comparison_executed": false,
+      "coordinate_translation_m": [
+        "0",
+        "-8"
+      ],
+      "data_class": "RELATED_R16_DEV_PROJECTIONS_NOT_INDEPENDENT_TASKS",
+      "endpoints": {
+        "1": [
+          16,
+          66
+        ],
+        "3": [
+          14,
+          12
+        ]
+      },
+      "id": "r16_ids13",
+      "initial_headings": {
+        "1": 3,
+        "3": 3
+      },
+      "paths": {
+        "1": [
+          16,
+          25,
+          24,
+          23,
+          22,
+          21,
+          30,
+          39,
+          48,
+          57,
+          66
+        ],
+        "3": [
+          14,
+          23,
+          22,
+          21,
+          12
+        ]
+      },
+      "rows": 9,
+      "source": {
+        "adapter_sha256": "fb416bb5521f737cec766a7db31577cbc99080fc9b441f46d99987d91fed61b0",
+        "all_original_ids": [
+          "agent0",
+          "agent1",
+          "agent2",
+          "agent3"
+        ],
+        "author_commit": "c2626d996121a9d6c128844a167b917db24418ac",
+        "author_map": {
+          "path": "/home/lyh/.cache/mapf_research/sadg-controller-c2626d9/sadg_controller/data/ecbs/test.yaml",
+          "sha256": "c8b4344b62e77fb7dbe9029fc2173749f72631e7ce63a7a0b0d71d11a18ab656"
+        },
+        "author_url": "https://github.com/alexberndt/sadg-controller",
+        "continuous_safety_checked": false,
+        "coordinate_offsets": [
+          "0",
+          "0"
+        ],
+        "data_class": "R16_DERIVED_DEV_NOT_INDEPENDENT_TEST",
+        "group_admissibility": "NOT_CHECKED",
+        "license": "AGPL-3.0",
+        "motion_mapping": "EACH_GRID_EDGE_IS_OWN_STOPPED_1M_MOVE_QUARTER_TURNS_PERMANENT_HOLD",
+        "obstacle_semantics": "CLOSED_UNIT_SQUARES_CENTERED_AT_ORIGINAL_BLOCKED_CELLS",
+        "original_horizon_not_used_as_physical_time": 5.0,
+        "original_scale_metadata_ignored": {
+          "dimensions": {
+            "resolution": 2.5,
+            "x_offset": -5.0,
+            "y_offset": 10.0
+          }
+        },
+        "physical_END_received": false,
+        "scale_metres_per_grid_unit": "1",
+        "selected_ids": [
+          "agent1",
+          "agent3"
+        ],
+        "source_condition": "joint_initial_se2_stopped_primitives_v2",
+        "source_discrete_paths_validated": true,
+        "source_t_semantics": "DISCRETE_ORDER_ONLY_NOT_SECONDS_OR_DEADLINES",
+        "specs_sha256": "7bbb4e5c04c4adda2267089360fa8492aa51bfd2e66af6b99362afc8784b0643",
+        "staged_input": {
+          "path": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/sadg_preflight_20261004_r16/inputs/official_test_staged.json",
+          "sha256": "e24af3c1c95fe57f7512f5d3ed6826f3ec4007b27ddc69c879cea30624487f13"
+        },
+        "uncertainty_mapping": "ORIGINAL_TASK_INITIAL_PARAMETERS_NO_RESET_OR_OVERRIDES",
+        "visit_mapping_sha256": "59d54a020d2d1c752a099d71cc9829e7c6cea4b09af2062aec4052afaa49c72c"
+      },
+      "static_qualification": {
+        "limits_m": {
+          "absolute_each_axis_inclusive": "10",
+          "initial_displacement_each_axis_inclusive": "8"
+        },
+        "qualified": true,
+        "scope": "STATIC_PATH_AND_MODEL_ELIGIBILITY_ONLY",
+        "static_properties": {
+          "per_cell_move_rest_to_rest": true,
+          "stationary_wait_has_no_translation": true,
+          "turn_occurs_at_fixed_centre": true
+        },
+        "status": "QUALIFIED",
+        "violation_count": 0,
+        "violations": [],
+        "violations_truncated": false
+      }
+    },
+    {
+      "blocked": [
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        63,
+        65,
+        67,
+        69,
+        71,
+        54,
+        62,
+        45,
+        47,
+        49,
+        51,
+        53,
+        36,
+        44,
+        27,
+        29,
+        31,
+        33,
+        35,
+        18,
+        26,
+        9,
+        11,
+        13,
+        15,
+        17,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "cols": 9,
+      "continuous_comparison_executed": false,
+      "coordinate_translation_m": [
+        "0",
+        "-8"
+      ],
+      "data_class": "RELATED_R16_DEV_PROJECTIONS_NOT_INDEPENDENT_TASKS",
+      "endpoints": {
+        "0": [
+          70,
+          16
+        ],
+        "1": [
+          16,
+          66
+        ],
+        "3": [
+          14,
+          12
+        ]
+      },
+      "id": "r16_ids013",
+      "initial_headings": {
+        "0": 1,
+        "1": 3,
+        "3": 3
+      },
+      "paths": {
+        "0": [
+          70,
+          61,
+          52,
+          43,
+          34,
+          25,
+          16
+        ],
+        "1": [
+          16,
+          25,
+          24,
+          23,
+          22,
+          21,
+          30,
+          39,
+          48,
+          57,
+          66
+        ],
+        "3": [
+          14,
+          23,
+          22,
+          21,
+          12
+        ]
+      },
+      "rows": 9,
+      "source": {
+        "adapter_sha256": "fb416bb5521f737cec766a7db31577cbc99080fc9b441f46d99987d91fed61b0",
+        "all_original_ids": [
+          "agent0",
+          "agent1",
+          "agent2",
+          "agent3"
+        ],
+        "author_commit": "c2626d996121a9d6c128844a167b917db24418ac",
+        "author_map": {
+          "path": "/home/lyh/.cache/mapf_research/sadg-controller-c2626d9/sadg_controller/data/ecbs/test.yaml",
+          "sha256": "c8b4344b62e77fb7dbe9029fc2173749f72631e7ce63a7a0b0d71d11a18ab656"
+        },
+        "author_url": "https://github.com/alexberndt/sadg-controller",
+        "continuous_safety_checked": false,
+        "coordinate_offsets": [
+          "0",
+          "0"
+        ],
+        "data_class": "R16_DERIVED_DEV_NOT_INDEPENDENT_TEST",
+        "group_admissibility": "NOT_CHECKED",
+        "license": "AGPL-3.0",
+        "motion_mapping": "EACH_GRID_EDGE_IS_OWN_STOPPED_1M_MOVE_QUARTER_TURNS_PERMANENT_HOLD",
+        "obstacle_semantics": "CLOSED_UNIT_SQUARES_CENTERED_AT_ORIGINAL_BLOCKED_CELLS",
+        "original_horizon_not_used_as_physical_time": 5.0,
+        "original_scale_metadata_ignored": {
+          "dimensions": {
+            "resolution": 2.5,
+            "x_offset": -5.0,
+            "y_offset": 10.0
+          }
+        },
+        "physical_END_received": false,
+        "scale_metres_per_grid_unit": "1",
+        "selected_ids": [
+          "agent0",
+          "agent1",
+          "agent3"
+        ],
+        "source_condition": "joint_initial_se2_stopped_primitives_v2",
+        "source_discrete_paths_validated": true,
+        "source_t_semantics": "DISCRETE_ORDER_ONLY_NOT_SECONDS_OR_DEADLINES",
+        "specs_sha256": "3e2612abe75f4ac7e1c1ca75eeb167fb93d5cd6bb38a1b5afb1368499d409193",
+        "staged_input": {
+          "path": "/home/lyh/MAPF_LMAPF_ERROR_GUIDANCE_EXPLORE/exploration/error_guidance/sadg_preflight_20261004_r16/inputs/official_test_staged.json",
+          "sha256": "e24af3c1c95fe57f7512f5d3ed6826f3ec4007b27ddc69c879cea30624487f13"
+        },
+        "uncertainty_mapping": "ORIGINAL_TASK_INITIAL_PARAMETERS_NO_RESET_OR_OVERRIDES",
+        "visit_mapping_sha256": "7c5f9bef6c3d9576209e87de07f0d1b9e29edc92a5da53f29cef2842eecdb710"
+      },
+      "static_qualification": {
+        "limits_m": {
+          "absolute_each_axis_inclusive": "10",
+          "initial_displacement_each_axis_inclusive": "8"
+        },
+        "qualified": true,
+        "scope": "STATIC_PATH_AND_MODEL_ELIGIBILITY_ONLY",
+        "static_properties": {
+          "per_cell_move_rest_to_rest": true,
+          "stationary_wait_has_no_translation": true,
+          "turn_occurs_at_fixed_centre": true
+        },
+        "status": "QUALIFIED",
+        "violation_count": 0,
+        "violations": [],
+        "violations_truncated": false
+      }
+    }
+  ],
+  "generator_sha256": "1f20034272108fa0f2f9fea969c9d97a2225222bffcdd957cf8c209fc4ed2430",
+  "motion_compared": false,
+  "new_initial_search": false,
+  "source_contract": {
+    "acceleration": "1",
+    "alpha": "1",
+    "body_half": [
+      ".3",
+      ".1"
+    ],
+    "condition": "joint_initial_se2_stopped_primitives_v2",
+    "controller": "ideal_feedforward_stopped_v05_a1_pivot_w05_alpha1_v2",
+    "hold_drift": "0",
+    "localization_physical_axis_bound": ".009999",
+    "model": "ideal_unicycle_identical_reference_actual_inputs",
+    "move_length": [
+      ".25",
+      "3"
+    ],
+    "numerical_reserve": "1/1000000",
+    "omega": ".5",
+    "reference_coordinate_limit": "10",
+    "reference_displacement_axis_limit": "8",
+    "scope": "whole declared chain including permanent terminal hold; no learning claim",
+    "speed": ".5",
+    "stop_at_each_action_boundary": true,
+    "task_initial_local_box": [
+      ".02",
+      ".01",
+      ".002"
+    ],
+    "turn_slot_seconds": "4",
+    "units": "metre_second_radian"
+  },
+  "source_pins": {
+    "composition": {
+      "blob_oid": "032213935c2d4d9644100f7c71e1f3de11900619",
+      "commit": "43806cff38d70efd868658db898f8f723aa25527",
+      "path": "exploration/spatial_source/composition.py",
+      "sha256": "e294be82cc6277fac462f61450685820f2d9f1b2c49f1c07c814f7abe4f08453"
+    },
+    "preexecution_input": {
+      "blob_oid": "2da27998bae67e0825adb271cbe8447504df30b1",
+      "commit": "81f586669c961392dbc27e6f9ae8cb7f32297584",
+      "path": "exploration/spatial_constraints_s1_20261016/preexecution_input.py",
+      "sha256": "fb416bb5521f737cec766a7db31577cbc99080fc9b441f46d99987d91fed61b0"
+    }
+  }
+}

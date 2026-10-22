@@ -35,12 +35,16 @@ class NominalMotionContracts(unittest.TestCase):
         values.update(changes)
         return motion.MotionModel(**values)
 
-    def compile(self, paths, *, rows=5, cols=5, blocked=(), model=None, headings=None):
+    def compile(self, paths, *, rows=5, cols=5, blocked=(), model=None, headings=None,
+                turn_quarter_slot_s=None, radius_increments=None, body_radius_m=None):
         endpoints = {a: (p[0], p[-1]) for a, p in paths.items()}
         problem = self.Grid(rows, cols, blocked, endpoints)
         if headings is None:
             headings = {a: 0 for a in paths}
-        return motion.compile_motion(problem, paths, model or self.model(), headings)
+        return motion.compile_motion(problem, paths, model or self.model(), headings,
+                                     turn_quarter_slot_s=turn_quarter_slot_s,
+                                     radius_increments=radius_increments,
+                                     body_radius_m=body_radius_m)
 
     def test_exact_relative_minimum_detects_between_vertex_proximity(self):
         distance2, q = motion.relative_minimum_squared((0, 0), (1, 0), (1, 0), (1, 1))
@@ -148,6 +152,96 @@ class NominalMotionContracts(unittest.TestCase):
                         (x-half, x+half, y-half, y+half))
                     if distance2 <= model.body_circle_radius_squared:
                         self.assertIn(vertex, candidates)
+
+    def test_fixed_quarter_slots_split_180_and_pad_with_zero_input_wait(self):
+        path = {0: [11, 12]}
+        legacy = self.compile(path, headings={0: 2})
+        self.assertEqual([r['kind'] for r in legacy['schedule']['agents'][0]],
+                         ['TURN', 'MOVE', 'GOAL_HOLD'])
+        self.assertEqual(legacy['schedule']['agents'][0][0]['signed_quarters'], 2)
+        fixed = self.compile(path, headings={0: 2}, turn_quarter_slot_s=4)
+        self.assertTrue(fixed['certified_nominal_reference'])
+        rows = fixed['schedule']['agents'][0]
+        self.assertEqual([r['kind'] for r in rows],
+                         ['TURN', 'WAIT', 'TURN', 'WAIT', 'MOVE', 'GOAL_HOLD'])
+        self.assertEqual([rows[0]['signed_quarters'], rows[2]['signed_quarters']], [1, 1])
+        self.assertEqual([rows[0]['heading_from_quarters'], rows[2]['heading_from_quarters']], [2, 3])
+        self.assertEqual([rows[0]['heading_to_quarters'], rows[2]['heading_to_quarters']], [3, 0])
+        for turn, padding in ((rows[0], rows[1]), (rows[2], rows[3])):
+            self.assertAlmostEqual(turn['end_s']-turn['start_s'],
+                                   fixed['profiles']['turn_1']['duration_s'])
+            self.assertEqual(padding['reason'], 'TURN_SLOT_PADDING')
+            self.assertTrue(padding['zero_input'])
+            self.assertAlmostEqual(padding['end_s']-padding['start_s'],
+                                   4-(turn['end_s']-turn['start_s']))
+            self.assertEqual(padding['heading_quarters'], turn['heading_to_quarters'])
+        self.assertAlmostEqual(rows[4]['start_s'], 8.0)
+        self.assertEqual(fixed['construction']['turn_quarter_slot_s'], '4')
+        self.assertTrue(fixed['construction']['split_180_into_two_90'])
+        # A 90 degree robot fills its own slot, then waits for the 180 degree
+        # robot's second slot; both still share one barrier before translation.
+        pair = self.compile({0: [11, 12], 1: [16, 17]}, headings={0: 2, 1: 3},
+                            turn_quarter_slot_s=4)
+        other = pair['schedule']['agents'][1]
+        self.assertEqual([r['kind'] for r in other],
+                         ['TURN', 'WAIT', 'WAIT', 'MOVE', 'GOAL_HOLD'])
+        self.assertEqual(other[1]['reason'], 'TURN_SLOT_PADDING')
+        self.assertEqual(other[2]['reason'], 'TURN_BARRIER')
+        self.assertAlmostEqual(other[2]['end_s'], 8.0)
+
+    def test_radius_increment_horizon_coverage_and_nonnegative_validation(self):
+        paths = {0: [11, 12], 1: [16, 17]}
+        accepted = self.compile(paths, radius_increments=[{0: 0, 1: Fraction(1, 100)}])
+        self.assertTrue(accepted['certified_nominal_reference'])
+        self.assertTrue(accepted['construction']['radius_increments_applied'])
+        self.assertEqual(accepted['construction']['maximum_radius_increment_m'], '1/100')
+        # A zero-step task still has one global stationary/goal segment.
+        idle = self.compile({0: [12], 1: [18]}, headings={0: 0, 1: 0},
+                            radius_increments=[{0: 0, 1: 0}])
+        self.assertTrue(idle['certified_nominal_reference'])
+        for bad in ([], [{}], [{0: -1, 1: 0}], [{0: True, 1: 0}], [[0, 0]]):
+            answer = self.compile(paths, radius_increments=bad)
+            self.assertEqual(answer['status'], 'REJECTED')
+            self.assertEqual(answer['reason']['kind'], 'INVALID_INPUT_OR_UNREPRESENTABLE_SCHEDULE')
+            self.assertIsNone(answer['schedule'])
+
+    def test_inflation_changes_obstacle_boundary_and_pair_sufficiency(self):
+        model = self.model(body_length_m='.6', body_width_m='.2')
+        obstacle = self.compile({0: [12, 13]}, blocked=[7], model=model)
+        self.assertTrue(obstacle['certified_nominal_reference'])
+        inflated_obstacle = self.compile({0: [12, 13]}, blocked=[7], model=model,
+                                         radius_increments=[{0: Fraction(1, 5)}])
+        self.assertEqual(inflated_obstacle['reason']['kind'],
+                         'CIRCLE_OBSTACLE_SEPARATION_NOT_ESTABLISHED')
+        boundary = self.compile({0: [0, 1]}, model=model)
+        self.assertTrue(boundary['certified_nominal_reference'])
+        inflated_boundary = self.compile({0: [0, 1]}, model=model,
+                                         radius_increments=[{0: Fraction(1, 5)}])
+        self.assertEqual(inflated_boundary['reason']['kind'],
+                         'CIRCLE_MAP_CONTAINMENT_NOT_ESTABLISHED')
+        # Same discrete crossing fixture: the nominal circle enclosures are
+        # separated, while adding 0.05 m to each radius is not.
+        pair_model = self.model(body_length_m='.45', body_width_m='.45')
+        pair = self.compile({0: [6, 7], 1: [7, 12]}, model=pair_model)
+        self.assertTrue(pair['certified_nominal_reference'])
+        inflated_pair = self.compile({0: [6, 7], 1: [7, 12]}, model=pair_model,
+                                     radius_increments=[{0: Fraction(1, 20),
+                                                        1: Fraction(1, 20)}])
+        self.assertEqual(inflated_pair['reason']['kind'],
+                         'CIRCLE_PAIR_SEPARATION_NOT_ESTABLISHED')
+        self.assertFalse(inflated_pair['certified_nominal_reference'])
+        self.assertIsNone(inflated_pair['schedule'])
+
+    def test_fixed_slot_and_body_radius_bound_are_validated(self):
+        slow = self.model(turn_speed_rad_s='.2', turn_accel_rad_s2='.1',
+                          turn_decel_rad_s2='.1')
+        answer = self.compile({0: [11, 12]}, headings={0: 2}, model=slow,
+                              turn_quarter_slot_s=4)
+        self.assertEqual(answer['status'], 'REJECTED')
+        self.assertIsNone(answer['schedule'])
+        under = self.compile({0: [11, 12]}, body_radius_m='.1')
+        self.assertEqual(under['status'], 'REJECTED')
+        self.assertIsNone(under['schedule'])
 
     def test_analytic_profiles_are_rest_to_rest_and_share_monotone_progress(self):
         for distance in (.05, 2):
