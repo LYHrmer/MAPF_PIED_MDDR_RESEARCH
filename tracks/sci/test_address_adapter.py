@@ -13,10 +13,52 @@ from run_address_adapter import (load, parse_paths, verify_attempt_trace, verify
                                  verify_phase_profile, verify_seed_comparison, comparison_settings,
                                  PHASE_NAMES, worker)
 from run_repair_dev import unpack
-from reward_analysis import diagnose_legacy, verify_reward_trace
+from reward_analysis import diagnose_legacy, verify_reward_trace, committed_magnitude_feedback
 
 
 class AdapterContracts(unittest.TestCase):
+    def test_magnitude_feedback_preserves_terminal_objective_and_censor_unknown(self):
+        rows = [dict(old_task_soc=10, committed_task_soc=8, committed_gain=2,
+                     selection_wall_before_log_ns=20, outcome='ACCEPTED',
+                     accepted=True, candidate_validated=True, censored=False, seed_id=0),
+                dict(old_task_soc=8, committed_task_soc=8, committed_gain=0,
+                     selection_wall_before_log_ns=80, outcome='CENSORED',
+                     accepted=False, candidate_validated=False, censored=True, seed_id=1),
+                dict(old_task_soc=8, committed_task_soc=3, committed_gain=5,
+                     selection_wall_before_log_ns=50, outcome='ACCEPTED',
+                     accepted=True, candidate_validated=True, censored=False, seed_id=0),
+                dict(old_task_soc=3, committed_task_soc=3, committed_gain=0,
+                     selection_wall_before_log_ns=0, outcome='NO_GROUP',
+                     accepted=False, candidate_validated=False, censored=False, seed_id=None)]
+        summary = committed_magnitude_feedback(rows, 10, 3)
+        self.assertEqual(summary['normalized_reward_sum_exact'], [7, 10])
+        self.assertEqual(summary['positive_gain_events'], 2)  # Magnitudes 2 and 5 retained.
+        self.assertEqual(summary['gain_event_counts'], {0: 2, 2: 1, 5: 1})
+        self.assertEqual(summary['censored_actual_committed_gain'], 0)
+        self.assertEqual(summary['censored_candidate_gain_unobserved_events'], 1)
+        self.assertIsNone(summary['counterfactual_gain_if_given_more_time'])
+        self.assertEqual(summary['recorded_selection_wall_ns'], 150)
+        self.assertEqual(summary['per_seed']['1']['recorded_selection_wall_ns'], 80)
+        self.assertEqual(summary['zero_recorded_wall_events'], 1)
+        self.assertFalse(summary['continuous_reward_passed_to_beta'])
+        self.assertFalse(summary['policy_performance_estimated'])
+        # No implicit denominator change, phantom improvement or missing tail.
+        for changed in (dict(rows[1], committed_gain=1),
+                        dict(rows[1], outcome='ACCEPTED', accepted=True, committed_task_soc=7,
+                             committed_gain=1), dict(rows[1], outcome='UNSETTLED_ERROR')):
+            with self.assertRaises(ValueError):
+                committed_magnitude_feedback([rows[0], changed, *rows[2:]], 10, 3)
+        with self.assertRaises(ValueError): committed_magnitude_feedback(rows[:-2], 10, 3)
+
+    def test_magnitude_feedback_zero_task_and_regression_rejection(self):
+        self.assertEqual(committed_magnitude_feedback([], 0, 0)['normalized_reward_sum_exact'], [0, 1])
+        bad = dict(old_task_soc=1, committed_task_soc=2, committed_gain=-1,
+                   selection_wall_before_log_ns=10, outcome='ROLLED_BACK',
+                   accepted=False, candidate_validated=True, censored=False, seed_id=0)
+        with self.assertRaises(ValueError): committed_magnitude_feedback([bad], 1, 2)
+        for invalid in (-1, True, 1.5):
+            with self.assertRaises(ValueError): committed_magnitude_feedback([], invalid, 0)
+
     def test_reward_protocol_keeps_seed_rule_budget_and_feedback_fixed(self):
         cfg = {'variant': 'reward_contract', 'comparison_protocol': 'reward_memory_v1'}
         job = {'seed_admission': 'positive_delay', 'effort_mode': 'total_budget',
@@ -67,6 +109,21 @@ class AdapterContracts(unittest.TestCase):
             out = verify_reward_trace(encoded(rows), native, job, 2)
             self.assertEqual(out['actual_committed_gain'], 2)
             self.assertEqual(out['outcomes']['CENSORED'], 1)
+            projected = committed_magnitude_feedback(rows, 10, 8)
+            self.assertEqual(projected['normalized_reward_sum_exact'], [2, 10])
+            self.assertEqual(projected['gain_event_counts'], {0: 4, 2: 1})
+            # A complete worse candidate is rolled back, not a negative
+            # retained-plan reward. A validated candidate can also lose its
+            # commit opportunity at the deadline; its known gain is not earned.
+            validated_censor = copy.deepcopy(rows)
+            validated_censor[2].update(fresh_paths=2, candidate_validated=True,
+                                      candidate_subset_soc=4, candidate_reward=4)
+            verify_reward_trace(encoded(validated_censor), native, job, 2)
+            projected = committed_magnitude_feedback(validated_censor, 10, 8)
+            self.assertEqual(projected['committed_gain'], 2)
+            self.assertEqual(projected['censored_actual_committed_gain'], 0)
+            self.assertEqual(projected['censored_candidate_gain_unobserved_events'], 0)
+            self.assertIsNone(projected['counterfactual_gain_if_given_more_time'])
             for index, changes in ((0, dict(selection_id=2)), (1, dict(old_task_soc=9)),
                                    (2, dict(candidate_subset_soc=3, candidate_reward=5)),
                                    (2, dict(memory_eligible=True, bernoulli_reward=0)),

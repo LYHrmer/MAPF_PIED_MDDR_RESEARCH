@@ -1,0 +1,4128 @@
+{
+  "scope": "OFFLINE_FEEDBACK_SEMANTICS_NOT_NEW_POLICY_EVALUATION",
+  "source_receipt_sha256": "e7a131d70d573f87c734ce467282b7835e7f1a74f9c8ca0d6f814903018fe16c",
+  "source_scientific_code_commit": "3d44f2d171444d0e2745a2858107c84e2d23b681",
+  "new_scientific_run": false,
+  "training": false,
+  "new_selection_or_search": false,
+  "formula": "r_t=(C_before-C_after)/max(1,C_initial); fixed denominator per task",
+  "cost_is_recorded_separately": true,
+  "cost_adjusted_reward_not_computed": true,
+  "source_tasks_are_now_design_data_for_this_candidate": true,
+  "cross_task_mean_is_not_equivalent_to_unweighted_SOC": true,
+  "missing_cost_fields": [
+    "per_event_reward_logging",
+    "separate_candidate_validation",
+    "first_observed_deadline_site"
+  ],
+  "jobs": [
+    {
+      "job": "maze-32-32-2__s04__n16__seed0__author",
+      "case": "maze-32-32-2__s04__n16",
+      "solver_seed": 0,
+      "executed_reward_memory": "author",
+      "initial_soc": 1042,
+      "final_soc": 978,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 150,
+        "fixed_task_denominator": 1042,
+        "normalized_reward_sum_exact": [
+          64,
+          1042
+        ],
+        "committed_gain": 64,
+        "positive_gain_events": 10,
+        "gain_event_counts": {
+          "0": 140,
+          "1": 3,
+          "2": 2,
+          "3": 1,
+          "5": 1,
+          "7": 1,
+          "17": 1,
+          "25": 1
+        },
+        "per_seed": {
+          "12": {
+            "events": 3,
+            "committed_gain": 17,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 57722157
+          },
+          "8": {
+            "events": 13,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 313114407
+          },
+          "4": {
+            "events": 3,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 81246223
+          },
+          "5": {
+            "events": 13,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 269034839
+          },
+          "15": {
+            "events": 29,
+            "committed_gain": 7,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 312242268
+          },
+          "13": {
+            "events": 13,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 118007037
+          },
+          "9": {
+            "events": 28,
+            "committed_gain": 5,
+            "positive_gain_events": 2,
+            "censored_events": 10,
+            "recorded_selection_wall_ns": 652004053
+          },
+          "0": {
+            "events": 5,
+            "committed_gain": 25,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 123003343
+          },
+          "7": {
+            "events": 6,
+            "committed_gain": 2,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 104388029
+          },
+          "10": {
+            "events": 4,
+            "committed_gain": 6,
+            "positive_gain_events": 2,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 103890649
+          },
+          "2": {
+            "events": 31,
+            "committed_gain": 2,
+            "positive_gain_events": 2,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 674761682
+          },
+          "3": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 41981765
+          }
+        },
+        "censored_events": 13,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 13,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2851396452,
+        "censored_selection_wall_ns": 357475944,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3084597947,
+      "reward_log_wall_ns": 8150344,
+      "wall_outside_selection_intervals_ns": 233201495,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "maze-32-32-2__s04__n16__seed0__cumulative",
+      "case": "maze-32-32-2__s04__n16",
+      "solver_seed": 0,
+      "executed_reward_memory": "cumulative",
+      "initial_soc": 1042,
+      "final_soc": 978,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 133,
+        "fixed_task_denominator": 1042,
+        "normalized_reward_sum_exact": [
+          64,
+          1042
+        ],
+        "committed_gain": 64,
+        "positive_gain_events": 10,
+        "gain_event_counts": {
+          "0": 123,
+          "2": 6,
+          "3": 1,
+          "7": 1,
+          "17": 1,
+          "25": 1
+        },
+        "per_seed": {
+          "12": {
+            "events": 5,
+            "committed_gain": 17,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 124285053
+          },
+          "8": {
+            "events": 13,
+            "committed_gain": 2,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 319008071
+          },
+          "4": {
+            "events": 10,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 211823717
+          },
+          "5": {
+            "events": 13,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 240268338
+          },
+          "15": {
+            "events": 17,
+            "committed_gain": 7,
+            "positive_gain_events": 1,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 317049140
+          },
+          "13": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 25951478
+          },
+          "9": {
+            "events": 24,
+            "committed_gain": 5,
+            "positive_gain_events": 2,
+            "censored_events": 4,
+            "recorded_selection_wall_ns": 597012191
+          },
+          "0": {
+            "events": 5,
+            "committed_gain": 25,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 123309544
+          },
+          "7": {
+            "events": 3,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 67744467
+          },
+          "10": {
+            "events": 22,
+            "committed_gain": 4,
+            "positive_gain_events": 2,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 496793506
+          },
+          "2": {
+            "events": 19,
+            "committed_gain": 4,
+            "positive_gain_events": 2,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 368916790
+          }
+        },
+        "censored_events": 7,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 7,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2892162295,
+        "censored_selection_wall_ns": 186313545,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3049536451,
+      "reward_log_wall_ns": 674622,
+      "wall_outside_selection_intervals_ns": 157374156,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "maze-32-32-2__s04__n16__seed0__window",
+      "case": "maze-32-32-2__s04__n16",
+      "solver_seed": 0,
+      "executed_reward_memory": "window",
+      "initial_soc": 1042,
+      "final_soc": 978,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 132,
+        "fixed_task_denominator": 1042,
+        "normalized_reward_sum_exact": [
+          64,
+          1042
+        ],
+        "committed_gain": 64,
+        "positive_gain_events": 10,
+        "gain_event_counts": {
+          "0": 122,
+          "2": 6,
+          "3": 1,
+          "7": 1,
+          "17": 1,
+          "25": 1
+        },
+        "per_seed": {
+          "12": {
+            "events": 5,
+            "committed_gain": 17,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 123285265
+          },
+          "8": {
+            "events": 15,
+            "committed_gain": 2,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 356506637
+          },
+          "4": {
+            "events": 11,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 225912494
+          },
+          "5": {
+            "events": 12,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 234256056
+          },
+          "15": {
+            "events": 16,
+            "committed_gain": 7,
+            "positive_gain_events": 1,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 291550357
+          },
+          "13": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 26162104
+          },
+          "9": {
+            "events": 24,
+            "committed_gain": 5,
+            "positive_gain_events": 2,
+            "censored_events": 3,
+            "recorded_selection_wall_ns": 598316453
+          },
+          "0": {
+            "events": 5,
+            "committed_gain": 25,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 123592809
+          },
+          "7": {
+            "events": 3,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 67974355
+          },
+          "10": {
+            "events": 21,
+            "committed_gain": 4,
+            "positive_gain_events": 2,
+            "censored_events": 2,
+            "recorded_selection_wall_ns": 496630700
+          },
+          "2": {
+            "events": 18,
+            "committed_gain": 4,
+            "positive_gain_events": 2,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 344770403
+          }
+        },
+        "censored_events": 7,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 7,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2888957633,
+        "censored_selection_wall_ns": 199842484,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3046448657,
+      "reward_log_wall_ns": 724310,
+      "wall_outside_selection_intervals_ns": 157491024,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "maze-32-32-2__s05__n32__seed0__cumulative",
+      "case": "maze-32-32-2__s05__n32",
+      "solver_seed": 0,
+      "executed_reward_memory": "cumulative",
+      "initial_soc": 2000,
+      "final_soc": 1988,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 107,
+        "fixed_task_denominator": 2000,
+        "normalized_reward_sum_exact": [
+          12,
+          2000
+        ],
+        "committed_gain": 12,
+        "positive_gain_events": 5,
+        "gain_event_counts": {
+          "0": 102,
+          "1": 2,
+          "2": 1,
+          "3": 1,
+          "5": 1
+        },
+        "per_seed": {
+          "23": {
+            "events": 8,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 8,
+            "recorded_selection_wall_ns": 231295108
+          },
+          "6": {
+            "events": 3,
+            "committed_gain": 1,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 48465745
+          },
+          "15": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 34518482
+          },
+          "20": {
+            "events": 5,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 5,
+            "recorded_selection_wall_ns": 144536057
+          },
+          "9": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 20867182
+          },
+          "17": {
+            "events": 9,
+            "committed_gain": 3,
+            "positive_gain_events": 1,
+            "censored_events": 8,
+            "recorded_selection_wall_ns": 249743994
+          },
+          "10": {
+            "events": 6,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 6,
+            "recorded_selection_wall_ns": 174101521
+          },
+          "27": {
+            "events": 11,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 11,
+            "recorded_selection_wall_ns": 318664580
+          },
+          "22": {
+            "events": 9,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 8,
+            "recorded_selection_wall_ns": 248989596
+          },
+          "18": {
+            "events": 4,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 4,
+            "recorded_selection_wall_ns": 115859644
+          },
+          "31": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 26491966
+          },
+          "16": {
+            "events": 5,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 5,
+            "recorded_selection_wall_ns": 144719237
+          },
+          "28": {
+            "events": 2,
+            "committed_gain": 6,
+            "positive_gain_events": 2,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 26696289
+          },
+          "4": {
+            "events": 10,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 10,
+            "recorded_selection_wall_ns": 289179458
+          },
+          "7": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 47409275
+          },
+          "11": {
+            "events": 4,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 4,
+            "recorded_selection_wall_ns": 115984432
+          },
+          "14": {
+            "events": 3,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 3,
+            "recorded_selection_wall_ns": 86776793
+          },
+          "19": {
+            "events": 4,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 4,
+            "recorded_selection_wall_ns": 91063694
+          },
+          "29": {
+            "events": 1,
+            "committed_gain": 2,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 15745262
+          },
+          "5": {
+            "events": 5,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 5,
+            "recorded_selection_wall_ns": 144643374
+          },
+          "21": {
+            "events": 5,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 4,
+            "recorded_selection_wall_ns": 140841331
+          },
+          "3": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 50859493
+          },
+          "26": {
+            "events": 4,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 4,
+            "recorded_selection_wall_ns": 115690764
+          }
+        },
+        "censored_events": 89,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 89,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2883143277,
+        "censored_selection_wall_ns": 2551326439,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3053100987,
+      "reward_log_wall_ns": 571451,
+      "wall_outside_selection_intervals_ns": 169957710,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "maze-32-32-2__s05__n32__seed0__window",
+      "case": "maze-32-32-2__s05__n32",
+      "solver_seed": 0,
+      "executed_reward_memory": "window",
+      "initial_soc": 2000,
+      "final_soc": 1988,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 105,
+        "fixed_task_denominator": 2000,
+        "normalized_reward_sum_exact": [
+          12,
+          2000
+        ],
+        "committed_gain": 12,
+        "positive_gain_events": 4,
+        "gain_event_counts": {
+          "0": 101,
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "6": 1
+        },
+        "per_seed": {
+          "23": {
+            "events": 7,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 7,
+            "recorded_selection_wall_ns": 201933808
+          },
+          "6": {
+            "events": 3,
+            "committed_gain": 3,
+            "positive_gain_events": 2,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 49611828
+          },
+          "15": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 17031532
+          },
+          "20": {
+            "events": 7,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 7,
+            "recorded_selection_wall_ns": 201905562
+          },
+          "9": {
+            "events": 3,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 2,
+            "recorded_selection_wall_ns": 79026775
+          },
+          "17": {
+            "events": 7,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 7,
+            "recorded_selection_wall_ns": 202268948
+          },
+          "10": {
+            "events": 8,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 8,
+            "recorded_selection_wall_ns": 231532321
+          },
+          "27": {
+            "events": 8,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 8,
+            "recorded_selection_wall_ns": 223288229
+          },
+          "22": {
+            "events": 5,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 5,
+            "recorded_selection_wall_ns": 144230516
+          },
+          "18": {
+            "events": 5,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 5,
+            "recorded_selection_wall_ns": 144411872
+          },
+          "31": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 27069937
+          },
+          "16": {
+            "events": 5,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 5,
+            "recorded_selection_wall_ns": 144714060
+          },
+          "28": {
+            "events": 1,
+            "committed_gain": 6,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 14423744
+          },
+          "4": {
+            "events": 12,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 12,
+            "recorded_selection_wall_ns": 346333988
+          },
+          "21": {
+            "events": 5,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 4,
+            "recorded_selection_wall_ns": 141478996
+          },
+          "7": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 45517371
+          },
+          "29": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 15862277
+          },
+          "19": {
+            "events": 5,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 5,
+            "recorded_selection_wall_ns": 144285321
+          },
+          "26": {
+            "events": 3,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 2,
+            "recorded_selection_wall_ns": 85177862
+          },
+          "5": {
+            "events": 5,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 5,
+            "recorded_selection_wall_ns": 144333716
+          },
+          "11": {
+            "events": 4,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 4,
+            "recorded_selection_wall_ns": 115648472
+          },
+          "3": {
+            "events": 3,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 2,
+            "recorded_selection_wall_ns": 82205421
+          },
+          "14": {
+            "events": 3,
+            "committed_gain": 3,
+            "positive_gain_events": 1,
+            "censored_events": 2,
+            "recorded_selection_wall_ns": 74395360
+          }
+        },
+        "censored_events": 91,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 91,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2876687916,
+        "censored_selection_wall_ns": 2620548183,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3052314620,
+      "reward_log_wall_ns": 611825,
+      "wall_outside_selection_intervals_ns": 175626704,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "maze-32-32-2__s05__n32__seed0__author",
+      "case": "maze-32-32-2__s05__n32",
+      "solver_seed": 0,
+      "executed_reward_memory": "author",
+      "initial_soc": 2000,
+      "final_soc": 1972,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 108,
+        "fixed_task_denominator": 2000,
+        "normalized_reward_sum_exact": [
+          28,
+          2000
+        ],
+        "committed_gain": 28,
+        "positive_gain_events": 8,
+        "gain_event_counts": {
+          "0": 100,
+          "1": 2,
+          "2": 3,
+          "3": 1,
+          "7": 1,
+          "10": 1
+        },
+        "per_seed": {
+          "23": {
+            "events": 4,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 4,
+            "recorded_selection_wall_ns": 115755108
+          },
+          "6": {
+            "events": 2,
+            "committed_gain": 3,
+            "positive_gain_events": 2,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 32241062
+          },
+          "15": {
+            "events": 3,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 63246018
+          },
+          "20": {
+            "events": 7,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 7,
+            "recorded_selection_wall_ns": 202761572
+          },
+          "28": {
+            "events": 2,
+            "committed_gain": 3,
+            "positive_gain_events": 2,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 40900142
+          },
+          "5": {
+            "events": 2,
+            "committed_gain": 10,
+            "positive_gain_events": 1,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 54940458
+          },
+          "16": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 2,
+            "recorded_selection_wall_ns": 57873618
+          },
+          "10": {
+            "events": 15,
+            "committed_gain": 7,
+            "positive_gain_events": 1,
+            "censored_events": 13,
+            "recorded_selection_wall_ns": 415174115
+          },
+          "22": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 2,
+            "recorded_selection_wall_ns": 57863806
+          },
+          "14": {
+            "events": 4,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 4,
+            "recorded_selection_wall_ns": 115849146
+          },
+          "4": {
+            "events": 19,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 15,
+            "recorded_selection_wall_ns": 503557030
+          },
+          "21": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 28999645
+          },
+          "29": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 30792399
+          },
+          "18": {
+            "events": 13,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 13,
+            "recorded_selection_wall_ns": 376997654
+          },
+          "19": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 2,
+            "recorded_selection_wall_ns": 57871669
+          },
+          "26": {
+            "events": 6,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 4,
+            "recorded_selection_wall_ns": 146709578
+          },
+          "17": {
+            "events": 3,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 84084928
+          },
+          "9": {
+            "events": 7,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 6,
+            "recorded_selection_wall_ns": 193902008
+          },
+          "27": {
+            "events": 4,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 4,
+            "recorded_selection_wall_ns": 115853990
+          },
+          "3": {
+            "events": 1,
+            "committed_gain": 2,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 18102165
+          },
+          "31": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 13271235
+          },
+          "7": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 54354618
+          },
+          "2": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 24442782
+          },
+          "11": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 2,
+            "recorded_selection_wall_ns": 57877412
+          },
+          "8": {
+            "events": 1,
+            "committed_gain": 3,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 22028178
+          }
+        },
+        "censored_events": 83,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 83,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2885450336,
+        "censored_selection_wall_ns": 2388975461,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3041354202,
+      "reward_log_wall_ns": 591734,
+      "wall_outside_selection_intervals_ns": 155903866,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "random-32-32-10__s04__n16__seed0__window",
+      "case": "random-32-32-10__s04__n16",
+      "solver_seed": 0,
+      "executed_reward_memory": "window",
+      "initial_soc": 356,
+      "final_soc": 353,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 1626,
+        "fixed_task_denominator": 356,
+        "normalized_reward_sum_exact": [
+          3,
+          356
+        ],
+        "committed_gain": 3,
+        "positive_gain_events": 3,
+        "gain_event_counts": {
+          "0": 1623,
+          "1": 3
+        },
+        "per_seed": {
+          "13": {
+            "events": 21,
+            "committed_gain": 3,
+            "positive_gain_events": 3,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 15550897
+          },
+          "14": {
+            "events": 1605,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 2869604650
+          }
+        },
+        "censored_events": 1,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 1,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2885155547,
+        "censored_selection_wall_ns": 1578779,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3056428756,
+      "reward_log_wall_ns": 4217898,
+      "wall_outside_selection_intervals_ns": 171273209,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "random-32-32-10__s04__n16__seed0__author",
+      "case": "random-32-32-10__s04__n16",
+      "solver_seed": 0,
+      "executed_reward_memory": "author",
+      "initial_soc": 356,
+      "final_soc": 353,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 1619,
+        "fixed_task_denominator": 356,
+        "normalized_reward_sum_exact": [
+          3,
+          356
+        ],
+        "committed_gain": 3,
+        "positive_gain_events": 3,
+        "gain_event_counts": {
+          "0": 1616,
+          "1": 3
+        },
+        "per_seed": {
+          "13": {
+            "events": 21,
+            "committed_gain": 3,
+            "positive_gain_events": 3,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 15278571
+          },
+          "14": {
+            "events": 1598,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 2863230073
+          }
+        },
+        "censored_events": 1,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 1,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2878508644,
+        "censored_selection_wall_ns": 617829,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3061376323,
+      "reward_log_wall_ns": 4381728,
+      "wall_outside_selection_intervals_ns": 182867679,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "random-32-32-10__s04__n16__seed0__cumulative",
+      "case": "random-32-32-10__s04__n16",
+      "solver_seed": 0,
+      "executed_reward_memory": "cumulative",
+      "initial_soc": 356,
+      "final_soc": 353,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 1625,
+        "fixed_task_denominator": 356,
+        "normalized_reward_sum_exact": [
+          3,
+          356
+        ],
+        "committed_gain": 3,
+        "positive_gain_events": 3,
+        "gain_event_counts": {
+          "0": 1622,
+          "1": 3
+        },
+        "per_seed": {
+          "13": {
+            "events": 21,
+            "committed_gain": 3,
+            "positive_gain_events": 3,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 15476971
+          },
+          "14": {
+            "events": 1604,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 2862656531
+          }
+        },
+        "censored_events": 1,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 1,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2878133502,
+        "censored_selection_wall_ns": 383451,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3052419619,
+      "reward_log_wall_ns": 4151521,
+      "wall_outside_selection_intervals_ns": 174286117,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "random-32-32-10__s05__n32__seed0__author",
+      "case": "random-32-32-10__s05__n32",
+      "solver_seed": 0,
+      "executed_reward_memory": "author",
+      "initial_soc": 753,
+      "final_soc": 749,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 516,
+        "fixed_task_denominator": 753,
+        "normalized_reward_sum_exact": [
+          4,
+          753
+        ],
+        "committed_gain": 4,
+        "positive_gain_events": 3,
+        "gain_event_counts": {
+          "0": 513,
+          "1": 2,
+          "2": 1
+        },
+        "per_seed": {
+          "31": {
+            "events": 2,
+            "committed_gain": 1,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 11192631
+          },
+          "26": {
+            "events": 1,
+            "committed_gain": 2,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 4718848
+          },
+          "6": {
+            "events": 512,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 2860406677
+          },
+          "11": {
+            "events": 1,
+            "committed_gain": 1,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 5405127
+          }
+        },
+        "censored_events": 1,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 1,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2881723283,
+        "censored_selection_wall_ns": 5846963,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3047503515,
+      "reward_log_wall_ns": 3789405,
+      "wall_outside_selection_intervals_ns": 165780232,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "random-32-32-10__s05__n32__seed0__cumulative",
+      "case": "random-32-32-10__s05__n32",
+      "solver_seed": 0,
+      "executed_reward_memory": "cumulative",
+      "initial_soc": 753,
+      "final_soc": 749,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 524,
+        "fixed_task_denominator": 753,
+        "normalized_reward_sum_exact": [
+          4,
+          753
+        ],
+        "committed_gain": 4,
+        "positive_gain_events": 3,
+        "gain_event_counts": {
+          "0": 521,
+          "1": 2,
+          "2": 1
+        },
+        "per_seed": {
+          "31": {
+            "events": 2,
+            "committed_gain": 1,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 11226263
+          },
+          "26": {
+            "events": 1,
+            "committed_gain": 2,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 4776243
+          },
+          "6": {
+            "events": 520,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 2858725358
+          },
+          "11": {
+            "events": 1,
+            "committed_gain": 1,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 5445511
+          }
+        },
+        "censored_events": 1,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 1,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2880173375,
+        "censored_selection_wall_ns": 2151355,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3044670031,
+      "reward_log_wall_ns": 1943118,
+      "wall_outside_selection_intervals_ns": 164496656,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "random-32-32-10__s05__n32__seed0__window",
+      "case": "random-32-32-10__s05__n32",
+      "solver_seed": 0,
+      "executed_reward_memory": "window",
+      "initial_soc": 753,
+      "final_soc": 749,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 524,
+        "fixed_task_denominator": 753,
+        "normalized_reward_sum_exact": [
+          4,
+          753
+        ],
+        "committed_gain": 4,
+        "positive_gain_events": 3,
+        "gain_event_counts": {
+          "0": 521,
+          "1": 2,
+          "2": 1
+        },
+        "per_seed": {
+          "31": {
+            "events": 2,
+            "committed_gain": 1,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 11217050
+          },
+          "26": {
+            "events": 1,
+            "committed_gain": 2,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 4774157
+          },
+          "6": {
+            "events": 520,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 2862286712
+          },
+          "11": {
+            "events": 1,
+            "committed_gain": 1,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 5531196
+          }
+        },
+        "censored_events": 1,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 1,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2883809115,
+        "censored_selection_wall_ns": 3673907,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3045942430,
+      "reward_log_wall_ns": 2295764,
+      "wall_outside_selection_intervals_ns": 162133315,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "maze-32-32-2__s04__n16__seed1__cumulative",
+      "case": "maze-32-32-2__s04__n16",
+      "solver_seed": 1,
+      "executed_reward_memory": "cumulative",
+      "initial_soc": 1042,
+      "final_soc": 982,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 127,
+        "fixed_task_denominator": 1042,
+        "normalized_reward_sum_exact": [
+          60,
+          1042
+        ],
+        "committed_gain": 60,
+        "positive_gain_events": 7,
+        "gain_event_counts": {
+          "0": 120,
+          "1": 1,
+          "2": 1,
+          "6": 1,
+          "7": 2,
+          "12": 1,
+          "25": 1
+        },
+        "per_seed": {
+          "15": {
+            "events": 27,
+            "committed_gain": 8,
+            "positive_gain_events": 2,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 581502499
+          },
+          "9": {
+            "events": 23,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 16,
+            "recorded_selection_wall_ns": 602259119
+          },
+          "13": {
+            "events": 3,
+            "committed_gain": 12,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 68492815
+          },
+          "7": {
+            "events": 5,
+            "committed_gain": 9,
+            "positive_gain_events": 2,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 79124544
+          },
+          "4": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 22067907
+          },
+          "0": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 47723742
+          },
+          "5": {
+            "events": 19,
+            "committed_gain": 25,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 408667661
+          },
+          "2": {
+            "events": 19,
+            "committed_gain": 6,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 440196427
+          },
+          "10": {
+            "events": 14,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 311161405
+          },
+          "8": {
+            "events": 14,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 327833046
+          }
+        },
+        "censored_events": 17,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 17,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2889029165,
+        "censored_selection_wall_ns": 484378394,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3055142801,
+      "reward_log_wall_ns": 988362,
+      "wall_outside_selection_intervals_ns": 166113636,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "maze-32-32-2__s04__n16__seed1__window",
+      "case": "maze-32-32-2__s04__n16",
+      "solver_seed": 1,
+      "executed_reward_memory": "window",
+      "initial_soc": 1042,
+      "final_soc": 981,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 131,
+        "fixed_task_denominator": 1042,
+        "normalized_reward_sum_exact": [
+          61,
+          1042
+        ],
+        "committed_gain": 61,
+        "positive_gain_events": 8,
+        "gain_event_counts": {
+          "0": 123,
+          "1": 2,
+          "2": 1,
+          "6": 1,
+          "7": 2,
+          "12": 1,
+          "25": 1
+        },
+        "per_seed": {
+          "15": {
+            "events": 23,
+            "committed_gain": 9,
+            "positive_gain_events": 3,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 513104008
+          },
+          "9": {
+            "events": 19,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 8,
+            "recorded_selection_wall_ns": 475101033
+          },
+          "13": {
+            "events": 10,
+            "committed_gain": 12,
+            "positive_gain_events": 1,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 129962209
+          },
+          "7": {
+            "events": 9,
+            "committed_gain": 9,
+            "positive_gain_events": 2,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 167187743
+          },
+          "4": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 20523199
+          },
+          "0": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 49776605
+          },
+          "5": {
+            "events": 18,
+            "committed_gain": 25,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 397055116
+          },
+          "2": {
+            "events": 19,
+            "committed_gain": 6,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 443163146
+          },
+          "10": {
+            "events": 15,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 2,
+            "recorded_selection_wall_ns": 340056551
+          },
+          "8": {
+            "events": 15,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 360543522
+          }
+        },
+        "censored_events": 13,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 13,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2896473132,
+        "censored_selection_wall_ns": 357892805,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3048257979,
+      "reward_log_wall_ns": 921188,
+      "wall_outside_selection_intervals_ns": 151784847,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "maze-32-32-2__s04__n16__seed1__author",
+      "case": "maze-32-32-2__s04__n16",
+      "solver_seed": 1,
+      "executed_reward_memory": "author",
+      "initial_soc": 1042,
+      "final_soc": 978,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 144,
+        "fixed_task_denominator": 1042,
+        "normalized_reward_sum_exact": [
+          64,
+          1042
+        ],
+        "committed_gain": 64,
+        "positive_gain_events": 10,
+        "gain_event_counts": {
+          "0": 134,
+          "1": 1,
+          "2": 4,
+          "4": 1,
+          "7": 2,
+          "12": 1,
+          "25": 1
+        },
+        "per_seed": {
+          "15": {
+            "events": 21,
+            "committed_gain": 7,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 160473726
+          },
+          "9": {
+            "events": 28,
+            "committed_gain": 25,
+            "positive_gain_events": 1,
+            "censored_events": 18,
+            "recorded_selection_wall_ns": 725822571
+          },
+          "13": {
+            "events": 4,
+            "committed_gain": 12,
+            "positive_gain_events": 1,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 83567956
+          },
+          "7": {
+            "events": 6,
+            "committed_gain": 9,
+            "positive_gain_events": 2,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 97063823
+          },
+          "4": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 20744349
+          },
+          "0": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 42761945
+          },
+          "5": {
+            "events": 13,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 260900113
+          },
+          "10": {
+            "events": 27,
+            "committed_gain": 4,
+            "positive_gain_events": 2,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 560209949
+          },
+          "3": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 8836844
+          },
+          "8": {
+            "events": 14,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 315854144
+          },
+          "12": {
+            "events": 1,
+            "committed_gain": 1,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 23125141
+          },
+          "2": {
+            "events": 26,
+            "committed_gain": 6,
+            "positive_gain_events": 2,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 590329977
+          }
+        },
+        "censored_events": 20,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 20,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2889690538,
+        "censored_selection_wall_ns": 555155690,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3048057582,
+      "reward_log_wall_ns": 1038274,
+      "wall_outside_selection_intervals_ns": 158367044,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "maze-32-32-2__s05__n32__seed1__window",
+      "case": "maze-32-32-2__s05__n32",
+      "solver_seed": 1,
+      "executed_reward_memory": "window",
+      "initial_soc": 2000,
+      "final_soc": 1985,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 106,
+        "fixed_task_denominator": 2000,
+        "normalized_reward_sum_exact": [
+          15,
+          2000
+        ],
+        "committed_gain": 15,
+        "positive_gain_events": 5,
+        "gain_event_counts": {
+          "0": 101,
+          "1": 1,
+          "2": 2,
+          "5": 2
+        },
+        "per_seed": {
+          "9": {
+            "events": 7,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 7,
+            "recorded_selection_wall_ns": 202733577
+          },
+          "5": {
+            "events": 4,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 4,
+            "recorded_selection_wall_ns": 104955245
+          },
+          "16": {
+            "events": 18,
+            "committed_gain": 5,
+            "positive_gain_events": 1,
+            "censored_events": 17,
+            "recorded_selection_wall_ns": 517145973
+          },
+          "21": {
+            "events": 5,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 4,
+            "recorded_selection_wall_ns": 129494778
+          },
+          "27": {
+            "events": 8,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 8,
+            "recorded_selection_wall_ns": 231973802
+          },
+          "7": {
+            "events": 6,
+            "committed_gain": 2,
+            "positive_gain_events": 1,
+            "censored_events": 3,
+            "recorded_selection_wall_ns": 144282207
+          },
+          "11": {
+            "events": 5,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 5,
+            "recorded_selection_wall_ns": 145187059
+          },
+          "22": {
+            "events": 8,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 8,
+            "recorded_selection_wall_ns": 231366679
+          },
+          "18": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 53662009
+          },
+          "26": {
+            "events": 3,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 2,
+            "recorded_selection_wall_ns": 73297027
+          },
+          "4": {
+            "events": 3,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 3,
+            "recorded_selection_wall_ns": 86805699
+          },
+          "6": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 15127809
+          },
+          "17": {
+            "events": 7,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 7,
+            "recorded_selection_wall_ns": 202735859
+          },
+          "20": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 2,
+            "recorded_selection_wall_ns": 57831261
+          },
+          "10": {
+            "events": 9,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 8,
+            "recorded_selection_wall_ns": 253915725
+          },
+          "28": {
+            "events": 3,
+            "committed_gain": 6,
+            "positive_gain_events": 2,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 43864531
+          },
+          "29": {
+            "events": 1,
+            "committed_gain": 2,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 15738386
+          },
+          "15": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 17600380
+          },
+          "19": {
+            "events": 6,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 6,
+            "recorded_selection_wall_ns": 173679227
+          },
+          "31": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 13470723
+          },
+          "14": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 2,
+            "recorded_selection_wall_ns": 57859445
+          },
+          "3": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 52418926
+          },
+          "23": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 2,
+            "recorded_selection_wall_ns": 57836276
+          }
+        },
+        "censored_events": 90,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 90,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2882982603,
+        "censored_selection_wall_ns": 2596301886,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3047257351,
+      "reward_log_wall_ns": 1760048,
+      "wall_outside_selection_intervals_ns": 164274748,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "maze-32-32-2__s05__n32__seed1__author",
+      "case": "maze-32-32-2__s05__n32",
+      "solver_seed": 1,
+      "executed_reward_memory": "author",
+      "initial_soc": 2000,
+      "final_soc": 1984,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 105,
+        "fixed_task_denominator": 2000,
+        "normalized_reward_sum_exact": [
+          16,
+          2000
+        ],
+        "committed_gain": 16,
+        "positive_gain_events": 5,
+        "gain_event_counts": {
+          "0": 100,
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1,
+          "6": 1
+        },
+        "per_seed": {
+          "9": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 28961417
+          },
+          "5": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 28857358
+          },
+          "31": {
+            "events": 2,
+            "committed_gain": 6,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 28690456
+          },
+          "11": {
+            "events": 3,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 3,
+            "recorded_selection_wall_ns": 86583991
+          },
+          "6": {
+            "events": 1,
+            "committed_gain": 3,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 16007646
+          },
+          "15": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 16922007
+          },
+          "16": {
+            "events": 4,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 4,
+            "recorded_selection_wall_ns": 115616077
+          },
+          "23": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 28828922
+          },
+          "12": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 14073521
+          },
+          "20": {
+            "events": 3,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 3,
+            "recorded_selection_wall_ns": 86536264
+          },
+          "19": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 2,
+            "recorded_selection_wall_ns": 57674688
+          },
+          "14": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 2,
+            "recorded_selection_wall_ns": 57763398
+          },
+          "22": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 28827184
+          },
+          "18": {
+            "events": 20,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 17,
+            "recorded_selection_wall_ns": 548808335
+          },
+          "3": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 2,
+            "recorded_selection_wall_ns": 57946674
+          },
+          "29": {
+            "events": 1,
+            "committed_gain": 2,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 15781812
+          },
+          "10": {
+            "events": 12,
+            "committed_gain": 1,
+            "positive_gain_events": 1,
+            "censored_events": 11,
+            "recorded_selection_wall_ns": 335136004
+          },
+          "17": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 28856285
+          },
+          "27": {
+            "events": 36,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 36,
+            "recorded_selection_wall_ns": 1013601731
+          },
+          "21": {
+            "events": 5,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 5,
+            "recorded_selection_wall_ns": 144399356
+          },
+          "7": {
+            "events": 2,
+            "committed_gain": 4,
+            "positive_gain_events": 1,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 48801827
+          },
+          "26": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 28843161
+          },
+          "4": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 2,
+            "recorded_selection_wall_ns": 57702931
+          }
+        },
+        "censored_events": 94,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 94,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2875221045,
+        "censored_selection_wall_ns": 2689322572,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3060028705,
+      "reward_log_wall_ns": 731172,
+      "wall_outside_selection_intervals_ns": 184807660,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "maze-32-32-2__s05__n32__seed1__cumulative",
+      "case": "maze-32-32-2__s05__n32",
+      "solver_seed": 1,
+      "executed_reward_memory": "cumulative",
+      "initial_soc": 2000,
+      "final_soc": 1980,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 104,
+        "fixed_task_denominator": 2000,
+        "normalized_reward_sum_exact": [
+          20,
+          2000
+        ],
+        "committed_gain": 20,
+        "positive_gain_events": 7,
+        "gain_event_counts": {
+          "0": 97,
+          "1": 1,
+          "2": 4,
+          "5": 1,
+          "6": 1
+        },
+        "per_seed": {
+          "9": {
+            "events": 6,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 6,
+            "recorded_selection_wall_ns": 173360529
+          },
+          "5": {
+            "events": 7,
+            "committed_gain": 4,
+            "positive_gain_events": 2,
+            "censored_events": 5,
+            "recorded_selection_wall_ns": 184110917
+          },
+          "16": {
+            "events": 13,
+            "committed_gain": 5,
+            "positive_gain_events": 1,
+            "censored_events": 12,
+            "recorded_selection_wall_ns": 371604798
+          },
+          "21": {
+            "events": 5,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 4,
+            "recorded_selection_wall_ns": 135920760
+          },
+          "27": {
+            "events": 10,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 10,
+            "recorded_selection_wall_ns": 289201455
+          },
+          "7": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 46204970
+          },
+          "11": {
+            "events": 6,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 6,
+            "recorded_selection_wall_ns": 173505002
+          },
+          "22": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 2,
+            "recorded_selection_wall_ns": 57708849
+          },
+          "18": {
+            "events": 7,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 7,
+            "recorded_selection_wall_ns": 202662251
+          },
+          "26": {
+            "events": 5,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 4,
+            "recorded_selection_wall_ns": 142667754
+          },
+          "4": {
+            "events": 3,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 3,
+            "recorded_selection_wall_ns": 86734485
+          },
+          "6": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 15418598
+          },
+          "17": {
+            "events": 9,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 9,
+            "recorded_selection_wall_ns": 260007980
+          },
+          "20": {
+            "events": 3,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 3,
+            "recorded_selection_wall_ns": 86601519
+          },
+          "10": {
+            "events": 6,
+            "committed_gain": 1,
+            "positive_gain_events": 1,
+            "censored_events": 4,
+            "recorded_selection_wall_ns": 169956367
+          },
+          "28": {
+            "events": 1,
+            "committed_gain": 6,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 14882962
+          },
+          "3": {
+            "events": 3,
+            "committed_gain": 2,
+            "positive_gain_events": 1,
+            "censored_events": 2,
+            "recorded_selection_wall_ns": 85256314
+          },
+          "19": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 28869803
+          },
+          "29": {
+            "events": 1,
+            "committed_gain": 2,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 15854212
+          },
+          "15": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 35406588
+          },
+          "31": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 13607153
+          },
+          "14": {
+            "events": 7,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 7,
+            "recorded_selection_wall_ns": 202164614
+          },
+          "23": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 2,
+            "recorded_selection_wall_ns": 57723822
+          },
+          "2": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 28904360
+          }
+        },
+        "censored_events": 89,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 89,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2878336062,
+        "censored_selection_wall_ns": 2571731761,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3061271941,
+      "reward_log_wall_ns": 627733,
+      "wall_outside_selection_intervals_ns": 182935879,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "random-32-32-10__s04__n16__seed1__author",
+      "case": "random-32-32-10__s04__n16",
+      "solver_seed": 1,
+      "executed_reward_memory": "author",
+      "initial_soc": 356,
+      "final_soc": 353,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 1627,
+        "fixed_task_denominator": 356,
+        "normalized_reward_sum_exact": [
+          3,
+          356
+        ],
+        "committed_gain": 3,
+        "positive_gain_events": 3,
+        "gain_event_counts": {
+          "0": 1624,
+          "1": 3
+        },
+        "per_seed": {
+          "13": {
+            "events": 31,
+            "committed_gain": 2,
+            "positive_gain_events": 2,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 10582360
+          },
+          "0": {
+            "events": 1,
+            "committed_gain": 1,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 1839540
+          },
+          "14": {
+            "events": 1595,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 2872332366
+          }
+        },
+        "censored_events": 1,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 1,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2884754266,
+        "censored_selection_wall_ns": 887896,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3057677143,
+      "reward_log_wall_ns": 4470356,
+      "wall_outside_selection_intervals_ns": 172922877,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "random-32-32-10__s04__n16__seed1__cumulative",
+      "case": "random-32-32-10__s04__n16",
+      "solver_seed": 1,
+      "executed_reward_memory": "cumulative",
+      "initial_soc": 356,
+      "final_soc": 353,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 1618,
+        "fixed_task_denominator": 356,
+        "normalized_reward_sum_exact": [
+          3,
+          356
+        ],
+        "committed_gain": 3,
+        "positive_gain_events": 3,
+        "gain_event_counts": {
+          "0": 1615,
+          "1": 3
+        },
+        "per_seed": {
+          "13": {
+            "events": 31,
+            "committed_gain": 2,
+            "positive_gain_events": 2,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 10521767
+          },
+          "0": {
+            "events": 1,
+            "committed_gain": 1,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 1842642
+          },
+          "14": {
+            "events": 1586,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 2876794656
+          }
+        },
+        "censored_events": 1,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 1,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2889159065,
+        "censored_selection_wall_ns": 308492,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3051056976,
+      "reward_log_wall_ns": 3965794,
+      "wall_outside_selection_intervals_ns": 161897911,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "random-32-32-10__s04__n16__seed1__window",
+      "case": "random-32-32-10__s04__n16",
+      "solver_seed": 1,
+      "executed_reward_memory": "window",
+      "initial_soc": 356,
+      "final_soc": 353,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 1614,
+        "fixed_task_denominator": 356,
+        "normalized_reward_sum_exact": [
+          3,
+          356
+        ],
+        "committed_gain": 3,
+        "positive_gain_events": 3,
+        "gain_event_counts": {
+          "0": 1611,
+          "1": 3
+        },
+        "per_seed": {
+          "13": {
+            "events": 31,
+            "committed_gain": 2,
+            "positive_gain_events": 2,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 10637170
+          },
+          "0": {
+            "events": 1,
+            "committed_gain": 1,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 1809514
+          },
+          "14": {
+            "events": 1582,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 2860518797
+          }
+        },
+        "censored_events": 1,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 1,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2872965481,
+        "censored_selection_wall_ns": 1305009,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3063976558,
+      "reward_log_wall_ns": 3847839,
+      "wall_outside_selection_intervals_ns": 191011077,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "random-32-32-10__s05__n32__seed1__cumulative",
+      "case": "random-32-32-10__s05__n32",
+      "solver_seed": 1,
+      "executed_reward_memory": "cumulative",
+      "initial_soc": 753,
+      "final_soc": 749,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 535,
+        "fixed_task_denominator": 753,
+        "normalized_reward_sum_exact": [
+          4,
+          753
+        ],
+        "committed_gain": 4,
+        "positive_gain_events": 3,
+        "gain_event_counts": {
+          "0": 532,
+          "1": 2,
+          "2": 1
+        },
+        "per_seed": {
+          "6": {
+            "events": 531,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 2838848367
+          },
+          "11": {
+            "events": 1,
+            "committed_gain": 1,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 5198632
+          },
+          "31": {
+            "events": 2,
+            "committed_gain": 1,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 12148844
+          },
+          "26": {
+            "events": 1,
+            "committed_gain": 2,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 4786396
+          }
+        },
+        "censored_events": 1,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 1,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2860982239,
+        "censored_selection_wall_ns": 5055068,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3070891008,
+      "reward_log_wall_ns": 2048450,
+      "wall_outside_selection_intervals_ns": 209908769,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "random-32-32-10__s05__n32__seed1__window",
+      "case": "random-32-32-10__s05__n32",
+      "solver_seed": 1,
+      "executed_reward_memory": "window",
+      "initial_soc": 753,
+      "final_soc": 749,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 539,
+        "fixed_task_denominator": 753,
+        "normalized_reward_sum_exact": [
+          4,
+          753
+        ],
+        "committed_gain": 4,
+        "positive_gain_events": 3,
+        "gain_event_counts": {
+          "0": 536,
+          "1": 2,
+          "2": 1
+        },
+        "per_seed": {
+          "6": {
+            "events": 535,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 2850086529
+          },
+          "11": {
+            "events": 1,
+            "committed_gain": 1,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 5252891
+          },
+          "31": {
+            "events": 2,
+            "committed_gain": 1,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 12440917
+          },
+          "26": {
+            "events": 1,
+            "committed_gain": 2,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 4762295
+          }
+        },
+        "censored_events": 1,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 1,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2872542632,
+        "censored_selection_wall_ns": 3153049,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3048248641,
+      "reward_log_wall_ns": 1651333,
+      "wall_outside_selection_intervals_ns": 175706009,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "random-32-32-10__s05__n32__seed1__author",
+      "case": "random-32-32-10__s05__n32",
+      "solver_seed": 1,
+      "executed_reward_memory": "author",
+      "initial_soc": 753,
+      "final_soc": 749,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 537,
+        "fixed_task_denominator": 753,
+        "normalized_reward_sum_exact": [
+          4,
+          753
+        ],
+        "committed_gain": 4,
+        "positive_gain_events": 3,
+        "gain_event_counts": {
+          "0": 534,
+          "1": 2,
+          "2": 1
+        },
+        "per_seed": {
+          "6": {
+            "events": 533,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 2847921216
+          },
+          "11": {
+            "events": 1,
+            "committed_gain": 1,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 5248276
+          },
+          "31": {
+            "events": 2,
+            "committed_gain": 1,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 12176057
+          },
+          "26": {
+            "events": 1,
+            "committed_gain": 2,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 4817529
+          }
+        },
+        "censored_events": 1,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 1,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2870163078,
+        "censored_selection_wall_ns": 330614,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3072482415,
+      "reward_log_wall_ns": 2185314,
+      "wall_outside_selection_intervals_ns": 202319337,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "maze-32-32-2__s04__n16__seed2__window",
+      "case": "maze-32-32-2__s04__n16",
+      "solver_seed": 2,
+      "executed_reward_memory": "window",
+      "initial_soc": 1042,
+      "final_soc": 978,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 181,
+        "fixed_task_denominator": 1042,
+        "normalized_reward_sum_exact": [
+          64,
+          1042
+        ],
+        "committed_gain": 64,
+        "positive_gain_events": 7,
+        "gain_event_counts": {
+          "0": 174,
+          "2": 1,
+          "3": 2,
+          "6": 3,
+          "38": 1
+        },
+        "per_seed": {
+          "4": {
+            "events": 24,
+            "committed_gain": 2,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 359620144
+          },
+          "0": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 26945784
+          },
+          "7": {
+            "events": 1,
+            "committed_gain": 38,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 26494245
+          },
+          "15": {
+            "events": 28,
+            "committed_gain": 6,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 233929916
+          },
+          "13": {
+            "events": 24,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 201376134
+          },
+          "8": {
+            "events": 30,
+            "committed_gain": 9,
+            "positive_gain_events": 2,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 614505013
+          },
+          "12": {
+            "events": 2,
+            "committed_gain": 6,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 51539203
+          },
+          "10": {
+            "events": 1,
+            "committed_gain": 3,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 17114280
+          },
+          "9": {
+            "events": 24,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 2,
+            "recorded_selection_wall_ns": 520624142
+          },
+          "5": {
+            "events": 22,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 447686306
+          },
+          "2": {
+            "events": 24,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 343919951
+          }
+        },
+        "censored_events": 3,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 3,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2843755118,
+        "censored_selection_wall_ns": 64404762,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3048948034,
+      "reward_log_wall_ns": 1177514,
+      "wall_outside_selection_intervals_ns": 205192916,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "maze-32-32-2__s04__n16__seed2__author",
+      "case": "maze-32-32-2__s04__n16",
+      "solver_seed": 2,
+      "executed_reward_memory": "author",
+      "initial_soc": 1042,
+      "final_soc": 978,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 188,
+        "fixed_task_denominator": 1042,
+        "normalized_reward_sum_exact": [
+          64,
+          1042
+        ],
+        "committed_gain": 64,
+        "positive_gain_events": 7,
+        "gain_event_counts": {
+          "0": 181,
+          "2": 1,
+          "3": 2,
+          "6": 3,
+          "38": 1
+        },
+        "per_seed": {
+          "4": {
+            "events": 33,
+            "committed_gain": 2,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 454458362
+          },
+          "0": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 27058525
+          },
+          "7": {
+            "events": 1,
+            "committed_gain": 38,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 25980785
+          },
+          "15": {
+            "events": 32,
+            "committed_gain": 6,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 262665179
+          },
+          "13": {
+            "events": 19,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 149672925
+          },
+          "8": {
+            "events": 40,
+            "committed_gain": 9,
+            "positive_gain_events": 2,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 842733012
+          },
+          "12": {
+            "events": 2,
+            "committed_gain": 6,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 50957434
+          },
+          "10": {
+            "events": 1,
+            "committed_gain": 3,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 17043858
+          },
+          "9": {
+            "events": 20,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 2,
+            "recorded_selection_wall_ns": 393777473
+          },
+          "5": {
+            "events": 17,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 357136514
+          },
+          "2": {
+            "events": 22,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 312765135
+          }
+        },
+        "censored_events": 3,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 3,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2894249202,
+        "censored_selection_wall_ns": 62943182,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3038359989,
+      "reward_log_wall_ns": 926464,
+      "wall_outside_selection_intervals_ns": 144110787,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "maze-32-32-2__s04__n16__seed2__cumulative",
+      "case": "maze-32-32-2__s04__n16",
+      "solver_seed": 2,
+      "executed_reward_memory": "cumulative",
+      "initial_soc": 1042,
+      "final_soc": 977,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 186,
+        "fixed_task_denominator": 1042,
+        "normalized_reward_sum_exact": [
+          65,
+          1042
+        ],
+        "committed_gain": 65,
+        "positive_gain_events": 8,
+        "gain_event_counts": {
+          "0": 178,
+          "1": 1,
+          "2": 1,
+          "3": 2,
+          "6": 3,
+          "38": 1
+        },
+        "per_seed": {
+          "4": {
+            "events": 29,
+            "committed_gain": 2,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 379986415
+          },
+          "0": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 27054909
+          },
+          "7": {
+            "events": 1,
+            "committed_gain": 38,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 26205064
+          },
+          "15": {
+            "events": 29,
+            "committed_gain": 6,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 338764285
+          },
+          "13": {
+            "events": 29,
+            "committed_gain": 1,
+            "positive_gain_events": 1,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 242562179
+          },
+          "8": {
+            "events": 40,
+            "committed_gain": 9,
+            "positive_gain_events": 2,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 836915015
+          },
+          "12": {
+            "events": 2,
+            "committed_gain": 6,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 51318555
+          },
+          "10": {
+            "events": 1,
+            "committed_gain": 3,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 16944083
+          },
+          "9": {
+            "events": 17,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 327147691
+          },
+          "5": {
+            "events": 20,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 408976832
+          },
+          "2": {
+            "events": 17,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 242675090
+          }
+        },
+        "censored_events": 1,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 1,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2898550118,
+        "censored_selection_wall_ns": 5090804,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3051988432,
+      "reward_log_wall_ns": 777792,
+      "wall_outside_selection_intervals_ns": 153438314,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "maze-32-32-2__s05__n32__seed2__author",
+      "case": "maze-32-32-2__s05__n32",
+      "solver_seed": 2,
+      "executed_reward_memory": "author",
+      "initial_soc": 2000,
+      "final_soc": 1989,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 107,
+        "fixed_task_denominator": 2000,
+        "normalized_reward_sum_exact": [
+          11,
+          2000
+        ],
+        "committed_gain": 11,
+        "positive_gain_events": 4,
+        "gain_event_counts": {
+          "0": 103,
+          "1": 2,
+          "4": 1,
+          "5": 1
+        },
+        "per_seed": {
+          "28": {
+            "events": 1,
+            "committed_gain": 1,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 14453513
+          },
+          "4": {
+            "events": 11,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 11,
+            "recorded_selection_wall_ns": 318290802
+          },
+          "16": {
+            "events": 6,
+            "committed_gain": 1,
+            "positive_gain_events": 1,
+            "censored_events": 5,
+            "recorded_selection_wall_ns": 166422522
+          },
+          "21": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 43329420
+          },
+          "17": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 2,
+            "recorded_selection_wall_ns": 57921679
+          },
+          "22": {
+            "events": 3,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 3,
+            "recorded_selection_wall_ns": 86729040
+          },
+          "10": {
+            "events": 5,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 5,
+            "recorded_selection_wall_ns": 144992981
+          },
+          "19": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 28933281
+          },
+          "26": {
+            "events": 3,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 3,
+            "recorded_selection_wall_ns": 86806055
+          },
+          "27": {
+            "events": 5,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 5,
+            "recorded_selection_wall_ns": 144756049
+          },
+          "20": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 28928900
+          },
+          "6": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 15907529
+          },
+          "31": {
+            "events": 3,
+            "committed_gain": 5,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 46663911
+          },
+          "18": {
+            "events": 34,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 22,
+            "recorded_selection_wall_ns": 932341603
+          },
+          "11": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 28982978
+          },
+          "14": {
+            "events": 5,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 5,
+            "recorded_selection_wall_ns": 144693827
+          },
+          "15": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 35414658
+          },
+          "7": {
+            "events": 7,
+            "committed_gain": 4,
+            "positive_gain_events": 1,
+            "censored_events": 3,
+            "recorded_selection_wall_ns": 165258153
+          },
+          "9": {
+            "events": 3,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 3,
+            "recorded_selection_wall_ns": 86808089
+          },
+          "29": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 15776511
+          },
+          "3": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 28970782
+          },
+          "5": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 28902189
+          },
+          "23": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 2,
+            "recorded_selection_wall_ns": 57824303
+          },
+          "25": {
+            "events": 6,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 6,
+            "recorded_selection_wall_ns": 174048065
+          }
+        },
+        "censored_events": 81,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 81,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2883156840,
+        "censored_selection_wall_ns": 2342247623,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3048540496,
+      "reward_log_wall_ns": 748398,
+      "wall_outside_selection_intervals_ns": 165383656,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "maze-32-32-2__s05__n32__seed2__cumulative",
+      "case": "maze-32-32-2__s05__n32",
+      "solver_seed": 2,
+      "executed_reward_memory": "cumulative",
+      "initial_soc": 2000,
+      "final_soc": 1968,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 106,
+        "fixed_task_denominator": 2000,
+        "normalized_reward_sum_exact": [
+          32,
+          2000
+        ],
+        "committed_gain": 32,
+        "positive_gain_events": 9,
+        "gain_event_counts": {
+          "0": 97,
+          "1": 2,
+          "2": 3,
+          "3": 1,
+          "5": 1,
+          "6": 1,
+          "10": 1
+        },
+        "per_seed": {
+          "28": {
+            "events": 2,
+            "committed_gain": 6,
+            "positive_gain_events": 2,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 27612630
+          },
+          "4": {
+            "events": 17,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 17,
+            "recorded_selection_wall_ns": 492297365
+          },
+          "11": {
+            "events": 6,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 6,
+            "recorded_selection_wall_ns": 174213355
+          },
+          "5": {
+            "events": 6,
+            "committed_gain": 10,
+            "positive_gain_events": 1,
+            "censored_events": 5,
+            "recorded_selection_wall_ns": 164230189
+          },
+          "18": {
+            "events": 3,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 2,
+            "recorded_selection_wall_ns": 85657738
+          },
+          "9": {
+            "events": 7,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 6,
+            "recorded_selection_wall_ns": 196413223
+          },
+          "3": {
+            "events": 3,
+            "committed_gain": 2,
+            "positive_gain_events": 1,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 72229653
+          },
+          "10": {
+            "events": 12,
+            "committed_gain": 3,
+            "positive_gain_events": 1,
+            "censored_events": 10,
+            "recorded_selection_wall_ns": 339671732
+          },
+          "20": {
+            "events": 3,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 2,
+            "recorded_selection_wall_ns": 78908732
+          },
+          "15": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 17212166
+          },
+          "17": {
+            "events": 6,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 6,
+            "recorded_selection_wall_ns": 174001434
+          },
+          "27": {
+            "events": 5,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 5,
+            "recorded_selection_wall_ns": 144953525
+          },
+          "6": {
+            "events": 3,
+            "committed_gain": 3,
+            "positive_gain_events": 2,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 48756359
+          },
+          "22": {
+            "events": 6,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 6,
+            "recorded_selection_wall_ns": 173585822
+          },
+          "29": {
+            "events": 1,
+            "committed_gain": 2,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 16035345
+          },
+          "19": {
+            "events": 6,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 6,
+            "recorded_selection_wall_ns": 173671946
+          },
+          "21": {
+            "events": 4,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 3,
+            "recorded_selection_wall_ns": 100229185
+          },
+          "14": {
+            "events": 2,
+            "committed_gain": 6,
+            "positive_gain_events": 1,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 53414621
+          },
+          "26": {
+            "events": 6,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 6,
+            "recorded_selection_wall_ns": 173692787
+          },
+          "31": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 19067846
+          },
+          "23": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 2,
+            "recorded_selection_wall_ns": 57868623
+          },
+          "7": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 49553466
+          },
+          "16": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 2,
+            "recorded_selection_wall_ns": 51598095
+          }
+        },
+        "censored_events": 87,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 87,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2884875837,
+        "censored_selection_wall_ns": 2514526216,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3043238550,
+      "reward_log_wall_ns": 1022725,
+      "wall_outside_selection_intervals_ns": 158362713,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "maze-32-32-2__s05__n32__seed2__window",
+      "case": "maze-32-32-2__s05__n32",
+      "solver_seed": 2,
+      "executed_reward_memory": "window",
+      "initial_soc": 2000,
+      "final_soc": 1985,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 106,
+        "fixed_task_denominator": 2000,
+        "normalized_reward_sum_exact": [
+          15,
+          2000
+        ],
+        "committed_gain": 15,
+        "positive_gain_events": 6,
+        "gain_event_counts": {
+          "0": 100,
+          "1": 2,
+          "2": 2,
+          "4": 1,
+          "5": 1
+        },
+        "per_seed": {
+          "28": {
+            "events": 2,
+            "committed_gain": 6,
+            "positive_gain_events": 2,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 28718217
+          },
+          "4": {
+            "events": 5,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 4,
+            "recorded_selection_wall_ns": 144132813
+          },
+          "11": {
+            "events": 6,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 6,
+            "recorded_selection_wall_ns": 168332559
+          },
+          "5": {
+            "events": 8,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 8,
+            "recorded_selection_wall_ns": 230697549
+          },
+          "18": {
+            "events": 8,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 7,
+            "recorded_selection_wall_ns": 222261268
+          },
+          "9": {
+            "events": 9,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 9,
+            "recorded_selection_wall_ns": 259475163
+          },
+          "3": {
+            "events": 3,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 66379764
+          },
+          "10": {
+            "events": 8,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 8,
+            "recorded_selection_wall_ns": 231335594
+          },
+          "20": {
+            "events": 5,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 5,
+            "recorded_selection_wall_ns": 144058134
+          },
+          "15": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 34921903
+          },
+          "17": {
+            "events": 2,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 2,
+            "recorded_selection_wall_ns": 57708831
+          },
+          "27": {
+            "events": 5,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 5,
+            "recorded_selection_wall_ns": 144228387
+          },
+          "6": {
+            "events": 2,
+            "committed_gain": 3,
+            "positive_gain_events": 2,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 32377116
+          },
+          "14": {
+            "events": 4,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 4,
+            "recorded_selection_wall_ns": 115381583
+          },
+          "19": {
+            "events": 7,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 7,
+            "recorded_selection_wall_ns": 201900244
+          },
+          "23": {
+            "events": 6,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 6,
+            "recorded_selection_wall_ns": 172882401
+          },
+          "7": {
+            "events": 4,
+            "committed_gain": 4,
+            "positive_gain_events": 1,
+            "censored_events": 2,
+            "recorded_selection_wall_ns": 96264270
+          },
+          "26": {
+            "events": 4,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 2,
+            "recorded_selection_wall_ns": 100511799
+          },
+          "31": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 13298635
+          },
+          "16": {
+            "events": 4,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 4,
+            "recorded_selection_wall_ns": 115505514
+          },
+          "29": {
+            "events": 1,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 15829570
+          },
+          "22": {
+            "events": 6,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 6,
+            "recorded_selection_wall_ns": 172857121
+          },
+          "21": {
+            "events": 4,
+            "committed_gain": 2,
+            "positive_gain_events": 1,
+            "censored_events": 2,
+            "recorded_selection_wall_ns": 104940615
+          }
+        },
+        "censored_events": 88,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 88,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2873999050,
+        "censored_selection_wall_ns": 2533857616,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3059116692,
+      "reward_log_wall_ns": 549060,
+      "wall_outside_selection_intervals_ns": 185117642,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "random-32-32-10__s04__n16__seed2__cumulative",
+      "case": "random-32-32-10__s04__n16",
+      "solver_seed": 2,
+      "executed_reward_memory": "cumulative",
+      "initial_soc": 356,
+      "final_soc": 353,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 1657,
+        "fixed_task_denominator": 356,
+        "normalized_reward_sum_exact": [
+          3,
+          356
+        ],
+        "committed_gain": 3,
+        "positive_gain_events": 3,
+        "gain_event_counts": {
+          "0": 1654,
+          "1": 3
+        },
+        "per_seed": {
+          "13": {
+            "events": 24,
+            "committed_gain": 2,
+            "positive_gain_events": 2,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 12305714
+          },
+          "0": {
+            "events": 1,
+            "committed_gain": 1,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 1609546
+          },
+          "14": {
+            "events": 1632,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 2860890909
+          }
+        },
+        "censored_events": 1,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 1,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2874806169,
+        "censored_selection_wall_ns": 284702,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3058608197,
+      "reward_log_wall_ns": 4378322,
+      "wall_outside_selection_intervals_ns": 183802028,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "random-32-32-10__s04__n16__seed2__window",
+      "case": "random-32-32-10__s04__n16",
+      "solver_seed": 2,
+      "executed_reward_memory": "window",
+      "initial_soc": 356,
+      "final_soc": 353,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 1663,
+        "fixed_task_denominator": 356,
+        "normalized_reward_sum_exact": [
+          3,
+          356
+        ],
+        "committed_gain": 3,
+        "positive_gain_events": 3,
+        "gain_event_counts": {
+          "0": 1660,
+          "1": 3
+        },
+        "per_seed": {
+          "13": {
+            "events": 24,
+            "committed_gain": 2,
+            "positive_gain_events": 2,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 12457349
+          },
+          "0": {
+            "events": 1,
+            "committed_gain": 1,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 1628526
+          },
+          "14": {
+            "events": 1638,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 2865550216
+          }
+        },
+        "censored_events": 1,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 1,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2879636091,
+        "censored_selection_wall_ns": 931450,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3053513657,
+      "reward_log_wall_ns": 4497472,
+      "wall_outside_selection_intervals_ns": 173877566,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "random-32-32-10__s04__n16__seed2__author",
+      "case": "random-32-32-10__s04__n16",
+      "solver_seed": 2,
+      "executed_reward_memory": "author",
+      "initial_soc": 356,
+      "final_soc": 353,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 1659,
+        "fixed_task_denominator": 356,
+        "normalized_reward_sum_exact": [
+          3,
+          356
+        ],
+        "committed_gain": 3,
+        "positive_gain_events": 3,
+        "gain_event_counts": {
+          "0": 1656,
+          "1": 3
+        },
+        "per_seed": {
+          "13": {
+            "events": 24,
+            "committed_gain": 2,
+            "positive_gain_events": 2,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 12465544
+          },
+          "0": {
+            "events": 1,
+            "committed_gain": 1,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 1609371
+          },
+          "14": {
+            "events": 1634,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 2859753289
+          }
+        },
+        "censored_events": 1,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 1,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2873828204,
+        "censored_selection_wall_ns": 647461,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3073728994,
+      "reward_log_wall_ns": 4612291,
+      "wall_outside_selection_intervals_ns": 199900790,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "random-32-32-10__s05__n32__seed2__window",
+      "case": "random-32-32-10__s05__n32",
+      "solver_seed": 2,
+      "executed_reward_memory": "window",
+      "initial_soc": 753,
+      "final_soc": 749,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 555,
+        "fixed_task_denominator": 753,
+        "normalized_reward_sum_exact": [
+          4,
+          753
+        ],
+        "committed_gain": 4,
+        "positive_gain_events": 3,
+        "gain_event_counts": {
+          "0": 552,
+          "1": 2,
+          "2": 1
+        },
+        "per_seed": {
+          "31": {
+            "events": 1,
+            "committed_gain": 1,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 5784465
+          },
+          "26": {
+            "events": 1,
+            "committed_gain": 2,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 4761260
+          },
+          "11": {
+            "events": 1,
+            "committed_gain": 1,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 5188893
+          },
+          "6": {
+            "events": 552,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 2861823083
+          }
+        },
+        "censored_events": 1,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 1,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2877557701,
+        "censored_selection_wall_ns": 1119851,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3046145152,
+      "reward_log_wall_ns": 1803138,
+      "wall_outside_selection_intervals_ns": 168587451,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "random-32-32-10__s05__n32__seed2__author",
+      "case": "random-32-32-10__s05__n32",
+      "solver_seed": 2,
+      "executed_reward_memory": "author",
+      "initial_soc": 753,
+      "final_soc": 749,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 553,
+        "fixed_task_denominator": 753,
+        "normalized_reward_sum_exact": [
+          4,
+          753
+        ],
+        "committed_gain": 4,
+        "positive_gain_events": 3,
+        "gain_event_counts": {
+          "0": 550,
+          "1": 2,
+          "2": 1
+        },
+        "per_seed": {
+          "31": {
+            "events": 1,
+            "committed_gain": 1,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 5824376
+          },
+          "26": {
+            "events": 1,
+            "committed_gain": 2,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 4809990
+          },
+          "11": {
+            "events": 1,
+            "committed_gain": 1,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 5191507
+          },
+          "6": {
+            "events": 550,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 2859734189
+          }
+        },
+        "censored_events": 1,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 1,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2875560062,
+        "censored_selection_wall_ns": 119480,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3042720926,
+      "reward_log_wall_ns": 1703292,
+      "wall_outside_selection_intervals_ns": 167160864,
+      "outside_time_is_not_claimed_savable": true
+    },
+    {
+      "job": "random-32-32-10__s05__n32__seed2__cumulative",
+      "case": "random-32-32-10__s05__n32",
+      "solver_seed": 2,
+      "executed_reward_memory": "cumulative",
+      "initial_soc": 753,
+      "final_soc": 749,
+      "feedback": {
+        "schema": "OFFLINE_COMMITTED_MAGNITUDE_V1",
+        "events": 556,
+        "fixed_task_denominator": 753,
+        "normalized_reward_sum_exact": [
+          4,
+          753
+        ],
+        "committed_gain": 4,
+        "positive_gain_events": 3,
+        "gain_event_counts": {
+          "0": 553,
+          "1": 2,
+          "2": 1
+        },
+        "per_seed": {
+          "31": {
+            "events": 1,
+            "committed_gain": 1,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 5815341
+          },
+          "26": {
+            "events": 1,
+            "committed_gain": 2,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 4798598
+          },
+          "11": {
+            "events": 1,
+            "committed_gain": 1,
+            "positive_gain_events": 1,
+            "censored_events": 0,
+            "recorded_selection_wall_ns": 5392562
+          },
+          "6": {
+            "events": 553,
+            "committed_gain": 0,
+            "positive_gain_events": 0,
+            "censored_events": 1,
+            "recorded_selection_wall_ns": 2860704097
+          }
+        },
+        "censored_events": 1,
+        "censored_actual_committed_gain": 0,
+        "censored_candidate_gain_unobserved_events": 1,
+        "counterfactual_gain_if_given_more_time": null,
+        "recorded_selection_wall_ns": 2876710598,
+        "censored_selection_wall_ns": 1754645,
+        "zero_recorded_wall_events": 0,
+        "cost_scope": "SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST",
+        "continuous_reward_passed_to_beta": false,
+        "online_selector_changed": false,
+        "policy_performance_estimated": false
+      },
+      "total_entry_wall_ns": 3043642712,
+      "reward_log_wall_ns": 1776791,
+      "wall_outside_selection_intervals_ns": 166932114,
+      "outside_time_is_not_claimed_savable": true
+    }
+  ],
+  "generator_sha256": "6fce42769dc2d9eab917ee2c1963a4a08abc00fd9a827d231ca88486d78542ac"
+}

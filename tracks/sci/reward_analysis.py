@@ -147,6 +147,114 @@ def diagnose_legacy(rows):
             'committed_gain': sum(r['committed_gain'] for r in output), 'rows': output}
 
 
+def committed_magnitude_feedback(rows, initial_soc, final_soc):
+    """Project a verified ledger; no selector update or policy estimation.
+
+    A constant task denominator preserves the terminal SOC objective. The
+    realized gain of a rolled-back censor is known; its unfinished candidate
+    and the counterfactual outcome with more time remain unknown.
+    """
+    if any(type(v) is not int or v < 0 for v in (initial_soc, final_soc)):
+        raise ValueError('invalid task SOC')
+    previous, gained, wall, events, zero_wall = initial_soc, 0, 0, 0, 0
+    censored, candidate_unknown, censored_wall = 0, 0, 0
+    gains, arms = Counter(), {}
+    for row in rows:
+        before, after, gain, cost = (row[k] for k in (
+            'old_task_soc', 'committed_task_soc', 'committed_gain',
+            'selection_wall_before_log_ns'))
+        if (any(type(v) is not int or v < 0 for v in (before, after, gain, cost))
+                or before != previous or after > before or gain != before-after):
+            raise ValueError('nonmonotone or broken retained-plan SOC ledger')
+        if row['outcome'] not in ('ACCEPTED', 'ROLLED_BACK', 'NO_GROUP', 'CENSORED'):
+            raise ValueError('unsettled/invalid event cannot become a reward')
+        if (row['censored'] != (row['outcome'] == 'CENSORED') or
+                (gain and (not row['accepted'] or not row['candidate_validated'] or row['censored']))):
+            raise ValueError('uncommitted candidate cannot become an actual reward')
+        seed = row['seed_id']
+        if seed is not None and (type(seed) is not int or seed < 0):
+            raise ValueError('invalid seed')
+        key = 'unselected' if seed is None else str(seed)
+        arm = arms.setdefault(key, {'events': 0, 'committed_gain': 0, 'positive_gain_events': 0,
+                                   'censored_events': 0, 'recorded_selection_wall_ns': 0})
+        arm['events'] += 1
+        arm['committed_gain'] += gain
+        arm['positive_gain_events'] += int(gain > 0)
+        arm['censored_events'] += int(row['censored'])
+        arm['recorded_selection_wall_ns'] += cost
+        censored += int(row['censored'])
+        if row['censored']:
+            censored_wall += cost
+            candidate_unknown += int(not row['candidate_validated'])
+        gains[gain] += 1
+        previous, gained, wall, events = after, gained+gain, wall+cost, events+1
+        zero_wall += int(cost == 0)
+    if previous != final_soc or gained != initial_soc-final_soc:
+        raise ValueError('magnitude rewards do not close against final task SOC')
+    denominator = max(1, initial_soc)
+    return {'schema': 'OFFLINE_COMMITTED_MAGNITUDE_V1', 'events': events,
+        'fixed_task_denominator': denominator, 'normalized_reward_sum_exact': [gained, denominator],
+        'committed_gain': gained, 'positive_gain_events': events-gains[0],
+        'gain_event_counts': dict(sorted(gains.items())), 'per_seed': arms,
+        'censored_events': censored, 'censored_actual_committed_gain': 0,
+        'censored_candidate_gain_unobserved_events': candidate_unknown,
+        'counterfactual_gain_if_given_more_time': None,
+        'recorded_selection_wall_ns': wall, 'censored_selection_wall_ns': censored_wall,
+        'zero_recorded_wall_events': zero_wall,
+        'cost_scope': 'SELECTION_INTERVALS_BEFORE_LOG_NOT_COMPLETE_ATTEMPT_COST',
+        'continuous_reward_passed_to_beta': False,
+        'online_selector_changed': False, 'policy_performance_estimated': False}
+
+
+def magnitude_report():
+    """Read the frozen 36-item batch; no new actions, fitting or search."""
+    root = Path(__file__).resolve().parent
+    batch = root/'results/address_reward_holdout_v1'
+    raw = (batch/'RUN_RECEIPT.json').read_bytes()
+    source_sha = 'e7a131d70d573f87c734ce467282b7835e7f1a74f9c8ca0d6f814903018fe16c'
+    if hashlib.sha256(raw).hexdigest() != source_sha:
+        raise ValueError('frozen reward comparison receipt changed')
+    source = json.loads(raw)
+    if source['status'] != 'ALL_COMPLETE':
+        raise ValueError('this offline projection expects the frozen complete batch')
+    def read(relative):
+        raw = (batch/relative).read_bytes()
+        pin = source['artifacts'][relative]
+        if len(raw) != pin['bytes'] or hashlib.sha256(raw).hexdigest() != pin['sha256']:
+            raise ValueError('changed frozen reward source: '+relative)
+        return raw
+    jobs = []
+    for entry in source['jobs']:
+        stem = entry['job']+'/'
+        result = json.loads(read(stem+'result.json'))
+        native = json.loads(read(stem+'native_receipt.json'))
+        ledger = read(stem+'rewards.jsonl')
+        verify_reward_trace(ledger, native, result['job'], len(result['final_paths']))
+        projected = committed_magnitude_feedback(
+            [json.loads(line) for line in ledger.splitlines()],
+            result['initial_soc'], result['final_soc'])
+        total = entry['total_entry_through_output_validation_and_hash_ns']
+        if projected['recorded_selection_wall_ns'] > total:
+            raise ValueError('recorded selection time exceeds complete entry cost')
+        jobs.append({'job': entry['job'], 'case': entry['case'],
+            'solver_seed': entry['solver_seed'], 'executed_reward_memory': entry['reward_memory'],
+            'initial_soc': result['initial_soc'], 'final_soc': result['final_soc'],
+            'feedback': projected, 'total_entry_wall_ns': total,
+            'reward_log_wall_ns': native['reward_contract']['log_wall_ns'],
+            'wall_outside_selection_intervals_ns': total-projected['recorded_selection_wall_ns'],
+            'outside_time_is_not_claimed_savable': True})
+    return {'scope': 'OFFLINE_FEEDBACK_SEMANTICS_NOT_NEW_POLICY_EVALUATION',
+        'source_receipt_sha256': source_sha, 'source_scientific_code_commit': source['scientific_code_commit'],
+        'new_scientific_run': False, 'training': False, 'new_selection_or_search': False,
+        'formula': 'r_t=(C_before-C_after)/max(1,C_initial); fixed denominator per task',
+        'cost_is_recorded_separately': True, 'cost_adjusted_reward_not_computed': True,
+        'source_tasks_are_now_design_data_for_this_candidate': True,
+        'cross_task_mean_is_not_equivalent_to_unweighted_SOC': True,
+        'missing_cost_fields': ['per_event_reward_logging', 'separate_candidate_validation',
+                               'first_observed_deadline_site'],
+        'jobs': jobs}
+
+
 def legacy_report():
     from run_address_adapter import verify_attempt_trace
     root = Path(__file__).resolve().parent
@@ -183,12 +291,15 @@ def legacy_report():
 if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--legacy-output', type=Path, required=True)
+    targets = parser.add_mutually_exclusive_group(required=True)
+    targets.add_argument('--legacy-output', type=Path)
+    targets.add_argument('--magnitude-output', type=Path)
     args = parser.parse_args()
-    report = legacy_report()
+    report = legacy_report() if args.legacy_output else magnitude_report()
     report['generator_sha256'] = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
-    with args.legacy_output.open('x') as stream:
+    with (args.legacy_output or args.magnitude_output).open('x') as stream:
         json.dump(report, stream, ensure_ascii=False, indent=2)
         stream.write('\n')
-    print(json.dumps({'sources': len(report['sources']), 'distinct_tasks': report['distinct_tasks'],
-                      'new_scientific_run': False}))
+    print(json.dumps({'sources': len(report.get('sources', report.get('jobs', []))),
+                      'distinct_tasks': report.get('distinct_tasks', 4), 'new_scientific_run': False,
+                      'output': str(args.legacy_output or args.magnitude_output)}))
