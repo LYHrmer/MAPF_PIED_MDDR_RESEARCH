@@ -42,7 +42,7 @@ rtk proxy python3 -B -m unittest test_address_budget -v
 
 当前构建入口和runner已发生变化。旧manifest保持原SHA不刷新；复核或重建旧版本须回到其固定历史提交，不能用当前源码冒充旧产物。
 
-## 奖励事务适配：实现完成，科学比较未运行
+## 奖励事务适配：实现与科学比较
 
 2026-10-18按用户要求新增可选`reward_contract`，叠加顺序为共同初解→原停止条件→共同预算→奖励事务；不叠加已停止的恢复候选。实现为[address_reward.py](address_reward.py)和[address_reward_support.h](address_reward_support.h)。原`budget_guard`、冻结二进制/清单、作者缓存不改写。依据[DyMAB接口核对](REFERENCE_REPRODUCTION.md)，这是ADDRESS车辆种子的项目适配，不是完整DyMAB，也不以窗口机制声称创新。
 
@@ -74,4 +74,4 @@ rtk proxy python3 -B -m unittest test_address_budget -v
 
 软件证据见[测试收据](results/reward_contract_software/verification.json)与[完整构建收据](reward_contract_build_receipt.json)。既有预算/适配/停止条件回归37项通过；补齐事件的修复ID及截止字段后，4项奖励测试复核通过。测试复用现有假时钟/假规划器，执行实际改写后的PP与外层失败控制流；包括改善、完整等成本/更差候选、部分空返回、首个/最后一个返回截止、非法候选回滚、空构组、已构组准入截止、窗口淘汰及重复结算。新增外层夹具首编译曾缺少假Agent的`getNumOfDelays`，补齐桩后通过，保留该软件开发失败说明；没有重跑科学任务。完整新程序仅编译及`--help`，不构造作者Instance或调用SIPP。
 
-后续比较分两层：①共同校验记账下的`author`与提交收益累计版，检验改奖励口径；②累计与窗口版，固定奖励口径，仅检验记忆长度。两层不能合并解释为窗口收益。2026-10-22已完成共同runner接入、奖励账本核验及失败费用保留，`test_address_adapter`的18项人工软件测试通过；这些不是科学性能结果。当前[比较说明](ADDRESS_REWARD_COMPARISON.md)与[36项清单](ADDRESS_REWARD_CHECKLIST.md)固定4任务×3种子×3模式，统一初解、准入规则、top-K、总wall/CPU、低层、日志和最终检查，窗口模式固定W=16；本批只比较固定总预算下的完整SOC/makespan，并保留全部费用、失败与未运行项。36项科学对照均未运行，状态为`PENDING_USER`，须获得本批明确授权；不复用旧八项许可。
+后续比较分两层：①共同校验记账下的`author`与提交收益累计版，检验改奖励口径；②累计与窗口版，固定奖励口径，仅检验记忆长度。两层不能合并解释为窗口收益。2026-10-22已完成共同runner接入、奖励账本核验及失败费用保留，`test_address_adapter`的18项人工软件测试通过；这些不是科学性能结果。当前[比较说明](ADDRESS_REWARD_COMPARISON.md)与[36项清单](ADDRESS_REWARD_CHECKLIST.md)固定4任务×3种子×3模式，统一初解、准入规则、top-K、总wall/CPU、低层、日志和最终检查，窗口模式固定W=16；本批只比较固定总预算下的完整SOC/makespan，并保留全部费用、失败与未运行项。随后用户明确授权的36项已全部COMPLETE、零重试，许可消费；[完整结果](ADDRESS_REWARD_RESULT.md)未建立稳定最终质量优势，停止扩大本奖励/窗口候选。旧八项许可未复用。

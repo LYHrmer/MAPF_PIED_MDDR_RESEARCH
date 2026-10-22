@@ -2,7 +2,7 @@
 
 本线问题是：**给定合法的多机器人路径方案，如何在有限总计算预算内分配局部重规划机会，使最终保留的完整方案更好？** 目标是在2026年形成SCI稿件；当前为候选问题验证阶段，尚无独立算法优势。唯一总体决定在[main](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/docs/RESEARCH_PLAN.md)，本页只维护本线入口。
 
-当前交付见[奖励诊断与比较](ADDRESS_REWARD_COMPARISON.md)：旧迷宫日志存在部分前缀的正差额、最终回滚为零的错配，尚不构成跨任务或因果证据。三种模式的科学入口已接通；[36项清单](ADDRESS_REWARD_CHECKLIST.md)固定四份未参与本轮s01设计的历史test完整初解、三个求解器种子和author/cumulative/window16。只完成静态准备和软件核验，未运行；全部旧许可仍为已消费。
+当前交付见[奖励诊断与比较](ADDRESS_REWARD_COMPARISON.md)：旧迷宫日志存在部分前缀的正差额、最终回滚为零的错配，尚不构成跨任务或因果证据。三种模式的科学入口已接通；[36项清单](ADDRESS_REWARD_CHECKLIST.md)固定四份未参与本轮s01设计的历史test完整初解、三个求解器种子和author/cumulative/window16。用户随后授权的36项已全部完成、零硬失败、零重试、许可消费；[完整结果](ADDRESS_REWARD_RESULT.md)中累计相对原奖励SOC胜/平/负为3/7/2，窗口相对累计为1/8/3。未建立跨任务稳定收益，停止扩大这两个具体候选；账本与原证据保留。
 
 ## 实现主干与当前工作
 
@@ -45,8 +45,8 @@
 
 后段恢复候选保持停止。[两项非修复费用诊断](ADDRESS_PHASE_RESULT.md)已按新授权完成，全部COMPLETE、零重试、许可消费；完整路径和成本经独立离线复核。random32的预算主要用于反复选种子/构组，maze32主要用于修复；详细分项只在结果报告维护。预算检查采样是嵌套子集，不外推全成本；不能用两次DEV宣称加速。
 
-[正延迟初始种子准入](ADDRESS_SEED_COMPARISON.md)已实现并完成[八项有限DEV](ADDRESS_SEED_RESULT.md)，独立核验通过、零重试、许可消费。零延迟车保留邻域成员资格，同一二进制比较两种规则；固定16次与无次数上限总预算分开。random固定次数原适配版4/16截尾，不报等工作量加速；总预算下更多修复未改善SOC。maze总预算SOC有差异但makespan退化，详细数值只在结果报告维护。当前规则是朴素强对照，没有创新或泛化结论；下一项固定规则后准备未参与设计的完整任务输入包及有限清单。原六份任务均为DEV，不能改标独立测试；不训练，不恢复后段候选。
+[正延迟初始种子准入](ADDRESS_SEED_COMPARISON.md)已实现并完成[八项有限DEV](ADDRESS_SEED_RESULT.md)，独立核验通过、零重试、许可消费。零延迟车保留邻域成员资格，同一二进制比较两种规则；固定16次与无次数上限总预算分开。random固定次数原适配版4/16截尾，不报等工作量加速；总预算下更多修复未改善SOC。maze总预算SOC有差异但makespan退化，详细数值只在结果报告维护。当前规则是朴素强对照，没有创新或泛化结论；随后四份历史test任务的奖励比较现已完成，见顶部最新结果。原六份任务均为DEV，不能改标独立测试；不训练，不恢复后段候选。
 
 学习按真实决策需要选择监督、在线学习或RL；三个正例不构成训练依据。算法在本线维护一份，硕士通过固定提交引用。历史详细实现说明见[535ee1a版本](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/535ee1adf3135ab79565e0b3aa5d189348fe7ab2/tracks/sci/README.md)，其中旧待运行表述不再是当前状态。
 
-已完成[DyMAB接口核对](REFERENCE_REPRODUCTION.md)及[ADDRESS奖励事务实现](ADDRESS_BUDGET.md#奖励事务适配实现完成科学比较未运行)。科学入口、外部账本核对和有限清单本轮已补齐，当前状态统一见本页顶部的[奖励比较](ADDRESS_REWARD_COMPARISON.md)。后两模式共用同一提交后Bernoulli反馈，只改变累计/窗口记忆；author对照保留原回滚前更新并承担相同检查费用。没有新科学运行或创新结论。CPLNS/X*继续作参考，后段恢复保持停止。
+已完成[DyMAB接口核对](REFERENCE_REPRODUCTION.md)及[ADDRESS奖励事务实现](ADDRESS_BUDGET.md#奖励事务适配实现与科学比较)。科学入口、外部账本核对和有限清单本轮已补齐，当前状态统一见本页顶部的[奖励比较](ADDRESS_REWARD_COMPARISON.md)。后两模式共用同一提交后Bernoulli反馈，只改变累计/窗口记忆；author对照保留原回滚前更新并承担相同检查费用。本批已有36项科学比较但未建立稳定质量优势，不能写成创新结论。CPLNS/X*继续作参考，后段恢复保持停止。

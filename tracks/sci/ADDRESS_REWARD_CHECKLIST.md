@@ -1,6 +1,6 @@
 # 奖励语义与记忆：36项有限比较清单
 
-状态：**PENDING_USER，尚未运行**。旧种子8项、费用2项、预算3项等许可均已消费。本文件及JSON仅冻结提案，不能代替用户对本批的授权。比较理由、旧日志结果及继续/停止标准见[比较说明](ADDRESS_REWARD_COMPARISON.md)。
+状态：**ALL_COMPLETE，36项已完成，零硬失败、零重试，本批许可已消费**。真实用户选择“先授权SCI 36项”，原指示及全部产物见[结果报告](ADDRESS_REWARD_RESULT.md)。原JSON SHA不变，本文件以下保留已执行范围和命令，不得再次消费许可。旧种子8项、费用2项、预算3项许可也均已消费。比较理由、旧日志结果及继续/停止标准见[比较说明](ADDRESS_REWARD_COMPARISON.md)。
 
 ## 工件与任务
 
@@ -33,7 +33,7 @@
 rtk proxy python3 -B tracks/sci/run_address_adapter.py inspect --manifest tracks/sci/config/address_reward_holdout_v1_manifest.json --sha256 6863861aa2a1a6856097620e1020f0340ea1d3b9a6f170de8b94c4c35b6fe791
 ```
 
-获得**本批**真实授权后才按JSON顺序逐项执行；首项命令为：
+以下是本批已获授权并执行的首项命令，供审计，不可重新执行：
 
 ```bash
 rtk proxy timeout --signal=TERM --kill-after=2s 10s python3 -B tracks/sci/run_address_adapter.py run --manifest tracks/sci/config/address_reward_holdout_v1_manifest.json --sha256 6863861aa2a1a6856097620e1020f0340ea1d3b9a6f170de8b94c4c35b6fe791 --job maze-32-32-2__s04__n16__seed0__author --authorization-reference '<本批真实用户指示引用>'
