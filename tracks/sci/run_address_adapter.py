@@ -26,10 +26,11 @@ def comparison_settings(config, job):
     """Explicit opt-in; old manifests never silently acquire a new policy."""
     protocol = config.get('comparison_protocol')
     if protocol is None:
-        if 'seed_admission' in job or 'effort_mode' in job:
+        if any(key in job for key in ('seed_admission', 'effort_mode', 'reward_memory', 'reward_window')):
             raise ValueError('seed/effort settings require comparison protocol')
         return None
-    if protocol != 'seed_admission_v1' or config.get('variant') != 'budget_guard':
+    variants = {'seed_admission_v1': 'budget_guard', 'reward_memory_v1': 'reward_contract'}
+    if protocol not in variants or config.get('variant') != variants[protocol]:
         raise ValueError('unsupported seed comparison protocol')
     if config.get('attempt_trace', False) or config.get('phase_profile', False):
         raise ValueError('seed comparison uses matched unprofiled, untraced arms')
@@ -41,6 +42,14 @@ def comparison_settings(config, job):
             (mode == 'fixed_repairs' and iterations < 1) or
             (mode == 'total_budget' and iterations != 0)):
         raise ValueError('repair cap must be positive for fixed work and zero for total budget')
+    if protocol == 'reward_memory_v1':
+        memory, width = job.get('reward_memory'), job.get('reward_window')
+        if (policy != 'positive_delay' or mode != 'total_budget' or
+                memory not in ('author', 'cumulative', 'window') or type(width) is not int or
+                (width <= 0 if memory == 'window' else width != 0)):
+            raise ValueError('reward comparison requires common positive-delay/time policy and explicit memory')
+    elif 'reward_memory' in job or 'reward_window' in job:
+        raise ValueError('reward settings require reward comparison protocol')
     return policy, mode
 
 
@@ -58,7 +67,8 @@ def load(path, expected_sha):
     variant = config.get('variant', 'base')
     scopes = {'base': 'ADDRESS_COMMON_INITIAL_ADAPTER_COMPILE_AND_HELP_ONLY',
               'loop_guard': 'ADDRESS_COMMON_INITIAL_LOOP_GUARD_COMPILE_AND_HELP_ONLY',
-              'budget_guard': 'ADDRESS_COMMON_INITIAL_BUDGET_GUARD_COMPILE_AND_HELP_ONLY'}
+              'budget_guard': 'ADDRESS_COMMON_INITIAL_BUDGET_GUARD_COMPILE_AND_HELP_ONLY',
+              'reward_contract': 'ADDRESS_COMMON_INITIAL_REWARD_CONTRACT_COMPILE_AND_HELP_ONLY'}
     if variant not in scopes:
         raise ValueError('unreviewed runner variant')
     if type(config.get('attempt_trace', False)) is not bool:
@@ -71,6 +81,10 @@ def load(path, expected_sha):
         raise ValueError('phase profile requires budget baseline with attempt trace')
     required = {'run_address_adapter.py', 'run_repair_dev.py', 'address_backend.py',
                 'pp_repair.py', receipt_name}
+    if variant == 'reward_contract':
+        required.add('reward_analysis.py')
+        if config.get('comparison_protocol') != 'reward_memory_v1':
+            raise ValueError('reward binary requires an explicit comparison protocol')
     if not required <= config['code_sha256'].keys():
         raise ValueError('missing runtime/build receipt pins')
     for name, expected in config['code_sha256'].items():
@@ -81,6 +95,8 @@ def load(path, expected_sha):
             'build_address_full.py', 'address_adapter.py', 'address_adapter_support.h',
             'address_loop_guard.py', 'address_budget.py', 'address_budget_support.h'} <= build_sources.keys():
         raise ValueError('missing diagnostic/comparison build source pins')
+    if variant == 'reward_contract' and not {'address_reward.py', 'address_reward_support.h'} <= build_sources.keys():
+        raise ValueError('missing reward build source pins')
     for name, expected in build_sources.items():
         if Path(name).name != name or digest((HERE/name).read_bytes()) != expected:
             raise ValueError('changed build source: '+name)
@@ -101,21 +117,30 @@ def load(path, expected_sha):
         raise ValueError('build receipt does not certify this adapter binary and author identity')
     if variant == 'loop_guard' and receipt.get('extension') != 'loop_guard':
         raise ValueError('shared root bound missing from build receipt')
-    if variant == 'budget_guard' and receipt.get('extension') != 'budget_guard':
+    if variant in ('budget_guard', 'reward_contract') and receipt.get('extension') != variant:
         raise ValueError('shared budget extension missing from build receipt')
     if config.get('attempt_trace', False) or config.get('comparison_protocol'):
-        if (receipt.get('extension_order') != ['address_loop_guard', 'address_budget']
+        extensions = ['address_loop_guard', 'address_budget']
+        if variant == 'reward_contract':
+            extensions.append('address_reward')
+        if (receipt.get('extension_order') != extensions
             or receipt.get('script_sha256') != build_sources['build_address_full.py']
             or receipt.get('adapter_script_sha256') != build_sources['address_adapter.py']
             or any(receipt.get('extension_script_sha256', {}).get(name) != build_sources[name+'.py']
-                   for name in ('address_loop_guard', 'address_budget'))
+                   for name in extensions)
             or receipt.get('extension_sources', {}).get('address_budget', {}).get(
                 'inc/address_budget_support.h', {}).get('sha256') != build_sources['address_budget_support.h']):
             raise ValueError('attempt-trace build receipt/source mismatch')
+        if variant == 'reward_contract' and (
+                receipt.get('extension_sources', {}).get('address_reward', {}).get(
+                    'inc/address_reward_support.h', {}).get('sha256') != build_sources['address_reward_support.h']):
+            raise ValueError('reward header receipt/source mismatch')
     if config.get('comparison_protocol'):
         if (receipt.get('seed_admission_policies') != ['all', 'positive_delay'] or
                 receipt.get('effort_modes') != ['fixed_repairs', 'total_budget']):
             raise ValueError('binary lacks reviewed seed admission / effort capabilities')
+    if variant == 'reward_contract' and receipt.get('reward_memory_modes') != ['author', 'cumulative', 'window']:
+        raise ValueError('binary lacks reviewed reward modes')
     if config.get('retry') != 0:
         raise ValueError('zero retry required')
     limits = config['limits']
@@ -127,7 +152,7 @@ def load(path, expected_sha):
         raise ValueError('integer resource limits required')
     if limits['external_final_reserve_s']+limits['inner_final_reserve_s'] >= limits['total_wall_s']:
         raise ValueError('reserves consume entire budget')
-    if variant == 'budget_guard':
+    if variant in ('budget_guard', 'reward_contract'):
         reserve = limits.get('native_cpu_reserve_s')
         if type(reserve) not in (int, float) or not 0 < reserve < limits['native_cpu_s']:
             raise ValueError('native CPU reserve must be inside the hard limit')
@@ -145,6 +170,15 @@ def load(path, expected_sha):
         settings = comparison_settings(config, job)
         if job['seed'] < 0 or (settings is None and job['iterations'] < 1) or job['top_k'] < 1:
             raise ValueError('invalid solver settings')
+    if variant == 'reward_contract':
+        expected = {(case, seed, mode) for case in ids for seed in (0, 1, 2)
+                    for mode in ('author', 'cumulative', 'window')}
+        actual = [(j['case'], j['seed'], j['reward_memory']) for j in jobs]
+        if (len(ids) != 4 or len(actual) != len(expected) or set(actual) != expected or
+                any(j['reward_window'] != (16 if j['reward_memory'] == 'window' else 0) for j in jobs) or
+                any(c.get('current_split') != 'HISTORICAL_TEST_HELD_OUT_FROM_S01_REWARD_DESIGN' for c in bundle['cases']) or
+                config.get('evidence_scope') != 'HELD_OUT_FROM_REWARD_DESIGN_HISTORICAL_TASK_PILOT'):
+            raise ValueError('reward pilot requires its fixed four-task/three-seed/three-mode design')
     if not re.fullmatch(r'[A-Za-z0-9_-]+', config['batch_id']):
         raise ValueError('invalid batch id')
     return config, bundle, binary
@@ -186,7 +220,7 @@ def verify_budget_receipt(native, config):
     The inner CPU value is absolute process CPU, not descendant CPU summed by
     the supervisor. It is a recorded admission check, not a hard-time proof.
     """
-    if config.get('variant', 'base') != 'budget_guard':
+    if config.get('variant', 'base') not in ('budget_guard', 'reward_contract'):
         return
     limits = config['limits']
     if (native.get('budget_scope') != 'SHARED_WALL_PROCESS_CPU_WITH_FINAL_RESERVE'
@@ -445,6 +479,7 @@ def worker(config, case, job, binary, folder, deadline_ns, command_factory=comma
     payload = {'scope': 'COMMON_INITIAL_ADDRESS_DEV_NOT_INDEPENDENT_PERFORMANCE', 'status': 'FAILED',
                'case': case['id'], 'job': job, 'stage_wall_ns': {},
                'manifest_sha256': config['manifest_sha256'], 'final_validated': False}
+    payload['task_provenance_scope'] = config.get('evidence_scope', 'REUSED_DEVELOPMENT_TASK')
     def timed(name, function):
         before = time.monotonic_ns()
         try:
@@ -475,7 +510,7 @@ def worker(config, case, job, binary, folder, deadline_ns, command_factory=comma
         if cutoff <= limits['inner_final_reserve_s']:
             raise TimeoutError('no budget for ADDRESS construction and final validation')
         cmd = command_factory(binary, folder, job, len(initial), cutoff, limits['inner_final_reserve_s'])
-        if config.get('variant', 'base') == 'budget_guard':
+        if config.get('variant', 'base') in ('budget_guard', 'reward_contract'):
             cmd += ['--cpuLimit', str(limits['native_cpu_s']),
                     '--cpuReserve', str(limits['native_cpu_reserve_s'])]
         if config.get('attempt_trace', False):
@@ -485,6 +520,9 @@ def worker(config, case, job, binary, folder, deadline_ns, command_factory=comma
         settings = comparison_settings(config, job)
         if settings is not None:
             cmd += ['--seedAdmission', settings[0], '--effortMode', settings[1]]
+        if config.get('variant') == 'reward_contract':
+            cmd += ['--rewardMemory', job['reward_memory'], '--rewardWindow', str(job['reward_window']),
+                    '--rewardTrace', str(folder/'rewards.jsonl')]
         payload['native_command'] = cmd
         def native_limits():
             resource.setrlimit(resource.RLIMIT_CPU, (limits['native_cpu_s'],)*2)
@@ -512,6 +550,10 @@ def worker(config, case, job, binary, folder, deadline_ns, command_factory=comma
             comparison = verify_seed_comparison(native, config, job)
             if comparison is not None:
                 payload['comparison_diagnostics'] = comparison
+            if config.get('variant') == 'reward_contract':
+                from reward_analysis import verify_reward_trace
+                payload['reward_diagnostics'] = verify_reward_trace(
+                    (folder/'rewards.jsonl').read_bytes(), native, job, len(problem.ids))
             phase = verify_phase_profile(native, config)
             if phase is not None:
                 payload['phase_diagnostics'] = phase
@@ -542,6 +584,13 @@ def execute(args, config, bundle, binary):
     if not args.authorization_reference or len(args.authorization_reference.strip()) < 8:
         raise ValueError('actual user permission reference required; a flag is not permission')
     job = next(job for job in config['jobs'] if job['id'] == args.job)
+    if config.get('comparison_protocol') == 'reward_memory_v1':
+        # A missing terminal receipt is also a stop, not permission to skip it.
+        for prior in config['jobs'][:config['jobs'].index(job)]:
+            saved = json.loads((HERE/'results'/config['batch_id']/prior['id']/'receipt.json').read_bytes())
+            if (saved.get('status') != 'COMPLETE' or saved.get('job') != prior or
+                    saved.get('manifest_sha256') != config['manifest_sha256']):
+                raise ValueError('earlier reward comparison failed/incomplete: batch closed')
     output = HERE/'results'/config['batch_id']/job['id']
     output.mkdir(parents=True, exist_ok=False)
     write_json(output/'attempt.json', {'job': job, 'status': 'CONSUMED_ONCE', 'retries': 0,
@@ -551,8 +600,13 @@ def execute(args, config, bundle, binary):
     deadline = ENTERED_NS+int(config['limits']['total_wall_s']*1e9)
     remaining = (deadline-time.monotonic_ns())/1e9
     if remaining <= 0:
-        write_json(output/'receipt.json', {'status': 'FAILED_OR_INCOMPLETE',
-            'reason': 'deadline consumed before launch', 'retry_allowed': False})
+        attempt_raw = (output/'attempt.json').read_bytes()
+        write_json(output/'receipt.json', {'status': 'FAILED_OR_INCOMPLETE', 'job': job,
+            'manifest_sha256': config['manifest_sha256'],
+            'reason': 'deadline consumed before launch', 'retry_allowed': False,
+            'costs': None, 'worker_launched': False,
+            'total_entry_through_output_validation_and_hash_ns': time.monotonic_ns()-ENTERED_NS,
+            'artifacts': {'attempt.json': {'sha256': digest(attempt_raw), 'bytes': len(attempt_raw)}}})
         return 2
     cmd = [sys.executable, '-B', str(Path(__file__).resolve()), '_worker', '--manifest', str(args.manifest.resolve()),
            '--sha256', args.sha256, '--job', args.job, '--output', str(output), '--deadline-ns', str(deadline)]

@@ -640,6 +640,89 @@ def prepare_seed_comparison():
     print(json.dumps({'proposals':outputs,'scientific_search_executed':False,'new_authorization_required':True},indent=2))
 
 
+def prepare_reward_comparison():
+    """Freeze four historical test tasks, chosen by IDs, not reward outcomes.
+
+    These complete scenarios were absent from s01 reward/seed development, but
+    have prior R18 provenance. They are not unseen maps or untouched new data.
+    """
+    from prepare_repair_dev import ROOT
+    from run_address_adapter import load as load_address
+    batch = 'address_reward_holdout_v1'
+    target = HERE/'config'/(batch+'_manifest.json')
+    input_path = HERE/'config'/(batch+'_inputs.json')
+    if target.exists() or input_path.exists() or (HERE/'results'/batch).exists():
+        raise FileExistsError('preserve prepared inputs/manifests and all attempts')
+    chosen = tuple(f'{family}__s{scenario:02d}__n{count:02d}'
+                   for family in FAMILIES[:2] for scenario, count in ((4, 16), (5, 32)))
+    freeze_raw = (ROOT/'DATA_FREEZE.json').read_bytes()
+    freeze = json.loads(freeze_raw)
+    cases = []
+    for name in chosen:
+        case = prepare_case(name)  # Reads and validates frozen plans; no search.
+        if case['old_split'] != 'test':
+            raise ValueError('expected the historical scenario4/5 test partition')
+        for path, pin in case['source_files'].items():
+            if freeze['files'].get(path) != pin:
+                raise ValueError('repacked input differs from original DATA_FREEZE: '+path)
+        case['orders'] = []  # Shared input schema; ADDRESS constructs its own neighbourhoods.
+        case['current_split'] = 'HISTORICAL_TEST_HELD_OUT_FROM_S01_REWARD_DESIGN'
+        cases.append(case)
+    bundle = {'scope': 'FROZEN_COMPLETE_INITIAL_PLANS_NO_NEW_SEARCH',
+              'selection': 'two existing maps; scenario4/n16 and scenario5/n32, fixed by IDs before outcomes',
+              'historical_dataset_freeze_sha256': sha(freeze_raw),
+              'historical_data_never_claimed_untouched': True,
+              'independent_task_units': 4, 'new_maps': False,
+              'density_and_scenario_effects_not_separately_identifiable': True,
+              'generator_sha256': sha(Path(__file__).read_bytes()), 'cases': cases}
+    write_json(input_path, bundle)
+    receipt_name = 'reward_contract_build_receipt.json'
+    receipt = json.loads((HERE/receipt_name).read_bytes())
+    modes = ('author', 'cumulative', 'window')
+    jobs = []
+    # Every seed block contains all modes; Latin rotation balances within-block
+    # execution position. Identical seeds do not imply identical neighbourhoods.
+    for seed in (0, 1, 2):
+        for index, case in enumerate(cases):
+            offset = (seed+index) % 3
+            for mode in modes[offset:]+modes[:offset]:
+                jobs.append({'id': case['id']+f'__seed{seed}__'+mode, 'case': case['id'],
+                    'seed': seed, 'iterations': 0, 'top_k': len(case['paths']),
+                    'seed_admission': 'positive_delay', 'effort_mode': 'total_budget',
+                    'reward_memory': mode, 'reward_window': 16 if mode == 'window' else 0})
+    config = {'schema': 'address_common_initial_dev_v1', 'authorization': 'PENDING_USER',
+        'batch_id': batch, 'comparison_protocol': 'reward_memory_v1', 'variant': 'reward_contract',
+        'evidence_scope': 'HELD_OUT_FROM_REWARD_DESIGN_HISTORICAL_TASK_PILOT',
+        'input_file': input_path.name, 'input_sha256': sha(input_path.read_bytes()),
+        'binary': '.address_reward_build/final/build/address', 'binary_sha256': receipt['binary_sha256'],
+        'build_receipt': receipt_name,
+        'code_sha256': {name: sha((HERE/name).read_bytes()) for name in
+            ('run_address_adapter.py', 'run_repair_dev.py', 'address_backend.py', 'pp_repair.py',
+             'repair_profile.py', 'reward_analysis.py', receipt_name)},
+        'build_source_sha256': {name: sha((HERE/name).read_bytes()) for name in
+            ('build_address_full.py', 'address_adapter.py', 'address_adapter_support.h',
+             'address_loop_guard.py', 'address_budget.py', 'address_budget_support.h',
+             'address_reward.py', 'address_reward_support.h')},
+        'limits': {'total_wall_s': 5, 'worker_cpu_s': 10, 'native_cpu_s': 10,
+                   'per_process_as_mib': 512, 'external_final_reserve_s': 1,
+                   'inner_final_reserve_s': 1, 'native_cpu_reserve_s': 1},
+        'external_command_guard': {'tool': 'timeout', 'required': True,
+                                   'term_after_s': 10, 'kill_grace_s': 2},
+        'retry': 0, 'attempt_trace': False, 'phase_profile': False,
+        'stop_batch_on_any_failure': True, 'previous_authorization_reusable': False,
+        'new_initial_search': False, 'training': False, 'world': False, 'jobs': jobs,
+        'contrasts': ['author_vs_cumulative: settlement semantics including censor/empty group',
+                      'cumulative_vs_window16: same committed Bernoulli reward, memory only'],
+        'primary_endpoint': 'final_validated_full_plan_SOC_within_total_admission_budget',
+        'secondary_endpoints': ['makespan', 'full_cost', 'censor_rate', 'failure', 'per_selection_gain_and_cost'],
+        'decision_rule': 'repair counts alone are not benefit; retain all losses/zero differences; no W tuning or added seeds in this batch'}
+    write_json(target, config)
+    load_address(target, sha(target.read_bytes()))
+    print(json.dumps({'manifest': str(target), 'manifest_sha256': sha(target.read_bytes()),
+                      'input_sha256': config['input_sha256'], 'jobs': len(jobs),
+                      'tasks': len(cases), 'scientific_search_executed': False}))
+
+
 def address_results(manifest, expected_sha, output=None):
     """Audit the completed/stopped ADDRESS batch; never launch or retry a job."""
     manifest = manifest.resolve()
@@ -676,26 +759,58 @@ def address_results(manifest, expected_sha, output=None):
             continue
         if failed_job is not None:
             raise ValueError('job attempted after the first failure')
-        receipt_raw = (folder/'receipt.json').read_bytes()
-        receipt = json.loads(receipt_raw)
-        result = json.loads((folder/'result.json').read_bytes())
-        attempt = json.loads((folder/'attempt.json').read_bytes())
-        for record in (receipt, result, attempt):
-            if record['job'] != job or record['manifest_sha256'] != expected_sha:
+        missing, unreadable, records, terminal_bytes = [], [], {}, {}
+        for name in ('receipt.json', 'result.json', 'attempt.json'):
+            if not (folder/name).is_file():
+                missing.append(name)
+                continue
+            terminal_bytes[name] = (folder/name).read_bytes()
+            try:
+                record = json.loads(terminal_bytes[name])
+            except (ValueError, UnicodeDecodeError):
+                unreadable.append(name)
+                continue
+            if not isinstance(record, dict):
+                unreadable.append(name)
+                continue
+            if record.get('job') != job or record.get('manifest_sha256') != expected_sha:
                 raise ValueError('ADDRESS job identity mismatch')
+            records[name] = record
+        receipt, result = records.get('receipt.json'), records.get('result.json')
+        if receipt is not None:
+            if receipt.get('status') not in ('COMPLETE', 'FAILED_OR_INCOMPLETE'):
+                raise ValueError('unknown ADDRESS terminal status')
+            for name, pin in receipt['artifacts'].items():
+                relative = Path(name)
+                if relative.is_absolute() or '..' in relative.parts:
+                    raise ValueError('artifact path escape')
+                if not (folder/relative).is_file():
+                    if name not in missing:
+                        missing.append(name)
+                    continue
+                artifact = (folder/relative).read_bytes()
+                if sha(artifact) != pin['sha256'] or len(artifact) != pin['bytes']:
+                    raise ValueError('ADDRESS evidence bytes changed: '+name)
+            row.update(receipt_sha256=sha(terminal_bytes['receipt.json']),
+                       total_entry_through_output_validation_and_hash_ns=
+                           receipt['total_entry_through_output_validation_and_hash_ns'],
+                       costs=receipt['costs'])
+        if missing or unreadable:
+            # A killed writer can leave no JSON or a truncated JSON. Verify all
+            # available identities/pins first, then retain real supervisor costs.
+            failed_job = job['id']
+            row.update(status='FAILED_OR_INCOMPLETE', missing_artifacts=missing,
+                       unreadable_artifacts=unreadable,
+                       reason='incomplete terminal evidence after external stop',
+                       initial_retained_is_not_a_successful_final_output=True,
+                       stage_wall_ns=result.get('stage_wall_ns') if result else None)
+            if receipt is None:
+                row.update(total_entry_through_output_validation_and_hash_ns=None, costs=None)
+            rows.append(row)
+            continue
         if result['case'] != job['case'] or result['initial_soc'] != row['initial_soc']:
             raise ValueError('ADDRESS initial plan identity mismatch')
-        for name, pin in receipt['artifacts'].items():
-            relative = Path(name)
-            if relative.is_absolute() or '..' in relative.parts:
-                raise ValueError('artifact path escape')
-            artifact = (folder/relative).read_bytes()
-            if sha(artifact) != pin['sha256'] or len(artifact) != pin['bytes']:
-                raise ValueError('ADDRESS evidence bytes changed: '+name)
-        row.update({'status': receipt['status'], 'receipt_sha256': sha(receipt_raw),
-                    'total_entry_through_output_validation_and_hash_ns':
-                        receipt['total_entry_through_output_validation_and_hash_ns'],
-                    'costs': receipt['costs'], 'stage_wall_ns': result['stage_wall_ns']})
+        row.update(status=receipt['status'], stage_wall_ns=result['stage_wall_ns'])
         if receipt['status'] == 'COMPLETE':
             final = {int(a): tuple(p) for a, p in result['final_paths'].items()}
             problem.validate(final)  # Offline audit, outside the recorded run timing.
@@ -729,6 +844,15 @@ def address_results(manifest, expected_sha, output=None):
                 if summary != result.get('comparison_diagnostics'):
                     raise ValueError('offline seed comparison differs from worker')
                 row['comparison_diagnostics'] = summary
+            if config.get('comparison_protocol') == 'reward_memory_v1':
+                from reward_analysis import verify_reward_trace
+                summary = verify_reward_trace((folder/'rewards.jsonl').read_bytes(),
+                                              result['native_receipt'], job, len(problem.ids))
+                if summary != result.get('reward_diagnostics'):
+                    raise ValueError('offline reward ledger differs from worker')
+                row['reward_diagnostics'] = summary
+                row['reward_memory'], row['reward_window'], row['solver_seed'] = (
+                    job['reward_memory'], job['reward_window'], job['seed'])
         elif receipt['status'] == 'FAILED_OR_INCOMPLETE':
             failed_job = job['id']
             row['reason'] = result.get('reason', 'missing success validation')
@@ -738,7 +862,8 @@ def address_results(manifest, expected_sha, output=None):
         rows.append(row)
     artifacts = {str(p.relative_to(batch)): {'bytes': p.stat().st_size, 'sha256': sha(p.read_bytes())}
                  for p in sorted(batch.rglob('*')) if p.is_file()}
-    value = {'scope': 'ADDRESS_FUNCTIONAL_DEV_STOPPED_BATCH_AUDIT',
+    reward_comparison = config.get('comparison_protocol') == 'reward_memory_v1'
+    value = {'scope': 'ADDRESS_REWARD_HELDOUT_TASK_PILOT' if reward_comparison else 'ADDRESS_FUNCTIONAL_DEV_STOPPED_BATCH_AUDIT',
         'manifest_sha256': expected_sha, 'scientific_code_commit': auth['scientific_code_commit'],
         'analyzer_sha256': sha(Path(__file__).read_bytes()), 'new_search_by_analyzer': False,
         'status': 'STOPPED_ON_FIRST_FAILURE' if failed_job else 'ALL_COMPLETE',
@@ -747,11 +872,29 @@ def address_results(manifest, expected_sha, output=None):
                    for status in ('COMPLETE', 'FAILED_OR_INCOMPLETE', 'NOT_RUN_AFTER_BATCH_STOP')},
         'authorization_consumed_or_closed': True, 'retry_allowed': False,
         'remaining_jobs_require_new_authorization': bool(failed_job),
-        'limits': ['single functional DEV, no candidate recovery or learning',
+        'limits': [('four held-out-from-reward-design historical tasks; solver seeds are within-task repeats; no offline training'
+                    if reward_comparison else 'single functional DEV, no candidate recovery or learning'),
                    'historical fixed-ID probe times are not paired performance baselines',
                    'failures and unattempted jobs retained; no survivor-only aggregate',
                    'nested native/worker/entry timings must not be added',
                    'offline audit timing is separate from recorded scientific run costs']}
+    if reward_comparison:
+        # Fixed paired contrasts. Missing/failing arms remain explicit, and seed
+        # repeats never turn four task instances into twelve independent tasks.
+        by_id = {row['job']: row for row in rows}
+        paired = []
+        for case in dict.fromkeys(j['case'] for j in config['jobs']):
+            for seed in sorted({j['seed'] for j in config['jobs'] if j['case'] == case}):
+                group = {j['reward_memory']: by_id[j['id']] for j in config['jobs']
+                         if j['case'] == case and j['seed'] == seed}
+                for first, second in (('author', 'cumulative'), ('cumulative', 'window')):
+                    a, b = group[first], group[second]
+                    complete = a['status'] == b['status'] == 'COMPLETE'
+                    paired.append({'case': case, 'solver_seed': seed, 'first': first, 'second': second,
+                        'statuses': [a['status'], b['status']], 'both_complete': complete,
+                        'soc_first_minus_second': a['final_soc']-b['final_soc'] if complete else None,
+                        'makespan_first_minus_second': a['final_makespan']-b['final_makespan'] if complete else None})
+        value['paired_contrasts'] = paired
     write_json(output, value)
     print(json.dumps({'output': str(output), 'sha256': sha(output.read_bytes()),
                       'status': value['status'], 'counts': value['counts'], 'jobs': rows}, indent=2))
@@ -826,7 +969,7 @@ def outside_repair(output=None):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('mode', choices=('prepare', 'summarize', 'costs', 'failures', 'recoveries', 'address', 'outside_repair', 'prepare_seed_comparison'))
+    parser.add_argument('mode', choices=('prepare', 'summarize', 'costs', 'failures', 'recoveries', 'address', 'outside_repair', 'prepare_seed_comparison', 'prepare_reward_comparison'))
     parser.add_argument('--manifest', type=Path)
     parser.add_argument('--sha256')
     parser.add_argument('--output', type=Path)
@@ -835,6 +978,8 @@ if __name__ == '__main__':
         outside_repair(args.output)
     elif args.mode == 'prepare_seed_comparison':
         prepare_seed_comparison()
+    elif args.mode == 'prepare_reward_comparison':
+        prepare_reward_comparison()
     elif args.mode == 'prepare':
         prepare()
     elif args.mode == 'failures':

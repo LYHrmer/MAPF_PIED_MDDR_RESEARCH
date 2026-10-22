@@ -1,6 +1,8 @@
 # SCI MAPF 支线
 
-本线问题是：**给定合法的多机器人路径方案，如何在有限总计算预算内进一步改善路径质量？** 目标是在2026年形成SCI稿件；当前为候选问题验证阶段，尚无独立算法优势。唯一总体决定在[main](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/docs/RESEARCH_PLAN.md)，本页只维护本线入口。
+本线问题是：**给定合法的多机器人路径方案，如何在有限总计算预算内分配局部重规划机会，使最终保留的完整方案更好？** 目标是在2026年形成SCI稿件；当前为候选问题验证阶段，尚无独立算法优势。唯一总体决定在[main](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/docs/RESEARCH_PLAN.md)，本页只维护本线入口。
+
+当前交付见[奖励诊断与比较](ADDRESS_REWARD_COMPARISON.md)：旧迷宫日志存在部分前缀的正差额、最终回滚为零的错配，尚不构成跨任务或因果证据。三种模式的科学入口已接通；[36项清单](ADDRESS_REWARD_CHECKLIST.md)固定四份未参与本轮s01设计的历史test完整初解、三个求解器种子和author/cumulative/window16。只完成静态准备和软件核验，未运行；全部旧许可仍为已消费。
 
 ## 实现主干与当前工作
 
@@ -47,4 +49,4 @@
 
 学习按真实决策需要选择监督、在线学习或RL；三个正例不构成训练依据。算法在本线维护一份，硕士通过固定提交引用。历史详细实现说明见[535ee1a版本](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/535ee1adf3135ab79565e0b3aa5d189348fe7ab2/tracks/sci/README.md)，其中旧待运行表述不再是当前状态。
 
-已完成[DyMAB接口核对](REFERENCE_REPRODUCTION.md)及[ADDRESS奖励事务实现](ADDRESS_BUDGET.md#奖励事务适配实现完成科学比较未运行)：完整候选奖励、实际提交收益与预算截尾分开，构组失败与回滚也逐次结算，重复结算拒绝。可选`reward_contract`提供原奖励、提交收益累计记忆和窗口记忆三个模式；后两者共用同一Bernoulli反馈及全部校验/预算。实际PP与外层控制流的软件夹具、完整构建及help已通过，尚无新科学运行；这是车辆种子适配，不是完整DyMAB或创新结论。下一项补runner收据核验及有限功能清单，再按新授权比较；原八项许可与冻结结果不变。CPLNS/X*继续作参考，后段恢复保持停止。
+已完成[DyMAB接口核对](REFERENCE_REPRODUCTION.md)及[ADDRESS奖励事务实现](ADDRESS_BUDGET.md#奖励事务适配实现完成科学比较未运行)。科学入口、外部账本核对和有限清单本轮已补齐，当前状态统一见本页顶部的[奖励比较](ADDRESS_REWARD_COMPARISON.md)。后两模式共用同一提交后Bernoulli反馈，只改变累计/窗口记忆；author对照保留原回滚前更新并承担相同检查费用。没有新科学运行或创新结论。CPLNS/X*继续作参考，后段恢复保持停止。

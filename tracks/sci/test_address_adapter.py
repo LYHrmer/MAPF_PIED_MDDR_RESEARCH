@@ -13,9 +13,158 @@ from run_address_adapter import (load, parse_paths, verify_attempt_trace, verify
                                  verify_phase_profile, verify_seed_comparison, comparison_settings,
                                  PHASE_NAMES, worker)
 from run_repair_dev import unpack
+from reward_analysis import diagnose_legacy, verify_reward_trace
 
 
 class AdapterContracts(unittest.TestCase):
+    def test_reward_protocol_keeps_seed_rule_budget_and_feedback_fixed(self):
+        cfg = {'variant': 'reward_contract', 'comparison_protocol': 'reward_memory_v1'}
+        job = {'seed_admission': 'positive_delay', 'effort_mode': 'total_budget',
+               'iterations': 0, 'reward_memory': 'window', 'reward_window': 16}
+        self.assertEqual(comparison_settings(cfg, job), ('positive_delay', 'total_budget'))
+        for changed in (dict(job, reward_window=0), dict(job, reward_window=True),
+                        dict(job, seed_admission='all'), dict(job, reward_memory='cumulative'),
+                        dict(job, effort_mode='fixed_repairs', iterations=16)):
+            with self.assertRaises(ValueError): comparison_settings(cfg, changed)
+
+    def test_reward_ledger_closes_censor_commit_and_per_seed_window(self):
+        import copy, json
+        base = dict(schema='ADDRESS_REWARD_V1', operator_id=0, seed_id=0,
+                    group_size=2, outcome='ACCEPTED', stop='FOUND', old_task_soc=10,
+                    old_subset_soc=10, fresh_paths=2, candidate_validated=True,
+                    candidate_subset_soc=8, candidate_reward=2, committed_task_soc=8,
+                    committed_gain=2, accepted=True, censored=False, local_deadline=False,
+                    global_deadline=False, deadline_stage='NONE', deadline_resource='NONE',
+                    memory_eligible=True, bernoulli_reward=1, selection_wall_before_log_ns=20,
+                    selection_cpu_before_log_ns=10)
+        rows = [dict(base, selection_id=1, repair_attempt_id=1)]
+        rows.append(dict(base, selection_id=2, repair_attempt_id=2, outcome='ROLLED_BACK',
+                         old_task_soc=8, old_subset_soc=8, candidate_subset_soc=9,
+                         candidate_reward=-1, committed_gain=0, accepted=False, bernoulli_reward=0))
+        rows.append(dict(rows[1], selection_id=3, repair_attempt_id=3, outcome='CENSORED',
+                         fresh_paths=1, candidate_validated=False, candidate_subset_soc=None,
+                         candidate_reward=None, censored=True, global_deadline=True,
+                         deadline_stage='SIPP', deadline_resource='WALL', memory_eligible=False,
+                         bernoulli_reward=None))
+        # A synthetic helper sequence, not a scientific trajectory: non-global
+        # local censor permits another selection and has no global resource.
+        rows[-1].update(global_deadline=False, local_deadline=True, deadline_resource='NONE')
+        rows.append(dict(rows[1], selection_id=4, repair_attempt_id=None, seed_id=1,
+                         outcome='NO_GROUP', group_size=0, fresh_paths=0, old_subset_soc=None,
+                         candidate_validated=False, candidate_subset_soc=None, candidate_reward=None))
+        rows.append(dict(rows[-1], selection_id=5, seed_id=None, memory_eligible=False, bernoulli_reward=None))
+        native = dict(initial_soc=10, final_soc=8, group_calls=5, repair_attempts=3)
+        def encoded(events): return ('\n'.join(json.dumps(r) for r in events)+'\n').encode()
+        for mode in ('author', 'cumulative', 'window'):
+            width = 1 if mode == 'window' else 0
+            native['reward_contract'] = dict(schema='ADDRESS_REWARD_V1', memory=mode, window=width,
+                decision='VEHICLE_SEED_PROJECT_ADAPTATION', reward='COMMITTED_GAIN_POSITIVE_BERNOULLI',
+                posterior_rule='AUTHOR_ATTEMPT_BEFORE_ROLLBACK' if mode == 'author' else 'POST_COMMIT_BERNOULLI',
+                prior_alpha=1, prior_beta=1, selections=5, settlements=5, log_wall_ns=5, log_cpu_ns=3,
+                arms=[dict(seed=0, completed=2, censored=1, retained_successes=0 if width else 1, retained_failures=1),
+                      dict(seed=1, completed=1, censored=0, retained_successes=0, retained_failures=1)])
+            job = dict(reward_memory=mode, reward_window=width)
+            out = verify_reward_trace(encoded(rows), native, job, 2)
+            self.assertEqual(out['actual_committed_gain'], 2)
+            self.assertEqual(out['outcomes']['CENSORED'], 1)
+            for index, changes in ((0, dict(selection_id=2)), (1, dict(old_task_soc=9)),
+                                   (2, dict(candidate_subset_soc=3, candidate_reward=5)),
+                                   (2, dict(memory_eligible=True, bernoulli_reward=0)),
+                                   (3, dict(committed_gain=1)), (4, dict(seed_id=2))):
+                bad = copy.deepcopy(rows); bad[index].update(changes)
+                with self.assertRaises(ValueError): verify_reward_trace(encoded(bad), native, job, 2)
+            with self.assertRaises(ValueError): verify_reward_trace(encoded(rows[:-1]), native, job, 2)
+            with self.assertRaises(ValueError): verify_reward_trace(encoded(rows)[:-1], native, job, 2)
+
+    def test_legacy_partial_positive_is_not_a_valid_complete_reward(self):
+        row = dict(attempt_id=1, primary_stop='FOCAL_DRAINED_EMPTY', group_size=3,
+                   old_group_cost=10, final_group_cost=10, local_deadline_reached=False,
+                   global_deadline_reached=False, primary_returns=[dict(empty=False, path_cost=2),
+                                                                 dict(empty=True, path_cost=-1)],
+                   cost=dict(attempt_wall_before_trace_ns=20, attempt_cpu_before_trace_ns=10))
+        result = diagnose_legacy([row])
+        self.assertEqual(result['positive_predicate_zero_commit_ids'], [1])
+        self.assertFalse(result['rows'][0]['all_fresh_paths_returned'])
+        self.assertEqual(result['rows'][0]['pre_rollback_cost_difference'], 8)
+        self.assertEqual(result['committed_gain'], 0)
+
+    def _incomplete_batch_fixture(self, root, result_bytes, receipt_kind='valid'):
+        import hashlib, json
+        batch = root/'results'/'fixture'
+        folder = batch/'first'
+        folder.mkdir(parents=True)
+        (folder/'worker.stderr.log').write_text('synthetic interrupted worker\n')
+        jobs = [dict(id=name, case='case') for name in ('first', 'second')]
+        inputs = json.dumps({'cases': [dict(id='case', rows=1, cols=2, blocked=[],
+            endpoints={'0': [0, 1]}, paths={'0': [0, 1]}, orders=[])]}).encode()
+        (root/'inputs.json').write_bytes(inputs)
+        cfg = dict(schema='address_common_initial_dev_v1', retry=0, batch_id='fixture', jobs=jobs,
+                   input_file='inputs.json', input_sha256=hashlib.sha256(inputs).hexdigest())
+        raw = json.dumps(cfg).encode(); expected = hashlib.sha256(raw).hexdigest()
+        (root/'manifest.json').write_bytes(raw)
+        (batch/'AUTHORIZATION.json').write_text(json.dumps(dict(manifest_sha256=expected,
+            jobs=['first', 'second'], scientific_code_commit='synthetic fixture, no execution')))
+        (folder/'attempt.json').write_text(json.dumps(dict(job=jobs[0], manifest_sha256=expected)))
+        if result_bytes is not None:
+            (folder/'result.json').write_bytes(result_bytes)
+        receipt = dict(status='FAILED_OR_INCOMPLETE', job=jobs[0], manifest_sha256=expected,
+            total_entry_through_output_validation_and_hash_ns=5010000000,
+            costs=None if receipt_kind == 'before_worker' else dict(exit_code=-9, wall_s=5, forced_cleanup=True),
+            artifacts={p.name: dict(sha256=hashlib.sha256(p.read_bytes()).hexdigest(), bytes=p.stat().st_size)
+                       for p in folder.iterdir()})
+        if receipt_kind != 'missing':
+            (folder/'receipt.json').write_text('{"status":' if receipt_kind == 'truncated' else json.dumps(receipt))
+        return expected, receipt
+
+    def test_batch_audit_retains_killed_job_costs_and_unattempted_tail(self):
+        import io, json
+        from contextlib import redirect_stdout
+        from repair_profile import address_results
+        for result_bytes, receipt_kind in ((None, 'valid'), (b'{"status":', 'valid'),
+                                           (None, 'missing'), (None, 'truncated'), (None, 'before_worker')):
+            with self.subTest(result=result_bytes, receipt=receipt_kind), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                expected, receipt = self._incomplete_batch_fixture(root, result_bytes, receipt_kind)
+                with patch('repair_profile.HERE', root), redirect_stdout(io.StringIO()):
+                    address_results(root/'manifest.json', expected)
+                result = json.loads((root/'results/fixture/RUN_RECEIPT.json').read_text())
+                self.assertEqual(result['counts']['FAILED_OR_INCOMPLETE'], 1)
+                self.assertEqual(result['counts']['NOT_RUN_AFTER_BATCH_STOP'], 1)
+                row = result['jobs'][0]
+                self.assertIsNone(row['final_soc'])
+                known_receipt = receipt_kind in ('valid', 'before_worker')
+                self.assertEqual(row['costs'], receipt['costs'] if known_receipt else None)
+                self.assertEqual(row['total_entry_through_output_validation_and_hash_ns'],
+                                 receipt['total_entry_through_output_validation_and_hash_ns'] if known_receipt else None)
+                if result_bytes is not None:
+                    self.assertIn('result.json', row['unreadable_artifacts'])
+
+    def test_incomplete_batch_still_rejects_identity_and_artifact_changes(self):
+        import io, json
+        from contextlib import redirect_stdout
+        from repair_profile import address_results
+        for changed in ('receipt_job', 'receipt_manifest', 'attempt_job', 'artifact', 'partial_result'):
+            with self.subTest(changed=changed), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                expected, receipt = self._incomplete_batch_fixture(
+                    root, b'{"status":' if changed == 'partial_result' else None)
+                folder = root/'results/fixture/first'
+                if changed == 'receipt_job':
+                    receipt['job'] = dict(id='different', case='case')
+                elif changed == 'receipt_manifest':
+                    receipt['manifest_sha256'] = '0'*64
+                elif changed == 'attempt_job':
+                    (folder/'attempt.json').write_text(json.dumps(dict(job={}, manifest_sha256=expected)))
+                elif changed == 'artifact':
+                    (folder/'worker.stderr.log').write_text('changed bytes\n')
+                else:
+                    (folder/'result.json').write_bytes(b'{"status":"FAILED"')
+                (folder/'receipt.json').write_text(json.dumps(receipt))
+                message = 'identity mismatch' if changed in ('receipt_job', 'receipt_manifest', 'attempt_job') else 'evidence bytes changed'
+                with patch('repair_profile.HERE', root), redirect_stdout(io.StringIO()), self.assertRaisesRegex(ValueError, message):
+                    address_results(root/'manifest.json', expected)
+                self.assertFalse((root/'results/fixture/RUN_RECEIPT.json').exists())
+
     def test_seed_comparison_requires_explicit_policy_and_uncapped_time_mode(self):
         config = {'comparison_protocol': 'seed_admission_v1', 'variant': 'budget_guard'}
         job = {'seed_admission': 'positive_delay', 'effort_mode': 'total_budget', 'iterations': 0}
