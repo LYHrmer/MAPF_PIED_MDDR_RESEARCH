@@ -19,7 +19,11 @@ import plan_selection as selection
 
 HERE = Path(__file__).resolve().parent
 SCHEMA = 'thesis_nominal_comparison_v1'
+SCHEDULER_SCHEMA = 'thesis_scheduler_comparison_v1'
 ARMS = ('original', 'frozen_soc', 'turn_aware')
+SCHEDULERS = ('global_barrier', 'local_dependency')
+SCHEDULER_CASES = ('maze-32-32-2__s01__n16', 'random-32-32-10__s01__n16')
+SCHEDULER_ARMS = tuple(a+'__'+s for a in ARMS for s in SCHEDULERS)
 RUNTIME = {'compare_nominal_motion.py', 'nominal_motion.py', 'plan_selection.py',
            'inspect_sci_paths.py', 'export_frozen_trace.py', 'sci.lock.json',
            'shared.lock.json', 'plan_selection.lock.json'}
@@ -58,16 +62,18 @@ def load(manifest, expected_sha, repo):
     if config.get('schema') == 'thesis_v2_pair_v1':
         from v2_motion_inputs import load_pair
         return load_pair(config, repo)
-    require(config['schema'] == SCHEMA and config['authorization'] == 'PENDING_USER',
+    scheduler_comparison = config.get('schema') == SCHEDULER_SCHEMA
+    require(config['schema'] in (SCHEMA, SCHEDULER_SCHEMA) and config['authorization'] == 'PENDING_USER',
             'manifest is a proposal, not an authorization')
-    require(set(config['runtime_sha256']) == RUNTIME, 'incomplete runtime/lock pin set')
+    require(set(config['runtime_sha256']) == (RUNTIME | {'local_scheduler.py'} if scheduler_comparison else RUNTIME),
+            'incomplete runtime/lock pin set')
     require(config['limits'] == LIMITS and config['retries'] == 0
             and config['stop_batch_on_failure'] is True
             and config['sufficient_geometry_rejection_is_retained_result'] is True
             and all(config[k] is False for k in ('new_world', 'training', 'optimizer_search')),
             'fixed budget, zero retry, fail-stop and scope flags required')
     require(re.fullmatch('[a-zA-Z0-9_-]+', config['batch_id']) is not None
-            and len(config['cases']) == len(set(config['cases'])) == 6
+            and len(config['cases']) == len(set(config['cases'])) == (2 if scheduler_comparison else 6)
             and all(re.fullmatch('[a-zA-Z0-9_-]+', name) is not None for name in config['cases']),
             'local case and batch IDs required')
     require(config['sci_commit'] == selection.SCI
@@ -76,8 +82,21 @@ def load(manifest, expected_sha, repo):
     for name, digest in config['runtime_sha256'].items():
         require(Path(name).name == name and sha((HERE/name).read_bytes()) == digest,
                 'runtime/lock changed: '+name)
-    require(config['arms'] == list(ARMS) and type(config['initial_heading_quarters']) is int and config['initial_heading_quarters'] == 0,
+    require(config['arms'] == list(SCHEDULER_ARMS if scheduler_comparison else ARMS)
+            and type(config['initial_heading_quarters']) is int and config['initial_heading_quarters'] == 0,
             'fixed three arms and common initial east heading required')
+    if scheduler_comparison:
+        from local_scheduler import PAIR_MAX_DEPTH, PAIR_MAX_BOXES
+        require(tuple(config['cases']) == SCHEDULER_CASES
+                and config['schedulers'] == list(SCHEDULERS)
+                and config['old_authorization_reusable'] is False
+                and config['error_model_applied'] is False
+                and config['author_sadg_reproduction'] is False
+                and config['primitive_timing'] == 'RATIONAL_REST_TO_REST_COMMON_TO_BOTH_SCHEDULERS',
+                'fixed scheduler scope or selected complete cases changed')
+        require(config['checker_policy'] == dict(pair_max_depth=PAIR_MAX_DEPTH,
+                pair_max_boxes=PAIR_MAX_BOXES, arithmetic='EXACT_RATIONAL_MONOTONE_INTERVAL_ENCLOSURES'),
+                'continuous interval proof policy changed')
     motion.MotionModel(**config['motion_model'])
     exporter = selection._local('_motion_frozen_export', 'export_frozen_trace.py')
     reader = exporter.load_reader(repo, read_json(HERE/'shared.lock.json'))
@@ -111,7 +130,13 @@ def load(manifest, expected_sha, repo):
         result['_prior_optimizer_costs'] = {key: receipt[key] for key in
             ('costs', 'supervisor_entry_through_artifact_hash_ns', 'supervisor_self_cpu_s', 'accounting_note')}
         cases[case['id']], results[case['id']] = case, result
-    require(list(cases) == config['cases'] and len(cases) == 6, 'case order/coverage changed')
+    require(len(cases) == 6, 'frozen source case coverage changed')
+    if scheduler_comparison:
+        require(all(name in cases for name in SCHEDULER_CASES), 'missing frozen scheduler case')
+        cases = {name: cases[name] for name in SCHEDULER_CASES}
+        results = {name: results[name] for name in SCHEDULER_CASES}
+    else:
+        require(list(cases) == config['cases'], 'case order/coverage changed')
     pin = config['supervisor_pin']
     require(pin['commit'] == selection.SCI and pin['path'] == 'tracks/sci/run_repair_dev.py',
             'unexpected supervisor source')
@@ -125,14 +150,17 @@ def load(manifest, expected_sha, repo):
 def motion_metrics(answer):
     """Wait only before actual reference completion; permanent holds excluded."""
     if not answer['certified_nominal_reference']:
-        require(answer['reason']['kind'].startswith('CIRCLE_'),
+        dependency_failure = answer['reason']['kind'].startswith('DEPENDENCY_')
+        require(answer['reason']['kind'].startswith('CIRCLE_') or dependency_failure,
                 'invalid motion input or schedule: '+str(answer['reason']))
-        return {'feasibility': 'SUFFICIENT_SEPARATION_NOT_ESTABLISHED',
+        return {'feasibility': ('LOCAL_CONSTRUCTION_NOT_ESTABLISHED' if dependency_failure
+                                else 'SUFFICIENT_SEPARATION_NOT_ESTABLISHED'),
                 'collision_claim': False, 'completion_sum_s': None, 'makespan_s': None,
                 'wait_sum_s': None, 'reason': answer['reason']}
     schedule = answer['schedule']
     totals = dict(turn_s=0.0, move_s=0.0, wait_sum_s=0.0,
-                  turn_barrier_wait_s=0.0, discrete_wait_slot_s=0.0, turn_slot_padding_wait_s=0.0)
+                  turn_barrier_wait_s=0.0, discrete_wait_slot_s=0.0, turn_slot_padding_wait_s=0.0,
+                  local_dependency_wait_s=0.0)
     per_agent = {}
     for agent, actions in schedule['agents'].items():
         total, wait = 0.0, 0.0
@@ -146,6 +174,7 @@ def motion_metrics(answer):
                 wait += duration
                 totals['wait_sum_s'] += duration
                 key = {'TURN_BARRIER': 'turn_barrier_wait_s',
+                       'LOCAL_DEPENDENCY': 'local_dependency_wait_s',
                        'TURN_SLOT_PADDING': 'turn_slot_padding_wait_s',
                        'DISCRETE_WAIT_SLOT': 'discrete_wait_slot_s'}[action['reason']]
                 totals[key] += duration
@@ -160,7 +189,7 @@ def motion_metrics(answer):
             'permanent_goal_hold_count': len(per_agent), 'goal_hold_in_wait_sum': False}
 
 
-def compare_plans(problem, initial, optimized, model, headings, emit=None):
+def compare_plans(problem, initial, optimized, model, headings, emit=None, *, scheduler_comparison=False):
     """No search; frozen optimized plan stays intact even on equal SOC.
 
     Turn-aware chooses among the two whole plans and one simultaneous retention
@@ -182,28 +211,45 @@ def compare_plans(problem, initial, optimized, model, headings, emit=None):
             selected = {'selected': 'incumbent' if arm == 'original' else 'frozen_proposal',
                         'rule': arm, 'search_calls': 0}
         selection_ns = time.monotonic_ns()-started
-        started = time.monotonic_ns()
-        answer = motion.compile_motion(problem, paths, model, headings)
-        construction_and_validation_ns = time.monotonic_ns()-started
-        started = time.monotonic_ns()
-        metrics = motion_metrics(answer)
-        row = {'arm': arm, 'selection': selected, 'soc': sum(len(p)-1 for p in paths.values()),
-               'grid_makespan': max(len(p)-1 for p in paths.values()), 'metrics': metrics,
-               'motion': answer, 'stage_wall_ns': {'whole_plan_selection': selection_ns,
-                   'complete_discrete_and_continuous_checks_and_schedule': construction_and_validation_ns,
-                   'metric_validation': time.monotonic_ns()-started}}
-        rows.append(row)
-        if emit is not None:
-            emit(row)
+        for scheduler in (SCHEDULERS if scheduler_comparison else (None,)):
+            started = time.monotonic_ns()
+            if scheduler_comparison:
+                import local_scheduler
+                answer = local_scheduler.compile_schedule(problem, paths, model, headings, scheduler)
+            else:
+                answer = motion.compile_motion(problem, paths, model, headings)
+            construction_and_validation_ns = time.monotonic_ns()-started
+            started = time.monotonic_ns()
+            metrics = motion_metrics(answer)
+            row = {'arm': arm+'__'+scheduler if scheduler_comparison else arm,
+                   'selection': selected, 'soc': sum(len(p)-1 for p in paths.values()),
+                   'grid_makespan': max(len(p)-1 for p in paths.values()), 'metrics': metrics,
+                   'motion': answer, 'stage_wall_ns': {
+                       'whole_plan_selection': selection_ns if scheduler in (None, SCHEDULERS[0]) else 0,
+                       'complete_discrete_and_continuous_checks_and_schedule': construction_and_validation_ns,
+                       'metric_validation': time.monotonic_ns()-started}}
+            if scheduler_comparison:
+                row.update(path_arm=arm, scheduler=scheduler,
+                    complete_paths_sha256=sha(json.dumps({str(a): list(p) for a, p in paths.items()},
+                                                         sort_keys=True, separators=(',', ':')).encode()),
+                    selection_cost_shared_by_scheduler_pair=True)
+            rows.append(row)
+            if emit is not None:
+                emit(row)
     return {'status': 'COMPLETE', 'rows': rows,
             'common_initial_and_optimized_validation_ns': common_validation_ns,
-            'comparison_scope': 'NOMINAL_SHARED_PHASE_BARRIER_CONTROL',
+            'comparison_scope': ('FIXED_PATH_GLOBAL_VS_CONSERVATIVE_LOCAL_DEPENDENCY'
+                                  if scheduler_comparison else 'NOMINAL_SHARED_PHASE_BARRIER_CONTROL'),
             'independent_performance_experiment': False, 'optimizer_called': False,
             'v2_applied': False, 'learning_used': False,
             'limits': ['Global barriers add conservative waiting; no optimal scheduling claim.',
+                       *(['Both schedulers use a new common rational primitive timing; do not subtract old 18-arm seconds.',
+                          'Local sweep serialization may cycle or be more conservative; other schedules may exist.',
+                          'This project fixed-order control is not a full SADG reproduction or feedback execution.']
+                         if scheduler_comparison else []),
                        'Circle separation failure is inconclusive about rectangular-body collision.',
                        'Motion parameters are synthetic declarations, not measured LIMO parameters.',
-                       'No independently delayed clocks, tracking disturbance or feedback controller.']}
+                       'No unmodeled per-robot timing delays, tracking disturbance or feedback controller.']}
 
 
 def execute_worker(config, case, source, output, repo, load_ns):
@@ -226,7 +272,8 @@ def execute_worker(config, case, source, output, repo, load_ns):
         started = time.monotonic_ns()
         write_json(output/('arm_'+row['arm']+'.json'), row)
         arm_io_ns[row['arm']] = time.monotonic_ns()-started
-    value = compare_plans(problem, initial, optimized, model, headings, emit=emit)
+    value = compare_plans(problem, initial, optimized, model, headings, emit=emit,
+                          scheduler_comparison=config.get('schema') == SCHEDULER_SCHEMA)
     # Each full reference is already saved; keep the task summary small.
     for row in value['rows']:
         row.pop('motion')

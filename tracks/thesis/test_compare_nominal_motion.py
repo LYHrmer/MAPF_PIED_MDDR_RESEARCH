@@ -130,6 +130,49 @@ class CompareContracts(unittest.TestCase):
         with self.assertRaises(ValueError):
             compare.compare_plans(problem, original, original, self.model(), {0: 0})
 
+    def test_scheduler_pair_keeps_same_selected_paths_and_wait_cost_partition(self):
+        paths = {0: [6, 11], 1: [16, 17]}
+        problem = self.Grid(5, 5, [], {a: (p[0], p[-1]) for a, p in paths.items()})
+        result = compare.compare_plans(problem, paths, paths, self.model(), {0: 0, 1: 0},
+                                       scheduler_comparison=True)
+        self.assertEqual([row['arm'] for row in result['rows']], list(compare.SCHEDULER_ARMS))
+        for global_row, local_row in zip(result['rows'][::2], result['rows'][1::2]):
+            self.assertEqual(global_row['complete_paths_sha256'], local_row['complete_paths_sha256'])
+            self.assertEqual(global_row['motion']['schedule']['profiles'], local_row['motion']['schedule']['profiles'])
+            self.assertGreater(global_row['metrics']['completion_sum_s'], local_row['metrics']['completion_sum_s'])
+            self.assertEqual(local_row['stage_wall_ns']['whole_plan_selection'], 0)
+            for row in (global_row, local_row):
+                metrics = row['metrics']
+                self.assertAlmostEqual(metrics['completion_sum_s'], metrics['turn_s']+metrics['move_s']+metrics['wait_sum_s'])
+                self.assertAlmostEqual(metrics['wait_sum_s'], sum(metrics[k] for k in
+                    ('turn_barrier_wait_s', 'local_dependency_wait_s', 'discrete_wait_slot_s', 'turn_slot_padding_wait_s')))
+
+    def test_scheduler_cycle_is_retained_and_worker_serializes_six_artifacts(self):
+        paths = {0: [6, 7], 1: [7, 12], 2: [12, 11], 3: [11, 6]}
+        problem = self.Grid(5, 5, [], {a: (p[0], p[-1]) for a, p in paths.items()})
+        value = compare.compare_plans(problem, paths, paths, self.model(), {a: 0 for a in paths},
+                                      scheduler_comparison=True)
+        self.assertEqual(value['status'], 'COMPLETE')
+        for row in value['rows'][1::2]:
+            self.assertEqual(row['metrics']['feasibility'], 'LOCAL_CONSTRUCTION_NOT_ESTABLISHED')
+            self.assertIsNone(row['metrics']['completion_sum_s'])
+            self.assertFalse(row['metrics']['collision_claim'])
+        case = dict(id='synthetic_scheduler_fixture', rows=5, cols=5, blocked=[],
+                    paths={str(a): p for a, p in paths.items()},
+                    endpoints={str(a): [p[0], p[-1]] for a, p in paths.items()})
+        source = dict(final_paths=case['paths'], initial_soc=4, final_soc=4,
+                      _frozen_provenance={'data_class': 'SOFTWARE_FIXTURE'}, _prior_optimizer_costs={})
+        config = dict(schema=compare.SCHEDULER_SCHEMA, motion_model=self.model().record(),
+                      initial_heading_quarters=0, manifest_sha256='SOFTWARE_FIXTURE')
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory)
+            compare.execute_worker(config, case, source, output, HERE.parents[1], 0)
+            self.assertEqual(len(list(output.glob('arm_*.json'))), 6)
+            saved = json.loads((output/'result.json').read_text())
+            self.assertEqual([row['arm'] for row in saved['rows']], list(compare.SCHEDULER_ARMS))
+            self.assertFalse(saved['optimizer_called'])
+            self.assertFalse(saved['v2_applied'])
+
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
