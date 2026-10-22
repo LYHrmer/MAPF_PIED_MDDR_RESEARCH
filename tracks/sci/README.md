@@ -1,6 +1,6 @@
 # SCI MAPF 支线索引
 
-工作树`/home/lyh/MAPF_SCI_RESEARCH`，分支`research/sci-mapf`。main只维护索引；当前实现与明细见[本线入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/13d4749d8ecc12cefba4c2de72d96dc4c84105b0/tracks/sci/README.md)。
+工作树`/home/lyh/MAPF_SCI_RESEARCH`，分支`research/sci-mapf`。main只维护索引；当前实现与明细见[本线入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/e8edaff2661d04c38789fa6189f32409f9c85b6b/tracks/sci/README.md)。
 
 问题是给定合法初解，在有限总计算预算内改善MAPF路径质量。以ADDRESS为实现主干，BALANCE/TACKLE提供针对性参考，确需神经表示时再看NNS。后段恢复候选保持停止；正延迟初始种子规则已完成八项开发对照，保留为朴素强对照，不把必要条件或共同工程优化称为创新。当前已完成四个未参与本轮设计的历史完整任务和多seed三模式比较，未建立稳定质量优势；不把旧random的单一正延迟候选作为种子排序训练依据。
 
@@ -15,4 +15,4 @@
 
 算法只在SCI维护，硕士引用固定版本。学习保留条件，不重启旧查询、L20/L21或零余量材料训练。总研究决定见[main计划](../../docs/RESEARCH_PLAN.md)。
 
-当前[36项结果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/13d4749d8ecc12cefba4c2de72d96dc4c84105b0/tracks/sci/ADDRESS_REWARD_RESULT.md)全部COMPLETE、零硬失败、零重试、许可消费，543原工件和全部路径/账本独立审计通过。累计相对原奖励SOC胜/平/负3/7/2，窗口相对累计1/8/3，停止当前候选扩容；不调W、不追加seed。下一项只补高截尾的首次截止位置与候选校验费用诊断，暂不增加学习变体。原始日志、总收据、所有零差异和退化均已保留。
+当前[36项结果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/13d4749d8ecc12cefba4c2de72d96dc4c84105b0/tracks/sci/ADDRESS_REWARD_RESULT.md)全部COMPLETE、零硬失败、零重试、许可消费，543原工件和全部路径/账本独立审计通过。累计相对原奖励SOC胜/平/负3/7/2，窗口相对累计1/8/3，停止当前候选扩容；不调W、不追加seed。本轮首次截止、搜索出口、同次候选池与候选校验独占费用已实现，完整编译及50项软件夹具通过；[6项诊断清单](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/e8edaff2661d04c38789fa6189f32409f9c85b6b/tracks/sci/ADDRESS_COST_DIAGNOSTIC.md)待新授权。离线幅度反馈已对账，但没有新在线选择器或收益结果。原始日志、总收据、所有零差异和退化均已保留。
