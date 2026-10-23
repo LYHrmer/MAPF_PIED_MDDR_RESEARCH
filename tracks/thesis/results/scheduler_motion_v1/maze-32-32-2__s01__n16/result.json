@@ -1,0 +1,771 @@
+{
+  "arm_serialization_and_fsync_ns": {
+    "frozen_soc__global_barrier": 29734865,
+    "frozen_soc__local_dependency": 37317826,
+    "original__global_barrier": 29255595,
+    "original__local_dependency": 37911831,
+    "turn_aware__global_barrier": 28472859,
+    "turn_aware__local_dependency": 35818776
+  },
+  "case": "maze-32-32-2__s01__n16",
+  "common_initial_and_optimized_validation_ns": 1707070,
+  "comparison_scope": "FIXED_PATH_GLOBAL_VS_CONSERVATIVE_LOCAL_DEPENDENCY",
+  "independent_performance_experiment": false,
+  "initial_headings_quarters": {
+    "0": 0,
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 0,
+    "6": 0,
+    "7": 0,
+    "8": 0,
+    "9": 0,
+    "10": 0,
+    "11": 0,
+    "12": 0,
+    "13": 0,
+    "14": 0,
+    "15": 0
+  },
+  "input_provenance": {
+    "inputs": {
+      "blob_oid": "33f9abdfe0898204aa297984379ed3c4859630f7",
+      "commit": "535ee1adf3135ab79565e0b3aa5d189348fe7ab2",
+      "path": "tracks/sci/config/repair_residual_v1_inputs.json",
+      "sha256": "be1e912e1e2ea3f59fcdc5d0c5737118e7f96d92227be536ada605f6751c0e5b"
+    },
+    "receipt": {
+      "blob_oid": "43c5904078fa76bf8191fa96a2620c6e0b47775d",
+      "commit": "535ee1adf3135ab79565e0b3aa5d189348fe7ab2",
+      "path": "tracks/sci/results/repair_residual_v1/maze-32-32-2__s01__n16__remaining_bound/receipt.json",
+      "sha256": "a4a1b99b46a7f48d6ee80d5cbf460f5a043b92b7ac07534e6634288b0347dd0f"
+    },
+    "result": {
+      "blob_oid": "0cd849f7962a58078de6e832f8941ac38a437b20",
+      "commit": "535ee1adf3135ab79565e0b3aa5d189348fe7ab2",
+      "path": "tracks/sci/results/repair_residual_v1/maze-32-32-2__s01__n16__remaining_bound/result.json",
+      "sha256": "4a487ea98f7e6fbc83ca7cddcadd22de233501972a5fdf1001f48521b8268578"
+    },
+    "source_job": {
+      "case": "maze-32-32-2__s01__n16",
+      "id": "maze-32-32-2__s01__n16__remaining_bound",
+      "policy": "REMAINING_BOUND"
+    },
+    "summary": {
+      "blob_oid": "f83dbb9db76b61ae0e6402f38b29dd35af5c9d29",
+      "commit": "535ee1adf3135ab79565e0b3aa5d189348fe7ab2",
+      "path": "tracks/sci/results/repair_residual_v1/summary.json",
+      "sha256": "ddad64b659096b6efb903b6d74c26f8a4a2d95f4bb48884a96dc81c22906bced"
+    }
+  },
+  "learning_used": false,
+  "limits": [
+    "Global barriers add conservative waiting; no optimal scheduling claim.",
+    "Both schedulers use a new common rational primitive timing; do not subtract old 18-arm seconds.",
+    "Local sweep serialization may cycle or be more conservative; other schedules may exist.",
+    "This project fixed-order control is not a full SADG reproduction or feedback execution.",
+    "Circle separation failure is inconclusive about rectangular-body collision.",
+    "Motion parameters are synthetic declarations, not measured LIMO parameters.",
+    "No unmodeled per-robot timing delays, tracking disturbance or feedback controller."
+  ],
+  "load_and_pinned_evidence_validation_ns": 156807256,
+  "manifest_sha256": "6c23695d30d661e823ea6731cb65f1b674d43a5b636f6b7283691031ee628630",
+  "motion_model": {
+    "accel_m_s2": "1/2",
+    "body_length_m": "11/50",
+    "body_width_m": "4/25",
+    "cell_m": "1/2",
+    "decel_m_s2": "1/2",
+    "speed_m_s": "1/2",
+    "turn_accel_rad_s2": "1",
+    "turn_decel_rad_s2": "1",
+    "turn_speed_rad_s": "1"
+  },
+  "optimizer_called": false,
+  "prior_optimizer_costs_not_new_run": {
+    "accounting_note": "worker wall includes imports and all result writes; supervisor bookkeeping separate; its final receipt write/exit excluded from its self-timer",
+    "costs": {
+      "all_descendant_system_s": 0.013904999999999999,
+      "all_descendant_user_s": 0.124703,
+      "exit_code": 0,
+      "forced_cleanup": false,
+      "interruption": null,
+      "largest_child_maxrss_kib": 20544,
+      "reaped": [
+        {
+          "exit_code": 0,
+          "maxrss_kib": 20544,
+          "pid": 11,
+          "system_s": 0.013904999999999999,
+          "user_s": 0.124703
+        }
+      ],
+      "scope": "WORKER_IMPORT_TO_EXIT_INCLUDING_RESULT_IO_AND_WAITED_NATIVE",
+      "wall_ns": 163437797
+    },
+    "supervisor_entry_through_artifact_hash_ns": 238956979,
+    "supervisor_self_cpu_s": 0.039778
+  },
+  "rows": [
+    {
+      "arm": "original__global_barrier",
+      "complete_paths_sha256": "a22046a418a6f1c68e26737cd205911378235801dcb9b8028d2c87c07fc60ceb",
+      "grid_makespan": 94,
+      "metrics": {
+        "collision_claim": false,
+        "completion_sum_s": 3020.017612416683,
+        "discrete_wait_slot_s": 4.000000000000007,
+        "feasibility": "CERTIFIED_NOMINAL_REFERENCE",
+        "goal_hold_in_wait_sum": false,
+        "local_dependency_wait_s": 0.0,
+        "makespan_s": 363.3849465488479,
+        "move_s": 1376.0,
+        "per_agent": {
+          "0": {
+            "completion_s": 295.3893722612836,
+            "wait_s": 123.96902001295001
+          },
+          "1": {
+            "completion_s": 94.55751918948772,
+            "wait_s": 41.70353755551323
+          },
+          "2": {
+            "completion_s": 266.5353906273091,
+            "wait_s": 106.97344572538566
+          },
+          "3": {
+            "completion_s": 80.84513020910303,
+            "wait_s": 24.707963267948955
+          },
+          "4": {
+            "completion_s": 80.84513020910303,
+            "wait_s": 36.42035224833366
+          },
+          "5": {
+            "completion_s": 153.9778714378214,
+            "wait_s": 69.98229715025712
+          },
+          "6": {
+            "completion_s": 310.5309649148734,
+            "wait_s": 118.82742735936009
+          },
+          "7": {
+            "completion_s": 221.96902001294993,
+            "wait_s": 100.83185307179582
+          },
+          "8": {
+            "completion_s": 233.11061266653974,
+            "wait_s": 95.69026041820605
+          },
+          "9": {
+            "completion_s": 6.141592653589793,
+            "wait_s": 1.5707963267948966
+          },
+          "10": {
+            "completion_s": 277.6769832808989,
+            "wait_s": 118.8274273593602
+          },
+          "11": {
+            "completion_s": 212.82742735936014,
+            "wait_s": 77.69468613064183
+          },
+          "12": {
+            "completion_s": 363.3849465488479,
+            "wait_s": 117.25663103256518
+          },
+          "13": {
+            "completion_s": 80.84513020910303,
+            "wait_s": 39.132741228718345
+          },
+          "14": {
+            "completion_s": 242.25220532012952,
+            "wait_s": 100.83185307179588
+          },
+          "15": {
+            "completion_s": 99.12831551628263,
+            "wait_s": 34.991148575128534
+          }
+        },
+        "permanent_goal_hold_count": 16,
+        "turn_barrier_wait_s": 1205.4114405347525,
+        "turn_s": 434.6061718819271,
+        "turn_slot_padding_wait_s": 0.0,
+        "wait_sum_s": 1209.4114405347525
+      },
+      "path_arm": "original",
+      "scheduler": "global_barrier",
+      "selection": {
+        "rule": "original",
+        "search_calls": 0,
+        "selected": "incumbent"
+      },
+      "selection_cost_shared_by_scheduler_pair": true,
+      "soc": 690,
+      "stage_wall_ns": {
+        "complete_discrete_and_continuous_checks_and_schedule": 1265432153,
+        "metric_validation": 314152,
+        "whole_plan_selection": 650
+      }
+    },
+    {
+      "arm": "original__local_dependency",
+      "complete_paths_sha256": "a22046a418a6f1c68e26737cd205911378235801dcb9b8028d2c87c07fc60ceb",
+      "grid_makespan": 94,
+      "metrics": {
+        "collision_claim": false,
+        "completion_sum_s": 1835.026524130261,
+        "discrete_wait_slot_s": 4.0,
+        "feasibility": "CERTIFIED_NOMINAL_REFERENCE",
+        "goal_hold_in_wait_sum": false,
+        "local_dependency_wait_s": 20.420352248333636,
+        "makespan_s": 248.69911184307753,
+        "move_s": 1376.0,
+        "per_agent": {
+          "0": {
+            "completion_s": 175.13274122871834,
+            "wait_s": 3.7123889803846737
+          },
+          "1": {
+            "completion_s": 52.853981633974485,
+            "wait_s": 0.0
+          },
+          "2": {
+            "completion_s": 161.27433388230813,
+            "wait_s": 1.712388980384688
+          },
+          "3": {
+            "completion_s": 56.13716694115407,
+            "wait_s": 0.0
+          },
+          "4": {
+            "completion_s": 52.995574287564274,
+            "wait_s": 8.570796326794898
+          },
+          "5": {
+            "completion_s": 83.99557428756428,
+            "wait_s": 0.0
+          },
+          "6": {
+            "completion_s": 191.70353755551324,
+            "wait_s": 0.0
+          },
+          "7": {
+            "completion_s": 121.13716694115406,
+            "wait_s": 0.0
+          },
+          "8": {
+            "completion_s": 137.42035224833364,
+            "wait_s": 0.0
+          },
+          "9": {
+            "completion_s": 4.570796326794897,
+            "wait_s": 0.0
+          },
+          "10": {
+            "completion_s": 164.70353755551324,
+            "wait_s": 5.853981633974485
+          },
+          "11": {
+            "completion_s": 137.13274122871834,
+            "wait_s": 2.0
+          },
+          "12": {
+            "completion_s": 248.69911184307753,
+            "wait_s": 2.5707963267948912
+          },
+          "13": {
+            "completion_s": 41.71238898038469,
+            "wait_s": 0.0
+          },
+          "14": {
+            "completion_s": 141.42035224833364,
+            "wait_s": 0.0
+          },
+          "15": {
+            "completion_s": 64.13716694115406,
+            "wait_s": 0.0
+          }
+        },
+        "permanent_goal_hold_count": 16,
+        "turn_barrier_wait_s": 0.0,
+        "turn_s": 434.60617188192685,
+        "turn_slot_padding_wait_s": 0.0,
+        "wait_sum_s": 24.420352248333636
+      },
+      "path_arm": "original",
+      "scheduler": "local_dependency",
+      "selection": {
+        "rule": "original",
+        "search_calls": 0,
+        "selected": "incumbent"
+      },
+      "selection_cost_shared_by_scheduler_pair": true,
+      "soc": 690,
+      "stage_wall_ns": {
+        "complete_discrete_and_continuous_checks_and_schedule": 9224035368,
+        "metric_validation": 196730,
+        "whole_plan_selection": 0
+      }
+    },
+    {
+      "arm": "frozen_soc__global_barrier",
+      "complete_paths_sha256": "c84a72e2e156dc8c7287c3de735c6e877c5f361fcfa700f6550abab9446f8d30",
+      "grid_makespan": 94,
+      "metrics": {
+        "collision_claim": false,
+        "completion_sum_s": 3045.871594050657,
+        "discrete_wait_slot_s": 6.0,
+        "feasibility": "CERTIFIED_NOMINAL_REFERENCE",
+        "goal_hold_in_wait_sum": false,
+        "local_dependency_wait_s": 0.0,
+        "makespan_s": 369.5265392024377,
+        "move_s": 1372.0,
+        "per_agent": {
+          "0": {
+            "completion_s": 301.5309649148734,
+            "wait_s": 124.9690200129499
+          },
+          "1": {
+            "completion_s": 92.98672286269283,
+            "wait_s": 40.13274122871835
+          },
+          "2": {
+            "completion_s": 272.6769832808989,
+            "wait_s": 101.83185307179592
+          },
+          "3": {
+            "completion_s": 79.27433388230814,
+            "wait_s": 22.13716694115407
+          },
+          "4": {
+            "completion_s": 74.70353755551324,
+            "wait_s": 38.42035224833364
+          },
+          "5": {
+            "completion_s": 152.40707511102647,
+            "wait_s": 63.2699081698724
+          },
+          "6": {
+            "completion_s": 316.67255756846316,
+            "wait_s": 124.9690200129499
+          },
+          "7": {
+            "completion_s": 222.96902001294993,
+            "wait_s": 92.54866776461628
+          },
+          "8": {
+            "completion_s": 236.68140899333463,
+            "wait_s": 99.26105674500101
+          },
+          "9": {
+            "completion_s": 6.141592653589793,
+            "wait_s": 1.5707963267948966
+          },
+          "10": {
+            "completion_s": 283.8185759344887,
+            "wait_s": 124.96902001294998
+          },
+          "11": {
+            "completion_s": 213.82742735936014,
+            "wait_s": 78.6946861306418
+          },
+          "12": {
+            "completion_s": 369.5265392024377,
+            "wait_s": 123.39822368615506
+          },
+          "13": {
+            "completion_s": 79.27433388230814,
+            "wait_s": 37.561944901923454
+          },
+          "14": {
+            "completion_s": 245.8230016469244,
+            "wait_s": 104.40264939859078
+          },
+          "15": {
+            "completion_s": 97.55751918948772,
+            "wait_s": 33.42035224833364
+          }
+        },
+        "permanent_goal_hold_count": 16,
+        "turn_barrier_wait_s": 1205.5574589007786,
+        "turn_s": 462.3141351498758,
+        "turn_slot_padding_wait_s": 0.0,
+        "wait_sum_s": 1211.5574589007783
+      },
+      "path_arm": "frozen_soc",
+      "scheduler": "global_barrier",
+      "selection": {
+        "rule": "frozen_soc",
+        "search_calls": 0,
+        "selected": "frozen_proposal"
+      },
+      "selection_cost_shared_by_scheduler_pair": true,
+      "soc": 689,
+      "stage_wall_ns": {
+        "complete_discrete_and_continuous_checks_and_schedule": 1282749036,
+        "metric_validation": 323996,
+        "whole_plan_selection": 1178
+      }
+    },
+    {
+      "arm": "frozen_soc__local_dependency",
+      "complete_paths_sha256": "c84a72e2e156dc8c7287c3de735c6e877c5f361fcfa700f6550abab9446f8d30",
+      "grid_makespan": 94,
+      "metrics": {
+        "collision_claim": false,
+        "completion_sum_s": 1864.73448739821,
+        "discrete_wait_slot_s": 5.9999999999999964,
+        "feasibility": "CERTIFIED_NOMINAL_REFERENCE",
+        "goal_hold_in_wait_sum": false,
+        "local_dependency_wait_s": 24.420352248333657,
+        "makespan_s": 248.69911184307753,
+        "move_s": 1372.0,
+        "per_agent": {
+          "0": {
+            "completion_s": 182.84513020910305,
+            "wait_s": 6.283185307179586
+          },
+          "1": {
+            "completion_s": 54.42477796076938,
+            "wait_s": 1.5707963267948983
+          },
+          "2": {
+            "completion_s": 170.84513020910305,
+            "wait_s": 0.0
+          },
+          "3": {
+            "completion_s": 57.13716694115407,
+            "wait_s": 0.0
+          },
+          "4": {
+            "completion_s": 49.42477796076938,
+            "wait_s": 13.141592653589793
+          },
+          "5": {
+            "completion_s": 89.13716694115406,
+            "wait_s": 0.0
+          },
+          "6": {
+            "completion_s": 191.70353755551324,
+            "wait_s": 0.0
+          },
+          "7": {
+            "completion_s": 130.42035224833364,
+            "wait_s": 0.0
+          },
+          "8": {
+            "completion_s": 137.42035224833364,
+            "wait_s": 0.0
+          },
+          "9": {
+            "completion_s": 4.570796326794897,
+            "wait_s": 0.0
+          },
+          "10": {
+            "completion_s": 165.70353755551324,
+            "wait_s": 6.853981633974485
+          },
+          "11": {
+            "completion_s": 135.13274122871834,
+            "wait_s": 0.0
+          },
+          "12": {
+            "completion_s": 248.69911184307753,
+            "wait_s": 2.5707963267948912
+          },
+          "13": {
+            "completion_s": 41.71238898038469,
+            "wait_s": 0.0
+          },
+          "14": {
+            "completion_s": 141.42035224833364,
+            "wait_s": 0.0
+          },
+          "15": {
+            "completion_s": 64.13716694115406,
+            "wait_s": 0.0
+          }
+        },
+        "permanent_goal_hold_count": 16,
+        "turn_barrier_wait_s": 0.0,
+        "turn_s": 462.31413514987577,
+        "turn_slot_padding_wait_s": 0.0,
+        "wait_sum_s": 30.420352248333653
+      },
+      "path_arm": "frozen_soc",
+      "scheduler": "local_dependency",
+      "selection": {
+        "rule": "frozen_soc",
+        "search_calls": 0,
+        "selected": "frozen_proposal"
+      },
+      "selection_cost_shared_by_scheduler_pair": true,
+      "soc": 689,
+      "stage_wall_ns": {
+        "complete_discrete_and_continuous_checks_and_schedule": 8934235632,
+        "metric_validation": 188656,
+        "whole_plan_selection": 0
+      }
+    },
+    {
+      "arm": "turn_aware__global_barrier",
+      "complete_paths_sha256": "7c1eee08f060a858a7e6b209ce7543476fb8d2fcc2548d0338d98cfd1890d0bd",
+      "grid_makespan": 94,
+      "metrics": {
+        "collision_claim": false,
+        "completion_sum_s": 2914.7609813841177,
+        "discrete_wait_slot_s": 6.0,
+        "feasibility": "CERTIFIED_NOMINAL_REFERENCE",
+        "goal_hold_in_wait_sum": false,
+        "local_dependency_wait_s": 0.0,
+        "makespan_s": 356.67255756846316,
+        "move_s": 1372.0,
+        "per_agent": {
+          "0": {
+            "completion_s": 288.6769832808989,
+            "wait_s": 117.25663103256532
+          },
+          "1": {
+            "completion_s": 87.84513020910303,
+            "wait_s": 34.99114857512855
+          },
+          "2": {
+            "completion_s": 259.8230016469244,
+            "wait_s": 100.26105674500101
+          },
+          "3": {
+            "completion_s": 74.13274122871834,
+            "wait_s": 17.995574287564274
+          },
+          "4": {
+            "completion_s": 69.56194490192345,
+            "wait_s": 33.278759594743875
+          },
+          "5": {
+            "completion_s": 147.2654824574367,
+            "wait_s": 63.26990816987245
+          },
+          "6": {
+            "completion_s": 303.8185759344887,
+            "wait_s": 112.11503837897547
+          },
+          "7": {
+            "completion_s": 215.25663103256525,
+            "wait_s": 94.1194640914112
+          },
+          "8": {
+            "completion_s": 226.39822368615503,
+            "wait_s": 88.97787143782145
+          },
+          "9": {
+            "completion_s": 6.141592653589793,
+            "wait_s": 1.5707963267948966
+          },
+          "10": {
+            "completion_s": 270.9645943005142,
+            "wait_s": 112.1150383789755
+          },
+          "11": {
+            "completion_s": 206.11503837897544,
+            "wait_s": 70.98229715025714
+          },
+          "12": {
+            "completion_s": 356.67255756846316,
+            "wait_s": 110.54424205218055
+          },
+          "13": {
+            "completion_s": 74.13274122871834,
+            "wait_s": 32.42035224833366
+          },
+          "14": {
+            "completion_s": 235.53981633974482,
+            "wait_s": 94.11946409141117
+          },
+          "15": {
+            "completion_s": 92.41592653589794,
+            "wait_s": 28.278759594743878
+          }
+        },
+        "permanent_goal_hold_count": 16,
+        "turn_barrier_wait_s": 1106.2964021557802,
+        "turn_s": 430.4645792283371,
+        "turn_slot_padding_wait_s": 0.0,
+        "wait_sum_s": 1112.2964021557802
+      },
+      "path_arm": "turn_aware",
+      "scheduler": "global_barrier",
+      "selection": {
+        "candidates": [
+          {
+            "changed_paths": 0,
+            "internal_quarter_turns": 157,
+            "name": "incumbent",
+            "soc": 690,
+            "valid": true
+          },
+          {
+            "changed_paths": 7,
+            "internal_quarter_turns": 168,
+            "name": "proposal",
+            "soc": 689,
+            "valid": true
+          },
+          {
+            "changed_paths": 1,
+            "internal_quarter_turns": 155,
+            "name": "retain_equal_cost_batch",
+            "soc": 689,
+            "valid": true
+          }
+        ],
+        "continuous_safety_checked": false,
+        "final_validated": true,
+        "rule": "turn_aware",
+        "scope": "DISCRETE_WHOLE_PLAN_CONTROL_ONLY",
+        "search_calls": 0,
+        "selected": "retain_equal_cost_batch"
+      },
+      "selection_cost_shared_by_scheduler_pair": true,
+      "soc": 689,
+      "stage_wall_ns": {
+        "complete_discrete_and_continuous_checks_and_schedule": 1251286645,
+        "metric_validation": 325200,
+        "whole_plan_selection": 5909873
+      }
+    },
+    {
+      "arm": "turn_aware__local_dependency",
+      "complete_paths_sha256": "7c1eee08f060a858a7e6b209ce7543476fb8d2fcc2548d0338d98cfd1890d0bd",
+      "grid_makespan": 94,
+      "metrics": {
+        "collision_claim": false,
+        "completion_sum_s": 1829.455727803466,
+        "discrete_wait_slot_s": 5.9999999999999964,
+        "feasibility": "CERTIFIED_NOMINAL_REFERENCE",
+        "goal_hold_in_wait_sum": false,
+        "local_dependency_wait_s": 20.991148575128534,
+        "makespan_s": 248.69911184307753,
+        "move_s": 1372.0,
+        "per_agent": {
+          "0": {
+            "completion_s": 175.13274122871834,
+            "wait_s": 3.7123889803846737
+          },
+          "1": {
+            "completion_s": 52.853981633974485,
+            "wait_s": 0.0
+          },
+          "2": {
+            "completion_s": 161.27433388230813,
+            "wait_s": 1.712388980384688
+          },
+          "3": {
+            "completion_s": 56.13716694115407,
+            "wait_s": 0.0
+          },
+          "4": {
+            "completion_s": 49.42477796076938,
+            "wait_s": 13.141592653589793
+          },
+          "5": {
+            "completion_s": 83.99557428756428,
+            "wait_s": 0.0
+          },
+          "6": {
+            "completion_s": 191.70353755551324,
+            "wait_s": 0.0
+          },
+          "7": {
+            "completion_s": 121.13716694115406,
+            "wait_s": 0.0
+          },
+          "8": {
+            "completion_s": 137.42035224833364,
+            "wait_s": 0.0
+          },
+          "9": {
+            "completion_s": 4.570796326794897,
+            "wait_s": 0.0
+          },
+          "10": {
+            "completion_s": 164.70353755551324,
+            "wait_s": 5.853981633974485
+          },
+          "11": {
+            "completion_s": 135.13274122871834,
+            "wait_s": 0.0
+          },
+          "12": {
+            "completion_s": 248.69911184307753,
+            "wait_s": 2.5707963267948912
+          },
+          "13": {
+            "completion_s": 41.71238898038469,
+            "wait_s": 0.0
+          },
+          "14": {
+            "completion_s": 141.42035224833364,
+            "wait_s": 0.0
+          },
+          "15": {
+            "completion_s": 64.13716694115406,
+            "wait_s": 0.0
+          }
+        },
+        "permanent_goal_hold_count": 16,
+        "turn_barrier_wait_s": 0.0,
+        "turn_s": 430.4645792283371,
+        "turn_slot_padding_wait_s": 0.0,
+        "wait_sum_s": 26.99114857512853
+      },
+      "path_arm": "turn_aware",
+      "scheduler": "local_dependency",
+      "selection": {
+        "candidates": [
+          {
+            "changed_paths": 0,
+            "internal_quarter_turns": 157,
+            "name": "incumbent",
+            "soc": 690,
+            "valid": true
+          },
+          {
+            "changed_paths": 7,
+            "internal_quarter_turns": 168,
+            "name": "proposal",
+            "soc": 689,
+            "valid": true
+          },
+          {
+            "changed_paths": 1,
+            "internal_quarter_turns": 155,
+            "name": "retain_equal_cost_batch",
+            "soc": 689,
+            "valid": true
+          }
+        ],
+        "continuous_safety_checked": false,
+        "final_validated": true,
+        "rule": "turn_aware",
+        "scope": "DISCRETE_WHOLE_PLAN_CONTROL_ONLY",
+        "search_calls": 0,
+        "selected": "retain_equal_cost_batch"
+      },
+      "selection_cost_shared_by_scheduler_pair": true,
+      "soc": 689,
+      "stage_wall_ns": {
+        "complete_discrete_and_continuous_checks_and_schedule": 8909331106,
+        "metric_validation": 196588,
+        "whole_plan_selection": 0
+      }
+    }
+  ],
+  "sci_commit": "535ee1adf3135ab79565e0b3aa5d189348fe7ab2",
+  "source_family": "repair_residual_v1_remaining_bound_NOT_FULL_ADDRESS",
+  "status": "COMPLETE",
+  "v2_applied": false,
+  "validator_import_and_problem_setup_ns": 47368862,
+  "worker_entry_through_before_result_write_ns": 31302358690
+}

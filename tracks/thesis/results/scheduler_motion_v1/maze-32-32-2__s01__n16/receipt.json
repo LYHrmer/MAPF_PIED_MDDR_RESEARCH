@@ -1,0 +1,71 @@
+{
+  "accounting": "Total includes Git reads, imports, selection, all geometry/construction, metric checks, result serialization, fsync, artifact hashes, and supervisor wait. Administrative receipt write and final process exit excluded. Nested times are not additive. Prior SCI optimization cost is source metadata, not this motion-adaptation cost.",
+  "artifacts": {
+    "arm_frozen_soc__global_barrier.json": {
+      "bytes": 937304,
+      "sha256": "0e23aec04d32c2f5bc08c4e0fb6330ffa2d1a8880e4e850c81f773117d08af43"
+    },
+    "arm_frozen_soc__local_dependency.json": {
+      "bytes": 1065960,
+      "sha256": "d7b051158e56ef2c671830f5d309fa0b8da6dc3ede36a5a72fbb8327d0008ecf"
+    },
+    "arm_original__global_barrier.json": {
+      "bytes": 925463,
+      "sha256": "6c0f717691072f1350143fb2ed888de537a3583c5556ec778cd981090e3f7383"
+    },
+    "arm_original__local_dependency.json": {
+      "bytes": 1048793,
+      "sha256": "9e203399f928450cc3b16733c4784dcf5d4ed8c85b69fc318353442f7fbce842"
+    },
+    "arm_turn_aware__global_barrier.json": {
+      "bytes": 909964,
+      "sha256": "146b9dba852042c31afa5660380c475e25bd3aec32e0d0109bf4b12135459828"
+    },
+    "arm_turn_aware__local_dependency.json": {
+      "bytes": 1042987,
+      "sha256": "f907a388f533b61c216b84e5a497073a77de4e8ca27509ba84a7982c2fdbd7a4"
+    },
+    "attempt.json": {
+      "bytes": 301,
+      "sha256": "9c8625bf2e044fbf0bf4a39bc7f7df19e30ce133fd683310ae33185d9ac6d278"
+    },
+    "result.json": {
+      "bytes": 24202,
+      "sha256": "2b3f23328f525591163f944a211d43df9cf4acbb12e05131a11ea40a085ba6e7"
+    },
+    "worker.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "worker.stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "case": "maze-32-32-2__s01__n16",
+  "entry_through_import_input_validation_output_and_hash_ns": 31553735240,
+  "manifest_sha256": "6c23695d30d661e823ea6731cb65f1b674d43a5b636f6b7283691031ee628630",
+  "new_scientific_motion_comparison": true,
+  "retry_allowed": false,
+  "status": "COMPLETE",
+  "supervisor_self_cpu_s": 0.255024,
+  "worker_costs": {
+    "all_descendant_system_s": 0.13105399999999998,
+    "all_descendant_user_s": 31.156494,
+    "exit_code": 0,
+    "forced_cleanup": false,
+    "interruption": null,
+    "largest_child_maxrss_kib": 34024,
+    "reaped": [
+      {
+        "exit_code": 0,
+        "maxrss_kib": 34024,
+        "pid": 65,
+        "system_s": 0.131054,
+        "user_s": 31.156493
+      }
+    ],
+    "scope": "WORKER_IMPORT_TO_EXIT_INCLUDING_RESULT_IO_AND_WAITED_NATIVE",
+    "wall_ns": 31348915737
+  }
+}

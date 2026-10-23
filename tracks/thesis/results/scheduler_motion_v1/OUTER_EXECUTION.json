@@ -1,0 +1,71 @@
+{
+  "schema": "SERIAL_AUTHORIZED_COMMANDS_V1",
+  "manifest_sha256": "6c23695d30d661e823ea6731cb65f1b674d43a5b636f6b7283691031ee628630",
+  "records": [
+    {
+      "case": "maze-32-32-2__s01__n16",
+      "command": [
+        "rtk",
+        "proxy",
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=2s",
+        "62s",
+        "python3",
+        "-B",
+        "tracks/thesis/compare_nominal_motion.py",
+        "run",
+        "--manifest",
+        "/home/lyh/MAPF_THESIS_RESEARCH/tracks/thesis/config/scheduler_motion_v1_manifest.json",
+        "--sha256",
+        "6c23695d30d661e823ea6731cb65f1b674d43a5b636f6b7283691031ee628630",
+        "--case",
+        "maze-32-32-2__s01__n16",
+        "--authorization-reference",
+        "2026-10-24 current conversation user reply 授权; see batch AUTHORIZATION.json"
+      ],
+      "started_at_utc": "2026-10-23T16:22:56.785774+00:00",
+      "outer_command_wall_ns": 31610157666,
+      "returncode": 0,
+      "stdout": "{\"case\": \"maze-32-32-2__s01__n16\", \"status\": \"COMPLETE\", \"output\": \"/home/lyh/MAPF_THESIS_RESEARCH/tracks/thesis/results/scheduler_motion_v1/maze-32-32-2__s01__n16\"}\n",
+      "stderr": "",
+      "receipt_status": "COMPLETE",
+      "retry": 0
+    },
+    {
+      "case": "random-32-32-10__s01__n16",
+      "command": [
+        "rtk",
+        "proxy",
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=2s",
+        "62s",
+        "python3",
+        "-B",
+        "tracks/thesis/compare_nominal_motion.py",
+        "run",
+        "--manifest",
+        "/home/lyh/MAPF_THESIS_RESEARCH/tracks/thesis/config/scheduler_motion_v1_manifest.json",
+        "--sha256",
+        "6c23695d30d661e823ea6731cb65f1b674d43a5b636f6b7283691031ee628630",
+        "--case",
+        "random-32-32-10__s01__n16",
+        "--authorization-reference",
+        "2026-10-24 current conversation user reply 授权; see batch AUTHORIZATION.json"
+      ],
+      "started_at_utc": "2026-10-23T16:23:28.400368+00:00",
+      "outer_command_wall_ns": 13216134932,
+      "returncode": 0,
+      "stdout": "{\"case\": \"random-32-32-10__s01__n16\", \"status\": \"COMPLETE\", \"output\": \"/home/lyh/MAPF_THESIS_RESEARCH/tracks/thesis/results/scheduler_motion_v1/random-32-32-10__s01__n16\"}\n",
+      "stderr": "",
+      "receipt_status": "COMPLETE",
+      "retry": 0
+    }
+  ],
+  "attempts": 2,
+  "all_commands_complete": true,
+  "unattempted_cases": [],
+  "authorization_consumed_or_closed": true,
+  "retry": 0
+}

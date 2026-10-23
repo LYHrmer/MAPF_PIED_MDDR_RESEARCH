@@ -1,0 +1,30 @@
+{
+  "schema": "ACTUAL_USER_AUTHORIZATION_RECORD_V1",
+  "batch_id": "scheduler_motion_v1",
+  "user_reply_verbatim": "授权",
+  "user_reply_local_date": "2026-10-24",
+  "context_question_verbatim": "是否授权执行已冻结的两批有限运行？SCI提交e8edaff，清单 tracks/sci/ADDRESS_COST_DIAGNOSTIC.md（/home/lyh/MAPF_SCI_RESEARCH），JSON SHA baf2255d…df3cd：6项，每项总准入≤5秒，各进程CPU≤10秒/512MiB，外层10+2秒。硕士提交76a6a99，清单 tracks/thesis/LOCAL_SCHEDULER_COMPARISON.md（/home/lyh/MAPF_THESIS_RESEARCH），JSON SHA 6c23695d…28630：2项各6臂，每项总准入≤60秒、CPU≤45秒/512MiB，外层62+2秒。均零重试、各批首硬失败即停；不训练、不启动world、不运行旧R16。两批都授权时先SCI后硕士。需确认源于你此前的新科学运行逐批授权要求。",
+  "interpretation": "User authorizes both concrete batches in preceding question; SCI first, thesis second; no prior permission reused.",
+  "recorded_at_utc": "2026-10-23T16:22:00.287818+00:00",
+  "scientific_code_commit": "76a6a99531d1ff2676b99d5eec458f0e97661c0a",
+  "manifest_sha256": "6c23695d30d661e823ea6731cb65f1b674d43a5b636f6b7283691031ee628630",
+  "jobs": [
+    "maze-32-32-2__s01__n16",
+    "random-32-32-10__s01__n16"
+  ],
+  "limits": {
+    "final_artifact_reserve_s": 2,
+    "outer_kill_after_s": 2,
+    "outer_term_s": 62,
+    "per_file_mib": 16,
+    "total_admission_wall_s": 60,
+    "worker_as_mib": 512,
+    "worker_cpu_s": 45
+  },
+  "retry": 0,
+  "stop_batch_on_first_hard_failure": true,
+  "training": false,
+  "world": false,
+  "old_R16_excluded": true,
+  "authorization_reference": "2026-10-24 current conversation user reply 授权 to the frozen SCI6 plus thesis2 request"
+}

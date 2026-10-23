@@ -1,0 +1,221 @@
+{
+  "actions_exactly_partitioned": 10595,
+  "arms_verified": 12,
+  "audit_cpu_ns": 347328452,
+  "audit_wall_ns": 513956382,
+  "batch_receipt_sha256": "50b48bdbe28e615e592618abd2069875bae7ea78c16ca947880c13e3fad7ee55",
+  "cases_verified": 2,
+  "checks": [
+    "all original artifact bytes and SHA256 match case receipts",
+    "actual user authorization and zero-retry outer records match frozen proposal",
+    "runtime SHA256 pins unchanged",
+    "frozen Git input/source/receipt/summary blob identities match",
+    "each arm summary exactly equals saved full arm without motion field",
+    "complete paths reconstructed from saved actions equal fixed source or explicitly selected whole-plan retention",
+    "paired global/local paths and primitive profiles identical",
+    "exact duration partition, completion, waits and permanent goal holds match displayed metrics",
+    "recorded dependency release inequalities and disjoint recorded phase costs reconcile",
+    "all declared admission/worker CPU/RSS/outer/file bounds met"
+  ],
+  "exact_metrics": [
+    {
+      "arm": "original__global_barrier",
+      "case": "maze-32-32-2__s01__n16",
+      "completion_sum_exact_s": "120800704496667312100014363982633539/40000000000000000000000000000000",
+      "durations_exact_s": {
+        "discrete_wait_slot_s": "4",
+        "local_dependency_wait_s": "0",
+        "move_s": "1376",
+        "turn_barrier_wait_s": "2410822881069510961223606180590881937/2000000000000000000000000000000000",
+        "turn_s": "869212343763854643777112018540795013/2000000000000000000000000000000000",
+        "turn_slot_padding_wait_s": "0",
+        "wait_sum_s": "2418822881069510961223606180590881937/2000000000000000000000000000000000"
+      },
+      "makespan_exact_s": "726769893097695733453922393446285707/2000000000000000000000000000000000"
+    },
+    {
+      "arm": "original__local_dependency",
+      "case": "maze-32-32-2__s01__n16",
+      "completion_sum_exact_s": "458756631032565244484640797815428569/250000000000000000000000000000000",
+      "durations_exact_s": {
+        "discrete_wait_slot_s": "4",
+        "local_dependency_wait_s": "40840704496667312100014363982633539/2000000000000000000000000000000000",
+        "move_s": "1376",
+        "turn_barrier_wait_s": "0",
+        "turn_s": "869212343763854643777112018540795013/2000000000000000000000000000000000",
+        "turn_slot_padding_wait_s": "0",
+        "wait_sum_s": "48840704496667312100014363982633539/2000000000000000000000000000000000"
+      },
+      "makespan_exact_s": "62174777960769379715387930149838509/250000000000000000000000000000000"
+    },
+    {
+      "arm": "frozen_soc__global_barrier",
+      "case": "maze-32-32-2__s01__n16",
+      "completion_sum_exact_s": "1218348637620262914238606283209614893/400000000000000000000000000000000",
+      "durations_exact_s": {
+        "discrete_wait_slot_s": "6",
+        "local_dependency_wait_s": "0",
+        "move_s": "1372",
+        "turn_barrier_wait_s": "1205557458900780997515646481837242211/1000000000000000000000000000000000",
+        "turn_s": "924628270299752576161738452373590043/2000000000000000000000000000000000",
+        "turn_slot_padding_wait_s": "0",
+        "wait_sum_s": "1211557458900780997515646481837242211/1000000000000000000000000000000000"
+      },
+      "makespan_exact_s": "739053078404875319930847680212844713/2000000000000000000000000000000000"
+    },
+    {
+      "arm": "frozen_soc__local_dependency",
+      "case": "maze-32-32-2__s01__n16",
+      "completion_sum_exact_s": "1864734487398209944130876408178111791/1000000000000000000000000000000000",
+      "durations_exact_s": {
+        "discrete_wait_slot_s": "6",
+        "local_dependency_wait_s": "48840704496667312100014363982633539/2000000000000000000000000000000000",
+        "move_s": "1372",
+        "turn_barrier_wait_s": "0",
+        "turn_s": "924628270299752576161738452373590043/2000000000000000000000000000000000",
+        "turn_slot_padding_wait_s": "0",
+        "wait_sum_s": "60840704496667312100014363982633539/2000000000000000000000000000000000"
+      },
+      "makespan_exact_s": "62174777960769379715387930149838509/250000000000000000000000000000000"
+    },
+    {
+      "arm": "turn_aware__global_barrier",
+      "case": "maze-32-32-2__s01__n16",
+      "completion_sum_exact_s": "1457380490692058779007859150875204953/500000000000000000000000000000000",
+      "durations_exact_s": {
+        "discrete_wait_slot_s": "6",
+        "local_dependency_wait_s": "0",
+        "move_s": "1372",
+        "turn_barrier_wait_s": "442518560862312011746249974345316761/400000000000000000000000000000000",
+        "turn_s": "860929158456675057300186731774236007/2000000000000000000000000000000000",
+        "turn_slot_padding_wait_s": "0",
+        "wait_sum_s": "444918560862312011746249974345316761/400000000000000000000000000000000"
+      },
+      "makespan_exact_s": "356672557568463176869267231648223599/1000000000000000000000000000000000"
+    },
+    {
+      "arm": "turn_aware__local_dependency",
+      "case": "maze-32-32-2__s01__n16",
+      "completion_sum_exact_s": "3658911455606932162638663739140149049/2000000000000000000000000000000000",
+      "durations_exact_s": {
+        "discrete_wait_slot_s": "6",
+        "local_dependency_wait_s": "20991148575128552669238503682956521/1000000000000000000000000000000000",
+        "move_s": "1372",
+        "turn_barrier_wait_s": "0",
+        "turn_s": "860929158456675057300186731774236007/2000000000000000000000000000000000",
+        "turn_slot_padding_wait_s": "0",
+        "wait_sum_s": "26991148575128552669238503682956521/1000000000000000000000000000000000"
+      },
+      "makespan_exact_s": "62174777960769379715387930149838509/250000000000000000000000000000000"
+    },
+    {
+      "arm": "original__global_barrier",
+      "case": "random-32-32-10__s01__n16",
+      "completion_sum_exact_s": "360122113490001936300043091947900617/200000000000000000000000000000000",
+      "durations_exact_s": {
+        "discrete_wait_slot_s": "0",
+        "local_dependency_wait_s": "0",
+        "move_s": "814",
+        "turn_barrier_wait_s": "289870781254618214592370672846931671/400000000000000000000000000000000",
+        "turn_s": "104773445725385658007715511048869563/400000000000000000000000000000000",
+        "turn_slot_padding_wait_s": "0",
+        "wait_sum_s": "289870781254618214592370672846931671/400000000000000000000000000000000"
+      },
+      "makespan_exact_s": "400238928182822349823117805181341611/2000000000000000000000000000000000"
+    },
+    {
+      "arm": "original__local_dependency",
+      "case": "random-32-32-10__s01__n16",
+      "completion_sum_exact_s": "2214132711084364981853979849376819863/2000000000000000000000000000000000",
+      "durations_exact_s": {
+        "discrete_wait_slot_s": "0",
+        "local_dependency_wait_s": "3891592653589793238462643383279503/125000000000000000000000000000000",
+        "move_s": "814",
+        "turn_barrier_wait_s": "0",
+        "turn_s": "104773445725385658007715511048869563/400000000000000000000000000000000",
+        "turn_slot_padding_wait_s": "0",
+        "wait_sum_s": "3891592653589793238462643383279503/125000000000000000000000000000000"
+      },
+      "makespan_exact_s": "18016592653589793238462643383279503/125000000000000000000000000000000"
+    },
+    {
+      "arm": "frozen_soc__global_barrier",
+      "case": "random-32-32-10__s01__n16",
+      "completion_sum_exact_s": "360122113490001936300043091947900617/200000000000000000000000000000000",
+      "durations_exact_s": {
+        "discrete_wait_slot_s": "0",
+        "local_dependency_wait_s": "0",
+        "move_s": "814",
+        "turn_barrier_wait_s": "289870781254618214592370672846931671/400000000000000000000000000000000",
+        "turn_s": "104773445725385658007715511048869563/400000000000000000000000000000000",
+        "turn_slot_padding_wait_s": "0",
+        "wait_sum_s": "289870781254618214592370672846931671/400000000000000000000000000000000"
+      },
+      "makespan_exact_s": "400238928182822349823117805181341611/2000000000000000000000000000000000"
+    },
+    {
+      "arm": "frozen_soc__local_dependency",
+      "case": "random-32-32-10__s01__n16",
+      "completion_sum_exact_s": "2214132711084364981853979849376819863/2000000000000000000000000000000000",
+      "durations_exact_s": {
+        "discrete_wait_slot_s": "0",
+        "local_dependency_wait_s": "3891592653589793238462643383279503/125000000000000000000000000000000",
+        "move_s": "814",
+        "turn_barrier_wait_s": "0",
+        "turn_s": "104773445725385658007715511048869563/400000000000000000000000000000000",
+        "turn_slot_padding_wait_s": "0",
+        "wait_sum_s": "3891592653589793238462643383279503/125000000000000000000000000000000"
+      },
+      "makespan_exact_s": "18016592653589793238462643383279503/125000000000000000000000000000000"
+    },
+    {
+      "arm": "turn_aware__global_barrier",
+      "case": "random-32-32-10__s01__n16",
+      "completion_sum_exact_s": "360122113490001936300043091947900617/200000000000000000000000000000000",
+      "durations_exact_s": {
+        "discrete_wait_slot_s": "0",
+        "local_dependency_wait_s": "0",
+        "move_s": "814",
+        "turn_barrier_wait_s": "289870781254618214592370672846931671/400000000000000000000000000000000",
+        "turn_s": "104773445725385658007715511048869563/400000000000000000000000000000000",
+        "turn_slot_padding_wait_s": "0",
+        "wait_sum_s": "289870781254618214592370672846931671/400000000000000000000000000000000"
+      },
+      "makespan_exact_s": "400238928182822349823117805181341611/2000000000000000000000000000000000"
+    },
+    {
+      "arm": "turn_aware__local_dependency",
+      "case": "random-32-32-10__s01__n16",
+      "completion_sum_exact_s": "2214132711084364981853979849376819863/2000000000000000000000000000000000",
+      "durations_exact_s": {
+        "discrete_wait_slot_s": "0",
+        "local_dependency_wait_s": "3891592653589793238462643383279503/125000000000000000000000000000000",
+        "move_s": "814",
+        "turn_barrier_wait_s": "0",
+        "turn_s": "104773445725385658007715511048869563/400000000000000000000000000000000",
+        "turn_slot_padding_wait_s": "0",
+        "wait_sum_s": "3891592653589793238462643383279503/125000000000000000000000000000000"
+      },
+      "makespan_exact_s": "18016592653589793238462643383279503/125000000000000000000000000000000"
+    }
+  ],
+  "limitations": [
+    "certification status is the original runtime continuous-check result; this audit checks evidence integrity and arithmetic",
+    "no unmodeled timing delays or spatial uncertainty evaluated",
+    "two known design tasks are diagnostic evidence, not independent generalization",
+    "local control is not an author SADG reproduction"
+  ],
+  "manifest_sha256": "6c23695d30d661e823ea6731cb65f1b674d43a5b636f6b7283691031ee628630",
+  "not_performed": [
+    "no new schedule construction",
+    "no continuous geometry certificate re-execution",
+    "no solver or motion scientific rerun"
+  ],
+  "original_artifacts_unchanged": true,
+  "original_artifacts_verified": 26,
+  "paired_paths_verified": 6,
+  "recorded_dependency_release_inequalities_verified": 10177,
+  "schema": "THESIS_SCHEDULER_INDEPENDENT_OFFLINE_AUDIT_V1",
+  "scientific_code_commit": "76a6a99531d1ff2676b99d5eec458f0e97661c0a",
+  "status": "PASS"
+}
