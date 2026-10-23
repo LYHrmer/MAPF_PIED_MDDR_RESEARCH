@@ -3,7 +3,7 @@
 GitHub入口与 [项目README](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/README.md) 一致。2026-10-18起采用SCI小论文与硕士论文两条线，共享必要底座；旧“四分支只服务一个误差问题”不再适用。
 
 - [唯一当前研究决定](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/docs/RESEARCH_PLAN.md)
-- [SCI支线](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/65d72115437c96e0b64c81535e72c00f50e027d7/tracks/sci/README.md)
+- [SCI支线](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/2bd191691b654e8ff8e0e1fc4933e997f07a063b/tracks/sci/README.md)
 - [硕士论文支线](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/906ba90aa7274f4035cf56d1b2cc323a642b1516/tracks/thesis/README.md)
 - [最新进度](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/GITHUB_PROGRESS.md) · [导航](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/main/REPOSITORY_NAVIGATION.md)
 

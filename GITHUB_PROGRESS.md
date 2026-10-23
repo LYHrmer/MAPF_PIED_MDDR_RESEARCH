@@ -4,7 +4,9 @@
 
 ## 当前交付
 
-**最新结果：** SCI [65d7211费用诊断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/65d72115437c96e0b64c81535e72c00f50e027d7/tracks/sci/ADDRESS_COST_RESULT.md)固定科学代码`e8edaff`：6项全部合法返回，1893事件闭合。random校验占selection79.41%，其中99.42%用于已COST_STOP的不能接纳候选；maze校验只占8.99%，且搜索/校验均可先触发截止。它定位的是项目奖励覆盖层的共同工程冗余，不能归为作者原版ADDRESS或算法创新。下一项按用户“学习期刊思路后继续优化”要求，仅先做接纳必要条件的廉价拒绝，保留可能提交候选及最终全检；奖励和训练暂不改。
+**最新结果：** SCI [65d7211费用诊断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/65d72115437c96e0b64c81535e72c00f50e027d7/tracks/sci/ADDRESS_COST_RESULT.md)固定科学代码`e8edaff`：6项全部合法返回，1893事件闭合。random校验占selection79.41%，其中99.42%用于已COST_STOP的不能接纳候选；maze校验只占8.99%，且搜索/校验均可先触发截止。它定位的是项目奖励覆盖层的共同工程冗余，不能归为作者原版ADDRESS或算法创新。按此实测结果落实下述单一工程改动；奖励和训练暂不改。
+
+**新优化实现：** SCI [2bd1916接纳门控](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/2bd191691b654e8ff8e0e1fc4933e997f07a063b/tracks/sci/ADDRESS_VALIDATION_GATE.md)已完成。依据[IJRR/AIJ定点学习](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/2bd191691b654e8ff8e0e1fc4933e997f07a063b/tracks/sci/REFERENCE_REPRODUCTION.md)，仅以原接纳必要条件跳过必拒候选的昂贵认证，默认all，显式acceptance_eligible；可能提交候选及最终方案全检保留。53项软件夹具、42份旧账本精确兼容、完整编译/help及独立复核通过。新优化没有科学结果；4项配对DEV清单SHA `4aa5d08c…82ad8b`待新授权，每项5秒准入/各进程CPU10秒/512MiB、外层10+2秒，零重试首硬失败停。已消费的6项许可不可复用。
 
 硕士 [906ba90调度结果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/906ba90aa7274f4035cf56d1b2cc323a642b1516/tracks/thesis/SCHEDULER_RESULT.md)固定科学代码`76a6a99`：2项12臂均获名义充分分离证书。maze的SOC690→689，局部完成时间和1835.027→1864.734秒，反转仍存在；转向整方案为1829.456秒，makespan三者相同。random三路径相同、零差异保留。局部构造/检查更贵，全部费用见报告。新旧实物、v2或反馈END均未混入。
 
