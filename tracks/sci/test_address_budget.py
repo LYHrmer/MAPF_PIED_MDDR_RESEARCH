@@ -729,6 +729,101 @@ int main(int argc,char**argv){
             self.assertEqual(d['eligible_topk_candidates'],2 if mode=='complete' else None)
             if mode=='deadline':self.assertEqual(d['first_observed_deadline']['stage'],'GROUP_SEED')
 
+    def test_acceptance_gate_actual_pp_keeps_author_update_rollback_and_final_check(self):
+        from reward_analysis import verify_reward_trace
+        code=pp_fixture(self.changed['src/LNS.cpp'].decode())
+        code=code.replace('int calls=0,expire_call=0;', 'int calls=0,expire_call=0,materializations=0;')
+        code=code.replace('bool isObstacle(int)const{return false;}',
+                          'bool isObstacle(int)const{++materializations;return false;}')
+        code=code.replace('      if(expire_call==-4)', '''      if(expire_call==-5&&calls==3){Path p(6,PathEntry{start_location});p.push_back({start_location+1});p.push_back({start_location+2});return p;}
+      if(expire_call==-6&&calls==3)return {{start_location},{start_location+1},{start_location}};
+      if(expire_call==-4)''')
+        code=code.replace('    if(argc>3)address_budget::configure_trace(argv[3]);','')
+        code=code.replace('    bool accepted=test.runPP();', '''    increment=0.000001;
+    address_budget::configure_cost_diagnostics(1);
+    address_reward::configure("author",0,3,argv[3],argv[4]);
+    address_budget::state().group_calls=1;
+    vector<int> q(3,9),freq(3,1);test.q_values=&q;test.frequency=&freq;test.current_index=0;
+    test.alpha.assign(3,1);test.beta.assign(3,1);
+    address_reward::SelectionScope selection(9);address_reward::bind_seed(0);address_reward::seed_pool_completed(3);
+    bool accepted=false,invalid=false;
+    try{accepted=test.runPP();}catch(const runtime_error&){invalid=true;assert(expire_call==-6);}
+    assert(!address_reward::state().active);
+    assert(test.alpha[0]==((expire_call==-4||expire_call==-5)?1:2));
+    assert(test.beta[0]==((expire_call==-4||expire_call==-5)?2:1));
+    bool duplicate=false;try{address_reward::settle(false,9,"DUPLICATE",test.alpha,test.beta);}
+    catch(const runtime_error&){duplicate=true;}assert(duplicate);
+    const bool gate=string(argv[4])=="acceptance_eligible";
+    if(gate&&(expire_call==-4||expire_call==-5))assert(materializations==0);
+    if(!gate&&(expire_call==-4||expire_call==-5))assert(materializations==15);
+    if(invalid){for(int a=0;a<3;++a)assert(test.path_table.paths.at(a).size()==4);return 0;}
+''')
+        exe=self.compile('acceptance_gate_pp',code)
+        for policy in ('all','acceptance_eligible'):
+            for mode in (0,-4,-5,-2,1,3,-6):
+                with self.subTest(policy=policy,mode=mode):
+                    native_path=self.root/f'gate_native_{policy}_{mode}.json'
+                    trace=self.root/f'gate_pp_{policy}_{mode}.jsonl'
+                    self.execute(exe,mode,native_path,trace,policy)
+                    raw=trace.read_bytes();row=json.loads(raw)
+                    self.assertEqual(row['committed_gain'],3 if mode==0 else 0)
+                    if mode==-6:
+                        self.assertEqual(row['outcome'],'INVALID_CANDIDATE')
+                        self.assertFalse(row['candidate_validated'])
+                        continue
+                    native=json.loads(native_path.read_text())
+                    self.assertTrue(native['initial_and_final_validated'])
+                    summary=verify_reward_trace(raw,native,dict(reward_memory='author',reward_window=0,
+                        candidate_validation_policy=policy),3,True)
+                    self.assertEqual(summary['selections'],1)
+                    if policy=='all':
+                        self.assertNotIn('candidate_validation_policy',row)
+                        self.assertEqual(row['candidate_reward'],{0:3,-4:0,-5:-2}.get(mode))
+                    else:
+                        p=row['candidate_validation_policy'];d=row['cost_diagnostics']
+                        skipped=mode in (-4,-5)
+                        self.assertEqual(p['result']=='SKIPPED_ACCEPTANCE_INELIGIBLE',skipped)
+                        if skipped:
+                            self.assertIsNone(row['candidate_reward']);self.assertIsNone(row['candidate_subset_soc'])
+                            self.assertFalse(row['candidate_validated']);self.assertEqual(p['remaining_agents'],1)
+                            self.assertEqual(d['candidate_materialization_wall_ns'],0)
+                            self.assertEqual(d['candidate_joint_check_wall_ns'],0)
+                            self.assertEqual(row['bernoulli_reward'],0)
+                            bad=dict(row,candidate_validation_policy=dict(p,remaining_agents=0,
+                                fresh_cost_sum_unvalidated=row['old_subset_soc'],skip_reason='COST_EXCEEDS_OLD'))
+                            with self.assertRaises(ValueError):
+                                verify_reward_trace((json.dumps(bad)+'\n').encode(),native,
+                                    dict(reward_memory='author',reward_window=0,candidate_validation_policy=policy),3,True)
+                        if mode==3:
+                            self.assertEqual(p['result'],'DEADLINE')
+                            self.assertEqual(d['first_observed_deadline']['stage'],'SIPP_RETURN')
+
+    def test_acceptance_gate_uses_nonstrict_original_cost_condition(self):
+        code=COMMON+r'''
+struct Agent {Path path;};
+struct Graph {
+    int map_size=3,num_of_rows=1,num_of_cols=3;
+    bool isObstacle(int)const{return false;}
+    vector<int>getStarts()const{return {0};}vector<int>getGoals()const{return {2};}
+};
+int main(int argc,char**argv){
+    setup();address_reward::configure("author",0,1,argv[1],"acceptance_eligible");
+    address_budget::state().attempts=1;
+    vector<int>alpha(1,1),beta(1,1);vector<Agent>agents{{{{0},{1},{2}}}};Graph graph;
+    address_reward::SelectionScope selection(2);address_reward::bind_seed(0);
+    address_reward::group(1,2);address_reward::found(2);
+    address_reward::inspect_candidate(agents,graph,0);
+    assert(address_reward::admissible());assert(address_reward::pending().candidate==2);
+    address_reward::settle(true,2,"FOUND",alpha,beta);
+}
+'''
+        trace=self.root/'gate_equal_acceptance_condition.jsonl'
+        self.execute(self.compile('gate_equal_condition',code),trace)
+        row=json.loads(trace.read_bytes())
+        self.assertTrue(row['candidate_validated']);self.assertTrue(row['accepted'])
+        self.assertEqual(row['candidate_reward'],0)
+        self.assertEqual(row['candidate_validation_policy']['result'],'VALIDATED')
+
     def test_shared_memory_rule_empty_groups_censoring_and_exactly_once(self):
         code=COMMON+r'''
 int main(int argc,char**argv){

@@ -22,14 +22,17 @@ struct Event {
     int remaining_at_search_return=-1,eligible_topk_candidates=-1;
     std::string search_loop_exit_stop="NOT_ENTERED",raw_primary_stop_before_finalization="NOT_ENTERED";
     std::string validation_stage="NOT_ENTERED",validation_result="NOT_ENTERED";
+    int inspection_remaining=-1;
+    std::string gate_result="NOT_ENTERED",gate_reason="NONE";
     address_budget::Tick search_return;
     long long validation_wall_ns=0,validation_cpu_ns=0;
     long long materialization_wall_ns=0,materialization_cpu_ns=0,joint_wall_ns=0,joint_cpu_ns=0;
 };
 struct State {
-    std::string mode="", trace;
+    std::string mode="", trace, candidate_validation="all";
     int width=0;
     long started=0, settled=0, errors=0;
+    long gate_skipped=0;
     long long io_wall_ns=0, io_cpu_ns=0;
     long long validation_wall_ns=0,validation_cpu_ns=0,post_search_wall_ns=0,post_search_cpu_ns=0;
     long long materialization_wall_ns=0,materialization_cpu_ns=0,joint_wall_ns=0,joint_cpu_ns=0;
@@ -40,12 +43,15 @@ struct State {
 inline State& state(){static State s;return s;}
 inline std::ofstream& stream(){static std::ofstream s;return s;}
 inline bool author(){return state().mode=="author";}
-inline void configure(const std::string& mode,int width,int arms,const std::string& path){
+inline void configure(const std::string& mode,int width,int arms,const std::string& path,
+                      const std::string& candidate_validation="all"){
     if(!state().mode.empty() || arms<=0 || path.empty() || std::ifstream(path)
-       || !((mode=="author"||mode=="cumulative")?width==0:(mode=="window"&&width>0)))
+       || !((mode=="author"||mode=="cumulative")?width==0:(mode=="window"&&width>0))
+       || !(candidate_validation=="all" || (candidate_validation=="acceptance_eligible"&&mode=="author")))
         throw std::runtime_error("reward: invalid/repeated configuration or existing trace");
     stream().open(path);if(!stream())throw std::runtime_error("reward: trace open failed");
     state().mode=mode;state().width=width;state().trace=path;state().arms.resize(arms);
+    state().candidate_validation=candidate_validation;
 }
 inline Event& pending(){
     if(!state().active)throw std::runtime_error("reward: no pending selection / duplicate settlement");
@@ -114,15 +120,31 @@ inline void found(int cost){
 // Validate the whole joint candidate, including unchanged vehicles and permanent
 // goals. All fresh paths must exist; an old path remaining in agents is not one.
 template<class Agents,class Instance>
-inline void inspect_candidate(const Agents& agents,const Instance& instance){
+inline void inspect_candidate(const Agents& agents,const Instance& instance,int remaining_agents){
     auto& e=pending();
     const bool diagnostic=address_budget::state().cost_diagnostics;
+    const bool gated=state().candidate_validation=="acceptance_eligible";
+    if(gated){
+        if(remaining_agents<0||remaining_agents>e.group_size||e.inspection_remaining>=0)
+            throw std::runtime_error("reward: invalid/repeated acceptance inspection");
+        e.inspection_remaining=remaining_agents;e.gate_result="INCOMPLETE_SKIPPED";
+    }
     if(diagnostic){e.inspection_entered=true;e.validation_result="INCOMPLETE_SKIPPED";}
     if(e.fresh_count!=e.group_size)return;
     CandidateValidationCost validation_cost;
     try {
         if(diagnostic)e.validation_stage="ENTRY_CHECKPOINT";
         address_budget::checkpoint(diagnostic?"REWARD_VALIDATION_ENTRY":"REWARD_VALIDATION");
+        // Reuse the actual acceptance prerequisites, not a diagnostic stop label.
+        // Keep the entry deadline check above and the original author update,
+        // rollback, settlement and final whole-plan check after this function.
+        if(gated&&(remaining_agents!=0||e.fresh_cost>e.old_group)){
+            e.gate_result="SKIPPED_ACCEPTANCE_INELIGIBLE";
+            e.gate_reason=remaining_agents!=0?"REMAINING_AGENTS":"COST_EXCEEDS_OLD";
+            ++state().gate_skipped;
+            if(diagnostic){e.validation_stage="ACCEPTANCE_GATE";e.validation_result=e.gate_result;}
+            return; // candidate/candidate_reward remain unknown, not validated.
+        }
         validation_cost.enter(1);
         if(diagnostic)e.validation_stage="PATH_MATERIALIZATION";
         address_adapter::Paths paths;
@@ -143,9 +165,10 @@ inline void inspect_candidate(const Agents& agents,const Instance& instance){
         if(diagnostic)e.validation_stage="FINAL_CHECKPOINT";
         address_budget::checkpoint("REWARD_VALIDATION_DONE");
         e.candidate=e.fresh_cost;e.candidate_valid=true;
+        if(gated)e.gate_result="VALIDATED";
         if(diagnostic){e.validation_stage="COMPLETE";e.validation_result="VALIDATED";}
-    } catch(const address_budget::Deadline&){e.censored=true;if(diagnostic)e.validation_result="DEADLINE";}
-      catch(const std::runtime_error&){e.invalid=true;if(diagnostic)e.validation_result="INVALID";}
+    } catch(const address_budget::Deadline&){e.censored=true;if(gated)e.gate_result="DEADLINE";if(diagnostic)e.validation_result="DEADLINE";}
+      catch(const std::runtime_error&){e.invalid=true;if(gated)e.gate_result="INVALID";if(diagnostic)e.validation_result="INVALID";}
 }
 inline bool admissible(){return pending().candidate_valid&&!pending().invalid&&!pending().censored;}
 
@@ -193,6 +216,11 @@ inline void emit(){
        <<(eligible?(e.old_task>e.committed?"1":"0"):"null")
        <<",\"selection_wall_before_log_ns\":"<<address_budget::difference(end.wall,e.begin.wall)
        <<",\"selection_cpu_before_log_ns\":"<<address_budget::difference(end.cpu,e.begin.cpu);
+    if(s.candidate_validation!="all")
+        out<<",\"candidate_validation_policy\":{\"schema\":\"ADDRESS_CANDIDATE_VALIDATION_V1\""
+           <<",\"mode\":\""<<s.candidate_validation<<"\",\"result\":\""<<e.gate_result
+           <<"\",\"skip_reason\":\""<<e.gate_reason<<"\",\"remaining_agents\":"<<nullable(e.inspection_remaining)
+           <<",\"fresh_cost_sum_unvalidated\":"<<(e.repair_id?std::to_string(e.fresh_cost):"null")<<"}";
     if(address_budget::state().cost_diagnostics){
         const auto post_wall=e.search_return_observed?address_budget::difference(end.wall,e.search_return.wall):0;
         const auto post_cpu=e.search_return_observed?address_budget::difference(end.cpu,e.search_return.cpu):0;
@@ -272,6 +300,9 @@ inline void summary(std::ostream& out){
         <<"{\"seed\":"<<i<<",\"completed\":"<<a.completed<<",\"censored\":"<<a.censored
         <<",\"retained_successes\":"<<a.successes<<",\"retained_failures\":"<<a.failures<<"}";}
     out<<"]";
+    if(s.candidate_validation!="all")
+        out<<",\"candidate_validation_policy\":{\"schema\":\"ADDRESS_CANDIDATE_VALIDATION_V1\""
+           <<",\"mode\":\""<<s.candidate_validation<<"\",\"skipped_acceptance_ineligible\":"<<s.gate_skipped<<"}";
     if(address_budget::state().cost_diagnostics)
         out<<",\"cost_diagnostics\":{\"schema\":\"ADDRESS_REWARD_COST_V1\""
            <<",\"candidate_validation_wall_ns\":"<<s.validation_wall_ns<<",\"candidate_validation_cpu_ns\":"<<s.validation_cpu_ns

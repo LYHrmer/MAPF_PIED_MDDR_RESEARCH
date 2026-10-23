@@ -44,6 +44,21 @@ class AdapterContracts(unittest.TestCase):
             with self.assertRaises(ValueError):comparison_settings(config,changed)
         with self.assertRaises(ValueError):comparison_settings(dict(config,cost_diagnostics=False),job)
 
+    def test_candidate_validation_requires_explicit_policy_and_separate_protocol(self):
+        config=dict(variant='reward_contract',comparison_protocol='candidate_validation_v1',cost_diagnostics=True)
+        job=dict(seed_admission='positive_delay',effort_mode='total_budget',iterations=0,
+                 reward_memory='author',reward_window=0)
+        for policy in ('all','acceptance_eligible'):
+            self.assertEqual(comparison_settings(config,dict(job,candidate_validation_policy=policy)),
+                             ('positive_delay','total_budget'))
+        for changed in (job,dict(job,candidate_validation_policy='bad'),
+                        dict(job,candidate_validation_policy='all',reward_memory='cumulative')):
+            with self.assertRaises(ValueError):comparison_settings(config,changed)
+        for protocol in (None,'reward_cost_diagnostic_v1','reward_memory_v1'):
+            with self.assertRaises(ValueError):
+                comparison_settings(dict(config,comparison_protocol=protocol),
+                                    dict(job,candidate_validation_policy='all'))
+
     def test_first_observation_rejects_missing_simultaneous_scope_and_false_trigger(self):
         import copy
         o=dict(stage='SIPP_RETURN',resource='WALL_AND_CPU',scope='LOCAL_AND_GLOBAL',

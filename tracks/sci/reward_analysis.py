@@ -12,6 +12,51 @@ COST_TOTAL_FIELDS = tuple(prefix+'_'+clock+'_ns' for prefix in (
     'candidate_validation', 'candidate_materialization', 'candidate_joint_check',
     'candidate_validation_other', 'post_search_through_settlement') for clock in ('wall', 'cpu'))
 
+
+def verify_candidate_validation_policy(row, expected='all'):
+    """A rejected acceptance prerequisite is not a validated candidate reward."""
+    policy = row.get('candidate_validation_policy')
+    if expected == 'all':
+        if policy is not None:
+            raise ValueError('undeclared candidate validation gate')
+        return False
+    if expected != 'acceptance_eligible' or not isinstance(policy, dict):
+        raise ValueError('missing/unknown candidate validation policy')
+    if policy.get('schema') != 'ADDRESS_CANDIDATE_VALIDATION_V1' or policy.get('mode') != expected:
+        raise ValueError('candidate validation policy identity')
+    remaining, fresh = policy.get('remaining_agents'), policy.get('fresh_cost_sum_unvalidated')
+    entered = row['repair_attempt_id'] is not None
+    if entered:
+        if (type(remaining) is not int or not 0 <= remaining <= row['group_size'] or
+                type(fresh) is not int or fresh < 0):
+            raise ValueError('candidate gate lacks actual inspection inputs')
+    elif remaining is not None or fresh is not None:
+        raise ValueError('unentered candidate gate has inputs')
+    result, reason = policy.get('result'), policy.get('skip_reason')
+    full = entered and row['fresh_paths'] == row['group_size']
+    skipped = result == 'SKIPPED_ACCEPTANCE_INELIGIBLE'
+    if skipped:
+        if (not full or row['candidate_validated'] or row['accepted'] or row['committed_gain'] or
+                row.get('candidate_subset_soc') is not None or row.get('candidate_reward') is not None):
+            raise ValueError('skipped candidate became a validated/committed reward')
+        expected_reason = ('REMAINING_AGENTS' if remaining != 0 else
+                           'COST_EXCEEDS_OLD' if fresh > row['old_subset_soc'] else None)
+        if reason != expected_reason or expected_reason is None:
+            raise ValueError('candidate gate skipped despite acceptance prerequisites')
+    else:
+        if reason != 'NONE':
+            raise ValueError('unskipped candidate has skip reason')
+        if row['candidate_validated']:
+            if (result != 'VALIDATED' or remaining != 0 or fresh > row['old_subset_soc'] or
+                    fresh != row['candidate_subset_soc']):
+                raise ValueError('validated candidate violates acceptance gate')
+        elif full:
+            if result != 'DEADLINE' or not row['censored']:
+                raise ValueError('unfinished gated validation lacks a deadline')
+        elif result != ('INCOMPLETE_SKIPPED' if entered else 'NOT_ENTERED'):
+            raise ValueError('partial/unentered candidate gate result mismatch')
+    return skipped
+
 def verify_deadline_observations(data):
     """Check sampled deadline evidence; never infer the true crossing instant."""
     if (data.get('wall_clock') != 'STEADY_ABSOLUTE_NS' or
@@ -76,7 +121,7 @@ def verify_deadline_observations(data):
                 raise ValueError('first deadline overwritten by a later observation')
 
 
-def verify_event_cost(row):
+def verify_event_cost(row, candidate_validation='all'):
     d = row['cost_diagnostics']
     if (d.get('schema') != 'ADDRESS_REWARD_COST_V1' or d.get('cost_scope') !=
             'VALIDATION_SUBSET_OF_POST_SEARCH_SUBSET_OF_SELECTION_BEFORE_LOG'):
@@ -115,7 +160,13 @@ def verify_event_cost(row):
         raise ValueError('candidate validation entry/fresh-path mismatch')
     result = d.get('validation_result')
     stage = d.get('validation_last_stage')
-    if row['candidate_validated']:
+    skipped = verify_candidate_validation_policy(row, candidate_validation)
+    if candidate_validation != 'all' and row['candidate_validation_policy']['remaining_agents'] != remaining:
+        raise ValueError('candidate gate differs from actual search-return remaining count')
+    if skipped:
+        if result != 'SKIPPED_ACCEPTANCE_INELIGIBLE' or stage != 'ACCEPTANCE_GATE':
+            raise ValueError('candidate gate/diagnostic result mismatch')
+    elif row['candidate_validated']:
         if result != 'VALIDATED' or stage != 'COMPLETE':
             raise ValueError('validated candidate lacks completion state')
     elif full:
@@ -137,6 +188,8 @@ def verify_event_cost(row):
                  ('materialization', 'joint_check', 'validation_other')]
         if any(type(value) is not int or value < 0 for value in parts) or sum(parts) != validation:
             raise ValueError('exclusive validation phases do not close')
+        if skipped and (parts[0] or parts[1]):
+            raise ValueError('skipped candidate still materialized or jointly validated')
     return d
 
 
@@ -146,6 +199,10 @@ def verify_reward_trace(raw, native, job, count, require_cost_diagnostics=False)
         raise ValueError('partial reward trace')
     summary = native.get('reward_contract', {})
     mode, width = job['reward_memory'], job['reward_window']
+    candidate_validation = job.get('candidate_validation_policy', 'all')
+    if candidate_validation not in ('all', 'acceptance_eligible') or (
+            candidate_validation != 'all' and mode != 'author'):
+        raise ValueError('unsupported candidate validation policy/memory')
     expected = {'schema': 'ADDRESS_REWARD_V1', 'memory': mode, 'window': width,
                 'decision': 'VEHICLE_SEED_PROJECT_ADAPTATION',
                 'reward': 'COMMITTED_GAIN_POSITIVE_BERNOULLI', 'prior_alpha': 1, 'prior_beta': 1,
@@ -158,7 +215,7 @@ def verify_reward_trace(raw, native, job, count, require_cost_diagnostics=False)
              'retained_successes': 0, 'retained_failures': 0} for seed in range(count)]
     recent = [deque() for _ in range(count)]
     previous = native['initial_soc']
-    selections = repairs = gain = wall = cpu = 0
+    selections = repairs = gain = wall = cpu = skipped_candidates = 0
     outcomes = Counter()
     cost_totals = Counter({key: 0 for key in COST_TOTAL_FIELDS})
     diagnostic = 'cost_diagnostics' in summary
@@ -167,6 +224,8 @@ def verify_reward_trace(raw, native, job, count, require_cost_diagnostics=False)
         raise ValueError('required reward cost diagnostics missing')
     if diagnostic:
         verify_deadline_observations(native['deadline_observations'])
+    if candidate_validation == 'all' and 'candidate_validation_policy' in summary:
+        raise ValueError('native used undeclared candidate gate')
     for line in raw.splitlines():
         row = json.loads(line)
         selections += 1
@@ -246,8 +305,9 @@ def verify_reward_trace(raw, native, job, count, require_cost_diagnostics=False)
         outcomes[outcome] += 1
         if ('cost_diagnostics' in row) != diagnostic:
             raise ValueError('mixed/missing per-event cost diagnostics')
+        skipped_candidates += verify_candidate_validation_policy(row, candidate_validation)
         if diagnostic:
-            d = verify_event_cost(row)
+            d = verify_event_cost(row, candidate_validation)
             for key in COST_TOTAL_FIELDS:
                 cost_totals[key] += d[key]
             first = d['first_observed_deadline']
@@ -264,6 +324,10 @@ def verify_reward_trace(raw, native, job, count, require_cost_diagnostics=False)
             raise ValueError('missing reward logging cost')
     if diagnostic and summary['cost_diagnostics'] != dict(schema='ADDRESS_REWARD_COST_V1', **cost_totals):
         raise ValueError('reward cost summary does not close')
+    if candidate_validation != 'all' and summary.get('candidate_validation_policy') != dict(
+            schema='ADDRESS_CANDIDATE_VALIDATION_V1', mode=candidate_validation,
+            skipped_acceptance_ineligible=skipped_candidates):
+        raise ValueError('candidate validation gate summary does not close')
     result = {'schema': 'ADDRESS_REWARD_DIAGNOSTIC_V1', 'selections': selections, 'repairs': repairs,
             'outcomes': dict(outcomes), 'actual_committed_gain': gain,
             'selection_wall_before_log_ns': wall, 'selection_cpu_before_log_ns': cpu,
@@ -277,6 +341,10 @@ def verify_reward_trace(raw, native, job, count, require_cost_diagnostics=False)
             completed_eligible_topk_size_counts=dict(pool_sizes),
             timings_are_nested_not_additive=True,
             historical_uninstrumented_runs_are_not_a_paired_speed_baseline=True)
+    if candidate_validation != 'all':
+        result['candidate_validation_policy'] = dict(mode=candidate_validation,
+            skipped_acceptance_ineligible=skipped_candidates,
+            skipped_candidate_reward_is_unknown=True)
     return result
 
 

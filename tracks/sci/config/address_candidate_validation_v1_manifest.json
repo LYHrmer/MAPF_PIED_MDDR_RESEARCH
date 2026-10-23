@@ -1,0 +1,134 @@
+{
+  "attempt_trace": false,
+  "authorization": "PENDING_USER",
+  "batch_id": "address_candidate_validation_v1",
+  "binary": ".address_reward_build/validation_gate_v1/build/address",
+  "binary_sha256": "eb5dd7e0d4c5c16a2db30714521329bc6a81227ac9f74e6a50db94d91575e61f",
+  "build_receipt": "candidate_validation_gate_build_receipt.json",
+  "build_source_sha256": {
+    "address_adapter.py": "7bd6ee6e969cb27414626289398b657f0b9ad7398903c9ab16cc76a5fcc00632",
+    "address_adapter_support.h": "8d9fbea2048eac1245df4d743580f994a23f2cb4d48089e9575de2508be94bc2",
+    "address_budget.py": "54657e47cffeaf279f043c179ff3188323d7e70ff2ccf9d8811c5285955e18b7",
+    "address_budget_support.h": "3a91ae1441ec377dd4ddb1c701163793ea0e93b45052ee658d0d8a64ac7603a6",
+    "address_loop_guard.py": "e533545391e86aaac0b1c057c14eee398c5dd46343a1b677d355087df1c4b8df",
+    "address_reward.py": "5c2eff8161d40ea363d3023fe8b9e6900a10c6ec5ce063af335cf5154b4f1663",
+    "address_reward_support.h": "36ac2a6fc7d9e57461c6bfc704ff1de145bc97d9a804dc21d52906c1bbd8911b",
+    "build_address_full.py": "01943c040c2793cd74b706ef95b4bfca0cc53bc9f788c6e1c609c577d112586e"
+  },
+  "code_sha256": {
+    "address_backend.py": "04cabeaf78f0425a6c9835d6c3e5eb2ee53fb2a1f63db907c456bbbbba94fd84",
+    "candidate_validation_gate_build_receipt.json": "80096095df3a9bd932f79b01ba5c13e0b8327f2ff36b5eb0f61773827533bc21",
+    "pp_repair.py": "f6a64ddee77c5a6d15659bf69fff5d3b75fc9ca936d2b4a46942d3f7467ea782",
+    "repair_profile.py": "4f96c452984e5f740a3c823e081f6246611734bf96c581624b07269c014e3055",
+    "reward_analysis.py": "6229bf1363e9776501ea3983b3ac54ea9a7a3c0a57d5e811999ce055c0f376db",
+    "run_address_adapter.py": "b45a5452a8d8145111abe95615f7ba2c1a00dd7bc46eb3d380c4aa0acf0f9117",
+    "run_repair_dev.py": "fc9573e1f1f55a890b93b717fe082eb7beedb69f33d731988ef68709781be29e"
+  },
+  "comparison_protocol": "candidate_validation_v1",
+  "contrasts": [
+    [
+      "all",
+      "acceptance_eligible"
+    ]
+  ],
+  "cost_diagnostics": true,
+  "decision_rule": "One common-engineering paired DEV; remove redundant candidate certification before considering reward changes. No independent algorithm claim.",
+  "evidence_scope": "COMMON_ENGINEERING_VALIDATION_GATE_DEV",
+  "external_command_guard": {
+    "kill_grace_s": 2,
+    "required": true,
+    "term_after_s": 10,
+    "tool": "timeout"
+  },
+  "historical_uninstrumented_runs_are_not_paired_speed_baselines": true,
+  "independent_task_units": 2,
+  "input_file": "address_reward_holdout_v1_inputs.json",
+  "input_sha256": "660b7bc4b4282db1feedd373a9220dc98638c18bcb835123aff448c83eadcf3e",
+  "jobs": [
+    {
+      "candidate_validation_policy": "all",
+      "case": "maze-32-32-2__s05__n32",
+      "effort_mode": "total_budget",
+      "id": "maze-32-32-2__s05__n32__seed0__all",
+      "iterations": 0,
+      "reward_memory": "author",
+      "reward_window": 0,
+      "seed": 0,
+      "seed_admission": "positive_delay",
+      "top_k": 32
+    },
+    {
+      "candidate_validation_policy": "acceptance_eligible",
+      "case": "maze-32-32-2__s05__n32",
+      "effort_mode": "total_budget",
+      "id": "maze-32-32-2__s05__n32__seed0__acceptance_eligible",
+      "iterations": 0,
+      "reward_memory": "author",
+      "reward_window": 0,
+      "seed": 0,
+      "seed_admission": "positive_delay",
+      "top_k": 32
+    },
+    {
+      "candidate_validation_policy": "all",
+      "case": "random-32-32-10__s05__n32",
+      "effort_mode": "total_budget",
+      "id": "random-32-32-10__s05__n32__seed0__all",
+      "iterations": 0,
+      "reward_memory": "author",
+      "reward_window": 0,
+      "seed": 0,
+      "seed_admission": "positive_delay",
+      "top_k": 32
+    },
+    {
+      "candidate_validation_policy": "acceptance_eligible",
+      "case": "random-32-32-10__s05__n32",
+      "effort_mode": "total_budget",
+      "id": "random-32-32-10__s05__n32__seed0__acceptance_eligible",
+      "iterations": 0,
+      "reward_memory": "author",
+      "reward_window": 0,
+      "seed": 0,
+      "seed_admission": "positive_delay",
+      "top_k": 32
+    }
+  ],
+  "limits": {
+    "external_final_reserve_s": 1,
+    "inner_final_reserve_s": 1,
+    "native_cpu_reserve_s": 1,
+    "native_cpu_s": 10,
+    "per_process_as_mib": 512,
+    "total_wall_s": 5,
+    "worker_cpu_s": 10
+  },
+  "maximum_sum_external_guard_wall_s": 48,
+  "maximum_total_success_admission_wall_s": 20,
+  "new_initial_search": false,
+  "new_reward_policy": false,
+  "new_selection_policy": false,
+  "original_candidate_validation_default": "all",
+  "phase_profile": false,
+  "previous_authorization_reusable": false,
+  "primary_endpoint": "final_validated_full_plan_SOC_at_common_total_admission_budget",
+  "retry": 0,
+  "schema": "address_common_initial_dev_v1",
+  "secondary_endpoints": [
+    "candidate_validation_exclusive_cost",
+    "skipped_acceptance_ineligible",
+    "final_makespan",
+    "full_admission_cost",
+    "failure_or_censor",
+    "repair_count_not_quality_proxy"
+  ],
+  "selection_instrumentation_charged_to_existing_budget": true,
+  "stop_batch_on_any_failure": true,
+  "tasks_are_known_design_data": true,
+  "training": false,
+  "variant": "reward_contract",
+  "within_task_solver_seeds": [
+    0
+  ],
+  "world": false
+}

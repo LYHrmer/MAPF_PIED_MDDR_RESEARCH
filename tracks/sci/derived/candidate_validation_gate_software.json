@@ -1,0 +1,103 @@
+{
+  "author_unchanged": true,
+  "binary_sha256": "eb5dd7e0d4c5c16a2db30714521329bc6a81227ac9f74e6a50db94d91575e61f",
+  "build_receipt_sha256": "80096095df3a9bd932f79b01ba5c13e0b8327f2ff36b5eb0f61773827533bc21",
+  "compile_and_help_only": true,
+  "independent_readonly_review": {
+    "additional_temporary_artificial_cases": [
+      "remaining_agents=0 but fresh cost exceeds old: skip without materialization",
+      "same candidate with entry deadline already reached: DEADLINE precedes gate and no skip count"
+    ],
+    "manifest_runtime_build_input_binary_pins_verified": true,
+    "new_scientific_runs": 0,
+    "repository_source_changes_by_reviewer": false,
+    "source": "motion_batch_audit child review",
+    "status": "PASS"
+  },
+  "legacy_exact_summary_matches": {
+    "address_reward_cost_diagnostic_v1": {
+      "events": 1893,
+      "jobs": 6
+    },
+    "address_reward_holdout_v1": {
+      "events": 21873,
+      "jobs": 36
+    }
+  },
+  "limitations": [
+    "Artificial software fixtures and compile/help do not establish path-quality or timing benefit.",
+    "The gate changes no author posterior formula, acceptance predicate, rollback, final validation or budget threshold.",
+    "Reduced validation work may change future selection/random trajectories; no end-to-end equivalence claimed.",
+    "Old consumed manifests stay byte-identical and use their frozen code commits; current modified runtime must not re-sign them.",
+    "Rejected candidates no longer provide joint-geometry error diagnostics; timing/censor labels can change, so full behavioral equivalence is not claimed."
+  ],
+  "manifest_authorization": "PENDING_USER",
+  "manifest_sha256": "4aa5d08c349d532f5d7cbcb32f817721e1becb2f4e8d00509716ad8fc382ad8b",
+  "protected_artifact_sha256": {
+    "cost_audit": "d256494eb0d6bc6cf0fc836f95a687bfe62f399cb396636b8fa315bd38c3d8c8",
+    "cost_manifest": "baf2255de8838c2d3bc2dc253523693fe78f9e3ceb24a04dad495a1b0aedf3cd",
+    "cost_run_receipt": "8bb0f27232f4ff25a3509f58b2084b75cdd91b4b29b8bb047eb704adc22ae257",
+    "old_cost_binary": "56348dd7b42a51ad5f94e90a5bb07328f2010159b07ee42722c8798c56d39609"
+  },
+  "schema": "ADDRESS_CANDIDATE_VALIDATION_SOFTWARE_ONLY_V1",
+  "scientific_runs": 0,
+  "software_tests": {
+    "command": [
+      "rtk",
+      "proxy",
+      "python3",
+      "-B",
+      "-m",
+      "unittest",
+      "test_address_adapter",
+      "test_address_budget",
+      "test_address_loop_guard"
+    ],
+    "cwd": "tracks/sci",
+    "exit_code": 0,
+    "reported_test_wall_s": 25.341,
+    "tests": 53
+  },
+  "solver_instance_constructed": false,
+  "source_sha256": {
+    "address_adapter.py": "7bd6ee6e969cb27414626289398b657f0b9ad7398903c9ab16cc76a5fcc00632",
+    "address_adapter_support.h": "8d9fbea2048eac1245df4d743580f994a23f2cb4d48089e9575de2508be94bc2",
+    "address_backend.py": "04cabeaf78f0425a6c9835d6c3e5eb2ee53fb2a1f63db907c456bbbbba94fd84",
+    "address_budget.py": "54657e47cffeaf279f043c179ff3188323d7e70ff2ccf9d8811c5285955e18b7",
+    "address_budget_support.h": "3a91ae1441ec377dd4ddb1c701163793ea0e93b45052ee658d0d8a64ac7603a6",
+    "address_loop_guard.py": "e533545391e86aaac0b1c057c14eee398c5dd46343a1b677d355087df1c4b8df",
+    "address_reward.py": "5c2eff8161d40ea363d3023fe8b9e6900a10c6ec5ce063af335cf5154b4f1663",
+    "address_reward_support.h": "36ac2a6fc7d9e57461c6bfc704ff1de145bc97d9a804dc21d52906c1bbd8911b",
+    "build_address_full.py": "01943c040c2793cd74b706ef95b4bfca0cc53bc9f788c6e1c609c577d112586e",
+    "candidate_validation_gate_build_receipt.json": "80096095df3a9bd932f79b01ba5c13e0b8327f2ff36b5eb0f61773827533bc21",
+    "pp_repair.py": "f6a64ddee77c5a6d15659bf69fff5d3b75fc9ca936d2b4a46942d3f7467ea782",
+    "repair_profile.py": "4f96c452984e5f740a3c823e081f6246611734bf96c581624b07269c014e3055",
+    "reward_analysis.py": "6229bf1363e9776501ea3983b3ac54ea9a7a3c0a57d5e811999ce055c0f376db",
+    "run_address_adapter.py": "b45a5452a8d8145111abe95615f7ba2c1a00dd7bc46eb3d380c4aa0acf0f9117",
+    "run_repair_dev.py": "fc9573e1f1f55a890b93b717fe082eb7beedb69f33d731988ef68709781be29e",
+    "test_address_adapter.py": "b6879518e2afded57b2f460c9c6136bd23b7744adfe4277eb43e7b78ad9fde75",
+    "test_address_budget.py": "e756adff6b4990ffdbf1edf3accdbd6ff19721682c084343363b3c46ef395133",
+    "test_address_loop_guard.py": "e46691e58f4abde846ad9d2a2f6d16f2c02e9cdf91d3a814f22a98b29a6d4865"
+  },
+  "static_inspection": {
+    "command": [
+      "rtk",
+      "proxy",
+      "python3",
+      "-B",
+      "tracks/sci/run_address_adapter.py",
+      "inspect",
+      "--manifest",
+      "tracks/sci/config/address_candidate_validation_v1_manifest.json",
+      "--sha256",
+      "4aa5d08c349d532f5d7cbcb32f817721e1becb2f4e8d00509716ad8fc382ad8b"
+    ],
+    "exit_code": 0,
+    "problem_constructed": false,
+    "rows": 4,
+    "scope": "PINNED_BYTES_AND_JSON_ONLY",
+    "search_executed": false
+  },
+  "training": false,
+  "world": false
+}

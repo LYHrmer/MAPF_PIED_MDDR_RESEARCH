@@ -16,10 +16,11 @@ def adapt(files):
     driver = replace_exact(driver, '("help", "produce help message")', '''("help", "produce help message")
         ("rewardMemory", po::value<string>()->required(), "author audit or committed Bernoulli cumulative/window")
         ("rewardWindow", po::value<int>()->required(), "positive for window; zero for author/cumulative")
+        ("candidateValidation", po::value<string>()->default_value("all"), "all or acceptance_eligible (author mode only)")
         ("rewardTrace", po::value<string>()->required(), "new per-selection reward JSONL")''')
     driver = replace_exact(driver, '    address_budget::configure_trace(vm["attemptTrace"].as<string>());', '''    address_budget::configure_trace(vm["attemptTrace"].as<string>());
     address_reward::configure(vm["rewardMemory"].as<string>(),vm["rewardWindow"].as<int>(),
-        vm["agentNum"].as<int>(),vm["rewardTrace"].as<string>());''')
+        vm["agentNum"].as<int>(),vm["rewardTrace"].as<string>(),vm["candidateValidation"].as<string>());''')
     lns = '#include "address_reward_support.h"\n' + files['src/LNS.cpp'].decode()
 
     def run(src):
@@ -50,7 +51,7 @@ def adapt(files):
         end = '    if (!address_budget::expired("ACCEPT") && remaining_agents == 0'
         a, b = src.index(marker), src.index(end)
         original_reward = src[a:b]
-        src = src[:a] + '''    address_reward::inspect_candidate(agents,instance);
+        src = src[:a] + '''    address_reward::inspect_candidate(agents,instance,remaining_agents);
     if(address_reward::author()) {
 ''' + original_reward + '    }\n' + src[b:]
         src = replace_exact(src, end,

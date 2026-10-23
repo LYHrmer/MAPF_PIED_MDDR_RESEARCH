@@ -844,7 +844,7 @@ def address_results(manifest, expected_sha, output=None):
                 if summary != result.get('comparison_diagnostics'):
                     raise ValueError('offline seed comparison differs from worker')
                 row['comparison_diagnostics'] = summary
-            if config.get('comparison_protocol') in ('reward_memory_v1', 'reward_cost_diagnostic_v1'):
+            if config.get('comparison_protocol') in ('reward_memory_v1', 'reward_cost_diagnostic_v1', 'candidate_validation_v1'):
                 from reward_analysis import verify_reward_trace
                 summary = verify_reward_trace((folder/'rewards.jsonl').read_bytes(),
                                               result['native_receipt'], job, len(problem.ids),
@@ -854,6 +854,8 @@ def address_results(manifest, expected_sha, output=None):
                 row['reward_diagnostics'] = summary
                 row['reward_memory'], row['reward_window'], row['solver_seed'] = (
                     job['reward_memory'], job['reward_window'], job['seed'])
+                if config.get('comparison_protocol') == 'candidate_validation_v1':
+                    row['candidate_validation_policy'] = job['candidate_validation_policy']
         elif receipt['status'] == 'FAILED_OR_INCOMPLETE':
             failed_job = job['id']
             row['reason'] = result.get('reason', 'missing success validation')
@@ -865,7 +867,9 @@ def address_results(manifest, expected_sha, output=None):
                  for p in sorted(batch.rglob('*')) if p.is_file()}
     reward_comparison = config.get('comparison_protocol') == 'reward_memory_v1'
     cost_diagnostic = config.get('comparison_protocol') == 'reward_cost_diagnostic_v1'
-    value = {'scope': 'ADDRESS_REWARD_COST_KNOWN_TASK_DIAGNOSTIC' if cost_diagnostic else
+    validation_comparison = config.get('comparison_protocol') == 'candidate_validation_v1'
+    value = {'scope': 'ADDRESS_COMMON_ENGINEERING_VALIDATION_GATE_DEV' if validation_comparison else
+                     'ADDRESS_REWARD_COST_KNOWN_TASK_DIAGNOSTIC' if cost_diagnostic else
                      'ADDRESS_REWARD_HELDOUT_TASK_PILOT' if reward_comparison else 'ADDRESS_FUNCTIONAL_DEV_STOPPED_BATCH_AUDIT',
         'manifest_sha256': expected_sha, 'scientific_code_commit': auth['scientific_code_commit'],
         'analyzer_sha256': sha(Path(__file__).read_bytes()), 'new_search_by_analyzer': False,
@@ -875,7 +879,8 @@ def address_results(manifest, expected_sha, output=None):
                    for status in ('COMPLETE', 'FAILED_OR_INCOMPLETE', 'NOT_RUN_AFTER_BATCH_STOP')},
         'authorization_consumed_or_closed': True, 'retry_allowed': False,
         'remaining_jobs_require_new_authorization': bool(failed_job),
-        'limits': [('two known design tasks; three within-task seeds; author mode only; observations do not establish a new policy benefit'
+        'limits': [('two known design tasks; seed zero; all versus acceptance_eligible validation in the same binary; common engineering DEV, not a new reward method'
+                    if validation_comparison else 'two known design tasks; three within-task seeds; author mode only; observations do not establish a new policy benefit'
                     if cost_diagnostic else 'four held-out-from-reward-design historical tasks; solver seeds are within-task repeats; no offline training'
                     if reward_comparison else 'single functional DEV, no candidate recovery or learning'),
                    'historical fixed-ID probe times are not paired performance baselines',
@@ -899,6 +904,16 @@ def address_results(manifest, expected_sha, output=None):
                         'soc_first_minus_second': a['final_soc']-b['final_soc'] if complete else None,
                         'makespan_first_minus_second': a['final_makespan']-b['final_makespan'] if complete else None})
         value['paired_contrasts'] = paired
+    if validation_comparison:
+        pairs = []
+        for first, second in zip(rows[::2], rows[1::2]):
+            both = first['status'] == second['status'] == 'COMPLETE'
+            pairs.append({'case': first['case'], 'first': 'all', 'second': 'acceptance_eligible',
+                'statuses': [first['status'], second['status']], 'both_complete': both,
+                'soc_first_minus_second': first['final_soc']-second['final_soc'] if both else None,
+                'makespan_first_minus_second': first['final_makespan']-second['final_makespan'] if both else None,
+                'scope': 'FINAL_QUALITY_AT_COMMON_TOTAL_BUDGET_NOT_EQUAL_WORK_SPEEDUP'})
+        value['paired_contrasts'] = pairs
     write_json(output, value)
     print(json.dumps({'output': str(output), 'sha256': sha(output.read_bytes()),
                       'status': value['status'], 'counts': value['counts'], 'jobs': rows}, indent=2))
