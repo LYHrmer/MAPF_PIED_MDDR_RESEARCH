@@ -1,0 +1,34 @@
+{
+  "schema": "ACTUAL_USER_AUTHORIZATION_RECORD_V1",
+  "batch_id": "address_reward_cost_diagnostic_v1",
+  "user_reply_verbatim": "授权",
+  "user_reply_local_date": "2026-10-24",
+  "context_question_verbatim": "是否授权执行已冻结的两批有限运行？SCI提交e8edaff，清单 tracks/sci/ADDRESS_COST_DIAGNOSTIC.md（/home/lyh/MAPF_SCI_RESEARCH），JSON SHA baf2255d…df3cd：6项，每项总准入≤5秒，各进程CPU≤10秒/512MiB，外层10+2秒。硕士提交76a6a99，清单 tracks/thesis/LOCAL_SCHEDULER_COMPARISON.md（/home/lyh/MAPF_THESIS_RESEARCH），JSON SHA 6c23695d…28630：2项各6臂，每项总准入≤60秒、CPU≤45秒/512MiB，外层62+2秒。均零重试、各批首硬失败即停；不训练、不启动world、不运行旧R16。两批都授权时先SCI后硕士。需确认源于你此前的新科学运行逐批授权要求。",
+  "interpretation": "User authorizes both concrete batches in preceding question; SCI first, thesis second; no prior permission reused.",
+  "recorded_at_utc": "2026-10-23T16:22:00.278791+00:00",
+  "scientific_code_commit": "e8edaff2661d04c38789fa6189f32409f9c85b6b",
+  "manifest_sha256": "baf2255de8838c2d3bc2dc253523693fe78f9e3ceb24a04dad495a1b0aedf3cd",
+  "jobs": [
+    "maze-32-32-2__s05__n32__seed0__author",
+    "random-32-32-10__s05__n32__seed0__author",
+    "maze-32-32-2__s05__n32__seed1__author",
+    "random-32-32-10__s05__n32__seed1__author",
+    "maze-32-32-2__s05__n32__seed2__author",
+    "random-32-32-10__s05__n32__seed2__author"
+  ],
+  "limits": {
+    "external_final_reserve_s": 1,
+    "inner_final_reserve_s": 1,
+    "native_cpu_reserve_s": 1,
+    "native_cpu_s": 10,
+    "per_process_as_mib": 512,
+    "total_wall_s": 5,
+    "worker_cpu_s": 10
+  },
+  "retry": 0,
+  "stop_batch_on_first_hard_failure": true,
+  "training": false,
+  "world": false,
+  "old_R16_excluded": true,
+  "authorization_reference": "2026-10-24 current conversation user reply 授权 to the frozen SCI6 plus thesis2 request"
+}
