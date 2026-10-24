@@ -1,12 +1,12 @@
 # 两线最新进度
 
-2026-10-25。唯一当前决定：[docs/RESEARCH_PLAN.md](docs/RESEARCH_PLAN.md)。本轮完成SCI共同预算执行版本与硕士运动目标接纳器，仅做实现、编译和软件核验，没有新科学运行。旧SCI4项门控、6项费用、36项奖励及硕士12臂调度比较均已完成且许可消费；旧R16误差两项仍未运行。两线仍为候选验证阶段，后段恢复停止，无训练或world。
+2026-10-25。唯一当前决定：[docs/RESEARCH_PLAN.md](docs/RESEARCH_PLAN.md)。本轮真实运行了SCI四项合同功能验证和十二项配对收益DEV，全部合法完成；硕士maze32初始认证在20秒软截止前未完成，random依规未运行。各批零重试，许可已消费或关闭。旧证据不变，无训练、world或旧R16误差运行。
 
 ## 当前交付
 
-**SCI实现完成，科学验证待授权：** [34a80e3共同预算合同](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/34a80e37034ef47608d609195070e6d4b34a23e9/tracks/sci/ADDRESS_BUDGET.md#共同预算执行合同实现完成科学验证待授权)增加显式`search_then_admission`，局部期限只管搜索，认证/作者更新/提交仍受全局wall/CPU和收尾保留约束。搜索截尾不可被释放局部期限“复活”；默认legacy/all及作者奖励语义保留。两合同可启用相同的真实后验、邻域/修复顺序、计划指纹/版本和搜索返回剩余预算记录。57项软件测试、完整编译/help、独立人工截止复核通过；46份旧账本共26,937事件的历史摘要逐项一致。新观测协议首版限author模式且车辆数大于8，不把绕过种子选择的整组捷径伪造为学习选择。没有新科学清单或任务结果；不能据此解释旧maze退化或声称加速。
+**SCI实际行为与收益DEV已完成：** [四项功能结果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/4fcf289347bcf8f93410e61ae15cf2b1bb37e3fa/tracks/sci/ADDRESS_SHARED_BUDGET_RESULT.md)（科学代码`08c3899`）确认迷宫旧合同有30次完整搜索后因局部认证期限到期回滚，新合同有7次认证越过原局部余量后提交。随后[十二项收益结果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/b4372b18c679cd7ce9bbe4ce6307a7bfe90dfaab/tracks/sci/ADDRESS_SHARED_BUDGET_GAIN_RESULT.md)（科学代码`f8539a1`）固定同两任务、seed1/2/3和同一二进制/author/all/观测/总预算。maze三对SOC改善42/39/43步，makespan增加4/2/4步；random三对均749/48且配对方案相同。没有触发预定SOC方向反转停止条件，但只有两个已知任务，不能算六个独立任务或新学习算法证据。全部费用和退化保留，旧无观测结果不作计时对照。新合同作为共同工程基座继续验证；默认legacy/all尚未自动切换，后续算法对照须共用最终选定合同。16项原始账本/完整路径与费用均经独立核验。
 
-**硕士实现完成，科学验证待授权：** [34d0cac运动接纳器](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/34d0cacc835d50c4b77254df6e18240ccf9de895/tracks/thesis/MOTION_ACCEPTANCE.md)接入现有任务worker。先认证初解；对给定完整候选，以同一MOVE/TURN/WAIT原语的无交互时间和作下界，仅对可能降低完成时间之和者构造局部日程并完整检查。证书有效、目标严格下降且未超时才原子提交；超时/不可接纳保留已认证方案，内部异常明确失败。29项软件测试和5项独立人工边界检查通过。新锁引用SCI`f9c651a`的10个冻结输入/结果对象，校验器、预算和监督器仍固定`535ee1a`；没有复制优化器或运行新ADDRESS。32车初始运动认证费用未知，当前manifest只是输入接口提案，不能称可运行科学清单；先准备单独的初始认证预算核验，再比较全量评估与下界筛选。现阶段只选择已提供候选，不是运动目标路径搜索器。
+**硕士初始认证预算验证未通过：** [实际失败与诊断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/57ed998260ec72490d4ffd9f60bc95dfda227f42/tracks/thesis/INITIAL_CERTIFICATION_RESULT.md)（科学代码`1e74ba0`）记录maze32初始事务20.000031466秒协作截止，其中依赖建图19.975115149秒；总准入20.221497115秒，未触硬杀，未进入完整连续几何认证。没有证书、可执行日程或安全回退；random未运行，未开展候选收益比较。2,000个原动作块对应完整全对枚举1,999,000对，这只是输入/控制流计数，实际已处理对数未知。下一项明确为同语义的依赖候选索引：当前单位四邻域/等待及`4r²<cell²`下，按共享端点枚举跨车块对，再按原顺序走精确判定，条件不满足回退全对；完整连续检查保留。该规则尚未实现/计时，不延长旧20秒或补跑已关闭批次。新候选锁仍为SCI`f9c651a`，基础validator/budget/supervisor仍为`535ee1a`。
 
 **最新结果：** SCI [65d7211费用诊断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/65d72115437c96e0b64c81535e72c00f50e027d7/tracks/sci/ADDRESS_COST_RESULT.md)固定科学代码`e8edaff`：6项全部合法返回，1893事件闭合。random校验占selection79.41%，其中99.42%用于已COST_STOP的不能接纳候选；maze校验只占8.99%，且搜索/校验均可先触发截止。它定位的是项目奖励覆盖层的共同工程冗余，不能归为作者原版ADDRESS或算法创新。按此实测结果落实下述单一工程改动；奖励和训练暂不改。
 
@@ -24,8 +24,8 @@ SCI [13d4749结果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/13d4
 
 | 研究线 | 已完成 | 下一项与边界 |
 |---|---|---|
-| SCI：有限总预算内分配局部重规划机会 | 旧科学结果冻结；共同预算合同及真实执行观测实现完成 | 先固定同观测、同认证策略的预算合同功能比较；任务质量与等工作量费用分开，不把总限时被继续搜索用满算作无加速，也不凭修复数称收益 |
-| 硕士：同一优化器的运动与误差扩展 | 旧运动/调度结果冻结；运动目标接纳器与下界筛选实现完成 | 先核实32车初始认证的预算可行性，再比较相同候选下全量评估/下界筛选；没有认证初解即失败，不静默放宽预算；R16误差另行处理 |
+| SCI：有限总预算内分配局部重规划机会 | 4项功能＋12项收益DEV完成；maze跨seed改善SOC但makespan退化，random零差异 | 固定共同预算基座，在新任务上检查适用边界；独立算法增量仍待，不自动加seed、奖励或训练 |
+| 硕士：同一优化器的运动与误差扩展 | 初始认证到期且无证书，random依规未运行；已定位依赖建图瓶颈 | 先实现带适用条件和回退的端点候选索引、核对等价性，再另定限额验证；收益比较暂缓 |
 
 SCI[正延迟初始种子结果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/fde3409c17b9de68691f9233161cc2dcca03dbef/tracks/sci/ADDRESS_SEED_RESULT.md)：科学代码`93af30f`，两份开发任务、单seed、两种策略与两种预算口径，共8项完整合法输出。固定总预算下maze最终SOC由对照1847降至1801，同时makespan由129增至131；random两臂SOC均771，更多修复没有转化为质量收益。固定次数random对照只完成4/16次并在CPU软截止返回，不能算相同16次加速比。零延迟车辆仍可作为邻域成员；筛选至输出全部计费，规则改变随机分布。random32中正延迟候选仅一辆，不能作为继续训练种子排序的依据。完整数值、截尾和独立审计统一见报告；这是朴素强对照，非独立创新。
 

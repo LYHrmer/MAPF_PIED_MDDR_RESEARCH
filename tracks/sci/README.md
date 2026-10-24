@@ -1,8 +1,8 @@
 # SCI MAPF 支线索引
 
-工作树`/home/lyh/MAPF_SCI_RESEARCH`，分支`research/sci-mapf`。main只维护索引；当前实现与明细见[本线入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/34a80e37034ef47608d609195070e6d4b34a23e9/tracks/sci/README.md)。
+工作树`/home/lyh/MAPF_SCI_RESEARCH`，分支`research/sci-mapf`。main只维护索引；当前实现与明细见[本线入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/b4372b18c679cd7ce9bbe4ce6307a7bfe90dfaab/tracks/sci/README.md)。
 
-2026-10-25[共同预算执行版本](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/34a80e37034ef47608d609195070e6d4b34a23e9/tracks/sci/ADDRESS_BUDGET.md#共同预算执行合同实现完成科学验证待授权)已完成：显式分开局部搜索和全局认证/提交期限，并补真实学习更新、计划身份和剩余预算观测。软件核验与编译通过，默认legacy/all保留；新协议首版限author模式、车辆数大于8。科学功能与收益尚未比较，没有新增运行许可；详细边界统一见报告。
+2026-10-25已完成[四项预算合同功能验证](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/4fcf289347bcf8f93410e61ae15cf2b1bb37e3fa/tracks/sci/ADDRESS_SHARED_BUDGET_RESULT.md)及[十二项配对收益DEV](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/b4372b18c679cd7ce9bbe4ce6307a7bfe90dfaab/tracks/sci/ADDRESS_SHARED_BUDGET_GAIN_RESULT.md)。maze三个新seed分别降低SOC 42/39/43，makespan增加4/2/4；random三对均无质量差异。两任务均为已知开发材料，工程作用已观察到，泛化与独立算法贡献仍待；全部费用和退化保留。各批零重试、许可消费，默认legacy/all未自动切换。
 
 问题是给定合法初解，在有限总计算预算内改善MAPF路径质量。以ADDRESS为实现主干，BALANCE/TACKLE提供针对性参考，确需神经表示时再看NNS。后段恢复候选保持停止；正延迟初始种子规则已完成八项开发对照，保留为朴素强对照，不把必要条件或共同工程优化称为创新。当前已完成四个未参与本轮设计的历史完整任务和多seed三模式比较，未建立稳定质量优势；不把旧random的单一正延迟候选作为种子排序训练依据。
 
@@ -17,4 +17,4 @@
 
 算法只在SCI维护，硕士引用固定版本。学习保留条件，不重启旧查询、L20/L21或零余量材料训练。总研究决定见[main计划](../../docs/RESEARCH_PLAN.md)。
 
-当前[36项结果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/13d4749d8ecc12cefba4c2de72d96dc4c84105b0/tracks/sci/ADDRESS_REWARD_RESULT.md)全部完成但无稳定质量优势，已停止扩大该候选。随后6项费用诊断定位到项目适配层冗余认证；最新[4项接纳门控结果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/f9c651ad0680679cf99a4973f722b65fd6f7aa97/tracks/sci/ADDRESS_VALIDATION_RESULT.md)已按授权完成、零重试、许可消费。候选校验减少，maze最终SOC却退化23，random持平且完整准入略增；未建立完整加速或质量优势，默认all保留。原清单邻域参数8被误写为硬上限，实际出现9，偏差单列。原始日志、全部费用和退化原样保存，不因这项工程变化启动学习。
+历史[36项结果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/13d4749d8ecc12cefba4c2de72d96dc4c84105b0/tracks/sci/ADDRESS_REWARD_RESULT.md)全部完成但无稳定质量优势，已停止扩大该候选。随后6项费用诊断定位到项目适配层冗余认证；此前[4项接纳门控结果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/f9c651ad0680679cf99a4973f722b65fd6f7aa97/tracks/sci/ADDRESS_VALIDATION_RESULT.md)已按授权完成、零重试、许可消费。候选校验减少，maze最终SOC却退化23，random持平且完整准入略增；未建立完整加速或质量优势，默认all保留。原清单邻域参数8被误写为硬上限，实际出现9，偏差单列。原始日志、全部费用和退化原样保存，不因这项工程变化启动学习。
