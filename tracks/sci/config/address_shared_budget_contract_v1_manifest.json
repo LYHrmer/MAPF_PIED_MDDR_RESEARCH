@@ -1,0 +1,160 @@
+{
+  "attempt_trace": false,
+  "authorization": "PENDING_USER",
+  "authorization_record_rule": "Record the new direct user validation instruction. The four jobs and resource ceilings are the implementation scope selected under that instruction, not a verbatim itemized user approval. No old authorization is reused; this manifest is not authorization.",
+  "batch_id": "address_shared_budget_contract_v1",
+  "binary": ".address_reward_build/shared_budget_v1_r2/build/address",
+  "binary_sha256": "8a9a8226eafc47894ae25a9fe2ae34615d8c790e29819dcb5dd5377d36724da3",
+  "build_receipt": "shared_budget_build_receipt.json",
+  "build_source_sha256": {
+    "address_adapter.py": "7bd6ee6e969cb27414626289398b657f0b9ad7398903c9ab16cc76a5fcc00632",
+    "address_adapter_support.h": "8d9fbea2048eac1245df4d743580f994a23f2cb4d48089e9575de2508be94bc2",
+    "address_budget.py": "54657e47cffeaf279f043c179ff3188323d7e70ff2ccf9d8811c5285955e18b7",
+    "address_budget_support.h": "3a91ae1441ec377dd4ddb1c701163793ea0e93b45052ee658d0d8a64ac7603a6",
+    "address_loop_guard.py": "e533545391e86aaac0b1c057c14eee398c5dd46343a1b677d355087df1c4b8df",
+    "address_reward.py": "a0d6b84519b58a9c12f90658814cce0c9d7b28ce867eb6ba5e8d3e58cc22231b",
+    "address_reward_support.h": "ae8c242ca8d9ef1bdc2f77d147572bb24fa7353bb746bb7ec8ce6e3e1e4158db",
+    "build_address_full.py": "03fb0240b63a69ef57bf81d81f3db59365016fb3a4277e4d8720740859cdb731"
+  },
+  "code_sha256": {
+    "address_backend.py": "04cabeaf78f0425a6c9835d6c3e5eb2ee53fb2a1f63db907c456bbbbba94fd84",
+    "pp_repair.py": "f6a64ddee77c5a6d15659bf69fff5d3b75fc9ca936d2b4a46942d3f7467ea782",
+    "repair_profile.py": "5b9f01f1a051f2e12e980b9bd97ee5f89a0e1e9f1b3a6126a545e43b233267db",
+    "reward_analysis.py": "665de76a671d912d3a7435d8b8890c164a4688387b6521bfa32f54b527cfd6b7",
+    "run_address_adapter.py": "164cc6b777d796b90315cc62e9a452ae9ab64ec09f9836f10f08fdf32dddd6ce",
+    "run_repair_dev.py": "fc9573e1f1f55a890b93b717fe082eb7beedb69f33d731988ef68709781be29e",
+    "shared_budget_build_receipt.json": "4e022cb6868dd28059c7570050ccc7b6a027d80eb3b66a2a860901435f677ebd"
+  },
+  "comparison_protocol": "shared_budget_v1",
+  "contrasts": [
+    [
+      "legacy",
+      "search_then_admission"
+    ]
+  ],
+  "cost_diagnostics": true,
+  "decision_rule": "Validate explicit local search/global admission behavior and complete accounting first. No retry, cap widening, reward change, gate change, extra seed or training. If required real cutoff is unobserved, record NOT_EXERCISED rather than claim validation or add runs. Fixed wall need not decrease; quality values are descriptive only.",
+  "evidence_scope": "SHARED_BUDGET_CONTRACT_FUNCTIONAL_DEV_NOT_BENEFIT_STUDY",
+  "execution_observations": true,
+  "execution_state_at_preparation": "NOT_STARTED_ROOT_COORDINATED",
+  "external_command_guard": {
+    "kill_grace_s": 2,
+    "required": true,
+    "term_after_s": 10,
+    "tool": "timeout"
+  },
+  "fixed_author_neighbor_size_parameter": 8,
+  "historical_uninstrumented_runs_are_not_paired_speed_baselines": true,
+  "input_file": "address_reward_holdout_v1_inputs.json",
+  "input_sha256": "660b7bc4b4282db1feedd373a9220dc98638c18bcb835123aff448c83eadcf3e",
+  "job_count_and_limits_source": "MINIMAL_IMPLEMENTATION_SCOPE_UNDER_NEW_DIRECT_VALIDATION_INSTRUCTION",
+  "jobs": [
+    {
+      "candidate_validation_policy": "all",
+      "case": "maze-32-32-2__s05__n32",
+      "effort_mode": "total_budget",
+      "id": "maze-32-32-2__s05__n32__seed0__legacy",
+      "iterations": 0,
+      "repair_budget_contract": "legacy",
+      "reward_memory": "author",
+      "reward_window": 0,
+      "seed": 0,
+      "seed_admission": "positive_delay",
+      "top_k": 32
+    },
+    {
+      "candidate_validation_policy": "all",
+      "case": "maze-32-32-2__s05__n32",
+      "effort_mode": "total_budget",
+      "id": "maze-32-32-2__s05__n32__seed0__search_then_admission",
+      "iterations": 0,
+      "repair_budget_contract": "search_then_admission",
+      "reward_memory": "author",
+      "reward_window": 0,
+      "seed": 0,
+      "seed_admission": "positive_delay",
+      "top_k": 32
+    },
+    {
+      "candidate_validation_policy": "all",
+      "case": "random-32-32-10__s05__n32",
+      "effort_mode": "total_budget",
+      "id": "random-32-32-10__s05__n32__seed0__legacy",
+      "iterations": 0,
+      "repair_budget_contract": "legacy",
+      "reward_memory": "author",
+      "reward_window": 0,
+      "seed": 0,
+      "seed_admission": "positive_delay",
+      "top_k": 32
+    },
+    {
+      "candidate_validation_policy": "all",
+      "case": "random-32-32-10__s05__n32",
+      "effort_mode": "total_budget",
+      "id": "random-32-32-10__s05__n32__seed0__search_then_admission",
+      "iterations": 0,
+      "repair_budget_contract": "search_then_admission",
+      "reward_memory": "author",
+      "reward_window": 0,
+      "seed": 0,
+      "seed_admission": "positive_delay",
+      "top_k": 32
+    }
+  ],
+  "limits": {
+    "external_final_reserve_s": 1,
+    "inner_final_reserve_s": 1,
+    "native_cpu_reserve_s": 1,
+    "native_cpu_s": 10,
+    "per_process_as_mib": 512,
+    "total_wall_s": 5,
+    "worker_cpu_s": 10
+  },
+  "matched_factors": [
+    "initial_plan",
+    "solver_seed",
+    "binary",
+    "author_reward",
+    "positive_delay_seed_rule",
+    "candidateValidation_all",
+    "execution_observations",
+    "total_wall_cpu_memory",
+    "local_search_fraction_1_over_100",
+    "PP_SIPP",
+    "cache",
+    "final_validation"
+  ],
+  "maximum_sum_external_guard_wall_s": 48,
+  "maximum_total_success_admission_wall_s": 20,
+  "neighbor_size_is_not_a_hard_membership_cap": true,
+  "new_initial_search": false,
+  "new_reward_policy": false,
+  "new_selection_policy": false,
+  "number_of_known_task_instances": 2,
+  "offline_coverage_projection_added_after_runtime_base": true,
+  "phase_profile": false,
+  "previous_authorization_reusable": false,
+  "primary_endpoint": "budget_contract_behavior_complete_legal_output_and_one_settlement_per_selection",
+  "retry": 0,
+  "schema": "address_common_initial_dev_v1",
+  "scientific_runtime_base_commit": "34a80e37034ef47608d609195070e6d4b34a23e9",
+  "secondary_endpoints": [
+    "search_vs_admission_deadline_observations",
+    "actual_author_posterior_updates",
+    "candidate_certification_commit_rollback_and_plan_identity",
+    "full_cost_including_observations_and_output",
+    "final_SOC_and_makespan_are_descriptive_not_independent_benefit_evidence"
+  ],
+  "selection_instrumentation_charged_to_existing_budget": true,
+  "stop_batch_on_any_failure": true,
+  "tasks_are_known_design_data": true,
+  "training": false,
+  "unobserved_trigger_status": "NOT_EXERCISED",
+  "user_instruction_verbatim": "验证SCI新旧预算合同的实际行为，以及硕士初始认证的预算可行性，再开展收益比较",
+  "variant": "reward_contract",
+  "within_task_solver_seeds": [
+    0
+  ],
+  "world": false
+}

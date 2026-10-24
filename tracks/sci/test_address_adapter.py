@@ -18,6 +18,36 @@ from reward_analysis import (diagnose_legacy, verify_reward_trace, committed_mag
 
 
 class AdapterContracts(unittest.TestCase):
+    def test_shared_budget_coverage_uses_validation_not_settlement_crossing(self):
+        import copy
+        from repair_profile import shared_budget_coverage
+        row=dict(selection_id=1,censored=False,accepted=True,global_deadline=False,candidate_validated=True,
+            fresh_paths=2,group_size=2,execution_observations=dict(repair_budget_contract='search_then_admission',
+                search_return=dict(search_censored=False,local_deadline_observed=False,
+                    global_deadline_observed=False,local_remaining_wall_ns=10),
+                plan_identity=dict(revision_before=0,revision_after=1,before_sha1='old',after_sha1='new')),
+            cost_diagnostics=dict(remaining_at_search_return=0,first_observed_local_deadline=None,
+                candidate_validation_wall_ns=13,post_search_through_settlement_wall_ns=100))
+        def result(value,contract='search_then_admission'):return shared_budget_coverage([value],contract)['coverage']
+        self.assertEqual(result(row)['common_commit_proven_beyond_local_margin']['status'],'EXERCISED')
+        for duration in (1,10,12):
+            changed=copy.deepcopy(row);changed['cost_diagnostics']['candidate_validation_wall_ns']=duration
+            self.assertEqual(result(changed)['common_commit_proven_beyond_local_margin']['status'],'NOT_EXERCISED')
+        cutoff=copy.deepcopy(row);cutoff.update(censored=True,accepted=False,global_deadline=True)
+        cutoff['execution_observations']['plan_identity'].update(revision_after=0,after_sha1='old')
+        self.assertEqual(result(cutoff)['validated_then_global_cutoff_rollback']['status'],'EXERCISED')
+        cutoff['execution_observations']['plan_identity']['revision_after']=1
+        with self.assertRaises(ValueError):result(cutoff)
+        legacy=copy.deepcopy(row);legacy.update(censored=True,accepted=False,candidate_validated=False)
+        legacy['execution_observations']['repair_budget_contract']='legacy'
+        legacy['execution_observations']['plan_identity'].update(revision_after=0,after_sha1='old')
+        legacy['cost_diagnostics']['first_observed_local_deadline']=dict(stage='REWARD_VALIDATION_JOINT',
+            global_wall_limit_ns=100,observed_wall_ns=20,global_cpu_limit_ns=100,observed_cpu_ns=10,
+            global_wall_triggered=False,global_cpu_triggered=False)
+        self.assertEqual(result(legacy,'legacy')['legacy_admission_local_cutoff_global_remaining']['status'],'EXERCISED')
+        legacy['cost_diagnostics']['first_observed_local_deadline']['stage']='PRIMARY_DONE'
+        self.assertEqual(result(legacy,'legacy')['legacy_admission_local_cutoff_global_remaining']['status'],'NOT_EXERCISED')
+
     def test_shared_budget_protocol_keeps_observations_and_policy_explicit(self):
         config=dict(variant='reward_contract',comparison_protocol='shared_budget_v1',
                     cost_diagnostics=True,execution_observations=True)

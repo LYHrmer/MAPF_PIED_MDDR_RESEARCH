@@ -723,6 +723,73 @@ def prepare_reward_comparison():
                       'tasks': len(cases), 'scientific_search_executed': False}))
 
 
+def shared_budget_coverage(rows, contract):
+    """Project already-verified events; no search or counterfactual replay.
+
+    Validation duration starts after search_return. Exceeding its nonnegative
+    local margin by >2 ns is a sufficient (not necessary) crossing witness;
+    the guard avoids promoting integer-ns rounding into coverage.
+    """
+    if contract not in ('legacy', 'search_then_admission'):
+        raise ValueError('unknown shared budget contract')
+    common = contract == 'search_then_admission'
+    witnesses = {key: [] for key in ('search_local_cutoff_rollback', 'search_global_cutoff_rollback',
+        'global_cutoff_rollback', 'validated_then_global_cutoff_rollback',
+        'normal_complete_search_validated', 'normal_complete_search_committed',
+        'legacy_admission_local_cutoff_global_remaining',
+        'common_validation_proven_beyond_local_margin', 'common_commit_proven_beyond_local_margin')}
+    unproven = 0
+    for row in rows:
+        o, d = row['execution_observations'], row['cost_diagnostics']
+        if o['repair_budget_contract'] != contract:
+            raise ValueError('coverage contract differs from verified event')
+        search, identity = o['search_return'], o['plan_identity']
+        def mark(key): witnesses[key].append(row['selection_id'])
+        if row['censored']:
+            if (row['accepted'] or identity['revision_after'] != identity['revision_before'] or
+                    identity['after_sha1'] != identity['before_sha1']):
+                raise ValueError('cutoff changed committed plan')
+        if row['global_deadline']:
+            mark('global_cutoff_rollback')
+            if row['candidate_validated']: mark('validated_then_global_cutoff_rollback')
+        if search is None:
+            continue
+        if search['local_deadline_observed']: mark('search_local_cutoff_rollback')
+        if search['global_deadline_observed']: mark('search_global_cutoff_rollback')
+        complete = (not search['search_censored'] and row['fresh_paths'] == row['group_size'] > 0
+                    and d['remaining_at_search_return'] == 0)
+        if not complete:
+            continue
+        if row['candidate_validated']: mark('normal_complete_search_validated')
+        if row['accepted']: mark('normal_complete_search_committed')
+        local = d['first_observed_local_deadline']
+        if (not common and local is not None and
+                (local['stage'].startswith('REWARD_VALIDATION') or local['stage'] == 'ACCEPT') and
+                local['global_wall_limit_ns'] > local['observed_wall_ns'] + 2 and
+                local['global_cpu_limit_ns'] > local['observed_cpu_ns'] + 2 and
+                not local['global_wall_triggered'] and not local['global_cpu_triggered']):
+            mark('legacy_admission_local_cutoff_global_remaining')
+        if common and row['candidate_validated']:
+            margin = search['local_remaining_wall_ns']
+            proven = margin >= 0 and d['candidate_validation_wall_ns'] > margin + 2
+            if proven:
+                mark('common_validation_proven_beyond_local_margin')
+                if row['accepted']: mark('common_commit_proven_beyond_local_margin')
+            else:
+                unproven += 1
+    def summarize(key, ids):
+        applicable = not ((common and key.startswith('legacy_')) or (not common and key.startswith('common_')))
+        return dict(status=('NOT_APPLICABLE' if not applicable else 'EXERCISED' if ids else 'NOT_EXERCISED'),
+                    count=len(ids),example_selection_ids=ids[:8])
+    return dict(schema='ADDRESS_SHARED_BUDGET_FUNCTIONAL_COVERAGE_V1',repair_budget_contract=contract,
+        coverage={key: summarize(key, ids) for key, ids in witnesses.items()},
+        common_validated_events_without_direct_crossing_proof=unproven,
+        unproven_event_interpretation='UNKNOWN_NOT_EVIDENCE_OF_NO_CROSSING',
+        cutoff_rejection_identity_checked=True,rounding_guard_ns=2,
+        settlement_time_not_used_as_commit_time=True,between_run_candidate_identity_assumed=False,
+        evidence_scope='KNOWN_TASK_SINGLE_SEED_FUNCTIONAL_NOT_BENEFIT_COMPARISON')
+
+
 def address_results(manifest, expected_sha, output=None):
     """Audit the completed/stopped ADDRESS batch; never launch or retry a job."""
     manifest = manifest.resolve()
@@ -860,6 +927,9 @@ def address_results(manifest, expected_sha, output=None):
                     row['candidate_validation_policy'] = job['candidate_validation_policy']
                 if config.get('comparison_protocol') == 'shared_budget_v1':
                     row['repair_budget_contract'] = job['repair_budget_contract']
+                    row['functional_coverage'] = shared_budget_coverage(
+                        [json.loads(line) for line in (folder/'rewards.jsonl').read_bytes().splitlines()],
+                        job['repair_budget_contract'])
         elif receipt['status'] == 'FAILED_OR_INCOMPLETE':
             failed_job = job['id']
             row['reason'] = result.get('reason', 'missing success validation')
