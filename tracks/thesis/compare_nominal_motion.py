@@ -1,4 +1,4 @@
-"""Three whole-plan motion controls; scientific runs require separate user authority.
+"""Whole-plan motion controls and objective acceptance; runs require user authority.
 
 Inspect checks frozen bytes only. Run consumes one exclusive case directory and
 uses the existing fixed SCI supervisor; no solver, training or world is started.
@@ -20,6 +20,12 @@ import plan_selection as selection
 HERE = Path(__file__).resolve().parent
 SCHEMA = 'thesis_nominal_comparison_v1'
 SCHEDULER_SCHEMA = 'thesis_scheduler_comparison_v1'
+ACCEPTANCE_SCHEMA = 'thesis_motion_acceptance_v1'
+ADDRESS_CANDIDATE_COMMIT = 'f9c651ad0680679cf99a4973f722b65fd6f7aa97'
+ACCEPTANCE_CASES = ('maze-32-32-2__s05__n32', 'random-32-32-10__s05__n32')
+ACCEPTANCE_ARMS = ('full_recompute', 'primitive_lower_bound')
+ACCEPTANCE_ARM_WALL_S = 20
+ACCEPTANCE_ARM_OUTPUT_RESERVE_S = 2
 ARMS = ('original', 'frozen_soc', 'turn_aware')
 SCHEDULERS = ('global_barrier', 'local_dependency')
 SCHEDULER_CASES = ('maze-32-32-2__s01__n16', 'random-32-32-10__s01__n16')
@@ -27,6 +33,9 @@ SCHEDULER_ARMS = tuple(a+'__'+s for a in ARMS for s in SCHEDULERS)
 RUNTIME = {'compare_nominal_motion.py', 'nominal_motion.py', 'plan_selection.py',
            'inspect_sci_paths.py', 'export_frozen_trace.py', 'sci.lock.json',
            'shared.lock.json', 'plan_selection.lock.json'}
+ACCEPTANCE_RUNTIME = {'compare_nominal_motion.py', 'nominal_motion.py', 'plan_selection.py',
+    'export_frozen_trace.py', 'shared.lock.json', 'plan_selection.lock.json',
+    'local_scheduler.py', 'motion_acceptance.lock.json'}
 LIMITS = {'total_admission_wall_s': 60, 'final_artifact_reserve_s': 2,
           'worker_cpu_s': 45, 'worker_as_mib': 512, 'per_file_mib': 16,
           'outer_term_s': 62, 'outer_kill_after_s': 2}
@@ -55,10 +64,86 @@ def write_json(path, value):
         os.fsync(stream.fileno())
 
 
+def load_acceptance(config, repo):
+    """Byte-only fixed ADDRESS input/output adapter; does not build a schedule."""
+    require(config['authorization'] == 'PENDING_USER'
+            and config['limits'] == LIMITS and config['retries'] == 0
+            and config['stop_batch_on_failure'] is True
+            and config['sufficient_geometry_rejection_is_retained_result'] is True
+            and config['old_authorization_reusable'] is False
+            and all(config[k] is False for k in ('new_world', 'training', 'optimizer_search')),
+            'fixed motion-acceptance budget and proposal scope required')
+    require(config['candidate_sci_commit'] == ADDRESS_CANDIDATE_COMMIT
+            and config['sci_commit'] == selection.SCI
+            and config['source_family'] == 'FROZEN_ADDRESS_CANDIDATES_NO_NEW_SEARCH'
+            and config['cases'] == list(ACCEPTANCE_CASES)
+            and config['arms'] == list(ACCEPTANCE_ARMS)
+            and config['arm_evaluation_wall_s'] == ACCEPTANCE_ARM_WALL_S
+            and config['arm_output_reserve_s'] == ACCEPTANCE_ARM_OUTPUT_RESERVE_S
+            and config['candidate_order'] == ['all', 'acceptance_eligible']
+            and config['initial_heading_quarters'] == 0
+            and type(config['initial_heading_quarters']) is int,
+            'fixed source, candidate order, motion arms and per-arm budget required')
+    require(re.fullmatch('[a-zA-Z0-9_-]+', config['batch_id']) is not None,
+            'local batch id required')
+    require(set(config['runtime_sha256']) == ACCEPTANCE_RUNTIME, 'incomplete acceptance runtime pins')
+    for name, digest in config['runtime_sha256'].items():
+        require(Path(name).name == name and sha((HERE/name).read_bytes()) == digest,
+                'runtime/lock changed: '+name)
+    motion.MotionModel(**config['motion_model'])
+    exporter = selection._local('_motion_acceptance_export', 'export_frozen_trace.py')
+    reader = exporter.load_reader(repo, read_json(HERE/'shared.lock.json'))
+    lock = read_json(HERE/'motion_acceptance.lock.json')
+    require(lock['schema'] == 'thesis_frozen_address_motion_candidates_v1'
+            and lock['commit'] == ADDRESS_CANDIDATE_COMMIT and len(lock['entries']) == 10
+            and lock['cases'] == list(ACCEPTANCE_CASES)
+            and lock['candidate_order'] == config['candidate_order']
+            and all(p['commit'] == ADDRESS_CANDIDATE_COMMIT for p in lock['entries'].values()),
+            'unexpected ADDRESS candidate lock')
+    blobs = {key: reader.read_blob(repo, pin) for key, pin in lock['entries'].items()}
+    require(sha(blobs['inputs']) == config['input_sha256'], 'frozen ADDRESS input SHA mismatch')
+    inputs, summary = json.loads(blobs['inputs']), json.loads(blobs['summary'])
+    cases, sources = {}, {}
+    for name in ACCEPTANCE_CASES:
+        case = next(c for c in inputs['cases'] if c['id'] == name)
+        candidates, costs = [], {}
+        for mode in config['candidate_order']:
+            job = name+'__seed0__'+mode
+            result, receipt = (json.loads(blobs[job+suffix]) for suffix in ('_result', '_receipt'))
+            row = next(r for r in summary['jobs'] if r['job'] == job)
+            require(row['status'] == receipt['status'] == result['status'] == 'COMPLETE'
+                    and result['final_validated'] is True and result['case'] == name
+                    and receipt['manifest_sha256'] == result['manifest_sha256'] == summary['manifest_sha256']
+                    and row['receipt_sha256'] == sha(blobs[job+'_receipt'])
+                    and receipt['artifacts']['result.json']['sha256'] == sha(blobs[job+'_result']),
+                    'frozen ADDRESS result/receipt identity mismatch')
+            require(sum(len(p)-1 for p in result['final_paths'].values()) == result['final_soc']
+                    and sum(len(p)-1 for p in case['paths'].values()) == result['initial_soc'],
+                    'frozen ADDRESS path costs mismatch')
+            candidates.append(dict(label=mode, paths=result['final_paths'],
+                source_result=lock['entries'][job+'_result'], source_receipt=lock['entries'][job+'_receipt']))
+            costs[mode] = receipt.get('costs', receipt.get('worker_costs'))
+        cases[name] = case
+        sources[name] = dict(candidates=candidates, prior_optimizer_costs_not_new_run=costs,
+            candidate_sci_commit=ADDRESS_CANDIDATE_COMMIT,
+            source_protocol_deviation=lock['source_protocol_deviation'],
+            input_pin=lock['entries']['inputs'], summary_pin=lock['entries']['summary'])
+    pin = config['supervisor_pin']
+    require(pin['commit'] == selection.SCI and pin['path'] == 'tracks/sci/run_repair_dev.py',
+            'unexpected fixed supervisor source')
+    raw = reader.read_blob(repo, pin)
+    supervisor = types.ModuleType('_motion_acceptance_fixed_supervisor')
+    supervisor.__file__ = pin['commit']+':'+pin['path']
+    exec(compile(raw, supervisor.__file__, 'exec'), supervisor.__dict__)
+    return config, cases, sources, supervisor
+
+
 def load(manifest, expected_sha, repo):
     raw = Path(manifest).read_bytes()
     require(sha(raw) == expected_sha, 'manifest SHA mismatch')
     config = json.loads(raw)
+    if config.get('schema') == ACCEPTANCE_SCHEMA:
+        return load_acceptance(config, repo)
     if config.get('schema') == 'thesis_v2_pair_v1':
         from v2_motion_inputs import load_pair
         return load_pair(config, repo)
@@ -252,7 +337,105 @@ def compare_plans(problem, initial, optimized, model, headings, emit=None, *, sc
                        'No unmodeled per-robot timing delays, tracking disturbance or feedback controller.']}
 
 
+def evaluate_motion_candidates(problem, initial, candidates, model, headings, *, budget,
+                               expired_exception, use_lower_bound):
+    """One real transaction path, used by the scientific worker and fixtures."""
+    selector = selection.MotionPlanSelector(problem, initial, model, headings,
+        budget=budget, expired_exception=expired_exception)
+    initial_snapshot = selector.snapshot()
+    attempts, status = [], 'COMPLETE'
+    for index, candidate in enumerate(candidates):
+        result = selector.consider(candidate['paths'], label=candidate['label'],
+                                   use_lower_bound=use_lower_bound)
+        attempts.append(result)
+        if result['status'] in ('BUDGET_CENSORED', 'IMPLEMENTATION_FAILED'):
+            if result['status'] == 'IMPLEMENTATION_FAILED':
+                status = 'FAILED'
+            for later in candidates[index+1:]:
+                attempts.append(dict(label=later['label'], status='NOT_ATTEMPTED_AFTER_STOP'))
+            break
+    final = selector.snapshot()
+    return dict(status=status, initial=initial_snapshot, final=final, attempts=attempts,
+        objective='EXACT_SUM_COMPLETION_TIMES_LOCAL_DEPENDENCY',
+        selected_within_supplied_set_only=True, optimizer_called=False,
+        budget_stage_wall_ns=dict(budget.stage_wall_ns), budget_stage_cpu_ns=dict(budget.stage_cpu_ns),
+        cpu_budget_enforcement='OUTER_PROCESS_RLIMIT_ONLY_NOT_COOPERATIVE_SOFT_CPU',
+        hard_realtime_claim=False, common_end_received=False)
+
+
+def execute_acceptance_worker(config, case, source, output, repo, load_ns):
+    """Fixed ADDRESS candidates, equal wall allowance per acceptance policy."""
+    setup_start = time.monotonic_ns()
+    modules = selection.load_fixed_sci_components(repo)
+    Grid, Budget = modules['address_backend'].GridProblem, modules['pp_repair'].SharedBudget
+    Expired = modules['pp_repair']._Expired
+    problem = Grid(case['rows'], case['cols'], case['blocked'],
+                   {int(a): tuple(p) for a, p in case['endpoints'].items()})
+    initial = {int(a): tuple(p) for a, p in case['paths'].items()}
+    candidates = [dict(label=c['label'], paths={int(a): tuple(p) for a, p in c['paths'].items()})
+                  for c in source['candidates']]
+    model = motion.MotionModel(**config['motion_model'])
+    headings = {a: config['initial_heading_quarters'] for a in problem.ids}
+    setup_ns = time.monotonic_ns()-setup_start
+    rows, arm_io, status = [], {}, 'COMPLETE'
+    for arm in ACCEPTANCE_ARMS:
+        if status != 'COMPLETE':
+            rows.append(dict(arm=arm, status='NOT_RUN_AFTER_HARD_FAILURE'))
+            continue
+        started, cpu = time.monotonic_ns(), time.process_time_ns()
+        budget = Budget(started+config['arm_evaluation_wall_s']*10**9, 0)
+        try:
+            # All construction, initial certification, candidate checks and
+            # commit polls share this one absolute deadline for the arm.
+            value = evaluate_motion_candidates(problem, initial, candidates, model, headings,
+                budget=budget, expired_exception=Expired,
+                use_lower_bound=arm == 'primitive_lower_bound')
+        except (Expired, TimeoutError) as error:
+            value = dict(status='FAILED', final=None, attempts=[],
+                reason=dict(kind='INITIAL_NOT_CERTIFIED_BEFORE_DEADLINE', detail=str(error)))
+        except Exception as error:
+            value = dict(status='FAILED', final=None, attempts=[],
+                reason=dict(kind='INITIAL_CERTIFICATION_FAILED', detail=type(error).__name__+': '+str(error)))
+        value.update(arm=arm, evaluation_wall_ns=time.monotonic_ns()-started,
+            evaluation_cpu_ns=time.process_time_ns()-cpu,
+            budget_stage_wall_ns=dict(budget.stage_wall_ns), budget_stage_cpu_ns=dict(budget.stage_cpu_ns))
+        io_start = time.monotonic_ns()
+        write_json(output/('arm_'+arm+'.json'), value)
+        arm_io[arm] = time.monotonic_ns()-io_start
+        admitted = time.monotonic_ns()-started <= (
+            config['arm_evaluation_wall_s']+config['arm_output_reserve_s'])*10**9
+        row = dict(arm=arm, status=value['status'] if admitted else 'FAILED',
+            arm_output_within_reserve=admitted, attempts=value['attempts'],
+            initial_objective_exact_s=value.get('initial', {}).get('objective_exact_s'),
+            final_objective_exact_s=(value['final']['objective_exact_s'] if value.get('final') else None),
+            final_paths_sha256=(value['final']['paths_sha256'] if value.get('final') else None),
+            complete_certified_incumbent_retained=value.get('final') is not None,
+            evaluation_wall_ns=value['evaluation_wall_ns'], evaluation_cpu_ns=value['evaluation_cpu_ns'],
+            arm_entry_through_output_ns=time.monotonic_ns()-started,
+            budget_stage_wall_ns=value['budget_stage_wall_ns'],
+            budget_stage_cpu_ns=value['budget_stage_cpu_ns'])
+        if value.get('reason'):
+            row['reason'] = value['reason']
+        rows.append(row)
+        if row['status'] != 'COMPLETE':
+            status = 'FAILED'
+    result = dict(status=status, case=case['id'], rows=rows,
+        manifest_sha256=config['manifest_sha256'], candidate_provenance=source,
+        validator_budget_supervisor_commit=selection.SCI,
+        candidate_sci_commit=ADDRESS_CANDIDATE_COMMIT,
+        source_family='FROZEN_ADDRESS_CANDIDATES_NO_NEW_SEARCH',
+        optimizer_called=False, v2_applied=False, common_end_received=False,
+        load_and_pinned_evidence_validation_ns=load_ns, validator_import_and_problem_setup_ns=setup_ns,
+        arm_serialization_and_fsync_ns=arm_io,
+        worker_entry_through_before_result_write_ns=time.monotonic_ns()-ENTERED_NS,
+        accounting='Each arm includes its own initial certificate and transaction work. Common fixed-source load/setup, output, hashing and process supervision are charged in the case total. Nested stage costs are not additive. Previous optimizer costs are provenance only.',
+        scope='SOFTWARE_IMPLEMENTED_SUPPLIED_CANDIDATE_ACCEPTANCE_NOT_END_TO_END_ADDRESS_SEARCH')
+    write_json(output/'result.json', result)
+
+
 def execute_worker(config, case, source, output, repo, load_ns):
+    if config.get('schema') == ACCEPTANCE_SCHEMA:
+        return execute_acceptance_worker(config, case, source, output, repo, load_ns)
     if config.get('schema') == 'thesis_v2_pair_v1':
         from v2_motion_inputs import execute_pair_worker
         return execute_pair_worker(config, case, source, output, repo, load_ns, ENTERED_NS)
@@ -353,9 +536,14 @@ def main():
     config['manifest_sha256'] = args.sha256
     load_ns = time.monotonic_ns()-started
     if args.mode == 'inspect':
-        print(json.dumps({'status': 'FROZEN_BYTES_VALIDATED_NO_MOTION_COMPARISON',
-                          'cases': config['cases'], 'sci_commit': selection.SCI,
-                          'motion_model': config['motion_model'], 'authorization': 'PENDING_USER'}))
+        value = {'status': 'FROZEN_BYTES_VALIDATED_NO_MOTION_COMPARISON',
+                 'cases': config['cases'], 'sci_commit': selection.SCI,
+                 'motion_model': config['motion_model'], 'authorization': 'PENDING_USER'}
+        if config['schema'] == ACCEPTANCE_SCHEMA:
+            value.update(candidate_sci_commit=config['candidate_sci_commit'],
+                initial_motion_certification_cost='UNKNOWN',
+                status='PINNED_ADDRESS_INPUT_INTERFACE_ONLY_NO_MOTION_COMPARISON')
+        print(json.dumps(value))
         return 0
     if args.mode == '_worker':
         execute_worker(config, cases[args.case], results[args.case], args.output, HERE.parents[1], load_ns)

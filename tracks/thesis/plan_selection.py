@@ -5,9 +5,12 @@ one batch retention proposal. They do not modify an author's solver or claim
 turn-optimal search. Every choice is checked by the same full MAPF validator.
 """
 import importlib.util
+from fractions import Fraction
+from hashlib import sha256
 import json
 from pathlib import Path
 import sys
+from threading import Lock
 import types
 
 
@@ -22,7 +25,7 @@ def _local(name, filename):
     return module
 
 
-def load_grid_problem(repo):
+def load_fixed_sci_components(repo):
     """Load only a fixed SCI module's class; never construct NativeBackend.
 
     The byte/commit checks occur for both modules before either is executed.
@@ -52,13 +55,187 @@ def load_grid_problem(repo):
             sys.modules[name] = module
             exec(compile(raw[name], module.__file__, 'exec'), module.__dict__)
             loaded[name] = module
-        return loaded['address_backend'].GridProblem
+        return loaded
     finally:
         for name, previous in saved.items():
             if previous is None:
                 sys.modules.pop(name, None)
             else:
                 sys.modules[name] = previous
+
+
+def load_grid_problem(repo):
+    return load_fixed_sci_components(repo)['address_backend'].GridProblem
+
+
+class InvalidMotionCandidate(ValueError):
+    """A supplied path set failed explicit input/discrete validation."""
+
+
+class MotionPlanSelector:
+    """Transactional selection within supplied plans, never new path search.
+
+    The initial certificate is established here, not trusted from a caller's
+    `certified=True`. A private cloned problem, cardinal headings, immutable
+    paths and serialized certificate bind the retained plan to one context.
+    A successful replacement is checked against the SAME absolute SharedBudget
+    immediately before commit. Fixed callbacks still require the outer process
+    supervisor; cooperative polling is not an arbitrary-size real-time proof.
+    """
+
+    def __init__(self, problem, paths, model, headings, *, budget, expired_exception,
+                 scheduler='local_dependency'):
+        import local_scheduler as local
+        self.budget, self.expired_exception = budget, expired_exception
+        self._lock, self._state, self._version = Lock(), None, 0
+        self._local = local
+
+        def prepare():
+            if scheduler != 'local_dependency':
+                raise ValueError('motion acceptance uses the fixed local dependency scheduler')
+            # Clone data through the same fixed GridProblem constructor. The
+            # caller cannot invalidate an incumbent by mutating its own problem.
+            self._problem = type(problem)(problem.rows, problem.cols,
+                                          tuple(problem.blocked), dict(problem.endpoints))
+            self._model, self._headings, self._scheduler = model, dict(headings), scheduler
+            self._context = dict(rows=self._problem.rows, cols=self._problem.cols,
+                blocked=sorted(self._problem.blocked),
+                endpoints=sorted(self._problem.endpoints.items()), model=model.record(),
+                headings=sorted(self._headings.items()), scheduler=scheduler,
+                checker=dict(pair_max_depth=local.PAIR_MAX_DEPTH, pair_max_boxes=local.PAIR_MAX_BOXES),
+                timing='RATIONAL_REST_TO_REST_COMMON_TO_BOTH_SCHEDULERS')
+            self._context_sha = sha256(self._encode(self._context)).hexdigest()
+            return {a: tuple(p) for a, p in paths.items()}
+
+        initial = budget.measure('initial_snapshot', prepare)
+        answer = budget.measure('initial_full_certification', lambda: self._compile(initial))
+        if not answer.get('certified_nominal_reference'):
+            raise ValueError('INITIAL_NOT_CERTIFIED: '+str(answer.get('reason')))
+        raw = budget.measure('initial_state_serialization', lambda: self._pack(initial, answer))
+        budget.check()
+        self._state = raw
+
+    @staticmethod
+    def _encode(value):
+        return json.dumps(value, sort_keys=True, separators=(',', ':'), allow_nan=False).encode()
+
+    def _compile(self, paths):
+        return self._local.compile_schedule(self._problem, paths, self._model,
+            self._headings, self._scheduler, checkpoint=self.budget.check)
+
+    def _prepare_candidate(self, paths):
+        try:
+            if not isinstance(paths, dict):
+                raise ValueError('candidate must be an explicit complete path mapping')
+            candidate = {}
+            for agent, path in paths.items():
+                self.budget.check()
+                if type(agent) is not int or not isinstance(path, (tuple, list)):
+                    raise ValueError('integer agent and concrete path sequence required')
+                candidate[agent] = tuple(path)
+            if self._problem.validate(candidate, complete=True) is not True:
+                raise ValueError('complete discrete validator did not return True')
+            return candidate
+        except ValueError as error:
+            raise InvalidMotionCandidate(str(error)) from error
+
+    def _pack(self, paths, answer):
+        if answer.get('status') != 'CERTIFIED_NOMINAL_REFERENCE' or not answer.get('schedule'):
+            raise ValueError('a complete certified schedule is required')
+        completion = answer['schedule']['completion_exact_s']
+        if set(completion) != set(self._problem.ids):
+            raise ValueError('complete exact completion coverage is required')
+        values = [Fraction(v) for v in completion.values()]
+        if any(v < 0 for v in values):
+            raise ValueError('negative exact completion')
+        paths_record = {str(a): list(p) for a, p in paths.items()}
+        return self._encode(dict(paths=paths_record, motion=answer,
+            objective_exact_s=str(sum(values, Fraction(0))),
+            paths_sha256=sha256(self._encode(paths_record)).hexdigest(),
+            context_sha256=self._context_sha, context=self._context))
+
+    def snapshot(self):
+        with self._lock:
+            if self._state is None:
+                raise ValueError('initial motion certificate has not been established')
+            # Each caller receives a detached value; changing it cannot alter
+            # the next transaction's certified incumbent or model identity.
+            value = json.loads(self._state)
+            value['version'] = self._version
+            return value
+
+    def consider(self, paths, *, label, use_lower_bound=True):
+        """Commit only a fully certified strict decrease in exact sum T_i."""
+        budget = self.budget
+        started, cpu = budget.clock_ns(), budget.cpu_clock_ns()
+        wall_before, cpu_before = dict(budget.stage_wall_ns), dict(budget.stage_cpu_ns)
+        with self._lock:
+            before, version = self._state, self._version
+        if before is None:
+            raise ValueError('cannot consider a candidate without a certified initial plan')
+        old = json.loads(before)
+        old_j, lower, candidate_j = Fraction(old['objective_exact_s']), None, None
+        status, reason = 'CANDIDATE_FAILED', None
+        try:
+            if type(use_lower_bound) is not bool or not isinstance(label, str) or not label:
+                raise ValueError('explicit candidate label and boolean bound policy required')
+            candidate = budget.measure('candidate_snapshot_and_discrete_validation',
+                lambda: self._prepare_candidate(paths))
+            if use_lower_bound:
+                lower = budget.measure('primitive_lower_bound', lambda:
+                    self._local.primitive_completion_lower_bound(self._problem, candidate,
+                        self._model, self._headings, checkpoint=budget.check))
+            if lower is not None and lower >= old_j:
+                status, reason = 'LOWER_BOUND_REJECTED', 'L >= incumbent exact sum of completion times'
+            else:
+                answer = budget.measure('candidate_full_evaluation', lambda: self._compile(candidate))
+                if not answer.get('certified_nominal_reference'):
+                    status, reason = 'CERTIFICATE_NOT_ESTABLISHED', answer.get('reason')
+                    if reason and reason.get('kind') == 'INVALID_INPUT_OR_UNREPRESENTABLE_SCHEDULE':
+                        # The complete discrete input and unchanged model were
+                        # checked already; do not hide an internal construction
+                        # error as an ordinary geometrically inconclusive plan.
+                        status = 'IMPLEMENTATION_FAILED'
+                else:
+                    packed = budget.measure('candidate_state_serialization',
+                                             lambda: self._pack(candidate, answer))
+                    candidate_j = Fraction(json.loads(packed)['objective_exact_s'])
+                    if candidate_j >= old_j:
+                        status, reason = 'NO_STRICT_IMPROVEMENT', 'candidate exact J >= incumbent J'
+                    else:
+                        def commit():
+                            with self._lock:
+                                budget.check()
+                                if self._state is not before:
+                                    return False
+                                self._state, self._version = packed, version+1
+                                return True
+                        committed = budget.measure('commit', commit, check_after=False)
+                        status = 'ACCEPTED' if committed else 'STALE_INCUMBENT'
+                        reason = 'complete certificate and exact strict improvement' if committed else 'incumbent changed'
+        except (self.expired_exception, TimeoutError) as error:
+            status, reason = 'BUDGET_CENSORED', str(error)
+        except InvalidMotionCandidate as error:
+            status, reason = 'INVALID_CANDIDATE', type(error).__name__+': '+str(error)
+        except Exception as error:
+            # Retain the private certificate but make the software error a hard
+            # batch failure; the runner must not relabel it ordinary no-gain.
+            status, reason = 'IMPLEMENTATION_FAILED', type(error).__name__+': '+str(error)
+        after = self.snapshot()
+        return dict(label=label, status=status, reason=reason, use_lower_bound=use_lower_bound,
+            incumbent_before_exact_s=str(old_j),
+            lower_bound_exact_s=None if lower is None else str(lower),
+            candidate_objective_exact_s=None if candidate_j is None else str(candidate_j),
+            incumbent_after_exact_s=after['objective_exact_s'],
+            retained_paths_sha256=after['paths_sha256'], version_before=version, version_after=after['version'],
+            stage_wall_ns={k: v-wall_before.get(k, 0) for k, v in budget.stage_wall_ns.items()
+                           if v != wall_before.get(k, 0)},
+            stage_cpu_ns={k: v-cpu_before.get(k, 0) for k, v in budget.stage_cpu_ns.items()
+                          if v != cpu_before.get(k, 0)},
+            transaction_wall_ns=budget.clock_ns()-started,
+            transaction_cpu_ns=budget.cpu_clock_ns()-cpu,
+            scope='SUPPLIED_CANDIDATE_SET_ONLY_NO_SEARCH_OR_OPTIMALITY',
+            new_search_calls=0, common_end_received=False)
 
 
 def select_complete_plan(problem, incumbent, proposal, *, rule):

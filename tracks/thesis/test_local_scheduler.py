@@ -47,6 +47,33 @@ class LocalContracts(unittest.TestCase):
         self.assertTrue(all(a['heading_to_quarters'] == 0 for a in turns))
         self.assertTrue(all('exactly' in a['angle_semantics'] for a in turns))
 
+    def test_completion_lower_bound_counts_initial_half_turn_and_original_wait(self):
+        paths = {0: [6, 6, 7], 1: [18]}
+        model = self.model()
+        lower = local.primitive_completion_lower_bound(self.problem(paths), paths, model, {0: 2, 1: 0})
+        profiles = local._profiles(model)
+        expected = 2*profiles['linear_one_cell']['duration_s']+profiles['turn_2']['duration_s']
+        self.assertEqual(lower, expected)
+        self.assertNotEqual(profiles['turn_2']['duration_s'], 2*profiles['turn_1']['duration_s'])
+        answer = local.compile_schedule(self.problem(paths), paths, model, {0: 2, 1: 0}, 'local_dependency')
+        self.assertTrue(answer['certified_nominal_reference'])
+        self.assertLessEqual(lower, sum(F(v) for v in answer['schedule']['completion_exact_s'].values()))
+
+    def test_cooperative_deadline_in_nested_dependency_and_geometry_is_not_invalid_input(self):
+        paths, headings = {0: [6, 7], 1: [16, 17]}, {0: 0, 1: 0}
+        _, _, blocks = local.make_blocks(self.problem(paths), paths, self.model(), headings)
+        calls = []
+        def deadline():
+            calls.append(1)
+            if len(calls) == 4:
+                raise TimeoutError('software clock reached the fixed deadline')
+        with self.assertRaises(TimeoutError):
+            local.dependency_edges(blocks, self.model().body_circle_radius_squared, checkpoint=deadline)
+        self.assertEqual(len(calls), 4)
+        with self.assertRaises(TimeoutError):
+            local.compile_schedule(self.problem(paths), paths, self.model(), headings, 'local_dependency',
+                checkpoint=lambda: (_ for _ in ()).throw(TimeoutError('entry cutoff')))
+
     def test_independent_turn_has_no_global_barrier_in_local_schedule(self):
         paths, headings = {0: [6, 11], 1: [16, 17]}, {0: 0, 1: 0}
         problem, model = self.problem(paths), self.model()

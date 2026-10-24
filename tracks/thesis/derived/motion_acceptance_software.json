@@ -1,0 +1,93 @@
+{
+  "candidate_commit": "f9c651ad0680679cf99a4973f722b65fd6f7aa97",
+  "code_and_interface_sha256": {
+    "compare_nominal_motion.py": "e32ebb729964078d421f2ddafbccbea89b6b7599fcb596e7947d8a100da88148",
+    "config/motion_acceptance_v1_manifest.json": "6b1e9de27e6f78d133b013ae560d35307d84c9ca5b6fe029372c39274342da10",
+    "local_scheduler.py": "e6d0debdf63bdf5cf9d5c4e913c00d642192c248256b2c07485a4b8f9d70386a",
+    "motion_acceptance.lock.json": "5fb2c7d0ab2916f93baf3f5fd3c82d2e8e690d7efb6cb35c4c09e7eaa2e82ec0",
+    "plan_selection.py": "d5cbb19fc4b9cd463fa4939d599d4f71b0c301c665bd1522302b7faa2d8f5416",
+    "test_compare_nominal_motion.py": "02642c50bed5d87b1781bd5dae81ab77e7568d922a745f8b81ddccdcae52006e",
+    "test_local_scheduler.py": "72b8ee4bbb2a45f3c6515b2292db653e868048d417c2de94db788f7cd2afd509"
+  },
+  "commands": [
+    {
+      "command": [
+        "rtk",
+        "proxy",
+        "python3",
+        "-B",
+        "tracks/thesis/test_local_scheduler.py"
+      ],
+      "exit_code": 0,
+      "stderr": "test_all_positive_fixtures_have_full_independent_continuous_certificate (__main__.LocalContracts) ... ok\ntest_completion_lower_bound_counts_initial_half_turn_and_original_wait (__main__.LocalContracts) ... ok\ntest_cooperative_deadline_in_nested_dependency_and_geometry_is_not_invalid_input (__main__.LocalContracts) ... ok\ntest_directed_grid_cycle_is_local_construction_failure (__main__.LocalContracts) ... ok\ntest_discrete_wait_and_zero_step_permanent_goal_are_explicit (__main__.LocalContracts) ... ok\ntest_following_must_wait_until_complete_predecessor_block (__main__.LocalContracts) ... ok\ntest_independent_turn_has_no_global_barrier_in_local_schedule (__main__.LocalContracts) ... ok\ntest_missing_initial_wait_is_invalid_and_interval_budget_is_inconclusive (__main__.LocalContracts) ... ok\ntest_primitive_physics_exact_endpoints_and_bounds (__main__.LocalContracts) ... ok\ntest_profile_order_and_display_corruption_are_not_certified (__main__.LocalContracts) ... ok\ntest_shifted_clock_crossing_caught_between_clear_endpoints (__main__.LocalContracts) ... ok\ntest_wait_turn_and_goal_hold_are_not_released_at_motion_end (__main__.LocalContracts) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.066s\n\nOK\n",
+      "stdout": "",
+      "wall_ns": 168870365
+    },
+    {
+      "command": [
+        "rtk",
+        "proxy",
+        "python3",
+        "-B",
+        "tracks/thesis/test_compare_nominal_motion.py"
+      ],
+      "exit_code": 0,
+      "stderr": "test_bound_equality_rejects_without_candidate_compile_and_full_mode_evaluates (__main__.CompareContracts) ... ok\ntest_candidate_deadline_during_complete_evaluation_never_commits_late (__main__.CompareContracts) ... ok\ntest_changed_config_fails_before_loading_or_running_any_case (__main__.CompareContracts) ... ok\ntest_circle_rejection_is_retained_with_unknown_time_not_collision (__main__.CompareContracts) ... ok\ntest_failed_previous_case_prevents_consuming_next_case (__main__.CompareContracts) ... ok\ntest_frozen_equal_soc_proposal_is_not_silently_replaced (__main__.CompareContracts) ... ok\ntest_initial_deadline_has_no_certified_fallback_and_hard_error_stops_other_candidates (__main__.CompareContracts) ... ok\ntest_invalid_frozen_proposal_and_missing_heading_are_not_accepted (__main__.CompareContracts) ... ok\ntest_invalid_path_and_unproved_certificate_retain_certified_incumbent (__main__.CompareContracts) ... ok\ntest_motion_acceptance_worker_connects_both_policies_without_optimizer (__main__.CompareContracts) ... ok\ntest_returned_paths_schedule_and_external_problem_cannot_mutate_certificate (__main__.CompareContracts) ... ok\ntest_scheduler_cycle_is_retained_and_worker_serializes_six_artifacts (__main__.CompareContracts) ... ok\ntest_scheduler_pair_keeps_same_selected_paths_and_wait_cost_partition (__main__.CompareContracts) ... ok\ntest_simultaneous_retention_conflict_is_rejected_before_motion (__main__.CompareContracts) ... ok\ntest_unexpected_type_key_and_runtime_errors_are_hard_failures_not_invalid_candidates (__main__.CompareContracts) ... ok\ntest_v2_worker_fixture_keeps_padding_cost_and_reference_end_separate (__main__.CompareContracts) ... ok\ntest_wait_partition_stops_at_completion_and_preserves_zero_step_goal (__main__.CompareContracts) ... ok\n\n----------------------------------------------------------------------\nRan 17 tests in 0.378s\n\nOK\n",
+      "stdout": "",
+      "wall_ns": 481766033
+    },
+    {
+      "command": [
+        "rtk",
+        "proxy",
+        "python3",
+        "-B",
+        "tracks/thesis/compare_nominal_motion.py",
+        "inspect",
+        "--manifest",
+        "tracks/thesis/config/motion_acceptance_v1_manifest.json",
+        "--sha256",
+        "6b1e9de27e6f78d133b013ae560d35307d84c9ca5b6fe029372c39274342da10"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "{\"status\": \"PINNED_ADDRESS_INPUT_INTERFACE_ONLY_NO_MOTION_COMPARISON\", \"cases\": [\"maze-32-32-2__s05__n32\", \"random-32-32-10__s05__n32\"], \"sci_commit\": \"535ee1adf3135ab79565e0b3aa5d189348fe7ab2\", \"motion_model\": {\"accel_m_s2\": \"1/2\", \"body_length_m\": \"11/50\", \"body_width_m\": \"4/25\", \"cell_m\": \"1/2\", \"decel_m_s2\": \"1/2\", \"speed_m_s\": \"1/2\", \"turn_accel_rad_s2\": \"1\", \"turn_decel_rad_s2\": \"1\", \"turn_speed_rad_s\": \"1\"}, \"authorization\": \"PENDING_USER\", \"candidate_sci_commit\": \"f9c651ad0680679cf99a4973f722b65fd6f7aa97\", \"initial_motion_certification_cost\": \"UNKNOWN\"}\n",
+      "wall_ns": 211072950
+    }
+  ],
+  "date": "2026-10-25",
+  "independent_review": {
+    "agent": "/root/common_contract_review",
+    "checks": [
+      "initial_certification_completed_after_deadline",
+      "candidate_serialization_crosses_deadline",
+      "bound_equality_skips_compilation",
+      "returned_state_mutation_cannot_change_private_certificate",
+      "unexpected_lower_bound_RuntimeError_stops_remaining_candidates"
+    ],
+    "fixture_count": 5,
+    "new_scientific_calls": false,
+    "original_artifacts_modified": false,
+    "status": "REPORTED_PASS_SOFTWARE_SCOPE_ONLY"
+  },
+  "limitations": [
+    "No complete s05 scientific motion construction or ADDRESS search was run.",
+    "Twenty-second arm evaluation is an uncalibrated interface proposal; initial certification cost unknown.",
+    "CPU is accounted by SharedBudget but enforced only by the outer process supervisor.",
+    "Fixed discrete validator and individual Python/serialization calls are not preemptible; no hard real-time guarantee."
+  ],
+  "new_search_calls": 0,
+  "protected_original_sha256": {
+    "config/scheduler_motion_v1_manifest.json": "6c23695d30d661e823ea6731cb65f1b674d43a5b636f6b7283691031ee628630",
+    "config/v2_motion_pair_v1_manifest.json": "1868bd5da40032128adc2f3f54ee2c6686408711b617f372a52f147f9131f4a3",
+    "plan_selection.lock.json": "3eed667929d3e7abd8f0c750047746550e7a87285fb567806e9a84d2a87c0395",
+    "sci.lock.json": "1c4c57844beb8839335f6e7b52e4f739a7c9a82d65d0f93c61f77317c4de6e66",
+    "shared.lock.json": "82ab83894e4b393e7f8202309debb3f0220a3ec78011be446cf99edd98098709"
+  },
+  "schema": "THESIS_MOTION_ACCEPTANCE_SOFTWARE_ONLY_V1",
+  "scientific_runs": 0,
+  "scope": "HANDWRITTEN_SOFTWARE_FIXTURES_AND_PINNED_BYTE_INSPECT_ONLY",
+  "source_base_commit": "906ba90aa7274f4035cf56d1b2cc323a642b1516",
+  "status": "PASS",
+  "test_count": 29
+}

@@ -19,6 +19,11 @@ PAIR_MAX_DEPTH = 16
 PAIR_MAX_BOXES = 2048
 
 
+def _poll(checkpoint):
+    if checkpoint is not None:
+        checkpoint()
+
+
 def exact_profile(distance, speed, accel, decel):
     """Same rest-to-rest equations as nominal_motion, with a safe rational peak.
 
@@ -76,8 +81,9 @@ def _box_distance2(a, b):
                for i in (0, 1))
 
 
-def make_blocks(problem, paths, model, headings):
+def make_blocks(problem, paths, model, headings, *, checkpoint=None):
     """One complete TURN+MOVE or discrete WAIT block per original grid step."""
+    _poll(checkpoint)
     if not isinstance(model, motion.MotionModel):
         raise ValueError('explicit MotionModel required')
     paths = {a: tuple(p) for a, p in paths.items()}
@@ -89,8 +95,10 @@ def make_blocks(problem, paths, model, headings):
     profiles = _profiles(model)
     blocks = {}
     for a in problem.ids:
+        _poll(checkpoint)
         heading = headings[a]
         for step, (u, v) in enumerate(zip(paths[a], paths[a][1:])):
+            _poll(checkpoint)
             start = motion._point(u, problem.cols, model.cell_m)
             end = motion._point(v, problem.cols, model.cell_m)
             target = motion._heading(start, end) if u != v else heading
@@ -103,7 +111,24 @@ def make_blocks(problem, paths, model, headings):
     return paths, profiles, blocks
 
 
-def dependency_edges(blocks, radius2):
+
+def primitive_completion_lower_bound(problem, paths, model, headings, *, checkpoint=None):
+    """Exact sum of solo action durations, including initial turns/discrete waits.
+
+    For either existing scheduler each robot finishes no earlier than the sum
+    of its own complete blocks. Dependency/barrier waiting is nonnegative, so
+    this is a lower bound on sum of completion times, not a safety certificate.
+    """
+    _, _, blocks = make_blocks(problem, paths, model, headings, checkpoint=checkpoint)
+    value = F(0)
+    for block in blocks.values():
+        _poll(checkpoint)
+        value += block['duration_s']
+    _poll(checkpoint)
+    return value
+
+
+def dependency_edges(blocks, radius2, *, checkpoint=None):
     """Conservative swept-circle order; no switching or order optimization.
 
     Each axis-aligned swept centre segment equals its box exactly. Overlapping
@@ -111,14 +136,18 @@ def dependency_edges(blocks, radius2):
     shared vertices. Geometry without an unambiguous discrete order is rejected.
     This serializes the whole block, not merely its waypoint or TURN completion.
     """
+    _poll(checkpoint)
     edges = set()
     for key, block in blocks.items():
+        _poll(checkpoint)
         if block['step']:
             edges.add(((block['agent'], block['step']-1), key))
     keys = list(blocks)
     for i, left in enumerate(keys):
+        _poll(checkpoint)
         a = blocks[left]
         for right in keys[i+1:]:
+            _poll(checkpoint)
             b = blocks[right]
             if a['agent'] == b['agent'] or _box_distance2(
                     _box(a['start'], a['end']), _box(b['start'], b['end'])) > 4*radius2:
@@ -126,6 +155,7 @@ def dependency_edges(blocks, radius2):
             shared = {a['u'], a['v']} & {b['u'], b['v']}
             orders = set()
             for vertex in shared:
+                _poll(checkpoint)
                 at = [a['step']+j for j, v in enumerate((a['u'], a['v'])) if v == vertex]
                 bt = [b['step']+j for j, v in enumerate((b['u'], b['v'])) if v == vertex]
                 if max(at) < min(bt):
@@ -142,12 +172,14 @@ def dependency_edges(blocks, radius2):
     return edges, None
 
 
-def earliest_starts(blocks, edges):
+def earliest_starts(blocks, edges, *, checkpoint=None):
     """Longest-path release times for this finite DAG; a cycle is local failure."""
+    _poll(checkpoint)
     successors = {key: [] for key in blocks}
     degree = {key: 0 for key in blocks}
     starts = {key: F(0) for key in blocks}
     for source, target in edges:
+        _poll(checkpoint)
         if source not in blocks or target not in blocks:
             raise ValueError('dependency refers to a missing complete action block')
         successors[source].append(target)
@@ -156,10 +188,12 @@ def earliest_starts(blocks, edges):
     heapq.heapify(ready)
     completed = []
     while ready:
+        _poll(checkpoint)
         key = heapq.heappop(ready)
         completed.append(key)
         finish = starts[key]+blocks[key]['duration_s']
         for other in successors[key]:
+            _poll(checkpoint)
             starts[other] = max(starts[other], finish)
             degree[other] -= 1
             if degree[other] == 0:
@@ -177,32 +211,37 @@ def _action(kind, start, end, **values):
                 start_exact_s=str(start), end_exact_s=None if end is None else str(end), **values)
 
 
-def build_schedule(problem, paths, model, headings, scheduler):
+def build_schedule(problem, paths, model, headings, scheduler, *, checkpoint=None):
     """Construct a full candidate. Certification is a separate obligatory step."""
+    _poll(checkpoint)
     if scheduler not in SCHEDULERS:
         raise ValueError('unknown scheduler')
-    paths, profiles, blocks = make_blocks(problem, paths, model, headings)
+    paths, profiles, blocks = make_blocks(problem, paths, model, headings, checkpoint=checkpoint)
     edges = set()
     if scheduler == 'local_dependency':
-        edges, reason = dependency_edges(blocks, model.body_circle_radius_squared)
+        edges, reason = dependency_edges(blocks, model.body_circle_radius_squared, checkpoint=checkpoint)
         if reason:
             return None, reason
-        starts, reason = earliest_starts(blocks, edges)
+        starts, reason = earliest_starts(blocks, edges, checkpoint=checkpoint)
         if reason:
             return None, reason
     else:
         starts, clock = {}, F(0)
         for step in range(max((len(p)-1 for p in paths.values()), default=0)):
+            _poll(checkpoint)
             current = [key for key in blocks if key[1] == step]
             barrier = max((blocks[key]['turn_s'] for key in current), default=F(0))
             for key in current:
+                _poll(checkpoint)
                 starts[key] = clock
                 blocks[key]['barrier_padding_s'] = barrier-blocks[key]['turn_s']
             clock += barrier+profiles['linear_one_cell']['duration_s']
     actions, completion = {}, {}
     for a in problem.ids:
+        _poll(checkpoint)
         sequence, clock, heading = [], F(0), headings[a]
         for step in range(len(paths[a])-1):
+            _poll(checkpoint)
             block, begin = blocks[a, step], starts[a, step]
             center = motion._point_record(block['start'])
             if begin < clock:
@@ -261,7 +300,7 @@ def _position(action, when, profiles):
     return tuple(x+q*(y-x) for x, y in zip(start, end))
 
 
-def pair_interval_check(a, b, left, right, profiles, required2):
+def pair_interval_check(a, b, left, right, profiles, required2, *, checkpoint=None):
     """Prove a whole time interval by exact monotone position enclosures.
 
     Each action has its OWN start clock and progress. On [l,r], monotonicity
@@ -270,8 +309,10 @@ def pair_interval_check(a, b, left, right, profiles, required2):
     interval. An exact midpoint circle overlap is an inconclusive body-collision
     result, not a safety sample. Acceptance NEVER relies on point samples.
     """
+    _poll(checkpoint)
     stack, tested = [(left, right, 0)], 0
     while stack:
+        _poll(checkpoint)
         if tested >= PAIR_MAX_BOXES:
             lo, hi, _ = stack[-1]
             return False, tested, dict(kind='CIRCLE_INTERVAL_SEPARATION_NOT_ESTABLISHED',
@@ -300,8 +341,9 @@ def pair_interval_check(a, b, left, right, profiles, required2):
     return True, tested, None
 
 
-def check_continuous(problem, paths, model, headings, schedule):
+def check_continuous(problem, paths, model, headings, schedule, *, checkpoint=None):
     """Full nominal occupancy, including every turn/wait and infinite goal tail."""
+    _poll(checkpoint)
     profiles = {name: {k: F(v) for k, v in p.items()} for name, p in schedule['profiles'].items()}
     if profiles != _profiles(model):
         raise ValueError('schedule profiles differ from the declared common primitive model')
@@ -322,10 +364,12 @@ def check_continuous(problem, paths, model, headings, schedule):
     # makes advancing both cursors at a shared endpoint valid below: positions
     # are continuous, so both incident actions have the same endpoint occupancy.
     for a in problem.ids:
+        _poll(checkpoint)
         sequence = schedule['agents'][a]
         clock, position, heading = F(0), motion._point(paths[a][0], problem.cols, scale), headings[a]
         executed_path, turn_pending, block_begin, step = [position], False, None, 0
         for index, action in enumerate(sequence):
+            _poll(checkpoint)
             checks['actions'] += 1
             begin = F(action['start_exact_s'])
             end = None if action['end_exact_s'] is None else F(action['end_exact_s'])
@@ -390,7 +434,7 @@ def check_continuous(problem, paths, model, headings, schedule):
         if (executed_path != [motion._point(v, problem.cols, scale) for v in paths[a]]
                 or turn_pending or not sequence or sequence[-1]['kind'] != 'GOAL_HOLD'):
             raise ValueError('schedule does not cover the full supplied discrete path')
-    _, _, expected_blocks = make_blocks(problem, paths, model, headings)
+    _, _, expected_blocks = make_blocks(problem, paths, model, headings, checkpoint=checkpoint)
     if set(actual_blocks) != set(expected_blocks):
         raise ValueError('complete action block coverage mismatch')
     recorded_blocks = {(r['agent'], r['step']): (F(r['start_exact_s']), F(r['end_exact_s']))
@@ -399,7 +443,7 @@ def check_continuous(problem, paths, model, headings, schedule):
         raise ValueError('recorded action block times differ from complete actions')
     scheduler = schedule['scheduler']
     if scheduler == 'local_dependency':
-        expected_edges, failure = dependency_edges(expected_blocks, radius2)
+        expected_edges, failure = dependency_edges(expected_blocks, radius2, checkpoint=checkpoint)
         if failure is not None:
             raise ValueError('local dependency order could not be established')
         actual_edges = {(tuple(a), tuple(b)) for a, b in schedule['dependency_edges']}
@@ -414,6 +458,7 @@ def check_continuous(problem, paths, model, headings, schedule):
         if schedule['dependency_edges']:
             raise ValueError('unexpected dependencies in global control')
         for step in range(max((len(p)-1 for p in paths.values()), default=0)):
+            _poll(checkpoint)
             current = [key for key in expected_blocks if key[1] == step]
             duration = max((expected_blocks[k]['turn_s'] for k in current), default=F(0))
             duration += profiles['linear_one_cell']['duration_s']
@@ -428,7 +473,9 @@ def check_continuous(problem, paths, model, headings, schedule):
             or schedule['makespan_s'] != float(max(exact_completions.values(), default=F(0)))):
         raise ValueError('summary completion costs differ from exact schedule')
     for a, sequence in schedule['agents'].items():
+        _poll(checkpoint)
         for index, action in enumerate(sequence):
+            _poll(checkpoint)
             start = _position(action, F(action['start_exact_s']), profiles)
             end = (tuple(F(v) for v in action['to_m']) if action['kind'] == 'MOVE' else start)
             clearances = (min(start[0], end[0])-boundary[0], boundary[1]-max(start[0], end[0]),
@@ -437,6 +484,7 @@ def check_continuous(problem, paths, model, headings, schedule):
             if any(g <= 0 or g*g <= radius2 for g in clearances):
                 return False, dict(kind='CIRCLE_MAP_CONTAINMENT_NOT_ESTABLISHED', agent=a, action=index), checks
             for obstacle in motion.obstacle_candidates(problem, start, end, model):
+                _poll(checkpoint)
                 x, y = motion._point(obstacle, problem.cols, scale)
                 box = (x-scale/2, x+scale/2, y-scale/2, y+scale/2)
                 checks['obstacle_segments'] += 1
@@ -446,9 +494,12 @@ def check_continuous(problem, paths, model, headings, schedule):
     horizon = max((F(t) for t in schedule['completion_exact_s'].values()), default=F(0))
     agents = tuple(problem.ids)
     for offset, a in enumerate(agents):
+        _poll(checkpoint)
         for b in agents[offset+1:]:
+            _poll(checkpoint)
             aa, bb, i, j = schedule['agents'][a], schedule['agents'][b], 0, 0
             while i < len(aa) and j < len(bb):
+                _poll(checkpoint)
                 one, two = aa[i], bb[j]
                 end_a = horizon if one['end_exact_s'] is None else F(one['end_exact_s'])
                 end_b = horizon if two['end_exact_s'] is None else F(two['end_exact_s'])
@@ -456,7 +507,7 @@ def check_continuous(problem, paths, model, headings, schedule):
                 hi = min(end_a, end_b)
                 if lo <= hi:
                     checks['pair_action_intersections'] += 1
-                    passed, count, reason = pair_interval_check(one, two, lo, hi, profiles, 4*radius2)
+                    passed, count, reason = pair_interval_check(one, two, lo, hi, profiles, 4*radius2, checkpoint=checkpoint)
                     checks['rational_interval_boxes'] += count
                     if not passed:
                         reason.update(agents=[a, b], action_indices=[i, j],
@@ -473,16 +524,17 @@ def check_continuous(problem, paths, model, headings, schedule):
     return True, None, checks
 
 
-def compile_schedule(problem, paths, model, headings, scheduler):
+def compile_schedule(problem, paths, model, headings, scheduler, *, checkpoint=None):
     """Return a complete certified reference or an explicit retained rejection."""
+    _poll(checkpoint)
     output = dict(status='REJECTED', certified_nominal_reference=False, schedule=None,
         scope='ERROR_FREE_FIXED_PATH_'+scheduler.upper(), error_model_applied=False,
         v2_qualification_claimed=False, common_end_received=False,
         author_sadg_reproduction=False, collision_claim=False)
     try:
-        schedule, reason = build_schedule(problem, paths, model, headings, scheduler)
+        schedule, reason = build_schedule(problem, paths, model, headings, scheduler, checkpoint=checkpoint)
         if reason is None:
-            passed, reason, checks = check_continuous(problem, paths, model, headings, schedule)
+            passed, reason, checks = check_continuous(problem, paths, model, headings, schedule, checkpoint=checkpoint)
             output['checks_attempted'] = checks
             if passed:
                 schedule['certified'] = True
