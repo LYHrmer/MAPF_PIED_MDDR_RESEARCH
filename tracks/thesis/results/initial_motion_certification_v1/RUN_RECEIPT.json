@@ -1,0 +1,195 @@
+{
+  "actual_user_instruction": "验证SCI新旧预算合同的实际行为，以及硕士初始认证的预算可行性，再开展收益比较",
+  "artifacts": {
+    "AUTHORIZATION.json": {
+      "bytes": 1431,
+      "sha256": "03ee7d4bd08aa18d04c69939c2f13cbbc378f37efead5b162975d72c2bfb41fb"
+    },
+    "COORDINATOR.py": {
+      "bytes": 5377,
+      "sha256": "c0f68aee87052c6cae2f9c60a299746b169d0661fc7bc96400b505c726ebbc3d"
+    },
+    "INDEPENDENT_AUDIT.json": {
+      "bytes": 3148,
+      "sha256": "33590211bf8e5ff9f4c6c602229aacef26f9d66b38118dbeb6cb2899005bdc41"
+    },
+    "OUTER_EXECUTION.json": {
+      "bytes": 1729,
+      "sha256": "1c03a0a8dedb695b25722e4ff7d0be749cfe1d9f211588f30fb487da34eee2a2"
+    },
+    "maze-32-32-2__s05__n32.outer.json": {
+      "bytes": 1032,
+      "sha256": "fc8961269ce55e5a7b1c28eb56db7e70b7ff531f62537986d89de9cab8361121"
+    },
+    "maze-32-32-2__s05__n32/attempt.json": {
+      "bytes": 287,
+      "sha256": "0565d98fcbad7290aee074bc2e4eca0666973da7e2895935f658d4a1d76dbbbe"
+    },
+    "maze-32-32-2__s05__n32/initial_certification.json": {
+      "bytes": 1583,
+      "sha256": "525b7a5094f71f0224f94f822d50f308e14e1ae95920b6f3e798b31c23429161"
+    },
+    "maze-32-32-2__s05__n32/receipt.json": {
+      "bytes": 2191,
+      "sha256": "629e4971b3c29f1183429bdce6154e5a94e7c25c0872aff548c2067f55581727"
+    },
+    "maze-32-32-2__s05__n32/result.json": {
+      "bytes": 3129,
+      "sha256": "1b01d24f7422ca7464050b2778bd1a3482adb2174e41084bec2c63705c332f9c"
+    },
+    "maze-32-32-2__s05__n32/worker.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "maze-32-32-2__s05__n32/worker.stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "authorization_consumed_or_closed": true,
+  "authorization_reference": "CURRENT_USER_REQUEST_20261025_BUDGET_CONTRACT_AND_INITIAL_CERTIFICATION",
+  "base_validator_budget_supervisor_commit": "535ee1adf3135ab79565e0b3aa5d189348fe7ab2",
+  "candidate_evaluations": 0,
+  "certified_items": 0,
+  "common_end_received": false,
+  "complete_certificate_phase_entered": false,
+  "created_utc": "2026-10-24T17:18:15.845814+00:00",
+  "dependency_build_fraction_of_initial_transaction": 0.998754186110039,
+  "executed_items": 1,
+  "following_gain_comparison_authorized": false,
+  "gain_comparison_gate": "NOT_PASSED",
+  "independent_audit_status": "AUDIT_PASS_BUDGET_FEASIBILITY_NEGATIVE",
+  "initial_source_pin": {
+    "blob_oid": "51ffd03b17504ea1c6e9efe19b73a9bae99c245a",
+    "commit": "f9c651ad0680679cf99a4973f722b65fd6f7aa97",
+    "path": "tracks/sci/config/address_reward_holdout_v1_inputs.json",
+    "sha256": "660b7bc4b4282db1feedd373a9220dc98638c18bcb835123aff448c83eadcf3e"
+  },
+  "jobs": [
+    {
+      "actual_initial_available_ns": 20000000000,
+      "candidate_evaluations": 0,
+      "certified_fallback_available": false,
+      "diagnostic_completed": true,
+      "failure": {
+        "certificate_reason": null,
+        "certified_fallback_available": false,
+        "detail": "_Expired: absolute deadline reached",
+        "first_failed_motion_stage": "motion_dependency_build",
+        "kind": "INITIAL_BUDGET_CENSORED",
+        "stage": "INITIAL_CERTIFICATION_TRANSACTION"
+      },
+      "full_admission_wall_ns": 20221497115,
+      "id": "maze-32-32-2__s05__n32",
+      "initial_certified": false,
+      "initial_evaluation_cpu_ns": 19997342437,
+      "initial_evaluation_wall_ns": 20000031466,
+      "new_search_calls": 0,
+      "outer_wall_ns": 20250148300,
+      "output_within_worker_tail": true,
+      "stage_cpu_ns": {
+        "initial_full_certification": 19992342354,
+        "initial_snapshot": 1000061,
+        "motion_build_blocks": 19998545,
+        "motion_build_schedule": 19992342354,
+        "motion_dependency_build": 19972343809,
+        "motion_discrete_validation": 1999159
+      },
+      "stage_wall_ns": {
+        "initial_full_certification": 19995599965,
+        "initial_snapshot": 226201,
+        "motion_build_blocks": 20459490,
+        "motion_build_schedule": 19995591456,
+        "motion_dependency_build": 19975115149,
+        "motion_discrete_validation": 2078083
+      },
+      "status": "FAILED_OR_INCOMPLETE",
+      "supervisor_self_cpu_s": 0.141763,
+      "worker_costs": {
+        "all_descendant_system_s": 0.049312,
+        "all_descendant_user_s": 20.097667,
+        "exit_code": 0,
+        "forced_cleanup": false,
+        "interruption": null,
+        "largest_child_maxrss_kib": 25260,
+        "reaped": [
+          {
+            "exit_code": 0,
+            "maxrss_kib": 25260,
+            "pid": 23,
+            "system_s": 0.049311,
+            "user_s": 20.097666
+          }
+        ],
+        "scope": "WORKER_IMPORT_TO_EXIT_INCLUDING_RESULT_IO_AND_WAITED_NATIVE",
+        "wall_ns": 20159794574
+      }
+    },
+    {
+      "candidate_evaluations": 0,
+      "directory_absent": true,
+      "id": "random-32-32-10__s05__n32",
+      "new_search_calls": 0,
+      "reason": "First item did not acquire a complete initial certificate",
+      "status": "NOT_RUN_AFTER_FAILURE"
+    }
+  ],
+  "limits": {
+    "final_artifact_reserve_s": 2,
+    "outer_kill_after_s": 2,
+    "outer_term_s": 28,
+    "per_file_mib": 16,
+    "total_admission_wall_s": 26,
+    "worker_as_mib": 512,
+    "worker_cpu_s": 24
+  },
+  "manifest_sha256": "2fd0f0a96746d1d1ad10fa5493d5b1ed5d1c866f924493125e230dc7e29e4492",
+  "measured_bottleneck": "motion_dependency_build",
+  "new_search_calls": 0,
+  "not_run_items": 1,
+  "numeric_limits_and_item_count_selected_by_assistant": true,
+  "offline_count_method": "Pinned JSON len(path)-1 and integer pair counts only; no problem object, geometry, schedule or search built",
+  "offline_input_counts": [
+    {
+      "agents": 32,
+      "case": "maze-32-32-2__s05__n32",
+      "cross_agent_pairs_if_full_enumeration": 1923256,
+      "executed_pair_count": "NOT_RECORDED",
+      "reconstructed_geometry": false,
+      "stored_path_edges": 2000,
+      "stored_wait_edges": 93,
+      "unordered_block_pairs_if_full_enumeration": 1999000
+    },
+    {
+      "agents": 32,
+      "case": "random-32-32-10__s05__n32",
+      "cross_agent_pairs_if_full_enumeration": 272646,
+      "executed_pair_count": "NOT_RECORDED",
+      "reconstructed_geometry": false,
+      "stored_path_edges": 753,
+      "stored_wait_edges": 3,
+      "unordered_block_pairs_if_full_enumeration": 283128
+    }
+  ],
+  "old_authorization_reused": false,
+  "optimizer_called": false,
+  "performance_comparison": false,
+  "planned_items": 2,
+  "private_state_serialization_phase_entered": false,
+  "raw_artifacts_changed": false,
+  "retries": 0,
+  "schema": "THESIS_INITIAL_CERTIFICATION_BATCH_RECEIPT_V1",
+  "scientific_code_commit": "1e74ba0b600fe0019f3e76d33314e5c0f19c8281",
+  "scientific_runs_during_aggregation": 0,
+  "source_protocol_deviation": "Configured neighborhood target 8 was documented as a hard cap; three recorded neighborhoods had 9 agents. Original source deviation retained.",
+  "status": "STOPPED_AFTER_INITIAL_CERTIFICATION_FAILURE",
+  "timing_interpretation": "Cutoff observation, not cost of completed certification. Nested stage times are not additive. Administrative aggregate/audit generation excluded from original scientific timing.",
+  "unknowns": [
+    "Total cost required to establish a complete certificate",
+    "Whether full continuous certificate would succeed",
+    "Actual number of block pairs visited before cutoff",
+    "Cost split within dependency construction",
+    "Random task certification cost"
+  ],
+  "v2_applied": false
+}

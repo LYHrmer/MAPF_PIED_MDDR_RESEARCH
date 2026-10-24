@@ -1,0 +1,44 @@
+{
+  "actual_initial_available_ns": 20000000000,
+  "candidate_evaluations": 0,
+  "certified_initial": null,
+  "common_end_received": false,
+  "configured_initial_evaluation_limit_ns": 20000000000,
+  "cpu_budget_enforcement": "OUTER_PROCESS_RLIMIT_ONLY",
+  "diagnostic_completed": true,
+  "failure": {
+    "certificate_reason": null,
+    "certified_fallback_available": false,
+    "detail": "_Expired: absolute deadline reached",
+    "first_failed_motion_stage": "motion_dependency_build",
+    "kind": "INITIAL_BUDGET_CENSORED",
+    "stage": "INITIAL_CERTIFICATION_TRANSACTION"
+  },
+  "hard_realtime_claim": false,
+  "initial_certified": false,
+  "initial_deadline_ns": 529648179604472,
+  "initial_evaluation_cpu_ns": 19997342437,
+  "initial_evaluation_wall_ns": 20000031466,
+  "new_search_calls": 0,
+  "parent_admission_deadline_ns": 529653978847472,
+  "scope": "INITIAL_CERTIFICATION_BUDGET_FEASIBILITY_ONLY",
+  "stage_cpu_ns": {
+    "initial_full_certification": 19992342354,
+    "initial_snapshot": 1000061,
+    "motion_build_blocks": 19998545,
+    "motion_build_schedule": 19992342354,
+    "motion_dependency_build": 19972343809,
+    "motion_discrete_validation": 1999159
+  },
+  "stage_wall_ns": {
+    "initial_full_certification": 19995599965,
+    "initial_snapshot": 226201,
+    "motion_build_blocks": 20459490,
+    "motion_build_schedule": 19995591456,
+    "motion_dependency_build": 19975115149,
+    "motion_discrete_validation": 2078083
+  },
+  "status": "FAILED",
+  "validator_import_and_problem_setup_cpu_ns": 27117324,
+  "validator_import_and_problem_setup_ns": 52108769
+}

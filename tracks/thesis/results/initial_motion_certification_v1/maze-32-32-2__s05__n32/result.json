@@ -1,0 +1,71 @@
+{
+  "accounting": "Input/Git/import/problem setup is charged in case total, outside the <=20s initial selector transaction. Selector snapshot/construction/full certification/private-state serialization shares one absolute deadline. Detached certificate export, result IO and hashes use the reserved tail. Nested costs are not additive.",
+  "candidate_evaluations": 0,
+  "case": "maze-32-32-2__s05__n32",
+  "diagnostic_completed": true,
+  "following_gain_comparison_authorized": false,
+  "initial_artifact_serialization_and_fsync_ns": 7861251,
+  "initial_certified": false,
+  "initial_provenance": {
+    "initial_sci_commit": "f9c651ad0680679cf99a4973f722b65fd6f7aa97",
+    "input_pin": {
+      "blob_oid": "51ffd03b17504ea1c6e9efe19b73a9bae99c245a",
+      "commit": "f9c651ad0680679cf99a4973f722b65fd6f7aa97",
+      "path": "tracks/sci/config/address_reward_holdout_v1_inputs.json",
+      "sha256": "660b7bc4b4282db1feedd373a9220dc98638c18bcb835123aff448c83eadcf3e"
+    },
+    "scope": "INITIAL_PLAN_ONLY_NO_FINAL_CANDIDATES",
+    "source_protocol_deviation": "Configured neighborhood target 8 was documented as a hard cap; three recorded neighborhoods had 9 agents. Original source deviation retained."
+  },
+  "load_and_pinned_evidence_validation_ns": 32963152,
+  "manifest_sha256": "2fd0f0a96746d1d1ad10fa5493d5b1ed5d1c866f924493125e230dc7e29e4492",
+  "new_search_calls": 0,
+  "optimizer_called": false,
+  "parent_admission_deadline_ns": 529653978847472,
+  "performance_comparison": false,
+  "rows": [
+    {
+      "actual_initial_available_ns": 20000000000,
+      "arm": "initial_certification",
+      "candidate_evaluations": 0,
+      "certified_paths_sha256": null,
+      "diagnostic_completed": true,
+      "exact_objective_s": null,
+      "failure": {
+        "certificate_reason": null,
+        "certified_fallback_available": false,
+        "detail": "_Expired: absolute deadline reached",
+        "first_failed_motion_stage": "motion_dependency_build",
+        "kind": "INITIAL_BUDGET_CENSORED",
+        "stage": "INITIAL_CERTIFICATION_TRANSACTION"
+      },
+      "initial_certified": false,
+      "initial_evaluation_cpu_ns": 19997342437,
+      "initial_evaluation_wall_ns": 20000031466,
+      "new_search_calls": 0,
+      "output_within_worker_tail": true,
+      "stage_cpu_ns": {
+        "initial_full_certification": 19992342354,
+        "initial_snapshot": 1000061,
+        "motion_build_blocks": 19998545,
+        "motion_build_schedule": 19992342354,
+        "motion_dependency_build": 19972343809,
+        "motion_discrete_validation": 1999159
+      },
+      "stage_wall_ns": {
+        "initial_full_certification": 19995599965,
+        "initial_snapshot": 226201,
+        "motion_build_blocks": 20459490,
+        "motion_build_schedule": 19995591456,
+        "motion_dependency_build": 19975115149,
+        "motion_discrete_validation": 2078083
+      },
+      "status": "FAILED"
+    }
+  ],
+  "scope": "INITIAL_CERTIFICATION_BUDGET_FEASIBILITY_ONLY",
+  "status": "FAILED",
+  "v2_applied": false,
+  "validator_import_and_problem_setup_ns": 52108769,
+  "worker_entry_through_before_result_write_ns": 20116602387
+}

@@ -1,12 +1,14 @@
 # 两项初始运动认证：预算可行性验证
 
-2026-10-25。只回答已固定32车完整初解能否在现有20秒初始认证软限内建立完整名义证书，以及费用消耗在哪个阶段；**不评价候选、不比较收益、不运行新ADDRESS搜索、训练、world或误差模型**。实现、31项人工软件检查及固定输入静态检查已完成，科学执行由主窗口统一进行。
+2026-10-25，**本批已执行并关闭，不可重用许可**。maze在20秒初始认证事务中因依赖构造超期未获证书，random为`NOT_RUN_AFTER_FAILURE`；零重试，候选评价和新搜索均为0。完整结果见[初始认证报告](INITIAL_CERTIFICATION_RESULT.md)，失败/未运行原始产物见[总收据](results/initial_motion_certification_v1/RUN_RECEIPT.json)。下文保留执行前冻结的范围、预算和历史命令；后继收益比较门槛未通过。
+
+本批只回答已固定32车完整初解能否在现有20秒初始认证软限内建立完整名义证书，以及费用消耗在哪个阶段；**不评价候选、不比较收益、不运行新ADDRESS搜索、训练、world或误差模型**。此前31项人工软件检查及固定输入静态检查已完成。
 
 本轮真实用户指示为：“验证SCI新旧预算合同的实际行为，以及硕士初始认证的预算可行性，再开展收益比较”。下列两项数量和资源限制是本轮据此制定的执行安排，不能写成用户曾逐项指定这些数字。新指示不复用任何消费许可，也不自动授权后继收益批。实际执行时原文与安排记录入本批AUTHORIZATION；记录文件本身不是授权来源。
 
 ## 固定输入、代码和范围
 
-- [manifest](config/initial_motion_certification_v1_manifest.json) SHA `2fd0f0a96746d1d1ad10fa5493d5b1ed5d1c866f924493125e230dc7e29e4492`；运行代码逐文件SHA在manifest中固定，提交号由主窗口冻结时补充。
+- [manifest](config/initial_motion_certification_v1_manifest.json) SHA `2fd0f0a96746d1d1ad10fa5493d5b1ed5d1c866f924493125e230dc7e29e4492`；运行代码逐文件SHA在manifest中固定，科学提交 `1e74ba0b600fe0019f3e76d33314e5c0f19c8281`。manifest冻结字节不因运行结果而改写。
 - 输入来自既有 [motion_acceptance.lock.json](motion_acceptance.lock.json) 固定的SCI证据提交 `f9c651ad0680679cf99a4973f722b65fd6f7aa97`，输入对象SHA `660b7bc4b4282db1feedd373a9220dc98638c18bcb835123aff448c83eadcf3e`。这是ADDRESS旧批共用的完整初解，不是新的优化结果。本模式只读取该输入对象，不读取final候选对象。
 - 依次为 `maze-32-32-2__s05__n32`、`random-32-32-10__s05__n32`，各只认证原完整32车方案一次，不投影或缩短任务。运动参数、初向和固定局部依赖调度完全沿现行名义接口；不换调度器。validator、SharedBudget、supervisor仍固定SCI `535ee1a`。
 - 旧接纳器提案与旧锁/结果不变；因新窄入口及阶段计费改变当前源码，旧收益提案以后只能在其冻结`34d0cac`代码恢复，不能把本批SHA塞回旧manifest。
@@ -33,7 +35,7 @@
 rtk proxy python3 -B tracks/thesis/compare_nominal_motion.py inspect --manifest tracks/thesis/config/initial_motion_certification_v1_manifest.json --sha256 2fd0f0a96746d1d1ad10fa5493d5b1ed5d1c866f924493125e230dc7e29e4492
 ```
 
-在硕士工作树按以下顺序执行，第二项只有第一项收据COMPLETE且已建立完整初始证书时才可启动：
+以下是原顺序命令，仅供复核，不能再次执行：本轮第一项已运行一次，第二项因第一项未获证书而关闭。实际命令和授权原文以[外层记录](results/initial_motion_certification_v1/OUTER_EXECUTION.json)及[授权来源记录](results/initial_motion_certification_v1/AUTHORIZATION.json)为准。
 
 ```bash
 rtk proxy timeout --signal=TERM --kill-after=2s 28s python3 -B tracks/thesis/compare_nominal_motion.py run --manifest tracks/thesis/config/initial_motion_certification_v1_manifest.json --sha256 2fd0f0a96746d1d1ad10fa5493d5b1ed5d1c866f924493125e230dc7e29e4492 --case maze-32-32-2__s05__n32 --authorization-reference '2026-10-25用户：验证SCI新旧预算合同的实际行为，以及硕士初始认证的预算可行性，再开展收益比较'

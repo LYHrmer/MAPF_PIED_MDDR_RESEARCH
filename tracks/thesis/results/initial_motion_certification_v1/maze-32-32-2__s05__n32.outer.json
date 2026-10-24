@@ -1,0 +1,29 @@
+{
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=2s",
+    "28s",
+    "/usr/bin/python3",
+    "-B",
+    "tracks/thesis/compare_nominal_motion.py",
+    "run",
+    "--manifest",
+    "tracks/thesis/config/initial_motion_certification_v1_manifest.json",
+    "--sha256",
+    "2fd0f0a96746d1d1ad10fa5493d5b1ed5d1c866f924493125e230dc7e29e4492",
+    "--case",
+    "maze-32-32-2__s05__n32",
+    "--authorization-reference",
+    "CURRENT_USER_REQUEST_20261025_BUDGET_CONTRACT_AND_INITIAL_CERTIFICATION"
+  ],
+  "cwd": "/home/lyh/MAPF_THESIS_RESEARCH",
+  "exit_code": 2,
+  "id": "maze-32-32-2__s05__n32",
+  "outer_wall_ns": 20250148300,
+  "receipt_sha256": "629e4971b3c29f1183429bdce6154e5a94e7c25c0872aff548c2067f55581727",
+  "retry_allowed": false,
+  "status": "FAILED_OR_INCOMPLETE",
+  "stderr": "",
+  "stdout": "{\"case\": \"maze-32-32-2__s05__n32\", \"status\": \"FAILED_OR_INCOMPLETE\", \"output\": \"/home/lyh/MAPF_THESIS_RESEARCH/tracks/thesis/results/initial_motion_certification_v1/maze-32-32-2__s05__n32\"}\n"
+}

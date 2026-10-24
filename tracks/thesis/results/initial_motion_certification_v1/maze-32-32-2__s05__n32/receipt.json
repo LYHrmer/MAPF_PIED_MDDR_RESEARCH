@@ -1,0 +1,58 @@
+{
+  "accounting": "Total includes Git reads, imports, selection, all geometry/construction, metric checks, result serialization, fsync, artifact hashes, and supervisor wait. Administrative receipt write and final process exit excluded. Nested times are not additive. Prior SCI optimization cost is source metadata, not this motion-adaptation cost.",
+  "any_initial_certification_failure_stops_batch": true,
+  "artifacts": {
+    "attempt.json": {
+      "bytes": 287,
+      "sha256": "0565d98fcbad7290aee074bc2e4eca0666973da7e2895935f658d4a1d76dbbbe"
+    },
+    "initial_certification.json": {
+      "bytes": 1583,
+      "sha256": "525b7a5094f71f0224f94f822d50f308e14e1ae95920b6f3e798b31c23429161"
+    },
+    "result.json": {
+      "bytes": 3129,
+      "sha256": "1b01d24f7422ca7464050b2778bd1a3482adb2174e41084bec2c63705c332f9c"
+    },
+    "worker.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "worker.stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "candidate_evaluations": 0,
+  "case": "maze-32-32-2__s05__n32",
+  "diagnostic_completed": true,
+  "entry_through_import_input_validation_output_and_hash_ns": 20221497115,
+  "following_gain_comparison_authorized": false,
+  "initial_budget_feasible_at_this_observation": false,
+  "initial_certified": false,
+  "manifest_sha256": "2fd0f0a96746d1d1ad10fa5493d5b1ed5d1c866f924493125e230dc7e29e4492",
+  "new_scientific_initial_certification": true,
+  "new_scientific_motion_comparison": false,
+  "retry_allowed": false,
+  "status": "FAILED_OR_INCOMPLETE",
+  "supervisor_self_cpu_s": 0.141763,
+  "worker_costs": {
+    "all_descendant_system_s": 0.049312,
+    "all_descendant_user_s": 20.097667,
+    "exit_code": 0,
+    "forced_cleanup": false,
+    "interruption": null,
+    "largest_child_maxrss_kib": 25260,
+    "reaped": [
+      {
+        "exit_code": 0,
+        "maxrss_kib": 25260,
+        "pid": 23,
+        "system_s": 0.049311,
+        "user_s": 20.097666
+      }
+    ],
+    "scope": "WORKER_IMPORT_TO_EXIT_INCLUDING_RESULT_IO_AND_WAITED_NATIVE",
+    "wall_ns": 20159794574
+  }
+}
