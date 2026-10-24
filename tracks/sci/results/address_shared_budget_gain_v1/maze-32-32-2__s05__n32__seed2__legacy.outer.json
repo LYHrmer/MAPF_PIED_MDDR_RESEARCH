@@ -1,0 +1,29 @@
+{
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=2s",
+    "10s",
+    "/usr/bin/python3",
+    "-B",
+    "tracks/sci/run_address_adapter.py",
+    "run",
+    "--manifest",
+    "tracks/sci/config/address_shared_budget_gain_v1_manifest.json",
+    "--sha256",
+    "48d0e66e7e69f447323ce3a3a6f55190433332834d3b3cf78798fdaf5f3606e7",
+    "--job",
+    "maze-32-32-2__s05__n32__seed2__legacy",
+    "--authorization-reference",
+    "CURRENT_USER_REQUEST_20261025_BUDGET_CONTRACT_AND_INITIAL_CERTIFICATION_GAIN"
+  ],
+  "cwd": "/home/lyh/MAPF_SCI_RESEARCH",
+  "exit_code": 0,
+  "id": "maze-32-32-2__s05__n32__seed2__legacy",
+  "outer_wall_ns": 3089152650,
+  "receipt_sha256": "f0a6bb739031af8b0fdcbfb5b2441f555db0d6da7eac8e7b8102c06a852cc856",
+  "retry_allowed": false,
+  "status": "COMPLETE",
+  "stderr": "",
+  "stdout": "{\"job\": \"maze-32-32-2__s05__n32__seed2__legacy\", \"status\": \"COMPLETE\"}\n"
+}

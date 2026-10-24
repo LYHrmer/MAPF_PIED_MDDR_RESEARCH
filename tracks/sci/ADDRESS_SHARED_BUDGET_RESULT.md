@@ -57,4 +57,4 @@
 
 原冻结分析器首次离线调用因授权文件使用`planned_items`而期待`jobs`产生`KeyError: 'jobs'`，未写总收据。经主窗口批准，只在一次内存解析中验证该数组与manifest逐项相等后映射别名；原授权字节及后续产物哈希仍读原文件。精确适配源码、源码SHA、初次失败和0.171174秒离线wall/0.162548秒CPU见[兼容收据](results/address_shared_budget_contract_v1/OFFLINE_AGGREGATION_COMPATIBILITY.json)。它没有扩大授权、重跑任务或修改科学计时。
 
-下一步先按当前条件指示准备[同两任务的12项收益DEV](ADDRESS_SHARED_BUDGET_CHECKLIST.md#第二阶段同两任务的12项收益dev本节为新范围)：固定共同基线和同观测/all策略，在seed1/2/3检查逐对SOC、makespan、失败和总成本，未改二进制或加入任务。此阶段仍为已知任务内复现，之后才决定是否需要真正未见任务比较。当前不能凭迷宫一例推广，也不以random零差异追调预算；若seed方向不稳或只增加修复次数，就停止扩大该具体候选。暂不增加学习或新奖励公式，原四项许可已消费，新阶段另记当前指示的实施范围。
+随后按当前条件指示完成的[同两任务12项收益DEV](ADDRESS_SHARED_BUDGET_GAIN_RESULT.md)已全部COMPLETE、零重试，第二阶段许可也已消费。maze三个seed的SOC差42/39/43同向，但makespan均退化；random三对最终方案相同。两任务内复现未触发预定方向反转停止规则，仍不足以声称独立算法优势。后继真正未见任务验证另定范围，不沿当前任务追加seed、调预算或加入新奖励；本页四项功能证据及其原产物不改写。

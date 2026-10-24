@@ -69,6 +69,8 @@ rtk proxy timeout --signal=TERM --kill-after=2s 10s python3 -B tracks/sci/run_ad
 
 ## 第二阶段：同两任务的12项收益DEV（本节为新范围）
 
+**状态更新：本阶段已执行，许可消费。** 冻结科学提交`f8539a133f8953536bb7487d4efef54520a63478`下12项全部COMPLETE、六对完整、零硬失败、零重试。[收益DEV结果](ADDRESS_SHARED_BUDGET_GAIN_RESULT.md)保留三个maze正SOC差、makespan退化及random零差异；预定seed方向翻转规则未触发。以下新范围和命令现仅作追溯，不得重跑或追加seed。
+
 当前用户原文“验证SCI新旧预算合同的实际行为，以及硕士初始认证的预算可行性，再开展收益比较”包含通过验证后开展收益比较的条件指示。SCI功能阶段已通过，[结果提交`4fcf289`](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/commit/4fcf289347bcf8f93410e61ae15cf2b1bb37e3fa)固定总收据SHA `70765e1f8e9ca3f2f64ed403bb0f7fe881ff50686e819a9be7ea1e93371446bc`和独立审计SHA `496fc47e93e3e06c638166f98b5ce26c2973b1e1c1b2421cc4771fdaf18934cc`。本节据此限定第二阶段最小实施范围；12项数量及预算由本轮实施安排，不冒充用户逐项给定，也不复用旧四项已消费许可。硕士认证失败不阻塞独立SCI支线。
 
 新[manifest](config/address_shared_budget_gain_v1_manifest.json) SHA `48d0e66e7e69f447323ce3a3a6f55190433332834d3b3cf78798fdaf5f3606e7`；二进制、运行器/分析器、初解输入及全部源SHA沿用第一阶段冻结值，未改局部份额、奖励、all策略或观测。只增加同两份已知32车任务的solver seed1/2/3，不加入地图、初始搜索、训练或新模型。独立任务单位仍是2，三个seed只是任务内重复，六对结果不能算六份独立地图或留出验证。
@@ -92,10 +94,10 @@ rtk proxy timeout --signal=TERM --kill-after=2s 10s python3 -B tracks/sci/run_ad
 rtk proxy python3 -B tracks/sci/run_address_adapter.py inspect --manifest tracks/sci/config/address_shared_budget_gain_v1_manifest.json --sha256 48d0e66e7e69f447323ce3a3a6f55190433332834d3b3cf78798fdaf5f3606e7
 ```
 
-主窗口冻结后按新manifest的12个job顺序执行。第一项具体命令如下，其余逐项使用manifest内的完整job ID；旧四项命令不得再次执行。新授权记录单列第二阶段、当前用户原文、前置功能证据、实际提交、全部12项和资源范围，提供`jobs`字段且逐项等于manifest，以兼容原聚合器。
+主窗口已冻结并按新manifest的12个job顺序执行，实际命令及退出见[外层记录](results/address_shared_budget_gain_v1/OUTER_EXECUTION.json)。下方为第一项的历史命令模板，全部四项/12项许可均不可再用。[本阶段授权记录](results/address_shared_budget_gain_v1/AUTHORIZATION.json)单列当前用户原文、前置功能证据、实际提交、全部12项和资源范围，`jobs`字段与manifest一致。
 
 ```bash
 rtk proxy timeout --signal=TERM --kill-after=2s 10s python3 -B tracks/sci/run_address_adapter.py run --manifest tracks/sci/config/address_shared_budget_gain_v1_manifest.json --sha256 48d0e66e7e69f447323ce3a3a6f55190433332834d3b3cf78798fdaf5f3606e7 --job maze-32-32-2__s05__n32__seed1__legacy --authorization-reference 'CURRENT_USER_CONDITIONAL_REQUEST_20261025_SECOND_STAGE_SCI_GAIN_DEV'
 ```
 
-新产物只写`results/address_shared_budget_gain_v1/`，授权/外层执行/每项原始文件与离线总收据结构复用现有模块；不覆盖第一阶段。旧冻结聚合的PRIMARY_DONE投影缺口仍须直接复核原stage，不据零计数断言未触发。当前本窗口仅完成准备，不执行或扩展本批。
+产物已保存在`results/address_shared_budget_gain_v1/`，授权/外层执行/每项原始文件与离线总收据结构复用现有模块，未覆盖第一阶段。独立审计直接核对原stage，12项PRIMARY_DONE首次local/global均为0，不修改冻结投影。本批已经闭合，不执行或扩展原清单。

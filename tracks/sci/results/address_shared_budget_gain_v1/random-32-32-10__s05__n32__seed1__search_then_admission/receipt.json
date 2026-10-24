@@ -1,0 +1,94 @@
+{
+  "artifacts": {
+    "agents.txt": {
+      "bytes": 359,
+      "sha256": "19f5e0d679268dc3ba4eb51524223a76ef63d03fd3252c2fb0d4a09fd44f31cc"
+    },
+    "attempt.json": {
+      "bytes": 651,
+      "sha256": "815460fc3b2589632c12b3c23d602e8353b213549d00c6fd74bf4dfdce56970b"
+    },
+    "final.paths": {
+      "bytes": 7020,
+      "sha256": "68c52e96a4645f0eaf5fc8399219fb158eb3934bfa8fafff006294e67dd8f42d"
+    },
+    "initial.txt": {
+      "bytes": 3224,
+      "sha256": "08d2ecfae164123232a54fb696e89051cb471e58ffa8f1fa20a2f5dd3dbe7fe8"
+    },
+    "map.txt": {
+      "bytes": 1062,
+      "sha256": "fe0aa228ea1d880f3a91ae6ff4ee049e8435affca28f985974bb4137802aaeb6"
+    },
+    "native.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "native.stdout.log": {
+      "bytes": 1685,
+      "sha256": "ae4cb03ba92467c5ff2e13ed55e5a22945aecea94c1658f04f13fbaf329cb5bc"
+    },
+    "native_receipt.json": {
+      "bytes": 6032,
+      "sha256": "50c0f4cab813744dba2ce5880575b19104d1baab34616693a28ede69e56552e5"
+    },
+    "result.json": {
+      "bytes": 27500,
+      "sha256": "decd7c7fcb040604bcca1579887745959a0bc2f977c5da6c626ff9b7fd557d87"
+    },
+    "rewards.jsonl": {
+      "bytes": 1407177,
+      "sha256": "d76c054b8c38a2dbb5dc3d8e0134d87f1014d6b861dd983d64f1348a5b7ebe1a"
+    },
+    "worker.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "worker.stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "audit_receipt_write_and_process_exit_excluded": true,
+  "budget_scope": "ENTRY_THROUGH_RESULT_OUTPUT_EXTERNAL_FINAL_CHECK_AND_ARTIFACT_HASH",
+  "coordinator_io_is_not_preemptively_bounded_here": true,
+  "costs": {
+    "all_descendant_system_s": 1.5469819999999999,
+    "all_descendant_user_s": 1.467298,
+    "exit_code": 0,
+    "forced_cleanup": false,
+    "interruption": null,
+    "largest_child_maxrss_kib": 24288,
+    "reaped": [
+      {
+        "exit_code": 0,
+        "maxrss_kib": 24288,
+        "pid": 24,
+        "system_s": 1.5469819999999999,
+        "user_s": 1.467298
+      }
+    ],
+    "scope": "WORKER_IMPORT_TO_EXIT_INCLUDING_RESULT_IO_AND_WAITED_NATIVE",
+    "wall_ns": 3086799967
+  },
+  "independent_performance_result": false,
+  "job": {
+    "candidate_validation_policy": "all",
+    "case": "random-32-32-10__s05__n32",
+    "effort_mode": "total_budget",
+    "id": "random-32-32-10__s05__n32__seed1__search_then_admission",
+    "iterations": 0,
+    "repair_budget_contract": "search_then_admission",
+    "reward_memory": "author",
+    "reward_window": 0,
+    "seed": 1,
+    "seed_admission": "positive_delay",
+    "top_k": 32
+  },
+  "manifest_sha256": "48d0e66e7e69f447323ce3a3a6f55190433332834d3b3cf78798fdaf5f3606e7",
+  "retry_allowed": false,
+  "status": "COMPLETE",
+  "supervisor_self_cpu_s": 0.07180299999999999,
+  "total_entry_through_output_validation_and_hash_ns": 3128857145,
+  "total_wall_is_success_admission_budget": true
+}

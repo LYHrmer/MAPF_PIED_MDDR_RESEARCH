@@ -1,0 +1,1768 @@
+{
+  "authorization_consumed_or_closed": true,
+  "authorization_sha256": "6d705c9785fa59efc1898003d4e4b2d071853418db50e8b50bd7237b6d76c08d",
+  "complete_pairs": 6,
+  "completed_jobs": 12,
+  "created_utc": "2026-10-24T17:24:12.550818+00:00",
+  "decision_rule": "Report all six paired SOC differences by two tasks, plus every makespan/cost/failure. If strict SOC differences switch sign across seeds within a task, or apparent benefit is only more repair attempts without retained full-plan quality gain, stop expanding this specific candidate. Zero or worse outcomes remain. No added seeds/maps, reruns, budget widening, reward changes, training or automatic next batch.",
+  "failed_jobs": 0,
+  "independent_task_units": 2,
+  "interpretation": "Known design tasks, three new solver seeds per task. Within-task paired descriptive evidence only; two task units, no significance or unseen-task generalization claim. No equal-work speedup from different repair counts. PRIMARY_DONE omissions are listed from raw stages; settlement duration is not a commit timestamp.",
+  "jobs": [
+    {
+      "PRIMARY_DONE_independent_stage_review": {
+        "global": {
+          "event_ids": [],
+          "first_observed_at_PRIMARY_DONE_count": 0,
+          "not_present_in_search_return_snapshot_ids": []
+        },
+        "local": {
+          "event_ids": [],
+          "first_observed_at_PRIMARY_DONE_count": 0,
+          "not_present_in_search_return_snapshot_ids": []
+        }
+      },
+      "accepted_after_proven_old_local_margin_crossing_count": 0,
+      "actual_posterior_and_plan_identity_chain_verified": true,
+      "case": "maze-32-32-2__s05__n32",
+      "complete_paths_validated": true,
+      "contract": "legacy",
+      "crossing_witness_examples": [],
+      "descendant_cpu_s": 2.999295,
+      "events": 104,
+      "final_makespan": 121,
+      "final_soc": 1981,
+      "full_admission_wall_ns": 3065785627,
+      "initial_soc": 2000,
+      "job": "maze-32-32-2__s05__n32__seed1__legacy",
+      "native_cpu_s": 2.905443285,
+      "one_settlement_and_cost_ledger_verified": true,
+      "outer_wall_ns": 3111641183,
+      "positive_gain_crossing_witness_count": 0,
+      "receipt_artifact_pins_verified": 12,
+      "recorded_functional_coverage": {
+        "between_run_candidate_identity_assumed": false,
+        "common_validated_events_without_direct_crossing_proof": 0,
+        "coverage": {
+          "common_commit_proven_beyond_local_margin": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "common_validation_proven_beyond_local_margin": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "global_cutoff_rollback": {
+            "count": 1,
+            "example_selection_ids": [
+              104
+            ],
+            "status": "EXERCISED"
+          },
+          "legacy_admission_local_cutoff_global_remaining": {
+            "count": 10,
+            "example_selection_ids": [
+              4,
+              7,
+              11,
+              14,
+              15,
+              21,
+              37,
+              44
+            ],
+            "status": "EXERCISED"
+          },
+          "normal_complete_search_committed": {
+            "count": 7,
+            "example_selection_ids": [
+              3,
+              5,
+              24,
+              26,
+              28,
+              35,
+              49
+            ],
+            "status": "EXERCISED"
+          },
+          "normal_complete_search_validated": {
+            "count": 7,
+            "example_selection_ids": [
+              3,
+              5,
+              24,
+              26,
+              28,
+              35,
+              49
+            ],
+            "status": "EXERCISED"
+          },
+          "search_global_cutoff_rollback": {
+            "count": 1,
+            "example_selection_ids": [
+              104
+            ],
+            "status": "EXERCISED"
+          },
+          "search_local_cutoff_rollback": {
+            "count": 64,
+            "example_selection_ids": [
+              12,
+              16,
+              23,
+              25,
+              27,
+              29,
+              32,
+              40
+            ],
+            "status": "EXERCISED"
+          },
+          "validated_then_global_cutoff_rollback": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          }
+        },
+        "cutoff_rejection_identity_checked": true,
+        "evidence_scope": "KNOWN_TASK_SINGLE_SEED_FUNCTIONAL_NOT_BENEFIT_COMPARISON",
+        "repair_budget_contract": "legacy",
+        "rounding_guard_ns": 2,
+        "schema": "ADDRESS_SHARED_BUDGET_FUNCTIONAL_COVERAGE_V1",
+        "settlement_time_not_used_as_commit_time": true,
+        "unproven_event_interpretation": "UNKNOWN_NOT_EVIDENCE_OF_NO_CROSSING"
+      },
+      "repairs": 104,
+      "rollbacks": 97,
+      "seed": 1,
+      "status": "AUDIT_PASS",
+      "worker_cpu_ns": 27701244
+    },
+    {
+      "PRIMARY_DONE_independent_stage_review": {
+        "global": {
+          "event_ids": [],
+          "first_observed_at_PRIMARY_DONE_count": 0,
+          "not_present_in_search_return_snapshot_ids": []
+        },
+        "local": {
+          "event_ids": [],
+          "first_observed_at_PRIMARY_DONE_count": 0,
+          "not_present_in_search_return_snapshot_ids": []
+        }
+      },
+      "accepted_after_proven_old_local_margin_crossing_count": 6,
+      "actual_posterior_and_plan_identity_chain_verified": true,
+      "case": "maze-32-32-2__s05__n32",
+      "complete_paths_validated": true,
+      "contract": "search_then_admission",
+      "crossing_witness_examples": [
+        {
+          "candidate_validation_wall_ns": 10761010,
+          "committed_gain": 6,
+          "local_remaining_wall_ns": 3336496,
+          "selection_id": 4
+        },
+        {
+          "candidate_validation_wall_ns": 10795106,
+          "committed_gain": 5,
+          "local_remaining_wall_ns": 2282566,
+          "selection_id": 21
+        },
+        {
+          "candidate_validation_wall_ns": 10751161,
+          "committed_gain": 2,
+          "local_remaining_wall_ns": 964767,
+          "selection_id": 30
+        },
+        {
+          "candidate_validation_wall_ns": 11262205,
+          "committed_gain": 22,
+          "local_remaining_wall_ns": 2710919,
+          "selection_id": 37
+        },
+        {
+          "candidate_validation_wall_ns": 11145687,
+          "committed_gain": 2,
+          "local_remaining_wall_ns": 74909,
+          "selection_id": 71
+        },
+        {
+          "candidate_validation_wall_ns": 11011302,
+          "committed_gain": 10,
+          "local_remaining_wall_ns": 4551123,
+          "selection_id": 85
+        }
+      ],
+      "descendant_cpu_s": 2.998652,
+      "events": 99,
+      "final_makespan": 125,
+      "final_soc": 1939,
+      "full_admission_wall_ns": 3065727811,
+      "initial_soc": 2000,
+      "job": "maze-32-32-2__s05__n32__seed1__search_then_admission",
+      "native_cpu_s": 2.903415952,
+      "one_settlement_and_cost_ledger_verified": true,
+      "outer_wall_ns": 3108917710,
+      "positive_gain_crossing_witness_count": 6,
+      "receipt_artifact_pins_verified": 12,
+      "recorded_functional_coverage": {
+        "between_run_candidate_identity_assumed": false,
+        "common_validated_events_without_direct_crossing_proof": 5,
+        "coverage": {
+          "common_commit_proven_beyond_local_margin": {
+            "count": 6,
+            "example_selection_ids": [
+              4,
+              21,
+              30,
+              37,
+              71,
+              85
+            ],
+            "status": "EXERCISED"
+          },
+          "common_validation_proven_beyond_local_margin": {
+            "count": 6,
+            "example_selection_ids": [
+              4,
+              21,
+              30,
+              37,
+              71,
+              85
+            ],
+            "status": "EXERCISED"
+          },
+          "global_cutoff_rollback": {
+            "count": 1,
+            "example_selection_ids": [
+              99
+            ],
+            "status": "EXERCISED"
+          },
+          "legacy_admission_local_cutoff_global_remaining": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "normal_complete_search_committed": {
+            "count": 11,
+            "example_selection_ids": [
+              3,
+              4,
+              18,
+              21,
+              30,
+              35,
+              37,
+              62
+            ],
+            "status": "EXERCISED"
+          },
+          "normal_complete_search_validated": {
+            "count": 11,
+            "example_selection_ids": [
+              3,
+              4,
+              18,
+              21,
+              30,
+              35,
+              37,
+              62
+            ],
+            "status": "EXERCISED"
+          },
+          "search_global_cutoff_rollback": {
+            "count": 1,
+            "example_selection_ids": [
+              99
+            ],
+            "status": "EXERCISED"
+          },
+          "search_local_cutoff_rollback": {
+            "count": 31,
+            "example_selection_ids": [
+              12,
+              13,
+              15,
+              17,
+              19,
+              22,
+              23,
+              25
+            ],
+            "status": "EXERCISED"
+          },
+          "validated_then_global_cutoff_rollback": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          }
+        },
+        "cutoff_rejection_identity_checked": true,
+        "evidence_scope": "KNOWN_TASK_SINGLE_SEED_FUNCTIONAL_NOT_BENEFIT_COMPARISON",
+        "repair_budget_contract": "search_then_admission",
+        "rounding_guard_ns": 2,
+        "schema": "ADDRESS_SHARED_BUDGET_FUNCTIONAL_COVERAGE_V1",
+        "settlement_time_not_used_as_commit_time": true,
+        "unproven_event_interpretation": "UNKNOWN_NOT_EVIDENCE_OF_NO_CROSSING"
+      },
+      "repairs": 99,
+      "rollbacks": 88,
+      "seed": 1,
+      "status": "AUDIT_PASS",
+      "worker_cpu_ns": 25056306
+    },
+    {
+      "PRIMARY_DONE_independent_stage_review": {
+        "global": {
+          "event_ids": [],
+          "first_observed_at_PRIMARY_DONE_count": 0,
+          "not_present_in_search_return_snapshot_ids": []
+        },
+        "local": {
+          "event_ids": [],
+          "first_observed_at_PRIMARY_DONE_count": 0,
+          "not_present_in_search_return_snapshot_ids": []
+        }
+      },
+      "accepted_after_proven_old_local_margin_crossing_count": 0,
+      "actual_posterior_and_plan_identity_chain_verified": true,
+      "case": "random-32-32-10__s05__n32",
+      "complete_paths_validated": true,
+      "contract": "search_then_admission",
+      "crossing_witness_examples": [],
+      "descendant_cpu_s": 3.01428,
+      "events": 528,
+      "final_makespan": 48,
+      "final_soc": 749,
+      "full_admission_wall_ns": 3128857145,
+      "initial_soc": 753,
+      "job": "random-32-32-10__s05__n32__seed1__search_then_admission",
+      "native_cpu_s": 2.9075666360000003,
+      "one_settlement_and_cost_ledger_verified": true,
+      "outer_wall_ns": 3174788865,
+      "positive_gain_crossing_witness_count": 0,
+      "receipt_artifact_pins_verified": 12,
+      "recorded_functional_coverage": {
+        "between_run_candidate_identity_assumed": false,
+        "common_validated_events_without_direct_crossing_proof": 3,
+        "coverage": {
+          "common_commit_proven_beyond_local_margin": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          },
+          "common_validation_proven_beyond_local_margin": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          },
+          "global_cutoff_rollback": {
+            "count": 1,
+            "example_selection_ids": [
+              528
+            ],
+            "status": "EXERCISED"
+          },
+          "legacy_admission_local_cutoff_global_remaining": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "normal_complete_search_committed": {
+            "count": 3,
+            "example_selection_ids": [
+              2,
+              4,
+              5
+            ],
+            "status": "EXERCISED"
+          },
+          "normal_complete_search_validated": {
+            "count": 3,
+            "example_selection_ids": [
+              2,
+              4,
+              5
+            ],
+            "status": "EXERCISED"
+          },
+          "search_global_cutoff_rollback": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          },
+          "search_local_cutoff_rollback": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          },
+          "validated_then_global_cutoff_rollback": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          }
+        },
+        "cutoff_rejection_identity_checked": true,
+        "evidence_scope": "KNOWN_TASK_SINGLE_SEED_FUNCTIONAL_NOT_BENEFIT_COMPARISON",
+        "repair_budget_contract": "search_then_admission",
+        "rounding_guard_ns": 2,
+        "schema": "ADDRESS_SHARED_BUDGET_FUNCTIONAL_COVERAGE_V1",
+        "settlement_time_not_used_as_commit_time": true,
+        "unproven_event_interpretation": "UNKNOWN_NOT_EVIDENCE_OF_NO_CROSSING"
+      },
+      "repairs": 521,
+      "rollbacks": 518,
+      "seed": 1,
+      "status": "AUDIT_PASS",
+      "worker_cpu_ns": 33116255
+    },
+    {
+      "PRIMARY_DONE_independent_stage_review": {
+        "global": {
+          "event_ids": [],
+          "first_observed_at_PRIMARY_DONE_count": 0,
+          "not_present_in_search_return_snapshot_ids": []
+        },
+        "local": {
+          "event_ids": [],
+          "first_observed_at_PRIMARY_DONE_count": 0,
+          "not_present_in_search_return_snapshot_ids": []
+        }
+      },
+      "accepted_after_proven_old_local_margin_crossing_count": 0,
+      "actual_posterior_and_plan_identity_chain_verified": true,
+      "case": "random-32-32-10__s05__n32",
+      "complete_paths_validated": true,
+      "contract": "legacy",
+      "crossing_witness_examples": [],
+      "descendant_cpu_s": 3.000513,
+      "events": 528,
+      "final_makespan": 48,
+      "final_soc": 749,
+      "full_admission_wall_ns": 3071782274,
+      "initial_soc": 753,
+      "job": "random-32-32-10__s05__n32__seed1__legacy",
+      "native_cpu_s": 2.908033903,
+      "one_settlement_and_cost_ledger_verified": true,
+      "outer_wall_ns": 3112037978,
+      "positive_gain_crossing_witness_count": 0,
+      "receipt_artifact_pins_verified": 12,
+      "recorded_functional_coverage": {
+        "between_run_candidate_identity_assumed": false,
+        "common_validated_events_without_direct_crossing_proof": 0,
+        "coverage": {
+          "common_commit_proven_beyond_local_margin": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "common_validation_proven_beyond_local_margin": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "global_cutoff_rollback": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          },
+          "legacy_admission_local_cutoff_global_remaining": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          },
+          "normal_complete_search_committed": {
+            "count": 3,
+            "example_selection_ids": [
+              2,
+              4,
+              5
+            ],
+            "status": "EXERCISED"
+          },
+          "normal_complete_search_validated": {
+            "count": 3,
+            "example_selection_ids": [
+              2,
+              4,
+              5
+            ],
+            "status": "EXERCISED"
+          },
+          "search_global_cutoff_rollback": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          },
+          "search_local_cutoff_rollback": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          },
+          "validated_then_global_cutoff_rollback": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          }
+        },
+        "cutoff_rejection_identity_checked": true,
+        "evidence_scope": "KNOWN_TASK_SINGLE_SEED_FUNCTIONAL_NOT_BENEFIT_COMPARISON",
+        "repair_budget_contract": "legacy",
+        "rounding_guard_ns": 2,
+        "schema": "ADDRESS_SHARED_BUDGET_FUNCTIONAL_COVERAGE_V1",
+        "settlement_time_not_used_as_commit_time": true,
+        "unproven_event_interpretation": "UNKNOWN_NOT_EVIDENCE_OF_NO_CROSSING"
+      },
+      "repairs": 521,
+      "rollbacks": 518,
+      "seed": 1,
+      "status": "AUDIT_PASS",
+      "worker_cpu_ns": 35132007
+    },
+    {
+      "PRIMARY_DONE_independent_stage_review": {
+        "global": {
+          "event_ids": [],
+          "first_observed_at_PRIMARY_DONE_count": 0,
+          "not_present_in_search_return_snapshot_ids": []
+        },
+        "local": {
+          "event_ids": [],
+          "first_observed_at_PRIMARY_DONE_count": 0,
+          "not_present_in_search_return_snapshot_ids": []
+        }
+      },
+      "accepted_after_proven_old_local_margin_crossing_count": 8,
+      "actual_posterior_and_plan_identity_chain_verified": true,
+      "case": "maze-32-32-2__s05__n32",
+      "complete_paths_validated": true,
+      "contract": "search_then_admission",
+      "crossing_witness_examples": [
+        {
+          "candidate_validation_wall_ns": 10856026,
+          "committed_gain": 1,
+          "local_remaining_wall_ns": 2814918,
+          "selection_id": 2
+        },
+        {
+          "candidate_validation_wall_ns": 10890387,
+          "committed_gain": 5,
+          "local_remaining_wall_ns": 4857227,
+          "selection_id": 3
+        },
+        {
+          "candidate_validation_wall_ns": 10860887,
+          "committed_gain": 9,
+          "local_remaining_wall_ns": 8838592,
+          "selection_id": 5
+        },
+        {
+          "candidate_validation_wall_ns": 10831057,
+          "committed_gain": 5,
+          "local_remaining_wall_ns": 4178092,
+          "selection_id": 9
+        },
+        {
+          "candidate_validation_wall_ns": 11078639,
+          "committed_gain": 19,
+          "local_remaining_wall_ns": 4435437,
+          "selection_id": 13
+        },
+        {
+          "candidate_validation_wall_ns": 11216864,
+          "committed_gain": 2,
+          "local_remaining_wall_ns": 714965,
+          "selection_id": 15
+        },
+        {
+          "candidate_validation_wall_ns": 10908162,
+          "committed_gain": 1,
+          "local_remaining_wall_ns": 318523,
+          "selection_id": 28
+        },
+        {
+          "candidate_validation_wall_ns": 10754326,
+          "committed_gain": 5,
+          "local_remaining_wall_ns": 1466777,
+          "selection_id": 85
+        }
+      ],
+      "descendant_cpu_s": 2.991886,
+      "events": 96,
+      "final_makespan": 123,
+      "final_soc": 1949,
+      "full_admission_wall_ns": 3048881875,
+      "initial_soc": 2000,
+      "job": "maze-32-32-2__s05__n32__seed2__search_then_admission",
+      "native_cpu_s": 2.912599054,
+      "one_settlement_and_cost_ledger_verified": true,
+      "outer_wall_ns": 3096685578,
+      "positive_gain_crossing_witness_count": 8,
+      "receipt_artifact_pins_verified": 12,
+      "recorded_functional_coverage": {
+        "between_run_candidate_identity_assumed": false,
+        "common_validated_events_without_direct_crossing_proof": 3,
+        "coverage": {
+          "common_commit_proven_beyond_local_margin": {
+            "count": 8,
+            "example_selection_ids": [
+              2,
+              3,
+              5,
+              9,
+              13,
+              15,
+              28,
+              85
+            ],
+            "status": "EXERCISED"
+          },
+          "common_validation_proven_beyond_local_margin": {
+            "count": 8,
+            "example_selection_ids": [
+              2,
+              3,
+              5,
+              9,
+              13,
+              15,
+              28,
+              85
+            ],
+            "status": "EXERCISED"
+          },
+          "global_cutoff_rollback": {
+            "count": 1,
+            "example_selection_ids": [
+              96
+            ],
+            "status": "EXERCISED"
+          },
+          "legacy_admission_local_cutoff_global_remaining": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "normal_complete_search_committed": {
+            "count": 11,
+            "example_selection_ids": [
+              1,
+              2,
+              3,
+              5,
+              9,
+              13,
+              15,
+              28
+            ],
+            "status": "EXERCISED"
+          },
+          "normal_complete_search_validated": {
+            "count": 11,
+            "example_selection_ids": [
+              1,
+              2,
+              3,
+              5,
+              9,
+              13,
+              15,
+              28
+            ],
+            "status": "EXERCISED"
+          },
+          "search_global_cutoff_rollback": {
+            "count": 1,
+            "example_selection_ids": [
+              96
+            ],
+            "status": "EXERCISED"
+          },
+          "search_local_cutoff_rollback": {
+            "count": 38,
+            "example_selection_ids": [
+              14,
+              17,
+              18,
+              21,
+              22,
+              24,
+              26,
+              27
+            ],
+            "status": "EXERCISED"
+          },
+          "validated_then_global_cutoff_rollback": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          }
+        },
+        "cutoff_rejection_identity_checked": true,
+        "evidence_scope": "KNOWN_TASK_SINGLE_SEED_FUNCTIONAL_NOT_BENEFIT_COMPARISON",
+        "repair_budget_contract": "search_then_admission",
+        "rounding_guard_ns": 2,
+        "schema": "ADDRESS_SHARED_BUDGET_FUNCTIONAL_COVERAGE_V1",
+        "settlement_time_not_used_as_commit_time": true,
+        "unproven_event_interpretation": "UNKNOWN_NOT_EVIDENCE_OF_NO_CROSSING"
+      },
+      "repairs": 96,
+      "rollbacks": 85,
+      "seed": 2,
+      "status": "AUDIT_PASS",
+      "worker_cpu_ns": 19595825
+    },
+    {
+      "PRIMARY_DONE_independent_stage_review": {
+        "global": {
+          "event_ids": [],
+          "first_observed_at_PRIMARY_DONE_count": 0,
+          "not_present_in_search_return_snapshot_ids": []
+        },
+        "local": {
+          "event_ids": [],
+          "first_observed_at_PRIMARY_DONE_count": 0,
+          "not_present_in_search_return_snapshot_ids": []
+        }
+      },
+      "accepted_after_proven_old_local_margin_crossing_count": 0,
+      "actual_posterior_and_plan_identity_chain_verified": true,
+      "case": "maze-32-32-2__s05__n32",
+      "complete_paths_validated": true,
+      "contract": "legacy",
+      "crossing_witness_examples": [],
+      "descendant_cpu_s": 2.993454,
+      "events": 105,
+      "final_makespan": 121,
+      "final_soc": 1988,
+      "full_admission_wall_ns": 3053077702,
+      "initial_soc": 2000,
+      "job": "maze-32-32-2__s05__n32__seed2__legacy",
+      "native_cpu_s": 2.908855398,
+      "one_settlement_and_cost_ledger_verified": true,
+      "outer_wall_ns": 3089152650,
+      "positive_gain_crossing_witness_count": 0,
+      "receipt_artifact_pins_verified": 12,
+      "recorded_functional_coverage": {
+        "between_run_candidate_identity_assumed": false,
+        "common_validated_events_without_direct_crossing_proof": 0,
+        "coverage": {
+          "common_commit_proven_beyond_local_margin": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "common_validation_proven_beyond_local_margin": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "global_cutoff_rollback": {
+            "count": 1,
+            "example_selection_ids": [
+              105
+            ],
+            "status": "EXERCISED"
+          },
+          "legacy_admission_local_cutoff_global_remaining": {
+            "count": 11,
+            "example_selection_ids": [
+              2,
+              6,
+              8,
+              18,
+              20,
+              23,
+              26,
+              27
+            ],
+            "status": "EXERCISED"
+          },
+          "normal_complete_search_committed": {
+            "count": 6,
+            "example_selection_ids": [
+              1,
+              15,
+              17,
+              24,
+              30,
+              46
+            ],
+            "status": "EXERCISED"
+          },
+          "normal_complete_search_validated": {
+            "count": 6,
+            "example_selection_ids": [
+              1,
+              15,
+              17,
+              24,
+              30,
+              46
+            ],
+            "status": "EXERCISED"
+          },
+          "search_global_cutoff_rollback": {
+            "count": 1,
+            "example_selection_ids": [
+              105
+            ],
+            "status": "EXERCISED"
+          },
+          "search_local_cutoff_rollback": {
+            "count": 55,
+            "example_selection_ids": [
+              3,
+              7,
+              10,
+              11,
+              13,
+              29,
+              31,
+              32
+            ],
+            "status": "EXERCISED"
+          },
+          "validated_then_global_cutoff_rollback": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          }
+        },
+        "cutoff_rejection_identity_checked": true,
+        "evidence_scope": "KNOWN_TASK_SINGLE_SEED_FUNCTIONAL_NOT_BENEFIT_COMPARISON",
+        "repair_budget_contract": "legacy",
+        "rounding_guard_ns": 2,
+        "schema": "ADDRESS_SHARED_BUDGET_FUNCTIONAL_COVERAGE_V1",
+        "settlement_time_not_used_as_commit_time": true,
+        "unproven_event_interpretation": "UNKNOWN_NOT_EVIDENCE_OF_NO_CROSSING"
+      },
+      "repairs": 105,
+      "rollbacks": 99,
+      "seed": 2,
+      "status": "AUDIT_PASS",
+      "worker_cpu_ns": 22398628
+    },
+    {
+      "PRIMARY_DONE_independent_stage_review": {
+        "global": {
+          "event_ids": [],
+          "first_observed_at_PRIMARY_DONE_count": 0,
+          "not_present_in_search_return_snapshot_ids": []
+        },
+        "local": {
+          "event_ids": [],
+          "first_observed_at_PRIMARY_DONE_count": 0,
+          "not_present_in_search_return_snapshot_ids": []
+        }
+      },
+      "accepted_after_proven_old_local_margin_crossing_count": 0,
+      "actual_posterior_and_plan_identity_chain_verified": true,
+      "case": "random-32-32-10__s05__n32",
+      "complete_paths_validated": true,
+      "contract": "legacy",
+      "crossing_witness_examples": [],
+      "descendant_cpu_s": 3.016746,
+      "events": 547,
+      "final_makespan": 48,
+      "final_soc": 749,
+      "full_admission_wall_ns": 3131620100,
+      "initial_soc": 753,
+      "job": "random-32-32-10__s05__n32__seed2__legacy",
+      "native_cpu_s": 2.911222509,
+      "one_settlement_and_cost_ledger_verified": true,
+      "outer_wall_ns": 3182422011,
+      "positive_gain_crossing_witness_count": 0,
+      "receipt_artifact_pins_verified": 12,
+      "recorded_functional_coverage": {
+        "between_run_candidate_identity_assumed": false,
+        "common_validated_events_without_direct_crossing_proof": 0,
+        "coverage": {
+          "common_commit_proven_beyond_local_margin": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "common_validation_proven_beyond_local_margin": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "global_cutoff_rollback": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          },
+          "legacy_admission_local_cutoff_global_remaining": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          },
+          "normal_complete_search_committed": {
+            "count": 3,
+            "example_selection_ids": [
+              1,
+              2,
+              3
+            ],
+            "status": "EXERCISED"
+          },
+          "normal_complete_search_validated": {
+            "count": 3,
+            "example_selection_ids": [
+              1,
+              2,
+              3
+            ],
+            "status": "EXERCISED"
+          },
+          "search_global_cutoff_rollback": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          },
+          "search_local_cutoff_rollback": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          },
+          "validated_then_global_cutoff_rollback": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          }
+        },
+        "cutoff_rejection_identity_checked": true,
+        "evidence_scope": "KNOWN_TASK_SINGLE_SEED_FUNCTIONAL_NOT_BENEFIT_COMPARISON",
+        "repair_budget_contract": "legacy",
+        "rounding_guard_ns": 2,
+        "schema": "ADDRESS_SHARED_BUDGET_FUNCTIONAL_COVERAGE_V1",
+        "settlement_time_not_used_as_commit_time": true,
+        "unproven_event_interpretation": "UNKNOWN_NOT_EVIDENCE_OF_NO_CROSSING"
+      },
+      "repairs": 521,
+      "rollbacks": 518,
+      "seed": 2,
+      "status": "AUDIT_PASS",
+      "worker_cpu_ns": 34910926
+    },
+    {
+      "PRIMARY_DONE_independent_stage_review": {
+        "global": {
+          "event_ids": [],
+          "first_observed_at_PRIMARY_DONE_count": 0,
+          "not_present_in_search_return_snapshot_ids": []
+        },
+        "local": {
+          "event_ids": [],
+          "first_observed_at_PRIMARY_DONE_count": 0,
+          "not_present_in_search_return_snapshot_ids": []
+        }
+      },
+      "accepted_after_proven_old_local_margin_crossing_count": 0,
+      "actual_posterior_and_plan_identity_chain_verified": true,
+      "case": "random-32-32-10__s05__n32",
+      "complete_paths_validated": true,
+      "contract": "search_then_admission",
+      "crossing_witness_examples": [],
+      "descendant_cpu_s": 3.017754,
+      "events": 549,
+      "final_makespan": 48,
+      "final_soc": 749,
+      "full_admission_wall_ns": 3120353432,
+      "initial_soc": 753,
+      "job": "random-32-32-10__s05__n32__seed2__search_then_admission",
+      "native_cpu_s": 2.9125579520000002,
+      "one_settlement_and_cost_ledger_verified": true,
+      "outer_wall_ns": 3174214088,
+      "positive_gain_crossing_witness_count": 0,
+      "receipt_artifact_pins_verified": 12,
+      "recorded_functional_coverage": {
+        "between_run_candidate_identity_assumed": false,
+        "common_validated_events_without_direct_crossing_proof": 3,
+        "coverage": {
+          "common_commit_proven_beyond_local_margin": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          },
+          "common_validation_proven_beyond_local_margin": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          },
+          "global_cutoff_rollback": {
+            "count": 1,
+            "example_selection_ids": [
+              549
+            ],
+            "status": "EXERCISED"
+          },
+          "legacy_admission_local_cutoff_global_remaining": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "normal_complete_search_committed": {
+            "count": 3,
+            "example_selection_ids": [
+              1,
+              2,
+              3
+            ],
+            "status": "EXERCISED"
+          },
+          "normal_complete_search_validated": {
+            "count": 3,
+            "example_selection_ids": [
+              1,
+              2,
+              3
+            ],
+            "status": "EXERCISED"
+          },
+          "search_global_cutoff_rollback": {
+            "count": 1,
+            "example_selection_ids": [
+              549
+            ],
+            "status": "EXERCISED"
+          },
+          "search_local_cutoff_rollback": {
+            "count": 1,
+            "example_selection_ids": [
+              549
+            ],
+            "status": "EXERCISED"
+          },
+          "validated_then_global_cutoff_rollback": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          }
+        },
+        "cutoff_rejection_identity_checked": true,
+        "evidence_scope": "KNOWN_TASK_SINGLE_SEED_FUNCTIONAL_NOT_BENEFIT_COMPARISON",
+        "repair_budget_contract": "search_then_admission",
+        "rounding_guard_ns": 2,
+        "schema": "ADDRESS_SHARED_BUDGET_FUNCTIONAL_COVERAGE_V1",
+        "settlement_time_not_used_as_commit_time": true,
+        "unproven_event_interpretation": "UNKNOWN_NOT_EVIDENCE_OF_NO_CROSSING"
+      },
+      "repairs": 523,
+      "rollbacks": 520,
+      "seed": 2,
+      "status": "AUDIT_PASS",
+      "worker_cpu_ns": 35066885
+    },
+    {
+      "PRIMARY_DONE_independent_stage_review": {
+        "global": {
+          "event_ids": [],
+          "first_observed_at_PRIMARY_DONE_count": 0,
+          "not_present_in_search_return_snapshot_ids": []
+        },
+        "local": {
+          "event_ids": [],
+          "first_observed_at_PRIMARY_DONE_count": 0,
+          "not_present_in_search_return_snapshot_ids": []
+        }
+      },
+      "accepted_after_proven_old_local_margin_crossing_count": 0,
+      "actual_posterior_and_plan_identity_chain_verified": true,
+      "case": "maze-32-32-2__s05__n32",
+      "complete_paths_validated": true,
+      "contract": "legacy",
+      "crossing_witness_examples": [],
+      "descendant_cpu_s": 2.9993160000000003,
+      "events": 106,
+      "final_makespan": 121,
+      "final_soc": 1982,
+      "full_admission_wall_ns": 3058195601,
+      "initial_soc": 2000,
+      "job": "maze-32-32-2__s05__n32__seed3__legacy",
+      "native_cpu_s": 2.909294801,
+      "one_settlement_and_cost_ledger_verified": true,
+      "outer_wall_ns": 3098005197,
+      "positive_gain_crossing_witness_count": 0,
+      "receipt_artifact_pins_verified": 12,
+      "recorded_functional_coverage": {
+        "between_run_candidate_identity_assumed": false,
+        "common_validated_events_without_direct_crossing_proof": 0,
+        "coverage": {
+          "common_commit_proven_beyond_local_margin": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "common_validation_proven_beyond_local_margin": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "global_cutoff_rollback": {
+            "count": 1,
+            "example_selection_ids": [
+              106
+            ],
+            "status": "EXERCISED"
+          },
+          "legacy_admission_local_cutoff_global_remaining": {
+            "count": 18,
+            "example_selection_ids": [
+              7,
+              21,
+              32,
+              41,
+              43,
+              52,
+              55,
+              56
+            ],
+            "status": "EXERCISED"
+          },
+          "normal_complete_search_committed": {
+            "count": 7,
+            "example_selection_ids": [
+              1,
+              4,
+              6,
+              9,
+              10,
+              14,
+              102
+            ],
+            "status": "EXERCISED"
+          },
+          "normal_complete_search_validated": {
+            "count": 7,
+            "example_selection_ids": [
+              1,
+              4,
+              6,
+              9,
+              10,
+              14,
+              102
+            ],
+            "status": "EXERCISED"
+          },
+          "search_global_cutoff_rollback": {
+            "count": 1,
+            "example_selection_ids": [
+              106
+            ],
+            "status": "EXERCISED"
+          },
+          "search_local_cutoff_rollback": {
+            "count": 43,
+            "example_selection_ids": [
+              2,
+              3,
+              5,
+              11,
+              13,
+              25,
+              27,
+              28
+            ],
+            "status": "EXERCISED"
+          },
+          "validated_then_global_cutoff_rollback": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          }
+        },
+        "cutoff_rejection_identity_checked": true,
+        "evidence_scope": "KNOWN_TASK_SINGLE_SEED_FUNCTIONAL_NOT_BENEFIT_COMPARISON",
+        "repair_budget_contract": "legacy",
+        "rounding_guard_ns": 2,
+        "schema": "ADDRESS_SHARED_BUDGET_FUNCTIONAL_COVERAGE_V1",
+        "settlement_time_not_used_as_commit_time": true,
+        "unproven_event_interpretation": "UNKNOWN_NOT_EVIDENCE_OF_NO_CROSSING"
+      },
+      "repairs": 106,
+      "rollbacks": 99,
+      "seed": 3,
+      "status": "AUDIT_PASS",
+      "worker_cpu_ns": 27105527
+    },
+    {
+      "PRIMARY_DONE_independent_stage_review": {
+        "global": {
+          "event_ids": [],
+          "first_observed_at_PRIMARY_DONE_count": 0,
+          "not_present_in_search_return_snapshot_ids": []
+        },
+        "local": {
+          "event_ids": [],
+          "first_observed_at_PRIMARY_DONE_count": 0,
+          "not_present_in_search_return_snapshot_ids": []
+        }
+      },
+      "accepted_after_proven_old_local_margin_crossing_count": 6,
+      "actual_posterior_and_plan_identity_chain_verified": true,
+      "case": "maze-32-32-2__s05__n32",
+      "complete_paths_validated": true,
+      "contract": "search_then_admission",
+      "crossing_witness_examples": [
+        {
+          "candidate_validation_wall_ns": 10620094,
+          "committed_gain": 8,
+          "local_remaining_wall_ns": 3824108,
+          "selection_id": 3
+        },
+        {
+          "candidate_validation_wall_ns": 10704230,
+          "committed_gain": 4,
+          "local_remaining_wall_ns": 5303883,
+          "selection_id": 12
+        },
+        {
+          "candidate_validation_wall_ns": 10854204,
+          "committed_gain": 1,
+          "local_remaining_wall_ns": 2601237,
+          "selection_id": 17
+        },
+        {
+          "candidate_validation_wall_ns": 10893221,
+          "committed_gain": 5,
+          "local_remaining_wall_ns": 1339695,
+          "selection_id": 23
+        },
+        {
+          "candidate_validation_wall_ns": 11213460,
+          "committed_gain": 27,
+          "local_remaining_wall_ns": 6147538,
+          "selection_id": 25
+        },
+        {
+          "candidate_validation_wall_ns": 11164560,
+          "committed_gain": 5,
+          "local_remaining_wall_ns": 376409,
+          "selection_id": 51
+        }
+      ],
+      "descendant_cpu_s": 2.990603,
+      "events": 100,
+      "final_makespan": 125,
+      "final_soc": 1939,
+      "full_admission_wall_ns": 3061180023,
+      "initial_soc": 2000,
+      "job": "maze-32-32-2__s05__n32__seed3__search_then_admission",
+      "native_cpu_s": 2.9054418120000003,
+      "one_settlement_and_cost_ledger_verified": true,
+      "outer_wall_ns": 3105224933,
+      "positive_gain_crossing_witness_count": 6,
+      "receipt_artifact_pins_verified": 12,
+      "recorded_functional_coverage": {
+        "between_run_candidate_identity_assumed": false,
+        "common_validated_events_without_direct_crossing_proof": 5,
+        "coverage": {
+          "common_commit_proven_beyond_local_margin": {
+            "count": 6,
+            "example_selection_ids": [
+              3,
+              12,
+              17,
+              23,
+              25,
+              51
+            ],
+            "status": "EXERCISED"
+          },
+          "common_validation_proven_beyond_local_margin": {
+            "count": 6,
+            "example_selection_ids": [
+              3,
+              12,
+              17,
+              23,
+              25,
+              51
+            ],
+            "status": "EXERCISED"
+          },
+          "global_cutoff_rollback": {
+            "count": 1,
+            "example_selection_ids": [
+              100
+            ],
+            "status": "EXERCISED"
+          },
+          "legacy_admission_local_cutoff_global_remaining": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "normal_complete_search_committed": {
+            "count": 11,
+            "example_selection_ids": [
+              1,
+              3,
+              4,
+              5,
+              12,
+              17,
+              23,
+              24
+            ],
+            "status": "EXERCISED"
+          },
+          "normal_complete_search_validated": {
+            "count": 11,
+            "example_selection_ids": [
+              1,
+              3,
+              4,
+              5,
+              12,
+              17,
+              23,
+              24
+            ],
+            "status": "EXERCISED"
+          },
+          "search_global_cutoff_rollback": {
+            "count": 1,
+            "example_selection_ids": [
+              100
+            ],
+            "status": "EXERCISED"
+          },
+          "search_local_cutoff_rollback": {
+            "count": 17,
+            "example_selection_ids": [
+              2,
+              15,
+              16,
+              29,
+              32,
+              46,
+              57,
+              58
+            ],
+            "status": "EXERCISED"
+          },
+          "validated_then_global_cutoff_rollback": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          }
+        },
+        "cutoff_rejection_identity_checked": true,
+        "evidence_scope": "KNOWN_TASK_SINGLE_SEED_FUNCTIONAL_NOT_BENEFIT_COMPARISON",
+        "repair_budget_contract": "search_then_admission",
+        "rounding_guard_ns": 2,
+        "schema": "ADDRESS_SHARED_BUDGET_FUNCTIONAL_COVERAGE_V1",
+        "settlement_time_not_used_as_commit_time": true,
+        "unproven_event_interpretation": "UNKNOWN_NOT_EVIDENCE_OF_NO_CROSSING"
+      },
+      "repairs": 100,
+      "rollbacks": 89,
+      "seed": 3,
+      "status": "AUDIT_PASS",
+      "worker_cpu_ns": 22092428
+    },
+    {
+      "PRIMARY_DONE_independent_stage_review": {
+        "global": {
+          "event_ids": [],
+          "first_observed_at_PRIMARY_DONE_count": 0,
+          "not_present_in_search_return_snapshot_ids": []
+        },
+        "local": {
+          "event_ids": [],
+          "first_observed_at_PRIMARY_DONE_count": 0,
+          "not_present_in_search_return_snapshot_ids": []
+        }
+      },
+      "accepted_after_proven_old_local_margin_crossing_count": 0,
+      "actual_posterior_and_plan_identity_chain_verified": true,
+      "case": "random-32-32-10__s05__n32",
+      "complete_paths_validated": true,
+      "contract": "search_then_admission",
+      "crossing_witness_examples": [],
+      "descendant_cpu_s": 3.015613,
+      "events": 537,
+      "final_makespan": 48,
+      "final_soc": 749,
+      "full_admission_wall_ns": 3118872864,
+      "initial_soc": 753,
+      "job": "random-32-32-10__s05__n32__seed3__search_then_admission",
+      "native_cpu_s": 2.91404578,
+      "one_settlement_and_cost_ledger_verified": true,
+      "outer_wall_ns": 3171149220,
+      "positive_gain_crossing_witness_count": 0,
+      "receipt_artifact_pins_verified": 12,
+      "recorded_functional_coverage": {
+        "between_run_candidate_identity_assumed": false,
+        "common_validated_events_without_direct_crossing_proof": 3,
+        "coverage": {
+          "common_commit_proven_beyond_local_margin": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          },
+          "common_validation_proven_beyond_local_margin": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          },
+          "global_cutoff_rollback": {
+            "count": 1,
+            "example_selection_ids": [
+              537
+            ],
+            "status": "EXERCISED"
+          },
+          "legacy_admission_local_cutoff_global_remaining": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "normal_complete_search_committed": {
+            "count": 3,
+            "example_selection_ids": [
+              3,
+              4,
+              5
+            ],
+            "status": "EXERCISED"
+          },
+          "normal_complete_search_validated": {
+            "count": 3,
+            "example_selection_ids": [
+              3,
+              4,
+              5
+            ],
+            "status": "EXERCISED"
+          },
+          "search_global_cutoff_rollback": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          },
+          "search_local_cutoff_rollback": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          },
+          "validated_then_global_cutoff_rollback": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          }
+        },
+        "cutoff_rejection_identity_checked": true,
+        "evidence_scope": "KNOWN_TASK_SINGLE_SEED_FUNCTIONAL_NOT_BENEFIT_COMPARISON",
+        "repair_budget_contract": "search_then_admission",
+        "rounding_guard_ns": 2,
+        "schema": "ADDRESS_SHARED_BUDGET_FUNCTIONAL_COVERAGE_V1",
+        "settlement_time_not_used_as_commit_time": true,
+        "unproven_event_interpretation": "UNKNOWN_NOT_EVIDENCE_OF_NO_CROSSING"
+      },
+      "repairs": 522,
+      "rollbacks": 519,
+      "seed": 3,
+      "status": "AUDIT_PASS",
+      "worker_cpu_ns": 36523727
+    },
+    {
+      "PRIMARY_DONE_independent_stage_review": {
+        "global": {
+          "event_ids": [],
+          "first_observed_at_PRIMARY_DONE_count": 0,
+          "not_present_in_search_return_snapshot_ids": []
+        },
+        "local": {
+          "event_ids": [],
+          "first_observed_at_PRIMARY_DONE_count": 0,
+          "not_present_in_search_return_snapshot_ids": []
+        }
+      },
+      "accepted_after_proven_old_local_margin_crossing_count": 0,
+      "actual_posterior_and_plan_identity_chain_verified": true,
+      "case": "random-32-32-10__s05__n32",
+      "complete_paths_validated": true,
+      "contract": "legacy",
+      "crossing_witness_examples": [],
+      "descendant_cpu_s": 3.008301,
+      "events": 537,
+      "final_makespan": 48,
+      "final_soc": 749,
+      "full_admission_wall_ns": 3070720483,
+      "initial_soc": 753,
+      "job": "random-32-32-10__s05__n32__seed3__legacy",
+      "native_cpu_s": 2.91134907,
+      "one_settlement_and_cost_ledger_verified": true,
+      "outer_wall_ns": 3121544363,
+      "positive_gain_crossing_witness_count": 0,
+      "receipt_artifact_pins_verified": 12,
+      "recorded_functional_coverage": {
+        "between_run_candidate_identity_assumed": false,
+        "common_validated_events_without_direct_crossing_proof": 0,
+        "coverage": {
+          "common_commit_proven_beyond_local_margin": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "common_validation_proven_beyond_local_margin": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "global_cutoff_rollback": {
+            "count": 1,
+            "example_selection_ids": [
+              537
+            ],
+            "status": "EXERCISED"
+          },
+          "legacy_admission_local_cutoff_global_remaining": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          },
+          "normal_complete_search_committed": {
+            "count": 3,
+            "example_selection_ids": [
+              3,
+              4,
+              5
+            ],
+            "status": "EXERCISED"
+          },
+          "normal_complete_search_validated": {
+            "count": 3,
+            "example_selection_ids": [
+              3,
+              4,
+              5
+            ],
+            "status": "EXERCISED"
+          },
+          "search_global_cutoff_rollback": {
+            "count": 1,
+            "example_selection_ids": [
+              537
+            ],
+            "status": "EXERCISED"
+          },
+          "search_local_cutoff_rollback": {
+            "count": 1,
+            "example_selection_ids": [
+              537
+            ],
+            "status": "EXERCISED"
+          },
+          "validated_then_global_cutoff_rollback": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          }
+        },
+        "cutoff_rejection_identity_checked": true,
+        "evidence_scope": "KNOWN_TASK_SINGLE_SEED_FUNCTIONAL_NOT_BENEFIT_COMPARISON",
+        "repair_budget_contract": "legacy",
+        "rounding_guard_ns": 2,
+        "schema": "ADDRESS_SHARED_BUDGET_FUNCTIONAL_COVERAGE_V1",
+        "settlement_time_not_used_as_commit_time": true,
+        "unproven_event_interpretation": "UNKNOWN_NOT_EVIDENCE_OF_NO_CROSSING"
+      },
+      "repairs": 522,
+      "rollbacks": 519,
+      "seed": 3,
+      "status": "AUDIT_PASS",
+      "worker_cpu_ns": 35061126
+    }
+  ],
+  "manifest_sha256": "48d0e66e7e69f447323ce3a3a6f55190433332834d3b3cf78798fdaf5f3606e7",
+  "new_scientific_runs": 0,
+  "no_posthoc_added_seeds_or_budget": true,
+  "not_run_jobs": 0,
+  "offline_audit_cpu_ns": 352288485,
+  "offline_audit_wall_ns": 352304349,
+  "offline_cost_not_added_to_recorded_scientific_runtime": true,
+  "outer_execution_sha256": "ca29382043c631a4386f9468b6dd90a3e437e31d3d3f6bed25ecd85ea7d94201",
+  "pair_order_legacy_first": 3,
+  "pair_order_new_first": 3,
+  "pairs": [
+    {
+      "SOC_legacy_minus_new": 42,
+      "case": "maze-32-32-2__s05__n32",
+      "cost_delta_is_not_equal_work_speedup": true,
+      "legacy_full_admission_wall_ns": 3065785627,
+      "legacy_makespan": 121,
+      "legacy_repairs": 104,
+      "legacy_soc": 1981,
+      "makespan_legacy_minus_new": -4,
+      "new_full_admission_wall_ns": 3065727811,
+      "new_makespan": 125,
+      "new_repairs": 99,
+      "new_soc": 1939,
+      "run_order": [
+        "legacy",
+        "search_then_admission"
+      ],
+      "solver_seed": 1
+    },
+    {
+      "SOC_legacy_minus_new": 0,
+      "case": "random-32-32-10__s05__n32",
+      "cost_delta_is_not_equal_work_speedup": true,
+      "legacy_full_admission_wall_ns": 3071782274,
+      "legacy_makespan": 48,
+      "legacy_repairs": 521,
+      "legacy_soc": 749,
+      "makespan_legacy_minus_new": 0,
+      "new_full_admission_wall_ns": 3128857145,
+      "new_makespan": 48,
+      "new_repairs": 521,
+      "new_soc": 749,
+      "run_order": [
+        "search_then_admission",
+        "legacy"
+      ],
+      "solver_seed": 1
+    },
+    {
+      "SOC_legacy_minus_new": 39,
+      "case": "maze-32-32-2__s05__n32",
+      "cost_delta_is_not_equal_work_speedup": true,
+      "legacy_full_admission_wall_ns": 3053077702,
+      "legacy_makespan": 121,
+      "legacy_repairs": 105,
+      "legacy_soc": 1988,
+      "makespan_legacy_minus_new": -2,
+      "new_full_admission_wall_ns": 3048881875,
+      "new_makespan": 123,
+      "new_repairs": 96,
+      "new_soc": 1949,
+      "run_order": [
+        "search_then_admission",
+        "legacy"
+      ],
+      "solver_seed": 2
+    },
+    {
+      "SOC_legacy_minus_new": 0,
+      "case": "random-32-32-10__s05__n32",
+      "cost_delta_is_not_equal_work_speedup": true,
+      "legacy_full_admission_wall_ns": 3131620100,
+      "legacy_makespan": 48,
+      "legacy_repairs": 521,
+      "legacy_soc": 749,
+      "makespan_legacy_minus_new": 0,
+      "new_full_admission_wall_ns": 3120353432,
+      "new_makespan": 48,
+      "new_repairs": 523,
+      "new_soc": 749,
+      "run_order": [
+        "legacy",
+        "search_then_admission"
+      ],
+      "solver_seed": 2
+    },
+    {
+      "SOC_legacy_minus_new": 43,
+      "case": "maze-32-32-2__s05__n32",
+      "cost_delta_is_not_equal_work_speedup": true,
+      "legacy_full_admission_wall_ns": 3058195601,
+      "legacy_makespan": 121,
+      "legacy_repairs": 106,
+      "legacy_soc": 1982,
+      "makespan_legacy_minus_new": -4,
+      "new_full_admission_wall_ns": 3061180023,
+      "new_makespan": 125,
+      "new_repairs": 100,
+      "new_soc": 1939,
+      "run_order": [
+        "legacy",
+        "search_then_admission"
+      ],
+      "solver_seed": 3
+    },
+    {
+      "SOC_legacy_minus_new": 0,
+      "case": "random-32-32-10__s05__n32",
+      "cost_delta_is_not_equal_work_speedup": true,
+      "legacy_full_admission_wall_ns": 3070720483,
+      "legacy_makespan": 48,
+      "legacy_repairs": 522,
+      "legacy_soc": 749,
+      "makespan_legacy_minus_new": 0,
+      "new_full_admission_wall_ns": 3118872864,
+      "new_makespan": 48,
+      "new_repairs": 522,
+      "new_soc": 749,
+      "run_order": [
+        "search_then_admission",
+        "legacy"
+      ],
+      "solver_seed": 3
+    }
+  ],
+  "planned_jobs": 12,
+  "planned_pairs": 6,
+  "predeclared_sign_flip_stop_triggered": false,
+  "raw_artifacts_changed": false,
+  "reviewer": "/root/common_contract_review",
+  "schema": "SCI_SHARED_BUDGET_GAIN_INDEPENDENT_OFFLINE_AUDIT_V1",
+  "scientific_code_commit": "f8539a133f8953536bb7487d4efef54520a63478",
+  "status": "AUDIT_PASS",
+  "task_seed_pairs_are_not_independent_tasks": true,
+  "task_summaries": [
+    {
+      "all_final_SOC_equal": false,
+      "case": "maze-32-32-2__s05__n32",
+      "losses": 0,
+      "mean_paired_SOC_improvement_exact": "124/3",
+      "paired_SOC_legacy_minus_new": [
+        42,
+        39,
+        43
+      ],
+      "solver_seeds": [
+        1,
+        2,
+        3
+      ],
+      "strict_sign_flip": false,
+      "ties": 0,
+      "wins": 3
+    },
+    {
+      "all_final_SOC_equal": true,
+      "case": "random-32-32-10__s05__n32",
+      "losses": 0,
+      "mean_paired_SOC_improvement_exact": "0",
+      "paired_SOC_legacy_minus_new": [
+        0,
+        0,
+        0
+      ],
+      "solver_seeds": [
+        1,
+        2,
+        3
+      ],
+      "strict_sign_flip": false,
+      "ties": 3,
+      "wins": 0
+    }
+  ],
+  "total_events": 3836,
+  "validation_method": "Direct original manifest, exact ordered jobs and planned_items authorization, receipt/hash checks; common discrete validator on retained initial/final paths and native final.paths; reward verifier for actual posterior/plan identity/censor/cost; independent raw PRIMARY_DONE stage review and validation-duration witnesses; new pair deltas computed from original full final paths."
+}
