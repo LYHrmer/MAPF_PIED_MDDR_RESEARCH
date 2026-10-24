@@ -1,12 +1,12 @@
 # 两线最新进度
 
-2026-10-24。唯一当前决定：[docs/RESEARCH_PLAN.md](docs/RESEARCH_PLAN.md)。用户新授权的SCI6项费用诊断与硕士2项12臂调度比较均已完成，零硬失败、零重试，许可已消费并独立离线复核。旧R16误差两项未获本次授权、仍未运行。两线均为候选验证阶段，后段恢复停止，无训练或world。
+2026-10-24。唯一当前决定：[docs/RESEARCH_PLAN.md](docs/RESEARCH_PLAN.md)。最新授权的SCI4项接纳门控DEV均正常返回、零重试，许可已消费。完整路径、账本与资源通过独立离线复核；发现清单的邻域上限表述偏差，另行保留，不能称全协议无偏差。此前SCI6项费用诊断与硕士2项12臂调度比较已完成；旧R16误差两项仍未运行。两线均为候选验证阶段，后段恢复停止，无训练或world。
 
 ## 当前交付
 
 **最新结果：** SCI [65d7211费用诊断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/65d72115437c96e0b64c81535e72c00f50e027d7/tracks/sci/ADDRESS_COST_RESULT.md)固定科学代码`e8edaff`：6项全部合法返回，1893事件闭合。random校验占selection79.41%，其中99.42%用于已COST_STOP的不能接纳候选；maze校验只占8.99%，且搜索/校验均可先触发截止。它定位的是项目奖励覆盖层的共同工程冗余，不能归为作者原版ADDRESS或算法创新。按此实测结果落实下述单一工程改动；奖励和训练暂不改。
 
-**新优化实现：** SCI [2bd1916接纳门控](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/2bd191691b654e8ff8e0e1fc4933e997f07a063b/tracks/sci/ADDRESS_VALIDATION_GATE.md)已完成。依据[IJRR/AIJ定点学习](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/2bd191691b654e8ff8e0e1fc4933e997f07a063b/tracks/sci/REFERENCE_REPRODUCTION.md)，仅以原接纳必要条件跳过必拒候选的昂贵认证，默认all，显式acceptance_eligible；可能提交候选及最终方案全检保留。53项软件夹具、42份旧账本精确兼容、完整编译/help及独立复核通过。新优化没有科学结果；4项配对DEV清单SHA `4aa5d08c…82ad8b`待新授权，每项5秒准入/各进程CPU10秒/512MiB、外层10+2秒，零重试首硬失败停。已消费的6项许可不可复用。
+**最新配对结果：** SCI [4项接纳门控DEV](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/f9c651ad0680679cf99a4973f722b65fd6f7aa97/tracks/sci/ADDRESS_VALIDATION_RESULT.md)固定科学代码`2bd1916`、清单SHA `4aa5d08c…82ad8b`，全部运行器COMPLETE，许可消费。all/acceptance_eligible共用同一二进制与总预算；maze最终SOC为1968/1991，random为749/749，makespan均不变。候选校验累计费用下降，但random完整准入3.059→3.124秒；不能把更多修复认定为质量改善或等工作量加速。独立复核发现原清单写“邻域上限8”而日志出现9，保留协议偏差，原清单SHA/二进制/收据不改。默认all不变，停止扩大当前门控性能候选；现有日志仅支持描述选择分化，尚不能因果归因退化，不因本批增加奖励或训练。
 
 硕士 [906ba90调度结果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/906ba90aa7274f4035cf56d1b2cc323a642b1516/tracks/thesis/SCHEDULER_RESULT.md)固定科学代码`76a6a99`：2项12臂均获名义充分分离证书。maze的SOC690→689，局部完成时间和1835.027→1864.734秒，反转仍存在；转向整方案为1829.456秒，makespan三者相同。random三路径相同、零差异保留。局部构造/检查更贵，全部费用见报告。新旧实物、v2或反馈END均未混入。
 
@@ -20,7 +20,7 @@ SCI [13d4749结果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/13d4
 
 | 研究线 | 已完成 | 下一项与边界 |
 |---|---|---|
-| SCI：有限总预算内分配局部重规划机会 | 36项三模式对照无稳定质量收益；幅度反馈离线闭合；6项费用归因已核 | 6项诊断已完成；先去掉必拒候选的冗余认证，再按完整预算评价工程优化和最终SOC |
+| SCI：有限总预算内分配局部重规划机会 | 36项奖励对照无稳定优势；6项费用归因和4项门控DEV完成 | 门控校验省时但质量退化/持平，默认all保留；先从已有日志/控制流确认可检验差异，再决定新机制，不追加seed追正例 |
 | 硕士：同一优化器的运动与误差扩展 | 旧6任务结果保留；新2任务12臂调度比较完成；误差接口保留 | 2项调度比较已完成，maze排序反转仍在；明确运动代价适配差异，R16误差另行处理 |
 
 SCI[正延迟初始种子结果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/fde3409c17b9de68691f9233161cc2dcca03dbef/tracks/sci/ADDRESS_SEED_RESULT.md)：科学代码`93af30f`，两份开发任务、单seed、两种策略与两种预算口径，共8项完整合法输出。固定总预算下maze最终SOC由对照1847降至1801，同时makespan由129增至131；random两臂SOC均771，更多修复没有转化为质量收益。固定次数random对照只完成4/16次并在CPU软截止返回，不能算相同16次加速比。零延迟车辆仍可作为邻域成员；筛选至输出全部计费，规则改变随机分布。random32中正延迟候选仅一辆，不能作为继续训练种子排序的依据。完整数值、截尾和独立审计统一见报告；这是朴素强对照，非独立创新。
