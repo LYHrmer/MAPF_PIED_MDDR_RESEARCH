@@ -21,6 +21,7 @@ HERE = Path(__file__).resolve().parent
 SCHEMA = 'thesis_nominal_comparison_v1'
 SCHEDULER_SCHEMA = 'thesis_scheduler_comparison_v1'
 ACCEPTANCE_SCHEMA = 'thesis_motion_acceptance_v1'
+INITIAL_CERTIFICATION_SCHEMA = 'thesis_initial_motion_certification_v1'
 ADDRESS_CANDIDATE_COMMIT = 'f9c651ad0680679cf99a4973f722b65fd6f7aa97'
 ACCEPTANCE_CASES = ('maze-32-32-2__s05__n32', 'random-32-32-10__s05__n32')
 ACCEPTANCE_ARMS = ('full_recompute', 'primitive_lower_bound')
@@ -39,6 +40,9 @@ ACCEPTANCE_RUNTIME = {'compare_nominal_motion.py', 'nominal_motion.py', 'plan_se
 LIMITS = {'total_admission_wall_s': 60, 'final_artifact_reserve_s': 2,
           'worker_cpu_s': 45, 'worker_as_mib': 512, 'per_file_mib': 16,
           'outer_term_s': 62, 'outer_kill_after_s': 2}
+INITIAL_CERTIFICATION_LIMITS = {'total_admission_wall_s': 26, 'final_artifact_reserve_s': 2,
+    'worker_cpu_s': 24, 'worker_as_mib': 512, 'per_file_mib': 16,
+    'outer_term_s': 28, 'outer_kill_after_s': 2}
 
 
 def require(condition, message):
@@ -66,8 +70,10 @@ def write_json(path, value):
 
 def load_acceptance(config, repo):
     """Byte-only fixed ADDRESS input/output adapter; does not build a schedule."""
+    initial_only = config['schema'] == INITIAL_CERTIFICATION_SCHEMA
     require(config['authorization'] == 'PENDING_USER'
-            and config['limits'] == LIMITS and config['retries'] == 0
+            and config['limits'] == (INITIAL_CERTIFICATION_LIMITS if initial_only else LIMITS)
+            and config['retries'] == 0
             and config['stop_batch_on_failure'] is True
             and config['sufficient_geometry_rejection_is_retained_result'] is True
             and config['old_authorization_reusable'] is False
@@ -75,15 +81,22 @@ def load_acceptance(config, repo):
             'fixed motion-acceptance budget and proposal scope required')
     require(config['candidate_sci_commit'] == ADDRESS_CANDIDATE_COMMIT
             and config['sci_commit'] == selection.SCI
-            and config['source_family'] == 'FROZEN_ADDRESS_CANDIDATES_NO_NEW_SEARCH'
+            and config['source_family'] == ('FROZEN_ADDRESS_INITIAL_ONLY_NO_CANDIDATE_EVALUATION'
+                                           if initial_only else 'FROZEN_ADDRESS_CANDIDATES_NO_NEW_SEARCH')
             and config['cases'] == list(ACCEPTANCE_CASES)
-            and config['arms'] == list(ACCEPTANCE_ARMS)
+            and config['arms'] == (['initial_certification'] if initial_only else list(ACCEPTANCE_ARMS))
             and config['arm_evaluation_wall_s'] == ACCEPTANCE_ARM_WALL_S
             and config['arm_output_reserve_s'] == ACCEPTANCE_ARM_OUTPUT_RESERVE_S
-            and config['candidate_order'] == ['all', 'acceptance_eligible']
+            and config['candidate_order'] == ([] if initial_only else ['all', 'acceptance_eligible'])
             and config['initial_heading_quarters'] == 0
             and type(config['initial_heading_quarters']) is int,
             'fixed source, candidate order, motion arms and per-arm budget required')
+    if initial_only:
+        require(config['stage'] == 'INITIAL_CERTIFICATION_ONLY'
+                and config['initial_certification_failure_stops_batch'] is True
+                and config['candidate_evaluations_allowed'] == 0
+                and config['maximum_external_total_wall_s'] == 60,
+                'initial-only scope, strict certification stop and total guard required')
     require(re.fullmatch('[a-zA-Z0-9_-]+', config['batch_id']) is not None,
             'local batch id required')
     require(set(config['runtime_sha256']) == ACCEPTANCE_RUNTIME, 'incomplete acceptance runtime pins')
@@ -97,15 +110,24 @@ def load_acceptance(config, repo):
     require(lock['schema'] == 'thesis_frozen_address_motion_candidates_v1'
             and lock['commit'] == ADDRESS_CANDIDATE_COMMIT and len(lock['entries']) == 10
             and lock['cases'] == list(ACCEPTANCE_CASES)
-            and lock['candidate_order'] == config['candidate_order']
+            and lock['candidate_order'] == ['all', 'acceptance_eligible']
             and all(p['commit'] == ADDRESS_CANDIDATE_COMMIT for p in lock['entries'].values()),
             'unexpected ADDRESS candidate lock')
-    blobs = {key: reader.read_blob(repo, pin) for key, pin in lock['entries'].items()}
+    # Initial feasibility must not load or evaluate the frozen final candidates.
+    selected_pins = {'inputs': lock['entries']['inputs']} if initial_only else lock['entries']
+    blobs = {key: reader.read_blob(repo, pin) for key, pin in selected_pins.items()}
     require(sha(blobs['inputs']) == config['input_sha256'], 'frozen ADDRESS input SHA mismatch')
-    inputs, summary = json.loads(blobs['inputs']), json.loads(blobs['summary'])
+    inputs = json.loads(blobs['inputs'])
+    summary = None if initial_only else json.loads(blobs['summary'])
     cases, sources = {}, {}
     for name in ACCEPTANCE_CASES:
         case = next(c for c in inputs['cases'] if c['id'] == name)
+        if initial_only:
+            cases[name] = case
+            sources[name] = dict(initial_sci_commit=ADDRESS_CANDIDATE_COMMIT,
+                input_pin=lock['entries']['inputs'], scope='INITIAL_PLAN_ONLY_NO_FINAL_CANDIDATES',
+                source_protocol_deviation=lock['source_protocol_deviation'])
+            continue
         candidates, costs = [], {}
         for mode in config['candidate_order']:
             job = name+'__seed0__'+mode
@@ -142,7 +164,7 @@ def load(manifest, expected_sha, repo):
     raw = Path(manifest).read_bytes()
     require(sha(raw) == expected_sha, 'manifest SHA mismatch')
     config = json.loads(raw)
-    if config.get('schema') == ACCEPTANCE_SCHEMA:
+    if config.get('schema') in (ACCEPTANCE_SCHEMA, INITIAL_CERTIFICATION_SCHEMA):
         return load_acceptance(config, repo)
     if config.get('schema') == 'thesis_v2_pair_v1':
         from v2_motion_inputs import load_pair
@@ -433,7 +455,106 @@ def execute_acceptance_worker(config, case, source, output, repo, load_ns):
     write_json(output/'result.json', result)
 
 
-def execute_worker(config, case, source, output, repo, load_ns):
+def execute_initial_certification_worker(config, case, source, output, repo, load_ns,
+                                         case_deadline_ns):
+    """Only certify the supplied initial plan; no candidate access or selection."""
+    setup_started, setup_cpu = time.monotonic_ns(), time.process_time_ns()
+    budget, snapshot, failure = None, None, None
+    Expired, current_stage = TimeoutError, 'FIXED_COMPONENTS_AND_PROBLEM_SETUP'
+    evaluation_started = evaluation_cpu = None
+    setup_ns = setup_cpu_ns = 0
+    evaluation_ns = evaluation_cpu_ns = 0
+    deadline_ns, available_ns = None, None
+    try:
+        require(type(case_deadline_ns) is int and case_deadline_ns > 0,
+                'the parent absolute admission deadline is required')
+        require('candidates' not in source, 'initial-only worker must not receive candidate plans')
+        modules = selection.load_fixed_sci_components(repo)
+        Grid, Budget = modules['address_backend'].GridProblem, modules['pp_repair'].SharedBudget
+        Expired = modules['pp_repair']._Expired
+        problem = Grid(case['rows'], case['cols'], case['blocked'],
+                       {int(a): tuple(p) for a, p in case['endpoints'].items()})
+        initial = {int(a): tuple(p) for a, p in case['paths'].items()}
+        model = motion.MotionModel(**config['motion_model'])
+        headings = {a: config['initial_heading_quarters'] for a in problem.ids}
+        setup_ns, setup_cpu_ns = time.monotonic_ns()-setup_started, time.process_time_ns()-setup_cpu
+        current_stage = 'INITIAL_CERTIFICATION_TRANSACTION'
+        evaluation_started, evaluation_cpu = time.monotonic_ns(), time.process_time_ns()
+        # Preserve 2s worker output and 2s parent validation/hash. Slow setup can
+        # only REDUCE the initial transaction's <=20s, never enlarge it.
+        deadline_ns = min(evaluation_started+config['arm_evaluation_wall_s']*10**9,
+            case_deadline_ns-(config['arm_output_reserve_s']+
+                              config['limits']['final_artifact_reserve_s'])*10**9)
+        available_ns = max(0, deadline_ns-evaluation_started)
+        budget = Budget(deadline_ns, 0)
+        selector = selection.MotionPlanSelector(problem, initial, model, headings,
+            budget=budget, expired_exception=Expired)
+        evaluation_ns = time.monotonic_ns()-evaluation_started
+        evaluation_cpu_ns = time.process_time_ns()-evaluation_cpu
+        current_stage = 'CERTIFIED_STATE_EXPORT'
+        snapshot = selector.snapshot()
+    except Exception as error:
+        if evaluation_started is not None:
+            evaluation_ns = time.monotonic_ns()-evaluation_started
+            evaluation_cpu_ns = time.process_time_ns()-evaluation_cpu
+        else:
+            setup_ns = time.monotonic_ns()-setup_started
+            setup_cpu_ns = time.process_time_ns()-setup_cpu
+        certificate_reason = getattr(error, 'reason', None)
+        expected_noncertificate = (isinstance(error, selection.InitialMotionCertificationError)
+            and isinstance(certificate_reason, dict)
+            and certificate_reason.get('kind', '').startswith(('DEPENDENCY_', 'CIRCLE_')))
+        kind = ('INITIAL_BUDGET_CENSORED' if isinstance(error, (Expired, TimeoutError))
+                else 'INITIAL_CERTIFICATE_NOT_ESTABLISHED' if expected_noncertificate
+                else 'IMPLEMENTATION_FAILED')
+        failure = dict(kind=kind, stage=current_stage, detail=type(error).__name__+': '+str(error),
+                       certificate_reason=certificate_reason,
+                       first_failed_motion_stage=getattr(budget, 'motion_first_failed_stage', None),
+                       certified_fallback_available=False)
+    stage_wall = {} if budget is None else dict(budget.stage_wall_ns)
+    stage_cpu = {} if budget is None else dict(budget.stage_cpu_ns)
+    value = dict(status='COMPLETE' if snapshot is not None else 'FAILED',
+        diagnostic_completed=True, initial_certified=snapshot is not None,
+        certified_initial=snapshot, failure=failure, candidate_evaluations=0, new_search_calls=0,
+        initial_evaluation_wall_ns=evaluation_ns, initial_evaluation_cpu_ns=evaluation_cpu_ns,
+        configured_initial_evaluation_limit_ns=config['arm_evaluation_wall_s']*10**9,
+        actual_initial_available_ns=available_ns, initial_deadline_ns=deadline_ns,
+        parent_admission_deadline_ns=case_deadline_ns,
+        stage_wall_ns=stage_wall, stage_cpu_ns=stage_cpu,
+        validator_import_and_problem_setup_ns=setup_ns, validator_import_and_problem_setup_cpu_ns=setup_cpu_ns,
+        cpu_budget_enforcement='OUTER_PROCESS_RLIMIT_ONLY', hard_realtime_claim=False,
+        common_end_received=False, scope='INITIAL_CERTIFICATION_BUDGET_FEASIBILITY_ONLY')
+    io_started = time.monotonic_ns()
+    write_json(output/'initial_certification.json', value)
+    io_ns = time.monotonic_ns()-io_started
+    within_worker_tail = type(case_deadline_ns) is int and time.monotonic_ns() <= (
+        case_deadline_ns-config['limits']['final_artifact_reserve_s']*10**9)
+    row = dict(arm='initial_certification', status=value['status'] if within_worker_tail else 'FAILED',
+        diagnostic_completed=True, initial_certified=value['initial_certified'], failure=failure,
+        output_within_worker_tail=within_worker_tail, candidate_evaluations=0, new_search_calls=0,
+        initial_evaluation_wall_ns=evaluation_ns, initial_evaluation_cpu_ns=evaluation_cpu_ns,
+        actual_initial_available_ns=available_ns,
+        exact_objective_s=None if snapshot is None else snapshot['objective_exact_s'],
+        certified_paths_sha256=None if snapshot is None else snapshot['paths_sha256'],
+        stage_wall_ns=stage_wall, stage_cpu_ns=stage_cpu)
+    result = dict(status=row['status'], case=case['id'], rows=[row],
+        manifest_sha256=config['manifest_sha256'], initial_provenance=source,
+        diagnostic_completed=True, initial_certified=row['initial_certified'],
+        candidate_evaluations=0, optimizer_called=False, new_search_calls=0, v2_applied=False,
+        performance_comparison=False, following_gain_comparison_authorized=False,
+        load_and_pinned_evidence_validation_ns=load_ns, validator_import_and_problem_setup_ns=setup_ns,
+        initial_artifact_serialization_and_fsync_ns=io_ns,
+        worker_entry_through_before_result_write_ns=time.monotonic_ns()-ENTERED_NS,
+        parent_admission_deadline_ns=case_deadline_ns,
+        scope='INITIAL_CERTIFICATION_BUDGET_FEASIBILITY_ONLY',
+        accounting='Input/Git/import/problem setup is charged in case total, outside the <=20s initial selector transaction. Selector snapshot/construction/full certification/private-state serialization shares one absolute deadline. Detached certificate export, result IO and hashes use the reserved tail. Nested costs are not additive.')
+    write_json(output/'result.json', result)
+
+
+def execute_worker(config, case, source, output, repo, load_ns, *, case_deadline_ns=None):
+    if config.get('schema') == INITIAL_CERTIFICATION_SCHEMA:
+        return execute_initial_certification_worker(config, case, source, output, repo, load_ns,
+                                                    case_deadline_ns)
     if config.get('schema') == ACCEPTANCE_SCHEMA:
         return execute_acceptance_worker(config, case, source, output, repo, load_ns)
     if config.get('schema') == 'thesis_v2_pair_v1':
@@ -494,6 +615,9 @@ def run(args, config, cases, results, supervisor):
     command = [sys.executable, '-B', str(Path(__file__).resolve()), '_worker',
                '--manifest', str(Path(args.manifest).resolve()), '--sha256', args.sha256,
                '--case', args.case, '--output', str(output)]
+    if config['schema'] == INITIAL_CERTIFICATION_SCHEMA:
+        command += ['--case-deadline-ns',
+                    str(ENTERED_NS+config['limits']['total_admission_wall_s']*10**9)]
     costs = supervisor.supervise(command, output,
         wall_s=remaining-config['limits']['final_artifact_reserve_s'],
         cpu_s=config['limits']['worker_cpu_s'], memory_mib=config['limits']['worker_as_mib'])
@@ -512,12 +636,21 @@ def run(args, config, cases, results, supervisor):
         and elapsed <= config['limits']['total_admission_wall_s']*1e9)
     usage = resource.getrusage(resource.RUSAGE_SELF)
     status = 'COMPLETE' if accepted else 'FAILED_OR_INCOMPLETE'
-    write_json(output/'receipt.json', {'status': status, 'case': args.case,
+    receipt = {'status': status, 'case': args.case,
         'manifest_sha256': args.sha256, 'artifacts': artifacts, 'worker_costs': costs,
         'entry_through_import_input_validation_output_and_hash_ns': elapsed,
         'supervisor_self_cpu_s': usage.ru_utime+usage.ru_stime,
         'accounting': 'Total includes Git reads, imports, selection, all geometry/construction, metric checks, result serialization, fsync, artifact hashes, and supervisor wait. Administrative receipt write and final process exit excluded. Nested times are not additive. Prior SCI optimization cost is source metadata, not this motion-adaptation cost.',
-        'retry_allowed': False, 'new_scientific_motion_comparison': True})
+        'retry_allowed': False, 'new_scientific_motion_comparison': True}
+    if config['schema'] == INITIAL_CERTIFICATION_SCHEMA:
+        receipt.update(new_scientific_motion_comparison=False,
+            new_scientific_initial_certification=True,
+            diagnostic_completed=bool(payload and payload.get('diagnostic_completed')),
+            initial_certified=bool(payload and payload.get('initial_certified')),
+            candidate_evaluations=0, following_gain_comparison_authorized=False,
+            initial_budget_feasible_at_this_observation=accepted,
+            any_initial_certification_failure_stops_batch=True)
+    write_json(output/'receipt.json', receipt)
     print(json.dumps({'case': args.case, 'status': status, 'output': str(output)}))
     return 0 if accepted else 2
 
@@ -530,6 +663,7 @@ def main():
     parser.add_argument('--case')
     parser.add_argument('--authorization-reference')
     parser.add_argument('--output', type=Path)
+    parser.add_argument('--case-deadline-ns', type=int)
     args = parser.parse_args()
     started = time.monotonic_ns()
     config, cases, results, supervisor = load(args.manifest, args.sha256, HERE.parents[1])
@@ -539,14 +673,18 @@ def main():
         value = {'status': 'FROZEN_BYTES_VALIDATED_NO_MOTION_COMPARISON',
                  'cases': config['cases'], 'sci_commit': selection.SCI,
                  'motion_model': config['motion_model'], 'authorization': 'PENDING_USER'}
-        if config['schema'] == ACCEPTANCE_SCHEMA:
+        if config['schema'] in (ACCEPTANCE_SCHEMA, INITIAL_CERTIFICATION_SCHEMA):
             value.update(candidate_sci_commit=config['candidate_sci_commit'],
                 initial_motion_certification_cost='UNKNOWN',
                 status='PINNED_ADDRESS_INPUT_INTERFACE_ONLY_NO_MOTION_COMPARISON')
+        if config['schema'] == INITIAL_CERTIFICATION_SCHEMA:
+            value.update(stage='INITIAL_CERTIFICATION_ONLY', candidate_evaluations=0,
+                         status='PINNED_INITIAL_INPUT_ONLY_NO_CERTIFICATION_OR_SEARCH')
         print(json.dumps(value))
         return 0
     if args.mode == '_worker':
-        execute_worker(config, cases[args.case], results[args.case], args.output, HERE.parents[1], load_ns)
+        execute_worker(config, cases[args.case], results[args.case], args.output, HERE.parents[1], load_ns,
+                       case_deadline_ns=args.case_deadline_ns)
         return 0
     return run(args, config, cases, results, supervisor)
 

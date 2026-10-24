@@ -55,6 +55,60 @@ class CompareContracts(unittest.TestCase):
                 self.assertTrue((output/('arm_'+row['arm']+'.json')).exists())
             self.assertEqual(saved['rows'][0]['final_paths_sha256'], saved['rows'][1]['final_paths_sha256'])
 
+    def initial_only_fixture(self):
+        paths = {'0': [6, 7], '1': [16, 17]}
+        case = dict(id='synthetic_initial_only', rows=5, cols=5, blocked=[],
+                    endpoints={a: [p[0], p[-1]] for a, p in paths.items()}, paths=paths)
+        config = dict(schema=compare.INITIAL_CERTIFICATION_SCHEMA,
+            motion_model=self.model().record(), initial_heading_quarters=0,
+            manifest_sha256='SOFTWARE_FIXTURE', arm_evaluation_wall_s=20,
+            arm_output_reserve_s=2, limits=compare.INITIAL_CERTIFICATION_LIMITS)
+        return config, case, dict(scope='SOFTWARE_FIXTURE_INITIAL_ONLY')
+
+    def test_initial_only_worker_cannot_consider_candidates_and_preserves_complete_certificate(self):
+        config, case, source = self.initial_only_fixture()
+        with tempfile.TemporaryDirectory() as directory, patch.object(
+                selection.MotionPlanSelector, 'consider', side_effect=AssertionError('candidate prohibited')):
+            output = Path(directory)
+            compare.execute_worker(config, case, source, output, HERE.parents[1], 0,
+                case_deadline_ns=time.monotonic_ns()+26*10**9)
+            result = json.loads((output/'result.json').read_text())
+            artifact = json.loads((output/'initial_certification.json').read_text())
+        self.assertEqual(result['status'], 'COMPLETE')
+        self.assertTrue(result['diagnostic_completed'])
+        self.assertTrue(result['initial_certified'])
+        self.assertEqual(result['candidate_evaluations'], 0)
+        self.assertFalse(result['following_gain_comparison_authorized'])
+        self.assertEqual(artifact['certified_initial']['paths'], case['paths'])
+        self.assertLessEqual(artifact['actual_initial_available_ns'], 20*10**9)
+        self.assertIn('motion_dependency_build', artifact['stage_wall_ns'])
+        self.assertIn('motion_interval_geometry', artifact['stage_wall_ns'])
+
+    def test_initial_only_failed_budget_and_internal_error_have_no_fallback_or_candidate_work(self):
+        import local_scheduler
+        for error, kind in [(self.sci['pp_repair']._Expired('fixture cutoff'), 'INITIAL_BUDGET_CENSORED'),
+                            (RuntimeError('unexpected graph bug'), 'IMPLEMENTATION_FAILED')]:
+            config, case, source = self.initial_only_fixture()
+            # Each worker loads a fresh fixed module, so use TimeoutError for the
+            # common cutoff protocol instead of another module's private type.
+            if kind == 'INITIAL_BUDGET_CENSORED':
+                error = TimeoutError('fixture cutoff')
+            with self.subTest(kind=kind), tempfile.TemporaryDirectory() as directory, patch.object(
+                    local_scheduler, 'dependency_edges', side_effect=error), patch.object(
+                    selection.MotionPlanSelector, 'consider', side_effect=AssertionError('candidate prohibited')):
+                output = Path(directory)
+                compare.execute_worker(config, case, source, output, HERE.parents[1], 0,
+                    case_deadline_ns=time.monotonic_ns()+26*10**9)
+                result = json.loads((output/'result.json').read_text())
+                artifact = json.loads((output/'initial_certification.json').read_text())
+            self.assertEqual(result['status'], 'FAILED')
+            self.assertTrue(result['diagnostic_completed'])
+            self.assertFalse(result['initial_certified'])
+            self.assertIsNone(artifact['certified_initial'])
+            self.assertEqual(artifact['failure']['kind'], kind)
+            self.assertEqual(artifact['failure']['first_failed_motion_stage'], 'motion_dependency_build')
+            self.assertEqual(result['candidate_evaluations'], 0)
+
     def test_bound_equality_rejects_without_candidate_compile_and_full_mode_evaluates(self):
         _, initial, _, _, selector = self.acceptance_fixture()
         before = selector.snapshot()

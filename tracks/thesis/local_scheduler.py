@@ -24,6 +24,10 @@ def _poll(checkpoint):
         checkpoint()
 
 
+def _measure(measure, stage, callback):
+    return callback() if measure is None else measure(stage, callback)
+
+
 def exact_profile(distance, speed, accel, decel):
     """Same rest-to-rest equations as nominal_motion, with a safe rational peak.
 
@@ -81,13 +85,14 @@ def _box_distance2(a, b):
                for i in (0, 1))
 
 
-def make_blocks(problem, paths, model, headings, *, checkpoint=None):
+def make_blocks(problem, paths, model, headings, *, checkpoint=None, measure=None):
     """One complete TURN+MOVE or discrete WAIT block per original grid step."""
     _poll(checkpoint)
     if not isinstance(model, motion.MotionModel):
         raise ValueError('explicit MotionModel required')
     paths = {a: tuple(p) for a, p in paths.items()}
-    if problem.validate(paths, complete=True) is not True:
+    if _measure(measure, 'motion_discrete_validation',
+                lambda: problem.validate(paths, complete=True)) is not True:
         raise ValueError('complete discrete validation must return True')
     if set(paths) != set(problem.ids) or set(headings) != set(paths) or any(
             type(h) is not int or h not in range(4) for h in headings.values()):
@@ -211,18 +216,21 @@ def _action(kind, start, end, **values):
                 start_exact_s=str(start), end_exact_s=None if end is None else str(end), **values)
 
 
-def build_schedule(problem, paths, model, headings, scheduler, *, checkpoint=None):
+def build_schedule(problem, paths, model, headings, scheduler, *, checkpoint=None, measure=None):
     """Construct a full candidate. Certification is a separate obligatory step."""
     _poll(checkpoint)
     if scheduler not in SCHEDULERS:
         raise ValueError('unknown scheduler')
-    paths, profiles, blocks = make_blocks(problem, paths, model, headings, checkpoint=checkpoint)
+    paths, profiles, blocks = _measure(measure, 'motion_build_blocks', lambda:
+        make_blocks(problem, paths, model, headings, checkpoint=checkpoint, measure=measure))
     edges = set()
     if scheduler == 'local_dependency':
-        edges, reason = dependency_edges(blocks, model.body_circle_radius_squared, checkpoint=checkpoint)
+        edges, reason = _measure(measure, 'motion_dependency_build', lambda:
+            dependency_edges(blocks, model.body_circle_radius_squared, checkpoint=checkpoint))
         if reason:
             return None, reason
-        starts, reason = earliest_starts(blocks, edges, checkpoint=checkpoint)
+        starts, reason = _measure(measure, 'motion_release_times', lambda:
+            earliest_starts(blocks, edges, checkpoint=checkpoint))
         if reason:
             return None, reason
     else:
@@ -341,7 +349,7 @@ def pair_interval_check(a, b, left, right, profiles, required2, *, checkpoint=No
     return True, tested, None
 
 
-def check_continuous(problem, paths, model, headings, schedule, *, checkpoint=None):
+def check_continuous(problem, paths, model, headings, schedule, *, checkpoint=None, measure=None):
     """Full nominal occupancy, including every turn/wait and infinite goal tail."""
     _poll(checkpoint)
     profiles = {name: {k: F(v) for k, v in p.items()} for name, p in schedule['profiles'].items()}
@@ -434,7 +442,8 @@ def check_continuous(problem, paths, model, headings, schedule, *, checkpoint=No
         if (executed_path != [motion._point(v, problem.cols, scale) for v in paths[a]]
                 or turn_pending or not sequence or sequence[-1]['kind'] != 'GOAL_HOLD'):
             raise ValueError('schedule does not cover the full supplied discrete path')
-    _, _, expected_blocks = make_blocks(problem, paths, model, headings, checkpoint=checkpoint)
+    _, _, expected_blocks = _measure(measure, 'motion_certificate_discrete_blocks', lambda:
+        make_blocks(problem, paths, model, headings, checkpoint=checkpoint, measure=measure))
     if set(actual_blocks) != set(expected_blocks):
         raise ValueError('complete action block coverage mismatch')
     recorded_blocks = {(r['agent'], r['step']): (F(r['start_exact_s']), F(r['end_exact_s']))
@@ -443,7 +452,8 @@ def check_continuous(problem, paths, model, headings, schedule, *, checkpoint=No
         raise ValueError('recorded action block times differ from complete actions')
     scheduler = schedule['scheduler']
     if scheduler == 'local_dependency':
-        expected_edges, failure = dependency_edges(expected_blocks, radius2, checkpoint=checkpoint)
+        expected_edges, failure = _measure(measure, 'motion_dependency_recheck', lambda:
+            dependency_edges(expected_blocks, radius2, checkpoint=checkpoint))
         if failure is not None:
             raise ValueError('local dependency order could not be established')
         actual_edges = {(tuple(a), tuple(b)) for a, b in schedule['dependency_edges']}
@@ -507,7 +517,8 @@ def check_continuous(problem, paths, model, headings, schedule, *, checkpoint=No
                 hi = min(end_a, end_b)
                 if lo <= hi:
                     checks['pair_action_intersections'] += 1
-                    passed, count, reason = pair_interval_check(one, two, lo, hi, profiles, 4*radius2, checkpoint=checkpoint)
+                    passed, count, reason = _measure(measure, 'motion_interval_geometry', lambda:
+                        pair_interval_check(one, two, lo, hi, profiles, 4*radius2, checkpoint=checkpoint))
                     checks['rational_interval_boxes'] += count
                     if not passed:
                         reason.update(agents=[a, b], action_indices=[i, j],
@@ -524,7 +535,7 @@ def check_continuous(problem, paths, model, headings, schedule, *, checkpoint=No
     return True, None, checks
 
 
-def compile_schedule(problem, paths, model, headings, scheduler, *, checkpoint=None):
+def compile_schedule(problem, paths, model, headings, scheduler, *, checkpoint=None, measure=None):
     """Return a complete certified reference or an explicit retained rejection."""
     _poll(checkpoint)
     output = dict(status='REJECTED', certified_nominal_reference=False, schedule=None,
@@ -532,9 +543,11 @@ def compile_schedule(problem, paths, model, headings, scheduler, *, checkpoint=N
         v2_qualification_claimed=False, common_end_received=False,
         author_sadg_reproduction=False, collision_claim=False)
     try:
-        schedule, reason = build_schedule(problem, paths, model, headings, scheduler, checkpoint=checkpoint)
+        schedule, reason = _measure(measure, 'motion_build_schedule', lambda:
+            build_schedule(problem, paths, model, headings, scheduler, checkpoint=checkpoint, measure=measure))
         if reason is None:
-            passed, reason, checks = check_continuous(problem, paths, model, headings, schedule, checkpoint=checkpoint)
+            passed, reason, checks = _measure(measure, 'motion_complete_certificate', lambda:
+                check_continuous(problem, paths, model, headings, schedule, checkpoint=checkpoint, measure=measure))
             output['checks_attempted'] = checks
             if passed:
                 schedule['certified'] = True

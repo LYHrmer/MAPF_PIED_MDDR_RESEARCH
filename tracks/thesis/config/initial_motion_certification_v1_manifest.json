@@ -1,0 +1,80 @@
+{
+  "arm_evaluation_wall_s": 20,
+  "arm_output_reserve_s": 2,
+  "arms": [
+    "initial_certification"
+  ],
+  "authorization": "PENDING_USER",
+  "batch_id": "initial_motion_certification_v1",
+  "candidate_evaluations_allowed": 0,
+  "candidate_order": [],
+  "candidate_sci_commit": "f9c651ad0680679cf99a4973f722b65fd6f7aa97",
+  "cases": [
+    "maze-32-32-2__s05__n32",
+    "random-32-32-10__s05__n32"
+  ],
+  "comparison_scope": "INITIAL_CERTIFICATION_FEASIBILITY_ONLY_NO_CANDIDATE_OR_QUALITY_COMPARISON",
+  "eligibility_status": "INITIAL_CERTIFICATION_BUDGET_TO_BE_MEASURED",
+  "evidence_scope": "KNOWN_DESIGN_CANDIDATES_FUNCTIONAL_DEV_ONLY",
+  "execution_order": [
+    "maze-32-32-2__s05__n32",
+    "random-32-32-10__s05__n32"
+  ],
+  "failure_policy": "Any initial non-certification, including soft budget cutoff or unestablished sufficient condition, closes all remaining jobs without retry.",
+  "following_gain_comparison_authorized": false,
+  "initial_certification_failure_is_hard_failure": true,
+  "initial_certification_failure_stops_batch": true,
+  "initial_heading_quarters": 0,
+  "input_sha256": "660b7bc4b4282db1feedd373a9220dc98638c18bcb835123aff448c83eadcf3e",
+  "limits": {
+    "final_artifact_reserve_s": 2,
+    "outer_kill_after_s": 2,
+    "outer_term_s": 28,
+    "per_file_mib": 16,
+    "total_admission_wall_s": 26,
+    "worker_as_mib": 512,
+    "worker_cpu_s": 24
+  },
+  "maximum_external_total_wall_s": 60,
+  "motion_model": {
+    "accel_m_s2": "1/2",
+    "body_length_m": "11/50",
+    "body_width_m": "4/25",
+    "cell_m": "1/2",
+    "decel_m_s2": "1/2",
+    "speed_m_s": "1/2",
+    "turn_accel_rad_s2": "1",
+    "turn_decel_rad_s2": "1",
+    "turn_speed_rad_s": "1"
+  },
+  "new_world": false,
+  "no_quality_claim_from_fewer_full_evaluations": true,
+  "old_authorization_reusable": false,
+  "optimizer_search": false,
+  "phase_budget_rule": "min(initial_selector_start+20s,parent_absolute_admission_deadline-2s_worker_output-2s_parent_finalization)",
+  "retries": 0,
+  "runtime_sha256": {
+    "compare_nominal_motion.py": "e43c25fb89e8c4adcde90c2f51612d95c5ce660d86f114bf3396239d9a6aeefa",
+    "export_frozen_trace.py": "defcfb2dfe0b2fd848dc46f11c5bc9ca1e68c10445632dcce2d9d3fb2c248ca9",
+    "local_scheduler.py": "fec7953cd6a5d4f89c47658be0892177e374043d187fe2c30149e0815a7bc715",
+    "motion_acceptance.lock.json": "5fb2c7d0ab2916f93baf3f5fd3c82d2e8e690d7efb6cb35c4c09e7eaa2e82ec0",
+    "nominal_motion.py": "7913e00a169ad8ea70a5d0d9d1fe61129441abb0a97f266bed1feaca322a08d7",
+    "plan_selection.lock.json": "3eed667929d3e7abd8f0c750047746550e7a87285fb567806e9a84d2a87c0395",
+    "plan_selection.py": "b07e0f96f407a46fc9e7820f5a0a19193a769d26ed3335d4fd66b8d3b1e8778f",
+    "shared.lock.json": "82ab83894e4b393e7f8202309debb3f0220a3ec78011be446cf99edd98098709"
+  },
+  "schema": "thesis_initial_motion_certification_v1",
+  "sci_commit": "535ee1adf3135ab79565e0b3aa5d189348fe7ab2",
+  "source_family": "FROZEN_ADDRESS_INITIAL_ONLY_NO_CANDIDATE_EVALUATION",
+  "source_protocol_deviation": "Configured neighborhood target 8 was documented as a hard cap; three recorded neighborhoods had 9 agents. Original source deviation retained.",
+  "stage": "INITIAL_CERTIFICATION_ONLY",
+  "stop_batch_on_failure": true,
+  "sufficient_geometry_rejection_is_retained_result": true,
+  "supervisor_pin": {
+    "blob_oid": "496b4bfdc8d5ef45ed575622c79c17b7f58153b8",
+    "commit": "535ee1adf3135ab79565e0b3aa5d189348fe7ab2",
+    "path": "tracks/sci/run_repair_dev.py",
+    "sha256": "c2e6eb8ecc825d2d7560157d5d325f62420d4f06d4fc9cb3f6aadd35d28f8397"
+  },
+  "training": false
+}

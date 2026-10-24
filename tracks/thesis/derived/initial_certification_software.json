@@ -1,0 +1,99 @@
+{
+  "base_commit": "34d0cacc835d50c4b77254df6e18240ccf9de895",
+  "candidate_evaluations": 0,
+  "date": "2026-10-25",
+  "independent_review": "PENDING_SEPARATE_REVIEW_NO_SCIENTIFIC_EXECUTION",
+  "inspect": {
+    "command": [
+      "rtk",
+      "proxy",
+      "python3",
+      "-B",
+      "tracks/thesis/compare_nominal_motion.py",
+      "inspect",
+      "--manifest",
+      "tracks/thesis/config/initial_motion_certification_v1_manifest.json",
+      "--sha256",
+      "2fd0f0a96746d1d1ad10fa5493d5b1ed5d1c866f924493125e230dc7e29e4492"
+    ],
+    "exit_code": 0,
+    "stdout": {
+      "authorization": "PENDING_USER",
+      "candidate_evaluations": 0,
+      "candidate_sci_commit": "f9c651ad0680679cf99a4973f722b65fd6f7aa97",
+      "cases": [
+        "maze-32-32-2__s05__n32",
+        "random-32-32-10__s05__n32"
+      ],
+      "initial_motion_certification_cost": "UNKNOWN",
+      "motion_model": {
+        "accel_m_s2": "1/2",
+        "body_length_m": "11/50",
+        "body_width_m": "4/25",
+        "cell_m": "1/2",
+        "decel_m_s2": "1/2",
+        "speed_m_s": "1/2",
+        "turn_accel_rad_s2": "1",
+        "turn_decel_rad_s2": "1",
+        "turn_speed_rad_s": "1"
+      },
+      "sci_commit": "535ee1adf3135ab79565e0b3aa5d189348fe7ab2",
+      "stage": "INITIAL_CERTIFICATION_ONLY",
+      "status": "PINNED_INITIAL_INPUT_ONLY_NO_CERTIFICATION_OR_SEARCH"
+    },
+    "wall_ns": 114963000
+  },
+  "limitations": [
+    "No frozen s05 task was constructed or certified in this preparation.",
+    "The twenty-second initial certification budget is still unmeasured.",
+    "Wall-clock polling does not preempt the fixed discrete validator; CPU has an outer hard limit only."
+  ],
+  "manifest_sha256": "2fd0f0a96746d1d1ad10fa5493d5b1ed5d1c866f924493125e230dc7e29e4492",
+  "new_search_calls": 0,
+  "protected_old_sha256": {
+    "config/motion_acceptance_v1_manifest.json": "6b1e9de27e6f78d133b013ae560d35307d84c9ca5b6fe029372c39274342da10",
+    "config/scheduler_motion_v1_manifest.json": "6c23695d30d661e823ea6731cb65f1b674d43a5b636f6b7283691031ee628630",
+    "config/v2_motion_pair_v1_manifest.json": "1868bd5da40032128adc2f3f54ee2c6686408711b617f372a52f147f9131f4a3",
+    "derived/motion_acceptance_software.json": "16970d6f40a1c59010bdfed751eb61f961dd0ee7a7ac13595ea7500d9c8f3583",
+    "motion_acceptance.lock.json": "5fb2c7d0ab2916f93baf3f5fd3c82d2e8e690d7efb6cb35c4c09e7eaa2e82ec0",
+    "plan_selection.lock.json": "3eed667929d3e7abd8f0c750047746550e7a87285fb567806e9a84d2a87c0395",
+    "sci.lock.json": "1c4c57844beb8839335f6e7b52e4f739a7c9a82d65d0f93c61f77317c4de6e66",
+    "shared.lock.json": "82ab83894e4b393e7f8202309debb3f0220a3ec78011be446cf99edd98098709"
+  },
+  "schema": "INITIAL_MOTION_CERTIFICATION_SOFTWARE_PREPARATION_V1",
+  "scientific_runs": 0,
+  "software_scope": "Handwritten small software fixtures only, including initial-only success, budget failure, internal exception, no candidate invocation and first failed stage.",
+  "software_tests": [
+    {
+      "command": [
+        "rtk",
+        "proxy",
+        "python3",
+        "-B",
+        "tracks/thesis/test_local_scheduler.py"
+      ],
+      "exit_code": 0,
+      "tests": 12,
+      "unittest_elapsed_s": 0.064
+    },
+    {
+      "command": [
+        "rtk",
+        "proxy",
+        "python3",
+        "-B",
+        "tracks/thesis/test_compare_nominal_motion.py"
+      ],
+      "exit_code": 0,
+      "tests": 19,
+      "unittest_elapsed_s": 0.502
+    }
+  ],
+  "source_sha256": {
+    "compare_nominal_motion.py": "e43c25fb89e8c4adcde90c2f51612d95c5ce660d86f114bf3396239d9a6aeefa",
+    "local_scheduler.py": "fec7953cd6a5d4f89c47658be0892177e374043d187fe2c30149e0815a7bc715",
+    "plan_selection.py": "b07e0f96f407a46fc9e7820f5a0a19193a769d26ed3335d4fd66b8d3b1e8778f",
+    "test_compare_nominal_motion.py": "2b784c4c0cecef2f1b02c78b84526e5be48c884f628788437314de97a269e840"
+  },
+  "status": "PASS"
+}

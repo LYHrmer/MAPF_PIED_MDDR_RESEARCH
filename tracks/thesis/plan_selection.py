@@ -72,6 +72,14 @@ class InvalidMotionCandidate(ValueError):
     """A supplied path set failed explicit input/discrete validation."""
 
 
+class InitialMotionCertificationError(ValueError):
+    """No certified initial incumbent exists; preserve the structured reason."""
+
+    def __init__(self, reason):
+        self.reason = reason
+        super().__init__('INITIAL_NOT_CERTIFIED: '+str(reason))
+
+
 class MotionPlanSelector:
     """Transactional selection within supplied plans, never new path search.
 
@@ -110,7 +118,7 @@ class MotionPlanSelector:
         initial = budget.measure('initial_snapshot', prepare)
         answer = budget.measure('initial_full_certification', lambda: self._compile(initial))
         if not answer.get('certified_nominal_reference'):
-            raise ValueError('INITIAL_NOT_CERTIFIED: '+str(answer.get('reason')))
+            raise InitialMotionCertificationError(answer.get('reason'))
         raw = budget.measure('initial_state_serialization', lambda: self._pack(initial, answer))
         budget.check()
         self._state = raw
@@ -121,7 +129,18 @@ class MotionPlanSelector:
 
     def _compile(self, paths):
         return self._local.compile_schedule(self._problem, paths, self._model,
-            self._headings, self._scheduler, checkpoint=self.budget.check)
+            self._headings, self._scheduler, checkpoint=self.budget.check, measure=self._measure_motion_stage)
+
+    def _measure_motion_stage(self, stage, callback):
+        try:
+            return self.budget.measure(stage, callback)
+        except Exception:
+            # SharedBudget itself remains the fixed SCI implementation. This
+            # diagnostic only records the deepest observed failing motion stage;
+            # it does not change its clock, deadline or exception classification.
+            if getattr(self.budget, 'motion_first_failed_stage', None) is None:
+                self.budget.motion_first_failed_stage = stage
+            raise
 
     def _prepare_candidate(self, paths):
         try:
