@@ -1,0 +1,924 @@
+{
+  "aggregated": {
+    "maze-32-32-2": {
+      "cost_stop_share_of_validation": 0.2831949144339971,
+      "cost_stop_validation_share_of_selection": 0.026911889050371996,
+      "hist": {
+        "cost_stop_candidate_reward": {
+          "-12": 1,
+          "-5": 1,
+          "-6": 2,
+          "0": 1,
+          "None": 59
+        },
+        "cost_stop_first_stage": {
+          "NONE": 41,
+          "REWARD_VALIDATION_JOINT": 21,
+          "REWARD_VALIDATION_MAP": 1,
+          "REWARD_VALIDATION_PATHS": 1
+        },
+        "first_resource": {
+          "NONE": 71,
+          "WALL": 149
+        },
+        "first_scope": {
+          "LOCAL": 147,
+          "LOCAL_AND_GLOBAL": 2,
+          "NONE": 71
+        },
+        "first_stage": {
+          "NONE": 71,
+          "REWARD_VALIDATION_JOINT": 84,
+          "REWARD_VALIDATION_MAP": 3,
+          "REWARD_VALIDATION_PATHS": 7,
+          "SIPP_EXPANSION": 3,
+          "SIPP_HELPER": 3,
+          "SIPP_RESERVATIONS": 49
+        },
+        "gate_reason": {
+          "REMAINING_AGENTS": 36
+        },
+        "outcome": {
+          "ACCEPTED": 16,
+          "CENSORED": 149,
+          "ROLLED_BACK": 55
+        },
+        "pool": {
+          "19": 57,
+          "20": 22,
+          "21": 42,
+          "22": 42,
+          "23": 57
+        },
+        "search_exit": {
+          "COMPLETE": 87,
+          "COST_STOP": 64,
+          "DEADLINE": 55,
+          "FOCAL_DRAINED_EMPTY": 14
+        },
+        "validation_result": {
+          "DEADLINE": 94,
+          "INCOMPLETE_SKIPPED": 69,
+          "SKIPPED_ACCEPTANCE_INELIGIBLE": 36,
+          "VALIDATED": 21
+        }
+      },
+      "totals": {
+        "accepted": 16,
+        "accepted_validation_wall_ns": 172124867,
+        "candidate_joint_check_cpu_ns": 485466482,
+        "candidate_joint_check_wall_ns": 495484840,
+        "candidate_materialization_cpu_ns": 61076575,
+        "candidate_materialization_wall_ns": 54162935,
+        "candidate_validation_cpu_ns": 546543057,
+        "candidate_validation_other_cpu_ns": 0,
+        "candidate_validation_other_wall_ns": 87849,
+        "candidate_validation_wall_ns": 549735624,
+        "censored": 149,
+        "committed_gain": 41,
+        "cost_stop_count": 64,
+        "cost_stop_selection_wall_ns": 1513873417,
+        "cost_stop_validated": 5,
+        "cost_stop_validation_entered": 64,
+        "cost_stop_validation_wall_ns": 155682333,
+        "post_search_other_cpu_ns": 2000157,
+        "post_search_other_wall_ns": 1908366,
+        "post_search_through_settlement_cpu_ns": 548543214,
+        "post_search_through_settlement_wall_ns": 551643990,
+        "selection_cpu_ns": 5788148363,
+        "selection_wall_ns": 5784890563,
+        "selections": 220,
+        "skipped_acceptance_ineligible": 36,
+        "validated_nonpositive_count": 5,
+        "validated_nonpositive_validation_wall_ns": 53735950
+      },
+      "validation_share_of_selection": 0.09502956331034053
+    },
+    "random-32-32-10": {
+      "cost_stop_share_of_validation": 0.9883278261163263,
+      "cost_stop_validation_share_of_selection": 0.392685069175349,
+      "hist": {
+        "cost_stop_candidate_reward": {
+          "-1": 8,
+          "-2": 12,
+          "-4": 2,
+          "0": 487,
+          "None": 2379
+        },
+        "cost_stop_first_stage": {
+          "NONE": 2887,
+          "REWARD_VALIDATION_JOINT": 1
+        },
+        "first_resource": {
+          "NONE": 2949,
+          "WALL": 2
+        },
+        "first_scope": {
+          "LOCAL": 1,
+          "LOCAL_AND_GLOBAL": 1,
+          "NONE": 2949
+        },
+        "first_stage": {
+          "NONE": 2949,
+          "REWARD_VALIDATION_JOINT": 1,
+          "SIPP_RESERVATIONS": 1
+        },
+        "gate_reason": {
+          "REMAINING_AGENTS": 2378
+        },
+        "outcome": {
+          "ACCEPTED": 6,
+          "CENSORED": 2,
+          "NO_GROUP": 56,
+          "ROLLED_BACK": 2887
+        },
+        "pool": {
+          "1": 2939,
+          "2": 6,
+          "3": 2,
+          "4": 4
+        },
+        "search_exit": {
+          "COMPLETE": 6,
+          "COST_STOP": 2888,
+          "DEADLINE": 1,
+          "NOT_ENTERED": 56
+        },
+        "validation_result": {
+          "DEADLINE": 1,
+          "INCOMPLETE_SKIPPED": 1,
+          "NOT_ENTERED": 56,
+          "SKIPPED_ACCEPTANCE_INELIGIBLE": 2378,
+          "VALIDATED": 515
+        }
+      },
+      "totals": {
+        "accepted": 6,
+        "accepted_validation_wall_ns": 26633451,
+        "candidate_joint_check_cpu_ns": 2132911233,
+        "candidate_joint_check_wall_ns": 2128853822,
+        "candidate_materialization_cpu_ns": 149000855,
+        "candidate_materialization_wall_ns": 151376840,
+        "candidate_validation_cpu_ns": 2283912217,
+        "candidate_validation_other_cpu_ns": 2000129,
+        "candidate_validation_other_wall_ns": 1559454,
+        "candidate_validation_wall_ns": 2281790116,
+        "censored": 2,
+        "committed_gain": 8,
+        "cost_stop_count": 2888,
+        "cost_stop_selection_wall_ns": 5708122317,
+        "cost_stop_validated": 509,
+        "cost_stop_validation_entered": 2888,
+        "cost_stop_validation_wall_ns": 2255156665,
+        "post_search_other_cpu_ns": 6999988,
+        "post_search_other_wall_ns": 4961149,
+        "post_search_through_settlement_cpu_ns": 2290912205,
+        "post_search_through_settlement_wall_ns": 2286751265,
+        "selection_cpu_ns": 5739658335,
+        "selection_wall_ns": 5742914213,
+        "selections": 2951,
+        "skipped_acceptance_ineligible": 2378,
+        "validated_nonpositive_count": 509,
+        "validated_nonpositive_validation_wall_ns": 2251759971
+      },
+      "validation_share_of_selection": 0.39732268868561627
+    }
+  },
+  "analysis_source": "from pathlib import Path\nfrom collections import Counter, defaultdict\nfrom datetime import datetime\nimport hashlib, json, re, subprocess\n\nBASE=Path('/home/lyh/MAPF_SCI_RESEARCH/tracks/sci')\nBATCH=BASE/'results/address_candidate_validation_v1'\nEXPECTED='520e755d3e2a9e84bbc84d53e1165eee12d72ba07344123583da2890a5faf049'\nMANIFEST='4aa5d08c349d532f5d7cbcb32f817721e1becb2f4e8d00509716ad8fc382ad8b'\ndef sha(raw): return hashlib.sha256(raw).hexdigest()\ndef read_json(path): return json.loads(path.read_bytes())\ndef audit_plan(case, raw_paths):\n    paths={int(k):v for k,v in raw_paths.items()}\n    endpoints={int(k):v for k,v in case['endpoints'].items()}\n    assert paths.keys()==endpoints.keys()\n    blocked=set(case['blocked']); nr,nc=case['rows'],case['cols']\n    for a,p in paths.items():\n        assert p and [p[0],p[-1]]==endpoints[a]\n        assert all(type(q) is int and 0<=q<nr*nc and q not in blocked for q in p)\n        assert all(abs(x//nc-y//nc)+abs(x%nc-y%nc)<=1 for x,y in zip(p,p[1:]))\n    horizon=max(map(len,paths.values()))\n    previous={a:p[0] for a,p in paths.items()}\n    for t in range(horizon):\n        now={a:p[min(t,len(p)-1)] for a,p in paths.items()}\n        assert len(set(now.values()))==len(now)\n        if t:\n            edges={}\n            for a,v in now.items():\n                u=previous[a]\n                assert u==v or (v,u) not in edges\n                edges[(u,v)]=a\n        previous=now\n    return sum(len(p)-1 for p in paths.values()),max(len(p)-1 for p in paths.values())\ndef raw_path_parse(raw,cols):\n    result={}\n    for line in raw.decode().splitlines():\n        m=re.fullmatch(r'Agent ([0-9]+):(.*)',line)\n        assert m\n        a=int(m[1]); assert a not in result\n        coords=re.findall(r'\\(([0-9]+),([0-9]+)\\)->',m[2])\n        assert ''.join('('+x+','+y+')->' for x,y in coords)==m[2]\n        result[a]=[int(x)*cols+int(y) for x,y in coords]\n    return result\n\ndef audit():\n    receipt_raw=(BATCH/'RUN_RECEIPT.json').read_bytes(); assert sha(receipt_raw)==EXPECTED\n    receipt=json.loads(receipt_raw)\n    cfg_path=BASE/'config/address_candidate_validation_v1_manifest.json'\n    cfg_raw=cfg_path.read_bytes(); assert sha(cfg_raw)==MANIFEST\n    cfg=json.loads(cfg_raw)\n    inputs=(cfg_path.parent/cfg['input_file']).read_bytes(); assert sha(inputs)==cfg['input_sha256']\n    cases={c['id']:c for c in json.loads(inputs)['cases']}\n    assert receipt['scientific_code_commit']=='2bd191691b654e8ff8e0e1fc4933e997f07a063b'\n    assert receipt['status']=='ALL_COMPLETE' and receipt['counts']=={'COMPLETE':4,'FAILED_OR_INCOMPLETE':0,'NOT_RUN_AFTER_BATCH_STOP':0}\n    assert receipt['first_failed_job'] is None and receipt['authorization_consumed_or_closed'] and not receipt['retry_allowed']\n    for name,pin in receipt['artifacts'].items():\n        raw=(BATCH/name).read_bytes(); assert sha(raw)==pin['sha256'] and len(raw)==pin['bytes']\n    for group in ('code_sha256','build_source_sha256'):\n        for name,digest in cfg[group].items(): assert sha((BASE/name).read_bytes())==digest\n    assert sha((BASE/cfg['binary']).read_bytes())==cfg['binary_sha256']\n    original_checklist=subprocess.check_output(['rtk','proxy','git','-C',str(BASE.parents[1]),'show',receipt['scientific_code_commit']+':tracks/sci/ADDRESS_VALIDATION_GATE.md'])\n    assert '邻域上限8' in original_checklist.decode()\n    build=read_json(BASE/cfg['build_receipt'])\n    author_root=Path('/home/lyh/.cache/mapf_research/address-b3d35c4')\n    source_pins={}\n    for name in ('src/LNS.cpp','src/PathTable.cpp'):\n        source_raw=(author_root/name).read_bytes()\n        assert sha(source_raw)==build['author_files'][name]['sha256']\n        source_pins[name]=sha(source_raw)\n    assert all('neighbor' not in key.lower() for key in cfg)\n    assert all(all('neighbor' not in key.lower() for key in job) for job in cfg['jobs'])\n    auth=read_json(BATCH/'AUTHORIZATION.json'); outer=read_json(BATCH/'OUTER_EXECUTION.json')\n    assert auth['manifest_sha256']==MANIFEST and auth['scientific_code_commit']==receipt['scientific_code_commit']\n    assert auth['user_reply_verbatim']=='授权' and auth['jobs']==[j['id'] for j in cfg['jobs']]\n    assert outer['attempts']==4 and outer['retry']==0 and outer['authorization_consumed_or_closed']\n    assert outer['all_commands_complete'] and outer['unattempted_jobs']==[]\n    assert not auth['previous_authorization_reused'] and not auth['training'] and not auth['world']\n    assert auth['limits']==cfg['limits'] and auth['old_R16_excluded']\n    assert [r['job'] for r in outer['records']]==auth['jobs']\n    assert sum(r['outer_command_wall_ns'] for r in outer['records'])<=48e9\n    for before,after in zip(outer['records'],outer['records'][1:]):\n        delta=(datetime.fromisoformat(after['started_at_utc'])-datetime.fromisoformat(before['started_at_utc'])).total_seconds()\n        assert delta*1e9>=before['outer_command_wall_ns']\n    per_job=[]; families={}; total_events=0; total_pin_count=0; event_sets={}\n    for job, outer_row, batch_row in zip(cfg['jobs'],outer['records'],receipt['jobs']):\n        folder=BATCH/job['id']; rec=read_json(folder/'receipt.json'); result=read_json(folder/'result.json')\n        native=read_json(folder/'native_receipt.json'); attempt=read_json(folder/'attempt.json')\n        assert sha((folder/'receipt.json').read_bytes())==batch_row['receipt_sha256']\n        assert attempt['status']=='CONSUMED_ONCE' and attempt['retries']==0\n        assert rec['job']==result['job']==attempt['job']==job\n        assert rec['manifest_sha256']==result['manifest_sha256']==attempt['manifest_sha256']==MANIFEST\n        assert rec['status']==result['status']==outer_row['receipt_status']=='COMPLETE'\n        assert outer_row['returncode']==0 and outer_row['retry']==0 and outer_row['outer_command_wall_ns']<12e9\n        command=outer_row['command']\n        assert command[:6]==['rtk','proxy','timeout','--signal=TERM','--kill-after=2s','10s']\n        assert command[command.index('--sha256')+1]==MANIFEST and command[command.index('--job')+1]==job['id']\n        assert rec['costs']['exit_code']==0 and not rec['costs']['forced_cleanup'] and not rec['retry_allowed']\n        assert rec['total_entry_through_output_validation_and_hash_ns']<5e9\n        for name,pin in rec['artifacts'].items():\n            raw=(folder/name).read_bytes(); assert sha(raw)==pin['sha256'] and len(raw)==pin['bytes'] and len(raw)<=16*1024*1024; total_pin_count+=1\n        assert native==result['native_receipt']\n        assert 0<=native['inner_cpu_s']<10 and 0<=result['worker_cpu_ns']<10e9\n        initial_soc,initial_makespan=audit_plan(cases[job['case']],cases[job['case']]['paths'])\n        final_soc,final_makespan=audit_plan(cases[job['case']],result['final_paths'])\n        parsed=raw_path_parse((folder/'final.paths').read_bytes(),cases[job['case']]['cols'])\n        assert parsed=={int(k):v for k,v in result['final_paths'].items()}\n        assert initial_soc==result['initial_soc']==native['initial_soc']==batch_row['initial_soc']\n        assert final_soc==result['final_soc']==native['final_soc']==batch_row['final_soc']\n        assert final_makespan==result['final_makespan']==batch_row['final_makespan'] and final_soc<=initial_soc\n        raw=(folder/'rewards.jsonl').read_bytes(); assert raw.endswith(b'\\n')\n        reward_trace_bytes=len(raw)\n        events=[json.loads(line) for line in raw.splitlines()]; total_events+=len(events); event_sets[job['id']]=events\n        totals=Counter(); hist={k:Counter() for k in ('first_stage','first_scope','first_resource','pool','search_exit','validation_result','outcome','cost_stop_candidate_reward','cost_stop_first_stage','gate_reason')}\n        arms=[dict(seed=i,completed=0,censored=0,retained_successes=0,retained_failures=0) for i in range(len(cases[job['case']]['paths']))]\n        previous=initial_soc; repairs=0\n        for index,e in enumerate(events,1):\n            d=e['cost_diagnostics']; assert e['selection_id']==index and e['old_task_soc']==previous\n            entered=e['repair_attempt_id'] is not None\n            assert d['search_return_observed']==d['inspection_entered']==entered\n            assert d['validation_entered']==(entered and e['fresh_paths']==e['group_size'])\n            assert e['committed_gain']==e['old_task_soc']-e['committed_task_soc']>=0\n            assert e['accepted'] or e['committed_gain']==0\n            previous=e['committed_task_soc']\n            if e['repair_attempt_id'] is not None:\n                repairs+=1; assert e['repair_attempt_id']==repairs\n            else:\n                assert e['group_size']==e['fresh_paths']==0 and e['old_subset_soc'] is None\n            assert e['schema']=='ADDRESS_REWARD_V1' and e['operator_id']==0\n            outcome='CENSORED' if e['censored'] else 'ACCEPTED' if e['accepted'] else 'NO_GROUP' if e['repair_attempt_id'] is None else 'ROLLED_BACK'\n            assert e['outcome']==outcome and not (e['censored'] and e['accepted'])\n            eligible=e['seed_id'] is not None and not e['censored']\n            assert e['memory_eligible']==eligible\n            assert e['bernoulli_reward']==(int(e['committed_gain']>0) if eligible else None)\n            if e['seed_id'] is not None:\n                arm=arms[e['seed_id']]\n                if e['censored']: arm['censored']+=1\n                else:\n                    arm['completed']+=1\n                    arm['retained_successes' if e['committed_gain']>0 else 'retained_failures']+=1\n            assert e['censored']==(e['local_deadline'] or e['global_deadline'])\n            assert (d['first_observed_deadline'] is not None)==e['censored']\n            first=d['first_observed_deadline']\n            for name in ('first_observed_deadline','first_observed_local_deadline','first_observed_global_deadline'):\n                observed=d[name]\n                if observed is not None:\n                    local,wall,cpu=(observed[k] for k in ('local_wall_triggered','global_wall_triggered','global_cpu_triggered'))\n                    assert any((local,wall,cpu))\n                    if local: assert observed['observed_wall_ns']>=observed['local_wall_limit_ns']\n                    if wall: assert observed['observed_wall_ns']>=observed['global_wall_limit_ns']\n                    if cpu: assert observed['observed_cpu_ns']>=observed['global_cpu_limit_ns']\n            hist['first_stage'][first['stage'] if first else 'NONE']+=1\n            hist['first_scope'][first['scope'] if first else 'NONE']+=1\n            hist['first_resource'][first['resource'] if first else 'NONE']+=1\n            hist['pool'][str(d['eligible_topk_candidates']) if d['seed_pool_completed'] else 'UNKNOWN']+=1\n            hist['search_exit'][d['search_loop_exit_stop']]+=1\n            hist['validation_result'][d['validation_result']]+=1; hist['outcome'][e['outcome']]+=1\n            for clock in ('wall','cpu'):\n                v=d['candidate_validation_'+clock+'_ns']; post=d['post_search_through_settlement_'+clock+'_ns']; selection=e['selection_'+clock+'_before_log_ns']\n                assert 0<=v<=post<=selection\n                assert post==v+d['post_search_other_'+clock+'_ns']\n                assert v==sum(d['candidate_'+p+'_'+clock+'_ns'] for p in ('materialization','joint_check','validation_other'))\n                totals['selection_'+clock+'_ns']+=selection\n                for key in ('candidate_validation','candidate_materialization','candidate_joint_check','candidate_validation_other','post_search_through_settlement','post_search_other'):\n                    totals[key+'_'+clock+'_ns']+=d[key+'_'+clock+'_ns']\n            policy=e.get('candidate_validation_policy')\n            if job['candidate_validation_policy']=='all':\n                assert policy is None\n            else:\n                assert policy['schema']=='ADDRESS_CANDIDATE_VALIDATION_V1' and policy['mode']=='acceptance_eligible'\n                remaining=policy['remaining_agents']; fresh=policy['fresh_cost_sum_unvalidated']\n                assert remaining==d['remaining_at_search_return']\n                if e['repair_attempt_id'] is None:\n                    assert remaining is None and fresh is None and policy['result']=='NOT_ENTERED'\n                else:\n                    assert type(remaining) is int and 0<=remaining<=e['group_size']\n                    assert type(fresh) is int and fresh>=0\n                if policy['result']=='SKIPPED_ACCEPTANCE_INELIGIBLE':\n                    assert e['repair_attempt_id'] is not None and e['fresh_paths']==e['group_size']\n                    reason='REMAINING_AGENTS' if remaining!=0 else 'COST_EXCEEDS_OLD' if fresh>e['old_subset_soc'] else None\n                    assert reason is not None and policy['skip_reason']==reason\n                    assert not e['candidate_validated'] and e['candidate_subset_soc'] is None and e['candidate_reward'] is None\n                    assert not e['accepted'] and e['committed_gain']==0\n                    assert not e['censored']\n                    assert d['validation_result']==policy['result'] and d['validation_last_stage']=='ACCEPTANCE_GATE'\n                    for clock in ('wall','cpu'):\n                        assert d['candidate_materialization_'+clock+'_ns']==d['candidate_joint_check_'+clock+'_ns']==0\n                    hist['gate_reason'][reason]+=1; totals['skipped_acceptance_ineligible']+=1\n                else:\n                    assert policy['skip_reason']=='NONE'\n                    if e['candidate_validated']:\n                        assert policy['result']=='VALIDATED' and remaining==0 and fresh<=e['old_subset_soc'] and fresh==e['candidate_subset_soc']\n                    elif e['repair_attempt_id'] is not None and e['fresh_paths']==e['group_size']:\n                        assert policy['result']=='DEADLINE' and e['censored']\n                    else:\n                        assert policy['result']==('INCOMPLETE_SKIPPED' if e['repair_attempt_id'] is not None else 'NOT_ENTERED')\n            totals['committed_gain']+=e['committed_gain']; totals['accepted']+=int(e['accepted'])\n            totals['censored']+=int(e['censored']); totals['selections']+=1\n            if e['candidate_validated']:\n                assert e['candidate_reward']==e['old_subset_soc']-e['candidate_subset_soc']\n            else:\n                assert e['candidate_reward'] is None and e['candidate_subset_soc'] is None\n            if e['accepted']:\n                assert e['candidate_validated'] and e['candidate_reward']==e['committed_gain']\n            if d['search_loop_exit_stop']=='COST_STOP':\n                assert not e['accepted'] and e['committed_gain']==0 and d['remaining_at_search_return']>0\n                assert not e['candidate_validated'] or e['candidate_reward']<=0\n                totals['cost_stop_count']+=1\n                totals['cost_stop_validation_entered']+=int(d['validation_entered'])\n                totals['cost_stop_validated']+=int(e['candidate_validated'])\n                totals['cost_stop_validation_wall_ns']+=d['candidate_validation_wall_ns']\n                totals['cost_stop_selection_wall_ns']+=e['selection_wall_before_log_ns']\n                hist['cost_stop_candidate_reward'][str(e['candidate_reward'])]+=1\n                hist['cost_stop_first_stage'][first['stage'] if first else 'NONE']+=1\n            if e['candidate_validated'] and e['candidate_reward']<=0:\n                totals['validated_nonpositive_count']+=1\n                totals['validated_nonpositive_validation_wall_ns']+=d['candidate_validation_wall_ns']\n            if e['accepted']: totals['accepted_validation_wall_ns']+=d['candidate_validation_wall_ns']\n        assert previous==final_soc and totals['committed_gain']==initial_soc-final_soc\n        assert len(events)==native['group_calls']==native['reward_contract']['selections']==native['reward_contract']['settlements']\n        assert arms==native['reward_contract']['arms']\n        assert native['reward_contract']['memory']=='author' and native['reward_contract']['posterior_rule']=='AUTHOR_ATTEMPT_BEFORE_ROLLBACK'\n        assert native['reward_contract']['log_wall_ns']>=0 and native['reward_contract']['log_cpu_ns']>=0\n        if job['candidate_validation_policy']=='all':\n            assert 'candidate_validation_policy' not in native['reward_contract']\n        else:\n            assert native['reward_contract']['candidate_validation_policy']==dict(schema='ADDRESS_CANDIDATE_VALIDATION_V1',mode='acceptance_eligible',skipped_acceptance_ineligible=totals['skipped_acceptance_ineligible'])\n        assert repairs==native['repair_attempts']==result['reward_diagnostics']['repairs']\n        assert dict(hist['outcome'])==result['reward_diagnostics']['outcomes']\n        for key,value in native['reward_contract']['cost_diagnostics'].items():\n            if key!='schema': assert totals[key]==value\n        diag=result['reward_diagnostics']['cost_diagnostics']\n        assert dict(hist['first_stage'])==diag['first_observed_deadline_stage_counts']\n        assert dict(hist['pool'])==diag['completed_eligible_topk_size_counts']\n        assert dict(hist['validation_result'])==diag['validation_result_counts']\n        family=job['case'].split('__')[0]\n        family_data=families.setdefault(family,{'totals':Counter(),'hist':{k:Counter() for k in hist}})\n        family_data['totals'].update(totals)\n        for key in hist: family_data['hist'][key].update(hist[key])\n        per_job.append({'job':job['id'],'case':job['case'],'policy':job['candidate_validation_policy'],'status':'COMPLETE','initial_soc':initial_soc,'final_soc':final_soc,'initial_makespan':initial_makespan,'final_makespan':final_makespan,\n            'entry_wall_ns':rec['total_entry_through_output_validation_and_hash_ns'],'outer_wall_ns':outer_row['outer_command_wall_ns'],\n            'worker_cpu_ns':result['worker_cpu_ns'],'native_cpu_s':native['inner_cpu_s'],'largest_child_maxrss_kib':rec['costs']['largest_child_maxrss_kib'],\n            'stage_wall_ns':result['stage_wall_ns'],'supervisor_costs':rec['costs'],'supervisor_self_cpu_s':rec['supervisor_self_cpu_s'],\n            'native_inner_wall_before_receipt_s':native['inner_wall_before_receipt_s'],'native_initial_check_s':native['initial_check_s'],'native_final_check_s':native['final_check_s'],\n            'native_termination':native['termination'],'native_loop_exit_reason':native['loop_exit_reason'],'sipp_calls':native['sipp_calls'],'repair_attempts':repairs,\n            'reward_trace_bytes':reward_trace_bytes,\n            'maximum_observed_group_size':max(e['group_size'] for e in events),\n            'group_size_above_documented_eight':[dict(selection_id=e['selection_id'],group_size=e['group_size']) for e in events if e['group_size']>8],\n            'reward_log_wall_ns':native['reward_contract']['log_wall_ns'],'reward_log_cpu_ns':native['reward_contract']['log_cpu_ns'],\n            'totals':dict(totals),'hist':{k:dict(v) for k,v in hist.items()},\n            'validation_share_of_selection':totals['candidate_validation_wall_ns']/totals['selection_wall_ns'],\n            'materialization_share_of_selection':totals['candidate_materialization_wall_ns']/totals['selection_wall_ns'],\n            'joint_check_share_of_selection':totals['candidate_joint_check_wall_ns']/totals['selection_wall_ns'],\n            'validation_share_of_admission':totals['candidate_validation_wall_ns']/rec['total_entry_through_output_validation_and_hash_ns'],\n            'cost_stop_share_of_validation':totals['cost_stop_validation_wall_ns']/totals['candidate_validation_wall_ns']})\n    aggregated={}\n    for family,data in families.items():\n        t=data['totals']; aggregated[family]={'totals':dict(t),'hist':{k:dict(v) for k,v in data['hist'].items()},\n            'validation_share_of_selection':t['candidate_validation_wall_ns']/t['selection_wall_ns'],\n            'cost_stop_share_of_validation':t['cost_stop_validation_wall_ns']/t['candidate_validation_wall_ns'],\n            'cost_stop_validation_share_of_selection':t['cost_stop_validation_wall_ns']/t['selection_wall_ns']}\n    paired=[]\n    for first,second in zip(per_job[::2],per_job[1::2]):\n        assert first['case']==second['case'] and first['policy']=='all' and second['policy']=='acceptance_eligible'\n        paired.append(dict(case=first['case'],soc_first_minus_second=first['final_soc']-second['final_soc'],makespan_first_minus_second=first['final_makespan']-second['final_makespan'],first=first['job'],second=second['job']))\n        events_a,event_b=event_sets[first['job']],event_sets[second['job']]\n        fields=('seed_id','group_size','fresh_paths','stop','outcome','censored','candidate_validated','candidate_reward','committed_gain','committed_task_soc')\n        differences={}\n        for field in fields:\n            pair=next(((a,b) for a,b in zip(events_a,event_b) if a[field]!=b[field]),None)\n            differences[field]=(dict(selection_id=pair[0]['selection_id'],all_value=pair[0][field],gated_value=pair[1][field]) if pair else None)\n        first_seed_diff=differences['seed_id']\n        paired[-1]['descriptive_first_field_differences']=differences\n        paired[-1]['same_seed_prefix_selections']=first_seed_diff['selection_id']-1 if first_seed_diff else min(len(events_a),len(event_b))\n        paired[-1]['total_admission_gated_minus_all_ns']=second['entry_wall_ns']-first['entry_wall_ns']\n        paired[-1]['candidate_validation_all_minus_gated_ns']=first['totals']['candidate_validation_wall_ns']-second['totals']['candidate_validation_wall_ns']\n        paired[-1]['descriptive_only_no_counterfactual_or_causal_attribution']=True\n    for computed,saved in zip(paired,receipt['paired_contrasts']):\n        assert computed['case']==saved['case'] and computed['soc_first_minus_second']==saved['soc_first_minus_second'] and computed['makespan_first_minus_second']==saved['makespan_first_minus_second']\n        assert saved['both_complete']\n    protocol_deviation=dict(status='DEVIATION_DOCUMENTED_NEIGHBORHOOD_CAP',original_claim='邻域上限8',\n        original_checklist_scientific_commit=receipt['scientific_code_commit'],original_checklist_sha256=sha(original_checklist),\n        manifest_has_separate_actual_neighborhood_hard_cap=False,author_source_sha256=source_pins,\n        source_explanation='Pinned author randomWalk can add both vertex and edge conflicting agents in one getConflictingAgents call before testing size>=neighbor_size; generateNeighborByRandomWalk assigns the full set without a final resize. Eight is the configured target, not a certified hard cap.',\n        affected_records={p['job']:p['group_size_above_documented_eight'] for p in per_job},\n        original_receipt_unchanged=True,scope='Path/ledger/resource checks pass; full written-protocol conformance must not be claimed.')\n    return {'schema':'INDEPENDENT_READONLY_VALIDATION_GATE_AUDIT_V1','status':'PASS_WITH_PROTOCOL_DEVIATION','source_receipt_sha256':EXPECTED,'manifest_sha256':MANIFEST,\n        'input_sha256':cfg['input_sha256'],'scientific_code_commit':receipt['scientific_code_commit'],'original_batch_artifacts_verified':len(receipt['artifacts']),\n        'per_job_artifact_pins_verified':total_pin_count,'events_verified':total_events,'full_initial_and_final_discrete_plans_independently_validated':8,\n        'author_final_paths_equal_result_json':True,'new_search':False,'reruns':0,'counts':receipt['counts'],'per_job':per_job,'aggregated':aggregated,'paired_contrasts':paired,\n        'authorization_consumed_or_closed':True,'sum_outer_command_wall_ns':sum(r['outer_command_wall_ns'] for r in outer['records']),\n        'component_checks':dict(discrete_initial_final_plans='PASS',byte_pins='PASS',once_only_reward_and_gate_ledger='PASS',recorded_resource_costs='PASS'),\n        'protocol_deviation':protocol_deviation,\n        'limitations':['Two known design tasks and one solver seed each, not independent or generalized performance evidence.','This audit verifies discrete grid paths, not continuous robot-body motion.','Validation is nested in post-search and selection; timings cannot be added.','First observed cutoff checkpoint is not the true crossing instant.','Same total budget allows different work; more repairs do not establish better final quality or fixed-work speedup.','Candidate eligibility/clock changes may alter censor labels and future random sequence; no trajectory or posterior equivalence is claimed.','Author arm summary audits committed outcomes, not its original posterior.','Skipped candidate reward stays unknown; actual committed reward zero is audited separately.']}\n",
+  "analysis_source_sha256": "bff6b4c19aaac9f4bc079e5b4dd547da7a30eeb1bba7d33d9450d24ca87afda4",
+  "author_final_paths_equal_result_json": true,
+  "authorization_consumed_or_closed": true,
+  "component_checks": {
+    "byte_pins": "PASS",
+    "discrete_initial_final_plans": "PASS",
+    "once_only_reward_and_gate_ledger": "PASS",
+    "recorded_resource_costs": "PASS"
+  },
+  "counts": {
+    "COMPLETE": 4,
+    "FAILED_OR_INCOMPLETE": 0,
+    "NOT_RUN_AFTER_BATCH_STOP": 0
+  },
+  "events_verified": 3171,
+  "full_initial_and_final_discrete_plans_independently_validated": 8,
+  "input_sha256": "660b7bc4b4282db1feedd373a9220dc98638c18bcb835123aff448c83eadcf3e",
+  "limitations": [
+    "Two known design tasks and one solver seed each, not independent or generalized performance evidence.",
+    "This audit verifies discrete grid paths, not continuous robot-body motion.",
+    "Validation is nested in post-search and selection; timings cannot be added.",
+    "First observed cutoff checkpoint is not the true crossing instant.",
+    "Same total budget allows different work; more repairs do not establish better final quality or fixed-work speedup.",
+    "Candidate eligibility/clock changes may alter censor labels and future random sequence; no trajectory or posterior equivalence is claimed.",
+    "Author arm summary audits committed outcomes, not its original posterior.",
+    "Skipped candidate reward stays unknown; actual committed reward zero is audited separately."
+  ],
+  "manifest_sha256": "4aa5d08c349d532f5d7cbcb32f817721e1becb2f4e8d00509716ad8fc382ad8b",
+  "new_search": false,
+  "original_batch_artifacts_verified": 58,
+  "paired_contrasts": [
+    {
+      "candidate_validation_all_minus_gated_ns": 254630744,
+      "case": "maze-32-32-2__s05__n32",
+      "descriptive_first_field_differences": {
+        "candidate_reward": {
+          "all_value": -12,
+          "gated_value": null,
+          "selection_id": 3
+        },
+        "candidate_validated": {
+          "all_value": true,
+          "gated_value": false,
+          "selection_id": 3
+        },
+        "censored": {
+          "all_value": true,
+          "gated_value": false,
+          "selection_id": 1
+        },
+        "committed_gain": {
+          "all_value": 3,
+          "gated_value": 0,
+          "selection_id": 24
+        },
+        "committed_task_soc": {
+          "all_value": 1993,
+          "gated_value": 1996,
+          "selection_id": 24
+        },
+        "fresh_paths": {
+          "all_value": 9,
+          "gated_value": 8,
+          "selection_id": 10
+        },
+        "group_size": {
+          "all_value": 9,
+          "gated_value": 8,
+          "selection_id": 10
+        },
+        "outcome": {
+          "all_value": "CENSORED",
+          "gated_value": "ROLLED_BACK",
+          "selection_id": 1
+        },
+        "seed_id": {
+          "all_value": 20,
+          "gated_value": 27,
+          "selection_id": 15
+        },
+        "stop": {
+          "all_value": "FOUND",
+          "gated_value": "COST_STOP",
+          "selection_id": 13
+        }
+      },
+      "descriptive_only_no_counterfactual_or_causal_attribution": true,
+      "first": "maze-32-32-2__s05__n32__seed0__all",
+      "makespan_first_minus_second": 0,
+      "same_seed_prefix_selections": 14,
+      "second": "maze-32-32-2__s05__n32__seed0__acceptance_eligible",
+      "soc_first_minus_second": -23,
+      "total_admission_gated_minus_all_ns": -1687710
+    },
+    {
+      "candidate_validation_all_minus_gated_ns": 2253368190,
+      "case": "random-32-32-10__s05__n32",
+      "descriptive_first_field_differences": {
+        "candidate_reward": {
+          "all_value": -1,
+          "gated_value": null,
+          "selection_id": 1
+        },
+        "candidate_validated": {
+          "all_value": true,
+          "gated_value": false,
+          "selection_id": 1
+        },
+        "censored": {
+          "all_value": true,
+          "gated_value": false,
+          "selection_id": 518
+        },
+        "committed_gain": null,
+        "committed_task_soc": null,
+        "fresh_paths": null,
+        "group_size": null,
+        "outcome": {
+          "all_value": "CENSORED",
+          "gated_value": "ROLLED_BACK",
+          "selection_id": 518
+        },
+        "seed_id": null,
+        "stop": null
+      },
+      "descriptive_only_no_counterfactual_or_causal_attribution": true,
+      "first": "random-32-32-10__s05__n32__seed0__all",
+      "makespan_first_minus_second": 0,
+      "same_seed_prefix_selections": 518,
+      "second": "random-32-32-10__s05__n32__seed0__acceptance_eligible",
+      "soc_first_minus_second": 0,
+      "total_admission_gated_minus_all_ns": 64967669
+    }
+  ],
+  "per_job": [
+    {
+      "case": "maze-32-32-2__s05__n32",
+      "cost_stop_share_of_validation": 0.38704643852041315,
+      "entry_wall_ns": 3040554108,
+      "final_makespan": 121,
+      "final_soc": 1968,
+      "group_size_above_documented_eight": [
+        {
+          "group_size": 9,
+          "selection_id": 10
+        },
+        {
+          "group_size": 9,
+          "selection_id": 45
+        }
+      ],
+      "hist": {
+        "cost_stop_candidate_reward": {
+          "-12": 1,
+          "-5": 1,
+          "-6": 2,
+          "0": 1,
+          "None": 23
+        },
+        "cost_stop_first_stage": {
+          "NONE": 5,
+          "REWARD_VALIDATION_JOINT": 21,
+          "REWARD_VALIDATION_MAP": 1,
+          "REWARD_VALIDATION_PATHS": 1
+        },
+        "first_resource": {
+          "NONE": 22,
+          "WALL": 85
+        },
+        "first_scope": {
+          "LOCAL": 84,
+          "LOCAL_AND_GLOBAL": 1,
+          "NONE": 22
+        },
+        "first_stage": {
+          "NONE": 22,
+          "REWARD_VALIDATION_JOINT": 57,
+          "REWARD_VALIDATION_MAP": 2,
+          "REWARD_VALIDATION_PATHS": 3,
+          "SIPP_HELPER": 1,
+          "SIPP_RESERVATIONS": 22
+        },
+        "gate_reason": {},
+        "outcome": {
+          "ACCEPTED": 11,
+          "CENSORED": 85,
+          "ROLLED_BACK": 11
+        },
+        "pool": {
+          "19": 57,
+          "20": 22,
+          "21": 2,
+          "22": 2,
+          "23": 24
+        },
+        "search_exit": {
+          "COMPLETE": 50,
+          "COST_STOP": 28,
+          "DEADLINE": 23,
+          "FOCAL_DRAINED_EMPTY": 6
+        },
+        "validation_result": {
+          "DEADLINE": 62,
+          "INCOMPLETE_SKIPPED": 29,
+          "VALIDATED": 16
+        }
+      },
+      "initial_makespan": 121,
+      "initial_soc": 2000,
+      "job": "maze-32-32-2__s05__n32__seed0__all",
+      "joint_check_share_of_selection": 0.1261590922651126,
+      "largest_child_maxrss_kib": 23196,
+      "materialization_share_of_selection": 0.012919335282955711,
+      "maximum_observed_group_size": 9,
+      "native_cpu_s": 2.912684751,
+      "native_final_check_s": 8.5679e-05,
+      "native_initial_check_s": 0.000254433,
+      "native_inner_wall_before_receipt_s": 2.910968654,
+      "native_loop_exit_reason": "GLOBAL_DEADLINE",
+      "native_termination": "GLOBAL_DEADLINE",
+      "outer_wall_ns": 3094713520,
+      "policy": "all",
+      "repair_attempts": 107,
+      "reward_log_cpu_ns": 0,
+      "reward_log_wall_ns": 1005935,
+      "reward_trace_bytes": 238287,
+      "sipp_calls": 721,
+      "stage_wall_ns": {
+        "common_initial_materialization": 360820,
+        "initial_complete_validation": 2200466,
+        "native_launch_through_exit": 2922874204,
+        "output_parse_and_external_final_validation": 11279649
+      },
+      "status": "COMPLETE",
+      "supervisor_costs": {
+        "all_descendant_system_s": 1.532315,
+        "all_descendant_user_s": 1.457508,
+        "exit_code": 0,
+        "forced_cleanup": false,
+        "interruption": null,
+        "largest_child_maxrss_kib": 23196,
+        "reaped": [
+          {
+            "exit_code": 0,
+            "maxrss_kib": 23196,
+            "pid": 17,
+            "system_s": 1.532315,
+            "user_s": 1.457508
+          }
+        ],
+        "scope": "WORKER_IMPORT_TO_EXIT_INCLUDING_RESULT_IO_AND_WAITED_NATIVE",
+        "wall_ns": 3002404105
+      },
+      "supervisor_self_cpu_s": 0.070703,
+      "totals": {
+        "accepted": 11,
+        "accepted_validation_wall_ns": 118347825,
+        "candidate_joint_check_cpu_ns": 357488176,
+        "candidate_joint_check_wall_ns": 364780100,
+        "candidate_materialization_cpu_ns": 42075848,
+        "candidate_materialization_wall_ns": 37355345,
+        "candidate_validation_cpu_ns": 399564024,
+        "candidate_validation_other_cpu_ns": 0,
+        "candidate_validation_other_wall_ns": 47739,
+        "candidate_validation_wall_ns": 402183184,
+        "censored": 85,
+        "committed_gain": 32,
+        "cost_stop_count": 28,
+        "cost_stop_selection_wall_ns": 761760423,
+        "cost_stop_validated": 5,
+        "cost_stop_validation_entered": 28,
+        "cost_stop_validation_wall_ns": 155663569,
+        "post_search_other_cpu_ns": 1000281,
+        "post_search_other_wall_ns": 903436,
+        "post_search_through_settlement_cpu_ns": 400564305,
+        "post_search_through_settlement_wall_ns": 403086620,
+        "selection_cpu_ns": 2892418125,
+        "selection_wall_ns": 2891429333,
+        "selections": 107,
+        "validated_nonpositive_count": 5,
+        "validated_nonpositive_validation_wall_ns": 53735950
+      },
+      "validation_share_of_admission": 0.13227299028878192,
+      "validation_share_of_selection": 0.13909493806743503,
+      "worker_cpu_ns": 17537777
+    },
+    {
+      "case": "maze-32-32-2__s05__n32",
+      "cost_stop_share_of_validation": 0.00012716834774131828,
+      "entry_wall_ns": 3038866398,
+      "final_makespan": 121,
+      "final_soc": 1991,
+      "group_size_above_documented_eight": [
+        {
+          "group_size": 9,
+          "selection_id": 112
+        }
+      ],
+      "hist": {
+        "cost_stop_candidate_reward": {
+          "None": 36
+        },
+        "cost_stop_first_stage": {
+          "NONE": 36
+        },
+        "first_resource": {
+          "NONE": 49,
+          "WALL": 64
+        },
+        "first_scope": {
+          "LOCAL": 63,
+          "LOCAL_AND_GLOBAL": 1,
+          "NONE": 49
+        },
+        "first_stage": {
+          "NONE": 49,
+          "REWARD_VALIDATION_JOINT": 27,
+          "REWARD_VALIDATION_MAP": 1,
+          "REWARD_VALIDATION_PATHS": 4,
+          "SIPP_EXPANSION": 3,
+          "SIPP_HELPER": 2,
+          "SIPP_RESERVATIONS": 27
+        },
+        "gate_reason": {
+          "REMAINING_AGENTS": 36
+        },
+        "outcome": {
+          "ACCEPTED": 5,
+          "CENSORED": 64,
+          "ROLLED_BACK": 44
+        },
+        "pool": {
+          "21": 40,
+          "22": 40,
+          "23": 33
+        },
+        "search_exit": {
+          "COMPLETE": 37,
+          "COST_STOP": 36,
+          "DEADLINE": 32,
+          "FOCAL_DRAINED_EMPTY": 8
+        },
+        "validation_result": {
+          "DEADLINE": 32,
+          "INCOMPLETE_SKIPPED": 40,
+          "SKIPPED_ACCEPTANCE_INELIGIBLE": 36,
+          "VALIDATED": 5
+        }
+      },
+      "initial_makespan": 121,
+      "initial_soc": 2000,
+      "job": "maze-32-32-2__s05__n32__seed0__acceptance_eligible",
+      "joint_check_share_of_selection": 0.045172452509412056,
+      "largest_child_maxrss_kib": 23528,
+      "materialization_share_of_selection": 0.005808818112278629,
+      "maximum_observed_group_size": 9,
+      "native_cpu_s": 2.913473192,
+      "native_final_check_s": 8.5931e-05,
+      "native_initial_check_s": 0.000228093,
+      "native_inner_wall_before_receipt_s": 2.912258529,
+      "native_loop_exit_reason": "GLOBAL_DEADLINE",
+      "native_termination": "GLOBAL_DEADLINE",
+      "outer_wall_ns": 3097853296,
+      "policy": "acceptance_eligible",
+      "repair_attempts": 113,
+      "reward_log_cpu_ns": 0,
+      "reward_log_wall_ns": 1293450,
+      "reward_trace_bytes": 257775,
+      "sipp_calls": 797,
+      "stage_wall_ns": {
+        "common_initial_materialization": 360775,
+        "initial_complete_validation": 2157525,
+        "native_launch_through_exit": 2920353499,
+        "output_parse_and_external_final_validation": 11552550
+      },
+      "status": "COMPLETE",
+      "supervisor_costs": {
+        "all_descendant_system_s": 1.5397560000000001,
+        "all_descendant_user_s": 1.448832,
+        "exit_code": 0,
+        "forced_cleanup": false,
+        "interruption": null,
+        "largest_child_maxrss_kib": 23528,
+        "reaped": [
+          {
+            "exit_code": 0,
+            "maxrss_kib": 23528,
+            "pid": 24,
+            "system_s": 1.5397560000000001,
+            "user_s": 1.448832
+          }
+        ],
+        "scope": "WORKER_IMPORT_TO_EXIT_INCLUDING_RESULT_IO_AND_WAITED_NATIVE",
+        "wall_ns": 3001268057
+      },
+      "supervisor_self_cpu_s": 0.071889,
+      "totals": {
+        "accepted": 5,
+        "accepted_validation_wall_ns": 53777042,
+        "candidate_joint_check_cpu_ns": 127978306,
+        "candidate_joint_check_wall_ns": 130704740,
+        "candidate_materialization_cpu_ns": 19000727,
+        "candidate_materialization_wall_ns": 16807590,
+        "candidate_validation_cpu_ns": 146979033,
+        "candidate_validation_other_cpu_ns": 0,
+        "candidate_validation_other_wall_ns": 40110,
+        "candidate_validation_wall_ns": 147552440,
+        "censored": 64,
+        "committed_gain": 9,
+        "cost_stop_count": 36,
+        "cost_stop_selection_wall_ns": 752112994,
+        "cost_stop_validated": 0,
+        "cost_stop_validation_entered": 36,
+        "cost_stop_validation_wall_ns": 18764,
+        "post_search_other_cpu_ns": 999876,
+        "post_search_other_wall_ns": 1004930,
+        "post_search_through_settlement_cpu_ns": 147978909,
+        "post_search_through_settlement_wall_ns": 148557370,
+        "selection_cpu_ns": 2895730238,
+        "selection_wall_ns": 2893461230,
+        "selections": 113,
+        "skipped_acceptance_ineligible": 36
+      },
+      "validation_share_of_admission": 0.0485550928126061,
+      "validation_share_of_selection": 0.05099513291214896,
+      "worker_cpu_ns": 16144474
+    },
+    {
+      "case": "random-32-32-10__s05__n32",
+      "cost_stop_share_of_validation": 0.9941309590086886,
+      "entry_wall_ns": 3059286912,
+      "final_makespan": 48,
+      "final_soc": 749,
+      "group_size_above_documented_eight": [],
+      "hist": {
+        "cost_stop_candidate_reward": {
+          "-1": 8,
+          "-2": 12,
+          "-4": 2,
+          "0": 487,
+          "None": 1
+        },
+        "cost_stop_first_stage": {
+          "NONE": 509,
+          "REWARD_VALIDATION_JOINT": 1
+        },
+        "first_resource": {
+          "NONE": 517,
+          "WALL": 1
+        },
+        "first_scope": {
+          "LOCAL": 1,
+          "NONE": 517
+        },
+        "first_stage": {
+          "NONE": 517,
+          "REWARD_VALIDATION_JOINT": 1
+        },
+        "gate_reason": {},
+        "outcome": {
+          "ACCEPTED": 3,
+          "CENSORED": 1,
+          "NO_GROUP": 5,
+          "ROLLED_BACK": 509
+        },
+        "pool": {
+          "1": 512,
+          "2": 3,
+          "3": 1,
+          "4": 2
+        },
+        "search_exit": {
+          "COMPLETE": 3,
+          "COST_STOP": 510,
+          "NOT_ENTERED": 5
+        },
+        "validation_result": {
+          "DEADLINE": 1,
+          "NOT_ENTERED": 5,
+          "VALIDATED": 512
+        }
+      },
+      "initial_makespan": 48,
+      "initial_soc": 753,
+      "job": "random-32-32-10__s05__n32__seed0__all",
+      "joint_check_share_of_selection": 0.7353750974659453,
+      "largest_child_maxrss_kib": 23436,
+      "materialization_share_of_selection": 0.052288663313730756,
+      "maximum_observed_group_size": 6,
+      "native_cpu_s": 2.9098936980000003,
+      "native_final_check_s": 3.8405e-05,
+      "native_initial_check_s": 0.000120226,
+      "native_inner_wall_before_receipt_s": 2.908085,
+      "native_loop_exit_reason": "AUTHOR_TIME_LIMIT",
+      "native_termination": "AUTHOR_TIME_LIMIT",
+      "outer_wall_ns": 3127692036,
+      "policy": "all",
+      "repair_attempts": 513,
+      "reward_log_cpu_ns": 0,
+      "reward_log_wall_ns": 2621161,
+      "reward_trace_bytes": 879737,
+      "sipp_calls": 1460,
+      "stage_wall_ns": {
+        "common_initial_materialization": 280859,
+        "initial_complete_validation": 936757,
+        "native_launch_through_exit": 2922864963,
+        "output_parse_and_external_final_validation": 18739045
+      },
+      "status": "COMPLETE",
+      "supervisor_costs": {
+        "all_descendant_system_s": 1.620117,
+        "all_descendant_user_s": 1.375966,
+        "exit_code": 0,
+        "forced_cleanup": false,
+        "interruption": null,
+        "largest_child_maxrss_kib": 23436,
+        "reaped": [
+          {
+            "exit_code": 0,
+            "maxrss_kib": 23436,
+            "pid": 31,
+            "system_s": 1.620117,
+            "user_s": 1.375966
+          }
+        ],
+        "scope": "WORKER_IMPORT_TO_EXIT_INCLUDING_RESULT_IO_AND_WAITED_NATIVE",
+        "wall_ns": 3015807251
+      },
+      "supervisor_self_cpu_s": 0.08269399999999999,
+      "totals": {
+        "accepted": 3,
+        "accepted_validation_wall_ns": 13308515,
+        "candidate_joint_check_cpu_ns": 2120911609,
+        "candidate_joint_check_wall_ns": 2116424691,
+        "candidate_materialization_cpu_ns": 149000855,
+        "candidate_materialization_wall_ns": 150487851,
+        "candidate_validation_cpu_ns": 2271912593,
+        "candidate_validation_other_cpu_ns": 2000129,
+        "candidate_validation_other_wall_ns": 666611,
+        "candidate_validation_wall_ns": 2267579153,
+        "censored": 1,
+        "committed_gain": 4,
+        "cost_stop_count": 510,
+        "cost_stop_selection_wall_ns": 2862070727,
+        "cost_stop_validated": 509,
+        "cost_stop_validation_entered": 510,
+        "cost_stop_validation_wall_ns": 2254270638,
+        "post_search_other_cpu_ns": 1999921,
+        "post_search_other_wall_ns": 1012094,
+        "post_search_through_settlement_cpu_ns": 2273912514,
+        "post_search_through_settlement_wall_ns": 2268591247,
+        "selection_cpu_ns": 2879854932,
+        "selection_wall_ns": 2878020616,
+        "selections": 518,
+        "validated_nonpositive_count": 509,
+        "validated_nonpositive_validation_wall_ns": 2251759971
+      },
+      "validation_share_of_admission": 0.7412116673677974,
+      "validation_share_of_selection": 0.7878953821225859,
+      "worker_cpu_ns": 23781110
+    },
+    {
+      "case": "random-32-32-10__s05__n32",
+      "cost_stop_share_of_validation": 0.06234813221313714,
+      "entry_wall_ns": 3124254581,
+      "final_makespan": 48,
+      "final_soc": 749,
+      "group_size_above_documented_eight": [],
+      "hist": {
+        "cost_stop_candidate_reward": {
+          "None": 2378
+        },
+        "cost_stop_first_stage": {
+          "NONE": 2378
+        },
+        "first_resource": {
+          "NONE": 2432,
+          "WALL": 1
+        },
+        "first_scope": {
+          "LOCAL_AND_GLOBAL": 1,
+          "NONE": 2432
+        },
+        "first_stage": {
+          "NONE": 2432,
+          "SIPP_RESERVATIONS": 1
+        },
+        "gate_reason": {
+          "REMAINING_AGENTS": 2378
+        },
+        "outcome": {
+          "ACCEPTED": 3,
+          "CENSORED": 1,
+          "NO_GROUP": 51,
+          "ROLLED_BACK": 2378
+        },
+        "pool": {
+          "1": 2427,
+          "2": 3,
+          "3": 1,
+          "4": 2
+        },
+        "search_exit": {
+          "COMPLETE": 3,
+          "COST_STOP": 2378,
+          "DEADLINE": 1,
+          "NOT_ENTERED": 51
+        },
+        "validation_result": {
+          "INCOMPLETE_SKIPPED": 1,
+          "NOT_ENTERED": 51,
+          "SKIPPED_ACCEPTANCE_INELIGIBLE": 2378,
+          "VALIDATED": 3
+        }
+      },
+      "initial_makespan": 48,
+      "initial_soc": 753,
+      "job": "random-32-32-10__s05__n32__seed0__acceptance_eligible",
+      "joint_check_share_of_selection": 0.004338426744021237,
+      "largest_child_maxrss_kib": 30336,
+      "materialization_share_of_selection": 0.0003103043690456473,
+      "maximum_observed_group_size": 6,
+      "native_cpu_s": 2.908818939,
+      "native_final_check_s": 3.8817e-05,
+      "native_initial_check_s": 0.000122038,
+      "native_inner_wall_before_receipt_s": 2.907900398,
+      "native_loop_exit_reason": "GLOBAL_DEADLINE",
+      "native_termination": "GLOBAL_DEADLINE",
+      "outer_wall_ns": 3181069973,
+      "policy": "acceptance_eligible",
+      "repair_attempts": 2382,
+      "reward_log_cpu_ns": 15999185,
+      "reward_log_wall_ns": 9929436,
+      "reward_trace_bytes": 4676816,
+      "sipp_calls": 6768,
+      "stage_wall_ns": {
+        "common_initial_materialization": 280112,
+        "initial_complete_validation": 952808,
+        "native_launch_through_exit": 2922770094,
+        "output_parse_and_external_final_validation": 79164909
+      },
+      "status": "COMPLETE",
+      "supervisor_costs": {
+        "all_descendant_system_s": 1.438998,
+        "all_descendant_user_s": 1.613813,
+        "exit_code": 0,
+        "forced_cleanup": false,
+        "interruption": null,
+        "largest_child_maxrss_kib": 30336,
+        "reaped": [
+          {
+            "exit_code": 0,
+            "maxrss_kib": 30336,
+            "pid": 38,
+            "system_s": 1.438998,
+            "user_s": 1.613813
+          }
+        ],
+        "scope": "WORKER_IMPORT_TO_EXIT_INCLUDING_RESULT_IO_AND_WAITED_NATIVE",
+        "wall_ns": 3077685494
+      },
+      "supervisor_self_cpu_s": 0.080756,
+      "totals": {
+        "accepted": 3,
+        "accepted_validation_wall_ns": 13324936,
+        "candidate_joint_check_cpu_ns": 11999624,
+        "candidate_joint_check_wall_ns": 12429131,
+        "candidate_materialization_cpu_ns": 0,
+        "candidate_materialization_wall_ns": 888989,
+        "candidate_validation_cpu_ns": 11999624,
+        "candidate_validation_other_cpu_ns": 0,
+        "candidate_validation_other_wall_ns": 892843,
+        "candidate_validation_wall_ns": 14210963,
+        "censored": 1,
+        "committed_gain": 4,
+        "cost_stop_count": 2378,
+        "cost_stop_selection_wall_ns": 2846051590,
+        "cost_stop_validated": 0,
+        "cost_stop_validation_entered": 2378,
+        "cost_stop_validation_wall_ns": 886027,
+        "post_search_other_cpu_ns": 5000067,
+        "post_search_other_wall_ns": 3949055,
+        "post_search_through_settlement_cpu_ns": 16999691,
+        "post_search_through_settlement_wall_ns": 18160018,
+        "selection_cpu_ns": 2859803403,
+        "selection_wall_ns": 2864893597,
+        "selections": 2433,
+        "skipped_acceptance_ineligible": 2378
+      },
+      "validation_share_of_admission": 0.004548593154483399,
+      "validation_share_of_selection": 0.0049603807327717655,
+      "worker_cpu_ns": 83879237
+    }
+  ],
+  "per_job_artifact_pins_verified": 48,
+  "protocol_deviation": {
+    "affected_records": {
+      "maze-32-32-2__s05__n32__seed0__acceptance_eligible": [
+        {
+          "group_size": 9,
+          "selection_id": 112
+        }
+      ],
+      "maze-32-32-2__s05__n32__seed0__all": [
+        {
+          "group_size": 9,
+          "selection_id": 10
+        },
+        {
+          "group_size": 9,
+          "selection_id": 45
+        }
+      ],
+      "random-32-32-10__s05__n32__seed0__acceptance_eligible": [],
+      "random-32-32-10__s05__n32__seed0__all": []
+    },
+    "author_source_sha256": {
+      "src/LNS.cpp": "d636acd39a75fb26a4a4e5dc39af64dd395fee81d811ddba4b9a005e3fd961df",
+      "src/PathTable.cpp": "19a2ec3d1c47828f5fd869d22928a055ef263466db0efdaa4410c28cdcaa0d70"
+    },
+    "manifest_has_separate_actual_neighborhood_hard_cap": false,
+    "original_checklist_scientific_commit": "2bd191691b654e8ff8e0e1fc4933e997f07a063b",
+    "original_checklist_sha256": "91d9009265d4348d4d18c4584c77144805cbc2361659fb557518a5f3511c103e",
+    "original_claim": "邻域上限8",
+    "original_receipt_unchanged": true,
+    "scope": "Path/ledger/resource checks pass; full written-protocol conformance must not be claimed.",
+    "source_explanation": "Pinned author randomWalk can add both vertex and edge conflicting agents in one getConflictingAgents call before testing size>=neighbor_size; generateNeighborByRandomWalk assigns the full set without a final resize. Eight is the configured target, not a certified hard cap.",
+    "status": "DEVIATION_DOCUMENTED_NEIGHBORHOOD_CAP"
+  },
+  "reproduction": "Execute analysis_source, then call audit(); standard-library offline JSON/SHA/discrete-path checks and read-only pinned Git document lookup; no planner, scientific geometry or project solver modules are imported.",
+  "reruns": 0,
+  "schema": "INDEPENDENT_READONLY_VALIDATION_GATE_AUDIT_V1",
+  "scientific_code_commit": "2bd191691b654e8ff8e0e1fc4933e997f07a063b",
+  "source_receipt_sha256": "520e755d3e2a9e84bbc84d53e1165eee12d72ba07344123583da2890a5faf049",
+  "status": "PASS_WITH_PROTOCOL_DEVIATION",
+  "sum_outer_command_wall_ns": 12501328825
+}

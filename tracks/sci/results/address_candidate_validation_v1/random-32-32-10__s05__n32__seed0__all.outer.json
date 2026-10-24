@@ -1,0 +1,30 @@
+{
+  "job": "random-32-32-10__s05__n32__seed0__all",
+  "command": [
+    "rtk",
+    "proxy",
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=2s",
+    "10s",
+    "python3",
+    "-B",
+    "tracks/sci/run_address_adapter.py",
+    "run",
+    "--manifest",
+    "/home/lyh/MAPF_SCI_RESEARCH/tracks/sci/config/address_candidate_validation_v1_manifest.json",
+    "--sha256",
+    "4aa5d08c349d532f5d7cbcb32f817721e1becb2f4e8d00509716ad8fc382ad8b",
+    "--job",
+    "random-32-32-10__s05__n32__seed0__all",
+    "--authorization-reference",
+    "2026-10-24 current conversation user reply 授权 to four candidate-validation DEV; see batch AUTHORIZATION.json"
+  ],
+  "started_at_utc": "2026-10-24T01:29:20.734295+00:00",
+  "outer_command_wall_ns": 3127692036,
+  "returncode": 0,
+  "stdout": "{\"job\": \"random-32-32-10__s05__n32__seed0__all\", \"status\": \"COMPLETE\"}\n",
+  "stderr": "",
+  "receipt_status": "COMPLETE",
+  "retry": 0
+}

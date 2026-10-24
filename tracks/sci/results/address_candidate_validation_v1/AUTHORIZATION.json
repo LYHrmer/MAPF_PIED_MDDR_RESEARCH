@@ -1,0 +1,32 @@
+{
+  "schema": "ACTUAL_USER_AUTHORIZATION_RECORD_V1",
+  "batch_id": "address_candidate_validation_v1",
+  "user_reply_verbatim": "授权",
+  "user_reply_local_date": "2026-10-24",
+  "context_question_verbatim": "是否授权执行刚完成优化的4项SCI配对DEV？提交2bd1916；清单 /home/lyh/MAPF_SCI_RESEARCH/tracks/sci/ADDRESS_VALIDATION_GATE.md，JSON SHA 4aa5d08c…82ad8b。两份既有s05完整任务，每份比较旧all策略与acceptance_eligible门控；同二进制、seed0、作者奖励、初解和总预算。每项总准入≤5秒、worker/native各CPU≤10秒、512MiB、单文件16MiB，外层10+2秒，四项外层总上限48秒；零重试、首硬失败停批。主要看最终合法方案SOC，完整记录费用与退化，不训练、不启动world、不运行旧R16。需确认是因为你此前要求新科学比较逐批授权，刚完成的6项费用诊断许可已消费，不能用于这4项新优化比较。",
+  "recorded_at_utc": "2026-10-24T01:29:14.359252+00:00",
+  "scientific_code_commit": "2bd191691b654e8ff8e0e1fc4933e997f07a063b",
+  "manifest_sha256": "4aa5d08c349d532f5d7cbcb32f817721e1becb2f4e8d00509716ad8fc382ad8b",
+  "jobs": [
+    "maze-32-32-2__s05__n32__seed0__all",
+    "maze-32-32-2__s05__n32__seed0__acceptance_eligible",
+    "random-32-32-10__s05__n32__seed0__all",
+    "random-32-32-10__s05__n32__seed0__acceptance_eligible"
+  ],
+  "limits": {
+    "external_final_reserve_s": 1,
+    "inner_final_reserve_s": 1,
+    "native_cpu_reserve_s": 1,
+    "native_cpu_s": 10,
+    "per_process_as_mib": 512,
+    "total_wall_s": 5,
+    "worker_cpu_s": 10
+  },
+  "retry": 0,
+  "stop_batch_on_first_hard_failure": true,
+  "previous_authorization_reused": false,
+  "training": false,
+  "world": false,
+  "old_R16_excluded": true,
+  "authorization_reference": "2026-10-24 current conversation user reply 授权 to four candidate-validation paired DEV request"
+}
