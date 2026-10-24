@@ -6,11 +6,112 @@ not the chosen arm or its posterior (neither was logged in those old traces).
 from collections import Counter, deque
 import hashlib
 import json
+import re
+import struct
 from pathlib import Path
 
 COST_TOTAL_FIELDS = tuple(prefix+'_'+clock+'_ns' for prefix in (
     'candidate_validation', 'candidate_materialization', 'candidate_joint_check',
     'candidate_validation_other', 'post_search_through_settlement') for clock in ('wall', 'cpu'))
+
+
+def path_identity(paths):
+    """Content fingerprint under the already pinned map/model, never a proof."""
+    h = hashlib.sha1()
+    h.update(struct.pack('<I', len(paths)))
+    for path in paths:
+        h.update(struct.pack('<I', len(path)))
+        for cell in path:
+            if type(cell) is not int or not 0 <= cell < 2**32:
+                raise ValueError('invalid path identity cell')
+            h.update(struct.pack('<I', cell))
+    return h.hexdigest()
+
+
+def shared_search_censored(row):
+    observation = row.get('execution_observations', {})
+    search = observation.get('search_return')
+    return (observation.get('repair_budget_contract') == 'search_then_admission' and
+            isinstance(search, dict) and search.get('search_censored') is True)
+
+
+def verify_execution_event(row, contract, count, posterior, plan_sha, revision):
+    """Actual author updates and content identities are distinct from gain audit."""
+    o = row.get('execution_observations')
+    if not isinstance(o, dict) or (o.get('schema'), o.get('repair_budget_contract')) != (
+            'ADDRESS_EXECUTION_OBSERVATIONS_V1', contract):
+        raise ValueError('execution observation contract missing/mixed')
+    entered, seed = row['repair_attempt_id'] is not None, row['seed_id']
+    members, order = o.get('group_members'), o.get('repair_order')
+    if (not isinstance(members, list) or not isinstance(order, list) or
+            any(type(v) is not int or not 0 <= v < count for v in members+order) or
+            len(members) != row['group_size'] or len(set(members)) != len(members) or
+            len(order) != len(members) or set(order) != set(members)):
+        raise ValueError('actual group/repair order mismatch')
+    search, update = o.get('search_return'), o.get('author_update')
+    if entered:
+        if not isinstance(search, dict) or not isinstance(update, dict):
+            raise ValueError('entered repair missing budget/posterior observations')
+        for key in ('wall_ns', 'cpu_ns', 'local_remaining_wall_ns',
+                    'global_remaining_wall_ns', 'global_remaining_cpu_ns'):
+            if type(search.get(key)) is not int:
+                raise ValueError('invalid signed search-return time')
+        if search['wall_ns'] < 0 or search['cpu_ns'] < 0:
+            raise ValueError('negative absolute clock')
+        for key in ('search_censored', 'local_deadline_observed', 'global_deadline_observed', 'local_scope_released'):
+            if type(search.get(key)) is not bool:
+                raise ValueError('invalid search budget flag')
+        if (search['search_censored'] != (search['local_deadline_observed'] or search['global_deadline_observed']) or
+                search['local_scope_released'] != (contract == 'search_then_admission')):
+            raise ValueError('search/admission scope flags disagree')
+        if search['search_censored'] and (not row['censored'] or row['accepted']):
+            raise ValueError('search expiry was erased at admission')
+        if contract == 'search_then_admission' and (
+                (search['local_deadline_observed'] and not row['local_deadline']) or
+                (search['global_deadline_observed'] and not row['global_deadline'])):
+            raise ValueError('recorded search deadline disappeared')
+        if (type(update.get('applied')) is not bool or type(update.get('positive_predicate')) is not bool or
+                type(update.get('partial_subset_soc')) is not int or update['partial_subset_soc'] < 0 or
+                update.get('old_subset_soc') != row['old_subset_soc'] or
+                update['positive_predicate'] != (row['old_subset_soc'] > update['partial_subset_soc'])):
+            raise ValueError('author predicate lacks actual pre-rollback operands')
+        if update.get('index') is not None and (type(update['index']) is not int or not 0 <= update['index'] < count):
+            raise ValueError('author index invalid')
+        if update['applied'] and update.get('index') != seed:
+            raise ValueError('author updated a different selected seed')
+        if seed is None:
+            raise ValueError('repair without selected seed')
+        before = (update.get('alpha_before'), update.get('beta_before'))
+        after = (update.get('alpha_after'), update.get('beta_after'))
+        if any(type(v) is not int or v < 1 for v in before+after) or before != posterior[seed]:
+            raise ValueError('actual author posterior history is discontinuous')
+        expected = (before[0]+int(update['applied'] and update['positive_predicate']),
+                    before[1]+int(update['applied'] and not update['positive_predicate']))
+        if after != expected:
+            raise ValueError('author posterior delta differs from actual predicate')
+        posterior[seed] = after
+    elif search is not None or update is not None:
+        raise ValueError('unentered repair has fabricated observations')
+    final_posterior = o.get('selected_posterior_after_settlement')
+    if seed is None:
+        if final_posterior is not None:
+            raise ValueError('unselected posterior recorded')
+    elif final_posterior != dict(alpha=posterior[seed][0], beta=posterior[seed][1]):
+        raise ValueError('committed audit replaced actual author posterior')
+    identity = o.get('plan_identity', {})
+    if (identity.get('encoding') != 'NATIVE_PATHS_U32LE_SHA1_V1' or identity.get('scope') !=
+            'WITHIN_MANIFEST_BOUND_MODEL_NOT_SAFETY_CERTIFICATE' or
+            identity.get('before_sha1') != plan_sha or identity.get('revision_before') != revision or
+            type(identity.get('revision_after')) is not int or
+            identity['revision_after'] != revision+int(row['accepted']) or
+            not isinstance(identity.get('after_sha1'), str) or
+            not re.fullmatch('[0-9a-f]{40}', identity['after_sha1'])):
+        raise ValueError('committed plan identity/revision discontinuity')
+    if not row['accepted'] and identity['after_sha1'] != plan_sha:
+        raise ValueError('rollback/censor changed plan identity')
+    if row['committed_gain'] and identity['after_sha1'] == plan_sha:
+        raise ValueError('SOC changed without a changed plan fingerprint')
+    return identity['after_sha1'], identity['revision_after']
 
 
 def verify_candidate_validation_policy(row, expected='all'):
@@ -46,7 +147,10 @@ def verify_candidate_validation_policy(row, expected='all'):
     else:
         if reason != 'NONE':
             raise ValueError('unskipped candidate has skip reason')
-        if row['candidate_validated']:
+        if shared_search_censored(row):
+            if result != 'SEARCH_CENSORED' or row['candidate_validated'] or not row['censored']:
+                raise ValueError('search-censored candidate became eligible')
+        elif row['candidate_validated']:
             if (result != 'VALIDATED' or remaining != 0 or fresh > row['old_subset_soc'] or
                     fresh != row['candidate_subset_soc']):
                 raise ValueError('validated candidate violates acceptance gate')
@@ -156,14 +260,18 @@ def verify_event_cost(row, candidate_validation='all'):
     elif remaining is not None or d.get('search_loop_exit_stop') != 'NOT_ENTERED':
         raise ValueError('unentered search has return data')
     full = entered and row['fresh_paths'] == row['group_size']
-    if d['validation_entered'] != full:
+    search_censored = shared_search_censored(row)
+    if d['validation_entered'] != (full and not search_censored):
         raise ValueError('candidate validation entry/fresh-path mismatch')
     result = d.get('validation_result')
     stage = d.get('validation_last_stage')
     skipped = verify_candidate_validation_policy(row, candidate_validation)
     if candidate_validation != 'all' and row['candidate_validation_policy']['remaining_agents'] != remaining:
         raise ValueError('candidate gate differs from actual search-return remaining count')
-    if skipped:
+    if search_censored:
+        if result != 'SEARCH_CENSORED' or stage != 'SEARCH_CENSORED' or row['candidate_validated']:
+            raise ValueError('search expiry silently resumed validation')
+    elif skipped:
         if result != 'SKIPPED_ACCEPTANCE_INELIGIBLE' or stage != 'ACCEPTANCE_GATE':
             raise ValueError('candidate gate/diagnostic result mismatch')
     elif row['candidate_validated']:
@@ -182,7 +290,7 @@ def verify_event_cost(row, candidate_validation='all'):
             raise ValueError('invalid cost diagnostic duration')
         validation, post, other = (d[key] for key in keys)
         if (validation+other != post or post > row['selection_'+clock+'_before_log_ns'] or
-                not full and validation or not entered and post):
+                (not full or search_censored) and validation or not entered and post):
             raise ValueError('nested cost diagnostic does not close')
         parts = [d.get('candidate_'+phase+'_'+clock+'_ns') for phase in
                  ('materialization', 'joint_check', 'validation_other')]
@@ -193,13 +301,24 @@ def verify_event_cost(row, candidate_validation='all'):
     return d
 
 
-def verify_reward_trace(raw, native, job, count, require_cost_diagnostics=False):
+def verify_reward_trace(raw, native, job, count, require_cost_diagnostics=False,
+                        initial_paths=None, final_paths=None):
     """Reconcile every selection, retained plan, censor and memory summary."""
     if raw and not raw.endswith(b'\n'):
         raise ValueError('partial reward trace')
     summary = native.get('reward_contract', {})
     mode, width = job['reward_memory'], job['reward_window']
     candidate_validation = job.get('candidate_validation_policy', 'all')
+    execution_contract = job.get('repair_budget_contract')
+    execution = summary.get('execution_observations')
+    if execution_contract is None:
+        if execution is not None:
+            raise ValueError('undeclared execution observations')
+    elif (execution_contract not in ('legacy', 'search_then_admission') or mode != 'author' or
+          not isinstance(execution, dict) or execution.get('schema') != 'ADDRESS_EXECUTION_OBSERVATIONS_V1' or
+          execution.get('repair_budget_contract') != execution_contract or
+          initial_paths is None or final_paths is None):
+        raise ValueError('explicit common budget contract and bound paths required')
     if candidate_validation not in ('all', 'acceptance_eligible') or (
             candidate_validation != 'all' and mode != 'author'):
         raise ValueError('unsupported candidate validation policy/memory')
@@ -219,6 +338,16 @@ def verify_reward_trace(raw, native, job, count, require_cost_diagnostics=False)
     outcomes = Counter()
     cost_totals = Counter({key: 0 for key in COST_TOTAL_FIELDS})
     diagnostic = 'cost_diagnostics' in summary
+    if execution is not None:
+        if not diagnostic or (execution.get('initial_plan_sha1'), execution.get('final_plan_sha1')) != (
+                path_identity(initial_paths), path_identity(final_paths)):
+            raise ValueError('execution plan identity differs from pinned initial/final paths')
+        if (type(execution.get('final_revision')) is not int or execution['final_revision'] < 0 or
+                any(type(execution.get(k)) is not int or execution[k] < 0 for k in ('identity_wall_ns', 'identity_cpu_ns')) or
+                execution.get('identity_cost_is_nested_in_recorded_total') is not True):
+            raise ValueError('execution identity cost/revision invalid')
+        posterior = [(1, 1) for _ in range(count)]
+        plan_sha, revision = execution['initial_plan_sha1'], 0
     first_stages, validation_results, pool_sizes = Counter(), Counter(), Counter()
     if require_cost_diagnostics and not diagnostic:
         raise ValueError('required reward cost diagnostics missing')
@@ -228,6 +357,8 @@ def verify_reward_trace(raw, native, job, count, require_cost_diagnostics=False)
         raise ValueError('native used undeclared candidate gate')
     for line in raw.splitlines():
         row = json.loads(line)
+        if ('execution_observations' in row) != (execution is not None):
+            raise ValueError('mixed/missing per-event execution observations')
         selections += 1
         if (row.get('schema') != 'ADDRESS_REWARD_V1' or
                 type(row.get('selection_id')) is not int or row['selection_id'] != selections or
@@ -298,6 +429,8 @@ def verify_reward_trace(raw, native, job, count, require_cost_diagnostics=False)
                     if len(recent[seed]) > width:
                         old = recent[seed].popleft()
                         arm['retained_successes' if old else 'retained_failures'] -= 1
+        if execution is not None:
+            plan_sha, revision = verify_execution_event(row, execution_contract, count, posterior, plan_sha, revision)
         previous = row['committed_task_soc']
         gain += row['committed_gain']
         wall += row['selection_wall_before_log_ns']
@@ -324,6 +457,8 @@ def verify_reward_trace(raw, native, job, count, require_cost_diagnostics=False)
             raise ValueError('missing reward logging cost')
     if diagnostic and summary['cost_diagnostics'] != dict(schema='ADDRESS_REWARD_COST_V1', **cost_totals):
         raise ValueError('reward cost summary does not close')
+    if execution is not None and (plan_sha != execution['final_plan_sha1'] or revision != execution['final_revision']):
+        raise ValueError('final committed identity/revision does not close')
     if candidate_validation != 'all' and summary.get('candidate_validation_policy') != dict(
             schema='ADDRESS_CANDIDATE_VALIDATION_V1', mode=candidate_validation,
             skipped_acceptance_ineligible=skipped_candidates):
@@ -345,6 +480,10 @@ def verify_reward_trace(raw, native, job, count, require_cost_diagnostics=False)
         result['candidate_validation_policy'] = dict(mode=candidate_validation,
             skipped_acceptance_ineligible=skipped_candidates,
             skipped_candidate_reward_is_unknown=True)
+    if execution is not None:
+        result['execution_observations'] = dict(execution,
+            author_posterior_final=[dict(seed=i, alpha=p[0], beta=p[1]) for i, p in enumerate(posterior)],
+            observation_scope='MATCHED_EXPLICIT_INSTRUMENTATION_NOT_COUNTERFACTUAL_REPLAY')
     return result
 
 

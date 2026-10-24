@@ -11,13 +11,50 @@ from address_adapter import adapt, replace_exact
 from build_address_full import AUTHOR, build, source_identity
 from run_address_adapter import (load, parse_paths, verify_attempt_trace, verify_budget_receipt,
                                  verify_phase_profile, verify_seed_comparison, comparison_settings,
-                                 PHASE_NAMES, worker)
+                                 PHASE_NAMES, worker, shared_budget_domain)
 from run_repair_dev import unpack
 from reward_analysis import (diagnose_legacy, verify_reward_trace, committed_magnitude_feedback,
                              verify_deadline_observations)
 
 
 class AdapterContracts(unittest.TestCase):
+    def test_shared_budget_protocol_keeps_observations_and_policy_explicit(self):
+        config=dict(variant='reward_contract',comparison_protocol='shared_budget_v1',
+                    cost_diagnostics=True,execution_observations=True)
+        job=dict(seed_admission='positive_delay',effort_mode='total_budget',iterations=0,
+                 reward_memory='author',reward_window=0,candidate_validation_policy='all',
+                 repair_budget_contract='legacy')
+        for contract in ('legacy','search_then_admission'):
+            for policy in ('all','acceptance_eligible'):
+                self.assertEqual(comparison_settings(config,dict(job,repair_budget_contract=contract,
+                    candidate_validation_policy=policy)),('positive_delay','total_budget'))
+        for key in ('repair_budget_contract','candidate_validation_policy'):
+            changed=dict(job);changed.pop(key)
+            with self.assertRaises(ValueError):comparison_settings(config,changed)
+        for changed in (dict(job,repair_budget_contract='implicit'),dict(job,reward_memory='cumulative'),
+                        dict(job,seed_admission='all'),dict(job,effort_mode='fixed_repairs',iterations=16)):
+            with self.assertRaises(ValueError):comparison_settings(config,changed)
+        for changed in (dict(config,execution_observations=False),dict(config,cost_diagnostics=False),
+                        dict(config,attempt_trace=True),dict(config,phase_profile=True),
+                        dict(config,comparison_protocol='candidate_validation_v1')):
+            with self.assertRaises(ValueError):comparison_settings(changed,job)
+
+    def test_shared_budget_inspection_never_constructs_problem_or_search(self):
+        import io,json,run_address_adapter
+        config=dict(comparison_protocol='shared_budget_v1',jobs=[dict(case='fixture',top_k=9)])
+        bundle=dict(cases=[dict(id='fixture',paths={str(i):[i,i] for i in range(9)})])
+        output=io.StringIO()
+        with patch('sys.argv',['runner','inspect','--manifest','unused.json','--sha256','unused']), \
+                patch('run_address_adapter.load',return_value=(config,bundle,Path('unused'))), \
+                patch('run_address_adapter.unpack',side_effect=AssertionError('must not construct GridProblem')), \
+                patch('sys.stdout',output):
+            self.assertEqual(run_address_adapter.main(),0)
+        value=json.loads(output.getvalue())
+        self.assertFalse(value['problem_constructed']);self.assertFalse(value['search_executed'])
+        for count in (3,8):
+            with self.assertRaises(ValueError):
+                shared_budget_domain(config,dict(cases=[dict(id='fixture',paths={str(i):[i] for i in range(count)})]))
+
     def test_cost_inspection_never_constructs_problem_or_search(self):
         import io
         import json

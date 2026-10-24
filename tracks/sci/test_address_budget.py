@@ -618,6 +618,24 @@ class RewardContracts(unittest.TestCase):
         self.assertEqual(result.returncode,0,result.stderr)
         return result
 
+    def test_execution_observations_configuration_fails_closed(self):
+        code=COMMON+r'''
+#include "address_reward_support.h"
+int main(int argc,char**argv){
+    setup();int mode=atoi(argv[1]);
+    if(mode!=1)address_budget::configure_cost_diagnostics(1);
+    if(mode==2)address_budget::configure_trace(argv[3]);
+    bool refused=false;
+    try {address_reward::configure(mode==3?"cumulative":"author",0,1,argv[2],"all",
+        mode==4?"unknown":mode==5?"search_then_admission":"legacy",mode==5?0:1);}
+    catch(const runtime_error&){refused=true;}
+    assert(refused==(mode!=0));return 0;
+}
+'''
+        exe=self.compile('execution_configuration',code)
+        for mode in range(6):
+            self.execute(exe,mode,self.root/('config_reward'+str(mode)),self.root/('config_attempt'+str(mode)))
+
     def test_actual_pp_separates_candidate_commit_failure_and_deadline(self):
         code=pp_fixture(self.changed['src/LNS.cpp'].decode())
         code=code.replace('      if(expire_call==-4)', '''      if(expire_call==-5&&calls==3){Path p(6,PathEntry{start_location});p.push_back({start_location+1});p.push_back({start_location+2});return p;}
@@ -797,6 +815,81 @@ int main(int argc,char**argv){
                         if mode==3:
                             self.assertEqual(p['result'],'DEADLINE')
                             self.assertEqual(d['first_observed_deadline']['stage'],'SIPP_RETURN')
+
+    def test_shared_budget_actual_pp_closes_search_before_global_admission(self):
+        from reward_analysis import verify_reward_trace
+        code=pp_fixture(self.changed['src/LNS.cpp'].decode()).split('int main(int argc,char**argv){')[0]
+        code=code.replace('      if(calls==expire_call)tick=100;',
+                          '      if(expire_call==4&&calls==3)tick=2;')
+        code=code.replace('bool isObstacle(int)const{return false;}', '''bool isObstacle(int)const{
+            if(expire_call==1)tick=2;
+            if(expire_call==2)tick=100;
+            if(expire_call==3)cputick=9;
+            return false;
+        }''')
+        # Place the fake crossing exactly between the old snapshot and the
+        # existing PRIMARY_DONE checkpoint, not in a replacement search loop.
+        code=code.replace('    budget_attempt.primary_done(remaining_agents,int(p-shuffled_agents.begin()));',
+            '    if(expire_call==5)tick=2;\n    budget_attempt.primary_done(remaining_agents,int(p-shuffled_agents.begin()));')
+        code=code.replace('    if (address_reward::admissible() && !address_budget::expired("ACCEPT")',
+            '    if(expire_call==6)tick=100;\n    if (address_reward::admissible() && !address_budget::expired("ACCEPT")')
+        code+=r'''
+int main(int argc,char**argv){
+    setup();expire_call=atoi(argv[1]);LNS test;test.replan_time_limit=1;
+    address_budget::configure_cost_diagnostics(1);
+    address_reward::configure("author",0,3,argv[3],argv[4],argv[5],1);
+    address_budget::state().group_calls=1;
+    vector<int> q(3,9),freq(3,1);test.q_values=&q;test.frequency=&freq;test.current_index=0;
+    test.alpha.assign(3,1);test.beta.assign(3,1);
+    address_adapter::Paths initial;
+    for(const auto& a:test.agents){initial.emplace_back();for(const auto& x:a.path)initial.back().push_back(x.location);}
+    address_reward::initialize_plan_identity(initial);
+    address_reward::SelectionScope selection(9);address_reward::bind_seed(0);address_reward::seed_pool_completed(3);
+    const bool accepted=test.runPP();
+    const bool expected=expire_call==0||(expire_call==1&&string(argv[5])=="search_then_admission");
+    assert(accepted==expected);assert(test.neighbor.sum_of_costs==(expected?6:9));
+    assert(test.alpha[0]==(expire_call==-4?1:2));assert(test.beta[0]==(expire_call==-4?2:1));
+    auto& a=address_adapter::state();a.initial_soc=9;a.initial_validated=true;a.total_seconds=5;a.receipt_file=argv[2];
+    address_adapter::check_final(test.agents,test.instance,test.neighbor.sum_of_costs);
+    assert(a.final_validated);return address_budget::finish();
+}
+'''
+        exe=self.compile('shared_budget_pp',code)
+        initial=[[s,s,s+1,s+2] for s in (0,5,10)]
+        for contract in ('legacy','search_then_admission'):
+            for policy in ('all','acceptance_eligible'):
+                for mode in (0,1,2,3,4,5,6,-4,-2):
+                    with self.subTest(contract=contract,policy=policy,mode=mode):
+                        native_path=self.root/f'common_native_{contract}_{policy}_{mode}.json'
+                        trace=self.root/f'common_pp_{contract}_{policy}_{mode}.jsonl'
+                        self.execute(exe,mode,native_path,trace,policy,contract)
+                        row=json.loads(trace.read_bytes());native=json.loads(native_path.read_bytes())
+                        accepted=mode==0 or (mode==1 and contract=='search_then_admission')
+                        final=[[s,s+1,s+2] for s in (0,5,10)] if accepted else initial
+                        job=dict(reward_memory='author',reward_window=0,candidate_validation_policy=policy,
+                                 repair_budget_contract=contract)
+                        verify_reward_trace(trace.read_bytes(),native,job,3,True,initial,final)
+                        self.assertEqual(row['accepted'],accepted)
+                        o=row['execution_observations'];search=o['search_return']
+                        self.assertEqual(search['local_scope_released'],contract=='search_then_admission')
+                        self.assertEqual(o['author_update']['positive_predicate'],mode!=-4)
+                        if contract=='search_then_admission' and mode in (4,5):
+                            self.assertTrue(search['search_censored'])
+                            self.assertTrue(row['local_deadline'])
+                            self.assertFalse(row['candidate_validated'])
+                            self.assertEqual(row['cost_diagnostics']['validation_result'],'SEARCH_CENSORED')
+                        if mode==6:
+                            self.assertTrue(row['candidate_validated'])
+                            self.assertTrue(row['global_deadline'])
+                            self.assertEqual(o['plan_identity']['revision_after'],0)
+                        # A signed time margin is an observation, not an excuse
+                        # to erase an actual expiry or fabricate a posterior.
+                        bad=json.loads(trace.read_bytes())
+                        bad['execution_observations']['author_update']['alpha_after']+=1
+                        with self.assertRaises(ValueError):
+                            verify_reward_trace((json.dumps(bad)+'\n').encode(),native,job,3,True,initial,final)
+                        with self.assertRaises(ValueError):
+                            verify_reward_trace(trace.read_bytes(),native,job,3,True)
 
     def test_acceptance_gate_uses_nonstrict_original_cost_condition(self):
         code=COMMON+r'''

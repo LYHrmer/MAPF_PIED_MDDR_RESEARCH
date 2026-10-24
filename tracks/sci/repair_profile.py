@@ -844,18 +844,22 @@ def address_results(manifest, expected_sha, output=None):
                 if summary != result.get('comparison_diagnostics'):
                     raise ValueError('offline seed comparison differs from worker')
                 row['comparison_diagnostics'] = summary
-            if config.get('comparison_protocol') in ('reward_memory_v1', 'reward_cost_diagnostic_v1', 'candidate_validation_v1'):
+            if config.get('comparison_protocol') in ('reward_memory_v1', 'reward_cost_diagnostic_v1', 'candidate_validation_v1', 'shared_budget_v1'):
                 from reward_analysis import verify_reward_trace
                 summary = verify_reward_trace((folder/'rewards.jsonl').read_bytes(),
                                               result['native_receipt'], job, len(problem.ids),
-                                              require_cost_diagnostics=config.get('cost_diagnostics', False))
+                                              require_cost_diagnostics=config.get('cost_diagnostics', False),
+                                              initial_paths=[initial[a] for a in problem.ids] if config.get('execution_observations') else None,
+                                              final_paths=[final[a] for a in problem.ids] if config.get('execution_observations') else None)
                 if summary != result.get('reward_diagnostics'):
                     raise ValueError('offline reward ledger differs from worker')
                 row['reward_diagnostics'] = summary
                 row['reward_memory'], row['reward_window'], row['solver_seed'] = (
                     job['reward_memory'], job['reward_window'], job['seed'])
-                if config.get('comparison_protocol') == 'candidate_validation_v1':
+                if config.get('comparison_protocol') in ('candidate_validation_v1', 'shared_budget_v1'):
                     row['candidate_validation_policy'] = job['candidate_validation_policy']
+                if config.get('comparison_protocol') == 'shared_budget_v1':
+                    row['repair_budget_contract'] = job['repair_budget_contract']
         elif receipt['status'] == 'FAILED_OR_INCOMPLETE':
             failed_job = job['id']
             row['reason'] = result.get('reason', 'missing success validation')
@@ -868,7 +872,9 @@ def address_results(manifest, expected_sha, output=None):
     reward_comparison = config.get('comparison_protocol') == 'reward_memory_v1'
     cost_diagnostic = config.get('comparison_protocol') == 'reward_cost_diagnostic_v1'
     validation_comparison = config.get('comparison_protocol') == 'candidate_validation_v1'
-    value = {'scope': 'ADDRESS_COMMON_ENGINEERING_VALIDATION_GATE_DEV' if validation_comparison else
+    shared_budget = config.get('comparison_protocol') == 'shared_budget_v1'
+    value = {'scope': 'ADDRESS_SHARED_BUDGET_CONTRACT_DEV' if shared_budget else
+                     'ADDRESS_COMMON_ENGINEERING_VALIDATION_GATE_DEV' if validation_comparison else
                      'ADDRESS_REWARD_COST_KNOWN_TASK_DIAGNOSTIC' if cost_diagnostic else
                      'ADDRESS_REWARD_HELDOUT_TASK_PILOT' if reward_comparison else 'ADDRESS_FUNCTIONAL_DEV_STOPPED_BATCH_AUDIT',
         'manifest_sha256': expected_sha, 'scientific_code_commit': auth['scientific_code_commit'],
@@ -879,7 +885,8 @@ def address_results(manifest, expected_sha, output=None):
                    for status in ('COMPLETE', 'FAILED_OR_INCOMPLETE', 'NOT_RUN_AFTER_BATCH_STOP')},
         'authorization_consumed_or_closed': True, 'retry_allowed': False,
         'remaining_jobs_require_new_authorization': bool(failed_job),
-        'limits': [('two known design tasks; seed zero; all versus acceptance_eligible validation in the same binary; common engineering DEV, not a new reward method'
+        'limits': [('explicit shared budget contract and matched observations; candidate audit policy is a separate declared factor; no innovation or unseen-task claim'
+                    if shared_budget else 'two known design tasks; seed zero; all versus acceptance_eligible validation in the same binary; common engineering DEV, not a new reward method'
                     if validation_comparison else 'two known design tasks; three within-task seeds; author mode only; observations do not establish a new policy benefit'
                     if cost_diagnostic else 'four held-out-from-reward-design historical tasks; solver seeds are within-task repeats; no offline training'
                     if reward_comparison else 'single functional DEV, no candidate recovery or learning'),
