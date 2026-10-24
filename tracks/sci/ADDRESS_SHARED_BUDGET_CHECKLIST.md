@@ -66,3 +66,36 @@ rtk proxy timeout --signal=TERM --kill-after=2s 10s python3 -B tracks/sci/run_ad
 ```
 
 产物唯一位置`results/address_shared_budget_contract_v1/`：批次`AUTHORIZATION.json`、外层命令/资源/退出记录；每项原始`attempt.json`、`receipt.json`、`result.json`、`native_receipt.json`、`rewards.jsonl`、初始输入、`final.paths`及stdout/stderr。失败和部分写盘也保留。执行结束后使用已有`repair_profile.py address --manifest … --sha256 …`离线核对并形成`RUN_RECEIPT.json`；分析器不启动搜索。实际触发计数和`NOT_EXERCISED`投影来自原始账本，派生分析另记录源码/来源SHA和离线费用，不回填原运行计时。
+
+## 第二阶段：同两任务的12项收益DEV（本节为新范围）
+
+当前用户原文“验证SCI新旧预算合同的实际行为，以及硕士初始认证的预算可行性，再开展收益比较”包含通过验证后开展收益比较的条件指示。SCI功能阶段已通过，[结果提交`4fcf289`](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/commit/4fcf289347bcf8f93410e61ae15cf2b1bb37e3fa)固定总收据SHA `70765e1f8e9ca3f2f64ed403bb0f7fe881ff50686e819a9be7ea1e93371446bc`和独立审计SHA `496fc47e93e3e06c638166f98b5ce26c2973b1e1c1b2421cc4771fdaf18934cc`。本节据此限定第二阶段最小实施范围；12项数量及预算由本轮实施安排，不冒充用户逐项给定，也不复用旧四项已消费许可。硕士认证失败不阻塞独立SCI支线。
+
+新[manifest](config/address_shared_budget_gain_v1_manifest.json) SHA `48d0e66e7e69f447323ce3a3a6f55190433332834d3b3cf78798fdaf5f3606e7`；二进制、运行器/分析器、初解输入及全部源SHA沿用第一阶段冻结值，未改局部份额、奖励、all策略或观测。只增加同两份已知32车任务的solver seed1/2/3，不加入地图、初始搜索、训练或新模型。独立任务单位仍是2，三个seed只是任务内重复，六对结果不能算六份独立地图或留出验证。
+
+| 配对顺序 | 任务 | seed | 本对合同顺序（各一项） |
+|---|---|---:|---|
+| 1 | maze-32-32-2 / s05 / n32 | 1 | legacy → search_then_admission |
+| 2 | random-32-32-10 / s05 / n32 | 1 | search_then_admission → legacy |
+| 3 | maze-32-32-2 / s05 / n32 | 2 | search_then_admission → legacy |
+| 4 | random-32-32-10 / s05 / n32 | 2 | legacy → search_then_admission |
+| 5 | maze-32-32-2 / s05 / n32 | 3 | legacy → search_then_admission |
+| 6 | random-32-32-10 / s05 / n32 | 3 | search_then_admission → legacy |
+
+同对两臂相邻，全批串行，三对旧先、三对新先；不与其他科学计时并跑。每项仍总准入wall≤5秒，worker/native各CPU≤10秒、地址空间≤512MiB、单文件≤16MiB，预留预算不变；外层10秒TERM＋2秒KILL。12项总准入上限60秒、外层保护总上限144秒。零重试，首个硬失败/超限/非法或缺失方案/账本不闭合停批，失败和未运行项照实保留；不通过替换seed或追加样本补齐。
+
+主指标逐对报告`SOC_legacy − SOC_search_then_admission`，正值表示新合同最终SOC更低；每任务分别列三个seed，不跨任务抹去方向。makespan两臂原值/差值、全部准入/外层/CPU/内存和失败同时报告。修复次数和截尾仅解释机制，不作收益代理。若同任务不同seed的严格SOC差出现正负翻转，或仅修复次数变多而最终完整质量无改善，停止扩大这个具体候选。零差异、退化、不完整配对均保留，不从幸存项单独宣布有效；本批不作显著性或未见任务泛化结论。
+
+准备阶段只进行byte/JSON inspect，无科学运行：
+
+```bash
+rtk proxy python3 -B tracks/sci/run_address_adapter.py inspect --manifest tracks/sci/config/address_shared_budget_gain_v1_manifest.json --sha256 48d0e66e7e69f447323ce3a3a6f55190433332834d3b3cf78798fdaf5f3606e7
+```
+
+主窗口冻结后按新manifest的12个job顺序执行。第一项具体命令如下，其余逐项使用manifest内的完整job ID；旧四项命令不得再次执行。新授权记录单列第二阶段、当前用户原文、前置功能证据、实际提交、全部12项和资源范围，提供`jobs`字段且逐项等于manifest，以兼容原聚合器。
+
+```bash
+rtk proxy timeout --signal=TERM --kill-after=2s 10s python3 -B tracks/sci/run_address_adapter.py run --manifest tracks/sci/config/address_shared_budget_gain_v1_manifest.json --sha256 48d0e66e7e69f447323ce3a3a6f55190433332834d3b3cf78798fdaf5f3606e7 --job maze-32-32-2__s05__n32__seed1__legacy --authorization-reference 'CURRENT_USER_CONDITIONAL_REQUEST_20261025_SECOND_STAGE_SCI_GAIN_DEV'
+```
+
+新产物只写`results/address_shared_budget_gain_v1/`，授权/外层执行/每项原始文件与离线总收据结构复用现有模块；不覆盖第一阶段。旧冻结聚合的PRIMARY_DONE投影缺口仍须直接复核原stage，不据零计数断言未触发。当前本窗口仅完成准备，不执行或扩展本批。
