@@ -38,3 +38,5 @@ Python接口为`read_blob(repo, pin) -> bytes`、`audit_manifest(repo, manifest)
 同提交的`plan_selection.lock.json`固定SCI`535ee1a`的`pp_repair.py`与`address_backend.py`，在校验Git对象字节后复用原`GridProblem`及完整路径检查，支持SOC、保留等成本路径、转向感知的整方案选择规则；没有复制或启动原生求解器。两份消费者锁由硕士维护，SCI`032bf22`及其后续实现不自动进入该消费者。当前没有新增公共运行接口，也不把SCI专用优化器或证据复制进公共目录。
 
 硕士`a4ad94c`的完整运动比较继续使用该固定GridProblem入口，不改变旧锁文件；其新清单同时固定SCI`535ee1a`的`run_repair_dev.py` supervisor对象，复用进程管理但不调用优化器。SCI`101f18c`的共同预算层和较新完整ADDRESS结果均不自动进入硕士。运动编译器仍只有硕士消费者，留在`tracks/thesis/`，不复制到公共目录；所有运行对象以清单固定，互不读取工作树最新版本。
+
+2026-10-25硕士[34d0cac运动接纳器](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/34d0cacc835d50c4b77254df6e18240ccf9de895/tracks/thesis/MOTION_ACCEPTANCE.md)新增独立的`motion_acceptance.lock.json`：固定SCI`f9c651a`的10个输入、结果与收据对象，其科学来源代码为`2bd1916`，并保留原邻域大小表述偏差。原三份锁不变，`GridProblem`、`SharedBudget`和supervisor仍固定SCI`535ee1a`。旧优化计算费用仅作来源记录，不伪装成新接纳运行的计算。SCI当前共同预算实现`34a80e3`没有自动进入该消费者；运动候选只从核定Git对象加载，优化器继续只在SCI维护一份。

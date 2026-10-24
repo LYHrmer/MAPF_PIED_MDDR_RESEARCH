@@ -1,6 +1,8 @@
 # SCI MAPF 支线索引
 
-工作树`/home/lyh/MAPF_SCI_RESEARCH`，分支`research/sci-mapf`。main只维护索引；当前实现与明细见[本线入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/f9c651ad0680679cf99a4973f722b65fd6f7aa97/tracks/sci/README.md)。
+工作树`/home/lyh/MAPF_SCI_RESEARCH`，分支`research/sci-mapf`。main只维护索引；当前实现与明细见[本线入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/34a80e37034ef47608d609195070e6d4b34a23e9/tracks/sci/README.md)。
+
+2026-10-25[共同预算执行版本](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/34a80e37034ef47608d609195070e6d4b34a23e9/tracks/sci/ADDRESS_BUDGET.md#共同预算执行合同实现完成科学验证待授权)已完成：显式分开局部搜索和全局认证/提交期限，并补真实学习更新、计划身份和剩余预算观测。软件核验与编译通过，默认legacy/all保留；新协议首版限author模式、车辆数大于8。科学功能与收益尚未比较，没有新增运行许可；详细边界统一见报告。
 
 问题是给定合法初解，在有限总计算预算内改善MAPF路径质量。以ADDRESS为实现主干，BALANCE/TACKLE提供针对性参考，确需神经表示时再看NNS。后段恢复候选保持停止；正延迟初始种子规则已完成八项开发对照，保留为朴素强对照，不把必要条件或共同工程优化称为创新。当前已完成四个未参与本轮设计的历史完整任务和多seed三模式比较，未建立稳定质量优势；不把旧random的单一正延迟候选作为种子排序训练依据。
 

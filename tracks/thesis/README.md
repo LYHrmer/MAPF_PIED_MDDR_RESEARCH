@@ -1,6 +1,8 @@
 # 硕士论文支线索引
 
-工作树`/home/lyh/MAPF_THESIS_RESEARCH`，分支`research/thesis-integration`。main只维护索引；实现与明细见[本线入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/906ba90aa7274f4035cf56d1b2cc323a642b1516/tracks/thesis/README.md)。
+工作树`/home/lyh/MAPF_THESIS_RESEARCH`，分支`research/thesis-integration`。main只维护索引；实现与明细见[本线入口](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/34d0cacc835d50c4b77254df6e18240ccf9de895/tracks/thesis/README.md)。
+
+2026-10-25[运动目标接纳器](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/34d0cacc835d50c4b77254df6e18240ccf9de895/tracks/thesis/MOTION_ACCEPTANCE.md)已接通现有worker：先认证初解，以同原语下界筛选完整候选，只有完整运动证书、严格目标改善和有效预算同时成立才提交。候选结果固定SCI`f9c651a`，基础校验/预算仍为`535ee1a`；新ADDRESS版本不自动进入硕士。软件核验通过，未运行新科学任务；32车初始认证费用未知，当前manifest只作输入接口提案。给定候选的接纳不等于完整运动目标搜索，不能将人工夹具改善写成任务收益。
 
 [等成本改路与资格诊断](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/aea4ffad2dfdf59a163436a21ee35c0f7b75c333/tracks/thesis/PATH_DIAGNOSTIC.md)保留既有离线证据。本轮[六任务三臂结果](https://github.com/LYHrmer/MAPF_PIED_MDDR_RESEARCH/blob/4fc3a549afeac751fb54deac0056efee4b88a657/tracks/thesis/MOTION_RESULT.md)已经完成；原方案、冻结SOC方案、转向感知整方案均通过全车离散和声明模型下的连续充分条件检查，许可已消费。三个SOC缩短任务中仅maze32略降运动完成时间；maze16与random32更慢。简单整方案保留规则只在maze16额外改善，其余结果与非法混合候选拒绝均保留。
 
