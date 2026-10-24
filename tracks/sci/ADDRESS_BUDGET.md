@@ -95,4 +95,4 @@ rtk proxy python3 -B -m unittest test_address_budget -v
 
 软件核验：`rtk proxy python3 -B -m unittest test_address_adapter test_address_budget test_address_loop_guard`在`tracks/sci`下57项通过；其中实际改写PP＋人工规划器/时钟覆盖36种预算、校验和截止组合，包含`PRIMARY_DONE`首次越界、认证后提交前全局到期、正常回滚及真实作者后验。配置反例拒绝缺省/未知合同、缺失观测、非author和双trace；inspect人工夹具不构造问题。另只读复核36奖励＋6费用＋4门控的46份旧账本、26937事件，当前解析摘要与原保存摘要完全相同。未构造作者Instance，未执行真实SIPP、任务、训练或旧许可。
 
-完整构建及help见[新收据](shared_budget_build_receipt.json)，独立目录`.address_reward_build/shared_budget_v1_r2`；不覆盖旧工件。本轮用户随后直接要求验证新旧合同实际行为，现已准备[四项功能清单](ADDRESS_SHARED_BUDGET_CHECKLIST.md)，固定总预算、同输入/种子/候选策略/观测，本窗口尚未执行。先核真实截尾/认证/提交和完整费用，缺失触发记`NOT_EXERCISED`，再决定收益比较。只有可重复的未提交有效候选与预算分配关联，才提出一种具体分配规则；若差异仅是更多尝试、单次偶然质量变化或额外费用抵消收益，就结束该具体候选，不通过继续放宽期限追逐正例。不能把上述人工反例或本轮功能DEV写成MAPF独立性能结果。
+完整构建及help见[新收据](shared_budget_build_receipt.json)，独立目录`.address_reward_build/shared_budget_v1_r2`；不覆盖旧工件。本轮直接指示下的[四项功能清单](ADDRESS_SHARED_BUDGET_CHECKLIST.md)随后已全部完成、零重试，许可消费。[真实结果](ADDRESS_SHARED_BUDGET_RESULT.md)确认迷宫的局部认证截止和新合同跨原局部期限提交触发，完整输出及账本闭合；部分边界仍`NOT_EXERCISED`，不追加追触发。当前尚无独立收益结论，后继比较另行固定范围；不能把人工反例或本轮功能DEV写成独立算法优势。

@@ -1,0 +1,17 @@
+{
+  "schema": "OFFLINE_AGGREGATION_AUTHORIZATION_ALIAS_V1",
+  "status": "PASS",
+  "error": null,
+  "first_frozen_analyzer_invocation_failure": "KeyError: 'jobs' at repair_profile.py address_results; no RUN_RECEIPT was written",
+  "original_authorization_sha256": "430b217f004eaab3ebb0d0b0fa38f4be1491b70491f2810ba263594e0c0668d2",
+  "original_authorization_unchanged": true,
+  "frozen_analyzer_sha256": "5b9f01f1a051f2e12e980b9bd97ee5f89a0e1e9f1b3a6126a545e43b233267db",
+  "mapping": "One in-memory authorization parse only: jobs=list(planned_items); exact equality to manifest jobs checked first. All later artifact hashing reads original bytes.",
+  "source": "from pathlib import Path\nimport json,sys\nfrom unittest.mock import patch\nroot=Path('/home/lyh/MAPF_SCI_RESEARCH/tracks/sci')\nsys.path.insert(0,str(root))\nimport repair_profile\nmanifest=root/'config/address_shared_budget_contract_v1_manifest.json'\nexpected='a6818a3c28d0d6880d2b57b810b956b9c46658c6274c7bd3c76cec56026abb98'\nauth_path=root/'results/address_shared_budget_contract_v1/AUTHORIZATION.json'\noriginal=Path.read_bytes\nauth=json.loads(original(auth_path))\nconfig=json.loads(original(manifest))\nassert 'jobs' not in auth\nassert auth['manifest_sha256']==expected\nassert auth['planned_items']==[job['id'] for job in config['jobs']]\nassert all(isinstance(item,str) for item in auth['planned_items'])\nview=dict(auth,jobs=list(auth['planned_items']))\nstate={'injected':False}\ndef one_read(path):\n    if path.resolve()==auth_path.resolve() and not state['injected']:\n        state['injected']=True\n        return json.dumps(view,ensure_ascii=False).encode()\n    return original(path)\nwith patch.object(Path,'read_bytes',one_read):\n    repair_profile.address_results(manifest,expected)\nassert state['injected']\nassert original(auth_path)==auth_raw\n",
+  "source_sha256": "cdad86eb878ce5c0e477057655e2574d0d0801c3fb198ff369ff6082e71e3fb2",
+  "offline_wall_ns": 171174086,
+  "offline_cpu_ns": 162547968,
+  "scientific_search_executed": false,
+  "scientific_run_timing_modified": false,
+  "run_receipt_sha256": "70765e1f8e9ca3f2f64ed403bb0f7fe881ff50686e819a9be7ea1e93371446bc"
+}

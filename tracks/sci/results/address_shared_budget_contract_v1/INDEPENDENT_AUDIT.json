@@ -1,0 +1,625 @@
+{
+  "analysis_compatibility_limitations": [
+    {
+      "detail": "Frozen address_results expects jobs, one-shot coordinator wrote planned_items. This independent audit reads planned_items directly and verifies exact ordered equality; original authorization unchanged.",
+      "kind": "AUTHORIZATION_FIELD_NAME_MISMATCH"
+    },
+    {
+      "detail": "Legacy search_return snapshot precedes PRIMARY_DONE. Frozen search_{local,global}_cutoff counters may omit a first cutoff at PRIMARY_DONE. Raw first_observed deadline stages independently listed per job; no binary/receipt/manifest rewritten.",
+      "kind": "LEGACY_PRIMARY_DONE_COVERAGE_SNAPSHOT_ORDER"
+    }
+  ],
+  "authorization_check": "Current direct user instruction and assistant-selected bounded scope checked; planned_items equals manifest ordered jobs; old authorization not reused. File alone is not authority.",
+  "authorization_sha256": "430b217f004eaab3ebb0d0b0fa38f4be1491b70491f2810ba263594e0c0668d2",
+  "created_utc": "2026-10-24T17:11:36.885484+00:00",
+  "interpretation": "Known design tasks, one seed each. Functional event coverage and legal output only. Between-run candidates are not counterfactual pairs; descriptive SOC/makespan differences do not establish independent benefit. Validation elapsed > nonnegative local margin +2ns is a sufficient witness only; settlement time is never used.",
+  "jobs": [
+    {
+      "PRIMARY_DONE_independent_stage_review": {
+        "global": {
+          "event_ids": [],
+          "first_observed_at_PRIMARY_DONE_count": 0,
+          "not_present_in_search_return_snapshot_ids": []
+        },
+        "local": {
+          "event_ids": [],
+          "first_observed_at_PRIMARY_DONE_count": 0,
+          "not_present_in_search_return_snapshot_ids": []
+        }
+      },
+      "accepted_after_proven_old_local_margin_crossing_count": 0,
+      "actual_posterior_and_plan_identity_chain_verified": true,
+      "complete_paths_validated": true,
+      "contract": "legacy",
+      "crossing_witness_examples": [],
+      "descendant_cpu_s": 2.993275,
+      "events": 105,
+      "final_makespan": 121,
+      "final_soc": 1978,
+      "full_admission_wall_ns": 3064294377,
+      "initial_final_native_text_matches_saved_paths": true,
+      "initial_soc": 2000,
+      "job": "maze-32-32-2__s05__n32__seed0__legacy",
+      "native_cpu_s": 2.9042947210000003,
+      "one_settlement_and_cost_ledger_verified": true,
+      "outer_wall_ns": 3108454394,
+      "positive_gain_crossing_witness_count": 0,
+      "receipt_artifact_pins_verified": 12,
+      "recorded_functional_coverage": {
+        "between_run_candidate_identity_assumed": false,
+        "common_validated_events_without_direct_crossing_proof": 0,
+        "coverage": {
+          "common_commit_proven_beyond_local_margin": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "common_validation_proven_beyond_local_margin": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "global_cutoff_rollback": {
+            "count": 1,
+            "example_selection_ids": [
+              105
+            ],
+            "status": "EXERCISED"
+          },
+          "legacy_admission_local_cutoff_global_remaining": {
+            "count": 30,
+            "example_selection_ids": [
+              4,
+              14,
+              19,
+              22,
+              24,
+              27,
+              31,
+              32
+            ],
+            "status": "EXERCISED"
+          },
+          "normal_complete_search_committed": {
+            "count": 9,
+            "example_selection_ids": [
+              2,
+              5,
+              7,
+              21,
+              41,
+              44,
+              56,
+              95
+            ],
+            "status": "EXERCISED"
+          },
+          "normal_complete_search_validated": {
+            "count": 9,
+            "example_selection_ids": [
+              2,
+              5,
+              7,
+              21,
+              41,
+              44,
+              56,
+              95
+            ],
+            "status": "EXERCISED"
+          },
+          "search_global_cutoff_rollback": {
+            "count": 1,
+            "example_selection_ids": [
+              105
+            ],
+            "status": "EXERCISED"
+          },
+          "search_local_cutoff_rollback": {
+            "count": 29,
+            "example_selection_ids": [
+              9,
+              15,
+              23,
+              26,
+              30,
+              34,
+              35,
+              36
+            ],
+            "status": "EXERCISED"
+          },
+          "validated_then_global_cutoff_rollback": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          }
+        },
+        "cutoff_rejection_identity_checked": true,
+        "evidence_scope": "KNOWN_TASK_SINGLE_SEED_FUNCTIONAL_NOT_BENEFIT_COMPARISON",
+        "repair_budget_contract": "legacy",
+        "rounding_guard_ns": 2,
+        "schema": "ADDRESS_SHARED_BUDGET_FUNCTIONAL_COVERAGE_V1",
+        "settlement_time_not_used_as_commit_time": true,
+        "unproven_event_interpretation": "UNKNOWN_NOT_EVIDENCE_OF_NO_CROSSING"
+      },
+      "repairs": 105,
+      "rollbacks": 96,
+      "status": "AUDIT_PASS",
+      "worker_cpu_ns": 21255169
+    },
+    {
+      "PRIMARY_DONE_independent_stage_review": {
+        "global": {
+          "event_ids": [],
+          "first_observed_at_PRIMARY_DONE_count": 0,
+          "not_present_in_search_return_snapshot_ids": []
+        },
+        "local": {
+          "event_ids": [],
+          "first_observed_at_PRIMARY_DONE_count": 0,
+          "not_present_in_search_return_snapshot_ids": []
+        }
+      },
+      "accepted_after_proven_old_local_margin_crossing_count": 7,
+      "actual_posterior_and_plan_identity_chain_verified": true,
+      "complete_paths_validated": true,
+      "contract": "search_then_admission",
+      "crossing_witness_examples": [
+        {
+          "candidate_validation_wall_ns": 11197420,
+          "committed_gain": 2,
+          "duration_minus_margin_ns": 3915932,
+          "local_remaining_wall_ns": 7281488,
+          "plan_identity": {
+            "after_sha1": "86e168e33a8a3d815adde30a742854945acf881d",
+            "before_sha1": "8dc6d26d51286d3219a642376238d7cc1b1de086",
+            "encoding": "NATIVE_PATHS_U32LE_SHA1_V1",
+            "revision_after": 2,
+            "revision_before": 1,
+            "scope": "WITHIN_MANIFEST_BOUND_MODEL_NOT_SAFETY_CERTIFICATE"
+          },
+          "repair_attempt_id": 4,
+          "selection_id": 4
+        },
+        {
+          "candidate_validation_wall_ns": 11196806,
+          "committed_gain": 1,
+          "duration_minus_margin_ns": 3236703,
+          "local_remaining_wall_ns": 7960103,
+          "plan_identity": {
+            "after_sha1": "1aaef612e313f6ecfe1f278c3c793252649533f6",
+            "before_sha1": "da6d7a14df437c6e90cd6eefe9243c9db13edf75",
+            "encoding": "NATIVE_PATHS_U32LE_SHA1_V1",
+            "revision_after": 5,
+            "revision_before": 4,
+            "scope": "WITHIN_MANIFEST_BOUND_MODEL_NOT_SAFETY_CERTIFICATE"
+          },
+          "repair_attempt_id": 8,
+          "selection_id": 8
+        },
+        {
+          "candidate_validation_wall_ns": 11207557,
+          "committed_gain": 8,
+          "duration_minus_margin_ns": 5848343,
+          "local_remaining_wall_ns": 5359214,
+          "plan_identity": {
+            "after_sha1": "c4e2217424c2af2a38a47d45b356de0f048d20fe",
+            "before_sha1": "1aaef612e313f6ecfe1f278c3c793252649533f6",
+            "encoding": "NATIVE_PATHS_U32LE_SHA1_V1",
+            "revision_after": 6,
+            "revision_before": 5,
+            "scope": "WITHIN_MANIFEST_BOUND_MODEL_NOT_SAFETY_CERTIFICATE"
+          },
+          "repair_attempt_id": 9,
+          "selection_id": 9
+        },
+        {
+          "candidate_validation_wall_ns": 11237653,
+          "committed_gain": 7,
+          "duration_minus_margin_ns": 10316793,
+          "local_remaining_wall_ns": 920860,
+          "plan_identity": {
+            "after_sha1": "4654cdf5f1291bec9ff8cfd83e3c05639c5f1d25",
+            "before_sha1": "fac3800cbd65d2a312a507057c20b1f94c9edfdf",
+            "encoding": "NATIVE_PATHS_U32LE_SHA1_V1",
+            "revision_after": 8,
+            "revision_before": 7,
+            "scope": "WITHIN_MANIFEST_BOUND_MODEL_NOT_SAFETY_CERTIFICATE"
+          },
+          "repair_attempt_id": 11,
+          "selection_id": 11
+        },
+        {
+          "candidate_validation_wall_ns": 11211004,
+          "committed_gain": 36,
+          "duration_minus_margin_ns": 9503490,
+          "local_remaining_wall_ns": 1707514,
+          "plan_identity": {
+            "after_sha1": "967c245dabfceca768c76f5c5547bc8409770c8e",
+            "before_sha1": "4654cdf5f1291bec9ff8cfd83e3c05639c5f1d25",
+            "encoding": "NATIVE_PATHS_U32LE_SHA1_V1",
+            "revision_after": 9,
+            "revision_before": 8,
+            "scope": "WITHIN_MANIFEST_BOUND_MODEL_NOT_SAFETY_CERTIFICATE"
+          },
+          "repair_attempt_id": 17,
+          "selection_id": 17
+        },
+        {
+          "candidate_validation_wall_ns": 11417149,
+          "committed_gain": 3,
+          "duration_minus_margin_ns": 8266683,
+          "local_remaining_wall_ns": 3150466,
+          "plan_identity": {
+            "after_sha1": "f8e252439c959597964bfa13d98342130a15073a",
+            "before_sha1": "ce47fd0059c6a479598361e736155fe27857d245",
+            "encoding": "NATIVE_PATHS_U32LE_SHA1_V1",
+            "revision_after": 11,
+            "revision_before": 10,
+            "scope": "WITHIN_MANIFEST_BOUND_MODEL_NOT_SAFETY_CERTIFICATE"
+          },
+          "repair_attempt_id": 40,
+          "selection_id": 40
+        },
+        {
+          "candidate_validation_wall_ns": 11344940,
+          "committed_gain": 2,
+          "duration_minus_margin_ns": 6546169,
+          "local_remaining_wall_ns": 4798771,
+          "plan_identity": {
+            "after_sha1": "02422b1652e1dcc9ead7f5687aab0f098f05dce6",
+            "before_sha1": "f8e252439c959597964bfa13d98342130a15073a",
+            "encoding": "NATIVE_PATHS_U32LE_SHA1_V1",
+            "revision_after": 12,
+            "revision_before": 11,
+            "scope": "WITHIN_MANIFEST_BOUND_MODEL_NOT_SAFETY_CERTIFICATE"
+          },
+          "repair_attempt_id": 55,
+          "selection_id": 55
+        }
+      ],
+      "descendant_cpu_s": 2.9974290000000003,
+      "events": 94,
+      "final_makespan": 125,
+      "final_soc": 1933,
+      "full_admission_wall_ns": 3066207435,
+      "initial_final_native_text_matches_saved_paths": true,
+      "initial_soc": 2000,
+      "job": "maze-32-32-2__s05__n32__seed0__search_then_admission",
+      "native_cpu_s": 2.90426634,
+      "one_settlement_and_cost_ledger_verified": true,
+      "outer_wall_ns": 3120602923,
+      "positive_gain_crossing_witness_count": 7,
+      "receipt_artifact_pins_verified": 12,
+      "recorded_functional_coverage": {
+        "between_run_candidate_identity_assumed": false,
+        "common_validated_events_without_direct_crossing_proof": 5,
+        "coverage": {
+          "common_commit_proven_beyond_local_margin": {
+            "count": 7,
+            "example_selection_ids": [
+              4,
+              8,
+              9,
+              11,
+              17,
+              40,
+              55
+            ],
+            "status": "EXERCISED"
+          },
+          "common_validation_proven_beyond_local_margin": {
+            "count": 7,
+            "example_selection_ids": [
+              4,
+              8,
+              9,
+              11,
+              17,
+              40,
+              55
+            ],
+            "status": "EXERCISED"
+          },
+          "global_cutoff_rollback": {
+            "count": 1,
+            "example_selection_ids": [
+              94
+            ],
+            "status": "EXERCISED"
+          },
+          "legacy_admission_local_cutoff_global_remaining": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "normal_complete_search_committed": {
+            "count": 12,
+            "example_selection_ids": [
+              2,
+              4,
+              5,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "status": "EXERCISED"
+          },
+          "normal_complete_search_validated": {
+            "count": 12,
+            "example_selection_ids": [
+              2,
+              4,
+              5,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "status": "EXERCISED"
+          },
+          "search_global_cutoff_rollback": {
+            "count": 1,
+            "example_selection_ids": [
+              94
+            ],
+            "status": "EXERCISED"
+          },
+          "search_local_cutoff_rollback": {
+            "count": 37,
+            "example_selection_ids": [
+              14,
+              16,
+              20,
+              22,
+              25,
+              26,
+              29,
+              32
+            ],
+            "status": "EXERCISED"
+          },
+          "validated_then_global_cutoff_rollback": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          }
+        },
+        "cutoff_rejection_identity_checked": true,
+        "evidence_scope": "KNOWN_TASK_SINGLE_SEED_FUNCTIONAL_NOT_BENEFIT_COMPARISON",
+        "repair_budget_contract": "search_then_admission",
+        "rounding_guard_ns": 2,
+        "schema": "ADDRESS_SHARED_BUDGET_FUNCTIONAL_COVERAGE_V1",
+        "settlement_time_not_used_as_commit_time": true,
+        "unproven_event_interpretation": "UNKNOWN_NOT_EVIDENCE_OF_NO_CROSSING"
+      },
+      "repairs": 94,
+      "rollbacks": 82,
+      "status": "AUDIT_PASS",
+      "worker_cpu_ns": 21085214
+    },
+    {
+      "PRIMARY_DONE_independent_stage_review": {
+        "global": {
+          "event_ids": [],
+          "first_observed_at_PRIMARY_DONE_count": 0,
+          "not_present_in_search_return_snapshot_ids": []
+        },
+        "local": {
+          "event_ids": [],
+          "first_observed_at_PRIMARY_DONE_count": 0,
+          "not_present_in_search_return_snapshot_ids": []
+        }
+      },
+      "accepted_after_proven_old_local_margin_crossing_count": 0,
+      "actual_posterior_and_plan_identity_chain_verified": true,
+      "complete_paths_validated": true,
+      "contract": "legacy",
+      "crossing_witness_examples": [],
+      "descendant_cpu_s": 3.00922,
+      "events": 512,
+      "final_makespan": 48,
+      "final_soc": 749,
+      "full_admission_wall_ns": 3090172512,
+      "initial_final_native_text_matches_saved_paths": true,
+      "initial_soc": 753,
+      "job": "random-32-32-10__s05__n32__seed0__legacy",
+      "native_cpu_s": 2.897021702,
+      "one_settlement_and_cost_ledger_verified": true,
+      "outer_wall_ns": 3137295452,
+      "positive_gain_crossing_witness_count": 0,
+      "receipt_artifact_pins_verified": 12,
+      "recorded_functional_coverage": {
+        "between_run_candidate_identity_assumed": false,
+        "common_validated_events_without_direct_crossing_proof": 0,
+        "coverage": {
+          "common_commit_proven_beyond_local_margin": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "common_validation_proven_beyond_local_margin": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "global_cutoff_rollback": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          },
+          "legacy_admission_local_cutoff_global_remaining": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          },
+          "normal_complete_search_committed": {
+            "count": 3,
+            "example_selection_ids": [
+              2,
+              3,
+              6
+            ],
+            "status": "EXERCISED"
+          },
+          "normal_complete_search_validated": {
+            "count": 3,
+            "example_selection_ids": [
+              2,
+              3,
+              6
+            ],
+            "status": "EXERCISED"
+          },
+          "search_global_cutoff_rollback": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          },
+          "search_local_cutoff_rollback": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          },
+          "validated_then_global_cutoff_rollback": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          }
+        },
+        "cutoff_rejection_identity_checked": true,
+        "evidence_scope": "KNOWN_TASK_SINGLE_SEED_FUNCTIONAL_NOT_BENEFIT_COMPARISON",
+        "repair_budget_contract": "legacy",
+        "rounding_guard_ns": 2,
+        "schema": "ADDRESS_SHARED_BUDGET_FUNCTIONAL_COVERAGE_V1",
+        "settlement_time_not_used_as_commit_time": true,
+        "unproven_event_interpretation": "UNKNOWN_NOT_EVIDENCE_OF_NO_CROSSING"
+      },
+      "repairs": 507,
+      "rollbacks": 504,
+      "status": "AUDIT_PASS",
+      "worker_cpu_ns": 43709367
+    },
+    {
+      "PRIMARY_DONE_independent_stage_review": {
+        "global": {
+          "event_ids": [],
+          "first_observed_at_PRIMARY_DONE_count": 0,
+          "not_present_in_search_return_snapshot_ids": []
+        },
+        "local": {
+          "event_ids": [],
+          "first_observed_at_PRIMARY_DONE_count": 0,
+          "not_present_in_search_return_snapshot_ids": []
+        }
+      },
+      "accepted_after_proven_old_local_margin_crossing_count": 0,
+      "actual_posterior_and_plan_identity_chain_verified": true,
+      "complete_paths_validated": true,
+      "contract": "search_then_admission",
+      "crossing_witness_examples": [],
+      "descendant_cpu_s": 3.00888,
+      "events": 511,
+      "final_makespan": 48,
+      "final_soc": 749,
+      "full_admission_wall_ns": 3077492506,
+      "initial_final_native_text_matches_saved_paths": true,
+      "initial_soc": 753,
+      "job": "random-32-32-10__s05__n32__seed0__search_then_admission",
+      "native_cpu_s": 2.90600756,
+      "one_settlement_and_cost_ledger_verified": true,
+      "outer_wall_ns": 3124728299,
+      "positive_gain_crossing_witness_count": 0,
+      "receipt_artifact_pins_verified": 12,
+      "recorded_functional_coverage": {
+        "between_run_candidate_identity_assumed": false,
+        "common_validated_events_without_direct_crossing_proof": 3,
+        "coverage": {
+          "common_commit_proven_beyond_local_margin": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          },
+          "common_validation_proven_beyond_local_margin": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          },
+          "global_cutoff_rollback": {
+            "count": 1,
+            "example_selection_ids": [
+              511
+            ],
+            "status": "EXERCISED"
+          },
+          "legacy_admission_local_cutoff_global_remaining": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "normal_complete_search_committed": {
+            "count": 3,
+            "example_selection_ids": [
+              2,
+              3,
+              6
+            ],
+            "status": "EXERCISED"
+          },
+          "normal_complete_search_validated": {
+            "count": 3,
+            "example_selection_ids": [
+              2,
+              3,
+              6
+            ],
+            "status": "EXERCISED"
+          },
+          "search_global_cutoff_rollback": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          },
+          "search_local_cutoff_rollback": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          },
+          "validated_then_global_cutoff_rollback": {
+            "count": 0,
+            "example_selection_ids": [],
+            "status": "NOT_EXERCISED"
+          }
+        },
+        "cutoff_rejection_identity_checked": true,
+        "evidence_scope": "KNOWN_TASK_SINGLE_SEED_FUNCTIONAL_NOT_BENEFIT_COMPARISON",
+        "repair_budget_contract": "search_then_admission",
+        "rounding_guard_ns": 2,
+        "schema": "ADDRESS_SHARED_BUDGET_FUNCTIONAL_COVERAGE_V1",
+        "settlement_time_not_used_as_commit_time": true,
+        "unproven_event_interpretation": "UNKNOWN_NOT_EVIDENCE_OF_NO_CROSSING"
+      },
+      "repairs": 506,
+      "rollbacks": 503,
+      "status": "AUDIT_PASS",
+      "worker_cpu_ns": 37299646
+    }
+  ],
+  "manifest_sha256": "a6818a3c28d0d6880d2b57b810b956b9c46658c6274c7bd3c76cec56026abb98",
+  "new_scientific_runs": 0,
+  "offline_audit_cpu_ns": 119155789,
+  "offline_audit_wall_ns": 119157934,
+  "offline_cost_not_added_to_recorded_scientific_runtime": true,
+  "outer_execution_sha256": "504feb8c23047efca0c08c0eba91fc4ba26037c864a3ee2ea8b1d948a3540cd2",
+  "raw_artifacts_changed": false,
+  "reviewer": "/root/common_contract_review",
+  "schema": "SCI_SHARED_BUDGET_INDEPENDENT_OFFLINE_AUDIT_V1",
+  "scientific_code_commit": "08c38999515c0af196f76b0dfb0cfa92299aec39",
+  "status": "PASS_WITH_ANALYZER_LIMITATIONS",
+  "total_events": 1222,
+  "validation_method": "Direct original manifest, authorization planned_items and receipt/hash checks; fixed common discrete validator over retained initial/final paths and native final.paths; original reward verifier for actual posterior/plan identity/censor/cost; independent raw PRIMARY_DONE stage review and conservative validation-duration crossing witnesses."
+}

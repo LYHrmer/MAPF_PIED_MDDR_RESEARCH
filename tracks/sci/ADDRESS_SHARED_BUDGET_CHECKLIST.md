@@ -1,6 +1,8 @@
 # SCI 新旧预算合同：四项功能验证清单
 
-本轮真实用户指示为：“验证SCI新旧预算合同的实际行为，以及硕士初始认证的预算可行性，再开展收益比较”。这是新的功能验证指示，不借用任何已消费许可。以下四项与资源上界是据此选定的最小实施范围，并非用户逐项指定的原文。主窗口负责冻结、执行和记录；本清单准备阶段没有启动科学任务。
+**状态更新：已执行，许可消费。** 科学提交`08c38999515c0af196f76b0dfb0cfa92299aec39`下四项全部COMPLETE，零硬失败、零重试；[结果](ADDRESS_SHARED_BUDGET_RESULT.md)保留合同触发、NOT_EXERCISED、退化与完整成本。以下冻结范围和命令用于追溯，不得再次执行或复用许可。原manifest字节/SHA、输入、二进制、授权和逐项产物不改写。
+
+本轮真实用户指示为：“验证SCI新旧预算合同的实际行为，以及硕士初始认证的预算可行性，再开展收益比较”。这是新的功能验证指示，不借用任何此前已消费许可。以下四项与资源上界是据此选定的最小实施范围，并非用户逐项指定的原文。主窗口已完成冻结、执行和记录；原准备阶段没有启动科学任务。
 
 目标是核实共同预算合同在真实完整ADDRESS调用中的行为、合法输出和费用闭合。只比较两个已参与设计的32车任务、seed0，不能作为独立收益、统计显著性或学习结果。新旧两臂均使用同一新二进制和相同观测，不能将旧无观测运行当作配对基线。
 
@@ -54,7 +56,7 @@
 rtk proxy python3 -B tracks/sci/run_address_adapter.py inspect --manifest tracks/sci/config/address_shared_budget_contract_v1_manifest.json --sha256 a6818a3c28d0d6880d2b57b810b956b9c46658c6274c7bd3c76cec56026abb98
 ```
 
-运行由主窗口在冻结后执行。授权记录须保存上面的当前用户原文、实际提交、本清单SHA、四个job、限额、零重试、旧许可未复用，并明确四项数量/预算是实施安排。以下参考字符串必须连接该真实记录，不能单凭字符串或文件授权。
+下列命令为本批已消费运行的追溯模板，不得重跑。主窗口的实际命令及授权引用见[外层执行记录](results/address_shared_budget_contract_v1/OUTER_EXECUTION.json)；[原授权](results/address_shared_budget_contract_v1/AUTHORIZATION.json)保存本轮用户原文、冻结提交、manifest SHA、四个job、限额、零重试与旧许可未复用，并区分实施安排与用户原文。参考字符串本身不授予许可。
 
 ```bash
 rtk proxy timeout --signal=TERM --kill-after=2s 10s python3 -B tracks/sci/run_address_adapter.py run --manifest tracks/sci/config/address_shared_budget_contract_v1_manifest.json --sha256 a6818a3c28d0d6880d2b57b810b956b9c46658c6274c7bd3c76cec56026abb98 --job maze-32-32-2__s05__n32__seed0__legacy --authorization-reference '2026-10-25 current direct validation instruction; shared budget contract functional DEV four jobs; new authorization only'
